@@ -16,49 +16,34 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
      * @return A default value used for the strategy parameter.
      * 
      */
-    private final List<Object> defaultValues;
+    private List<Object> defaultValues;
     /**
      * @return Text describing the strategy parameter.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Whether this parameter is required.
      * 
      */
-    private final Boolean isRequired;
+    private Boolean isRequired;
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The list of possible values used for these strategy parameters.
      * 
      */
-    private final List<Object> possibleValues;
+    private List<Object> possibleValues;
     /**
      * @return The type of strategy parameter.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition(
-        @CustomType.Parameter("defaultValues") List<Object> defaultValues,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("isRequired") Boolean isRequired,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("possibleValues") List<Object> possibleValues,
-        @CustomType.Parameter("type") String type) {
-        this.defaultValues = defaultValues;
-        this.description = description;
-        this.isRequired = isRequired;
-        this.name = name;
-        this.possibleValues = possibleValues;
-        this.type = type;
-    }
-
+    private GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition() {}
     /**
      * @return A default value used for the strategy parameter.
      * 
@@ -109,7 +94,7 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
     public static Builder builder(GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<Object> defaultValues;
         private String description;
@@ -117,11 +102,7 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
         private String name;
         private List<Object> possibleValues;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultValues = defaults.defaultValues;
@@ -132,6 +113,7 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder defaultValues(List<Object> defaultValues) {
             this.defaultValues = Objects.requireNonNull(defaultValues);
             return this;
@@ -139,18 +121,22 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
         public Builder defaultValues(Object... defaultValues) {
             return defaultValues(List.of(defaultValues));
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder isRequired(Boolean isRequired) {
             this.isRequired = Objects.requireNonNull(isRequired);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder possibleValues(List<Object> possibleValues) {
             this.possibleValues = Objects.requireNonNull(possibleValues);
             return this;
@@ -158,11 +144,20 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
         public Builder possibleValues(Object... possibleValues) {
             return possibleValues(List.of(possibleValues));
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition build() {
-            return new GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition(defaultValues, description, isRequired, name, possibleValues, type);
+        }
+        public GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition build() {
+            final var o = new GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition();
+            o.defaultValues = defaultValues;
+            o.description = description;
+            o.isRequired = isRequired;
+            o.name = name;
+            o.possibleValues = possibleValues;
+            o.type = type;
+            return o;
         }
     }
 }

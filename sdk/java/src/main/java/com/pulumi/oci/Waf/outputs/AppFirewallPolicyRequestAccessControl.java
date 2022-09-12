@@ -18,21 +18,14 @@ public final class AppFirewallPolicyRequestAccessControl {
      * * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
      * 
      */
-    private final String defaultActionName;
+    private String defaultActionName;
     /**
      * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
      */
-    private final @Nullable List<AppFirewallPolicyRequestAccessControlRule> rules;
+    private @Nullable List<AppFirewallPolicyRequestAccessControlRule> rules;
 
-    @CustomType.Constructor
-    private AppFirewallPolicyRequestAccessControl(
-        @CustomType.Parameter("defaultActionName") String defaultActionName,
-        @CustomType.Parameter("rules") @Nullable List<AppFirewallPolicyRequestAccessControlRule> rules) {
-        this.defaultActionName = defaultActionName;
-        this.rules = rules;
-    }
-
+    private AppFirewallPolicyRequestAccessControl() {}
     /**
      * @return (Updatable) References an default Action to take if no AccessControlRule was matched. Allowed action types:
      * * **ALLOW** continues execution of other modules and their rules.
@@ -57,33 +50,35 @@ public final class AppFirewallPolicyRequestAccessControl {
     public static Builder builder(AppFirewallPolicyRequestAccessControl defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String defaultActionName;
         private @Nullable List<AppFirewallPolicyRequestAccessControlRule> rules;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AppFirewallPolicyRequestAccessControl defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultActionName = defaults.defaultActionName;
     	      this.rules = defaults.rules;
         }
 
+        @CustomType.Setter
         public Builder defaultActionName(String defaultActionName) {
             this.defaultActionName = Objects.requireNonNull(defaultActionName);
             return this;
         }
+        @CustomType.Setter
         public Builder rules(@Nullable List<AppFirewallPolicyRequestAccessControlRule> rules) {
             this.rules = rules;
             return this;
         }
         public Builder rules(AppFirewallPolicyRequestAccessControlRule... rules) {
             return rules(List.of(rules));
-        }        public AppFirewallPolicyRequestAccessControl build() {
-            return new AppFirewallPolicyRequestAccessControl(defaultActionName, rules);
+        }
+        public AppFirewallPolicyRequestAccessControl build() {
+            final var o = new AppFirewallPolicyRequestAccessControl();
+            o.defaultActionName = defaultActionName;
+            o.rules = rules;
+            return o;
         }
     }
 }

@@ -70,14 +70,14 @@ public final class GetRegistryFoldersArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      * 
      */
     @Import(name="registryId", required=true)
     private Output<String> registryId;
 
     /**
-     * @return The registry Ocid.
+     * @return The registry OCID.
      * 
      */
     public Output<String> registryId() {
@@ -215,7 +215,7 @@ public final class GetRegistryFoldersArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param registryId The registry Ocid.
+         * @param registryId The registry OCID.
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class GetRegistryFoldersArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param registryId The registry Ocid.
+         * @param registryId The registry OCID.
          * 
          * @return builder
          * 

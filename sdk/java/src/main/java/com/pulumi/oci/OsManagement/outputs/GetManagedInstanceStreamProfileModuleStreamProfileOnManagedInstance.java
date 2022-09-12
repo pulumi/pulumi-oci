@@ -13,42 +13,29 @@ public final class GetManagedInstanceStreamProfileModuleStreamProfileOnManagedIn
      * @return The name of a module.  This parameter is required if a streamName is specified.
      * 
      */
-    private final String moduleName;
+    private String moduleName;
     /**
      * @return The name of the profile of the containing module stream
      * 
      */
-    private final String profileName;
+    private String profileName;
     /**
      * @return The status of the profile.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The name of the stream of the containing module.  This parameter is required if a profileName is specified.
      * 
      */
-    private final String streamName;
+    private String streamName;
     /**
      * @return The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    private final String timeModified;
+    private String timeModified;
 
-    @CustomType.Constructor
-    private GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance(
-        @CustomType.Parameter("moduleName") String moduleName,
-        @CustomType.Parameter("profileName") String profileName,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("streamName") String streamName,
-        @CustomType.Parameter("timeModified") String timeModified) {
-        this.moduleName = moduleName;
-        this.profileName = profileName;
-        this.status = status;
-        this.streamName = streamName;
-        this.timeModified = timeModified;
-    }
-
+    private GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance() {}
     /**
      * @return The name of a module.  This parameter is required if a streamName is specified.
      * 
@@ -92,18 +79,14 @@ public final class GetManagedInstanceStreamProfileModuleStreamProfileOnManagedIn
     public static Builder builder(GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String moduleName;
         private String profileName;
         private String status;
         private String streamName;
         private String timeModified;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.moduleName = defaults.moduleName;
@@ -113,27 +96,39 @@ public final class GetManagedInstanceStreamProfileModuleStreamProfileOnManagedIn
     	      this.timeModified = defaults.timeModified;
         }
 
+        @CustomType.Setter
         public Builder moduleName(String moduleName) {
             this.moduleName = Objects.requireNonNull(moduleName);
             return this;
         }
+        @CustomType.Setter
         public Builder profileName(String profileName) {
             this.profileName = Objects.requireNonNull(profileName);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder streamName(String streamName) {
             this.streamName = Objects.requireNonNull(streamName);
             return this;
         }
+        @CustomType.Setter
         public Builder timeModified(String timeModified) {
             this.timeModified = Objects.requireNonNull(timeModified);
             return this;
-        }        public GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance build() {
-            return new GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance(moduleName, profileName, status, streamName, timeModified);
+        }
+        public GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance build() {
+            final var o = new GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance();
+            o.moduleName = moduleName;
+            o.profileName = profileName;
+            o.status = status;
+            o.streamName = streamName;
+            o.timeModified = timeModified;
+            return o;
         }
     }
 }

@@ -12,104 +12,71 @@ import java.util.Objects;
 
 @CustomType
 public final class GetInstancePoolInstancesInstance {
-    private final Boolean autoTerminateInstanceOnDelete;
+    private Boolean autoTerminateInstanceOnDelete;
     /**
      * @return The availability domain the instance is running in.
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final Boolean decrementSizeOnDelete;
+    private String compartmentId;
+    private Boolean decrementSizeOnDelete;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The fault domain the instance is running in.
      * 
      */
-    private final String faultDomain;
+    private String faultDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration used to create the instance.
      * 
      */
-    private final String instanceConfigurationId;
-    private final String instanceId;
+    private String instanceConfigurationId;
+    private String instanceId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
      * 
      */
-    private final String instancePoolId;
+    private String instancePoolId;
     /**
      * @return The load balancer backends that are configured for the instance pool instance.
      * 
      */
-    private final List<GetInstancePoolInstancesInstanceLoadBalancerBackend> loadBalancerBackends;
+    private List<GetInstancePoolInstancesInstanceLoadBalancerBackend> loadBalancerBackends;
     /**
      * @return The region that contains the availability domain the instance is running in.
      * 
      */
-    private final String region;
+    private String region;
     /**
      * @return The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
-    private final String shape;
+    private String shape;
     /**
      * @return The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetInstancePoolInstancesInstance(
-        @CustomType.Parameter("autoTerminateInstanceOnDelete") Boolean autoTerminateInstanceOnDelete,
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("decrementSizeOnDelete") Boolean decrementSizeOnDelete,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("faultDomain") String faultDomain,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instanceConfigurationId") String instanceConfigurationId,
-        @CustomType.Parameter("instanceId") String instanceId,
-        @CustomType.Parameter("instancePoolId") String instancePoolId,
-        @CustomType.Parameter("loadBalancerBackends") List<GetInstancePoolInstancesInstanceLoadBalancerBackend> loadBalancerBackends,
-        @CustomType.Parameter("region") String region,
-        @CustomType.Parameter("shape") String shape,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.autoTerminateInstanceOnDelete = autoTerminateInstanceOnDelete;
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.decrementSizeOnDelete = decrementSizeOnDelete;
-        this.displayName = displayName;
-        this.faultDomain = faultDomain;
-        this.id = id;
-        this.instanceConfigurationId = instanceConfigurationId;
-        this.instanceId = instanceId;
-        this.instancePoolId = instancePoolId;
-        this.loadBalancerBackends = loadBalancerBackends;
-        this.region = region;
-        this.shape = shape;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetInstancePoolInstancesInstance() {}
     public Boolean autoTerminateInstanceOnDelete() {
         return this.autoTerminateInstanceOnDelete;
     }
@@ -211,7 +178,7 @@ public final class GetInstancePoolInstancesInstance {
     public static Builder builder(GetInstancePoolInstancesInstance defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean autoTerminateInstanceOnDelete;
         private String availabilityDomain;
@@ -228,11 +195,7 @@ public final class GetInstancePoolInstancesInstance {
         private String shape;
         private String state;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstancePoolInstancesInstance defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autoTerminateInstanceOnDelete = defaults.autoTerminateInstanceOnDelete;
@@ -252,46 +215,57 @@ public final class GetInstancePoolInstancesInstance {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder autoTerminateInstanceOnDelete(Boolean autoTerminateInstanceOnDelete) {
             this.autoTerminateInstanceOnDelete = Objects.requireNonNull(autoTerminateInstanceOnDelete);
             return this;
         }
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder decrementSizeOnDelete(Boolean decrementSizeOnDelete) {
             this.decrementSizeOnDelete = Objects.requireNonNull(decrementSizeOnDelete);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = Objects.requireNonNull(faultDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceConfigurationId(String instanceConfigurationId) {
             this.instanceConfigurationId = Objects.requireNonNull(instanceConfigurationId);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(String instanceId) {
             this.instanceId = Objects.requireNonNull(instanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder instancePoolId(String instancePoolId) {
             this.instancePoolId = Objects.requireNonNull(instancePoolId);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerBackends(List<GetInstancePoolInstancesInstanceLoadBalancerBackend> loadBalancerBackends) {
             this.loadBalancerBackends = Objects.requireNonNull(loadBalancerBackends);
             return this;
@@ -299,23 +273,44 @@ public final class GetInstancePoolInstancesInstance {
         public Builder loadBalancerBackends(GetInstancePoolInstancesInstanceLoadBalancerBackend... loadBalancerBackends) {
             return loadBalancerBackends(List.of(loadBalancerBackends));
         }
+        @CustomType.Setter
         public Builder region(String region) {
             this.region = Objects.requireNonNull(region);
             return this;
         }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetInstancePoolInstancesInstance build() {
-            return new GetInstancePoolInstancesInstance(autoTerminateInstanceOnDelete, availabilityDomain, compartmentId, decrementSizeOnDelete, displayName, faultDomain, id, instanceConfigurationId, instanceId, instancePoolId, loadBalancerBackends, region, shape, state, timeCreated);
+        }
+        public GetInstancePoolInstancesInstance build() {
+            final var o = new GetInstancePoolInstancesInstance();
+            o.autoTerminateInstanceOnDelete = autoTerminateInstanceOnDelete;
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.decrementSizeOnDelete = decrementSizeOnDelete;
+            o.displayName = displayName;
+            o.faultDomain = faultDomain;
+            o.id = id;
+            o.instanceConfigurationId = instanceConfigurationId;
+            o.instanceId = instanceId;
+            o.instancePoolId = instancePoolId;
+            o.loadBalancerBackends = loadBalancerBackends;
+            o.region = region;
+            o.shape = shape;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

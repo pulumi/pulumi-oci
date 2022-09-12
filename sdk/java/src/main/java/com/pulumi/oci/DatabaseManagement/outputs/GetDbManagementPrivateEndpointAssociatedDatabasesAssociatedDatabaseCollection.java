@@ -14,13 +14,9 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDa
      * @return A list of databases using a Database Management private endpoint.
      * 
      */
-    private final List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem> items;
+    private List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection(@CustomType.Parameter("items") List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection() {}
     /**
      * @return A list of databases using a Database Management private endpoint.
      * 
@@ -36,27 +32,27 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDa
     public static Builder builder(GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection build() {
-            return new GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection(items);
+        }
+        public GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection build() {
+            final var o = new GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection();
+            o.items = items;
+            return o;
         }
     }
 }

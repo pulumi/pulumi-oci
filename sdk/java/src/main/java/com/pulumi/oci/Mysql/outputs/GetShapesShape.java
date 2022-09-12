@@ -15,35 +15,24 @@ public final class GetShapesShape {
      * @return The number of CPU Cores the Instance provides. These are &#34;OCPU&#34;s.
      * 
      */
-    private final Integer cpuCoreCount;
+    private Integer cpuCoreCount;
     /**
      * @return Return shapes that are supported by the service feature.
      * 
      */
-    private final List<String> isSupportedFors;
+    private List<String> isSupportedFors;
     /**
      * @return The amount of RAM the Instance provides. This is an IEC base-2 number.
      * 
      */
-    private final Integer memorySizeInGbs;
+    private Integer memorySizeInGbs;
     /**
      * @return Name
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetShapesShape(
-        @CustomType.Parameter("cpuCoreCount") Integer cpuCoreCount,
-        @CustomType.Parameter("isSupportedFors") List<String> isSupportedFors,
-        @CustomType.Parameter("memorySizeInGbs") Integer memorySizeInGbs,
-        @CustomType.Parameter("name") String name) {
-        this.cpuCoreCount = cpuCoreCount;
-        this.isSupportedFors = isSupportedFors;
-        this.memorySizeInGbs = memorySizeInGbs;
-        this.name = name;
-    }
-
+    private GetShapesShape() {}
     /**
      * @return The number of CPU Cores the Instance provides. These are &#34;OCPU&#34;s.
      * 
@@ -80,17 +69,13 @@ public final class GetShapesShape {
     public static Builder builder(GetShapesShape defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer cpuCoreCount;
         private List<String> isSupportedFors;
         private Integer memorySizeInGbs;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapesShape defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cpuCoreCount = defaults.cpuCoreCount;
@@ -99,10 +84,12 @@ public final class GetShapesShape {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
             return this;
         }
+        @CustomType.Setter
         public Builder isSupportedFors(List<String> isSupportedFors) {
             this.isSupportedFors = Objects.requireNonNull(isSupportedFors);
             return this;
@@ -110,15 +97,23 @@ public final class GetShapesShape {
         public Builder isSupportedFors(String... isSupportedFors) {
             return isSupportedFors(List.of(isSupportedFors));
         }
+        @CustomType.Setter
         public Builder memorySizeInGbs(Integer memorySizeInGbs) {
             this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetShapesShape build() {
-            return new GetShapesShape(cpuCoreCount, isSupportedFors, memorySizeInGbs, name);
+        }
+        public GetShapesShape build() {
+            final var o = new GetShapesShape();
+            o.cpuCoreCount = cpuCoreCount;
+            o.isSupportedFors = isSupportedFors;
+            o.memorySizeInGbs = memorySizeInGbs;
+            o.name = name;
+            return o;
         }
     }
 }

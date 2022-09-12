@@ -17,98 +17,69 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A description of the announcement subscription. Avoid entering confidential information.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return A list of filter groups for the announcement subscription. A filter group is a combination of multiple filters applied to announcements for matching purposes.
      * 
      */
-    private final List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup> filterGroups;
+    private List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup> filterGroups;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the announcement subscription.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
      * 
      */
-    private final String onsTopicId;
+    private String onsTopicId;
     /**
      * @return A filter to return only announcement subscriptions that match the given lifecycle state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("filterGroups") List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup> filterGroups,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("onsTopicId") String onsTopicId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.filterGroups = filterGroups;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.onsTopicId = onsTopicId;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem() {}
     /**
      * @return The OCID of the compartment.
      * 
@@ -208,7 +179,7 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
     public static Builder builder(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -223,11 +194,7 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -245,22 +212,27 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder filterGroups(List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup> filterGroups) {
             this.filterGroups = Objects.requireNonNull(filterGroups);
             return this;
@@ -268,39 +240,62 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
         public Builder filterGroups(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup... filterGroups) {
             return filterGroups(List.of(filterGroups));
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder onsTopicId(String onsTopicId) {
             this.onsTopicId = Objects.requireNonNull(onsTopicId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem build() {
-            return new GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem(compartmentId, definedTags, description, displayName, filterGroups, freeformTags, id, lifecycleDetails, onsTopicId, state, systemTags, timeCreated, timeUpdated);
+        }
+        public GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem build() {
+            final var o = new GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.filterGroups = filterGroups;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.onsTopicId = onsTopicId;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

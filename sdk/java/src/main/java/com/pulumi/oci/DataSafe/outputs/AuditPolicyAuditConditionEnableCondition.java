@@ -16,35 +16,24 @@ public final class AuditPolicyAuditConditionEnableCondition {
      * @return List of users or roles that the policy must be enabled for.
      * 
      */
-    private final @Nullable List<String> entityNames;
+    private @Nullable List<String> entityNames;
     /**
      * @return The entity include or exclude selection.
      * 
      */
-    private final @Nullable String entitySelection;
+    private @Nullable String entitySelection;
     /**
      * @return The entity type that the policy must be enabled for.
      * 
      */
-    private final @Nullable String entityType;
+    private @Nullable String entityType;
     /**
      * @return The operation status that the policy must be enabled for.
      * 
      */
-    private final @Nullable String operationStatus;
+    private @Nullable String operationStatus;
 
-    @CustomType.Constructor
-    private AuditPolicyAuditConditionEnableCondition(
-        @CustomType.Parameter("entityNames") @Nullable List<String> entityNames,
-        @CustomType.Parameter("entitySelection") @Nullable String entitySelection,
-        @CustomType.Parameter("entityType") @Nullable String entityType,
-        @CustomType.Parameter("operationStatus") @Nullable String operationStatus) {
-        this.entityNames = entityNames;
-        this.entitySelection = entitySelection;
-        this.entityType = entityType;
-        this.operationStatus = operationStatus;
-    }
-
+    private AuditPolicyAuditConditionEnableCondition() {}
     /**
      * @return List of users or roles that the policy must be enabled for.
      * 
@@ -81,17 +70,13 @@ public final class AuditPolicyAuditConditionEnableCondition {
     public static Builder builder(AuditPolicyAuditConditionEnableCondition defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> entityNames;
         private @Nullable String entitySelection;
         private @Nullable String entityType;
         private @Nullable String operationStatus;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AuditPolicyAuditConditionEnableCondition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.entityNames = defaults.entityNames;
@@ -100,6 +85,7 @@ public final class AuditPolicyAuditConditionEnableCondition {
     	      this.operationStatus = defaults.operationStatus;
         }
 
+        @CustomType.Setter
         public Builder entityNames(@Nullable List<String> entityNames) {
             this.entityNames = entityNames;
             return this;
@@ -107,19 +93,28 @@ public final class AuditPolicyAuditConditionEnableCondition {
         public Builder entityNames(String... entityNames) {
             return entityNames(List.of(entityNames));
         }
+        @CustomType.Setter
         public Builder entitySelection(@Nullable String entitySelection) {
             this.entitySelection = entitySelection;
             return this;
         }
+        @CustomType.Setter
         public Builder entityType(@Nullable String entityType) {
             this.entityType = entityType;
             return this;
         }
+        @CustomType.Setter
         public Builder operationStatus(@Nullable String operationStatus) {
             this.operationStatus = operationStatus;
             return this;
-        }        public AuditPolicyAuditConditionEnableCondition build() {
-            return new AuditPolicyAuditConditionEnableCondition(entityNames, entitySelection, entityType, operationStatus);
+        }
+        public AuditPolicyAuditConditionEnableCondition build() {
+            final var o = new AuditPolicyAuditConditionEnableCondition();
+            o.entityNames = entityNames;
+            o.entitySelection = entitySelection;
+            o.entityType = entityType;
+            o.operationStatus = operationStatus;
+            return o;
         }
     }
 }

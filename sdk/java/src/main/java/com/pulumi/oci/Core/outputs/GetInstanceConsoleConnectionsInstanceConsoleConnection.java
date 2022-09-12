@@ -15,80 +15,55 @@ public final class GetInstanceConsoleConnectionsInstanceConsoleConnection {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The SSH connection string for the console connection.
      * 
      */
-    private final String connectionString;
+    private String connectionString;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The SSH public key&#39;s fingerprint for client authentication to the console connection.
      * 
      */
-    private final String fingerprint;
+    private String fingerprint;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the console connection.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the instance.
      * 
      */
-    private final String instanceId;
-    private final String publicKey;
+    private String instanceId;
+    private String publicKey;
     /**
      * @return The SSH public key&#39;s fingerprint for the console connection service host.
      * 
      */
-    private final String serviceHostKeyFingerprint;
+    private String serviceHostKeyFingerprint;
     /**
      * @return The current state of the console connection.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The SSH connection string for the SSH tunnel used to connect to the console connection over VNC.
      * 
      */
-    private final String vncConnectionString;
+    private String vncConnectionString;
 
-    @CustomType.Constructor
-    private GetInstanceConsoleConnectionsInstanceConsoleConnection(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("connectionString") String connectionString,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("fingerprint") String fingerprint,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instanceId") String instanceId,
-        @CustomType.Parameter("publicKey") String publicKey,
-        @CustomType.Parameter("serviceHostKeyFingerprint") String serviceHostKeyFingerprint,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("vncConnectionString") String vncConnectionString) {
-        this.compartmentId = compartmentId;
-        this.connectionString = connectionString;
-        this.definedTags = definedTags;
-        this.fingerprint = fingerprint;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.instanceId = instanceId;
-        this.publicKey = publicKey;
-        this.serviceHostKeyFingerprint = serviceHostKeyFingerprint;
-        this.state = state;
-        this.vncConnectionString = vncConnectionString;
-    }
-
+    private GetInstanceConsoleConnectionsInstanceConsoleConnection() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -170,7 +145,7 @@ public final class GetInstanceConsoleConnectionsInstanceConsoleConnection {
     public static Builder builder(GetInstanceConsoleConnectionsInstanceConsoleConnection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String connectionString;
@@ -183,11 +158,7 @@ public final class GetInstanceConsoleConnectionsInstanceConsoleConnection {
         private String serviceHostKeyFingerprint;
         private String state;
         private String vncConnectionString;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceConsoleConnectionsInstanceConsoleConnection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -203,51 +174,75 @@ public final class GetInstanceConsoleConnectionsInstanceConsoleConnection {
     	      this.vncConnectionString = defaults.vncConnectionString;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder connectionString(String connectionString) {
             this.connectionString = Objects.requireNonNull(connectionString);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder fingerprint(String fingerprint) {
             this.fingerprint = Objects.requireNonNull(fingerprint);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(String instanceId) {
             this.instanceId = Objects.requireNonNull(instanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder publicKey(String publicKey) {
             this.publicKey = Objects.requireNonNull(publicKey);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceHostKeyFingerprint(String serviceHostKeyFingerprint) {
             this.serviceHostKeyFingerprint = Objects.requireNonNull(serviceHostKeyFingerprint);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder vncConnectionString(String vncConnectionString) {
             this.vncConnectionString = Objects.requireNonNull(vncConnectionString);
             return this;
-        }        public GetInstanceConsoleConnectionsInstanceConsoleConnection build() {
-            return new GetInstanceConsoleConnectionsInstanceConsoleConnection(compartmentId, connectionString, definedTags, fingerprint, freeformTags, id, instanceId, publicKey, serviceHostKeyFingerprint, state, vncConnectionString);
+        }
+        public GetInstanceConsoleConnectionsInstanceConsoleConnection build() {
+            final var o = new GetInstanceConsoleConnectionsInstanceConsoleConnection();
+            o.compartmentId = compartmentId;
+            o.connectionString = connectionString;
+            o.definedTags = definedTags;
+            o.fingerprint = fingerprint;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.instanceId = instanceId;
+            o.publicKey = publicKey;
+            o.serviceHostKeyFingerprint = serviceHostKeyFingerprint;
+            o.state = state;
+            o.vncConnectionString = vncConnectionString;
+            return o;
         }
     }
 }

@@ -13,55 +13,36 @@ public final class GetIpsecConnectionTunnelErrorResult {
      * @return Unique code describes the error type.
      * 
      */
-    private final String errorCode;
+    private String errorCode;
     /**
      * @return A detailed description of the error.
      * 
      */
-    private final String errorDescription;
+    private String errorDescription;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String ipsecId;
+    private String id;
+    private String ipsecId;
     /**
      * @return Link to more Oracle resources or relevant documentation.
      * 
      */
-    private final String ociResourcesLink;
+    private String ociResourcesLink;
     /**
      * @return Resolution for the error.
      * 
      */
-    private final String solution;
+    private String solution;
     /**
      * @return Timestamp when the error occurred.
      * 
      */
-    private final String timestamp;
-    private final String tunnelId;
+    private String timestamp;
+    private String tunnelId;
 
-    @CustomType.Constructor
-    private GetIpsecConnectionTunnelErrorResult(
-        @CustomType.Parameter("errorCode") String errorCode,
-        @CustomType.Parameter("errorDescription") String errorDescription,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipsecId") String ipsecId,
-        @CustomType.Parameter("ociResourcesLink") String ociResourcesLink,
-        @CustomType.Parameter("solution") String solution,
-        @CustomType.Parameter("timestamp") String timestamp,
-        @CustomType.Parameter("tunnelId") String tunnelId) {
-        this.errorCode = errorCode;
-        this.errorDescription = errorDescription;
-        this.id = id;
-        this.ipsecId = ipsecId;
-        this.ociResourcesLink = ociResourcesLink;
-        this.solution = solution;
-        this.timestamp = timestamp;
-        this.tunnelId = tunnelId;
-    }
-
+    private GetIpsecConnectionTunnelErrorResult() {}
     /**
      * @return Unique code describes the error type.
      * 
@@ -118,7 +99,7 @@ public final class GetIpsecConnectionTunnelErrorResult {
     public static Builder builder(GetIpsecConnectionTunnelErrorResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String errorCode;
         private String errorDescription;
@@ -128,11 +109,7 @@ public final class GetIpsecConnectionTunnelErrorResult {
         private String solution;
         private String timestamp;
         private String tunnelId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIpsecConnectionTunnelErrorResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.errorCode = defaults.errorCode;
@@ -145,39 +122,57 @@ public final class GetIpsecConnectionTunnelErrorResult {
     	      this.tunnelId = defaults.tunnelId;
         }
 
+        @CustomType.Setter
         public Builder errorCode(String errorCode) {
             this.errorCode = Objects.requireNonNull(errorCode);
             return this;
         }
+        @CustomType.Setter
         public Builder errorDescription(String errorDescription) {
             this.errorDescription = Objects.requireNonNull(errorDescription);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipsecId(String ipsecId) {
             this.ipsecId = Objects.requireNonNull(ipsecId);
             return this;
         }
+        @CustomType.Setter
         public Builder ociResourcesLink(String ociResourcesLink) {
             this.ociResourcesLink = Objects.requireNonNull(ociResourcesLink);
             return this;
         }
+        @CustomType.Setter
         public Builder solution(String solution) {
             this.solution = Objects.requireNonNull(solution);
             return this;
         }
+        @CustomType.Setter
         public Builder timestamp(String timestamp) {
             this.timestamp = Objects.requireNonNull(timestamp);
             return this;
         }
+        @CustomType.Setter
         public Builder tunnelId(String tunnelId) {
             this.tunnelId = Objects.requireNonNull(tunnelId);
             return this;
-        }        public GetIpsecConnectionTunnelErrorResult build() {
-            return new GetIpsecConnectionTunnelErrorResult(errorCode, errorDescription, id, ipsecId, ociResourcesLink, solution, timestamp, tunnelId);
+        }
+        public GetIpsecConnectionTunnelErrorResult build() {
+            final var o = new GetIpsecConnectionTunnelErrorResult();
+            o.errorCode = errorCode;
+            o.errorDescription = errorDescription;
+            o.id = id;
+            o.ipsecId = ipsecId;
+            o.ociResourcesLink = ociResourcesLink;
+            o.solution = solution;
+            o.timestamp = timestamp;
+            o.tunnelId = tunnelId;
+            return o;
         }
     }
 }

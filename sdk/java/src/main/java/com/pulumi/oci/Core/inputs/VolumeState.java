@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.VolumeAutotunePolicyArgs;
 import com.pulumi.oci.Core.inputs.VolumeBlockVolumeReplicaArgs;
 import com.pulumi.oci.Core.inputs.VolumeSourceDetailsArgs;
 import java.lang.Boolean;
@@ -22,18 +23,33 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     public static final VolumeState Empty = new VolumeState();
 
     /**
-     * The number of Volume Performance Units per GB that this volume is effectively tuned to when it&#39;s idle.
+     * The number of Volume Performance Units per GB that this volume is effectively tuned to.
      * 
      */
     @Import(name="autoTunedVpusPerGb")
     private @Nullable Output<String> autoTunedVpusPerGb;
 
     /**
-     * @return The number of Volume Performance Units per GB that this volume is effectively tuned to when it&#39;s idle.
+     * @return The number of Volume Performance Units per GB that this volume is effectively tuned to.
      * 
      */
     public Optional<Output<String>> autoTunedVpusPerGb() {
         return Optional.ofNullable(this.autoTunedVpusPerGb);
+    }
+
+    /**
+     * (Updatable) The list of autotune policies to be enabled for this volume.
+     * 
+     */
+    @Import(name="autotunePolicies")
+    private @Nullable Output<List<VolumeAutotunePolicyArgs>> autotunePolicies;
+
+    /**
+     * @return (Updatable) The list of autotune policies to be enabled for this volume.
+     * 
+     */
+    public Optional<Output<List<VolumeAutotunePolicyArgs>>> autotunePolicies() {
+        return Optional.ofNullable(this.autotunePolicies);
     }
 
     /**
@@ -157,14 +173,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
+     * (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      * 
      */
     @Import(name="isAutoTuneEnabled")
     private @Nullable Output<Boolean> isAutoTuneEnabled;
 
     /**
-     * @return (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
+     * @return (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      * 
      */
     public Optional<Output<Boolean>> isAutoTuneEnabled() {
@@ -340,6 +356,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
 
     private VolumeState(VolumeState $) {
         this.autoTunedVpusPerGb = $.autoTunedVpusPerGb;
+        this.autotunePolicies = $.autotunePolicies;
         this.availabilityDomain = $.availabilityDomain;
         this.backupPolicyId = $.backupPolicyId;
         this.blockVolumeReplicas = $.blockVolumeReplicas;
@@ -381,7 +398,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoTunedVpusPerGb The number of Volume Performance Units per GB that this volume is effectively tuned to when it&#39;s idle.
+         * @param autoTunedVpusPerGb The number of Volume Performance Units per GB that this volume is effectively tuned to.
          * 
          * @return builder
          * 
@@ -392,13 +409,44 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoTunedVpusPerGb The number of Volume Performance Units per GB that this volume is effectively tuned to when it&#39;s idle.
+         * @param autoTunedVpusPerGb The number of Volume Performance Units per GB that this volume is effectively tuned to.
          * 
          * @return builder
          * 
          */
         public Builder autoTunedVpusPerGb(String autoTunedVpusPerGb) {
             return autoTunedVpusPerGb(Output.of(autoTunedVpusPerGb));
+        }
+
+        /**
+         * @param autotunePolicies (Updatable) The list of autotune policies to be enabled for this volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autotunePolicies(@Nullable Output<List<VolumeAutotunePolicyArgs>> autotunePolicies) {
+            $.autotunePolicies = autotunePolicies;
+            return this;
+        }
+
+        /**
+         * @param autotunePolicies (Updatable) The list of autotune policies to be enabled for this volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autotunePolicies(List<VolumeAutotunePolicyArgs> autotunePolicies) {
+            return autotunePolicies(Output.of(autotunePolicies));
+        }
+
+        /**
+         * @param autotunePolicies (Updatable) The list of autotune policies to be enabled for this volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autotunePolicies(VolumeAutotunePolicyArgs... autotunePolicies) {
+            return autotunePolicies(List.of(autotunePolicies));
         }
 
         /**
@@ -576,7 +624,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isAutoTuneEnabled (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
+         * @param isAutoTuneEnabled (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
          * 
          * @return builder
          * 
@@ -587,7 +635,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isAutoTuneEnabled (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
+         * @param isAutoTuneEnabled (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
          * 
          * @return builder
          * 

@@ -19,52 +19,27 @@ public final class GetManagedDatabaseAttentionLogCountsResult {
      * @return The list of attention_log_counts_collection.
      * 
      */
-    private final List<GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection> attentionLogCountsCollections;
-    private final @Nullable List<GetManagedDatabaseAttentionLogCountsFilter> filters;
-    private final @Nullable String groupBy;
+    private List<GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection> attentionLogCountsCollections;
+    private @Nullable List<GetManagedDatabaseAttentionLogCountsFilter> filters;
+    private @Nullable String groupBy;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Boolean isRegularExpression;
-    private final @Nullable String logSearchText;
+    private String id;
+    private @Nullable Boolean isRegularExpression;
+    private @Nullable String logSearchText;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * 
      */
-    private final String managedDatabaseId;
-    private final @Nullable String timeGreaterThanOrEqualTo;
-    private final @Nullable String timeLessThanOrEqualTo;
-    private final @Nullable String typeFilter;
-    private final @Nullable String urgencyFilter;
+    private String managedDatabaseId;
+    private @Nullable String timeGreaterThanOrEqualTo;
+    private @Nullable String timeLessThanOrEqualTo;
+    private @Nullable String typeFilter;
+    private @Nullable String urgencyFilter;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseAttentionLogCountsResult(
-        @CustomType.Parameter("attentionLogCountsCollections") List<GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection> attentionLogCountsCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetManagedDatabaseAttentionLogCountsFilter> filters,
-        @CustomType.Parameter("groupBy") @Nullable String groupBy,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isRegularExpression") @Nullable Boolean isRegularExpression,
-        @CustomType.Parameter("logSearchText") @Nullable String logSearchText,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("timeGreaterThanOrEqualTo") @Nullable String timeGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeLessThanOrEqualTo") @Nullable String timeLessThanOrEqualTo,
-        @CustomType.Parameter("typeFilter") @Nullable String typeFilter,
-        @CustomType.Parameter("urgencyFilter") @Nullable String urgencyFilter) {
-        this.attentionLogCountsCollections = attentionLogCountsCollections;
-        this.filters = filters;
-        this.groupBy = groupBy;
-        this.id = id;
-        this.isRegularExpression = isRegularExpression;
-        this.logSearchText = logSearchText;
-        this.managedDatabaseId = managedDatabaseId;
-        this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
-        this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
-        this.typeFilter = typeFilter;
-        this.urgencyFilter = urgencyFilter;
-    }
-
+    private GetManagedDatabaseAttentionLogCountsResult() {}
     /**
      * @return The list of attention_log_counts_collection.
      * 
@@ -118,7 +93,7 @@ public final class GetManagedDatabaseAttentionLogCountsResult {
     public static Builder builder(GetManagedDatabaseAttentionLogCountsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection> attentionLogCountsCollections;
         private @Nullable List<GetManagedDatabaseAttentionLogCountsFilter> filters;
@@ -131,11 +106,7 @@ public final class GetManagedDatabaseAttentionLogCountsResult {
         private @Nullable String timeLessThanOrEqualTo;
         private @Nullable String typeFilter;
         private @Nullable String urgencyFilter;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseAttentionLogCountsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.attentionLogCountsCollections = defaults.attentionLogCountsCollections;
@@ -151,6 +122,7 @@ public final class GetManagedDatabaseAttentionLogCountsResult {
     	      this.urgencyFilter = defaults.urgencyFilter;
         }
 
+        @CustomType.Setter
         public Builder attentionLogCountsCollections(List<GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection> attentionLogCountsCollections) {
             this.attentionLogCountsCollections = Objects.requireNonNull(attentionLogCountsCollections);
             return this;
@@ -158,6 +130,7 @@ public final class GetManagedDatabaseAttentionLogCountsResult {
         public Builder attentionLogCountsCollections(GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection... attentionLogCountsCollections) {
             return attentionLogCountsCollections(List.of(attentionLogCountsCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseAttentionLogCountsFilter> filters) {
             this.filters = filters;
             return this;
@@ -165,43 +138,65 @@ public final class GetManagedDatabaseAttentionLogCountsResult {
         public Builder filters(GetManagedDatabaseAttentionLogCountsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder groupBy(@Nullable String groupBy) {
             this.groupBy = groupBy;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isRegularExpression(@Nullable Boolean isRegularExpression) {
             this.isRegularExpression = isRegularExpression;
             return this;
         }
+        @CustomType.Setter
         public Builder logSearchText(@Nullable String logSearchText) {
             this.logSearchText = logSearchText;
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeGreaterThanOrEqualTo(@Nullable String timeGreaterThanOrEqualTo) {
             this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeLessThanOrEqualTo(@Nullable String timeLessThanOrEqualTo) {
             this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder typeFilter(@Nullable String typeFilter) {
             this.typeFilter = typeFilter;
             return this;
         }
+        @CustomType.Setter
         public Builder urgencyFilter(@Nullable String urgencyFilter) {
             this.urgencyFilter = urgencyFilter;
             return this;
-        }        public GetManagedDatabaseAttentionLogCountsResult build() {
-            return new GetManagedDatabaseAttentionLogCountsResult(attentionLogCountsCollections, filters, groupBy, id, isRegularExpression, logSearchText, managedDatabaseId, timeGreaterThanOrEqualTo, timeLessThanOrEqualTo, typeFilter, urgencyFilter);
+        }
+        public GetManagedDatabaseAttentionLogCountsResult build() {
+            final var o = new GetManagedDatabaseAttentionLogCountsResult();
+            o.attentionLogCountsCollections = attentionLogCountsCollections;
+            o.filters = filters;
+            o.groupBy = groupBy;
+            o.id = id;
+            o.isRegularExpression = isRegularExpression;
+            o.logSearchText = logSearchText;
+            o.managedDatabaseId = managedDatabaseId;
+            o.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
+            o.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
+            o.typeFilter = typeFilter;
+            o.urgencyFilter = urgencyFilter;
+            return o;
         }
     }
 }

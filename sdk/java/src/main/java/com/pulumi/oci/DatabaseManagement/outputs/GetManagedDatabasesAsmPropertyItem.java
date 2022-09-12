@@ -13,13 +13,9 @@ public final class GetManagedDatabasesAsmPropertyItem {
      * @return The name of the disk group.
      * 
      */
-    private final String diskGroup;
+    private String diskGroup;
 
-    @CustomType.Constructor
-    private GetManagedDatabasesAsmPropertyItem(@CustomType.Parameter("diskGroup") String diskGroup) {
-        this.diskGroup = diskGroup;
-    }
-
+    private GetManagedDatabasesAsmPropertyItem() {}
     /**
      * @return The name of the disk group.
      * 
@@ -35,24 +31,24 @@ public final class GetManagedDatabasesAsmPropertyItem {
     public static Builder builder(GetManagedDatabasesAsmPropertyItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String diskGroup;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabasesAsmPropertyItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.diskGroup = defaults.diskGroup;
         }
 
+        @CustomType.Setter
         public Builder diskGroup(String diskGroup) {
             this.diskGroup = Objects.requireNonNull(diskGroup);
             return this;
-        }        public GetManagedDatabasesAsmPropertyItem build() {
-            return new GetManagedDatabasesAsmPropertyItem(diskGroup);
+        }
+        public GetManagedDatabasesAsmPropertyItem build() {
+            final var o = new GetManagedDatabasesAsmPropertyItem();
+            o.diskGroup = diskGroup;
+            return o;
         }
     }
 }

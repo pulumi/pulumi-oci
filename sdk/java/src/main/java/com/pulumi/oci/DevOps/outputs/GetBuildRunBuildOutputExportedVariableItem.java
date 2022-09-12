@@ -13,21 +13,14 @@ public final class GetBuildRunBuildOutputExportedVariableItem {
      * @return Name of the step.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Value of the argument.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetBuildRunBuildOutputExportedVariableItem(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("value") String value) {
-        this.name = name;
-        this.value = value;
-    }
-
+    private GetBuildRunBuildOutputExportedVariableItem() {}
     /**
      * @return Name of the step.
      * 
@@ -50,30 +43,32 @@ public final class GetBuildRunBuildOutputExportedVariableItem {
     public static Builder builder(GetBuildRunBuildOutputExportedVariableItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunBuildOutputExportedVariableItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetBuildRunBuildOutputExportedVariableItem build() {
-            return new GetBuildRunBuildOutputExportedVariableItem(name, value);
+        }
+        public GetBuildRunBuildOutputExportedVariableItem build() {
+            final var o = new GetBuildRunBuildOutputExportedVariableItem();
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

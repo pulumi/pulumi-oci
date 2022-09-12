@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAccessPoliciesAccessPolicyCollection {
-    private final List<GetAccessPoliciesAccessPolicyCollectionItem> items;
+    private List<GetAccessPoliciesAccessPolicyCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetAccessPoliciesAccessPolicyCollection(@CustomType.Parameter("items") List<GetAccessPoliciesAccessPolicyCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetAccessPoliciesAccessPolicyCollection() {}
     public List<GetAccessPoliciesAccessPolicyCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetAccessPoliciesAccessPolicyCollection {
     public static Builder builder(GetAccessPoliciesAccessPolicyCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAccessPoliciesAccessPolicyCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAccessPoliciesAccessPolicyCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetAccessPoliciesAccessPolicyCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAccessPoliciesAccessPolicyCollectionItem... items) {
             return items(List.of(items));
-        }        public GetAccessPoliciesAccessPolicyCollection build() {
-            return new GetAccessPoliciesAccessPolicyCollection(items);
+        }
+        public GetAccessPoliciesAccessPolicyCollection build() {
+            final var o = new GetAccessPoliciesAccessPolicyCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -15,24 +15,15 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return Type of the database backup destination.
      * 
      */
-    private final @Nullable String type;
-    private final @Nullable String vpcUser;
+    private @Nullable String type;
+    private @Nullable String vpcUser;
 
-    @CustomType.Constructor
-    private DatabaseDatabaseDbBackupConfigBackupDestinationDetail(
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("type") @Nullable String type,
-        @CustomType.Parameter("vpcUser") @Nullable String vpcUser) {
-        this.id = id;
-        this.type = type;
-        this.vpcUser = vpcUser;
-    }
-
+    private DatabaseDatabaseDbBackupConfigBackupDestinationDetail() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
@@ -58,16 +49,12 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
     public static Builder builder(DatabaseDatabaseDbBackupConfigBackupDestinationDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String id;
         private @Nullable String type;
         private @Nullable String vpcUser;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DatabaseDatabaseDbBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -75,19 +62,27 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
     	      this.vpcUser = defaults.vpcUser;
         }
 
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
         }
+        @CustomType.Setter
         public Builder vpcUser(@Nullable String vpcUser) {
             this.vpcUser = vpcUser;
             return this;
-        }        public DatabaseDatabaseDbBackupConfigBackupDestinationDetail build() {
-            return new DatabaseDatabaseDbBackupConfigBackupDestinationDetail(id, type, vpcUser);
+        }
+        public DatabaseDatabaseDbBackupConfigBackupDestinationDetail build() {
+            final var o = new DatabaseDatabaseDbBackupConfigBackupDestinationDetail();
+            o.id = id;
+            o.type = type;
+            o.vpcUser = vpcUser;
+            return o;
         }
     }
 }

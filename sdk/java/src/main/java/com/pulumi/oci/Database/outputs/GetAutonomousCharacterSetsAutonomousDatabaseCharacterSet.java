@@ -13,13 +13,9 @@ public final class GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet {
      * @return A valid Oracle character set.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet() {}
     /**
      * @return A valid Oracle character set.
      * 
@@ -35,24 +31,24 @@ public final class GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet {
     public static Builder builder(GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet build() {
-            return new GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet(name);
+        }
+        public GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet build() {
+            final var o = new GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet();
+            o.name = name;
+            return o;
         }
     }
 }

@@ -17,38 +17,25 @@ public final class DbSystemIormConfigCach {
      * @return An array of IORM settings for all the database in the Exadata DB system.
      * 
      */
-    private final @Nullable List<DbSystemIormConfigCachDbPlan> dbPlans;
-    private final @Nullable String dbSystemId;
+    private @Nullable List<DbSystemIormConfigCachDbPlan> dbPlans;
+    private @Nullable String dbSystemId;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final @Nullable String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The current value for the IORM objective. The default is `AUTO`.
      * 
      */
-    private final @Nullable String objective;
+    private @Nullable String objective;
     /**
      * @return The current state of the DB system.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private DbSystemIormConfigCach(
-        @CustomType.Parameter("dbPlans") @Nullable List<DbSystemIormConfigCachDbPlan> dbPlans,
-        @CustomType.Parameter("dbSystemId") @Nullable String dbSystemId,
-        @CustomType.Parameter("lifecycleDetails") @Nullable String lifecycleDetails,
-        @CustomType.Parameter("objective") @Nullable String objective,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.dbPlans = dbPlans;
-        this.dbSystemId = dbSystemId;
-        this.lifecycleDetails = lifecycleDetails;
-        this.objective = objective;
-        this.state = state;
-    }
-
+    private DbSystemIormConfigCach() {}
     /**
      * @return An array of IORM settings for all the database in the Exadata DB system.
      * 
@@ -88,18 +75,14 @@ public final class DbSystemIormConfigCach {
     public static Builder builder(DbSystemIormConfigCach defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<DbSystemIormConfigCachDbPlan> dbPlans;
         private @Nullable String dbSystemId;
         private @Nullable String lifecycleDetails;
         private @Nullable String objective;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DbSystemIormConfigCach defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbPlans = defaults.dbPlans;
@@ -109,6 +92,7 @@ public final class DbSystemIormConfigCach {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder dbPlans(@Nullable List<DbSystemIormConfigCachDbPlan> dbPlans) {
             this.dbPlans = dbPlans;
             return this;
@@ -116,23 +100,34 @@ public final class DbSystemIormConfigCach {
         public Builder dbPlans(DbSystemIormConfigCachDbPlan... dbPlans) {
             return dbPlans(List.of(dbPlans));
         }
+        @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
             this.dbSystemId = dbSystemId;
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
+        @CustomType.Setter
         public Builder objective(@Nullable String objective) {
             this.objective = objective;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public DbSystemIormConfigCach build() {
-            return new DbSystemIormConfigCach(dbPlans, dbSystemId, lifecycleDetails, objective, state);
+        }
+        public DbSystemIormConfigCach build() {
+            final var o = new DbSystemIormConfigCach();
+            o.dbPlans = dbPlans;
+            o.dbSystemId = dbSystemId;
+            o.lifecycleDetails = lifecycleDetails;
+            o.objective = objective;
+            o.state = state;
+            return o;
         }
     }
 }

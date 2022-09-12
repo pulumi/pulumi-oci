@@ -14,13 +14,9 @@ public final class GetDeployPipelineDeployPipelineEnvironment {
      * @return List of parameters defined for a deployment pipeline.
      * 
      */
-    private final List<GetDeployPipelineDeployPipelineEnvironmentItem> items;
+    private List<GetDeployPipelineDeployPipelineEnvironmentItem> items;
 
-    @CustomType.Constructor
-    private GetDeployPipelineDeployPipelineEnvironment(@CustomType.Parameter("items") List<GetDeployPipelineDeployPipelineEnvironmentItem> items) {
-        this.items = items;
-    }
-
+    private GetDeployPipelineDeployPipelineEnvironment() {}
     /**
      * @return List of parameters defined for a deployment pipeline.
      * 
@@ -36,27 +32,27 @@ public final class GetDeployPipelineDeployPipelineEnvironment {
     public static Builder builder(GetDeployPipelineDeployPipelineEnvironment defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeployPipelineDeployPipelineEnvironmentItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployPipelineDeployPipelineEnvironment defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDeployPipelineDeployPipelineEnvironmentItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDeployPipelineDeployPipelineEnvironmentItem... items) {
             return items(List.of(items));
-        }        public GetDeployPipelineDeployPipelineEnvironment build() {
-            return new GetDeployPipelineDeployPipelineEnvironment(items);
+        }
+        public GetDeployPipelineDeployPipelineEnvironment build() {
+            final var o = new GetDeployPipelineDeployPipelineEnvironment();
+            o.items = items;
+            return o;
         }
     }
 }

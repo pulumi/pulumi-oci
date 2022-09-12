@@ -15,56 +15,39 @@ public final class GetMysqlDbSystemEndpoint {
      * @return The network address of the DB System.
      * 
      */
-    private final String hostname;
+    private String hostname;
     /**
      * @return The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet&#39;s CIDR. This will be a &#34;dotted-quad&#34; style IPv4 address.
      * 
      */
-    private final String ipAddress;
+    private String ipAddress;
     /**
      * @return The access modes from the client that this endpoint supports.
      * 
      */
-    private final List<String> modes;
+    private List<String> modes;
     /**
      * @return The port for primary endpoint of the DB System to listen on.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
      * 
      */
-    private final Integer portX;
+    private Integer portX;
     /**
      * @return The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return Additional information about the current endpoint status.
      * 
      */
-    private final String statusDetails;
+    private String statusDetails;
 
-    @CustomType.Constructor
-    private GetMysqlDbSystemEndpoint(
-        @CustomType.Parameter("hostname") String hostname,
-        @CustomType.Parameter("ipAddress") String ipAddress,
-        @CustomType.Parameter("modes") List<String> modes,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("portX") Integer portX,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("statusDetails") String statusDetails) {
-        this.hostname = hostname;
-        this.ipAddress = ipAddress;
-        this.modes = modes;
-        this.port = port;
-        this.portX = portX;
-        this.status = status;
-        this.statusDetails = statusDetails;
-    }
-
+    private GetMysqlDbSystemEndpoint() {}
     /**
      * @return The network address of the DB System.
      * 
@@ -122,7 +105,7 @@ public final class GetMysqlDbSystemEndpoint {
     public static Builder builder(GetMysqlDbSystemEndpoint defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String hostname;
         private String ipAddress;
@@ -131,11 +114,7 @@ public final class GetMysqlDbSystemEndpoint {
         private Integer portX;
         private String status;
         private String statusDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMysqlDbSystemEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostname = defaults.hostname;
@@ -147,14 +126,17 @@ public final class GetMysqlDbSystemEndpoint {
     	      this.statusDetails = defaults.statusDetails;
         }
 
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = Objects.requireNonNull(ipAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder modes(List<String> modes) {
             this.modes = Objects.requireNonNull(modes);
             return this;
@@ -162,23 +144,36 @@ public final class GetMysqlDbSystemEndpoint {
         public Builder modes(String... modes) {
             return modes(List.of(modes));
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder portX(Integer portX) {
             this.portX = Objects.requireNonNull(portX);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder statusDetails(String statusDetails) {
             this.statusDetails = Objects.requireNonNull(statusDetails);
             return this;
-        }        public GetMysqlDbSystemEndpoint build() {
-            return new GetMysqlDbSystemEndpoint(hostname, ipAddress, modes, port, portX, status, statusDetails);
+        }
+        public GetMysqlDbSystemEndpoint build() {
+            final var o = new GetMysqlDbSystemEndpoint();
+            o.hostname = hostname;
+            o.ipAddress = ipAddress;
+            o.modes = modes;
+            o.port = port;
+            o.portX = portX;
+            o.status = status;
+            o.statusDetails = statusDetails;
+            return o;
         }
     }
 }

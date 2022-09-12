@@ -14,13 +14,9 @@ public final class GetManagedDatabaseAlertLogCountsAlertLogCountsCollection {
      * @return An array of the counts of different urgency or type of alert logs.
      * 
      */
-    private final List<GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem> items;
+    private List<GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseAlertLogCountsAlertLogCountsCollection(@CustomType.Parameter("items") List<GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetManagedDatabaseAlertLogCountsAlertLogCountsCollection() {}
     /**
      * @return An array of the counts of different urgency or type of alert logs.
      * 
@@ -36,27 +32,27 @@ public final class GetManagedDatabaseAlertLogCountsAlertLogCountsCollection {
     public static Builder builder(GetManagedDatabaseAlertLogCountsAlertLogCountsCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseAlertLogCountsAlertLogCountsCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem... items) {
             return items(List.of(items));
-        }        public GetManagedDatabaseAlertLogCountsAlertLogCountsCollection build() {
-            return new GetManagedDatabaseAlertLogCountsAlertLogCountsCollection(items);
+        }
+        public GetManagedDatabaseAlertLogCountsAlertLogCountsCollection build() {
+            final var o = new GetManagedDatabaseAlertLogCountsAlertLogCountsCollection();
+            o.items = items;
+            return o;
         }
     }
 }

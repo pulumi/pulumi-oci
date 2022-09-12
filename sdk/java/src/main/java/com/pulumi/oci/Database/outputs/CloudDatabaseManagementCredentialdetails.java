@@ -13,21 +13,14 @@ public final class CloudDatabaseManagementCredentialdetails {
      * @return Specific database username&#39;s password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String passwordSecretId;
+    private String passwordSecretId;
     /**
      * @return Database username
      * 
      */
-    private final String userName;
+    private String userName;
 
-    @CustomType.Constructor
-    private CloudDatabaseManagementCredentialdetails(
-        @CustomType.Parameter("passwordSecretId") String passwordSecretId,
-        @CustomType.Parameter("userName") String userName) {
-        this.passwordSecretId = passwordSecretId;
-        this.userName = userName;
-    }
-
+    private CloudDatabaseManagementCredentialdetails() {}
     /**
      * @return Specific database username&#39;s password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -50,30 +43,32 @@ public final class CloudDatabaseManagementCredentialdetails {
     public static Builder builder(CloudDatabaseManagementCredentialdetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String passwordSecretId;
         private String userName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CloudDatabaseManagementCredentialdetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.passwordSecretId = defaults.passwordSecretId;
     	      this.userName = defaults.userName;
         }
 
+        @CustomType.Setter
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = Objects.requireNonNull(passwordSecretId);
             return this;
         }
+        @CustomType.Setter
         public Builder userName(String userName) {
             this.userName = Objects.requireNonNull(userName);
             return this;
-        }        public CloudDatabaseManagementCredentialdetails build() {
-            return new CloudDatabaseManagementCredentialdetails(passwordSecretId, userName);
+        }
+        public CloudDatabaseManagementCredentialdetails build() {
+            final var o = new CloudDatabaseManagementCredentialdetails();
+            o.passwordSecretId = passwordSecretId;
+            o.userName = userName;
+            return o;
         }
     }
 }

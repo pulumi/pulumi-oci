@@ -16,42 +16,29 @@ public final class GetSubscriptionRewardResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The monthly summary of rewards.
      * 
      */
-    private final List<GetSubscriptionRewardItem> items;
+    private List<GetSubscriptionRewardItem> items;
     /**
      * @return The entitlement ID from MQS, which is the same as the subcription ID.
      * 
      */
-    private final String subscriptionId;
+    private String subscriptionId;
     /**
      * @return The overall monthly reward summary.
      * 
      */
-    private final List<GetSubscriptionRewardSummary> summaries;
+    private List<GetSubscriptionRewardSummary> summaries;
     /**
      * @return The OCID of the target tenancy.
      * 
      */
-    private final String tenancyId;
+    private String tenancyId;
 
-    @CustomType.Constructor
-    private GetSubscriptionRewardResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetSubscriptionRewardItem> items,
-        @CustomType.Parameter("subscriptionId") String subscriptionId,
-        @CustomType.Parameter("summaries") List<GetSubscriptionRewardSummary> summaries,
-        @CustomType.Parameter("tenancyId") String tenancyId) {
-        this.id = id;
-        this.items = items;
-        this.subscriptionId = subscriptionId;
-        this.summaries = summaries;
-        this.tenancyId = tenancyId;
-    }
-
+    private GetSubscriptionRewardResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -95,18 +82,14 @@ public final class GetSubscriptionRewardResult {
     public static Builder builder(GetSubscriptionRewardResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private List<GetSubscriptionRewardItem> items;
         private String subscriptionId;
         private List<GetSubscriptionRewardSummary> summaries;
         private String tenancyId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionRewardResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -116,10 +99,12 @@ public final class GetSubscriptionRewardResult {
     	      this.tenancyId = defaults.tenancyId;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetSubscriptionRewardItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -127,10 +112,12 @@ public final class GetSubscriptionRewardResult {
         public Builder items(GetSubscriptionRewardItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = Objects.requireNonNull(subscriptionId);
             return this;
         }
+        @CustomType.Setter
         public Builder summaries(List<GetSubscriptionRewardSummary> summaries) {
             this.summaries = Objects.requireNonNull(summaries);
             return this;
@@ -138,11 +125,19 @@ public final class GetSubscriptionRewardResult {
         public Builder summaries(GetSubscriptionRewardSummary... summaries) {
             return summaries(List.of(summaries));
         }
+        @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = Objects.requireNonNull(tenancyId);
             return this;
-        }        public GetSubscriptionRewardResult build() {
-            return new GetSubscriptionRewardResult(id, items, subscriptionId, summaries, tenancyId);
+        }
+        public GetSubscriptionRewardResult build() {
+            final var o = new GetSubscriptionRewardResult();
+            o.id = id;
+            o.items = items;
+            o.subscriptionId = subscriptionId;
+            o.summaries = summaries;
+            o.tenancyId = tenancyId;
+            return o;
         }
     }
 }

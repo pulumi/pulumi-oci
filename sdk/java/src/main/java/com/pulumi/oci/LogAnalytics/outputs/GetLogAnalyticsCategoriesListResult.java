@@ -13,41 +13,26 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogAnalyticsCategoriesListResult {
-    private final @Nullable String categoryDisplayText;
-    private final @Nullable String categoryType;
+    private @Nullable String categoryDisplayText;
+    private @Nullable String categoryType;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return An array of categories.
      * 
      */
-    private final List<GetLogAnalyticsCategoriesListItem> items;
+    private List<GetLogAnalyticsCategoriesListItem> items;
     /**
      * @return The unique name that identifies the category.
      * 
      */
-    private final @Nullable String name;
-    private final String namespace;
+    private @Nullable String name;
+    private String namespace;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsCategoriesListResult(
-        @CustomType.Parameter("categoryDisplayText") @Nullable String categoryDisplayText,
-        @CustomType.Parameter("categoryType") @Nullable String categoryType,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetLogAnalyticsCategoriesListItem> items,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("namespace") String namespace) {
-        this.categoryDisplayText = categoryDisplayText;
-        this.categoryType = categoryType;
-        this.id = id;
-        this.items = items;
-        this.name = name;
-        this.namespace = namespace;
-    }
-
+    private GetLogAnalyticsCategoriesListResult() {}
     public Optional<String> categoryDisplayText() {
         return Optional.ofNullable(this.categoryDisplayText);
     }
@@ -86,7 +71,7 @@ public final class GetLogAnalyticsCategoriesListResult {
     public static Builder builder(GetLogAnalyticsCategoriesListResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String categoryDisplayText;
         private @Nullable String categoryType;
@@ -94,11 +79,7 @@ public final class GetLogAnalyticsCategoriesListResult {
         private List<GetLogAnalyticsCategoriesListItem> items;
         private @Nullable String name;
         private String namespace;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsCategoriesListResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.categoryDisplayText = defaults.categoryDisplayText;
@@ -109,18 +90,22 @@ public final class GetLogAnalyticsCategoriesListResult {
     	      this.namespace = defaults.namespace;
         }
 
+        @CustomType.Setter
         public Builder categoryDisplayText(@Nullable String categoryDisplayText) {
             this.categoryDisplayText = categoryDisplayText;
             return this;
         }
+        @CustomType.Setter
         public Builder categoryType(@Nullable String categoryType) {
             this.categoryType = categoryType;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetLogAnalyticsCategoriesListItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -128,15 +113,25 @@ public final class GetLogAnalyticsCategoriesListResult {
         public Builder items(GetLogAnalyticsCategoriesListItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
-        }        public GetLogAnalyticsCategoriesListResult build() {
-            return new GetLogAnalyticsCategoriesListResult(categoryDisplayText, categoryType, id, items, name, namespace);
+        }
+        public GetLogAnalyticsCategoriesListResult build() {
+            final var o = new GetLogAnalyticsCategoriesListResult();
+            o.categoryDisplayText = categoryDisplayText;
+            o.categoryType = categoryType;
+            o.id = id;
+            o.items = items;
+            o.name = name;
+            o.namespace = namespace;
+            return o;
         }
     }
 }

@@ -13,35 +13,24 @@ public final class GetDeployStageBlueGreenStrategy {
      * @return Name of the Ingress resource.
      * 
      */
-    private final String ingressName;
+    private String ingressName;
     /**
      * @return First Namespace for deployment.
      * 
      */
-    private final String namespaceA;
+    private String namespaceA;
     /**
      * @return Second Namespace for deployment.
      * 
      */
-    private final String namespaceB;
+    private String namespaceB;
     /**
      * @return Canary strategy type
      * 
      */
-    private final String strategyType;
+    private String strategyType;
 
-    @CustomType.Constructor
-    private GetDeployStageBlueGreenStrategy(
-        @CustomType.Parameter("ingressName") String ingressName,
-        @CustomType.Parameter("namespaceA") String namespaceA,
-        @CustomType.Parameter("namespaceB") String namespaceB,
-        @CustomType.Parameter("strategyType") String strategyType) {
-        this.ingressName = ingressName;
-        this.namespaceA = namespaceA;
-        this.namespaceB = namespaceB;
-        this.strategyType = strategyType;
-    }
-
+    private GetDeployStageBlueGreenStrategy() {}
     /**
      * @return Name of the Ingress resource.
      * 
@@ -78,17 +67,13 @@ public final class GetDeployStageBlueGreenStrategy {
     public static Builder builder(GetDeployStageBlueGreenStrategy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String ingressName;
         private String namespaceA;
         private String namespaceB;
         private String strategyType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployStageBlueGreenStrategy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ingressName = defaults.ingressName;
@@ -97,23 +82,33 @@ public final class GetDeployStageBlueGreenStrategy {
     	      this.strategyType = defaults.strategyType;
         }
 
+        @CustomType.Setter
         public Builder ingressName(String ingressName) {
             this.ingressName = Objects.requireNonNull(ingressName);
             return this;
         }
+        @CustomType.Setter
         public Builder namespaceA(String namespaceA) {
             this.namespaceA = Objects.requireNonNull(namespaceA);
             return this;
         }
+        @CustomType.Setter
         public Builder namespaceB(String namespaceB) {
             this.namespaceB = Objects.requireNonNull(namespaceB);
             return this;
         }
+        @CustomType.Setter
         public Builder strategyType(String strategyType) {
             this.strategyType = Objects.requireNonNull(strategyType);
             return this;
-        }        public GetDeployStageBlueGreenStrategy build() {
-            return new GetDeployStageBlueGreenStrategy(ingressName, namespaceA, namespaceB, strategyType);
+        }
+        public GetDeployStageBlueGreenStrategy build() {
+            final var o = new GetDeployStageBlueGreenStrategy();
+            o.ingressName = ingressName;
+            o.namespaceA = namespaceA;
+            o.namespaceB = namespaceB;
+            o.strategyType = strategyType;
+            return o;
         }
     }
 }

@@ -10,24 +10,15 @@ import java.util.Objects;
 
 @CustomType
 public final class GetConfigurationResult {
-    private final String compartmentId;
-    private final String id;
+    private String compartmentId;
+    private String id;
     /**
      * @return The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
      * 
      */
-    private final Integer retentionPeriodDays;
+    private Integer retentionPeriodDays;
 
-    @CustomType.Constructor
-    private GetConfigurationResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("retentionPeriodDays") Integer retentionPeriodDays) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.retentionPeriodDays = retentionPeriodDays;
-    }
-
+    private GetConfigurationResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -49,16 +40,12 @@ public final class GetConfigurationResult {
     public static Builder builder(GetConfigurationResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private Integer retentionPeriodDays;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -66,19 +53,27 @@ public final class GetConfigurationResult {
     	      this.retentionPeriodDays = defaults.retentionPeriodDays;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder retentionPeriodDays(Integer retentionPeriodDays) {
             this.retentionPeriodDays = Objects.requireNonNull(retentionPeriodDays);
             return this;
-        }        public GetConfigurationResult build() {
-            return new GetConfigurationResult(compartmentId, id, retentionPeriodDays);
+        }
+        public GetConfigurationResult build() {
+            final var o = new GetConfigurationResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.retentionPeriodDays = retentionPeriodDays;
+            return o;
         }
     }
 }

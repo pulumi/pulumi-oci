@@ -14,42 +14,29 @@ public final class GetLogAnalyticsCategoriesListItem {
      * @return The category description.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The category display name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
      * 
      */
-    private final Boolean isSystem;
+    private Boolean isSystem;
     /**
      * @return A filter to return only log analytics category whose name matches the entire name given. The match is case-insensitive.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The category type. Values include &#34;PRODUCT&#34;, &#34;TIER&#34;, &#34;VENDOR&#34; and &#34;GENERIC&#34;.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsCategoriesListItem(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("isSystem") Boolean isSystem,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("type") String type) {
-        this.description = description;
-        this.displayName = displayName;
-        this.isSystem = isSystem;
-        this.name = name;
-        this.type = type;
-    }
-
+    private GetLogAnalyticsCategoriesListItem() {}
     /**
      * @return The category description.
      * 
@@ -93,18 +80,14 @@ public final class GetLogAnalyticsCategoriesListItem {
     public static Builder builder(GetLogAnalyticsCategoriesListItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String displayName;
         private Boolean isSystem;
         private String name;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsCategoriesListItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -114,27 +97,39 @@ public final class GetLogAnalyticsCategoriesListItem {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = Objects.requireNonNull(isSystem);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetLogAnalyticsCategoriesListItem build() {
-            return new GetLogAnalyticsCategoriesListItem(description, displayName, isSystem, name, type);
+        }
+        public GetLogAnalyticsCategoriesListItem build() {
+            final var o = new GetLogAnalyticsCategoriesListItem();
+            o.description = description;
+            o.displayName = displayName;
+            o.isSystem = isSystem;
+            o.name = name;
+            o.type = type;
+            return o;
         }
     }
 }

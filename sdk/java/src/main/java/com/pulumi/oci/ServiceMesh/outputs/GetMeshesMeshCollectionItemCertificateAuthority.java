@@ -13,13 +13,9 @@ public final class GetMeshesMeshCollectionItemCertificateAuthority {
      * @return Unique Mesh identifier.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetMeshesMeshCollectionItemCertificateAuthority(@CustomType.Parameter("id") String id) {
-        this.id = id;
-    }
-
+    private GetMeshesMeshCollectionItemCertificateAuthority() {}
     /**
      * @return Unique Mesh identifier.
      * 
@@ -35,24 +31,24 @@ public final class GetMeshesMeshCollectionItemCertificateAuthority {
     public static Builder builder(GetMeshesMeshCollectionItemCertificateAuthority defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMeshesMeshCollectionItemCertificateAuthority defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetMeshesMeshCollectionItemCertificateAuthority build() {
-            return new GetMeshesMeshCollectionItemCertificateAuthority(id);
+        }
+        public GetMeshesMeshCollectionItemCertificateAuthority build() {
+            final var o = new GetMeshesMeshCollectionItemCertificateAuthority();
+            o.id = id;
+            return o;
         }
     }
 }

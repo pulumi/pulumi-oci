@@ -17,73 +17,50 @@ public final class GetAddressListResult {
      * @return The total number of unique IP addresses in the address list.
      * 
      */
-    private final Double addressCount;
-    private final String addressListId;
+    private Double addressCount;
+    private String addressListId;
     /**
      * @return The list of IP addresses or CIDR notations.
      * 
      */
-    private final List<String> addresses;
+    private List<String> addresses;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list&#39;s compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The user-friendly name of the address list.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current lifecycle state of the address list.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the address list was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetAddressListResult(
-        @CustomType.Parameter("addressCount") Double addressCount,
-        @CustomType.Parameter("addressListId") String addressListId,
-        @CustomType.Parameter("addresses") List<String> addresses,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.addressCount = addressCount;
-        this.addressListId = addressListId;
-        this.addresses = addresses;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetAddressListResult() {}
     /**
      * @return The total number of unique IP addresses in the address list.
      * 
@@ -158,7 +135,7 @@ public final class GetAddressListResult {
     public static Builder builder(GetAddressListResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double addressCount;
         private String addressListId;
@@ -170,11 +147,7 @@ public final class GetAddressListResult {
         private String id;
         private String state;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAddressListResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.addressCount = defaults.addressCount;
@@ -189,14 +162,17 @@ public final class GetAddressListResult {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder addressCount(Double addressCount) {
             this.addressCount = Objects.requireNonNull(addressCount);
             return this;
         }
+        @CustomType.Setter
         public Builder addressListId(String addressListId) {
             this.addressListId = Objects.requireNonNull(addressListId);
             return this;
         }
+        @CustomType.Setter
         public Builder addresses(List<String> addresses) {
             this.addresses = Objects.requireNonNull(addresses);
             return this;
@@ -204,35 +180,54 @@ public final class GetAddressListResult {
         public Builder addresses(String... addresses) {
             return addresses(List.of(addresses));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetAddressListResult build() {
-            return new GetAddressListResult(addressCount, addressListId, addresses, compartmentId, definedTags, displayName, freeformTags, id, state, timeCreated);
+        }
+        public GetAddressListResult build() {
+            final var o = new GetAddressListResult();
+            o.addressCount = addressCount;
+            o.addressListId = addressListId;
+            o.addresses = addresses;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

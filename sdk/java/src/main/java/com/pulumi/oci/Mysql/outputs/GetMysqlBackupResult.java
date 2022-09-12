@@ -14,147 +14,104 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMysqlBackupResult {
-    private final String backupId;
+    private String backupId;
     /**
      * @return The size of the backup in base-2 (IEC) gibibytes. (GiB).
      * 
      */
-    private final Integer backupSizeInGbs;
+    private Integer backupSizeInGbs;
     /**
      * @return The type of backup.
      * 
      */
-    private final String backupType;
+    private String backupType;
     /**
      * @return The OCID of the compartment the DB System belongs in.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Indicates how the backup was created: manually, automatic, or by an Operator.
      * 
      */
-    private final String creationType;
+    private String creationType;
     /**
      * @return Initial size of the data volume in GiBs that will be created and attached.
      * 
      */
-    private final Integer dataStorageSizeInGb;
+    private Integer dataStorageSizeInGb;
     /**
      * @return The OCID of the DB System the backup is associated with.
      * 
      */
-    private final String dbSystemId;
+    private String dbSystemId;
     /**
      * @return Snapshot of the DbSystem details at the time of the backup
      * 
      */
-    private final List<GetMysqlBackupDbSystemSnapshot> dbSystemSnapshots;
+    private List<GetMysqlBackupDbSystemSnapshot> dbSystemSnapshots;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-supplied description for the backup.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A user-supplied display name for the backup.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return OCID of the backup itself
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Additional information about the current lifecycleState.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The MySQL server version of the DB System used for backup.
      * 
      */
-    private final String mysqlVersion;
+    private String mysqlVersion;
     /**
      * @return Number of days to retain this backup.
      * 
      */
-    private final Integer retentionInDays;
+    private Integer retentionInDays;
     /**
      * @return The shape of the DB System instance used for backup.
      * 
      */
-    private final String shapeName;
+    private String shapeName;
     /**
      * @return The state of the backup.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The time the backup record was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time at which the backup was updated.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetMysqlBackupResult(
-        @CustomType.Parameter("backupId") String backupId,
-        @CustomType.Parameter("backupSizeInGbs") Integer backupSizeInGbs,
-        @CustomType.Parameter("backupType") String backupType,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("creationType") String creationType,
-        @CustomType.Parameter("dataStorageSizeInGb") Integer dataStorageSizeInGb,
-        @CustomType.Parameter("dbSystemId") String dbSystemId,
-        @CustomType.Parameter("dbSystemSnapshots") List<GetMysqlBackupDbSystemSnapshot> dbSystemSnapshots,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("mysqlVersion") String mysqlVersion,
-        @CustomType.Parameter("retentionInDays") Integer retentionInDays,
-        @CustomType.Parameter("shapeName") String shapeName,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.backupId = backupId;
-        this.backupSizeInGbs = backupSizeInGbs;
-        this.backupType = backupType;
-        this.compartmentId = compartmentId;
-        this.creationType = creationType;
-        this.dataStorageSizeInGb = dataStorageSizeInGb;
-        this.dbSystemId = dbSystemId;
-        this.dbSystemSnapshots = dbSystemSnapshots;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.mysqlVersion = mysqlVersion;
-        this.retentionInDays = retentionInDays;
-        this.shapeName = shapeName;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetMysqlBackupResult() {}
     public String backupId() {
         return this.backupId;
     }
@@ -299,7 +256,7 @@ public final class GetMysqlBackupResult {
     public static Builder builder(GetMysqlBackupResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String backupId;
         private Integer backupSizeInGbs;
@@ -321,11 +278,7 @@ public final class GetMysqlBackupResult {
         private String state;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMysqlBackupResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupId = defaults.backupId;
@@ -350,34 +303,42 @@ public final class GetMysqlBackupResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder backupId(String backupId) {
             this.backupId = Objects.requireNonNull(backupId);
             return this;
         }
+        @CustomType.Setter
         public Builder backupSizeInGbs(Integer backupSizeInGbs) {
             this.backupSizeInGbs = Objects.requireNonNull(backupSizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder backupType(String backupType) {
             this.backupType = Objects.requireNonNull(backupType);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder creationType(String creationType) {
             this.creationType = Objects.requireNonNull(creationType);
             return this;
         }
+        @CustomType.Setter
         public Builder dataStorageSizeInGb(Integer dataStorageSizeInGb) {
             this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = Objects.requireNonNull(dbSystemId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemSnapshots(List<GetMysqlBackupDbSystemSnapshot> dbSystemSnapshots) {
             this.dbSystemSnapshots = Objects.requireNonNull(dbSystemSnapshots);
             return this;
@@ -385,55 +346,89 @@ public final class GetMysqlBackupResult {
         public Builder dbSystemSnapshots(GetMysqlBackupDbSystemSnapshot... dbSystemSnapshots) {
             return dbSystemSnapshots(List.of(dbSystemSnapshots));
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlVersion(String mysqlVersion) {
             this.mysqlVersion = Objects.requireNonNull(mysqlVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder retentionInDays(Integer retentionInDays) {
             this.retentionInDays = Objects.requireNonNull(retentionInDays);
             return this;
         }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             this.shapeName = Objects.requireNonNull(shapeName);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetMysqlBackupResult build() {
-            return new GetMysqlBackupResult(backupId, backupSizeInGbs, backupType, compartmentId, creationType, dataStorageSizeInGb, dbSystemId, dbSystemSnapshots, definedTags, description, displayName, freeformTags, id, lifecycleDetails, mysqlVersion, retentionInDays, shapeName, state, timeCreated, timeUpdated);
+        }
+        public GetMysqlBackupResult build() {
+            final var o = new GetMysqlBackupResult();
+            o.backupId = backupId;
+            o.backupSizeInGbs = backupSizeInGbs;
+            o.backupType = backupType;
+            o.compartmentId = compartmentId;
+            o.creationType = creationType;
+            o.dataStorageSizeInGb = dataStorageSizeInGb;
+            o.dbSystemId = dbSystemId;
+            o.dbSystemSnapshots = dbSystemSnapshots;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.mysqlVersion = mysqlVersion;
+            o.retentionInDays = retentionInDays;
+            o.shapeName = shapeName;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

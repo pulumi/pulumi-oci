@@ -19,136 +19,95 @@ public final class GetDatabaseToolsConnectionResult {
      * @return The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
      * 
      */
-    private final Map<String,Object> advancedProperties;
+    private Map<String,Object> advancedProperties;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The connect descriptor or Easy Connect Naming method used to connect to the database.
      * 
      */
-    private final String connectionString;
-    private final String databaseToolsConnectionId;
+    private String connectionString;
+    private String databaseToolsConnectionId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server&#39;s public certificate and the client private key and associated certificates required for client authentication.
      * 
      */
-    private final List<GetDatabaseToolsConnectionKeyStore> keyStores;
+    private List<GetDatabaseToolsConnectionKeyStore> keyStores;
     /**
      * @return A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * 
      */
-    private final String privateEndpointId;
+    private String privateEndpointId;
     /**
      * @return A related resource
      * 
      */
-    private final List<GetDatabaseToolsConnectionRelatedResource> relatedResources;
+    private List<GetDatabaseToolsConnectionRelatedResource> relatedResources;
     /**
      * @return The current state of the Database Tools connection.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return The Database Tools connection type.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return The database user name.
      * 
      */
-    private final String userName;
+    private String userName;
     /**
      * @return The user password.
      * 
      */
-    private final List<GetDatabaseToolsConnectionUserPassword> userPasswords;
+    private List<GetDatabaseToolsConnectionUserPassword> userPasswords;
 
-    @CustomType.Constructor
-    private GetDatabaseToolsConnectionResult(
-        @CustomType.Parameter("advancedProperties") Map<String,Object> advancedProperties,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("connectionString") String connectionString,
-        @CustomType.Parameter("databaseToolsConnectionId") String databaseToolsConnectionId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("keyStores") List<GetDatabaseToolsConnectionKeyStore> keyStores,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("privateEndpointId") String privateEndpointId,
-        @CustomType.Parameter("relatedResources") List<GetDatabaseToolsConnectionRelatedResource> relatedResources,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("userName") String userName,
-        @CustomType.Parameter("userPasswords") List<GetDatabaseToolsConnectionUserPassword> userPasswords) {
-        this.advancedProperties = advancedProperties;
-        this.compartmentId = compartmentId;
-        this.connectionString = connectionString;
-        this.databaseToolsConnectionId = databaseToolsConnectionId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.keyStores = keyStores;
-        this.lifecycleDetails = lifecycleDetails;
-        this.privateEndpointId = privateEndpointId;
-        this.relatedResources = relatedResources;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.type = type;
-        this.userName = userName;
-        this.userPasswords = userPasswords;
-    }
-
+    private GetDatabaseToolsConnectionResult() {}
     /**
      * @return The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
      * 
@@ -286,7 +245,7 @@ public final class GetDatabaseToolsConnectionResult {
     public static Builder builder(GetDatabaseToolsConnectionResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> advancedProperties;
         private String compartmentId;
@@ -307,11 +266,7 @@ public final class GetDatabaseToolsConnectionResult {
         private String type;
         private String userName;
         private List<GetDatabaseToolsConnectionUserPassword> userPasswords;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseToolsConnectionResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.advancedProperties = defaults.advancedProperties;
@@ -335,38 +290,47 @@ public final class GetDatabaseToolsConnectionResult {
     	      this.userPasswords = defaults.userPasswords;
         }
 
+        @CustomType.Setter
         public Builder advancedProperties(Map<String,Object> advancedProperties) {
             this.advancedProperties = Objects.requireNonNull(advancedProperties);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder connectionString(String connectionString) {
             this.connectionString = Objects.requireNonNull(connectionString);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseToolsConnectionId(String databaseToolsConnectionId) {
             this.databaseToolsConnectionId = Objects.requireNonNull(databaseToolsConnectionId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder keyStores(List<GetDatabaseToolsConnectionKeyStore> keyStores) {
             this.keyStores = Objects.requireNonNull(keyStores);
             return this;
@@ -374,14 +338,17 @@ public final class GetDatabaseToolsConnectionResult {
         public Builder keyStores(GetDatabaseToolsConnectionKeyStore... keyStores) {
             return keyStores(List.of(keyStores));
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
             return this;
         }
+        @CustomType.Setter
         public Builder relatedResources(List<GetDatabaseToolsConnectionRelatedResource> relatedResources) {
             this.relatedResources = Objects.requireNonNull(relatedResources);
             return this;
@@ -389,38 +356,66 @@ public final class GetDatabaseToolsConnectionResult {
         public Builder relatedResources(GetDatabaseToolsConnectionRelatedResource... relatedResources) {
             return relatedResources(List.of(relatedResources));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder userName(String userName) {
             this.userName = Objects.requireNonNull(userName);
             return this;
         }
+        @CustomType.Setter
         public Builder userPasswords(List<GetDatabaseToolsConnectionUserPassword> userPasswords) {
             this.userPasswords = Objects.requireNonNull(userPasswords);
             return this;
         }
         public Builder userPasswords(GetDatabaseToolsConnectionUserPassword... userPasswords) {
             return userPasswords(List.of(userPasswords));
-        }        public GetDatabaseToolsConnectionResult build() {
-            return new GetDatabaseToolsConnectionResult(advancedProperties, compartmentId, connectionString, databaseToolsConnectionId, definedTags, displayName, freeformTags, id, keyStores, lifecycleDetails, privateEndpointId, relatedResources, state, systemTags, timeCreated, timeUpdated, type, userName, userPasswords);
+        }
+        public GetDatabaseToolsConnectionResult build() {
+            final var o = new GetDatabaseToolsConnectionResult();
+            o.advancedProperties = advancedProperties;
+            o.compartmentId = compartmentId;
+            o.connectionString = connectionString;
+            o.databaseToolsConnectionId = databaseToolsConnectionId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.keyStores = keyStores;
+            o.lifecycleDetails = lifecycleDetails;
+            o.privateEndpointId = privateEndpointId;
+            o.relatedResources = relatedResources;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.type = type;
+            o.userName = userName;
+            o.userPasswords = userPasswords;
+            return o;
         }
     }
 }

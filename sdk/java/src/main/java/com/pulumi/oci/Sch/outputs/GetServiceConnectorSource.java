@@ -17,42 +17,29 @@ public final class GetServiceConnectorSource {
      * @return The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
      * 
      */
-    private final List<GetServiceConnectorSourceCursor> cursors;
+    private List<GetServiceConnectorSourceCursor> cursors;
     /**
      * @return The type descriminator.
      * 
      */
-    private final String kind;
+    private String kind;
     /**
      * @return The logs for this Logging source.
      * 
      */
-    private final List<GetServiceConnectorSourceLogSource> logSources;
+    private List<GetServiceConnectorSourceLogSource> logSources;
     /**
      * @return The list of metric namespaces to retrieve data from.
      * 
      */
-    private final List<GetServiceConnectorSourceMonitoringSource> monitoringSources;
+    private List<GetServiceConnectorSourceMonitoringSource> monitoringSources;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
-    private final String streamId;
+    private String streamId;
 
-    @CustomType.Constructor
-    private GetServiceConnectorSource(
-        @CustomType.Parameter("cursors") List<GetServiceConnectorSourceCursor> cursors,
-        @CustomType.Parameter("kind") String kind,
-        @CustomType.Parameter("logSources") List<GetServiceConnectorSourceLogSource> logSources,
-        @CustomType.Parameter("monitoringSources") List<GetServiceConnectorSourceMonitoringSource> monitoringSources,
-        @CustomType.Parameter("streamId") String streamId) {
-        this.cursors = cursors;
-        this.kind = kind;
-        this.logSources = logSources;
-        this.monitoringSources = monitoringSources;
-        this.streamId = streamId;
-    }
-
+    private GetServiceConnectorSource() {}
     /**
      * @return The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
      * 
@@ -96,18 +83,14 @@ public final class GetServiceConnectorSource {
     public static Builder builder(GetServiceConnectorSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetServiceConnectorSourceCursor> cursors;
         private String kind;
         private List<GetServiceConnectorSourceLogSource> logSources;
         private List<GetServiceConnectorSourceMonitoringSource> monitoringSources;
         private String streamId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceConnectorSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cursors = defaults.cursors;
@@ -117,6 +100,7 @@ public final class GetServiceConnectorSource {
     	      this.streamId = defaults.streamId;
         }
 
+        @CustomType.Setter
         public Builder cursors(List<GetServiceConnectorSourceCursor> cursors) {
             this.cursors = Objects.requireNonNull(cursors);
             return this;
@@ -124,10 +108,12 @@ public final class GetServiceConnectorSource {
         public Builder cursors(GetServiceConnectorSourceCursor... cursors) {
             return cursors(List.of(cursors));
         }
+        @CustomType.Setter
         public Builder kind(String kind) {
             this.kind = Objects.requireNonNull(kind);
             return this;
         }
+        @CustomType.Setter
         public Builder logSources(List<GetServiceConnectorSourceLogSource> logSources) {
             this.logSources = Objects.requireNonNull(logSources);
             return this;
@@ -135,6 +121,7 @@ public final class GetServiceConnectorSource {
         public Builder logSources(GetServiceConnectorSourceLogSource... logSources) {
             return logSources(List.of(logSources));
         }
+        @CustomType.Setter
         public Builder monitoringSources(List<GetServiceConnectorSourceMonitoringSource> monitoringSources) {
             this.monitoringSources = Objects.requireNonNull(monitoringSources);
             return this;
@@ -142,11 +129,19 @@ public final class GetServiceConnectorSource {
         public Builder monitoringSources(GetServiceConnectorSourceMonitoringSource... monitoringSources) {
             return monitoringSources(List.of(monitoringSources));
         }
+        @CustomType.Setter
         public Builder streamId(String streamId) {
             this.streamId = Objects.requireNonNull(streamId);
             return this;
-        }        public GetServiceConnectorSource build() {
-            return new GetServiceConnectorSource(cursors, kind, logSources, monitoringSources, streamId);
+        }
+        public GetServiceConnectorSource build() {
+            final var o = new GetServiceConnectorSource();
+            o.cursors = cursors;
+            o.kind = kind;
+            o.logSources = logSources;
+            o.monitoringSources = monitoringSources;
+            o.streamId = streamId;
+            return o;
         }
     }
 }

@@ -15,21 +15,14 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
      * @return The shape used to launch the model deployment instances.
      * 
      */
-    private final String instanceShapeName;
+    private String instanceShapeName;
     /**
      * @return Details for the model-deployment instance shape configuration.
      * 
      */
-    private final List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails;
+    private List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails;
 
-    @CustomType.Constructor
-    private GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration(
-        @CustomType.Parameter("instanceShapeName") String instanceShapeName,
-        @CustomType.Parameter("modelDeploymentInstanceShapeConfigDetails") List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails) {
-        this.instanceShapeName = instanceShapeName;
-        this.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
-    }
-
+    private GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration() {}
     /**
      * @return The shape used to launch the model deployment instances.
      * 
@@ -52,33 +45,35 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
     public static Builder builder(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String instanceShapeName;
         private List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.instanceShapeName = defaults.instanceShapeName;
     	      this.modelDeploymentInstanceShapeConfigDetails = defaults.modelDeploymentInstanceShapeConfigDetails;
         }
 
+        @CustomType.Setter
         public Builder instanceShapeName(String instanceShapeName) {
             this.instanceShapeName = Objects.requireNonNull(instanceShapeName);
             return this;
         }
+        @CustomType.Setter
         public Builder modelDeploymentInstanceShapeConfigDetails(List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails) {
             this.modelDeploymentInstanceShapeConfigDetails = Objects.requireNonNull(modelDeploymentInstanceShapeConfigDetails);
             return this;
         }
         public Builder modelDeploymentInstanceShapeConfigDetails(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail... modelDeploymentInstanceShapeConfigDetails) {
             return modelDeploymentInstanceShapeConfigDetails(List.of(modelDeploymentInstanceShapeConfigDetails));
-        }        public GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration build() {
-            return new GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration(instanceShapeName, modelDeploymentInstanceShapeConfigDetails);
+        }
+        public GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration build() {
+            final var o = new GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration();
+            o.instanceShapeName = instanceShapeName;
+            o.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
+            return o;
         }
     }
 }

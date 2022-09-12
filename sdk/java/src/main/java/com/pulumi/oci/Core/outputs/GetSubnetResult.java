@@ -17,164 +17,115 @@ public final class GetSubnetResult {
      * @return The subnet&#39;s availability domain. This attribute will be null if this is a regional subnet instead of an AD-specific subnet. Oracle recommends creating regional subnets.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The subnet&#39;s CIDR block.  Example: `10.0.1.0/24`
      * 
      */
-    private final String cidrBlock;
+    private String cidrBlock;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the subnet.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options that the subnet uses.
      * 
      */
-    private final String dhcpOptionsId;
+    private String dhcpOptionsId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return A DNS label for the subnet, used in conjunction with the VNIC&#39;s hostname and VCN&#39;s DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance-1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
      * 
      */
-    private final String dnsLabel;
+    private String dnsLabel;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The subnet&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet&#39;s IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
      * 
      */
-    private final String ipv6cidrBlock;
+    private String ipv6cidrBlock;
     /**
      * @return The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
      * 
      */
-    private final List<String> ipv6cidrBlocks;
+    private List<String> ipv6cidrBlocks;
     /**
      * @return For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
      * 
      */
-    private final String ipv6virtualRouterIp;
+    private String ipv6virtualRouterIp;
     /**
      * @return Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
      * 
      */
-    private final Boolean prohibitInternetIngress;
+    private Boolean prohibitInternetIngress;
     /**
      * @return Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it&#39;s a private subnet).  Example: `true`
      * 
      */
-    private final Boolean prohibitPublicIpOnVnic;
+    private Boolean prohibitPublicIpOnVnic;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the subnet uses.
      * 
      */
-    private final String routeTableId;
+    private String routeTableId;
     /**
      * @return The OCIDs of the security list or lists that the subnet uses. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
      * 
      */
-    private final List<String> securityListIds;
+    private List<String> securityListIds;
     /**
      * @return The subnet&#39;s current state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The subnet&#39;s domain name, which consists of the subnet&#39;s DNS label, the VCN&#39;s DNS label, and the `oraclevcn.com` domain.
      * 
      */
-    private final String subnetDomainName;
-    private final String subnetId;
+    private String subnetDomainName;
+    private String subnetId;
     /**
      * @return The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the subnet is in.
      * 
      */
-    private final String vcnId;
+    private String vcnId;
     /**
      * @return The IP address of the virtual router.  Example: `10.0.14.1`
      * 
      */
-    private final String virtualRouterIp;
+    private String virtualRouterIp;
     /**
      * @return The MAC address of the virtual router.  Example: `00:00:00:00:00:01`
      * 
      */
-    private final String virtualRouterMac;
+    private String virtualRouterMac;
 
-    @CustomType.Constructor
-    private GetSubnetResult(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("cidrBlock") String cidrBlock,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("dhcpOptionsId") String dhcpOptionsId,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("dnsLabel") String dnsLabel,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipv6cidrBlock") String ipv6cidrBlock,
-        @CustomType.Parameter("ipv6cidrBlocks") List<String> ipv6cidrBlocks,
-        @CustomType.Parameter("ipv6virtualRouterIp") String ipv6virtualRouterIp,
-        @CustomType.Parameter("prohibitInternetIngress") Boolean prohibitInternetIngress,
-        @CustomType.Parameter("prohibitPublicIpOnVnic") Boolean prohibitPublicIpOnVnic,
-        @CustomType.Parameter("routeTableId") String routeTableId,
-        @CustomType.Parameter("securityListIds") List<String> securityListIds,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subnetDomainName") String subnetDomainName,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("vcnId") String vcnId,
-        @CustomType.Parameter("virtualRouterIp") String virtualRouterIp,
-        @CustomType.Parameter("virtualRouterMac") String virtualRouterMac) {
-        this.availabilityDomain = availabilityDomain;
-        this.cidrBlock = cidrBlock;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.dhcpOptionsId = dhcpOptionsId;
-        this.displayName = displayName;
-        this.dnsLabel = dnsLabel;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.ipv6cidrBlock = ipv6cidrBlock;
-        this.ipv6cidrBlocks = ipv6cidrBlocks;
-        this.ipv6virtualRouterIp = ipv6virtualRouterIp;
-        this.prohibitInternetIngress = prohibitInternetIngress;
-        this.prohibitPublicIpOnVnic = prohibitPublicIpOnVnic;
-        this.routeTableId = routeTableId;
-        this.securityListIds = securityListIds;
-        this.state = state;
-        this.subnetDomainName = subnetDomainName;
-        this.subnetId = subnetId;
-        this.timeCreated = timeCreated;
-        this.vcnId = vcnId;
-        this.virtualRouterIp = virtualRouterIp;
-        this.virtualRouterMac = virtualRouterMac;
-    }
-
+    private GetSubnetResult() {}
     /**
      * @return The subnet&#39;s availability domain. This attribute will be null if this is a regional subnet instead of an AD-specific subnet. Oracle recommends creating regional subnets.  Example: `Uocm:PHX-AD-1`
      * 
@@ -340,7 +291,7 @@ public final class GetSubnetResult {
     public static Builder builder(GetSubnetResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String cidrBlock;
@@ -365,11 +316,7 @@ public final class GetSubnetResult {
         private String vcnId;
         private String virtualRouterIp;
         private String virtualRouterMac;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubnetResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -397,46 +344,57 @@ public final class GetSubnetResult {
     	      this.virtualRouterMac = defaults.virtualRouterMac;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = Objects.requireNonNull(cidrBlock);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder dhcpOptionsId(String dhcpOptionsId) {
             this.dhcpOptionsId = Objects.requireNonNull(dhcpOptionsId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder dnsLabel(String dnsLabel) {
             this.dnsLabel = Objects.requireNonNull(dnsLabel);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipv6cidrBlock(String ipv6cidrBlock) {
             this.ipv6cidrBlock = Objects.requireNonNull(ipv6cidrBlock);
             return this;
         }
+        @CustomType.Setter
         public Builder ipv6cidrBlocks(List<String> ipv6cidrBlocks) {
             this.ipv6cidrBlocks = Objects.requireNonNull(ipv6cidrBlocks);
             return this;
@@ -444,22 +402,27 @@ public final class GetSubnetResult {
         public Builder ipv6cidrBlocks(String... ipv6cidrBlocks) {
             return ipv6cidrBlocks(List.of(ipv6cidrBlocks));
         }
+        @CustomType.Setter
         public Builder ipv6virtualRouterIp(String ipv6virtualRouterIp) {
             this.ipv6virtualRouterIp = Objects.requireNonNull(ipv6virtualRouterIp);
             return this;
         }
+        @CustomType.Setter
         public Builder prohibitInternetIngress(Boolean prohibitInternetIngress) {
             this.prohibitInternetIngress = Objects.requireNonNull(prohibitInternetIngress);
             return this;
         }
+        @CustomType.Setter
         public Builder prohibitPublicIpOnVnic(Boolean prohibitPublicIpOnVnic) {
             this.prohibitPublicIpOnVnic = Objects.requireNonNull(prohibitPublicIpOnVnic);
             return this;
         }
+        @CustomType.Setter
         public Builder routeTableId(String routeTableId) {
             this.routeTableId = Objects.requireNonNull(routeTableId);
             return this;
         }
+        @CustomType.Setter
         public Builder securityListIds(List<String> securityListIds) {
             this.securityListIds = Objects.requireNonNull(securityListIds);
             return this;
@@ -467,35 +430,67 @@ public final class GetSubnetResult {
         public Builder securityListIds(String... securityListIds) {
             return securityListIds(List.of(securityListIds));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetDomainName(String subnetDomainName) {
             this.subnetDomainName = Objects.requireNonNull(subnetDomainName);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(String vcnId) {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
         }
+        @CustomType.Setter
         public Builder virtualRouterIp(String virtualRouterIp) {
             this.virtualRouterIp = Objects.requireNonNull(virtualRouterIp);
             return this;
         }
+        @CustomType.Setter
         public Builder virtualRouterMac(String virtualRouterMac) {
             this.virtualRouterMac = Objects.requireNonNull(virtualRouterMac);
             return this;
-        }        public GetSubnetResult build() {
-            return new GetSubnetResult(availabilityDomain, cidrBlock, compartmentId, definedTags, dhcpOptionsId, displayName, dnsLabel, freeformTags, id, ipv6cidrBlock, ipv6cidrBlocks, ipv6virtualRouterIp, prohibitInternetIngress, prohibitPublicIpOnVnic, routeTableId, securityListIds, state, subnetDomainName, subnetId, timeCreated, vcnId, virtualRouterIp, virtualRouterMac);
+        }
+        public GetSubnetResult build() {
+            final var o = new GetSubnetResult();
+            o.availabilityDomain = availabilityDomain;
+            o.cidrBlock = cidrBlock;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.dhcpOptionsId = dhcpOptionsId;
+            o.displayName = displayName;
+            o.dnsLabel = dnsLabel;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.ipv6cidrBlock = ipv6cidrBlock;
+            o.ipv6cidrBlocks = ipv6cidrBlocks;
+            o.ipv6virtualRouterIp = ipv6virtualRouterIp;
+            o.prohibitInternetIngress = prohibitInternetIngress;
+            o.prohibitPublicIpOnVnic = prohibitPublicIpOnVnic;
+            o.routeTableId = routeTableId;
+            o.securityListIds = securityListIds;
+            o.state = state;
+            o.subnetDomainName = subnetDomainName;
+            o.subnetId = subnetId;
+            o.timeCreated = timeCreated;
+            o.vcnId = vcnId;
+            o.virtualRouterIp = virtualRouterIp;
+            o.virtualRouterMac = virtualRouterMac;
+            return o;
         }
     }
 }

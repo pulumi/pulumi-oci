@@ -17,129 +17,90 @@ public final class GetVnicResult {
      * @return The VNIC&#39;s availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The hostname for the VNIC&#39;s primary private IP. Used for DNS. The value is the hostname portion of the primary private IP&#39;s fully qualified domain name (FQDN) (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
      * 
      */
-    private final String hostnameLabel;
+    private String hostnameLabel;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Whether the VNIC is the primary VNIC (the VNIC that is automatically created and attached during instance launch).
      * 
      */
-    private final Boolean isPrimary;
+    private Boolean isPrimary;
     /**
      * @return The MAC address of the VNIC.
      * 
      */
-    private final String macAddress;
+    private String macAddress;
     /**
      * @return A list of the OCIDs of the network security groups that the VNIC belongs to.
      * 
      */
-    private final List<String> nsgIds;
+    private List<String> nsgIds;
     /**
      * @return The private IP address of the primary `privateIp` object on the VNIC. The address is within the CIDR of the VNIC&#39;s subnet.  Example: `10.0.3.3`
      * 
      */
-    private final String privateIpAddress;
+    private String privateIpAddress;
     /**
      * @return The public IP address of the VNIC, if one is assigned.
      * 
      */
-    private final String publicIpAddress;
+    private String publicIpAddress;
     /**
      * @return Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      * 
      */
-    private final Boolean skipSourceDestCheck;
+    private Boolean skipSourceDestCheck;
     /**
      * @return The current state of the VNIC.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return The date and time the VNIC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of belonging to a subnet), the `vlanId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan). If the VNIC is instead in a subnet, `subnetId` has a value.
      * 
      */
-    private final String vlanId;
-    private final String vnicId;
+    private String vlanId;
+    private String vnicId;
 
-    @CustomType.Constructor
-    private GetVnicResult(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("hostnameLabel") String hostnameLabel,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isPrimary") Boolean isPrimary,
-        @CustomType.Parameter("macAddress") String macAddress,
-        @CustomType.Parameter("nsgIds") List<String> nsgIds,
-        @CustomType.Parameter("privateIpAddress") String privateIpAddress,
-        @CustomType.Parameter("publicIpAddress") String publicIpAddress,
-        @CustomType.Parameter("skipSourceDestCheck") Boolean skipSourceDestCheck,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("vlanId") String vlanId,
-        @CustomType.Parameter("vnicId") String vnicId) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.hostnameLabel = hostnameLabel;
-        this.id = id;
-        this.isPrimary = isPrimary;
-        this.macAddress = macAddress;
-        this.nsgIds = nsgIds;
-        this.privateIpAddress = privateIpAddress;
-        this.publicIpAddress = publicIpAddress;
-        this.skipSourceDestCheck = skipSourceDestCheck;
-        this.state = state;
-        this.subnetId = subnetId;
-        this.timeCreated = timeCreated;
-        this.vlanId = vlanId;
-        this.vnicId = vnicId;
-    }
-
+    private GetVnicResult() {}
     /**
      * @return The VNIC&#39;s availability domain.  Example: `Uocm:PHX-AD-1`
      * 
@@ -270,7 +231,7 @@ public final class GetVnicResult {
     public static Builder builder(GetVnicResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String compartmentId;
@@ -290,11 +251,7 @@ public final class GetVnicResult {
         private String timeCreated;
         private String vlanId;
         private String vnicId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVnicResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -317,42 +274,52 @@ public final class GetVnicResult {
     	      this.vnicId = defaults.vnicId;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder hostnameLabel(String hostnameLabel) {
             this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isPrimary(Boolean isPrimary) {
             this.isPrimary = Objects.requireNonNull(isPrimary);
             return this;
         }
+        @CustomType.Setter
         public Builder macAddress(String macAddress) {
             this.macAddress = Objects.requireNonNull(macAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             this.nsgIds = Objects.requireNonNull(nsgIds);
             return this;
@@ -360,39 +327,67 @@ public final class GetVnicResult {
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
+        @CustomType.Setter
         public Builder privateIpAddress(String privateIpAddress) {
             this.privateIpAddress = Objects.requireNonNull(privateIpAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder publicIpAddress(String publicIpAddress) {
             this.publicIpAddress = Objects.requireNonNull(publicIpAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder skipSourceDestCheck(Boolean skipSourceDestCheck) {
             this.skipSourceDestCheck = Objects.requireNonNull(skipSourceDestCheck);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder vlanId(String vlanId) {
             this.vlanId = Objects.requireNonNull(vlanId);
             return this;
         }
+        @CustomType.Setter
         public Builder vnicId(String vnicId) {
             this.vnicId = Objects.requireNonNull(vnicId);
             return this;
-        }        public GetVnicResult build() {
-            return new GetVnicResult(availabilityDomain, compartmentId, definedTags, displayName, freeformTags, hostnameLabel, id, isPrimary, macAddress, nsgIds, privateIpAddress, publicIpAddress, skipSourceDestCheck, state, subnetId, timeCreated, vlanId, vnicId);
+        }
+        public GetVnicResult build() {
+            final var o = new GetVnicResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.hostnameLabel = hostnameLabel;
+            o.id = id;
+            o.isPrimary = isPrimary;
+            o.macAddress = macAddress;
+            o.nsgIds = nsgIds;
+            o.privateIpAddress = privateIpAddress;
+            o.publicIpAddress = publicIpAddress;
+            o.skipSourceDestCheck = skipSourceDestCheck;
+            o.state = state;
+            o.subnetId = subnetId;
+            o.timeCreated = timeCreated;
+            o.vlanId = vlanId;
+            o.vnicId = vnicId;
+            return o;
         }
     }
 }

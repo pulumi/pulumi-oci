@@ -13,49 +13,34 @@ public final class GetSubscribedServiceRateCardProduct {
      * @return Metered service billing category
      * 
      */
-    private final String billingCategory;
+    private String billingCategory;
     /**
      * @return Commercial name also called customer name.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Product part numner
      * 
      */
-    private final String partNumber;
+    private String partNumber;
     /**
      * @return Product category
      * 
      */
-    private final String productCategory;
+    private String productCategory;
     /**
      * @return Rate card part type of Product
      * 
      */
-    private final String ucmRateCardPartType;
+    private String ucmRateCardPartType;
     /**
      * @return Unit of measure
      * 
      */
-    private final String unitOfMeasure;
+    private String unitOfMeasure;
 
-    @CustomType.Constructor
-    private GetSubscribedServiceRateCardProduct(
-        @CustomType.Parameter("billingCategory") String billingCategory,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("partNumber") String partNumber,
-        @CustomType.Parameter("productCategory") String productCategory,
-        @CustomType.Parameter("ucmRateCardPartType") String ucmRateCardPartType,
-        @CustomType.Parameter("unitOfMeasure") String unitOfMeasure) {
-        this.billingCategory = billingCategory;
-        this.name = name;
-        this.partNumber = partNumber;
-        this.productCategory = productCategory;
-        this.ucmRateCardPartType = ucmRateCardPartType;
-        this.unitOfMeasure = unitOfMeasure;
-    }
-
+    private GetSubscribedServiceRateCardProduct() {}
     /**
      * @return Metered service billing category
      * 
@@ -106,7 +91,7 @@ public final class GetSubscribedServiceRateCardProduct {
     public static Builder builder(GetSubscribedServiceRateCardProduct defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String billingCategory;
         private String name;
@@ -114,11 +99,7 @@ public final class GetSubscribedServiceRateCardProduct {
         private String productCategory;
         private String ucmRateCardPartType;
         private String unitOfMeasure;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscribedServiceRateCardProduct defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.billingCategory = defaults.billingCategory;
@@ -129,31 +110,45 @@ public final class GetSubscribedServiceRateCardProduct {
     	      this.unitOfMeasure = defaults.unitOfMeasure;
         }
 
+        @CustomType.Setter
         public Builder billingCategory(String billingCategory) {
             this.billingCategory = Objects.requireNonNull(billingCategory);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder partNumber(String partNumber) {
             this.partNumber = Objects.requireNonNull(partNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder productCategory(String productCategory) {
             this.productCategory = Objects.requireNonNull(productCategory);
             return this;
         }
+        @CustomType.Setter
         public Builder ucmRateCardPartType(String ucmRateCardPartType) {
             this.ucmRateCardPartType = Objects.requireNonNull(ucmRateCardPartType);
             return this;
         }
+        @CustomType.Setter
         public Builder unitOfMeasure(String unitOfMeasure) {
             this.unitOfMeasure = Objects.requireNonNull(unitOfMeasure);
             return this;
-        }        public GetSubscribedServiceRateCardProduct build() {
-            return new GetSubscribedServiceRateCardProduct(billingCategory, name, partNumber, productCategory, ucmRateCardPartType, unitOfMeasure);
+        }
+        public GetSubscribedServiceRateCardProduct build() {
+            final var o = new GetSubscribedServiceRateCardProduct();
+            o.billingCategory = billingCategory;
+            o.name = name;
+            o.partNumber = partNumber;
+            o.productCategory = productCategory;
+            o.ucmRateCardPartType = ucmRateCardPartType;
+            o.unitOfMeasure = unitOfMeasure;
+            return o;
         }
     }
 }

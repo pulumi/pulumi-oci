@@ -13,28 +13,19 @@ public final class GetContainerImagesContainerImageCollectionItemLayer {
      * @return The sha256 digest of the image layer.
      * 
      */
-    private final String digest;
+    private String digest;
     /**
      * @return The size of the layer in bytes.
      * 
      */
-    private final String sizeInBytes;
+    private String sizeInBytes;
     /**
      * @return The creation time of the version.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetContainerImagesContainerImageCollectionItemLayer(
-        @CustomType.Parameter("digest") String digest,
-        @CustomType.Parameter("sizeInBytes") String sizeInBytes,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.digest = digest;
-        this.sizeInBytes = sizeInBytes;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetContainerImagesContainerImageCollectionItemLayer() {}
     /**
      * @return The sha256 digest of the image layer.
      * 
@@ -64,16 +55,12 @@ public final class GetContainerImagesContainerImageCollectionItemLayer {
     public static Builder builder(GetContainerImagesContainerImageCollectionItemLayer defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String digest;
         private String sizeInBytes;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetContainerImagesContainerImageCollectionItemLayer defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.digest = defaults.digest;
@@ -81,19 +68,27 @@ public final class GetContainerImagesContainerImageCollectionItemLayer {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder digest(String digest) {
             this.digest = Objects.requireNonNull(digest);
             return this;
         }
+        @CustomType.Setter
         public Builder sizeInBytes(String sizeInBytes) {
             this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetContainerImagesContainerImageCollectionItemLayer build() {
-            return new GetContainerImagesContainerImageCollectionItemLayer(digest, sizeInBytes, timeCreated);
+        }
+        public GetContainerImagesContainerImageCollectionItemLayer build() {
+            final var o = new GetContainerImagesContainerImageCollectionItemLayer();
+            o.digest = digest;
+            o.sizeInBytes = sizeInBytes;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

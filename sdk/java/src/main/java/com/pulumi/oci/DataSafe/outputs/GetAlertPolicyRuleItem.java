@@ -13,28 +13,19 @@ public final class GetAlertPolicyRuleItem {
      * @return Describes the alert policy rule.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The conditional expression of the alert policy rule which evaluates to boolean value.
      * 
      */
-    private final String expression;
+    private String expression;
     /**
      * @return The unique key of the alert policy rule.
      * 
      */
-    private final String key;
+    private String key;
 
-    @CustomType.Constructor
-    private GetAlertPolicyRuleItem(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("expression") String expression,
-        @CustomType.Parameter("key") String key) {
-        this.description = description;
-        this.expression = expression;
-        this.key = key;
-    }
-
+    private GetAlertPolicyRuleItem() {}
     /**
      * @return Describes the alert policy rule.
      * 
@@ -64,16 +55,12 @@ public final class GetAlertPolicyRuleItem {
     public static Builder builder(GetAlertPolicyRuleItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String expression;
         private String key;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAlertPolicyRuleItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -81,19 +68,27 @@ public final class GetAlertPolicyRuleItem {
     	      this.key = defaults.key;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder expression(String expression) {
             this.expression = Objects.requireNonNull(expression);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
-        }        public GetAlertPolicyRuleItem build() {
-            return new GetAlertPolicyRuleItem(description, expression, key);
+        }
+        public GetAlertPolicyRuleItem build() {
+            final var o = new GetAlertPolicyRuleItem();
+            o.description = description;
+            o.expression = expression;
+            o.key = key;
+            return o;
         }
     }
 }

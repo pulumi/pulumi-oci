@@ -14,21 +14,14 @@ public final class GetDeploymentSpecificationRequestPolicyRateLimiting {
      * @return The maximum number of requests per second to allow.
      * 
      */
-    private final Integer rateInRequestsPerSecond;
+    private Integer rateInRequestsPerSecond;
     /**
      * @return The key used to group requests together.
      * 
      */
-    private final String rateKey;
+    private String rateKey;
 
-    @CustomType.Constructor
-    private GetDeploymentSpecificationRequestPolicyRateLimiting(
-        @CustomType.Parameter("rateInRequestsPerSecond") Integer rateInRequestsPerSecond,
-        @CustomType.Parameter("rateKey") String rateKey) {
-        this.rateInRequestsPerSecond = rateInRequestsPerSecond;
-        this.rateKey = rateKey;
-    }
-
+    private GetDeploymentSpecificationRequestPolicyRateLimiting() {}
     /**
      * @return The maximum number of requests per second to allow.
      * 
@@ -51,30 +44,32 @@ public final class GetDeploymentSpecificationRequestPolicyRateLimiting {
     public static Builder builder(GetDeploymentSpecificationRequestPolicyRateLimiting defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer rateInRequestsPerSecond;
         private String rateKey;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentSpecificationRequestPolicyRateLimiting defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.rateInRequestsPerSecond = defaults.rateInRequestsPerSecond;
     	      this.rateKey = defaults.rateKey;
         }
 
+        @CustomType.Setter
         public Builder rateInRequestsPerSecond(Integer rateInRequestsPerSecond) {
             this.rateInRequestsPerSecond = Objects.requireNonNull(rateInRequestsPerSecond);
             return this;
         }
+        @CustomType.Setter
         public Builder rateKey(String rateKey) {
             this.rateKey = Objects.requireNonNull(rateKey);
             return this;
-        }        public GetDeploymentSpecificationRequestPolicyRateLimiting build() {
-            return new GetDeploymentSpecificationRequestPolicyRateLimiting(rateInRequestsPerSecond, rateKey);
+        }
+        public GetDeploymentSpecificationRequestPolicyRateLimiting build() {
+            final var o = new GetDeploymentSpecificationRequestPolicyRateLimiting();
+            o.rateInRequestsPerSecond = rateInRequestsPerSecond;
+            o.rateKey = rateKey;
+            return o;
         }
     }
 }

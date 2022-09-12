@@ -14,13 +14,9 @@ public final class BuildPipelineBuildPipelineParameters {
      * @return (Updatable) List of parameters defined for a build pipeline.
      * 
      */
-    private final List<BuildPipelineBuildPipelineParametersItem> items;
+    private List<BuildPipelineBuildPipelineParametersItem> items;
 
-    @CustomType.Constructor
-    private BuildPipelineBuildPipelineParameters(@CustomType.Parameter("items") List<BuildPipelineBuildPipelineParametersItem> items) {
-        this.items = items;
-    }
-
+    private BuildPipelineBuildPipelineParameters() {}
     /**
      * @return (Updatable) List of parameters defined for a build pipeline.
      * 
@@ -36,27 +32,27 @@ public final class BuildPipelineBuildPipelineParameters {
     public static Builder builder(BuildPipelineBuildPipelineParameters defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<BuildPipelineBuildPipelineParametersItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BuildPipelineBuildPipelineParameters defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<BuildPipelineBuildPipelineParametersItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(BuildPipelineBuildPipelineParametersItem... items) {
             return items(List.of(items));
-        }        public BuildPipelineBuildPipelineParameters build() {
-            return new BuildPipelineBuildPipelineParameters(items);
+        }
+        public BuildPipelineBuildPipelineParameters build() {
+            final var o = new BuildPipelineBuildPipelineParameters();
+            o.items = items;
+            return o;
         }
     }
 }

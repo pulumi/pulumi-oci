@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetScheduledRunsScheduledRunCollection {
-    private final List<GetScheduledRunsScheduledRunCollectionItem> items;
+    private List<GetScheduledRunsScheduledRunCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetScheduledRunsScheduledRunCollection(@CustomType.Parameter("items") List<GetScheduledRunsScheduledRunCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetScheduledRunsScheduledRunCollection() {}
     public List<GetScheduledRunsScheduledRunCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetScheduledRunsScheduledRunCollection {
     public static Builder builder(GetScheduledRunsScheduledRunCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetScheduledRunsScheduledRunCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetScheduledRunsScheduledRunCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetScheduledRunsScheduledRunCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetScheduledRunsScheduledRunCollectionItem... items) {
             return items(List.of(items));
-        }        public GetScheduledRunsScheduledRunCollection build() {
-            return new GetScheduledRunsScheduledRunCollection(items);
+        }
+        public GetScheduledRunsScheduledRunCollection build() {
+            final var o = new GetScheduledRunsScheduledRunCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -16,21 +16,14 @@ public final class ClusterOptionsPersistentVolumeConfig {
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
 
-    @CustomType.Constructor
-    private ClusterOptionsPersistentVolumeConfig(
-        @CustomType.Parameter("definedTags") @Nullable Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") @Nullable Map<String,Object> freeformTags) {
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-    }
-
+    private ClusterOptionsPersistentVolumeConfig() {}
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -53,30 +46,32 @@ public final class ClusterOptionsPersistentVolumeConfig {
     public static Builder builder(ClusterOptionsPersistentVolumeConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Map<String,Object> definedTags;
         private @Nullable Map<String,Object> freeformTags;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ClusterOptionsPersistentVolumeConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
         }
 
+        @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
             this.definedTags = definedTags;
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
             this.freeformTags = freeformTags;
             return this;
-        }        public ClusterOptionsPersistentVolumeConfig build() {
-            return new ClusterOptionsPersistentVolumeConfig(definedTags, freeformTags);
+        }
+        public ClusterOptionsPersistentVolumeConfig build() {
+            final var o = new ClusterOptionsPersistentVolumeConfig();
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            return o;
         }
     }
 }

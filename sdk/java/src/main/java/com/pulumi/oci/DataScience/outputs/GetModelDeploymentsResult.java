@@ -18,59 +18,40 @@ public final class GetModelDeploymentsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment&#39;s compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model deployment.
      * 
      */
-    private final @Nullable String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetModelDeploymentsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetModelDeploymentsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of model_deployments.
      * 
      */
-    private final List<GetModelDeploymentsModelDeployment> modelDeployments;
+    private List<GetModelDeploymentsModelDeployment> modelDeployments;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model deployment.
      * 
      */
-    private final @Nullable String projectId;
+    private @Nullable String projectId;
     /**
      * @return The state of the model deployment.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetModelDeploymentsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("createdBy") @Nullable String createdBy,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetModelDeploymentsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("modelDeployments") List<GetModelDeploymentsModelDeployment> modelDeployments,
-        @CustomType.Parameter("projectId") @Nullable String projectId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.createdBy = createdBy;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.modelDeployments = modelDeployments;
-        this.projectId = projectId;
-        this.state = state;
-    }
-
+    private GetModelDeploymentsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment&#39;s compartment.
      * 
@@ -131,7 +112,7 @@ public final class GetModelDeploymentsResult {
     public static Builder builder(GetModelDeploymentsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String createdBy;
@@ -141,11 +122,7 @@ public final class GetModelDeploymentsResult {
         private List<GetModelDeploymentsModelDeployment> modelDeployments;
         private @Nullable String projectId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetModelDeploymentsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -158,18 +135,22 @@ public final class GetModelDeploymentsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder createdBy(@Nullable String createdBy) {
             this.createdBy = createdBy;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetModelDeploymentsFilter> filters) {
             this.filters = filters;
             return this;
@@ -177,10 +158,12 @@ public final class GetModelDeploymentsResult {
         public Builder filters(GetModelDeploymentsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder modelDeployments(List<GetModelDeploymentsModelDeployment> modelDeployments) {
             this.modelDeployments = Objects.requireNonNull(modelDeployments);
             return this;
@@ -188,15 +171,27 @@ public final class GetModelDeploymentsResult {
         public Builder modelDeployments(GetModelDeploymentsModelDeployment... modelDeployments) {
             return modelDeployments(List.of(modelDeployments));
         }
+        @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
             this.projectId = projectId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetModelDeploymentsResult build() {
-            return new GetModelDeploymentsResult(compartmentId, createdBy, displayName, filters, id, modelDeployments, projectId, state);
+        }
+        public GetModelDeploymentsResult build() {
+            final var o = new GetModelDeploymentsResult();
+            o.compartmentId = compartmentId;
+            o.createdBy = createdBy;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.modelDeployments = modelDeployments;
+            o.projectId = projectId;
+            o.state = state;
+            return o;
         }
     }
 }

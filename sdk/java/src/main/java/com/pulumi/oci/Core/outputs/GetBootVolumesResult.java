@@ -18,45 +18,30 @@ public final class GetBootVolumesResult {
      * @return The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The list of boot_volumes.
      * 
      */
-    private final List<GetBootVolumesBootVolume> bootVolumes;
+    private List<GetBootVolumesBootVolume> bootVolumes;
     /**
      * @return The OCID of the compartment that contains the boot volume.
      * 
      */
-    private final @Nullable String compartmentId;
-    private final @Nullable List<GetBootVolumesFilter> filters;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetBootVolumesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the source volume group.
      * 
      */
-    private final @Nullable String volumeGroupId;
+    private @Nullable String volumeGroupId;
 
-    @CustomType.Constructor
-    private GetBootVolumesResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("bootVolumes") List<GetBootVolumesBootVolume> bootVolumes,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetBootVolumesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("volumeGroupId") @Nullable String volumeGroupId) {
-        this.availabilityDomain = availabilityDomain;
-        this.bootVolumes = bootVolumes;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.volumeGroupId = volumeGroupId;
-    }
-
+    private GetBootVolumesResult() {}
     /**
      * @return The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
      * 
@@ -103,7 +88,7 @@ public final class GetBootVolumesResult {
     public static Builder builder(GetBootVolumesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private List<GetBootVolumesBootVolume> bootVolumes;
@@ -111,11 +96,7 @@ public final class GetBootVolumesResult {
         private @Nullable List<GetBootVolumesFilter> filters;
         private String id;
         private @Nullable String volumeGroupId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBootVolumesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -126,10 +107,12 @@ public final class GetBootVolumesResult {
     	      this.volumeGroupId = defaults.volumeGroupId;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder bootVolumes(List<GetBootVolumesBootVolume> bootVolumes) {
             this.bootVolumes = Objects.requireNonNull(bootVolumes);
             return this;
@@ -137,10 +120,12 @@ public final class GetBootVolumesResult {
         public Builder bootVolumes(GetBootVolumesBootVolume... bootVolumes) {
             return bootVolumes(List.of(bootVolumes));
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBootVolumesFilter> filters) {
             this.filters = filters;
             return this;
@@ -148,15 +133,25 @@ public final class GetBootVolumesResult {
         public Builder filters(GetBootVolumesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeGroupId(@Nullable String volumeGroupId) {
             this.volumeGroupId = volumeGroupId;
             return this;
-        }        public GetBootVolumesResult build() {
-            return new GetBootVolumesResult(availabilityDomain, bootVolumes, compartmentId, filters, id, volumeGroupId);
+        }
+        public GetBootVolumesResult build() {
+            final var o = new GetBootVolumesResult();
+            o.availabilityDomain = availabilityDomain;
+            o.bootVolumes = bootVolumes;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.volumeGroupId = volumeGroupId;
+            return o;
         }
     }
 }

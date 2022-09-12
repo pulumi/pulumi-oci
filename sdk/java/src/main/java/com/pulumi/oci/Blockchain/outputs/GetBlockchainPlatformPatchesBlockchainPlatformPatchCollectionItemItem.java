@@ -13,35 +13,24 @@ public final class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection
      * @return patch id
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A URL for the patch specific documentation
      * 
      */
-    private final String patchInfoUrl;
+    private String patchInfoUrl;
     /**
      * @return patch service version
      * 
      */
-    private final String serviceVersion;
+    private String serviceVersion;
     /**
      * @return patch due date for customer initiated patching
      * 
      */
-    private final String timePatchDue;
+    private String timePatchDue;
 
-    @CustomType.Constructor
-    private GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("patchInfoUrl") String patchInfoUrl,
-        @CustomType.Parameter("serviceVersion") String serviceVersion,
-        @CustomType.Parameter("timePatchDue") String timePatchDue) {
-        this.id = id;
-        this.patchInfoUrl = patchInfoUrl;
-        this.serviceVersion = serviceVersion;
-        this.timePatchDue = timePatchDue;
-    }
-
+    private GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem() {}
     /**
      * @return patch id
      * 
@@ -78,17 +67,13 @@ public final class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection
     public static Builder builder(GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String patchInfoUrl;
         private String serviceVersion;
         private String timePatchDue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -97,23 +82,33 @@ public final class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection
     	      this.timePatchDue = defaults.timePatchDue;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder patchInfoUrl(String patchInfoUrl) {
             this.patchInfoUrl = Objects.requireNonNull(patchInfoUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceVersion(String serviceVersion) {
             this.serviceVersion = Objects.requireNonNull(serviceVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder timePatchDue(String timePatchDue) {
             this.timePatchDue = Objects.requireNonNull(timePatchDue);
             return this;
-        }        public GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem build() {
-            return new GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem(id, patchInfoUrl, serviceVersion, timePatchDue);
+        }
+        public GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem build() {
+            final var o = new GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem();
+            o.id = id;
+            o.patchInfoUrl = patchInfoUrl;
+            o.serviceVersion = serviceVersion;
+            o.timePatchDue = timePatchDue;
+            return o;
         }
     }
 }

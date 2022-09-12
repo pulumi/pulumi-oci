@@ -17,63 +17,44 @@ public final class GetInvoiceLineComputedUsagesInvoicelineComputedUsage {
      * @return Sum of Usage/Service Billing Line net Amount
      * 
      */
-    private final Double cost;
+    private Double cost;
     /**
      * @return Computed Line Amount rounded.
      * 
      */
-    private final Double costRounded;
+    private Double costRounded;
     /**
      * @return Net Unit Price for the product in consideration, price actual.
      * 
      */
-    private final Double netUnitPrice;
+    private Double netUnitPrice;
     /**
      * @return Product description
      * 
      */
-    private final List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct> parentProducts;
+    private List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct> parentProducts;
     /**
      * @return Product description
      * 
      */
-    private final List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct> products;
+    private List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct> products;
     /**
      * @return Total Quantity that was used for computation
      * 
      */
-    private final Double quantity;
+    private Double quantity;
     /**
      * @return Metered Service date.
      * 
      */
-    private final String timeMeteredOn;
+    private String timeMeteredOn;
     /**
      * @return Usage compute type in SPM.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetInvoiceLineComputedUsagesInvoicelineComputedUsage(
-        @CustomType.Parameter("cost") Double cost,
-        @CustomType.Parameter("costRounded") Double costRounded,
-        @CustomType.Parameter("netUnitPrice") Double netUnitPrice,
-        @CustomType.Parameter("parentProducts") List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct> parentProducts,
-        @CustomType.Parameter("products") List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct> products,
-        @CustomType.Parameter("quantity") Double quantity,
-        @CustomType.Parameter("timeMeteredOn") String timeMeteredOn,
-        @CustomType.Parameter("type") String type) {
-        this.cost = cost;
-        this.costRounded = costRounded;
-        this.netUnitPrice = netUnitPrice;
-        this.parentProducts = parentProducts;
-        this.products = products;
-        this.quantity = quantity;
-        this.timeMeteredOn = timeMeteredOn;
-        this.type = type;
-    }
-
+    private GetInvoiceLineComputedUsagesInvoicelineComputedUsage() {}
     /**
      * @return Sum of Usage/Service Billing Line net Amount
      * 
@@ -138,7 +119,7 @@ public final class GetInvoiceLineComputedUsagesInvoicelineComputedUsage {
     public static Builder builder(GetInvoiceLineComputedUsagesInvoicelineComputedUsage defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double cost;
         private Double costRounded;
@@ -148,11 +129,7 @@ public final class GetInvoiceLineComputedUsagesInvoicelineComputedUsage {
         private Double quantity;
         private String timeMeteredOn;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvoiceLineComputedUsagesInvoicelineComputedUsage defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cost = defaults.cost;
@@ -165,18 +142,22 @@ public final class GetInvoiceLineComputedUsagesInvoicelineComputedUsage {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder cost(Double cost) {
             this.cost = Objects.requireNonNull(cost);
             return this;
         }
+        @CustomType.Setter
         public Builder costRounded(Double costRounded) {
             this.costRounded = Objects.requireNonNull(costRounded);
             return this;
         }
+        @CustomType.Setter
         public Builder netUnitPrice(Double netUnitPrice) {
             this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
             return this;
         }
+        @CustomType.Setter
         public Builder parentProducts(List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct> parentProducts) {
             this.parentProducts = Objects.requireNonNull(parentProducts);
             return this;
@@ -184,6 +165,7 @@ public final class GetInvoiceLineComputedUsagesInvoicelineComputedUsage {
         public Builder parentProducts(GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct... parentProducts) {
             return parentProducts(List.of(parentProducts));
         }
+        @CustomType.Setter
         public Builder products(List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct> products) {
             this.products = Objects.requireNonNull(products);
             return this;
@@ -191,19 +173,32 @@ public final class GetInvoiceLineComputedUsagesInvoicelineComputedUsage {
         public Builder products(GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct... products) {
             return products(List.of(products));
         }
+        @CustomType.Setter
         public Builder quantity(Double quantity) {
             this.quantity = Objects.requireNonNull(quantity);
             return this;
         }
+        @CustomType.Setter
         public Builder timeMeteredOn(String timeMeteredOn) {
             this.timeMeteredOn = Objects.requireNonNull(timeMeteredOn);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetInvoiceLineComputedUsagesInvoicelineComputedUsage build() {
-            return new GetInvoiceLineComputedUsagesInvoicelineComputedUsage(cost, costRounded, netUnitPrice, parentProducts, products, quantity, timeMeteredOn, type);
+        }
+        public GetInvoiceLineComputedUsagesInvoicelineComputedUsage build() {
+            final var o = new GetInvoiceLineComputedUsagesInvoicelineComputedUsage();
+            o.cost = cost;
+            o.costRounded = costRounded;
+            o.netUnitPrice = netUnitPrice;
+            o.parentProducts = parentProducts;
+            o.products = products;
+            o.quantity = quantity;
+            o.timeMeteredOn = timeMeteredOn;
+            o.type = type;
+            return o;
         }
     }
 }

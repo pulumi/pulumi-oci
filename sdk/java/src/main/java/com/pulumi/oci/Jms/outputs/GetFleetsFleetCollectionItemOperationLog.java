@@ -13,21 +13,14 @@ public final class GetFleetsFleetCollectionItemOperationLog {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
      * 
      */
-    private final String logGroupId;
+    private String logGroupId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
      * 
      */
-    private final String logId;
+    private String logId;
 
-    @CustomType.Constructor
-    private GetFleetsFleetCollectionItemOperationLog(
-        @CustomType.Parameter("logGroupId") String logGroupId,
-        @CustomType.Parameter("logId") String logId) {
-        this.logGroupId = logGroupId;
-        this.logId = logId;
-    }
-
+    private GetFleetsFleetCollectionItemOperationLog() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
      * 
@@ -50,30 +43,32 @@ public final class GetFleetsFleetCollectionItemOperationLog {
     public static Builder builder(GetFleetsFleetCollectionItemOperationLog defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String logGroupId;
         private String logId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFleetsFleetCollectionItemOperationLog defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.logGroupId = defaults.logGroupId;
     	      this.logId = defaults.logId;
         }
 
+        @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = Objects.requireNonNull(logGroupId);
             return this;
         }
+        @CustomType.Setter
         public Builder logId(String logId) {
             this.logId = Objects.requireNonNull(logId);
             return this;
-        }        public GetFleetsFleetCollectionItemOperationLog build() {
-            return new GetFleetsFleetCollectionItemOperationLog(logGroupId, logId);
+        }
+        public GetFleetsFleetCollectionItemOperationLog build() {
+            final var o = new GetFleetsFleetCollectionItemOperationLog();
+            o.logGroupId = logGroupId;
+            o.logId = logId;
+            return o;
         }
     }
 }

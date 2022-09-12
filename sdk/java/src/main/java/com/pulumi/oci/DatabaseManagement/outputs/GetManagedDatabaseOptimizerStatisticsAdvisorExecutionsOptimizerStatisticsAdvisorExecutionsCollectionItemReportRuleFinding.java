@@ -16,28 +16,19 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
      * @return The details of the schema or operation.
      * 
      */
-    private final List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail> details;
+    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail> details;
     /**
      * @return The message of the rationale.
      * 
      */
-    private final String message;
+    private String message;
     /**
      * @return The list of recommendations.
      * 
      */
-    private final List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation> recommendations;
+    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation> recommendations;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding(
-        @CustomType.Parameter("details") List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail> details,
-        @CustomType.Parameter("message") String message,
-        @CustomType.Parameter("recommendations") List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation> recommendations) {
-        this.details = details;
-        this.message = message;
-        this.recommendations = recommendations;
-    }
-
+    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding() {}
     /**
      * @return The details of the schema or operation.
      * 
@@ -67,16 +58,12 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
     public static Builder builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail> details;
         private String message;
         private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation> recommendations;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.details = defaults.details;
@@ -84,6 +71,7 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
     	      this.recommendations = defaults.recommendations;
         }
 
+        @CustomType.Setter
         public Builder details(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail> details) {
             this.details = Objects.requireNonNull(details);
             return this;
@@ -91,18 +79,25 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
         public Builder details(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail... details) {
             return details(List.of(details));
         }
+        @CustomType.Setter
         public Builder message(String message) {
             this.message = Objects.requireNonNull(message);
             return this;
         }
+        @CustomType.Setter
         public Builder recommendations(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation> recommendations) {
             this.recommendations = Objects.requireNonNull(recommendations);
             return this;
         }
         public Builder recommendations(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendation... recommendations) {
             return recommendations(List.of(recommendations));
-        }        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding build() {
-            return new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding(details, message, recommendations);
+        }
+        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding build() {
+            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding();
+            o.details = details;
+            o.message = message;
+            o.recommendations = recommendations;
+            return o;
         }
     }
 }

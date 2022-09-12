@@ -15,49 +15,34 @@ public final class GetReportDefinitionSummary {
      * @return Name of the key or count of object.
      * 
      */
-    private final String countOf;
+    private String countOf;
     /**
      * @return Specifies the order in which the summary must be displayed.
      * 
      */
-    private final Integer displayOrder;
+    private Integer displayOrder;
     /**
      * @return A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
      * 
      */
-    private final String groupByFieldName;
+    private String groupByFieldName;
     /**
      * @return Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    private final Boolean isHidden;
+    private Boolean isHidden;
     /**
      * @return Name of the report summary.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Additional scim filters used to get the specific summary.
      * 
      */
-    private final String scimFilter;
+    private String scimFilter;
 
-    @CustomType.Constructor
-    private GetReportDefinitionSummary(
-        @CustomType.Parameter("countOf") String countOf,
-        @CustomType.Parameter("displayOrder") Integer displayOrder,
-        @CustomType.Parameter("groupByFieldName") String groupByFieldName,
-        @CustomType.Parameter("isHidden") Boolean isHidden,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("scimFilter") String scimFilter) {
-        this.countOf = countOf;
-        this.displayOrder = displayOrder;
-        this.groupByFieldName = groupByFieldName;
-        this.isHidden = isHidden;
-        this.name = name;
-        this.scimFilter = scimFilter;
-    }
-
+    private GetReportDefinitionSummary() {}
     /**
      * @return Name of the key or count of object.
      * 
@@ -108,7 +93,7 @@ public final class GetReportDefinitionSummary {
     public static Builder builder(GetReportDefinitionSummary defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String countOf;
         private Integer displayOrder;
@@ -116,11 +101,7 @@ public final class GetReportDefinitionSummary {
         private Boolean isHidden;
         private String name;
         private String scimFilter;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetReportDefinitionSummary defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.countOf = defaults.countOf;
@@ -131,31 +112,45 @@ public final class GetReportDefinitionSummary {
     	      this.scimFilter = defaults.scimFilter;
         }
 
+        @CustomType.Setter
         public Builder countOf(String countOf) {
             this.countOf = Objects.requireNonNull(countOf);
             return this;
         }
+        @CustomType.Setter
         public Builder displayOrder(Integer displayOrder) {
             this.displayOrder = Objects.requireNonNull(displayOrder);
             return this;
         }
+        @CustomType.Setter
         public Builder groupByFieldName(String groupByFieldName) {
             this.groupByFieldName = Objects.requireNonNull(groupByFieldName);
             return this;
         }
+        @CustomType.Setter
         public Builder isHidden(Boolean isHidden) {
             this.isHidden = Objects.requireNonNull(isHidden);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder scimFilter(String scimFilter) {
             this.scimFilter = Objects.requireNonNull(scimFilter);
             return this;
-        }        public GetReportDefinitionSummary build() {
-            return new GetReportDefinitionSummary(countOf, displayOrder, groupByFieldName, isHidden, name, scimFilter);
+        }
+        public GetReportDefinitionSummary build() {
+            final var o = new GetReportDefinitionSummary();
+            o.countOf = countOf;
+            o.displayOrder = displayOrder;
+            o.groupByFieldName = groupByFieldName;
+            o.isHidden = isHidden;
+            o.name = name;
+            o.scimFilter = scimFilter;
+            return o;
         }
     }
 }

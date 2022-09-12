@@ -15,28 +15,19 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource {
      * @return The DevOps code repository identifier that invoked the build run.
      * 
      */
-    private final String repositoryId;
+    private String repositoryId;
     /**
      * @return The source from which the build run is triggered.
      * 
      */
-    private final String sourceType;
+    private String sourceType;
     /**
      * @return Trigger details that need to be used for the BuildRun
      * 
      */
-    private final List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo> triggerInfos;
+    private List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo> triggerInfos;
 
-    @CustomType.Constructor
-    private GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource(
-        @CustomType.Parameter("repositoryId") String repositoryId,
-        @CustomType.Parameter("sourceType") String sourceType,
-        @CustomType.Parameter("triggerInfos") List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo> triggerInfos) {
-        this.repositoryId = repositoryId;
-        this.sourceType = sourceType;
-        this.triggerInfos = triggerInfos;
-    }
-
+    private GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource() {}
     /**
      * @return The DevOps code repository identifier that invoked the build run.
      * 
@@ -66,16 +57,12 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource {
     public static Builder builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String repositoryId;
         private String sourceType;
         private List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo> triggerInfos;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.repositoryId = defaults.repositoryId;
@@ -83,22 +70,30 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource {
     	      this.triggerInfos = defaults.triggerInfos;
         }
 
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder triggerInfos(List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo> triggerInfos) {
             this.triggerInfos = Objects.requireNonNull(triggerInfos);
             return this;
         }
         public Builder triggerInfos(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo... triggerInfos) {
             return triggerInfos(List.of(triggerInfos));
-        }        public GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource build() {
-            return new GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource(repositoryId, sourceType, triggerInfos);
+        }
+        public GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource build() {
+            final var o = new GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource();
+            o.repositoryId = repositoryId;
+            o.sourceType = sourceType;
+            o.triggerInfos = triggerInfos;
+            return o;
         }
     }
 }

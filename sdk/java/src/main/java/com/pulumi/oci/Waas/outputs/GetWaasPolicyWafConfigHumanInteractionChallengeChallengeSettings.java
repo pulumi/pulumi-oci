@@ -14,70 +14,49 @@ public final class GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSetti
      * @return If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
      * 
      */
-    private final String blockAction;
+    private String blockAction;
     /**
      * @return The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
      * 
      */
-    private final String blockErrorPageCode;
+    private String blockErrorPageCode;
     /**
      * @return The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
      * 
      */
-    private final String blockErrorPageDescription;
+    private String blockErrorPageDescription;
     /**
      * @return The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to &#39;Access to the website is blocked.&#39;
      * 
      */
-    private final String blockErrorPageMessage;
+    private String blockErrorPageMessage;
     /**
      * @return The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
      * 
      */
-    private final Integer blockResponseCode;
+    private Integer blockResponseCode;
     /**
      * @return The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
      * 
      */
-    private final String captchaFooter;
+    private String captchaFooter;
     /**
      * @return The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
      * 
      */
-    private final String captchaHeader;
+    private String captchaHeader;
     /**
      * @return The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
      * 
      */
-    private final String captchaSubmitLabel;
+    private String captchaSubmitLabel;
     /**
      * @return The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
      * 
      */
-    private final String captchaTitle;
+    private String captchaTitle;
 
-    @CustomType.Constructor
-    private GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings(
-        @CustomType.Parameter("blockAction") String blockAction,
-        @CustomType.Parameter("blockErrorPageCode") String blockErrorPageCode,
-        @CustomType.Parameter("blockErrorPageDescription") String blockErrorPageDescription,
-        @CustomType.Parameter("blockErrorPageMessage") String blockErrorPageMessage,
-        @CustomType.Parameter("blockResponseCode") Integer blockResponseCode,
-        @CustomType.Parameter("captchaFooter") String captchaFooter,
-        @CustomType.Parameter("captchaHeader") String captchaHeader,
-        @CustomType.Parameter("captchaSubmitLabel") String captchaSubmitLabel,
-        @CustomType.Parameter("captchaTitle") String captchaTitle) {
-        this.blockAction = blockAction;
-        this.blockErrorPageCode = blockErrorPageCode;
-        this.blockErrorPageDescription = blockErrorPageDescription;
-        this.blockErrorPageMessage = blockErrorPageMessage;
-        this.blockResponseCode = blockResponseCode;
-        this.captchaFooter = captchaFooter;
-        this.captchaHeader = captchaHeader;
-        this.captchaSubmitLabel = captchaSubmitLabel;
-        this.captchaTitle = captchaTitle;
-    }
-
+    private GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings() {}
     /**
      * @return If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
      * 
@@ -149,7 +128,7 @@ public final class GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSetti
     public static Builder builder(GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String blockAction;
         private String blockErrorPageCode;
@@ -160,11 +139,7 @@ public final class GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSetti
         private String captchaHeader;
         private String captchaSubmitLabel;
         private String captchaTitle;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockAction = defaults.blockAction;
@@ -178,43 +153,63 @@ public final class GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSetti
     	      this.captchaTitle = defaults.captchaTitle;
         }
 
+        @CustomType.Setter
         public Builder blockAction(String blockAction) {
             this.blockAction = Objects.requireNonNull(blockAction);
             return this;
         }
+        @CustomType.Setter
         public Builder blockErrorPageCode(String blockErrorPageCode) {
             this.blockErrorPageCode = Objects.requireNonNull(blockErrorPageCode);
             return this;
         }
+        @CustomType.Setter
         public Builder blockErrorPageDescription(String blockErrorPageDescription) {
             this.blockErrorPageDescription = Objects.requireNonNull(blockErrorPageDescription);
             return this;
         }
+        @CustomType.Setter
         public Builder blockErrorPageMessage(String blockErrorPageMessage) {
             this.blockErrorPageMessage = Objects.requireNonNull(blockErrorPageMessage);
             return this;
         }
+        @CustomType.Setter
         public Builder blockResponseCode(Integer blockResponseCode) {
             this.blockResponseCode = Objects.requireNonNull(blockResponseCode);
             return this;
         }
+        @CustomType.Setter
         public Builder captchaFooter(String captchaFooter) {
             this.captchaFooter = Objects.requireNonNull(captchaFooter);
             return this;
         }
+        @CustomType.Setter
         public Builder captchaHeader(String captchaHeader) {
             this.captchaHeader = Objects.requireNonNull(captchaHeader);
             return this;
         }
+        @CustomType.Setter
         public Builder captchaSubmitLabel(String captchaSubmitLabel) {
             this.captchaSubmitLabel = Objects.requireNonNull(captchaSubmitLabel);
             return this;
         }
+        @CustomType.Setter
         public Builder captchaTitle(String captchaTitle) {
             this.captchaTitle = Objects.requireNonNull(captchaTitle);
             return this;
-        }        public GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings build() {
-            return new GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings(blockAction, blockErrorPageCode, blockErrorPageDescription, blockErrorPageMessage, blockResponseCode, captchaFooter, captchaHeader, captchaSubmitLabel, captchaTitle);
+        }
+        public GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings build() {
+            final var o = new GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings();
+            o.blockAction = blockAction;
+            o.blockErrorPageCode = blockErrorPageCode;
+            o.blockErrorPageDescription = blockErrorPageDescription;
+            o.blockErrorPageMessage = blockErrorPageMessage;
+            o.blockResponseCode = blockResponseCode;
+            o.captchaFooter = captchaFooter;
+            o.captchaHeader = captchaHeader;
+            o.captchaSubmitLabel = captchaSubmitLabel;
+            o.captchaTitle = captchaTitle;
+            return o;
         }
     }
 }

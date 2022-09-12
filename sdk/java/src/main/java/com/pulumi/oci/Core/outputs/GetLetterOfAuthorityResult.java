@@ -13,63 +13,44 @@ public final class GetLetterOfAuthorityResult {
      * @return The name of the entity authorized by this Letter of Authority.
      * 
      */
-    private final String authorizedEntityName;
+    private String authorizedEntityName;
     /**
      * @return The type of cross-connect fiber, termination, and optical specification.
      * 
      */
-    private final String circuitType;
+    private String circuitType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
      * 
      */
-    private final String crossConnectId;
+    private String crossConnectId;
     /**
      * @return The address of the FastConnect location.
      * 
      */
-    private final String facilityLocation;
+    private String facilityLocation;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The meet-me room port for this cross-connect.
      * 
      */
-    private final String portName;
+    private String portName;
     /**
      * @return The date and time when the Letter of Authority expires, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeExpires;
+    private String timeExpires;
     /**
      * @return The date and time the Letter of Authority was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeIssued;
+    private String timeIssued;
 
-    @CustomType.Constructor
-    private GetLetterOfAuthorityResult(
-        @CustomType.Parameter("authorizedEntityName") String authorizedEntityName,
-        @CustomType.Parameter("circuitType") String circuitType,
-        @CustomType.Parameter("crossConnectId") String crossConnectId,
-        @CustomType.Parameter("facilityLocation") String facilityLocation,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("portName") String portName,
-        @CustomType.Parameter("timeExpires") String timeExpires,
-        @CustomType.Parameter("timeIssued") String timeIssued) {
-        this.authorizedEntityName = authorizedEntityName;
-        this.circuitType = circuitType;
-        this.crossConnectId = crossConnectId;
-        this.facilityLocation = facilityLocation;
-        this.id = id;
-        this.portName = portName;
-        this.timeExpires = timeExpires;
-        this.timeIssued = timeIssued;
-    }
-
+    private GetLetterOfAuthorityResult() {}
     /**
      * @return The name of the entity authorized by this Letter of Authority.
      * 
@@ -134,7 +115,7 @@ public final class GetLetterOfAuthorityResult {
     public static Builder builder(GetLetterOfAuthorityResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String authorizedEntityName;
         private String circuitType;
@@ -144,11 +125,7 @@ public final class GetLetterOfAuthorityResult {
         private String portName;
         private String timeExpires;
         private String timeIssued;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLetterOfAuthorityResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authorizedEntityName = defaults.authorizedEntityName;
@@ -161,39 +138,57 @@ public final class GetLetterOfAuthorityResult {
     	      this.timeIssued = defaults.timeIssued;
         }
 
+        @CustomType.Setter
         public Builder authorizedEntityName(String authorizedEntityName) {
             this.authorizedEntityName = Objects.requireNonNull(authorizedEntityName);
             return this;
         }
+        @CustomType.Setter
         public Builder circuitType(String circuitType) {
             this.circuitType = Objects.requireNonNull(circuitType);
             return this;
         }
+        @CustomType.Setter
         public Builder crossConnectId(String crossConnectId) {
             this.crossConnectId = Objects.requireNonNull(crossConnectId);
             return this;
         }
+        @CustomType.Setter
         public Builder facilityLocation(String facilityLocation) {
             this.facilityLocation = Objects.requireNonNull(facilityLocation);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder portName(String portName) {
             this.portName = Objects.requireNonNull(portName);
             return this;
         }
+        @CustomType.Setter
         public Builder timeExpires(String timeExpires) {
             this.timeExpires = Objects.requireNonNull(timeExpires);
             return this;
         }
+        @CustomType.Setter
         public Builder timeIssued(String timeIssued) {
             this.timeIssued = Objects.requireNonNull(timeIssued);
             return this;
-        }        public GetLetterOfAuthorityResult build() {
-            return new GetLetterOfAuthorityResult(authorizedEntityName, circuitType, crossConnectId, facilityLocation, id, portName, timeExpires, timeIssued);
+        }
+        public GetLetterOfAuthorityResult build() {
+            final var o = new GetLetterOfAuthorityResult();
+            o.authorizedEntityName = authorizedEntityName;
+            o.circuitType = circuitType;
+            o.crossConnectId = crossConnectId;
+            o.facilityLocation = facilityLocation;
+            o.id = id;
+            o.portName = portName;
+            o.timeExpires = timeExpires;
+            o.timeIssued = timeIssued;
+            return o;
         }
     }
 }

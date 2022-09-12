@@ -15,28 +15,19 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
      * @return A map contains the statistics for the SQL execution using the plan. The key of the map is the metric&#39;s name. The value of the map is the metric&#39;s value.
      * 
      */
-    private final Map<String,Object> planStats;
+    private Map<String,Object> planStats;
     /**
      * @return The status of the execution using the plan.
      * 
      */
-    private final String planStatus;
+    private String planStatus;
     /**
      * @return The type of the original or modified plan with profile, index, and so on.
      * 
      */
-    private final String planType;
+    private String planType;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified(
-        @CustomType.Parameter("planStats") Map<String,Object> planStats,
-        @CustomType.Parameter("planStatus") String planStatus,
-        @CustomType.Parameter("planType") String planType) {
-        this.planStats = planStats;
-        this.planStatus = planStatus;
-        this.planType = planType;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified() {}
     /**
      * @return A map contains the statistics for the SQL execution using the plan. The key of the map is the metric&#39;s name. The value of the map is the metric&#39;s value.
      * 
@@ -66,16 +57,12 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> planStats;
         private String planStatus;
         private String planType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.planStats = defaults.planStats;
@@ -83,19 +70,27 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
     	      this.planType = defaults.planType;
         }
 
+        @CustomType.Setter
         public Builder planStats(Map<String,Object> planStats) {
             this.planStats = Objects.requireNonNull(planStats);
             return this;
         }
+        @CustomType.Setter
         public Builder planStatus(String planStatus) {
             this.planStatus = Objects.requireNonNull(planStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder planType(String planType) {
             this.planType = Objects.requireNonNull(planType);
             return this;
-        }        public GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified(planStats, planStatus, planType);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified();
+            o.planStats = planStats;
+            o.planStatus = planStatus;
+            o.planType = planType;
+            return o;
         }
     }
 }

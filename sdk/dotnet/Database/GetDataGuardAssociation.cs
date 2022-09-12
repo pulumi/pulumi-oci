@@ -132,6 +132,7 @@ namespace Pulumi.Oci.Database
         public readonly int CpuCoreCount;
         public readonly bool CreateAsync;
         public readonly string CreationType;
+        public readonly ImmutableArray<Outputs.GetDataGuardAssociationDataCollectionOptionResult> DataCollectionOptions;
         public readonly string DataGuardAssociationId;
         public readonly string DatabaseAdminPassword;
         public readonly ImmutableDictionary<string, object> DatabaseDefinedTags;
@@ -227,6 +228,8 @@ namespace Pulumi.Oci.Database
 
             string creationType,
 
+            ImmutableArray<Outputs.GetDataGuardAssociationDataCollectionOptionResult> dataCollectionOptions,
+
             string dataGuardAssociationId,
 
             string databaseAdminPassword,
@@ -306,6 +309,7 @@ namespace Pulumi.Oci.Database
             CpuCoreCount = cpuCoreCount;
             CreateAsync = createAsync;
             CreationType = creationType;
+            DataCollectionOptions = dataCollectionOptions;
             DataGuardAssociationId = dataGuardAssociationId;
             DatabaseAdminPassword = databaseAdminPassword;
             DatabaseDefinedTags = databaseDefinedTags;

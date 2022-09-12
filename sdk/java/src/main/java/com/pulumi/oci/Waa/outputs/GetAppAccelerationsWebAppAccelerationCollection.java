@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAppAccelerationsWebAppAccelerationCollection {
-    private final List<GetAppAccelerationsWebAppAccelerationCollectionItem> items;
+    private List<GetAppAccelerationsWebAppAccelerationCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetAppAccelerationsWebAppAccelerationCollection(@CustomType.Parameter("items") List<GetAppAccelerationsWebAppAccelerationCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetAppAccelerationsWebAppAccelerationCollection() {}
     public List<GetAppAccelerationsWebAppAccelerationCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetAppAccelerationsWebAppAccelerationCollection {
     public static Builder builder(GetAppAccelerationsWebAppAccelerationCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAppAccelerationsWebAppAccelerationCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAppAccelerationsWebAppAccelerationCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetAppAccelerationsWebAppAccelerationCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAppAccelerationsWebAppAccelerationCollectionItem... items) {
             return items(List.of(items));
-        }        public GetAppAccelerationsWebAppAccelerationCollection build() {
-            return new GetAppAccelerationsWebAppAccelerationCollection(items);
+        }
+        public GetAppAccelerationsWebAppAccelerationCollection build() {
+            final var o = new GetAppAccelerationsWebAppAccelerationCollection();
+            o.items = items;
+            return o;
         }
     }
 }

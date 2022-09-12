@@ -13,28 +13,19 @@ public final class GetServiceConnectorTargetDimensionDimensionValue {
      * @return The type descriminator.
      * 
      */
-    private final String kind;
+    private String kind;
     /**
      * @return The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `&#34;compartmentId&#34;` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
      * 
      */
-    private final String path;
+    private String path;
     /**
      * @return The data extracted from the specified dimension value (passed as-is). Unicode characters only. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails).
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetServiceConnectorTargetDimensionDimensionValue(
-        @CustomType.Parameter("kind") String kind,
-        @CustomType.Parameter("path") String path,
-        @CustomType.Parameter("value") String value) {
-        this.kind = kind;
-        this.path = path;
-        this.value = value;
-    }
-
+    private GetServiceConnectorTargetDimensionDimensionValue() {}
     /**
      * @return The type descriminator.
      * 
@@ -64,16 +55,12 @@ public final class GetServiceConnectorTargetDimensionDimensionValue {
     public static Builder builder(GetServiceConnectorTargetDimensionDimensionValue defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String kind;
         private String path;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceConnectorTargetDimensionDimensionValue defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kind = defaults.kind;
@@ -81,19 +68,27 @@ public final class GetServiceConnectorTargetDimensionDimensionValue {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder kind(String kind) {
             this.kind = Objects.requireNonNull(kind);
             return this;
         }
+        @CustomType.Setter
         public Builder path(String path) {
             this.path = Objects.requireNonNull(path);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetServiceConnectorTargetDimensionDimensionValue build() {
-            return new GetServiceConnectorTargetDimensionDimensionValue(kind, path, value);
+        }
+        public GetServiceConnectorTargetDimensionDimensionValue build() {
+            final var o = new GetServiceConnectorTargetDimensionDimensionValue();
+            o.kind = kind;
+            o.path = path;
+            o.value = value;
+            return o;
         }
     }
 }

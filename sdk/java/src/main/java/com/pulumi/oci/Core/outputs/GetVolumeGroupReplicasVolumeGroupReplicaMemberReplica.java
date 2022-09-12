@@ -13,21 +13,14 @@ public final class GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica {
      * @return Membership state of the volume replica in relation to the volume group replica.
      * 
      */
-    private final String membershipState;
+    private String membershipState;
     /**
      * @return The volume replica ID.
      * 
      */
-    private final String volumeReplicaId;
+    private String volumeReplicaId;
 
-    @CustomType.Constructor
-    private GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica(
-        @CustomType.Parameter("membershipState") String membershipState,
-        @CustomType.Parameter("volumeReplicaId") String volumeReplicaId) {
-        this.membershipState = membershipState;
-        this.volumeReplicaId = volumeReplicaId;
-    }
-
+    private GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica() {}
     /**
      * @return Membership state of the volume replica in relation to the volume group replica.
      * 
@@ -50,30 +43,32 @@ public final class GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica {
     public static Builder builder(GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String membershipState;
         private String volumeReplicaId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.membershipState = defaults.membershipState;
     	      this.volumeReplicaId = defaults.volumeReplicaId;
         }
 
+        @CustomType.Setter
         public Builder membershipState(String membershipState) {
             this.membershipState = Objects.requireNonNull(membershipState);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeReplicaId(String volumeReplicaId) {
             this.volumeReplicaId = Objects.requireNonNull(volumeReplicaId);
             return this;
-        }        public GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica build() {
-            return new GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica(membershipState, volumeReplicaId);
+        }
+        public GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica build() {
+            final var o = new GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica();
+            o.membershipState = membershipState;
+            o.volumeReplicaId = volumeReplicaId;
+            return o;
         }
     }
 }

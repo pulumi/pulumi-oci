@@ -8,7 +8,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Recommendations in Oracle Cloud Infrastructure Optimizer service.
  *
- * Lists the Cloud Advisor recommendations that are currently supported in the specified category.
+ * Lists the Cloud Advisor recommendations that are currently supported.
  *
  * ## Example Usage
  *
@@ -17,9 +17,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRecommendations = oci.Optimizer.getRecommendations({
- *     categoryId: oci_optimizer_category.test_category.id,
  *     compartmentId: _var.compartment_id,
  *     compartmentIdInSubtree: _var.recommendation_compartment_id_in_subtree,
+ *     categoryId: oci_optimizer_category.test_category.id,
+ *     categoryName: oci_optimizer_category.test_category.name,
+ *     childTenancyIds: _var.recommendation_child_tenancy_ids,
+ *     includeOrganization: _var.recommendation_include_organization,
  *     name: _var.recommendation_name,
  *     state: _var.recommendation_state,
  *     status: _var.recommendation_status,
@@ -34,9 +37,12 @@ export function getRecommendations(args: GetRecommendationsArgs, opts?: pulumi.I
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("oci:Optimizer/getRecommendations:getRecommendations", {
         "categoryId": args.categoryId,
+        "categoryName": args.categoryName,
+        "childTenancyIds": args.childTenancyIds,
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
+        "includeOrganization": args.includeOrganization,
         "name": args.name,
         "state": args.state,
         "status": args.status,
@@ -50,7 +56,15 @@ export interface GetRecommendationsArgs {
     /**
      * The unique OCID associated with the category.
      */
-    categoryId: string;
+    categoryId?: string;
+    /**
+     * Optional. A filter that returns results that match the category name specified.
+     */
+    categoryName?: string;
+    /**
+     * A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+     */
+    childTenancyIds?: string[];
     /**
      * The OCID of the compartment.
      */
@@ -60,6 +74,10 @@ export interface GetRecommendationsArgs {
      */
     compartmentIdInSubtree: boolean;
     filters?: inputs.Optimizer.GetRecommendationsFilter[];
+    /**
+     * When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+     */
+    includeOrganization?: boolean;
     /**
      * Optional. A filter that returns results that match the name specified.
      */
@@ -81,7 +99,9 @@ export interface GetRecommendationsResult {
     /**
      * The unique OCID associated with the category.
      */
-    readonly categoryId: string;
+    readonly categoryId?: string;
+    readonly categoryName?: string;
+    readonly childTenancyIds?: string[];
     /**
      * The OCID of the tenancy. The tenancy is the root compartment.
      */
@@ -92,6 +112,7 @@ export interface GetRecommendationsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly includeOrganization?: boolean;
     /**
      * The name of the profile level.
      */
@@ -121,7 +142,15 @@ export interface GetRecommendationsOutputArgs {
     /**
      * The unique OCID associated with the category.
      */
-    categoryId: pulumi.Input<string>;
+    categoryId?: pulumi.Input<string>;
+    /**
+     * Optional. A filter that returns results that match the category name specified.
+     */
+    categoryName?: pulumi.Input<string>;
+    /**
+     * A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+     */
+    childTenancyIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The OCID of the compartment.
      */
@@ -131,6 +160,10 @@ export interface GetRecommendationsOutputArgs {
      */
     compartmentIdInSubtree: pulumi.Input<boolean>;
     filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetRecommendationsFilterArgs>[]>;
+    /**
+     * When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+     */
+    includeOrganization?: pulumi.Input<boolean>;
     /**
      * Optional. A filter that returns results that match the name specified.
      */

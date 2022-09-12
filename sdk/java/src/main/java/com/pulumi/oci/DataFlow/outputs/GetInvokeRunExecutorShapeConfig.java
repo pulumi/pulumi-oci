@@ -13,21 +13,14 @@ public final class GetInvokeRunExecutorShapeConfig {
      * @return The amount of memory used for the driver or executors.
      * 
      */
-    private final Double memoryInGbs;
+    private Double memoryInGbs;
     /**
      * @return The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
      * 
      */
-    private final Double ocpus;
+    private Double ocpus;
 
-    @CustomType.Constructor
-    private GetInvokeRunExecutorShapeConfig(
-        @CustomType.Parameter("memoryInGbs") Double memoryInGbs,
-        @CustomType.Parameter("ocpus") Double ocpus) {
-        this.memoryInGbs = memoryInGbs;
-        this.ocpus = ocpus;
-    }
-
+    private GetInvokeRunExecutorShapeConfig() {}
     /**
      * @return The amount of memory used for the driver or executors.
      * 
@@ -50,30 +43,32 @@ public final class GetInvokeRunExecutorShapeConfig {
     public static Builder builder(GetInvokeRunExecutorShapeConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double memoryInGbs;
         private Double ocpus;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvokeRunExecutorShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.ocpus = defaults.ocpus;
         }
 
+        @CustomType.Setter
         public Builder memoryInGbs(Double memoryInGbs) {
             this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder ocpus(Double ocpus) {
             this.ocpus = Objects.requireNonNull(ocpus);
             return this;
-        }        public GetInvokeRunExecutorShapeConfig build() {
-            return new GetInvokeRunExecutorShapeConfig(memoryInGbs, ocpus);
+        }
+        public GetInvokeRunExecutorShapeConfig build() {
+            final var o = new GetInvokeRunExecutorShapeConfig();
+            o.memoryInGbs = memoryInGbs;
+            o.ocpus = ocpus;
+            return o;
         }
     }
 }

@@ -14,12 +14,13 @@ import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
  * This resource provides the View resource in Oracle Cloud Infrastructure DNS service.
  * 
- * Creates a new view in the specified compartment. Requires a `PRIVATE` scope query parameter.
+ * Creates a new view in the specified compartment.
  * 
  * ## Example Usage
  * ```java
@@ -57,16 +58,10 @@ import javax.annotation.Nullable;
  * 
  * ## Import
  * 
- * For legacy Views that were created without using `scope`, these Views can be imported using the `id`, e.g.
+ * Views can be imported using their OCID, e.g.
  * 
  * ```sh
  *  $ pulumi import oci:Dns/view:View test_view &#34;id&#34;
- * ```
- * 
- *  For Views created using `scope`, these Views can be imported using the `id`, e.g.
- * 
- * ```sh
- *  $ pulumi import oci:Dns/view:View test_view &#34;viewId/{viewId}/scope/{scope}&#34;
  * ```
  * 
  */
@@ -143,18 +138,18 @@ public class View extends com.pulumi.resources.CustomResource {
         return this.isProtected;
     }
     /**
-     * Value must be `PRIVATE` when creating a view for private zones.
+     * If specified, must be `PRIVATE` when creating a view for private zones.
      * 
      */
     @Export(name="scope", type=String.class, parameters={})
-    private Output<String> scope;
+    private Output</* @Nullable */ String> scope;
 
     /**
-     * @return Value must be `PRIVATE` when creating a view for private zones.
+     * @return If specified, must be `PRIVATE` when creating a view for private zones.
      * 
      */
-    public Output<String> scope() {
-        return this.scope;
+    public Output<Optional<String>> scope() {
+        return Codegen.optional(this.scope);
     }
     /**
      * The canonical absolute URL of the resource.

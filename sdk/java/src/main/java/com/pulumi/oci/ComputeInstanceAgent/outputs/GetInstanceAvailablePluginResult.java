@@ -18,40 +18,23 @@ public final class GetInstanceAvailablePluginResult {
      * @return The list of available_plugins.
      * 
      */
-    private final List<GetInstanceAvailablePluginAvailablePlugin> availablePlugins;
-    private final String compartmentId;
-    private final @Nullable List<GetInstanceAvailablePluginFilter> filters;
+    private List<GetInstanceAvailablePluginAvailablePlugin> availablePlugins;
+    private String compartmentId;
+    private @Nullable List<GetInstanceAvailablePluginFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The plugin name
      * 
      */
-    private final @Nullable String name;
-    private final String osName;
-    private final String osVersion;
+    private @Nullable String name;
+    private String osName;
+    private String osVersion;
 
-    @CustomType.Constructor
-    private GetInstanceAvailablePluginResult(
-        @CustomType.Parameter("availablePlugins") List<GetInstanceAvailablePluginAvailablePlugin> availablePlugins,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetInstanceAvailablePluginFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("osName") String osName,
-        @CustomType.Parameter("osVersion") String osVersion) {
-        this.availablePlugins = availablePlugins;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.osName = osName;
-        this.osVersion = osVersion;
-    }
-
+    private GetInstanceAvailablePluginResult() {}
     /**
      * @return The list of available_plugins.
      * 
@@ -93,7 +76,7 @@ public final class GetInstanceAvailablePluginResult {
     public static Builder builder(GetInstanceAvailablePluginResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetInstanceAvailablePluginAvailablePlugin> availablePlugins;
         private String compartmentId;
@@ -102,11 +85,7 @@ public final class GetInstanceAvailablePluginResult {
         private @Nullable String name;
         private String osName;
         private String osVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceAvailablePluginResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availablePlugins = defaults.availablePlugins;
@@ -118,6 +97,7 @@ public final class GetInstanceAvailablePluginResult {
     	      this.osVersion = defaults.osVersion;
         }
 
+        @CustomType.Setter
         public Builder availablePlugins(List<GetInstanceAvailablePluginAvailablePlugin> availablePlugins) {
             this.availablePlugins = Objects.requireNonNull(availablePlugins);
             return this;
@@ -125,10 +105,12 @@ public final class GetInstanceAvailablePluginResult {
         public Builder availablePlugins(GetInstanceAvailablePluginAvailablePlugin... availablePlugins) {
             return availablePlugins(List.of(availablePlugins));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetInstanceAvailablePluginFilter> filters) {
             this.filters = filters;
             return this;
@@ -136,23 +118,36 @@ public final class GetInstanceAvailablePluginResult {
         public Builder filters(GetInstanceAvailablePluginFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder osName(String osName) {
             this.osName = Objects.requireNonNull(osName);
             return this;
         }
+        @CustomType.Setter
         public Builder osVersion(String osVersion) {
             this.osVersion = Objects.requireNonNull(osVersion);
             return this;
-        }        public GetInstanceAvailablePluginResult build() {
-            return new GetInstanceAvailablePluginResult(availablePlugins, compartmentId, filters, id, name, osName, osVersion);
+        }
+        public GetInstanceAvailablePluginResult build() {
+            final var o = new GetInstanceAvailablePluginResult();
+            o.availablePlugins = availablePlugins;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.osName = osName;
+            o.osVersion = osVersion;
+            return o;
         }
     }
 }

@@ -13,13 +13,9 @@ public final class GetCloudExadataInfrastructureCustomerContact {
      * @return The email address used by Oracle to send notifications regarding databases and infrastructure.
      * 
      */
-    private final String email;
+    private String email;
 
-    @CustomType.Constructor
-    private GetCloudExadataInfrastructureCustomerContact(@CustomType.Parameter("email") String email) {
-        this.email = email;
-    }
-
+    private GetCloudExadataInfrastructureCustomerContact() {}
     /**
      * @return The email address used by Oracle to send notifications regarding databases and infrastructure.
      * 
@@ -35,24 +31,24 @@ public final class GetCloudExadataInfrastructureCustomerContact {
     public static Builder builder(GetCloudExadataInfrastructureCustomerContact defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String email;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCloudExadataInfrastructureCustomerContact defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.email = defaults.email;
         }
 
+        @CustomType.Setter
         public Builder email(String email) {
             this.email = Objects.requireNonNull(email);
             return this;
-        }        public GetCloudExadataInfrastructureCustomerContact build() {
-            return new GetCloudExadataInfrastructureCustomerContact(email);
+        }
+        public GetCloudExadataInfrastructureCustomerContact build() {
+            final var o = new GetCloudExadataInfrastructureCustomerContact();
+            o.email = email;
+            return o;
         }
     }
 }

@@ -14,21 +14,14 @@ public final class GetIpsecConnectionTunnelEncryptionDomainConfig {
      * @return Lists IPv4 or IPv6-enabled subnets in your on-premises network.
      * 
      */
-    private final List<String> cpeTrafficSelectors;
+    private List<String> cpeTrafficSelectors;
     /**
      * @return Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy.
      * 
      */
-    private final List<String> oracleTrafficSelectors;
+    private List<String> oracleTrafficSelectors;
 
-    @CustomType.Constructor
-    private GetIpsecConnectionTunnelEncryptionDomainConfig(
-        @CustomType.Parameter("cpeTrafficSelectors") List<String> cpeTrafficSelectors,
-        @CustomType.Parameter("oracleTrafficSelectors") List<String> oracleTrafficSelectors) {
-        this.cpeTrafficSelectors = cpeTrafficSelectors;
-        this.oracleTrafficSelectors = oracleTrafficSelectors;
-    }
-
+    private GetIpsecConnectionTunnelEncryptionDomainConfig() {}
     /**
      * @return Lists IPv4 or IPv6-enabled subnets in your on-premises network.
      * 
@@ -51,21 +44,18 @@ public final class GetIpsecConnectionTunnelEncryptionDomainConfig {
     public static Builder builder(GetIpsecConnectionTunnelEncryptionDomainConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> cpeTrafficSelectors;
         private List<String> oracleTrafficSelectors;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIpsecConnectionTunnelEncryptionDomainConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cpeTrafficSelectors = defaults.cpeTrafficSelectors;
     	      this.oracleTrafficSelectors = defaults.oracleTrafficSelectors;
         }
 
+        @CustomType.Setter
         public Builder cpeTrafficSelectors(List<String> cpeTrafficSelectors) {
             this.cpeTrafficSelectors = Objects.requireNonNull(cpeTrafficSelectors);
             return this;
@@ -73,14 +63,19 @@ public final class GetIpsecConnectionTunnelEncryptionDomainConfig {
         public Builder cpeTrafficSelectors(String... cpeTrafficSelectors) {
             return cpeTrafficSelectors(List.of(cpeTrafficSelectors));
         }
+        @CustomType.Setter
         public Builder oracleTrafficSelectors(List<String> oracleTrafficSelectors) {
             this.oracleTrafficSelectors = Objects.requireNonNull(oracleTrafficSelectors);
             return this;
         }
         public Builder oracleTrafficSelectors(String... oracleTrafficSelectors) {
             return oracleTrafficSelectors(List.of(oracleTrafficSelectors));
-        }        public GetIpsecConnectionTunnelEncryptionDomainConfig build() {
-            return new GetIpsecConnectionTunnelEncryptionDomainConfig(cpeTrafficSelectors, oracleTrafficSelectors);
+        }
+        public GetIpsecConnectionTunnelEncryptionDomainConfig build() {
+            final var o = new GetIpsecConnectionTunnelEncryptionDomainConfig();
+            o.cpeTrafficSelectors = cpeTrafficSelectors;
+            o.oracleTrafficSelectors = oracleTrafficSelectors;
+            return o;
         }
     }
 }

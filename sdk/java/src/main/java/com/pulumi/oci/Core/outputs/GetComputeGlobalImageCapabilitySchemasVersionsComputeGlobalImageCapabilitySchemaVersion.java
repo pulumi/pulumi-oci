@@ -15,42 +15,29 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalIm
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
      * 
      */
-    private final String computeGlobalImageCapabilitySchemaId;
+    private String computeGlobalImageCapabilitySchemaId;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The name of the compute global image capability schema version
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The map of each capability name to its ImageCapabilityDescriptor.
      * 
      */
-    private final Map<String,Object> schemaData;
+    private Map<String,Object> schemaData;
     /**
      * @return The date and time the compute global image capability schema version was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion(
-        @CustomType.Parameter("computeGlobalImageCapabilitySchemaId") String computeGlobalImageCapabilitySchemaId,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("schemaData") Map<String,Object> schemaData,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
-        this.displayName = displayName;
-        this.name = name;
-        this.schemaData = schemaData;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
      * 
@@ -94,18 +81,14 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalIm
     public static Builder builder(GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String computeGlobalImageCapabilitySchemaId;
         private String displayName;
         private String name;
         private Map<String,Object> schemaData;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.computeGlobalImageCapabilitySchemaId = defaults.computeGlobalImageCapabilitySchemaId;
@@ -115,27 +98,39 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalIm
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder computeGlobalImageCapabilitySchemaId(String computeGlobalImageCapabilitySchemaId) {
             this.computeGlobalImageCapabilitySchemaId = Objects.requireNonNull(computeGlobalImageCapabilitySchemaId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder schemaData(Map<String,Object> schemaData) {
             this.schemaData = Objects.requireNonNull(schemaData);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion build() {
-            return new GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion(computeGlobalImageCapabilitySchemaId, displayName, name, schemaData, timeCreated);
+        }
+        public GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion build() {
+            final var o = new GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion();
+            o.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
+            o.displayName = displayName;
+            o.name = name;
+            o.schemaData = schemaData;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

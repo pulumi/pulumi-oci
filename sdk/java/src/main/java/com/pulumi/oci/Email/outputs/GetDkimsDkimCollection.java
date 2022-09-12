@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDkimsDkimCollection {
-    private final List<GetDkimsDkimCollectionItem> items;
+    private List<GetDkimsDkimCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDkimsDkimCollection(@CustomType.Parameter("items") List<GetDkimsDkimCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDkimsDkimCollection() {}
     public List<GetDkimsDkimCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetDkimsDkimCollection {
     public static Builder builder(GetDkimsDkimCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDkimsDkimCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDkimsDkimCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDkimsDkimCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDkimsDkimCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDkimsDkimCollection build() {
-            return new GetDkimsDkimCollection(items);
+        }
+        public GetDkimsDkimCollection build() {
+            final var o = new GetDkimsDkimCollection();
+            o.items = items;
+            return o;
         }
     }
 }

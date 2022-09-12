@@ -18,57 +18,57 @@ public final class GetUserResult {
      * @return Properties indicating how the user is allowed to authenticate.
      * 
      */
-    private final List<GetUserCapability> capabilities;
+    private List<GetUserCapability> capabilities;
     /**
      * @return The OCID of the tenancy containing the user.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return DB username of the DB credential. Has to be unique across the tenancy.
      * 
      */
-    private final String dbUserName;
+    private String dbUserName;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The description you assign to the user. Does not have to be unique, and it&#39;s changeable.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The email address you assign to the user. The email address must be unique across all users in the tenancy.
      * 
      */
-    private final String email;
+    private String email;
     /**
      * @return Whether the email address has been validated.
      * 
      */
-    private final Boolean emailVerified;
+    private Boolean emailVerified;
     /**
      * @return Identifier of the user in the identity provider
      * 
      */
-    private final String externalIdentifier;
+    private String externalIdentifier;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the user.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the `IdentityProvider` this user belongs to.
      * 
      */
-    private final String identityProviderId;
+    private String identityProviderId;
     /**
      * @return Returned only if the user&#39;s `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user is inactive:
      * * bit 0: SUSPENDED (reserved for future use)
@@ -76,74 +76,35 @@ public final class GetUserResult {
      * * bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
      * 
      */
-    private final String inactiveState;
+    private String inactiveState;
     /**
      * @return The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
      * 
      */
-    private final String lastSuccessfulLoginTime;
+    private String lastSuccessfulLoginTime;
     /**
      * @return The name you assign to the user during creation. This is the user&#39;s login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
      * 
      */
-    private final String previousSuccessfulLoginTime;
+    private String previousSuccessfulLoginTime;
     /**
      * @return The user&#39;s current state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Date and time the user was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
-    private final String userId;
+    private String timeCreated;
+    private String userId;
 
-    @CustomType.Constructor
-    private GetUserResult(
-        @CustomType.Parameter("capabilities") List<GetUserCapability> capabilities,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dbUserName") String dbUserName,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("email") String email,
-        @CustomType.Parameter("emailVerified") Boolean emailVerified,
-        @CustomType.Parameter("externalIdentifier") String externalIdentifier,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("identityProviderId") String identityProviderId,
-        @CustomType.Parameter("inactiveState") String inactiveState,
-        @CustomType.Parameter("lastSuccessfulLoginTime") String lastSuccessfulLoginTime,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("previousSuccessfulLoginTime") String previousSuccessfulLoginTime,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("userId") String userId) {
-        this.capabilities = capabilities;
-        this.compartmentId = compartmentId;
-        this.dbUserName = dbUserName;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.email = email;
-        this.emailVerified = emailVerified;
-        this.externalIdentifier = externalIdentifier;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.identityProviderId = identityProviderId;
-        this.inactiveState = inactiveState;
-        this.lastSuccessfulLoginTime = lastSuccessfulLoginTime;
-        this.name = name;
-        this.previousSuccessfulLoginTime = previousSuccessfulLoginTime;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.userId = userId;
-    }
-
+    private GetUserResult() {}
     /**
      * @return Properties indicating how the user is allowed to authenticate.
      * 
@@ -277,7 +238,7 @@ public final class GetUserResult {
     public static Builder builder(GetUserResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetUserCapability> capabilities;
         private String compartmentId;
@@ -297,11 +258,7 @@ public final class GetUserResult {
         private String state;
         private String timeCreated;
         private String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUserResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.capabilities = defaults.capabilities;
@@ -324,6 +281,7 @@ public final class GetUserResult {
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder capabilities(List<GetUserCapability> capabilities) {
             this.capabilities = Objects.requireNonNull(capabilities);
             return this;
@@ -331,75 +289,112 @@ public final class GetUserResult {
         public Builder capabilities(GetUserCapability... capabilities) {
             return capabilities(List.of(capabilities));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbUserName(String dbUserName) {
             this.dbUserName = Objects.requireNonNull(dbUserName);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder email(String email) {
             this.email = Objects.requireNonNull(email);
             return this;
         }
+        @CustomType.Setter
         public Builder emailVerified(Boolean emailVerified) {
             this.emailVerified = Objects.requireNonNull(emailVerified);
             return this;
         }
+        @CustomType.Setter
         public Builder externalIdentifier(String externalIdentifier) {
             this.externalIdentifier = Objects.requireNonNull(externalIdentifier);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder identityProviderId(String identityProviderId) {
             this.identityProviderId = Objects.requireNonNull(identityProviderId);
             return this;
         }
+        @CustomType.Setter
         public Builder inactiveState(String inactiveState) {
             this.inactiveState = Objects.requireNonNull(inactiveState);
             return this;
         }
+        @CustomType.Setter
         public Builder lastSuccessfulLoginTime(String lastSuccessfulLoginTime) {
             this.lastSuccessfulLoginTime = Objects.requireNonNull(lastSuccessfulLoginTime);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder previousSuccessfulLoginTime(String previousSuccessfulLoginTime) {
             this.previousSuccessfulLoginTime = Objects.requireNonNull(previousSuccessfulLoginTime);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder userId(String userId) {
             this.userId = Objects.requireNonNull(userId);
             return this;
-        }        public GetUserResult build() {
-            return new GetUserResult(capabilities, compartmentId, dbUserName, definedTags, description, email, emailVerified, externalIdentifier, freeformTags, id, identityProviderId, inactiveState, lastSuccessfulLoginTime, name, previousSuccessfulLoginTime, state, timeCreated, userId);
+        }
+        public GetUserResult build() {
+            final var o = new GetUserResult();
+            o.capabilities = capabilities;
+            o.compartmentId = compartmentId;
+            o.dbUserName = dbUserName;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.email = email;
+            o.emailVerified = emailVerified;
+            o.externalIdentifier = externalIdentifier;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.identityProviderId = identityProviderId;
+            o.inactiveState = inactiveState;
+            o.lastSuccessfulLoginTime = lastSuccessfulLoginTime;
+            o.name = name;
+            o.previousSuccessfulLoginTime = previousSuccessfulLoginTime;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.userId = userId;
+            return o;
         }
     }
 }

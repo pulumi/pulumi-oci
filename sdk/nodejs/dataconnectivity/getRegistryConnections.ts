@@ -65,7 +65,7 @@ export interface GetRegistryConnectionsArgs {
      */
     name?: string;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: string;
     /**
@@ -91,7 +91,7 @@ export interface GetRegistryConnectionsResult {
      */
     readonly id: string;
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
     readonly name?: string;
     readonly registryId: string;
@@ -127,7 +127,7 @@ export interface GetRegistryConnectionsOutputArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: pulumi.Input<string>;
     /**

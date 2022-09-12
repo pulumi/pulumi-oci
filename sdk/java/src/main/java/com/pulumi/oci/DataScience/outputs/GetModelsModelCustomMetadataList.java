@@ -13,12 +13,12 @@ public final class GetModelsModelCustomMetadataList {
      * @return Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,other&#34;.
      * 
      */
-    private final String category;
+    private String category;
     /**
      * @return A short description of the model.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
      * * useCaseType
@@ -29,25 +29,14 @@ public final class GetModelsModelCustomMetadataList {
      * * testartifactresults
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetModelsModelCustomMetadataList(
-        @CustomType.Parameter("category") String category,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("value") String value) {
-        this.category = category;
-        this.description = description;
-        this.key = key;
-        this.value = value;
-    }
-
+    private GetModelsModelCustomMetadataList() {}
     /**
      * @return Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,other&#34;.
      * 
@@ -90,17 +79,13 @@ public final class GetModelsModelCustomMetadataList {
     public static Builder builder(GetModelsModelCustomMetadataList defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String category;
         private String description;
         private String key;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetModelsModelCustomMetadataList defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.category = defaults.category;
@@ -109,23 +94,33 @@ public final class GetModelsModelCustomMetadataList {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder category(String category) {
             this.category = Objects.requireNonNull(category);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetModelsModelCustomMetadataList build() {
-            return new GetModelsModelCustomMetadataList(category, description, key, value);
+        }
+        public GetModelsModelCustomMetadataList build() {
+            final var o = new GetModelsModelCustomMetadataList();
+            o.category = category;
+            o.description = description;
+            o.key = key;
+            o.value = value;
+            return o;
         }
     }
 }

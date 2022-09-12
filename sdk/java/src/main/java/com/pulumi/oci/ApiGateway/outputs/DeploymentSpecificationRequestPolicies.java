@@ -19,42 +19,29 @@ public final class DeploymentSpecificationRequestPolicies {
      * @return (Updatable) Information on how to authenticate incoming requests.
      * 
      */
-    private final @Nullable DeploymentSpecificationRequestPoliciesAuthentication authentication;
+    private @Nullable DeploymentSpecificationRequestPoliciesAuthentication authentication;
     /**
      * @return (Updatable) Enable CORS (Cross-Origin-Resource-Sharing) request handling.
      * 
      */
-    private final @Nullable DeploymentSpecificationRequestPoliciesCors cors;
+    private @Nullable DeploymentSpecificationRequestPoliciesCors cors;
     /**
      * @return (Updatable) Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
      * 
      */
-    private final @Nullable DeploymentSpecificationRequestPoliciesMutualTls mutualTls;
+    private @Nullable DeploymentSpecificationRequestPoliciesMutualTls mutualTls;
     /**
      * @return (Updatable) Limit the number of requests that should be handled for the specified window using a specfic key.
      * 
      */
-    private final @Nullable DeploymentSpecificationRequestPoliciesRateLimiting rateLimiting;
+    private @Nullable DeploymentSpecificationRequestPoliciesRateLimiting rateLimiting;
     /**
      * @return (Updatable) Usage plan policies for this deployment
      * 
      */
-    private final @Nullable DeploymentSpecificationRequestPoliciesUsagePlans usagePlans;
+    private @Nullable DeploymentSpecificationRequestPoliciesUsagePlans usagePlans;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationRequestPolicies(
-        @CustomType.Parameter("authentication") @Nullable DeploymentSpecificationRequestPoliciesAuthentication authentication,
-        @CustomType.Parameter("cors") @Nullable DeploymentSpecificationRequestPoliciesCors cors,
-        @CustomType.Parameter("mutualTls") @Nullable DeploymentSpecificationRequestPoliciesMutualTls mutualTls,
-        @CustomType.Parameter("rateLimiting") @Nullable DeploymentSpecificationRequestPoliciesRateLimiting rateLimiting,
-        @CustomType.Parameter("usagePlans") @Nullable DeploymentSpecificationRequestPoliciesUsagePlans usagePlans) {
-        this.authentication = authentication;
-        this.cors = cors;
-        this.mutualTls = mutualTls;
-        this.rateLimiting = rateLimiting;
-        this.usagePlans = usagePlans;
-    }
-
+    private DeploymentSpecificationRequestPolicies() {}
     /**
      * @return (Updatable) Information on how to authenticate incoming requests.
      * 
@@ -98,18 +85,14 @@ public final class DeploymentSpecificationRequestPolicies {
     public static Builder builder(DeploymentSpecificationRequestPolicies defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable DeploymentSpecificationRequestPoliciesAuthentication authentication;
         private @Nullable DeploymentSpecificationRequestPoliciesCors cors;
         private @Nullable DeploymentSpecificationRequestPoliciesMutualTls mutualTls;
         private @Nullable DeploymentSpecificationRequestPoliciesRateLimiting rateLimiting;
         private @Nullable DeploymentSpecificationRequestPoliciesUsagePlans usagePlans;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationRequestPolicies defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authentication = defaults.authentication;
@@ -119,27 +102,39 @@ public final class DeploymentSpecificationRequestPolicies {
     	      this.usagePlans = defaults.usagePlans;
         }
 
+        @CustomType.Setter
         public Builder authentication(@Nullable DeploymentSpecificationRequestPoliciesAuthentication authentication) {
             this.authentication = authentication;
             return this;
         }
+        @CustomType.Setter
         public Builder cors(@Nullable DeploymentSpecificationRequestPoliciesCors cors) {
             this.cors = cors;
             return this;
         }
+        @CustomType.Setter
         public Builder mutualTls(@Nullable DeploymentSpecificationRequestPoliciesMutualTls mutualTls) {
             this.mutualTls = mutualTls;
             return this;
         }
+        @CustomType.Setter
         public Builder rateLimiting(@Nullable DeploymentSpecificationRequestPoliciesRateLimiting rateLimiting) {
             this.rateLimiting = rateLimiting;
             return this;
         }
+        @CustomType.Setter
         public Builder usagePlans(@Nullable DeploymentSpecificationRequestPoliciesUsagePlans usagePlans) {
             this.usagePlans = usagePlans;
             return this;
-        }        public DeploymentSpecificationRequestPolicies build() {
-            return new DeploymentSpecificationRequestPolicies(authentication, cors, mutualTls, rateLimiting, usagePlans);
+        }
+        public DeploymentSpecificationRequestPolicies build() {
+            final var o = new DeploymentSpecificationRequestPolicies();
+            o.authentication = authentication;
+            o.cors = cors;
+            o.mutualTls = mutualTls;
+            o.rateLimiting = rateLimiting;
+            o.usagePlans = usagePlans;
+            return o;
         }
     }
 }

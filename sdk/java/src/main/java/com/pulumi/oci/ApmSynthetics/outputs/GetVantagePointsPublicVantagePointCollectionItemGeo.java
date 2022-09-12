@@ -14,49 +14,34 @@ public final class GetVantagePointsPublicVantagePointCollectionItemGeo {
      * @return The ISO 3166-2 code for this location&#39;s first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see Country Codes.
      * 
      */
-    private final String adminDivCode;
+    private String adminDivCode;
     /**
      * @return Common English-language name for the city.
      * 
      */
-    private final String cityName;
+    private String cityName;
     /**
      * @return The ISO 3166-1 alpha-2 country code. For a list of codes, see Country Codes.
      * 
      */
-    private final String countryCode;
+    private String countryCode;
     /**
      * @return The common English-language name for the country.
      * 
      */
-    private final String countryName;
+    private String countryName;
     /**
      * @return Degrees north of the Equator.
      * 
      */
-    private final Double latitude;
+    private Double latitude;
     /**
      * @return Degrees east of the prime meridian.
      * 
      */
-    private final Double longitude;
+    private Double longitude;
 
-    @CustomType.Constructor
-    private GetVantagePointsPublicVantagePointCollectionItemGeo(
-        @CustomType.Parameter("adminDivCode") String adminDivCode,
-        @CustomType.Parameter("cityName") String cityName,
-        @CustomType.Parameter("countryCode") String countryCode,
-        @CustomType.Parameter("countryName") String countryName,
-        @CustomType.Parameter("latitude") Double latitude,
-        @CustomType.Parameter("longitude") Double longitude) {
-        this.adminDivCode = adminDivCode;
-        this.cityName = cityName;
-        this.countryCode = countryCode;
-        this.countryName = countryName;
-        this.latitude = latitude;
-        this.longitude = longitude;
-    }
-
+    private GetVantagePointsPublicVantagePointCollectionItemGeo() {}
     /**
      * @return The ISO 3166-2 code for this location&#39;s first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see Country Codes.
      * 
@@ -107,7 +92,7 @@ public final class GetVantagePointsPublicVantagePointCollectionItemGeo {
     public static Builder builder(GetVantagePointsPublicVantagePointCollectionItemGeo defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String adminDivCode;
         private String cityName;
@@ -115,11 +100,7 @@ public final class GetVantagePointsPublicVantagePointCollectionItemGeo {
         private String countryName;
         private Double latitude;
         private Double longitude;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVantagePointsPublicVantagePointCollectionItemGeo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminDivCode = defaults.adminDivCode;
@@ -130,31 +111,45 @@ public final class GetVantagePointsPublicVantagePointCollectionItemGeo {
     	      this.longitude = defaults.longitude;
         }
 
+        @CustomType.Setter
         public Builder adminDivCode(String adminDivCode) {
             this.adminDivCode = Objects.requireNonNull(adminDivCode);
             return this;
         }
+        @CustomType.Setter
         public Builder cityName(String cityName) {
             this.cityName = Objects.requireNonNull(cityName);
             return this;
         }
+        @CustomType.Setter
         public Builder countryCode(String countryCode) {
             this.countryCode = Objects.requireNonNull(countryCode);
             return this;
         }
+        @CustomType.Setter
         public Builder countryName(String countryName) {
             this.countryName = Objects.requireNonNull(countryName);
             return this;
         }
+        @CustomType.Setter
         public Builder latitude(Double latitude) {
             this.latitude = Objects.requireNonNull(latitude);
             return this;
         }
+        @CustomType.Setter
         public Builder longitude(Double longitude) {
             this.longitude = Objects.requireNonNull(longitude);
             return this;
-        }        public GetVantagePointsPublicVantagePointCollectionItemGeo build() {
-            return new GetVantagePointsPublicVantagePointCollectionItemGeo(adminDivCode, cityName, countryCode, countryName, latitude, longitude);
+        }
+        public GetVantagePointsPublicVantagePointCollectionItemGeo build() {
+            final var o = new GetVantagePointsPublicVantagePointCollectionItemGeo();
+            o.adminDivCode = adminDivCode;
+            o.cityName = cityName;
+            o.countryCode = countryCode;
+            o.countryName = countryName;
+            o.latitude = latitude;
+            o.longitude = longitude;
+            return o;
         }
     }
 }

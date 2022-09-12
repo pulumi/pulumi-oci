@@ -13,28 +13,19 @@ public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffec
      * @return Unique name of the configuration
      * 
      */
-    private final String configKey;
+    private String configKey;
     /**
      * @return configuration name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return configuration value
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration(
-        @CustomType.Parameter("configKey") String configKey,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("value") String value) {
-        this.configKey = configKey;
-        this.name = name;
-        this.value = value;
-    }
-
+    private GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration() {}
     /**
      * @return Unique name of the configuration
      * 
@@ -64,16 +55,12 @@ public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffec
     public static Builder builder(GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String configKey;
         private String name;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configKey = defaults.configKey;
@@ -81,19 +68,27 @@ public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffec
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder configKey(String configKey) {
             this.configKey = Objects.requireNonNull(configKey);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration build() {
-            return new GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration(configKey, name, value);
+        }
+        public GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration build() {
+            final var o = new GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration();
+            o.configKey = configKey;
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

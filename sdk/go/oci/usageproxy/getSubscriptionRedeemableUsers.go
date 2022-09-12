@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Subscription Redeemable Users in Oracle Cloud Infrastructure Usage Proxy service.
 //
-// Provides the email IDs of users that can redeem rewards for the given subscription ID.
+// Provides the list of user summary that can redeem rewards for the given subscription ID.
 //
 // ## Example Usage
 //

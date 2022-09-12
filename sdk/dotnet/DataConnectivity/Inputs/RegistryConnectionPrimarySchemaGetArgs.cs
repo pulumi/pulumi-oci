@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The external key for the object.
+        /// (Updatable) The external key of the object.
         /// </summary>
         [Input("externalKey")]
         public Input<string>? ExternalKey { get; set; }
@@ -49,25 +49,25 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        /// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.RegistryConnectionPrimarySchemaMetadataGetArgs>? Metadata { get; set; }
 
         /// <summary>
-        /// (Updatable) The object's type.
+        /// (Updatable) The object type.
         /// </summary>
         [Input("modelType", required: true)]
         public Input<string> ModelType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The object's model version.
+        /// (Updatable) The model version of the object.
         /// </summary>
         [Input("modelVersion")]
         public Input<string>? ModelVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<int>? ObjectVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) A reference to the object's parent.
+        /// (Updatable) A reference to the parent object.
         /// </summary>
         [Input("parentRef")]
         public Input<Inputs.RegistryConnectionPrimarySchemaParentRefGetArgs>? ParentRef { get; set; }

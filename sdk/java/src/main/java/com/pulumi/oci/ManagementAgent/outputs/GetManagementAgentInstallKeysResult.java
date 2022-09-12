@@ -15,55 +15,36 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentInstallKeysResult {
-    private final @Nullable String accessLevel;
+    private @Nullable String accessLevel;
     /**
      * @return Compartment Identifier
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return Management Agent Install Key Name
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetManagementAgentInstallKeysFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetManagementAgentInstallKeysFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of management_agent_install_keys.
      * 
      */
-    private final List<GetManagementAgentInstallKeysManagementAgentInstallKey> managementAgentInstallKeys;
+    private List<GetManagementAgentInstallKeysManagementAgentInstallKey> managementAgentInstallKeys;
     /**
      * @return Status of Key
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetManagementAgentInstallKeysResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetManagementAgentInstallKeysFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managementAgentInstallKeys") List<GetManagementAgentInstallKeysManagementAgentInstallKey> managementAgentInstallKeys,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.accessLevel = accessLevel;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.managementAgentInstallKeys = managementAgentInstallKeys;
-        this.state = state;
-    }
-
+    private GetManagementAgentInstallKeysResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -116,7 +97,7 @@ public final class GetManagementAgentInstallKeysResult {
     public static Builder builder(GetManagementAgentInstallKeysResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private String compartmentId;
@@ -126,11 +107,7 @@ public final class GetManagementAgentInstallKeysResult {
         private String id;
         private List<GetManagementAgentInstallKeysManagementAgentInstallKey> managementAgentInstallKeys;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagementAgentInstallKeysResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -143,22 +120,27 @@ public final class GetManagementAgentInstallKeysResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagementAgentInstallKeysFilter> filters) {
             this.filters = filters;
             return this;
@@ -166,10 +148,12 @@ public final class GetManagementAgentInstallKeysResult {
         public Builder filters(GetManagementAgentInstallKeysFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managementAgentInstallKeys(List<GetManagementAgentInstallKeysManagementAgentInstallKey> managementAgentInstallKeys) {
             this.managementAgentInstallKeys = Objects.requireNonNull(managementAgentInstallKeys);
             return this;
@@ -177,11 +161,22 @@ public final class GetManagementAgentInstallKeysResult {
         public Builder managementAgentInstallKeys(GetManagementAgentInstallKeysManagementAgentInstallKey... managementAgentInstallKeys) {
             return managementAgentInstallKeys(List.of(managementAgentInstallKeys));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetManagementAgentInstallKeysResult build() {
-            return new GetManagementAgentInstallKeysResult(accessLevel, compartmentId, compartmentIdInSubtree, displayName, filters, id, managementAgentInstallKeys, state);
+        }
+        public GetManagementAgentInstallKeysResult build() {
+            final var o = new GetManagementAgentInstallKeysResult();
+            o.accessLevel = accessLevel;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.managementAgentInstallKeys = managementAgentInstallKeys;
+            o.state = state;
+            return o;
         }
     }
 }

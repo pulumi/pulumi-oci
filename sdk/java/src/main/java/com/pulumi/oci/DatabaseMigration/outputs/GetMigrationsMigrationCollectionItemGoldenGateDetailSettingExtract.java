@@ -14,21 +14,14 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSettingEx
      * @return Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
      * 
      */
-    private final Integer longTransDuration;
+    private Integer longTransDuration;
     /**
      * @return Extract performance.
      * 
      */
-    private final String performanceProfile;
+    private String performanceProfile;
 
-    @CustomType.Constructor
-    private GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract(
-        @CustomType.Parameter("longTransDuration") Integer longTransDuration,
-        @CustomType.Parameter("performanceProfile") String performanceProfile) {
-        this.longTransDuration = longTransDuration;
-        this.performanceProfile = performanceProfile;
-    }
-
+    private GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract() {}
     /**
      * @return Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
      * 
@@ -51,30 +44,32 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSettingEx
     public static Builder builder(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer longTransDuration;
         private String performanceProfile;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.longTransDuration = defaults.longTransDuration;
     	      this.performanceProfile = defaults.performanceProfile;
         }
 
+        @CustomType.Setter
         public Builder longTransDuration(Integer longTransDuration) {
             this.longTransDuration = Objects.requireNonNull(longTransDuration);
             return this;
         }
+        @CustomType.Setter
         public Builder performanceProfile(String performanceProfile) {
             this.performanceProfile = Objects.requireNonNull(performanceProfile);
             return this;
-        }        public GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract build() {
-            return new GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract(longTransDuration, performanceProfile);
+        }
+        public GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract build() {
+            final var o = new GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract();
+            o.longTransDuration = longTransDuration;
+            o.performanceProfile = performanceProfile;
+            return o;
         }
     }
 }

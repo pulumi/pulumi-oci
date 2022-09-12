@@ -47,9 +47,13 @@ export interface GetBootVolumeArgs {
  */
 export interface GetBootVolumeResult {
     /**
-     * The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+     * The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
      */
     readonly autoTunedVpusPerGb: string;
+    /**
+     * The list of autotune policies enabled for this volume.
+     */
+    readonly autotunePolicies: outputs.Core.GetBootVolumeAutotunePolicy[];
     /**
      * The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
      */
@@ -89,7 +93,7 @@ export interface GetBootVolumeResult {
      */
     readonly imageId: string;
     /**
-     * Specifies whether the auto-tune performance is enabled for this boot volume.
+     * Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      */
     readonly isAutoTuneEnabled: boolean;
     /**

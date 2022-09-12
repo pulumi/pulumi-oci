@@ -15,21 +15,14 @@ public final class GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy 
      * @return Configures the logging policies for the access logs of an API Deployment.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog> accessLogs;
+    private List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog> accessLogs;
     /**
      * @return Configures the logging policies for the execution logs of an API Deployment.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLog> executionLogs;
+    private List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLog> executionLogs;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy(
-        @CustomType.Parameter("accessLogs") List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog> accessLogs,
-        @CustomType.Parameter("executionLogs") List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLog> executionLogs) {
-        this.accessLogs = accessLogs;
-        this.executionLogs = executionLogs;
-    }
-
+    private GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy() {}
     /**
      * @return Configures the logging policies for the access logs of an API Deployment.
      * 
@@ -52,21 +45,18 @@ public final class GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy 
     public static Builder builder(GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog> accessLogs;
         private List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLog> executionLogs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLogs = defaults.accessLogs;
     	      this.executionLogs = defaults.executionLogs;
         }
 
+        @CustomType.Setter
         public Builder accessLogs(List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog> accessLogs) {
             this.accessLogs = Objects.requireNonNull(accessLogs);
             return this;
@@ -74,14 +64,19 @@ public final class GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy 
         public Builder accessLogs(GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog... accessLogs) {
             return accessLogs(List.of(accessLogs));
         }
+        @CustomType.Setter
         public Builder executionLogs(List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLog> executionLogs) {
             this.executionLogs = Objects.requireNonNull(executionLogs);
             return this;
         }
         public Builder executionLogs(GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLog... executionLogs) {
             return executionLogs(List.of(executionLogs));
-        }        public GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy build() {
-            return new GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy(accessLogs, executionLogs);
+        }
+        public GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy build() {
+            final var o = new GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy();
+            o.accessLogs = accessLogs;
+            o.executionLogs = executionLogs;
+            return o;
         }
     }
 }

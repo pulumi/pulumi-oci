@@ -16,28 +16,19 @@ public final class GetAccessPoliciesAccessPolicyCollectionItemRule {
      * @return Action for the traffic between the source and the destination.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return Target of the access policy. This can either be the source or the destination of the traffic.
      * 
      */
-    private final List<GetAccessPoliciesAccessPolicyCollectionItemRuleDestination> destinations;
+    private List<GetAccessPoliciesAccessPolicyCollectionItemRuleDestination> destinations;
     /**
      * @return Target of the access policy. This can either be the source or the destination of the traffic.
      * 
      */
-    private final List<GetAccessPoliciesAccessPolicyCollectionItemRuleSource> sources;
+    private List<GetAccessPoliciesAccessPolicyCollectionItemRuleSource> sources;
 
-    @CustomType.Constructor
-    private GetAccessPoliciesAccessPolicyCollectionItemRule(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("destinations") List<GetAccessPoliciesAccessPolicyCollectionItemRuleDestination> destinations,
-        @CustomType.Parameter("sources") List<GetAccessPoliciesAccessPolicyCollectionItemRuleSource> sources) {
-        this.action = action;
-        this.destinations = destinations;
-        this.sources = sources;
-    }
-
+    private GetAccessPoliciesAccessPolicyCollectionItemRule() {}
     /**
      * @return Action for the traffic between the source and the destination.
      * 
@@ -67,16 +58,12 @@ public final class GetAccessPoliciesAccessPolicyCollectionItemRule {
     public static Builder builder(GetAccessPoliciesAccessPolicyCollectionItemRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private List<GetAccessPoliciesAccessPolicyCollectionItemRuleDestination> destinations;
         private List<GetAccessPoliciesAccessPolicyCollectionItemRuleSource> sources;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAccessPoliciesAccessPolicyCollectionItemRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -84,10 +71,12 @@ public final class GetAccessPoliciesAccessPolicyCollectionItemRule {
     	      this.sources = defaults.sources;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder destinations(List<GetAccessPoliciesAccessPolicyCollectionItemRuleDestination> destinations) {
             this.destinations = Objects.requireNonNull(destinations);
             return this;
@@ -95,14 +84,20 @@ public final class GetAccessPoliciesAccessPolicyCollectionItemRule {
         public Builder destinations(GetAccessPoliciesAccessPolicyCollectionItemRuleDestination... destinations) {
             return destinations(List.of(destinations));
         }
+        @CustomType.Setter
         public Builder sources(List<GetAccessPoliciesAccessPolicyCollectionItemRuleSource> sources) {
             this.sources = Objects.requireNonNull(sources);
             return this;
         }
         public Builder sources(GetAccessPoliciesAccessPolicyCollectionItemRuleSource... sources) {
             return sources(List.of(sources));
-        }        public GetAccessPoliciesAccessPolicyCollectionItemRule build() {
-            return new GetAccessPoliciesAccessPolicyCollectionItemRule(action, destinations, sources);
+        }
+        public GetAccessPoliciesAccessPolicyCollectionItemRule build() {
+            final var o = new GetAccessPoliciesAccessPolicyCollectionItemRule();
+            o.action = action;
+            o.destinations = destinations;
+            o.sources = sources;
+            return o;
         }
     }
 }

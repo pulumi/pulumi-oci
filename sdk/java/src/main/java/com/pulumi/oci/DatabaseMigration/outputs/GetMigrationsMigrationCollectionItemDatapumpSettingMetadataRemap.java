@@ -13,28 +13,19 @@ public final class GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRe
      * @return Specifies the new value that oldValue should be translated into.
      * 
      */
-    private final String newValue;
+    private String newValue;
     /**
      * @return Specifies the value which needs to be reset.
      * 
      */
-    private final String oldValue;
+    private String oldValue;
     /**
      * @return Migration type.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap(
-        @CustomType.Parameter("newValue") String newValue,
-        @CustomType.Parameter("oldValue") String oldValue,
-        @CustomType.Parameter("type") String type) {
-        this.newValue = newValue;
-        this.oldValue = oldValue;
-        this.type = type;
-    }
-
+    private GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap() {}
     /**
      * @return Specifies the new value that oldValue should be translated into.
      * 
@@ -64,16 +55,12 @@ public final class GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRe
     public static Builder builder(GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String newValue;
         private String oldValue;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.newValue = defaults.newValue;
@@ -81,19 +68,27 @@ public final class GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRe
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder newValue(String newValue) {
             this.newValue = Objects.requireNonNull(newValue);
             return this;
         }
+        @CustomType.Setter
         public Builder oldValue(String oldValue) {
             this.oldValue = Objects.requireNonNull(oldValue);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap build() {
-            return new GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap(newValue, oldValue, type);
+        }
+        public GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap build() {
+            final var o = new GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemap();
+            o.newValue = newValue;
+            o.oldValue = oldValue;
+            o.type = type;
+            return o;
         }
     }
 }

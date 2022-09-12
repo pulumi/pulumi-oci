@@ -18,13 +18,9 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyU
      * * &#34;request.path[TOKEN]&#34;
      * 
      */
-    private final List<String> tokenLocations;
+    private List<String> tokenLocations;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan(@CustomType.Parameter("tokenLocations") List<String> tokenLocations) {
-        this.tokenLocations = tokenLocations;
-    }
-
+    private GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan() {}
     /**
      * @return A list of context variables specifying where API tokens may be located in a request. Example locations:
      * * &#34;request.headers[token]&#34;
@@ -44,27 +40,27 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyU
     public static Builder builder(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> tokenLocations;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.tokenLocations = defaults.tokenLocations;
         }
 
+        @CustomType.Setter
         public Builder tokenLocations(List<String> tokenLocations) {
             this.tokenLocations = Objects.requireNonNull(tokenLocations);
             return this;
         }
         public Builder tokenLocations(String... tokenLocations) {
             return tokenLocations(List.of(tokenLocations));
-        }        public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan build() {
-            return new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan(tokenLocations);
+        }
+        public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan build() {
+            final var o = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan();
+            o.tokenLocations = tokenLocations;
+            return o;
         }
     }
 }

@@ -18,56 +18,31 @@ public final class GetRepositoryCommitsResult {
      * @return Name of the author of the repository.
      * 
      */
-    private final @Nullable String authorName;
+    private @Nullable String authorName;
     /**
      * @return The commit message.
      * 
      */
-    private final @Nullable String commitMessage;
-    private final @Nullable String excludeRefName;
-    private final @Nullable String filePath;
-    private final @Nullable List<GetRepositoryCommitsFilter> filters;
+    private @Nullable String commitMessage;
+    private @Nullable String excludeRefName;
+    private @Nullable String filePath;
+    private @Nullable List<GetRepositoryCommitsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String refName;
+    private String id;
+    private @Nullable String refName;
     /**
      * @return The list of repository_commit_collection.
      * 
      */
-    private final List<GetRepositoryCommitsRepositoryCommitCollection> repositoryCommitCollections;
-    private final String repositoryId;
-    private final @Nullable String timestampGreaterThanOrEqualTo;
-    private final @Nullable String timestampLessThanOrEqualTo;
+    private List<GetRepositoryCommitsRepositoryCommitCollection> repositoryCommitCollections;
+    private String repositoryId;
+    private @Nullable String timestampGreaterThanOrEqualTo;
+    private @Nullable String timestampLessThanOrEqualTo;
 
-    @CustomType.Constructor
-    private GetRepositoryCommitsResult(
-        @CustomType.Parameter("authorName") @Nullable String authorName,
-        @CustomType.Parameter("commitMessage") @Nullable String commitMessage,
-        @CustomType.Parameter("excludeRefName") @Nullable String excludeRefName,
-        @CustomType.Parameter("filePath") @Nullable String filePath,
-        @CustomType.Parameter("filters") @Nullable List<GetRepositoryCommitsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("refName") @Nullable String refName,
-        @CustomType.Parameter("repositoryCommitCollections") List<GetRepositoryCommitsRepositoryCommitCollection> repositoryCommitCollections,
-        @CustomType.Parameter("repositoryId") String repositoryId,
-        @CustomType.Parameter("timestampGreaterThanOrEqualTo") @Nullable String timestampGreaterThanOrEqualTo,
-        @CustomType.Parameter("timestampLessThanOrEqualTo") @Nullable String timestampLessThanOrEqualTo) {
-        this.authorName = authorName;
-        this.commitMessage = commitMessage;
-        this.excludeRefName = excludeRefName;
-        this.filePath = filePath;
-        this.filters = filters;
-        this.id = id;
-        this.refName = refName;
-        this.repositoryCommitCollections = repositoryCommitCollections;
-        this.repositoryId = repositoryId;
-        this.timestampGreaterThanOrEqualTo = timestampGreaterThanOrEqualTo;
-        this.timestampLessThanOrEqualTo = timestampLessThanOrEqualTo;
-    }
-
+    private GetRepositoryCommitsResult() {}
     /**
      * @return Name of the author of the repository.
      * 
@@ -125,7 +100,7 @@ public final class GetRepositoryCommitsResult {
     public static Builder builder(GetRepositoryCommitsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String authorName;
         private @Nullable String commitMessage;
@@ -138,11 +113,7 @@ public final class GetRepositoryCommitsResult {
         private String repositoryId;
         private @Nullable String timestampGreaterThanOrEqualTo;
         private @Nullable String timestampLessThanOrEqualTo;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryCommitsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authorName = defaults.authorName;
@@ -158,22 +129,27 @@ public final class GetRepositoryCommitsResult {
     	      this.timestampLessThanOrEqualTo = defaults.timestampLessThanOrEqualTo;
         }
 
+        @CustomType.Setter
         public Builder authorName(@Nullable String authorName) {
             this.authorName = authorName;
             return this;
         }
+        @CustomType.Setter
         public Builder commitMessage(@Nullable String commitMessage) {
             this.commitMessage = commitMessage;
             return this;
         }
+        @CustomType.Setter
         public Builder excludeRefName(@Nullable String excludeRefName) {
             this.excludeRefName = excludeRefName;
             return this;
         }
+        @CustomType.Setter
         public Builder filePath(@Nullable String filePath) {
             this.filePath = filePath;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRepositoryCommitsFilter> filters) {
             this.filters = filters;
             return this;
@@ -181,14 +157,17 @@ public final class GetRepositoryCommitsResult {
         public Builder filters(GetRepositoryCommitsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder refName(@Nullable String refName) {
             this.refName = refName;
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryCommitCollections(List<GetRepositoryCommitsRepositoryCommitCollection> repositoryCommitCollections) {
             this.repositoryCommitCollections = Objects.requireNonNull(repositoryCommitCollections);
             return this;
@@ -196,19 +175,35 @@ public final class GetRepositoryCommitsResult {
         public Builder repositoryCommitCollections(GetRepositoryCommitsRepositoryCommitCollection... repositoryCommitCollections) {
             return repositoryCommitCollections(List.of(repositoryCommitCollections));
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder timestampGreaterThanOrEqualTo(@Nullable String timestampGreaterThanOrEqualTo) {
             this.timestampGreaterThanOrEqualTo = timestampGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timestampLessThanOrEqualTo(@Nullable String timestampLessThanOrEqualTo) {
             this.timestampLessThanOrEqualTo = timestampLessThanOrEqualTo;
             return this;
-        }        public GetRepositoryCommitsResult build() {
-            return new GetRepositoryCommitsResult(authorName, commitMessage, excludeRefName, filePath, filters, id, refName, repositoryCommitCollections, repositoryId, timestampGreaterThanOrEqualTo, timestampLessThanOrEqualTo);
+        }
+        public GetRepositoryCommitsResult build() {
+            final var o = new GetRepositoryCommitsResult();
+            o.authorName = authorName;
+            o.commitMessage = commitMessage;
+            o.excludeRefName = excludeRefName;
+            o.filePath = filePath;
+            o.filters = filters;
+            o.id = id;
+            o.refName = refName;
+            o.repositoryCommitCollections = repositoryCommitCollections;
+            o.repositoryId = repositoryId;
+            o.timestampGreaterThanOrEqualTo = timestampGreaterThanOrEqualTo;
+            o.timestampLessThanOrEqualTo = timestampLessThanOrEqualTo;
+            return o;
         }
     }
 }

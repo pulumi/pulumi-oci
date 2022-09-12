@@ -18,52 +18,35 @@ public final class GetManagedDatabasesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The infrastructure used to deploy the Oracle Database.
      * 
      */
-    private final @Nullable String deploymentType;
-    private final @Nullable List<GetManagedDatabasesFilter> filters;
+    private @Nullable String deploymentType;
+    private @Nullable List<GetManagedDatabasesFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of managed_database_collection.
      * 
      */
-    private final List<GetManagedDatabasesManagedDatabaseCollection> managedDatabaseCollections;
+    private List<GetManagedDatabasesManagedDatabaseCollection> managedDatabaseCollections;
     /**
      * @return The management option used when enabling Database Management.
      * 
      */
-    private final @Nullable String managementOption;
+    private @Nullable String managementOption;
     /**
      * @return The name of the Managed Database.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private GetManagedDatabasesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("deploymentType") @Nullable String deploymentType,
-        @CustomType.Parameter("filters") @Nullable List<GetManagedDatabasesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("managedDatabaseCollections") List<GetManagedDatabasesManagedDatabaseCollection> managedDatabaseCollections,
-        @CustomType.Parameter("managementOption") @Nullable String managementOption,
-        @CustomType.Parameter("name") @Nullable String name) {
-        this.compartmentId = compartmentId;
-        this.deploymentType = deploymentType;
-        this.filters = filters;
-        this.id = id;
-        this.managedDatabaseCollections = managedDatabaseCollections;
-        this.managementOption = managementOption;
-        this.name = name;
-    }
-
+    private GetManagedDatabasesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
      * 
@@ -117,7 +100,7 @@ public final class GetManagedDatabasesResult {
     public static Builder builder(GetManagedDatabasesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String deploymentType;
@@ -126,11 +109,7 @@ public final class GetManagedDatabasesResult {
         private List<GetManagedDatabasesManagedDatabaseCollection> managedDatabaseCollections;
         private @Nullable String managementOption;
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabasesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,14 +121,17 @@ public final class GetManagedDatabasesResult {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder deploymentType(@Nullable String deploymentType) {
             this.deploymentType = deploymentType;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabasesFilter> filters) {
             this.filters = filters;
             return this;
@@ -157,10 +139,12 @@ public final class GetManagedDatabasesResult {
         public Builder filters(GetManagedDatabasesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseCollections(List<GetManagedDatabasesManagedDatabaseCollection> managedDatabaseCollections) {
             this.managedDatabaseCollections = Objects.requireNonNull(managedDatabaseCollections);
             return this;
@@ -168,15 +152,26 @@ public final class GetManagedDatabasesResult {
         public Builder managedDatabaseCollections(GetManagedDatabasesManagedDatabaseCollection... managedDatabaseCollections) {
             return managedDatabaseCollections(List.of(managedDatabaseCollections));
         }
+        @CustomType.Setter
         public Builder managementOption(@Nullable String managementOption) {
             this.managementOption = managementOption;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public GetManagedDatabasesResult build() {
-            return new GetManagedDatabasesResult(compartmentId, deploymentType, filters, id, managedDatabaseCollections, managementOption, name);
+        }
+        public GetManagedDatabasesResult build() {
+            final var o = new GetManagedDatabasesResult();
+            o.compartmentId = compartmentId;
+            o.deploymentType = deploymentType;
+            o.filters = filters;
+            o.id = id;
+            o.managedDatabaseCollections = managedDatabaseCollections;
+            o.managementOption = managementOption;
+            o.name = name;
+            return o;
         }
     }
 }

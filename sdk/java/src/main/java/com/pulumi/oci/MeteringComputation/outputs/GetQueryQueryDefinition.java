@@ -17,35 +17,24 @@ public final class GetQueryQueryDefinition {
      * @return The common fields for Cost Analysis UI rendering.
      * 
      */
-    private final List<GetQueryQueryDefinitionCostAnalysisUi> costAnalysisUis;
+    private List<GetQueryQueryDefinitionCostAnalysisUi> costAnalysisUis;
     /**
      * @return The query display name. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The request of the generated Cost Analysis report.
      * 
      */
-    private final List<GetQueryQueryDefinitionReportQuery> reportQueries;
+    private List<GetQueryQueryDefinitionReportQuery> reportQueries;
     /**
      * @return The saved query version.
      * 
      */
-    private final Double version;
+    private Double version;
 
-    @CustomType.Constructor
-    private GetQueryQueryDefinition(
-        @CustomType.Parameter("costAnalysisUis") List<GetQueryQueryDefinitionCostAnalysisUi> costAnalysisUis,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("reportQueries") List<GetQueryQueryDefinitionReportQuery> reportQueries,
-        @CustomType.Parameter("version") Double version) {
-        this.costAnalysisUis = costAnalysisUis;
-        this.displayName = displayName;
-        this.reportQueries = reportQueries;
-        this.version = version;
-    }
-
+    private GetQueryQueryDefinition() {}
     /**
      * @return The common fields for Cost Analysis UI rendering.
      * 
@@ -82,17 +71,13 @@ public final class GetQueryQueryDefinition {
     public static Builder builder(GetQueryQueryDefinition defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetQueryQueryDefinitionCostAnalysisUi> costAnalysisUis;
         private String displayName;
         private List<GetQueryQueryDefinitionReportQuery> reportQueries;
         private Double version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetQueryQueryDefinition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.costAnalysisUis = defaults.costAnalysisUis;
@@ -101,6 +86,7 @@ public final class GetQueryQueryDefinition {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder costAnalysisUis(List<GetQueryQueryDefinitionCostAnalysisUi> costAnalysisUis) {
             this.costAnalysisUis = Objects.requireNonNull(costAnalysisUis);
             return this;
@@ -108,10 +94,12 @@ public final class GetQueryQueryDefinition {
         public Builder costAnalysisUis(GetQueryQueryDefinitionCostAnalysisUi... costAnalysisUis) {
             return costAnalysisUis(List.of(costAnalysisUis));
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder reportQueries(List<GetQueryQueryDefinitionReportQuery> reportQueries) {
             this.reportQueries = Objects.requireNonNull(reportQueries);
             return this;
@@ -119,11 +107,18 @@ public final class GetQueryQueryDefinition {
         public Builder reportQueries(GetQueryQueryDefinitionReportQuery... reportQueries) {
             return reportQueries(List.of(reportQueries));
         }
+        @CustomType.Setter
         public Builder version(Double version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetQueryQueryDefinition build() {
-            return new GetQueryQueryDefinition(costAnalysisUis, displayName, reportQueries, version);
+        }
+        public GetQueryQueryDefinition build() {
+            final var o = new GetQueryQueryDefinition();
+            o.costAnalysisUis = costAnalysisUis;
+            o.displayName = displayName;
+            o.reportQueries = reportQueries;
+            o.version = version;
+            return o;
         }
     }
 }

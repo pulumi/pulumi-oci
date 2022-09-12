@@ -18,7 +18,7 @@ namespace Pulumi.Oci.UsageProxy.Outputs
         /// </summary>
         public readonly string Currency;
         /// <summary>
-        /// The redemption code used in the billing center during the reward redemption process
+        /// The redemption code used in the Billing Center during the reward redemption process.
         /// </summary>
         public readonly string RedemptionCode;
         /// <summary>

@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDataMaskRulesDataMaskRuleCollection {
-    private final List<GetDataMaskRulesDataMaskRuleCollectionItem> items;
+    private List<GetDataMaskRulesDataMaskRuleCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDataMaskRulesDataMaskRuleCollection(@CustomType.Parameter("items") List<GetDataMaskRulesDataMaskRuleCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDataMaskRulesDataMaskRuleCollection() {}
     public List<GetDataMaskRulesDataMaskRuleCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetDataMaskRulesDataMaskRuleCollection {
     public static Builder builder(GetDataMaskRulesDataMaskRuleCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDataMaskRulesDataMaskRuleCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDataMaskRulesDataMaskRuleCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDataMaskRulesDataMaskRuleCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDataMaskRulesDataMaskRuleCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDataMaskRulesDataMaskRuleCollection build() {
-            return new GetDataMaskRulesDataMaskRuleCollection(items);
+        }
+        public GetDataMaskRulesDataMaskRuleCollection build() {
+            final var o = new GetDataMaskRulesDataMaskRuleCollection();
+            o.items = items;
+            return o;
         }
     }
 }

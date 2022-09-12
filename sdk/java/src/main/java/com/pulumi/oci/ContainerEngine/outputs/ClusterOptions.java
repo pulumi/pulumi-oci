@@ -21,49 +21,34 @@ public final class ClusterOptions {
      * @return Configurable cluster add-ons
      * 
      */
-    private final @Nullable ClusterOptionsAddOns addOns;
+    private @Nullable ClusterOptionsAddOns addOns;
     /**
      * @return (Updatable) Configurable cluster admission controllers
      * 
      */
-    private final @Nullable ClusterOptionsAdmissionControllerOptions admissionControllerOptions;
+    private @Nullable ClusterOptionsAdmissionControllerOptions admissionControllerOptions;
     /**
      * @return Network configuration for Kubernetes.
      * 
      */
-    private final @Nullable ClusterOptionsKubernetesNetworkConfig kubernetesNetworkConfig;
+    private @Nullable ClusterOptionsKubernetesNetworkConfig kubernetesNetworkConfig;
     /**
      * @return (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
      * 
      */
-    private final @Nullable ClusterOptionsPersistentVolumeConfig persistentVolumeConfig;
+    private @Nullable ClusterOptionsPersistentVolumeConfig persistentVolumeConfig;
     /**
      * @return (Updatable) Configuration to be applied to load balancers created by Kubernetes services
      * 
      */
-    private final @Nullable ClusterOptionsServiceLbConfig serviceLbConfig;
+    private @Nullable ClusterOptionsServiceLbConfig serviceLbConfig;
     /**
      * @return The OCIDs of the subnets used for Kubernetes services load balancers.
      * 
      */
-    private final @Nullable List<String> serviceLbSubnetIds;
+    private @Nullable List<String> serviceLbSubnetIds;
 
-    @CustomType.Constructor
-    private ClusterOptions(
-        @CustomType.Parameter("addOns") @Nullable ClusterOptionsAddOns addOns,
-        @CustomType.Parameter("admissionControllerOptions") @Nullable ClusterOptionsAdmissionControllerOptions admissionControllerOptions,
-        @CustomType.Parameter("kubernetesNetworkConfig") @Nullable ClusterOptionsKubernetesNetworkConfig kubernetesNetworkConfig,
-        @CustomType.Parameter("persistentVolumeConfig") @Nullable ClusterOptionsPersistentVolumeConfig persistentVolumeConfig,
-        @CustomType.Parameter("serviceLbConfig") @Nullable ClusterOptionsServiceLbConfig serviceLbConfig,
-        @CustomType.Parameter("serviceLbSubnetIds") @Nullable List<String> serviceLbSubnetIds) {
-        this.addOns = addOns;
-        this.admissionControllerOptions = admissionControllerOptions;
-        this.kubernetesNetworkConfig = kubernetesNetworkConfig;
-        this.persistentVolumeConfig = persistentVolumeConfig;
-        this.serviceLbConfig = serviceLbConfig;
-        this.serviceLbSubnetIds = serviceLbSubnetIds;
-    }
-
+    private ClusterOptions() {}
     /**
      * @return Configurable cluster add-ons
      * 
@@ -114,7 +99,7 @@ public final class ClusterOptions {
     public static Builder builder(ClusterOptions defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable ClusterOptionsAddOns addOns;
         private @Nullable ClusterOptionsAdmissionControllerOptions admissionControllerOptions;
@@ -122,11 +107,7 @@ public final class ClusterOptions {
         private @Nullable ClusterOptionsPersistentVolumeConfig persistentVolumeConfig;
         private @Nullable ClusterOptionsServiceLbConfig serviceLbConfig;
         private @Nullable List<String> serviceLbSubnetIds;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ClusterOptions defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.addOns = defaults.addOns;
@@ -137,34 +118,48 @@ public final class ClusterOptions {
     	      this.serviceLbSubnetIds = defaults.serviceLbSubnetIds;
         }
 
+        @CustomType.Setter
         public Builder addOns(@Nullable ClusterOptionsAddOns addOns) {
             this.addOns = addOns;
             return this;
         }
+        @CustomType.Setter
         public Builder admissionControllerOptions(@Nullable ClusterOptionsAdmissionControllerOptions admissionControllerOptions) {
             this.admissionControllerOptions = admissionControllerOptions;
             return this;
         }
+        @CustomType.Setter
         public Builder kubernetesNetworkConfig(@Nullable ClusterOptionsKubernetesNetworkConfig kubernetesNetworkConfig) {
             this.kubernetesNetworkConfig = kubernetesNetworkConfig;
             return this;
         }
+        @CustomType.Setter
         public Builder persistentVolumeConfig(@Nullable ClusterOptionsPersistentVolumeConfig persistentVolumeConfig) {
             this.persistentVolumeConfig = persistentVolumeConfig;
             return this;
         }
+        @CustomType.Setter
         public Builder serviceLbConfig(@Nullable ClusterOptionsServiceLbConfig serviceLbConfig) {
             this.serviceLbConfig = serviceLbConfig;
             return this;
         }
+        @CustomType.Setter
         public Builder serviceLbSubnetIds(@Nullable List<String> serviceLbSubnetIds) {
             this.serviceLbSubnetIds = serviceLbSubnetIds;
             return this;
         }
         public Builder serviceLbSubnetIds(String... serviceLbSubnetIds) {
             return serviceLbSubnetIds(List.of(serviceLbSubnetIds));
-        }        public ClusterOptions build() {
-            return new ClusterOptions(addOns, admissionControllerOptions, kubernetesNetworkConfig, persistentVolumeConfig, serviceLbConfig, serviceLbSubnetIds);
+        }
+        public ClusterOptions build() {
+            final var o = new ClusterOptions();
+            o.addOns = addOns;
+            o.admissionControllerOptions = admissionControllerOptions;
+            o.kubernetesNetworkConfig = kubernetesNetworkConfig;
+            o.persistentVolumeConfig = persistentVolumeConfig;
+            o.serviceLbConfig = serviceLbConfig;
+            o.serviceLbSubnetIds = serviceLbSubnetIds;
+            return o;
         }
     }
 }

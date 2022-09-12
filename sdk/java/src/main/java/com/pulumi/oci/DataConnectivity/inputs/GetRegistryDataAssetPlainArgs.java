@@ -28,14 +28,14 @@ public final class GetRegistryDataAssetPlainArgs extends com.pulumi.resources.In
     }
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      * 
      */
     @Import(name="registryId", required=true)
     private String registryId;
 
     /**
-     * @return The registry Ocid.
+     * @return The registry OCID.
      * 
      */
     public String registryId() {
@@ -79,7 +79,7 @@ public final class GetRegistryDataAssetPlainArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param registryId The registry Ocid.
+         * @param registryId The registry OCID.
          * 
          * @return builder
          * 

@@ -21,119 +21,84 @@ public final class GetRegistryFolderDataAsset {
      * @return Additional properties for the data asset.
      * 
      */
-    private final Map<String,Object> assetProperties;
+    private Map<String,Object> assetProperties;
     /**
      * @return The default connection key.
      * 
      */
-    private final List<GetRegistryFolderDataAssetDefaultConnection> defaultConnections;
+    private List<GetRegistryFolderDataAssetDefaultConnection> defaultConnections;
     /**
-     * @return User-defined description for the folder.
+     * @return User-defined description of the folder.
      * 
      */
-    private final String description;
+    private String description;
     /**
-     * @return The external key for the object.
+     * @return The external key of the object.
      * 
      */
-    private final String externalKey;
+    private String externalKey;
     /**
-     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
-    private final String identifier;
+    private String identifier;
     /**
-     * @return Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
-    private final String key;
+    private String key;
     /**
-     * @return A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
-    private final List<GetRegistryFolderDataAssetMetadata> metadatas;
+    private List<GetRegistryFolderDataAssetMetadata> metadatas;
     /**
      * @return The type of the folder.
      * 
      */
-    private final String modelType;
+    private String modelType;
     /**
      * @return The model version of an object.
      * 
      */
-    private final String modelVersion;
+    private String modelVersion;
     /**
-     * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The type system maps from and to a type.
      * 
      */
-    private final List<GetRegistryFolderDataAssetNativeTypeSystem> nativeTypeSystems;
+    private List<GetRegistryFolderDataAssetNativeTypeSystem> nativeTypeSystems;
     /**
      * @return The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private final Integer objectStatus;
+    private Integer objectStatus;
     /**
      * @return The version of the object that is used to track changes in the object instance.
      * 
      */
-    private final Integer objectVersion;
+    private Integer objectVersion;
     /**
      * @return All the properties for the data asset in a key-value map format.
      * 
      */
-    private final Map<String,Object> properties;
+    private Map<String,Object> properties;
     /**
      * @return Information about the object and its parent.
      * 
      */
-    private final List<GetRegistryFolderDataAssetRegistryMetadata> registryMetadatas;
+    private List<GetRegistryFolderDataAssetRegistryMetadata> registryMetadatas;
     /**
      * @return Specific DataAsset Type
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetRegistryFolderDataAsset(
-        @CustomType.Parameter("assetProperties") Map<String,Object> assetProperties,
-        @CustomType.Parameter("defaultConnections") List<GetRegistryFolderDataAssetDefaultConnection> defaultConnections,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("externalKey") String externalKey,
-        @CustomType.Parameter("identifier") String identifier,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("metadatas") List<GetRegistryFolderDataAssetMetadata> metadatas,
-        @CustomType.Parameter("modelType") String modelType,
-        @CustomType.Parameter("modelVersion") String modelVersion,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("nativeTypeSystems") List<GetRegistryFolderDataAssetNativeTypeSystem> nativeTypeSystems,
-        @CustomType.Parameter("objectStatus") Integer objectStatus,
-        @CustomType.Parameter("objectVersion") Integer objectVersion,
-        @CustomType.Parameter("properties") Map<String,Object> properties,
-        @CustomType.Parameter("registryMetadatas") List<GetRegistryFolderDataAssetRegistryMetadata> registryMetadatas,
-        @CustomType.Parameter("type") String type) {
-        this.assetProperties = assetProperties;
-        this.defaultConnections = defaultConnections;
-        this.description = description;
-        this.externalKey = externalKey;
-        this.identifier = identifier;
-        this.key = key;
-        this.metadatas = metadatas;
-        this.modelType = modelType;
-        this.modelVersion = modelVersion;
-        this.name = name;
-        this.nativeTypeSystems = nativeTypeSystems;
-        this.objectStatus = objectStatus;
-        this.objectVersion = objectVersion;
-        this.properties = properties;
-        this.registryMetadatas = registryMetadatas;
-        this.type = type;
-    }
-
+    private GetRegistryFolderDataAsset() {}
     /**
      * @return Additional properties for the data asset.
      * 
@@ -149,35 +114,35 @@ public final class GetRegistryFolderDataAsset {
         return this.defaultConnections;
     }
     /**
-     * @return User-defined description for the folder.
+     * @return User-defined description of the folder.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return The external key for the object.
+     * @return The external key of the object.
      * 
      */
     public String externalKey() {
         return this.externalKey;
     }
     /**
-     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public String identifier() {
         return this.identifier;
     }
     /**
-     * @return Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     public List<GetRegistryFolderDataAssetMetadata> metadatas() {
@@ -198,7 +163,7 @@ public final class GetRegistryFolderDataAsset {
         return this.modelVersion;
     }
     /**
-     * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public String name() {
@@ -254,7 +219,7 @@ public final class GetRegistryFolderDataAsset {
     public static Builder builder(GetRegistryFolderDataAsset defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> assetProperties;
         private List<GetRegistryFolderDataAssetDefaultConnection> defaultConnections;
@@ -272,11 +237,7 @@ public final class GetRegistryFolderDataAsset {
         private Map<String,Object> properties;
         private List<GetRegistryFolderDataAssetRegistryMetadata> registryMetadatas;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryFolderDataAsset defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.assetProperties = defaults.assetProperties;
@@ -297,10 +258,12 @@ public final class GetRegistryFolderDataAsset {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder assetProperties(Map<String,Object> assetProperties) {
             this.assetProperties = Objects.requireNonNull(assetProperties);
             return this;
         }
+        @CustomType.Setter
         public Builder defaultConnections(List<GetRegistryFolderDataAssetDefaultConnection> defaultConnections) {
             this.defaultConnections = Objects.requireNonNull(defaultConnections);
             return this;
@@ -308,22 +271,27 @@ public final class GetRegistryFolderDataAsset {
         public Builder defaultConnections(GetRegistryFolderDataAssetDefaultConnection... defaultConnections) {
             return defaultConnections(List.of(defaultConnections));
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder externalKey(String externalKey) {
             this.externalKey = Objects.requireNonNull(externalKey);
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(String identifier) {
             this.identifier = Objects.requireNonNull(identifier);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder metadatas(List<GetRegistryFolderDataAssetMetadata> metadatas) {
             this.metadatas = Objects.requireNonNull(metadatas);
             return this;
@@ -331,18 +299,22 @@ public final class GetRegistryFolderDataAsset {
         public Builder metadatas(GetRegistryFolderDataAssetMetadata... metadatas) {
             return metadatas(List.of(metadatas));
         }
+        @CustomType.Setter
         public Builder modelType(String modelType) {
             this.modelType = Objects.requireNonNull(modelType);
             return this;
         }
+        @CustomType.Setter
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = Objects.requireNonNull(modelVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder nativeTypeSystems(List<GetRegistryFolderDataAssetNativeTypeSystem> nativeTypeSystems) {
             this.nativeTypeSystems = Objects.requireNonNull(nativeTypeSystems);
             return this;
@@ -350,18 +322,22 @@ public final class GetRegistryFolderDataAsset {
         public Builder nativeTypeSystems(GetRegistryFolderDataAssetNativeTypeSystem... nativeTypeSystems) {
             return nativeTypeSystems(List.of(nativeTypeSystems));
         }
+        @CustomType.Setter
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = Objects.requireNonNull(objectStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = Objects.requireNonNull(objectVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder properties(Map<String,Object> properties) {
             this.properties = Objects.requireNonNull(properties);
             return this;
         }
+        @CustomType.Setter
         public Builder registryMetadatas(List<GetRegistryFolderDataAssetRegistryMetadata> registryMetadatas) {
             this.registryMetadatas = Objects.requireNonNull(registryMetadatas);
             return this;
@@ -369,11 +345,30 @@ public final class GetRegistryFolderDataAsset {
         public Builder registryMetadatas(GetRegistryFolderDataAssetRegistryMetadata... registryMetadatas) {
             return registryMetadatas(List.of(registryMetadatas));
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetRegistryFolderDataAsset build() {
-            return new GetRegistryFolderDataAsset(assetProperties, defaultConnections, description, externalKey, identifier, key, metadatas, modelType, modelVersion, name, nativeTypeSystems, objectStatus, objectVersion, properties, registryMetadatas, type);
+        }
+        public GetRegistryFolderDataAsset build() {
+            final var o = new GetRegistryFolderDataAsset();
+            o.assetProperties = assetProperties;
+            o.defaultConnections = defaultConnections;
+            o.description = description;
+            o.externalKey = externalKey;
+            o.identifier = identifier;
+            o.key = key;
+            o.metadatas = metadatas;
+            o.modelType = modelType;
+            o.modelVersion = modelVersion;
+            o.name = name;
+            o.nativeTypeSystems = nativeTypeSystems;
+            o.objectStatus = objectStatus;
+            o.objectVersion = objectVersion;
+            o.properties = properties;
+            o.registryMetadatas = registryMetadatas;
+            o.type = type;
+            return o;
         }
     }
 }

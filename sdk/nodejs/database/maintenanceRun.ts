@@ -143,9 +143,9 @@ export class MaintenanceRun extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
-     * The target software version for the database server patching operation.
+     * (Updatable) The target database server system software version for the patching operation.
      */
-    public /*out*/ readonly targetDbServerVersion!: pulumi.Output<string>;
+    public readonly targetDbServerVersion!: pulumi.Output<string>;
     /**
      * The ID of the target resource on which the maintenance run occurs.
      */
@@ -155,9 +155,9 @@ export class MaintenanceRun extends pulumi.CustomResource {
      */
     public /*out*/ readonly targetResourceType!: pulumi.Output<string>;
     /**
-     * The target Cell version that is to be patched to.
+     * (Updatable) The target storage cell system software version for the patching operation.
      */
-    public /*out*/ readonly targetStorageServerVersion!: pulumi.Output<string>;
+    public readonly targetStorageServerVersion!: pulumi.Output<string>;
     /**
      * The date and time the maintenance run was completed.
      */
@@ -229,6 +229,8 @@ export class MaintenanceRun extends pulumi.CustomResource {
             resourceInputs["maintenanceRunId"] = args ? args.maintenanceRunId : undefined;
             resourceInputs["patchId"] = args ? args.patchId : undefined;
             resourceInputs["patchingMode"] = args ? args.patchingMode : undefined;
+            resourceInputs["targetDbServerVersion"] = args ? args.targetDbServerVersion : undefined;
+            resourceInputs["targetStorageServerVersion"] = args ? args.targetStorageServerVersion : undefined;
             resourceInputs["timeScheduled"] = args ? args.timeScheduled : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["currentPatchingComponent"] = undefined /*out*/;
@@ -245,10 +247,8 @@ export class MaintenanceRun extends pulumi.CustomResource {
             resourceInputs["patchingStatus"] = undefined /*out*/;
             resourceInputs["peerMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
-            resourceInputs["targetDbServerVersion"] = undefined /*out*/;
             resourceInputs["targetResourceId"] = undefined /*out*/;
             resourceInputs["targetResourceType"] = undefined /*out*/;
-            resourceInputs["targetStorageServerVersion"] = undefined /*out*/;
             resourceInputs["timeEnded"] = undefined /*out*/;
             resourceInputs["timeStarted"] = undefined /*out*/;
         }
@@ -358,7 +358,7 @@ export interface MaintenanceRunState {
      */
     state?: pulumi.Input<string>;
     /**
-     * The target software version for the database server patching operation.
+     * (Updatable) The target database server system software version for the patching operation.
      */
     targetDbServerVersion?: pulumi.Input<string>;
     /**
@@ -370,7 +370,7 @@ export interface MaintenanceRunState {
      */
     targetResourceType?: pulumi.Input<string>;
     /**
-     * The target Cell version that is to be patched to.
+     * (Updatable) The target storage cell system software version for the patching operation.
      */
     targetStorageServerVersion?: pulumi.Input<string>;
     /**
@@ -427,6 +427,14 @@ export interface MaintenanceRunArgs {
      * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
      */
     patchingMode?: pulumi.Input<string>;
+    /**
+     * (Updatable) The target database server system software version for the patching operation.
+     */
+    targetDbServerVersion?: pulumi.Input<string>;
+    /**
+     * (Updatable) The target storage cell system software version for the patching operation.
+     */
+    targetStorageServerVersion?: pulumi.Input<string>;
     /**
      * (Updatable) The scheduled date and time of the maintenance run to update.
      */

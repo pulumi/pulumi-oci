@@ -19,66 +19,45 @@ public final class GetDatabaseSoftwareImagesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of database_software_images.
      * 
      */
-    private final List<GetDatabaseSoftwareImagesDatabaseSoftwareImage> databaseSoftwareImages;
+    private List<GetDatabaseSoftwareImagesDatabaseSoftwareImage> databaseSoftwareImages;
     /**
      * @return The user-friendly name for the database software image. The name does not have to be unique.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetDatabaseSoftwareImagesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetDatabaseSoftwareImagesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return To what shape the image is meant for.
      * 
      */
-    private final @Nullable String imageShapeFamily;
+    private @Nullable String imageShapeFamily;
     /**
      * @return The type of software image. Can be grid or database.
      * 
      */
-    private final @Nullable String imageType;
+    private @Nullable String imageType;
     /**
      * @return True if this Database software image is supported for Upgrade.
      * 
      */
-    private final @Nullable Boolean isUpgradeSupported;
+    private @Nullable Boolean isUpgradeSupported;
     /**
      * @return The current state of the database software image.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetDatabaseSoftwareImagesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("databaseSoftwareImages") List<GetDatabaseSoftwareImagesDatabaseSoftwareImage> databaseSoftwareImages,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetDatabaseSoftwareImagesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("imageShapeFamily") @Nullable String imageShapeFamily,
-        @CustomType.Parameter("imageType") @Nullable String imageType,
-        @CustomType.Parameter("isUpgradeSupported") @Nullable Boolean isUpgradeSupported,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.databaseSoftwareImages = databaseSoftwareImages;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.imageShapeFamily = imageShapeFamily;
-        this.imageType = imageType;
-        this.isUpgradeSupported = isUpgradeSupported;
-        this.state = state;
-    }
-
+    private GetDatabaseSoftwareImagesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -146,7 +125,7 @@ public final class GetDatabaseSoftwareImagesResult {
     public static Builder builder(GetDatabaseSoftwareImagesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetDatabaseSoftwareImagesDatabaseSoftwareImage> databaseSoftwareImages;
@@ -157,11 +136,7 @@ public final class GetDatabaseSoftwareImagesResult {
         private @Nullable String imageType;
         private @Nullable Boolean isUpgradeSupported;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseSoftwareImagesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -175,10 +150,12 @@ public final class GetDatabaseSoftwareImagesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseSoftwareImages(List<GetDatabaseSoftwareImagesDatabaseSoftwareImage> databaseSoftwareImages) {
             this.databaseSoftwareImages = Objects.requireNonNull(databaseSoftwareImages);
             return this;
@@ -186,10 +163,12 @@ public final class GetDatabaseSoftwareImagesResult {
         public Builder databaseSoftwareImages(GetDatabaseSoftwareImagesDatabaseSoftwareImage... databaseSoftwareImages) {
             return databaseSoftwareImages(List.of(databaseSoftwareImages));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDatabaseSoftwareImagesFilter> filters) {
             this.filters = filters;
             return this;
@@ -197,27 +176,43 @@ public final class GetDatabaseSoftwareImagesResult {
         public Builder filters(GetDatabaseSoftwareImagesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder imageShapeFamily(@Nullable String imageShapeFamily) {
             this.imageShapeFamily = imageShapeFamily;
             return this;
         }
+        @CustomType.Setter
         public Builder imageType(@Nullable String imageType) {
             this.imageType = imageType;
             return this;
         }
+        @CustomType.Setter
         public Builder isUpgradeSupported(@Nullable Boolean isUpgradeSupported) {
             this.isUpgradeSupported = isUpgradeSupported;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetDatabaseSoftwareImagesResult build() {
-            return new GetDatabaseSoftwareImagesResult(compartmentId, databaseSoftwareImages, displayName, filters, id, imageShapeFamily, imageType, isUpgradeSupported, state);
+        }
+        public GetDatabaseSoftwareImagesResult build() {
+            final var o = new GetDatabaseSoftwareImagesResult();
+            o.compartmentId = compartmentId;
+            o.databaseSoftwareImages = databaseSoftwareImages;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.imageShapeFamily = imageShapeFamily;
+            o.imageType = imageType;
+            o.isUpgradeSupported = isUpgradeSupported;
+            o.state = state;
+            return o;
         }
     }
 }

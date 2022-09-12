@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetJavaReleasesJavaReleaseCollection {
-    private final List<GetJavaReleasesJavaReleaseCollectionItem> items;
+    private List<GetJavaReleasesJavaReleaseCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetJavaReleasesJavaReleaseCollection(@CustomType.Parameter("items") List<GetJavaReleasesJavaReleaseCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetJavaReleasesJavaReleaseCollection() {}
     public List<GetJavaReleasesJavaReleaseCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetJavaReleasesJavaReleaseCollection {
     public static Builder builder(GetJavaReleasesJavaReleaseCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetJavaReleasesJavaReleaseCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJavaReleasesJavaReleaseCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetJavaReleasesJavaReleaseCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetJavaReleasesJavaReleaseCollectionItem... items) {
             return items(List.of(items));
-        }        public GetJavaReleasesJavaReleaseCollection build() {
-            return new GetJavaReleasesJavaReleaseCollection(items);
+        }
+        public GetJavaReleasesJavaReleaseCollection build() {
+            final var o = new GetJavaReleasesJavaReleaseCollection();
+            o.items = items;
+            return o;
         }
     }
 }

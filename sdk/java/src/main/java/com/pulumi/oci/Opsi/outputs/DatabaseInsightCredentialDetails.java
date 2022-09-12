@@ -15,42 +15,29 @@ public final class DatabaseInsightCredentialDetails {
      * @return Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
      * 
      */
-    private final @Nullable String credentialSourceName;
+    private @Nullable String credentialSourceName;
     /**
      * @return Credential type.
      * 
      */
-    private final String credentialType;
+    private String credentialType;
     /**
      * @return The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
      * 
      */
-    private final @Nullable String passwordSecretId;
+    private @Nullable String passwordSecretId;
     /**
      * @return database user role.
      * 
      */
-    private final @Nullable String role;
+    private @Nullable String role;
     /**
      * @return database user name.
      * 
      */
-    private final @Nullable String userName;
+    private @Nullable String userName;
 
-    @CustomType.Constructor
-    private DatabaseInsightCredentialDetails(
-        @CustomType.Parameter("credentialSourceName") @Nullable String credentialSourceName,
-        @CustomType.Parameter("credentialType") String credentialType,
-        @CustomType.Parameter("passwordSecretId") @Nullable String passwordSecretId,
-        @CustomType.Parameter("role") @Nullable String role,
-        @CustomType.Parameter("userName") @Nullable String userName) {
-        this.credentialSourceName = credentialSourceName;
-        this.credentialType = credentialType;
-        this.passwordSecretId = passwordSecretId;
-        this.role = role;
-        this.userName = userName;
-    }
-
+    private DatabaseInsightCredentialDetails() {}
     /**
      * @return Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
      * 
@@ -94,18 +81,14 @@ public final class DatabaseInsightCredentialDetails {
     public static Builder builder(DatabaseInsightCredentialDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String credentialSourceName;
         private String credentialType;
         private @Nullable String passwordSecretId;
         private @Nullable String role;
         private @Nullable String userName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DatabaseInsightCredentialDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.credentialSourceName = defaults.credentialSourceName;
@@ -115,27 +98,39 @@ public final class DatabaseInsightCredentialDetails {
     	      this.userName = defaults.userName;
         }
 
+        @CustomType.Setter
         public Builder credentialSourceName(@Nullable String credentialSourceName) {
             this.credentialSourceName = credentialSourceName;
             return this;
         }
+        @CustomType.Setter
         public Builder credentialType(String credentialType) {
             this.credentialType = Objects.requireNonNull(credentialType);
             return this;
         }
+        @CustomType.Setter
         public Builder passwordSecretId(@Nullable String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             return this;
         }
+        @CustomType.Setter
         public Builder role(@Nullable String role) {
             this.role = role;
             return this;
         }
+        @CustomType.Setter
         public Builder userName(@Nullable String userName) {
             this.userName = userName;
             return this;
-        }        public DatabaseInsightCredentialDetails build() {
-            return new DatabaseInsightCredentialDetails(credentialSourceName, credentialType, passwordSecretId, role, userName);
+        }
+        public DatabaseInsightCredentialDetails build() {
+            final var o = new DatabaseInsightCredentialDetails();
+            o.credentialSourceName = credentialSourceName;
+            o.credentialType = credentialType;
+            o.passwordSecretId = passwordSecretId;
+            o.role = role;
+            o.userName = userName;
+            return o;
         }
     }
 }

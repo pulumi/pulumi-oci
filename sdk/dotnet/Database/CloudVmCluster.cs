@@ -39,6 +39,8 @@ namespace Pulumi.Oci.Database
     ///         DataCollectionOptions = new Oci.Database.Inputs.CloudVmClusterDataCollectionOptionsArgs
     ///         {
     ///             IsDiagnosticsEventsEnabled = @var.Cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled,
+    ///             IsHealthMonitoringEnabled = @var.Cloud_vm_cluster_data_collection_options_is_health_monitoring_enabled,
+    ///             IsIncidentLogsEnabled = @var.Cloud_vm_cluster_data_collection_options_is_incident_logs_enabled,
     ///         },
     ///         DataStoragePercentage = @var.Cloud_vm_cluster_data_storage_percentage,
     ///         DefinedTags = @var.Cloud_vm_cluster_defined_tags,

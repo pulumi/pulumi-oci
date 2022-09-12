@@ -18,55 +18,36 @@ public final class GetNetworkSecurityGroupsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the network security group is in.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetNetworkSecurityGroupsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetNetworkSecurityGroupsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of network_security_groups.
      * 
      */
-    private final List<GetNetworkSecurityGroupsNetworkSecurityGroup> networkSecurityGroups;
+    private List<GetNetworkSecurityGroupsNetworkSecurityGroup> networkSecurityGroups;
     /**
      * @return The network security group&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group&#39;s VCN.
      * 
      */
-    private final @Nullable String vcnId;
-    private final @Nullable String vlanId;
+    private @Nullable String vcnId;
+    private @Nullable String vlanId;
 
-    @CustomType.Constructor
-    private GetNetworkSecurityGroupsResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetNetworkSecurityGroupsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("networkSecurityGroups") List<GetNetworkSecurityGroupsNetworkSecurityGroup> networkSecurityGroups,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("vcnId") @Nullable String vcnId,
-        @CustomType.Parameter("vlanId") @Nullable String vlanId) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.networkSecurityGroups = networkSecurityGroups;
-        this.state = state;
-        this.vcnId = vcnId;
-        this.vlanId = vlanId;
-    }
-
+    private GetNetworkSecurityGroupsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the network security group is in.
      * 
@@ -123,7 +104,7 @@ public final class GetNetworkSecurityGroupsResult {
     public static Builder builder(GetNetworkSecurityGroupsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
@@ -133,11 +114,7 @@ public final class GetNetworkSecurityGroupsResult {
         private @Nullable String state;
         private @Nullable String vcnId;
         private @Nullable String vlanId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkSecurityGroupsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -150,14 +127,17 @@ public final class GetNetworkSecurityGroupsResult {
     	      this.vlanId = defaults.vlanId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkSecurityGroupsFilter> filters) {
             this.filters = filters;
             return this;
@@ -165,10 +145,12 @@ public final class GetNetworkSecurityGroupsResult {
         public Builder filters(GetNetworkSecurityGroupsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder networkSecurityGroups(List<GetNetworkSecurityGroupsNetworkSecurityGroup> networkSecurityGroups) {
             this.networkSecurityGroups = Objects.requireNonNull(networkSecurityGroups);
             return this;
@@ -176,19 +158,32 @@ public final class GetNetworkSecurityGroupsResult {
         public Builder networkSecurityGroups(GetNetworkSecurityGroupsNetworkSecurityGroup... networkSecurityGroups) {
             return networkSecurityGroups(List.of(networkSecurityGroups));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
             this.vcnId = vcnId;
             return this;
         }
+        @CustomType.Setter
         public Builder vlanId(@Nullable String vlanId) {
             this.vlanId = vlanId;
             return this;
-        }        public GetNetworkSecurityGroupsResult build() {
-            return new GetNetworkSecurityGroupsResult(compartmentId, displayName, filters, id, networkSecurityGroups, state, vcnId, vlanId);
+        }
+        public GetNetworkSecurityGroupsResult build() {
+            final var o = new GetNetworkSecurityGroupsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.networkSecurityGroups = networkSecurityGroups;
+            o.state = state;
+            o.vcnId = vcnId;
+            o.vlanId = vlanId;
+            return o;
         }
     }
 }

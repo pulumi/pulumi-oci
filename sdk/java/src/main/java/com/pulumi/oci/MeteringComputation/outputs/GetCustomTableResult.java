@@ -15,38 +15,25 @@ public final class GetCustomTableResult {
      * @return The custom table compartment OCID.
      * 
      */
-    private final String compartmentId;
-    private final String customTableId;
+    private String compartmentId;
+    private String customTableId;
     /**
      * @return The custom table OCID.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The custom table for Cost Analysis UI rendering.
      * 
      */
-    private final List<GetCustomTableSavedCustomTable> savedCustomTables;
+    private List<GetCustomTableSavedCustomTable> savedCustomTables;
     /**
      * @return The custom table associated saved report OCID.
      * 
      */
-    private final String savedReportId;
+    private String savedReportId;
 
-    @CustomType.Constructor
-    private GetCustomTableResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("customTableId") String customTableId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("savedCustomTables") List<GetCustomTableSavedCustomTable> savedCustomTables,
-        @CustomType.Parameter("savedReportId") String savedReportId) {
-        this.compartmentId = compartmentId;
-        this.customTableId = customTableId;
-        this.id = id;
-        this.savedCustomTables = savedCustomTables;
-        this.savedReportId = savedReportId;
-    }
-
+    private GetCustomTableResult() {}
     /**
      * @return The custom table compartment OCID.
      * 
@@ -86,18 +73,14 @@ public final class GetCustomTableResult {
     public static Builder builder(GetCustomTableResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String customTableId;
         private String id;
         private List<GetCustomTableSavedCustomTable> savedCustomTables;
         private String savedReportId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCustomTableResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -107,18 +90,22 @@ public final class GetCustomTableResult {
     	      this.savedReportId = defaults.savedReportId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder customTableId(String customTableId) {
             this.customTableId = Objects.requireNonNull(customTableId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder savedCustomTables(List<GetCustomTableSavedCustomTable> savedCustomTables) {
             this.savedCustomTables = Objects.requireNonNull(savedCustomTables);
             return this;
@@ -126,11 +113,19 @@ public final class GetCustomTableResult {
         public Builder savedCustomTables(GetCustomTableSavedCustomTable... savedCustomTables) {
             return savedCustomTables(List.of(savedCustomTables));
         }
+        @CustomType.Setter
         public Builder savedReportId(String savedReportId) {
             this.savedReportId = Objects.requireNonNull(savedReportId);
             return this;
-        }        public GetCustomTableResult build() {
-            return new GetCustomTableResult(compartmentId, customTableId, id, savedCustomTables, savedReportId);
+        }
+        public GetCustomTableResult build() {
+            final var o = new GetCustomTableResult();
+            o.compartmentId = compartmentId;
+            o.customTableId = customTableId;
+            o.id = id;
+            o.savedCustomTables = savedCustomTables;
+            o.savedReportId = savedReportId;
+            return o;
         }
     }
 }

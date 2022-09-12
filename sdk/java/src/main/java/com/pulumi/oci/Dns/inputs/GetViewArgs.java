@@ -7,6 +7,8 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetViewArgs extends com.pulumi.resources.InvokeArgs {
@@ -17,30 +19,30 @@ public final class GetViewArgs extends com.pulumi.resources.InvokeArgs {
      * Value must be `PRIVATE` when listing views for private zones.
      * 
      */
-    @Import(name="scope", required=true)
-    private Output<String> scope;
+    @Import(name="scope")
+    private @Nullable Output<String> scope;
 
     /**
      * @return Value must be `PRIVATE` when listing views for private zones.
      * 
      */
-    public Output<String> scope() {
-        return this.scope;
+    public Optional<Output<String>> scope() {
+        return Optional.ofNullable(this.scope);
     }
 
     /**
      * The OCID of the target view.
      * 
      */
-    @Import(name="viewId", required=true)
-    private Output<String> viewId;
+    @Import(name="viewId")
+    private @Nullable Output<String> viewId;
 
     /**
      * @return The OCID of the target view.
      * 
      */
-    public Output<String> viewId() {
-        return this.viewId;
+    public Optional<Output<String>> viewId() {
+        return Optional.ofNullable(this.viewId);
     }
 
     private GetViewArgs() {}
@@ -74,7 +76,7 @@ public final class GetViewArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          */
-        public Builder scope(Output<String> scope) {
+        public Builder scope(@Nullable Output<String> scope) {
             $.scope = scope;
             return this;
         }
@@ -95,7 +97,7 @@ public final class GetViewArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          */
-        public Builder viewId(Output<String> viewId) {
+        public Builder viewId(@Nullable Output<String> viewId) {
             $.viewId = viewId;
             return this;
         }
@@ -111,8 +113,6 @@ public final class GetViewArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetViewArgs build() {
-            $.scope = Objects.requireNonNull($.scope, "expected parameter 'scope' to be non-null");
-            $.viewId = Objects.requireNonNull($.viewId, "expected parameter 'viewId' to be non-null");
             return $;
         }
     }

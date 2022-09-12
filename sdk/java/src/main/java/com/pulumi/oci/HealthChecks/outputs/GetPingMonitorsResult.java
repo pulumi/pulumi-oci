@@ -18,45 +18,30 @@ public final class GetPingMonitorsResult {
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly and mutable name suitable for display in a user interface.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetPingMonitorsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetPingMonitorsFilter> filters;
     /**
      * @return The region where updates must be made and where results must be fetched from.
      * 
      */
-    private final @Nullable String homeRegion;
+    private @Nullable String homeRegion;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of ping_monitors.
      * 
      */
-    private final List<GetPingMonitorsPingMonitor> pingMonitors;
+    private List<GetPingMonitorsPingMonitor> pingMonitors;
 
-    @CustomType.Constructor
-    private GetPingMonitorsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetPingMonitorsFilter> filters,
-        @CustomType.Parameter("homeRegion") @Nullable String homeRegion,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("pingMonitors") List<GetPingMonitorsPingMonitor> pingMonitors) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.homeRegion = homeRegion;
-        this.id = id;
-        this.pingMonitors = pingMonitors;
-    }
-
+    private GetPingMonitorsResult() {}
     /**
      * @return The OCID of the compartment.
      * 
@@ -103,7 +88,7 @@ public final class GetPingMonitorsResult {
     public static Builder builder(GetPingMonitorsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetPingMonitorsResult {
         private @Nullable String homeRegion;
         private String id;
         private List<GetPingMonitorsPingMonitor> pingMonitors;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPingMonitorsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetPingMonitorsResult {
     	      this.pingMonitors = defaults.pingMonitors;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetPingMonitorsFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,22 +125,33 @@ public final class GetPingMonitorsResult {
         public Builder filters(GetPingMonitorsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder homeRegion(@Nullable String homeRegion) {
             this.homeRegion = homeRegion;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder pingMonitors(List<GetPingMonitorsPingMonitor> pingMonitors) {
             this.pingMonitors = Objects.requireNonNull(pingMonitors);
             return this;
         }
         public Builder pingMonitors(GetPingMonitorsPingMonitor... pingMonitors) {
             return pingMonitors(List.of(pingMonitors));
-        }        public GetPingMonitorsResult build() {
-            return new GetPingMonitorsResult(compartmentId, displayName, filters, homeRegion, id, pingMonitors);
+        }
+        public GetPingMonitorsResult build() {
+            final var o = new GetPingMonitorsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.homeRegion = homeRegion;
+            o.id = id;
+            o.pingMonitors = pingMonitors;
+            return o;
         }
     }
 }

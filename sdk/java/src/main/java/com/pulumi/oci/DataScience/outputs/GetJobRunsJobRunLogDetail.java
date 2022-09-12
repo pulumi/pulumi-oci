@@ -13,21 +13,14 @@ public final class GetJobRunsJobRunLogDetail {
      * @return The log group id for where log objects will be for job runs.
      * 
      */
-    private final String logGroupId;
+    private String logGroupId;
     /**
      * @return The log id of the log object the job run logs will be shipped to.
      * 
      */
-    private final String logId;
+    private String logId;
 
-    @CustomType.Constructor
-    private GetJobRunsJobRunLogDetail(
-        @CustomType.Parameter("logGroupId") String logGroupId,
-        @CustomType.Parameter("logId") String logId) {
-        this.logGroupId = logGroupId;
-        this.logId = logId;
-    }
-
+    private GetJobRunsJobRunLogDetail() {}
     /**
      * @return The log group id for where log objects will be for job runs.
      * 
@@ -50,30 +43,32 @@ public final class GetJobRunsJobRunLogDetail {
     public static Builder builder(GetJobRunsJobRunLogDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String logGroupId;
         private String logId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJobRunsJobRunLogDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.logGroupId = defaults.logGroupId;
     	      this.logId = defaults.logId;
         }
 
+        @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = Objects.requireNonNull(logGroupId);
             return this;
         }
+        @CustomType.Setter
         public Builder logId(String logId) {
             this.logId = Objects.requireNonNull(logId);
             return this;
-        }        public GetJobRunsJobRunLogDetail build() {
-            return new GetJobRunsJobRunLogDetail(logGroupId, logId);
+        }
+        public GetJobRunsJobRunLogDetail build() {
+            final var o = new GetJobRunsJobRunLogDetail();
+            o.logGroupId = logGroupId;
+            o.logId = logId;
+            return o;
         }
     }
 }

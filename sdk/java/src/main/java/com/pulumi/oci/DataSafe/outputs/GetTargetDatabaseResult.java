@@ -20,122 +20,85 @@ public final class GetTargetDatabaseResult {
      * @return The OCIDs of associated resources like Database, Data Safe private endpoint etc.
      * 
      */
-    private final List<String> associatedResourceIds;
+    private List<String> associatedResourceIds;
     /**
      * @return The OCID of the compartment which contains the Data Safe target database.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Types of connection supported by Data Safe.
      * 
      */
-    private final List<GetTargetDatabaseConnectionOption> connectionOptions;
+    private List<GetTargetDatabaseConnectionOption> connectionOptions;
     /**
      * @return The database credentials required for Data Safe to connect to the database.
      * 
      */
-    private final List<GetTargetDatabaseCredential> credentials;
+    private List<GetTargetDatabaseCredential> credentials;
     /**
      * @return Details of the database for the registration in Data Safe. To choose applicable database type and infrastructure type refer to  https://confluence.oci.oraclecorp.com/display/DATASAFE/Target+V2+Design
      * 
      */
-    private final List<GetTargetDatabaseDatabaseDetail> databaseDetails;
+    private List<GetTargetDatabaseDatabaseDetail> databaseDetails;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The description of the target database in Data Safe.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The display name of the target database in Data Safe.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the Data Safe target database.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Details about the current state of the target database in Data Safe.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The current state of the target database in Data Safe.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
-    private final String targetDatabaseId;
+    private Map<String,Object> systemTags;
+    private String targetDatabaseId;
     /**
      * @return The date and time the database was registered in Data Safe and created as a target database in Data Safe.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time of the target database update in Data Safe.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return The details required to establish a TLS enabled connection.
      * 
      */
-    private final List<GetTargetDatabaseTlsConfig> tlsConfigs;
+    private List<GetTargetDatabaseTlsConfig> tlsConfigs;
 
-    @CustomType.Constructor
-    private GetTargetDatabaseResult(
-        @CustomType.Parameter("associatedResourceIds") List<String> associatedResourceIds,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("connectionOptions") List<GetTargetDatabaseConnectionOption> connectionOptions,
-        @CustomType.Parameter("credentials") List<GetTargetDatabaseCredential> credentials,
-        @CustomType.Parameter("databaseDetails") List<GetTargetDatabaseDatabaseDetail> databaseDetails,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("targetDatabaseId") String targetDatabaseId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("tlsConfigs") List<GetTargetDatabaseTlsConfig> tlsConfigs) {
-        this.associatedResourceIds = associatedResourceIds;
-        this.compartmentId = compartmentId;
-        this.connectionOptions = connectionOptions;
-        this.credentials = credentials;
-        this.databaseDetails = databaseDetails;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.targetDatabaseId = targetDatabaseId;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.tlsConfigs = tlsConfigs;
-    }
-
+    private GetTargetDatabaseResult() {}
     /**
      * @return The OCIDs of associated resources like Database, Data Safe private endpoint etc.
      * 
@@ -259,7 +222,7 @@ public final class GetTargetDatabaseResult {
     public static Builder builder(GetTargetDatabaseResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> associatedResourceIds;
         private String compartmentId;
@@ -278,11 +241,7 @@ public final class GetTargetDatabaseResult {
         private String timeCreated;
         private String timeUpdated;
         private List<GetTargetDatabaseTlsConfig> tlsConfigs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTargetDatabaseResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.associatedResourceIds = defaults.associatedResourceIds;
@@ -304,6 +263,7 @@ public final class GetTargetDatabaseResult {
     	      this.tlsConfigs = defaults.tlsConfigs;
         }
 
+        @CustomType.Setter
         public Builder associatedResourceIds(List<String> associatedResourceIds) {
             this.associatedResourceIds = Objects.requireNonNull(associatedResourceIds);
             return this;
@@ -311,10 +271,12 @@ public final class GetTargetDatabaseResult {
         public Builder associatedResourceIds(String... associatedResourceIds) {
             return associatedResourceIds(List.of(associatedResourceIds));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder connectionOptions(List<GetTargetDatabaseConnectionOption> connectionOptions) {
             this.connectionOptions = Objects.requireNonNull(connectionOptions);
             return this;
@@ -322,6 +284,7 @@ public final class GetTargetDatabaseResult {
         public Builder connectionOptions(GetTargetDatabaseConnectionOption... connectionOptions) {
             return connectionOptions(List.of(connectionOptions));
         }
+        @CustomType.Setter
         public Builder credentials(List<GetTargetDatabaseCredential> credentials) {
             this.credentials = Objects.requireNonNull(credentials);
             return this;
@@ -329,6 +292,7 @@ public final class GetTargetDatabaseResult {
         public Builder credentials(GetTargetDatabaseCredential... credentials) {
             return credentials(List.of(credentials));
         }
+        @CustomType.Setter
         public Builder databaseDetails(List<GetTargetDatabaseDatabaseDetail> databaseDetails) {
             this.databaseDetails = Objects.requireNonNull(databaseDetails);
             return this;
@@ -336,58 +300,89 @@ public final class GetTargetDatabaseResult {
         public Builder databaseDetails(GetTargetDatabaseDatabaseDetail... databaseDetails) {
             return databaseDetails(List.of(databaseDetails));
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder targetDatabaseId(String targetDatabaseId) {
             this.targetDatabaseId = Objects.requireNonNull(targetDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder tlsConfigs(List<GetTargetDatabaseTlsConfig> tlsConfigs) {
             this.tlsConfigs = Objects.requireNonNull(tlsConfigs);
             return this;
         }
         public Builder tlsConfigs(GetTargetDatabaseTlsConfig... tlsConfigs) {
             return tlsConfigs(List.of(tlsConfigs));
-        }        public GetTargetDatabaseResult build() {
-            return new GetTargetDatabaseResult(associatedResourceIds, compartmentId, connectionOptions, credentials, databaseDetails, definedTags, description, displayName, freeformTags, id, lifecycleDetails, state, systemTags, targetDatabaseId, timeCreated, timeUpdated, tlsConfigs);
+        }
+        public GetTargetDatabaseResult build() {
+            final var o = new GetTargetDatabaseResult();
+            o.associatedResourceIds = associatedResourceIds;
+            o.compartmentId = compartmentId;
+            o.connectionOptions = connectionOptions;
+            o.credentials = credentials;
+            o.databaseDetails = databaseDetails;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.targetDatabaseId = targetDatabaseId;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.tlsConfigs = tlsConfigs;
+            return o;
         }
     }
 }

@@ -15,35 +15,24 @@ public final class GetHttpProbeResultsHttpProbeResultConnection {
      * @return The connection IP address.
      * 
      */
-    private final String address;
+    private String address;
     /**
      * @return Total connect duration, calculated using `connectEnd` minus `connectStart`.
      * 
      */
-    private final Double connectDuration;
+    private Double connectDuration;
     /**
      * @return The port.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return The duration to secure the connection.  This value will be zero for insecure connections.  Calculated using `connectEnd` minus `secureConnectionStart`.
      * 
      */
-    private final Double secureConnectDuration;
+    private Double secureConnectDuration;
 
-    @CustomType.Constructor
-    private GetHttpProbeResultsHttpProbeResultConnection(
-        @CustomType.Parameter("address") String address,
-        @CustomType.Parameter("connectDuration") Double connectDuration,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("secureConnectDuration") Double secureConnectDuration) {
-        this.address = address;
-        this.connectDuration = connectDuration;
-        this.port = port;
-        this.secureConnectDuration = secureConnectDuration;
-    }
-
+    private GetHttpProbeResultsHttpProbeResultConnection() {}
     /**
      * @return The connection IP address.
      * 
@@ -80,17 +69,13 @@ public final class GetHttpProbeResultsHttpProbeResultConnection {
     public static Builder builder(GetHttpProbeResultsHttpProbeResultConnection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String address;
         private Double connectDuration;
         private Integer port;
         private Double secureConnectDuration;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetHttpProbeResultsHttpProbeResultConnection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.address = defaults.address;
@@ -99,23 +84,33 @@ public final class GetHttpProbeResultsHttpProbeResultConnection {
     	      this.secureConnectDuration = defaults.secureConnectDuration;
         }
 
+        @CustomType.Setter
         public Builder address(String address) {
             this.address = Objects.requireNonNull(address);
             return this;
         }
+        @CustomType.Setter
         public Builder connectDuration(Double connectDuration) {
             this.connectDuration = Objects.requireNonNull(connectDuration);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder secureConnectDuration(Double secureConnectDuration) {
             this.secureConnectDuration = Objects.requireNonNull(secureConnectDuration);
             return this;
-        }        public GetHttpProbeResultsHttpProbeResultConnection build() {
-            return new GetHttpProbeResultsHttpProbeResultConnection(address, connectDuration, port, secureConnectDuration);
+        }
+        public GetHttpProbeResultsHttpProbeResultConnection build() {
+            final var o = new GetHttpProbeResultsHttpProbeResultConnection();
+            o.address = address;
+            o.connectDuration = connectDuration;
+            o.port = port;
+            o.secureConnectDuration = secureConnectDuration;
+            return o;
         }
     }
 }

@@ -13,21 +13,14 @@ public final class GetListingPublisherLink {
      * @return The anchor tag.
      * 
      */
-    private final String href;
+    private String href;
     /**
      * @return Reference links to the previous page, next page, and other pages.
      * 
      */
-    private final String rel;
+    private String rel;
 
-    @CustomType.Constructor
-    private GetListingPublisherLink(
-        @CustomType.Parameter("href") String href,
-        @CustomType.Parameter("rel") String rel) {
-        this.href = href;
-        this.rel = rel;
-    }
-
+    private GetListingPublisherLink() {}
     /**
      * @return The anchor tag.
      * 
@@ -50,30 +43,32 @@ public final class GetListingPublisherLink {
     public static Builder builder(GetListingPublisherLink defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String href;
         private String rel;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingPublisherLink defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.href = defaults.href;
     	      this.rel = defaults.rel;
         }
 
+        @CustomType.Setter
         public Builder href(String href) {
             this.href = Objects.requireNonNull(href);
             return this;
         }
+        @CustomType.Setter
         public Builder rel(String rel) {
             this.rel = Objects.requireNonNull(rel);
             return this;
-        }        public GetListingPublisherLink build() {
-            return new GetListingPublisherLink(href, rel);
+        }
+        public GetListingPublisherLink build() {
+            final var o = new GetListingPublisherLink();
+            o.href = href;
+            o.rel = rel;
+            return o;
         }
     }
 }

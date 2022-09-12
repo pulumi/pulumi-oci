@@ -14,59 +14,32 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetObjectVersionsResult {
-    private final String bucket;
-    private final @Nullable String delimiter;
-    private final @Nullable String end;
-    private final @Nullable String fields;
-    private final @Nullable List<GetObjectVersionsFilter> filters;
+    private String bucket;
+    private @Nullable String delimiter;
+    private @Nullable String end;
+    private @Nullable String fields;
+    private @Nullable List<GetObjectVersionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return An array of object version summaries.
      * 
      */
-    private final List<GetObjectVersionsItem> items;
-    private final String namespace;
-    private final @Nullable String prefix;
+    private List<GetObjectVersionsItem> items;
+    private String namespace;
+    private @Nullable String prefix;
     /**
      * @return Prefixes that are common to the results returned by the request if the request specified a delimiter.
      * 
      */
-    private final List<String> prefixes;
-    private final @Nullable String start;
-    private final @Nullable String startAfter;
+    private List<String> prefixes;
+    private @Nullable String start;
+    private @Nullable String startAfter;
 
-    @CustomType.Constructor
-    private GetObjectVersionsResult(
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("delimiter") @Nullable String delimiter,
-        @CustomType.Parameter("end") @Nullable String end,
-        @CustomType.Parameter("fields") @Nullable String fields,
-        @CustomType.Parameter("filters") @Nullable List<GetObjectVersionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetObjectVersionsItem> items,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("prefix") @Nullable String prefix,
-        @CustomType.Parameter("prefixes") List<String> prefixes,
-        @CustomType.Parameter("start") @Nullable String start,
-        @CustomType.Parameter("startAfter") @Nullable String startAfter) {
-        this.bucket = bucket;
-        this.delimiter = delimiter;
-        this.end = end;
-        this.fields = fields;
-        this.filters = filters;
-        this.id = id;
-        this.items = items;
-        this.namespace = namespace;
-        this.prefix = prefix;
-        this.prefixes = prefixes;
-        this.start = start;
-        this.startAfter = startAfter;
-    }
-
+    private GetObjectVersionsResult() {}
     public String bucket() {
         return this.bucket;
     }
@@ -123,7 +96,7 @@ public final class GetObjectVersionsResult {
     public static Builder builder(GetObjectVersionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucket;
         private @Nullable String delimiter;
@@ -137,11 +110,7 @@ public final class GetObjectVersionsResult {
         private List<String> prefixes;
         private @Nullable String start;
         private @Nullable String startAfter;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetObjectVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -158,22 +127,27 @@ public final class GetObjectVersionsResult {
     	      this.startAfter = defaults.startAfter;
         }
 
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder delimiter(@Nullable String delimiter) {
             this.delimiter = delimiter;
             return this;
         }
+        @CustomType.Setter
         public Builder end(@Nullable String end) {
             this.end = end;
             return this;
         }
+        @CustomType.Setter
         public Builder fields(@Nullable String fields) {
             this.fields = fields;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetObjectVersionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -181,10 +155,12 @@ public final class GetObjectVersionsResult {
         public Builder filters(GetObjectVersionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetObjectVersionsItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -192,14 +168,17 @@ public final class GetObjectVersionsResult {
         public Builder items(GetObjectVersionsItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder prefix(@Nullable String prefix) {
             this.prefix = prefix;
             return this;
         }
+        @CustomType.Setter
         public Builder prefixes(List<String> prefixes) {
             this.prefixes = Objects.requireNonNull(prefixes);
             return this;
@@ -207,15 +186,31 @@ public final class GetObjectVersionsResult {
         public Builder prefixes(String... prefixes) {
             return prefixes(List.of(prefixes));
         }
+        @CustomType.Setter
         public Builder start(@Nullable String start) {
             this.start = start;
             return this;
         }
+        @CustomType.Setter
         public Builder startAfter(@Nullable String startAfter) {
             this.startAfter = startAfter;
             return this;
-        }        public GetObjectVersionsResult build() {
-            return new GetObjectVersionsResult(bucket, delimiter, end, fields, filters, id, items, namespace, prefix, prefixes, start, startAfter);
+        }
+        public GetObjectVersionsResult build() {
+            final var o = new GetObjectVersionsResult();
+            o.bucket = bucket;
+            o.delimiter = delimiter;
+            o.end = end;
+            o.fields = fields;
+            o.filters = filters;
+            o.id = id;
+            o.items = items;
+            o.namespace = namespace;
+            o.prefix = prefix;
+            o.prefixes = prefixes;
+            o.start = start;
+            o.startAfter = startAfter;
+            return o;
         }
     }
 }

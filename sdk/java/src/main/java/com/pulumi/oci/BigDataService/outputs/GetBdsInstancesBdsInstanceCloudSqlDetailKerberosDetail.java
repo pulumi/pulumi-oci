@@ -13,21 +13,14 @@ public final class GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail {
      * @return Location of the keytab file
      * 
      */
-    private final String keytabFile;
+    private String keytabFile;
     /**
      * @return Name of the Kerberos principal.
      * 
      */
-    private final String principalName;
+    private String principalName;
 
-    @CustomType.Constructor
-    private GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail(
-        @CustomType.Parameter("keytabFile") String keytabFile,
-        @CustomType.Parameter("principalName") String principalName) {
-        this.keytabFile = keytabFile;
-        this.principalName = principalName;
-    }
-
+    private GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail() {}
     /**
      * @return Location of the keytab file
      * 
@@ -50,30 +43,32 @@ public final class GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail {
     public static Builder builder(GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String keytabFile;
         private String principalName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.keytabFile = defaults.keytabFile;
     	      this.principalName = defaults.principalName;
         }
 
+        @CustomType.Setter
         public Builder keytabFile(String keytabFile) {
             this.keytabFile = Objects.requireNonNull(keytabFile);
             return this;
         }
+        @CustomType.Setter
         public Builder principalName(String principalName) {
             this.principalName = Objects.requireNonNull(principalName);
             return this;
-        }        public GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail build() {
-            return new GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail(keytabFile, principalName);
+        }
+        public GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail build() {
+            final var o = new GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail();
+            o.keytabFile = keytabFile;
+            o.principalName = principalName;
+            return o;
         }
     }
 }

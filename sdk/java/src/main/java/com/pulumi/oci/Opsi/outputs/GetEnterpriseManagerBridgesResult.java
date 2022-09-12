@@ -19,48 +19,31 @@ public final class GetEnterpriseManagerBridgesResult {
      * @return Compartment identifier of the Enterprise Manager bridge
      * 
      */
-    private final @Nullable String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return User-friedly name of Enterprise Manager Bridge that does not have to be unique.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The list of enterprise_manager_bridge_collection.
      * 
      */
-    private final List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection> enterpriseManagerBridgeCollections;
-    private final @Nullable List<GetEnterpriseManagerBridgesFilter> filters;
+    private List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection> enterpriseManagerBridgeCollections;
+    private @Nullable List<GetEnterpriseManagerBridgesFilter> filters;
     /**
      * @return Enterprise Manager bridge identifier
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The current state of the Enterprise Manager bridge.
      * 
      */
-    private final @Nullable List<String> states;
+    private @Nullable List<String> states;
 
-    @CustomType.Constructor
-    private GetEnterpriseManagerBridgesResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("enterpriseManagerBridgeCollections") List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection> enterpriseManagerBridgeCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetEnterpriseManagerBridgesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("states") @Nullable List<String> states) {
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.displayName = displayName;
-        this.enterpriseManagerBridgeCollections = enterpriseManagerBridgeCollections;
-        this.filters = filters;
-        this.id = id;
-        this.states = states;
-    }
-
+    private GetEnterpriseManagerBridgesResult() {}
     /**
      * @return Compartment identifier of the Enterprise Manager bridge
      * 
@@ -110,7 +93,7 @@ public final class GetEnterpriseManagerBridgesResult {
     public static Builder builder(GetEnterpriseManagerBridgesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
@@ -119,11 +102,7 @@ public final class GetEnterpriseManagerBridgesResult {
         private @Nullable List<GetEnterpriseManagerBridgesFilter> filters;
         private @Nullable String id;
         private @Nullable List<String> states;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEnterpriseManagerBridgesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -135,18 +114,22 @@ public final class GetEnterpriseManagerBridgesResult {
     	      this.states = defaults.states;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder enterpriseManagerBridgeCollections(List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection> enterpriseManagerBridgeCollections) {
             this.enterpriseManagerBridgeCollections = Objects.requireNonNull(enterpriseManagerBridgeCollections);
             return this;
@@ -154,6 +137,7 @@ public final class GetEnterpriseManagerBridgesResult {
         public Builder enterpriseManagerBridgeCollections(GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection... enterpriseManagerBridgeCollections) {
             return enterpriseManagerBridgeCollections(List.of(enterpriseManagerBridgeCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetEnterpriseManagerBridgesFilter> filters) {
             this.filters = filters;
             return this;
@@ -161,18 +145,29 @@ public final class GetEnterpriseManagerBridgesResult {
         public Builder filters(GetEnterpriseManagerBridgesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
             this.states = states;
             return this;
         }
         public Builder states(String... states) {
             return states(List.of(states));
-        }        public GetEnterpriseManagerBridgesResult build() {
-            return new GetEnterpriseManagerBridgesResult(compartmentId, compartmentIdInSubtree, displayName, enterpriseManagerBridgeCollections, filters, id, states);
+        }
+        public GetEnterpriseManagerBridgesResult build() {
+            final var o = new GetEnterpriseManagerBridgesResult();
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.displayName = displayName;
+            o.enterpriseManagerBridgeCollections = enterpriseManagerBridgeCollections;
+            o.filters = filters;
+            o.id = id;
+            o.states = states;
+            return o;
         }
     }
 }

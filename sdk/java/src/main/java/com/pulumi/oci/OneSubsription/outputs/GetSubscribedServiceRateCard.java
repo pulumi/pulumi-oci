@@ -18,77 +18,54 @@ public final class GetSubscribedServiceRateCard {
      * @return Currency details
      * 
      */
-    private final List<GetSubscribedServiceRateCardCurrency> currencies;
+    private List<GetSubscribedServiceRateCardCurrency> currencies;
     /**
      * @return Rate card discretionary discount percentage
      * 
      */
-    private final String discretionaryDiscountPercentage;
+    private String discretionaryDiscountPercentage;
     /**
      * @return Rate card price tier flag
      * 
      */
-    private final Boolean isTier;
+    private Boolean isTier;
     /**
      * @return Rate card tier net unit price
      * 
      */
-    private final String netUnitPrice;
+    private String netUnitPrice;
     /**
      * @return Rate card tier overage price
      * 
      */
-    private final String overagePrice;
+    private String overagePrice;
     /**
      * @return Product description
      * 
      */
-    private final List<GetSubscribedServiceRateCardProduct> products;
+    private List<GetSubscribedServiceRateCardProduct> products;
     /**
      * @return List of tiered rate card prices
      * 
      */
-    private final List<GetSubscribedServiceRateCardRateCardTier> rateCardTiers;
+    private List<GetSubscribedServiceRateCardRateCardTier> rateCardTiers;
     /**
      * @return The Subscribed Service Id
      * 
      */
-    private final String subscribedServiceId;
+    private String subscribedServiceId;
     /**
      * @return Subscribed service end date
      * 
      */
-    private final String timeEnd;
+    private String timeEnd;
     /**
      * @return Subscribed service start date
      * 
      */
-    private final String timeStart;
+    private String timeStart;
 
-    @CustomType.Constructor
-    private GetSubscribedServiceRateCard(
-        @CustomType.Parameter("currencies") List<GetSubscribedServiceRateCardCurrency> currencies,
-        @CustomType.Parameter("discretionaryDiscountPercentage") String discretionaryDiscountPercentage,
-        @CustomType.Parameter("isTier") Boolean isTier,
-        @CustomType.Parameter("netUnitPrice") String netUnitPrice,
-        @CustomType.Parameter("overagePrice") String overagePrice,
-        @CustomType.Parameter("products") List<GetSubscribedServiceRateCardProduct> products,
-        @CustomType.Parameter("rateCardTiers") List<GetSubscribedServiceRateCardRateCardTier> rateCardTiers,
-        @CustomType.Parameter("subscribedServiceId") String subscribedServiceId,
-        @CustomType.Parameter("timeEnd") String timeEnd,
-        @CustomType.Parameter("timeStart") String timeStart) {
-        this.currencies = currencies;
-        this.discretionaryDiscountPercentage = discretionaryDiscountPercentage;
-        this.isTier = isTier;
-        this.netUnitPrice = netUnitPrice;
-        this.overagePrice = overagePrice;
-        this.products = products;
-        this.rateCardTiers = rateCardTiers;
-        this.subscribedServiceId = subscribedServiceId;
-        this.timeEnd = timeEnd;
-        this.timeStart = timeStart;
-    }
-
+    private GetSubscribedServiceRateCard() {}
     /**
      * @return Currency details
      * 
@@ -167,7 +144,7 @@ public final class GetSubscribedServiceRateCard {
     public static Builder builder(GetSubscribedServiceRateCard defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSubscribedServiceRateCardCurrency> currencies;
         private String discretionaryDiscountPercentage;
@@ -179,11 +156,7 @@ public final class GetSubscribedServiceRateCard {
         private String subscribedServiceId;
         private String timeEnd;
         private String timeStart;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscribedServiceRateCard defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.currencies = defaults.currencies;
@@ -198,6 +171,7 @@ public final class GetSubscribedServiceRateCard {
     	      this.timeStart = defaults.timeStart;
         }
 
+        @CustomType.Setter
         public Builder currencies(List<GetSubscribedServiceRateCardCurrency> currencies) {
             this.currencies = Objects.requireNonNull(currencies);
             return this;
@@ -205,22 +179,27 @@ public final class GetSubscribedServiceRateCard {
         public Builder currencies(GetSubscribedServiceRateCardCurrency... currencies) {
             return currencies(List.of(currencies));
         }
+        @CustomType.Setter
         public Builder discretionaryDiscountPercentage(String discretionaryDiscountPercentage) {
             this.discretionaryDiscountPercentage = Objects.requireNonNull(discretionaryDiscountPercentage);
             return this;
         }
+        @CustomType.Setter
         public Builder isTier(Boolean isTier) {
             this.isTier = Objects.requireNonNull(isTier);
             return this;
         }
+        @CustomType.Setter
         public Builder netUnitPrice(String netUnitPrice) {
             this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
             return this;
         }
+        @CustomType.Setter
         public Builder overagePrice(String overagePrice) {
             this.overagePrice = Objects.requireNonNull(overagePrice);
             return this;
         }
+        @CustomType.Setter
         public Builder products(List<GetSubscribedServiceRateCardProduct> products) {
             this.products = Objects.requireNonNull(products);
             return this;
@@ -228,6 +207,7 @@ public final class GetSubscribedServiceRateCard {
         public Builder products(GetSubscribedServiceRateCardProduct... products) {
             return products(List.of(products));
         }
+        @CustomType.Setter
         public Builder rateCardTiers(List<GetSubscribedServiceRateCardRateCardTier> rateCardTiers) {
             this.rateCardTiers = Objects.requireNonNull(rateCardTiers);
             return this;
@@ -235,19 +215,34 @@ public final class GetSubscribedServiceRateCard {
         public Builder rateCardTiers(GetSubscribedServiceRateCardRateCardTier... rateCardTiers) {
             return rateCardTiers(List.of(rateCardTiers));
         }
+        @CustomType.Setter
         public Builder subscribedServiceId(String subscribedServiceId) {
             this.subscribedServiceId = Objects.requireNonNull(subscribedServiceId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
             this.timeEnd = Objects.requireNonNull(timeEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(String timeStart) {
             this.timeStart = Objects.requireNonNull(timeStart);
             return this;
-        }        public GetSubscribedServiceRateCard build() {
-            return new GetSubscribedServiceRateCard(currencies, discretionaryDiscountPercentage, isTier, netUnitPrice, overagePrice, products, rateCardTiers, subscribedServiceId, timeEnd, timeStart);
+        }
+        public GetSubscribedServiceRateCard build() {
+            final var o = new GetSubscribedServiceRateCard();
+            o.currencies = currencies;
+            o.discretionaryDiscountPercentage = discretionaryDiscountPercentage;
+            o.isTier = isTier;
+            o.netUnitPrice = netUnitPrice;
+            o.overagePrice = overagePrice;
+            o.products = products;
+            o.rateCardTiers = rateCardTiers;
+            o.subscribedServiceId = subscribedServiceId;
+            o.timeEnd = timeEnd;
+            o.timeStart = timeStart;
+            return o;
         }
     }
 }

@@ -14,56 +14,39 @@ public final class GetAwrHubAwrSnapshotItem {
      * @return DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
      * 
      */
-    private final String awrSourceDatabaseId;
+    private String awrSourceDatabaseId;
     /**
      * @return The total number of errors.
      * 
      */
-    private final String errorCount;
+    private String errorCount;
     /**
      * @return The database instance number.
      * 
      */
-    private final Integer instanceNumber;
+    private Integer instanceNumber;
     /**
      * @return The identifier of the snapshot.
      * 
      */
-    private final Integer snapshotIdentifier;
+    private Integer snapshotIdentifier;
     /**
      * @return The timestamp of the database startup.
      * 
      */
-    private final String timeDbStartup;
+    private String timeDbStartup;
     /**
      * @return The start time of the snapshot.
      * 
      */
-    private final String timeSnapshotBegin;
+    private String timeSnapshotBegin;
     /**
      * @return The end time of the snapshot.
      * 
      */
-    private final String timeSnapshotEnd;
+    private String timeSnapshotEnd;
 
-    @CustomType.Constructor
-    private GetAwrHubAwrSnapshotItem(
-        @CustomType.Parameter("awrSourceDatabaseId") String awrSourceDatabaseId,
-        @CustomType.Parameter("errorCount") String errorCount,
-        @CustomType.Parameter("instanceNumber") Integer instanceNumber,
-        @CustomType.Parameter("snapshotIdentifier") Integer snapshotIdentifier,
-        @CustomType.Parameter("timeDbStartup") String timeDbStartup,
-        @CustomType.Parameter("timeSnapshotBegin") String timeSnapshotBegin,
-        @CustomType.Parameter("timeSnapshotEnd") String timeSnapshotEnd) {
-        this.awrSourceDatabaseId = awrSourceDatabaseId;
-        this.errorCount = errorCount;
-        this.instanceNumber = instanceNumber;
-        this.snapshotIdentifier = snapshotIdentifier;
-        this.timeDbStartup = timeDbStartup;
-        this.timeSnapshotBegin = timeSnapshotBegin;
-        this.timeSnapshotEnd = timeSnapshotEnd;
-    }
-
+    private GetAwrHubAwrSnapshotItem() {}
     /**
      * @return DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
      * 
@@ -121,7 +104,7 @@ public final class GetAwrHubAwrSnapshotItem {
     public static Builder builder(GetAwrHubAwrSnapshotItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String awrSourceDatabaseId;
         private String errorCount;
@@ -130,11 +113,7 @@ public final class GetAwrHubAwrSnapshotItem {
         private String timeDbStartup;
         private String timeSnapshotBegin;
         private String timeSnapshotEnd;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAwrHubAwrSnapshotItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.awrSourceDatabaseId = defaults.awrSourceDatabaseId;
@@ -146,35 +125,51 @@ public final class GetAwrHubAwrSnapshotItem {
     	      this.timeSnapshotEnd = defaults.timeSnapshotEnd;
         }
 
+        @CustomType.Setter
         public Builder awrSourceDatabaseId(String awrSourceDatabaseId) {
             this.awrSourceDatabaseId = Objects.requireNonNull(awrSourceDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder errorCount(String errorCount) {
             this.errorCount = Objects.requireNonNull(errorCount);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceNumber(Integer instanceNumber) {
             this.instanceNumber = Objects.requireNonNull(instanceNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder snapshotIdentifier(Integer snapshotIdentifier) {
             this.snapshotIdentifier = Objects.requireNonNull(snapshotIdentifier);
             return this;
         }
+        @CustomType.Setter
         public Builder timeDbStartup(String timeDbStartup) {
             this.timeDbStartup = Objects.requireNonNull(timeDbStartup);
             return this;
         }
+        @CustomType.Setter
         public Builder timeSnapshotBegin(String timeSnapshotBegin) {
             this.timeSnapshotBegin = Objects.requireNonNull(timeSnapshotBegin);
             return this;
         }
+        @CustomType.Setter
         public Builder timeSnapshotEnd(String timeSnapshotEnd) {
             this.timeSnapshotEnd = Objects.requireNonNull(timeSnapshotEnd);
             return this;
-        }        public GetAwrHubAwrSnapshotItem build() {
-            return new GetAwrHubAwrSnapshotItem(awrSourceDatabaseId, errorCount, instanceNumber, snapshotIdentifier, timeDbStartup, timeSnapshotBegin, timeSnapshotEnd);
+        }
+        public GetAwrHubAwrSnapshotItem build() {
+            final var o = new GetAwrHubAwrSnapshotItem();
+            o.awrSourceDatabaseId = awrSourceDatabaseId;
+            o.errorCount = errorCount;
+            o.instanceNumber = instanceNumber;
+            o.snapshotIdentifier = snapshotIdentifier;
+            o.timeDbStartup = timeDbStartup;
+            o.timeSnapshotBegin = timeSnapshotBegin;
+            o.timeSnapshotEnd = timeSnapshotEnd;
+            return o;
         }
     }
 }

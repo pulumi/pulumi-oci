@@ -13,94 +13,65 @@ public final class GetMaskingReportResult {
      * @return The OCID of the compartment that contains the masking report.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the masking policy used.
      * 
      */
-    private final String maskingPolicyId;
-    private final String maskingReportId;
+    private String maskingPolicyId;
+    private String maskingReportId;
     /**
      * @return The OCID of the masking work request that resulted in this masking report.
      * 
      */
-    private final String maskingWorkRequestId;
+    private String maskingWorkRequestId;
     /**
      * @return The OCID of the target database masked.
      * 
      */
-    private final String targetId;
+    private String targetId;
     /**
      * @return The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
      */
-    private final String timeMaskingFinished;
+    private String timeMaskingFinished;
     /**
      * @return The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
      */
-    private final String timeMaskingStarted;
+    private String timeMaskingStarted;
     /**
      * @return The total number of masked columns.
      * 
      */
-    private final String totalMaskedColumns;
+    private String totalMaskedColumns;
     /**
      * @return The total number of unique objects (tables and editioning views) that contain the masked columns.
      * 
      */
-    private final String totalMaskedObjects;
+    private String totalMaskedObjects;
     /**
      * @return The total number of unique schemas that contain the masked columns.
      * 
      */
-    private final String totalMaskedSchemas;
+    private String totalMaskedSchemas;
     /**
      * @return The total number of unique sensitive types associated with the masked columns.
      * 
      */
-    private final String totalMaskedSensitiveTypes;
+    private String totalMaskedSensitiveTypes;
     /**
      * @return The total number of masked values.
      * 
      */
-    private final String totalMaskedValues;
+    private String totalMaskedValues;
 
-    @CustomType.Constructor
-    private GetMaskingReportResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("maskingPolicyId") String maskingPolicyId,
-        @CustomType.Parameter("maskingReportId") String maskingReportId,
-        @CustomType.Parameter("maskingWorkRequestId") String maskingWorkRequestId,
-        @CustomType.Parameter("targetId") String targetId,
-        @CustomType.Parameter("timeMaskingFinished") String timeMaskingFinished,
-        @CustomType.Parameter("timeMaskingStarted") String timeMaskingStarted,
-        @CustomType.Parameter("totalMaskedColumns") String totalMaskedColumns,
-        @CustomType.Parameter("totalMaskedObjects") String totalMaskedObjects,
-        @CustomType.Parameter("totalMaskedSchemas") String totalMaskedSchemas,
-        @CustomType.Parameter("totalMaskedSensitiveTypes") String totalMaskedSensitiveTypes,
-        @CustomType.Parameter("totalMaskedValues") String totalMaskedValues) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.maskingPolicyId = maskingPolicyId;
-        this.maskingReportId = maskingReportId;
-        this.maskingWorkRequestId = maskingWorkRequestId;
-        this.targetId = targetId;
-        this.timeMaskingFinished = timeMaskingFinished;
-        this.timeMaskingStarted = timeMaskingStarted;
-        this.totalMaskedColumns = totalMaskedColumns;
-        this.totalMaskedObjects = totalMaskedObjects;
-        this.totalMaskedSchemas = totalMaskedSchemas;
-        this.totalMaskedSensitiveTypes = totalMaskedSensitiveTypes;
-        this.totalMaskedValues = totalMaskedValues;
-    }
-
+    private GetMaskingReportResult() {}
     /**
      * @return The OCID of the compartment that contains the masking report.
      * 
@@ -196,7 +167,7 @@ public final class GetMaskingReportResult {
     public static Builder builder(GetMaskingReportResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
@@ -211,11 +182,7 @@ public final class GetMaskingReportResult {
         private String totalMaskedSchemas;
         private String totalMaskedSensitiveTypes;
         private String totalMaskedValues;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMaskingReportResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -233,59 +200,87 @@ public final class GetMaskingReportResult {
     	      this.totalMaskedValues = defaults.totalMaskedValues;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder maskingPolicyId(String maskingPolicyId) {
             this.maskingPolicyId = Objects.requireNonNull(maskingPolicyId);
             return this;
         }
+        @CustomType.Setter
         public Builder maskingReportId(String maskingReportId) {
             this.maskingReportId = Objects.requireNonNull(maskingReportId);
             return this;
         }
+        @CustomType.Setter
         public Builder maskingWorkRequestId(String maskingWorkRequestId) {
             this.maskingWorkRequestId = Objects.requireNonNull(maskingWorkRequestId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeMaskingFinished(String timeMaskingFinished) {
             this.timeMaskingFinished = Objects.requireNonNull(timeMaskingFinished);
             return this;
         }
+        @CustomType.Setter
         public Builder timeMaskingStarted(String timeMaskingStarted) {
             this.timeMaskingStarted = Objects.requireNonNull(timeMaskingStarted);
             return this;
         }
+        @CustomType.Setter
         public Builder totalMaskedColumns(String totalMaskedColumns) {
             this.totalMaskedColumns = Objects.requireNonNull(totalMaskedColumns);
             return this;
         }
+        @CustomType.Setter
         public Builder totalMaskedObjects(String totalMaskedObjects) {
             this.totalMaskedObjects = Objects.requireNonNull(totalMaskedObjects);
             return this;
         }
+        @CustomType.Setter
         public Builder totalMaskedSchemas(String totalMaskedSchemas) {
             this.totalMaskedSchemas = Objects.requireNonNull(totalMaskedSchemas);
             return this;
         }
+        @CustomType.Setter
         public Builder totalMaskedSensitiveTypes(String totalMaskedSensitiveTypes) {
             this.totalMaskedSensitiveTypes = Objects.requireNonNull(totalMaskedSensitiveTypes);
             return this;
         }
+        @CustomType.Setter
         public Builder totalMaskedValues(String totalMaskedValues) {
             this.totalMaskedValues = Objects.requireNonNull(totalMaskedValues);
             return this;
-        }        public GetMaskingReportResult build() {
-            return new GetMaskingReportResult(compartmentId, id, maskingPolicyId, maskingReportId, maskingWorkRequestId, targetId, timeMaskingFinished, timeMaskingStarted, totalMaskedColumns, totalMaskedObjects, totalMaskedSchemas, totalMaskedSensitiveTypes, totalMaskedValues);
+        }
+        public GetMaskingReportResult build() {
+            final var o = new GetMaskingReportResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.maskingPolicyId = maskingPolicyId;
+            o.maskingReportId = maskingReportId;
+            o.maskingWorkRequestId = maskingWorkRequestId;
+            o.targetId = targetId;
+            o.timeMaskingFinished = timeMaskingFinished;
+            o.timeMaskingStarted = timeMaskingStarted;
+            o.totalMaskedColumns = totalMaskedColumns;
+            o.totalMaskedObjects = totalMaskedObjects;
+            o.totalMaskedSchemas = totalMaskedSchemas;
+            o.totalMaskedSensitiveTypes = totalMaskedSensitiveTypes;
+            o.totalMaskedValues = totalMaskedValues;
+            return o;
         }
     }
 }

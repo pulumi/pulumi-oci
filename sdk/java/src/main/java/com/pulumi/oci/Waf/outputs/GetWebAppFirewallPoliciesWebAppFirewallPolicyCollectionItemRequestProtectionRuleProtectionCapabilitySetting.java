@@ -15,49 +15,34 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
      * @return List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
      * 
      */
-    private final List<String> allowedHttpMethods;
+    private List<String> allowedHttpMethods;
     /**
      * @return Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
      * 
      */
-    private final Integer maxHttpRequestHeaderLength;
+    private Integer maxHttpRequestHeaderLength;
     /**
      * @return Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
      * 
      */
-    private final Integer maxHttpRequestHeaders;
+    private Integer maxHttpRequestHeaders;
     /**
      * @return Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
      * 
      */
-    private final Integer maxNumberOfArguments;
+    private Integer maxNumberOfArguments;
     /**
      * @return Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
      * 
      */
-    private final Integer maxSingleArgumentLength;
+    private Integer maxSingleArgumentLength;
     /**
      * @return Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
      * 
      */
-    private final Integer maxTotalArgumentLength;
+    private Integer maxTotalArgumentLength;
 
-    @CustomType.Constructor
-    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting(
-        @CustomType.Parameter("allowedHttpMethods") List<String> allowedHttpMethods,
-        @CustomType.Parameter("maxHttpRequestHeaderLength") Integer maxHttpRequestHeaderLength,
-        @CustomType.Parameter("maxHttpRequestHeaders") Integer maxHttpRequestHeaders,
-        @CustomType.Parameter("maxNumberOfArguments") Integer maxNumberOfArguments,
-        @CustomType.Parameter("maxSingleArgumentLength") Integer maxSingleArgumentLength,
-        @CustomType.Parameter("maxTotalArgumentLength") Integer maxTotalArgumentLength) {
-        this.allowedHttpMethods = allowedHttpMethods;
-        this.maxHttpRequestHeaderLength = maxHttpRequestHeaderLength;
-        this.maxHttpRequestHeaders = maxHttpRequestHeaders;
-        this.maxNumberOfArguments = maxNumberOfArguments;
-        this.maxSingleArgumentLength = maxSingleArgumentLength;
-        this.maxTotalArgumentLength = maxTotalArgumentLength;
-    }
-
+    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting() {}
     /**
      * @return List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
      * 
@@ -108,7 +93,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
     public static Builder builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> allowedHttpMethods;
         private Integer maxHttpRequestHeaderLength;
@@ -116,11 +101,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
         private Integer maxNumberOfArguments;
         private Integer maxSingleArgumentLength;
         private Integer maxTotalArgumentLength;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowedHttpMethods = defaults.allowedHttpMethods;
@@ -131,6 +112,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
     	      this.maxTotalArgumentLength = defaults.maxTotalArgumentLength;
         }
 
+        @CustomType.Setter
         public Builder allowedHttpMethods(List<String> allowedHttpMethods) {
             this.allowedHttpMethods = Objects.requireNonNull(allowedHttpMethods);
             return this;
@@ -138,27 +120,40 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
         public Builder allowedHttpMethods(String... allowedHttpMethods) {
             return allowedHttpMethods(List.of(allowedHttpMethods));
         }
+        @CustomType.Setter
         public Builder maxHttpRequestHeaderLength(Integer maxHttpRequestHeaderLength) {
             this.maxHttpRequestHeaderLength = Objects.requireNonNull(maxHttpRequestHeaderLength);
             return this;
         }
+        @CustomType.Setter
         public Builder maxHttpRequestHeaders(Integer maxHttpRequestHeaders) {
             this.maxHttpRequestHeaders = Objects.requireNonNull(maxHttpRequestHeaders);
             return this;
         }
+        @CustomType.Setter
         public Builder maxNumberOfArguments(Integer maxNumberOfArguments) {
             this.maxNumberOfArguments = Objects.requireNonNull(maxNumberOfArguments);
             return this;
         }
+        @CustomType.Setter
         public Builder maxSingleArgumentLength(Integer maxSingleArgumentLength) {
             this.maxSingleArgumentLength = Objects.requireNonNull(maxSingleArgumentLength);
             return this;
         }
+        @CustomType.Setter
         public Builder maxTotalArgumentLength(Integer maxTotalArgumentLength) {
             this.maxTotalArgumentLength = Objects.requireNonNull(maxTotalArgumentLength);
             return this;
-        }        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting build() {
-            return new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting(allowedHttpMethods, maxHttpRequestHeaderLength, maxHttpRequestHeaders, maxNumberOfArguments, maxSingleArgumentLength, maxTotalArgumentLength);
+        }
+        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting build() {
+            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting();
+            o.allowedHttpMethods = allowedHttpMethods;
+            o.maxHttpRequestHeaderLength = maxHttpRequestHeaderLength;
+            o.maxHttpRequestHeaders = maxHttpRequestHeaders;
+            o.maxNumberOfArguments = maxNumberOfArguments;
+            o.maxSingleArgumentLength = maxSingleArgumentLength;
+            o.maxTotalArgumentLength = maxTotalArgumentLength;
+            return o;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
     public sealed class RegistryFolderDataAssetMetadata
     {
         /// <summary>
-        /// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        /// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         /// </summary>
         public readonly Outputs.RegistryFolderDataAssetMetadataAggregator? Aggregator;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string? CreatedByName;
         /// <summary>
-        /// (Updatable) The full path to identify this object.
+        /// (Updatable) The full path to identify the object.
         /// </summary>
         public readonly string? IdentifierPath;
         /// <summary>
@@ -38,11 +38,11 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object>? InfoFields;
         /// <summary>
-        /// (Updatable) Specifies whether this object is a favorite or not.
+        /// (Updatable) Specifies whether the object is a favorite.
         /// </summary>
         public readonly bool? IsFavorite;
         /// <summary>
-        /// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        /// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         /// </summary>
         public readonly ImmutableArray<string> Labels;
         /// <summary>

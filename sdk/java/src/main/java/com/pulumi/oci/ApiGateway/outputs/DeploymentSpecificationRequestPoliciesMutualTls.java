@@ -17,21 +17,14 @@ public final class DeploymentSpecificationRequestPoliciesMutualTls {
      * @return (Updatable) Allowed list of CN or SAN which will be used for verification of certificate.
      * 
      */
-    private final @Nullable List<String> allowedSans;
+    private @Nullable List<String> allowedSans;
     /**
      * @return (Updatable) Determines whether to enable client verification when API Consumer makes connection to the gateway.
      * 
      */
-    private final @Nullable Boolean isVerifiedCertificateRequired;
+    private @Nullable Boolean isVerifiedCertificateRequired;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationRequestPoliciesMutualTls(
-        @CustomType.Parameter("allowedSans") @Nullable List<String> allowedSans,
-        @CustomType.Parameter("isVerifiedCertificateRequired") @Nullable Boolean isVerifiedCertificateRequired) {
-        this.allowedSans = allowedSans;
-        this.isVerifiedCertificateRequired = isVerifiedCertificateRequired;
-    }
-
+    private DeploymentSpecificationRequestPoliciesMutualTls() {}
     /**
      * @return (Updatable) Allowed list of CN or SAN which will be used for verification of certificate.
      * 
@@ -54,21 +47,18 @@ public final class DeploymentSpecificationRequestPoliciesMutualTls {
     public static Builder builder(DeploymentSpecificationRequestPoliciesMutualTls defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> allowedSans;
         private @Nullable Boolean isVerifiedCertificateRequired;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationRequestPoliciesMutualTls defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowedSans = defaults.allowedSans;
     	      this.isVerifiedCertificateRequired = defaults.isVerifiedCertificateRequired;
         }
 
+        @CustomType.Setter
         public Builder allowedSans(@Nullable List<String> allowedSans) {
             this.allowedSans = allowedSans;
             return this;
@@ -76,11 +66,16 @@ public final class DeploymentSpecificationRequestPoliciesMutualTls {
         public Builder allowedSans(String... allowedSans) {
             return allowedSans(List.of(allowedSans));
         }
+        @CustomType.Setter
         public Builder isVerifiedCertificateRequired(@Nullable Boolean isVerifiedCertificateRequired) {
             this.isVerifiedCertificateRequired = isVerifiedCertificateRequired;
             return this;
-        }        public DeploymentSpecificationRequestPoliciesMutualTls build() {
-            return new DeploymentSpecificationRequestPoliciesMutualTls(allowedSans, isVerifiedCertificateRequired);
+        }
+        public DeploymentSpecificationRequestPoliciesMutualTls build() {
+            final var o = new DeploymentSpecificationRequestPoliciesMutualTls();
+            o.allowedSans = allowedSans;
+            o.isVerifiedCertificateRequired = isVerifiedCertificateRequired;
+            return o;
         }
     }
 }

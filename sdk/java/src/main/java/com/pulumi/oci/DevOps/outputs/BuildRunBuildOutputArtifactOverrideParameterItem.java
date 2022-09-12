@@ -15,28 +15,19 @@ public final class BuildRunBuildOutputArtifactOverrideParameterItem {
      * @return The OCID of the deployment artifact definition.
      * 
      */
-    private final @Nullable String deployArtifactId;
+    private @Nullable String deployArtifactId;
     /**
      * @return Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: &#39;Build_Pipeline_param&#39; is not same as &#39;build_pipeline_Param&#39;
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return Value of the argument.
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
 
-    @CustomType.Constructor
-    private BuildRunBuildOutputArtifactOverrideParameterItem(
-        @CustomType.Parameter("deployArtifactId") @Nullable String deployArtifactId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("value") @Nullable String value) {
-        this.deployArtifactId = deployArtifactId;
-        this.name = name;
-        this.value = value;
-    }
-
+    private BuildRunBuildOutputArtifactOverrideParameterItem() {}
     /**
      * @return The OCID of the deployment artifact definition.
      * 
@@ -66,16 +57,12 @@ public final class BuildRunBuildOutputArtifactOverrideParameterItem {
     public static Builder builder(BuildRunBuildOutputArtifactOverrideParameterItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String deployArtifactId;
         private @Nullable String name;
         private @Nullable String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BuildRunBuildOutputArtifactOverrideParameterItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.deployArtifactId = defaults.deployArtifactId;
@@ -83,19 +70,27 @@ public final class BuildRunBuildOutputArtifactOverrideParameterItem {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder deployArtifactId(@Nullable String deployArtifactId) {
             this.deployArtifactId = deployArtifactId;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
-        }        public BuildRunBuildOutputArtifactOverrideParameterItem build() {
-            return new BuildRunBuildOutputArtifactOverrideParameterItem(deployArtifactId, name, value);
+        }
+        public BuildRunBuildOutputArtifactOverrideParameterItem build() {
+            final var o = new BuildRunBuildOutputArtifactOverrideParameterItem();
+            o.deployArtifactId = deployArtifactId;
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

@@ -43,6 +43,8 @@ import (
 //				ClusterName:                  pulumi.Any(_var.Cloud_vm_cluster_cluster_name),
 //				DataCollectionOptions: &database.CloudVmClusterDataCollectionOptionsArgs{
 //					IsDiagnosticsEventsEnabled: pulumi.Any(_var.Cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled),
+//					IsHealthMonitoringEnabled:  pulumi.Any(_var.Cloud_vm_cluster_data_collection_options_is_health_monitoring_enabled),
+//					IsIncidentLogsEnabled:      pulumi.Any(_var.Cloud_vm_cluster_data_collection_options_is_incident_logs_enabled),
 //				},
 //				DataStoragePercentage: pulumi.Any(_var.Cloud_vm_cluster_data_storage_percentage),
 //				DefinedTags:           pulumi.Any(_var.Cloud_vm_cluster_defined_tags),

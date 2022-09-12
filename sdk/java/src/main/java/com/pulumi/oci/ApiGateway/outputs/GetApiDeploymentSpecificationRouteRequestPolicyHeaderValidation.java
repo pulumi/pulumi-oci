@@ -11,21 +11,14 @@ import java.util.Objects;
 
 @CustomType
 public final class GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation {
-    private final List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeader> headers;
+    private List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeader> headers;
     /**
      * @return Validation behavior mode.
      * 
      */
-    private final String validationMode;
+    private String validationMode;
 
-    @CustomType.Constructor
-    private GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation(
-        @CustomType.Parameter("headers") List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeader> headers,
-        @CustomType.Parameter("validationMode") String validationMode) {
-        this.headers = headers;
-        this.validationMode = validationMode;
-    }
-
+    private GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation() {}
     public List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeader> headers() {
         return this.headers;
     }
@@ -44,21 +37,18 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidati
     public static Builder builder(GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeader> headers;
         private String validationMode;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.headers = defaults.headers;
     	      this.validationMode = defaults.validationMode;
         }
 
+        @CustomType.Setter
         public Builder headers(List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeader> headers) {
             this.headers = Objects.requireNonNull(headers);
             return this;
@@ -66,11 +56,16 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidati
         public Builder headers(GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeader... headers) {
             return headers(List.of(headers));
         }
+        @CustomType.Setter
         public Builder validationMode(String validationMode) {
             this.validationMode = Objects.requireNonNull(validationMode);
             return this;
-        }        public GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation build() {
-            return new GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation(headers, validationMode);
+        }
+        public GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation build() {
+            final var o = new GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation();
+            o.headers = headers;
+            o.validationMode = validationMode;
+            return o;
         }
     }
 }

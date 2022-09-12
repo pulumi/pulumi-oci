@@ -18,45 +18,30 @@ public final class GetUsagePlansResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetUsagePlansFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetUsagePlansFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the usage plan.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of usage_plan_collection.
      * 
      */
-    private final List<GetUsagePlansUsagePlanCollection> usagePlanCollections;
+    private List<GetUsagePlansUsagePlanCollection> usagePlanCollections;
 
-    @CustomType.Constructor
-    private GetUsagePlansResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetUsagePlansFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("usagePlanCollections") List<GetUsagePlansUsagePlanCollection> usagePlanCollections) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.usagePlanCollections = usagePlanCollections;
-    }
-
+    private GetUsagePlansResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
      * 
@@ -103,7 +88,7 @@ public final class GetUsagePlansResult {
     public static Builder builder(GetUsagePlansResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetUsagePlansResult {
         private String id;
         private @Nullable String state;
         private List<GetUsagePlansUsagePlanCollection> usagePlanCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUsagePlansResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetUsagePlansResult {
     	      this.usagePlanCollections = defaults.usagePlanCollections;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetUsagePlansFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,22 +125,33 @@ public final class GetUsagePlansResult {
         public Builder filters(GetUsagePlansFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder usagePlanCollections(List<GetUsagePlansUsagePlanCollection> usagePlanCollections) {
             this.usagePlanCollections = Objects.requireNonNull(usagePlanCollections);
             return this;
         }
         public Builder usagePlanCollections(GetUsagePlansUsagePlanCollection... usagePlanCollections) {
             return usagePlanCollections(List.of(usagePlanCollections));
-        }        public GetUsagePlansResult build() {
-            return new GetUsagePlansResult(compartmentId, displayName, filters, id, state, usagePlanCollections);
+        }
+        public GetUsagePlansResult build() {
+            final var o = new GetUsagePlansResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.usagePlanCollections = usagePlanCollections;
+            return o;
         }
     }
 }

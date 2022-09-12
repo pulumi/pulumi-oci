@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDetectionDataAssetsDataAssetCollection {
-    private final List<GetDetectionDataAssetsDataAssetCollectionItem> items;
+    private List<GetDetectionDataAssetsDataAssetCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDetectionDataAssetsDataAssetCollection(@CustomType.Parameter("items") List<GetDetectionDataAssetsDataAssetCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDetectionDataAssetsDataAssetCollection() {}
     public List<GetDetectionDataAssetsDataAssetCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetDetectionDataAssetsDataAssetCollection {
     public static Builder builder(GetDetectionDataAssetsDataAssetCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDetectionDataAssetsDataAssetCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDetectionDataAssetsDataAssetCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDetectionDataAssetsDataAssetCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDetectionDataAssetsDataAssetCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDetectionDataAssetsDataAssetCollection build() {
-            return new GetDetectionDataAssetsDataAssetCollection(items);
+        }
+        public GetDetectionDataAssetsDataAssetCollection build() {
+            final var o = new GetDetectionDataAssetsDataAssetCollection();
+            o.items = items;
+            return o;
         }
     }
 }

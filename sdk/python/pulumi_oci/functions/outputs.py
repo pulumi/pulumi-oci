@@ -30,6 +30,54 @@ __all__ = [
     'GetFunctionsFunctionResult',
     'GetFunctionsFunctionProvisionedConcurrencyConfigResult',
     'GetFunctionsFunctionTraceConfigResult',
+    'GetFusionEnvironmentAdminUserItemResult',
+    'GetFusionEnvironmentAdminUsersAdminUserCollectionResult',
+    'GetFusionEnvironmentAdminUsersAdminUserCollectionItemResult',
+    'GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemResult',
+    'GetFusionEnvironmentAdminUsersFilterResult',
+    'GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailResult',
+    'GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionResult',
+    'GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemResult',
+    'GetFusionEnvironmentDataMaskingActivitiesFilterResult',
+    'GetFusionEnvironmentFamiliesFilterResult',
+    'GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionResult',
+    'GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemResult',
+    'GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyResult',
+    'GetFusionEnvironmentFamilyFamilyMaintenancePolicyResult',
+    'GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageResult',
+    'GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageResult',
+    'GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageResult',
+    'GetFusionEnvironmentFamilySubscriptionDetailSubscriptionResult',
+    'GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusResult',
+    'GetFusionEnvironmentMaintenancePolicyResult',
+    'GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeResult',
+    'GetFusionEnvironmentRefreshResult',
+    'GetFusionEnvironmentRefreshActivitiesFilterResult',
+    'GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionResult',
+    'GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult',
+    'GetFusionEnvironmentRuleResult',
+    'GetFusionEnvironmentRuleConditionResult',
+    'GetFusionEnvironmentScheduledActivitiesFilterResult',
+    'GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionResult',
+    'GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemResult',
+    'GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionResult',
+    'GetFusionEnvironmentScheduledActivityActionResult',
+    'GetFusionEnvironmentServiceAttachmentsFilterResult',
+    'GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionResult',
+    'GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResult',
+    'GetFusionEnvironmentTimeAvailableForRefreshItemResult',
+    'GetFusionEnvironmentTimeAvailableForRefreshsFilterResult',
+    'GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionResult',
+    'GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemResult',
+    'GetFusionEnvironmentsFilterResult',
+    'GetFusionEnvironmentsFusionEnvironmentCollectionResult',
+    'GetFusionEnvironmentsFusionEnvironmentCollectionItemResult',
+    'GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailResult',
+    'GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyResult',
+    'GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeResult',
+    'GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshResult',
+    'GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleResult',
+    'GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionResult',
 ]
 
 @pulumi.output_type
@@ -877,5 +925,2441 @@ class GetFunctionsFunctionTraceConfigResult(dict):
         Define if tracing is enabled for the resource.
         """
         return pulumi.get(self, "is_enabled")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentAdminUserItemResult(dict):
+    def __init__(__self__, *,
+                 email_address: str,
+                 first_name: str,
+                 last_name: str,
+                 username: str):
+        """
+        :param str email_address: Admin users email address
+        :param str first_name: Admin users first name
+        :param str last_name: Admin users last name
+        :param str username: Admin username
+        """
+        pulumi.set(__self__, "email_address", email_address)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="emailAddress")
+    def email_address(self) -> str:
+        """
+        Admin users email address
+        """
+        return pulumi.get(self, "email_address")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> str:
+        """
+        Admin users first name
+        """
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> str:
+        """
+        Admin users last name
+        """
+        return pulumi.get(self, "last_name")
+
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        """
+        Admin username
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentAdminUsersAdminUserCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFusionEnvironmentAdminUsersAdminUserCollectionItemResult']):
+        """
+        :param Sequence['GetFusionEnvironmentAdminUsersAdminUserCollectionItemArgs'] items: A page of AdminUserSummary objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFusionEnvironmentAdminUsersAdminUserCollectionItemResult']:
+        """
+        A page of AdminUserSummary objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentAdminUsersAdminUserCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 email_address: str,
+                 first_name: str,
+                 fusion_environment_id: str,
+                 id: str,
+                 items: Sequence['outputs.GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemResult'],
+                 last_name: str,
+                 password: str,
+                 username: str):
+        """
+        :param str email_address: Admin users email address
+        :param str first_name: Admin users first name
+        :param str fusion_environment_id: unique FusionEnvironment identifier
+        :param Sequence['GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArgs'] items: A page of AdminUserSummary objects.
+        :param str last_name: Admin users last name
+        :param str username: Admin username
+        """
+        pulumi.set(__self__, "email_address", email_address)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="emailAddress")
+    def email_address(self) -> str:
+        """
+        Admin users email address
+        """
+        return pulumi.get(self, "email_address")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> str:
+        """
+        Admin users first name
+        """
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="fusionEnvironmentId")
+    def fusion_environment_id(self) -> str:
+        """
+        unique FusionEnvironment identifier
+        """
+        return pulumi.get(self, "fusion_environment_id")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemResult']:
+        """
+        A page of AdminUserSummary objects.
+        """
+        return pulumi.get(self, "items")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> str:
+        """
+        Admin users last name
+        """
+        return pulumi.get(self, "last_name")
+
+    @property
+    @pulumi.getter
+    def password(self) -> str:
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        """
+        Admin username
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemResult(dict):
+    def __init__(__self__, *,
+                 email_address: str,
+                 first_name: str,
+                 last_name: str,
+                 username: str):
+        """
+        :param str email_address: Admin users email address
+        :param str first_name: Admin users first name
+        :param str last_name: Admin users last name
+        :param str username: Admin username
+        """
+        pulumi.set(__self__, "email_address", email_address)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="emailAddress")
+    def email_address(self) -> str:
+        """
+        Admin users email address
+        """
+        return pulumi.get(self, "email_address")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> str:
+        """
+        Admin users first name
+        """
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> str:
+        """
+        Admin users last name
+        """
+        return pulumi.get(self, "last_name")
+
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        """
+        Admin username
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentAdminUsersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailResult(dict):
+    def __init__(__self__, *,
+                 email_address: str,
+                 first_name: str,
+                 last_name: str,
+                 password: str,
+                 username: str):
+        pulumi.set(__self__, "email_address", email_address)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="emailAddress")
+    def email_address(self) -> str:
+        return pulumi.get(self, "email_address")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> str:
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> str:
+        return pulumi.get(self, "last_name")
+
+    @property
+    @pulumi.getter
+    def password(self) -> str:
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 fusion_environment_id: str,
+                 id: str,
+                 is_resume_data_masking: bool,
+                 state: str,
+                 time_masking_finish: str,
+                 time_masking_start: str):
+        """
+        :param str fusion_environment_id: unique FusionEnvironment identifier
+        :param str id: Unique identifier that is immutable on creation.
+        :param str state: A filter that returns all resources that match the specified status
+        :param str time_masking_finish: The time the data masking activity ended. An RFC3339 formatted datetime string.
+        :param str time_masking_start: The time the data masking activity started. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_resume_data_masking", is_resume_data_masking)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_masking_finish", time_masking_finish)
+        pulumi.set(__self__, "time_masking_start", time_masking_start)
+
+    @property
+    @pulumi.getter(name="fusionEnvironmentId")
+    def fusion_environment_id(self) -> str:
+        """
+        unique FusionEnvironment identifier
+        """
+        return pulumi.get(self, "fusion_environment_id")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Unique identifier that is immutable on creation.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isResumeDataMasking")
+    def is_resume_data_masking(self) -> bool:
+        return pulumi.get(self, "is_resume_data_masking")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter that returns all resources that match the specified status
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeMaskingFinish")
+    def time_masking_finish(self) -> str:
+        """
+        The time the data masking activity ended. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_masking_finish")
+
+    @property
+    @pulumi.getter(name="timeMaskingStart")
+    def time_masking_start(self) -> str:
+        """
+        The time the data masking activity started. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_masking_start")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentDataMaskingActivitiesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentFamiliesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 family_maintenance_policies: Sequence['outputs.GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyResult'],
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 is_subscription_update_needed: bool,
+                 lifecycle_details: str,
+                 state: str,
+                 subscription_ids: Sequence[str],
+                 system_name: str,
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param Sequence['GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArgs'] family_maintenance_policies: The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: The unique identifier (OCID) of the environment family. Can't be changed after creation.
+        :param bool is_subscription_update_needed: When set to True, a subscription update is required for the environment family.
+        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param str state: A filter that returns all resources that match the specified lifecycle state.
+        :param Sequence[str] subscription_ids: The list of the IDs of the applications subscriptions that are associated with the environment family.
+        :param str system_name: Environment Specific Guid/ System Name
+        :param str time_created: The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "family_maintenance_policies", family_maintenance_policies)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_subscription_update_needed", is_subscription_update_needed)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subscription_ids", subscription_ids)
+        pulumi.set(__self__, "system_name", system_name)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="familyMaintenancePolicies")
+    def family_maintenance_policies(self) -> Sequence['outputs.GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyResult']:
+        """
+        The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+        """
+        return pulumi.get(self, "family_maintenance_policies")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The unique identifier (OCID) of the environment family. Can't be changed after creation.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isSubscriptionUpdateNeeded")
+    def is_subscription_update_needed(self) -> bool:
+        """
+        When set to True, a subscription update is required for the environment family.
+        """
+        return pulumi.get(self, "is_subscription_update_needed")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter that returns all resources that match the specified lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="subscriptionIds")
+    def subscription_ids(self) -> Sequence[str]:
+        """
+        The list of the IDs of the applications subscriptions that are associated with the environment family.
+        """
+        return pulumi.get(self, "subscription_ids")
+
+    @property
+    @pulumi.getter(name="systemName")
+    def system_name(self) -> str:
+        """
+        Environment Specific Guid/ System Name
+        """
+        return pulumi.get(self, "system_name")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyResult(dict):
+    def __init__(__self__, *,
+                 concurrent_maintenance: str,
+                 is_monthly_patching_enabled: bool,
+                 quarterly_upgrade_begin_times: str):
+        """
+        :param str concurrent_maintenance: Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
+        :param bool is_monthly_patching_enabled: When True, monthly patching is enabled for the environment family.
+        :param str quarterly_upgrade_begin_times: The quarterly maintenance month group schedule of the Fusion environment family.
+        """
+        pulumi.set(__self__, "concurrent_maintenance", concurrent_maintenance)
+        pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+        pulumi.set(__self__, "quarterly_upgrade_begin_times", quarterly_upgrade_begin_times)
+
+    @property
+    @pulumi.getter(name="concurrentMaintenance")
+    def concurrent_maintenance(self) -> str:
+        """
+        Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
+        """
+        return pulumi.get(self, "concurrent_maintenance")
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> bool:
+        """
+        When True, monthly patching is enabled for the environment family.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @property
+    @pulumi.getter(name="quarterlyUpgradeBeginTimes")
+    def quarterly_upgrade_begin_times(self) -> str:
+        """
+        The quarterly maintenance month group schedule of the Fusion environment family.
+        """
+        return pulumi.get(self, "quarterly_upgrade_begin_times")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentFamilyFamilyMaintenancePolicyResult(dict):
+    def __init__(__self__, *,
+                 concurrent_maintenance: str,
+                 is_monthly_patching_enabled: bool,
+                 quarterly_upgrade_begin_times: str):
+        """
+        :param str concurrent_maintenance: Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
+        :param bool is_monthly_patching_enabled: When True, monthly patching is enabled for the environment family.
+        :param str quarterly_upgrade_begin_times: The quarterly maintenance month group schedule of the Fusion environment family.
+        """
+        pulumi.set(__self__, "concurrent_maintenance", concurrent_maintenance)
+        pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+        pulumi.set(__self__, "quarterly_upgrade_begin_times", quarterly_upgrade_begin_times)
+
+    @property
+    @pulumi.getter(name="concurrentMaintenance")
+    def concurrent_maintenance(self) -> str:
+        """
+        Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
+        """
+        return pulumi.get(self, "concurrent_maintenance")
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> bool:
+        """
+        When True, monthly patching is enabled for the environment family.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @property
+    @pulumi.getter(name="quarterlyUpgradeBeginTimes")
+    def quarterly_upgrade_begin_times(self) -> str:
+        """
+        The quarterly maintenance month group schedule of the Fusion environment family.
+        """
+        return pulumi.get(self, "quarterly_upgrade_begin_times")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageResult(dict):
+    def __init__(__self__, *,
+                 limit: int,
+                 usage: int):
+        """
+        :param int usage: The usage of current environment.
+        """
+        pulumi.set(__self__, "limit", limit)
+        pulumi.set(__self__, "usage", usage)
+
+    @property
+    @pulumi.getter
+    def limit(self) -> int:
+        return pulumi.get(self, "limit")
+
+    @property
+    @pulumi.getter
+    def usage(self) -> int:
+        """
+        The usage of current environment.
+        """
+        return pulumi.get(self, "usage")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageResult(dict):
+    def __init__(__self__, *,
+                 limit: int,
+                 usage: int):
+        """
+        :param int usage: The usage of current environment.
+        """
+        pulumi.set(__self__, "limit", limit)
+        pulumi.set(__self__, "usage", usage)
+
+    @property
+    @pulumi.getter
+    def limit(self) -> int:
+        return pulumi.get(self, "limit")
+
+    @property
+    @pulumi.getter
+    def usage(self) -> int:
+        """
+        The usage of current environment.
+        """
+        return pulumi.get(self, "usage")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageResult(dict):
+    def __init__(__self__, *,
+                 limit: int,
+                 usage: int):
+        """
+        :param int usage: The usage of current environment.
+        """
+        pulumi.set(__self__, "limit", limit)
+        pulumi.set(__self__, "usage", usage)
+
+    @property
+    @pulumi.getter
+    def limit(self) -> int:
+        return pulumi.get(self, "limit")
+
+    @property
+    @pulumi.getter
+    def usage(self) -> int:
+        """
+        The usage of current environment.
+        """
+        return pulumi.get(self, "usage")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentFamilySubscriptionDetailSubscriptionResult(dict):
+    def __init__(__self__, *,
+                 classic_subscription_id: str,
+                 id: str,
+                 service_name: str,
+                 skuses: Sequence['outputs.GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusResult']):
+        """
+        :param str classic_subscription_id: Subscription id.
+        :param str id: OCID of the subscription details for particular root compartment or tenancy.
+        :param str service_name: The type of subscription, such as 'CLOUDCM'/'SAAS'/'CRM', etc.
+        :param Sequence['GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArgs'] skuses: Stock keeping unit.
+        """
+        pulumi.set(__self__, "classic_subscription_id", classic_subscription_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "skuses", skuses)
+
+    @property
+    @pulumi.getter(name="classicSubscriptionId")
+    def classic_subscription_id(self) -> str:
+        """
+        Subscription id.
+        """
+        return pulumi.get(self, "classic_subscription_id")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        OCID of the subscription details for particular root compartment or tenancy.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> str:
+        """
+        The type of subscription, such as 'CLOUDCM'/'SAAS'/'CRM', etc.
+        """
+        return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter
+    def skuses(self) -> Sequence['outputs.GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusResult']:
+        """
+        Stock keeping unit.
+        """
+        return pulumi.get(self, "skuses")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 license_part_description: str,
+                 metric_name: str,
+                 quantity: int,
+                 sku: str):
+        """
+        :param str description: Description of the stock units.
+        :param str license_part_description: Description of the covered product belonging to this Sku.
+        :param str metric_name: Base metric for billing the service.
+        :param int quantity: Quantity of the stock units.
+        :param str sku: Stock keeping unit id.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "license_part_description", license_part_description)
+        pulumi.set(__self__, "metric_name", metric_name)
+        pulumi.set(__self__, "quantity", quantity)
+        pulumi.set(__self__, "sku", sku)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of the stock units.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="licensePartDescription")
+    def license_part_description(self) -> str:
+        """
+        Description of the covered product belonging to this Sku.
+        """
+        return pulumi.get(self, "license_part_description")
+
+    @property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> str:
+        """
+        Base metric for billing the service.
+        """
+        return pulumi.get(self, "metric_name")
+
+    @property
+    @pulumi.getter
+    def quantity(self) -> int:
+        """
+        Quantity of the stock units.
+        """
+        return pulumi.get(self, "quantity")
+
+    @property
+    @pulumi.getter
+    def sku(self) -> str:
+        """
+        Stock keeping unit id.
+        """
+        return pulumi.get(self, "sku")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentMaintenancePolicyResult(dict):
+    def __init__(__self__, *,
+                 environment_maintenance_override: str,
+                 monthly_patching_override: str,
+                 quarterly_upgrade_begin_times: Sequence['outputs.GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeResult']):
+        """
+        :param str environment_maintenance_override: User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
+        :param str monthly_patching_override: Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
+        :param Sequence['GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs'] quarterly_upgrade_begin_times: Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
+        """
+        pulumi.set(__self__, "environment_maintenance_override", environment_maintenance_override)
+        pulumi.set(__self__, "monthly_patching_override", monthly_patching_override)
+        pulumi.set(__self__, "quarterly_upgrade_begin_times", quarterly_upgrade_begin_times)
+
+    @property
+    @pulumi.getter(name="environmentMaintenanceOverride")
+    def environment_maintenance_override(self) -> str:
+        """
+        User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
+        """
+        return pulumi.get(self, "environment_maintenance_override")
+
+    @property
+    @pulumi.getter(name="monthlyPatchingOverride")
+    def monthly_patching_override(self) -> str:
+        """
+        Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
+        """
+        return pulumi.get(self, "monthly_patching_override")
+
+    @property
+    @pulumi.getter(name="quarterlyUpgradeBeginTimes")
+    def quarterly_upgrade_begin_times(self) -> Sequence['outputs.GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeResult']:
+        """
+        Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
+        """
+        return pulumi.get(self, "quarterly_upgrade_begin_times")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeResult(dict):
+    def __init__(__self__, *,
+                 begin_times_value: str,
+                 override_type: str):
+        """
+        :param str begin_times_value: The frequency and month when maintenance occurs for the Fusion environment.
+        :param str override_type: Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
+        """
+        pulumi.set(__self__, "begin_times_value", begin_times_value)
+        pulumi.set(__self__, "override_type", override_type)
+
+    @property
+    @pulumi.getter(name="beginTimesValue")
+    def begin_times_value(self) -> str:
+        """
+        The frequency and month when maintenance occurs for the Fusion environment.
+        """
+        return pulumi.get(self, "begin_times_value")
+
+    @property
+    @pulumi.getter(name="overrideType")
+    def override_type(self) -> str:
+        """
+        Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
+        """
+        return pulumi.get(self, "override_type")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentRefreshResult(dict):
+    def __init__(__self__, *,
+                 source_fusion_environment_id: str,
+                 time_finished: str,
+                 time_of_restoration_point: str):
+        """
+        :param str source_fusion_environment_id: The source environment id for the last refresh
+        :param str time_finished: The time of when the last refresh finish
+        :param str time_of_restoration_point: The point of time of the latest DB backup for the last refresh
+        """
+        pulumi.set(__self__, "source_fusion_environment_id", source_fusion_environment_id)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_of_restoration_point", time_of_restoration_point)
+
+    @property
+    @pulumi.getter(name="sourceFusionEnvironmentId")
+    def source_fusion_environment_id(self) -> str:
+        """
+        The source environment id for the last refresh
+        """
+        return pulumi.get(self, "source_fusion_environment_id")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        The time of when the last refresh finish
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeOfRestorationPoint")
+    def time_of_restoration_point(self) -> str:
+        """
+        The point of time of the latest DB backup for the last refresh
+        """
+        return pulumi.get(self, "time_of_restoration_point")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentRefreshActivitiesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 fusion_environment_id: str,
+                 id: str,
+                 lifecycle_details: str,
+                 service_availability: str,
+                 source_fusion_environment_id: str,
+                 state: str,
+                 time_accepted: str,
+                 time_expected_finish: str,
+                 time_finished: str,
+                 time_of_restoration_point: str,
+                 time_scheduled_start: str,
+                 time_updated: str):
+        """
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str fusion_environment_id: unique FusionEnvironment identifier
+        :param str id: The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
+        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param str service_availability: Service availability / impact during refresh activity execution up down
+        :param str source_fusion_environment_id: The OCID of the Fusion environment that is the source environment for the refresh.
+        :param str state: A filter that returns all resources that match the specified status
+        :param str time_accepted: The time the refresh activity record was created. An RFC3339 formatted datetime string.
+        :param str time_expected_finish: The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
+        :param str time_finished: The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
+        :param str time_of_restoration_point: The date and time of the most recent source environment backup used for the environment refresh.
+        :param str time_scheduled_start: The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
+        :param str time_updated: The time the refresh activity record was updated. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "service_availability", service_availability)
+        pulumi.set(__self__, "source_fusion_environment_id", source_fusion_environment_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_accepted", time_accepted)
+        pulumi.set(__self__, "time_expected_finish", time_expected_finish)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_of_restoration_point", time_of_restoration_point)
+        pulumi.set(__self__, "time_scheduled_start", time_scheduled_start)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="fusionEnvironmentId")
+    def fusion_environment_id(self) -> str:
+        """
+        unique FusionEnvironment identifier
+        """
+        return pulumi.get(self, "fusion_environment_id")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="serviceAvailability")
+    def service_availability(self) -> str:
+        """
+        Service availability / impact during refresh activity execution up down
+        """
+        return pulumi.get(self, "service_availability")
+
+    @property
+    @pulumi.getter(name="sourceFusionEnvironmentId")
+    def source_fusion_environment_id(self) -> str:
+        """
+        The OCID of the Fusion environment that is the source environment for the refresh.
+        """
+        return pulumi.get(self, "source_fusion_environment_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter that returns all resources that match the specified status
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeAccepted")
+    def time_accepted(self) -> str:
+        """
+        The time the refresh activity record was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_accepted")
+
+    @property
+    @pulumi.getter(name="timeExpectedFinish")
+    def time_expected_finish(self) -> str:
+        """
+        The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_expected_finish")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeOfRestorationPoint")
+    def time_of_restoration_point(self) -> str:
+        """
+        The date and time of the most recent source environment backup used for the environment refresh.
+        """
+        return pulumi.get(self, "time_of_restoration_point")
+
+    @property
+    @pulumi.getter(name="timeScheduledStart")
+    def time_scheduled_start(self) -> str:
+        """
+        The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_scheduled_start")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the refresh activity record was updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentRuleResult(dict):
+    def __init__(__self__, *,
+                 action: str,
+                 conditions: Sequence['outputs.GetFusionEnvironmentRuleConditionResult'],
+                 description: str):
+        """
+        :param str action: Rule type
+        :param str description: A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "conditions", conditions)
+        pulumi.set(__self__, "description", description)
+
+    @property
+    @pulumi.getter
+    def action(self) -> str:
+        """
+        Rule type
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Sequence['outputs.GetFusionEnvironmentRuleConditionResult']:
+        return pulumi.get(self, "conditions")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+        """
+        return pulumi.get(self, "description")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentRuleConditionResult(dict):
+    def __init__(__self__, *,
+                 attribute_name: str,
+                 attribute_value: str):
+        """
+        :param str attribute_name: RuleCondition type
+        :param str attribute_value: The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
+        """
+        pulumi.set(__self__, "attribute_name", attribute_name)
+        pulumi.set(__self__, "attribute_value", attribute_value)
+
+    @property
+    @pulumi.getter(name="attributeName")
+    def attribute_name(self) -> str:
+        """
+        RuleCondition type
+        """
+        return pulumi.get(self, "attribute_name")
+
+    @property
+    @pulumi.getter(name="attributeValue")
+    def attribute_value(self) -> str:
+        """
+        The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
+        """
+        return pulumi.get(self, "attribute_value")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentScheduledActivitiesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 actions: Sequence['outputs.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionResult'],
+                 delay_in_hours: int,
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 fusion_environment_id: str,
+                 id: str,
+                 lifecycle_details: str,
+                 run_cycle: str,
+                 service_availability: str,
+                 state: str,
+                 time_accepted: str,
+                 time_expected_finish: str,
+                 time_finished: str,
+                 time_scheduled_start: str,
+                 time_updated: str):
+        """
+        :param Sequence['GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArgs'] actions: List of actions
+        :param int delay_in_hours: Cumulative delay hours
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str fusion_environment_id: unique FusionEnvironment identifier
+        :param str id: Unique identifier that is immutable on creation.
+        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param str run_cycle: A filter that returns all resources that match the specified run cycle.
+        :param str service_availability: Service availability / impact during scheduled activity execution up down
+        :param str state: A filter that returns all resources that match the specified status
+        :param str time_expected_finish: Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
+        :param str time_finished: The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
+        :param str time_scheduled_start: Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
+        :param str time_updated: The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "actions", actions)
+        pulumi.set(__self__, "delay_in_hours", delay_in_hours)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "run_cycle", run_cycle)
+        pulumi.set(__self__, "service_availability", service_availability)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_accepted", time_accepted)
+        pulumi.set(__self__, "time_expected_finish", time_expected_finish)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_scheduled_start", time_scheduled_start)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter
+    def actions(self) -> Sequence['outputs.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionResult']:
+        """
+        List of actions
+        """
+        return pulumi.get(self, "actions")
+
+    @property
+    @pulumi.getter(name="delayInHours")
+    def delay_in_hours(self) -> int:
+        """
+        Cumulative delay hours
+        """
+        return pulumi.get(self, "delay_in_hours")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="fusionEnvironmentId")
+    def fusion_environment_id(self) -> str:
+        """
+        unique FusionEnvironment identifier
+        """
+        return pulumi.get(self, "fusion_environment_id")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Unique identifier that is immutable on creation.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="runCycle")
+    def run_cycle(self) -> str:
+        """
+        A filter that returns all resources that match the specified run cycle.
+        """
+        return pulumi.get(self, "run_cycle")
+
+    @property
+    @pulumi.getter(name="serviceAvailability")
+    def service_availability(self) -> str:
+        """
+        Service availability / impact during scheduled activity execution up down
+        """
+        return pulumi.get(self, "service_availability")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter that returns all resources that match the specified status
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeAccepted")
+    def time_accepted(self) -> str:
+        return pulumi.get(self, "time_accepted")
+
+    @property
+    @pulumi.getter(name="timeExpectedFinish")
+    def time_expected_finish(self) -> str:
+        """
+        Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_expected_finish")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeScheduledStart")
+    def time_scheduled_start(self) -> str:
+        """
+        Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_scheduled_start")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionResult(dict):
+    def __init__(__self__, *,
+                 action_type: str,
+                 artifact: str,
+                 category: str,
+                 description: str,
+                 mode: str,
+                 qualifier: str,
+                 reference_key: str,
+                 state: str,
+                 version: str):
+        """
+        :param str action_type: Type of action
+        :param str artifact: patch that delivered the vertex update prerequisite
+        :param str category: patch artifact category
+        :param str description: A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+        :param str mode: A string that describeds whether the change is applied hot or cold
+        :param str qualifier: month qualifier
+        :param str reference_key: Unique identifier of the object that represents the action
+        :param str state: A filter that returns all resources that match the specified status
+        :param str version: name of the repo
+        """
+        pulumi.set(__self__, "action_type", action_type)
+        pulumi.set(__self__, "artifact", artifact)
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "mode", mode)
+        pulumi.set(__self__, "qualifier", qualifier)
+        pulumi.set(__self__, "reference_key", reference_key)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="actionType")
+    def action_type(self) -> str:
+        """
+        Type of action
+        """
+        return pulumi.get(self, "action_type")
+
+    @property
+    @pulumi.getter
+    def artifact(self) -> str:
+        """
+        patch that delivered the vertex update prerequisite
+        """
+        return pulumi.get(self, "artifact")
+
+    @property
+    @pulumi.getter
+    def category(self) -> str:
+        """
+        patch artifact category
+        """
+        return pulumi.get(self, "category")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def mode(self) -> str:
+        """
+        A string that describeds whether the change is applied hot or cold
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter
+    def qualifier(self) -> str:
+        """
+        month qualifier
+        """
+        return pulumi.get(self, "qualifier")
+
+    @property
+    @pulumi.getter(name="referenceKey")
+    def reference_key(self) -> str:
+        """
+        Unique identifier of the object that represents the action
+        """
+        return pulumi.get(self, "reference_key")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter that returns all resources that match the specified status
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        name of the repo
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentScheduledActivityActionResult(dict):
+    def __init__(__self__, *,
+                 action_type: str,
+                 artifact: str,
+                 category: str,
+                 description: str,
+                 mode: str,
+                 qualifier: str,
+                 reference_key: str,
+                 state: str,
+                 version: str):
+        """
+        :param str action_type: Type of action
+        :param str artifact: patch that delivered the vertex update prerequisite
+        :param str category: patch artifact category
+        :param str description: A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+        :param str mode: A string that describeds whether the change is applied hot or cold
+        :param str qualifier: month qualifier
+        :param str reference_key: Unique identifier of the object that represents the action
+        :param str state: The current state of the scheduledActivity.
+        :param str version: name of the repo
+        """
+        pulumi.set(__self__, "action_type", action_type)
+        pulumi.set(__self__, "artifact", artifact)
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "mode", mode)
+        pulumi.set(__self__, "qualifier", qualifier)
+        pulumi.set(__self__, "reference_key", reference_key)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="actionType")
+    def action_type(self) -> str:
+        """
+        Type of action
+        """
+        return pulumi.get(self, "action_type")
+
+    @property
+    @pulumi.getter
+    def artifact(self) -> str:
+        """
+        patch that delivered the vertex update prerequisite
+        """
+        return pulumi.get(self, "artifact")
+
+    @property
+    @pulumi.getter
+    def category(self) -> str:
+        """
+        patch artifact category
+        """
+        return pulumi.get(self, "category")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def mode(self) -> str:
+        """
+        A string that describeds whether the change is applied hot or cold
+        """
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter
+    def qualifier(self) -> str:
+        """
+        month qualifier
+        """
+        return pulumi.get(self, "qualifier")
+
+    @property
+    @pulumi.getter(name="referenceKey")
+    def reference_key(self) -> str:
+        """
+        Unique identifier of the object that represents the action
+        """
+        return pulumi.get(self, "reference_key")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the scheduledActivity.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        name of the repo
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentServiceAttachmentsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 action: str,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 is_sku_based: bool,
+                 service_instance_id: str,
+                 service_instance_type: str,
+                 service_url: str,
+                 state: str,
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str action: Action
+        :param str compartment_id: Compartment Identifier
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: Unique identifier that is immutable on creation
+        :param bool is_sku_based: Whether this service is provisioned due to the customer being subscribed to a specific SKU
+        :param str service_instance_id: The ID of the service instance created that can be used to identify this on the service control plane
+        :param str service_instance_type: A filter that returns all resources that match the specified lifecycle state.
+        :param str service_url: Public URL
+        :param str state: A filter that returns all resources that match the specified lifecycle state.
+        :param str time_created: The time the the ServiceInstance was created. An RFC3339 formatted datetime string
+        :param str time_updated: The time the ServiceInstance was updated. An RFC3339 formatted datetime string
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_sku_based", is_sku_based)
+        pulumi.set(__self__, "service_instance_id", service_instance_id)
+        pulumi.set(__self__, "service_instance_type", service_instance_type)
+        pulumi.set(__self__, "service_url", service_url)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter
+    def action(self) -> str:
+        """
+        Action
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        Compartment Identifier
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Unique identifier that is immutable on creation
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isSkuBased")
+    def is_sku_based(self) -> bool:
+        """
+        Whether this service is provisioned due to the customer being subscribed to a specific SKU
+        """
+        return pulumi.get(self, "is_sku_based")
+
+    @property
+    @pulumi.getter(name="serviceInstanceId")
+    def service_instance_id(self) -> str:
+        """
+        The ID of the service instance created that can be used to identify this on the service control plane
+        """
+        return pulumi.get(self, "service_instance_id")
+
+    @property
+    @pulumi.getter(name="serviceInstanceType")
+    def service_instance_type(self) -> str:
+        """
+        A filter that returns all resources that match the specified lifecycle state.
+        """
+        return pulumi.get(self, "service_instance_type")
+
+    @property
+    @pulumi.getter(name="serviceUrl")
+    def service_url(self) -> str:
+        """
+        Public URL
+        """
+        return pulumi.get(self, "service_url")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter that returns all resources that match the specified lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the the ServiceInstance was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the ServiceInstance was updated. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentTimeAvailableForRefreshItemResult(dict):
+    def __init__(__self__, *,
+                 time_available_for_refresh: str):
+        """
+        :param str time_available_for_refresh: refresh time.
+        """
+        pulumi.set(__self__, "time_available_for_refresh", time_available_for_refresh)
+
+    @property
+    @pulumi.getter(name="timeAvailableForRefresh")
+    def time_available_for_refresh(self) -> str:
+        """
+        refresh time.
+        """
+        return pulumi.get(self, "time_available_for_refresh")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentTimeAvailableForRefreshsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemResult']):
+        """
+        :param Sequence['GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArgs'] items: A list of available refresh time objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemResult']:
+        """
+        A list of available refresh time objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 time_available_for_refresh: str):
+        """
+        :param str time_available_for_refresh: refresh time.
+        """
+        pulumi.set(__self__, "time_available_for_refresh", time_available_for_refresh)
+
+    @property
+    @pulumi.getter(name="timeAvailableForRefresh")
+    def time_available_for_refresh(self) -> str:
+        """
+        refresh time.
+        """
+        return pulumi.get(self, "time_available_for_refresh")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentsFusionEnvironmentCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 additional_language_packs: Sequence[str],
+                 applied_patch_bundles: Sequence[str],
+                 compartment_id: str,
+                 create_fusion_environment_admin_user_details: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailResult'],
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 dns_prefix: str,
+                 domain_id: str,
+                 freeform_tags: Mapping[str, Any],
+                 fusion_environment_family_id: str,
+                 fusion_environment_type: str,
+                 id: str,
+                 idcs_domain_url: str,
+                 kms_key_id: str,
+                 kms_key_infos: Sequence[str],
+                 lifecycle_details: str,
+                 maintenance_policies: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyResult'],
+                 public_url: str,
+                 refreshes: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshResult'],
+                 rules: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleResult'],
+                 state: str,
+                 subscription_ids: Sequence[str],
+                 system_name: str,
+                 time_created: str,
+                 time_upcoming_maintenance: str,
+                 time_updated: str,
+                 version: str):
+        """
+        :param Sequence[str] additional_language_packs: Language packs
+        :param Sequence[str] applied_patch_bundles: Patch bundle names
+        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str dns_prefix: DNS prefix
+        :param str domain_id: The IDCS domain created for the fusion instance
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str fusion_environment_family_id: The ID of the fusion environment family in which to list resources.
+        :param str fusion_environment_type: Type of the FusionEnvironment.
+        :param str id: Unique identifier that is immutable on creation
+        :param str idcs_domain_url: The IDCS Domain URL
+        :param str kms_key_id: BYOK key id
+        :param Sequence[str] kms_key_infos: BYOK key info
+        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param Sequence['GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArgs'] maintenance_policies: The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+        :param str public_url: Public URL
+        :param Sequence['GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArgs'] refreshes: Describes a refresh of a fusion environment
+        :param Sequence['GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArgs'] rules: Network Access Control Rules
+        :param str state: A filter that returns all resources that match the specified lifecycle state.
+        :param Sequence[str] subscription_ids: List of subscription IDs.
+        :param str system_name: Environment Specific Guid/ System Name
+        :param str time_created: The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
+        :param str time_upcoming_maintenance: The next maintenance for this environment
+        :param str time_updated: The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
+        :param str version: Version of Fusion Apps used by this environment
+        """
+        pulumi.set(__self__, "additional_language_packs", additional_language_packs)
+        pulumi.set(__self__, "applied_patch_bundles", applied_patch_bundles)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "create_fusion_environment_admin_user_details", create_fusion_environment_admin_user_details)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "dns_prefix", dns_prefix)
+        pulumi.set(__self__, "domain_id", domain_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "fusion_environment_family_id", fusion_environment_family_id)
+        pulumi.set(__self__, "fusion_environment_type", fusion_environment_type)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "idcs_domain_url", idcs_domain_url)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "kms_key_infos", kms_key_infos)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "maintenance_policies", maintenance_policies)
+        pulumi.set(__self__, "public_url", public_url)
+        pulumi.set(__self__, "refreshes", refreshes)
+        pulumi.set(__self__, "rules", rules)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subscription_ids", subscription_ids)
+        pulumi.set(__self__, "system_name", system_name)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_upcoming_maintenance", time_upcoming_maintenance)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="additionalLanguagePacks")
+    def additional_language_packs(self) -> Sequence[str]:
+        """
+        Language packs
+        """
+        return pulumi.get(self, "additional_language_packs")
+
+    @property
+    @pulumi.getter(name="appliedPatchBundles")
+    def applied_patch_bundles(self) -> Sequence[str]:
+        """
+        Patch bundle names
+        """
+        return pulumi.get(self, "applied_patch_bundles")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="createFusionEnvironmentAdminUserDetails")
+    def create_fusion_environment_admin_user_details(self) -> Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailResult']:
+        return pulumi.get(self, "create_fusion_environment_admin_user_details")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="dnsPrefix")
+    def dns_prefix(self) -> str:
+        """
+        DNS prefix
+        """
+        return pulumi.get(self, "dns_prefix")
+
+    @property
+    @pulumi.getter(name="domainId")
+    def domain_id(self) -> str:
+        """
+        The IDCS domain created for the fusion instance
+        """
+        return pulumi.get(self, "domain_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="fusionEnvironmentFamilyId")
+    def fusion_environment_family_id(self) -> str:
+        """
+        The ID of the fusion environment family in which to list resources.
+        """
+        return pulumi.get(self, "fusion_environment_family_id")
+
+    @property
+    @pulumi.getter(name="fusionEnvironmentType")
+    def fusion_environment_type(self) -> str:
+        """
+        Type of the FusionEnvironment.
+        """
+        return pulumi.get(self, "fusion_environment_type")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Unique identifier that is immutable on creation
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="idcsDomainUrl")
+    def idcs_domain_url(self) -> str:
+        """
+        The IDCS Domain URL
+        """
+        return pulumi.get(self, "idcs_domain_url")
+
+    @property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> str:
+        """
+        BYOK key id
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @property
+    @pulumi.getter(name="kmsKeyInfos")
+    def kms_key_infos(self) -> Sequence[str]:
+        """
+        BYOK key info
+        """
+        return pulumi.get(self, "kms_key_infos")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="maintenancePolicies")
+    def maintenance_policies(self) -> Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyResult']:
+        """
+        The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+        """
+        return pulumi.get(self, "maintenance_policies")
+
+    @property
+    @pulumi.getter(name="publicUrl")
+    def public_url(self) -> str:
+        """
+        Public URL
+        """
+        return pulumi.get(self, "public_url")
+
+    @property
+    @pulumi.getter
+    def refreshes(self) -> Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshResult']:
+        """
+        Describes a refresh of a fusion environment
+        """
+        return pulumi.get(self, "refreshes")
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleResult']:
+        """
+        Network Access Control Rules
+        """
+        return pulumi.get(self, "rules")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter that returns all resources that match the specified lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="subscriptionIds")
+    def subscription_ids(self) -> Sequence[str]:
+        """
+        List of subscription IDs.
+        """
+        return pulumi.get(self, "subscription_ids")
+
+    @property
+    @pulumi.getter(name="systemName")
+    def system_name(self) -> str:
+        """
+        Environment Specific Guid/ System Name
+        """
+        return pulumi.get(self, "system_name")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpcomingMaintenance")
+    def time_upcoming_maintenance(self) -> str:
+        """
+        The next maintenance for this environment
+        """
+        return pulumi.get(self, "time_upcoming_maintenance")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        Version of Fusion Apps used by this environment
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailResult(dict):
+    def __init__(__self__, *,
+                 email_address: str,
+                 first_name: str,
+                 last_name: str,
+                 password: str,
+                 username: str):
+        pulumi.set(__self__, "email_address", email_address)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="emailAddress")
+    def email_address(self) -> str:
+        return pulumi.get(self, "email_address")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> str:
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> str:
+        return pulumi.get(self, "last_name")
+
+    @property
+    @pulumi.getter
+    def password(self) -> str:
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyResult(dict):
+    def __init__(__self__, *,
+                 environment_maintenance_override: str,
+                 monthly_patching_override: str,
+                 quarterly_upgrade_begin_times: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeResult']):
+        """
+        :param str environment_maintenance_override: User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
+        :param str monthly_patching_override: Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
+        :param Sequence['GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArgs'] quarterly_upgrade_begin_times: Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
+        """
+        pulumi.set(__self__, "environment_maintenance_override", environment_maintenance_override)
+        pulumi.set(__self__, "monthly_patching_override", monthly_patching_override)
+        pulumi.set(__self__, "quarterly_upgrade_begin_times", quarterly_upgrade_begin_times)
+
+    @property
+    @pulumi.getter(name="environmentMaintenanceOverride")
+    def environment_maintenance_override(self) -> str:
+        """
+        User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
+        """
+        return pulumi.get(self, "environment_maintenance_override")
+
+    @property
+    @pulumi.getter(name="monthlyPatchingOverride")
+    def monthly_patching_override(self) -> str:
+        """
+        Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
+        """
+        return pulumi.get(self, "monthly_patching_override")
+
+    @property
+    @pulumi.getter(name="quarterlyUpgradeBeginTimes")
+    def quarterly_upgrade_begin_times(self) -> Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeResult']:
+        """
+        Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
+        """
+        return pulumi.get(self, "quarterly_upgrade_begin_times")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeResult(dict):
+    def __init__(__self__, *,
+                 begin_times_value: str,
+                 override_type: str):
+        """
+        :param str begin_times_value: The frequency and month when maintenance occurs for the Fusion environment.
+        :param str override_type: Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
+        """
+        pulumi.set(__self__, "begin_times_value", begin_times_value)
+        pulumi.set(__self__, "override_type", override_type)
+
+    @property
+    @pulumi.getter(name="beginTimesValue")
+    def begin_times_value(self) -> str:
+        """
+        The frequency and month when maintenance occurs for the Fusion environment.
+        """
+        return pulumi.get(self, "begin_times_value")
+
+    @property
+    @pulumi.getter(name="overrideType")
+    def override_type(self) -> str:
+        """
+        Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
+        """
+        return pulumi.get(self, "override_type")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshResult(dict):
+    def __init__(__self__, *,
+                 source_fusion_environment_id: str,
+                 time_finished: str,
+                 time_of_restoration_point: str):
+        """
+        :param str source_fusion_environment_id: The source environment id for the last refresh
+        :param str time_finished: The time of when the last refresh finish
+        :param str time_of_restoration_point: The point of time of the latest DB backup for the last refresh
+        """
+        pulumi.set(__self__, "source_fusion_environment_id", source_fusion_environment_id)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_of_restoration_point", time_of_restoration_point)
+
+    @property
+    @pulumi.getter(name="sourceFusionEnvironmentId")
+    def source_fusion_environment_id(self) -> str:
+        """
+        The source environment id for the last refresh
+        """
+        return pulumi.get(self, "source_fusion_environment_id")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        The time of when the last refresh finish
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeOfRestorationPoint")
+    def time_of_restoration_point(self) -> str:
+        """
+        The point of time of the latest DB backup for the last refresh
+        """
+        return pulumi.get(self, "time_of_restoration_point")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleResult(dict):
+    def __init__(__self__, *,
+                 action: str,
+                 conditions: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionResult'],
+                 description: str):
+        """
+        :param str action: Rule type
+        :param str description: A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "conditions", conditions)
+        pulumi.set(__self__, "description", description)
+
+    @property
+    @pulumi.getter
+    def action(self) -> str:
+        """
+        Rule type
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionResult']:
+        return pulumi.get(self, "conditions")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+        """
+        return pulumi.get(self, "description")
+
+
+@pulumi.output_type
+class GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionResult(dict):
+    def __init__(__self__, *,
+                 attribute_name: str,
+                 attribute_value: str):
+        """
+        :param str attribute_name: RuleCondition type
+        :param str attribute_value: The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
+        """
+        pulumi.set(__self__, "attribute_name", attribute_name)
+        pulumi.set(__self__, "attribute_value", attribute_value)
+
+    @property
+    @pulumi.getter(name="attributeName")
+    def attribute_name(self) -> str:
+        """
+        RuleCondition type
+        """
+        return pulumi.get(self, "attribute_name")
+
+    @property
+    @pulumi.getter(name="attributeValue")
+    def attribute_value(self) -> str:
+        """
+        The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
+        """
+        return pulumi.get(self, "attribute_value")
 
 

@@ -21,7 +21,7 @@ class GetExsiHostResult:
     """
     A collection of values returned by getExsiHost.
     """
-    def __init__(__self__, billing_contract_end_date=None, capacity_reservation_id=None, compartment_id=None, compute_availability_domain=None, compute_instance_id=None, current_sku=None, defined_tags=None, display_name=None, esxi_host_id=None, failed_esxi_host_id=None, freeform_tags=None, grace_period_end_date=None, host_ocpu_count=None, host_shape_name=None, id=None, next_sku=None, replacement_esxi_host_id=None, sddc_id=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, billing_contract_end_date=None, capacity_reservation_id=None, compartment_id=None, compute_availability_domain=None, compute_instance_id=None, current_sku=None, defined_tags=None, display_name=None, esxi_host_id=None, failed_esxi_host_id=None, freeform_tags=None, grace_period_end_date=None, host_ocpu_count=None, host_shape_name=None, id=None, next_sku=None, non_upgraded_esxi_host_id=None, replacement_esxi_host_id=None, sddc_id=None, state=None, time_created=None, time_updated=None, upgraded_replacement_esxi_host_id=None, vmware_software_version=None):
         if billing_contract_end_date and not isinstance(billing_contract_end_date, str):
             raise TypeError("Expected argument 'billing_contract_end_date' to be a str")
         pulumi.set(__self__, "billing_contract_end_date", billing_contract_end_date)
@@ -70,6 +70,9 @@ class GetExsiHostResult:
         if next_sku and not isinstance(next_sku, str):
             raise TypeError("Expected argument 'next_sku' to be a str")
         pulumi.set(__self__, "next_sku", next_sku)
+        if non_upgraded_esxi_host_id and not isinstance(non_upgraded_esxi_host_id, str):
+            raise TypeError("Expected argument 'non_upgraded_esxi_host_id' to be a str")
+        pulumi.set(__self__, "non_upgraded_esxi_host_id", non_upgraded_esxi_host_id)
         if replacement_esxi_host_id and not isinstance(replacement_esxi_host_id, str):
             raise TypeError("Expected argument 'replacement_esxi_host_id' to be a str")
         pulumi.set(__self__, "replacement_esxi_host_id", replacement_esxi_host_id)
@@ -85,6 +88,12 @@ class GetExsiHostResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if upgraded_replacement_esxi_host_id and not isinstance(upgraded_replacement_esxi_host_id, str):
+            raise TypeError("Expected argument 'upgraded_replacement_esxi_host_id' to be a str")
+        pulumi.set(__self__, "upgraded_replacement_esxi_host_id", upgraded_replacement_esxi_host_id)
+        if vmware_software_version and not isinstance(vmware_software_version, str):
+            raise TypeError("Expected argument 'vmware_software_version' to be a str")
+        pulumi.set(__self__, "vmware_software_version", vmware_software_version)
 
     @property
     @pulumi.getter(name="billingContractEndDate")
@@ -212,6 +221,14 @@ class GetExsiHostResult:
         return pulumi.get(self, "next_sku")
 
     @property
+    @pulumi.getter(name="nonUpgradedEsxiHostId")
+    def non_upgraded_esxi_host_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
+        """
+        return pulumi.get(self, "non_upgraded_esxi_host_id")
+
+    @property
     @pulumi.getter(name="replacementEsxiHostId")
     def replacement_esxi_host_id(self) -> str:
         """
@@ -251,6 +268,22 @@ class GetExsiHostResult:
         """
         return pulumi.get(self, "time_updated")
 
+    @property
+    @pulumi.getter(name="upgradedReplacementEsxiHostId")
+    def upgraded_replacement_esxi_host_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+        """
+        return pulumi.get(self, "upgraded_replacement_esxi_host_id")
+
+    @property
+    @pulumi.getter(name="vmwareSoftwareVersion")
+    def vmware_software_version(self) -> str:
+        """
+        The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+        """
+        return pulumi.get(self, "vmware_software_version")
+
 
 class AwaitableGetExsiHostResult(GetExsiHostResult):
     # pylint: disable=using-constant-test
@@ -274,11 +307,14 @@ class AwaitableGetExsiHostResult(GetExsiHostResult):
             host_shape_name=self.host_shape_name,
             id=self.id,
             next_sku=self.next_sku,
+            non_upgraded_esxi_host_id=self.non_upgraded_esxi_host_id,
             replacement_esxi_host_id=self.replacement_esxi_host_id,
             sddc_id=self.sddc_id,
             state=self.state,
             time_created=self.time_created,
-            time_updated=self.time_updated)
+            time_updated=self.time_updated,
+            upgraded_replacement_esxi_host_id=self.upgraded_replacement_esxi_host_id,
+            vmware_software_version=self.vmware_software_version)
 
 
 def get_exsi_host(esxi_host_id: Optional[str] = None,
@@ -322,11 +358,14 @@ def get_exsi_host(esxi_host_id: Optional[str] = None,
         host_shape_name=__ret__.host_shape_name,
         id=__ret__.id,
         next_sku=__ret__.next_sku,
+        non_upgraded_esxi_host_id=__ret__.non_upgraded_esxi_host_id,
         replacement_esxi_host_id=__ret__.replacement_esxi_host_id,
         sddc_id=__ret__.sddc_id,
         state=__ret__.state,
         time_created=__ret__.time_created,
-        time_updated=__ret__.time_updated)
+        time_updated=__ret__.time_updated,
+        upgraded_replacement_esxi_host_id=__ret__.upgraded_replacement_esxi_host_id,
+        vmware_software_version=__ret__.vmware_software_version)
 
 
 @_utilities.lift_output_func(get_exsi_host)

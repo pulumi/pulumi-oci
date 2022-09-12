@@ -13,35 +13,24 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecretbundleVersionsResult {
-    private final @Nullable List<GetSecretbundleVersionsFilter> filters;
+    private @Nullable List<GetSecretbundleVersionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of secret_bundle_versions.
      * 
      */
-    private final List<GetSecretbundleVersionsSecretBundleVersion> secretBundleVersions;
+    private List<GetSecretbundleVersionsSecretBundleVersion> secretBundleVersions;
     /**
      * @return The OCID of the secret.
      * 
      */
-    private final String secretId;
+    private String secretId;
 
-    @CustomType.Constructor
-    private GetSecretbundleVersionsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetSecretbundleVersionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("secretBundleVersions") List<GetSecretbundleVersionsSecretBundleVersion> secretBundleVersions,
-        @CustomType.Parameter("secretId") String secretId) {
-        this.filters = filters;
-        this.id = id;
-        this.secretBundleVersions = secretBundleVersions;
-        this.secretId = secretId;
-    }
-
+    private GetSecretbundleVersionsResult() {}
     public List<GetSecretbundleVersionsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -74,17 +63,13 @@ public final class GetSecretbundleVersionsResult {
     public static Builder builder(GetSecretbundleVersionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetSecretbundleVersionsFilter> filters;
         private String id;
         private List<GetSecretbundleVersionsSecretBundleVersion> secretBundleVersions;
         private String secretId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecretbundleVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -93,6 +78,7 @@ public final class GetSecretbundleVersionsResult {
     	      this.secretId = defaults.secretId;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSecretbundleVersionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -100,10 +86,12 @@ public final class GetSecretbundleVersionsResult {
         public Builder filters(GetSecretbundleVersionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder secretBundleVersions(List<GetSecretbundleVersionsSecretBundleVersion> secretBundleVersions) {
             this.secretBundleVersions = Objects.requireNonNull(secretBundleVersions);
             return this;
@@ -111,11 +99,18 @@ public final class GetSecretbundleVersionsResult {
         public Builder secretBundleVersions(GetSecretbundleVersionsSecretBundleVersion... secretBundleVersions) {
             return secretBundleVersions(List.of(secretBundleVersions));
         }
+        @CustomType.Setter
         public Builder secretId(String secretId) {
             this.secretId = Objects.requireNonNull(secretId);
             return this;
-        }        public GetSecretbundleVersionsResult build() {
-            return new GetSecretbundleVersionsResult(filters, id, secretBundleVersions, secretId);
+        }
+        public GetSecretbundleVersionsResult build() {
+            final var o = new GetSecretbundleVersionsResult();
+            o.filters = filters;
+            o.id = id;
+            o.secretBundleVersions = secretBundleVersions;
+            o.secretId = secretId;
+            return o;
         }
     }
 }

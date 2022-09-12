@@ -27,6 +27,7 @@ class DbSystemArgs:
                  backup_subnet_id: Optional[pulumi.Input[str]] = None,
                  cluster_name: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
+                 data_collection_options: Optional[pulumi.Input['DbSystemDataCollectionOptionsArgs']] = None,
                  data_storage_percentage: Optional[pulumi.Input[int]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  database_edition: Optional[pulumi.Input[str]] = None,
@@ -75,6 +76,7 @@ class DbSystemArgs:
                * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
                * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
                * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
+        :param pulumi.Input['DbSystemDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
         :param pulumi.Input[str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
@@ -115,6 +117,8 @@ class DbSystemArgs:
             pulumi.set(__self__, "cluster_name", cluster_name)
         if cpu_core_count is not None:
             pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+        if data_collection_options is not None:
+            pulumi.set(__self__, "data_collection_options", data_collection_options)
         if data_storage_percentage is not None:
             pulumi.set(__self__, "data_storage_percentage", data_storage_percentage)
         if data_storage_size_in_gb is not None:
@@ -305,6 +309,18 @@ class DbSystemArgs:
     @cpu_core_count.setter
     def cpu_core_count(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "cpu_core_count", value)
+
+    @property
+    @pulumi.getter(name="dataCollectionOptions")
+    def data_collection_options(self) -> Optional[pulumi.Input['DbSystemDataCollectionOptionsArgs']]:
+        """
+        (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        """
+        return pulumi.get(self, "data_collection_options")
+
+    @data_collection_options.setter
+    def data_collection_options(self, value: Optional[pulumi.Input['DbSystemDataCollectionOptionsArgs']]):
+        pulumi.set(self, "data_collection_options", value)
 
     @property
     @pulumi.getter(name="dataStoragePercentage")
@@ -593,6 +609,7 @@ class _DbSystemState:
                  cluster_name: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
+                 data_collection_options: Optional[pulumi.Input['DbSystemDataCollectionOptionsArgs']] = None,
                  data_storage_percentage: Optional[pulumi.Input[int]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  database_edition: Optional[pulumi.Input[str]] = None,
@@ -656,6 +673,7 @@ class _DbSystemState:
                * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
                * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
                * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
+        :param pulumi.Input['DbSystemDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
         :param pulumi.Input[str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
@@ -717,6 +735,8 @@ class _DbSystemState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if cpu_core_count is not None:
             pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+        if data_collection_options is not None:
+            pulumi.set(__self__, "data_collection_options", data_collection_options)
         if data_storage_percentage is not None:
             pulumi.set(__self__, "data_storage_percentage", data_storage_percentage)
         if data_storage_size_in_gb is not None:
@@ -889,6 +909,18 @@ class _DbSystemState:
     @cpu_core_count.setter
     def cpu_core_count(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "cpu_core_count", value)
+
+    @property
+    @pulumi.getter(name="dataCollectionOptions")
+    def data_collection_options(self) -> Optional[pulumi.Input['DbSystemDataCollectionOptionsArgs']]:
+        """
+        (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        """
+        return pulumi.get(self, "data_collection_options")
+
+    @data_collection_options.setter
+    def data_collection_options(self, value: Optional[pulumi.Input['DbSystemDataCollectionOptionsArgs']]):
+        pulumi.set(self, "data_collection_options", value)
 
     @property
     @pulumi.getter(name="dataStoragePercentage")
@@ -1445,6 +1477,7 @@ class DbSystem(pulumi.CustomResource):
                  cluster_name: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
+                 data_collection_options: Optional[pulumi.Input[pulumi.InputType['DbSystemDataCollectionOptionsArgs']]] = None,
                  data_storage_percentage: Optional[pulumi.Input[int]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  database_edition: Optional[pulumi.Input[str]] = None,
@@ -1535,6 +1568,7 @@ class DbSystem(pulumi.CustomResource):
                * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
                * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
                * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
+        :param pulumi.Input[pulumi.InputType['DbSystemDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
         :param pulumi.Input[str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
@@ -1637,6 +1671,7 @@ class DbSystem(pulumi.CustomResource):
                  cluster_name: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
+                 data_collection_options: Optional[pulumi.Input[pulumi.InputType['DbSystemDataCollectionOptionsArgs']]] = None,
                  data_storage_percentage: Optional[pulumi.Input[int]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
                  database_edition: Optional[pulumi.Input[str]] = None,
@@ -1684,6 +1719,7 @@ class DbSystem(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["cpu_core_count"] = cpu_core_count
+            __props__.__dict__["data_collection_options"] = data_collection_options
             __props__.__dict__["data_storage_percentage"] = data_storage_percentage
             __props__.__dict__["data_storage_size_in_gb"] = data_storage_size_in_gb
             __props__.__dict__["database_edition"] = database_edition
@@ -1755,6 +1791,7 @@ class DbSystem(pulumi.CustomResource):
             cluster_name: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             cpu_core_count: Optional[pulumi.Input[int]] = None,
+            data_collection_options: Optional[pulumi.Input[pulumi.InputType['DbSystemDataCollectionOptionsArgs']]] = None,
             data_storage_percentage: Optional[pulumi.Input[int]] = None,
             data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
             database_edition: Optional[pulumi.Input[str]] = None,
@@ -1823,6 +1860,7 @@ class DbSystem(pulumi.CustomResource):
                * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
                * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
                * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
+        :param pulumi.Input[pulumi.InputType['DbSystemDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
         :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
         :param pulumi.Input[str] database_edition: The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
@@ -1882,6 +1920,7 @@ class DbSystem(pulumi.CustomResource):
         __props__.__dict__["cluster_name"] = cluster_name
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["cpu_core_count"] = cpu_core_count
+        __props__.__dict__["data_collection_options"] = data_collection_options
         __props__.__dict__["data_storage_percentage"] = data_storage_percentage
         __props__.__dict__["data_storage_size_in_gb"] = data_storage_size_in_gb
         __props__.__dict__["database_edition"] = database_edition
@@ -1986,6 +2025,14 @@ class DbSystem(pulumi.CustomResource):
         * VM.Standard.E4.Flex - Specify any thing from 1 to 64.
         """
         return pulumi.get(self, "cpu_core_count")
+
+    @property
+    @pulumi.getter(name="dataCollectionOptions")
+    def data_collection_options(self) -> pulumi.Output['outputs.DbSystemDataCollectionOptions']:
+        """
+        (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        """
+        return pulumi.get(self, "data_collection_options")
 
     @property
     @pulumi.getter(name="dataStoragePercentage")

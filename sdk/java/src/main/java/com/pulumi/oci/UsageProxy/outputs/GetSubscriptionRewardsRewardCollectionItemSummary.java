@@ -14,49 +14,34 @@ public final class GetSubscriptionRewardsRewardCollectionItemSummary {
      * @return The currency unit for the reward amount.
      * 
      */
-    private final String currency;
+    private String currency;
     /**
-     * @return The redemption code used in the billing center during the reward redemption process
+     * @return The redemption code used in the Billing Center during the reward redemption process.
      * 
      */
-    private final String redemptionCode;
+    private String redemptionCode;
     /**
      * @return The current Rewards percentage in decimal format.
      * 
      */
-    private final Double rewardsRate;
+    private Double rewardsRate;
     /**
      * @return The subscription ID for which rewards information is requested for.
      * 
      */
-    private final String subscriptionId;
+    private String subscriptionId;
     /**
      * @return The OCID of the tenancy.
      * 
      */
-    private final String tenancyId;
+    private String tenancyId;
     /**
      * @return The total number of available rewards for a given subscription ID.
      * 
      */
-    private final Double totalRewardsAvailable;
+    private Double totalRewardsAvailable;
 
-    @CustomType.Constructor
-    private GetSubscriptionRewardsRewardCollectionItemSummary(
-        @CustomType.Parameter("currency") String currency,
-        @CustomType.Parameter("redemptionCode") String redemptionCode,
-        @CustomType.Parameter("rewardsRate") Double rewardsRate,
-        @CustomType.Parameter("subscriptionId") String subscriptionId,
-        @CustomType.Parameter("tenancyId") String tenancyId,
-        @CustomType.Parameter("totalRewardsAvailable") Double totalRewardsAvailable) {
-        this.currency = currency;
-        this.redemptionCode = redemptionCode;
-        this.rewardsRate = rewardsRate;
-        this.subscriptionId = subscriptionId;
-        this.tenancyId = tenancyId;
-        this.totalRewardsAvailable = totalRewardsAvailable;
-    }
-
+    private GetSubscriptionRewardsRewardCollectionItemSummary() {}
     /**
      * @return The currency unit for the reward amount.
      * 
@@ -65,7 +50,7 @@ public final class GetSubscriptionRewardsRewardCollectionItemSummary {
         return this.currency;
     }
     /**
-     * @return The redemption code used in the billing center during the reward redemption process
+     * @return The redemption code used in the Billing Center during the reward redemption process.
      * 
      */
     public String redemptionCode() {
@@ -107,7 +92,7 @@ public final class GetSubscriptionRewardsRewardCollectionItemSummary {
     public static Builder builder(GetSubscriptionRewardsRewardCollectionItemSummary defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String currency;
         private String redemptionCode;
@@ -115,11 +100,7 @@ public final class GetSubscriptionRewardsRewardCollectionItemSummary {
         private String subscriptionId;
         private String tenancyId;
         private Double totalRewardsAvailable;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionRewardsRewardCollectionItemSummary defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.currency = defaults.currency;
@@ -130,31 +111,45 @@ public final class GetSubscriptionRewardsRewardCollectionItemSummary {
     	      this.totalRewardsAvailable = defaults.totalRewardsAvailable;
         }
 
+        @CustomType.Setter
         public Builder currency(String currency) {
             this.currency = Objects.requireNonNull(currency);
             return this;
         }
+        @CustomType.Setter
         public Builder redemptionCode(String redemptionCode) {
             this.redemptionCode = Objects.requireNonNull(redemptionCode);
             return this;
         }
+        @CustomType.Setter
         public Builder rewardsRate(Double rewardsRate) {
             this.rewardsRate = Objects.requireNonNull(rewardsRate);
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = Objects.requireNonNull(subscriptionId);
             return this;
         }
+        @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = Objects.requireNonNull(tenancyId);
             return this;
         }
+        @CustomType.Setter
         public Builder totalRewardsAvailable(Double totalRewardsAvailable) {
             this.totalRewardsAvailable = Objects.requireNonNull(totalRewardsAvailable);
             return this;
-        }        public GetSubscriptionRewardsRewardCollectionItemSummary build() {
-            return new GetSubscriptionRewardsRewardCollectionItemSummary(currency, redemptionCode, rewardsRate, subscriptionId, tenancyId, totalRewardsAvailable);
+        }
+        public GetSubscriptionRewardsRewardCollectionItemSummary build() {
+            final var o = new GetSubscriptionRewardsRewardCollectionItemSummary();
+            o.currency = currency;
+            o.redemptionCode = redemptionCode;
+            o.rewardsRate = rewardsRate;
+            o.subscriptionId = subscriptionId;
+            o.tenancyId = tenancyId;
+            o.totalRewardsAvailable = totalRewardsAvailable;
+            return o;
         }
     }
 }

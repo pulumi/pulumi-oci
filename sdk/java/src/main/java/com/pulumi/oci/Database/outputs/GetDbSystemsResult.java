@@ -18,55 +18,36 @@ public final class GetDbSystemsResult {
      * @return The name of the availability domain that the DB system is located in.
      * 
      */
-    private final @Nullable String availabilityDomain;
-    private final @Nullable String backupId;
+    private @Nullable String availabilityDomain;
+    private @Nullable String backupId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of db_systems.
      * 
      */
-    private final List<GetDbSystemsDbSystem> dbSystems;
+    private List<GetDbSystemsDbSystem> dbSystems;
     /**
      * @return The user-friendly name for the DB system. The name does not have to be unique.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetDbSystemsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetDbSystemsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the DB system.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetDbSystemsResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("backupId") @Nullable String backupId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dbSystems") List<GetDbSystemsDbSystem> dbSystems,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetDbSystemsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.availabilityDomain = availabilityDomain;
-        this.backupId = backupId;
-        this.compartmentId = compartmentId;
-        this.dbSystems = dbSystems;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetDbSystemsResult() {}
     /**
      * @return The name of the availability domain that the DB system is located in.
      * 
@@ -123,7 +104,7 @@ public final class GetDbSystemsResult {
     public static Builder builder(GetDbSystemsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private @Nullable String backupId;
@@ -133,11 +114,7 @@ public final class GetDbSystemsResult {
         private @Nullable List<GetDbSystemsFilter> filters;
         private String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbSystemsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -150,18 +127,22 @@ public final class GetDbSystemsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder backupId(@Nullable String backupId) {
             this.backupId = backupId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystems(List<GetDbSystemsDbSystem> dbSystems) {
             this.dbSystems = Objects.requireNonNull(dbSystems);
             return this;
@@ -169,10 +150,12 @@ public final class GetDbSystemsResult {
         public Builder dbSystems(GetDbSystemsDbSystem... dbSystems) {
             return dbSystems(List.of(dbSystems));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDbSystemsFilter> filters) {
             this.filters = filters;
             return this;
@@ -180,15 +163,27 @@ public final class GetDbSystemsResult {
         public Builder filters(GetDbSystemsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetDbSystemsResult build() {
-            return new GetDbSystemsResult(availabilityDomain, backupId, compartmentId, dbSystems, displayName, filters, id, state);
+        }
+        public GetDbSystemsResult build() {
+            final var o = new GetDbSystemsResult();
+            o.availabilityDomain = availabilityDomain;
+            o.backupId = backupId;
+            o.compartmentId = compartmentId;
+            o.dbSystems = dbSystems;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

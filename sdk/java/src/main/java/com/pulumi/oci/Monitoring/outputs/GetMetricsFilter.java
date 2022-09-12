@@ -17,20 +17,11 @@ public final class GetMetricsFilter {
      * @return The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
      * 
      */
-    private final String name;
-    private final @Nullable Boolean regex;
-    private final List<String> values;
+    private String name;
+    private @Nullable Boolean regex;
+    private List<String> values;
 
-    @CustomType.Constructor
-    private GetMetricsFilter(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("regex") @Nullable Boolean regex,
-        @CustomType.Parameter("values") List<String> values) {
-        this.name = name;
-        this.regex = regex;
-        this.values = values;
-    }
-
+    private GetMetricsFilter() {}
     /**
      * @return The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
      * 
@@ -52,16 +43,12 @@ public final class GetMetricsFilter {
     public static Builder builder(GetMetricsFilter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private @Nullable Boolean regex;
         private List<String> values;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMetricsFilter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
@@ -69,22 +56,30 @@ public final class GetMetricsFilter {
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder regex(@Nullable Boolean regex) {
             this.regex = regex;
             return this;
         }
+        @CustomType.Setter
         public Builder values(List<String> values) {
             this.values = Objects.requireNonNull(values);
             return this;
         }
         public Builder values(String... values) {
             return values(List.of(values));
-        }        public GetMetricsFilter build() {
-            return new GetMetricsFilter(name, regex, values);
+        }
+        public GetMetricsFilter build() {
+            final var o = new GetMetricsFilter();
+            o.name = name;
+            o.regex = regex;
+            o.values = values;
+            return o;
         }
     }
 }

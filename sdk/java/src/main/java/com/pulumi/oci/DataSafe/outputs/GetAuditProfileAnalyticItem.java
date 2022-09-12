@@ -15,21 +15,14 @@ public final class GetAuditProfileAnalyticItem {
      * @return Total count of aggregated metric.
      * 
      */
-    private final String count;
+    private String count;
     /**
      * @return Details of aggregation dimensions used for summarizing audit profiles.
      * 
      */
-    private final List<GetAuditProfileAnalyticItemDimension> dimensions;
+    private List<GetAuditProfileAnalyticItemDimension> dimensions;
 
-    @CustomType.Constructor
-    private GetAuditProfileAnalyticItem(
-        @CustomType.Parameter("count") String count,
-        @CustomType.Parameter("dimensions") List<GetAuditProfileAnalyticItemDimension> dimensions) {
-        this.count = count;
-        this.dimensions = dimensions;
-    }
-
+    private GetAuditProfileAnalyticItem() {}
     /**
      * @return Total count of aggregated metric.
      * 
@@ -52,33 +45,35 @@ public final class GetAuditProfileAnalyticItem {
     public static Builder builder(GetAuditProfileAnalyticItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String count;
         private List<GetAuditProfileAnalyticItemDimension> dimensions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditProfileAnalyticItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
     	      this.dimensions = defaults.dimensions;
         }
 
+        @CustomType.Setter
         public Builder count(String count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder dimensions(List<GetAuditProfileAnalyticItemDimension> dimensions) {
             this.dimensions = Objects.requireNonNull(dimensions);
             return this;
         }
         public Builder dimensions(GetAuditProfileAnalyticItemDimension... dimensions) {
             return dimensions(List.of(dimensions));
-        }        public GetAuditProfileAnalyticItem build() {
-            return new GetAuditProfileAnalyticItem(count, dimensions);
+        }
+        public GetAuditProfileAnalyticItem build() {
+            final var o = new GetAuditProfileAnalyticItem();
+            o.count = count;
+            o.dimensions = dimensions;
+            return o;
         }
     }
 }

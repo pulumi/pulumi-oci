@@ -3093,7 +3093,8 @@ func (o BuildRunBuildRunSourceTriggerInfoActionArrayOutput) Index(i pulumi.IntIn
 
 type BuildRunBuildRunSourceTriggerInfoActionFilter struct {
 	// The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events []string `pulumi:"events"`
+	Events   []string                                               `pulumi:"events"`
+	Excludes []BuildRunBuildRunSourceTriggerInfoActionFilterExclude `pulumi:"excludes"`
 	// Attributes to filter GitLab self-hosted server events.
 	Includes []BuildRunBuildRunSourceTriggerInfoActionFilterInclude `pulumi:"includes"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
@@ -3113,7 +3114,8 @@ type BuildRunBuildRunSourceTriggerInfoActionFilterInput interface {
 
 type BuildRunBuildRunSourceTriggerInfoActionFilterArgs struct {
 	// The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events pulumi.StringArrayInput `pulumi:"events"`
+	Events   pulumi.StringArrayInput                                        `pulumi:"events"`
+	Excludes BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayInput `pulumi:"excludes"`
 	// Attributes to filter GitLab self-hosted server events.
 	Includes BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayInput `pulumi:"includes"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
@@ -3176,6 +3178,12 @@ func (o BuildRunBuildRunSourceTriggerInfoActionFilterOutput) Events() pulumi.Str
 	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilter) []string { return v.Events }).(pulumi.StringArrayOutput)
 }
 
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterOutput) Excludes() BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput {
+	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilter) []BuildRunBuildRunSourceTriggerInfoActionFilterExclude {
+		return v.Excludes
+	}).(BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput)
+}
+
 // Attributes to filter GitLab self-hosted server events.
 func (o BuildRunBuildRunSourceTriggerInfoActionFilterOutput) Includes() BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayOutput {
 	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilter) []BuildRunBuildRunSourceTriggerInfoActionFilterInclude {
@@ -3208,9 +3216,200 @@ func (o BuildRunBuildRunSourceTriggerInfoActionFilterArrayOutput) Index(i pulumi
 	}).(BuildRunBuildRunSourceTriggerInfoActionFilterOutput)
 }
 
+type BuildRunBuildRunSourceTriggerInfoActionFilterExclude struct {
+	FileFilters []BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter `pulumi:"fileFilters"`
+}
+
+// BuildRunBuildRunSourceTriggerInfoActionFilterExcludeInput is an input type that accepts BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs and BuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput values.
+// You can construct a concrete instance of `BuildRunBuildRunSourceTriggerInfoActionFilterExcludeInput` via:
+//
+//	BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs{...}
+type BuildRunBuildRunSourceTriggerInfoActionFilterExcludeInput interface {
+	pulumi.Input
+
+	ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput() BuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput
+	ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutputWithContext(context.Context) BuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput
+}
+
+type BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs struct {
+	FileFilters BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayInput `pulumi:"fileFilters"`
+}
+
+func (BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionFilterExclude)(nil)).Elem()
+}
+
+func (i BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs) ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput() BuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput {
+	return i.ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutputWithContext(context.Background())
+}
+
+func (i BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs) ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutputWithContext(ctx context.Context) BuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput)
+}
+
+// BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayInput is an input type that accepts BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArray and BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput values.
+// You can construct a concrete instance of `BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayInput` via:
+//
+//	BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArray{ BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs{...} }
+type BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayInput interface {
+	pulumi.Input
+
+	ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput() BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput
+	ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutputWithContext(context.Context) BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput
+}
+
+type BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArray []BuildRunBuildRunSourceTriggerInfoActionFilterExcludeInput
+
+func (BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BuildRunBuildRunSourceTriggerInfoActionFilterExclude)(nil)).Elem()
+}
+
+func (i BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArray) ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput() BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput {
+	return i.ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutputWithContext(context.Background())
+}
+
+func (i BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArray) ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutputWithContext(ctx context.Context) BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput)
+}
+
+type BuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput struct{ *pulumi.OutputState }
+
+func (BuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionFilterExclude)(nil)).Elem()
+}
+
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput) ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput() BuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput {
+	return o
+}
+
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput) ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutputWithContext(ctx context.Context) BuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput {
+	return o
+}
+
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput) FileFilters() BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput {
+	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilterExclude) []BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter {
+		return v.FileFilters
+	}).(BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput)
+}
+
+type BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput struct{ *pulumi.OutputState }
+
+func (BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BuildRunBuildRunSourceTriggerInfoActionFilterExclude)(nil)).Elem()
+}
+
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput) ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput() BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput {
+	return o
+}
+
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput) ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutputWithContext(ctx context.Context) BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput {
+	return o
+}
+
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput) Index(i pulumi.IntInput) BuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BuildRunBuildRunSourceTriggerInfoActionFilterExclude {
+		return vs[0].([]BuildRunBuildRunSourceTriggerInfoActionFilterExclude)[vs[1].(int)]
+	}).(BuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput)
+}
+
+type BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter struct {
+	FilePaths []string `pulumi:"filePaths"`
+}
+
+// BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterInput is an input type that accepts BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs and BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput values.
+// You can construct a concrete instance of `BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterInput` via:
+//
+//	BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs{...}
+type BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterInput interface {
+	pulumi.Input
+
+	ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput() BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput
+	ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutputWithContext(context.Context) BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput
+}
+
+type BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs struct {
+	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
+}
+
+func (BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (i BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs) ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput() BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput {
+	return i.ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutputWithContext(context.Background())
+}
+
+func (i BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs) ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutputWithContext(ctx context.Context) BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput)
+}
+
+// BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayInput is an input type that accepts BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArray and BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput values.
+// You can construct a concrete instance of `BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayInput` via:
+//
+//	BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArray{ BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs{...} }
+type BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayInput interface {
+	pulumi.Input
+
+	ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput() BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput
+	ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutputWithContext(context.Context) BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput
+}
+
+type BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArray []BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterInput
+
+func (BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (i BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArray) ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput() BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput {
+	return i.ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutputWithContext(context.Background())
+}
+
+func (i BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArray) ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutputWithContext(ctx context.Context) BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput)
+}
+
+type BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput struct{ *pulumi.OutputState }
+
+func (BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput) ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput() BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput {
+	return o
+}
+
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput) ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutputWithContext(ctx context.Context) BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput {
+	return o
+}
+
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
+}
+
+type BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput) ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput() BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput {
+	return o
+}
+
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput) ToBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutputWithContext(ctx context.Context) BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput {
+	return o
+}
+
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput) Index(i pulumi.IntInput) BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter {
+		return vs[0].([]BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter)[vs[1].(int)]
+	}).(BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput)
+}
+
 type BuildRunBuildRunSourceTriggerInfoActionFilterInclude struct {
 	// The target branch for pull requests; not applicable for push requests.
-	BaseRef *string `pulumi:"baseRef"`
+	BaseRef     *string                                                          `pulumi:"baseRef"`
+	FileFilters []BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef *string `pulumi:"headRef"`
 }
@@ -3228,7 +3427,8 @@ type BuildRunBuildRunSourceTriggerInfoActionFilterIncludeInput interface {
 
 type BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs struct {
 	// The target branch for pull requests; not applicable for push requests.
-	BaseRef pulumi.StringPtrInput `pulumi:"baseRef"`
+	BaseRef     pulumi.StringPtrInput                                                    `pulumi:"baseRef"`
+	FileFilters BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayInput `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef pulumi.StringPtrInput `pulumi:"headRef"`
 }
@@ -3289,6 +3489,12 @@ func (o BuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput) BaseRef() pu
 	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilterInclude) *string { return v.BaseRef }).(pulumi.StringPtrOutput)
 }
 
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput) FileFilters() BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput {
+	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilterInclude) []BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter {
+		return v.FileFilters
+	}).(BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput)
+}
+
 // Branch for push event; source branch for pull requests.
 func (o BuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput) HeadRef() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilterInclude) *string { return v.HeadRef }).(pulumi.StringPtrOutput)
@@ -3312,6 +3518,100 @@ func (o BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayOutput) Index(i
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BuildRunBuildRunSourceTriggerInfoActionFilterInclude {
 		return vs[0].([]BuildRunBuildRunSourceTriggerInfoActionFilterInclude)[vs[1].(int)]
 	}).(BuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput)
+}
+
+type BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter struct {
+	FilePaths []string `pulumi:"filePaths"`
+}
+
+// BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterInput is an input type that accepts BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs and BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput values.
+// You can construct a concrete instance of `BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterInput` via:
+//
+//	BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs{...}
+type BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterInput interface {
+	pulumi.Input
+
+	ToBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput() BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput
+	ToBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutputWithContext(context.Context) BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput
+}
+
+type BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs struct {
+	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
+}
+
+func (BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (i BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs) ToBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput() BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput {
+	return i.ToBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutputWithContext(context.Background())
+}
+
+func (i BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs) ToBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutputWithContext(ctx context.Context) BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput)
+}
+
+// BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayInput is an input type that accepts BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArray and BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput values.
+// You can construct a concrete instance of `BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayInput` via:
+//
+//	BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArray{ BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs{...} }
+type BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayInput interface {
+	pulumi.Input
+
+	ToBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput() BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput
+	ToBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutputWithContext(context.Context) BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput
+}
+
+type BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArray []BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterInput
+
+func (BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (i BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArray) ToBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput() BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput {
+	return i.ToBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutputWithContext(context.Background())
+}
+
+func (i BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArray) ToBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutputWithContext(ctx context.Context) BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput)
+}
+
+type BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput struct{ *pulumi.OutputState }
+
+func (BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput) ToBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput() BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput {
+	return o
+}
+
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput) ToBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutputWithContext(ctx context.Context) BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput {
+	return o
+}
+
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
+}
+
+type BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput) ToBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput() BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput {
+	return o
+}
+
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput) ToBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutputWithContext(ctx context.Context) BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput {
+	return o
+}
+
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput) Index(i pulumi.IntInput) BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter {
+		return vs[0].([]BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter)[vs[1].(int)]
+	}).(BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput)
 }
 
 type BuildRunCommitInfo struct {
@@ -9792,7 +10092,8 @@ func (o TriggerActionArrayOutput) Index(i pulumi.IntInput) TriggerActionOutput {
 
 type TriggerActionFilter struct {
 	// (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events []string `pulumi:"events"`
+	Events  []string                    `pulumi:"events"`
+	Exclude *TriggerActionFilterExclude `pulumi:"exclude"`
 	// (Updatable) Attributes to filter GitLab self-hosted server events.
 	Include *TriggerActionFilterInclude `pulumi:"include"`
 	// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
@@ -9812,7 +10113,8 @@ type TriggerActionFilterInput interface {
 
 type TriggerActionFilterArgs struct {
 	// (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events pulumi.StringArrayInput `pulumi:"events"`
+	Events  pulumi.StringArrayInput            `pulumi:"events"`
+	Exclude TriggerActionFilterExcludePtrInput `pulumi:"exclude"`
 	// (Updatable) Attributes to filter GitLab self-hosted server events.
 	Include TriggerActionFilterIncludePtrInput `pulumi:"include"`
 	// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
@@ -9901,6 +10203,10 @@ func (o TriggerActionFilterOutput) Events() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v TriggerActionFilter) []string { return v.Events }).(pulumi.StringArrayOutput)
 }
 
+func (o TriggerActionFilterOutput) Exclude() TriggerActionFilterExcludePtrOutput {
+	return o.ApplyT(func(v TriggerActionFilter) *TriggerActionFilterExclude { return v.Exclude }).(TriggerActionFilterExcludePtrOutput)
+}
+
 // (Updatable) Attributes to filter GitLab self-hosted server events.
 func (o TriggerActionFilterOutput) Include() TriggerActionFilterIncludePtrOutput {
 	return o.ApplyT(func(v TriggerActionFilter) *TriggerActionFilterInclude { return v.Include }).(TriggerActionFilterIncludePtrOutput)
@@ -9945,6 +10251,15 @@ func (o TriggerActionFilterPtrOutput) Events() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+func (o TriggerActionFilterPtrOutput) Exclude() TriggerActionFilterExcludePtrOutput {
+	return o.ApplyT(func(v *TriggerActionFilter) *TriggerActionFilterExclude {
+		if v == nil {
+			return nil
+		}
+		return v.Exclude
+	}).(TriggerActionFilterExcludePtrOutput)
+}
+
 // (Updatable) Attributes to filter GitLab self-hosted server events.
 func (o TriggerActionFilterPtrOutput) Include() TriggerActionFilterIncludePtrOutput {
 	return o.ApplyT(func(v *TriggerActionFilter) *TriggerActionFilterInclude {
@@ -9965,9 +10280,276 @@ func (o TriggerActionFilterPtrOutput) TriggerSource() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type TriggerActionFilterExclude struct {
+	FileFilter *TriggerActionFilterExcludeFileFilter `pulumi:"fileFilter"`
+}
+
+// TriggerActionFilterExcludeInput is an input type that accepts TriggerActionFilterExcludeArgs and TriggerActionFilterExcludeOutput values.
+// You can construct a concrete instance of `TriggerActionFilterExcludeInput` via:
+//
+//	TriggerActionFilterExcludeArgs{...}
+type TriggerActionFilterExcludeInput interface {
+	pulumi.Input
+
+	ToTriggerActionFilterExcludeOutput() TriggerActionFilterExcludeOutput
+	ToTriggerActionFilterExcludeOutputWithContext(context.Context) TriggerActionFilterExcludeOutput
+}
+
+type TriggerActionFilterExcludeArgs struct {
+	FileFilter TriggerActionFilterExcludeFileFilterPtrInput `pulumi:"fileFilter"`
+}
+
+func (TriggerActionFilterExcludeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TriggerActionFilterExclude)(nil)).Elem()
+}
+
+func (i TriggerActionFilterExcludeArgs) ToTriggerActionFilterExcludeOutput() TriggerActionFilterExcludeOutput {
+	return i.ToTriggerActionFilterExcludeOutputWithContext(context.Background())
+}
+
+func (i TriggerActionFilterExcludeArgs) ToTriggerActionFilterExcludeOutputWithContext(ctx context.Context) TriggerActionFilterExcludeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TriggerActionFilterExcludeOutput)
+}
+
+func (i TriggerActionFilterExcludeArgs) ToTriggerActionFilterExcludePtrOutput() TriggerActionFilterExcludePtrOutput {
+	return i.ToTriggerActionFilterExcludePtrOutputWithContext(context.Background())
+}
+
+func (i TriggerActionFilterExcludeArgs) ToTriggerActionFilterExcludePtrOutputWithContext(ctx context.Context) TriggerActionFilterExcludePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TriggerActionFilterExcludeOutput).ToTriggerActionFilterExcludePtrOutputWithContext(ctx)
+}
+
+// TriggerActionFilterExcludePtrInput is an input type that accepts TriggerActionFilterExcludeArgs, TriggerActionFilterExcludePtr and TriggerActionFilterExcludePtrOutput values.
+// You can construct a concrete instance of `TriggerActionFilterExcludePtrInput` via:
+//
+//	        TriggerActionFilterExcludeArgs{...}
+//
+//	or:
+//
+//	        nil
+type TriggerActionFilterExcludePtrInput interface {
+	pulumi.Input
+
+	ToTriggerActionFilterExcludePtrOutput() TriggerActionFilterExcludePtrOutput
+	ToTriggerActionFilterExcludePtrOutputWithContext(context.Context) TriggerActionFilterExcludePtrOutput
+}
+
+type triggerActionFilterExcludePtrType TriggerActionFilterExcludeArgs
+
+func TriggerActionFilterExcludePtr(v *TriggerActionFilterExcludeArgs) TriggerActionFilterExcludePtrInput {
+	return (*triggerActionFilterExcludePtrType)(v)
+}
+
+func (*triggerActionFilterExcludePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TriggerActionFilterExclude)(nil)).Elem()
+}
+
+func (i *triggerActionFilterExcludePtrType) ToTriggerActionFilterExcludePtrOutput() TriggerActionFilterExcludePtrOutput {
+	return i.ToTriggerActionFilterExcludePtrOutputWithContext(context.Background())
+}
+
+func (i *triggerActionFilterExcludePtrType) ToTriggerActionFilterExcludePtrOutputWithContext(ctx context.Context) TriggerActionFilterExcludePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TriggerActionFilterExcludePtrOutput)
+}
+
+type TriggerActionFilterExcludeOutput struct{ *pulumi.OutputState }
+
+func (TriggerActionFilterExcludeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TriggerActionFilterExclude)(nil)).Elem()
+}
+
+func (o TriggerActionFilterExcludeOutput) ToTriggerActionFilterExcludeOutput() TriggerActionFilterExcludeOutput {
+	return o
+}
+
+func (o TriggerActionFilterExcludeOutput) ToTriggerActionFilterExcludeOutputWithContext(ctx context.Context) TriggerActionFilterExcludeOutput {
+	return o
+}
+
+func (o TriggerActionFilterExcludeOutput) ToTriggerActionFilterExcludePtrOutput() TriggerActionFilterExcludePtrOutput {
+	return o.ToTriggerActionFilterExcludePtrOutputWithContext(context.Background())
+}
+
+func (o TriggerActionFilterExcludeOutput) ToTriggerActionFilterExcludePtrOutputWithContext(ctx context.Context) TriggerActionFilterExcludePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TriggerActionFilterExclude) *TriggerActionFilterExclude {
+		return &v
+	}).(TriggerActionFilterExcludePtrOutput)
+}
+
+func (o TriggerActionFilterExcludeOutput) FileFilter() TriggerActionFilterExcludeFileFilterPtrOutput {
+	return o.ApplyT(func(v TriggerActionFilterExclude) *TriggerActionFilterExcludeFileFilter { return v.FileFilter }).(TriggerActionFilterExcludeFileFilterPtrOutput)
+}
+
+type TriggerActionFilterExcludePtrOutput struct{ *pulumi.OutputState }
+
+func (TriggerActionFilterExcludePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TriggerActionFilterExclude)(nil)).Elem()
+}
+
+func (o TriggerActionFilterExcludePtrOutput) ToTriggerActionFilterExcludePtrOutput() TriggerActionFilterExcludePtrOutput {
+	return o
+}
+
+func (o TriggerActionFilterExcludePtrOutput) ToTriggerActionFilterExcludePtrOutputWithContext(ctx context.Context) TriggerActionFilterExcludePtrOutput {
+	return o
+}
+
+func (o TriggerActionFilterExcludePtrOutput) Elem() TriggerActionFilterExcludeOutput {
+	return o.ApplyT(func(v *TriggerActionFilterExclude) TriggerActionFilterExclude {
+		if v != nil {
+			return *v
+		}
+		var ret TriggerActionFilterExclude
+		return ret
+	}).(TriggerActionFilterExcludeOutput)
+}
+
+func (o TriggerActionFilterExcludePtrOutput) FileFilter() TriggerActionFilterExcludeFileFilterPtrOutput {
+	return o.ApplyT(func(v *TriggerActionFilterExclude) *TriggerActionFilterExcludeFileFilter {
+		if v == nil {
+			return nil
+		}
+		return v.FileFilter
+	}).(TriggerActionFilterExcludeFileFilterPtrOutput)
+}
+
+type TriggerActionFilterExcludeFileFilter struct {
+	FilePaths []string `pulumi:"filePaths"`
+}
+
+// TriggerActionFilterExcludeFileFilterInput is an input type that accepts TriggerActionFilterExcludeFileFilterArgs and TriggerActionFilterExcludeFileFilterOutput values.
+// You can construct a concrete instance of `TriggerActionFilterExcludeFileFilterInput` via:
+//
+//	TriggerActionFilterExcludeFileFilterArgs{...}
+type TriggerActionFilterExcludeFileFilterInput interface {
+	pulumi.Input
+
+	ToTriggerActionFilterExcludeFileFilterOutput() TriggerActionFilterExcludeFileFilterOutput
+	ToTriggerActionFilterExcludeFileFilterOutputWithContext(context.Context) TriggerActionFilterExcludeFileFilterOutput
+}
+
+type TriggerActionFilterExcludeFileFilterArgs struct {
+	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
+}
+
+func (TriggerActionFilterExcludeFileFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TriggerActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (i TriggerActionFilterExcludeFileFilterArgs) ToTriggerActionFilterExcludeFileFilterOutput() TriggerActionFilterExcludeFileFilterOutput {
+	return i.ToTriggerActionFilterExcludeFileFilterOutputWithContext(context.Background())
+}
+
+func (i TriggerActionFilterExcludeFileFilterArgs) ToTriggerActionFilterExcludeFileFilterOutputWithContext(ctx context.Context) TriggerActionFilterExcludeFileFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TriggerActionFilterExcludeFileFilterOutput)
+}
+
+func (i TriggerActionFilterExcludeFileFilterArgs) ToTriggerActionFilterExcludeFileFilterPtrOutput() TriggerActionFilterExcludeFileFilterPtrOutput {
+	return i.ToTriggerActionFilterExcludeFileFilterPtrOutputWithContext(context.Background())
+}
+
+func (i TriggerActionFilterExcludeFileFilterArgs) ToTriggerActionFilterExcludeFileFilterPtrOutputWithContext(ctx context.Context) TriggerActionFilterExcludeFileFilterPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TriggerActionFilterExcludeFileFilterOutput).ToTriggerActionFilterExcludeFileFilterPtrOutputWithContext(ctx)
+}
+
+// TriggerActionFilterExcludeFileFilterPtrInput is an input type that accepts TriggerActionFilterExcludeFileFilterArgs, TriggerActionFilterExcludeFileFilterPtr and TriggerActionFilterExcludeFileFilterPtrOutput values.
+// You can construct a concrete instance of `TriggerActionFilterExcludeFileFilterPtrInput` via:
+//
+//	        TriggerActionFilterExcludeFileFilterArgs{...}
+//
+//	or:
+//
+//	        nil
+type TriggerActionFilterExcludeFileFilterPtrInput interface {
+	pulumi.Input
+
+	ToTriggerActionFilterExcludeFileFilterPtrOutput() TriggerActionFilterExcludeFileFilterPtrOutput
+	ToTriggerActionFilterExcludeFileFilterPtrOutputWithContext(context.Context) TriggerActionFilterExcludeFileFilterPtrOutput
+}
+
+type triggerActionFilterExcludeFileFilterPtrType TriggerActionFilterExcludeFileFilterArgs
+
+func TriggerActionFilterExcludeFileFilterPtr(v *TriggerActionFilterExcludeFileFilterArgs) TriggerActionFilterExcludeFileFilterPtrInput {
+	return (*triggerActionFilterExcludeFileFilterPtrType)(v)
+}
+
+func (*triggerActionFilterExcludeFileFilterPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TriggerActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (i *triggerActionFilterExcludeFileFilterPtrType) ToTriggerActionFilterExcludeFileFilterPtrOutput() TriggerActionFilterExcludeFileFilterPtrOutput {
+	return i.ToTriggerActionFilterExcludeFileFilterPtrOutputWithContext(context.Background())
+}
+
+func (i *triggerActionFilterExcludeFileFilterPtrType) ToTriggerActionFilterExcludeFileFilterPtrOutputWithContext(ctx context.Context) TriggerActionFilterExcludeFileFilterPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TriggerActionFilterExcludeFileFilterPtrOutput)
+}
+
+type TriggerActionFilterExcludeFileFilterOutput struct{ *pulumi.OutputState }
+
+func (TriggerActionFilterExcludeFileFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TriggerActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (o TriggerActionFilterExcludeFileFilterOutput) ToTriggerActionFilterExcludeFileFilterOutput() TriggerActionFilterExcludeFileFilterOutput {
+	return o
+}
+
+func (o TriggerActionFilterExcludeFileFilterOutput) ToTriggerActionFilterExcludeFileFilterOutputWithContext(ctx context.Context) TriggerActionFilterExcludeFileFilterOutput {
+	return o
+}
+
+func (o TriggerActionFilterExcludeFileFilterOutput) ToTriggerActionFilterExcludeFileFilterPtrOutput() TriggerActionFilterExcludeFileFilterPtrOutput {
+	return o.ToTriggerActionFilterExcludeFileFilterPtrOutputWithContext(context.Background())
+}
+
+func (o TriggerActionFilterExcludeFileFilterOutput) ToTriggerActionFilterExcludeFileFilterPtrOutputWithContext(ctx context.Context) TriggerActionFilterExcludeFileFilterPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TriggerActionFilterExcludeFileFilter) *TriggerActionFilterExcludeFileFilter {
+		return &v
+	}).(TriggerActionFilterExcludeFileFilterPtrOutput)
+}
+
+func (o TriggerActionFilterExcludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v TriggerActionFilterExcludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
+}
+
+type TriggerActionFilterExcludeFileFilterPtrOutput struct{ *pulumi.OutputState }
+
+func (TriggerActionFilterExcludeFileFilterPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TriggerActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (o TriggerActionFilterExcludeFileFilterPtrOutput) ToTriggerActionFilterExcludeFileFilterPtrOutput() TriggerActionFilterExcludeFileFilterPtrOutput {
+	return o
+}
+
+func (o TriggerActionFilterExcludeFileFilterPtrOutput) ToTriggerActionFilterExcludeFileFilterPtrOutputWithContext(ctx context.Context) TriggerActionFilterExcludeFileFilterPtrOutput {
+	return o
+}
+
+func (o TriggerActionFilterExcludeFileFilterPtrOutput) Elem() TriggerActionFilterExcludeFileFilterOutput {
+	return o.ApplyT(func(v *TriggerActionFilterExcludeFileFilter) TriggerActionFilterExcludeFileFilter {
+		if v != nil {
+			return *v
+		}
+		var ret TriggerActionFilterExcludeFileFilter
+		return ret
+	}).(TriggerActionFilterExcludeFileFilterOutput)
+}
+
+func (o TriggerActionFilterExcludeFileFilterPtrOutput) FilePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *TriggerActionFilterExcludeFileFilter) []string {
+		if v == nil {
+			return nil
+		}
+		return v.FilePaths
+	}).(pulumi.StringArrayOutput)
+}
+
 type TriggerActionFilterInclude struct {
 	// (Updatable) The target branch for pull requests; not applicable for push requests.
-	BaseRef *string `pulumi:"baseRef"`
+	BaseRef    *string                               `pulumi:"baseRef"`
+	FileFilter *TriggerActionFilterIncludeFileFilter `pulumi:"fileFilter"`
 	// (Updatable) Branch for push event; source branch for pull requests.
 	HeadRef *string `pulumi:"headRef"`
 }
@@ -9985,7 +10567,8 @@ type TriggerActionFilterIncludeInput interface {
 
 type TriggerActionFilterIncludeArgs struct {
 	// (Updatable) The target branch for pull requests; not applicable for push requests.
-	BaseRef pulumi.StringPtrInput `pulumi:"baseRef"`
+	BaseRef    pulumi.StringPtrInput                        `pulumi:"baseRef"`
+	FileFilter TriggerActionFilterIncludeFileFilterPtrInput `pulumi:"fileFilter"`
 	// (Updatable) Branch for push event; source branch for pull requests.
 	HeadRef pulumi.StringPtrInput `pulumi:"headRef"`
 }
@@ -10072,6 +10655,10 @@ func (o TriggerActionFilterIncludeOutput) BaseRef() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TriggerActionFilterInclude) *string { return v.BaseRef }).(pulumi.StringPtrOutput)
 }
 
+func (o TriggerActionFilterIncludeOutput) FileFilter() TriggerActionFilterIncludeFileFilterPtrOutput {
+	return o.ApplyT(func(v TriggerActionFilterInclude) *TriggerActionFilterIncludeFileFilter { return v.FileFilter }).(TriggerActionFilterIncludeFileFilterPtrOutput)
+}
+
 // (Updatable) Branch for push event; source branch for pull requests.
 func (o TriggerActionFilterIncludeOutput) HeadRef() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TriggerActionFilterInclude) *string { return v.HeadRef }).(pulumi.StringPtrOutput)
@@ -10111,6 +10698,15 @@ func (o TriggerActionFilterIncludePtrOutput) BaseRef() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+func (o TriggerActionFilterIncludePtrOutput) FileFilter() TriggerActionFilterIncludeFileFilterPtrOutput {
+	return o.ApplyT(func(v *TriggerActionFilterInclude) *TriggerActionFilterIncludeFileFilter {
+		if v == nil {
+			return nil
+		}
+		return v.FileFilter
+	}).(TriggerActionFilterIncludeFileFilterPtrOutput)
+}
+
 // (Updatable) Branch for push event; source branch for pull requests.
 func (o TriggerActionFilterIncludePtrOutput) HeadRef() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TriggerActionFilterInclude) *string {
@@ -10119,6 +10715,139 @@ func (o TriggerActionFilterIncludePtrOutput) HeadRef() pulumi.StringPtrOutput {
 		}
 		return v.HeadRef
 	}).(pulumi.StringPtrOutput)
+}
+
+type TriggerActionFilterIncludeFileFilter struct {
+	FilePaths []string `pulumi:"filePaths"`
+}
+
+// TriggerActionFilterIncludeFileFilterInput is an input type that accepts TriggerActionFilterIncludeFileFilterArgs and TriggerActionFilterIncludeFileFilterOutput values.
+// You can construct a concrete instance of `TriggerActionFilterIncludeFileFilterInput` via:
+//
+//	TriggerActionFilterIncludeFileFilterArgs{...}
+type TriggerActionFilterIncludeFileFilterInput interface {
+	pulumi.Input
+
+	ToTriggerActionFilterIncludeFileFilterOutput() TriggerActionFilterIncludeFileFilterOutput
+	ToTriggerActionFilterIncludeFileFilterOutputWithContext(context.Context) TriggerActionFilterIncludeFileFilterOutput
+}
+
+type TriggerActionFilterIncludeFileFilterArgs struct {
+	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
+}
+
+func (TriggerActionFilterIncludeFileFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TriggerActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (i TriggerActionFilterIncludeFileFilterArgs) ToTriggerActionFilterIncludeFileFilterOutput() TriggerActionFilterIncludeFileFilterOutput {
+	return i.ToTriggerActionFilterIncludeFileFilterOutputWithContext(context.Background())
+}
+
+func (i TriggerActionFilterIncludeFileFilterArgs) ToTriggerActionFilterIncludeFileFilterOutputWithContext(ctx context.Context) TriggerActionFilterIncludeFileFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TriggerActionFilterIncludeFileFilterOutput)
+}
+
+func (i TriggerActionFilterIncludeFileFilterArgs) ToTriggerActionFilterIncludeFileFilterPtrOutput() TriggerActionFilterIncludeFileFilterPtrOutput {
+	return i.ToTriggerActionFilterIncludeFileFilterPtrOutputWithContext(context.Background())
+}
+
+func (i TriggerActionFilterIncludeFileFilterArgs) ToTriggerActionFilterIncludeFileFilterPtrOutputWithContext(ctx context.Context) TriggerActionFilterIncludeFileFilterPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TriggerActionFilterIncludeFileFilterOutput).ToTriggerActionFilterIncludeFileFilterPtrOutputWithContext(ctx)
+}
+
+// TriggerActionFilterIncludeFileFilterPtrInput is an input type that accepts TriggerActionFilterIncludeFileFilterArgs, TriggerActionFilterIncludeFileFilterPtr and TriggerActionFilterIncludeFileFilterPtrOutput values.
+// You can construct a concrete instance of `TriggerActionFilterIncludeFileFilterPtrInput` via:
+//
+//	        TriggerActionFilterIncludeFileFilterArgs{...}
+//
+//	or:
+//
+//	        nil
+type TriggerActionFilterIncludeFileFilterPtrInput interface {
+	pulumi.Input
+
+	ToTriggerActionFilterIncludeFileFilterPtrOutput() TriggerActionFilterIncludeFileFilterPtrOutput
+	ToTriggerActionFilterIncludeFileFilterPtrOutputWithContext(context.Context) TriggerActionFilterIncludeFileFilterPtrOutput
+}
+
+type triggerActionFilterIncludeFileFilterPtrType TriggerActionFilterIncludeFileFilterArgs
+
+func TriggerActionFilterIncludeFileFilterPtr(v *TriggerActionFilterIncludeFileFilterArgs) TriggerActionFilterIncludeFileFilterPtrInput {
+	return (*triggerActionFilterIncludeFileFilterPtrType)(v)
+}
+
+func (*triggerActionFilterIncludeFileFilterPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TriggerActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (i *triggerActionFilterIncludeFileFilterPtrType) ToTriggerActionFilterIncludeFileFilterPtrOutput() TriggerActionFilterIncludeFileFilterPtrOutput {
+	return i.ToTriggerActionFilterIncludeFileFilterPtrOutputWithContext(context.Background())
+}
+
+func (i *triggerActionFilterIncludeFileFilterPtrType) ToTriggerActionFilterIncludeFileFilterPtrOutputWithContext(ctx context.Context) TriggerActionFilterIncludeFileFilterPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TriggerActionFilterIncludeFileFilterPtrOutput)
+}
+
+type TriggerActionFilterIncludeFileFilterOutput struct{ *pulumi.OutputState }
+
+func (TriggerActionFilterIncludeFileFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TriggerActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (o TriggerActionFilterIncludeFileFilterOutput) ToTriggerActionFilterIncludeFileFilterOutput() TriggerActionFilterIncludeFileFilterOutput {
+	return o
+}
+
+func (o TriggerActionFilterIncludeFileFilterOutput) ToTriggerActionFilterIncludeFileFilterOutputWithContext(ctx context.Context) TriggerActionFilterIncludeFileFilterOutput {
+	return o
+}
+
+func (o TriggerActionFilterIncludeFileFilterOutput) ToTriggerActionFilterIncludeFileFilterPtrOutput() TriggerActionFilterIncludeFileFilterPtrOutput {
+	return o.ToTriggerActionFilterIncludeFileFilterPtrOutputWithContext(context.Background())
+}
+
+func (o TriggerActionFilterIncludeFileFilterOutput) ToTriggerActionFilterIncludeFileFilterPtrOutputWithContext(ctx context.Context) TriggerActionFilterIncludeFileFilterPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TriggerActionFilterIncludeFileFilter) *TriggerActionFilterIncludeFileFilter {
+		return &v
+	}).(TriggerActionFilterIncludeFileFilterPtrOutput)
+}
+
+func (o TriggerActionFilterIncludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v TriggerActionFilterIncludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
+}
+
+type TriggerActionFilterIncludeFileFilterPtrOutput struct{ *pulumi.OutputState }
+
+func (TriggerActionFilterIncludeFileFilterPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TriggerActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (o TriggerActionFilterIncludeFileFilterPtrOutput) ToTriggerActionFilterIncludeFileFilterPtrOutput() TriggerActionFilterIncludeFileFilterPtrOutput {
+	return o
+}
+
+func (o TriggerActionFilterIncludeFileFilterPtrOutput) ToTriggerActionFilterIncludeFileFilterPtrOutputWithContext(ctx context.Context) TriggerActionFilterIncludeFileFilterPtrOutput {
+	return o
+}
+
+func (o TriggerActionFilterIncludeFileFilterPtrOutput) Elem() TriggerActionFilterIncludeFileFilterOutput {
+	return o.ApplyT(func(v *TriggerActionFilterIncludeFileFilter) TriggerActionFilterIncludeFileFilter {
+		if v != nil {
+			return *v
+		}
+		var ret TriggerActionFilterIncludeFileFilter
+		return ret
+	}).(TriggerActionFilterIncludeFileFilterOutput)
+}
+
+func (o TriggerActionFilterIncludeFileFilterPtrOutput) FilePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *TriggerActionFilterIncludeFileFilter) []string {
+		if v == nil {
+			return nil
+		}
+		return v.FilePaths
+	}).(pulumi.StringArrayOutput)
 }
 
 type GetBuildPipelineBuildPipelineParameter struct {
@@ -14790,7 +15519,8 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionArrayOutput) Index(i pulumi.In
 
 type GetBuildRunBuildRunSourceTriggerInfoActionFilter struct {
 	// The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events []string `pulumi:"events"`
+	Events   []string                                                  `pulumi:"events"`
+	Excludes []GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude `pulumi:"excludes"`
 	// Attributes to filter GitLab self-hosted server events.
 	Includes []GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude `pulumi:"includes"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
@@ -14810,7 +15540,8 @@ type GetBuildRunBuildRunSourceTriggerInfoActionFilterInput interface {
 
 type GetBuildRunBuildRunSourceTriggerInfoActionFilterArgs struct {
 	// The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events pulumi.StringArrayInput `pulumi:"events"`
+	Events   pulumi.StringArrayInput                                           `pulumi:"events"`
+	Excludes GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayInput `pulumi:"excludes"`
 	// Attributes to filter GitLab self-hosted server events.
 	Includes GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayInput `pulumi:"includes"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
@@ -14873,6 +15604,12 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterOutput) Events() pulumi.
 	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilter) []string { return v.Events }).(pulumi.StringArrayOutput)
 }
 
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterOutput) Excludes() GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput {
+	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilter) []GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude {
+		return v.Excludes
+	}).(GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput)
+}
+
 // Attributes to filter GitLab self-hosted server events.
 func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterOutput) Includes() GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayOutput {
 	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilter) []GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude {
@@ -14905,9 +15642,200 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterArrayOutput) Index(i pul
 	}).(GetBuildRunBuildRunSourceTriggerInfoActionFilterOutput)
 }
 
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude struct {
+	FileFilters []GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter `pulumi:"fileFilters"`
+}
+
+// GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeInput is an input type that accepts GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs and GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput values.
+// You can construct a concrete instance of `GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeInput` via:
+//
+//	GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs{...}
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeInput interface {
+	pulumi.Input
+
+	ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput() GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput
+	ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutputWithContext(context.Context) GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput
+}
+
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs struct {
+	FileFilters GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayInput `pulumi:"fileFilters"`
+}
+
+func (GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude)(nil)).Elem()
+}
+
+func (i GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput() GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput {
+	return i.ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutputWithContext(context.Background())
+}
+
+func (i GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutputWithContext(ctx context.Context) GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput)
+}
+
+// GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayInput is an input type that accepts GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArray and GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput values.
+// You can construct a concrete instance of `GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayInput` via:
+//
+//	GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArray{ GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs{...} }
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayInput interface {
+	pulumi.Input
+
+	ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput() GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput
+	ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutputWithContext(context.Context) GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput
+}
+
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArray []GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeInput
+
+func (GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude)(nil)).Elem()
+}
+
+func (i GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArray) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput() GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput {
+	return i.ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutputWithContext(context.Background())
+}
+
+func (i GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArray) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutputWithContext(ctx context.Context) GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput)
+}
+
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput struct{ *pulumi.OutputState }
+
+func (GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude)(nil)).Elem()
+}
+
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput() GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput {
+	return o
+}
+
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutputWithContext(ctx context.Context) GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput {
+	return o
+}
+
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput) FileFilters() GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput {
+	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude) []GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter {
+		return v.FileFilters
+	}).(GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput)
+}
+
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude)(nil)).Elem()
+}
+
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput() GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput {
+	return o
+}
+
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutputWithContext(ctx context.Context) GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput {
+	return o
+}
+
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput) Index(i pulumi.IntInput) GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude {
+		return vs[0].([]GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude)[vs[1].(int)]
+	}).(GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput)
+}
+
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter struct {
+	FilePaths []string `pulumi:"filePaths"`
+}
+
+// GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterInput is an input type that accepts GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs and GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput values.
+// You can construct a concrete instance of `GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterInput` via:
+//
+//	GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs{...}
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterInput interface {
+	pulumi.Input
+
+	ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput() GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput
+	ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutputWithContext(context.Context) GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput
+}
+
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs struct {
+	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
+}
+
+func (GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (i GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput() GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput {
+	return i.ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutputWithContext(context.Background())
+}
+
+func (i GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutputWithContext(ctx context.Context) GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput)
+}
+
+// GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayInput is an input type that accepts GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArray and GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput values.
+// You can construct a concrete instance of `GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayInput` via:
+//
+//	GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArray{ GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs{...} }
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput() GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput
+	ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutputWithContext(context.Context) GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput
+}
+
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArray []GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterInput
+
+func (GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (i GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArray) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput() GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput {
+	return i.ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArray) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutputWithContext(ctx context.Context) GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput)
+}
+
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput() GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput {
+	return o
+}
+
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutputWithContext(ctx context.Context) GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput {
+	return o
+}
+
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
+}
+
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput() GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput {
+	return o
+}
+
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutputWithContext(ctx context.Context) GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput {
+	return o
+}
+
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput) Index(i pulumi.IntInput) GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter {
+		return vs[0].([]GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter)[vs[1].(int)]
+	}).(GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput)
+}
+
 type GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude struct {
 	// The target branch for pull requests; not applicable for push requests.
-	BaseRef string `pulumi:"baseRef"`
+	BaseRef     string                                                              `pulumi:"baseRef"`
+	FileFilters []GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef string `pulumi:"headRef"`
 }
@@ -14925,7 +15853,8 @@ type GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeInput interface {
 
 type GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs struct {
 	// The target branch for pull requests; not applicable for push requests.
-	BaseRef pulumi.StringInput `pulumi:"baseRef"`
+	BaseRef     pulumi.StringInput                                                          `pulumi:"baseRef"`
+	FileFilters GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayInput `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef pulumi.StringInput `pulumi:"headRef"`
 }
@@ -14986,6 +15915,12 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput) BaseRef()
 	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude) string { return v.BaseRef }).(pulumi.StringOutput)
 }
 
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput) FileFilters() GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput {
+	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude) []GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter {
+		return v.FileFilters
+	}).(GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput)
+}
+
 // Branch for push event; source branch for pull requests.
 func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput) HeadRef() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude) string { return v.HeadRef }).(pulumi.StringOutput)
@@ -15009,6 +15944,100 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayOutput) Inde
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude {
 		return vs[0].([]GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude)[vs[1].(int)]
 	}).(GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput)
+}
+
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter struct {
+	FilePaths []string `pulumi:"filePaths"`
+}
+
+// GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterInput is an input type that accepts GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs and GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput values.
+// You can construct a concrete instance of `GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterInput` via:
+//
+//	GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs{...}
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterInput interface {
+	pulumi.Input
+
+	ToGetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput() GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput
+	ToGetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutputWithContext(context.Context) GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput
+}
+
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs struct {
+	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
+}
+
+func (GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (i GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput() GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput {
+	return i.ToGetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutputWithContext(context.Background())
+}
+
+func (i GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutputWithContext(ctx context.Context) GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput)
+}
+
+// GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayInput is an input type that accepts GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArray and GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput values.
+// You can construct a concrete instance of `GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayInput` via:
+//
+//	GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArray{ GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs{...} }
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput() GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput
+	ToGetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutputWithContext(context.Context) GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput
+}
+
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArray []GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterInput
+
+func (GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (i GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArray) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput() GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput {
+	return i.ToGetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArray) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutputWithContext(ctx context.Context) GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput)
+}
+
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput() GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput {
+	return o
+}
+
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutputWithContext(ctx context.Context) GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput {
+	return o
+}
+
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
+}
+
+type GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput() GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput {
+	return o
+}
+
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput) ToGetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutputWithContext(ctx context.Context) GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput {
+	return o
+}
+
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput) Index(i pulumi.IntInput) GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter {
+		return vs[0].([]GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter)[vs[1].(int)]
+	}).(GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput)
 }
 
 type GetBuildRunCommitInfo struct {
@@ -34231,7 +35260,8 @@ func (o GetTriggerActionArrayOutput) Index(i pulumi.IntInput) GetTriggerActionOu
 
 type GetTriggerActionFilter struct {
 	// The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events []string `pulumi:"events"`
+	Events   []string                        `pulumi:"events"`
+	Excludes []GetTriggerActionFilterExclude `pulumi:"excludes"`
 	// Attributes to filter GitLab self-hosted server events.
 	Includes []GetTriggerActionFilterInclude `pulumi:"includes"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
@@ -34251,7 +35281,8 @@ type GetTriggerActionFilterInput interface {
 
 type GetTriggerActionFilterArgs struct {
 	// The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events pulumi.StringArrayInput `pulumi:"events"`
+	Events   pulumi.StringArrayInput                 `pulumi:"events"`
+	Excludes GetTriggerActionFilterExcludeArrayInput `pulumi:"excludes"`
 	// Attributes to filter GitLab self-hosted server events.
 	Includes GetTriggerActionFilterIncludeArrayInput `pulumi:"includes"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
@@ -34314,6 +35345,10 @@ func (o GetTriggerActionFilterOutput) Events() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetTriggerActionFilter) []string { return v.Events }).(pulumi.StringArrayOutput)
 }
 
+func (o GetTriggerActionFilterOutput) Excludes() GetTriggerActionFilterExcludeArrayOutput {
+	return o.ApplyT(func(v GetTriggerActionFilter) []GetTriggerActionFilterExclude { return v.Excludes }).(GetTriggerActionFilterExcludeArrayOutput)
+}
+
 // Attributes to filter GitLab self-hosted server events.
 func (o GetTriggerActionFilterOutput) Includes() GetTriggerActionFilterIncludeArrayOutput {
 	return o.ApplyT(func(v GetTriggerActionFilter) []GetTriggerActionFilterInclude { return v.Includes }).(GetTriggerActionFilterIncludeArrayOutput)
@@ -34344,9 +35379,198 @@ func (o GetTriggerActionFilterArrayOutput) Index(i pulumi.IntInput) GetTriggerAc
 	}).(GetTriggerActionFilterOutput)
 }
 
+type GetTriggerActionFilterExclude struct {
+	FileFilters []GetTriggerActionFilterExcludeFileFilter `pulumi:"fileFilters"`
+}
+
+// GetTriggerActionFilterExcludeInput is an input type that accepts GetTriggerActionFilterExcludeArgs and GetTriggerActionFilterExcludeOutput values.
+// You can construct a concrete instance of `GetTriggerActionFilterExcludeInput` via:
+//
+//	GetTriggerActionFilterExcludeArgs{...}
+type GetTriggerActionFilterExcludeInput interface {
+	pulumi.Input
+
+	ToGetTriggerActionFilterExcludeOutput() GetTriggerActionFilterExcludeOutput
+	ToGetTriggerActionFilterExcludeOutputWithContext(context.Context) GetTriggerActionFilterExcludeOutput
+}
+
+type GetTriggerActionFilterExcludeArgs struct {
+	FileFilters GetTriggerActionFilterExcludeFileFilterArrayInput `pulumi:"fileFilters"`
+}
+
+func (GetTriggerActionFilterExcludeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTriggerActionFilterExclude)(nil)).Elem()
+}
+
+func (i GetTriggerActionFilterExcludeArgs) ToGetTriggerActionFilterExcludeOutput() GetTriggerActionFilterExcludeOutput {
+	return i.ToGetTriggerActionFilterExcludeOutputWithContext(context.Background())
+}
+
+func (i GetTriggerActionFilterExcludeArgs) ToGetTriggerActionFilterExcludeOutputWithContext(ctx context.Context) GetTriggerActionFilterExcludeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTriggerActionFilterExcludeOutput)
+}
+
+// GetTriggerActionFilterExcludeArrayInput is an input type that accepts GetTriggerActionFilterExcludeArray and GetTriggerActionFilterExcludeArrayOutput values.
+// You can construct a concrete instance of `GetTriggerActionFilterExcludeArrayInput` via:
+//
+//	GetTriggerActionFilterExcludeArray{ GetTriggerActionFilterExcludeArgs{...} }
+type GetTriggerActionFilterExcludeArrayInput interface {
+	pulumi.Input
+
+	ToGetTriggerActionFilterExcludeArrayOutput() GetTriggerActionFilterExcludeArrayOutput
+	ToGetTriggerActionFilterExcludeArrayOutputWithContext(context.Context) GetTriggerActionFilterExcludeArrayOutput
+}
+
+type GetTriggerActionFilterExcludeArray []GetTriggerActionFilterExcludeInput
+
+func (GetTriggerActionFilterExcludeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTriggerActionFilterExclude)(nil)).Elem()
+}
+
+func (i GetTriggerActionFilterExcludeArray) ToGetTriggerActionFilterExcludeArrayOutput() GetTriggerActionFilterExcludeArrayOutput {
+	return i.ToGetTriggerActionFilterExcludeArrayOutputWithContext(context.Background())
+}
+
+func (i GetTriggerActionFilterExcludeArray) ToGetTriggerActionFilterExcludeArrayOutputWithContext(ctx context.Context) GetTriggerActionFilterExcludeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTriggerActionFilterExcludeArrayOutput)
+}
+
+type GetTriggerActionFilterExcludeOutput struct{ *pulumi.OutputState }
+
+func (GetTriggerActionFilterExcludeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTriggerActionFilterExclude)(nil)).Elem()
+}
+
+func (o GetTriggerActionFilterExcludeOutput) ToGetTriggerActionFilterExcludeOutput() GetTriggerActionFilterExcludeOutput {
+	return o
+}
+
+func (o GetTriggerActionFilterExcludeOutput) ToGetTriggerActionFilterExcludeOutputWithContext(ctx context.Context) GetTriggerActionFilterExcludeOutput {
+	return o
+}
+
+func (o GetTriggerActionFilterExcludeOutput) FileFilters() GetTriggerActionFilterExcludeFileFilterArrayOutput {
+	return o.ApplyT(func(v GetTriggerActionFilterExclude) []GetTriggerActionFilterExcludeFileFilter { return v.FileFilters }).(GetTriggerActionFilterExcludeFileFilterArrayOutput)
+}
+
+type GetTriggerActionFilterExcludeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTriggerActionFilterExcludeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTriggerActionFilterExclude)(nil)).Elem()
+}
+
+func (o GetTriggerActionFilterExcludeArrayOutput) ToGetTriggerActionFilterExcludeArrayOutput() GetTriggerActionFilterExcludeArrayOutput {
+	return o
+}
+
+func (o GetTriggerActionFilterExcludeArrayOutput) ToGetTriggerActionFilterExcludeArrayOutputWithContext(ctx context.Context) GetTriggerActionFilterExcludeArrayOutput {
+	return o
+}
+
+func (o GetTriggerActionFilterExcludeArrayOutput) Index(i pulumi.IntInput) GetTriggerActionFilterExcludeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTriggerActionFilterExclude {
+		return vs[0].([]GetTriggerActionFilterExclude)[vs[1].(int)]
+	}).(GetTriggerActionFilterExcludeOutput)
+}
+
+type GetTriggerActionFilterExcludeFileFilter struct {
+	FilePaths []string `pulumi:"filePaths"`
+}
+
+// GetTriggerActionFilterExcludeFileFilterInput is an input type that accepts GetTriggerActionFilterExcludeFileFilterArgs and GetTriggerActionFilterExcludeFileFilterOutput values.
+// You can construct a concrete instance of `GetTriggerActionFilterExcludeFileFilterInput` via:
+//
+//	GetTriggerActionFilterExcludeFileFilterArgs{...}
+type GetTriggerActionFilterExcludeFileFilterInput interface {
+	pulumi.Input
+
+	ToGetTriggerActionFilterExcludeFileFilterOutput() GetTriggerActionFilterExcludeFileFilterOutput
+	ToGetTriggerActionFilterExcludeFileFilterOutputWithContext(context.Context) GetTriggerActionFilterExcludeFileFilterOutput
+}
+
+type GetTriggerActionFilterExcludeFileFilterArgs struct {
+	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
+}
+
+func (GetTriggerActionFilterExcludeFileFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTriggerActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (i GetTriggerActionFilterExcludeFileFilterArgs) ToGetTriggerActionFilterExcludeFileFilterOutput() GetTriggerActionFilterExcludeFileFilterOutput {
+	return i.ToGetTriggerActionFilterExcludeFileFilterOutputWithContext(context.Background())
+}
+
+func (i GetTriggerActionFilterExcludeFileFilterArgs) ToGetTriggerActionFilterExcludeFileFilterOutputWithContext(ctx context.Context) GetTriggerActionFilterExcludeFileFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTriggerActionFilterExcludeFileFilterOutput)
+}
+
+// GetTriggerActionFilterExcludeFileFilterArrayInput is an input type that accepts GetTriggerActionFilterExcludeFileFilterArray and GetTriggerActionFilterExcludeFileFilterArrayOutput values.
+// You can construct a concrete instance of `GetTriggerActionFilterExcludeFileFilterArrayInput` via:
+//
+//	GetTriggerActionFilterExcludeFileFilterArray{ GetTriggerActionFilterExcludeFileFilterArgs{...} }
+type GetTriggerActionFilterExcludeFileFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTriggerActionFilterExcludeFileFilterArrayOutput() GetTriggerActionFilterExcludeFileFilterArrayOutput
+	ToGetTriggerActionFilterExcludeFileFilterArrayOutputWithContext(context.Context) GetTriggerActionFilterExcludeFileFilterArrayOutput
+}
+
+type GetTriggerActionFilterExcludeFileFilterArray []GetTriggerActionFilterExcludeFileFilterInput
+
+func (GetTriggerActionFilterExcludeFileFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTriggerActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (i GetTriggerActionFilterExcludeFileFilterArray) ToGetTriggerActionFilterExcludeFileFilterArrayOutput() GetTriggerActionFilterExcludeFileFilterArrayOutput {
+	return i.ToGetTriggerActionFilterExcludeFileFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTriggerActionFilterExcludeFileFilterArray) ToGetTriggerActionFilterExcludeFileFilterArrayOutputWithContext(ctx context.Context) GetTriggerActionFilterExcludeFileFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTriggerActionFilterExcludeFileFilterArrayOutput)
+}
+
+type GetTriggerActionFilterExcludeFileFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTriggerActionFilterExcludeFileFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTriggerActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (o GetTriggerActionFilterExcludeFileFilterOutput) ToGetTriggerActionFilterExcludeFileFilterOutput() GetTriggerActionFilterExcludeFileFilterOutput {
+	return o
+}
+
+func (o GetTriggerActionFilterExcludeFileFilterOutput) ToGetTriggerActionFilterExcludeFileFilterOutputWithContext(ctx context.Context) GetTriggerActionFilterExcludeFileFilterOutput {
+	return o
+}
+
+func (o GetTriggerActionFilterExcludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTriggerActionFilterExcludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
+}
+
+type GetTriggerActionFilterExcludeFileFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTriggerActionFilterExcludeFileFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTriggerActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (o GetTriggerActionFilterExcludeFileFilterArrayOutput) ToGetTriggerActionFilterExcludeFileFilterArrayOutput() GetTriggerActionFilterExcludeFileFilterArrayOutput {
+	return o
+}
+
+func (o GetTriggerActionFilterExcludeFileFilterArrayOutput) ToGetTriggerActionFilterExcludeFileFilterArrayOutputWithContext(ctx context.Context) GetTriggerActionFilterExcludeFileFilterArrayOutput {
+	return o
+}
+
+func (o GetTriggerActionFilterExcludeFileFilterArrayOutput) Index(i pulumi.IntInput) GetTriggerActionFilterExcludeFileFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTriggerActionFilterExcludeFileFilter {
+		return vs[0].([]GetTriggerActionFilterExcludeFileFilter)[vs[1].(int)]
+	}).(GetTriggerActionFilterExcludeFileFilterOutput)
+}
+
 type GetTriggerActionFilterInclude struct {
 	// The target branch for pull requests; not applicable for push requests.
-	BaseRef string `pulumi:"baseRef"`
+	BaseRef     string                                    `pulumi:"baseRef"`
+	FileFilters []GetTriggerActionFilterIncludeFileFilter `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef string `pulumi:"headRef"`
 }
@@ -34364,7 +35588,8 @@ type GetTriggerActionFilterIncludeInput interface {
 
 type GetTriggerActionFilterIncludeArgs struct {
 	// The target branch for pull requests; not applicable for push requests.
-	BaseRef pulumi.StringInput `pulumi:"baseRef"`
+	BaseRef     pulumi.StringInput                                `pulumi:"baseRef"`
+	FileFilters GetTriggerActionFilterIncludeFileFilterArrayInput `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef pulumi.StringInput `pulumi:"headRef"`
 }
@@ -34425,6 +35650,10 @@ func (o GetTriggerActionFilterIncludeOutput) BaseRef() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTriggerActionFilterInclude) string { return v.BaseRef }).(pulumi.StringOutput)
 }
 
+func (o GetTriggerActionFilterIncludeOutput) FileFilters() GetTriggerActionFilterIncludeFileFilterArrayOutput {
+	return o.ApplyT(func(v GetTriggerActionFilterInclude) []GetTriggerActionFilterIncludeFileFilter { return v.FileFilters }).(GetTriggerActionFilterIncludeFileFilterArrayOutput)
+}
+
 // Branch for push event; source branch for pull requests.
 func (o GetTriggerActionFilterIncludeOutput) HeadRef() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTriggerActionFilterInclude) string { return v.HeadRef }).(pulumi.StringOutput)
@@ -34448,6 +35677,100 @@ func (o GetTriggerActionFilterIncludeArrayOutput) Index(i pulumi.IntInput) GetTr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTriggerActionFilterInclude {
 		return vs[0].([]GetTriggerActionFilterInclude)[vs[1].(int)]
 	}).(GetTriggerActionFilterIncludeOutput)
+}
+
+type GetTriggerActionFilterIncludeFileFilter struct {
+	FilePaths []string `pulumi:"filePaths"`
+}
+
+// GetTriggerActionFilterIncludeFileFilterInput is an input type that accepts GetTriggerActionFilterIncludeFileFilterArgs and GetTriggerActionFilterIncludeFileFilterOutput values.
+// You can construct a concrete instance of `GetTriggerActionFilterIncludeFileFilterInput` via:
+//
+//	GetTriggerActionFilterIncludeFileFilterArgs{...}
+type GetTriggerActionFilterIncludeFileFilterInput interface {
+	pulumi.Input
+
+	ToGetTriggerActionFilterIncludeFileFilterOutput() GetTriggerActionFilterIncludeFileFilterOutput
+	ToGetTriggerActionFilterIncludeFileFilterOutputWithContext(context.Context) GetTriggerActionFilterIncludeFileFilterOutput
+}
+
+type GetTriggerActionFilterIncludeFileFilterArgs struct {
+	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
+}
+
+func (GetTriggerActionFilterIncludeFileFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTriggerActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (i GetTriggerActionFilterIncludeFileFilterArgs) ToGetTriggerActionFilterIncludeFileFilterOutput() GetTriggerActionFilterIncludeFileFilterOutput {
+	return i.ToGetTriggerActionFilterIncludeFileFilterOutputWithContext(context.Background())
+}
+
+func (i GetTriggerActionFilterIncludeFileFilterArgs) ToGetTriggerActionFilterIncludeFileFilterOutputWithContext(ctx context.Context) GetTriggerActionFilterIncludeFileFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTriggerActionFilterIncludeFileFilterOutput)
+}
+
+// GetTriggerActionFilterIncludeFileFilterArrayInput is an input type that accepts GetTriggerActionFilterIncludeFileFilterArray and GetTriggerActionFilterIncludeFileFilterArrayOutput values.
+// You can construct a concrete instance of `GetTriggerActionFilterIncludeFileFilterArrayInput` via:
+//
+//	GetTriggerActionFilterIncludeFileFilterArray{ GetTriggerActionFilterIncludeFileFilterArgs{...} }
+type GetTriggerActionFilterIncludeFileFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTriggerActionFilterIncludeFileFilterArrayOutput() GetTriggerActionFilterIncludeFileFilterArrayOutput
+	ToGetTriggerActionFilterIncludeFileFilterArrayOutputWithContext(context.Context) GetTriggerActionFilterIncludeFileFilterArrayOutput
+}
+
+type GetTriggerActionFilterIncludeFileFilterArray []GetTriggerActionFilterIncludeFileFilterInput
+
+func (GetTriggerActionFilterIncludeFileFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTriggerActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (i GetTriggerActionFilterIncludeFileFilterArray) ToGetTriggerActionFilterIncludeFileFilterArrayOutput() GetTriggerActionFilterIncludeFileFilterArrayOutput {
+	return i.ToGetTriggerActionFilterIncludeFileFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTriggerActionFilterIncludeFileFilterArray) ToGetTriggerActionFilterIncludeFileFilterArrayOutputWithContext(ctx context.Context) GetTriggerActionFilterIncludeFileFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTriggerActionFilterIncludeFileFilterArrayOutput)
+}
+
+type GetTriggerActionFilterIncludeFileFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTriggerActionFilterIncludeFileFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTriggerActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (o GetTriggerActionFilterIncludeFileFilterOutput) ToGetTriggerActionFilterIncludeFileFilterOutput() GetTriggerActionFilterIncludeFileFilterOutput {
+	return o
+}
+
+func (o GetTriggerActionFilterIncludeFileFilterOutput) ToGetTriggerActionFilterIncludeFileFilterOutputWithContext(ctx context.Context) GetTriggerActionFilterIncludeFileFilterOutput {
+	return o
+}
+
+func (o GetTriggerActionFilterIncludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTriggerActionFilterIncludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
+}
+
+type GetTriggerActionFilterIncludeFileFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTriggerActionFilterIncludeFileFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTriggerActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (o GetTriggerActionFilterIncludeFileFilterArrayOutput) ToGetTriggerActionFilterIncludeFileFilterArrayOutput() GetTriggerActionFilterIncludeFileFilterArrayOutput {
+	return o
+}
+
+func (o GetTriggerActionFilterIncludeFileFilterArrayOutput) ToGetTriggerActionFilterIncludeFileFilterArrayOutputWithContext(ctx context.Context) GetTriggerActionFilterIncludeFileFilterArrayOutput {
+	return o
+}
+
+func (o GetTriggerActionFilterIncludeFileFilterArrayOutput) Index(i pulumi.IntInput) GetTriggerActionFilterIncludeFileFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTriggerActionFilterIncludeFileFilter {
+		return vs[0].([]GetTriggerActionFilterIncludeFileFilter)[vs[1].(int)]
+	}).(GetTriggerActionFilterIncludeFileFilterOutput)
 }
 
 type GetTriggersFilter struct {
@@ -34655,6 +35978,7 @@ type GetTriggersTriggerCollectionItem struct {
 	Actions []GetTriggersTriggerCollectionItemAction `pulumi:"actions"`
 	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
+	ConnectionId  string `pulumi:"connectionId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description about the trigger.
@@ -34701,6 +36025,7 @@ type GetTriggersTriggerCollectionItemArgs struct {
 	Actions GetTriggersTriggerCollectionItemActionArrayInput `pulumi:"actions"`
 	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	ConnectionId  pulumi.StringInput `pulumi:"connectionId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description about the trigger.
@@ -34790,6 +36115,10 @@ func (o GetTriggersTriggerCollectionItemOutput) Actions() GetTriggersTriggerColl
 // The OCID of the compartment in which to list resources.
 func (o GetTriggersTriggerCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetTriggersTriggerCollectionItemOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTriggersTriggerCollectionItem) string { return v.ConnectionId }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -35001,7 +36330,8 @@ func (o GetTriggersTriggerCollectionItemActionArrayOutput) Index(i pulumi.IntInp
 
 type GetTriggersTriggerCollectionItemActionFilter struct {
 	// The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events []string `pulumi:"events"`
+	Events   []string                                              `pulumi:"events"`
+	Excludes []GetTriggersTriggerCollectionItemActionFilterExclude `pulumi:"excludes"`
 	// Attributes to filter GitLab self-hosted server events.
 	Includes []GetTriggersTriggerCollectionItemActionFilterInclude `pulumi:"includes"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
@@ -35021,7 +36351,8 @@ type GetTriggersTriggerCollectionItemActionFilterInput interface {
 
 type GetTriggersTriggerCollectionItemActionFilterArgs struct {
 	// The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events pulumi.StringArrayInput `pulumi:"events"`
+	Events   pulumi.StringArrayInput                                       `pulumi:"events"`
+	Excludes GetTriggersTriggerCollectionItemActionFilterExcludeArrayInput `pulumi:"excludes"`
 	// Attributes to filter GitLab self-hosted server events.
 	Includes GetTriggersTriggerCollectionItemActionFilterIncludeArrayInput `pulumi:"includes"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
@@ -35084,6 +36415,12 @@ func (o GetTriggersTriggerCollectionItemActionFilterOutput) Events() pulumi.Stri
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilter) []string { return v.Events }).(pulumi.StringArrayOutput)
 }
 
+func (o GetTriggersTriggerCollectionItemActionFilterOutput) Excludes() GetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput {
+	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilter) []GetTriggersTriggerCollectionItemActionFilterExclude {
+		return v.Excludes
+	}).(GetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput)
+}
+
 // Attributes to filter GitLab self-hosted server events.
 func (o GetTriggersTriggerCollectionItemActionFilterOutput) Includes() GetTriggersTriggerCollectionItemActionFilterIncludeArrayOutput {
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilter) []GetTriggersTriggerCollectionItemActionFilterInclude {
@@ -35116,9 +36453,200 @@ func (o GetTriggersTriggerCollectionItemActionFilterArrayOutput) Index(i pulumi.
 	}).(GetTriggersTriggerCollectionItemActionFilterOutput)
 }
 
+type GetTriggersTriggerCollectionItemActionFilterExclude struct {
+	FileFilters []GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter `pulumi:"fileFilters"`
+}
+
+// GetTriggersTriggerCollectionItemActionFilterExcludeInput is an input type that accepts GetTriggersTriggerCollectionItemActionFilterExcludeArgs and GetTriggersTriggerCollectionItemActionFilterExcludeOutput values.
+// You can construct a concrete instance of `GetTriggersTriggerCollectionItemActionFilterExcludeInput` via:
+//
+//	GetTriggersTriggerCollectionItemActionFilterExcludeArgs{...}
+type GetTriggersTriggerCollectionItemActionFilterExcludeInput interface {
+	pulumi.Input
+
+	ToGetTriggersTriggerCollectionItemActionFilterExcludeOutput() GetTriggersTriggerCollectionItemActionFilterExcludeOutput
+	ToGetTriggersTriggerCollectionItemActionFilterExcludeOutputWithContext(context.Context) GetTriggersTriggerCollectionItemActionFilterExcludeOutput
+}
+
+type GetTriggersTriggerCollectionItemActionFilterExcludeArgs struct {
+	FileFilters GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayInput `pulumi:"fileFilters"`
+}
+
+func (GetTriggersTriggerCollectionItemActionFilterExcludeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTriggersTriggerCollectionItemActionFilterExclude)(nil)).Elem()
+}
+
+func (i GetTriggersTriggerCollectionItemActionFilterExcludeArgs) ToGetTriggersTriggerCollectionItemActionFilterExcludeOutput() GetTriggersTriggerCollectionItemActionFilterExcludeOutput {
+	return i.ToGetTriggersTriggerCollectionItemActionFilterExcludeOutputWithContext(context.Background())
+}
+
+func (i GetTriggersTriggerCollectionItemActionFilterExcludeArgs) ToGetTriggersTriggerCollectionItemActionFilterExcludeOutputWithContext(ctx context.Context) GetTriggersTriggerCollectionItemActionFilterExcludeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTriggersTriggerCollectionItemActionFilterExcludeOutput)
+}
+
+// GetTriggersTriggerCollectionItemActionFilterExcludeArrayInput is an input type that accepts GetTriggersTriggerCollectionItemActionFilterExcludeArray and GetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput values.
+// You can construct a concrete instance of `GetTriggersTriggerCollectionItemActionFilterExcludeArrayInput` via:
+//
+//	GetTriggersTriggerCollectionItemActionFilterExcludeArray{ GetTriggersTriggerCollectionItemActionFilterExcludeArgs{...} }
+type GetTriggersTriggerCollectionItemActionFilterExcludeArrayInput interface {
+	pulumi.Input
+
+	ToGetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput() GetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput
+	ToGetTriggersTriggerCollectionItemActionFilterExcludeArrayOutputWithContext(context.Context) GetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput
+}
+
+type GetTriggersTriggerCollectionItemActionFilterExcludeArray []GetTriggersTriggerCollectionItemActionFilterExcludeInput
+
+func (GetTriggersTriggerCollectionItemActionFilterExcludeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTriggersTriggerCollectionItemActionFilterExclude)(nil)).Elem()
+}
+
+func (i GetTriggersTriggerCollectionItemActionFilterExcludeArray) ToGetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput() GetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput {
+	return i.ToGetTriggersTriggerCollectionItemActionFilterExcludeArrayOutputWithContext(context.Background())
+}
+
+func (i GetTriggersTriggerCollectionItemActionFilterExcludeArray) ToGetTriggersTriggerCollectionItemActionFilterExcludeArrayOutputWithContext(ctx context.Context) GetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput)
+}
+
+type GetTriggersTriggerCollectionItemActionFilterExcludeOutput struct{ *pulumi.OutputState }
+
+func (GetTriggersTriggerCollectionItemActionFilterExcludeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTriggersTriggerCollectionItemActionFilterExclude)(nil)).Elem()
+}
+
+func (o GetTriggersTriggerCollectionItemActionFilterExcludeOutput) ToGetTriggersTriggerCollectionItemActionFilterExcludeOutput() GetTriggersTriggerCollectionItemActionFilterExcludeOutput {
+	return o
+}
+
+func (o GetTriggersTriggerCollectionItemActionFilterExcludeOutput) ToGetTriggersTriggerCollectionItemActionFilterExcludeOutputWithContext(ctx context.Context) GetTriggersTriggerCollectionItemActionFilterExcludeOutput {
+	return o
+}
+
+func (o GetTriggersTriggerCollectionItemActionFilterExcludeOutput) FileFilters() GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput {
+	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilterExclude) []GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter {
+		return v.FileFilters
+	}).(GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput)
+}
+
+type GetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTriggersTriggerCollectionItemActionFilterExclude)(nil)).Elem()
+}
+
+func (o GetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput) ToGetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput() GetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput {
+	return o
+}
+
+func (o GetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput) ToGetTriggersTriggerCollectionItemActionFilterExcludeArrayOutputWithContext(ctx context.Context) GetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput {
+	return o
+}
+
+func (o GetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput) Index(i pulumi.IntInput) GetTriggersTriggerCollectionItemActionFilterExcludeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTriggersTriggerCollectionItemActionFilterExclude {
+		return vs[0].([]GetTriggersTriggerCollectionItemActionFilterExclude)[vs[1].(int)]
+	}).(GetTriggersTriggerCollectionItemActionFilterExcludeOutput)
+}
+
+type GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter struct {
+	FilePaths []string `pulumi:"filePaths"`
+}
+
+// GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterInput is an input type that accepts GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArgs and GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput values.
+// You can construct a concrete instance of `GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterInput` via:
+//
+//	GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArgs{...}
+type GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterInput interface {
+	pulumi.Input
+
+	ToGetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput() GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput
+	ToGetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutputWithContext(context.Context) GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput
+}
+
+type GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArgs struct {
+	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
+}
+
+func (GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (i GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArgs) ToGetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput() GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput {
+	return i.ToGetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutputWithContext(context.Background())
+}
+
+func (i GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArgs) ToGetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutputWithContext(ctx context.Context) GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput)
+}
+
+// GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayInput is an input type that accepts GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArray and GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput values.
+// You can construct a concrete instance of `GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayInput` via:
+//
+//	GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArray{ GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArgs{...} }
+type GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput() GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput
+	ToGetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutputWithContext(context.Context) GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput
+}
+
+type GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArray []GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterInput
+
+func (GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (i GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArray) ToGetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput() GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput {
+	return i.ToGetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArray) ToGetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutputWithContext(ctx context.Context) GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput)
+}
+
+type GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (o GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput) ToGetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput() GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput {
+	return o
+}
+
+func (o GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput) ToGetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutputWithContext(ctx context.Context) GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput {
+	return o
+}
+
+func (o GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
+}
+
+type GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter)(nil)).Elem()
+}
+
+func (o GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput) ToGetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput() GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput {
+	return o
+}
+
+func (o GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput) ToGetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutputWithContext(ctx context.Context) GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput {
+	return o
+}
+
+func (o GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput) Index(i pulumi.IntInput) GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter {
+		return vs[0].([]GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter)[vs[1].(int)]
+	}).(GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput)
+}
+
 type GetTriggersTriggerCollectionItemActionFilterInclude struct {
 	// The target branch for pull requests; not applicable for push requests.
-	BaseRef string `pulumi:"baseRef"`
+	BaseRef     string                                                          `pulumi:"baseRef"`
+	FileFilters []GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef string `pulumi:"headRef"`
 }
@@ -35136,7 +36664,8 @@ type GetTriggersTriggerCollectionItemActionFilterIncludeInput interface {
 
 type GetTriggersTriggerCollectionItemActionFilterIncludeArgs struct {
 	// The target branch for pull requests; not applicable for push requests.
-	BaseRef pulumi.StringInput `pulumi:"baseRef"`
+	BaseRef     pulumi.StringInput                                                      `pulumi:"baseRef"`
+	FileFilters GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayInput `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef pulumi.StringInput `pulumi:"headRef"`
 }
@@ -35197,6 +36726,12 @@ func (o GetTriggersTriggerCollectionItemActionFilterIncludeOutput) BaseRef() pul
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilterInclude) string { return v.BaseRef }).(pulumi.StringOutput)
 }
 
+func (o GetTriggersTriggerCollectionItemActionFilterIncludeOutput) FileFilters() GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput {
+	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilterInclude) []GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter {
+		return v.FileFilters
+	}).(GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput)
+}
+
 // Branch for push event; source branch for pull requests.
 func (o GetTriggersTriggerCollectionItemActionFilterIncludeOutput) HeadRef() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilterInclude) string { return v.HeadRef }).(pulumi.StringOutput)
@@ -35220,6 +36755,100 @@ func (o GetTriggersTriggerCollectionItemActionFilterIncludeArrayOutput) Index(i 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTriggersTriggerCollectionItemActionFilterInclude {
 		return vs[0].([]GetTriggersTriggerCollectionItemActionFilterInclude)[vs[1].(int)]
 	}).(GetTriggersTriggerCollectionItemActionFilterIncludeOutput)
+}
+
+type GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter struct {
+	FilePaths []string `pulumi:"filePaths"`
+}
+
+// GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterInput is an input type that accepts GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArgs and GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput values.
+// You can construct a concrete instance of `GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterInput` via:
+//
+//	GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArgs{...}
+type GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterInput interface {
+	pulumi.Input
+
+	ToGetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput() GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput
+	ToGetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutputWithContext(context.Context) GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput
+}
+
+type GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArgs struct {
+	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
+}
+
+func (GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (i GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArgs) ToGetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput() GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput {
+	return i.ToGetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutputWithContext(context.Background())
+}
+
+func (i GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArgs) ToGetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutputWithContext(ctx context.Context) GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput)
+}
+
+// GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayInput is an input type that accepts GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArray and GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput values.
+// You can construct a concrete instance of `GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayInput` via:
+//
+//	GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArray{ GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArgs{...} }
+type GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput() GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput
+	ToGetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutputWithContext(context.Context) GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput
+}
+
+type GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArray []GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterInput
+
+func (GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (i GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArray) ToGetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput() GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput {
+	return i.ToGetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArray) ToGetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutputWithContext(ctx context.Context) GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput)
+}
+
+type GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (o GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput) ToGetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput() GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput {
+	return o
+}
+
+func (o GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput) ToGetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutputWithContext(ctx context.Context) GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput {
+	return o
+}
+
+func (o GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
+}
+
+type GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter)(nil)).Elem()
+}
+
+func (o GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput) ToGetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput() GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput {
+	return o
+}
+
+func (o GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput) ToGetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutputWithContext(ctx context.Context) GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput {
+	return o
+}
+
+func (o GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput) Index(i pulumi.IntInput) GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter {
+		return vs[0].([]GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter)[vs[1].(int)]
+	}).(GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput)
 }
 
 func init() {
@@ -35275,8 +36904,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionArrayInput)(nil)).Elem(), BuildRunBuildRunSourceTriggerInfoActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionFilterInput)(nil)).Elem(), BuildRunBuildRunSourceTriggerInfoActionFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionFilterArrayInput)(nil)).Elem(), BuildRunBuildRunSourceTriggerInfoActionFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionFilterExcludeInput)(nil)).Elem(), BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayInput)(nil)).Elem(), BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterInput)(nil)).Elem(), BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayInput)(nil)).Elem(), BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionFilterIncludeInput)(nil)).Elem(), BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayInput)(nil)).Elem(), BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterInput)(nil)).Elem(), BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayInput)(nil)).Elem(), BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunCommitInfoInput)(nil)).Elem(), BuildRunCommitInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BuildRunCommitInfoPtrInput)(nil)).Elem(), BuildRunCommitInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionTlsVerifyConfigInput)(nil)).Elem(), ConnectionTlsVerifyConfigArgs{})
@@ -35373,8 +37008,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*TriggerActionArrayInput)(nil)).Elem(), TriggerActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TriggerActionFilterInput)(nil)).Elem(), TriggerActionFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TriggerActionFilterPtrInput)(nil)).Elem(), TriggerActionFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TriggerActionFilterExcludeInput)(nil)).Elem(), TriggerActionFilterExcludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TriggerActionFilterExcludePtrInput)(nil)).Elem(), TriggerActionFilterExcludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TriggerActionFilterExcludeFileFilterInput)(nil)).Elem(), TriggerActionFilterExcludeFileFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TriggerActionFilterExcludeFileFilterPtrInput)(nil)).Elem(), TriggerActionFilterExcludeFileFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TriggerActionFilterIncludeInput)(nil)).Elem(), TriggerActionFilterIncludeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TriggerActionFilterIncludePtrInput)(nil)).Elem(), TriggerActionFilterIncludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TriggerActionFilterIncludeFileFilterInput)(nil)).Elem(), TriggerActionFilterIncludeFileFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TriggerActionFilterIncludeFileFilterPtrInput)(nil)).Elem(), TriggerActionFilterIncludeFileFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineBuildPipelineParameterInput)(nil)).Elem(), GetBuildPipelineBuildPipelineParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineBuildPipelineParameterArrayInput)(nil)).Elem(), GetBuildPipelineBuildPipelineParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildPipelineBuildPipelineParameterItemInput)(nil)).Elem(), GetBuildPipelineBuildPipelineParameterItemArgs{})
@@ -35455,8 +37096,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildRunSourceTriggerInfoActionArrayInput)(nil)).Elem(), GetBuildRunBuildRunSourceTriggerInfoActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildRunSourceTriggerInfoActionFilterInput)(nil)).Elem(), GetBuildRunBuildRunSourceTriggerInfoActionFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildRunSourceTriggerInfoActionFilterArrayInput)(nil)).Elem(), GetBuildRunBuildRunSourceTriggerInfoActionFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeInput)(nil)).Elem(), GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayInput)(nil)).Elem(), GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterInput)(nil)).Elem(), GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayInput)(nil)).Elem(), GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeInput)(nil)).Elem(), GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayInput)(nil)).Elem(), GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterInput)(nil)).Elem(), GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayInput)(nil)).Elem(), GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunCommitInfoInput)(nil)).Elem(), GetBuildRunCommitInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunCommitInfoArrayInput)(nil)).Elem(), GetBuildRunCommitInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBuildRunsBuildRunSummaryCollectionInput)(nil)).Elem(), GetBuildRunsBuildRunSummaryCollectionArgs{})
@@ -35775,8 +37422,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggerActionArrayInput)(nil)).Elem(), GetTriggerActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggerActionFilterInput)(nil)).Elem(), GetTriggerActionFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggerActionFilterArrayInput)(nil)).Elem(), GetTriggerActionFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggerActionFilterExcludeInput)(nil)).Elem(), GetTriggerActionFilterExcludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggerActionFilterExcludeArrayInput)(nil)).Elem(), GetTriggerActionFilterExcludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggerActionFilterExcludeFileFilterInput)(nil)).Elem(), GetTriggerActionFilterExcludeFileFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggerActionFilterExcludeFileFilterArrayInput)(nil)).Elem(), GetTriggerActionFilterExcludeFileFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggerActionFilterIncludeInput)(nil)).Elem(), GetTriggerActionFilterIncludeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggerActionFilterIncludeArrayInput)(nil)).Elem(), GetTriggerActionFilterIncludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggerActionFilterIncludeFileFilterInput)(nil)).Elem(), GetTriggerActionFilterIncludeFileFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggerActionFilterIncludeFileFilterArrayInput)(nil)).Elem(), GetTriggerActionFilterIncludeFileFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggersFilterInput)(nil)).Elem(), GetTriggersFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggersFilterArrayInput)(nil)).Elem(), GetTriggersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggersTriggerCollectionInput)(nil)).Elem(), GetTriggersTriggerCollectionArgs{})
@@ -35787,8 +37440,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggersTriggerCollectionItemActionArrayInput)(nil)).Elem(), GetTriggersTriggerCollectionItemActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggersTriggerCollectionItemActionFilterInput)(nil)).Elem(), GetTriggersTriggerCollectionItemActionFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggersTriggerCollectionItemActionFilterArrayInput)(nil)).Elem(), GetTriggersTriggerCollectionItemActionFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggersTriggerCollectionItemActionFilterExcludeInput)(nil)).Elem(), GetTriggersTriggerCollectionItemActionFilterExcludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggersTriggerCollectionItemActionFilterExcludeArrayInput)(nil)).Elem(), GetTriggersTriggerCollectionItemActionFilterExcludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterInput)(nil)).Elem(), GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayInput)(nil)).Elem(), GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggersTriggerCollectionItemActionFilterIncludeInput)(nil)).Elem(), GetTriggersTriggerCollectionItemActionFilterIncludeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggersTriggerCollectionItemActionFilterIncludeArrayInput)(nil)).Elem(), GetTriggersTriggerCollectionItemActionFilterIncludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterInput)(nil)).Elem(), GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayInput)(nil)).Elem(), GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArray{})
 	pulumi.RegisterOutputType(BuildPipelineBuildPipelineParametersOutput{})
 	pulumi.RegisterOutputType(BuildPipelineBuildPipelineParametersPtrOutput{})
 	pulumi.RegisterOutputType(BuildPipelineBuildPipelineParametersItemOutput{})
@@ -35841,8 +37500,14 @@ func init() {
 	pulumi.RegisterOutputType(BuildRunBuildRunSourceTriggerInfoActionArrayOutput{})
 	pulumi.RegisterOutputType(BuildRunBuildRunSourceTriggerInfoActionFilterOutput{})
 	pulumi.RegisterOutputType(BuildRunBuildRunSourceTriggerInfoActionFilterArrayOutput{})
+	pulumi.RegisterOutputType(BuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput{})
+	pulumi.RegisterOutputType(BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput{})
+	pulumi.RegisterOutputType(BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput{})
+	pulumi.RegisterOutputType(BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput{})
 	pulumi.RegisterOutputType(BuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput{})
 	pulumi.RegisterOutputType(BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayOutput{})
+	pulumi.RegisterOutputType(BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput{})
+	pulumi.RegisterOutputType(BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput{})
 	pulumi.RegisterOutputType(BuildRunCommitInfoOutput{})
 	pulumi.RegisterOutputType(BuildRunCommitInfoPtrOutput{})
 	pulumi.RegisterOutputType(ConnectionTlsVerifyConfigOutput{})
@@ -35939,8 +37604,14 @@ func init() {
 	pulumi.RegisterOutputType(TriggerActionArrayOutput{})
 	pulumi.RegisterOutputType(TriggerActionFilterOutput{})
 	pulumi.RegisterOutputType(TriggerActionFilterPtrOutput{})
+	pulumi.RegisterOutputType(TriggerActionFilterExcludeOutput{})
+	pulumi.RegisterOutputType(TriggerActionFilterExcludePtrOutput{})
+	pulumi.RegisterOutputType(TriggerActionFilterExcludeFileFilterOutput{})
+	pulumi.RegisterOutputType(TriggerActionFilterExcludeFileFilterPtrOutput{})
 	pulumi.RegisterOutputType(TriggerActionFilterIncludeOutput{})
 	pulumi.RegisterOutputType(TriggerActionFilterIncludePtrOutput{})
+	pulumi.RegisterOutputType(TriggerActionFilterIncludeFileFilterOutput{})
+	pulumi.RegisterOutputType(TriggerActionFilterIncludeFileFilterPtrOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineBuildPipelineParameterOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineBuildPipelineParameterArrayOutput{})
 	pulumi.RegisterOutputType(GetBuildPipelineBuildPipelineParameterItemOutput{})
@@ -36021,8 +37692,14 @@ func init() {
 	pulumi.RegisterOutputType(GetBuildRunBuildRunSourceTriggerInfoActionArrayOutput{})
 	pulumi.RegisterOutputType(GetBuildRunBuildRunSourceTriggerInfoActionFilterOutput{})
 	pulumi.RegisterOutputType(GetBuildRunBuildRunSourceTriggerInfoActionFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeOutput{})
+	pulumi.RegisterOutputType(GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeArrayOutput{})
+	pulumi.RegisterOutputType(GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterOutput{})
+	pulumi.RegisterOutputType(GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput{})
 	pulumi.RegisterOutputType(GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayOutput{})
+	pulumi.RegisterOutputType(GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterOutput{})
+	pulumi.RegisterOutputType(GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetBuildRunCommitInfoOutput{})
 	pulumi.RegisterOutputType(GetBuildRunCommitInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetBuildRunsBuildRunSummaryCollectionOutput{})
@@ -36341,8 +38018,14 @@ func init() {
 	pulumi.RegisterOutputType(GetTriggerActionArrayOutput{})
 	pulumi.RegisterOutputType(GetTriggerActionFilterOutput{})
 	pulumi.RegisterOutputType(GetTriggerActionFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTriggerActionFilterExcludeOutput{})
+	pulumi.RegisterOutputType(GetTriggerActionFilterExcludeArrayOutput{})
+	pulumi.RegisterOutputType(GetTriggerActionFilterExcludeFileFilterOutput{})
+	pulumi.RegisterOutputType(GetTriggerActionFilterExcludeFileFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetTriggerActionFilterIncludeOutput{})
 	pulumi.RegisterOutputType(GetTriggerActionFilterIncludeArrayOutput{})
+	pulumi.RegisterOutputType(GetTriggerActionFilterIncludeFileFilterOutput{})
+	pulumi.RegisterOutputType(GetTriggerActionFilterIncludeFileFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetTriggersFilterOutput{})
 	pulumi.RegisterOutputType(GetTriggersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetTriggersTriggerCollectionOutput{})
@@ -36353,6 +38036,12 @@ func init() {
 	pulumi.RegisterOutputType(GetTriggersTriggerCollectionItemActionArrayOutput{})
 	pulumi.RegisterOutputType(GetTriggersTriggerCollectionItemActionFilterOutput{})
 	pulumi.RegisterOutputType(GetTriggersTriggerCollectionItemActionFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTriggersTriggerCollectionItemActionFilterExcludeOutput{})
+	pulumi.RegisterOutputType(GetTriggersTriggerCollectionItemActionFilterExcludeArrayOutput{})
+	pulumi.RegisterOutputType(GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterOutput{})
+	pulumi.RegisterOutputType(GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetTriggersTriggerCollectionItemActionFilterIncludeOutput{})
 	pulumi.RegisterOutputType(GetTriggersTriggerCollectionItemActionFilterIncludeArrayOutput{})
+	pulumi.RegisterOutputType(GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterOutput{})
+	pulumi.RegisterOutputType(GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayOutput{})
 }

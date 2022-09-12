@@ -17,6 +17,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// The target branch for pull requests; not applicable for push requests.
         /// </summary>
         public readonly string BaseRef;
+        public readonly ImmutableArray<Outputs.GetTriggerActionFilterIncludeFileFilterResult> FileFilters;
         /// <summary>
         /// Branch for push event; source branch for pull requests.
         /// </summary>
@@ -26,9 +27,12 @@ namespace Pulumi.Oci.DevOps.Outputs
         private GetTriggerActionFilterIncludeResult(
             string baseRef,
 
+            ImmutableArray<Outputs.GetTriggerActionFilterIncludeFileFilterResult> fileFilters,
+
             string headRef)
         {
             BaseRef = baseRef;
+            FileFilters = fileFilters;
             HeadRef = headRef;
         }
     }

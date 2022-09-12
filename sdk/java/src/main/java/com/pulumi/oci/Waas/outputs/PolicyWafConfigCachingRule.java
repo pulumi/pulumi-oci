@@ -18,56 +18,39 @@ public final class PolicyWafConfigCachingRule {
      * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return (Updatable) The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
      * 
      */
-    private final @Nullable String cachingDuration;
+    private @Nullable String cachingDuration;
     /**
      * @return (Updatable) The duration to cache content in the user&#39;s browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
      * 
      */
-    private final @Nullable String clientCachingDuration;
+    private @Nullable String clientCachingDuration;
     /**
      * @return (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
      * 
      */
-    private final List<PolicyWafConfigCachingRuleCriteria> criterias;
+    private List<PolicyWafConfigCachingRuleCriteria> criterias;
     /**
      * @return (Updatable) Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
      * 
      */
-    private final @Nullable Boolean isClientCachingEnabled;
+    private @Nullable Boolean isClientCachingEnabled;
     /**
      * @return (Updatable) The unique key for the caching rule.
      * 
      */
-    private final @Nullable String key;
+    private @Nullable String key;
     /**
      * @return (Updatable) The unique name of the whitelist.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private PolicyWafConfigCachingRule(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("cachingDuration") @Nullable String cachingDuration,
-        @CustomType.Parameter("clientCachingDuration") @Nullable String clientCachingDuration,
-        @CustomType.Parameter("criterias") List<PolicyWafConfigCachingRuleCriteria> criterias,
-        @CustomType.Parameter("isClientCachingEnabled") @Nullable Boolean isClientCachingEnabled,
-        @CustomType.Parameter("key") @Nullable String key,
-        @CustomType.Parameter("name") String name) {
-        this.action = action;
-        this.cachingDuration = cachingDuration;
-        this.clientCachingDuration = clientCachingDuration;
-        this.criterias = criterias;
-        this.isClientCachingEnabled = isClientCachingEnabled;
-        this.key = key;
-        this.name = name;
-    }
-
+    private PolicyWafConfigCachingRule() {}
     /**
      * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
@@ -125,7 +108,7 @@ public final class PolicyWafConfigCachingRule {
     public static Builder builder(PolicyWafConfigCachingRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private @Nullable String cachingDuration;
@@ -134,11 +117,7 @@ public final class PolicyWafConfigCachingRule {
         private @Nullable Boolean isClientCachingEnabled;
         private @Nullable String key;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PolicyWafConfigCachingRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -150,18 +129,22 @@ public final class PolicyWafConfigCachingRule {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder cachingDuration(@Nullable String cachingDuration) {
             this.cachingDuration = cachingDuration;
             return this;
         }
+        @CustomType.Setter
         public Builder clientCachingDuration(@Nullable String clientCachingDuration) {
             this.clientCachingDuration = clientCachingDuration;
             return this;
         }
+        @CustomType.Setter
         public Builder criterias(List<PolicyWafConfigCachingRuleCriteria> criterias) {
             this.criterias = Objects.requireNonNull(criterias);
             return this;
@@ -169,19 +152,31 @@ public final class PolicyWafConfigCachingRule {
         public Builder criterias(PolicyWafConfigCachingRuleCriteria... criterias) {
             return criterias(List.of(criterias));
         }
+        @CustomType.Setter
         public Builder isClientCachingEnabled(@Nullable Boolean isClientCachingEnabled) {
             this.isClientCachingEnabled = isClientCachingEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder key(@Nullable String key) {
             this.key = key;
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public PolicyWafConfigCachingRule build() {
-            return new PolicyWafConfigCachingRule(action, cachingDuration, clientCachingDuration, criterias, isClientCachingEnabled, key, name);
+        }
+        public PolicyWafConfigCachingRule build() {
+            final var o = new PolicyWafConfigCachingRule();
+            o.action = action;
+            o.cachingDuration = cachingDuration;
+            o.clientCachingDuration = clientCachingDuration;
+            o.criterias = criterias;
+            o.isClientCachingEnabled = isClientCachingEnabled;
+            o.key = key;
+            o.name = name;
+            return o;
         }
     }
 }

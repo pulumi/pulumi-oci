@@ -9,13 +9,9 @@ import java.util.Objects;
 
 @CustomType
 public final class ExadataInfrastructureStorageMaintenanceWindowMonth {
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private ExadataInfrastructureStorageMaintenanceWindowMonth(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private ExadataInfrastructureStorageMaintenanceWindowMonth() {}
     public String name() {
         return this.name;
     }
@@ -27,24 +23,24 @@ public final class ExadataInfrastructureStorageMaintenanceWindowMonth {
     public static Builder builder(ExadataInfrastructureStorageMaintenanceWindowMonth defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ExadataInfrastructureStorageMaintenanceWindowMonth defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public ExadataInfrastructureStorageMaintenanceWindowMonth build() {
-            return new ExadataInfrastructureStorageMaintenanceWindowMonth(name);
+        }
+        public ExadataInfrastructureStorageMaintenanceWindowMonth build() {
+            final var o = new ExadataInfrastructureStorageMaintenanceWindowMonth();
+            o.name = name;
+            return o;
         }
     }
 }

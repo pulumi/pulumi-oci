@@ -52,6 +52,10 @@ export interface GetCategoryResult {
      */
     readonly compartmentId: string;
     /**
+     * The name associated with the compartment.
+     */
+    readonly compartmentName: string;
+    /**
      * Text describing the category.
      */
     readonly description: string;

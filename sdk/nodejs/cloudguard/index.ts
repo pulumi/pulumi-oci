@@ -6,17 +6,24 @@ import * as utilities from "../utilities";
 
 // Export members:
 export * from "./cloudGuardConfiguration";
+export * from "./cloudGuardDataSource";
 export * from "./dataMaskRule";
 export * from "./detectorRecipe";
 export * from "./getCloudGuardConfiguration";
 export * from "./getDataMaskRule";
 export * from "./getDataMaskRules";
+export * from "./getDataSource";
+export * from "./getDataSourceEvent";
+export * from "./getDataSourceEvents";
+export * from "./getDataSources";
 export * from "./getDetectorRecipe";
 export * from "./getDetectorRecipes";
 export * from "./getGuardTarget";
 export * from "./getGuardTargets";
 export * from "./getManagedList";
 export * from "./getManagedLists";
+export * from "./getProblemEntities";
+export * from "./getProblemEntity";
 export * from "./getResponderRecipe";
 export * from "./getResponderRecipes";
 export * from "./getSecurityPolicies";
@@ -33,6 +40,7 @@ export * from "./target";
 
 // Import resources to register:
 import { CloudGuardConfiguration } from "./cloudGuardConfiguration";
+import { CloudGuardDataSource } from "./cloudGuardDataSource";
 import { DataMaskRule } from "./dataMaskRule";
 import { DetectorRecipe } from "./detectorRecipe";
 import { ManagedList } from "./managedList";
@@ -47,6 +55,8 @@ const _module = {
         switch (type) {
             case "oci:CloudGuard/cloudGuardConfiguration:CloudGuardConfiguration":
                 return new CloudGuardConfiguration(name, <any>undefined, { urn })
+            case "oci:CloudGuard/cloudGuardDataSource:CloudGuardDataSource":
+                return new CloudGuardDataSource(name, <any>undefined, { urn })
             case "oci:CloudGuard/dataMaskRule:DataMaskRule":
                 return new DataMaskRule(name, <any>undefined, { urn })
             case "oci:CloudGuard/detectorRecipe:DetectorRecipe":
@@ -67,6 +77,7 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("oci", "CloudGuard/cloudGuardConfiguration", _module)
+pulumi.runtime.registerResourceModule("oci", "CloudGuard/cloudGuardDataSource", _module)
 pulumi.runtime.registerResourceModule("oci", "CloudGuard/dataMaskRule", _module)
 pulumi.runtime.registerResourceModule("oci", "CloudGuard/detectorRecipe", _module)
 pulumi.runtime.registerResourceModule("oci", "CloudGuard/managedList", _module)

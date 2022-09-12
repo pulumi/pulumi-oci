@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetListenersListenerCollection {
-    private final List<GetListenersListenerCollectionItem> items;
+    private List<GetListenersListenerCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetListenersListenerCollection(@CustomType.Parameter("items") List<GetListenersListenerCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetListenersListenerCollection() {}
     public List<GetListenersListenerCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetListenersListenerCollection {
     public static Builder builder(GetListenersListenerCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetListenersListenerCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListenersListenerCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetListenersListenerCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetListenersListenerCollectionItem... items) {
             return items(List.of(items));
-        }        public GetListenersListenerCollection build() {
-            return new GetListenersListenerCollection(items);
+        }
+        public GetListenersListenerCollection build() {
+            final var o = new GetListenersListenerCollection();
+            o.items = items;
+            return o;
         }
     }
 }

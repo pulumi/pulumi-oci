@@ -14,13 +14,9 @@ public final class GetDeployStageGreenBackendIp {
      * @return The IP address of the backend server. A server could be a compute instance or a load balancer.
      * 
      */
-    private final List<String> items;
+    private List<String> items;
 
-    @CustomType.Constructor
-    private GetDeployStageGreenBackendIp(@CustomType.Parameter("items") List<String> items) {
-        this.items = items;
-    }
-
+    private GetDeployStageGreenBackendIp() {}
     /**
      * @return The IP address of the backend server. A server could be a compute instance or a load balancer.
      * 
@@ -36,27 +32,27 @@ public final class GetDeployStageGreenBackendIp {
     public static Builder builder(GetDeployStageGreenBackendIp defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployStageGreenBackendIp defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<String> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(String... items) {
             return items(List.of(items));
-        }        public GetDeployStageGreenBackendIp build() {
-            return new GetDeployStageGreenBackendIp(items);
+        }
+        public GetDeployStageGreenBackendIp build() {
+            final var o = new GetDeployStageGreenBackendIp();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -17,122 +17,85 @@ public final class GetContainerImageResult {
      * @return The compartment OCID to which the container image belongs. Inferred from the container repository.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The OCID of the user or principal that pushed the version.
      * 
      */
-    private final String createdBy;
+    private String createdBy;
     /**
      * @return The sha256 digest of the image layer.
      * 
      */
-    private final String digest;
+    private String digest;
     /**
      * @return The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then &#39;unknown&#39; is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String imageId;
+    private String id;
+    private String imageId;
     /**
      * @return Layers of which the image is composed, ordered by the layer digest.
      * 
      */
-    private final List<GetContainerImageLayer> layers;
+    private List<GetContainerImageLayer> layers;
     /**
      * @return The total size of the container image layers in bytes.
      * 
      */
-    private final String layersSizeInBytes;
+    private String layersSizeInBytes;
     /**
      * @return The size of the container image manifest in bytes.
      * 
      */
-    private final Integer manifestSizeInBytes;
+    private Integer manifestSizeInBytes;
     /**
      * @return Total number of pulls.
      * 
      */
-    private final String pullCount;
+    private String pullCount;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
      * 
      */
-    private final String repositoryId;
+    private String repositoryId;
     /**
      * @return The container repository name.
      * 
      */
-    private final String repositoryName;
+    private String repositoryName;
     /**
      * @return The current state of the container image.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The creation time of the version.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return An RFC 3339 timestamp indicating when the image was last pulled.
      * 
      */
-    private final String timeLastPulled;
+    private String timeLastPulled;
     /**
      * @return The version name.
      * 
      */
-    private final String version;
+    private String version;
     /**
      * @return The versions associated with this image.
      * 
      */
-    private final List<GetContainerImageVersion> versions;
+    private List<GetContainerImageVersion> versions;
 
-    @CustomType.Constructor
-    private GetContainerImageResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("createdBy") String createdBy,
-        @CustomType.Parameter("digest") String digest,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("imageId") String imageId,
-        @CustomType.Parameter("layers") List<GetContainerImageLayer> layers,
-        @CustomType.Parameter("layersSizeInBytes") String layersSizeInBytes,
-        @CustomType.Parameter("manifestSizeInBytes") Integer manifestSizeInBytes,
-        @CustomType.Parameter("pullCount") String pullCount,
-        @CustomType.Parameter("repositoryId") String repositoryId,
-        @CustomType.Parameter("repositoryName") String repositoryName,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeLastPulled") String timeLastPulled,
-        @CustomType.Parameter("version") String version,
-        @CustomType.Parameter("versions") List<GetContainerImageVersion> versions) {
-        this.compartmentId = compartmentId;
-        this.createdBy = createdBy;
-        this.digest = digest;
-        this.displayName = displayName;
-        this.id = id;
-        this.imageId = imageId;
-        this.layers = layers;
-        this.layersSizeInBytes = layersSizeInBytes;
-        this.manifestSizeInBytes = manifestSizeInBytes;
-        this.pullCount = pullCount;
-        this.repositoryId = repositoryId;
-        this.repositoryName = repositoryName;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeLastPulled = timeLastPulled;
-        this.version = version;
-        this.versions = versions;
-    }
-
+    private GetContainerImageResult() {}
     /**
      * @return The compartment OCID to which the container image belongs. Inferred from the container repository.
      * 
@@ -256,7 +219,7 @@ public final class GetContainerImageResult {
     public static Builder builder(GetContainerImageResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String createdBy;
@@ -275,11 +238,7 @@ public final class GetContainerImageResult {
         private String timeLastPulled;
         private String version;
         private List<GetContainerImageVersion> versions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetContainerImageResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -301,30 +260,37 @@ public final class GetContainerImageResult {
     	      this.versions = defaults.versions;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder createdBy(String createdBy) {
             this.createdBy = Objects.requireNonNull(createdBy);
             return this;
         }
+        @CustomType.Setter
         public Builder digest(String digest) {
             this.digest = Objects.requireNonNull(digest);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder imageId(String imageId) {
             this.imageId = Objects.requireNonNull(imageId);
             return this;
         }
+        @CustomType.Setter
         public Builder layers(List<GetContainerImageLayer> layers) {
             this.layers = Objects.requireNonNull(layers);
             return this;
@@ -332,50 +298,79 @@ public final class GetContainerImageResult {
         public Builder layers(GetContainerImageLayer... layers) {
             return layers(List.of(layers));
         }
+        @CustomType.Setter
         public Builder layersSizeInBytes(String layersSizeInBytes) {
             this.layersSizeInBytes = Objects.requireNonNull(layersSizeInBytes);
             return this;
         }
+        @CustomType.Setter
         public Builder manifestSizeInBytes(Integer manifestSizeInBytes) {
             this.manifestSizeInBytes = Objects.requireNonNull(manifestSizeInBytes);
             return this;
         }
+        @CustomType.Setter
         public Builder pullCount(String pullCount) {
             this.pullCount = Objects.requireNonNull(pullCount);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryName(String repositoryName) {
             this.repositoryName = Objects.requireNonNull(repositoryName);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastPulled(String timeLastPulled) {
             this.timeLastPulled = Objects.requireNonNull(timeLastPulled);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
         }
+        @CustomType.Setter
         public Builder versions(List<GetContainerImageVersion> versions) {
             this.versions = Objects.requireNonNull(versions);
             return this;
         }
         public Builder versions(GetContainerImageVersion... versions) {
             return versions(List.of(versions));
-        }        public GetContainerImageResult build() {
-            return new GetContainerImageResult(compartmentId, createdBy, digest, displayName, id, imageId, layers, layersSizeInBytes, manifestSizeInBytes, pullCount, repositoryId, repositoryName, state, timeCreated, timeLastPulled, version, versions);
+        }
+        public GetContainerImageResult build() {
+            final var o = new GetContainerImageResult();
+            o.compartmentId = compartmentId;
+            o.createdBy = createdBy;
+            o.digest = digest;
+            o.displayName = displayName;
+            o.id = id;
+            o.imageId = imageId;
+            o.layers = layers;
+            o.layersSizeInBytes = layersSizeInBytes;
+            o.manifestSizeInBytes = manifestSizeInBytes;
+            o.pullCount = pullCount;
+            o.repositoryId = repositoryId;
+            o.repositoryName = repositoryName;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeLastPulled = timeLastPulled;
+            o.version = version;
+            o.versions = versions;
+            return o;
         }
     }
 }

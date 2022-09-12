@@ -14,13 +14,9 @@ public final class GetBuildRunBuildOutputExportedVariable {
      * @return List of exported variables.
      * 
      */
-    private final List<GetBuildRunBuildOutputExportedVariableItem> items;
+    private List<GetBuildRunBuildOutputExportedVariableItem> items;
 
-    @CustomType.Constructor
-    private GetBuildRunBuildOutputExportedVariable(@CustomType.Parameter("items") List<GetBuildRunBuildOutputExportedVariableItem> items) {
-        this.items = items;
-    }
-
+    private GetBuildRunBuildOutputExportedVariable() {}
     /**
      * @return List of exported variables.
      * 
@@ -36,27 +32,27 @@ public final class GetBuildRunBuildOutputExportedVariable {
     public static Builder builder(GetBuildRunBuildOutputExportedVariable defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBuildRunBuildOutputExportedVariableItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunBuildOutputExportedVariable defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetBuildRunBuildOutputExportedVariableItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetBuildRunBuildOutputExportedVariableItem... items) {
             return items(List.of(items));
-        }        public GetBuildRunBuildOutputExportedVariable build() {
-            return new GetBuildRunBuildOutputExportedVariable(items);
+        }
+        public GetBuildRunBuildOutputExportedVariable build() {
+            final var o = new GetBuildRunBuildOutputExportedVariable();
+            o.items = items;
+            return o;
         }
     }
 }

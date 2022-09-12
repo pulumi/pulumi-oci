@@ -13,28 +13,19 @@ public final class GetCustomTablesCustomTableCollectionItemSavedCustomTableGroup
      * @return The tag key.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return The tag namespace.
      * 
      */
-    private final String namespace;
+    private String namespace;
     /**
      * @return The tag value.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag(
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("value") String value) {
-        this.key = key;
-        this.namespace = namespace;
-        this.value = value;
-    }
-
+    private GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag() {}
     /**
      * @return The tag key.
      * 
@@ -64,16 +55,12 @@ public final class GetCustomTablesCustomTableCollectionItemSavedCustomTableGroup
     public static Builder builder(GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String key;
         private String namespace;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.key = defaults.key;
@@ -81,19 +68,27 @@ public final class GetCustomTablesCustomTableCollectionItemSavedCustomTableGroup
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag build() {
-            return new GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag(key, namespace, value);
+        }
+        public GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag build() {
+            final var o = new GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag();
+            o.key = key;
+            o.namespace = namespace;
+            o.value = value;
+            return o;
         }
     }
 }

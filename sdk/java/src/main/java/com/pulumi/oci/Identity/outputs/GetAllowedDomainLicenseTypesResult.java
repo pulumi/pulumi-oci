@@ -18,27 +18,16 @@ public final class GetAllowedDomainLicenseTypesResult {
      * @return The list of allowed_domain_license_types.
      * 
      */
-    private final List<GetAllowedDomainLicenseTypesAllowedDomainLicenseType> allowedDomainLicenseTypes;
-    private final @Nullable String currentLicenseTypeName;
-    private final @Nullable List<GetAllowedDomainLicenseTypesFilter> filters;
+    private List<GetAllowedDomainLicenseTypesAllowedDomainLicenseType> allowedDomainLicenseTypes;
+    private @Nullable String currentLicenseTypeName;
+    private @Nullable List<GetAllowedDomainLicenseTypesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetAllowedDomainLicenseTypesResult(
-        @CustomType.Parameter("allowedDomainLicenseTypes") List<GetAllowedDomainLicenseTypesAllowedDomainLicenseType> allowedDomainLicenseTypes,
-        @CustomType.Parameter("currentLicenseTypeName") @Nullable String currentLicenseTypeName,
-        @CustomType.Parameter("filters") @Nullable List<GetAllowedDomainLicenseTypesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.allowedDomainLicenseTypes = allowedDomainLicenseTypes;
-        this.currentLicenseTypeName = currentLicenseTypeName;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetAllowedDomainLicenseTypesResult() {}
     /**
      * @return The list of allowed_domain_license_types.
      * 
@@ -67,17 +56,13 @@ public final class GetAllowedDomainLicenseTypesResult {
     public static Builder builder(GetAllowedDomainLicenseTypesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAllowedDomainLicenseTypesAllowedDomainLicenseType> allowedDomainLicenseTypes;
         private @Nullable String currentLicenseTypeName;
         private @Nullable List<GetAllowedDomainLicenseTypesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAllowedDomainLicenseTypesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowedDomainLicenseTypes = defaults.allowedDomainLicenseTypes;
@@ -86,6 +71,7 @@ public final class GetAllowedDomainLicenseTypesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder allowedDomainLicenseTypes(List<GetAllowedDomainLicenseTypesAllowedDomainLicenseType> allowedDomainLicenseTypes) {
             this.allowedDomainLicenseTypes = Objects.requireNonNull(allowedDomainLicenseTypes);
             return this;
@@ -93,10 +79,12 @@ public final class GetAllowedDomainLicenseTypesResult {
         public Builder allowedDomainLicenseTypes(GetAllowedDomainLicenseTypesAllowedDomainLicenseType... allowedDomainLicenseTypes) {
             return allowedDomainLicenseTypes(List.of(allowedDomainLicenseTypes));
         }
+        @CustomType.Setter
         public Builder currentLicenseTypeName(@Nullable String currentLicenseTypeName) {
             this.currentLicenseTypeName = currentLicenseTypeName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAllowedDomainLicenseTypesFilter> filters) {
             this.filters = filters;
             return this;
@@ -104,11 +92,18 @@ public final class GetAllowedDomainLicenseTypesResult {
         public Builder filters(GetAllowedDomainLicenseTypesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetAllowedDomainLicenseTypesResult build() {
-            return new GetAllowedDomainLicenseTypesResult(allowedDomainLicenseTypes, currentLicenseTypeName, filters, id);
+        }
+        public GetAllowedDomainLicenseTypesResult build() {
+            final var o = new GetAllowedDomainLicenseTypesResult();
+            o.allowedDomainLicenseTypes = allowedDomainLicenseTypes;
+            o.currentLicenseTypeName = currentLicenseTypeName;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

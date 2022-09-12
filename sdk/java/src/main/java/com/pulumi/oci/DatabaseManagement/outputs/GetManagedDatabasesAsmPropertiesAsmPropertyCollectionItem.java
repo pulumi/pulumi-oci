@@ -13,13 +13,9 @@ public final class GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem {
      * @return The name of the disk group.
      * 
      */
-    private final String diskGroup;
+    private String diskGroup;
 
-    @CustomType.Constructor
-    private GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem(@CustomType.Parameter("diskGroup") String diskGroup) {
-        this.diskGroup = diskGroup;
-    }
-
+    private GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem() {}
     /**
      * @return The name of the disk group.
      * 
@@ -35,24 +31,24 @@ public final class GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem {
     public static Builder builder(GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String diskGroup;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.diskGroup = defaults.diskGroup;
         }
 
+        @CustomType.Setter
         public Builder diskGroup(String diskGroup) {
             this.diskGroup = Objects.requireNonNull(diskGroup);
             return this;
-        }        public GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem build() {
-            return new GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem(diskGroup);
+        }
+        public GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem build() {
+            final var o = new GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem();
+            o.diskGroup = diskGroup;
+            return o;
         }
     }
 }

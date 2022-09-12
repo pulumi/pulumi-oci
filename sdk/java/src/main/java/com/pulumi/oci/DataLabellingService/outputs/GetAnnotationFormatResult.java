@@ -11,28 +11,19 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAnnotationFormatResult {
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return List of annotation formats.
      * 
      */
-    private final List<GetAnnotationFormatItem> items;
+    private List<GetAnnotationFormatItem> items;
 
-    @CustomType.Constructor
-    private GetAnnotationFormatResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetAnnotationFormatItem> items) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.items = items;
-    }
-
+    private GetAnnotationFormatResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -58,16 +49,12 @@ public final class GetAnnotationFormatResult {
     public static Builder builder(GetAnnotationFormatResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private List<GetAnnotationFormatItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAnnotationFormatResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -75,22 +62,30 @@ public final class GetAnnotationFormatResult {
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetAnnotationFormatItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAnnotationFormatItem... items) {
             return items(List.of(items));
-        }        public GetAnnotationFormatResult build() {
-            return new GetAnnotationFormatResult(compartmentId, id, items);
+        }
+        public GetAnnotationFormatResult build() {
+            final var o = new GetAnnotationFormatResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.items = items;
+            return o;
         }
     }
 }

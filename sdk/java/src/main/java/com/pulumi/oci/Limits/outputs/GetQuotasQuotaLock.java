@@ -13,35 +13,24 @@ public final class GetQuotasQuotaLock {
      * @return A message added by the lock creator. The message typically gives an indication of why the resource is locked.
      * 
      */
-    private final String message;
+    private String message;
     /**
      * @return The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
      * 
      */
-    private final String relatedResourceId;
+    private String relatedResourceId;
     /**
      * @return Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Lock type.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetQuotasQuotaLock(
-        @CustomType.Parameter("message") String message,
-        @CustomType.Parameter("relatedResourceId") String relatedResourceId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("type") String type) {
-        this.message = message;
-        this.relatedResourceId = relatedResourceId;
-        this.timeCreated = timeCreated;
-        this.type = type;
-    }
-
+    private GetQuotasQuotaLock() {}
     /**
      * @return A message added by the lock creator. The message typically gives an indication of why the resource is locked.
      * 
@@ -78,17 +67,13 @@ public final class GetQuotasQuotaLock {
     public static Builder builder(GetQuotasQuotaLock defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String message;
         private String relatedResourceId;
         private String timeCreated;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetQuotasQuotaLock defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.message = defaults.message;
@@ -97,23 +82,33 @@ public final class GetQuotasQuotaLock {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder message(String message) {
             this.message = Objects.requireNonNull(message);
             return this;
         }
+        @CustomType.Setter
         public Builder relatedResourceId(String relatedResourceId) {
             this.relatedResourceId = Objects.requireNonNull(relatedResourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetQuotasQuotaLock build() {
-            return new GetQuotasQuotaLock(message, relatedResourceId, timeCreated, type);
+        }
+        public GetQuotasQuotaLock build() {
+            final var o = new GetQuotasQuotaLock();
+            o.message = message;
+            o.relatedResourceId = relatedResourceId;
+            o.timeCreated = timeCreated;
+            o.type = type;
+            return o;
         }
     }
 }

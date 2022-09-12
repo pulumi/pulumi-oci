@@ -16,77 +16,54 @@ public final class GetGuardTargetTargetResponderRecipe {
      * @return Compartment Identifier
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return ResponderRule description.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return ResponderRule display name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return List of responder rules associated with the recipe after applying all defaults
      * 
      */
-    private final List<GetGuardTargetTargetResponderRecipeEffectiveResponderRule> effectiveResponderRules;
+    private List<GetGuardTargetTargetResponderRecipeEffectiveResponderRule> effectiveResponderRules;
     /**
      * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Owner of ResponderRecipe
      * 
      */
-    private final String owner;
+    private String owner;
     /**
      * @return Unique identifier for Responder Recipe of which this is an extension.
      * 
      */
-    private final String responderRecipeId;
+    private String responderRecipeId;
     /**
      * @return List of responder rules associated with the recipe - user input
      * 
      */
-    private final List<GetGuardTargetTargetResponderRecipeResponderRule> responderRules;
+    private List<GetGuardTargetTargetResponderRecipeResponderRule> responderRules;
     /**
      * @return The date and time the target was created. Format defined by RFC3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the target was updated. Format defined by RFC3339.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetGuardTargetTargetResponderRecipe(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("effectiveResponderRules") List<GetGuardTargetTargetResponderRecipeEffectiveResponderRule> effectiveResponderRules,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("owner") String owner,
-        @CustomType.Parameter("responderRecipeId") String responderRecipeId,
-        @CustomType.Parameter("responderRules") List<GetGuardTargetTargetResponderRecipeResponderRule> responderRules,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.description = description;
-        this.displayName = displayName;
-        this.effectiveResponderRules = effectiveResponderRules;
-        this.id = id;
-        this.owner = owner;
-        this.responderRecipeId = responderRecipeId;
-        this.responderRules = responderRules;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetGuardTargetTargetResponderRecipe() {}
     /**
      * @return Compartment Identifier
      * 
@@ -165,7 +142,7 @@ public final class GetGuardTargetTargetResponderRecipe {
     public static Builder builder(GetGuardTargetTargetResponderRecipe defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String description;
@@ -177,11 +154,7 @@ public final class GetGuardTargetTargetResponderRecipe {
         private List<GetGuardTargetTargetResponderRecipeResponderRule> responderRules;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGuardTargetTargetResponderRecipe defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -196,18 +169,22 @@ public final class GetGuardTargetTargetResponderRecipe {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder effectiveResponderRules(List<GetGuardTargetTargetResponderRecipeEffectiveResponderRule> effectiveResponderRules) {
             this.effectiveResponderRules = Objects.requireNonNull(effectiveResponderRules);
             return this;
@@ -215,18 +192,22 @@ public final class GetGuardTargetTargetResponderRecipe {
         public Builder effectiveResponderRules(GetGuardTargetTargetResponderRecipeEffectiveResponderRule... effectiveResponderRules) {
             return effectiveResponderRules(List.of(effectiveResponderRules));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder owner(String owner) {
             this.owner = Objects.requireNonNull(owner);
             return this;
         }
+        @CustomType.Setter
         public Builder responderRecipeId(String responderRecipeId) {
             this.responderRecipeId = Objects.requireNonNull(responderRecipeId);
             return this;
         }
+        @CustomType.Setter
         public Builder responderRules(List<GetGuardTargetTargetResponderRecipeResponderRule> responderRules) {
             this.responderRules = Objects.requireNonNull(responderRules);
             return this;
@@ -234,15 +215,29 @@ public final class GetGuardTargetTargetResponderRecipe {
         public Builder responderRules(GetGuardTargetTargetResponderRecipeResponderRule... responderRules) {
             return responderRules(List.of(responderRules));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetGuardTargetTargetResponderRecipe build() {
-            return new GetGuardTargetTargetResponderRecipe(compartmentId, description, displayName, effectiveResponderRules, id, owner, responderRecipeId, responderRules, timeCreated, timeUpdated);
+        }
+        public GetGuardTargetTargetResponderRecipe build() {
+            final var o = new GetGuardTargetTargetResponderRecipe();
+            o.compartmentId = compartmentId;
+            o.description = description;
+            o.displayName = displayName;
+            o.effectiveResponderRules = effectiveResponderRules;
+            o.id = id;
+            o.owner = owner;
+            o.responderRecipeId = responderRecipeId;
+            o.responderRules = responderRules;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

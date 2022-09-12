@@ -26,168 +26,111 @@ public final class GetBdsInstancesBdsInstance {
      * @return pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
      * 
      */
-    private final String bootstrapScriptUrl;
+    private String bootstrapScriptUrl;
     /**
      * @return The information about added Cloud SQL capability
      * 
      */
-    private final List<GetBdsInstancesBdsInstanceCloudSqlDetail> cloudSqlDetails;
-    private final String clusterAdminPassword;
+    private List<GetBdsInstancesBdsInstanceCloudSqlDetail> cloudSqlDetails;
+    private String clusterAdminPassword;
     /**
      * @return Specific info about a Hadoop cluster
      * 
      */
-    private final List<GetBdsInstancesBdsInstanceClusterDetail> clusterDetails;
-    private final String clusterPublicKey;
+    private List<GetBdsInstancesBdsInstanceClusterDetail> clusterDetails;
+    private String clusterPublicKey;
     /**
      * @return Version of the Hadoop distribution.
      * 
      */
-    private final String clusterVersion;
+    private String clusterVersion;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final List<GetBdsInstancesBdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNodes;
+    private String compartmentId;
+    private List<GetBdsInstancesBdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNodes;
     /**
      * @return The user who created the cluster.
      * 
      */
-    private final String createdBy;
+    private String createdBy;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the Big Data Service resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Boolean flag specifying whether or not Cloud SQL should be configured.
      * 
      */
-    private final Boolean isCloudSqlConfigured;
+    private Boolean isCloudSqlConfigured;
     /**
      * @return Boolean flag specifying whether or not the cluster is highly available (HA)
      * 
      */
-    private final Boolean isHighAvailability;
+    private Boolean isHighAvailability;
     /**
      * @return Boolean flag specifying whether or not the cluster should be set up as secure.
      * 
      */
-    private final Boolean isSecure;
-    private final String kerberosRealmName;
+    private Boolean isSecure;
+    private String kerberosRealmName;
     /**
      * @return The OCID of the Key Management master encryption key.
      * 
      */
-    private final String kmsKeyId;
-    private final List<GetBdsInstancesBdsInstanceMasterNode> masterNodes;
+    private String kmsKeyId;
+    private List<GetBdsInstancesBdsInstanceMasterNode> masterNodes;
     /**
      * @return Additional configuration of the user&#39;s network.
      * 
      */
-    private final List<GetBdsInstancesBdsInstanceNetworkConfig> networkConfigs;
+    private List<GetBdsInstancesBdsInstanceNetworkConfig> networkConfigs;
     /**
      * @return The list of nodes in the cluster.
      * 
      */
-    private final List<GetBdsInstancesBdsInstanceNode> nodes;
+    private List<GetBdsInstancesBdsInstanceNode> nodes;
     /**
      * @return The number of nodes that form the cluster.
      * 
      */
-    private final Integer numberOfNodes;
+    private Integer numberOfNodes;
     /**
      * @return The state of the cluster.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    private final String timeUpdated;
-    private final List<GetBdsInstancesBdsInstanceUtilNode> utilNodes;
-    private final List<GetBdsInstancesBdsInstanceWorkerNode> workerNodes;
+    private String timeUpdated;
+    private List<GetBdsInstancesBdsInstanceUtilNode> utilNodes;
+    private List<GetBdsInstancesBdsInstanceWorkerNode> workerNodes;
 
-    @CustomType.Constructor
-    private GetBdsInstancesBdsInstance(
-        @CustomType.Parameter("bootstrapScriptUrl") String bootstrapScriptUrl,
-        @CustomType.Parameter("cloudSqlDetails") List<GetBdsInstancesBdsInstanceCloudSqlDetail> cloudSqlDetails,
-        @CustomType.Parameter("clusterAdminPassword") String clusterAdminPassword,
-        @CustomType.Parameter("clusterDetails") List<GetBdsInstancesBdsInstanceClusterDetail> clusterDetails,
-        @CustomType.Parameter("clusterPublicKey") String clusterPublicKey,
-        @CustomType.Parameter("clusterVersion") String clusterVersion,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("computeOnlyWorkerNodes") List<GetBdsInstancesBdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNodes,
-        @CustomType.Parameter("createdBy") String createdBy,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isCloudSqlConfigured") Boolean isCloudSqlConfigured,
-        @CustomType.Parameter("isHighAvailability") Boolean isHighAvailability,
-        @CustomType.Parameter("isSecure") Boolean isSecure,
-        @CustomType.Parameter("kerberosRealmName") String kerberosRealmName,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("masterNodes") List<GetBdsInstancesBdsInstanceMasterNode> masterNodes,
-        @CustomType.Parameter("networkConfigs") List<GetBdsInstancesBdsInstanceNetworkConfig> networkConfigs,
-        @CustomType.Parameter("nodes") List<GetBdsInstancesBdsInstanceNode> nodes,
-        @CustomType.Parameter("numberOfNodes") Integer numberOfNodes,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("utilNodes") List<GetBdsInstancesBdsInstanceUtilNode> utilNodes,
-        @CustomType.Parameter("workerNodes") List<GetBdsInstancesBdsInstanceWorkerNode> workerNodes) {
-        this.bootstrapScriptUrl = bootstrapScriptUrl;
-        this.cloudSqlDetails = cloudSqlDetails;
-        this.clusterAdminPassword = clusterAdminPassword;
-        this.clusterDetails = clusterDetails;
-        this.clusterPublicKey = clusterPublicKey;
-        this.clusterVersion = clusterVersion;
-        this.compartmentId = compartmentId;
-        this.computeOnlyWorkerNodes = computeOnlyWorkerNodes;
-        this.createdBy = createdBy;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isCloudSqlConfigured = isCloudSqlConfigured;
-        this.isHighAvailability = isHighAvailability;
-        this.isSecure = isSecure;
-        this.kerberosRealmName = kerberosRealmName;
-        this.kmsKeyId = kmsKeyId;
-        this.masterNodes = masterNodes;
-        this.networkConfigs = networkConfigs;
-        this.nodes = nodes;
-        this.numberOfNodes = numberOfNodes;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.utilNodes = utilNodes;
-        this.workerNodes = workerNodes;
-    }
-
+    private GetBdsInstancesBdsInstance() {}
     /**
      * @return pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
      * 
@@ -357,7 +300,7 @@ public final class GetBdsInstancesBdsInstance {
     public static Builder builder(GetBdsInstancesBdsInstance defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bootstrapScriptUrl;
         private List<GetBdsInstancesBdsInstanceCloudSqlDetail> cloudSqlDetails;
@@ -386,11 +329,7 @@ public final class GetBdsInstancesBdsInstance {
         private String timeUpdated;
         private List<GetBdsInstancesBdsInstanceUtilNode> utilNodes;
         private List<GetBdsInstancesBdsInstanceWorkerNode> workerNodes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBdsInstancesBdsInstance defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bootstrapScriptUrl = defaults.bootstrapScriptUrl;
@@ -422,10 +361,12 @@ public final class GetBdsInstancesBdsInstance {
     	      this.workerNodes = defaults.workerNodes;
         }
 
+        @CustomType.Setter
         public Builder bootstrapScriptUrl(String bootstrapScriptUrl) {
             this.bootstrapScriptUrl = Objects.requireNonNull(bootstrapScriptUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder cloudSqlDetails(List<GetBdsInstancesBdsInstanceCloudSqlDetail> cloudSqlDetails) {
             this.cloudSqlDetails = Objects.requireNonNull(cloudSqlDetails);
             return this;
@@ -433,10 +374,12 @@ public final class GetBdsInstancesBdsInstance {
         public Builder cloudSqlDetails(GetBdsInstancesBdsInstanceCloudSqlDetail... cloudSqlDetails) {
             return cloudSqlDetails(List.of(cloudSqlDetails));
         }
+        @CustomType.Setter
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = Objects.requireNonNull(clusterAdminPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder clusterDetails(List<GetBdsInstancesBdsInstanceClusterDetail> clusterDetails) {
             this.clusterDetails = Objects.requireNonNull(clusterDetails);
             return this;
@@ -444,18 +387,22 @@ public final class GetBdsInstancesBdsInstance {
         public Builder clusterDetails(GetBdsInstancesBdsInstanceClusterDetail... clusterDetails) {
             return clusterDetails(List.of(clusterDetails));
         }
+        @CustomType.Setter
         public Builder clusterPublicKey(String clusterPublicKey) {
             this.clusterPublicKey = Objects.requireNonNull(clusterPublicKey);
             return this;
         }
+        @CustomType.Setter
         public Builder clusterVersion(String clusterVersion) {
             this.clusterVersion = Objects.requireNonNull(clusterVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder computeOnlyWorkerNodes(List<GetBdsInstancesBdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNodes) {
             this.computeOnlyWorkerNodes = Objects.requireNonNull(computeOnlyWorkerNodes);
             return this;
@@ -463,46 +410,57 @@ public final class GetBdsInstancesBdsInstance {
         public Builder computeOnlyWorkerNodes(GetBdsInstancesBdsInstanceComputeOnlyWorkerNode... computeOnlyWorkerNodes) {
             return computeOnlyWorkerNodes(List.of(computeOnlyWorkerNodes));
         }
+        @CustomType.Setter
         public Builder createdBy(String createdBy) {
             this.createdBy = Objects.requireNonNull(createdBy);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isCloudSqlConfigured(Boolean isCloudSqlConfigured) {
             this.isCloudSqlConfigured = Objects.requireNonNull(isCloudSqlConfigured);
             return this;
         }
+        @CustomType.Setter
         public Builder isHighAvailability(Boolean isHighAvailability) {
             this.isHighAvailability = Objects.requireNonNull(isHighAvailability);
             return this;
         }
+        @CustomType.Setter
         public Builder isSecure(Boolean isSecure) {
             this.isSecure = Objects.requireNonNull(isSecure);
             return this;
         }
+        @CustomType.Setter
         public Builder kerberosRealmName(String kerberosRealmName) {
             this.kerberosRealmName = Objects.requireNonNull(kerberosRealmName);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder masterNodes(List<GetBdsInstancesBdsInstanceMasterNode> masterNodes) {
             this.masterNodes = Objects.requireNonNull(masterNodes);
             return this;
@@ -510,6 +468,7 @@ public final class GetBdsInstancesBdsInstance {
         public Builder masterNodes(GetBdsInstancesBdsInstanceMasterNode... masterNodes) {
             return masterNodes(List.of(masterNodes));
         }
+        @CustomType.Setter
         public Builder networkConfigs(List<GetBdsInstancesBdsInstanceNetworkConfig> networkConfigs) {
             this.networkConfigs = Objects.requireNonNull(networkConfigs);
             return this;
@@ -517,6 +476,7 @@ public final class GetBdsInstancesBdsInstance {
         public Builder networkConfigs(GetBdsInstancesBdsInstanceNetworkConfig... networkConfigs) {
             return networkConfigs(List.of(networkConfigs));
         }
+        @CustomType.Setter
         public Builder nodes(List<GetBdsInstancesBdsInstanceNode> nodes) {
             this.nodes = Objects.requireNonNull(nodes);
             return this;
@@ -524,22 +484,27 @@ public final class GetBdsInstancesBdsInstance {
         public Builder nodes(GetBdsInstancesBdsInstanceNode... nodes) {
             return nodes(List.of(nodes));
         }
+        @CustomType.Setter
         public Builder numberOfNodes(Integer numberOfNodes) {
             this.numberOfNodes = Objects.requireNonNull(numberOfNodes);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder utilNodes(List<GetBdsInstancesBdsInstanceUtilNode> utilNodes) {
             this.utilNodes = Objects.requireNonNull(utilNodes);
             return this;
@@ -547,14 +512,44 @@ public final class GetBdsInstancesBdsInstance {
         public Builder utilNodes(GetBdsInstancesBdsInstanceUtilNode... utilNodes) {
             return utilNodes(List.of(utilNodes));
         }
+        @CustomType.Setter
         public Builder workerNodes(List<GetBdsInstancesBdsInstanceWorkerNode> workerNodes) {
             this.workerNodes = Objects.requireNonNull(workerNodes);
             return this;
         }
         public Builder workerNodes(GetBdsInstancesBdsInstanceWorkerNode... workerNodes) {
             return workerNodes(List.of(workerNodes));
-        }        public GetBdsInstancesBdsInstance build() {
-            return new GetBdsInstancesBdsInstance(bootstrapScriptUrl, cloudSqlDetails, clusterAdminPassword, clusterDetails, clusterPublicKey, clusterVersion, compartmentId, computeOnlyWorkerNodes, createdBy, definedTags, displayName, freeformTags, id, isCloudSqlConfigured, isHighAvailability, isSecure, kerberosRealmName, kmsKeyId, masterNodes, networkConfigs, nodes, numberOfNodes, state, timeCreated, timeUpdated, utilNodes, workerNodes);
+        }
+        public GetBdsInstancesBdsInstance build() {
+            final var o = new GetBdsInstancesBdsInstance();
+            o.bootstrapScriptUrl = bootstrapScriptUrl;
+            o.cloudSqlDetails = cloudSqlDetails;
+            o.clusterAdminPassword = clusterAdminPassword;
+            o.clusterDetails = clusterDetails;
+            o.clusterPublicKey = clusterPublicKey;
+            o.clusterVersion = clusterVersion;
+            o.compartmentId = compartmentId;
+            o.computeOnlyWorkerNodes = computeOnlyWorkerNodes;
+            o.createdBy = createdBy;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isCloudSqlConfigured = isCloudSqlConfigured;
+            o.isHighAvailability = isHighAvailability;
+            o.isSecure = isSecure;
+            o.kerberosRealmName = kerberosRealmName;
+            o.kmsKeyId = kmsKeyId;
+            o.masterNodes = masterNodes;
+            o.networkConfigs = networkConfigs;
+            o.nodes = nodes;
+            o.numberOfNodes = numberOfNodes;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.utilNodes = utilNodes;
+            o.workerNodes = workerNodes;
+            return o;
         }
     }
 }

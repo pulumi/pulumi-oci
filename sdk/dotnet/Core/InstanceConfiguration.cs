@@ -55,6 +55,14 @@ namespace Pulumi.Oci.Core
     ///                     },
     ///                     CreateDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs
     ///                     {
+    ///                         AutotunePolicies = new[]
+    ///                         {
+    ///                             new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs
+    ///                             {
+    ///                                 AutotuneType = @var.Instance_configuration_instance_details_block_volumes_create_details_autotune_policies_autotune_type,
+    ///                                 MaxVpusPerGb = @var.Instance_configuration_instance_details_block_volumes_create_details_autotune_policies_max_vpus_per_gb,
+    ///                             },
+    ///                         },
     ///                         AvailabilityDomain = @var.Instance_configuration_instance_details_block_volumes_create_details_availability_domain,
     ///                         BackupPolicyId = data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id,
     ///                         CompartmentId = @var.Compartment_id,

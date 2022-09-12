@@ -15,28 +15,19 @@ public final class DrgRouteDistributionStatementMatchCriteria {
      * @return The type of the network resource to be included in this match. A match for a network type implies that all DRG attachments of that type insert routes into the table.
      * 
      */
-    private final @Nullable String attachmentType;
+    private @Nullable String attachmentType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment.
      * 
      */
-    private final @Nullable String drgAttachmentId;
+    private @Nullable String drgAttachmentId;
     /**
      * @return (Updatable) The type of the match criteria for a route distribution statement.
      * 
      */
-    private final @Nullable String matchType;
+    private @Nullable String matchType;
 
-    @CustomType.Constructor
-    private DrgRouteDistributionStatementMatchCriteria(
-        @CustomType.Parameter("attachmentType") @Nullable String attachmentType,
-        @CustomType.Parameter("drgAttachmentId") @Nullable String drgAttachmentId,
-        @CustomType.Parameter("matchType") @Nullable String matchType) {
-        this.attachmentType = attachmentType;
-        this.drgAttachmentId = drgAttachmentId;
-        this.matchType = matchType;
-    }
-
+    private DrgRouteDistributionStatementMatchCriteria() {}
     /**
      * @return The type of the network resource to be included in this match. A match for a network type implies that all DRG attachments of that type insert routes into the table.
      * 
@@ -66,16 +57,12 @@ public final class DrgRouteDistributionStatementMatchCriteria {
     public static Builder builder(DrgRouteDistributionStatementMatchCriteria defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String attachmentType;
         private @Nullable String drgAttachmentId;
         private @Nullable String matchType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DrgRouteDistributionStatementMatchCriteria defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.attachmentType = defaults.attachmentType;
@@ -83,19 +70,27 @@ public final class DrgRouteDistributionStatementMatchCriteria {
     	      this.matchType = defaults.matchType;
         }
 
+        @CustomType.Setter
         public Builder attachmentType(@Nullable String attachmentType) {
             this.attachmentType = attachmentType;
             return this;
         }
+        @CustomType.Setter
         public Builder drgAttachmentId(@Nullable String drgAttachmentId) {
             this.drgAttachmentId = drgAttachmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder matchType(@Nullable String matchType) {
             this.matchType = matchType;
             return this;
-        }        public DrgRouteDistributionStatementMatchCriteria build() {
-            return new DrgRouteDistributionStatementMatchCriteria(attachmentType, drgAttachmentId, matchType);
+        }
+        public DrgRouteDistributionStatementMatchCriteria build() {
+            final var o = new DrgRouteDistributionStatementMatchCriteria();
+            o.attachmentType = attachmentType;
+            o.drgAttachmentId = drgAttachmentId;
+            o.matchType = matchType;
+            return o;
         }
     }
 }

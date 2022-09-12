@@ -13,42 +13,29 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabasePee
      * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Proxy URL to connect to object store.
      * 
      */
-    private final String internetProxy;
+    private String internetProxy;
     /**
      * @return Type of the database backup destination.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
      * 
      */
-    private final String vpcPassword;
+    private String vpcPassword;
     /**
      * @return For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
      * 
      */
-    private final String vpcUser;
+    private String vpcUser;
 
-    @CustomType.Constructor
-    private GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("internetProxy") String internetProxy,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("vpcPassword") String vpcPassword,
-        @CustomType.Parameter("vpcUser") String vpcUser) {
-        this.id = id;
-        this.internetProxy = internetProxy;
-        this.type = type;
-        this.vpcPassword = vpcPassword;
-        this.vpcUser = vpcUser;
-    }
-
+    private GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail() {}
     /**
      * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
@@ -92,18 +79,14 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabasePee
     public static Builder builder(GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String internetProxy;
         private String type;
         private String vpcPassword;
         private String vpcUser;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -113,27 +96,39 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabasePee
     	      this.vpcUser = defaults.vpcUser;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder internetProxy(String internetProxy) {
             this.internetProxy = Objects.requireNonNull(internetProxy);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder vpcPassword(String vpcPassword) {
             this.vpcPassword = Objects.requireNonNull(vpcPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder vpcUser(String vpcUser) {
             this.vpcUser = Objects.requireNonNull(vpcUser);
             return this;
-        }        public GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail build() {
-            return new GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail(id, internetProxy, type, vpcPassword, vpcUser);
+        }
+        public GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail build() {
+            final var o = new GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail();
+            o.id = id;
+            o.internetProxy = internetProxy;
+            o.type = type;
+            o.vpcPassword = vpcPassword;
+            o.vpcUser = vpcUser;
+            return o;
         }
     }
 }

@@ -13,13 +13,9 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
      * @return The type descriminator.
      * 
      */
-    private final String kind;
+    private String kind;
 
-    @CustomType.Constructor
-    private GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric(@CustomType.Parameter("kind") String kind) {
-        this.kind = kind;
-    }
-
+    private GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric() {}
     /**
      * @return The type descriminator.
      * 
@@ -35,24 +31,24 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
     public static Builder builder(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String kind;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kind = defaults.kind;
         }
 
+        @CustomType.Setter
         public Builder kind(String kind) {
             this.kind = Objects.requireNonNull(kind);
             return this;
-        }        public GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric build() {
-            return new GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric(kind);
+        }
+        public GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric build() {
+            final var o = new GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric();
+            o.kind = kind;
+            return o;
         }
     }
 }

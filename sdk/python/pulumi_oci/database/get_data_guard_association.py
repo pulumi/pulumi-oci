@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetDataGuardAssociationResult',
@@ -21,7 +22,7 @@ class GetDataGuardAssociationResult:
     """
     A collection of values returned by getDataGuardAssociation.
     """
-    def __init__(__self__, apply_lag=None, apply_rate=None, availability_domain=None, backup_network_nsg_ids=None, cpu_core_count=None, create_async=None, creation_type=None, data_guard_association_id=None, database_admin_password=None, database_defined_tags=None, database_freeform_tags=None, database_id=None, database_software_image_id=None, db_system_defined_tags=None, db_system_freeform_tags=None, delete_standby_db_home_on_delete=None, display_name=None, fault_domains=None, hostname=None, id=None, is_active_data_guard_enabled=None, license_model=None, lifecycle_details=None, node_count=None, nsg_ids=None, peer_data_guard_association_id=None, peer_database_id=None, peer_db_home_id=None, peer_db_system_id=None, peer_db_unique_name=None, peer_role=None, peer_sid_prefix=None, peer_vm_cluster_id=None, private_ip=None, protection_mode=None, role=None, shape=None, state=None, storage_volume_performance_mode=None, subnet_id=None, time_created=None, time_zone=None, transport_type=None):
+    def __init__(__self__, apply_lag=None, apply_rate=None, availability_domain=None, backup_network_nsg_ids=None, cpu_core_count=None, create_async=None, creation_type=None, data_collection_options=None, data_guard_association_id=None, database_admin_password=None, database_defined_tags=None, database_freeform_tags=None, database_id=None, database_software_image_id=None, db_system_defined_tags=None, db_system_freeform_tags=None, delete_standby_db_home_on_delete=None, display_name=None, fault_domains=None, hostname=None, id=None, is_active_data_guard_enabled=None, license_model=None, lifecycle_details=None, node_count=None, nsg_ids=None, peer_data_guard_association_id=None, peer_database_id=None, peer_db_home_id=None, peer_db_system_id=None, peer_db_unique_name=None, peer_role=None, peer_sid_prefix=None, peer_vm_cluster_id=None, private_ip=None, protection_mode=None, role=None, shape=None, state=None, storage_volume_performance_mode=None, subnet_id=None, time_created=None, time_zone=None, transport_type=None):
         if apply_lag and not isinstance(apply_lag, str):
             raise TypeError("Expected argument 'apply_lag' to be a str")
         pulumi.set(__self__, "apply_lag", apply_lag)
@@ -43,6 +44,9 @@ class GetDataGuardAssociationResult:
         if creation_type and not isinstance(creation_type, str):
             raise TypeError("Expected argument 'creation_type' to be a str")
         pulumi.set(__self__, "creation_type", creation_type)
+        if data_collection_options and not isinstance(data_collection_options, list):
+            raise TypeError("Expected argument 'data_collection_options' to be a list")
+        pulumi.set(__self__, "data_collection_options", data_collection_options)
         if data_guard_association_id and not isinstance(data_guard_association_id, str):
             raise TypeError("Expected argument 'data_guard_association_id' to be a str")
         pulumi.set(__self__, "data_guard_association_id", data_guard_association_id)
@@ -192,6 +196,11 @@ class GetDataGuardAssociationResult:
     @pulumi.getter(name="creationType")
     def creation_type(self) -> str:
         return pulumi.get(self, "creation_type")
+
+    @property
+    @pulumi.getter(name="dataCollectionOptions")
+    def data_collection_options(self) -> Sequence['outputs.GetDataGuardAssociationDataCollectionOptionResult']:
+        return pulumi.get(self, "data_collection_options")
 
     @property
     @pulumi.getter(name="dataGuardAssociationId")
@@ -429,6 +438,7 @@ class AwaitableGetDataGuardAssociationResult(GetDataGuardAssociationResult):
             cpu_core_count=self.cpu_core_count,
             create_async=self.create_async,
             creation_type=self.creation_type,
+            data_collection_options=self.data_collection_options,
             data_guard_association_id=self.data_guard_association_id,
             database_admin_password=self.database_admin_password,
             database_defined_tags=self.database_defined_tags,
@@ -503,6 +513,7 @@ def get_data_guard_association(data_guard_association_id: Optional[str] = None,
         cpu_core_count=__ret__.cpu_core_count,
         create_async=__ret__.create_async,
         creation_type=__ret__.creation_type,
+        data_collection_options=__ret__.data_collection_options,
         data_guard_association_id=__ret__.data_guard_association_id,
         database_admin_password=__ret__.database_admin_password,
         database_defined_tags=__ret__.database_defined_tags,

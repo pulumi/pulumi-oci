@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRunLogsResult {
-    private final @Nullable List<GetRunLogsFilter> filters;
+    private @Nullable List<GetRunLogsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String runId;
+    private String id;
+    private String runId;
     /**
      * @return The list of run_logs.
      * 
      */
-    private final List<GetRunLogsRunLog> runLogs;
+    private List<GetRunLogsRunLog> runLogs;
 
-    @CustomType.Constructor
-    private GetRunLogsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetRunLogsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("runId") String runId,
-        @CustomType.Parameter("runLogs") List<GetRunLogsRunLog> runLogs) {
-        this.filters = filters;
-        this.id = id;
-        this.runId = runId;
-        this.runLogs = runLogs;
-    }
-
+    private GetRunLogsResult() {}
     public List<GetRunLogsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -66,17 +55,13 @@ public final class GetRunLogsResult {
     public static Builder builder(GetRunLogsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetRunLogsFilter> filters;
         private String id;
         private String runId;
         private List<GetRunLogsRunLog> runLogs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRunLogsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -85,6 +70,7 @@ public final class GetRunLogsResult {
     	      this.runLogs = defaults.runLogs;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRunLogsFilter> filters) {
             this.filters = filters;
             return this;
@@ -92,22 +78,31 @@ public final class GetRunLogsResult {
         public Builder filters(GetRunLogsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder runId(String runId) {
             this.runId = Objects.requireNonNull(runId);
             return this;
         }
+        @CustomType.Setter
         public Builder runLogs(List<GetRunLogsRunLog> runLogs) {
             this.runLogs = Objects.requireNonNull(runLogs);
             return this;
         }
         public Builder runLogs(GetRunLogsRunLog... runLogs) {
             return runLogs(List.of(runLogs));
-        }        public GetRunLogsResult build() {
-            return new GetRunLogsResult(filters, id, runId, runLogs);
+        }
+        public GetRunLogsResult build() {
+            final var o = new GetRunLogsResult();
+            o.filters = filters;
+            o.id = id;
+            o.runId = runId;
+            o.runLogs = runLogs;
+            return o;
         }
     }
 }

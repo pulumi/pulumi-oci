@@ -22,7 +22,7 @@ class GetAnalyticsInstancePrivateAccessChannelResult:
     """
     A collection of values returned by getAnalyticsInstancePrivateAccessChannel.
     """
-    def __init__(__self__, analytics_instance_id=None, display_name=None, egress_source_ip_addresses=None, id=None, ip_address=None, key=None, private_access_channel_key=None, private_source_dns_zones=None, subnet_id=None, vcn_id=None):
+    def __init__(__self__, analytics_instance_id=None, display_name=None, egress_source_ip_addresses=None, id=None, ip_address=None, key=None, network_security_group_ids=None, private_access_channel_key=None, private_source_dns_zones=None, private_source_scan_hosts=None, subnet_id=None, vcn_id=None):
         if analytics_instance_id and not isinstance(analytics_instance_id, str):
             raise TypeError("Expected argument 'analytics_instance_id' to be a str")
         pulumi.set(__self__, "analytics_instance_id", analytics_instance_id)
@@ -41,12 +41,18 @@ class GetAnalyticsInstancePrivateAccessChannelResult:
         if key and not isinstance(key, str):
             raise TypeError("Expected argument 'key' to be a str")
         pulumi.set(__self__, "key", key)
+        if network_security_group_ids and not isinstance(network_security_group_ids, list):
+            raise TypeError("Expected argument 'network_security_group_ids' to be a list")
+        pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         if private_access_channel_key and not isinstance(private_access_channel_key, str):
             raise TypeError("Expected argument 'private_access_channel_key' to be a str")
         pulumi.set(__self__, "private_access_channel_key", private_access_channel_key)
         if private_source_dns_zones and not isinstance(private_source_dns_zones, list):
             raise TypeError("Expected argument 'private_source_dns_zones' to be a list")
         pulumi.set(__self__, "private_source_dns_zones", private_source_dns_zones)
+        if private_source_scan_hosts and not isinstance(private_source_scan_hosts, list):
+            raise TypeError("Expected argument 'private_source_scan_hosts' to be a list")
+        pulumi.set(__self__, "private_source_scan_hosts", private_source_scan_hosts)
         if subnet_id and not isinstance(subnet_id, str):
             raise TypeError("Expected argument 'subnet_id' to be a str")
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -97,6 +103,14 @@ class GetAnalyticsInstancePrivateAccessChannelResult:
         return pulumi.get(self, "key")
 
     @property
+    @pulumi.getter(name="networkSecurityGroupIds")
+    def network_security_group_ids(self) -> Sequence[str]:
+        """
+        Network Security Group OCIDs for an Analytics instance.
+        """
+        return pulumi.get(self, "network_security_group_ids")
+
+    @property
     @pulumi.getter(name="privateAccessChannelKey")
     def private_access_channel_key(self) -> str:
         return pulumi.get(self, "private_access_channel_key")
@@ -108,6 +122,14 @@ class GetAnalyticsInstancePrivateAccessChannelResult:
         List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
         """
         return pulumi.get(self, "private_source_dns_zones")
+
+    @property
+    @pulumi.getter(name="privateSourceScanHosts")
+    def private_source_scan_hosts(self) -> Sequence['outputs.GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostResult']:
+        """
+        List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+        """
+        return pulumi.get(self, "private_source_scan_hosts")
 
     @property
     @pulumi.getter(name="subnetId")
@@ -138,8 +160,10 @@ class AwaitableGetAnalyticsInstancePrivateAccessChannelResult(GetAnalyticsInstan
             id=self.id,
             ip_address=self.ip_address,
             key=self.key,
+            network_security_group_ids=self.network_security_group_ids,
             private_access_channel_key=self.private_access_channel_key,
             private_source_dns_zones=self.private_source_dns_zones,
+            private_source_scan_hosts=self.private_source_scan_hosts,
             subnet_id=self.subnet_id,
             vcn_id=self.vcn_id)
 
@@ -179,8 +203,10 @@ def get_analytics_instance_private_access_channel(analytics_instance_id: Optiona
         id=__ret__.id,
         ip_address=__ret__.ip_address,
         key=__ret__.key,
+        network_security_group_ids=__ret__.network_security_group_ids,
         private_access_channel_key=__ret__.private_access_channel_key,
         private_source_dns_zones=__ret__.private_source_dns_zones,
+        private_source_scan_hosts=__ret__.private_source_scan_hosts,
         subnet_id=__ret__.subnet_id,
         vcn_id=__ret__.vcn_id)
 

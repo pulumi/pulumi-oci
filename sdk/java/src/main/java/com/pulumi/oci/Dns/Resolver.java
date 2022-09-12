@@ -24,23 +24,17 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Resolver resource in Oracle Cloud Infrastructure DNS service.
  * 
- * Updates the specified resolver with your new information. Requires a `PRIVATE` scope query parameter.
+ * Updates the specified resolver with your new information.
  * 
  * Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until created VCN&#39;s state shows as Available in OCI console before updating DNS resolver properties.
  * Also a VCN cannot be deleted while its resolver has resolver endpoints. Additionally a resolver endpoint cannot be deleted if it is referenced in the resolver&#39;s rules. To remove the rules from a resolver user needs to update the resolver resource. Since DNS Resolver gets deleted when VCN is deleted there is no support for Delete for DNS Resolver.
  * 
  * ## Import
  * 
- * For legacy Resolvers that were created without using `scope`, these Resolvers can be imported using the `id`, e.g.
+ * Resolvers can be imported using their OCID, e.g.
  * 
  * ```sh
  *  $ pulumi import oci:Dns/resolver:Resolver test_resolver &#34;id&#34;
- * ```
- * 
- *  For Resolvers created using `scope`, these Resolvers can be imported using the `id`, e.g.
- * 
- * ```sh
- *  $ pulumi import oci:Dns/resolver:Resolver test_resolver &#34;resolverId/{resolverId}/scope/{scope}&#34;
  * ```
  * 
  */
@@ -201,18 +195,18 @@ public class Resolver extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.rules);
     }
     /**
-     * Value must be `PRIVATE` when creating private name resolvers.
+     * If specified, must be `PRIVATE` when creating private name resolvers.
      * 
      */
     @Export(name="scope", type=String.class, parameters={})
-    private Output<String> scope;
+    private Output</* @Nullable */ String> scope;
 
     /**
-     * @return Value must be `PRIVATE` when creating private name resolvers.
+     * @return If specified, must be `PRIVATE` when creating private name resolvers.
      * 
      */
-    public Output<String> scope() {
-        return this.scope;
+    public Output<Optional<String>> scope() {
+        return Codegen.optional(this.scope);
     }
     /**
      * The canonical absolute URL of the resource.

@@ -16,49 +16,34 @@ public final class MonitoredResourceDatabaseConnectionDetails {
      * @return (Updatable) Database connector Identifier
      * 
      */
-    private final @Nullable String connectorId;
+    private @Nullable String connectorId;
     /**
      * @return (Updatable) dbId of the database
      * 
      */
-    private final @Nullable String dbId;
+    private @Nullable String dbId;
     /**
      * @return (Updatable) UniqueName used for database connection requests.
      * 
      */
-    private final @Nullable String dbUniqueName;
+    private @Nullable String dbUniqueName;
     /**
      * @return (Updatable) Listener Port number used for connection requests.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return (Updatable) Protocol used in DB connection string when connecting to external database service.
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return (Updatable) Service name used for connection requests.
      * 
      */
-    private final String serviceName;
+    private String serviceName;
 
-    @CustomType.Constructor
-    private MonitoredResourceDatabaseConnectionDetails(
-        @CustomType.Parameter("connectorId") @Nullable String connectorId,
-        @CustomType.Parameter("dbId") @Nullable String dbId,
-        @CustomType.Parameter("dbUniqueName") @Nullable String dbUniqueName,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("serviceName") String serviceName) {
-        this.connectorId = connectorId;
-        this.dbId = dbId;
-        this.dbUniqueName = dbUniqueName;
-        this.port = port;
-        this.protocol = protocol;
-        this.serviceName = serviceName;
-    }
-
+    private MonitoredResourceDatabaseConnectionDetails() {}
     /**
      * @return (Updatable) Database connector Identifier
      * 
@@ -109,7 +94,7 @@ public final class MonitoredResourceDatabaseConnectionDetails {
     public static Builder builder(MonitoredResourceDatabaseConnectionDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String connectorId;
         private @Nullable String dbId;
@@ -117,11 +102,7 @@ public final class MonitoredResourceDatabaseConnectionDetails {
         private Integer port;
         private String protocol;
         private String serviceName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MonitoredResourceDatabaseConnectionDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.connectorId = defaults.connectorId;
@@ -132,31 +113,45 @@ public final class MonitoredResourceDatabaseConnectionDetails {
     	      this.serviceName = defaults.serviceName;
         }
 
+        @CustomType.Setter
         public Builder connectorId(@Nullable String connectorId) {
             this.connectorId = connectorId;
             return this;
         }
+        @CustomType.Setter
         public Builder dbId(@Nullable String dbId) {
             this.dbId = dbId;
             return this;
         }
+        @CustomType.Setter
         public Builder dbUniqueName(@Nullable String dbUniqueName) {
             this.dbUniqueName = dbUniqueName;
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceName(String serviceName) {
             this.serviceName = Objects.requireNonNull(serviceName);
             return this;
-        }        public MonitoredResourceDatabaseConnectionDetails build() {
-            return new MonitoredResourceDatabaseConnectionDetails(connectorId, dbId, dbUniqueName, port, protocol, serviceName);
+        }
+        public MonitoredResourceDatabaseConnectionDetails build() {
+            final var o = new MonitoredResourceDatabaseConnectionDetails();
+            o.connectorId = connectorId;
+            o.dbId = dbId;
+            o.dbUniqueName = dbUniqueName;
+            o.port = port;
+            o.protocol = protocol;
+            o.serviceName = serviceName;
+            return o;
         }
     }
 }

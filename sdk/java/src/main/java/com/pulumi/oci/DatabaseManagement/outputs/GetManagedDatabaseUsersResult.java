@@ -14,38 +14,25 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseUsersResult {
-    private final @Nullable List<GetManagedDatabaseUsersFilter> filters;
+    private @Nullable List<GetManagedDatabaseUsersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String managedDatabaseId;
+    private String id;
+    private String managedDatabaseId;
     /**
      * @return The name of the User.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The list of user_collection.
      * 
      */
-    private final List<GetManagedDatabaseUsersUserCollection> userCollections;
+    private List<GetManagedDatabaseUsersUserCollection> userCollections;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseUsersResult(
-        @CustomType.Parameter("filters") @Nullable List<GetManagedDatabaseUsersFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("userCollections") List<GetManagedDatabaseUsersUserCollection> userCollections) {
-        this.filters = filters;
-        this.id = id;
-        this.managedDatabaseId = managedDatabaseId;
-        this.name = name;
-        this.userCollections = userCollections;
-    }
-
+    private GetManagedDatabaseUsersResult() {}
     public List<GetManagedDatabaseUsersFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -81,18 +68,14 @@ public final class GetManagedDatabaseUsersResult {
     public static Builder builder(GetManagedDatabaseUsersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetManagedDatabaseUsersFilter> filters;
         private String id;
         private String managedDatabaseId;
         private @Nullable String name;
         private List<GetManagedDatabaseUsersUserCollection> userCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseUsersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -102,6 +85,7 @@ public final class GetManagedDatabaseUsersResult {
     	      this.userCollections = defaults.userCollections;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseUsersFilter> filters) {
             this.filters = filters;
             return this;
@@ -109,26 +93,37 @@ public final class GetManagedDatabaseUsersResult {
         public Builder filters(GetManagedDatabaseUsersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder userCollections(List<GetManagedDatabaseUsersUserCollection> userCollections) {
             this.userCollections = Objects.requireNonNull(userCollections);
             return this;
         }
         public Builder userCollections(GetManagedDatabaseUsersUserCollection... userCollections) {
             return userCollections(List.of(userCollections));
-        }        public GetManagedDatabaseUsersResult build() {
-            return new GetManagedDatabaseUsersResult(filters, id, managedDatabaseId, name, userCollections);
+        }
+        public GetManagedDatabaseUsersResult build() {
+            final var o = new GetManagedDatabaseUsersResult();
+            o.filters = filters;
+            o.id = id;
+            o.managedDatabaseId = managedDatabaseId;
+            o.name = name;
+            o.userCollections = userCollections;
+            return o;
         }
     }
 }

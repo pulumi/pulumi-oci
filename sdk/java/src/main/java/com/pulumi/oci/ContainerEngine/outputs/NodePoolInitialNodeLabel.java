@@ -15,21 +15,14 @@ public final class NodePoolInitialNodeLabel {
      * @return (Updatable) The key of the pair.
      * 
      */
-    private final @Nullable String key;
+    private @Nullable String key;
     /**
      * @return (Updatable) The value of the pair.
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
 
-    @CustomType.Constructor
-    private NodePoolInitialNodeLabel(
-        @CustomType.Parameter("key") @Nullable String key,
-        @CustomType.Parameter("value") @Nullable String value) {
-        this.key = key;
-        this.value = value;
-    }
-
+    private NodePoolInitialNodeLabel() {}
     /**
      * @return (Updatable) The key of the pair.
      * 
@@ -52,30 +45,32 @@ public final class NodePoolInitialNodeLabel {
     public static Builder builder(NodePoolInitialNodeLabel defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String key;
         private @Nullable String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NodePoolInitialNodeLabel defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.key = defaults.key;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder key(@Nullable String key) {
             this.key = key;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
-        }        public NodePoolInitialNodeLabel build() {
-            return new NodePoolInitialNodeLabel(key, value);
+        }
+        public NodePoolInitialNodeLabel build() {
+            final var o = new NodePoolInitialNodeLabel();
+            o.key = key;
+            o.value = value;
+            return o;
         }
     }
 }

@@ -16,37 +16,22 @@ public final class GetContainerRepositoriesContainerRepositoryCollection {
      * @return Total number of images.
      * 
      */
-    private final Integer imageCount;
-    private final List<GetContainerRepositoriesContainerRepositoryCollectionItem> items;
+    private Integer imageCount;
+    private List<GetContainerRepositoriesContainerRepositoryCollectionItem> items;
     /**
      * @return Total number of layers.
      * 
      */
-    private final Integer layerCount;
+    private Integer layerCount;
     /**
      * @return Total storage in bytes consumed by layers.
      * 
      */
-    private final String layersSizeInBytes;
-    private final Integer remainingItemsCount;
-    private final Integer repositoryCount;
+    private String layersSizeInBytes;
+    private Integer remainingItemsCount;
+    private Integer repositoryCount;
 
-    @CustomType.Constructor
-    private GetContainerRepositoriesContainerRepositoryCollection(
-        @CustomType.Parameter("imageCount") Integer imageCount,
-        @CustomType.Parameter("items") List<GetContainerRepositoriesContainerRepositoryCollectionItem> items,
-        @CustomType.Parameter("layerCount") Integer layerCount,
-        @CustomType.Parameter("layersSizeInBytes") String layersSizeInBytes,
-        @CustomType.Parameter("remainingItemsCount") Integer remainingItemsCount,
-        @CustomType.Parameter("repositoryCount") Integer repositoryCount) {
-        this.imageCount = imageCount;
-        this.items = items;
-        this.layerCount = layerCount;
-        this.layersSizeInBytes = layersSizeInBytes;
-        this.remainingItemsCount = remainingItemsCount;
-        this.repositoryCount = repositoryCount;
-    }
-
+    private GetContainerRepositoriesContainerRepositoryCollection() {}
     /**
      * @return Total number of images.
      * 
@@ -85,7 +70,7 @@ public final class GetContainerRepositoriesContainerRepositoryCollection {
     public static Builder builder(GetContainerRepositoriesContainerRepositoryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer imageCount;
         private List<GetContainerRepositoriesContainerRepositoryCollectionItem> items;
@@ -93,11 +78,7 @@ public final class GetContainerRepositoriesContainerRepositoryCollection {
         private String layersSizeInBytes;
         private Integer remainingItemsCount;
         private Integer repositoryCount;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetContainerRepositoriesContainerRepositoryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.imageCount = defaults.imageCount;
@@ -108,10 +89,12 @@ public final class GetContainerRepositoriesContainerRepositoryCollection {
     	      this.repositoryCount = defaults.repositoryCount;
         }
 
+        @CustomType.Setter
         public Builder imageCount(Integer imageCount) {
             this.imageCount = Objects.requireNonNull(imageCount);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetContainerRepositoriesContainerRepositoryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -119,23 +102,35 @@ public final class GetContainerRepositoriesContainerRepositoryCollection {
         public Builder items(GetContainerRepositoriesContainerRepositoryCollectionItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder layerCount(Integer layerCount) {
             this.layerCount = Objects.requireNonNull(layerCount);
             return this;
         }
+        @CustomType.Setter
         public Builder layersSizeInBytes(String layersSizeInBytes) {
             this.layersSizeInBytes = Objects.requireNonNull(layersSizeInBytes);
             return this;
         }
+        @CustomType.Setter
         public Builder remainingItemsCount(Integer remainingItemsCount) {
             this.remainingItemsCount = Objects.requireNonNull(remainingItemsCount);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryCount(Integer repositoryCount) {
             this.repositoryCount = Objects.requireNonNull(repositoryCount);
             return this;
-        }        public GetContainerRepositoriesContainerRepositoryCollection build() {
-            return new GetContainerRepositoriesContainerRepositoryCollection(imageCount, items, layerCount, layersSizeInBytes, remainingItemsCount, repositoryCount);
+        }
+        public GetContainerRepositoriesContainerRepositoryCollection build() {
+            final var o = new GetContainerRepositoriesContainerRepositoryCollection();
+            o.imageCount = imageCount;
+            o.items = items;
+            o.layerCount = layerCount;
+            o.layersSizeInBytes = layersSizeInBytes;
+            o.remainingItemsCount = remainingItemsCount;
+            o.repositoryCount = repositoryCount;
+            return o;
         }
     }
 }

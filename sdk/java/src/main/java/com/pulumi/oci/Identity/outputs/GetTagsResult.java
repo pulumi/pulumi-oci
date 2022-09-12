@@ -14,42 +14,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTagsResult {
-    private final @Nullable List<GetTagsFilter> filters;
+    private @Nullable List<GetTagsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The tag&#39;s current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag&#39;s `lifecycleState` changes from DELETING to DELETED.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The OCID of the namespace that contains the tag definition.
      * 
      */
-    private final String tagNamespaceId;
+    private String tagNamespaceId;
     /**
      * @return The list of tags.
      * 
      */
-    private final List<GetTagsTag> tags;
+    private List<GetTagsTag> tags;
 
-    @CustomType.Constructor
-    private GetTagsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetTagsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("tagNamespaceId") String tagNamespaceId,
-        @CustomType.Parameter("tags") List<GetTagsTag> tags) {
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.tagNamespaceId = tagNamespaceId;
-        this.tags = tags;
-    }
-
+    private GetTagsResult() {}
     public List<GetTagsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -89,18 +76,14 @@ public final class GetTagsResult {
     public static Builder builder(GetTagsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetTagsFilter> filters;
         private String id;
         private @Nullable String state;
         private String tagNamespaceId;
         private List<GetTagsTag> tags;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTagsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -110,6 +93,7 @@ public final class GetTagsResult {
     	      this.tags = defaults.tags;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetTagsFilter> filters) {
             this.filters = filters;
             return this;
@@ -117,26 +101,37 @@ public final class GetTagsResult {
         public Builder filters(GetTagsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder tagNamespaceId(String tagNamespaceId) {
             this.tagNamespaceId = Objects.requireNonNull(tagNamespaceId);
             return this;
         }
+        @CustomType.Setter
         public Builder tags(List<GetTagsTag> tags) {
             this.tags = Objects.requireNonNull(tags);
             return this;
         }
         public Builder tags(GetTagsTag... tags) {
             return tags(List.of(tags));
-        }        public GetTagsResult build() {
-            return new GetTagsResult(filters, id, state, tagNamespaceId, tags);
+        }
+        public GetTagsResult build() {
+            final var o = new GetTagsResult();
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.tagNamespaceId = tagNamespaceId;
+            o.tags = tags;
+            return o;
         }
     }
 }

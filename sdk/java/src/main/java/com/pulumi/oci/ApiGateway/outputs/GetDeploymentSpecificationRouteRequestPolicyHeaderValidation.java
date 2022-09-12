@@ -11,21 +11,14 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDeploymentSpecificationRouteRequestPolicyHeaderValidation {
-    private final List<GetDeploymentSpecificationRouteRequestPolicyHeaderValidationHeader> headers;
+    private List<GetDeploymentSpecificationRouteRequestPolicyHeaderValidationHeader> headers;
     /**
      * @return Validation behavior mode.
      * 
      */
-    private final String validationMode;
+    private String validationMode;
 
-    @CustomType.Constructor
-    private GetDeploymentSpecificationRouteRequestPolicyHeaderValidation(
-        @CustomType.Parameter("headers") List<GetDeploymentSpecificationRouteRequestPolicyHeaderValidationHeader> headers,
-        @CustomType.Parameter("validationMode") String validationMode) {
-        this.headers = headers;
-        this.validationMode = validationMode;
-    }
-
+    private GetDeploymentSpecificationRouteRequestPolicyHeaderValidation() {}
     public List<GetDeploymentSpecificationRouteRequestPolicyHeaderValidationHeader> headers() {
         return this.headers;
     }
@@ -44,21 +37,18 @@ public final class GetDeploymentSpecificationRouteRequestPolicyHeaderValidation 
     public static Builder builder(GetDeploymentSpecificationRouteRequestPolicyHeaderValidation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentSpecificationRouteRequestPolicyHeaderValidationHeader> headers;
         private String validationMode;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentSpecificationRouteRequestPolicyHeaderValidation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.headers = defaults.headers;
     	      this.validationMode = defaults.validationMode;
         }
 
+        @CustomType.Setter
         public Builder headers(List<GetDeploymentSpecificationRouteRequestPolicyHeaderValidationHeader> headers) {
             this.headers = Objects.requireNonNull(headers);
             return this;
@@ -66,11 +56,16 @@ public final class GetDeploymentSpecificationRouteRequestPolicyHeaderValidation 
         public Builder headers(GetDeploymentSpecificationRouteRequestPolicyHeaderValidationHeader... headers) {
             return headers(List.of(headers));
         }
+        @CustomType.Setter
         public Builder validationMode(String validationMode) {
             this.validationMode = Objects.requireNonNull(validationMode);
             return this;
-        }        public GetDeploymentSpecificationRouteRequestPolicyHeaderValidation build() {
-            return new GetDeploymentSpecificationRouteRequestPolicyHeaderValidation(headers, validationMode);
+        }
+        public GetDeploymentSpecificationRouteRequestPolicyHeaderValidation build() {
+            final var o = new GetDeploymentSpecificationRouteRequestPolicyHeaderValidation();
+            o.headers = headers;
+            o.validationMode = validationMode;
+            return o;
         }
     }
 }

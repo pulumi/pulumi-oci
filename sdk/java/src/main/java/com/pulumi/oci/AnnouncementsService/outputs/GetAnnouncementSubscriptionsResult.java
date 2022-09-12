@@ -18,45 +18,30 @@ public final class GetAnnouncementSubscriptionsResult {
      * @return The list of announcement_subscription_collection.
      * 
      */
-    private final List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection> announcementSubscriptionCollections;
+    private List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection> announcementSubscriptionCollections;
     /**
      * @return The OCID of the compartment that contains the announcement subscription.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name for the announcement subscription. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetAnnouncementSubscriptionsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetAnnouncementSubscriptionsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the announcement subscription.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The current lifecycle state of the announcement subscription.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetAnnouncementSubscriptionsResult(
-        @CustomType.Parameter("announcementSubscriptionCollections") List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection> announcementSubscriptionCollections,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetAnnouncementSubscriptionsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.announcementSubscriptionCollections = announcementSubscriptionCollections;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetAnnouncementSubscriptionsResult() {}
     /**
      * @return The list of announcement_subscription_collection.
      * 
@@ -103,7 +88,7 @@ public final class GetAnnouncementSubscriptionsResult {
     public static Builder builder(GetAnnouncementSubscriptionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection> announcementSubscriptionCollections;
         private String compartmentId;
@@ -111,11 +96,7 @@ public final class GetAnnouncementSubscriptionsResult {
         private @Nullable List<GetAnnouncementSubscriptionsFilter> filters;
         private @Nullable String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAnnouncementSubscriptionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.announcementSubscriptionCollections = defaults.announcementSubscriptionCollections;
@@ -126,6 +107,7 @@ public final class GetAnnouncementSubscriptionsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder announcementSubscriptionCollections(List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection> announcementSubscriptionCollections) {
             this.announcementSubscriptionCollections = Objects.requireNonNull(announcementSubscriptionCollections);
             return this;
@@ -133,14 +115,17 @@ public final class GetAnnouncementSubscriptionsResult {
         public Builder announcementSubscriptionCollections(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection... announcementSubscriptionCollections) {
             return announcementSubscriptionCollections(List.of(announcementSubscriptionCollections));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAnnouncementSubscriptionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -148,15 +133,25 @@ public final class GetAnnouncementSubscriptionsResult {
         public Builder filters(GetAnnouncementSubscriptionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetAnnouncementSubscriptionsResult build() {
-            return new GetAnnouncementSubscriptionsResult(announcementSubscriptionCollections, compartmentId, displayName, filters, id, state);
+        }
+        public GetAnnouncementSubscriptionsResult build() {
+            final var o = new GetAnnouncementSubscriptionsResult();
+            o.announcementSubscriptionCollections = announcementSubscriptionCollections;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

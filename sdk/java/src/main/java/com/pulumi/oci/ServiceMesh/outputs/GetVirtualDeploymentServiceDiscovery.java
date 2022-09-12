@@ -13,21 +13,14 @@ public final class GetVirtualDeploymentServiceDiscovery {
      * @return The hostname of the virtual deployments.
      * 
      */
-    private final String hostname;
+    private String hostname;
     /**
      * @return Type of service discovery.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetVirtualDeploymentServiceDiscovery(
-        @CustomType.Parameter("hostname") String hostname,
-        @CustomType.Parameter("type") String type) {
-        this.hostname = hostname;
-        this.type = type;
-    }
-
+    private GetVirtualDeploymentServiceDiscovery() {}
     /**
      * @return The hostname of the virtual deployments.
      * 
@@ -50,30 +43,32 @@ public final class GetVirtualDeploymentServiceDiscovery {
     public static Builder builder(GetVirtualDeploymentServiceDiscovery defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String hostname;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualDeploymentServiceDiscovery defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostname = defaults.hostname;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetVirtualDeploymentServiceDiscovery build() {
-            return new GetVirtualDeploymentServiceDiscovery(hostname, type);
+        }
+        public GetVirtualDeploymentServiceDiscovery build() {
+            final var o = new GetVirtualDeploymentServiceDiscovery();
+            o.hostname = hostname;
+            o.type = type;
+            return o;
         }
     }
 }

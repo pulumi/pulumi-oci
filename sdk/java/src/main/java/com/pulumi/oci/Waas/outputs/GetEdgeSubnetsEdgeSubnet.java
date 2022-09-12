@@ -13,28 +13,19 @@ public final class GetEdgeSubnetsEdgeSubnet {
      * @return An edge node subnet. This can include /24 or /8 addresses.
      * 
      */
-    private final String cidr;
+    private String cidr;
     /**
      * @return The name of the region containing the indicated subnet.
      * 
      */
-    private final String region;
+    private String region;
     /**
      * @return The date and time the last change was made to the indicated edge node subnet, expressed in RFC 3339 timestamp format.
      * 
      */
-    private final String timeModified;
+    private String timeModified;
 
-    @CustomType.Constructor
-    private GetEdgeSubnetsEdgeSubnet(
-        @CustomType.Parameter("cidr") String cidr,
-        @CustomType.Parameter("region") String region,
-        @CustomType.Parameter("timeModified") String timeModified) {
-        this.cidr = cidr;
-        this.region = region;
-        this.timeModified = timeModified;
-    }
-
+    private GetEdgeSubnetsEdgeSubnet() {}
     /**
      * @return An edge node subnet. This can include /24 or /8 addresses.
      * 
@@ -64,16 +55,12 @@ public final class GetEdgeSubnetsEdgeSubnet {
     public static Builder builder(GetEdgeSubnetsEdgeSubnet defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String cidr;
         private String region;
         private String timeModified;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEdgeSubnetsEdgeSubnet defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cidr = defaults.cidr;
@@ -81,19 +68,27 @@ public final class GetEdgeSubnetsEdgeSubnet {
     	      this.timeModified = defaults.timeModified;
         }
 
+        @CustomType.Setter
         public Builder cidr(String cidr) {
             this.cidr = Objects.requireNonNull(cidr);
             return this;
         }
+        @CustomType.Setter
         public Builder region(String region) {
             this.region = Objects.requireNonNull(region);
             return this;
         }
+        @CustomType.Setter
         public Builder timeModified(String timeModified) {
             this.timeModified = Objects.requireNonNull(timeModified);
             return this;
-        }        public GetEdgeSubnetsEdgeSubnet build() {
-            return new GetEdgeSubnetsEdgeSubnet(cidr, region, timeModified);
+        }
+        public GetEdgeSubnetsEdgeSubnet build() {
+            final var o = new GetEdgeSubnetsEdgeSubnet();
+            o.cidr = cidr;
+            o.region = region;
+            o.timeModified = timeModified;
+            return o;
         }
     }
 }

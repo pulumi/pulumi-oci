@@ -15,56 +15,39 @@ public final class GetAccessPolicyRuleSource {
      * @return The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are &#34;www.example.com&#34;, &#34;*.example.com&#34;, &#34;*.com&#34;, &#34;*&#34;. Hostname &#34;*&#34; can be used to allow all hosts.
      * 
      */
-    private final List<String> hostnames;
+    private List<String> hostnames;
     /**
      * @return The OCID of the ingress gateway resource.
      * 
      */
-    private final String ingressGatewayId;
+    private String ingressGatewayId;
     /**
      * @return The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR &#34;0.0.0.0/0&#34; is provided, the same port cannot be used for a virtual service communication.
      * 
      */
-    private final List<String> ipAddresses;
+    private List<String> ipAddresses;
     /**
      * @return Ports exposed by an external service. If left empty all ports will be allowed.
      * 
      */
-    private final List<Integer> ports;
+    private List<Integer> ports;
     /**
      * @return Protocol of the external service
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return Traffic type of the target.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return The OCID of the virtual service resource.
      * 
      */
-    private final String virtualServiceId;
+    private String virtualServiceId;
 
-    @CustomType.Constructor
-    private GetAccessPolicyRuleSource(
-        @CustomType.Parameter("hostnames") List<String> hostnames,
-        @CustomType.Parameter("ingressGatewayId") String ingressGatewayId,
-        @CustomType.Parameter("ipAddresses") List<String> ipAddresses,
-        @CustomType.Parameter("ports") List<Integer> ports,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("virtualServiceId") String virtualServiceId) {
-        this.hostnames = hostnames;
-        this.ingressGatewayId = ingressGatewayId;
-        this.ipAddresses = ipAddresses;
-        this.ports = ports;
-        this.protocol = protocol;
-        this.type = type;
-        this.virtualServiceId = virtualServiceId;
-    }
-
+    private GetAccessPolicyRuleSource() {}
     /**
      * @return The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are &#34;www.example.com&#34;, &#34;*.example.com&#34;, &#34;*.com&#34;, &#34;*&#34;. Hostname &#34;*&#34; can be used to allow all hosts.
      * 
@@ -122,7 +105,7 @@ public final class GetAccessPolicyRuleSource {
     public static Builder builder(GetAccessPolicyRuleSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> hostnames;
         private String ingressGatewayId;
@@ -131,11 +114,7 @@ public final class GetAccessPolicyRuleSource {
         private String protocol;
         private String type;
         private String virtualServiceId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAccessPolicyRuleSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostnames = defaults.hostnames;
@@ -147,6 +126,7 @@ public final class GetAccessPolicyRuleSource {
     	      this.virtualServiceId = defaults.virtualServiceId;
         }
 
+        @CustomType.Setter
         public Builder hostnames(List<String> hostnames) {
             this.hostnames = Objects.requireNonNull(hostnames);
             return this;
@@ -154,10 +134,12 @@ public final class GetAccessPolicyRuleSource {
         public Builder hostnames(String... hostnames) {
             return hostnames(List.of(hostnames));
         }
+        @CustomType.Setter
         public Builder ingressGatewayId(String ingressGatewayId) {
             this.ingressGatewayId = Objects.requireNonNull(ingressGatewayId);
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddresses(List<String> ipAddresses) {
             this.ipAddresses = Objects.requireNonNull(ipAddresses);
             return this;
@@ -165,6 +147,7 @@ public final class GetAccessPolicyRuleSource {
         public Builder ipAddresses(String... ipAddresses) {
             return ipAddresses(List.of(ipAddresses));
         }
+        @CustomType.Setter
         public Builder ports(List<Integer> ports) {
             this.ports = Objects.requireNonNull(ports);
             return this;
@@ -172,19 +155,31 @@ public final class GetAccessPolicyRuleSource {
         public Builder ports(Integer... ports) {
             return ports(List.of(ports));
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder virtualServiceId(String virtualServiceId) {
             this.virtualServiceId = Objects.requireNonNull(virtualServiceId);
             return this;
-        }        public GetAccessPolicyRuleSource build() {
-            return new GetAccessPolicyRuleSource(hostnames, ingressGatewayId, ipAddresses, ports, protocol, type, virtualServiceId);
+        }
+        public GetAccessPolicyRuleSource build() {
+            final var o = new GetAccessPolicyRuleSource();
+            o.hostnames = hostnames;
+            o.ingressGatewayId = ingressGatewayId;
+            o.ipAddresses = ipAddresses;
+            o.ports = ports;
+            o.protocol = protocol;
+            o.type = type;
+            o.virtualServiceId = virtualServiceId;
+            return o;
         }
     }
 }

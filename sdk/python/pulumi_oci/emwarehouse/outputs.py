@@ -566,17 +566,28 @@ class GetEtlRunsFilterResult(dict):
 @pulumi.output_type
 class GetResourceUsageEmInstanceResult(dict):
     def __init__(__self__, *,
+                 em_discoverer_url: str,
                  em_host: str,
                  em_id: str,
                  targets_count: int):
         """
+        :param str em_discoverer_url: emdDiscoverer url
         :param str em_host: emHost name
         :param str em_id: operations Insights Warehouse Identifier
         :param int targets_count: EmInstance Target count
         """
+        pulumi.set(__self__, "em_discoverer_url", em_discoverer_url)
         pulumi.set(__self__, "em_host", em_host)
         pulumi.set(__self__, "em_id", em_id)
         pulumi.set(__self__, "targets_count", targets_count)
+
+    @property
+    @pulumi.getter(name="emDiscovererUrl")
+    def em_discoverer_url(self) -> str:
+        """
+        emdDiscoverer url
+        """
+        return pulumi.get(self, "em_discoverer_url")
 
     @property
     @pulumi.getter(name="emHost")

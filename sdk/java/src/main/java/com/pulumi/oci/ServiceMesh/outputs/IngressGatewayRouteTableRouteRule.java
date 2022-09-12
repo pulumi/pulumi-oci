@@ -19,63 +19,44 @@ public final class IngressGatewayRouteTableRouteRule {
      * @return (Updatable) The destination of the request.
      * 
      */
-    private final List<IngressGatewayRouteTableRouteRuleDestination> destinations;
+    private List<IngressGatewayRouteTableRouteRuleDestination> destinations;
     /**
      * @return (Updatable) The ingress gateway host to which the route rule attaches. If not specified, the route rule gets attached to all hosts on the ingress gateway.
      * 
      */
-    private final @Nullable IngressGatewayRouteTableRouteRuleIngressGatewayHost ingressGatewayHost;
+    private @Nullable IngressGatewayRouteTableRouteRuleIngressGatewayHost ingressGatewayHost;
     /**
      * @return (Updatable) If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
      * 
      */
-    private final @Nullable Boolean isGrpc;
+    private @Nullable Boolean isGrpc;
     /**
      * @return (Updatable) If true, the hostname will be rewritten to the target virtual deployment&#39;s DNS hostname.
      * 
      */
-    private final @Nullable Boolean isHostRewriteEnabled;
+    private @Nullable Boolean isHostRewriteEnabled;
     /**
      * @return (Updatable) If true, the matched path prefix will be rewritten to &#39;/&#39; before being directed to the target virtual deployment.
      * 
      */
-    private final @Nullable Boolean isPathRewriteEnabled;
+    private @Nullable Boolean isPathRewriteEnabled;
     /**
      * @return (Updatable) Route to match
      * 
      */
-    private final @Nullable String path;
+    private @Nullable String path;
     /**
      * @return (Updatable) Match type for the route
      * 
      */
-    private final @Nullable String pathType;
+    private @Nullable String pathType;
     /**
      * @return (Updatable) Type of protocol.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private IngressGatewayRouteTableRouteRule(
-        @CustomType.Parameter("destinations") List<IngressGatewayRouteTableRouteRuleDestination> destinations,
-        @CustomType.Parameter("ingressGatewayHost") @Nullable IngressGatewayRouteTableRouteRuleIngressGatewayHost ingressGatewayHost,
-        @CustomType.Parameter("isGrpc") @Nullable Boolean isGrpc,
-        @CustomType.Parameter("isHostRewriteEnabled") @Nullable Boolean isHostRewriteEnabled,
-        @CustomType.Parameter("isPathRewriteEnabled") @Nullable Boolean isPathRewriteEnabled,
-        @CustomType.Parameter("path") @Nullable String path,
-        @CustomType.Parameter("pathType") @Nullable String pathType,
-        @CustomType.Parameter("type") String type) {
-        this.destinations = destinations;
-        this.ingressGatewayHost = ingressGatewayHost;
-        this.isGrpc = isGrpc;
-        this.isHostRewriteEnabled = isHostRewriteEnabled;
-        this.isPathRewriteEnabled = isPathRewriteEnabled;
-        this.path = path;
-        this.pathType = pathType;
-        this.type = type;
-    }
-
+    private IngressGatewayRouteTableRouteRule() {}
     /**
      * @return (Updatable) The destination of the request.
      * 
@@ -140,7 +121,7 @@ public final class IngressGatewayRouteTableRouteRule {
     public static Builder builder(IngressGatewayRouteTableRouteRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<IngressGatewayRouteTableRouteRuleDestination> destinations;
         private @Nullable IngressGatewayRouteTableRouteRuleIngressGatewayHost ingressGatewayHost;
@@ -150,11 +131,7 @@ public final class IngressGatewayRouteTableRouteRule {
         private @Nullable String path;
         private @Nullable String pathType;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(IngressGatewayRouteTableRouteRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.destinations = defaults.destinations;
@@ -167,6 +144,7 @@ public final class IngressGatewayRouteTableRouteRule {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder destinations(List<IngressGatewayRouteTableRouteRuleDestination> destinations) {
             this.destinations = Objects.requireNonNull(destinations);
             return this;
@@ -174,35 +152,52 @@ public final class IngressGatewayRouteTableRouteRule {
         public Builder destinations(IngressGatewayRouteTableRouteRuleDestination... destinations) {
             return destinations(List.of(destinations));
         }
+        @CustomType.Setter
         public Builder ingressGatewayHost(@Nullable IngressGatewayRouteTableRouteRuleIngressGatewayHost ingressGatewayHost) {
             this.ingressGatewayHost = ingressGatewayHost;
             return this;
         }
+        @CustomType.Setter
         public Builder isGrpc(@Nullable Boolean isGrpc) {
             this.isGrpc = isGrpc;
             return this;
         }
+        @CustomType.Setter
         public Builder isHostRewriteEnabled(@Nullable Boolean isHostRewriteEnabled) {
             this.isHostRewriteEnabled = isHostRewriteEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder isPathRewriteEnabled(@Nullable Boolean isPathRewriteEnabled) {
             this.isPathRewriteEnabled = isPathRewriteEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder path(@Nullable String path) {
             this.path = path;
             return this;
         }
+        @CustomType.Setter
         public Builder pathType(@Nullable String pathType) {
             this.pathType = pathType;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public IngressGatewayRouteTableRouteRule build() {
-            return new IngressGatewayRouteTableRouteRule(destinations, ingressGatewayHost, isGrpc, isHostRewriteEnabled, isPathRewriteEnabled, path, pathType, type);
+        }
+        public IngressGatewayRouteTableRouteRule build() {
+            final var o = new IngressGatewayRouteTableRouteRule();
+            o.destinations = destinations;
+            o.ingressGatewayHost = ingressGatewayHost;
+            o.isGrpc = isGrpc;
+            o.isHostRewriteEnabled = isHostRewriteEnabled;
+            o.isPathRewriteEnabled = isPathRewriteEnabled;
+            o.path = path;
+            o.pathType = pathType;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// <summary>
         /// This data source provides the list of Registry Types in Oracle Cloud Infrastructure Data Connectivity service.
         /// 
-        /// This endpoint retrieves list of all the supported connector types
+        /// This endpoint retrieves a list of all the supported connector types.
         /// 
         /// 
         /// {{% examples %}}
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// <summary>
         /// This data source provides the list of Registry Types in Oracle Cloud Infrastructure Data Connectivity service.
         /// 
-        /// This endpoint retrieves list of all the supported connector types
+        /// This endpoint retrieves a list of all the supported connector types.
         /// 
         /// 
         /// {{% examples %}}
@@ -94,7 +94,7 @@ namespace Pulumi.Oci.DataConnectivity
         public string? Name { get; set; }
 
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         [Input("registryId", required: true)]
         public string RegistryId { get; set; } = null!;
@@ -128,7 +128,7 @@ namespace Pulumi.Oci.DataConnectivity
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         [Input("registryId", required: true)]
         public Input<string> RegistryId { get; set; } = null!;
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The name of of the Attribute.
+        /// The name of of the attribute.
         /// </summary>
         public readonly string? Name;
         public readonly string RegistryId;

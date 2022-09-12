@@ -14,42 +14,29 @@ public final class GetListUserGrantsGrant {
      * @return A filter to return only items that match the specified user grant depth level.
      * 
      */
-    private final Integer depthLevel;
+    private Integer depthLevel;
     /**
      * @return A filter to return only items that match the specified user grant name.
      * 
      */
-    private final String grantName;
+    private String grantName;
     /**
      * @return The unique key of a user grant.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return A filter to return only items that match the specified user privilege category.
      * 
      */
-    private final String privilegeCategory;
+    private String privilegeCategory;
     /**
      * @return A filter to return only items that match the specified privilege grant type.
      * 
      */
-    private final String privilegeType;
+    private String privilegeType;
 
-    @CustomType.Constructor
-    private GetListUserGrantsGrant(
-        @CustomType.Parameter("depthLevel") Integer depthLevel,
-        @CustomType.Parameter("grantName") String grantName,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("privilegeCategory") String privilegeCategory,
-        @CustomType.Parameter("privilegeType") String privilegeType) {
-        this.depthLevel = depthLevel;
-        this.grantName = grantName;
-        this.key = key;
-        this.privilegeCategory = privilegeCategory;
-        this.privilegeType = privilegeType;
-    }
-
+    private GetListUserGrantsGrant() {}
     /**
      * @return A filter to return only items that match the specified user grant depth level.
      * 
@@ -93,18 +80,14 @@ public final class GetListUserGrantsGrant {
     public static Builder builder(GetListUserGrantsGrant defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer depthLevel;
         private String grantName;
         private String key;
         private String privilegeCategory;
         private String privilegeType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListUserGrantsGrant defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.depthLevel = defaults.depthLevel;
@@ -114,27 +97,39 @@ public final class GetListUserGrantsGrant {
     	      this.privilegeType = defaults.privilegeType;
         }
 
+        @CustomType.Setter
         public Builder depthLevel(Integer depthLevel) {
             this.depthLevel = Objects.requireNonNull(depthLevel);
             return this;
         }
+        @CustomType.Setter
         public Builder grantName(String grantName) {
             this.grantName = Objects.requireNonNull(grantName);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder privilegeCategory(String privilegeCategory) {
             this.privilegeCategory = Objects.requireNonNull(privilegeCategory);
             return this;
         }
+        @CustomType.Setter
         public Builder privilegeType(String privilegeType) {
             this.privilegeType = Objects.requireNonNull(privilegeType);
             return this;
-        }        public GetListUserGrantsGrant build() {
-            return new GetListUserGrantsGrant(depthLevel, grantName, key, privilegeCategory, privilegeType);
+        }
+        public GetListUserGrantsGrant build() {
+            final var o = new GetListUserGrantsGrant();
+            o.depthLevel = depthLevel;
+            o.grantName = grantName;
+            o.key = key;
+            o.privilegeCategory = privilegeCategory;
+            o.privilegeType = privilegeType;
+            return o;
         }
     }
 }

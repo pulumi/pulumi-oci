@@ -14,13 +14,9 @@ public final class GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyColl
      * @return Array of NetworkLoadBalancersPolicySummary objects.
      * 
      */
-    private final List<String> items;
+    private List<String> items;
 
-    @CustomType.Constructor
-    private GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection(@CustomType.Parameter("items") List<String> items) {
-        this.items = items;
-    }
-
+    private GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection() {}
     /**
      * @return Array of NetworkLoadBalancersPolicySummary objects.
      * 
@@ -36,27 +32,27 @@ public final class GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyColl
     public static Builder builder(GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<String> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(String... items) {
             return items(List.of(items));
-        }        public GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection build() {
-            return new GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection(items);
+        }
+        public GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection build() {
+            final var o = new GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -15,28 +15,19 @@ public final class GetClusterNetworksClusterNetworkPlacementConfiguration {
      * @return The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances.
      * 
      */
-    private final String primarySubnetId;
+    private String primarySubnetId;
     /**
      * @return The set of secondary VNIC data for instances in the pool.
      * 
      */
-    private final List<GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets;
+    private List<GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets;
 
-    @CustomType.Constructor
-    private GetClusterNetworksClusterNetworkPlacementConfiguration(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("primarySubnetId") String primarySubnetId,
-        @CustomType.Parameter("secondaryVnicSubnets") List<GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets) {
-        this.availabilityDomain = availabilityDomain;
-        this.primarySubnetId = primarySubnetId;
-        this.secondaryVnicSubnets = secondaryVnicSubnets;
-    }
-
+    private GetClusterNetworksClusterNetworkPlacementConfiguration() {}
     /**
      * @return The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
      * 
@@ -66,16 +57,12 @@ public final class GetClusterNetworksClusterNetworkPlacementConfiguration {
     public static Builder builder(GetClusterNetworksClusterNetworkPlacementConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String primarySubnetId;
         private List<GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetClusterNetworksClusterNetworkPlacementConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -83,22 +70,30 @@ public final class GetClusterNetworksClusterNetworkPlacementConfiguration {
     	      this.secondaryVnicSubnets = defaults.secondaryVnicSubnets;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder primarySubnetId(String primarySubnetId) {
             this.primarySubnetId = Objects.requireNonNull(primarySubnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder secondaryVnicSubnets(List<GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets) {
             this.secondaryVnicSubnets = Objects.requireNonNull(secondaryVnicSubnets);
             return this;
         }
         public Builder secondaryVnicSubnets(GetClusterNetworksClusterNetworkPlacementConfigurationSecondaryVnicSubnet... secondaryVnicSubnets) {
             return secondaryVnicSubnets(List.of(secondaryVnicSubnets));
-        }        public GetClusterNetworksClusterNetworkPlacementConfiguration build() {
-            return new GetClusterNetworksClusterNetworkPlacementConfiguration(availabilityDomain, primarySubnetId, secondaryVnicSubnets);
+        }
+        public GetClusterNetworksClusterNetworkPlacementConfiguration build() {
+            final var o = new GetClusterNetworksClusterNetworkPlacementConfiguration();
+            o.availabilityDomain = availabilityDomain;
+            o.primarySubnetId = primarySubnetId;
+            o.secondaryVnicSubnets = secondaryVnicSubnets;
+            return o;
         }
     }
 }

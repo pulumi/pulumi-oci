@@ -18,52 +18,35 @@ public final class GetIdentityProvidersResult {
      * @return The OCID of the tenancy containing the `IdentityProvider`.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetIdentityProvidersFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetIdentityProvidersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of identity_providers.
      * 
      */
-    private final List<GetIdentityProvidersIdentityProvider> identityProviders;
+    private List<GetIdentityProvidersIdentityProvider> identityProviders;
     /**
      * @return The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed. This is the name federated users see when choosing which identity provider to use when signing in to the Oracle Cloud Infrastructure Console.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The protocol used for federation. Allowed value: `SAML2`.  Example: `SAML2`
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return The current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetIdentityProvidersResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetIdentityProvidersFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("identityProviders") List<GetIdentityProvidersIdentityProvider> identityProviders,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.identityProviders = identityProviders;
-        this.name = name;
-        this.protocol = protocol;
-        this.state = state;
-    }
-
+    private GetIdentityProvidersResult() {}
     /**
      * @return The OCID of the tenancy containing the `IdentityProvider`.
      * 
@@ -117,7 +100,7 @@ public final class GetIdentityProvidersResult {
     public static Builder builder(GetIdentityProvidersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetIdentityProvidersFilter> filters;
@@ -126,11 +109,7 @@ public final class GetIdentityProvidersResult {
         private @Nullable String name;
         private String protocol;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIdentityProvidersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,10 +121,12 @@ public final class GetIdentityProvidersResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetIdentityProvidersFilter> filters) {
             this.filters = filters;
             return this;
@@ -153,10 +134,12 @@ public final class GetIdentityProvidersResult {
         public Builder filters(GetIdentityProvidersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder identityProviders(List<GetIdentityProvidersIdentityProvider> identityProviders) {
             this.identityProviders = Objects.requireNonNull(identityProviders);
             return this;
@@ -164,19 +147,31 @@ public final class GetIdentityProvidersResult {
         public Builder identityProviders(GetIdentityProvidersIdentityProvider... identityProviders) {
             return identityProviders(List.of(identityProviders));
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetIdentityProvidersResult build() {
-            return new GetIdentityProvidersResult(compartmentId, filters, id, identityProviders, name, protocol, state);
+        }
+        public GetIdentityProvidersResult build() {
+            final var o = new GetIdentityProvidersResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.identityProviders = identityProviders;
+            o.name = name;
+            o.protocol = protocol;
+            o.state = state;
+            return o;
         }
     }
 }

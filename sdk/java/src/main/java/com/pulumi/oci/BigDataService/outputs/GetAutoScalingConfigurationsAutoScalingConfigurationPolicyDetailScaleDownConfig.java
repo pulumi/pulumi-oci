@@ -11,26 +11,13 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig {
-    private final Integer memoryStepSize;
-    private final List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric> metrics;
-    private final Integer minMemoryPerNode;
-    private final Integer minOcpusPerNode;
-    private final Integer ocpuStepSize;
+    private Integer memoryStepSize;
+    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric> metrics;
+    private Integer minMemoryPerNode;
+    private Integer minOcpusPerNode;
+    private Integer ocpuStepSize;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig(
-        @CustomType.Parameter("memoryStepSize") Integer memoryStepSize,
-        @CustomType.Parameter("metrics") List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric> metrics,
-        @CustomType.Parameter("minMemoryPerNode") Integer minMemoryPerNode,
-        @CustomType.Parameter("minOcpusPerNode") Integer minOcpusPerNode,
-        @CustomType.Parameter("ocpuStepSize") Integer ocpuStepSize) {
-        this.memoryStepSize = memoryStepSize;
-        this.metrics = metrics;
-        this.minMemoryPerNode = minMemoryPerNode;
-        this.minOcpusPerNode = minOcpusPerNode;
-        this.ocpuStepSize = ocpuStepSize;
-    }
-
+    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig() {}
     public Integer memoryStepSize() {
         return this.memoryStepSize;
     }
@@ -54,18 +41,14 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     public static Builder builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer memoryStepSize;
         private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric> metrics;
         private Integer minMemoryPerNode;
         private Integer minOcpusPerNode;
         private Integer ocpuStepSize;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.memoryStepSize = defaults.memoryStepSize;
@@ -75,10 +58,12 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     	      this.ocpuStepSize = defaults.ocpuStepSize;
         }
 
+        @CustomType.Setter
         public Builder memoryStepSize(Integer memoryStepSize) {
             this.memoryStepSize = Objects.requireNonNull(memoryStepSize);
             return this;
         }
+        @CustomType.Setter
         public Builder metrics(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric> metrics) {
             this.metrics = Objects.requireNonNull(metrics);
             return this;
@@ -86,19 +71,29 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
         public Builder metrics(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfigMetric... metrics) {
             return metrics(List.of(metrics));
         }
+        @CustomType.Setter
         public Builder minMemoryPerNode(Integer minMemoryPerNode) {
             this.minMemoryPerNode = Objects.requireNonNull(minMemoryPerNode);
             return this;
         }
+        @CustomType.Setter
         public Builder minOcpusPerNode(Integer minOcpusPerNode) {
             this.minOcpusPerNode = Objects.requireNonNull(minOcpusPerNode);
             return this;
         }
+        @CustomType.Setter
         public Builder ocpuStepSize(Integer ocpuStepSize) {
             this.ocpuStepSize = Objects.requireNonNull(ocpuStepSize);
             return this;
-        }        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig build() {
-            return new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig(memoryStepSize, metrics, minMemoryPerNode, minOcpusPerNode, ocpuStepSize);
+        }
+        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig build() {
+            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig();
+            o.memoryStepSize = memoryStepSize;
+            o.metrics = metrics;
+            o.minMemoryPerNode = minMemoryPerNode;
+            o.minOcpusPerNode = minOcpusPerNode;
+            o.ocpuStepSize = ocpuStepSize;
+            return o;
         }
     }
 }

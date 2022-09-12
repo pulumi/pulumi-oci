@@ -15,93 +15,54 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUserAssessmentUsersResult {
-    private final @Nullable String accessLevel;
+    private @Nullable String accessLevel;
     /**
      * @return The user account status.
      * 
      */
-    private final @Nullable String accountStatus;
+    private @Nullable String accountStatus;
     /**
      * @return The user authentication method.
      * 
      */
-    private final @Nullable String authenticationType;
-    private final @Nullable Boolean compartmentIdInSubtree;
-    private final @Nullable List<GetUserAssessmentUsersFilter> filters;
+    private @Nullable String authenticationType;
+    private @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable List<GetUserAssessmentUsersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the target database.
      * 
      */
-    private final @Nullable String targetId;
-    private final @Nullable String timeLastLoginGreaterThanOrEqualTo;
-    private final @Nullable String timeLastLoginLessThan;
-    private final @Nullable String timePasswordLastChangedGreaterThanOrEqualTo;
-    private final @Nullable String timePasswordLastChangedLessThan;
-    private final @Nullable String timeUserCreatedGreaterThanOrEqualTo;
-    private final @Nullable String timeUserCreatedLessThan;
-    private final String userAssessmentId;
+    private @Nullable String targetId;
+    private @Nullable String timeLastLoginGreaterThanOrEqualTo;
+    private @Nullable String timeLastLoginLessThan;
+    private @Nullable String timePasswordLastChangedGreaterThanOrEqualTo;
+    private @Nullable String timePasswordLastChangedLessThan;
+    private @Nullable String timeUserCreatedGreaterThanOrEqualTo;
+    private @Nullable String timeUserCreatedLessThan;
+    private String userAssessmentId;
     /**
      * @return The user category based on the privileges and other details of the user.
      * 
      */
-    private final @Nullable String userCategory;
-    private final @Nullable String userKey;
+    private @Nullable String userCategory;
+    private @Nullable String userKey;
     /**
      * @return The database user name.
      * 
      */
-    private final @Nullable String userName;
+    private @Nullable String userName;
     /**
      * @return The list of users.
      * 
      */
-    private final List<GetUserAssessmentUsersUser> users;
+    private List<GetUserAssessmentUsersUser> users;
 
-    @CustomType.Constructor
-    private GetUserAssessmentUsersResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("accountStatus") @Nullable String accountStatus,
-        @CustomType.Parameter("authenticationType") @Nullable String authenticationType,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("filters") @Nullable List<GetUserAssessmentUsersFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("targetId") @Nullable String targetId,
-        @CustomType.Parameter("timeLastLoginGreaterThanOrEqualTo") @Nullable String timeLastLoginGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeLastLoginLessThan") @Nullable String timeLastLoginLessThan,
-        @CustomType.Parameter("timePasswordLastChangedGreaterThanOrEqualTo") @Nullable String timePasswordLastChangedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timePasswordLastChangedLessThan") @Nullable String timePasswordLastChangedLessThan,
-        @CustomType.Parameter("timeUserCreatedGreaterThanOrEqualTo") @Nullable String timeUserCreatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeUserCreatedLessThan") @Nullable String timeUserCreatedLessThan,
-        @CustomType.Parameter("userAssessmentId") String userAssessmentId,
-        @CustomType.Parameter("userCategory") @Nullable String userCategory,
-        @CustomType.Parameter("userKey") @Nullable String userKey,
-        @CustomType.Parameter("userName") @Nullable String userName,
-        @CustomType.Parameter("users") List<GetUserAssessmentUsersUser> users) {
-        this.accessLevel = accessLevel;
-        this.accountStatus = accountStatus;
-        this.authenticationType = authenticationType;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.filters = filters;
-        this.id = id;
-        this.targetId = targetId;
-        this.timeLastLoginGreaterThanOrEqualTo = timeLastLoginGreaterThanOrEqualTo;
-        this.timeLastLoginLessThan = timeLastLoginLessThan;
-        this.timePasswordLastChangedGreaterThanOrEqualTo = timePasswordLastChangedGreaterThanOrEqualTo;
-        this.timePasswordLastChangedLessThan = timePasswordLastChangedLessThan;
-        this.timeUserCreatedGreaterThanOrEqualTo = timeUserCreatedGreaterThanOrEqualTo;
-        this.timeUserCreatedLessThan = timeUserCreatedLessThan;
-        this.userAssessmentId = userAssessmentId;
-        this.userCategory = userCategory;
-        this.userKey = userKey;
-        this.userName = userName;
-        this.users = users;
-    }
-
+    private GetUserAssessmentUsersResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -192,7 +153,7 @@ public final class GetUserAssessmentUsersResult {
     public static Builder builder(GetUserAssessmentUsersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private @Nullable String accountStatus;
@@ -212,11 +173,7 @@ public final class GetUserAssessmentUsersResult {
         private @Nullable String userKey;
         private @Nullable String userName;
         private List<GetUserAssessmentUsersUser> users;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUserAssessmentUsersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -239,22 +196,27 @@ public final class GetUserAssessmentUsersResult {
     	      this.users = defaults.users;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder accountStatus(@Nullable String accountStatus) {
             this.accountStatus = accountStatus;
             return this;
         }
+        @CustomType.Setter
         public Builder authenticationType(@Nullable String authenticationType) {
             this.authenticationType = authenticationType;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetUserAssessmentUsersFilter> filters) {
             this.filters = filters;
             return this;
@@ -262,62 +224,95 @@ public final class GetUserAssessmentUsersResult {
         public Builder filters(GetUserAssessmentUsersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
             this.targetId = targetId;
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastLoginGreaterThanOrEqualTo(@Nullable String timeLastLoginGreaterThanOrEqualTo) {
             this.timeLastLoginGreaterThanOrEqualTo = timeLastLoginGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastLoginLessThan(@Nullable String timeLastLoginLessThan) {
             this.timeLastLoginLessThan = timeLastLoginLessThan;
             return this;
         }
+        @CustomType.Setter
         public Builder timePasswordLastChangedGreaterThanOrEqualTo(@Nullable String timePasswordLastChangedGreaterThanOrEqualTo) {
             this.timePasswordLastChangedGreaterThanOrEqualTo = timePasswordLastChangedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timePasswordLastChangedLessThan(@Nullable String timePasswordLastChangedLessThan) {
             this.timePasswordLastChangedLessThan = timePasswordLastChangedLessThan;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUserCreatedGreaterThanOrEqualTo(@Nullable String timeUserCreatedGreaterThanOrEqualTo) {
             this.timeUserCreatedGreaterThanOrEqualTo = timeUserCreatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUserCreatedLessThan(@Nullable String timeUserCreatedLessThan) {
             this.timeUserCreatedLessThan = timeUserCreatedLessThan;
             return this;
         }
+        @CustomType.Setter
         public Builder userAssessmentId(String userAssessmentId) {
             this.userAssessmentId = Objects.requireNonNull(userAssessmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder userCategory(@Nullable String userCategory) {
             this.userCategory = userCategory;
             return this;
         }
+        @CustomType.Setter
         public Builder userKey(@Nullable String userKey) {
             this.userKey = userKey;
             return this;
         }
+        @CustomType.Setter
         public Builder userName(@Nullable String userName) {
             this.userName = userName;
             return this;
         }
+        @CustomType.Setter
         public Builder users(List<GetUserAssessmentUsersUser> users) {
             this.users = Objects.requireNonNull(users);
             return this;
         }
         public Builder users(GetUserAssessmentUsersUser... users) {
             return users(List.of(users));
-        }        public GetUserAssessmentUsersResult build() {
-            return new GetUserAssessmentUsersResult(accessLevel, accountStatus, authenticationType, compartmentIdInSubtree, filters, id, targetId, timeLastLoginGreaterThanOrEqualTo, timeLastLoginLessThan, timePasswordLastChangedGreaterThanOrEqualTo, timePasswordLastChangedLessThan, timeUserCreatedGreaterThanOrEqualTo, timeUserCreatedLessThan, userAssessmentId, userCategory, userKey, userName, users);
+        }
+        public GetUserAssessmentUsersResult build() {
+            final var o = new GetUserAssessmentUsersResult();
+            o.accessLevel = accessLevel;
+            o.accountStatus = accountStatus;
+            o.authenticationType = authenticationType;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.filters = filters;
+            o.id = id;
+            o.targetId = targetId;
+            o.timeLastLoginGreaterThanOrEqualTo = timeLastLoginGreaterThanOrEqualTo;
+            o.timeLastLoginLessThan = timeLastLoginLessThan;
+            o.timePasswordLastChangedGreaterThanOrEqualTo = timePasswordLastChangedGreaterThanOrEqualTo;
+            o.timePasswordLastChangedLessThan = timePasswordLastChangedLessThan;
+            o.timeUserCreatedGreaterThanOrEqualTo = timeUserCreatedGreaterThanOrEqualTo;
+            o.timeUserCreatedLessThan = timeUserCreatedLessThan;
+            o.userAssessmentId = userAssessmentId;
+            o.userCategory = userCategory;
+            o.userKey = userKey;
+            o.userName = userName;
+            o.users = users;
+            return o;
         }
     }
 }

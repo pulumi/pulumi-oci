@@ -13,20 +13,11 @@ public final class GetVolumeBackupsVolumeBackupSourceDetail {
      * @return The OCID of the Key Management key which is the master encryption key for the volume backup. For more information about the Key Management service and encryption keys, see [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      * 
      */
-    private final String kmsKeyId;
-    private final String region;
-    private final String volumeBackupId;
+    private String kmsKeyId;
+    private String region;
+    private String volumeBackupId;
 
-    @CustomType.Constructor
-    private GetVolumeBackupsVolumeBackupSourceDetail(
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("region") String region,
-        @CustomType.Parameter("volumeBackupId") String volumeBackupId) {
-        this.kmsKeyId = kmsKeyId;
-        this.region = region;
-        this.volumeBackupId = volumeBackupId;
-    }
-
+    private GetVolumeBackupsVolumeBackupSourceDetail() {}
     /**
      * @return The OCID of the Key Management key which is the master encryption key for the volume backup. For more information about the Key Management service and encryption keys, see [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      * 
@@ -48,16 +39,12 @@ public final class GetVolumeBackupsVolumeBackupSourceDetail {
     public static Builder builder(GetVolumeBackupsVolumeBackupSourceDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String kmsKeyId;
         private String region;
         private String volumeBackupId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumeBackupsVolumeBackupSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kmsKeyId = defaults.kmsKeyId;
@@ -65,19 +52,27 @@ public final class GetVolumeBackupsVolumeBackupSourceDetail {
     	      this.volumeBackupId = defaults.volumeBackupId;
         }
 
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder region(String region) {
             this.region = Objects.requireNonNull(region);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeBackupId(String volumeBackupId) {
             this.volumeBackupId = Objects.requireNonNull(volumeBackupId);
             return this;
-        }        public GetVolumeBackupsVolumeBackupSourceDetail build() {
-            return new GetVolumeBackupsVolumeBackupSourceDetail(kmsKeyId, region, volumeBackupId);
+        }
+        public GetVolumeBackupsVolumeBackupSourceDetail build() {
+            final var o = new GetVolumeBackupsVolumeBackupSourceDetail();
+            o.kmsKeyId = kmsKeyId;
+            o.region = region;
+            o.volumeBackupId = volumeBackupId;
+            return o;
         }
     }
 }

@@ -18,104 +18,71 @@ public final class GetCatalogTypeResult {
      * @return The data catalog&#39;s OCID.
      * 
      */
-    private final String catalogId;
+    private String catalogId;
     /**
      * @return Detailed description of the type.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Mapping type equivalence in the external system.
      * 
      */
-    private final String externalTypeName;
-    private final @Nullable List<String> fields;
+    private String externalTypeName;
+    private @Nullable List<String> fields;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates whether the type is approved for use as a classifying object.
      * 
      */
-    private final Boolean isApproved;
+    private Boolean isApproved;
     /**
      * @return Indicates whether the type is internal, making it unavailable for use by metadata elements.
      * 
      */
-    private final Boolean isInternal;
+    private Boolean isInternal;
     /**
      * @return Indicates whether the type can be used for tagging metadata elements.
      * 
      */
-    private final Boolean isTag;
+    private Boolean isTag;
     /**
      * @return Unique type key that is immutable.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return The immutable name of the type.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return A map of arrays which defines the type specific properties, both required and optional. The map keys are category names and the values are arrays contiaing all property details. Every property is contained inside of a category. Most types have required properties within the &#34;default&#34; category. Example: `{ &#34;properties&#34;: { &#34;default&#34;: { &#34;attributes:&#34;: [ { &#34;name&#34;: &#34;host&#34;, &#34;type&#34;: &#34;string&#34;, &#34;isRequired&#34;: true, &#34;isUpdatable&#34;: false }, ... ] } } }`
      * 
      */
-    private final Map<String,Object> properties;
+    private Map<String,Object> properties;
     /**
      * @return The current state of the type.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Indicates the category this type belongs to. For instance, data assets, connections.
      * 
      */
-    private final String typeCategory;
-    private final String typeKey;
+    private String typeCategory;
+    private String typeKey;
     /**
      * @return URI to the type instance in the API.
      * 
      */
-    private final String uri;
+    private String uri;
 
-    @CustomType.Constructor
-    private GetCatalogTypeResult(
-        @CustomType.Parameter("catalogId") String catalogId,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("externalTypeName") String externalTypeName,
-        @CustomType.Parameter("fields") @Nullable List<String> fields,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isApproved") Boolean isApproved,
-        @CustomType.Parameter("isInternal") Boolean isInternal,
-        @CustomType.Parameter("isTag") Boolean isTag,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("properties") Map<String,Object> properties,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("typeCategory") String typeCategory,
-        @CustomType.Parameter("typeKey") String typeKey,
-        @CustomType.Parameter("uri") String uri) {
-        this.catalogId = catalogId;
-        this.description = description;
-        this.externalTypeName = externalTypeName;
-        this.fields = fields;
-        this.id = id;
-        this.isApproved = isApproved;
-        this.isInternal = isInternal;
-        this.isTag = isTag;
-        this.key = key;
-        this.name = name;
-        this.properties = properties;
-        this.state = state;
-        this.typeCategory = typeCategory;
-        this.typeKey = typeKey;
-        this.uri = uri;
-    }
-
+    private GetCatalogTypeResult() {}
     /**
      * @return The data catalog&#39;s OCID.
      * 
@@ -221,7 +188,7 @@ public final class GetCatalogTypeResult {
     public static Builder builder(GetCatalogTypeResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String catalogId;
         private String description;
@@ -238,11 +205,7 @@ public final class GetCatalogTypeResult {
         private String typeCategory;
         private String typeKey;
         private String uri;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCatalogTypeResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.catalogId = defaults.catalogId;
@@ -262,18 +225,22 @@ public final class GetCatalogTypeResult {
     	      this.uri = defaults.uri;
         }
 
+        @CustomType.Setter
         public Builder catalogId(String catalogId) {
             this.catalogId = Objects.requireNonNull(catalogId);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder externalTypeName(String externalTypeName) {
             this.externalTypeName = Objects.requireNonNull(externalTypeName);
             return this;
         }
+        @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
             this.fields = fields;
             return this;
@@ -281,51 +248,79 @@ public final class GetCatalogTypeResult {
         public Builder fields(String... fields) {
             return fields(List.of(fields));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isApproved(Boolean isApproved) {
             this.isApproved = Objects.requireNonNull(isApproved);
             return this;
         }
+        @CustomType.Setter
         public Builder isInternal(Boolean isInternal) {
             this.isInternal = Objects.requireNonNull(isInternal);
             return this;
         }
+        @CustomType.Setter
         public Builder isTag(Boolean isTag) {
             this.isTag = Objects.requireNonNull(isTag);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder properties(Map<String,Object> properties) {
             this.properties = Objects.requireNonNull(properties);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder typeCategory(String typeCategory) {
             this.typeCategory = Objects.requireNonNull(typeCategory);
             return this;
         }
+        @CustomType.Setter
         public Builder typeKey(String typeKey) {
             this.typeKey = Objects.requireNonNull(typeKey);
             return this;
         }
+        @CustomType.Setter
         public Builder uri(String uri) {
             this.uri = Objects.requireNonNull(uri);
             return this;
-        }        public GetCatalogTypeResult build() {
-            return new GetCatalogTypeResult(catalogId, description, externalTypeName, fields, id, isApproved, isInternal, isTag, key, name, properties, state, typeCategory, typeKey, uri);
+        }
+        public GetCatalogTypeResult build() {
+            final var o = new GetCatalogTypeResult();
+            o.catalogId = catalogId;
+            o.description = description;
+            o.externalTypeName = externalTypeName;
+            o.fields = fields;
+            o.id = id;
+            o.isApproved = isApproved;
+            o.isInternal = isInternal;
+            o.isTag = isTag;
+            o.key = key;
+            o.name = name;
+            o.properties = properties;
+            o.state = state;
+            o.typeCategory = typeCategory;
+            o.typeKey = typeKey;
+            o.uri = uri;
+            return o;
         }
     }
 }

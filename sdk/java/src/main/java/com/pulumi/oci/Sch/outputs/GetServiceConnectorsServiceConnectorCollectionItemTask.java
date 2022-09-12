@@ -14,42 +14,29 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTask {
      * @return Size limit (kilobytes) for batch sent to invoke the function.
      * 
      */
-    private final Integer batchSizeInKbs;
+    private Integer batchSizeInKbs;
     /**
      * @return Time limit (seconds) for batch sent to invoke the function.
      * 
      */
-    private final Integer batchTimeInSec;
+    private Integer batchTimeInSec;
     /**
      * @return A filter or mask to limit the source used in the flow defined by the service connector.
      * 
      */
-    private final String condition;
+    private String condition;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
      * 
      */
-    private final String functionId;
+    private String functionId;
     /**
      * @return The type descriminator.
      * 
      */
-    private final String kind;
+    private String kind;
 
-    @CustomType.Constructor
-    private GetServiceConnectorsServiceConnectorCollectionItemTask(
-        @CustomType.Parameter("batchSizeInKbs") Integer batchSizeInKbs,
-        @CustomType.Parameter("batchTimeInSec") Integer batchTimeInSec,
-        @CustomType.Parameter("condition") String condition,
-        @CustomType.Parameter("functionId") String functionId,
-        @CustomType.Parameter("kind") String kind) {
-        this.batchSizeInKbs = batchSizeInKbs;
-        this.batchTimeInSec = batchTimeInSec;
-        this.condition = condition;
-        this.functionId = functionId;
-        this.kind = kind;
-    }
-
+    private GetServiceConnectorsServiceConnectorCollectionItemTask() {}
     /**
      * @return Size limit (kilobytes) for batch sent to invoke the function.
      * 
@@ -93,18 +80,14 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTask {
     public static Builder builder(GetServiceConnectorsServiceConnectorCollectionItemTask defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer batchSizeInKbs;
         private Integer batchTimeInSec;
         private String condition;
         private String functionId;
         private String kind;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceConnectorsServiceConnectorCollectionItemTask defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.batchSizeInKbs = defaults.batchSizeInKbs;
@@ -114,27 +97,39 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTask {
     	      this.kind = defaults.kind;
         }
 
+        @CustomType.Setter
         public Builder batchSizeInKbs(Integer batchSizeInKbs) {
             this.batchSizeInKbs = Objects.requireNonNull(batchSizeInKbs);
             return this;
         }
+        @CustomType.Setter
         public Builder batchTimeInSec(Integer batchTimeInSec) {
             this.batchTimeInSec = Objects.requireNonNull(batchTimeInSec);
             return this;
         }
+        @CustomType.Setter
         public Builder condition(String condition) {
             this.condition = Objects.requireNonNull(condition);
             return this;
         }
+        @CustomType.Setter
         public Builder functionId(String functionId) {
             this.functionId = Objects.requireNonNull(functionId);
             return this;
         }
+        @CustomType.Setter
         public Builder kind(String kind) {
             this.kind = Objects.requireNonNull(kind);
             return this;
-        }        public GetServiceConnectorsServiceConnectorCollectionItemTask build() {
-            return new GetServiceConnectorsServiceConnectorCollectionItemTask(batchSizeInKbs, batchTimeInSec, condition, functionId, kind);
+        }
+        public GetServiceConnectorsServiceConnectorCollectionItemTask build() {
+            final var o = new GetServiceConnectorsServiceConnectorCollectionItemTask();
+            o.batchSizeInKbs = batchSizeInKbs;
+            o.batchTimeInSec = batchTimeInSec;
+            o.condition = condition;
+            o.functionId = functionId;
+            o.kind = kind;
+            return o;
         }
     }
 }

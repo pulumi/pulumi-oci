@@ -12,26 +12,19 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RegistryConnectionConnectionProperty {
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) The value for the connection name property.
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
 
-    @CustomType.Constructor
-    private RegistryConnectionConnectionProperty(
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("value") @Nullable String value) {
-        this.name = name;
-        this.value = value;
-    }
-
+    private RegistryConnectionConnectionProperty() {}
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Optional<String> name() {
@@ -52,30 +45,32 @@ public final class RegistryConnectionConnectionProperty {
     public static Builder builder(RegistryConnectionConnectionProperty defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String name;
         private @Nullable String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RegistryConnectionConnectionProperty defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
-        }        public RegistryConnectionConnectionProperty build() {
-            return new RegistryConnectionConnectionProperty(name, value);
+        }
+        public RegistryConnectionConnectionProperty build() {
+            final var o = new RegistryConnectionConnectionProperty();
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

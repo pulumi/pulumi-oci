@@ -18,49 +18,34 @@ public final class DetectorRecipeEffectiveDetectorRuleDetail {
      * @return (Updatable) Base condition object
      * 
      */
-    private final @Nullable String condition;
+    private @Nullable String condition;
     /**
      * @return (Updatable) Configuration details
      * 
      */
-    private final @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations;
+    private @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations;
     /**
      * @return configuration allowed or not
      * 
      */
-    private final @Nullable Boolean isConfigurationAllowed;
+    private @Nullable Boolean isConfigurationAllowed;
     /**
      * @return (Updatable) Enables the control
      * 
      */
-    private final @Nullable Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return (Updatable) user defined labels for a detector rule
      * 
      */
-    private final @Nullable List<String> labels;
+    private @Nullable List<String> labels;
     /**
      * @return (Updatable) The Risk Level
      * 
      */
-    private final @Nullable String riskLevel;
+    private @Nullable String riskLevel;
 
-    @CustomType.Constructor
-    private DetectorRecipeEffectiveDetectorRuleDetail(
-        @CustomType.Parameter("condition") @Nullable String condition,
-        @CustomType.Parameter("configurations") @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations,
-        @CustomType.Parameter("isConfigurationAllowed") @Nullable Boolean isConfigurationAllowed,
-        @CustomType.Parameter("isEnabled") @Nullable Boolean isEnabled,
-        @CustomType.Parameter("labels") @Nullable List<String> labels,
-        @CustomType.Parameter("riskLevel") @Nullable String riskLevel) {
-        this.condition = condition;
-        this.configurations = configurations;
-        this.isConfigurationAllowed = isConfigurationAllowed;
-        this.isEnabled = isEnabled;
-        this.labels = labels;
-        this.riskLevel = riskLevel;
-    }
-
+    private DetectorRecipeEffectiveDetectorRuleDetail() {}
     /**
      * @return (Updatable) Base condition object
      * 
@@ -111,7 +96,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetail {
     public static Builder builder(DetectorRecipeEffectiveDetectorRuleDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String condition;
         private @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations;
@@ -119,11 +104,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetail {
         private @Nullable Boolean isEnabled;
         private @Nullable List<String> labels;
         private @Nullable String riskLevel;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DetectorRecipeEffectiveDetectorRuleDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.condition = defaults.condition;
@@ -134,10 +115,12 @@ public final class DetectorRecipeEffectiveDetectorRuleDetail {
     	      this.riskLevel = defaults.riskLevel;
         }
 
+        @CustomType.Setter
         public Builder condition(@Nullable String condition) {
             this.condition = condition;
             return this;
         }
+        @CustomType.Setter
         public Builder configurations(@Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations) {
             this.configurations = configurations;
             return this;
@@ -145,14 +128,17 @@ public final class DetectorRecipeEffectiveDetectorRuleDetail {
         public Builder configurations(DetectorRecipeEffectiveDetectorRuleDetailConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
+        @CustomType.Setter
         public Builder isConfigurationAllowed(@Nullable Boolean isConfigurationAllowed) {
             this.isConfigurationAllowed = isConfigurationAllowed;
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
             this.isEnabled = isEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder labels(@Nullable List<String> labels) {
             this.labels = labels;
             return this;
@@ -160,11 +146,20 @@ public final class DetectorRecipeEffectiveDetectorRuleDetail {
         public Builder labels(String... labels) {
             return labels(List.of(labels));
         }
+        @CustomType.Setter
         public Builder riskLevel(@Nullable String riskLevel) {
             this.riskLevel = riskLevel;
             return this;
-        }        public DetectorRecipeEffectiveDetectorRuleDetail build() {
-            return new DetectorRecipeEffectiveDetectorRuleDetail(condition, configurations, isConfigurationAllowed, isEnabled, labels, riskLevel);
+        }
+        public DetectorRecipeEffectiveDetectorRuleDetail build() {
+            final var o = new DetectorRecipeEffectiveDetectorRuleDetail();
+            o.condition = condition;
+            o.configurations = configurations;
+            o.isConfigurationAllowed = isConfigurationAllowed;
+            o.isEnabled = isEnabled;
+            o.labels = labels;
+            o.riskLevel = riskLevel;
+            return o;
         }
     }
 }

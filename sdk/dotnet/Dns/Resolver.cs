@@ -12,23 +12,17 @@ namespace Pulumi.Oci.Dns
     /// <summary>
     /// This resource provides the Resolver resource in Oracle Cloud Infrastructure DNS service.
     /// 
-    /// Updates the specified resolver with your new information. Requires a `PRIVATE` scope query parameter.
+    /// Updates the specified resolver with your new information.
     /// 
     /// Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until created VCN's state shows as Available in OCI console before updating DNS resolver properties.
     /// Also a VCN cannot be deleted while its resolver has resolver endpoints. Additionally a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove the rules from a resolver user needs to update the resolver resource. Since DNS Resolver gets deleted when VCN is deleted there is no support for Delete for DNS Resolver.
     /// 
     /// ## Import
     /// 
-    /// For legacy Resolvers that were created without using `scope`, these Resolvers can be imported using the `id`, e.g.
+    /// Resolvers can be imported using their OCID, e.g.
     /// 
     /// ```sh
     ///  $ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
-    /// ```
-    /// 
-    ///  For Resolvers created using `scope`, these Resolvers can be imported using the `id`, e.g.
-    /// 
-    /// ```sh
-    ///  $ pulumi import oci:Dns/resolver:Resolver test_resolver "resolverId/{resolverId}/scope/{scope}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Dns/resolver:Resolver")]
@@ -101,10 +95,10 @@ namespace Pulumi.Oci.Dns
         public Output<ImmutableArray<Outputs.ResolverRule>> Rules { get; private set; } = null!;
 
         /// <summary>
-        /// Value must be `PRIVATE` when creating private name resolvers.
+        /// If specified, must be `PRIVATE` when creating private name resolvers.
         /// </summary>
         [Output("scope")]
-        public Output<string> Scope { get; private set; } = null!;
+        public Output<string?> Scope { get; private set; } = null!;
 
         /// <summary>
         /// The canonical absolute URL of the resource.
@@ -243,10 +237,10 @@ namespace Pulumi.Oci.Dns
         }
 
         /// <summary>
-        /// Value must be `PRIVATE` when creating private name resolvers.
+        /// If specified, must be `PRIVATE` when creating private name resolvers.
         /// </summary>
-        [Input("scope", required: true)]
-        public Input<string> Scope { get; set; } = null!;
+        [Input("scope")]
+        public Input<string>? Scope { get; set; }
 
         public ResolverArgs()
         {
@@ -353,7 +347,7 @@ namespace Pulumi.Oci.Dns
         }
 
         /// <summary>
-        /// Value must be `PRIVATE` when creating private name resolvers.
+        /// If specified, must be `PRIVATE` when creating private name resolvers.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }

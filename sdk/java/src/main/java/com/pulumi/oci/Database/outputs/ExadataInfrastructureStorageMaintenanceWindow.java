@@ -15,29 +15,14 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ExadataInfrastructureStorageMaintenanceWindow {
-    private final @Nullable List<ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek> daysOfWeeks;
-    private final @Nullable List<Integer> hoursOfDays;
-    private final @Nullable Integer leadTimeInWeeks;
-    private final @Nullable List<ExadataInfrastructureStorageMaintenanceWindowMonth> months;
-    private final String preference;
-    private final @Nullable List<Integer> weeksOfMonths;
+    private @Nullable List<ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek> daysOfWeeks;
+    private @Nullable List<Integer> hoursOfDays;
+    private @Nullable Integer leadTimeInWeeks;
+    private @Nullable List<ExadataInfrastructureStorageMaintenanceWindowMonth> months;
+    private String preference;
+    private @Nullable List<Integer> weeksOfMonths;
 
-    @CustomType.Constructor
-    private ExadataInfrastructureStorageMaintenanceWindow(
-        @CustomType.Parameter("daysOfWeeks") @Nullable List<ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek> daysOfWeeks,
-        @CustomType.Parameter("hoursOfDays") @Nullable List<Integer> hoursOfDays,
-        @CustomType.Parameter("leadTimeInWeeks") @Nullable Integer leadTimeInWeeks,
-        @CustomType.Parameter("months") @Nullable List<ExadataInfrastructureStorageMaintenanceWindowMonth> months,
-        @CustomType.Parameter("preference") String preference,
-        @CustomType.Parameter("weeksOfMonths") @Nullable List<Integer> weeksOfMonths) {
-        this.daysOfWeeks = daysOfWeeks;
-        this.hoursOfDays = hoursOfDays;
-        this.leadTimeInWeeks = leadTimeInWeeks;
-        this.months = months;
-        this.preference = preference;
-        this.weeksOfMonths = weeksOfMonths;
-    }
-
+    private ExadataInfrastructureStorageMaintenanceWindow() {}
     public List<ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek> daysOfWeeks() {
         return this.daysOfWeeks == null ? List.of() : this.daysOfWeeks;
     }
@@ -64,7 +49,7 @@ public final class ExadataInfrastructureStorageMaintenanceWindow {
     public static Builder builder(ExadataInfrastructureStorageMaintenanceWindow defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek> daysOfWeeks;
         private @Nullable List<Integer> hoursOfDays;
@@ -72,11 +57,7 @@ public final class ExadataInfrastructureStorageMaintenanceWindow {
         private @Nullable List<ExadataInfrastructureStorageMaintenanceWindowMonth> months;
         private String preference;
         private @Nullable List<Integer> weeksOfMonths;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ExadataInfrastructureStorageMaintenanceWindow defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.daysOfWeeks = defaults.daysOfWeeks;
@@ -87,6 +68,7 @@ public final class ExadataInfrastructureStorageMaintenanceWindow {
     	      this.weeksOfMonths = defaults.weeksOfMonths;
         }
 
+        @CustomType.Setter
         public Builder daysOfWeeks(@Nullable List<ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek> daysOfWeeks) {
             this.daysOfWeeks = daysOfWeeks;
             return this;
@@ -94,6 +76,7 @@ public final class ExadataInfrastructureStorageMaintenanceWindow {
         public Builder daysOfWeeks(ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek... daysOfWeeks) {
             return daysOfWeeks(List.of(daysOfWeeks));
         }
+        @CustomType.Setter
         public Builder hoursOfDays(@Nullable List<Integer> hoursOfDays) {
             this.hoursOfDays = hoursOfDays;
             return this;
@@ -101,10 +84,12 @@ public final class ExadataInfrastructureStorageMaintenanceWindow {
         public Builder hoursOfDays(Integer... hoursOfDays) {
             return hoursOfDays(List.of(hoursOfDays));
         }
+        @CustomType.Setter
         public Builder leadTimeInWeeks(@Nullable Integer leadTimeInWeeks) {
             this.leadTimeInWeeks = leadTimeInWeeks;
             return this;
         }
+        @CustomType.Setter
         public Builder months(@Nullable List<ExadataInfrastructureStorageMaintenanceWindowMonth> months) {
             this.months = months;
             return this;
@@ -112,18 +97,28 @@ public final class ExadataInfrastructureStorageMaintenanceWindow {
         public Builder months(ExadataInfrastructureStorageMaintenanceWindowMonth... months) {
             return months(List.of(months));
         }
+        @CustomType.Setter
         public Builder preference(String preference) {
             this.preference = Objects.requireNonNull(preference);
             return this;
         }
+        @CustomType.Setter
         public Builder weeksOfMonths(@Nullable List<Integer> weeksOfMonths) {
             this.weeksOfMonths = weeksOfMonths;
             return this;
         }
         public Builder weeksOfMonths(Integer... weeksOfMonths) {
             return weeksOfMonths(List.of(weeksOfMonths));
-        }        public ExadataInfrastructureStorageMaintenanceWindow build() {
-            return new ExadataInfrastructureStorageMaintenanceWindow(daysOfWeeks, hoursOfDays, leadTimeInWeeks, months, preference, weeksOfMonths);
+        }
+        public ExadataInfrastructureStorageMaintenanceWindow build() {
+            final var o = new ExadataInfrastructureStorageMaintenanceWindow();
+            o.daysOfWeeks = daysOfWeeks;
+            o.hoursOfDays = hoursOfDays;
+            o.leadTimeInWeeks = leadTimeInWeeks;
+            o.months = months;
+            o.preference = preference;
+            o.weeksOfMonths = weeksOfMonths;
+            return o;
         }
     }
 }

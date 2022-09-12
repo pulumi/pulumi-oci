@@ -13,21 +13,14 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSumm
      * @return The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private final String timeFinished;
+    private String timeFinished;
     /**
      * @return The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private final String timeStarted;
+    private String timeStarted;
 
-    @CustomType.Constructor
-    private GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummary(
-        @CustomType.Parameter("timeFinished") String timeFinished,
-        @CustomType.Parameter("timeStarted") String timeStarted) {
-        this.timeFinished = timeFinished;
-        this.timeStarted = timeStarted;
-    }
-
+    private GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummary() {}
     /**
      * @return The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
@@ -50,30 +43,32 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSumm
     public static Builder builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummary defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String timeFinished;
         private String timeStarted;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummary defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.timeFinished = defaults.timeFinished;
     	      this.timeStarted = defaults.timeStarted;
         }
 
+        @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
             this.timeFinished = Objects.requireNonNull(timeFinished);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
-        }        public GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummary build() {
-            return new GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummary(timeFinished, timeStarted);
+        }
+        public GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummary build() {
+            final var o = new GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummary();
+            o.timeFinished = timeFinished;
+            o.timeStarted = timeStarted;
+            return o;
         }
     }
 }

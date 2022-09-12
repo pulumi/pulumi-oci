@@ -15,13 +15,9 @@ public final class AutonomousContainerDatabaseMaintenanceWindowMonth {
      * @return (Updatable) Name of the month of the year.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private AutonomousContainerDatabaseMaintenanceWindowMonth(@CustomType.Parameter("name") @Nullable String name) {
-        this.name = name;
-    }
-
+    private AutonomousContainerDatabaseMaintenanceWindowMonth() {}
     /**
      * @return (Updatable) Name of the month of the year.
      * 
@@ -37,24 +33,24 @@ public final class AutonomousContainerDatabaseMaintenanceWindowMonth {
     public static Builder builder(AutonomousContainerDatabaseMaintenanceWindowMonth defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutonomousContainerDatabaseMaintenanceWindowMonth defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public AutonomousContainerDatabaseMaintenanceWindowMonth build() {
-            return new AutonomousContainerDatabaseMaintenanceWindowMonth(name);
+        }
+        public AutonomousContainerDatabaseMaintenanceWindowMonth build() {
+            final var o = new AutonomousContainerDatabaseMaintenanceWindowMonth();
+            o.name = name;
+            return o;
         }
     }
 }

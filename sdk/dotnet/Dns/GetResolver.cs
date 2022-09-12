@@ -90,8 +90,8 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// Value must be `PRIVATE` when listing private name resolvers.
         /// </summary>
-        [Input("scope", required: true)]
-        public string Scope { get; set; } = null!;
+        [Input("scope")]
+        public string? Scope { get; set; }
 
         public GetResolverArgs()
         {
@@ -110,8 +110,8 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// Value must be `PRIVATE` when listing private name resolvers.
         /// </summary>
-        [Input("scope", required: true)]
-        public Input<string> Scope { get; set; } = null!;
+        [Input("scope")]
+        public Input<string>? Scope { get; set; }
 
         public GetResolverInvokeArgs()
         {
@@ -168,7 +168,7 @@ namespace Pulumi.Oci.Dns
         /// Rules for the resolver. Rules are evaluated in order.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetResolverRuleResult> Rules;
-        public readonly string Scope;
+        public readonly string? Scope;
         /// <summary>
         /// The canonical absolute URL of the resource.
         /// </summary>
@@ -212,7 +212,7 @@ namespace Pulumi.Oci.Dns
 
             ImmutableArray<Outputs.GetResolverRuleResult> rules,
 
-            string scope,
+            string? scope,
 
             string self,
 

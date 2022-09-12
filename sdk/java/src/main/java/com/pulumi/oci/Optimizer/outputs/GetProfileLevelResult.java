@@ -14,45 +14,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProfileLevelResult {
-    private final String compartmentId;
-    private final Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private Boolean compartmentIdInSubtree;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A collection of profile levels.
      * 
      */
-    private final List<GetProfileLevelItem> items;
+    private List<GetProfileLevelItem> items;
     /**
      * @return A unique name for the profile level.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The name of the recommendation this profile level applies to.
      * 
      */
-    private final @Nullable String recommendationName;
+    private @Nullable String recommendationName;
 
-    @CustomType.Constructor
-    private GetProfileLevelResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetProfileLevelItem> items,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("recommendationName") @Nullable String recommendationName) {
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.id = id;
-        this.items = items;
-        this.name = name;
-        this.recommendationName = recommendationName;
-    }
-
+    private GetProfileLevelResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -95,7 +80,7 @@ public final class GetProfileLevelResult {
     public static Builder builder(GetProfileLevelResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Boolean compartmentIdInSubtree;
@@ -103,11 +88,7 @@ public final class GetProfileLevelResult {
         private List<GetProfileLevelItem> items;
         private @Nullable String name;
         private @Nullable String recommendationName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProfileLevelResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -118,18 +99,22 @@ public final class GetProfileLevelResult {
     	      this.recommendationName = defaults.recommendationName;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetProfileLevelItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -137,15 +122,25 @@ public final class GetProfileLevelResult {
         public Builder items(GetProfileLevelItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder recommendationName(@Nullable String recommendationName) {
             this.recommendationName = recommendationName;
             return this;
-        }        public GetProfileLevelResult build() {
-            return new GetProfileLevelResult(compartmentId, compartmentIdInSubtree, id, items, name, recommendationName);
+        }
+        public GetProfileLevelResult build() {
+            final var o = new GetProfileLevelResult();
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.id = id;
+            o.items = items;
+            o.name = name;
+            o.recommendationName = recommendationName;
+            return o;
         }
     }
 }

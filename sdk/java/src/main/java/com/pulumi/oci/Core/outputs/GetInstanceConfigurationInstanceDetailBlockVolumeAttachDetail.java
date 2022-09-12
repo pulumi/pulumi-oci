@@ -14,56 +14,39 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail
      * @return The device name.
      * 
      */
-    private final String device;
+    private String device;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
      * 
      */
-    private final Boolean isPvEncryptionInTransitEnabled;
+    private Boolean isPvEncryptionInTransitEnabled;
     /**
      * @return Whether the attachment should be created in read-only mode.
      * 
      */
-    private final Boolean isReadOnly;
+    private Boolean isReadOnly;
     /**
      * @return Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
      * 
      */
-    private final Boolean isShareable;
+    private Boolean isShareable;
     /**
      * @return The type of action to run when the instance is interrupted for eviction.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return Whether to use CHAP authentication for the volume attachment. Defaults to false.
      * 
      */
-    private final Boolean useChap;
+    private Boolean useChap;
 
-    @CustomType.Constructor
-    private GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail(
-        @CustomType.Parameter("device") String device,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("isPvEncryptionInTransitEnabled") Boolean isPvEncryptionInTransitEnabled,
-        @CustomType.Parameter("isReadOnly") Boolean isReadOnly,
-        @CustomType.Parameter("isShareable") Boolean isShareable,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("useChap") Boolean useChap) {
-        this.device = device;
-        this.displayName = displayName;
-        this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
-        this.isReadOnly = isReadOnly;
-        this.isShareable = isShareable;
-        this.type = type;
-        this.useChap = useChap;
-    }
-
+    private GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail() {}
     /**
      * @return The device name.
      * 
@@ -121,7 +104,7 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail
     public static Builder builder(GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String device;
         private String displayName;
@@ -130,11 +113,7 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail
         private Boolean isShareable;
         private String type;
         private Boolean useChap;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.device = defaults.device;
@@ -146,35 +125,51 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail
     	      this.useChap = defaults.useChap;
         }
 
+        @CustomType.Setter
         public Builder device(String device) {
             this.device = Objects.requireNonNull(device);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
             this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isReadOnly(Boolean isReadOnly) {
             this.isReadOnly = Objects.requireNonNull(isReadOnly);
             return this;
         }
+        @CustomType.Setter
         public Builder isShareable(Boolean isShareable) {
             this.isShareable = Objects.requireNonNull(isShareable);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder useChap(Boolean useChap) {
             this.useChap = Objects.requireNonNull(useChap);
             return this;
-        }        public GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail build() {
-            return new GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail(device, displayName, isPvEncryptionInTransitEnabled, isReadOnly, isShareable, type, useChap);
+        }
+        public GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail build() {
+            final var o = new GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail();
+            o.device = device;
+            o.displayName = displayName;
+            o.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            o.isReadOnly = isReadOnly;
+            o.isShareable = isShareable;
+            o.type = type;
+            o.useChap = useChap;
+            return o;
         }
     }
 }

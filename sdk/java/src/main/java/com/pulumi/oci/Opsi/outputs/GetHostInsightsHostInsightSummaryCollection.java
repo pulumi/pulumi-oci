@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetHostInsightsHostInsightSummaryCollection {
-    private final List<GetHostInsightsHostInsightSummaryCollectionItem> items;
+    private List<GetHostInsightsHostInsightSummaryCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetHostInsightsHostInsightSummaryCollection(@CustomType.Parameter("items") List<GetHostInsightsHostInsightSummaryCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetHostInsightsHostInsightSummaryCollection() {}
     public List<GetHostInsightsHostInsightSummaryCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetHostInsightsHostInsightSummaryCollection {
     public static Builder builder(GetHostInsightsHostInsightSummaryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetHostInsightsHostInsightSummaryCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetHostInsightsHostInsightSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetHostInsightsHostInsightSummaryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetHostInsightsHostInsightSummaryCollectionItem... items) {
             return items(List.of(items));
-        }        public GetHostInsightsHostInsightSummaryCollection build() {
-            return new GetHostInsightsHostInsightSummaryCollection(items);
+        }
+        public GetHostInsightsHostInsightSummaryCollection build() {
+            final var o = new GetHostInsightsHostInsightSummaryCollection();
+            o.items = items;
+            return o;
         }
     }
 }

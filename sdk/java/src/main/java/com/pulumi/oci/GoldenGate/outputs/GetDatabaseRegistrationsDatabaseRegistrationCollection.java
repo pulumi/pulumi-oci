@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDatabaseRegistrationsDatabaseRegistrationCollection {
-    private final List<GetDatabaseRegistrationsDatabaseRegistrationCollectionItem> items;
+    private List<GetDatabaseRegistrationsDatabaseRegistrationCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDatabaseRegistrationsDatabaseRegistrationCollection(@CustomType.Parameter("items") List<GetDatabaseRegistrationsDatabaseRegistrationCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDatabaseRegistrationsDatabaseRegistrationCollection() {}
     public List<GetDatabaseRegistrationsDatabaseRegistrationCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollection {
     public static Builder builder(GetDatabaseRegistrationsDatabaseRegistrationCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDatabaseRegistrationsDatabaseRegistrationCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseRegistrationsDatabaseRegistrationCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDatabaseRegistrationsDatabaseRegistrationCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDatabaseRegistrationsDatabaseRegistrationCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDatabaseRegistrationsDatabaseRegistrationCollection build() {
-            return new GetDatabaseRegistrationsDatabaseRegistrationCollection(items);
+        }
+        public GetDatabaseRegistrationsDatabaseRegistrationCollection build() {
+            final var o = new GetDatabaseRegistrationsDatabaseRegistrationCollection();
+            o.items = items;
+            return o;
         }
     }
 }

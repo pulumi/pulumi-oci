@@ -13,65 +13,34 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstallationSiteResult {
-    private final @Nullable String applicationId;
-    private final String fleetId;
+    private @Nullable String applicationId;
+    private String fleetId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String installationPath;
+    private String id;
+    private @Nullable String installationPath;
     /**
      * @return A list of Java installation sites.
      * 
      */
-    private final List<GetInstallationSiteItem> items;
-    private final @Nullable String jreDistribution;
-    private final @Nullable String jreSecurityStatus;
-    private final @Nullable String jreVendor;
-    private final @Nullable String jreVersion;
+    private List<GetInstallationSiteItem> items;
+    private @Nullable String jreDistribution;
+    private @Nullable String jreSecurityStatus;
+    private @Nullable String jreVendor;
+    private @Nullable String jreVersion;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
      * 
      */
-    private final @Nullable String managedInstanceId;
-    private final @Nullable List<String> osFamilies;
-    private final @Nullable String pathContains;
-    private final @Nullable String timeEnd;
-    private final @Nullable String timeStart;
+    private @Nullable String managedInstanceId;
+    private @Nullable List<String> osFamilies;
+    private @Nullable String pathContains;
+    private @Nullable String timeEnd;
+    private @Nullable String timeStart;
 
-    @CustomType.Constructor
-    private GetInstallationSiteResult(
-        @CustomType.Parameter("applicationId") @Nullable String applicationId,
-        @CustomType.Parameter("fleetId") String fleetId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("installationPath") @Nullable String installationPath,
-        @CustomType.Parameter("items") List<GetInstallationSiteItem> items,
-        @CustomType.Parameter("jreDistribution") @Nullable String jreDistribution,
-        @CustomType.Parameter("jreSecurityStatus") @Nullable String jreSecurityStatus,
-        @CustomType.Parameter("jreVendor") @Nullable String jreVendor,
-        @CustomType.Parameter("jreVersion") @Nullable String jreVersion,
-        @CustomType.Parameter("managedInstanceId") @Nullable String managedInstanceId,
-        @CustomType.Parameter("osFamilies") @Nullable List<String> osFamilies,
-        @CustomType.Parameter("pathContains") @Nullable String pathContains,
-        @CustomType.Parameter("timeEnd") @Nullable String timeEnd,
-        @CustomType.Parameter("timeStart") @Nullable String timeStart) {
-        this.applicationId = applicationId;
-        this.fleetId = fleetId;
-        this.id = id;
-        this.installationPath = installationPath;
-        this.items = items;
-        this.jreDistribution = jreDistribution;
-        this.jreSecurityStatus = jreSecurityStatus;
-        this.jreVendor = jreVendor;
-        this.jreVersion = jreVersion;
-        this.managedInstanceId = managedInstanceId;
-        this.osFamilies = osFamilies;
-        this.pathContains = pathContains;
-        this.timeEnd = timeEnd;
-        this.timeStart = timeStart;
-    }
-
+    private GetInstallationSiteResult() {}
     public Optional<String> applicationId() {
         return Optional.ofNullable(this.applicationId);
     }
@@ -134,7 +103,7 @@ public final class GetInstallationSiteResult {
     public static Builder builder(GetInstallationSiteResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String applicationId;
         private String fleetId;
@@ -150,11 +119,7 @@ public final class GetInstallationSiteResult {
         private @Nullable String pathContains;
         private @Nullable String timeEnd;
         private @Nullable String timeStart;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstallationSiteResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applicationId = defaults.applicationId;
@@ -173,22 +138,27 @@ public final class GetInstallationSiteResult {
     	      this.timeStart = defaults.timeStart;
         }
 
+        @CustomType.Setter
         public Builder applicationId(@Nullable String applicationId) {
             this.applicationId = applicationId;
             return this;
         }
+        @CustomType.Setter
         public Builder fleetId(String fleetId) {
             this.fleetId = Objects.requireNonNull(fleetId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder installationPath(@Nullable String installationPath) {
             this.installationPath = installationPath;
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetInstallationSiteItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -196,26 +166,32 @@ public final class GetInstallationSiteResult {
         public Builder items(GetInstallationSiteItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder jreDistribution(@Nullable String jreDistribution) {
             this.jreDistribution = jreDistribution;
             return this;
         }
+        @CustomType.Setter
         public Builder jreSecurityStatus(@Nullable String jreSecurityStatus) {
             this.jreSecurityStatus = jreSecurityStatus;
             return this;
         }
+        @CustomType.Setter
         public Builder jreVendor(@Nullable String jreVendor) {
             this.jreVendor = jreVendor;
             return this;
         }
+        @CustomType.Setter
         public Builder jreVersion(@Nullable String jreVersion) {
             this.jreVersion = jreVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder managedInstanceId(@Nullable String managedInstanceId) {
             this.managedInstanceId = managedInstanceId;
             return this;
         }
+        @CustomType.Setter
         public Builder osFamilies(@Nullable List<String> osFamilies) {
             this.osFamilies = osFamilies;
             return this;
@@ -223,19 +199,38 @@ public final class GetInstallationSiteResult {
         public Builder osFamilies(String... osFamilies) {
             return osFamilies(List.of(osFamilies));
         }
+        @CustomType.Setter
         public Builder pathContains(@Nullable String pathContains) {
             this.pathContains = pathContains;
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnd(@Nullable String timeEnd) {
             this.timeEnd = timeEnd;
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(@Nullable String timeStart) {
             this.timeStart = timeStart;
             return this;
-        }        public GetInstallationSiteResult build() {
-            return new GetInstallationSiteResult(applicationId, fleetId, id, installationPath, items, jreDistribution, jreSecurityStatus, jreVendor, jreVersion, managedInstanceId, osFamilies, pathContains, timeEnd, timeStart);
+        }
+        public GetInstallationSiteResult build() {
+            final var o = new GetInstallationSiteResult();
+            o.applicationId = applicationId;
+            o.fleetId = fleetId;
+            o.id = id;
+            o.installationPath = installationPath;
+            o.items = items;
+            o.jreDistribution = jreDistribution;
+            o.jreSecurityStatus = jreSecurityStatus;
+            o.jreVendor = jreVendor;
+            o.jreVersion = jreVersion;
+            o.managedInstanceId = managedInstanceId;
+            o.osFamilies = osFamilies;
+            o.pathContains = pathContains;
+            o.timeEnd = timeEnd;
+            o.timeStart = timeStart;
+            return o;
         }
     }
 }

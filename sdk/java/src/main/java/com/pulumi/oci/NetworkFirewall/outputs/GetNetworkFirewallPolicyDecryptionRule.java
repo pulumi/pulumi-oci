@@ -19,42 +19,29 @@ public final class GetNetworkFirewallPolicyDecryptionRule {
      * * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
      * 
      */
-    private final List<GetNetworkFirewallPolicyDecryptionRuleCondition> conditions;
+    private List<GetNetworkFirewallPolicyDecryptionRuleCondition> conditions;
     /**
      * @return The name of the decryption profile to use.
      * 
      */
-    private final String decryptionProfile;
+    private String decryptionProfile;
     /**
      * @return Name for the Security rule, must be unique within the policy.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The name of a mapped secret. Its `type` must match that of the specified decryption profile.
      * 
      */
-    private final String secret;
+    private String secret;
 
-    @CustomType.Constructor
-    private GetNetworkFirewallPolicyDecryptionRule(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("conditions") List<GetNetworkFirewallPolicyDecryptionRuleCondition> conditions,
-        @CustomType.Parameter("decryptionProfile") String decryptionProfile,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("secret") String secret) {
-        this.action = action;
-        this.conditions = conditions;
-        this.decryptionProfile = decryptionProfile;
-        this.name = name;
-        this.secret = secret;
-    }
-
+    private GetNetworkFirewallPolicyDecryptionRule() {}
     /**
      * @return Types of Action on the Traffic flow.
      * * ALLOW - Allows the traffic.
@@ -102,18 +89,14 @@ public final class GetNetworkFirewallPolicyDecryptionRule {
     public static Builder builder(GetNetworkFirewallPolicyDecryptionRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private List<GetNetworkFirewallPolicyDecryptionRuleCondition> conditions;
         private String decryptionProfile;
         private String name;
         private String secret;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkFirewallPolicyDecryptionRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -123,10 +106,12 @@ public final class GetNetworkFirewallPolicyDecryptionRule {
     	      this.secret = defaults.secret;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder conditions(List<GetNetworkFirewallPolicyDecryptionRuleCondition> conditions) {
             this.conditions = Objects.requireNonNull(conditions);
             return this;
@@ -134,19 +119,29 @@ public final class GetNetworkFirewallPolicyDecryptionRule {
         public Builder conditions(GetNetworkFirewallPolicyDecryptionRuleCondition... conditions) {
             return conditions(List.of(conditions));
         }
+        @CustomType.Setter
         public Builder decryptionProfile(String decryptionProfile) {
             this.decryptionProfile = Objects.requireNonNull(decryptionProfile);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder secret(String secret) {
             this.secret = Objects.requireNonNull(secret);
             return this;
-        }        public GetNetworkFirewallPolicyDecryptionRule build() {
-            return new GetNetworkFirewallPolicyDecryptionRule(action, conditions, decryptionProfile, name, secret);
+        }
+        public GetNetworkFirewallPolicyDecryptionRule build() {
+            final var o = new GetNetworkFirewallPolicyDecryptionRule();
+            o.action = action;
+            o.conditions = conditions;
+            o.decryptionProfile = decryptionProfile;
+            o.name = name;
+            o.secret = secret;
+            return o;
         }
     }
 }

@@ -17,28 +17,19 @@ public final class IngressGatewayHostListener {
      * @return (Updatable) Port on which ingress gateway is listening.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return (Updatable) Type of protocol used.
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return (Updatable) TLS enforcement config for the ingress listener.
      * 
      */
-    private final @Nullable IngressGatewayHostListenerTls tls;
+    private @Nullable IngressGatewayHostListenerTls tls;
 
-    @CustomType.Constructor
-    private IngressGatewayHostListener(
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("tls") @Nullable IngressGatewayHostListenerTls tls) {
-        this.port = port;
-        this.protocol = protocol;
-        this.tls = tls;
-    }
-
+    private IngressGatewayHostListener() {}
     /**
      * @return (Updatable) Port on which ingress gateway is listening.
      * 
@@ -68,16 +59,12 @@ public final class IngressGatewayHostListener {
     public static Builder builder(IngressGatewayHostListener defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer port;
         private String protocol;
         private @Nullable IngressGatewayHostListenerTls tls;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(IngressGatewayHostListener defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.port = defaults.port;
@@ -85,19 +72,27 @@ public final class IngressGatewayHostListener {
     	      this.tls = defaults.tls;
         }
 
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder tls(@Nullable IngressGatewayHostListenerTls tls) {
             this.tls = tls;
             return this;
-        }        public IngressGatewayHostListener build() {
-            return new IngressGatewayHostListener(port, protocol, tls);
+        }
+        public IngressGatewayHostListener build() {
+            final var o = new IngressGatewayHostListener();
+            o.port = port;
+            o.protocol = protocol;
+            o.tls = tls;
+            return o;
         }
     }
 }

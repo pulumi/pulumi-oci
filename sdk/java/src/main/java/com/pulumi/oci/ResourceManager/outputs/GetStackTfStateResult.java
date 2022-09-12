@@ -13,20 +13,11 @@ public final class GetStackTfStateResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String localPath;
-    private final String stackId;
+    private String id;
+    private String localPath;
+    private String stackId;
 
-    @CustomType.Constructor
-    private GetStackTfStateResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("localPath") String localPath,
-        @CustomType.Parameter("stackId") String stackId) {
-        this.id = id;
-        this.localPath = localPath;
-        this.stackId = stackId;
-    }
-
+    private GetStackTfStateResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -48,16 +39,12 @@ public final class GetStackTfStateResult {
     public static Builder builder(GetStackTfStateResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String localPath;
         private String stackId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetStackTfStateResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -65,19 +52,27 @@ public final class GetStackTfStateResult {
     	      this.stackId = defaults.stackId;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder localPath(String localPath) {
             this.localPath = Objects.requireNonNull(localPath);
             return this;
         }
+        @CustomType.Setter
         public Builder stackId(String stackId) {
             this.stackId = Objects.requireNonNull(stackId);
             return this;
-        }        public GetStackTfStateResult build() {
-            return new GetStackTfStateResult(id, localPath, stackId);
+        }
+        public GetStackTfStateResult build() {
+            final var o = new GetStackTfStateResult();
+            o.id = id;
+            o.localPath = localPath;
+            o.stackId = stackId;
+            return o;
         }
     }
 }

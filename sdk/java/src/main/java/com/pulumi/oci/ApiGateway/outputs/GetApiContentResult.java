@@ -9,24 +9,15 @@ import java.util.Objects;
 
 @CustomType
 public final class GetApiContentResult {
-    private final String apiId;
-    private final String content;
+    private String apiId;
+    private String content;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetApiContentResult(
-        @CustomType.Parameter("apiId") String apiId,
-        @CustomType.Parameter("content") String content,
-        @CustomType.Parameter("id") String id) {
-        this.apiId = apiId;
-        this.content = content;
-        this.id = id;
-    }
-
+    private GetApiContentResult() {}
     public String apiId() {
         return this.apiId;
     }
@@ -48,16 +39,12 @@ public final class GetApiContentResult {
     public static Builder builder(GetApiContentResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apiId;
         private String content;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiContentResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apiId = defaults.apiId;
@@ -65,19 +52,27 @@ public final class GetApiContentResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder apiId(String apiId) {
             this.apiId = Objects.requireNonNull(apiId);
             return this;
         }
+        @CustomType.Setter
         public Builder content(String content) {
             this.content = Objects.requireNonNull(content);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetApiContentResult build() {
-            return new GetApiContentResult(apiId, content, id);
+        }
+        public GetApiContentResult build() {
+            final var o = new GetApiContentResult();
+            o.apiId = apiId;
+            o.content = content;
+            o.id = id;
+            return o;
         }
     }
 }

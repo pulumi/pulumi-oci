@@ -15,35 +15,16 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DefaultSecurityListIngressSecurityRule {
-    private final @Nullable String description;
-    private final @Nullable DefaultSecurityListIngressSecurityRuleIcmpOptions icmpOptions;
-    private final String protocol;
-    private final String source;
-    private final @Nullable String sourceType;
-    private final @Nullable Boolean stateless;
-    private final @Nullable DefaultSecurityListIngressSecurityRuleTcpOptions tcpOptions;
-    private final @Nullable DefaultSecurityListIngressSecurityRuleUdpOptions udpOptions;
+    private @Nullable String description;
+    private @Nullable DefaultSecurityListIngressSecurityRuleIcmpOptions icmpOptions;
+    private String protocol;
+    private String source;
+    private @Nullable String sourceType;
+    private @Nullable Boolean stateless;
+    private @Nullable DefaultSecurityListIngressSecurityRuleTcpOptions tcpOptions;
+    private @Nullable DefaultSecurityListIngressSecurityRuleUdpOptions udpOptions;
 
-    @CustomType.Constructor
-    private DefaultSecurityListIngressSecurityRule(
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("icmpOptions") @Nullable DefaultSecurityListIngressSecurityRuleIcmpOptions icmpOptions,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("source") String source,
-        @CustomType.Parameter("sourceType") @Nullable String sourceType,
-        @CustomType.Parameter("stateless") @Nullable Boolean stateless,
-        @CustomType.Parameter("tcpOptions") @Nullable DefaultSecurityListIngressSecurityRuleTcpOptions tcpOptions,
-        @CustomType.Parameter("udpOptions") @Nullable DefaultSecurityListIngressSecurityRuleUdpOptions udpOptions) {
-        this.description = description;
-        this.icmpOptions = icmpOptions;
-        this.protocol = protocol;
-        this.source = source;
-        this.sourceType = sourceType;
-        this.stateless = stateless;
-        this.tcpOptions = tcpOptions;
-        this.udpOptions = udpOptions;
-    }
-
+    private DefaultSecurityListIngressSecurityRule() {}
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
@@ -76,7 +57,7 @@ public final class DefaultSecurityListIngressSecurityRule {
     public static Builder builder(DefaultSecurityListIngressSecurityRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String description;
         private @Nullable DefaultSecurityListIngressSecurityRuleIcmpOptions icmpOptions;
@@ -86,11 +67,7 @@ public final class DefaultSecurityListIngressSecurityRule {
         private @Nullable Boolean stateless;
         private @Nullable DefaultSecurityListIngressSecurityRuleTcpOptions tcpOptions;
         private @Nullable DefaultSecurityListIngressSecurityRuleUdpOptions udpOptions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DefaultSecurityListIngressSecurityRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -103,39 +80,57 @@ public final class DefaultSecurityListIngressSecurityRule {
     	      this.udpOptions = defaults.udpOptions;
         }
 
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder icmpOptions(@Nullable DefaultSecurityListIngressSecurityRuleIcmpOptions icmpOptions) {
             this.icmpOptions = icmpOptions;
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder source(String source) {
             this.source = Objects.requireNonNull(source);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceType(@Nullable String sourceType) {
             this.sourceType = sourceType;
             return this;
         }
+        @CustomType.Setter
         public Builder stateless(@Nullable Boolean stateless) {
             this.stateless = stateless;
             return this;
         }
+        @CustomType.Setter
         public Builder tcpOptions(@Nullable DefaultSecurityListIngressSecurityRuleTcpOptions tcpOptions) {
             this.tcpOptions = tcpOptions;
             return this;
         }
+        @CustomType.Setter
         public Builder udpOptions(@Nullable DefaultSecurityListIngressSecurityRuleUdpOptions udpOptions) {
             this.udpOptions = udpOptions;
             return this;
-        }        public DefaultSecurityListIngressSecurityRule build() {
-            return new DefaultSecurityListIngressSecurityRule(description, icmpOptions, protocol, source, sourceType, stateless, tcpOptions, udpOptions);
+        }
+        public DefaultSecurityListIngressSecurityRule build() {
+            final var o = new DefaultSecurityListIngressSecurityRule();
+            o.description = description;
+            o.icmpOptions = icmpOptions;
+            o.protocol = protocol;
+            o.source = source;
+            o.sourceType = sourceType;
+            o.stateless = stateless;
+            o.tcpOptions = tcpOptions;
+            o.udpOptions = udpOptions;
+            return o;
         }
     }
 }

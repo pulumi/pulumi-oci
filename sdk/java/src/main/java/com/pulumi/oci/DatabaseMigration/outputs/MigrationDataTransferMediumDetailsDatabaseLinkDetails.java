@@ -16,21 +16,14 @@ public final class MigrationDataTransferMediumDetailsDatabaseLinkDetails {
      * @return (Updatable) Name of directory object in database
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
      * 
      */
-    private final @Nullable MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket walletBucket;
+    private @Nullable MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket walletBucket;
 
-    @CustomType.Constructor
-    private MigrationDataTransferMediumDetailsDatabaseLinkDetails(
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("walletBucket") @Nullable MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket walletBucket) {
-        this.name = name;
-        this.walletBucket = walletBucket;
-    }
-
+    private MigrationDataTransferMediumDetailsDatabaseLinkDetails() {}
     /**
      * @return (Updatable) Name of directory object in database
      * 
@@ -53,30 +46,32 @@ public final class MigrationDataTransferMediumDetailsDatabaseLinkDetails {
     public static Builder builder(MigrationDataTransferMediumDetailsDatabaseLinkDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String name;
         private @Nullable MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket walletBucket;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MigrationDataTransferMediumDetailsDatabaseLinkDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.walletBucket = defaults.walletBucket;
         }
 
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder walletBucket(@Nullable MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket walletBucket) {
             this.walletBucket = walletBucket;
             return this;
-        }        public MigrationDataTransferMediumDetailsDatabaseLinkDetails build() {
-            return new MigrationDataTransferMediumDetailsDatabaseLinkDetails(name, walletBucket);
+        }
+        public MigrationDataTransferMediumDetailsDatabaseLinkDetails build() {
+            final var o = new MigrationDataTransferMediumDetailsDatabaseLinkDetails();
+            o.name = name;
+            o.walletBucket = walletBucket;
+            return o;
         }
     }
 }

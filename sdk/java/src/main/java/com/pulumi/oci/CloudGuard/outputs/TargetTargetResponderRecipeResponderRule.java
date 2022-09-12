@@ -17,91 +17,64 @@ public final class TargetTargetResponderRecipeResponderRule {
      * @return (Updatable) compartment associated with condition
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The target description.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
      * @return (Updatable) Details of ResponderRule.
      * 
      */
-    private final TargetTargetResponderRecipeResponderRuleDetails details;
+    private TargetTargetResponderRecipeResponderRuleDetails details;
     /**
      * @return (Updatable) DetectorTemplate identifier.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final @Nullable String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return List of Policy
      * 
      */
-    private final @Nullable List<String> policies;
+    private @Nullable List<String> policies;
     /**
      * @return (Updatable) Identifier for ResponderRule.
      * 
      */
-    private final String responderRuleId;
+    private String responderRuleId;
     /**
      * @return (Updatable) The current state of the DetectorRule.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return Supported Execution Modes
      * 
      */
-    private final @Nullable List<String> supportedModes;
+    private @Nullable List<String> supportedModes;
     /**
      * @return The date and time the target was created. Format defined by RFC3339.
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the target was updated. Format defined by RFC3339.
      * 
      */
-    private final @Nullable String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Type of Responder
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private TargetTargetResponderRecipeResponderRule(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("details") TargetTargetResponderRecipeResponderRuleDetails details,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("lifecycleDetails") @Nullable String lifecycleDetails,
-        @CustomType.Parameter("policies") @Nullable List<String> policies,
-        @CustomType.Parameter("responderRuleId") String responderRuleId,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("supportedModes") @Nullable List<String> supportedModes,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated,
-        @CustomType.Parameter("timeUpdated") @Nullable String timeUpdated,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.compartmentId = compartmentId;
-        this.description = description;
-        this.details = details;
-        this.displayName = displayName;
-        this.lifecycleDetails = lifecycleDetails;
-        this.policies = policies;
-        this.responderRuleId = responderRuleId;
-        this.state = state;
-        this.supportedModes = supportedModes;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.type = type;
-    }
-
+    private TargetTargetResponderRecipeResponderRule() {}
     /**
      * @return (Updatable) compartment associated with condition
      * 
@@ -194,7 +167,7 @@ public final class TargetTargetResponderRecipeResponderRule {
     public static Builder builder(TargetTargetResponderRecipeResponderRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String description;
@@ -208,11 +181,7 @@ public final class TargetTargetResponderRecipeResponderRule {
         private @Nullable String timeCreated;
         private @Nullable String timeUpdated;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(TargetTargetResponderRecipeResponderRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -229,26 +198,32 @@ public final class TargetTargetResponderRecipeResponderRule {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder details(TargetTargetResponderRecipeResponderRuleDetails details) {
             this.details = Objects.requireNonNull(details);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
+        @CustomType.Setter
         public Builder policies(@Nullable List<String> policies) {
             this.policies = policies;
             return this;
@@ -256,14 +231,17 @@ public final class TargetTargetResponderRecipeResponderRule {
         public Builder policies(String... policies) {
             return policies(List.of(policies));
         }
+        @CustomType.Setter
         public Builder responderRuleId(String responderRuleId) {
             this.responderRuleId = Objects.requireNonNull(responderRuleId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder supportedModes(@Nullable List<String> supportedModes) {
             this.supportedModes = supportedModes;
             return this;
@@ -271,19 +249,36 @@ public final class TargetTargetResponderRecipeResponderRule {
         public Builder supportedModes(String... supportedModes) {
             return supportedModes(List.of(supportedModes));
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
             this.timeUpdated = timeUpdated;
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public TargetTargetResponderRecipeResponderRule build() {
-            return new TargetTargetResponderRecipeResponderRule(compartmentId, description, details, displayName, lifecycleDetails, policies, responderRuleId, state, supportedModes, timeCreated, timeUpdated, type);
+        }
+        public TargetTargetResponderRecipeResponderRule build() {
+            final var o = new TargetTargetResponderRecipeResponderRule();
+            o.compartmentId = compartmentId;
+            o.description = description;
+            o.details = details;
+            o.displayName = displayName;
+            o.lifecycleDetails = lifecycleDetails;
+            o.policies = policies;
+            o.responderRuleId = responderRuleId;
+            o.state = state;
+            o.supportedModes = supportedModes;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -15,13 +15,9 @@ public final class PathAnalysiQueryOptions {
      * @return If true, a path analysis is done for both the forward and reverse routes.
      * 
      */
-    private final @Nullable Boolean isBiDirectionalAnalysis;
+    private @Nullable Boolean isBiDirectionalAnalysis;
 
-    @CustomType.Constructor
-    private PathAnalysiQueryOptions(@CustomType.Parameter("isBiDirectionalAnalysis") @Nullable Boolean isBiDirectionalAnalysis) {
-        this.isBiDirectionalAnalysis = isBiDirectionalAnalysis;
-    }
-
+    private PathAnalysiQueryOptions() {}
     /**
      * @return If true, a path analysis is done for both the forward and reverse routes.
      * 
@@ -37,24 +33,24 @@ public final class PathAnalysiQueryOptions {
     public static Builder builder(PathAnalysiQueryOptions defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isBiDirectionalAnalysis;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PathAnalysiQueryOptions defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isBiDirectionalAnalysis = defaults.isBiDirectionalAnalysis;
         }
 
+        @CustomType.Setter
         public Builder isBiDirectionalAnalysis(@Nullable Boolean isBiDirectionalAnalysis) {
             this.isBiDirectionalAnalysis = isBiDirectionalAnalysis;
             return this;
-        }        public PathAnalysiQueryOptions build() {
-            return new PathAnalysiQueryOptions(isBiDirectionalAnalysis);
+        }
+        public PathAnalysiQueryOptions build() {
+            final var o = new PathAnalysiQueryOptions();
+            o.isBiDirectionalAnalysis = isBiDirectionalAnalysis;
+            return o;
         }
     }
 }

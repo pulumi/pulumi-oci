@@ -15,35 +15,24 @@ public final class GetInstanceAgentConfig {
      * @return Whether Oracle Cloud Agent can run all of the available plugins. This includes the management and monitoring plugins.
      * 
      */
-    private final Boolean areAllPluginsDisabled;
+    private Boolean areAllPluginsDisabled;
     /**
      * @return Whether Oracle Cloud Agent can run all the available management plugins.
      * 
      */
-    private final Boolean isManagementDisabled;
+    private Boolean isManagementDisabled;
     /**
      * @return Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins.
      * 
      */
-    private final Boolean isMonitoringDisabled;
+    private Boolean isMonitoringDisabled;
     /**
      * @return The configuration of plugins associated with this instance.
      * 
      */
-    private final List<GetInstanceAgentConfigPluginsConfig> pluginsConfigs;
+    private List<GetInstanceAgentConfigPluginsConfig> pluginsConfigs;
 
-    @CustomType.Constructor
-    private GetInstanceAgentConfig(
-        @CustomType.Parameter("areAllPluginsDisabled") Boolean areAllPluginsDisabled,
-        @CustomType.Parameter("isManagementDisabled") Boolean isManagementDisabled,
-        @CustomType.Parameter("isMonitoringDisabled") Boolean isMonitoringDisabled,
-        @CustomType.Parameter("pluginsConfigs") List<GetInstanceAgentConfigPluginsConfig> pluginsConfigs) {
-        this.areAllPluginsDisabled = areAllPluginsDisabled;
-        this.isManagementDisabled = isManagementDisabled;
-        this.isMonitoringDisabled = isMonitoringDisabled;
-        this.pluginsConfigs = pluginsConfigs;
-    }
-
+    private GetInstanceAgentConfig() {}
     /**
      * @return Whether Oracle Cloud Agent can run all of the available plugins. This includes the management and monitoring plugins.
      * 
@@ -80,17 +69,13 @@ public final class GetInstanceAgentConfig {
     public static Builder builder(GetInstanceAgentConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean areAllPluginsDisabled;
         private Boolean isManagementDisabled;
         private Boolean isMonitoringDisabled;
         private List<GetInstanceAgentConfigPluginsConfig> pluginsConfigs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceAgentConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.areAllPluginsDisabled = defaults.areAllPluginsDisabled;
@@ -99,26 +84,36 @@ public final class GetInstanceAgentConfig {
     	      this.pluginsConfigs = defaults.pluginsConfigs;
         }
 
+        @CustomType.Setter
         public Builder areAllPluginsDisabled(Boolean areAllPluginsDisabled) {
             this.areAllPluginsDisabled = Objects.requireNonNull(areAllPluginsDisabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isManagementDisabled(Boolean isManagementDisabled) {
             this.isManagementDisabled = Objects.requireNonNull(isManagementDisabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isMonitoringDisabled(Boolean isMonitoringDisabled) {
             this.isMonitoringDisabled = Objects.requireNonNull(isMonitoringDisabled);
             return this;
         }
+        @CustomType.Setter
         public Builder pluginsConfigs(List<GetInstanceAgentConfigPluginsConfig> pluginsConfigs) {
             this.pluginsConfigs = Objects.requireNonNull(pluginsConfigs);
             return this;
         }
         public Builder pluginsConfigs(GetInstanceAgentConfigPluginsConfig... pluginsConfigs) {
             return pluginsConfigs(List.of(pluginsConfigs));
-        }        public GetInstanceAgentConfig build() {
-            return new GetInstanceAgentConfig(areAllPluginsDisabled, isManagementDisabled, isMonitoringDisabled, pluginsConfigs);
+        }
+        public GetInstanceAgentConfig build() {
+            final var o = new GetInstanceAgentConfig();
+            o.areAllPluginsDisabled = areAllPluginsDisabled;
+            o.isManagementDisabled = isManagementDisabled;
+            o.isMonitoringDisabled = isMonitoringDisabled;
+            o.pluginsConfigs = pluginsConfigs;
+            return o;
         }
     }
 }

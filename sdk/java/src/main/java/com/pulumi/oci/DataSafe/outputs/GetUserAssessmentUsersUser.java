@@ -14,91 +14,64 @@ public final class GetUserAssessmentUsersUser {
      * @return A filter to return only items that match the specified account status.
      * 
      */
-    private final String accountStatus;
+    private String accountStatus;
     /**
      * @return The admin roles granted to the user.
      * 
      */
-    private final List<String> adminRoles;
+    private List<String> adminRoles;
     /**
      * @return A filter to return only items that match the specified authentication type.
      * 
      */
-    private final String authenticationType;
+    private String authenticationType;
     /**
      * @return The unique user key. This is a system-generated identifier. Use ListUsers to get the user key for a user.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private final String targetId;
+    private String targetId;
     /**
      * @return The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeLastLogin;
+    private String timeLastLogin;
     /**
      * @return The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timePasswordChanged;
+    private String timePasswordChanged;
     /**
      * @return The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeUserCreated;
+    private String timeUserCreated;
     /**
      * @return A filter to return only items that match the specified user category.
      * 
      */
-    private final String userCategory;
+    private String userCategory;
     /**
      * @return A filter to return only items that match the specified user name.
      * 
      */
-    private final String userName;
+    private String userName;
     /**
      * @return The user profile name.
      * 
      */
-    private final String userProfile;
+    private String userProfile;
     /**
      * @return The user type, which can be a combination of the following:
      * 
      */
-    private final List<String> userTypes;
+    private List<String> userTypes;
 
-    @CustomType.Constructor
-    private GetUserAssessmentUsersUser(
-        @CustomType.Parameter("accountStatus") String accountStatus,
-        @CustomType.Parameter("adminRoles") List<String> adminRoles,
-        @CustomType.Parameter("authenticationType") String authenticationType,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("targetId") String targetId,
-        @CustomType.Parameter("timeLastLogin") String timeLastLogin,
-        @CustomType.Parameter("timePasswordChanged") String timePasswordChanged,
-        @CustomType.Parameter("timeUserCreated") String timeUserCreated,
-        @CustomType.Parameter("userCategory") String userCategory,
-        @CustomType.Parameter("userName") String userName,
-        @CustomType.Parameter("userProfile") String userProfile,
-        @CustomType.Parameter("userTypes") List<String> userTypes) {
-        this.accountStatus = accountStatus;
-        this.adminRoles = adminRoles;
-        this.authenticationType = authenticationType;
-        this.key = key;
-        this.targetId = targetId;
-        this.timeLastLogin = timeLastLogin;
-        this.timePasswordChanged = timePasswordChanged;
-        this.timeUserCreated = timeUserCreated;
-        this.userCategory = userCategory;
-        this.userName = userName;
-        this.userProfile = userProfile;
-        this.userTypes = userTypes;
-    }
-
+    private GetUserAssessmentUsersUser() {}
     /**
      * @return A filter to return only items that match the specified account status.
      * 
@@ -191,7 +164,7 @@ public final class GetUserAssessmentUsersUser {
     public static Builder builder(GetUserAssessmentUsersUser defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String accountStatus;
         private List<String> adminRoles;
@@ -205,11 +178,7 @@ public final class GetUserAssessmentUsersUser {
         private String userName;
         private String userProfile;
         private List<String> userTypes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUserAssessmentUsersUser defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accountStatus = defaults.accountStatus;
@@ -226,10 +195,12 @@ public final class GetUserAssessmentUsersUser {
     	      this.userTypes = defaults.userTypes;
         }
 
+        @CustomType.Setter
         public Builder accountStatus(String accountStatus) {
             this.accountStatus = Objects.requireNonNull(accountStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder adminRoles(List<String> adminRoles) {
             this.adminRoles = Objects.requireNonNull(adminRoles);
             return this;
@@ -237,50 +208,74 @@ public final class GetUserAssessmentUsersUser {
         public Builder adminRoles(String... adminRoles) {
             return adminRoles(List.of(adminRoles));
         }
+        @CustomType.Setter
         public Builder authenticationType(String authenticationType) {
             this.authenticationType = Objects.requireNonNull(authenticationType);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastLogin(String timeLastLogin) {
             this.timeLastLogin = Objects.requireNonNull(timeLastLogin);
             return this;
         }
+        @CustomType.Setter
         public Builder timePasswordChanged(String timePasswordChanged) {
             this.timePasswordChanged = Objects.requireNonNull(timePasswordChanged);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUserCreated(String timeUserCreated) {
             this.timeUserCreated = Objects.requireNonNull(timeUserCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder userCategory(String userCategory) {
             this.userCategory = Objects.requireNonNull(userCategory);
             return this;
         }
+        @CustomType.Setter
         public Builder userName(String userName) {
             this.userName = Objects.requireNonNull(userName);
             return this;
         }
+        @CustomType.Setter
         public Builder userProfile(String userProfile) {
             this.userProfile = Objects.requireNonNull(userProfile);
             return this;
         }
+        @CustomType.Setter
         public Builder userTypes(List<String> userTypes) {
             this.userTypes = Objects.requireNonNull(userTypes);
             return this;
         }
         public Builder userTypes(String... userTypes) {
             return userTypes(List.of(userTypes));
-        }        public GetUserAssessmentUsersUser build() {
-            return new GetUserAssessmentUsersUser(accountStatus, adminRoles, authenticationType, key, targetId, timeLastLogin, timePasswordChanged, timeUserCreated, userCategory, userName, userProfile, userTypes);
+        }
+        public GetUserAssessmentUsersUser build() {
+            final var o = new GetUserAssessmentUsersUser();
+            o.accountStatus = accountStatus;
+            o.adminRoles = adminRoles;
+            o.authenticationType = authenticationType;
+            o.key = key;
+            o.targetId = targetId;
+            o.timeLastLogin = timeLastLogin;
+            o.timePasswordChanged = timePasswordChanged;
+            o.timeUserCreated = timeUserCreated;
+            o.userCategory = userCategory;
+            o.userName = userName;
+            o.userProfile = userProfile;
+            o.userTypes = userTypes;
+            return o;
         }
     }
 }

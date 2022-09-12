@@ -17,31 +17,20 @@ public final class GetNamespacesResult {
      * @return The is the tenancy ID
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetNamespacesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetNamespacesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of namespace_collection.
      * 
      */
-    private final List<GetNamespacesNamespaceCollection> namespaceCollections;
+    private List<GetNamespacesNamespaceCollection> namespaceCollections;
 
-    @CustomType.Constructor
-    private GetNamespacesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetNamespacesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("namespaceCollections") List<GetNamespacesNamespaceCollection> namespaceCollections) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.namespaceCollections = namespaceCollections;
-    }
-
+    private GetNamespacesResult() {}
     /**
      * @return The is the tenancy ID
      * 
@@ -74,17 +63,13 @@ public final class GetNamespacesResult {
     public static Builder builder(GetNamespacesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetNamespacesFilter> filters;
         private String id;
         private List<GetNamespacesNamespaceCollection> namespaceCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNamespacesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -93,10 +78,12 @@ public final class GetNamespacesResult {
     	      this.namespaceCollections = defaults.namespaceCollections;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetNamespacesFilter> filters) {
             this.filters = filters;
             return this;
@@ -104,18 +91,26 @@ public final class GetNamespacesResult {
         public Builder filters(GetNamespacesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder namespaceCollections(List<GetNamespacesNamespaceCollection> namespaceCollections) {
             this.namespaceCollections = Objects.requireNonNull(namespaceCollections);
             return this;
         }
         public Builder namespaceCollections(GetNamespacesNamespaceCollection... namespaceCollections) {
             return namespaceCollections(List.of(namespaceCollections));
-        }        public GetNamespacesResult build() {
-            return new GetNamespacesResult(compartmentId, filters, id, namespaceCollections);
+        }
+        public GetNamespacesResult build() {
+            final var o = new GetNamespacesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.namespaceCollections = namespaceCollections;
+            return o;
         }
     }
 }

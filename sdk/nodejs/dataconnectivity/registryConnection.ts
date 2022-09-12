@@ -144,7 +144,7 @@ export class RegistryConnection extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The properties for the connection.
+     * (Updatable) The properties of the connection.
      */
     public readonly connectionProperties!: pulumi.Output<outputs.DataConnectivity.RegistryConnectionConnectionProperty[]>;
     /**
@@ -156,7 +156,7 @@ export class RegistryConnection extends pulumi.CustomResource {
      */
     public readonly identifier!: pulumi.Output<string>;
     /**
-     * (Updatable) The default property for the connection.
+     * (Updatable) The default property of the connection.
      */
     public readonly isDefault!: pulumi.Output<boolean>;
     /**
@@ -164,19 +164,19 @@ export class RegistryConnection extends pulumi.CustomResource {
      */
     public readonly key!: pulumi.Output<string>;
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      */
     public readonly metadata!: pulumi.Output<outputs.DataConnectivity.RegistryConnectionMetadata>;
     /**
-     * (Updatable) The object's type.
+     * (Updatable) The object type.
      */
     public readonly modelType!: pulumi.Output<string>;
     /**
-     * (Updatable) The object's model version.
+     * (Updatable) The model version of the object.
      */
     public readonly modelVersion!: pulumi.Output<string>;
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -192,11 +192,11 @@ export class RegistryConnection extends pulumi.CustomResource {
      */
     public readonly primarySchema!: pulumi.Output<outputs.DataConnectivity.RegistryConnectionPrimarySchema>;
     /**
-     * (Updatable) All the properties for the connection in a key-value map format.
+     * (Updatable) All the properties of the connection in a key-value map format.
      */
     public readonly properties!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public readonly registryId!: pulumi.Output<string>;
     /**
@@ -278,7 +278,7 @@ export class RegistryConnection extends pulumi.CustomResource {
  */
 export interface RegistryConnectionState {
     /**
-     * (Updatable) The properties for the connection.
+     * (Updatable) The properties of the connection.
      */
     connectionProperties?: pulumi.Input<pulumi.Input<inputs.DataConnectivity.RegistryConnectionConnectionProperty>[]>;
     /**
@@ -290,7 +290,7 @@ export interface RegistryConnectionState {
      */
     identifier?: pulumi.Input<string>;
     /**
-     * (Updatable) The default property for the connection.
+     * (Updatable) The default property of the connection.
      */
     isDefault?: pulumi.Input<boolean>;
     /**
@@ -298,19 +298,19 @@ export interface RegistryConnectionState {
      */
     key?: pulumi.Input<string>;
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      */
     metadata?: pulumi.Input<inputs.DataConnectivity.RegistryConnectionMetadata>;
     /**
-     * (Updatable) The object's type.
+     * (Updatable) The object type.
      */
     modelType?: pulumi.Input<string>;
     /**
-     * (Updatable) The object's model version.
+     * (Updatable) The model version of the object.
      */
     modelVersion?: pulumi.Input<string>;
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
     name?: pulumi.Input<string>;
     /**
@@ -326,11 +326,11 @@ export interface RegistryConnectionState {
      */
     primarySchema?: pulumi.Input<inputs.DataConnectivity.RegistryConnectionPrimarySchema>;
     /**
-     * (Updatable) All the properties for the connection in a key-value map format.
+     * (Updatable) All the properties of the connection in a key-value map format.
      */
     properties?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId?: pulumi.Input<string>;
     /**
@@ -348,7 +348,7 @@ export interface RegistryConnectionState {
  */
 export interface RegistryConnectionArgs {
     /**
-     * (Updatable) The properties for the connection.
+     * (Updatable) The properties of the connection.
      */
     connectionProperties?: pulumi.Input<pulumi.Input<inputs.DataConnectivity.RegistryConnectionConnectionProperty>[]>;
     /**
@@ -360,7 +360,7 @@ export interface RegistryConnectionArgs {
      */
     identifier: pulumi.Input<string>;
     /**
-     * (Updatable) The default property for the connection.
+     * (Updatable) The default property of the connection.
      */
     isDefault?: pulumi.Input<boolean>;
     /**
@@ -368,19 +368,19 @@ export interface RegistryConnectionArgs {
      */
     key?: pulumi.Input<string>;
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      */
     metadata?: pulumi.Input<inputs.DataConnectivity.RegistryConnectionMetadata>;
     /**
-     * (Updatable) The object's type.
+     * (Updatable) The object type.
      */
     modelType?: pulumi.Input<string>;
     /**
-     * (Updatable) The object's model version.
+     * (Updatable) The model version of the object.
      */
     modelVersion?: pulumi.Input<string>;
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
     name?: pulumi.Input<string>;
     /**
@@ -396,11 +396,11 @@ export interface RegistryConnectionArgs {
      */
     primarySchema?: pulumi.Input<inputs.DataConnectivity.RegistryConnectionPrimarySchema>;
     /**
-     * (Updatable) All the properties for the connection in a key-value map format.
+     * (Updatable) All the properties of the connection in a key-value map format.
      */
     properties: pulumi.Input<{[key: string]: any}>;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: pulumi.Input<string>;
     /**

@@ -16,21 +16,14 @@ public final class BdsInstanceNetworkConfig {
      * @return The CIDR IP address block of the VCN.
      * 
      */
-    private final @Nullable String cidrBlock;
+    private @Nullable String cidrBlock;
     /**
      * @return A boolean flag whether to configure a NAT gateway.
      * 
      */
-    private final @Nullable Boolean isNatGatewayRequired;
+    private @Nullable Boolean isNatGatewayRequired;
 
-    @CustomType.Constructor
-    private BdsInstanceNetworkConfig(
-        @CustomType.Parameter("cidrBlock") @Nullable String cidrBlock,
-        @CustomType.Parameter("isNatGatewayRequired") @Nullable Boolean isNatGatewayRequired) {
-        this.cidrBlock = cidrBlock;
-        this.isNatGatewayRequired = isNatGatewayRequired;
-    }
-
+    private BdsInstanceNetworkConfig() {}
     /**
      * @return The CIDR IP address block of the VCN.
      * 
@@ -53,30 +46,32 @@ public final class BdsInstanceNetworkConfig {
     public static Builder builder(BdsInstanceNetworkConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String cidrBlock;
         private @Nullable Boolean isNatGatewayRequired;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BdsInstanceNetworkConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cidrBlock = defaults.cidrBlock;
     	      this.isNatGatewayRequired = defaults.isNatGatewayRequired;
         }
 
+        @CustomType.Setter
         public Builder cidrBlock(@Nullable String cidrBlock) {
             this.cidrBlock = cidrBlock;
             return this;
         }
+        @CustomType.Setter
         public Builder isNatGatewayRequired(@Nullable Boolean isNatGatewayRequired) {
             this.isNatGatewayRequired = isNatGatewayRequired;
             return this;
-        }        public BdsInstanceNetworkConfig build() {
-            return new BdsInstanceNetworkConfig(cidrBlock, isNatGatewayRequired);
+        }
+        public BdsInstanceNetworkConfig build() {
+            final var o = new BdsInstanceNetworkConfig();
+            o.cidrBlock = cidrBlock;
+            o.isNatGatewayRequired = isNatGatewayRequired;
+            return o;
         }
     }
 }

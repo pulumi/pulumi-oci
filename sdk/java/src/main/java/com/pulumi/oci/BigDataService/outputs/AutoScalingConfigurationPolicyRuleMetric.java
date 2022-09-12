@@ -14,21 +14,14 @@ public final class AutoScalingConfigurationPolicyRuleMetric {
      * @return (Updatable) Allowed value is CPU_UTILIZATION.
      * 
      */
-    private final String metricType;
+    private String metricType;
     /**
      * @return (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
      * 
      */
-    private final AutoScalingConfigurationPolicyRuleMetricThreshold threshold;
+    private AutoScalingConfigurationPolicyRuleMetricThreshold threshold;
 
-    @CustomType.Constructor
-    private AutoScalingConfigurationPolicyRuleMetric(
-        @CustomType.Parameter("metricType") String metricType,
-        @CustomType.Parameter("threshold") AutoScalingConfigurationPolicyRuleMetricThreshold threshold) {
-        this.metricType = metricType;
-        this.threshold = threshold;
-    }
-
+    private AutoScalingConfigurationPolicyRuleMetric() {}
     /**
      * @return (Updatable) Allowed value is CPU_UTILIZATION.
      * 
@@ -51,30 +44,32 @@ public final class AutoScalingConfigurationPolicyRuleMetric {
     public static Builder builder(AutoScalingConfigurationPolicyRuleMetric defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String metricType;
         private AutoScalingConfigurationPolicyRuleMetricThreshold threshold;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutoScalingConfigurationPolicyRuleMetric defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.metricType = defaults.metricType;
     	      this.threshold = defaults.threshold;
         }
 
+        @CustomType.Setter
         public Builder metricType(String metricType) {
             this.metricType = Objects.requireNonNull(metricType);
             return this;
         }
+        @CustomType.Setter
         public Builder threshold(AutoScalingConfigurationPolicyRuleMetricThreshold threshold) {
             this.threshold = Objects.requireNonNull(threshold);
             return this;
-        }        public AutoScalingConfigurationPolicyRuleMetric build() {
-            return new AutoScalingConfigurationPolicyRuleMetric(metricType, threshold);
+        }
+        public AutoScalingConfigurationPolicyRuleMetric build() {
+            final var o = new AutoScalingConfigurationPolicyRuleMetric();
+            o.metricType = metricType;
+            o.threshold = threshold;
+            return o;
         }
     }
 }

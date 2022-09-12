@@ -18,37 +18,22 @@ public final class GetManagedDatabaseUserDataAccessContainersResult {
      * @return The list of data_access_container_collection.
      * 
      */
-    private final List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection> dataAccessContainerCollections;
-    private final @Nullable List<GetManagedDatabaseUserDataAccessContainersFilter> filters;
+    private List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection> dataAccessContainerCollections;
+    private @Nullable List<GetManagedDatabaseUserDataAccessContainersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String managedDatabaseId;
+    private String id;
+    private String managedDatabaseId;
     /**
      * @return The name of the container included in the attribute.
      * 
      */
-    private final @Nullable String name;
-    private final String userName;
+    private @Nullable String name;
+    private String userName;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseUserDataAccessContainersResult(
-        @CustomType.Parameter("dataAccessContainerCollections") List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection> dataAccessContainerCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetManagedDatabaseUserDataAccessContainersFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("userName") String userName) {
-        this.dataAccessContainerCollections = dataAccessContainerCollections;
-        this.filters = filters;
-        this.id = id;
-        this.managedDatabaseId = managedDatabaseId;
-        this.name = name;
-        this.userName = userName;
-    }
-
+    private GetManagedDatabaseUserDataAccessContainersResult() {}
     /**
      * @return The list of data_access_container_collection.
      * 
@@ -87,7 +72,7 @@ public final class GetManagedDatabaseUserDataAccessContainersResult {
     public static Builder builder(GetManagedDatabaseUserDataAccessContainersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection> dataAccessContainerCollections;
         private @Nullable List<GetManagedDatabaseUserDataAccessContainersFilter> filters;
@@ -95,11 +80,7 @@ public final class GetManagedDatabaseUserDataAccessContainersResult {
         private String managedDatabaseId;
         private @Nullable String name;
         private String userName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseUserDataAccessContainersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dataAccessContainerCollections = defaults.dataAccessContainerCollections;
@@ -110,6 +91,7 @@ public final class GetManagedDatabaseUserDataAccessContainersResult {
     	      this.userName = defaults.userName;
         }
 
+        @CustomType.Setter
         public Builder dataAccessContainerCollections(List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection> dataAccessContainerCollections) {
             this.dataAccessContainerCollections = Objects.requireNonNull(dataAccessContainerCollections);
             return this;
@@ -117,6 +99,7 @@ public final class GetManagedDatabaseUserDataAccessContainersResult {
         public Builder dataAccessContainerCollections(GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection... dataAccessContainerCollections) {
             return dataAccessContainerCollections(List.of(dataAccessContainerCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseUserDataAccessContainersFilter> filters) {
             this.filters = filters;
             return this;
@@ -124,23 +107,35 @@ public final class GetManagedDatabaseUserDataAccessContainersResult {
         public Builder filters(GetManagedDatabaseUserDataAccessContainersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder userName(String userName) {
             this.userName = Objects.requireNonNull(userName);
             return this;
-        }        public GetManagedDatabaseUserDataAccessContainersResult build() {
-            return new GetManagedDatabaseUserDataAccessContainersResult(dataAccessContainerCollections, filters, id, managedDatabaseId, name, userName);
+        }
+        public GetManagedDatabaseUserDataAccessContainersResult build() {
+            final var o = new GetManagedDatabaseUserDataAccessContainersResult();
+            o.dataAccessContainerCollections = dataAccessContainerCollections;
+            o.filters = filters;
+            o.id = id;
+            o.managedDatabaseId = managedDatabaseId;
+            o.name = name;
+            o.userName = userName;
+            return o;
         }
     }
 }

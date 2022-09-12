@@ -18,66 +18,45 @@ public final class GetFileSystemsResult {
      * @return The availability domain the file system is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The list of file_systems.
      * 
      */
-    private final List<GetFileSystemsFileSystem> fileSystems;
-    private final @Nullable List<GetFileSystemsFilter> filters;
+    private List<GetFileSystemsFileSystem> fileSystems;
+    private @Nullable List<GetFileSystemsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
      * 
      */
-    private final @Nullable String parentFileSystemId;
+    private @Nullable String parentFileSystemId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
      * 
      */
-    private final @Nullable String sourceSnapshotId;
+    private @Nullable String sourceSnapshotId;
     /**
      * @return The current state of the file system.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetFileSystemsResult(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("fileSystems") List<GetFileSystemsFileSystem> fileSystems,
-        @CustomType.Parameter("filters") @Nullable List<GetFileSystemsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("parentFileSystemId") @Nullable String parentFileSystemId,
-        @CustomType.Parameter("sourceSnapshotId") @Nullable String sourceSnapshotId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.fileSystems = fileSystems;
-        this.filters = filters;
-        this.id = id;
-        this.parentFileSystemId = parentFileSystemId;
-        this.sourceSnapshotId = sourceSnapshotId;
-        this.state = state;
-    }
-
+    private GetFileSystemsResult() {}
     /**
      * @return The availability domain the file system is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
      * 
@@ -145,7 +124,7 @@ public final class GetFileSystemsResult {
     public static Builder builder(GetFileSystemsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String compartmentId;
@@ -156,11 +135,7 @@ public final class GetFileSystemsResult {
         private @Nullable String parentFileSystemId;
         private @Nullable String sourceSnapshotId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFileSystemsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -174,18 +149,22 @@ public final class GetFileSystemsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder fileSystems(List<GetFileSystemsFileSystem> fileSystems) {
             this.fileSystems = Objects.requireNonNull(fileSystems);
             return this;
@@ -193,6 +172,7 @@ public final class GetFileSystemsResult {
         public Builder fileSystems(GetFileSystemsFileSystem... fileSystems) {
             return fileSystems(List.of(fileSystems));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetFileSystemsFilter> filters) {
             this.filters = filters;
             return this;
@@ -200,23 +180,38 @@ public final class GetFileSystemsResult {
         public Builder filters(GetFileSystemsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder parentFileSystemId(@Nullable String parentFileSystemId) {
             this.parentFileSystemId = parentFileSystemId;
             return this;
         }
+        @CustomType.Setter
         public Builder sourceSnapshotId(@Nullable String sourceSnapshotId) {
             this.sourceSnapshotId = sourceSnapshotId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetFileSystemsResult build() {
-            return new GetFileSystemsResult(availabilityDomain, compartmentId, displayName, fileSystems, filters, id, parentFileSystemId, sourceSnapshotId, state);
+        }
+        public GetFileSystemsResult build() {
+            final var o = new GetFileSystemsResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.fileSystems = fileSystems;
+            o.filters = filters;
+            o.id = id;
+            o.parentFileSystemId = parentFileSystemId;
+            o.sourceSnapshotId = sourceSnapshotId;
+            o.state = state;
+            return o;
         }
     }
 }

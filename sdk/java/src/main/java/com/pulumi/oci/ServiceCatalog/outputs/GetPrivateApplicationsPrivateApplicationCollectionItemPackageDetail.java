@@ -13,20 +13,11 @@ public final class GetPrivateApplicationsPrivateApplicationCollectionItemPackage
      * @return Type of packages within this private application.
      * 
      */
-    private final String packageType;
-    private final String version;
-    private final String zipFileBase64encoded;
+    private String packageType;
+    private String version;
+    private String zipFileBase64encoded;
 
-    @CustomType.Constructor
-    private GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail(
-        @CustomType.Parameter("packageType") String packageType,
-        @CustomType.Parameter("version") String version,
-        @CustomType.Parameter("zipFileBase64encoded") String zipFileBase64encoded) {
-        this.packageType = packageType;
-        this.version = version;
-        this.zipFileBase64encoded = zipFileBase64encoded;
-    }
-
+    private GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail() {}
     /**
      * @return Type of packages within this private application.
      * 
@@ -48,16 +39,12 @@ public final class GetPrivateApplicationsPrivateApplicationCollectionItemPackage
     public static Builder builder(GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String packageType;
         private String version;
         private String zipFileBase64encoded;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.packageType = defaults.packageType;
@@ -65,19 +52,27 @@ public final class GetPrivateApplicationsPrivateApplicationCollectionItemPackage
     	      this.zipFileBase64encoded = defaults.zipFileBase64encoded;
         }
 
+        @CustomType.Setter
         public Builder packageType(String packageType) {
             this.packageType = Objects.requireNonNull(packageType);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
         }
+        @CustomType.Setter
         public Builder zipFileBase64encoded(String zipFileBase64encoded) {
             this.zipFileBase64encoded = Objects.requireNonNull(zipFileBase64encoded);
             return this;
-        }        public GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail build() {
-            return new GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail(packageType, version, zipFileBase64encoded);
+        }
+        public GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail build() {
+            final var o = new GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail();
+            o.packageType = packageType;
+            o.version = version;
+            o.zipFileBase64encoded = zipFileBase64encoded;
+            return o;
         }
     }
 }

@@ -14,36 +14,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationsResult {
-    private final List<GetAutoScalingConfigurationsAutoScalingConfiguration> autoScalingConfigurations;
-    private final String bdsInstanceId;
-    private final String compartmentId;
-    private final @Nullable String displayName;
-    private final @Nullable List<GetAutoScalingConfigurationsFilter> filters;
+    private List<GetAutoScalingConfigurationsAutoScalingConfiguration> autoScalingConfigurations;
+    private String bdsInstanceId;
+    private String compartmentId;
+    private @Nullable String displayName;
+    private @Nullable List<GetAutoScalingConfigurationsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String state;
+    private String id;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationsResult(
-        @CustomType.Parameter("autoScalingConfigurations") List<GetAutoScalingConfigurationsAutoScalingConfiguration> autoScalingConfigurations,
-        @CustomType.Parameter("bdsInstanceId") String bdsInstanceId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetAutoScalingConfigurationsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.autoScalingConfigurations = autoScalingConfigurations;
-        this.bdsInstanceId = bdsInstanceId;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetAutoScalingConfigurationsResult() {}
     public List<GetAutoScalingConfigurationsAutoScalingConfiguration> autoScalingConfigurations() {
         return this.autoScalingConfigurations;
     }
@@ -77,7 +60,7 @@ public final class GetAutoScalingConfigurationsResult {
     public static Builder builder(GetAutoScalingConfigurationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAutoScalingConfigurationsAutoScalingConfiguration> autoScalingConfigurations;
         private String bdsInstanceId;
@@ -86,11 +69,7 @@ public final class GetAutoScalingConfigurationsResult {
         private @Nullable List<GetAutoScalingConfigurationsFilter> filters;
         private String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autoScalingConfigurations = defaults.autoScalingConfigurations;
@@ -102,6 +81,7 @@ public final class GetAutoScalingConfigurationsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder autoScalingConfigurations(List<GetAutoScalingConfigurationsAutoScalingConfiguration> autoScalingConfigurations) {
             this.autoScalingConfigurations = Objects.requireNonNull(autoScalingConfigurations);
             return this;
@@ -109,18 +89,22 @@ public final class GetAutoScalingConfigurationsResult {
         public Builder autoScalingConfigurations(GetAutoScalingConfigurationsAutoScalingConfiguration... autoScalingConfigurations) {
             return autoScalingConfigurations(List.of(autoScalingConfigurations));
         }
+        @CustomType.Setter
         public Builder bdsInstanceId(String bdsInstanceId) {
             this.bdsInstanceId = Objects.requireNonNull(bdsInstanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAutoScalingConfigurationsFilter> filters) {
             this.filters = filters;
             return this;
@@ -128,15 +112,26 @@ public final class GetAutoScalingConfigurationsResult {
         public Builder filters(GetAutoScalingConfigurationsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetAutoScalingConfigurationsResult build() {
-            return new GetAutoScalingConfigurationsResult(autoScalingConfigurations, bdsInstanceId, compartmentId, displayName, filters, id, state);
+        }
+        public GetAutoScalingConfigurationsResult build() {
+            final var o = new GetAutoScalingConfigurationsResult();
+            o.autoScalingConfigurations = autoScalingConfigurations;
+            o.bdsInstanceId = bdsInstanceId;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

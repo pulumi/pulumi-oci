@@ -18,105 +18,74 @@ public final class GetRegistryConnectionPrimarySchema {
      * @return The default connection key.
      * 
      */
-    private final String defaultConnection;
+    private String defaultConnection;
     /**
      * @return The description of the aggregator.
      * 
      */
-    private final String description;
+    private String description;
     /**
-     * @return The external key for the object.
+     * @return The external key of the object.
      * 
      */
-    private final String externalKey;
+    private String externalKey;
     /**
      * @return The identifier of the aggregator.
      * 
      */
-    private final String identifier;
+    private String identifier;
     /**
      * @return Specifies whether the schema has containers.
      * 
      */
-    private final Boolean isHasContainers;
+    private Boolean isHasContainers;
     /**
      * @return The identifying key for the object.
      * 
      */
-    private final String key;
+    private String key;
     /**
-     * @return A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
-    private final List<GetRegistryConnectionPrimarySchemaMetadata> metadatas;
+    private List<GetRegistryConnectionPrimarySchemaMetadata> metadatas;
     /**
-     * @return The object&#39;s type.
+     * @return The object type.
      * 
      */
-    private final String modelType;
+    private String modelType;
     /**
-     * @return The object&#39;s model version.
+     * @return The model version of the object.
      * 
      */
-    private final String modelVersion;
+    private String modelVersion;
     /**
-     * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private final Integer objectStatus;
+    private Integer objectStatus;
     /**
      * @return The version of the object that is used to track changes in the object instance.
      * 
      */
-    private final Integer objectVersion;
+    private Integer objectVersion;
     /**
-     * @return A reference to the object&#39;s parent.
+     * @return A reference to the parent object.
      * 
      */
-    private final List<GetRegistryConnectionPrimarySchemaParentRef> parentReves;
+    private List<GetRegistryConnectionPrimarySchemaParentRef> parentReves;
     /**
      * @return A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
      * 
      */
-    private final String resourceName;
+    private String resourceName;
 
-    @CustomType.Constructor
-    private GetRegistryConnectionPrimarySchema(
-        @CustomType.Parameter("defaultConnection") String defaultConnection,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("externalKey") String externalKey,
-        @CustomType.Parameter("identifier") String identifier,
-        @CustomType.Parameter("isHasContainers") Boolean isHasContainers,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("metadatas") List<GetRegistryConnectionPrimarySchemaMetadata> metadatas,
-        @CustomType.Parameter("modelType") String modelType,
-        @CustomType.Parameter("modelVersion") String modelVersion,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("objectStatus") Integer objectStatus,
-        @CustomType.Parameter("objectVersion") Integer objectVersion,
-        @CustomType.Parameter("parentReves") List<GetRegistryConnectionPrimarySchemaParentRef> parentReves,
-        @CustomType.Parameter("resourceName") String resourceName) {
-        this.defaultConnection = defaultConnection;
-        this.description = description;
-        this.externalKey = externalKey;
-        this.identifier = identifier;
-        this.isHasContainers = isHasContainers;
-        this.key = key;
-        this.metadatas = metadatas;
-        this.modelType = modelType;
-        this.modelVersion = modelVersion;
-        this.name = name;
-        this.objectStatus = objectStatus;
-        this.objectVersion = objectVersion;
-        this.parentReves = parentReves;
-        this.resourceName = resourceName;
-    }
-
+    private GetRegistryConnectionPrimarySchema() {}
     /**
      * @return The default connection key.
      * 
@@ -132,7 +101,7 @@ public final class GetRegistryConnectionPrimarySchema {
         return this.description;
     }
     /**
-     * @return The external key for the object.
+     * @return The external key of the object.
      * 
      */
     public String externalKey() {
@@ -160,28 +129,28 @@ public final class GetRegistryConnectionPrimarySchema {
         return this.key;
     }
     /**
-     * @return A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     public List<GetRegistryConnectionPrimarySchemaMetadata> metadatas() {
         return this.metadatas;
     }
     /**
-     * @return The object&#39;s type.
+     * @return The object type.
      * 
      */
     public String modelType() {
         return this.modelType;
     }
     /**
-     * @return The object&#39;s model version.
+     * @return The model version of the object.
      * 
      */
     public String modelVersion() {
         return this.modelVersion;
     }
     /**
-     * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public String name() {
@@ -202,7 +171,7 @@ public final class GetRegistryConnectionPrimarySchema {
         return this.objectVersion;
     }
     /**
-     * @return A reference to the object&#39;s parent.
+     * @return A reference to the parent object.
      * 
      */
     public List<GetRegistryConnectionPrimarySchemaParentRef> parentReves() {
@@ -223,7 +192,7 @@ public final class GetRegistryConnectionPrimarySchema {
     public static Builder builder(GetRegistryConnectionPrimarySchema defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String defaultConnection;
         private String description;
@@ -239,11 +208,7 @@ public final class GetRegistryConnectionPrimarySchema {
         private Integer objectVersion;
         private List<GetRegistryConnectionPrimarySchemaParentRef> parentReves;
         private String resourceName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryConnectionPrimarySchema defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultConnection = defaults.defaultConnection;
@@ -262,30 +227,37 @@ public final class GetRegistryConnectionPrimarySchema {
     	      this.resourceName = defaults.resourceName;
         }
 
+        @CustomType.Setter
         public Builder defaultConnection(String defaultConnection) {
             this.defaultConnection = Objects.requireNonNull(defaultConnection);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder externalKey(String externalKey) {
             this.externalKey = Objects.requireNonNull(externalKey);
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(String identifier) {
             this.identifier = Objects.requireNonNull(identifier);
             return this;
         }
+        @CustomType.Setter
         public Builder isHasContainers(Boolean isHasContainers) {
             this.isHasContainers = Objects.requireNonNull(isHasContainers);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder metadatas(List<GetRegistryConnectionPrimarySchemaMetadata> metadatas) {
             this.metadatas = Objects.requireNonNull(metadatas);
             return this;
@@ -293,26 +265,32 @@ public final class GetRegistryConnectionPrimarySchema {
         public Builder metadatas(GetRegistryConnectionPrimarySchemaMetadata... metadatas) {
             return metadatas(List.of(metadatas));
         }
+        @CustomType.Setter
         public Builder modelType(String modelType) {
             this.modelType = Objects.requireNonNull(modelType);
             return this;
         }
+        @CustomType.Setter
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = Objects.requireNonNull(modelVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = Objects.requireNonNull(objectStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = Objects.requireNonNull(objectVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder parentReves(List<GetRegistryConnectionPrimarySchemaParentRef> parentReves) {
             this.parentReves = Objects.requireNonNull(parentReves);
             return this;
@@ -320,11 +298,28 @@ public final class GetRegistryConnectionPrimarySchema {
         public Builder parentReves(GetRegistryConnectionPrimarySchemaParentRef... parentReves) {
             return parentReves(List.of(parentReves));
         }
+        @CustomType.Setter
         public Builder resourceName(String resourceName) {
             this.resourceName = Objects.requireNonNull(resourceName);
             return this;
-        }        public GetRegistryConnectionPrimarySchema build() {
-            return new GetRegistryConnectionPrimarySchema(defaultConnection, description, externalKey, identifier, isHasContainers, key, metadatas, modelType, modelVersion, name, objectStatus, objectVersion, parentReves, resourceName);
+        }
+        public GetRegistryConnectionPrimarySchema build() {
+            final var o = new GetRegistryConnectionPrimarySchema();
+            o.defaultConnection = defaultConnection;
+            o.description = description;
+            o.externalKey = externalKey;
+            o.identifier = identifier;
+            o.isHasContainers = isHasContainers;
+            o.key = key;
+            o.metadatas = metadatas;
+            o.modelType = modelType;
+            o.modelVersion = modelVersion;
+            o.name = name;
+            o.objectStatus = objectStatus;
+            o.objectVersion = objectVersion;
+            o.parentReves = parentReves;
+            o.resourceName = resourceName;
+            return o;
         }
     }
 }

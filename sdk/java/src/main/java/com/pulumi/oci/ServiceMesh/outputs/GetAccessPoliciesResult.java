@@ -18,52 +18,35 @@ public final class GetAccessPoliciesResult {
      * @return The list of access_policy_collection.
      * 
      */
-    private final List<GetAccessPoliciesAccessPolicyCollection> accessPolicyCollections;
+    private List<GetAccessPoliciesAccessPolicyCollection> accessPolicyCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetAccessPoliciesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetAccessPoliciesFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the service mesh in which this access policy is created.
      * 
      */
-    private final @Nullable String meshId;
+    private @Nullable String meshId;
     /**
      * @return A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The current state of the Resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetAccessPoliciesResult(
-        @CustomType.Parameter("accessPolicyCollections") List<GetAccessPoliciesAccessPolicyCollection> accessPolicyCollections,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetAccessPoliciesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("meshId") @Nullable String meshId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.accessPolicyCollections = accessPolicyCollections;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.meshId = meshId;
-        this.name = name;
-        this.state = state;
-    }
-
+    private GetAccessPoliciesResult() {}
     /**
      * @return The list of access_policy_collection.
      * 
@@ -117,7 +100,7 @@ public final class GetAccessPoliciesResult {
     public static Builder builder(GetAccessPoliciesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAccessPoliciesAccessPolicyCollection> accessPolicyCollections;
         private String compartmentId;
@@ -126,11 +109,7 @@ public final class GetAccessPoliciesResult {
         private @Nullable String meshId;
         private @Nullable String name;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAccessPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessPolicyCollections = defaults.accessPolicyCollections;
@@ -142,6 +121,7 @@ public final class GetAccessPoliciesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder accessPolicyCollections(List<GetAccessPoliciesAccessPolicyCollection> accessPolicyCollections) {
             this.accessPolicyCollections = Objects.requireNonNull(accessPolicyCollections);
             return this;
@@ -149,10 +129,12 @@ public final class GetAccessPoliciesResult {
         public Builder accessPolicyCollections(GetAccessPoliciesAccessPolicyCollection... accessPolicyCollections) {
             return accessPolicyCollections(List.of(accessPolicyCollections));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAccessPoliciesFilter> filters) {
             this.filters = filters;
             return this;
@@ -160,23 +142,36 @@ public final class GetAccessPoliciesResult {
         public Builder filters(GetAccessPoliciesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder meshId(@Nullable String meshId) {
             this.meshId = meshId;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetAccessPoliciesResult build() {
-            return new GetAccessPoliciesResult(accessPolicyCollections, compartmentId, filters, id, meshId, name, state);
+        }
+        public GetAccessPoliciesResult build() {
+            final var o = new GetAccessPoliciesResult();
+            o.accessPolicyCollections = accessPolicyCollections;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.meshId = meshId;
+            o.name = name;
+            o.state = state;
+            return o;
         }
     }
 }

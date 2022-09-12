@@ -16,28 +16,19 @@ public final class IngressGatewayRouteTableRouteRuleDestination {
      * @return (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
      * 
      */
-    private final @Nullable Integer port;
+    private @Nullable Integer port;
     /**
      * @return (Updatable) The OCID of the virtual service where the request will be routed.
      * 
      */
-    private final String virtualServiceId;
+    private String virtualServiceId;
     /**
      * @return (Updatable) Weight of traffic target.
      * 
      */
-    private final @Nullable Integer weight;
+    private @Nullable Integer weight;
 
-    @CustomType.Constructor
-    private IngressGatewayRouteTableRouteRuleDestination(
-        @CustomType.Parameter("port") @Nullable Integer port,
-        @CustomType.Parameter("virtualServiceId") String virtualServiceId,
-        @CustomType.Parameter("weight") @Nullable Integer weight) {
-        this.port = port;
-        this.virtualServiceId = virtualServiceId;
-        this.weight = weight;
-    }
-
+    private IngressGatewayRouteTableRouteRuleDestination() {}
     /**
      * @return (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
      * 
@@ -67,16 +58,12 @@ public final class IngressGatewayRouteTableRouteRuleDestination {
     public static Builder builder(IngressGatewayRouteTableRouteRuleDestination defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer port;
         private String virtualServiceId;
         private @Nullable Integer weight;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(IngressGatewayRouteTableRouteRuleDestination defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.port = defaults.port;
@@ -84,19 +71,27 @@ public final class IngressGatewayRouteTableRouteRuleDestination {
     	      this.weight = defaults.weight;
         }
 
+        @CustomType.Setter
         public Builder port(@Nullable Integer port) {
             this.port = port;
             return this;
         }
+        @CustomType.Setter
         public Builder virtualServiceId(String virtualServiceId) {
             this.virtualServiceId = Objects.requireNonNull(virtualServiceId);
             return this;
         }
+        @CustomType.Setter
         public Builder weight(@Nullable Integer weight) {
             this.weight = weight;
             return this;
-        }        public IngressGatewayRouteTableRouteRuleDestination build() {
-            return new IngressGatewayRouteTableRouteRuleDestination(port, virtualServiceId, weight);
+        }
+        public IngressGatewayRouteTableRouteRuleDestination build() {
+            final var o = new IngressGatewayRouteTableRouteRuleDestination();
+            o.port = port;
+            o.virtualServiceId = virtualServiceId;
+            o.weight = weight;
+            return o;
         }
     }
 }

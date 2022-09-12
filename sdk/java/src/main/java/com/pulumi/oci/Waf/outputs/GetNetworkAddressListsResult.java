@@ -18,45 +18,30 @@ public final class GetNetworkAddressListsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return NetworkAddressList display name, can be renamed.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetNetworkAddressListsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetNetworkAddressListsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of network_address_list_collection.
      * 
      */
-    private final List<GetNetworkAddressListsNetworkAddressListCollection> networkAddressListCollections;
+    private List<GetNetworkAddressListsNetworkAddressListCollection> networkAddressListCollections;
     /**
      * @return The current state of the NetworkAddressList.
      * 
      */
-    private final @Nullable List<String> states;
+    private @Nullable List<String> states;
 
-    @CustomType.Constructor
-    private GetNetworkAddressListsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetNetworkAddressListsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("networkAddressListCollections") List<GetNetworkAddressListsNetworkAddressListCollection> networkAddressListCollections,
-        @CustomType.Parameter("states") @Nullable List<String> states) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.networkAddressListCollections = networkAddressListCollections;
-        this.states = states;
-    }
-
+    private GetNetworkAddressListsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -103,7 +88,7 @@ public final class GetNetworkAddressListsResult {
     public static Builder builder(GetNetworkAddressListsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetNetworkAddressListsResult {
         private @Nullable String id;
         private List<GetNetworkAddressListsNetworkAddressListCollection> networkAddressListCollections;
         private @Nullable List<String> states;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkAddressListsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetNetworkAddressListsResult {
     	      this.states = defaults.states;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkAddressListsFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +125,12 @@ public final class GetNetworkAddressListsResult {
         public Builder filters(GetNetworkAddressListsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder networkAddressListCollections(List<GetNetworkAddressListsNetworkAddressListCollection> networkAddressListCollections) {
             this.networkAddressListCollections = Objects.requireNonNull(networkAddressListCollections);
             return this;
@@ -152,14 +138,23 @@ public final class GetNetworkAddressListsResult {
         public Builder networkAddressListCollections(GetNetworkAddressListsNetworkAddressListCollection... networkAddressListCollections) {
             return networkAddressListCollections(List.of(networkAddressListCollections));
         }
+        @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
             this.states = states;
             return this;
         }
         public Builder states(String... states) {
             return states(List.of(states));
-        }        public GetNetworkAddressListsResult build() {
-            return new GetNetworkAddressListsResult(compartmentId, displayName, filters, id, networkAddressListCollections, states);
+        }
+        public GetNetworkAddressListsResult build() {
+            final var o = new GetNetworkAddressListsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.networkAddressListCollections = networkAddressListCollections;
+            o.states = states;
+            return o;
         }
     }
 }

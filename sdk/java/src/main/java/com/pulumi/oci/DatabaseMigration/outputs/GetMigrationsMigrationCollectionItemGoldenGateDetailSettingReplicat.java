@@ -13,28 +13,19 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSettingRe
      * @return Number of threads used to read trail files (valid for Parallel Replicat)
      * 
      */
-    private final Integer mapParallelism;
+    private Integer mapParallelism;
     /**
      * @return Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
      * 
      */
-    private final Integer maxApplyParallelism;
+    private Integer maxApplyParallelism;
     /**
      * @return Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
      * 
      */
-    private final Integer minApplyParallelism;
+    private Integer minApplyParallelism;
 
-    @CustomType.Constructor
-    private GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat(
-        @CustomType.Parameter("mapParallelism") Integer mapParallelism,
-        @CustomType.Parameter("maxApplyParallelism") Integer maxApplyParallelism,
-        @CustomType.Parameter("minApplyParallelism") Integer minApplyParallelism) {
-        this.mapParallelism = mapParallelism;
-        this.maxApplyParallelism = maxApplyParallelism;
-        this.minApplyParallelism = minApplyParallelism;
-    }
-
+    private GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat() {}
     /**
      * @return Number of threads used to read trail files (valid for Parallel Replicat)
      * 
@@ -64,16 +55,12 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSettingRe
     public static Builder builder(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer mapParallelism;
         private Integer maxApplyParallelism;
         private Integer minApplyParallelism;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.mapParallelism = defaults.mapParallelism;
@@ -81,19 +68,27 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSettingRe
     	      this.minApplyParallelism = defaults.minApplyParallelism;
         }
 
+        @CustomType.Setter
         public Builder mapParallelism(Integer mapParallelism) {
             this.mapParallelism = Objects.requireNonNull(mapParallelism);
             return this;
         }
+        @CustomType.Setter
         public Builder maxApplyParallelism(Integer maxApplyParallelism) {
             this.maxApplyParallelism = Objects.requireNonNull(maxApplyParallelism);
             return this;
         }
+        @CustomType.Setter
         public Builder minApplyParallelism(Integer minApplyParallelism) {
             this.minApplyParallelism = Objects.requireNonNull(minApplyParallelism);
             return this;
-        }        public GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat build() {
-            return new GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat(mapParallelism, maxApplyParallelism, minApplyParallelism);
+        }
+        public GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat build() {
+            final var o = new GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat();
+            o.mapParallelism = mapParallelism;
+            o.maxApplyParallelism = maxApplyParallelism;
+            o.minApplyParallelism = minApplyParallelism;
+            return o;
         }
     }
 }

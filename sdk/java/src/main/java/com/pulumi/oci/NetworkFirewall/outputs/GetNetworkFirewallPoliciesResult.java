@@ -18,45 +18,30 @@ public final class GetNetworkFirewallPoliciesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly optional name for the firewall policy. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetNetworkFirewallPoliciesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetNetworkFirewallPoliciesFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource - Network Firewall Policy.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of network_firewall_policy_summary_collection.
      * 
      */
-    private final List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection> networkFirewallPolicySummaryCollections;
+    private List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection> networkFirewallPolicySummaryCollections;
     /**
      * @return The current state of the Network Firewall Policy.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetNetworkFirewallPoliciesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetNetworkFirewallPoliciesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("networkFirewallPolicySummaryCollections") List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection> networkFirewallPolicySummaryCollections,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.networkFirewallPolicySummaryCollections = networkFirewallPolicySummaryCollections;
-        this.state = state;
-    }
-
+    private GetNetworkFirewallPoliciesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
      * 
@@ -103,7 +88,7 @@ public final class GetNetworkFirewallPoliciesResult {
     public static Builder builder(GetNetworkFirewallPoliciesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetNetworkFirewallPoliciesResult {
         private @Nullable String id;
         private List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection> networkFirewallPolicySummaryCollections;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkFirewallPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetNetworkFirewallPoliciesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkFirewallPoliciesFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +125,12 @@ public final class GetNetworkFirewallPoliciesResult {
         public Builder filters(GetNetworkFirewallPoliciesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder networkFirewallPolicySummaryCollections(List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection> networkFirewallPolicySummaryCollections) {
             this.networkFirewallPolicySummaryCollections = Objects.requireNonNull(networkFirewallPolicySummaryCollections);
             return this;
@@ -152,11 +138,20 @@ public final class GetNetworkFirewallPoliciesResult {
         public Builder networkFirewallPolicySummaryCollections(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection... networkFirewallPolicySummaryCollections) {
             return networkFirewallPolicySummaryCollections(List.of(networkFirewallPolicySummaryCollections));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetNetworkFirewallPoliciesResult build() {
-            return new GetNetworkFirewallPoliciesResult(compartmentId, displayName, filters, id, networkFirewallPolicySummaryCollections, state);
+        }
+        public GetNetworkFirewallPoliciesResult build() {
+            final var o = new GetNetworkFirewallPoliciesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.networkFirewallPolicySummaryCollections = networkFirewallPolicySummaryCollections;
+            o.state = state;
+            return o;
         }
     }
 }

@@ -62,16 +62,17 @@ type LookupDataGuardAssociationResult struct {
 	// The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
 	ApplyLag string `pulumi:"applyLag"`
 	// The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
-	ApplyRate              string                 `pulumi:"applyRate"`
-	AvailabilityDomain     string                 `pulumi:"availabilityDomain"`
-	BackupNetworkNsgIds    []string               `pulumi:"backupNetworkNsgIds"`
-	CpuCoreCount           int                    `pulumi:"cpuCoreCount"`
-	CreateAsync            bool                   `pulumi:"createAsync"`
-	CreationType           string                 `pulumi:"creationType"`
-	DataGuardAssociationId string                 `pulumi:"dataGuardAssociationId"`
-	DatabaseAdminPassword  string                 `pulumi:"databaseAdminPassword"`
-	DatabaseDefinedTags    map[string]interface{} `pulumi:"databaseDefinedTags"`
-	DatabaseFreeformTags   map[string]interface{} `pulumi:"databaseFreeformTags"`
+	ApplyRate              string                                        `pulumi:"applyRate"`
+	AvailabilityDomain     string                                        `pulumi:"availabilityDomain"`
+	BackupNetworkNsgIds    []string                                      `pulumi:"backupNetworkNsgIds"`
+	CpuCoreCount           int                                           `pulumi:"cpuCoreCount"`
+	CreateAsync            bool                                          `pulumi:"createAsync"`
+	CreationType           string                                        `pulumi:"creationType"`
+	DataCollectionOptions  []GetDataGuardAssociationDataCollectionOption `pulumi:"dataCollectionOptions"`
+	DataGuardAssociationId string                                        `pulumi:"dataGuardAssociationId"`
+	DatabaseAdminPassword  string                                        `pulumi:"databaseAdminPassword"`
+	DatabaseDefinedTags    map[string]interface{}                        `pulumi:"databaseDefinedTags"`
+	DatabaseFreeformTags   map[string]interface{}                        `pulumi:"databaseFreeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
 	DatabaseId                  string                 `pulumi:"databaseId"`
 	DatabaseSoftwareImageId     string                 `pulumi:"databaseSoftwareImageId"`
@@ -188,6 +189,12 @@ func (o LookupDataGuardAssociationResultOutput) CreateAsync() pulumi.BoolOutput 
 
 func (o LookupDataGuardAssociationResultOutput) CreationType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.CreationType }).(pulumi.StringOutput)
+}
+
+func (o LookupDataGuardAssociationResultOutput) DataCollectionOptions() GetDataGuardAssociationDataCollectionOptionArrayOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) []GetDataGuardAssociationDataCollectionOption {
+		return v.DataCollectionOptions
+	}).(GetDataGuardAssociationDataCollectionOptionArrayOutput)
 }
 
 func (o LookupDataGuardAssociationResultOutput) DataGuardAssociationId() pulumi.StringOutput {

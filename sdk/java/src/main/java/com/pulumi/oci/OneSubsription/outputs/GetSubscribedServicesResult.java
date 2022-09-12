@@ -14,52 +14,35 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscribedServicesResult {
-    private final String compartmentId;
-    private final @Nullable List<GetSubscribedServicesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetSubscribedServicesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Sales Order Line Id associated to the subscribed service
      * 
      */
-    private final @Nullable String orderLineId;
+    private @Nullable String orderLineId;
     /**
      * @return Subscribed service status
      * 
      */
-    private final @Nullable String status;
+    private @Nullable String status;
     /**
      * @return The list of subscribed_services.
      * 
      */
-    private final List<GetSubscribedServicesSubscribedService> subscribedServices;
+    private List<GetSubscribedServicesSubscribedService> subscribedServices;
     /**
      * @return Subscription ID associated to the subscribed service
      * 
      */
-    private final String subscriptionId;
+    private String subscriptionId;
 
-    @CustomType.Constructor
-    private GetSubscribedServicesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetSubscribedServicesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("orderLineId") @Nullable String orderLineId,
-        @CustomType.Parameter("status") @Nullable String status,
-        @CustomType.Parameter("subscribedServices") List<GetSubscribedServicesSubscribedService> subscribedServices,
-        @CustomType.Parameter("subscriptionId") String subscriptionId) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.orderLineId = orderLineId;
-        this.status = status;
-        this.subscribedServices = subscribedServices;
-        this.subscriptionId = subscriptionId;
-    }
-
+    private GetSubscribedServicesResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -109,7 +92,7 @@ public final class GetSubscribedServicesResult {
     public static Builder builder(GetSubscribedServicesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetSubscribedServicesFilter> filters;
@@ -118,11 +101,7 @@ public final class GetSubscribedServicesResult {
         private @Nullable String status;
         private List<GetSubscribedServicesSubscribedService> subscribedServices;
         private String subscriptionId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscribedServicesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,10 +113,12 @@ public final class GetSubscribedServicesResult {
     	      this.subscriptionId = defaults.subscriptionId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSubscribedServicesFilter> filters) {
             this.filters = filters;
             return this;
@@ -145,18 +126,22 @@ public final class GetSubscribedServicesResult {
         public Builder filters(GetSubscribedServicesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder orderLineId(@Nullable String orderLineId) {
             this.orderLineId = orderLineId;
             return this;
         }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
         }
+        @CustomType.Setter
         public Builder subscribedServices(List<GetSubscribedServicesSubscribedService> subscribedServices) {
             this.subscribedServices = Objects.requireNonNull(subscribedServices);
             return this;
@@ -164,11 +149,21 @@ public final class GetSubscribedServicesResult {
         public Builder subscribedServices(GetSubscribedServicesSubscribedService... subscribedServices) {
             return subscribedServices(List.of(subscribedServices));
         }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = Objects.requireNonNull(subscriptionId);
             return this;
-        }        public GetSubscribedServicesResult build() {
-            return new GetSubscribedServicesResult(compartmentId, filters, id, orderLineId, status, subscribedServices, subscriptionId);
+        }
+        public GetSubscribedServicesResult build() {
+            final var o = new GetSubscribedServicesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.orderLineId = orderLineId;
+            o.status = status;
+            o.subscribedServices = subscribedServices;
+            o.subscriptionId = subscriptionId;
+            return o;
         }
     }
 }

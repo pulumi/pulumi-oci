@@ -13,73 +13,50 @@ public final class GetExportSetsExportSet {
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be &#39;0&#39;.
      * 
      */
-    private final String maxFsStatBytes;
+    private String maxFsStatBytes;
     /**
      * @return Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be &#39;0&#39;.
      * 
      */
-    private final String maxFsStatFiles;
-    private final String mountTargetId;
+    private String maxFsStatFiles;
+    private String mountTargetId;
     /**
      * @return Filter results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the export set was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
      * 
      */
-    private final String vcnId;
+    private String vcnId;
 
-    @CustomType.Constructor
-    private GetExportSetsExportSet(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("maxFsStatBytes") String maxFsStatBytes,
-        @CustomType.Parameter("maxFsStatFiles") String maxFsStatFiles,
-        @CustomType.Parameter("mountTargetId") String mountTargetId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("vcnId") String vcnId) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.id = id;
-        this.maxFsStatBytes = maxFsStatBytes;
-        this.maxFsStatFiles = maxFsStatFiles;
-        this.mountTargetId = mountTargetId;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.vcnId = vcnId;
-    }
-
+    private GetExportSetsExportSet() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
@@ -154,7 +131,7 @@ public final class GetExportSetsExportSet {
     public static Builder builder(GetExportSetsExportSet defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String compartmentId;
@@ -166,11 +143,7 @@ public final class GetExportSetsExportSet {
         private String state;
         private String timeCreated;
         private String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetExportSetsExportSet defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -185,47 +158,69 @@ public final class GetExportSetsExportSet {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder maxFsStatBytes(String maxFsStatBytes) {
             this.maxFsStatBytes = Objects.requireNonNull(maxFsStatBytes);
             return this;
         }
+        @CustomType.Setter
         public Builder maxFsStatFiles(String maxFsStatFiles) {
             this.maxFsStatFiles = Objects.requireNonNull(maxFsStatFiles);
             return this;
         }
+        @CustomType.Setter
         public Builder mountTargetId(String mountTargetId) {
             this.mountTargetId = Objects.requireNonNull(mountTargetId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(String vcnId) {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
-        }        public GetExportSetsExportSet build() {
-            return new GetExportSetsExportSet(availabilityDomain, compartmentId, displayName, id, maxFsStatBytes, maxFsStatFiles, mountTargetId, state, timeCreated, vcnId);
+        }
+        public GetExportSetsExportSet build() {
+            final var o = new GetExportSetsExportSet();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.id = id;
+            o.maxFsStatBytes = maxFsStatBytes;
+            o.maxFsStatFiles = maxFsStatFiles;
+            o.mountTargetId = mountTargetId;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

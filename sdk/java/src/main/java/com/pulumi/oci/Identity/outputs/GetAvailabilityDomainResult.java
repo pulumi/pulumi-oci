@@ -14,35 +14,24 @@ public final class GetAvailabilityDomainResult {
      * @return The number of the Availability Domain. For example, the `ad_number` for YXol:US-ASHBURN-AD-1 would be &#34;1&#34;
      * 
      */
-    private final Integer adNumber;
+    private Integer adNumber;
     /**
      * @return The OCID of the tenancy.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The OCID of the Availability Domain.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the Availability Domain.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetAvailabilityDomainResult(
-        @CustomType.Parameter("adNumber") Integer adNumber,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name) {
-        this.adNumber = adNumber;
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.name = name;
-    }
-
+    private GetAvailabilityDomainResult() {}
     /**
      * @return The number of the Availability Domain. For example, the `ad_number` for YXol:US-ASHBURN-AD-1 would be &#34;1&#34;
      * 
@@ -79,17 +68,13 @@ public final class GetAvailabilityDomainResult {
     public static Builder builder(GetAvailabilityDomainResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer adNumber;
         private String compartmentId;
         private String id;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAvailabilityDomainResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adNumber = defaults.adNumber;
@@ -98,23 +83,33 @@ public final class GetAvailabilityDomainResult {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder adNumber(Integer adNumber) {
             this.adNumber = Objects.requireNonNull(adNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetAvailabilityDomainResult build() {
-            return new GetAvailabilityDomainResult(adNumber, compartmentId, id, name);
+        }
+        public GetAvailabilityDomainResult build() {
+            final var o = new GetAvailabilityDomainResult();
+            o.adNumber = adNumber;
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.name = name;
+            return o;
         }
     }
 }

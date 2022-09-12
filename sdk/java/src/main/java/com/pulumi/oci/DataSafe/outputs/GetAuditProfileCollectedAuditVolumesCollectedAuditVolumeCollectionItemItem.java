@@ -13,35 +13,24 @@ public final class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeColle
      * @return The audit data volume collected by Data Safe and is available in archive storage.
      * 
      */
-    private final String archivedVolume;
+    private String archivedVolume;
     /**
      * @return The OCID of the audit.
      * 
      */
-    private final String auditProfileId;
+    private String auditProfileId;
     /**
      * @return Represents the month under consideration in which the aggregated audit data volume collected by Data Safe is displayed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
      * 
      */
-    private final String monthInConsideration;
+    private String monthInConsideration;
     /**
      * @return The audit data volume collected by Data Safe and is available online in repository.
      * 
      */
-    private final String onlineVolume;
+    private String onlineVolume;
 
-    @CustomType.Constructor
-    private GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem(
-        @CustomType.Parameter("archivedVolume") String archivedVolume,
-        @CustomType.Parameter("auditProfileId") String auditProfileId,
-        @CustomType.Parameter("monthInConsideration") String monthInConsideration,
-        @CustomType.Parameter("onlineVolume") String onlineVolume) {
-        this.archivedVolume = archivedVolume;
-        this.auditProfileId = auditProfileId;
-        this.monthInConsideration = monthInConsideration;
-        this.onlineVolume = onlineVolume;
-    }
-
+    private GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem() {}
     /**
      * @return The audit data volume collected by Data Safe and is available in archive storage.
      * 
@@ -78,17 +67,13 @@ public final class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeColle
     public static Builder builder(GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String archivedVolume;
         private String auditProfileId;
         private String monthInConsideration;
         private String onlineVolume;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.archivedVolume = defaults.archivedVolume;
@@ -97,23 +82,33 @@ public final class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeColle
     	      this.onlineVolume = defaults.onlineVolume;
         }
 
+        @CustomType.Setter
         public Builder archivedVolume(String archivedVolume) {
             this.archivedVolume = Objects.requireNonNull(archivedVolume);
             return this;
         }
+        @CustomType.Setter
         public Builder auditProfileId(String auditProfileId) {
             this.auditProfileId = Objects.requireNonNull(auditProfileId);
             return this;
         }
+        @CustomType.Setter
         public Builder monthInConsideration(String monthInConsideration) {
             this.monthInConsideration = Objects.requireNonNull(monthInConsideration);
             return this;
         }
+        @CustomType.Setter
         public Builder onlineVolume(String onlineVolume) {
             this.onlineVolume = Objects.requireNonNull(onlineVolume);
             return this;
-        }        public GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem build() {
-            return new GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem(archivedVolume, auditProfileId, monthInConsideration, onlineVolume);
+        }
+        public GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem build() {
+            final var o = new GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem();
+            o.archivedVolume = archivedVolume;
+            o.auditProfileId = auditProfileId;
+            o.monthInConsideration = monthInConsideration;
+            o.onlineVolume = onlineVolume;
+            return o;
         }
     }
 }

@@ -8,7 +8,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Registry Folders in Oracle Cloud Infrastructure Data Connectivity service.
  *
- * Retrieves a list of all folders.
+ * Retrieves a list of all the folders.
  *
  * ## Example Usage
  *
@@ -59,7 +59,7 @@ export interface GetRegistryFoldersArgs {
      */
     name?: string;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: string;
     /**
@@ -84,7 +84,7 @@ export interface GetRegistryFoldersResult {
      */
     readonly id: string;
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
     readonly name?: string;
     readonly registryId: string;
@@ -116,7 +116,7 @@ export interface GetRegistryFoldersOutputArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: pulumi.Input<string>;
     /**

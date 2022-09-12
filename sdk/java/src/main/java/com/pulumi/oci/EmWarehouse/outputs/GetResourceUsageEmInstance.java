@@ -11,31 +11,34 @@ import java.util.Objects;
 @CustomType
 public final class GetResourceUsageEmInstance {
     /**
+     * @return emdDiscoverer url
+     * 
+     */
+    private String emDiscovererUrl;
+    /**
      * @return emHost name
      * 
      */
-    private final String emHost;
+    private String emHost;
     /**
      * @return operations Insights Warehouse Identifier
      * 
      */
-    private final String emId;
+    private String emId;
     /**
      * @return EmInstance Target count
      * 
      */
-    private final Integer targetsCount;
+    private Integer targetsCount;
 
-    @CustomType.Constructor
-    private GetResourceUsageEmInstance(
-        @CustomType.Parameter("emHost") String emHost,
-        @CustomType.Parameter("emId") String emId,
-        @CustomType.Parameter("targetsCount") Integer targetsCount) {
-        this.emHost = emHost;
-        this.emId = emId;
-        this.targetsCount = targetsCount;
+    private GetResourceUsageEmInstance() {}
+    /**
+     * @return emdDiscoverer url
+     * 
+     */
+    public String emDiscovererUrl() {
+        return this.emDiscovererUrl;
     }
-
     /**
      * @return emHost name
      * 
@@ -65,36 +68,48 @@ public final class GetResourceUsageEmInstance {
     public static Builder builder(GetResourceUsageEmInstance defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
+        private String emDiscovererUrl;
         private String emHost;
         private String emId;
         private Integer targetsCount;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetResourceUsageEmInstance defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.emDiscovererUrl = defaults.emDiscovererUrl;
     	      this.emHost = defaults.emHost;
     	      this.emId = defaults.emId;
     	      this.targetsCount = defaults.targetsCount;
         }
 
+        @CustomType.Setter
+        public Builder emDiscovererUrl(String emDiscovererUrl) {
+            this.emDiscovererUrl = Objects.requireNonNull(emDiscovererUrl);
+            return this;
+        }
+        @CustomType.Setter
         public Builder emHost(String emHost) {
             this.emHost = Objects.requireNonNull(emHost);
             return this;
         }
+        @CustomType.Setter
         public Builder emId(String emId) {
             this.emId = Objects.requireNonNull(emId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetsCount(Integer targetsCount) {
             this.targetsCount = Objects.requireNonNull(targetsCount);
             return this;
-        }        public GetResourceUsageEmInstance build() {
-            return new GetResourceUsageEmInstance(emHost, emId, targetsCount);
+        }
+        public GetResourceUsageEmInstance build() {
+            final var o = new GetResourceUsageEmInstance();
+            o.emDiscovererUrl = emDiscovererUrl;
+            o.emHost = emHost;
+            o.emId = emId;
+            o.targetsCount = targetsCount;
+            return o;
         }
     }
 }

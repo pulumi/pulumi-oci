@@ -13,63 +13,44 @@ public final class GetAssociationsAssociationCollectionItem {
      * @return A filter that returns only resources that match the given OCID of an associated Oracle Cloud Infrastructure resource.
      * 
      */
-    private final String associatedResourceId;
+    private String associatedResourceId;
     /**
      * @return Type of associations to list. If the parameter is set to null, the service lists all types of associations.
      * 
      */
-    private final String associationType;
+    private String associationType;
     /**
      * @return A filter that returns only resources that match the given OCID of a certificate-related resource.
      * 
      */
-    private final String certificatesResourceId;
+    private String certificatesResourceId;
     /**
      * @return A filter that returns only resources that match the given compartment OCID.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The OCID of the association.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A filter that returns only resources that match the specified name.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The current lifecycle state of the association.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return A property indicating when the association was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetAssociationsAssociationCollectionItem(
-        @CustomType.Parameter("associatedResourceId") String associatedResourceId,
-        @CustomType.Parameter("associationType") String associationType,
-        @CustomType.Parameter("certificatesResourceId") String certificatesResourceId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.associatedResourceId = associatedResourceId;
-        this.associationType = associationType;
-        this.certificatesResourceId = certificatesResourceId;
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.name = name;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetAssociationsAssociationCollectionItem() {}
     /**
      * @return A filter that returns only resources that match the given OCID of an associated Oracle Cloud Infrastructure resource.
      * 
@@ -134,7 +115,7 @@ public final class GetAssociationsAssociationCollectionItem {
     public static Builder builder(GetAssociationsAssociationCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String associatedResourceId;
         private String associationType;
@@ -144,11 +125,7 @@ public final class GetAssociationsAssociationCollectionItem {
         private String name;
         private String state;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAssociationsAssociationCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.associatedResourceId = defaults.associatedResourceId;
@@ -161,39 +138,57 @@ public final class GetAssociationsAssociationCollectionItem {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder associatedResourceId(String associatedResourceId) {
             this.associatedResourceId = Objects.requireNonNull(associatedResourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder associationType(String associationType) {
             this.associationType = Objects.requireNonNull(associationType);
             return this;
         }
+        @CustomType.Setter
         public Builder certificatesResourceId(String certificatesResourceId) {
             this.certificatesResourceId = Objects.requireNonNull(certificatesResourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetAssociationsAssociationCollectionItem build() {
-            return new GetAssociationsAssociationCollectionItem(associatedResourceId, associationType, certificatesResourceId, compartmentId, id, name, state, timeCreated);
+        }
+        public GetAssociationsAssociationCollectionItem build() {
+            final var o = new GetAssociationsAssociationCollectionItem();
+            o.associatedResourceId = associatedResourceId;
+            o.associationType = associationType;
+            o.certificatesResourceId = certificatesResourceId;
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.name = name;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

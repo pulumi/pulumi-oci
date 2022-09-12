@@ -17,20 +17,11 @@ public final class GetSnapshotsFilter {
      * @return Name of the snapshot. This value is immutable.
      * 
      */
-    private final String name;
-    private final @Nullable Boolean regex;
-    private final List<String> values;
+    private String name;
+    private @Nullable Boolean regex;
+    private List<String> values;
 
-    @CustomType.Constructor
-    private GetSnapshotsFilter(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("regex") @Nullable Boolean regex,
-        @CustomType.Parameter("values") List<String> values) {
-        this.name = name;
-        this.regex = regex;
-        this.values = values;
-    }
-
+    private GetSnapshotsFilter() {}
     /**
      * @return Name of the snapshot. This value is immutable.
      * 
@@ -52,16 +43,12 @@ public final class GetSnapshotsFilter {
     public static Builder builder(GetSnapshotsFilter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private @Nullable Boolean regex;
         private List<String> values;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSnapshotsFilter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
@@ -69,22 +56,30 @@ public final class GetSnapshotsFilter {
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder regex(@Nullable Boolean regex) {
             this.regex = regex;
             return this;
         }
+        @CustomType.Setter
         public Builder values(List<String> values) {
             this.values = Objects.requireNonNull(values);
             return this;
         }
         public Builder values(String... values) {
             return values(List.of(values));
-        }        public GetSnapshotsFilter build() {
-            return new GetSnapshotsFilter(name, regex, values);
+        }
+        public GetSnapshotsFilter build() {
+            final var o = new GetSnapshotsFilter();
+            o.name = name;
+            o.regex = regex;
+            o.values = values;
+            return o;
         }
     }
 }

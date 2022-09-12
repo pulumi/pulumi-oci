@@ -17,49 +17,34 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStrin
      * @return Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
      * 
      */
-    private final Map<String,Object> allConnectionStrings;
+    private Map<String,Object> allConnectionStrings;
     /**
      * @return The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
      * 
      */
-    private final String dedicated;
+    private String dedicated;
     /**
      * @return The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
      * 
      */
-    private final String high;
+    private String high;
     /**
      * @return The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
      * 
      */
-    private final String low;
+    private String low;
     /**
      * @return The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
      * 
      */
-    private final String medium;
+    private String medium;
     /**
      * @return A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
      * 
      */
-    private final List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile> profiles;
+    private List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile> profiles;
 
-    @CustomType.Constructor
-    private GetAutonomousDatabasesClonesAutonomousDatabaseConnectionString(
-        @CustomType.Parameter("allConnectionStrings") Map<String,Object> allConnectionStrings,
-        @CustomType.Parameter("dedicated") String dedicated,
-        @CustomType.Parameter("high") String high,
-        @CustomType.Parameter("low") String low,
-        @CustomType.Parameter("medium") String medium,
-        @CustomType.Parameter("profiles") List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile> profiles) {
-        this.allConnectionStrings = allConnectionStrings;
-        this.dedicated = dedicated;
-        this.high = high;
-        this.low = low;
-        this.medium = medium;
-        this.profiles = profiles;
-    }
-
+    private GetAutonomousDatabasesClonesAutonomousDatabaseConnectionString() {}
     /**
      * @return Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
      * 
@@ -110,7 +95,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStrin
     public static Builder builder(GetAutonomousDatabasesClonesAutonomousDatabaseConnectionString defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> allConnectionStrings;
         private String dedicated;
@@ -118,11 +103,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStrin
         private String low;
         private String medium;
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile> profiles;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDatabasesClonesAutonomousDatabaseConnectionString defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allConnectionStrings = defaults.allConnectionStrings;
@@ -133,34 +114,48 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStrin
     	      this.profiles = defaults.profiles;
         }
 
+        @CustomType.Setter
         public Builder allConnectionStrings(Map<String,Object> allConnectionStrings) {
             this.allConnectionStrings = Objects.requireNonNull(allConnectionStrings);
             return this;
         }
+        @CustomType.Setter
         public Builder dedicated(String dedicated) {
             this.dedicated = Objects.requireNonNull(dedicated);
             return this;
         }
+        @CustomType.Setter
         public Builder high(String high) {
             this.high = Objects.requireNonNull(high);
             return this;
         }
+        @CustomType.Setter
         public Builder low(String low) {
             this.low = Objects.requireNonNull(low);
             return this;
         }
+        @CustomType.Setter
         public Builder medium(String medium) {
             this.medium = Objects.requireNonNull(medium);
             return this;
         }
+        @CustomType.Setter
         public Builder profiles(List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile> profiles) {
             this.profiles = Objects.requireNonNull(profiles);
             return this;
         }
         public Builder profiles(GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfile... profiles) {
             return profiles(List.of(profiles));
-        }        public GetAutonomousDatabasesClonesAutonomousDatabaseConnectionString build() {
-            return new GetAutonomousDatabasesClonesAutonomousDatabaseConnectionString(allConnectionStrings, dedicated, high, low, medium, profiles);
+        }
+        public GetAutonomousDatabasesClonesAutonomousDatabaseConnectionString build() {
+            final var o = new GetAutonomousDatabasesClonesAutonomousDatabaseConnectionString();
+            o.allConnectionStrings = allConnectionStrings;
+            o.dedicated = dedicated;
+            o.high = high;
+            o.low = low;
+            o.medium = medium;
+            o.profiles = profiles;
+            return o;
         }
     }
 }

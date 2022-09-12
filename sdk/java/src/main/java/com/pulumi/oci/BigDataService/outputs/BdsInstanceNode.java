@@ -18,119 +18,84 @@ public final class BdsInstanceNode {
      * @return The list of block volumes attached to a given node.
      * 
      */
-    private final @Nullable List<BdsInstanceNodeAttachedBlockVolume> attachedBlockVolumes;
+    private @Nullable List<BdsInstanceNodeAttachedBlockVolume> attachedBlockVolumes;
     /**
      * @return The name of the availability domain the node is running in
      * 
      */
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return (Updatable) Name of the BDS instance
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The name of the fault domain the node is running in
      * 
      */
-    private final @Nullable String faultDomain;
+    private @Nullable String faultDomain;
     /**
      * @return The fully-qualified hostname (FQDN) of the node
      * 
      */
-    private final @Nullable String hostname;
+    private @Nullable String hostname;
     /**
      * @return The OCID of the image from which the node was created
      * 
      */
-    private final @Nullable String imageId;
+    private @Nullable String imageId;
     /**
      * @return The OCID of the underlying compute instance
      * 
      */
-    private final @Nullable String instanceId;
+    private @Nullable String instanceId;
     /**
      * @return IP address of the node
      * 
      */
-    private final @Nullable String ipAddress;
+    private @Nullable String ipAddress;
     /**
      * @return The total amount of memory available to the node, in gigabytes
      * 
      */
-    private final @Nullable Integer memoryInGbs;
+    private @Nullable Integer memoryInGbs;
     /**
      * @return BDS instance node type
      * 
      */
-    private final @Nullable String nodeType;
+    private @Nullable String nodeType;
     /**
      * @return The total number of OCPUs available to the node.
      * 
      */
-    private final @Nullable Integer ocpus;
+    private @Nullable Integer ocpus;
     /**
      * @return Shape of the node
      * 
      */
-    private final @Nullable String shape;
+    private @Nullable String shape;
     /**
      * @return The fingerprint of the SSH key used for node access
      * 
      */
-    private final @Nullable String sshFingerprint;
+    private @Nullable String sshFingerprint;
     /**
      * @return The state of the BDS instance
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The OCID of the subnet in which the node should be created
      * 
      */
-    private final @Nullable String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The time the BDS instance was created. An RFC3339 formatted datetime string
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
 
-    @CustomType.Constructor
-    private BdsInstanceNode(
-        @CustomType.Parameter("attachedBlockVolumes") @Nullable List<BdsInstanceNodeAttachedBlockVolume> attachedBlockVolumes,
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("faultDomain") @Nullable String faultDomain,
-        @CustomType.Parameter("hostname") @Nullable String hostname,
-        @CustomType.Parameter("imageId") @Nullable String imageId,
-        @CustomType.Parameter("instanceId") @Nullable String instanceId,
-        @CustomType.Parameter("ipAddress") @Nullable String ipAddress,
-        @CustomType.Parameter("memoryInGbs") @Nullable Integer memoryInGbs,
-        @CustomType.Parameter("nodeType") @Nullable String nodeType,
-        @CustomType.Parameter("ocpus") @Nullable Integer ocpus,
-        @CustomType.Parameter("shape") @Nullable String shape,
-        @CustomType.Parameter("sshFingerprint") @Nullable String sshFingerprint,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("subnetId") @Nullable String subnetId,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated) {
-        this.attachedBlockVolumes = attachedBlockVolumes;
-        this.availabilityDomain = availabilityDomain;
-        this.displayName = displayName;
-        this.faultDomain = faultDomain;
-        this.hostname = hostname;
-        this.imageId = imageId;
-        this.instanceId = instanceId;
-        this.ipAddress = ipAddress;
-        this.memoryInGbs = memoryInGbs;
-        this.nodeType = nodeType;
-        this.ocpus = ocpus;
-        this.shape = shape;
-        this.sshFingerprint = sshFingerprint;
-        this.state = state;
-        this.subnetId = subnetId;
-        this.timeCreated = timeCreated;
-    }
-
+    private BdsInstanceNode() {}
     /**
      * @return The list of block volumes attached to a given node.
      * 
@@ -251,7 +216,7 @@ public final class BdsInstanceNode {
     public static Builder builder(BdsInstanceNode defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<BdsInstanceNodeAttachedBlockVolume> attachedBlockVolumes;
         private @Nullable String availabilityDomain;
@@ -269,11 +234,7 @@ public final class BdsInstanceNode {
         private @Nullable String state;
         private @Nullable String subnetId;
         private @Nullable String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BdsInstanceNode defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.attachedBlockVolumes = defaults.attachedBlockVolumes;
@@ -294,6 +255,7 @@ public final class BdsInstanceNode {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder attachedBlockVolumes(@Nullable List<BdsInstanceNodeAttachedBlockVolume> attachedBlockVolumes) {
             this.attachedBlockVolumes = attachedBlockVolumes;
             return this;
@@ -301,67 +263,100 @@ public final class BdsInstanceNode {
         public Builder attachedBlockVolumes(BdsInstanceNodeAttachedBlockVolume... attachedBlockVolumes) {
             return attachedBlockVolumes(List.of(attachedBlockVolumes));
         }
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder faultDomain(@Nullable String faultDomain) {
             this.faultDomain = faultDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder hostname(@Nullable String hostname) {
             this.hostname = hostname;
             return this;
         }
+        @CustomType.Setter
         public Builder imageId(@Nullable String imageId) {
             this.imageId = imageId;
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(@Nullable String instanceId) {
             this.instanceId = instanceId;
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddress(@Nullable String ipAddress) {
             this.ipAddress = ipAddress;
             return this;
         }
+        @CustomType.Setter
         public Builder memoryInGbs(@Nullable Integer memoryInGbs) {
             this.memoryInGbs = memoryInGbs;
             return this;
         }
+        @CustomType.Setter
         public Builder nodeType(@Nullable String nodeType) {
             this.nodeType = nodeType;
             return this;
         }
+        @CustomType.Setter
         public Builder ocpus(@Nullable Integer ocpus) {
             this.ocpus = ocpus;
             return this;
         }
+        @CustomType.Setter
         public Builder shape(@Nullable String shape) {
             this.shape = shape;
             return this;
         }
+        @CustomType.Setter
         public Builder sshFingerprint(@Nullable String sshFingerprint) {
             this.sshFingerprint = sshFingerprint;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
             this.subnetId = subnetId;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
-        }        public BdsInstanceNode build() {
-            return new BdsInstanceNode(attachedBlockVolumes, availabilityDomain, displayName, faultDomain, hostname, imageId, instanceId, ipAddress, memoryInGbs, nodeType, ocpus, shape, sshFingerprint, state, subnetId, timeCreated);
+        }
+        public BdsInstanceNode build() {
+            final var o = new BdsInstanceNode();
+            o.attachedBlockVolumes = attachedBlockVolumes;
+            o.availabilityDomain = availabilityDomain;
+            o.displayName = displayName;
+            o.faultDomain = faultDomain;
+            o.hostname = hostname;
+            o.imageId = imageId;
+            o.instanceId = instanceId;
+            o.ipAddress = ipAddress;
+            o.memoryInGbs = memoryInGbs;
+            o.nodeType = nodeType;
+            o.ocpus = ocpus;
+            o.shape = shape;
+            o.sshFingerprint = sshFingerprint;
+            o.state = state;
+            o.subnetId = subnetId;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

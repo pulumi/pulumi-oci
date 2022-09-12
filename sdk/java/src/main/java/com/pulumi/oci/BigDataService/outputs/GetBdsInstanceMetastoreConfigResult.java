@@ -10,82 +10,53 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBdsInstanceMetastoreConfigResult {
-    private final Integer activateTrigger;
+    private Integer activateTrigger;
     /**
      * @return The ID of BDS API Key used for metastore configuration. Set only if metastore&#39;s type is EXTERNAL.
      * 
      */
-    private final String bdsApiKeyId;
-    private final String bdsApiKeyPassphrase;
-    private final String bdsInstanceId;
-    private final String clusterAdminPassword;
+    private String bdsApiKeyId;
+    private String bdsApiKeyPassphrase;
+    private String bdsInstanceId;
+    private String clusterAdminPassword;
     /**
      * @return The display name of metastore configuration
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The ID of the metastore configuration
      * 
      */
-    private final String id;
-    private final String metastoreConfigId;
+    private String id;
+    private String metastoreConfigId;
     /**
      * @return The OCID of the Data Catalog metastore. Set only if metastore&#39;s type is EXTERNAL.
      * 
      */
-    private final String metastoreId;
+    private String metastoreId;
     /**
      * @return The type of the metastore in the metastore configuration.
      * 
      */
-    private final String metastoreType;
+    private String metastoreType;
     /**
      * @return the lifecycle state of the metastore configuration.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetBdsInstanceMetastoreConfigResult(
-        @CustomType.Parameter("activateTrigger") Integer activateTrigger,
-        @CustomType.Parameter("bdsApiKeyId") String bdsApiKeyId,
-        @CustomType.Parameter("bdsApiKeyPassphrase") String bdsApiKeyPassphrase,
-        @CustomType.Parameter("bdsInstanceId") String bdsInstanceId,
-        @CustomType.Parameter("clusterAdminPassword") String clusterAdminPassword,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("metastoreConfigId") String metastoreConfigId,
-        @CustomType.Parameter("metastoreId") String metastoreId,
-        @CustomType.Parameter("metastoreType") String metastoreType,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.activateTrigger = activateTrigger;
-        this.bdsApiKeyId = bdsApiKeyId;
-        this.bdsApiKeyPassphrase = bdsApiKeyPassphrase;
-        this.bdsInstanceId = bdsInstanceId;
-        this.clusterAdminPassword = clusterAdminPassword;
-        this.displayName = displayName;
-        this.id = id;
-        this.metastoreConfigId = metastoreConfigId;
-        this.metastoreId = metastoreId;
-        this.metastoreType = metastoreType;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetBdsInstanceMetastoreConfigResult() {}
     public Integer activateTrigger() {
         return this.activateTrigger;
     }
@@ -165,7 +136,7 @@ public final class GetBdsInstanceMetastoreConfigResult {
     public static Builder builder(GetBdsInstanceMetastoreConfigResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer activateTrigger;
         private String bdsApiKeyId;
@@ -180,11 +151,7 @@ public final class GetBdsInstanceMetastoreConfigResult {
         private String state;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBdsInstanceMetastoreConfigResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.activateTrigger = defaults.activateTrigger;
@@ -202,59 +169,87 @@ public final class GetBdsInstanceMetastoreConfigResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder activateTrigger(Integer activateTrigger) {
             this.activateTrigger = Objects.requireNonNull(activateTrigger);
             return this;
         }
+        @CustomType.Setter
         public Builder bdsApiKeyId(String bdsApiKeyId) {
             this.bdsApiKeyId = Objects.requireNonNull(bdsApiKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder bdsApiKeyPassphrase(String bdsApiKeyPassphrase) {
             this.bdsApiKeyPassphrase = Objects.requireNonNull(bdsApiKeyPassphrase);
             return this;
         }
+        @CustomType.Setter
         public Builder bdsInstanceId(String bdsInstanceId) {
             this.bdsInstanceId = Objects.requireNonNull(bdsInstanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = Objects.requireNonNull(clusterAdminPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder metastoreConfigId(String metastoreConfigId) {
             this.metastoreConfigId = Objects.requireNonNull(metastoreConfigId);
             return this;
         }
+        @CustomType.Setter
         public Builder metastoreId(String metastoreId) {
             this.metastoreId = Objects.requireNonNull(metastoreId);
             return this;
         }
+        @CustomType.Setter
         public Builder metastoreType(String metastoreType) {
             this.metastoreType = Objects.requireNonNull(metastoreType);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetBdsInstanceMetastoreConfigResult build() {
-            return new GetBdsInstanceMetastoreConfigResult(activateTrigger, bdsApiKeyId, bdsApiKeyPassphrase, bdsInstanceId, clusterAdminPassword, displayName, id, metastoreConfigId, metastoreId, metastoreType, state, timeCreated, timeUpdated);
+        }
+        public GetBdsInstanceMetastoreConfigResult build() {
+            final var o = new GetBdsInstanceMetastoreConfigResult();
+            o.activateTrigger = activateTrigger;
+            o.bdsApiKeyId = bdsApiKeyId;
+            o.bdsApiKeyPassphrase = bdsApiKeyPassphrase;
+            o.bdsInstanceId = bdsInstanceId;
+            o.clusterAdminPassword = clusterAdminPassword;
+            o.displayName = displayName;
+            o.id = id;
+            o.metastoreConfigId = metastoreConfigId;
+            o.metastoreId = metastoreId;
+            o.metastoreType = metastoreType;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

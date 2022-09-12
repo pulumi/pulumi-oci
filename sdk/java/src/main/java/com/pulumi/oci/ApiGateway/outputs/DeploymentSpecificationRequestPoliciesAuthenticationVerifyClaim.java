@@ -17,28 +17,19 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationVerifyCla
      * @return (Updatable) Whether the claim is required to be present in the JWT or not. If set to &#34;false&#34;, the claim values will be matched only if the claim is present in the JWT.
      * 
      */
-    private final @Nullable Boolean isRequired;
+    private @Nullable Boolean isRequired;
     /**
      * @return (Updatable) Name of the claim.
      * 
      */
-    private final @Nullable String key;
+    private @Nullable String key;
     /**
      * @return (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
      * 
      */
-    private final @Nullable List<String> values;
+    private @Nullable List<String> values;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim(
-        @CustomType.Parameter("isRequired") @Nullable Boolean isRequired,
-        @CustomType.Parameter("key") @Nullable String key,
-        @CustomType.Parameter("values") @Nullable List<String> values) {
-        this.isRequired = isRequired;
-        this.key = key;
-        this.values = values;
-    }
-
+    private DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim() {}
     /**
      * @return (Updatable) Whether the claim is required to be present in the JWT or not. If set to &#34;false&#34;, the claim values will be matched only if the claim is present in the JWT.
      * 
@@ -68,16 +59,12 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationVerifyCla
     public static Builder builder(DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isRequired;
         private @Nullable String key;
         private @Nullable List<String> values;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isRequired = defaults.isRequired;
@@ -85,22 +72,30 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationVerifyCla
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
         public Builder isRequired(@Nullable Boolean isRequired) {
             this.isRequired = isRequired;
             return this;
         }
+        @CustomType.Setter
         public Builder key(@Nullable String key) {
             this.key = key;
             return this;
         }
+        @CustomType.Setter
         public Builder values(@Nullable List<String> values) {
             this.values = values;
             return this;
         }
         public Builder values(String... values) {
             return values(List.of(values));
-        }        public DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim build() {
-            return new DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim(isRequired, key, values);
+        }
+        public DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim build() {
+            final var o = new DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim();
+            o.isRequired = isRequired;
+            o.key = key;
+            o.values = values;
+            return o;
         }
     }
 }

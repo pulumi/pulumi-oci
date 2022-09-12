@@ -16,35 +16,24 @@ public final class DeployStageLoadBalancerConfig {
      * @return (Updatable) Listen port for the backend server.
      * 
      */
-    private final @Nullable Integer backendPort;
+    private @Nullable Integer backendPort;
     /**
      * @return (Updatable) Name of the load balancer listener.
      * 
      */
-    private final @Nullable String listenerName;
+    private @Nullable String listenerName;
     /**
      * @return (Updatable) The OCID of the load balancer.
      * 
      */
-    private final @Nullable String loadBalancerId;
+    private @Nullable String loadBalancerId;
     /**
      * @return The current state of the deployment stage.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private DeployStageLoadBalancerConfig(
-        @CustomType.Parameter("backendPort") @Nullable Integer backendPort,
-        @CustomType.Parameter("listenerName") @Nullable String listenerName,
-        @CustomType.Parameter("loadBalancerId") @Nullable String loadBalancerId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.backendPort = backendPort;
-        this.listenerName = listenerName;
-        this.loadBalancerId = loadBalancerId;
-        this.state = state;
-    }
-
+    private DeployStageLoadBalancerConfig() {}
     /**
      * @return (Updatable) Listen port for the backend server.
      * 
@@ -81,17 +70,13 @@ public final class DeployStageLoadBalancerConfig {
     public static Builder builder(DeployStageLoadBalancerConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer backendPort;
         private @Nullable String listenerName;
         private @Nullable String loadBalancerId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeployStageLoadBalancerConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backendPort = defaults.backendPort;
@@ -100,23 +85,33 @@ public final class DeployStageLoadBalancerConfig {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder backendPort(@Nullable Integer backendPort) {
             this.backendPort = backendPort;
             return this;
         }
+        @CustomType.Setter
         public Builder listenerName(@Nullable String listenerName) {
             this.listenerName = listenerName;
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(@Nullable String loadBalancerId) {
             this.loadBalancerId = loadBalancerId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public DeployStageLoadBalancerConfig build() {
-            return new DeployStageLoadBalancerConfig(backendPort, listenerName, loadBalancerId, state);
+        }
+        public DeployStageLoadBalancerConfig build() {
+            final var o = new DeployStageLoadBalancerConfig();
+            o.backendPort = backendPort;
+            o.listenerName = listenerName;
+            o.loadBalancerId = loadBalancerId;
+            o.state = state;
+            return o;
         }
     }
 }

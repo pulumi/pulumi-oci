@@ -18,46 +18,25 @@ public final class GetAddressListsResult {
      * @return The list of address_lists.
      * 
      */
-    private final List<GetAddressListsAddressList> addressLists;
+    private List<GetAddressListsAddressList> addressLists;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list&#39;s compartment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetAddressListsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetAddressListsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable List<String> ids;
-    private final @Nullable List<String> names;
-    private final @Nullable List<String> states;
-    private final @Nullable String timeCreatedGreaterThanOrEqualTo;
-    private final @Nullable String timeCreatedLessThan;
+    private String id;
+    private @Nullable List<String> ids;
+    private @Nullable List<String> names;
+    private @Nullable List<String> states;
+    private @Nullable String timeCreatedGreaterThanOrEqualTo;
+    private @Nullable String timeCreatedLessThan;
 
-    @CustomType.Constructor
-    private GetAddressListsResult(
-        @CustomType.Parameter("addressLists") List<GetAddressListsAddressList> addressLists,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetAddressListsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ids") @Nullable List<String> ids,
-        @CustomType.Parameter("names") @Nullable List<String> names,
-        @CustomType.Parameter("states") @Nullable List<String> states,
-        @CustomType.Parameter("timeCreatedGreaterThanOrEqualTo") @Nullable String timeCreatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeCreatedLessThan") @Nullable String timeCreatedLessThan) {
-        this.addressLists = addressLists;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.ids = ids;
-        this.names = names;
-        this.states = states;
-        this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-        this.timeCreatedLessThan = timeCreatedLessThan;
-    }
-
+    private GetAddressListsResult() {}
     /**
      * @return The list of address_lists.
      * 
@@ -105,7 +84,7 @@ public final class GetAddressListsResult {
     public static Builder builder(GetAddressListsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAddressListsAddressList> addressLists;
         private String compartmentId;
@@ -116,11 +95,7 @@ public final class GetAddressListsResult {
         private @Nullable List<String> states;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAddressListsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.addressLists = defaults.addressLists;
@@ -134,6 +109,7 @@ public final class GetAddressListsResult {
     	      this.timeCreatedLessThan = defaults.timeCreatedLessThan;
         }
 
+        @CustomType.Setter
         public Builder addressLists(List<GetAddressListsAddressList> addressLists) {
             this.addressLists = Objects.requireNonNull(addressLists);
             return this;
@@ -141,10 +117,12 @@ public final class GetAddressListsResult {
         public Builder addressLists(GetAddressListsAddressList... addressLists) {
             return addressLists(List.of(addressLists));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAddressListsFilter> filters) {
             this.filters = filters;
             return this;
@@ -152,10 +130,12 @@ public final class GetAddressListsResult {
         public Builder filters(GetAddressListsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ids(@Nullable List<String> ids) {
             this.ids = ids;
             return this;
@@ -163,6 +143,7 @@ public final class GetAddressListsResult {
         public Builder ids(String... ids) {
             return ids(List.of(ids));
         }
+        @CustomType.Setter
         public Builder names(@Nullable List<String> names) {
             this.names = names;
             return this;
@@ -170,6 +151,7 @@ public final class GetAddressListsResult {
         public Builder names(String... names) {
             return names(List.of(names));
         }
+        @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
             this.states = states;
             return this;
@@ -177,15 +159,28 @@ public final class GetAddressListsResult {
         public Builder states(String... states) {
             return states(List.of(states));
         }
+        @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
-        }        public GetAddressListsResult build() {
-            return new GetAddressListsResult(addressLists, compartmentId, filters, id, ids, names, states, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan);
+        }
+        public GetAddressListsResult build() {
+            final var o = new GetAddressListsResult();
+            o.addressLists = addressLists;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.ids = ids;
+            o.names = names;
+            o.states = states;
+            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            o.timeCreatedLessThan = timeCreatedLessThan;
+            return o;
         }
     }
 }

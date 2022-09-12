@@ -15,50 +15,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbVersionsResult {
-    private final String compartmentId;
-    private final @Nullable String dbSystemId;
-    private final @Nullable String dbSystemShape;
+    private String compartmentId;
+    private @Nullable String dbSystemId;
+    private @Nullable String dbSystemShape;
     /**
      * @return The list of db_versions.
      * 
      */
-    private final List<GetDbVersionsDbVersion> dbVersions;
-    private final @Nullable List<GetDbVersionsFilter> filters;
+    private List<GetDbVersionsDbVersion> dbVersions;
+    private @Nullable List<GetDbVersionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Boolean isDatabaseSoftwareImageSupported;
+    private String id;
+    private @Nullable Boolean isDatabaseSoftwareImageSupported;
     /**
      * @return True if this version of the Oracle Database software is supported for Upgrade.
      * 
      */
-    private final @Nullable Boolean isUpgradeSupported;
-    private final @Nullable String storageManagement;
+    private @Nullable Boolean isUpgradeSupported;
+    private @Nullable String storageManagement;
 
-    @CustomType.Constructor
-    private GetDbVersionsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dbSystemId") @Nullable String dbSystemId,
-        @CustomType.Parameter("dbSystemShape") @Nullable String dbSystemShape,
-        @CustomType.Parameter("dbVersions") List<GetDbVersionsDbVersion> dbVersions,
-        @CustomType.Parameter("filters") @Nullable List<GetDbVersionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isDatabaseSoftwareImageSupported") @Nullable Boolean isDatabaseSoftwareImageSupported,
-        @CustomType.Parameter("isUpgradeSupported") @Nullable Boolean isUpgradeSupported,
-        @CustomType.Parameter("storageManagement") @Nullable String storageManagement) {
-        this.compartmentId = compartmentId;
-        this.dbSystemId = dbSystemId;
-        this.dbSystemShape = dbSystemShape;
-        this.dbVersions = dbVersions;
-        this.filters = filters;
-        this.id = id;
-        this.isDatabaseSoftwareImageSupported = isDatabaseSoftwareImageSupported;
-        this.isUpgradeSupported = isUpgradeSupported;
-        this.storageManagement = storageManagement;
-    }
-
+    private GetDbVersionsResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -106,7 +85,7 @@ public final class GetDbVersionsResult {
     public static Builder builder(GetDbVersionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String dbSystemId;
@@ -117,11 +96,7 @@ public final class GetDbVersionsResult {
         private @Nullable Boolean isDatabaseSoftwareImageSupported;
         private @Nullable Boolean isUpgradeSupported;
         private @Nullable String storageManagement;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -135,18 +110,22 @@ public final class GetDbVersionsResult {
     	      this.storageManagement = defaults.storageManagement;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
             this.dbSystemId = dbSystemId;
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemShape(@Nullable String dbSystemShape) {
             this.dbSystemShape = dbSystemShape;
             return this;
         }
+        @CustomType.Setter
         public Builder dbVersions(List<GetDbVersionsDbVersion> dbVersions) {
             this.dbVersions = Objects.requireNonNull(dbVersions);
             return this;
@@ -154,6 +133,7 @@ public final class GetDbVersionsResult {
         public Builder dbVersions(GetDbVersionsDbVersion... dbVersions) {
             return dbVersions(List.of(dbVersions));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDbVersionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -161,23 +141,38 @@ public final class GetDbVersionsResult {
         public Builder filters(GetDbVersionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isDatabaseSoftwareImageSupported(@Nullable Boolean isDatabaseSoftwareImageSupported) {
             this.isDatabaseSoftwareImageSupported = isDatabaseSoftwareImageSupported;
             return this;
         }
+        @CustomType.Setter
         public Builder isUpgradeSupported(@Nullable Boolean isUpgradeSupported) {
             this.isUpgradeSupported = isUpgradeSupported;
             return this;
         }
+        @CustomType.Setter
         public Builder storageManagement(@Nullable String storageManagement) {
             this.storageManagement = storageManagement;
             return this;
-        }        public GetDbVersionsResult build() {
-            return new GetDbVersionsResult(compartmentId, dbSystemId, dbSystemShape, dbVersions, filters, id, isDatabaseSoftwareImageSupported, isUpgradeSupported, storageManagement);
+        }
+        public GetDbVersionsResult build() {
+            final var o = new GetDbVersionsResult();
+            o.compartmentId = compartmentId;
+            o.dbSystemId = dbSystemId;
+            o.dbSystemShape = dbSystemShape;
+            o.dbVersions = dbVersions;
+            o.filters = filters;
+            o.id = id;
+            o.isDatabaseSoftwareImageSupported = isDatabaseSoftwareImageSupported;
+            o.isUpgradeSupported = isUpgradeSupported;
+            o.storageManagement = storageManagement;
+            return o;
         }
     }
 }

@@ -13,63 +13,44 @@ public final class GetSubscribedServiceServiceToContact {
      * @return Email.
      * 
      */
-    private final String email;
+    private String email;
     /**
      * @return First name.
      * 
      */
-    private final String firstName;
+    private String firstName;
     /**
      * @return Last name.
      * 
      */
-    private final String lastName;
+    private String lastName;
     /**
      * @return Commercial name also called customer name.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return TCA contact ID.
      * 
      */
-    private final String tcaContactId;
+    private String tcaContactId;
     /**
      * @return TCA customer account site ID.
      * 
      */
-    private final String tcaCustAccntSiteId;
+    private String tcaCustAccntSiteId;
     /**
      * @return TCA party ID.
      * 
      */
-    private final String tcaPartyId;
+    private String tcaPartyId;
     /**
      * @return Username.
      * 
      */
-    private final String username;
+    private String username;
 
-    @CustomType.Constructor
-    private GetSubscribedServiceServiceToContact(
-        @CustomType.Parameter("email") String email,
-        @CustomType.Parameter("firstName") String firstName,
-        @CustomType.Parameter("lastName") String lastName,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("tcaContactId") String tcaContactId,
-        @CustomType.Parameter("tcaCustAccntSiteId") String tcaCustAccntSiteId,
-        @CustomType.Parameter("tcaPartyId") String tcaPartyId,
-        @CustomType.Parameter("username") String username) {
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.name = name;
-        this.tcaContactId = tcaContactId;
-        this.tcaCustAccntSiteId = tcaCustAccntSiteId;
-        this.tcaPartyId = tcaPartyId;
-        this.username = username;
-    }
-
+    private GetSubscribedServiceServiceToContact() {}
     /**
      * @return Email.
      * 
@@ -134,7 +115,7 @@ public final class GetSubscribedServiceServiceToContact {
     public static Builder builder(GetSubscribedServiceServiceToContact defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String email;
         private String firstName;
@@ -144,11 +125,7 @@ public final class GetSubscribedServiceServiceToContact {
         private String tcaCustAccntSiteId;
         private String tcaPartyId;
         private String username;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscribedServiceServiceToContact defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.email = defaults.email;
@@ -161,39 +138,57 @@ public final class GetSubscribedServiceServiceToContact {
     	      this.username = defaults.username;
         }
 
+        @CustomType.Setter
         public Builder email(String email) {
             this.email = Objects.requireNonNull(email);
             return this;
         }
+        @CustomType.Setter
         public Builder firstName(String firstName) {
             this.firstName = Objects.requireNonNull(firstName);
             return this;
         }
+        @CustomType.Setter
         public Builder lastName(String lastName) {
             this.lastName = Objects.requireNonNull(lastName);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder tcaContactId(String tcaContactId) {
             this.tcaContactId = Objects.requireNonNull(tcaContactId);
             return this;
         }
+        @CustomType.Setter
         public Builder tcaCustAccntSiteId(String tcaCustAccntSiteId) {
             this.tcaCustAccntSiteId = Objects.requireNonNull(tcaCustAccntSiteId);
             return this;
         }
+        @CustomType.Setter
         public Builder tcaPartyId(String tcaPartyId) {
             this.tcaPartyId = Objects.requireNonNull(tcaPartyId);
             return this;
         }
+        @CustomType.Setter
         public Builder username(String username) {
             this.username = Objects.requireNonNull(username);
             return this;
-        }        public GetSubscribedServiceServiceToContact build() {
-            return new GetSubscribedServiceServiceToContact(email, firstName, lastName, name, tcaContactId, tcaCustAccntSiteId, tcaPartyId, username);
+        }
+        public GetSubscribedServiceServiceToContact build() {
+            final var o = new GetSubscribedServiceServiceToContact();
+            o.email = email;
+            o.firstName = firstName;
+            o.lastName = lastName;
+            o.name = name;
+            o.tcaContactId = tcaContactId;
+            o.tcaCustAccntSiteId = tcaCustAccntSiteId;
+            o.tcaPartyId = tcaPartyId;
+            o.username = username;
+            return o;
         }
     }
 }

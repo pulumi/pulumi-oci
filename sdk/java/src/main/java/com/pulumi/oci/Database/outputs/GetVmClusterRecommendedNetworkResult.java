@@ -22,90 +22,61 @@ public final class GetVmClusterRecommendedNetworkResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The list of DNS server IP addresses. Maximum of 3 allowed.
      * 
      */
-    private final List<String> dns;
-    private final String exadataInfrastructureId;
+    private List<String> dns;
+    private String exadataInfrastructureId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final List<GetVmClusterRecommendedNetworkNetwork> networks;
+    private String id;
+    private List<GetVmClusterRecommendedNetworkNetwork> networks;
     /**
      * @return The list of NTP server IP addresses. Maximum of 3 allowed.
      * 
      */
-    private final List<String> ntps;
+    private List<String> ntps;
     /**
      * @return The SCAN TCPIP port. Default is 1521.
      * 
      */
-    private final @Nullable Integer scanListenerPortTcp;
+    private @Nullable Integer scanListenerPortTcp;
     /**
      * @return The SCAN TCPIP SSL port. Default is 2484.
      * 
      */
-    private final @Nullable Integer scanListenerPortTcpSsl;
+    private @Nullable Integer scanListenerPortTcpSsl;
     /**
      * @return The SCAN details.
      * 
      */
-    private final List<GetVmClusterRecommendedNetworkScan> scans;
+    private List<GetVmClusterRecommendedNetworkScan> scans;
     /**
      * @return Details of the client and backup networks.
      * 
      */
-    private final List<GetVmClusterRecommendedNetworkVmNetwork> vmNetworks;
+    private List<GetVmClusterRecommendedNetworkVmNetwork> vmNetworks;
 
-    @CustomType.Constructor
-    private GetVmClusterRecommendedNetworkResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("dns") List<String> dns,
-        @CustomType.Parameter("exadataInfrastructureId") String exadataInfrastructureId,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("networks") List<GetVmClusterRecommendedNetworkNetwork> networks,
-        @CustomType.Parameter("ntps") List<String> ntps,
-        @CustomType.Parameter("scanListenerPortTcp") @Nullable Integer scanListenerPortTcp,
-        @CustomType.Parameter("scanListenerPortTcpSsl") @Nullable Integer scanListenerPortTcpSsl,
-        @CustomType.Parameter("scans") List<GetVmClusterRecommendedNetworkScan> scans,
-        @CustomType.Parameter("vmNetworks") List<GetVmClusterRecommendedNetworkVmNetwork> vmNetworks) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.dns = dns;
-        this.exadataInfrastructureId = exadataInfrastructureId;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.networks = networks;
-        this.ntps = ntps;
-        this.scanListenerPortTcp = scanListenerPortTcp;
-        this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
-        this.scans = scans;
-        this.vmNetworks = vmNetworks;
-    }
-
+    private GetVmClusterRecommendedNetworkResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -197,7 +168,7 @@ public final class GetVmClusterRecommendedNetworkResult {
     public static Builder builder(GetVmClusterRecommendedNetworkResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -212,11 +183,7 @@ public final class GetVmClusterRecommendedNetworkResult {
         private @Nullable Integer scanListenerPortTcpSsl;
         private List<GetVmClusterRecommendedNetworkScan> scans;
         private List<GetVmClusterRecommendedNetworkVmNetwork> vmNetworks;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVmClusterRecommendedNetworkResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -234,18 +201,22 @@ public final class GetVmClusterRecommendedNetworkResult {
     	      this.vmNetworks = defaults.vmNetworks;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder dns(List<String> dns) {
             this.dns = Objects.requireNonNull(dns);
             return this;
@@ -253,18 +224,22 @@ public final class GetVmClusterRecommendedNetworkResult {
         public Builder dns(String... dns) {
             return dns(List.of(dns));
         }
+        @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
             this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder networks(List<GetVmClusterRecommendedNetworkNetwork> networks) {
             this.networks = Objects.requireNonNull(networks);
             return this;
@@ -272,6 +247,7 @@ public final class GetVmClusterRecommendedNetworkResult {
         public Builder networks(GetVmClusterRecommendedNetworkNetwork... networks) {
             return networks(List.of(networks));
         }
+        @CustomType.Setter
         public Builder ntps(List<String> ntps) {
             this.ntps = Objects.requireNonNull(ntps);
             return this;
@@ -279,14 +255,17 @@ public final class GetVmClusterRecommendedNetworkResult {
         public Builder ntps(String... ntps) {
             return ntps(List.of(ntps));
         }
+        @CustomType.Setter
         public Builder scanListenerPortTcp(@Nullable Integer scanListenerPortTcp) {
             this.scanListenerPortTcp = scanListenerPortTcp;
             return this;
         }
+        @CustomType.Setter
         public Builder scanListenerPortTcpSsl(@Nullable Integer scanListenerPortTcpSsl) {
             this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
             return this;
         }
+        @CustomType.Setter
         public Builder scans(List<GetVmClusterRecommendedNetworkScan> scans) {
             this.scans = Objects.requireNonNull(scans);
             return this;
@@ -294,14 +273,30 @@ public final class GetVmClusterRecommendedNetworkResult {
         public Builder scans(GetVmClusterRecommendedNetworkScan... scans) {
             return scans(List.of(scans));
         }
+        @CustomType.Setter
         public Builder vmNetworks(List<GetVmClusterRecommendedNetworkVmNetwork> vmNetworks) {
             this.vmNetworks = Objects.requireNonNull(vmNetworks);
             return this;
         }
         public Builder vmNetworks(GetVmClusterRecommendedNetworkVmNetwork... vmNetworks) {
             return vmNetworks(List.of(vmNetworks));
-        }        public GetVmClusterRecommendedNetworkResult build() {
-            return new GetVmClusterRecommendedNetworkResult(compartmentId, definedTags, displayName, dns, exadataInfrastructureId, freeformTags, id, networks, ntps, scanListenerPortTcp, scanListenerPortTcpSsl, scans, vmNetworks);
+        }
+        public GetVmClusterRecommendedNetworkResult build() {
+            final var o = new GetVmClusterRecommendedNetworkResult();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.dns = dns;
+            o.exadataInfrastructureId = exadataInfrastructureId;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.networks = networks;
+            o.ntps = ntps;
+            o.scanListenerPortTcp = scanListenerPortTcp;
+            o.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
+            o.scans = scans;
+            o.vmNetworks = vmNetworks;
+            return o;
         }
     }
 }

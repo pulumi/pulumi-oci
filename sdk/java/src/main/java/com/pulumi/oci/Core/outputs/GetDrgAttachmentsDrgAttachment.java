@@ -18,104 +18,71 @@ public final class GetDrgAttachmentsDrgAttachment {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      * 
      */
-    private final String drgId;
+    private String drgId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
      * 
      */
-    private final String drgRouteTableId;
+    private String drgRouteTableId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
      * 
      */
-    private final String exportDrgRouteDistributionId;
+    private String exportDrgRouteDistributionId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
      * 
      */
-    private final Boolean isCrossTenancy;
-    private final List<GetDrgAttachmentsDrgAttachmentNetworkDetail> networkDetails;
-    private final Boolean removeExportDrgRouteDistributionTrigger;
+    private Boolean isCrossTenancy;
+    private List<GetDrgAttachmentsDrgAttachmentNetworkDetail> networkDetails;
+    private Boolean removeExportDrgRouteDistributionTrigger;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
      * 
      */
-    private final String routeTableId;
+    private String routeTableId;
     /**
      * @return A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
-    private final String vcnId;
+    private String vcnId;
 
-    @CustomType.Constructor
-    private GetDrgAttachmentsDrgAttachment(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("drgId") String drgId,
-        @CustomType.Parameter("drgRouteTableId") String drgRouteTableId,
-        @CustomType.Parameter("exportDrgRouteDistributionId") String exportDrgRouteDistributionId,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isCrossTenancy") Boolean isCrossTenancy,
-        @CustomType.Parameter("networkDetails") List<GetDrgAttachmentsDrgAttachmentNetworkDetail> networkDetails,
-        @CustomType.Parameter("removeExportDrgRouteDistributionTrigger") Boolean removeExportDrgRouteDistributionTrigger,
-        @CustomType.Parameter("routeTableId") String routeTableId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("vcnId") String vcnId) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.drgId = drgId;
-        this.drgRouteTableId = drgRouteTableId;
-        this.exportDrgRouteDistributionId = exportDrgRouteDistributionId;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isCrossTenancy = isCrossTenancy;
-        this.networkDetails = networkDetails;
-        this.removeExportDrgRouteDistributionTrigger = removeExportDrgRouteDistributionTrigger;
-        this.routeTableId = routeTableId;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.vcnId = vcnId;
-    }
-
+    private GetDrgAttachmentsDrgAttachment() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -221,7 +188,7 @@ public final class GetDrgAttachmentsDrgAttachment {
     public static Builder builder(GetDrgAttachmentsDrgAttachment defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -238,11 +205,7 @@ public final class GetDrgAttachmentsDrgAttachment {
         private String state;
         private String timeCreated;
         private String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDrgAttachmentsDrgAttachment defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -262,42 +225,52 @@ public final class GetDrgAttachmentsDrgAttachment {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder drgId(String drgId) {
             this.drgId = Objects.requireNonNull(drgId);
             return this;
         }
+        @CustomType.Setter
         public Builder drgRouteTableId(String drgRouteTableId) {
             this.drgRouteTableId = Objects.requireNonNull(drgRouteTableId);
             return this;
         }
+        @CustomType.Setter
         public Builder exportDrgRouteDistributionId(String exportDrgRouteDistributionId) {
             this.exportDrgRouteDistributionId = Objects.requireNonNull(exportDrgRouteDistributionId);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isCrossTenancy(Boolean isCrossTenancy) {
             this.isCrossTenancy = Objects.requireNonNull(isCrossTenancy);
             return this;
         }
+        @CustomType.Setter
         public Builder networkDetails(List<GetDrgAttachmentsDrgAttachmentNetworkDetail> networkDetails) {
             this.networkDetails = Objects.requireNonNull(networkDetails);
             return this;
@@ -305,27 +278,49 @@ public final class GetDrgAttachmentsDrgAttachment {
         public Builder networkDetails(GetDrgAttachmentsDrgAttachmentNetworkDetail... networkDetails) {
             return networkDetails(List.of(networkDetails));
         }
+        @CustomType.Setter
         public Builder removeExportDrgRouteDistributionTrigger(Boolean removeExportDrgRouteDistributionTrigger) {
             this.removeExportDrgRouteDistributionTrigger = Objects.requireNonNull(removeExportDrgRouteDistributionTrigger);
             return this;
         }
+        @CustomType.Setter
         public Builder routeTableId(String routeTableId) {
             this.routeTableId = Objects.requireNonNull(routeTableId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(String vcnId) {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
-        }        public GetDrgAttachmentsDrgAttachment build() {
-            return new GetDrgAttachmentsDrgAttachment(compartmentId, definedTags, displayName, drgId, drgRouteTableId, exportDrgRouteDistributionId, freeformTags, id, isCrossTenancy, networkDetails, removeExportDrgRouteDistributionTrigger, routeTableId, state, timeCreated, vcnId);
+        }
+        public GetDrgAttachmentsDrgAttachment build() {
+            final var o = new GetDrgAttachmentsDrgAttachment();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.drgId = drgId;
+            o.drgRouteTableId = drgRouteTableId;
+            o.exportDrgRouteDistributionId = exportDrgRouteDistributionId;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isCrossTenancy = isCrossTenancy;
+            o.networkDetails = networkDetails;
+            o.removeExportDrgRouteDistributionTrigger = removeExportDrgRouteDistributionTrigger;
+            o.routeTableId = routeTableId;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

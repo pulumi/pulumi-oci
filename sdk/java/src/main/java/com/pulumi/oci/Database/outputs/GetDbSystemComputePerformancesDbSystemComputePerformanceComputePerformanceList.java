@@ -14,42 +14,29 @@ public final class GetDbSystemComputePerformancesDbSystemComputePerformanceCompu
      * @return The number of OCPU cores available.
      * 
      */
-    private final Integer cpuCoreCount;
+    private Integer cpuCoreCount;
     /**
      * @return The amount of memory allocated for the VMDB System.
      * 
      */
-    private final Double memoryInGbs;
+    private Double memoryInGbs;
     /**
      * @return The network bandwidth of the VMDB system in gbps.
      * 
      */
-    private final Double networkBandwidthInGbps;
+    private Double networkBandwidthInGbps;
     /**
      * @return IOPS for the VMDB System.
      * 
      */
-    private final Double networkIops;
+    private Double networkIops;
     /**
      * @return Network throughput for the VMDB System.
      * 
      */
-    private final Double networkThroughputInMbps;
+    private Double networkThroughputInMbps;
 
-    @CustomType.Constructor
-    private GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList(
-        @CustomType.Parameter("cpuCoreCount") Integer cpuCoreCount,
-        @CustomType.Parameter("memoryInGbs") Double memoryInGbs,
-        @CustomType.Parameter("networkBandwidthInGbps") Double networkBandwidthInGbps,
-        @CustomType.Parameter("networkIops") Double networkIops,
-        @CustomType.Parameter("networkThroughputInMbps") Double networkThroughputInMbps) {
-        this.cpuCoreCount = cpuCoreCount;
-        this.memoryInGbs = memoryInGbs;
-        this.networkBandwidthInGbps = networkBandwidthInGbps;
-        this.networkIops = networkIops;
-        this.networkThroughputInMbps = networkThroughputInMbps;
-    }
-
+    private GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList() {}
     /**
      * @return The number of OCPU cores available.
      * 
@@ -93,18 +80,14 @@ public final class GetDbSystemComputePerformancesDbSystemComputePerformanceCompu
     public static Builder builder(GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer cpuCoreCount;
         private Double memoryInGbs;
         private Double networkBandwidthInGbps;
         private Double networkIops;
         private Double networkThroughputInMbps;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cpuCoreCount = defaults.cpuCoreCount;
@@ -114,27 +97,39 @@ public final class GetDbSystemComputePerformancesDbSystemComputePerformanceCompu
     	      this.networkThroughputInMbps = defaults.networkThroughputInMbps;
         }
 
+        @CustomType.Setter
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
             return this;
         }
+        @CustomType.Setter
         public Builder memoryInGbs(Double memoryInGbs) {
             this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder networkBandwidthInGbps(Double networkBandwidthInGbps) {
             this.networkBandwidthInGbps = Objects.requireNonNull(networkBandwidthInGbps);
             return this;
         }
+        @CustomType.Setter
         public Builder networkIops(Double networkIops) {
             this.networkIops = Objects.requireNonNull(networkIops);
             return this;
         }
+        @CustomType.Setter
         public Builder networkThroughputInMbps(Double networkThroughputInMbps) {
             this.networkThroughputInMbps = Objects.requireNonNull(networkThroughputInMbps);
             return this;
-        }        public GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList build() {
-            return new GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList(cpuCoreCount, memoryInGbs, networkBandwidthInGbps, networkIops, networkThroughputInMbps);
+        }
+        public GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList build() {
+            final var o = new GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList();
+            o.cpuCoreCount = cpuCoreCount;
+            o.memoryInGbs = memoryInGbs;
+            o.networkBandwidthInGbps = networkBandwidthInGbps;
+            o.networkIops = networkIops;
+            o.networkThroughputInMbps = networkThroughputInMbps;
+            return o;
         }
     }
 }

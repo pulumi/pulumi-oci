@@ -18,34 +18,21 @@ public final class GetDrgRouteTableRouteRulesResult {
      * @return The list of drg_route_rules.
      * 
      */
-    private final List<GetDrgRouteTableRouteRulesDrgRouteRule> drgRouteRules;
-    private final String drgRouteTableId;
-    private final @Nullable List<GetDrgRouteTableRouteRulesFilter> filters;
+    private List<GetDrgRouteTableRouteRulesDrgRouteRule> drgRouteRules;
+    private String drgRouteTableId;
+    private @Nullable List<GetDrgRouteTableRouteRulesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
      * 
      */
-    private final @Nullable String routeType;
+    private @Nullable String routeType;
 
-    @CustomType.Constructor
-    private GetDrgRouteTableRouteRulesResult(
-        @CustomType.Parameter("drgRouteRules") List<GetDrgRouteTableRouteRulesDrgRouteRule> drgRouteRules,
-        @CustomType.Parameter("drgRouteTableId") String drgRouteTableId,
-        @CustomType.Parameter("filters") @Nullable List<GetDrgRouteTableRouteRulesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("routeType") @Nullable String routeType) {
-        this.drgRouteRules = drgRouteRules;
-        this.drgRouteTableId = drgRouteTableId;
-        this.filters = filters;
-        this.id = id;
-        this.routeType = routeType;
-    }
-
+    private GetDrgRouteTableRouteRulesResult() {}
     /**
      * @return The list of drg_route_rules.
      * 
@@ -81,18 +68,14 @@ public final class GetDrgRouteTableRouteRulesResult {
     public static Builder builder(GetDrgRouteTableRouteRulesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDrgRouteTableRouteRulesDrgRouteRule> drgRouteRules;
         private String drgRouteTableId;
         private @Nullable List<GetDrgRouteTableRouteRulesFilter> filters;
         private String id;
         private @Nullable String routeType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDrgRouteTableRouteRulesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.drgRouteRules = defaults.drgRouteRules;
@@ -102,6 +85,7 @@ public final class GetDrgRouteTableRouteRulesResult {
     	      this.routeType = defaults.routeType;
         }
 
+        @CustomType.Setter
         public Builder drgRouteRules(List<GetDrgRouteTableRouteRulesDrgRouteRule> drgRouteRules) {
             this.drgRouteRules = Objects.requireNonNull(drgRouteRules);
             return this;
@@ -109,10 +93,12 @@ public final class GetDrgRouteTableRouteRulesResult {
         public Builder drgRouteRules(GetDrgRouteTableRouteRulesDrgRouteRule... drgRouteRules) {
             return drgRouteRules(List.of(drgRouteRules));
         }
+        @CustomType.Setter
         public Builder drgRouteTableId(String drgRouteTableId) {
             this.drgRouteTableId = Objects.requireNonNull(drgRouteTableId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDrgRouteTableRouteRulesFilter> filters) {
             this.filters = filters;
             return this;
@@ -120,15 +106,24 @@ public final class GetDrgRouteTableRouteRulesResult {
         public Builder filters(GetDrgRouteTableRouteRulesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder routeType(@Nullable String routeType) {
             this.routeType = routeType;
             return this;
-        }        public GetDrgRouteTableRouteRulesResult build() {
-            return new GetDrgRouteTableRouteRulesResult(drgRouteRules, drgRouteTableId, filters, id, routeType);
+        }
+        public GetDrgRouteTableRouteRulesResult build() {
+            final var o = new GetDrgRouteTableRouteRulesResult();
+            o.drgRouteRules = drgRouteRules;
+            o.drgRouteTableId = drgRouteTableId;
+            o.filters = filters;
+            o.id = id;
+            o.routeType = routeType;
+            return o;
         }
     }
 }

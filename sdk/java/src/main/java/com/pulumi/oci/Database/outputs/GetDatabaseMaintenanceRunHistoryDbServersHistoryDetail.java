@@ -15,28 +15,19 @@ public final class GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail {
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    private final List<GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail> dbServerPatchingDetails;
+    private List<GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail> dbServerPatchingDetails;
     /**
      * @return The user-friendly name for the maintenance run.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The OCID of the maintenance run.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail(
-        @CustomType.Parameter("dbServerPatchingDetails") List<GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail> dbServerPatchingDetails,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id) {
-        this.dbServerPatchingDetails = dbServerPatchingDetails;
-        this.displayName = displayName;
-        this.id = id;
-    }
-
+    private GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail() {}
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
@@ -66,16 +57,12 @@ public final class GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail {
     public static Builder builder(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail> dbServerPatchingDetails;
         private String displayName;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbServerPatchingDetails = defaults.dbServerPatchingDetails;
@@ -83,6 +70,7 @@ public final class GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder dbServerPatchingDetails(List<GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail> dbServerPatchingDetails) {
             this.dbServerPatchingDetails = Objects.requireNonNull(dbServerPatchingDetails);
             return this;
@@ -90,15 +78,22 @@ public final class GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail {
         public Builder dbServerPatchingDetails(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail... dbServerPatchingDetails) {
             return dbServerPatchingDetails(List.of(dbServerPatchingDetails));
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail build() {
-            return new GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail(dbServerPatchingDetails, displayName, id);
+        }
+        public GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail build() {
+            final var o = new GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail();
+            o.dbServerPatchingDetails = dbServerPatchingDetails;
+            o.displayName = displayName;
+            o.id = id;
+            return o;
         }
     }
 }

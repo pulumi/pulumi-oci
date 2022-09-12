@@ -15,21 +15,14 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlC
      * @return A list of alternate names to verify the subject identity in the certificate presented by the client.
      * 
      */
-    private final List<String> subjectAlternateNames;
+    private List<String> subjectAlternateNames;
     /**
      * @return Resource representing the CA bundle.
      * 
      */
-    private final List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle> trustedCaBundles;
+    private List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle> trustedCaBundles;
 
-    @CustomType.Constructor
-    private GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation(
-        @CustomType.Parameter("subjectAlternateNames") List<String> subjectAlternateNames,
-        @CustomType.Parameter("trustedCaBundles") List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle> trustedCaBundles) {
-        this.subjectAlternateNames = subjectAlternateNames;
-        this.trustedCaBundles = trustedCaBundles;
-    }
-
+    private GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation() {}
     /**
      * @return A list of alternate names to verify the subject identity in the certificate presented by the client.
      * 
@@ -52,21 +45,18 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlC
     public static Builder builder(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> subjectAlternateNames;
         private List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle> trustedCaBundles;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.subjectAlternateNames = defaults.subjectAlternateNames;
     	      this.trustedCaBundles = defaults.trustedCaBundles;
         }
 
+        @CustomType.Setter
         public Builder subjectAlternateNames(List<String> subjectAlternateNames) {
             this.subjectAlternateNames = Objects.requireNonNull(subjectAlternateNames);
             return this;
@@ -74,14 +64,19 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlC
         public Builder subjectAlternateNames(String... subjectAlternateNames) {
             return subjectAlternateNames(List.of(subjectAlternateNames));
         }
+        @CustomType.Setter
         public Builder trustedCaBundles(List<GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle> trustedCaBundles) {
             this.trustedCaBundles = Objects.requireNonNull(trustedCaBundles);
             return this;
         }
         public Builder trustedCaBundles(GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle... trustedCaBundles) {
             return trustedCaBundles(List.of(trustedCaBundles));
-        }        public GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation build() {
-            return new GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation(subjectAlternateNames, trustedCaBundles);
+        }
+        public GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation build() {
+            final var o = new GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation();
+            o.subjectAlternateNames = subjectAlternateNames;
+            o.trustedCaBundles = trustedCaBundles;
+            return o;
         }
     }
 }

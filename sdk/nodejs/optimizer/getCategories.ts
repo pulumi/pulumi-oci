@@ -19,6 +19,8 @@ import * as utilities from "../utilities";
  * const testCategories = oci.Optimizer.getCategories({
  *     compartmentId: _var.compartment_id,
  *     compartmentIdInSubtree: _var.category_compartment_id_in_subtree,
+ *     childTenancyIds: _var.category_child_tenancy_ids,
+ *     includeOrganization: _var.category_include_organization,
  *     name: _var.category_name,
  *     state: _var.category_state,
  * });
@@ -31,9 +33,11 @@ export function getCategories(args: GetCategoriesArgs, opts?: pulumi.InvokeOptio
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("oci:Optimizer/getCategories:getCategories", {
+        "childTenancyIds": args.childTenancyIds,
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
+        "includeOrganization": args.includeOrganization,
         "name": args.name,
         "state": args.state,
     }, opts);
@@ -44,6 +48,10 @@ export function getCategories(args: GetCategoriesArgs, opts?: pulumi.InvokeOptio
  */
 export interface GetCategoriesArgs {
     /**
+     * A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+     */
+    childTenancyIds?: string[];
+    /**
      * The OCID of the compartment.
      */
     compartmentId: string;
@@ -52,6 +60,10 @@ export interface GetCategoriesArgs {
      */
     compartmentIdInSubtree: boolean;
     filters?: inputs.Optimizer.GetCategoriesFilter[];
+    /**
+     * When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+     */
+    includeOrganization?: boolean;
     /**
      * Optional. A filter that returns results that match the name specified.
      */
@@ -70,6 +82,7 @@ export interface GetCategoriesResult {
      * The list of category_collection.
      */
     readonly categoryCollections: outputs.Optimizer.GetCategoriesCategoryCollection[];
+    readonly childTenancyIds?: string[];
     /**
      * The OCID of the tenancy. The tenancy is the root compartment.
      */
@@ -80,6 +93,7 @@ export interface GetCategoriesResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly includeOrganization?: boolean;
     /**
      * The name assigned to the category.
      */
@@ -99,6 +113,10 @@ export function getCategoriesOutput(args: GetCategoriesOutputArgs, opts?: pulumi
  */
 export interface GetCategoriesOutputArgs {
     /**
+     * A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+     */
+    childTenancyIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * The OCID of the compartment.
      */
     compartmentId: pulumi.Input<string>;
@@ -107,6 +125,10 @@ export interface GetCategoriesOutputArgs {
      */
     compartmentIdInSubtree: pulumi.Input<boolean>;
     filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetCategoriesFilterArgs>[]>;
+    /**
+     * When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+     */
+    includeOrganization?: pulumi.Input<boolean>;
     /**
      * Optional. A filter that returns results that match the name specified.
      */

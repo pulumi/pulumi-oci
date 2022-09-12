@@ -17,56 +17,39 @@ public final class ConfigRule {
      * @return (Updatable) The name by which a configuration entity is displayed to the end user.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return (Updatable) The string that defines the Span Filter expression.
      * 
      */
-    private final @Nullable String filterText;
+    private @Nullable String filterText;
     /**
      * @return (Updatable) Specifies whether an Apdex score should be computed for error spans. Setting it to &#34;true&#34; means that the Apdex score is computed in the usual way. Setting it to &#34;false&#34; skips the Apdex computation and sets the Apdex score to &#34;frustrating&#34; regardless of the configured thresholds. The default is &#34;false&#34;.
      * 
      */
-    private final @Nullable Boolean isApplyToErrorSpans;
+    private @Nullable Boolean isApplyToErrorSpans;
     /**
      * @return (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is &#34;true&#34;.
      * 
      */
-    private final @Nullable Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return (Updatable) The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
      * 
      */
-    private final @Nullable Integer priority;
+    private @Nullable Integer priority;
     /**
      * @return (Updatable) The maximum response time in milliseconds that is considered &#34;satisfactory&#34; for the end user.
      * 
      */
-    private final @Nullable Integer satisfiedResponseTime;
+    private @Nullable Integer satisfiedResponseTime;
     /**
      * @return (Updatable) The maximum response time in milliseconds that is considered &#34;tolerable&#34; for the end user. A response time beyond this threshold is considered &#34;frustrating&#34;. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
      * 
      */
-    private final @Nullable Integer toleratingResponseTime;
+    private @Nullable Integer toleratingResponseTime;
 
-    @CustomType.Constructor
-    private ConfigRule(
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filterText") @Nullable String filterText,
-        @CustomType.Parameter("isApplyToErrorSpans") @Nullable Boolean isApplyToErrorSpans,
-        @CustomType.Parameter("isEnabled") @Nullable Boolean isEnabled,
-        @CustomType.Parameter("priority") @Nullable Integer priority,
-        @CustomType.Parameter("satisfiedResponseTime") @Nullable Integer satisfiedResponseTime,
-        @CustomType.Parameter("toleratingResponseTime") @Nullable Integer toleratingResponseTime) {
-        this.displayName = displayName;
-        this.filterText = filterText;
-        this.isApplyToErrorSpans = isApplyToErrorSpans;
-        this.isEnabled = isEnabled;
-        this.priority = priority;
-        this.satisfiedResponseTime = satisfiedResponseTime;
-        this.toleratingResponseTime = toleratingResponseTime;
-    }
-
+    private ConfigRule() {}
     /**
      * @return (Updatable) The name by which a configuration entity is displayed to the end user.
      * 
@@ -124,7 +107,7 @@ public final class ConfigRule {
     public static Builder builder(ConfigRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String displayName;
         private @Nullable String filterText;
@@ -133,11 +116,7 @@ public final class ConfigRule {
         private @Nullable Integer priority;
         private @Nullable Integer satisfiedResponseTime;
         private @Nullable Integer toleratingResponseTime;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConfigRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -149,35 +128,51 @@ public final class ConfigRule {
     	      this.toleratingResponseTime = defaults.toleratingResponseTime;
         }
 
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filterText(@Nullable String filterText) {
             this.filterText = filterText;
             return this;
         }
+        @CustomType.Setter
         public Builder isApplyToErrorSpans(@Nullable Boolean isApplyToErrorSpans) {
             this.isApplyToErrorSpans = isApplyToErrorSpans;
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
             this.isEnabled = isEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder priority(@Nullable Integer priority) {
             this.priority = priority;
             return this;
         }
+        @CustomType.Setter
         public Builder satisfiedResponseTime(@Nullable Integer satisfiedResponseTime) {
             this.satisfiedResponseTime = satisfiedResponseTime;
             return this;
         }
+        @CustomType.Setter
         public Builder toleratingResponseTime(@Nullable Integer toleratingResponseTime) {
             this.toleratingResponseTime = toleratingResponseTime;
             return this;
-        }        public ConfigRule build() {
-            return new ConfigRule(displayName, filterText, isApplyToErrorSpans, isEnabled, priority, satisfiedResponseTime, toleratingResponseTime);
+        }
+        public ConfigRule build() {
+            final var o = new ConfigRule();
+            o.displayName = displayName;
+            o.filterText = filterText;
+            o.isApplyToErrorSpans = isApplyToErrorSpans;
+            o.isEnabled = isEnabled;
+            o.priority = priority;
+            o.satisfiedResponseTime = satisfiedResponseTime;
+            o.toleratingResponseTime = toleratingResponseTime;
+            return o;
         }
     }
 }

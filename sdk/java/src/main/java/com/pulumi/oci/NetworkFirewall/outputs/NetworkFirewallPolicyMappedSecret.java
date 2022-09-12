@@ -12,37 +12,26 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class NetworkFirewallPolicyMappedSecret {
-    private final String key;
+    private String key;
     /**
      * @return (Updatable) Type of the secrets mapped based on the policy.
      * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
      * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return (Updatable) OCID for the Vault Secret to be used.
      * 
      */
-    private final @Nullable String vaultSecretId;
+    private @Nullable String vaultSecretId;
     /**
      * @return (Updatable) Version number of the secret to be used.
      * 
      */
-    private final @Nullable Integer versionNumber;
+    private @Nullable Integer versionNumber;
 
-    @CustomType.Constructor
-    private NetworkFirewallPolicyMappedSecret(
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("vaultSecretId") @Nullable String vaultSecretId,
-        @CustomType.Parameter("versionNumber") @Nullable Integer versionNumber) {
-        this.key = key;
-        this.type = type;
-        this.vaultSecretId = vaultSecretId;
-        this.versionNumber = versionNumber;
-    }
-
+    private NetworkFirewallPolicyMappedSecret() {}
     public String key() {
         return this.key;
     }
@@ -77,17 +66,13 @@ public final class NetworkFirewallPolicyMappedSecret {
     public static Builder builder(NetworkFirewallPolicyMappedSecret defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String key;
         private String type;
         private @Nullable String vaultSecretId;
         private @Nullable Integer versionNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NetworkFirewallPolicyMappedSecret defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.key = defaults.key;
@@ -96,23 +81,33 @@ public final class NetworkFirewallPolicyMappedSecret {
     	      this.versionNumber = defaults.versionNumber;
         }
 
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder vaultSecretId(@Nullable String vaultSecretId) {
             this.vaultSecretId = vaultSecretId;
             return this;
         }
+        @CustomType.Setter
         public Builder versionNumber(@Nullable Integer versionNumber) {
             this.versionNumber = versionNumber;
             return this;
-        }        public NetworkFirewallPolicyMappedSecret build() {
-            return new NetworkFirewallPolicyMappedSecret(key, type, vaultSecretId, versionNumber);
+        }
+        public NetworkFirewallPolicyMappedSecret build() {
+            final var o = new NetworkFirewallPolicyMappedSecret();
+            o.key = key;
+            o.type = type;
+            o.vaultSecretId = vaultSecretId;
+            o.versionNumber = versionNumber;
+            return o;
         }
     }
 }

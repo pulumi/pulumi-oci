@@ -17,28 +17,19 @@ public final class ClusterEndpointConfig {
      * @return Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
      * 
      */
-    private final @Nullable Boolean isPublicIpEnabled;
+    private @Nullable Boolean isPublicIpEnabled;
     /**
      * @return A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
-    private final @Nullable List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return The OCID of the regional subnet in which to place the Cluster endpoint.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
 
-    @CustomType.Constructor
-    private ClusterEndpointConfig(
-        @CustomType.Parameter("isPublicIpEnabled") @Nullable Boolean isPublicIpEnabled,
-        @CustomType.Parameter("nsgIds") @Nullable List<String> nsgIds,
-        @CustomType.Parameter("subnetId") String subnetId) {
-        this.isPublicIpEnabled = isPublicIpEnabled;
-        this.nsgIds = nsgIds;
-        this.subnetId = subnetId;
-    }
-
+    private ClusterEndpointConfig() {}
     /**
      * @return Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
      * 
@@ -68,16 +59,12 @@ public final class ClusterEndpointConfig {
     public static Builder builder(ClusterEndpointConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isPublicIpEnabled;
         private @Nullable List<String> nsgIds;
         private String subnetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ClusterEndpointConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isPublicIpEnabled = defaults.isPublicIpEnabled;
@@ -85,10 +72,12 @@ public final class ClusterEndpointConfig {
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
         public Builder isPublicIpEnabled(@Nullable Boolean isPublicIpEnabled) {
             this.isPublicIpEnabled = isPublicIpEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder nsgIds(@Nullable List<String> nsgIds) {
             this.nsgIds = nsgIds;
             return this;
@@ -96,11 +85,17 @@ public final class ClusterEndpointConfig {
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
-        }        public ClusterEndpointConfig build() {
-            return new ClusterEndpointConfig(isPublicIpEnabled, nsgIds, subnetId);
+        }
+        public ClusterEndpointConfig build() {
+            final var o = new ClusterEndpointConfig();
+            o.isPublicIpEnabled = isPublicIpEnabled;
+            o.nsgIds = nsgIds;
+            o.subnetId = subnetId;
+            return o;
         }
     }
 }

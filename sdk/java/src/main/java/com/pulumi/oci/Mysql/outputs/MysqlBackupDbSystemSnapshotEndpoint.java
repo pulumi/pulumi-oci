@@ -17,56 +17,39 @@ public final class MysqlBackupDbSystemSnapshotEndpoint {
      * @return The network address of the DB System.
      * 
      */
-    private final @Nullable String hostname;
+    private @Nullable String hostname;
     /**
      * @return The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet&#39;s CIDR. This will be a &#34;dotted-quad&#34; style IPv4 address.
      * 
      */
-    private final @Nullable String ipAddress;
+    private @Nullable String ipAddress;
     /**
      * @return The access modes from the client that this endpoint supports.
      * 
      */
-    private final @Nullable List<String> modes;
+    private @Nullable List<String> modes;
     /**
      * @return The port for primary endpoint of the DB System to listen on.
      * 
      */
-    private final @Nullable Integer port;
+    private @Nullable Integer port;
     /**
      * @return The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
      * 
      */
-    private final @Nullable Integer portX;
+    private @Nullable Integer portX;
     /**
      * @return The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
      * 
      */
-    private final @Nullable String status;
+    private @Nullable String status;
     /**
      * @return Additional information about the current endpoint status.
      * 
      */
-    private final @Nullable String statusDetails;
+    private @Nullable String statusDetails;
 
-    @CustomType.Constructor
-    private MysqlBackupDbSystemSnapshotEndpoint(
-        @CustomType.Parameter("hostname") @Nullable String hostname,
-        @CustomType.Parameter("ipAddress") @Nullable String ipAddress,
-        @CustomType.Parameter("modes") @Nullable List<String> modes,
-        @CustomType.Parameter("port") @Nullable Integer port,
-        @CustomType.Parameter("portX") @Nullable Integer portX,
-        @CustomType.Parameter("status") @Nullable String status,
-        @CustomType.Parameter("statusDetails") @Nullable String statusDetails) {
-        this.hostname = hostname;
-        this.ipAddress = ipAddress;
-        this.modes = modes;
-        this.port = port;
-        this.portX = portX;
-        this.status = status;
-        this.statusDetails = statusDetails;
-    }
-
+    private MysqlBackupDbSystemSnapshotEndpoint() {}
     /**
      * @return The network address of the DB System.
      * 
@@ -124,7 +107,7 @@ public final class MysqlBackupDbSystemSnapshotEndpoint {
     public static Builder builder(MysqlBackupDbSystemSnapshotEndpoint defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String hostname;
         private @Nullable String ipAddress;
@@ -133,11 +116,7 @@ public final class MysqlBackupDbSystemSnapshotEndpoint {
         private @Nullable Integer portX;
         private @Nullable String status;
         private @Nullable String statusDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MysqlBackupDbSystemSnapshotEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostname = defaults.hostname;
@@ -149,14 +128,17 @@ public final class MysqlBackupDbSystemSnapshotEndpoint {
     	      this.statusDetails = defaults.statusDetails;
         }
 
+        @CustomType.Setter
         public Builder hostname(@Nullable String hostname) {
             this.hostname = hostname;
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddress(@Nullable String ipAddress) {
             this.ipAddress = ipAddress;
             return this;
         }
+        @CustomType.Setter
         public Builder modes(@Nullable List<String> modes) {
             this.modes = modes;
             return this;
@@ -164,23 +146,36 @@ public final class MysqlBackupDbSystemSnapshotEndpoint {
         public Builder modes(String... modes) {
             return modes(List.of(modes));
         }
+        @CustomType.Setter
         public Builder port(@Nullable Integer port) {
             this.port = port;
             return this;
         }
+        @CustomType.Setter
         public Builder portX(@Nullable Integer portX) {
             this.portX = portX;
             return this;
         }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
         }
+        @CustomType.Setter
         public Builder statusDetails(@Nullable String statusDetails) {
             this.statusDetails = statusDetails;
             return this;
-        }        public MysqlBackupDbSystemSnapshotEndpoint build() {
-            return new MysqlBackupDbSystemSnapshotEndpoint(hostname, ipAddress, modes, port, portX, status, statusDetails);
+        }
+        public MysqlBackupDbSystemSnapshotEndpoint build() {
+            final var o = new MysqlBackupDbSystemSnapshotEndpoint();
+            o.hostname = hostname;
+            o.ipAddress = ipAddress;
+            o.modes = modes;
+            o.port = port;
+            o.portX = portX;
+            o.status = status;
+            o.statusDetails = statusDetails;
+            return o;
         }
     }
 }

@@ -15,21 +15,14 @@ public final class CertificateCurrentVersionSubjectAlternativeName {
      * @return The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
     /**
      * @return The subject alternative name.
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
 
-    @CustomType.Constructor
-    private CertificateCurrentVersionSubjectAlternativeName(
-        @CustomType.Parameter("type") @Nullable String type,
-        @CustomType.Parameter("value") @Nullable String value) {
-        this.type = type;
-        this.value = value;
-    }
-
+    private CertificateCurrentVersionSubjectAlternativeName() {}
     /**
      * @return The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
      * 
@@ -52,30 +45,32 @@ public final class CertificateCurrentVersionSubjectAlternativeName {
     public static Builder builder(CertificateCurrentVersionSubjectAlternativeName defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String type;
         private @Nullable String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CertificateCurrentVersionSubjectAlternativeName defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.type = defaults.type;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
-        }        public CertificateCurrentVersionSubjectAlternativeName build() {
-            return new CertificateCurrentVersionSubjectAlternativeName(type, value);
+        }
+        public CertificateCurrentVersionSubjectAlternativeName build() {
+            final var o = new CertificateCurrentVersionSubjectAlternativeName();
+            o.type = type;
+            o.value = value;
+            return o;
         }
     }
 }

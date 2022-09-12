@@ -31,14 +31,14 @@ public final class GetRegistryTypePlainArgs extends com.pulumi.resources.InvokeA
     }
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      * 
      */
     @Import(name="registryId", required=true)
     private String registryId;
 
     /**
-     * @return The registry Ocid.
+     * @return The registry OCID.
      * 
      */
     public String registryId() {
@@ -46,14 +46,14 @@ public final class GetRegistryTypePlainArgs extends com.pulumi.resources.InvokeA
     }
 
     /**
-     * key of the a specefic Type.
+     * Key of the a specific type.
      * 
      */
     @Import(name="typeKey", required=true)
     private String typeKey;
 
     /**
-     * @return key of the a specefic Type.
+     * @return Key of the a specific type.
      * 
      */
     public String typeKey() {
@@ -108,7 +108,7 @@ public final class GetRegistryTypePlainArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param registryId The registry Ocid.
+         * @param registryId The registry OCID.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class GetRegistryTypePlainArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param typeKey key of the a specefic Type.
+         * @param typeKey Key of the a specific type.
          * 
          * @return builder
          * 

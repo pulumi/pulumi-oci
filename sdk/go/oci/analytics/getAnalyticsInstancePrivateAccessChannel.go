@@ -68,10 +68,14 @@ type LookupAnalyticsInstancePrivateAccessChannelResult struct {
 	// IP Address of the Private Access channel.
 	IpAddress string `pulumi:"ipAddress"`
 	// Private Access Channel unique identifier key.
-	Key                     string `pulumi:"key"`
-	PrivateAccessChannelKey string `pulumi:"privateAccessChannelKey"`
+	Key string `pulumi:"key"`
+	// Network Security Group OCIDs for an Analytics instance.
+	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
+	PrivateAccessChannelKey string   `pulumi:"privateAccessChannelKey"`
 	// List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
 	PrivateSourceDnsZones []GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone `pulumi:"privateSourceDnsZones"`
+	// List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+	PrivateSourceScanHosts []GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost `pulumi:"privateSourceScanHosts"`
 	// OCID of the customer subnet connected to private access channel.
 	SubnetId string `pulumi:"subnetId"`
 	// OCID of the customer VCN peered with private access channel.
@@ -146,6 +150,11 @@ func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) Key() pulumi.St
 	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) string { return v.Key }).(pulumi.StringOutput)
 }
 
+// Network Security Group OCIDs for an Analytics instance.
+func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) []string { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
 func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) PrivateAccessChannelKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) string { return v.PrivateAccessChannelKey }).(pulumi.StringOutput)
 }
@@ -155,6 +164,13 @@ func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) PrivateSourceDn
 	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) []GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
 		return v.PrivateSourceDnsZones
 	}).(GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput)
+}
+
+// List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+func (o LookupAnalyticsInstancePrivateAccessChannelResultOutput) PrivateSourceScanHosts() GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput {
+	return o.ApplyT(func(v LookupAnalyticsInstancePrivateAccessChannelResult) []GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost {
+		return v.PrivateSourceScanHosts
+	}).(GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput)
 }
 
 // OCID of the customer subnet connected to private access channel.

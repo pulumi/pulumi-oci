@@ -14,57 +14,34 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCommitmentAggregatedsResult {
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of computed_usage_aggregateds.
      * 
      */
-    private final List<GetCommitmentAggregatedsComputedUsageAggregated> computedUsageAggregateds;
-    private final @Nullable List<GetCommitmentAggregatedsFilter> filters;
-    private final @Nullable String grouping;
+    private List<GetCommitmentAggregatedsComputedUsageAggregated> computedUsageAggregateds;
+    private @Nullable List<GetCommitmentAggregatedsFilter> filters;
+    private @Nullable String grouping;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Product description
      * 
      */
-    private final @Nullable String parentProduct;
+    private @Nullable String parentProduct;
     /**
      * @return Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM
      * 
      */
-    private final String subscriptionId;
-    private final String timeFrom;
-    private final String timeTo;
-    private final @Nullable String xOneOriginRegion;
+    private String subscriptionId;
+    private String timeFrom;
+    private String timeTo;
+    private @Nullable String xOneOriginRegion;
 
-    @CustomType.Constructor
-    private GetCommitmentAggregatedsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("computedUsageAggregateds") List<GetCommitmentAggregatedsComputedUsageAggregated> computedUsageAggregateds,
-        @CustomType.Parameter("filters") @Nullable List<GetCommitmentAggregatedsFilter> filters,
-        @CustomType.Parameter("grouping") @Nullable String grouping,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("parentProduct") @Nullable String parentProduct,
-        @CustomType.Parameter("subscriptionId") String subscriptionId,
-        @CustomType.Parameter("timeFrom") String timeFrom,
-        @CustomType.Parameter("timeTo") String timeTo,
-        @CustomType.Parameter("xOneOriginRegion") @Nullable String xOneOriginRegion) {
-        this.compartmentId = compartmentId;
-        this.computedUsageAggregateds = computedUsageAggregateds;
-        this.filters = filters;
-        this.grouping = grouping;
-        this.id = id;
-        this.parentProduct = parentProduct;
-        this.subscriptionId = subscriptionId;
-        this.timeFrom = timeFrom;
-        this.timeTo = timeTo;
-        this.xOneOriginRegion = xOneOriginRegion;
-    }
-
+    private GetCommitmentAggregatedsResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -119,7 +96,7 @@ public final class GetCommitmentAggregatedsResult {
     public static Builder builder(GetCommitmentAggregatedsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetCommitmentAggregatedsComputedUsageAggregated> computedUsageAggregateds;
@@ -131,11 +108,7 @@ public final class GetCommitmentAggregatedsResult {
         private String timeFrom;
         private String timeTo;
         private @Nullable String xOneOriginRegion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCommitmentAggregatedsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -150,10 +123,12 @@ public final class GetCommitmentAggregatedsResult {
     	      this.xOneOriginRegion = defaults.xOneOriginRegion;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder computedUsageAggregateds(List<GetCommitmentAggregatedsComputedUsageAggregated> computedUsageAggregateds) {
             this.computedUsageAggregateds = Objects.requireNonNull(computedUsageAggregateds);
             return this;
@@ -161,6 +136,7 @@ public final class GetCommitmentAggregatedsResult {
         public Builder computedUsageAggregateds(GetCommitmentAggregatedsComputedUsageAggregated... computedUsageAggregateds) {
             return computedUsageAggregateds(List.of(computedUsageAggregateds));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetCommitmentAggregatedsFilter> filters) {
             this.filters = filters;
             return this;
@@ -168,35 +144,54 @@ public final class GetCommitmentAggregatedsResult {
         public Builder filters(GetCommitmentAggregatedsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder grouping(@Nullable String grouping) {
             this.grouping = grouping;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder parentProduct(@Nullable String parentProduct) {
             this.parentProduct = parentProduct;
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = Objects.requireNonNull(subscriptionId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeFrom(String timeFrom) {
             this.timeFrom = Objects.requireNonNull(timeFrom);
             return this;
         }
+        @CustomType.Setter
         public Builder timeTo(String timeTo) {
             this.timeTo = Objects.requireNonNull(timeTo);
             return this;
         }
+        @CustomType.Setter
         public Builder xOneOriginRegion(@Nullable String xOneOriginRegion) {
             this.xOneOriginRegion = xOneOriginRegion;
             return this;
-        }        public GetCommitmentAggregatedsResult build() {
-            return new GetCommitmentAggregatedsResult(compartmentId, computedUsageAggregateds, filters, grouping, id, parentProduct, subscriptionId, timeFrom, timeTo, xOneOriginRegion);
+        }
+        public GetCommitmentAggregatedsResult build() {
+            final var o = new GetCommitmentAggregatedsResult();
+            o.compartmentId = compartmentId;
+            o.computedUsageAggregateds = computedUsageAggregateds;
+            o.filters = filters;
+            o.grouping = grouping;
+            o.id = id;
+            o.parentProduct = parentProduct;
+            o.subscriptionId = subscriptionId;
+            o.timeFrom = timeFrom;
+            o.timeTo = timeTo;
+            o.xOneOriginRegion = xOneOriginRegion;
+            return o;
         }
     }
 }

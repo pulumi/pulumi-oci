@@ -14,45 +14,30 @@ public final class GetLogAnalyticsEntitiesSummaryResult {
      * @return Total number of ACTIVE entities
      * 
      */
-    private final Integer activeEntitiesCount;
+    private Integer activeEntitiesCount;
     /**
      * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Entities with log collection enabled
      * 
      */
-    private final Integer entitiesWithHasLogsCollectedCount;
+    private Integer entitiesWithHasLogsCollectedCount;
     /**
      * @return Entities with management agent
      * 
      */
-    private final Integer entitiesWithManagementAgentCount;
+    private Integer entitiesWithManagementAgentCount;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String namespace;
+    private String id;
+    private String namespace;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsEntitiesSummaryResult(
-        @CustomType.Parameter("activeEntitiesCount") Integer activeEntitiesCount,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("entitiesWithHasLogsCollectedCount") Integer entitiesWithHasLogsCollectedCount,
-        @CustomType.Parameter("entitiesWithManagementAgentCount") Integer entitiesWithManagementAgentCount,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("namespace") String namespace) {
-        this.activeEntitiesCount = activeEntitiesCount;
-        this.compartmentId = compartmentId;
-        this.entitiesWithHasLogsCollectedCount = entitiesWithHasLogsCollectedCount;
-        this.entitiesWithManagementAgentCount = entitiesWithManagementAgentCount;
-        this.id = id;
-        this.namespace = namespace;
-    }
-
+    private GetLogAnalyticsEntitiesSummaryResult() {}
     /**
      * @return Total number of ACTIVE entities
      * 
@@ -99,7 +84,7 @@ public final class GetLogAnalyticsEntitiesSummaryResult {
     public static Builder builder(GetLogAnalyticsEntitiesSummaryResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer activeEntitiesCount;
         private String compartmentId;
@@ -107,11 +92,7 @@ public final class GetLogAnalyticsEntitiesSummaryResult {
         private Integer entitiesWithManagementAgentCount;
         private String id;
         private String namespace;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsEntitiesSummaryResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.activeEntitiesCount = defaults.activeEntitiesCount;
@@ -122,31 +103,45 @@ public final class GetLogAnalyticsEntitiesSummaryResult {
     	      this.namespace = defaults.namespace;
         }
 
+        @CustomType.Setter
         public Builder activeEntitiesCount(Integer activeEntitiesCount) {
             this.activeEntitiesCount = Objects.requireNonNull(activeEntitiesCount);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder entitiesWithHasLogsCollectedCount(Integer entitiesWithHasLogsCollectedCount) {
             this.entitiesWithHasLogsCollectedCount = Objects.requireNonNull(entitiesWithHasLogsCollectedCount);
             return this;
         }
+        @CustomType.Setter
         public Builder entitiesWithManagementAgentCount(Integer entitiesWithManagementAgentCount) {
             this.entitiesWithManagementAgentCount = Objects.requireNonNull(entitiesWithManagementAgentCount);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
-        }        public GetLogAnalyticsEntitiesSummaryResult build() {
-            return new GetLogAnalyticsEntitiesSummaryResult(activeEntitiesCount, compartmentId, entitiesWithHasLogsCollectedCount, entitiesWithManagementAgentCount, id, namespace);
+        }
+        public GetLogAnalyticsEntitiesSummaryResult build() {
+            final var o = new GetLogAnalyticsEntitiesSummaryResult();
+            o.activeEntitiesCount = activeEntitiesCount;
+            o.compartmentId = compartmentId;
+            o.entitiesWithHasLogsCollectedCount = entitiesWithHasLogsCollectedCount;
+            o.entitiesWithManagementAgentCount = entitiesWithManagementAgentCount;
+            o.id = id;
+            o.namespace = namespace;
+            return o;
         }
     }
 }

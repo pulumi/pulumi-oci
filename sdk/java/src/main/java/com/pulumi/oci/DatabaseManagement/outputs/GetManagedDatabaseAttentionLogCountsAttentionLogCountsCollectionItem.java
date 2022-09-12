@@ -14,21 +14,14 @@ public final class GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollect
      * @return The category of different attention logs.
      * 
      */
-    private final String category;
+    private String category;
     /**
      * @return The count of attention logs with specific category.
      * 
      */
-    private final Integer count;
+    private Integer count;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem(
-        @CustomType.Parameter("category") String category,
-        @CustomType.Parameter("count") Integer count) {
-        this.category = category;
-        this.count = count;
-    }
-
+    private GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem() {}
     /**
      * @return The category of different attention logs.
      * 
@@ -51,30 +44,32 @@ public final class GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollect
     public static Builder builder(GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String category;
         private Integer count;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.category = defaults.category;
     	      this.count = defaults.count;
         }
 
+        @CustomType.Setter
         public Builder category(String category) {
             this.category = Objects.requireNonNull(category);
             return this;
         }
+        @CustomType.Setter
         public Builder count(Integer count) {
             this.count = Objects.requireNonNull(count);
             return this;
-        }        public GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem build() {
-            return new GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem(category, count);
+        }
+        public GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem build() {
+            final var o = new GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItem();
+            o.category = category;
+            o.count = count;
+            return o;
         }
     }
 }

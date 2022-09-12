@@ -13,42 +13,29 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetai
      * @return The OCID of the boot volume used to boot the instance.
      * 
      */
-    private final String bootVolumeId;
+    private String bootVolumeId;
     /**
      * @return The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
      * 
      */
-    private final String bootVolumeSizeInGbs;
+    private String bootVolumeSizeInGbs;
     /**
      * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
      */
-    private final String bootVolumeVpusPerGb;
+    private String bootVolumeVpusPerGb;
     /**
      * @return The OCID of the image used to boot the instance.
      * 
      */
-    private final String imageId;
+    private String imageId;
     /**
      * @return The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
      * 
      */
-    private final String sourceType;
+    private String sourceType;
 
-    @CustomType.Constructor
-    private GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail(
-        @CustomType.Parameter("bootVolumeId") String bootVolumeId,
-        @CustomType.Parameter("bootVolumeSizeInGbs") String bootVolumeSizeInGbs,
-        @CustomType.Parameter("bootVolumeVpusPerGb") String bootVolumeVpusPerGb,
-        @CustomType.Parameter("imageId") String imageId,
-        @CustomType.Parameter("sourceType") String sourceType) {
-        this.bootVolumeId = bootVolumeId;
-        this.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
-        this.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
-        this.imageId = imageId;
-        this.sourceType = sourceType;
-    }
-
+    private GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail() {}
     /**
      * @return The OCID of the boot volume used to boot the instance.
      * 
@@ -92,18 +79,14 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetai
     public static Builder builder(GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bootVolumeId;
         private String bootVolumeSizeInGbs;
         private String bootVolumeVpusPerGb;
         private String imageId;
         private String sourceType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bootVolumeId = defaults.bootVolumeId;
@@ -113,27 +96,39 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetai
     	      this.sourceType = defaults.sourceType;
         }
 
+        @CustomType.Setter
         public Builder bootVolumeId(String bootVolumeId) {
             this.bootVolumeId = Objects.requireNonNull(bootVolumeId);
             return this;
         }
+        @CustomType.Setter
         public Builder bootVolumeSizeInGbs(String bootVolumeSizeInGbs) {
             this.bootVolumeSizeInGbs = Objects.requireNonNull(bootVolumeSizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder bootVolumeVpusPerGb(String bootVolumeVpusPerGb) {
             this.bootVolumeVpusPerGb = Objects.requireNonNull(bootVolumeVpusPerGb);
             return this;
         }
+        @CustomType.Setter
         public Builder imageId(String imageId) {
             this.imageId = Objects.requireNonNull(imageId);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
-        }        public GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail build() {
-            return new GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail(bootVolumeId, bootVolumeSizeInGbs, bootVolumeVpusPerGb, imageId, sourceType);
+        }
+        public GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail build() {
+            final var o = new GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail();
+            o.bootVolumeId = bootVolumeId;
+            o.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
+            o.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
+            o.imageId = imageId;
+            o.sourceType = sourceType;
+            return o;
         }
     }
 }

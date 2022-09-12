@@ -13,13 +13,9 @@ public final class GetPathAnalyzerTestQueryOption {
      * @return If true, a path analysis is done for both the forward and reverse routes.
      * 
      */
-    private final Boolean isBiDirectionalAnalysis;
+    private Boolean isBiDirectionalAnalysis;
 
-    @CustomType.Constructor
-    private GetPathAnalyzerTestQueryOption(@CustomType.Parameter("isBiDirectionalAnalysis") Boolean isBiDirectionalAnalysis) {
-        this.isBiDirectionalAnalysis = isBiDirectionalAnalysis;
-    }
-
+    private GetPathAnalyzerTestQueryOption() {}
     /**
      * @return If true, a path analysis is done for both the forward and reverse routes.
      * 
@@ -35,24 +31,24 @@ public final class GetPathAnalyzerTestQueryOption {
     public static Builder builder(GetPathAnalyzerTestQueryOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isBiDirectionalAnalysis;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPathAnalyzerTestQueryOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isBiDirectionalAnalysis = defaults.isBiDirectionalAnalysis;
         }
 
+        @CustomType.Setter
         public Builder isBiDirectionalAnalysis(Boolean isBiDirectionalAnalysis) {
             this.isBiDirectionalAnalysis = Objects.requireNonNull(isBiDirectionalAnalysis);
             return this;
-        }        public GetPathAnalyzerTestQueryOption build() {
-            return new GetPathAnalyzerTestQueryOption(isBiDirectionalAnalysis);
+        }
+        public GetPathAnalyzerTestQueryOption build() {
+            final var o = new GetPathAnalyzerTestQueryOption();
+            o.isBiDirectionalAnalysis = isBiDirectionalAnalysis;
+            return o;
         }
     }
 }

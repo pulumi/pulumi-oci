@@ -15,28 +15,19 @@ public final class NodePoolNodeSourceDetails {
      * @return (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
      * 
      */
-    private final @Nullable String bootVolumeSizeInGbs;
+    private @Nullable String bootVolumeSizeInGbs;
     /**
      * @return (Updatable) The OCID of the image used to boot the node.
      * 
      */
-    private final String imageId;
+    private String imageId;
     /**
      * @return (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
      * 
      */
-    private final String sourceType;
+    private String sourceType;
 
-    @CustomType.Constructor
-    private NodePoolNodeSourceDetails(
-        @CustomType.Parameter("bootVolumeSizeInGbs") @Nullable String bootVolumeSizeInGbs,
-        @CustomType.Parameter("imageId") String imageId,
-        @CustomType.Parameter("sourceType") String sourceType) {
-        this.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
-        this.imageId = imageId;
-        this.sourceType = sourceType;
-    }
-
+    private NodePoolNodeSourceDetails() {}
     /**
      * @return (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
      * 
@@ -66,16 +57,12 @@ public final class NodePoolNodeSourceDetails {
     public static Builder builder(NodePoolNodeSourceDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String bootVolumeSizeInGbs;
         private String imageId;
         private String sourceType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NodePoolNodeSourceDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bootVolumeSizeInGbs = defaults.bootVolumeSizeInGbs;
@@ -83,19 +70,27 @@ public final class NodePoolNodeSourceDetails {
     	      this.sourceType = defaults.sourceType;
         }
 
+        @CustomType.Setter
         public Builder bootVolumeSizeInGbs(@Nullable String bootVolumeSizeInGbs) {
             this.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
             return this;
         }
+        @CustomType.Setter
         public Builder imageId(String imageId) {
             this.imageId = Objects.requireNonNull(imageId);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
-        }        public NodePoolNodeSourceDetails build() {
-            return new NodePoolNodeSourceDetails(bootVolumeSizeInGbs, imageId, sourceType);
+        }
+        public NodePoolNodeSourceDetails build() {
+            final var o = new NodePoolNodeSourceDetails();
+            o.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
+            o.imageId = imageId;
+            o.sourceType = sourceType;
+            return o;
         }
     }
 }

@@ -13,13 +13,9 @@ public final class GetDbSystemsDbSystemDbSystemOption {
      * @return The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
      * 
      */
-    private final String storageManagement;
+    private String storageManagement;
 
-    @CustomType.Constructor
-    private GetDbSystemsDbSystemDbSystemOption(@CustomType.Parameter("storageManagement") String storageManagement) {
-        this.storageManagement = storageManagement;
-    }
-
+    private GetDbSystemsDbSystemDbSystemOption() {}
     /**
      * @return The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
      * 
@@ -35,24 +31,24 @@ public final class GetDbSystemsDbSystemDbSystemOption {
     public static Builder builder(GetDbSystemsDbSystemDbSystemOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String storageManagement;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbSystemsDbSystemDbSystemOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.storageManagement = defaults.storageManagement;
         }
 
+        @CustomType.Setter
         public Builder storageManagement(String storageManagement) {
             this.storageManagement = Objects.requireNonNull(storageManagement);
             return this;
-        }        public GetDbSystemsDbSystemDbSystemOption build() {
-            return new GetDbSystemsDbSystemDbSystemOption(storageManagement);
+        }
+        public GetDbSystemsDbSystemDbSystemOption build() {
+            final var o = new GetDbSystemsDbSystemDbSystemOption();
+            o.storageManagement = storageManagement;
+            return o;
         }
     }
 }

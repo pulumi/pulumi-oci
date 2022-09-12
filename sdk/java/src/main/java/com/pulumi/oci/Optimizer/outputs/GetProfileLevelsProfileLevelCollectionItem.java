@@ -16,56 +16,39 @@ public final class GetProfileLevelsProfileLevelCollectionItem {
      * @return The default aggregation interval (in days) for profiles using this profile level.
      * 
      */
-    private final Integer defaultInterval;
+    private Integer defaultInterval;
     /**
      * @return The metrics that will be evaluated by profiles using this profile level.
      * 
      */
-    private final List<GetProfileLevelsProfileLevelCollectionItemMetric> metrics;
+    private List<GetProfileLevelsProfileLevelCollectionItemMetric> metrics;
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Optional. A filter that returns results that match the recommendation name specified.
      * 
      */
-    private final String recommendationName;
+    private String recommendationName;
     /**
      * @return The date and time the category details were created, in the format defined by RFC3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the category details were last updated, in the format defined by RFC3339.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return An array of aggregation intervals (in days) allowed for profiles using this profile level.
      * 
      */
-    private final List<Integer> validIntervals;
+    private List<Integer> validIntervals;
 
-    @CustomType.Constructor
-    private GetProfileLevelsProfileLevelCollectionItem(
-        @CustomType.Parameter("defaultInterval") Integer defaultInterval,
-        @CustomType.Parameter("metrics") List<GetProfileLevelsProfileLevelCollectionItemMetric> metrics,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("recommendationName") String recommendationName,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("validIntervals") List<Integer> validIntervals) {
-        this.defaultInterval = defaultInterval;
-        this.metrics = metrics;
-        this.name = name;
-        this.recommendationName = recommendationName;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.validIntervals = validIntervals;
-    }
-
+    private GetProfileLevelsProfileLevelCollectionItem() {}
     /**
      * @return The default aggregation interval (in days) for profiles using this profile level.
      * 
@@ -123,7 +106,7 @@ public final class GetProfileLevelsProfileLevelCollectionItem {
     public static Builder builder(GetProfileLevelsProfileLevelCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer defaultInterval;
         private List<GetProfileLevelsProfileLevelCollectionItemMetric> metrics;
@@ -132,11 +115,7 @@ public final class GetProfileLevelsProfileLevelCollectionItem {
         private String timeCreated;
         private String timeUpdated;
         private List<Integer> validIntervals;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProfileLevelsProfileLevelCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultInterval = defaults.defaultInterval;
@@ -148,10 +127,12 @@ public final class GetProfileLevelsProfileLevelCollectionItem {
     	      this.validIntervals = defaults.validIntervals;
         }
 
+        @CustomType.Setter
         public Builder defaultInterval(Integer defaultInterval) {
             this.defaultInterval = Objects.requireNonNull(defaultInterval);
             return this;
         }
+        @CustomType.Setter
         public Builder metrics(List<GetProfileLevelsProfileLevelCollectionItemMetric> metrics) {
             this.metrics = Objects.requireNonNull(metrics);
             return this;
@@ -159,30 +140,44 @@ public final class GetProfileLevelsProfileLevelCollectionItem {
         public Builder metrics(GetProfileLevelsProfileLevelCollectionItemMetric... metrics) {
             return metrics(List.of(metrics));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder recommendationName(String recommendationName) {
             this.recommendationName = Objects.requireNonNull(recommendationName);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder validIntervals(List<Integer> validIntervals) {
             this.validIntervals = Objects.requireNonNull(validIntervals);
             return this;
         }
         public Builder validIntervals(Integer... validIntervals) {
             return validIntervals(List.of(validIntervals));
-        }        public GetProfileLevelsProfileLevelCollectionItem build() {
-            return new GetProfileLevelsProfileLevelCollectionItem(defaultInterval, metrics, name, recommendationName, timeCreated, timeUpdated, validIntervals);
+        }
+        public GetProfileLevelsProfileLevelCollectionItem build() {
+            final var o = new GetProfileLevelsProfileLevelCollectionItem();
+            o.defaultInterval = defaultInterval;
+            o.metrics = metrics;
+            o.name = name;
+            o.recommendationName = recommendationName;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.validIntervals = validIntervals;
+            return o;
         }
     }
 }

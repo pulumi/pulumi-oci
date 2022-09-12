@@ -15,28 +15,19 @@ public final class BlockchainPlatformReplicas {
      * @return Number of CA replicas
      * 
      */
-    private final @Nullable Integer caCount;
+    private @Nullable Integer caCount;
     /**
      * @return Number of console replicas
      * 
      */
-    private final @Nullable Integer consoleCount;
+    private @Nullable Integer consoleCount;
     /**
      * @return Number of REST proxy replicas
      * 
      */
-    private final @Nullable Integer proxyCount;
+    private @Nullable Integer proxyCount;
 
-    @CustomType.Constructor
-    private BlockchainPlatformReplicas(
-        @CustomType.Parameter("caCount") @Nullable Integer caCount,
-        @CustomType.Parameter("consoleCount") @Nullable Integer consoleCount,
-        @CustomType.Parameter("proxyCount") @Nullable Integer proxyCount) {
-        this.caCount = caCount;
-        this.consoleCount = consoleCount;
-        this.proxyCount = proxyCount;
-    }
-
+    private BlockchainPlatformReplicas() {}
     /**
      * @return Number of CA replicas
      * 
@@ -66,16 +57,12 @@ public final class BlockchainPlatformReplicas {
     public static Builder builder(BlockchainPlatformReplicas defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer caCount;
         private @Nullable Integer consoleCount;
         private @Nullable Integer proxyCount;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BlockchainPlatformReplicas defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.caCount = defaults.caCount;
@@ -83,19 +70,27 @@ public final class BlockchainPlatformReplicas {
     	      this.proxyCount = defaults.proxyCount;
         }
 
+        @CustomType.Setter
         public Builder caCount(@Nullable Integer caCount) {
             this.caCount = caCount;
             return this;
         }
+        @CustomType.Setter
         public Builder consoleCount(@Nullable Integer consoleCount) {
             this.consoleCount = consoleCount;
             return this;
         }
+        @CustomType.Setter
         public Builder proxyCount(@Nullable Integer proxyCount) {
             this.proxyCount = proxyCount;
             return this;
-        }        public BlockchainPlatformReplicas build() {
-            return new BlockchainPlatformReplicas(caCount, consoleCount, proxyCount);
+        }
+        public BlockchainPlatformReplicas build() {
+            final var o = new BlockchainPlatformReplicas();
+            o.caCount = caCount;
+            o.consoleCount = consoleCount;
+            o.proxyCount = proxyCount;
+            return o;
         }
     }
 }

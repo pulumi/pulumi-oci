@@ -13,119 +13,84 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAlertRuleResult {
-    private final String alertRuleId;
+    private String alertRuleId;
     /**
      * @return The OCID of the budget.
      * 
      */
-    private final String budgetId;
+    private String budgetId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The description of the alert rule.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The name of the alert rule. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the alert rule.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The custom message that will be sent when the alert is triggered.
      * 
      */
-    private final String message;
+    private String message;
     /**
      * @return The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
      * 
      */
-    private final String recipients;
+    private String recipients;
     /**
      * @return The current state of the alert rule.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
      * 
      */
-    private final Double threshold;
+    private Double threshold;
     /**
      * @return The type of threshold.
      * 
      */
-    private final String thresholdType;
+    private String thresholdType;
     /**
      * @return The time when the budget was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time when the budget was updated.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return The version of the alert rule. Starts from 1 and increments by 1.
      * 
      */
-    private final Integer version;
+    private Integer version;
 
-    @CustomType.Constructor
-    private GetAlertRuleResult(
-        @CustomType.Parameter("alertRuleId") String alertRuleId,
-        @CustomType.Parameter("budgetId") String budgetId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("message") String message,
-        @CustomType.Parameter("recipients") String recipients,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("threshold") Double threshold,
-        @CustomType.Parameter("thresholdType") String thresholdType,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("version") Integer version) {
-        this.alertRuleId = alertRuleId;
-        this.budgetId = budgetId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.message = message;
-        this.recipients = recipients;
-        this.state = state;
-        this.threshold = threshold;
-        this.thresholdType = thresholdType;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.type = type;
-        this.version = version;
-    }
-
+    private GetAlertRuleResult() {}
     public String alertRuleId() {
         return this.alertRuleId;
     }
@@ -242,7 +207,7 @@ public final class GetAlertRuleResult {
     public static Builder builder(GetAlertRuleResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String alertRuleId;
         private String budgetId;
@@ -260,11 +225,7 @@ public final class GetAlertRuleResult {
         private String timeUpdated;
         private String type;
         private Integer version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAlertRuleResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alertRuleId = defaults.alertRuleId;
@@ -285,71 +246,105 @@ public final class GetAlertRuleResult {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder alertRuleId(String alertRuleId) {
             this.alertRuleId = Objects.requireNonNull(alertRuleId);
             return this;
         }
+        @CustomType.Setter
         public Builder budgetId(String budgetId) {
             this.budgetId = Objects.requireNonNull(budgetId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder message(String message) {
             this.message = Objects.requireNonNull(message);
             return this;
         }
+        @CustomType.Setter
         public Builder recipients(String recipients) {
             this.recipients = Objects.requireNonNull(recipients);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder threshold(Double threshold) {
             this.threshold = Objects.requireNonNull(threshold);
             return this;
         }
+        @CustomType.Setter
         public Builder thresholdType(String thresholdType) {
             this.thresholdType = Objects.requireNonNull(thresholdType);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder version(Integer version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetAlertRuleResult build() {
-            return new GetAlertRuleResult(alertRuleId, budgetId, definedTags, description, displayName, freeformTags, id, message, recipients, state, threshold, thresholdType, timeCreated, timeUpdated, type, version);
+        }
+        public GetAlertRuleResult build() {
+            final var o = new GetAlertRuleResult();
+            o.alertRuleId = alertRuleId;
+            o.budgetId = budgetId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.message = message;
+            o.recipients = recipients;
+            o.state = state;
+            o.threshold = threshold;
+            o.thresholdType = thresholdType;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.type = type;
+            o.version = version;
+            return o;
         }
     }
 }

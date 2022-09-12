@@ -19,84 +19,59 @@ public final class VnicAttachmentCreateVnicDetails {
      * @return Whether the VNIC should be assigned a DNS record. If set to false, no DNS record registion for the VNIC; if set to true, DNS record will be registered. Example: `true`
      * 
      */
-    private final @Nullable Boolean assignPrivateDnsRecord;
+    private @Nullable Boolean assignPrivateDnsRecord;
     /**
      * @return Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
      * 
      */
-    private final @Nullable String assignPublicIp;
+    private @Nullable String assignPublicIp;
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return (Updatable) The hostname for the VNIC&#39;s primary private IP. Used for DNS. The value is the hostname portion of the primary private IP&#39;s fully qualified domain name (FQDN) (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
      * 
      */
-    private final @Nullable String hostnameLabel;
+    private @Nullable String hostnameLabel;
     /**
      * @return (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      * 
      */
-    private final @Nullable List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC&#39;s *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
      * 
      */
-    private final @Nullable String privateIp;
+    private @Nullable String privateIp;
     /**
      * @return (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      * 
      */
-    private final @Nullable Boolean skipSourceDestCheck;
+    private @Nullable Boolean skipSourceDestCheck;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
      * 
      */
-    private final @Nullable String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      */
-    private final @Nullable String vlanId;
+    private @Nullable String vlanId;
 
-    @CustomType.Constructor
-    private VnicAttachmentCreateVnicDetails(
-        @CustomType.Parameter("assignPrivateDnsRecord") @Nullable Boolean assignPrivateDnsRecord,
-        @CustomType.Parameter("assignPublicIp") @Nullable String assignPublicIp,
-        @CustomType.Parameter("definedTags") @Nullable Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("freeformTags") @Nullable Map<String,Object> freeformTags,
-        @CustomType.Parameter("hostnameLabel") @Nullable String hostnameLabel,
-        @CustomType.Parameter("nsgIds") @Nullable List<String> nsgIds,
-        @CustomType.Parameter("privateIp") @Nullable String privateIp,
-        @CustomType.Parameter("skipSourceDestCheck") @Nullable Boolean skipSourceDestCheck,
-        @CustomType.Parameter("subnetId") @Nullable String subnetId,
-        @CustomType.Parameter("vlanId") @Nullable String vlanId) {
-        this.assignPrivateDnsRecord = assignPrivateDnsRecord;
-        this.assignPublicIp = assignPublicIp;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.hostnameLabel = hostnameLabel;
-        this.nsgIds = nsgIds;
-        this.privateIp = privateIp;
-        this.skipSourceDestCheck = skipSourceDestCheck;
-        this.subnetId = subnetId;
-        this.vlanId = vlanId;
-    }
-
+    private VnicAttachmentCreateVnicDetails() {}
     /**
      * @return Whether the VNIC should be assigned a DNS record. If set to false, no DNS record registion for the VNIC; if set to true, DNS record will be registered. Example: `true`
      * 
@@ -182,7 +157,7 @@ public final class VnicAttachmentCreateVnicDetails {
     public static Builder builder(VnicAttachmentCreateVnicDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean assignPrivateDnsRecord;
         private @Nullable String assignPublicIp;
@@ -195,11 +170,7 @@ public final class VnicAttachmentCreateVnicDetails {
         private @Nullable Boolean skipSourceDestCheck;
         private @Nullable String subnetId;
         private @Nullable String vlanId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(VnicAttachmentCreateVnicDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.assignPrivateDnsRecord = defaults.assignPrivateDnsRecord;
@@ -215,30 +186,37 @@ public final class VnicAttachmentCreateVnicDetails {
     	      this.vlanId = defaults.vlanId;
         }
 
+        @CustomType.Setter
         public Builder assignPrivateDnsRecord(@Nullable Boolean assignPrivateDnsRecord) {
             this.assignPrivateDnsRecord = assignPrivateDnsRecord;
             return this;
         }
+        @CustomType.Setter
         public Builder assignPublicIp(@Nullable String assignPublicIp) {
             this.assignPublicIp = assignPublicIp;
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
             this.definedTags = definedTags;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
             this.freeformTags = freeformTags;
             return this;
         }
+        @CustomType.Setter
         public Builder hostnameLabel(@Nullable String hostnameLabel) {
             this.hostnameLabel = hostnameLabel;
             return this;
         }
+        @CustomType.Setter
         public Builder nsgIds(@Nullable List<String> nsgIds) {
             this.nsgIds = nsgIds;
             return this;
@@ -246,23 +224,40 @@ public final class VnicAttachmentCreateVnicDetails {
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
+        @CustomType.Setter
         public Builder privateIp(@Nullable String privateIp) {
             this.privateIp = privateIp;
             return this;
         }
+        @CustomType.Setter
         public Builder skipSourceDestCheck(@Nullable Boolean skipSourceDestCheck) {
             this.skipSourceDestCheck = skipSourceDestCheck;
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
             this.subnetId = subnetId;
             return this;
         }
+        @CustomType.Setter
         public Builder vlanId(@Nullable String vlanId) {
             this.vlanId = vlanId;
             return this;
-        }        public VnicAttachmentCreateVnicDetails build() {
-            return new VnicAttachmentCreateVnicDetails(assignPrivateDnsRecord, assignPublicIp, definedTags, displayName, freeformTags, hostnameLabel, nsgIds, privateIp, skipSourceDestCheck, subnetId, vlanId);
+        }
+        public VnicAttachmentCreateVnicDetails build() {
+            final var o = new VnicAttachmentCreateVnicDetails();
+            o.assignPrivateDnsRecord = assignPrivateDnsRecord;
+            o.assignPublicIp = assignPublicIp;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.hostnameLabel = hostnameLabel;
+            o.nsgIds = nsgIds;
+            o.privateIp = privateIp;
+            o.skipSourceDestCheck = skipSourceDestCheck;
+            o.subnetId = subnetId;
+            o.vlanId = vlanId;
+            return o;
         }
     }
 }

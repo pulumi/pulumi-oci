@@ -18,34 +18,21 @@ public final class GetNetworkSecurityGroupSecurityRulesResult {
      * @return Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
      * 
      */
-    private final @Nullable String direction;
-    private final @Nullable List<GetNetworkSecurityGroupSecurityRulesFilter> filters;
+    private @Nullable String direction;
+    private @Nullable List<GetNetworkSecurityGroupSecurityRulesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String networkSecurityGroupId;
+    private String id;
+    private String networkSecurityGroupId;
     /**
      * @return The list of security_rules.
      * 
      */
-    private final List<GetNetworkSecurityGroupSecurityRulesSecurityRule> securityRules;
+    private List<GetNetworkSecurityGroupSecurityRulesSecurityRule> securityRules;
 
-    @CustomType.Constructor
-    private GetNetworkSecurityGroupSecurityRulesResult(
-        @CustomType.Parameter("direction") @Nullable String direction,
-        @CustomType.Parameter("filters") @Nullable List<GetNetworkSecurityGroupSecurityRulesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("networkSecurityGroupId") String networkSecurityGroupId,
-        @CustomType.Parameter("securityRules") List<GetNetworkSecurityGroupSecurityRulesSecurityRule> securityRules) {
-        this.direction = direction;
-        this.filters = filters;
-        this.id = id;
-        this.networkSecurityGroupId = networkSecurityGroupId;
-        this.securityRules = securityRules;
-    }
-
+    private GetNetworkSecurityGroupSecurityRulesResult() {}
     /**
      * @return Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
      * 
@@ -81,18 +68,14 @@ public final class GetNetworkSecurityGroupSecurityRulesResult {
     public static Builder builder(GetNetworkSecurityGroupSecurityRulesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String direction;
         private @Nullable List<GetNetworkSecurityGroupSecurityRulesFilter> filters;
         private String id;
         private String networkSecurityGroupId;
         private List<GetNetworkSecurityGroupSecurityRulesSecurityRule> securityRules;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkSecurityGroupSecurityRulesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.direction = defaults.direction;
@@ -102,10 +85,12 @@ public final class GetNetworkSecurityGroupSecurityRulesResult {
     	      this.securityRules = defaults.securityRules;
         }
 
+        @CustomType.Setter
         public Builder direction(@Nullable String direction) {
             this.direction = direction;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkSecurityGroupSecurityRulesFilter> filters) {
             this.filters = filters;
             return this;
@@ -113,22 +98,32 @@ public final class GetNetworkSecurityGroupSecurityRulesResult {
         public Builder filters(GetNetworkSecurityGroupSecurityRulesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder networkSecurityGroupId(String networkSecurityGroupId) {
             this.networkSecurityGroupId = Objects.requireNonNull(networkSecurityGroupId);
             return this;
         }
+        @CustomType.Setter
         public Builder securityRules(List<GetNetworkSecurityGroupSecurityRulesSecurityRule> securityRules) {
             this.securityRules = Objects.requireNonNull(securityRules);
             return this;
         }
         public Builder securityRules(GetNetworkSecurityGroupSecurityRulesSecurityRule... securityRules) {
             return securityRules(List.of(securityRules));
-        }        public GetNetworkSecurityGroupSecurityRulesResult build() {
-            return new GetNetworkSecurityGroupSecurityRulesResult(direction, filters, id, networkSecurityGroupId, securityRules);
+        }
+        public GetNetworkSecurityGroupSecurityRulesResult build() {
+            final var o = new GetNetworkSecurityGroupSecurityRulesResult();
+            o.direction = direction;
+            o.filters = filters;
+            o.id = id;
+            o.networkSecurityGroupId = networkSecurityGroupId;
+            o.securityRules = securityRules;
+            return o;
         }
     }
 }

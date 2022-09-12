@@ -20,281 +20,186 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutonomousContainerDatabaseResult {
-    private final String autonomousContainerDatabaseId;
+    private String autonomousContainerDatabaseId;
     /**
      * @return **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      * 
      */
-    private final String autonomousExadataInfrastructureId;
+    private String autonomousExadataInfrastructureId;
     /**
      * @return The OCID of the Autonomous VM Cluster.
      * 
      */
-    private final String autonomousVmClusterId;
+    private String autonomousVmClusterId;
     /**
      * @return The availability domain of the Autonomous Container Database.
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
      * 
      */
-    private final Double availableCpus;
+    private Double availableCpus;
     /**
      * @return Backup options for the Autonomous Container Database.
      * 
      */
-    private final List<GetAutonomousContainerDatabaseBackupConfig> backupConfigs;
+    private List<GetAutonomousContainerDatabaseBackupConfig> backupConfigs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      * 
      */
-    private final String cloudAutonomousVmClusterId;
+    private String cloudAutonomousVmClusterId;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final String dbUniqueName;
+    private String compartmentId;
+    private String dbUniqueName;
     /**
      * @return Oracle Database version of the Autonomous Container Database.
      * 
      */
-    private final String dbVersion;
+    private String dbVersion;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The user-provided name for the Autonomous Container Database.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The infrastructure type this resource belongs to.
      * 
      */
-    private final String infrastructureType;
-    private final Boolean isAutomaticFailoverEnabled;
+    private String infrastructureType;
+    private Boolean isAutomaticFailoverEnabled;
     /**
      * @return Key History Entry.
      * 
      */
-    private final List<GetAutonomousContainerDatabaseKeyHistoryEntry> keyHistoryEntries;
+    private List<GetAutonomousContainerDatabaseKeyHistoryEntry> keyHistoryEntries;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    private final String keyStoreId;
+    private String keyStoreId;
     /**
      * @return The wallet name for Oracle Key Vault.
      * 
      */
-    private final String keyStoreWalletName;
+    private String keyStoreWalletName;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    private final String kmsKeyId;
+    private String kmsKeyId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    private final String lastMaintenanceRunId;
+    private String lastMaintenanceRunId;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
-    private final List<GetAutonomousContainerDatabaseMaintenanceWindowDetail> maintenanceWindowDetails;
+    private String lifecycleDetails;
+    private List<GetAutonomousContainerDatabaseMaintenanceWindowDetail> maintenanceWindowDetails;
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    private final List<GetAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows;
+    private List<GetAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows;
     /**
      * @return The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
      * 
      */
-    private final Integer memoryPerOracleComputeUnitInGbs;
+    private Integer memoryPerOracleComputeUnitInGbs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    private final String nextMaintenanceRunId;
+    private String nextMaintenanceRunId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      * 
      */
-    private final String patchId;
+    private String patchId;
     /**
      * @return Database patch model preference.
      * 
      */
-    private final String patchModel;
-    private final List<GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs;
-    private final String peerAutonomousContainerDatabaseCompartmentId;
-    private final String peerAutonomousContainerDatabaseDisplayName;
-    private final String peerAutonomousExadataInfrastructureId;
-    private final String peerAutonomousVmClusterId;
-    private final String peerCloudAutonomousVmClusterId;
-    private final String peerDbUniqueName;
-    private final String protectionMode;
+    private String patchModel;
+    private List<GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs;
+    private String peerAutonomousContainerDatabaseCompartmentId;
+    private String peerAutonomousContainerDatabaseDisplayName;
+    private String peerAutonomousExadataInfrastructureId;
+    private String peerAutonomousVmClusterId;
+    private String peerCloudAutonomousVmClusterId;
+    private String peerDbUniqueName;
+    private String protectionMode;
     /**
      * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.
      * 
      */
-    private final List<Double> provisionableCpuses;
+    private List<Double> provisionableCpuses;
     /**
      * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      * 
      */
-    private final Double reclaimableCpus;
+    private Double reclaimableCpus;
     /**
      * @return The role of the Autonomous Data Guard-enabled Autonomous Container Database.
      * 
      */
-    private final String role;
-    private final Boolean rotateKeyTrigger;
+    private String role;
+    private Boolean rotateKeyTrigger;
     /**
      * @return The service level agreement type of the container database. The default is STANDARD.
      * 
      */
-    private final String serviceLevelAgreementType;
+    private String serviceLevelAgreementType;
     /**
      * @return The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      * 
      */
-    private final Integer standbyMaintenanceBufferInDays;
+    private Integer standbyMaintenanceBufferInDays;
     /**
      * @return The current state of the Autonomous Container Database.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the Autonomous Container Database was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The number of CPU cores allocated to the Autonomous VM cluster.
      * 
      */
-    private final Integer totalCpus;
+    private Integer totalCpus;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    private final String vaultId;
+    private String vaultId;
 
-    @CustomType.Constructor
-    private GetAutonomousContainerDatabaseResult(
-        @CustomType.Parameter("autonomousContainerDatabaseId") String autonomousContainerDatabaseId,
-        @CustomType.Parameter("autonomousExadataInfrastructureId") String autonomousExadataInfrastructureId,
-        @CustomType.Parameter("autonomousVmClusterId") String autonomousVmClusterId,
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("availableCpus") Double availableCpus,
-        @CustomType.Parameter("backupConfigs") List<GetAutonomousContainerDatabaseBackupConfig> backupConfigs,
-        @CustomType.Parameter("cloudAutonomousVmClusterId") String cloudAutonomousVmClusterId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dbUniqueName") String dbUniqueName,
-        @CustomType.Parameter("dbVersion") String dbVersion,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("infrastructureType") String infrastructureType,
-        @CustomType.Parameter("isAutomaticFailoverEnabled") Boolean isAutomaticFailoverEnabled,
-        @CustomType.Parameter("keyHistoryEntries") List<GetAutonomousContainerDatabaseKeyHistoryEntry> keyHistoryEntries,
-        @CustomType.Parameter("keyStoreId") String keyStoreId,
-        @CustomType.Parameter("keyStoreWalletName") String keyStoreWalletName,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("lastMaintenanceRunId") String lastMaintenanceRunId,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("maintenanceWindowDetails") List<GetAutonomousContainerDatabaseMaintenanceWindowDetail> maintenanceWindowDetails,
-        @CustomType.Parameter("maintenanceWindows") List<GetAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows,
-        @CustomType.Parameter("memoryPerOracleComputeUnitInGbs") Integer memoryPerOracleComputeUnitInGbs,
-        @CustomType.Parameter("nextMaintenanceRunId") String nextMaintenanceRunId,
-        @CustomType.Parameter("patchId") String patchId,
-        @CustomType.Parameter("patchModel") String patchModel,
-        @CustomType.Parameter("peerAutonomousContainerDatabaseBackupConfigs") List<GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs,
-        @CustomType.Parameter("peerAutonomousContainerDatabaseCompartmentId") String peerAutonomousContainerDatabaseCompartmentId,
-        @CustomType.Parameter("peerAutonomousContainerDatabaseDisplayName") String peerAutonomousContainerDatabaseDisplayName,
-        @CustomType.Parameter("peerAutonomousExadataInfrastructureId") String peerAutonomousExadataInfrastructureId,
-        @CustomType.Parameter("peerAutonomousVmClusterId") String peerAutonomousVmClusterId,
-        @CustomType.Parameter("peerCloudAutonomousVmClusterId") String peerCloudAutonomousVmClusterId,
-        @CustomType.Parameter("peerDbUniqueName") String peerDbUniqueName,
-        @CustomType.Parameter("protectionMode") String protectionMode,
-        @CustomType.Parameter("provisionableCpuses") List<Double> provisionableCpuses,
-        @CustomType.Parameter("reclaimableCpus") Double reclaimableCpus,
-        @CustomType.Parameter("role") String role,
-        @CustomType.Parameter("rotateKeyTrigger") Boolean rotateKeyTrigger,
-        @CustomType.Parameter("serviceLevelAgreementType") String serviceLevelAgreementType,
-        @CustomType.Parameter("standbyMaintenanceBufferInDays") Integer standbyMaintenanceBufferInDays,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("totalCpus") Integer totalCpus,
-        @CustomType.Parameter("vaultId") String vaultId) {
-        this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
-        this.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
-        this.autonomousVmClusterId = autonomousVmClusterId;
-        this.availabilityDomain = availabilityDomain;
-        this.availableCpus = availableCpus;
-        this.backupConfigs = backupConfigs;
-        this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
-        this.compartmentId = compartmentId;
-        this.dbUniqueName = dbUniqueName;
-        this.dbVersion = dbVersion;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.infrastructureType = infrastructureType;
-        this.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
-        this.keyHistoryEntries = keyHistoryEntries;
-        this.keyStoreId = keyStoreId;
-        this.keyStoreWalletName = keyStoreWalletName;
-        this.kmsKeyId = kmsKeyId;
-        this.lastMaintenanceRunId = lastMaintenanceRunId;
-        this.lifecycleDetails = lifecycleDetails;
-        this.maintenanceWindowDetails = maintenanceWindowDetails;
-        this.maintenanceWindows = maintenanceWindows;
-        this.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
-        this.nextMaintenanceRunId = nextMaintenanceRunId;
-        this.patchId = patchId;
-        this.patchModel = patchModel;
-        this.peerAutonomousContainerDatabaseBackupConfigs = peerAutonomousContainerDatabaseBackupConfigs;
-        this.peerAutonomousContainerDatabaseCompartmentId = peerAutonomousContainerDatabaseCompartmentId;
-        this.peerAutonomousContainerDatabaseDisplayName = peerAutonomousContainerDatabaseDisplayName;
-        this.peerAutonomousExadataInfrastructureId = peerAutonomousExadataInfrastructureId;
-        this.peerAutonomousVmClusterId = peerAutonomousVmClusterId;
-        this.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
-        this.peerDbUniqueName = peerDbUniqueName;
-        this.protectionMode = protectionMode;
-        this.provisionableCpuses = provisionableCpuses;
-        this.reclaimableCpus = reclaimableCpus;
-        this.role = role;
-        this.rotateKeyTrigger = rotateKeyTrigger;
-        this.serviceLevelAgreementType = serviceLevelAgreementType;
-        this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.totalCpus = totalCpus;
-        this.vaultId = vaultId;
-    }
-
+    private GetAutonomousContainerDatabaseResult() {}
     public String autonomousContainerDatabaseId() {
         return this.autonomousContainerDatabaseId;
     }
@@ -573,7 +478,7 @@ public final class GetAutonomousContainerDatabaseResult {
     public static Builder builder(GetAutonomousContainerDatabaseResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String autonomousContainerDatabaseId;
         private String autonomousExadataInfrastructureId;
@@ -621,11 +526,7 @@ public final class GetAutonomousContainerDatabaseResult {
         private String timeCreated;
         private Integer totalCpus;
         private String vaultId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousContainerDatabaseResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousContainerDatabaseId = defaults.autonomousContainerDatabaseId;
@@ -676,26 +577,32 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.vaultId = defaults.vaultId;
         }
 
+        @CustomType.Setter
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
             this.autonomousContainerDatabaseId = Objects.requireNonNull(autonomousContainerDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder autonomousExadataInfrastructureId(String autonomousExadataInfrastructureId) {
             this.autonomousExadataInfrastructureId = Objects.requireNonNull(autonomousExadataInfrastructureId);
             return this;
         }
+        @CustomType.Setter
         public Builder autonomousVmClusterId(String autonomousVmClusterId) {
             this.autonomousVmClusterId = Objects.requireNonNull(autonomousVmClusterId);
             return this;
         }
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder availableCpus(Double availableCpus) {
             this.availableCpus = Objects.requireNonNull(availableCpus);
             return this;
         }
+        @CustomType.Setter
         public Builder backupConfigs(List<GetAutonomousContainerDatabaseBackupConfig> backupConfigs) {
             this.backupConfigs = Objects.requireNonNull(backupConfigs);
             return this;
@@ -703,46 +610,57 @@ public final class GetAutonomousContainerDatabaseResult {
         public Builder backupConfigs(GetAutonomousContainerDatabaseBackupConfig... backupConfigs) {
             return backupConfigs(List.of(backupConfigs));
         }
+        @CustomType.Setter
         public Builder cloudAutonomousVmClusterId(String cloudAutonomousVmClusterId) {
             this.cloudAutonomousVmClusterId = Objects.requireNonNull(cloudAutonomousVmClusterId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbUniqueName(String dbUniqueName) {
             this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
             return this;
         }
+        @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
             this.dbVersion = Objects.requireNonNull(dbVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder infrastructureType(String infrastructureType) {
             this.infrastructureType = Objects.requireNonNull(infrastructureType);
             return this;
         }
+        @CustomType.Setter
         public Builder isAutomaticFailoverEnabled(Boolean isAutomaticFailoverEnabled) {
             this.isAutomaticFailoverEnabled = Objects.requireNonNull(isAutomaticFailoverEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder keyHistoryEntries(List<GetAutonomousContainerDatabaseKeyHistoryEntry> keyHistoryEntries) {
             this.keyHistoryEntries = Objects.requireNonNull(keyHistoryEntries);
             return this;
@@ -750,26 +668,32 @@ public final class GetAutonomousContainerDatabaseResult {
         public Builder keyHistoryEntries(GetAutonomousContainerDatabaseKeyHistoryEntry... keyHistoryEntries) {
             return keyHistoryEntries(List.of(keyHistoryEntries));
         }
+        @CustomType.Setter
         public Builder keyStoreId(String keyStoreId) {
             this.keyStoreId = Objects.requireNonNull(keyStoreId);
             return this;
         }
+        @CustomType.Setter
         public Builder keyStoreWalletName(String keyStoreWalletName) {
             this.keyStoreWalletName = Objects.requireNonNull(keyStoreWalletName);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
             this.lastMaintenanceRunId = Objects.requireNonNull(lastMaintenanceRunId);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder maintenanceWindowDetails(List<GetAutonomousContainerDatabaseMaintenanceWindowDetail> maintenanceWindowDetails) {
             this.maintenanceWindowDetails = Objects.requireNonNull(maintenanceWindowDetails);
             return this;
@@ -777,6 +701,7 @@ public final class GetAutonomousContainerDatabaseResult {
         public Builder maintenanceWindowDetails(GetAutonomousContainerDatabaseMaintenanceWindowDetail... maintenanceWindowDetails) {
             return maintenanceWindowDetails(List.of(maintenanceWindowDetails));
         }
+        @CustomType.Setter
         public Builder maintenanceWindows(List<GetAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows) {
             this.maintenanceWindows = Objects.requireNonNull(maintenanceWindows);
             return this;
@@ -784,22 +709,27 @@ public final class GetAutonomousContainerDatabaseResult {
         public Builder maintenanceWindows(GetAutonomousContainerDatabaseMaintenanceWindow... maintenanceWindows) {
             return maintenanceWindows(List.of(maintenanceWindows));
         }
+        @CustomType.Setter
         public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
             this.memoryPerOracleComputeUnitInGbs = Objects.requireNonNull(memoryPerOracleComputeUnitInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
             this.nextMaintenanceRunId = Objects.requireNonNull(nextMaintenanceRunId);
             return this;
         }
+        @CustomType.Setter
         public Builder patchId(String patchId) {
             this.patchId = Objects.requireNonNull(patchId);
             return this;
         }
+        @CustomType.Setter
         public Builder patchModel(String patchModel) {
             this.patchModel = Objects.requireNonNull(patchModel);
             return this;
         }
+        @CustomType.Setter
         public Builder peerAutonomousContainerDatabaseBackupConfigs(List<GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs) {
             this.peerAutonomousContainerDatabaseBackupConfigs = Objects.requireNonNull(peerAutonomousContainerDatabaseBackupConfigs);
             return this;
@@ -807,34 +737,42 @@ public final class GetAutonomousContainerDatabaseResult {
         public Builder peerAutonomousContainerDatabaseBackupConfigs(GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig... peerAutonomousContainerDatabaseBackupConfigs) {
             return peerAutonomousContainerDatabaseBackupConfigs(List.of(peerAutonomousContainerDatabaseBackupConfigs));
         }
+        @CustomType.Setter
         public Builder peerAutonomousContainerDatabaseCompartmentId(String peerAutonomousContainerDatabaseCompartmentId) {
             this.peerAutonomousContainerDatabaseCompartmentId = Objects.requireNonNull(peerAutonomousContainerDatabaseCompartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder peerAutonomousContainerDatabaseDisplayName(String peerAutonomousContainerDatabaseDisplayName) {
             this.peerAutonomousContainerDatabaseDisplayName = Objects.requireNonNull(peerAutonomousContainerDatabaseDisplayName);
             return this;
         }
+        @CustomType.Setter
         public Builder peerAutonomousExadataInfrastructureId(String peerAutonomousExadataInfrastructureId) {
             this.peerAutonomousExadataInfrastructureId = Objects.requireNonNull(peerAutonomousExadataInfrastructureId);
             return this;
         }
+        @CustomType.Setter
         public Builder peerAutonomousVmClusterId(String peerAutonomousVmClusterId) {
             this.peerAutonomousVmClusterId = Objects.requireNonNull(peerAutonomousVmClusterId);
             return this;
         }
+        @CustomType.Setter
         public Builder peerCloudAutonomousVmClusterId(String peerCloudAutonomousVmClusterId) {
             this.peerCloudAutonomousVmClusterId = Objects.requireNonNull(peerCloudAutonomousVmClusterId);
             return this;
         }
+        @CustomType.Setter
         public Builder peerDbUniqueName(String peerDbUniqueName) {
             this.peerDbUniqueName = Objects.requireNonNull(peerDbUniqueName);
             return this;
         }
+        @CustomType.Setter
         public Builder protectionMode(String protectionMode) {
             this.protectionMode = Objects.requireNonNull(protectionMode);
             return this;
         }
+        @CustomType.Setter
         public Builder provisionableCpuses(List<Double> provisionableCpuses) {
             this.provisionableCpuses = Objects.requireNonNull(provisionableCpuses);
             return this;
@@ -842,43 +780,100 @@ public final class GetAutonomousContainerDatabaseResult {
         public Builder provisionableCpuses(Double... provisionableCpuses) {
             return provisionableCpuses(List.of(provisionableCpuses));
         }
+        @CustomType.Setter
         public Builder reclaimableCpus(Double reclaimableCpus) {
             this.reclaimableCpus = Objects.requireNonNull(reclaimableCpus);
             return this;
         }
+        @CustomType.Setter
         public Builder role(String role) {
             this.role = Objects.requireNonNull(role);
             return this;
         }
+        @CustomType.Setter
         public Builder rotateKeyTrigger(Boolean rotateKeyTrigger) {
             this.rotateKeyTrigger = Objects.requireNonNull(rotateKeyTrigger);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceLevelAgreementType(String serviceLevelAgreementType) {
             this.serviceLevelAgreementType = Objects.requireNonNull(serviceLevelAgreementType);
             return this;
         }
+        @CustomType.Setter
         public Builder standbyMaintenanceBufferInDays(Integer standbyMaintenanceBufferInDays) {
             this.standbyMaintenanceBufferInDays = Objects.requireNonNull(standbyMaintenanceBufferInDays);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder totalCpus(Integer totalCpus) {
             this.totalCpus = Objects.requireNonNull(totalCpus);
             return this;
         }
+        @CustomType.Setter
         public Builder vaultId(String vaultId) {
             this.vaultId = Objects.requireNonNull(vaultId);
             return this;
-        }        public GetAutonomousContainerDatabaseResult build() {
-            return new GetAutonomousContainerDatabaseResult(autonomousContainerDatabaseId, autonomousExadataInfrastructureId, autonomousVmClusterId, availabilityDomain, availableCpus, backupConfigs, cloudAutonomousVmClusterId, compartmentId, dbUniqueName, dbVersion, definedTags, displayName, freeformTags, id, infrastructureType, isAutomaticFailoverEnabled, keyHistoryEntries, keyStoreId, keyStoreWalletName, kmsKeyId, lastMaintenanceRunId, lifecycleDetails, maintenanceWindowDetails, maintenanceWindows, memoryPerOracleComputeUnitInGbs, nextMaintenanceRunId, patchId, patchModel, peerAutonomousContainerDatabaseBackupConfigs, peerAutonomousContainerDatabaseCompartmentId, peerAutonomousContainerDatabaseDisplayName, peerAutonomousExadataInfrastructureId, peerAutonomousVmClusterId, peerCloudAutonomousVmClusterId, peerDbUniqueName, protectionMode, provisionableCpuses, reclaimableCpus, role, rotateKeyTrigger, serviceLevelAgreementType, standbyMaintenanceBufferInDays, state, timeCreated, totalCpus, vaultId);
+        }
+        public GetAutonomousContainerDatabaseResult build() {
+            final var o = new GetAutonomousContainerDatabaseResult();
+            o.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            o.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
+            o.autonomousVmClusterId = autonomousVmClusterId;
+            o.availabilityDomain = availabilityDomain;
+            o.availableCpus = availableCpus;
+            o.backupConfigs = backupConfigs;
+            o.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
+            o.compartmentId = compartmentId;
+            o.dbUniqueName = dbUniqueName;
+            o.dbVersion = dbVersion;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.infrastructureType = infrastructureType;
+            o.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
+            o.keyHistoryEntries = keyHistoryEntries;
+            o.keyStoreId = keyStoreId;
+            o.keyStoreWalletName = keyStoreWalletName;
+            o.kmsKeyId = kmsKeyId;
+            o.lastMaintenanceRunId = lastMaintenanceRunId;
+            o.lifecycleDetails = lifecycleDetails;
+            o.maintenanceWindowDetails = maintenanceWindowDetails;
+            o.maintenanceWindows = maintenanceWindows;
+            o.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
+            o.nextMaintenanceRunId = nextMaintenanceRunId;
+            o.patchId = patchId;
+            o.patchModel = patchModel;
+            o.peerAutonomousContainerDatabaseBackupConfigs = peerAutonomousContainerDatabaseBackupConfigs;
+            o.peerAutonomousContainerDatabaseCompartmentId = peerAutonomousContainerDatabaseCompartmentId;
+            o.peerAutonomousContainerDatabaseDisplayName = peerAutonomousContainerDatabaseDisplayName;
+            o.peerAutonomousExadataInfrastructureId = peerAutonomousExadataInfrastructureId;
+            o.peerAutonomousVmClusterId = peerAutonomousVmClusterId;
+            o.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
+            o.peerDbUniqueName = peerDbUniqueName;
+            o.protectionMode = protectionMode;
+            o.provisionableCpuses = provisionableCpuses;
+            o.reclaimableCpus = reclaimableCpus;
+            o.role = role;
+            o.rotateKeyTrigger = rotateKeyTrigger;
+            o.serviceLevelAgreementType = serviceLevelAgreementType;
+            o.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.totalCpus = totalCpus;
+            o.vaultId = vaultId;
+            return o;
         }
     }
 }

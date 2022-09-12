@@ -19,30 +19,17 @@ public final class GetAutonomousCharacterSetsResult {
      * @return The list of autonomous_database_character_sets.
      * 
      */
-    private final List<GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet> autonomousDatabaseCharacterSets;
-    private final @Nullable String characterSetType;
-    private final @Nullable List<GetAutonomousCharacterSetsFilter> filters;
+    private List<GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet> autonomousDatabaseCharacterSets;
+    private @Nullable String characterSetType;
+    private @Nullable List<GetAutonomousCharacterSetsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Boolean isShared;
+    private String id;
+    private @Nullable Boolean isShared;
 
-    @CustomType.Constructor
-    private GetAutonomousCharacterSetsResult(
-        @CustomType.Parameter("autonomousDatabaseCharacterSets") List<GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet> autonomousDatabaseCharacterSets,
-        @CustomType.Parameter("characterSetType") @Nullable String characterSetType,
-        @CustomType.Parameter("filters") @Nullable List<GetAutonomousCharacterSetsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isShared") @Nullable Boolean isShared) {
-        this.autonomousDatabaseCharacterSets = autonomousDatabaseCharacterSets;
-        this.characterSetType = characterSetType;
-        this.filters = filters;
-        this.id = id;
-        this.isShared = isShared;
-    }
-
+    private GetAutonomousCharacterSetsResult() {}
     /**
      * @return The list of autonomous_database_character_sets.
      * 
@@ -74,18 +61,14 @@ public final class GetAutonomousCharacterSetsResult {
     public static Builder builder(GetAutonomousCharacterSetsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet> autonomousDatabaseCharacterSets;
         private @Nullable String characterSetType;
         private @Nullable List<GetAutonomousCharacterSetsFilter> filters;
         private String id;
         private @Nullable Boolean isShared;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousCharacterSetsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousDatabaseCharacterSets = defaults.autonomousDatabaseCharacterSets;
@@ -95,6 +78,7 @@ public final class GetAutonomousCharacterSetsResult {
     	      this.isShared = defaults.isShared;
         }
 
+        @CustomType.Setter
         public Builder autonomousDatabaseCharacterSets(List<GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet> autonomousDatabaseCharacterSets) {
             this.autonomousDatabaseCharacterSets = Objects.requireNonNull(autonomousDatabaseCharacterSets);
             return this;
@@ -102,10 +86,12 @@ public final class GetAutonomousCharacterSetsResult {
         public Builder autonomousDatabaseCharacterSets(GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet... autonomousDatabaseCharacterSets) {
             return autonomousDatabaseCharacterSets(List.of(autonomousDatabaseCharacterSets));
         }
+        @CustomType.Setter
         public Builder characterSetType(@Nullable String characterSetType) {
             this.characterSetType = characterSetType;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousCharacterSetsFilter> filters) {
             this.filters = filters;
             return this;
@@ -113,15 +99,24 @@ public final class GetAutonomousCharacterSetsResult {
         public Builder filters(GetAutonomousCharacterSetsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isShared(@Nullable Boolean isShared) {
             this.isShared = isShared;
             return this;
-        }        public GetAutonomousCharacterSetsResult build() {
-            return new GetAutonomousCharacterSetsResult(autonomousDatabaseCharacterSets, characterSetType, filters, id, isShared);
+        }
+        public GetAutonomousCharacterSetsResult build() {
+            final var o = new GetAutonomousCharacterSetsResult();
+            o.autonomousDatabaseCharacterSets = autonomousDatabaseCharacterSets;
+            o.characterSetType = characterSetType;
+            o.filters = filters;
+            o.id = id;
+            o.isShared = isShared;
+            return o;
         }
     }
 }

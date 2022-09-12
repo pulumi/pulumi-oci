@@ -18,52 +18,35 @@ public final class GetRouteTablesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route table.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetRouteTablesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetRouteTablesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of route_tables.
      * 
      */
-    private final List<GetRouteTablesRouteTable> routeTables;
+    private List<GetRouteTablesRouteTable> routeTables;
     /**
      * @return The route table&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the route table list belongs to.
      * 
      */
-    private final @Nullable String vcnId;
+    private @Nullable String vcnId;
 
-    @CustomType.Constructor
-    private GetRouteTablesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetRouteTablesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("routeTables") List<GetRouteTablesRouteTable> routeTables,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("vcnId") @Nullable String vcnId) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.routeTables = routeTables;
-        this.state = state;
-        this.vcnId = vcnId;
-    }
-
+    private GetRouteTablesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route table.
      * 
@@ -117,7 +100,7 @@ public final class GetRouteTablesResult {
     public static Builder builder(GetRouteTablesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -126,11 +109,7 @@ public final class GetRouteTablesResult {
         private List<GetRouteTablesRouteTable> routeTables;
         private @Nullable String state;
         private @Nullable String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRouteTablesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,14 +121,17 @@ public final class GetRouteTablesResult {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRouteTablesFilter> filters) {
             this.filters = filters;
             return this;
@@ -157,10 +139,12 @@ public final class GetRouteTablesResult {
         public Builder filters(GetRouteTablesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder routeTables(List<GetRouteTablesRouteTable> routeTables) {
             this.routeTables = Objects.requireNonNull(routeTables);
             return this;
@@ -168,15 +152,26 @@ public final class GetRouteTablesResult {
         public Builder routeTables(GetRouteTablesRouteTable... routeTables) {
             return routeTables(List.of(routeTables));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
             this.vcnId = vcnId;
             return this;
-        }        public GetRouteTablesResult build() {
-            return new GetRouteTablesResult(compartmentId, displayName, filters, id, routeTables, state, vcnId);
+        }
+        public GetRouteTablesResult build() {
+            final var o = new GetRouteTablesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.routeTables = routeTables;
+            o.state = state;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

@@ -15,70 +15,49 @@ public final class ClusterMetadata {
      * @return The user who created the cluster.
      * 
      */
-    private final @Nullable String createdByUserId;
+    private @Nullable String createdByUserId;
     /**
      * @return The OCID of the work request which created the cluster.
      * 
      */
-    private final @Nullable String createdByWorkRequestId;
+    private @Nullable String createdByWorkRequestId;
     /**
      * @return The user who deleted the cluster.
      * 
      */
-    private final @Nullable String deletedByUserId;
+    private @Nullable String deletedByUserId;
     /**
      * @return The OCID of the work request which deleted the cluster.
      * 
      */
-    private final @Nullable String deletedByWorkRequestId;
+    private @Nullable String deletedByWorkRequestId;
     /**
      * @return The time the cluster was created.
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the cluster was deleted.
      * 
      */
-    private final @Nullable String timeDeleted;
+    private @Nullable String timeDeleted;
     /**
      * @return The time the cluster was updated.
      * 
      */
-    private final @Nullable String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The user who updated the cluster.
      * 
      */
-    private final @Nullable String updatedByUserId;
+    private @Nullable String updatedByUserId;
     /**
      * @return The OCID of the work request which updated the cluster.
      * 
      */
-    private final @Nullable String updatedByWorkRequestId;
+    private @Nullable String updatedByWorkRequestId;
 
-    @CustomType.Constructor
-    private ClusterMetadata(
-        @CustomType.Parameter("createdByUserId") @Nullable String createdByUserId,
-        @CustomType.Parameter("createdByWorkRequestId") @Nullable String createdByWorkRequestId,
-        @CustomType.Parameter("deletedByUserId") @Nullable String deletedByUserId,
-        @CustomType.Parameter("deletedByWorkRequestId") @Nullable String deletedByWorkRequestId,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated,
-        @CustomType.Parameter("timeDeleted") @Nullable String timeDeleted,
-        @CustomType.Parameter("timeUpdated") @Nullable String timeUpdated,
-        @CustomType.Parameter("updatedByUserId") @Nullable String updatedByUserId,
-        @CustomType.Parameter("updatedByWorkRequestId") @Nullable String updatedByWorkRequestId) {
-        this.createdByUserId = createdByUserId;
-        this.createdByWorkRequestId = createdByWorkRequestId;
-        this.deletedByUserId = deletedByUserId;
-        this.deletedByWorkRequestId = deletedByWorkRequestId;
-        this.timeCreated = timeCreated;
-        this.timeDeleted = timeDeleted;
-        this.timeUpdated = timeUpdated;
-        this.updatedByUserId = updatedByUserId;
-        this.updatedByWorkRequestId = updatedByWorkRequestId;
-    }
-
+    private ClusterMetadata() {}
     /**
      * @return The user who created the cluster.
      * 
@@ -150,7 +129,7 @@ public final class ClusterMetadata {
     public static Builder builder(ClusterMetadata defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String createdByUserId;
         private @Nullable String createdByWorkRequestId;
@@ -161,11 +140,7 @@ public final class ClusterMetadata {
         private @Nullable String timeUpdated;
         private @Nullable String updatedByUserId;
         private @Nullable String updatedByWorkRequestId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ClusterMetadata defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.createdByUserId = defaults.createdByUserId;
@@ -179,43 +154,63 @@ public final class ClusterMetadata {
     	      this.updatedByWorkRequestId = defaults.updatedByWorkRequestId;
         }
 
+        @CustomType.Setter
         public Builder createdByUserId(@Nullable String createdByUserId) {
             this.createdByUserId = createdByUserId;
             return this;
         }
+        @CustomType.Setter
         public Builder createdByWorkRequestId(@Nullable String createdByWorkRequestId) {
             this.createdByWorkRequestId = createdByWorkRequestId;
             return this;
         }
+        @CustomType.Setter
         public Builder deletedByUserId(@Nullable String deletedByUserId) {
             this.deletedByUserId = deletedByUserId;
             return this;
         }
+        @CustomType.Setter
         public Builder deletedByWorkRequestId(@Nullable String deletedByWorkRequestId) {
             this.deletedByWorkRequestId = deletedByWorkRequestId;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
         public Builder timeDeleted(@Nullable String timeDeleted) {
             this.timeDeleted = timeDeleted;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
             this.timeUpdated = timeUpdated;
             return this;
         }
+        @CustomType.Setter
         public Builder updatedByUserId(@Nullable String updatedByUserId) {
             this.updatedByUserId = updatedByUserId;
             return this;
         }
+        @CustomType.Setter
         public Builder updatedByWorkRequestId(@Nullable String updatedByWorkRequestId) {
             this.updatedByWorkRequestId = updatedByWorkRequestId;
             return this;
-        }        public ClusterMetadata build() {
-            return new ClusterMetadata(createdByUserId, createdByWorkRequestId, deletedByUserId, deletedByWorkRequestId, timeCreated, timeDeleted, timeUpdated, updatedByUserId, updatedByWorkRequestId);
+        }
+        public ClusterMetadata build() {
+            final var o = new ClusterMetadata();
+            o.createdByUserId = createdByUserId;
+            o.createdByWorkRequestId = createdByWorkRequestId;
+            o.deletedByUserId = deletedByUserId;
+            o.deletedByWorkRequestId = deletedByWorkRequestId;
+            o.timeCreated = timeCreated;
+            o.timeDeleted = timeDeleted;
+            o.timeUpdated = timeUpdated;
+            o.updatedByUserId = updatedByUserId;
+            o.updatedByWorkRequestId = updatedByWorkRequestId;
+            return o;
         }
     }
 }

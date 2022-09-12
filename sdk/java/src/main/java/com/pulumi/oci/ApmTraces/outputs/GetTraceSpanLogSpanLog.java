@@ -13,21 +13,14 @@ public final class GetTraceSpanLogSpanLog {
      * @return Key that specifies the log name.
      * 
      */
-    private final String logKey;
+    private String logKey;
     /**
      * @return Value associated with the log key.
      * 
      */
-    private final String logValue;
+    private String logValue;
 
-    @CustomType.Constructor
-    private GetTraceSpanLogSpanLog(
-        @CustomType.Parameter("logKey") String logKey,
-        @CustomType.Parameter("logValue") String logValue) {
-        this.logKey = logKey;
-        this.logValue = logValue;
-    }
-
+    private GetTraceSpanLogSpanLog() {}
     /**
      * @return Key that specifies the log name.
      * 
@@ -50,30 +43,32 @@ public final class GetTraceSpanLogSpanLog {
     public static Builder builder(GetTraceSpanLogSpanLog defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String logKey;
         private String logValue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTraceSpanLogSpanLog defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.logKey = defaults.logKey;
     	      this.logValue = defaults.logValue;
         }
 
+        @CustomType.Setter
         public Builder logKey(String logKey) {
             this.logKey = Objects.requireNonNull(logKey);
             return this;
         }
+        @CustomType.Setter
         public Builder logValue(String logValue) {
             this.logValue = Objects.requireNonNull(logValue);
             return this;
-        }        public GetTraceSpanLogSpanLog build() {
-            return new GetTraceSpanLogSpanLog(logKey, logValue);
+        }
+        public GetTraceSpanLogSpanLog build() {
+            final var o = new GetTraceSpanLogSpanLog();
+            o.logKey = logKey;
+            o.logValue = logValue;
+            return o;
         }
     }
 }

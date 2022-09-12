@@ -63,14 +63,14 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) Detector recipe description.
+     * (Updatable) Description for DetectorRecipeDetectorRule.
      * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output<String> description;
 
     /**
-     * @return (Updatable) Detector recipe description.
+     * @return (Updatable) Description for DetectorRecipeDetectorRule.
      * 
      */
     public Output<String> description() {
@@ -201,6 +201,20 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * The recipe attached to targets
+     * 
+     */
+    @Export(name="targetIds", type=List.class, parameters={String.class})
+    private Output<List<String>> targetIds;
+
+    /**
+     * @return The recipe attached to targets
+     * 
+     */
+    public Output<List<String>> targetIds() {
+        return this.targetIds;
     }
     /**
      * The date and time the detector recipe was created. Format defined by RFC3339.

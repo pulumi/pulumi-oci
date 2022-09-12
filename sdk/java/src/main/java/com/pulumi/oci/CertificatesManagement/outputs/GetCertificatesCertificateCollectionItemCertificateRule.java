@@ -13,28 +13,19 @@ public final class GetCertificatesCertificateCollectionItemCertificateRule {
      * @return A property specifying the period of time, in days, before the certificate&#39;s targeted renewal that the process should occur. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
      */
-    private final String advanceRenewalPeriod;
+    private String advanceRenewalPeriod;
     /**
      * @return A property specifying how often, in days, a certificate should be renewed. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
      */
-    private final String renewalInterval;
+    private String renewalInterval;
     /**
      * @return The type of rule.
      * 
      */
-    private final String ruleType;
+    private String ruleType;
 
-    @CustomType.Constructor
-    private GetCertificatesCertificateCollectionItemCertificateRule(
-        @CustomType.Parameter("advanceRenewalPeriod") String advanceRenewalPeriod,
-        @CustomType.Parameter("renewalInterval") String renewalInterval,
-        @CustomType.Parameter("ruleType") String ruleType) {
-        this.advanceRenewalPeriod = advanceRenewalPeriod;
-        this.renewalInterval = renewalInterval;
-        this.ruleType = ruleType;
-    }
-
+    private GetCertificatesCertificateCollectionItemCertificateRule() {}
     /**
      * @return A property specifying the period of time, in days, before the certificate&#39;s targeted renewal that the process should occur. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
@@ -64,16 +55,12 @@ public final class GetCertificatesCertificateCollectionItemCertificateRule {
     public static Builder builder(GetCertificatesCertificateCollectionItemCertificateRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String advanceRenewalPeriod;
         private String renewalInterval;
         private String ruleType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificatesCertificateCollectionItemCertificateRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.advanceRenewalPeriod = defaults.advanceRenewalPeriod;
@@ -81,19 +68,27 @@ public final class GetCertificatesCertificateCollectionItemCertificateRule {
     	      this.ruleType = defaults.ruleType;
         }
 
+        @CustomType.Setter
         public Builder advanceRenewalPeriod(String advanceRenewalPeriod) {
             this.advanceRenewalPeriod = Objects.requireNonNull(advanceRenewalPeriod);
             return this;
         }
+        @CustomType.Setter
         public Builder renewalInterval(String renewalInterval) {
             this.renewalInterval = Objects.requireNonNull(renewalInterval);
             return this;
         }
+        @CustomType.Setter
         public Builder ruleType(String ruleType) {
             this.ruleType = Objects.requireNonNull(ruleType);
             return this;
-        }        public GetCertificatesCertificateCollectionItemCertificateRule build() {
-            return new GetCertificatesCertificateCollectionItemCertificateRule(advanceRenewalPeriod, renewalInterval, ruleType);
+        }
+        public GetCertificatesCertificateCollectionItemCertificateRule build() {
+            final var o = new GetCertificatesCertificateCollectionItemCertificateRule();
+            o.advanceRenewalPeriod = advanceRenewalPeriod;
+            o.renewalInterval = renewalInterval;
+            o.ruleType = ruleType;
+            return o;
         }
     }
 }

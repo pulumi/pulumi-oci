@@ -17,49 +17,34 @@ public final class ReportDefinitionSummary {
      * @return (Updatable) Name of the key or count of object.
      * 
      */
-    private final @Nullable String countOf;
+    private @Nullable String countOf;
     /**
      * @return (Updatable) Specifies the order in which the summary must be displayed.
      * 
      */
-    private final Integer displayOrder;
+    private Integer displayOrder;
     /**
      * @return (Updatable) A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
      * 
      */
-    private final @Nullable String groupByFieldName;
+    private @Nullable String groupByFieldName;
     /**
      * @return (Updatable) Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    private final @Nullable Boolean isHidden;
+    private @Nullable Boolean isHidden;
     /**
      * @return (Updatable) Name of the report summary.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return (Updatable) Additional scim filters used to get the specific summary.
      * 
      */
-    private final @Nullable String scimFilter;
+    private @Nullable String scimFilter;
 
-    @CustomType.Constructor
-    private ReportDefinitionSummary(
-        @CustomType.Parameter("countOf") @Nullable String countOf,
-        @CustomType.Parameter("displayOrder") Integer displayOrder,
-        @CustomType.Parameter("groupByFieldName") @Nullable String groupByFieldName,
-        @CustomType.Parameter("isHidden") @Nullable Boolean isHidden,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("scimFilter") @Nullable String scimFilter) {
-        this.countOf = countOf;
-        this.displayOrder = displayOrder;
-        this.groupByFieldName = groupByFieldName;
-        this.isHidden = isHidden;
-        this.name = name;
-        this.scimFilter = scimFilter;
-    }
-
+    private ReportDefinitionSummary() {}
     /**
      * @return (Updatable) Name of the key or count of object.
      * 
@@ -110,7 +95,7 @@ public final class ReportDefinitionSummary {
     public static Builder builder(ReportDefinitionSummary defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String countOf;
         private Integer displayOrder;
@@ -118,11 +103,7 @@ public final class ReportDefinitionSummary {
         private @Nullable Boolean isHidden;
         private String name;
         private @Nullable String scimFilter;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ReportDefinitionSummary defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.countOf = defaults.countOf;
@@ -133,31 +114,45 @@ public final class ReportDefinitionSummary {
     	      this.scimFilter = defaults.scimFilter;
         }
 
+        @CustomType.Setter
         public Builder countOf(@Nullable String countOf) {
             this.countOf = countOf;
             return this;
         }
+        @CustomType.Setter
         public Builder displayOrder(Integer displayOrder) {
             this.displayOrder = Objects.requireNonNull(displayOrder);
             return this;
         }
+        @CustomType.Setter
         public Builder groupByFieldName(@Nullable String groupByFieldName) {
             this.groupByFieldName = groupByFieldName;
             return this;
         }
+        @CustomType.Setter
         public Builder isHidden(@Nullable Boolean isHidden) {
             this.isHidden = isHidden;
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder scimFilter(@Nullable String scimFilter) {
             this.scimFilter = scimFilter;
             return this;
-        }        public ReportDefinitionSummary build() {
-            return new ReportDefinitionSummary(countOf, displayOrder, groupByFieldName, isHidden, name, scimFilter);
+        }
+        public ReportDefinitionSummary build() {
+            final var o = new ReportDefinitionSummary();
+            o.countOf = countOf;
+            o.displayOrder = displayOrder;
+            o.groupByFieldName = groupByFieldName;
+            o.isHidden = isHidden;
+            o.name = name;
+            o.scimFilter = scimFilter;
+            return o;
         }
     }
 }

@@ -18,45 +18,30 @@ public final class GetEmailDomainsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email domain.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of email_domain_collection.
      * 
      */
-    private final List<GetEmailDomainsEmailDomainCollection> emailDomainCollections;
-    private final @Nullable List<GetEmailDomainsFilter> filters;
+    private List<GetEmailDomainsEmailDomainCollection> emailDomainCollections;
+    private @Nullable List<GetEmailDomainsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The name of the email domain in the Internet Domain Name System (DNS).  Example: `example.net`
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The current state of the email domain.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetEmailDomainsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("emailDomainCollections") List<GetEmailDomainsEmailDomainCollection> emailDomainCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetEmailDomainsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.emailDomainCollections = emailDomainCollections;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.state = state;
-    }
-
+    private GetEmailDomainsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email domain.
      * 
@@ -103,7 +88,7 @@ public final class GetEmailDomainsResult {
     public static Builder builder(GetEmailDomainsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetEmailDomainsEmailDomainCollection> emailDomainCollections;
@@ -111,11 +96,7 @@ public final class GetEmailDomainsResult {
         private @Nullable String id;
         private @Nullable String name;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEmailDomainsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +107,12 @@ public final class GetEmailDomainsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder emailDomainCollections(List<GetEmailDomainsEmailDomainCollection> emailDomainCollections) {
             this.emailDomainCollections = Objects.requireNonNull(emailDomainCollections);
             return this;
@@ -137,6 +120,7 @@ public final class GetEmailDomainsResult {
         public Builder emailDomainCollections(GetEmailDomainsEmailDomainCollection... emailDomainCollections) {
             return emailDomainCollections(List.of(emailDomainCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetEmailDomainsFilter> filters) {
             this.filters = filters;
             return this;
@@ -144,19 +128,30 @@ public final class GetEmailDomainsResult {
         public Builder filters(GetEmailDomainsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetEmailDomainsResult build() {
-            return new GetEmailDomainsResult(compartmentId, emailDomainCollections, filters, id, name, state);
+        }
+        public GetEmailDomainsResult build() {
+            final var o = new GetEmailDomainsResult();
+            o.compartmentId = compartmentId;
+            o.emailDomainCollections = emailDomainCollections;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.state = state;
+            return o;
         }
     }
 }

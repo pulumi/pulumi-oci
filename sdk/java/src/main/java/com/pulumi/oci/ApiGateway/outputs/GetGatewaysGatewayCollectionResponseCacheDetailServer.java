@@ -14,21 +14,14 @@ public final class GetGatewaysGatewayCollectionResponseCacheDetailServer {
      * @return Hostname or IP address (IPv4 only) where the cache store is running.
      * 
      */
-    private final String host;
+    private String host;
     /**
      * @return The port the cache store is exposed on.
      * 
      */
-    private final Integer port;
+    private Integer port;
 
-    @CustomType.Constructor
-    private GetGatewaysGatewayCollectionResponseCacheDetailServer(
-        @CustomType.Parameter("host") String host,
-        @CustomType.Parameter("port") Integer port) {
-        this.host = host;
-        this.port = port;
-    }
-
+    private GetGatewaysGatewayCollectionResponseCacheDetailServer() {}
     /**
      * @return Hostname or IP address (IPv4 only) where the cache store is running.
      * 
@@ -51,30 +44,32 @@ public final class GetGatewaysGatewayCollectionResponseCacheDetailServer {
     public static Builder builder(GetGatewaysGatewayCollectionResponseCacheDetailServer defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String host;
         private Integer port;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGatewaysGatewayCollectionResponseCacheDetailServer defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.host = defaults.host;
     	      this.port = defaults.port;
         }
 
+        @CustomType.Setter
         public Builder host(String host) {
             this.host = Objects.requireNonNull(host);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
-        }        public GetGatewaysGatewayCollectionResponseCacheDetailServer build() {
-            return new GetGatewaysGatewayCollectionResponseCacheDetailServer(host, port);
+        }
+        public GetGatewaysGatewayCollectionResponseCacheDetailServer build() {
+            final var o = new GetGatewaysGatewayCollectionResponseCacheDetailServer();
+            o.host = host;
+            o.port = port;
+            return o;
         }
     }
 }

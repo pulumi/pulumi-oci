@@ -129,7 +129,7 @@ type Target struct {
 	TargetDetectorRecipes TargetTargetDetectorRecipeArrayOutput `pulumi:"targetDetectorRecipes"`
 	// Resource ID which the target uses to monitor
 	TargetResourceId pulumi.StringOutput `pulumi:"targetResourceId"`
-	// possible type of targets(compartment/HCMCloud/ERPCloud)
+	// possible type of targets(COMPARTMENT/FACLOUD)
 	TargetResourceType pulumi.StringOutput `pulumi:"targetResourceType"`
 	// (Updatable) List of responder recipes to associate with target
 	TargetResponderRecipes TargetTargetResponderRecipeArrayOutput `pulumi:"targetResponderRecipes"`
@@ -206,7 +206,7 @@ type targetState struct {
 	TargetDetectorRecipes []TargetTargetDetectorRecipe `pulumi:"targetDetectorRecipes"`
 	// Resource ID which the target uses to monitor
 	TargetResourceId *string `pulumi:"targetResourceId"`
-	// possible type of targets(compartment/HCMCloud/ERPCloud)
+	// possible type of targets(COMPARTMENT/FACLOUD)
 	TargetResourceType *string `pulumi:"targetResourceType"`
 	// (Updatable) List of responder recipes to associate with target
 	TargetResponderRecipes []TargetTargetResponderRecipe `pulumi:"targetResponderRecipes"`
@@ -243,7 +243,7 @@ type TargetState struct {
 	TargetDetectorRecipes TargetTargetDetectorRecipeArrayInput
 	// Resource ID which the target uses to monitor
 	TargetResourceId pulumi.StringPtrInput
-	// possible type of targets(compartment/HCMCloud/ERPCloud)
+	// possible type of targets(COMPARTMENT/FACLOUD)
 	TargetResourceType pulumi.StringPtrInput
 	// (Updatable) List of responder recipes to associate with target
 	TargetResponderRecipes TargetTargetResponderRecipeArrayInput
@@ -274,7 +274,7 @@ type targetArgs struct {
 	TargetDetectorRecipes []TargetTargetDetectorRecipe `pulumi:"targetDetectorRecipes"`
 	// Resource ID which the target uses to monitor
 	TargetResourceId string `pulumi:"targetResourceId"`
-	// possible type of targets(compartment/HCMCloud/ERPCloud)
+	// possible type of targets(COMPARTMENT/FACLOUD)
 	TargetResourceType string `pulumi:"targetResourceType"`
 	// (Updatable) List of responder recipes to associate with target
 	TargetResponderRecipes []TargetTargetResponderRecipe `pulumi:"targetResponderRecipes"`
@@ -298,7 +298,7 @@ type TargetArgs struct {
 	TargetDetectorRecipes TargetTargetDetectorRecipeArrayInput
 	// Resource ID which the target uses to monitor
 	TargetResourceId pulumi.StringInput
-	// possible type of targets(compartment/HCMCloud/ERPCloud)
+	// possible type of targets(COMPARTMENT/FACLOUD)
 	TargetResourceType pulumi.StringInput
 	// (Updatable) List of responder recipes to associate with target
 	TargetResponderRecipes TargetTargetResponderRecipeArrayInput
@@ -456,7 +456,7 @@ func (o TargetOutput) TargetResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Target) pulumi.StringOutput { return v.TargetResourceId }).(pulumi.StringOutput)
 }
 
-// possible type of targets(compartment/HCMCloud/ERPCloud)
+// possible type of targets(COMPARTMENT/FACLOUD)
 func (o TargetOutput) TargetResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Target) pulumi.StringOutput { return v.TargetResourceType }).(pulumi.StringOutput)
 }

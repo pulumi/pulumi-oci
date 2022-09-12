@@ -16,42 +16,29 @@ public final class ConfigConfigurationNetworkConfiguration {
      * @return (Updatable) Number of hops.
      * 
      */
-    private final @Nullable Integer numberOfHops;
+    private @Nullable Integer numberOfHops;
     /**
      * @return (Updatable) Type of probe mode when TCP protocol is selected.
      * 
      */
-    private final @Nullable String probeMode;
+    private @Nullable String probeMode;
     /**
      * @return (Updatable) Number of probes per hop.
      * 
      */
-    private final @Nullable Integer probePerHop;
+    private @Nullable Integer probePerHop;
     /**
      * @return (Updatable) Type of protocol.
      * 
      */
-    private final @Nullable String protocol;
+    private @Nullable String protocol;
     /**
      * @return (Updatable) Number of probe packets sent out simultaneously.
      * 
      */
-    private final @Nullable Integer transmissionRate;
+    private @Nullable Integer transmissionRate;
 
-    @CustomType.Constructor
-    private ConfigConfigurationNetworkConfiguration(
-        @CustomType.Parameter("numberOfHops") @Nullable Integer numberOfHops,
-        @CustomType.Parameter("probeMode") @Nullable String probeMode,
-        @CustomType.Parameter("probePerHop") @Nullable Integer probePerHop,
-        @CustomType.Parameter("protocol") @Nullable String protocol,
-        @CustomType.Parameter("transmissionRate") @Nullable Integer transmissionRate) {
-        this.numberOfHops = numberOfHops;
-        this.probeMode = probeMode;
-        this.probePerHop = probePerHop;
-        this.protocol = protocol;
-        this.transmissionRate = transmissionRate;
-    }
-
+    private ConfigConfigurationNetworkConfiguration() {}
     /**
      * @return (Updatable) Number of hops.
      * 
@@ -95,18 +82,14 @@ public final class ConfigConfigurationNetworkConfiguration {
     public static Builder builder(ConfigConfigurationNetworkConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer numberOfHops;
         private @Nullable String probeMode;
         private @Nullable Integer probePerHop;
         private @Nullable String protocol;
         private @Nullable Integer transmissionRate;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConfigConfigurationNetworkConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.numberOfHops = defaults.numberOfHops;
@@ -116,27 +99,39 @@ public final class ConfigConfigurationNetworkConfiguration {
     	      this.transmissionRate = defaults.transmissionRate;
         }
 
+        @CustomType.Setter
         public Builder numberOfHops(@Nullable Integer numberOfHops) {
             this.numberOfHops = numberOfHops;
             return this;
         }
+        @CustomType.Setter
         public Builder probeMode(@Nullable String probeMode) {
             this.probeMode = probeMode;
             return this;
         }
+        @CustomType.Setter
         public Builder probePerHop(@Nullable Integer probePerHop) {
             this.probePerHop = probePerHop;
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(@Nullable String protocol) {
             this.protocol = protocol;
             return this;
         }
+        @CustomType.Setter
         public Builder transmissionRate(@Nullable Integer transmissionRate) {
             this.transmissionRate = transmissionRate;
             return this;
-        }        public ConfigConfigurationNetworkConfiguration build() {
-            return new ConfigConfigurationNetworkConfiguration(numberOfHops, probeMode, probePerHop, protocol, transmissionRate);
+        }
+        public ConfigConfigurationNetworkConfiguration build() {
+            final var o = new ConfigConfigurationNetworkConfiguration();
+            o.numberOfHops = numberOfHops;
+            o.probeMode = probeMode;
+            o.probePerHop = probePerHop;
+            o.protocol = protocol;
+            o.transmissionRate = transmissionRate;
+            return o;
         }
     }
 }

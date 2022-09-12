@@ -15,28 +15,19 @@ public final class KeyRestoreFromFile {
      * @return (Updatable) content length of key&#39;s backup binary file
      * 
      */
-    private final String contentLength;
+    private String contentLength;
     /**
      * @return (Updatable) content md5 hashed value of key&#39;s backup file
      * 
      */
-    private final @Nullable String contentMd5;
+    private @Nullable String contentMd5;
     /**
      * @return Key backup file content.
      * 
      */
-    private final String restoreKeyFromFileDetails;
+    private String restoreKeyFromFileDetails;
 
-    @CustomType.Constructor
-    private KeyRestoreFromFile(
-        @CustomType.Parameter("contentLength") String contentLength,
-        @CustomType.Parameter("contentMd5") @Nullable String contentMd5,
-        @CustomType.Parameter("restoreKeyFromFileDetails") String restoreKeyFromFileDetails) {
-        this.contentLength = contentLength;
-        this.contentMd5 = contentMd5;
-        this.restoreKeyFromFileDetails = restoreKeyFromFileDetails;
-    }
-
+    private KeyRestoreFromFile() {}
     /**
      * @return (Updatable) content length of key&#39;s backup binary file
      * 
@@ -66,16 +57,12 @@ public final class KeyRestoreFromFile {
     public static Builder builder(KeyRestoreFromFile defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String contentLength;
         private @Nullable String contentMd5;
         private String restoreKeyFromFileDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(KeyRestoreFromFile defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.contentLength = defaults.contentLength;
@@ -83,19 +70,27 @@ public final class KeyRestoreFromFile {
     	      this.restoreKeyFromFileDetails = defaults.restoreKeyFromFileDetails;
         }
 
+        @CustomType.Setter
         public Builder contentLength(String contentLength) {
             this.contentLength = Objects.requireNonNull(contentLength);
             return this;
         }
+        @CustomType.Setter
         public Builder contentMd5(@Nullable String contentMd5) {
             this.contentMd5 = contentMd5;
             return this;
         }
+        @CustomType.Setter
         public Builder restoreKeyFromFileDetails(String restoreKeyFromFileDetails) {
             this.restoreKeyFromFileDetails = Objects.requireNonNull(restoreKeyFromFileDetails);
             return this;
-        }        public KeyRestoreFromFile build() {
-            return new KeyRestoreFromFile(contentLength, contentMd5, restoreKeyFromFileDetails);
+        }
+        public KeyRestoreFromFile build() {
+            final var o = new KeyRestoreFromFile();
+            o.contentLength = contentLength;
+            o.contentMd5 = contentMd5;
+            o.restoreKeyFromFileDetails = restoreKeyFromFileDetails;
+            return o;
         }
     }
 }

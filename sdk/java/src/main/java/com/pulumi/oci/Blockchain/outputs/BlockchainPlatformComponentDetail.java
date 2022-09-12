@@ -16,21 +16,14 @@ public final class BlockchainPlatformComponentDetail {
      * @return List of OSNs
      * 
      */
-    private final @Nullable List<BlockchainPlatformComponentDetailOsn> osns;
+    private @Nullable List<BlockchainPlatformComponentDetailOsn> osns;
     /**
      * @return List of Peers
      * 
      */
-    private final @Nullable List<BlockchainPlatformComponentDetailPeer> peers;
+    private @Nullable List<BlockchainPlatformComponentDetailPeer> peers;
 
-    @CustomType.Constructor
-    private BlockchainPlatformComponentDetail(
-        @CustomType.Parameter("osns") @Nullable List<BlockchainPlatformComponentDetailOsn> osns,
-        @CustomType.Parameter("peers") @Nullable List<BlockchainPlatformComponentDetailPeer> peers) {
-        this.osns = osns;
-        this.peers = peers;
-    }
-
+    private BlockchainPlatformComponentDetail() {}
     /**
      * @return List of OSNs
      * 
@@ -53,21 +46,18 @@ public final class BlockchainPlatformComponentDetail {
     public static Builder builder(BlockchainPlatformComponentDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<BlockchainPlatformComponentDetailOsn> osns;
         private @Nullable List<BlockchainPlatformComponentDetailPeer> peers;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BlockchainPlatformComponentDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.osns = defaults.osns;
     	      this.peers = defaults.peers;
         }
 
+        @CustomType.Setter
         public Builder osns(@Nullable List<BlockchainPlatformComponentDetailOsn> osns) {
             this.osns = osns;
             return this;
@@ -75,14 +65,19 @@ public final class BlockchainPlatformComponentDetail {
         public Builder osns(BlockchainPlatformComponentDetailOsn... osns) {
             return osns(List.of(osns));
         }
+        @CustomType.Setter
         public Builder peers(@Nullable List<BlockchainPlatformComponentDetailPeer> peers) {
             this.peers = peers;
             return this;
         }
         public Builder peers(BlockchainPlatformComponentDetailPeer... peers) {
             return peers(List.of(peers));
-        }        public BlockchainPlatformComponentDetail build() {
-            return new BlockchainPlatformComponentDetail(osns, peers);
+        }
+        public BlockchainPlatformComponentDetail build() {
+            final var o = new BlockchainPlatformComponentDetail();
+            o.osns = osns;
+            o.peers = peers;
+            return o;
         }
     }
 }

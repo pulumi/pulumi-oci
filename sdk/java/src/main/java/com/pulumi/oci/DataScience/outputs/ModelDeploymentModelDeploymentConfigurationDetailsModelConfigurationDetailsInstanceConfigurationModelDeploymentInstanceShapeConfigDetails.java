@@ -15,21 +15,14 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
      * @return (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
      * 
      */
-    private final @Nullable Double memoryInGbs;
+    private @Nullable Double memoryInGbs;
     /**
      * @return (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
      * 
      */
-    private final @Nullable Double ocpus;
+    private @Nullable Double ocpus;
 
-    @CustomType.Constructor
-    private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails(
-        @CustomType.Parameter("memoryInGbs") @Nullable Double memoryInGbs,
-        @CustomType.Parameter("ocpus") @Nullable Double ocpus) {
-        this.memoryInGbs = memoryInGbs;
-        this.ocpus = ocpus;
-    }
-
+    private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails() {}
     /**
      * @return (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
      * 
@@ -52,30 +45,32 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     public static Builder builder(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Double memoryInGbs;
         private @Nullable Double ocpus;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.ocpus = defaults.ocpus;
         }
 
+        @CustomType.Setter
         public Builder memoryInGbs(@Nullable Double memoryInGbs) {
             this.memoryInGbs = memoryInGbs;
             return this;
         }
+        @CustomType.Setter
         public Builder ocpus(@Nullable Double ocpus) {
             this.ocpus = ocpus;
             return this;
-        }        public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails build() {
-            return new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails(memoryInGbs, ocpus);
+        }
+        public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails build() {
+            final var o = new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails();
+            o.memoryInGbs = memoryInGbs;
+            o.ocpus = ocpus;
+            return o;
         }
     }
 }

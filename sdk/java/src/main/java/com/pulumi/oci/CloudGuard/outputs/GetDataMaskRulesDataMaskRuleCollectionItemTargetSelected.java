@@ -14,21 +14,14 @@ public final class GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected {
      * @return Target selection.
      * 
      */
-    private final String kind;
+    private String kind;
     /**
      * @return Types of Targets
      * 
      */
-    private final List<String> values;
+    private List<String> values;
 
-    @CustomType.Constructor
-    private GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected(
-        @CustomType.Parameter("kind") String kind,
-        @CustomType.Parameter("values") List<String> values) {
-        this.kind = kind;
-        this.values = values;
-    }
-
+    private GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected() {}
     /**
      * @return Target selection.
      * 
@@ -51,33 +44,35 @@ public final class GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected {
     public static Builder builder(GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String kind;
         private List<String> values;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kind = defaults.kind;
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
         public Builder kind(String kind) {
             this.kind = Objects.requireNonNull(kind);
             return this;
         }
+        @CustomType.Setter
         public Builder values(List<String> values) {
             this.values = Objects.requireNonNull(values);
             return this;
         }
         public Builder values(String... values) {
             return values(List.of(values));
-        }        public GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected build() {
-            return new GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected(kind, values);
+        }
+        public GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected build() {
+            final var o = new GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected();
+            o.kind = kind;
+            o.values = values;
+            return o;
         }
     }
 }

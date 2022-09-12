@@ -17,27 +17,16 @@ public final class GetAutonomousDbPreviewVersionsResult {
      * @return The list of autonomous_db_preview_versions.
      * 
      */
-    private final List<GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion> autonomousDbPreviewVersions;
-    private final String compartmentId;
-    private final @Nullable List<GetAutonomousDbPreviewVersionsFilter> filters;
+    private List<GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion> autonomousDbPreviewVersions;
+    private String compartmentId;
+    private @Nullable List<GetAutonomousDbPreviewVersionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetAutonomousDbPreviewVersionsResult(
-        @CustomType.Parameter("autonomousDbPreviewVersions") List<GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion> autonomousDbPreviewVersions,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetAutonomousDbPreviewVersionsFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.autonomousDbPreviewVersions = autonomousDbPreviewVersions;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetAutonomousDbPreviewVersionsResult() {}
     /**
      * @return The list of autonomous_db_preview_versions.
      * 
@@ -66,17 +55,13 @@ public final class GetAutonomousDbPreviewVersionsResult {
     public static Builder builder(GetAutonomousDbPreviewVersionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion> autonomousDbPreviewVersions;
         private String compartmentId;
         private @Nullable List<GetAutonomousDbPreviewVersionsFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDbPreviewVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousDbPreviewVersions = defaults.autonomousDbPreviewVersions;
@@ -85,6 +70,7 @@ public final class GetAutonomousDbPreviewVersionsResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder autonomousDbPreviewVersions(List<GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion> autonomousDbPreviewVersions) {
             this.autonomousDbPreviewVersions = Objects.requireNonNull(autonomousDbPreviewVersions);
             return this;
@@ -92,10 +78,12 @@ public final class GetAutonomousDbPreviewVersionsResult {
         public Builder autonomousDbPreviewVersions(GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion... autonomousDbPreviewVersions) {
             return autonomousDbPreviewVersions(List.of(autonomousDbPreviewVersions));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousDbPreviewVersionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -103,11 +91,18 @@ public final class GetAutonomousDbPreviewVersionsResult {
         public Builder filters(GetAutonomousDbPreviewVersionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetAutonomousDbPreviewVersionsResult build() {
-            return new GetAutonomousDbPreviewVersionsResult(autonomousDbPreviewVersions, compartmentId, filters, id);
+        }
+        public GetAutonomousDbPreviewVersionsResult build() {
+            final var o = new GetAutonomousDbPreviewVersionsResult();
+            o.autonomousDbPreviewVersions = autonomousDbPreviewVersions;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

@@ -15,21 +15,14 @@ public final class GetDatasetsDatasetCollectionItemDatasetFormatDetail {
      * @return It defines the format type of text files.
      * 
      */
-    private final String formatType;
+    private String formatType;
     /**
      * @return Metadata for files with text content.
      * 
      */
-    private final List<GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata> textFileTypeMetadatas;
+    private List<GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata> textFileTypeMetadatas;
 
-    @CustomType.Constructor
-    private GetDatasetsDatasetCollectionItemDatasetFormatDetail(
-        @CustomType.Parameter("formatType") String formatType,
-        @CustomType.Parameter("textFileTypeMetadatas") List<GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata> textFileTypeMetadatas) {
-        this.formatType = formatType;
-        this.textFileTypeMetadatas = textFileTypeMetadatas;
-    }
-
+    private GetDatasetsDatasetCollectionItemDatasetFormatDetail() {}
     /**
      * @return It defines the format type of text files.
      * 
@@ -52,33 +45,35 @@ public final class GetDatasetsDatasetCollectionItemDatasetFormatDetail {
     public static Builder builder(GetDatasetsDatasetCollectionItemDatasetFormatDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String formatType;
         private List<GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata> textFileTypeMetadatas;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatasetsDatasetCollectionItemDatasetFormatDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.formatType = defaults.formatType;
     	      this.textFileTypeMetadatas = defaults.textFileTypeMetadatas;
         }
 
+        @CustomType.Setter
         public Builder formatType(String formatType) {
             this.formatType = Objects.requireNonNull(formatType);
             return this;
         }
+        @CustomType.Setter
         public Builder textFileTypeMetadatas(List<GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata> textFileTypeMetadatas) {
             this.textFileTypeMetadatas = Objects.requireNonNull(textFileTypeMetadatas);
             return this;
         }
         public Builder textFileTypeMetadatas(GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadata... textFileTypeMetadatas) {
             return textFileTypeMetadatas(List.of(textFileTypeMetadatas));
-        }        public GetDatasetsDatasetCollectionItemDatasetFormatDetail build() {
-            return new GetDatasetsDatasetCollectionItemDatasetFormatDetail(formatType, textFileTypeMetadatas);
+        }
+        public GetDatasetsDatasetCollectionItemDatasetFormatDetail build() {
+            final var o = new GetDatasetsDatasetCollectionItemDatasetFormatDetail();
+            o.formatType = formatType;
+            o.textFileTypeMetadatas = textFileTypeMetadatas;
+            return o;
         }
     }
 }

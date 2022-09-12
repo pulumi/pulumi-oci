@@ -15,28 +15,19 @@ public final class GetManagedDatabaseTableStatisticsTableStatisticsCollectionIte
      * @return The number of objects aggregated by status category.
      * 
      */
-    private final Integer count;
+    private Integer count;
     /**
      * @return The percentage of objects with a particular status.
      * 
      */
-    private final Double percentage;
+    private Double percentage;
     /**
      * @return The valid status categories of table statistics.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem(
-        @CustomType.Parameter("count") Integer count,
-        @CustomType.Parameter("percentage") Double percentage,
-        @CustomType.Parameter("type") String type) {
-        this.count = count;
-        this.percentage = percentage;
-        this.type = type;
-    }
-
+    private GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem() {}
     /**
      * @return The number of objects aggregated by status category.
      * 
@@ -66,16 +57,12 @@ public final class GetManagedDatabaseTableStatisticsTableStatisticsCollectionIte
     public static Builder builder(GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer count;
         private Double percentage;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
@@ -83,19 +70,27 @@ public final class GetManagedDatabaseTableStatisticsTableStatisticsCollectionIte
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder count(Integer count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder percentage(Double percentage) {
             this.percentage = Objects.requireNonNull(percentage);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem build() {
-            return new GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem(count, percentage, type);
+        }
+        public GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem build() {
+            final var o = new GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem();
+            o.count = count;
+            o.percentage = percentage;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -14,13 +14,9 @@ public final class GetByoipAllocatedRangesByoipAllocatedRangeCollection {
      * @return A list of subranges of a BYOIP CIDR block allocated to an IP pool.
      * 
      */
-    private final List<GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem> items;
+    private List<GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetByoipAllocatedRangesByoipAllocatedRangeCollection(@CustomType.Parameter("items") List<GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetByoipAllocatedRangesByoipAllocatedRangeCollection() {}
     /**
      * @return A list of subranges of a BYOIP CIDR block allocated to an IP pool.
      * 
@@ -36,27 +32,27 @@ public final class GetByoipAllocatedRangesByoipAllocatedRangeCollection {
     public static Builder builder(GetByoipAllocatedRangesByoipAllocatedRangeCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetByoipAllocatedRangesByoipAllocatedRangeCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem... items) {
             return items(List.of(items));
-        }        public GetByoipAllocatedRangesByoipAllocatedRangeCollection build() {
-            return new GetByoipAllocatedRangesByoipAllocatedRangeCollection(items);
+        }
+        public GetByoipAllocatedRangesByoipAllocatedRangeCollection build() {
+            final var o = new GetByoipAllocatedRangesByoipAllocatedRangeCollection();
+            o.items = items;
+            return o;
         }
     }
 }

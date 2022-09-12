@@ -18,110 +18,83 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RegistryFolderDataAssetNativeTypeSystem {
     /**
-     * @return (Updatable) User-defined description for the folder.
+     * @return (Updatable) User-defined description of the folder.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
-    private final @Nullable String identifier;
+    private @Nullable String identifier;
     /**
-     * @return (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
-    private final @Nullable String key;
+    private @Nullable String key;
     /**
      * @return (Updatable) The type of the folder.
      * 
      */
-    private final @Nullable String modelType;
+    private @Nullable String modelType;
     /**
      * @return (Updatable) The model version of an object.
      * 
      */
-    private final @Nullable String modelVersion;
+    private @Nullable String modelVersion;
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private final @Nullable Integer objectStatus;
+    private @Nullable Integer objectStatus;
     /**
      * @return (Updatable) The version of the object that is used to track changes in the object instance.
      * 
      */
-    private final @Nullable Integer objectVersion;
+    private @Nullable Integer objectVersion;
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
-    private final @Nullable RegistryFolderDataAssetNativeTypeSystemParentRef parentRef;
+    private @Nullable RegistryFolderDataAssetNativeTypeSystemParentRef parentRef;
     /**
      * @return (Updatable) The type system to map from.
      * 
      */
-    private final @Nullable Map<String,Object> typeMappingFrom;
+    private @Nullable Map<String,Object> typeMappingFrom;
     /**
      * @return (Updatable) The type system to map to.
      * 
      */
-    private final @Nullable Map<String,Object> typeMappingTo;
+    private @Nullable Map<String,Object> typeMappingTo;
     /**
      * @return (Updatable) An array of types.
      * 
      */
-    private final @Nullable List<RegistryFolderDataAssetNativeTypeSystemType> types;
+    private @Nullable List<RegistryFolderDataAssetNativeTypeSystemType> types;
 
-    @CustomType.Constructor
-    private RegistryFolderDataAssetNativeTypeSystem(
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("identifier") @Nullable String identifier,
-        @CustomType.Parameter("key") @Nullable String key,
-        @CustomType.Parameter("modelType") @Nullable String modelType,
-        @CustomType.Parameter("modelVersion") @Nullable String modelVersion,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("objectStatus") @Nullable Integer objectStatus,
-        @CustomType.Parameter("objectVersion") @Nullable Integer objectVersion,
-        @CustomType.Parameter("parentRef") @Nullable RegistryFolderDataAssetNativeTypeSystemParentRef parentRef,
-        @CustomType.Parameter("typeMappingFrom") @Nullable Map<String,Object> typeMappingFrom,
-        @CustomType.Parameter("typeMappingTo") @Nullable Map<String,Object> typeMappingTo,
-        @CustomType.Parameter("types") @Nullable List<RegistryFolderDataAssetNativeTypeSystemType> types) {
-        this.description = description;
-        this.identifier = identifier;
-        this.key = key;
-        this.modelType = modelType;
-        this.modelVersion = modelVersion;
-        this.name = name;
-        this.objectStatus = objectStatus;
-        this.objectVersion = objectVersion;
-        this.parentRef = parentRef;
-        this.typeMappingFrom = typeMappingFrom;
-        this.typeMappingTo = typeMappingTo;
-        this.types = types;
-    }
-
+    private RegistryFolderDataAssetNativeTypeSystem() {}
     /**
-     * @return (Updatable) User-defined description for the folder.
+     * @return (Updatable) User-defined description of the folder.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public Optional<String> identifier() {
         return Optional.ofNullable(this.identifier);
     }
     /**
-     * @return (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     public Optional<String> key() {
@@ -142,7 +115,7 @@ public final class RegistryFolderDataAssetNativeTypeSystem {
         return Optional.ofNullable(this.modelVersion);
     }
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Optional<String> name() {
@@ -163,7 +136,7 @@ public final class RegistryFolderDataAssetNativeTypeSystem {
         return Optional.ofNullable(this.objectVersion);
     }
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
     public Optional<RegistryFolderDataAssetNativeTypeSystemParentRef> parentRef() {
@@ -198,7 +171,7 @@ public final class RegistryFolderDataAssetNativeTypeSystem {
     public static Builder builder(RegistryFolderDataAssetNativeTypeSystem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String description;
         private @Nullable String identifier;
@@ -212,11 +185,7 @@ public final class RegistryFolderDataAssetNativeTypeSystem {
         private @Nullable Map<String,Object> typeMappingFrom;
         private @Nullable Map<String,Object> typeMappingTo;
         private @Nullable List<RegistryFolderDataAssetNativeTypeSystemType> types;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RegistryFolderDataAssetNativeTypeSystem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -233,58 +202,84 @@ public final class RegistryFolderDataAssetNativeTypeSystem {
     	      this.types = defaults.types;
         }
 
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(@Nullable String identifier) {
             this.identifier = identifier;
             return this;
         }
+        @CustomType.Setter
         public Builder key(@Nullable String key) {
             this.key = key;
             return this;
         }
+        @CustomType.Setter
         public Builder modelType(@Nullable String modelType) {
             this.modelType = modelType;
             return this;
         }
+        @CustomType.Setter
         public Builder modelVersion(@Nullable String modelVersion) {
             this.modelVersion = modelVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder objectStatus(@Nullable Integer objectStatus) {
             this.objectStatus = objectStatus;
             return this;
         }
+        @CustomType.Setter
         public Builder objectVersion(@Nullable Integer objectVersion) {
             this.objectVersion = objectVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder parentRef(@Nullable RegistryFolderDataAssetNativeTypeSystemParentRef parentRef) {
             this.parentRef = parentRef;
             return this;
         }
+        @CustomType.Setter
         public Builder typeMappingFrom(@Nullable Map<String,Object> typeMappingFrom) {
             this.typeMappingFrom = typeMappingFrom;
             return this;
         }
+        @CustomType.Setter
         public Builder typeMappingTo(@Nullable Map<String,Object> typeMappingTo) {
             this.typeMappingTo = typeMappingTo;
             return this;
         }
+        @CustomType.Setter
         public Builder types(@Nullable List<RegistryFolderDataAssetNativeTypeSystemType> types) {
             this.types = types;
             return this;
         }
         public Builder types(RegistryFolderDataAssetNativeTypeSystemType... types) {
             return types(List.of(types));
-        }        public RegistryFolderDataAssetNativeTypeSystem build() {
-            return new RegistryFolderDataAssetNativeTypeSystem(description, identifier, key, modelType, modelVersion, name, objectStatus, objectVersion, parentRef, typeMappingFrom, typeMappingTo, types);
+        }
+        public RegistryFolderDataAssetNativeTypeSystem build() {
+            final var o = new RegistryFolderDataAssetNativeTypeSystem();
+            o.description = description;
+            o.identifier = identifier;
+            o.key = key;
+            o.modelType = modelType;
+            o.modelVersion = modelVersion;
+            o.name = name;
+            o.objectStatus = objectStatus;
+            o.objectVersion = objectVersion;
+            o.parentRef = parentRef;
+            o.typeMappingFrom = typeMappingFrom;
+            o.typeMappingTo = typeMappingTo;
+            o.types = types;
+            return o;
         }
     }
 }

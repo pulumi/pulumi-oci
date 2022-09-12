@@ -14,35 +14,24 @@ public final class GetFlexComponentsFlexComponentCollectionItem {
      * @return The maximum number of CPU cores that can ben enabled on the DB Server for this Flex Component.
      * 
      */
-    private final Integer availableCoreCount;
+    private Integer availableCoreCount;
     /**
      * @return The maximum  storage that can be enabled on the Storage Server for this Flex Component.
      * 
      */
-    private final Integer availableDbStorageInGbs;
+    private Integer availableDbStorageInGbs;
     /**
      * @return The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
      * 
      */
-    private final Integer minimumCoreCount;
+    private Integer minimumCoreCount;
     /**
      * @return A filter to return only resources that match the entire name given. The match is not case sensitive.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetFlexComponentsFlexComponentCollectionItem(
-        @CustomType.Parameter("availableCoreCount") Integer availableCoreCount,
-        @CustomType.Parameter("availableDbStorageInGbs") Integer availableDbStorageInGbs,
-        @CustomType.Parameter("minimumCoreCount") Integer minimumCoreCount,
-        @CustomType.Parameter("name") String name) {
-        this.availableCoreCount = availableCoreCount;
-        this.availableDbStorageInGbs = availableDbStorageInGbs;
-        this.minimumCoreCount = minimumCoreCount;
-        this.name = name;
-    }
-
+    private GetFlexComponentsFlexComponentCollectionItem() {}
     /**
      * @return The maximum number of CPU cores that can ben enabled on the DB Server for this Flex Component.
      * 
@@ -79,17 +68,13 @@ public final class GetFlexComponentsFlexComponentCollectionItem {
     public static Builder builder(GetFlexComponentsFlexComponentCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer availableCoreCount;
         private Integer availableDbStorageInGbs;
         private Integer minimumCoreCount;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFlexComponentsFlexComponentCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availableCoreCount = defaults.availableCoreCount;
@@ -98,23 +83,33 @@ public final class GetFlexComponentsFlexComponentCollectionItem {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder availableCoreCount(Integer availableCoreCount) {
             this.availableCoreCount = Objects.requireNonNull(availableCoreCount);
             return this;
         }
+        @CustomType.Setter
         public Builder availableDbStorageInGbs(Integer availableDbStorageInGbs) {
             this.availableDbStorageInGbs = Objects.requireNonNull(availableDbStorageInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder minimumCoreCount(Integer minimumCoreCount) {
             this.minimumCoreCount = Objects.requireNonNull(minimumCoreCount);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetFlexComponentsFlexComponentCollectionItem build() {
-            return new GetFlexComponentsFlexComponentCollectionItem(availableCoreCount, availableDbStorageInGbs, minimumCoreCount, name);
+        }
+        public GetFlexComponentsFlexComponentCollectionItem build() {
+            final var o = new GetFlexComponentsFlexComponentCollectionItem();
+            o.availableCoreCount = availableCoreCount;
+            o.availableDbStorageInGbs = availableDbStorageInGbs;
+            o.minimumCoreCount = minimumCoreCount;
+            o.name = name;
+            return o;
         }
     }
 }

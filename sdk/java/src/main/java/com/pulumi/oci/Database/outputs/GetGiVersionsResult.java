@@ -14,34 +14,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetGiVersionsResult {
-    private final String compartmentId;
-    private final @Nullable List<GetGiVersionsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetGiVersionsFilter> filters;
     /**
      * @return The list of gi_versions.
      * 
      */
-    private final List<GetGiVersionsGiVersion> giVersions;
+    private List<GetGiVersionsGiVersion> giVersions;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String shape;
+    private String id;
+    private @Nullable String shape;
 
-    @CustomType.Constructor
-    private GetGiVersionsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetGiVersionsFilter> filters,
-        @CustomType.Parameter("giVersions") List<GetGiVersionsGiVersion> giVersions,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("shape") @Nullable String shape) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.giVersions = giVersions;
-        this.id = id;
-        this.shape = shape;
-    }
-
+    private GetGiVersionsResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -73,18 +60,14 @@ public final class GetGiVersionsResult {
     public static Builder builder(GetGiVersionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetGiVersionsFilter> filters;
         private List<GetGiVersionsGiVersion> giVersions;
         private String id;
         private @Nullable String shape;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGiVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -94,10 +77,12 @@ public final class GetGiVersionsResult {
     	      this.shape = defaults.shape;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetGiVersionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -105,6 +90,7 @@ public final class GetGiVersionsResult {
         public Builder filters(GetGiVersionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder giVersions(List<GetGiVersionsGiVersion> giVersions) {
             this.giVersions = Objects.requireNonNull(giVersions);
             return this;
@@ -112,15 +98,24 @@ public final class GetGiVersionsResult {
         public Builder giVersions(GetGiVersionsGiVersion... giVersions) {
             return giVersions(List.of(giVersions));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder shape(@Nullable String shape) {
             this.shape = shape;
             return this;
-        }        public GetGiVersionsResult build() {
-            return new GetGiVersionsResult(compartmentId, filters, giVersions, id, shape);
+        }
+        public GetGiVersionsResult build() {
+            final var o = new GetGiVersionsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.giVersions = giVersions;
+            o.id = id;
+            o.shape = shape;
+            return o;
         }
     }
 }

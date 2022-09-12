@@ -11,45 +11,30 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudVmClusterIormConfigResult {
-    private final String cloudVmClusterId;
+    private String cloudVmClusterId;
     /**
      * @return An array of IORM settings for all the database in the cloud vm cluster.
      * 
      */
-    private final List<GetCloudVmClusterIormConfigDbPlan> dbPlans;
-    private final String id;
+    private List<GetCloudVmClusterIormConfigDbPlan> dbPlans;
+    private String id;
     /**
      * @return Additional information about the current `lifecycleState`.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The current value for the IORM objective. The default is `AUTO`.
      * 
      */
-    private final String objective;
+    private String objective;
     /**
      * @return The current state of IORM configuration for the cloud vm cluster.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private GetCloudVmClusterIormConfigResult(
-        @CustomType.Parameter("cloudVmClusterId") String cloudVmClusterId,
-        @CustomType.Parameter("dbPlans") List<GetCloudVmClusterIormConfigDbPlan> dbPlans,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("objective") String objective,
-        @CustomType.Parameter("state") String state) {
-        this.cloudVmClusterId = cloudVmClusterId;
-        this.dbPlans = dbPlans;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.objective = objective;
-        this.state = state;
-    }
-
+    private GetCloudVmClusterIormConfigResult() {}
     public String cloudVmClusterId() {
         return this.cloudVmClusterId;
     }
@@ -92,7 +77,7 @@ public final class GetCloudVmClusterIormConfigResult {
     public static Builder builder(GetCloudVmClusterIormConfigResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String cloudVmClusterId;
         private List<GetCloudVmClusterIormConfigDbPlan> dbPlans;
@@ -100,11 +85,7 @@ public final class GetCloudVmClusterIormConfigResult {
         private String lifecycleDetails;
         private String objective;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCloudVmClusterIormConfigResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cloudVmClusterId = defaults.cloudVmClusterId;
@@ -115,10 +96,12 @@ public final class GetCloudVmClusterIormConfigResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder cloudVmClusterId(String cloudVmClusterId) {
             this.cloudVmClusterId = Objects.requireNonNull(cloudVmClusterId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbPlans(List<GetCloudVmClusterIormConfigDbPlan> dbPlans) {
             this.dbPlans = Objects.requireNonNull(dbPlans);
             return this;
@@ -126,23 +109,35 @@ public final class GetCloudVmClusterIormConfigResult {
         public Builder dbPlans(GetCloudVmClusterIormConfigDbPlan... dbPlans) {
             return dbPlans(List.of(dbPlans));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder objective(String objective) {
             this.objective = Objects.requireNonNull(objective);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetCloudVmClusterIormConfigResult build() {
-            return new GetCloudVmClusterIormConfigResult(cloudVmClusterId, dbPlans, id, lifecycleDetails, objective, state);
+        }
+        public GetCloudVmClusterIormConfigResult build() {
+            final var o = new GetCloudVmClusterIormConfigResult();
+            o.cloudVmClusterId = cloudVmClusterId;
+            o.dbPlans = dbPlans;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.objective = objective;
+            o.state = state;
+            return o;
         }
     }
 }

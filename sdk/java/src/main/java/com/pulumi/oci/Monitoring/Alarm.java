@@ -63,6 +63,7 @@ import javax.annotation.Nullable;
  *             .body(var_.alarm_body())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isNotificationsPerMetricDimensionEnabled(var_.alarm_is_notifications_per_metric_dimension_enabled())
  *             .messageFormat(var_.alarm_message_format())
  *             .metricCompartmentIdInSubtree(var_.alarm_metric_compartment_id_in_subtree())
  *             .pendingDuration(var_.alarm_pending_duration())
@@ -188,6 +189,20 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isEnabled() {
         return this.isEnabled;
+    }
+    /**
+     * (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+     * 
+     */
+    @Export(name="isNotificationsPerMetricDimensionEnabled", type=Boolean.class, parameters={})
+    private Output<Boolean> isNotificationsPerMetricDimensionEnabled;
+
+    /**
+     * @return (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+     * 
+     */
+    public Output<Boolean> isNotificationsPerMetricDimensionEnabled() {
+        return this.isNotificationsPerMetricDimensionEnabled;
     }
     /**
      * (Updatable) The format to use for notification messages sent from this alarm. The formats are:

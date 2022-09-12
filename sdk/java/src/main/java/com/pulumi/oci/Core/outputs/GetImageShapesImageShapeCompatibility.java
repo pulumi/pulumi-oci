@@ -16,35 +16,24 @@ public final class GetImageShapesImageShapeCompatibility {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
      * 
      */
-    private final String imageId;
+    private String imageId;
     /**
      * @return For a flexible image and shape, the amount of memory supported for instances that use this image.
      * 
      */
-    private final List<GetImageShapesImageShapeCompatibilityMemoryConstraint> memoryConstraints;
+    private List<GetImageShapesImageShapeCompatibilityMemoryConstraint> memoryConstraints;
     /**
      * @return OCPU options for an image and shape.
      * 
      */
-    private final List<GetImageShapesImageShapeCompatibilityOcpuConstraint> ocpuConstraints;
+    private List<GetImageShapesImageShapeCompatibilityOcpuConstraint> ocpuConstraints;
     /**
      * @return The shape name.
      * 
      */
-    private final String shape;
+    private String shape;
 
-    @CustomType.Constructor
-    private GetImageShapesImageShapeCompatibility(
-        @CustomType.Parameter("imageId") String imageId,
-        @CustomType.Parameter("memoryConstraints") List<GetImageShapesImageShapeCompatibilityMemoryConstraint> memoryConstraints,
-        @CustomType.Parameter("ocpuConstraints") List<GetImageShapesImageShapeCompatibilityOcpuConstraint> ocpuConstraints,
-        @CustomType.Parameter("shape") String shape) {
-        this.imageId = imageId;
-        this.memoryConstraints = memoryConstraints;
-        this.ocpuConstraints = ocpuConstraints;
-        this.shape = shape;
-    }
-
+    private GetImageShapesImageShapeCompatibility() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
      * 
@@ -81,17 +70,13 @@ public final class GetImageShapesImageShapeCompatibility {
     public static Builder builder(GetImageShapesImageShapeCompatibility defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String imageId;
         private List<GetImageShapesImageShapeCompatibilityMemoryConstraint> memoryConstraints;
         private List<GetImageShapesImageShapeCompatibilityOcpuConstraint> ocpuConstraints;
         private String shape;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetImageShapesImageShapeCompatibility defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.imageId = defaults.imageId;
@@ -100,10 +85,12 @@ public final class GetImageShapesImageShapeCompatibility {
     	      this.shape = defaults.shape;
         }
 
+        @CustomType.Setter
         public Builder imageId(String imageId) {
             this.imageId = Objects.requireNonNull(imageId);
             return this;
         }
+        @CustomType.Setter
         public Builder memoryConstraints(List<GetImageShapesImageShapeCompatibilityMemoryConstraint> memoryConstraints) {
             this.memoryConstraints = Objects.requireNonNull(memoryConstraints);
             return this;
@@ -111,6 +98,7 @@ public final class GetImageShapesImageShapeCompatibility {
         public Builder memoryConstraints(GetImageShapesImageShapeCompatibilityMemoryConstraint... memoryConstraints) {
             return memoryConstraints(List.of(memoryConstraints));
         }
+        @CustomType.Setter
         public Builder ocpuConstraints(List<GetImageShapesImageShapeCompatibilityOcpuConstraint> ocpuConstraints) {
             this.ocpuConstraints = Objects.requireNonNull(ocpuConstraints);
             return this;
@@ -118,11 +106,18 @@ public final class GetImageShapesImageShapeCompatibility {
         public Builder ocpuConstraints(GetImageShapesImageShapeCompatibilityOcpuConstraint... ocpuConstraints) {
             return ocpuConstraints(List.of(ocpuConstraints));
         }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
-        }        public GetImageShapesImageShapeCompatibility build() {
-            return new GetImageShapesImageShapeCompatibility(imageId, memoryConstraints, ocpuConstraints, shape);
+        }
+        public GetImageShapesImageShapeCompatibility build() {
+            final var o = new GetImageShapesImageShapeCompatibility();
+            o.imageId = imageId;
+            o.memoryConstraints = memoryConstraints;
+            o.ocpuConstraints = ocpuConstraints;
+            o.shape = shape;
+            return o;
         }
     }
 }

@@ -13,7 +13,7 @@ import (
 
 // This resource provides the Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
 //
-// Adds the list of redeemable user email IDs for a subscription ID.
+// Adds the list of redeemable user summary for a subscription ID.
 //
 // ## Example Usage
 //
@@ -34,7 +34,9 @@ import (
 //				TenancyId:      pulumi.Any(oci_identity_tenancy.Test_tenancy.Id),
 //				Items: usageproxy.SubscriptionRedeemableUserItemArray{
 //					&usageproxy.SubscriptionRedeemableUserItemArgs{
-//						EmailId: pulumi.Any(oci_usage_proxy_email.Test_email.Id),
+//						EmailId:   pulumi.Any(oci_usage_proxy_email.Test_email.Id),
+//						FirstName: pulumi.Any(_var.Subscription_redeemable_user_items_first_name),
+//						LastName:  pulumi.Any(_var.Subscription_redeemable_user_items_last_name),
 //					},
 //				},
 //				UserId: pulumi.Any(oci_identity_user.Test_user.Id),
@@ -60,7 +62,7 @@ import (
 type SubscriptionRedeemableUser struct {
 	pulumi.CustomResourceState
 
-	// The list of email IDs to be added to the list of users that can redeem rewards.
+	// The list of new user to be added to the list of user that can redeem rewards.
 	Items SubscriptionRedeemableUserItemArrayOutput `pulumi:"items"`
 	// The subscription ID for which rewards information is requested for.
 	SubscriptionId pulumi.StringOutput `pulumi:"subscriptionId"`
@@ -108,7 +110,7 @@ func GetSubscriptionRedeemableUser(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SubscriptionRedeemableUser resources.
 type subscriptionRedeemableUserState struct {
-	// The list of email IDs to be added to the list of users that can redeem rewards.
+	// The list of new user to be added to the list of user that can redeem rewards.
 	Items []SubscriptionRedeemableUserItem `pulumi:"items"`
 	// The subscription ID for which rewards information is requested for.
 	SubscriptionId *string `pulumi:"subscriptionId"`
@@ -119,7 +121,7 @@ type subscriptionRedeemableUserState struct {
 }
 
 type SubscriptionRedeemableUserState struct {
-	// The list of email IDs to be added to the list of users that can redeem rewards.
+	// The list of new user to be added to the list of user that can redeem rewards.
 	Items SubscriptionRedeemableUserItemArrayInput
 	// The subscription ID for which rewards information is requested for.
 	SubscriptionId pulumi.StringPtrInput
@@ -134,7 +136,7 @@ func (SubscriptionRedeemableUserState) ElementType() reflect.Type {
 }
 
 type subscriptionRedeemableUserArgs struct {
-	// The list of email IDs to be added to the list of users that can redeem rewards.
+	// The list of new user to be added to the list of user that can redeem rewards.
 	Items []SubscriptionRedeemableUserItem `pulumi:"items"`
 	// The subscription ID for which rewards information is requested for.
 	SubscriptionId string `pulumi:"subscriptionId"`
@@ -146,7 +148,7 @@ type subscriptionRedeemableUserArgs struct {
 
 // The set of arguments for constructing a SubscriptionRedeemableUser resource.
 type SubscriptionRedeemableUserArgs struct {
-	// The list of email IDs to be added to the list of users that can redeem rewards.
+	// The list of new user to be added to the list of user that can redeem rewards.
 	Items SubscriptionRedeemableUserItemArrayInput
 	// The subscription ID for which rewards information is requested for.
 	SubscriptionId pulumi.StringInput
@@ -243,7 +245,7 @@ func (o SubscriptionRedeemableUserOutput) ToSubscriptionRedeemableUserOutputWith
 	return o
 }
 
-// The list of email IDs to be added to the list of users that can redeem rewards.
+// The list of new user to be added to the list of user that can redeem rewards.
 func (o SubscriptionRedeemableUserOutput) Items() SubscriptionRedeemableUserItemArrayOutput {
 	return o.ApplyT(func(v *SubscriptionRedeemableUser) SubscriptionRedeemableUserItemArrayOutput { return v.Items }).(SubscriptionRedeemableUserItemArrayOutput)
 }

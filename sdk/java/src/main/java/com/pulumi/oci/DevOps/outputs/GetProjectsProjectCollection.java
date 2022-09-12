@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetProjectsProjectCollection {
-    private final List<GetProjectsProjectCollectionItem> items;
+    private List<GetProjectsProjectCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetProjectsProjectCollection(@CustomType.Parameter("items") List<GetProjectsProjectCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetProjectsProjectCollection() {}
     public List<GetProjectsProjectCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetProjectsProjectCollection {
     public static Builder builder(GetProjectsProjectCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetProjectsProjectCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProjectsProjectCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetProjectsProjectCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetProjectsProjectCollectionItem... items) {
             return items(List.of(items));
-        }        public GetProjectsProjectCollection build() {
-            return new GetProjectsProjectCollection(items);
+        }
+        public GetProjectsProjectCollection build() {
+            final var o = new GetProjectsProjectCollection();
+            o.items = items;
+            return o;
         }
     }
 }

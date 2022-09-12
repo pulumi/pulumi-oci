@@ -14,13 +14,9 @@ public final class ProfileTargetCompartments {
      * @return (Updatable) The list of tags specified in the current profile override.
      * 
      */
-    private final List<String> items;
+    private List<String> items;
 
-    @CustomType.Constructor
-    private ProfileTargetCompartments(@CustomType.Parameter("items") List<String> items) {
-        this.items = items;
-    }
-
+    private ProfileTargetCompartments() {}
     /**
      * @return (Updatable) The list of tags specified in the current profile override.
      * 
@@ -36,27 +32,27 @@ public final class ProfileTargetCompartments {
     public static Builder builder(ProfileTargetCompartments defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ProfileTargetCompartments defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<String> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(String... items) {
             return items(List.of(items));
-        }        public ProfileTargetCompartments build() {
-            return new ProfileTargetCompartments(items);
+        }
+        public ProfileTargetCompartments build() {
+            final var o = new ProfileTargetCompartments();
+            o.items = items;
+            return o;
         }
     }
 }

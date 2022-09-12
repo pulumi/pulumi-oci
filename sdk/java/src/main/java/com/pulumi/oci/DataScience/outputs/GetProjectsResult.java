@@ -18,52 +18,35 @@ public final class GetProjectsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project&#39;s compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created this project.
      * 
      */
-    private final @Nullable String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetProjectsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetProjectsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of projects.
      * 
      */
-    private final List<GetProjectsProject> projects;
+    private List<GetProjectsProject> projects;
     /**
      * @return The state of the project.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetProjectsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("createdBy") @Nullable String createdBy,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetProjectsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("projects") List<GetProjectsProject> projects,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.createdBy = createdBy;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.projects = projects;
-        this.state = state;
-    }
-
+    private GetProjectsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project&#39;s compartment.
      * 
@@ -117,7 +100,7 @@ public final class GetProjectsResult {
     public static Builder builder(GetProjectsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String createdBy;
@@ -126,11 +109,7 @@ public final class GetProjectsResult {
         private @Nullable String id;
         private List<GetProjectsProject> projects;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProjectsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,18 +121,22 @@ public final class GetProjectsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder createdBy(@Nullable String createdBy) {
             this.createdBy = createdBy;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetProjectsFilter> filters) {
             this.filters = filters;
             return this;
@@ -161,10 +144,12 @@ public final class GetProjectsResult {
         public Builder filters(GetProjectsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder projects(List<GetProjectsProject> projects) {
             this.projects = Objects.requireNonNull(projects);
             return this;
@@ -172,11 +157,21 @@ public final class GetProjectsResult {
         public Builder projects(GetProjectsProject... projects) {
             return projects(List.of(projects));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetProjectsResult build() {
-            return new GetProjectsResult(compartmentId, createdBy, displayName, filters, id, projects, state);
+        }
+        public GetProjectsResult build() {
+            final var o = new GetProjectsResult();
+            o.compartmentId = compartmentId;
+            o.createdBy = createdBy;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.projects = projects;
+            o.state = state;
+            return o;
         }
     }
 }

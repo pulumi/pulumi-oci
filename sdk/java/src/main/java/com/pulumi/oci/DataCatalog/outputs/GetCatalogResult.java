@@ -17,101 +17,70 @@ public final class GetCatalogResult {
      * @return The list of private reverse connection endpoints attached to the catalog
      * 
      */
-    private final List<String> attachedCatalogPrivateEndpoints;
-    private final String catalogId;
+    private List<String> attachedCatalogPrivateEndpoints;
+    private String catalogId;
     /**
      * @return Compartment identifier.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Data catalog identifier, which can be renamed.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in &#39;Failed&#39; state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
      * 
      */
-    private final Integer numberOfObjects;
+    private Integer numberOfObjects;
     /**
      * @return The REST front endpoint URL to the data catalog instance.
      * 
      */
-    private final String serviceApiUrl;
+    private String serviceApiUrl;
     /**
      * @return The console front endpoint URL to the data catalog instance.
      * 
      */
-    private final String serviceConsoleUrl;
+    private String serviceConsoleUrl;
     /**
      * @return The current state of the data catalog resource.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetCatalogResult(
-        @CustomType.Parameter("attachedCatalogPrivateEndpoints") List<String> attachedCatalogPrivateEndpoints,
-        @CustomType.Parameter("catalogId") String catalogId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("numberOfObjects") Integer numberOfObjects,
-        @CustomType.Parameter("serviceApiUrl") String serviceApiUrl,
-        @CustomType.Parameter("serviceConsoleUrl") String serviceConsoleUrl,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.attachedCatalogPrivateEndpoints = attachedCatalogPrivateEndpoints;
-        this.catalogId = catalogId;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.numberOfObjects = numberOfObjects;
-        this.serviceApiUrl = serviceApiUrl;
-        this.serviceConsoleUrl = serviceConsoleUrl;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetCatalogResult() {}
     /**
      * @return The list of private reverse connection endpoints attached to the catalog
      * 
@@ -214,7 +183,7 @@ public final class GetCatalogResult {
     public static Builder builder(GetCatalogResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> attachedCatalogPrivateEndpoints;
         private String catalogId;
@@ -230,11 +199,7 @@ public final class GetCatalogResult {
         private String state;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCatalogResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.attachedCatalogPrivateEndpoints = defaults.attachedCatalogPrivateEndpoints;
@@ -253,6 +218,7 @@ public final class GetCatalogResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder attachedCatalogPrivateEndpoints(List<String> attachedCatalogPrivateEndpoints) {
             this.attachedCatalogPrivateEndpoints = Objects.requireNonNull(attachedCatalogPrivateEndpoints);
             return this;
@@ -260,59 +226,88 @@ public final class GetCatalogResult {
         public Builder attachedCatalogPrivateEndpoints(String... attachedCatalogPrivateEndpoints) {
             return attachedCatalogPrivateEndpoints(List.of(attachedCatalogPrivateEndpoints));
         }
+        @CustomType.Setter
         public Builder catalogId(String catalogId) {
             this.catalogId = Objects.requireNonNull(catalogId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder numberOfObjects(Integer numberOfObjects) {
             this.numberOfObjects = Objects.requireNonNull(numberOfObjects);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceApiUrl(String serviceApiUrl) {
             this.serviceApiUrl = Objects.requireNonNull(serviceApiUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceConsoleUrl(String serviceConsoleUrl) {
             this.serviceConsoleUrl = Objects.requireNonNull(serviceConsoleUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetCatalogResult build() {
-            return new GetCatalogResult(attachedCatalogPrivateEndpoints, catalogId, compartmentId, definedTags, displayName, freeformTags, id, lifecycleDetails, numberOfObjects, serviceApiUrl, serviceConsoleUrl, state, timeCreated, timeUpdated);
+        }
+        public GetCatalogResult build() {
+            final var o = new GetCatalogResult();
+            o.attachedCatalogPrivateEndpoints = attachedCatalogPrivateEndpoints;
+            o.catalogId = catalogId;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.numberOfObjects = numberOfObjects;
+            o.serviceApiUrl = serviceApiUrl;
+            o.serviceConsoleUrl = serviceConsoleUrl;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

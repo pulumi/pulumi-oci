@@ -14,38 +14,25 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVirtualCircuitPublicPrefixesResult {
-    private final @Nullable List<GetVirtualCircuitPublicPrefixesFilter> filters;
+    private @Nullable List<GetVirtualCircuitPublicPrefixesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Oracle must verify that the customer owns the public IP prefix before traffic for that prefix can flow across the virtual circuit. Verification can take a few business days. `IN_PROGRESS` means Oracle is verifying the prefix. `COMPLETED` means verification succeeded. `FAILED` means verification failed and traffic for this prefix will not flow across the connection.
      * 
      */
-    private final @Nullable String verificationState;
-    private final String virtualCircuitId;
+    private @Nullable String verificationState;
+    private String virtualCircuitId;
     /**
      * @return The list of virtual_circuit_public_prefixes.
      * 
      */
-    private final List<GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix> virtualCircuitPublicPrefixes;
+    private List<GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix> virtualCircuitPublicPrefixes;
 
-    @CustomType.Constructor
-    private GetVirtualCircuitPublicPrefixesResult(
-        @CustomType.Parameter("filters") @Nullable List<GetVirtualCircuitPublicPrefixesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("verificationState") @Nullable String verificationState,
-        @CustomType.Parameter("virtualCircuitId") String virtualCircuitId,
-        @CustomType.Parameter("virtualCircuitPublicPrefixes") List<GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix> virtualCircuitPublicPrefixes) {
-        this.filters = filters;
-        this.id = id;
-        this.verificationState = verificationState;
-        this.virtualCircuitId = virtualCircuitId;
-        this.virtualCircuitPublicPrefixes = virtualCircuitPublicPrefixes;
-    }
-
+    private GetVirtualCircuitPublicPrefixesResult() {}
     public List<GetVirtualCircuitPublicPrefixesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -81,18 +68,14 @@ public final class GetVirtualCircuitPublicPrefixesResult {
     public static Builder builder(GetVirtualCircuitPublicPrefixesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetVirtualCircuitPublicPrefixesFilter> filters;
         private String id;
         private @Nullable String verificationState;
         private String virtualCircuitId;
         private List<GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix> virtualCircuitPublicPrefixes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualCircuitPublicPrefixesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -102,6 +85,7 @@ public final class GetVirtualCircuitPublicPrefixesResult {
     	      this.virtualCircuitPublicPrefixes = defaults.virtualCircuitPublicPrefixes;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVirtualCircuitPublicPrefixesFilter> filters) {
             this.filters = filters;
             return this;
@@ -109,26 +93,37 @@ public final class GetVirtualCircuitPublicPrefixesResult {
         public Builder filters(GetVirtualCircuitPublicPrefixesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder verificationState(@Nullable String verificationState) {
             this.verificationState = verificationState;
             return this;
         }
+        @CustomType.Setter
         public Builder virtualCircuitId(String virtualCircuitId) {
             this.virtualCircuitId = Objects.requireNonNull(virtualCircuitId);
             return this;
         }
+        @CustomType.Setter
         public Builder virtualCircuitPublicPrefixes(List<GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix> virtualCircuitPublicPrefixes) {
             this.virtualCircuitPublicPrefixes = Objects.requireNonNull(virtualCircuitPublicPrefixes);
             return this;
         }
         public Builder virtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix... virtualCircuitPublicPrefixes) {
             return virtualCircuitPublicPrefixes(List.of(virtualCircuitPublicPrefixes));
-        }        public GetVirtualCircuitPublicPrefixesResult build() {
-            return new GetVirtualCircuitPublicPrefixesResult(filters, id, verificationState, virtualCircuitId, virtualCircuitPublicPrefixes);
+        }
+        public GetVirtualCircuitPublicPrefixesResult build() {
+            final var o = new GetVirtualCircuitPublicPrefixesResult();
+            o.filters = filters;
+            o.id = id;
+            o.verificationState = verificationState;
+            o.virtualCircuitId = virtualCircuitId;
+            o.virtualCircuitPublicPrefixes = virtualCircuitPublicPrefixes;
+            return o;
         }
     }
 }

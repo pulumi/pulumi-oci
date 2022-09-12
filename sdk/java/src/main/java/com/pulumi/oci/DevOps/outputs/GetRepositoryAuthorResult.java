@@ -17,27 +17,16 @@ public final class GetRepositoryAuthorResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return List of author objects.
      * 
      */
-    private final List<GetRepositoryAuthorItem> items;
-    private final @Nullable String refName;
-    private final String repositoryId;
+    private List<GetRepositoryAuthorItem> items;
+    private @Nullable String refName;
+    private String repositoryId;
 
-    @CustomType.Constructor
-    private GetRepositoryAuthorResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetRepositoryAuthorItem> items,
-        @CustomType.Parameter("refName") @Nullable String refName,
-        @CustomType.Parameter("repositoryId") String repositoryId) {
-        this.id = id;
-        this.items = items;
-        this.refName = refName;
-        this.repositoryId = repositoryId;
-    }
-
+    private GetRepositoryAuthorResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -66,17 +55,13 @@ public final class GetRepositoryAuthorResult {
     public static Builder builder(GetRepositoryAuthorResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private List<GetRepositoryAuthorItem> items;
         private @Nullable String refName;
         private String repositoryId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryAuthorResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -85,10 +70,12 @@ public final class GetRepositoryAuthorResult {
     	      this.repositoryId = defaults.repositoryId;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetRepositoryAuthorItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -96,15 +83,23 @@ public final class GetRepositoryAuthorResult {
         public Builder items(GetRepositoryAuthorItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder refName(@Nullable String refName) {
             this.refName = refName;
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
-        }        public GetRepositoryAuthorResult build() {
-            return new GetRepositoryAuthorResult(id, items, refName, repositoryId);
+        }
+        public GetRepositoryAuthorResult build() {
+            final var o = new GetRepositoryAuthorResult();
+            o.id = id;
+            o.items = items;
+            o.refName = refName;
+            o.repositoryId = repositoryId;
+            return o;
         }
     }
 }

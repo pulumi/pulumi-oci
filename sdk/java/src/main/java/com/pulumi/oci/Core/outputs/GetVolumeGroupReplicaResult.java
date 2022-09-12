@@ -17,94 +17,65 @@ public final class GetVolumeGroupReplicaResult {
      * @return The availability domain of the volume group replica.
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The OCID of the compartment that contains the volume group replica.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Volume replicas within this volume group replica.
      * 
      */
-    private final List<GetVolumeGroupReplicaMemberReplica> memberReplicas;
+    private List<GetVolumeGroupReplicaMemberReplica> memberReplicas;
     /**
      * @return The aggregate size of the volume group replica in GBs.
      * 
      */
-    private final String sizeInGbs;
+    private String sizeInGbs;
     /**
      * @return The current state of a volume group.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the volume group replica was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the volume group replica was last synced from the source volume group. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeLastSynced;
+    private String timeLastSynced;
     /**
      * @return The OCID of the source volume group.
      * 
      */
-    private final String volumeGroupId;
-    private final String volumeGroupReplicaId;
+    private String volumeGroupId;
+    private String volumeGroupReplicaId;
 
-    @CustomType.Constructor
-    private GetVolumeGroupReplicaResult(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("memberReplicas") List<GetVolumeGroupReplicaMemberReplica> memberReplicas,
-        @CustomType.Parameter("sizeInGbs") String sizeInGbs,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeLastSynced") String timeLastSynced,
-        @CustomType.Parameter("volumeGroupId") String volumeGroupId,
-        @CustomType.Parameter("volumeGroupReplicaId") String volumeGroupReplicaId) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.memberReplicas = memberReplicas;
-        this.sizeInGbs = sizeInGbs;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeLastSynced = timeLastSynced;
-        this.volumeGroupId = volumeGroupId;
-        this.volumeGroupReplicaId = volumeGroupReplicaId;
-    }
-
+    private GetVolumeGroupReplicaResult() {}
     /**
      * @return The availability domain of the volume group replica.
      * 
@@ -200,7 +171,7 @@ public final class GetVolumeGroupReplicaResult {
     public static Builder builder(GetVolumeGroupReplicaResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String compartmentId;
@@ -215,11 +186,7 @@ public final class GetVolumeGroupReplicaResult {
         private String timeLastSynced;
         private String volumeGroupId;
         private String volumeGroupReplicaId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumeGroupReplicaResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -237,30 +204,37 @@ public final class GetVolumeGroupReplicaResult {
     	      this.volumeGroupReplicaId = defaults.volumeGroupReplicaId;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder memberReplicas(List<GetVolumeGroupReplicaMemberReplica> memberReplicas) {
             this.memberReplicas = Objects.requireNonNull(memberReplicas);
             return this;
@@ -268,31 +242,52 @@ public final class GetVolumeGroupReplicaResult {
         public Builder memberReplicas(GetVolumeGroupReplicaMemberReplica... memberReplicas) {
             return memberReplicas(List.of(memberReplicas));
         }
+        @CustomType.Setter
         public Builder sizeInGbs(String sizeInGbs) {
             this.sizeInGbs = Objects.requireNonNull(sizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastSynced(String timeLastSynced) {
             this.timeLastSynced = Objects.requireNonNull(timeLastSynced);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeGroupId(String volumeGroupId) {
             this.volumeGroupId = Objects.requireNonNull(volumeGroupId);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeGroupReplicaId(String volumeGroupReplicaId) {
             this.volumeGroupReplicaId = Objects.requireNonNull(volumeGroupReplicaId);
             return this;
-        }        public GetVolumeGroupReplicaResult build() {
-            return new GetVolumeGroupReplicaResult(availabilityDomain, compartmentId, definedTags, displayName, freeformTags, id, memberReplicas, sizeInGbs, state, timeCreated, timeLastSynced, volumeGroupId, volumeGroupReplicaId);
+        }
+        public GetVolumeGroupReplicaResult build() {
+            final var o = new GetVolumeGroupReplicaResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.memberReplicas = memberReplicas;
+            o.sizeInGbs = sizeInGbs;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeLastSynced = timeLastSynced;
+            o.volumeGroupId = volumeGroupId;
+            o.volumeGroupReplicaId = volumeGroupReplicaId;
+            return o;
         }
     }
 }

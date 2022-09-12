@@ -18,48 +18,31 @@ public final class GetResolversResult {
      * @return The OCID of the owning compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The display name of the resolver.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetResolversFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetResolversFilter> filters;
     /**
      * @return The OCID of the resolver.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of resolvers.
      * 
      */
-    private final List<GetResolversResolver> resolvers;
-    private final String scope;
+    private List<GetResolversResolver> resolvers;
+    private String scope;
     /**
      * @return The current state of the resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetResolversResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetResolversFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("resolvers") List<GetResolversResolver> resolvers,
-        @CustomType.Parameter("scope") String scope,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.resolvers = resolvers;
-        this.scope = scope;
-        this.state = state;
-    }
-
+    private GetResolversResult() {}
     /**
      * @return The OCID of the owning compartment.
      * 
@@ -109,7 +92,7 @@ public final class GetResolversResult {
     public static Builder builder(GetResolversResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -118,11 +101,7 @@ public final class GetResolversResult {
         private List<GetResolversResolver> resolvers;
         private String scope;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetResolversResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,14 +113,17 @@ public final class GetResolversResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetResolversFilter> filters) {
             this.filters = filters;
             return this;
@@ -149,10 +131,12 @@ public final class GetResolversResult {
         public Builder filters(GetResolversFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder resolvers(List<GetResolversResolver> resolvers) {
             this.resolvers = Objects.requireNonNull(resolvers);
             return this;
@@ -160,15 +144,26 @@ public final class GetResolversResult {
         public Builder resolvers(GetResolversResolver... resolvers) {
             return resolvers(List.of(resolvers));
         }
+        @CustomType.Setter
         public Builder scope(String scope) {
             this.scope = Objects.requireNonNull(scope);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetResolversResult build() {
-            return new GetResolversResult(compartmentId, displayName, filters, id, resolvers, scope, state);
+        }
+        public GetResolversResult build() {
+            final var o = new GetResolversResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.resolvers = resolvers;
+            o.scope = scope;
+            o.state = state;
+            return o;
         }
     }
 }

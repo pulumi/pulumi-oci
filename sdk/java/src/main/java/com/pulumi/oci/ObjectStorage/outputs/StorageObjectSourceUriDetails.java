@@ -15,63 +15,44 @@ public final class StorageObjectSourceUriDetails {
      * @return The name of the bucket for the source object.
      * 
      */
-    private final String bucket;
+    private String bucket;
     /**
      * @return The entity tag to match the target object.
      * 
      */
-    private final @Nullable String destinationObjectIfMatchEtag;
+    private @Nullable String destinationObjectIfMatchEtag;
     /**
      * @return The entity tag to not match the target object.
      * 
      */
-    private final @Nullable String destinationObjectIfNoneMatchEtag;
+    private @Nullable String destinationObjectIfNoneMatchEtag;
     /**
      * @return The top-level namespace of the source object.
      * 
      */
-    private final String namespace;
+    private String namespace;
     /**
      * @return The name of the source object.
      * 
      */
-    private final String object;
+    private String object;
     /**
      * @return The region of the source object.
      * 
      */
-    private final String region;
+    private String region;
     /**
      * @return The entity tag to match the source object.
      * 
      */
-    private final @Nullable String sourceObjectIfMatchEtag;
+    private @Nullable String sourceObjectIfMatchEtag;
     /**
      * @return The version id of the object to be restored.
      * 
      */
-    private final @Nullable String sourceVersionId;
+    private @Nullable String sourceVersionId;
 
-    @CustomType.Constructor
-    private StorageObjectSourceUriDetails(
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("destinationObjectIfMatchEtag") @Nullable String destinationObjectIfMatchEtag,
-        @CustomType.Parameter("destinationObjectIfNoneMatchEtag") @Nullable String destinationObjectIfNoneMatchEtag,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("object") String object,
-        @CustomType.Parameter("region") String region,
-        @CustomType.Parameter("sourceObjectIfMatchEtag") @Nullable String sourceObjectIfMatchEtag,
-        @CustomType.Parameter("sourceVersionId") @Nullable String sourceVersionId) {
-        this.bucket = bucket;
-        this.destinationObjectIfMatchEtag = destinationObjectIfMatchEtag;
-        this.destinationObjectIfNoneMatchEtag = destinationObjectIfNoneMatchEtag;
-        this.namespace = namespace;
-        this.object = object;
-        this.region = region;
-        this.sourceObjectIfMatchEtag = sourceObjectIfMatchEtag;
-        this.sourceVersionId = sourceVersionId;
-    }
-
+    private StorageObjectSourceUriDetails() {}
     /**
      * @return The name of the bucket for the source object.
      * 
@@ -136,7 +117,7 @@ public final class StorageObjectSourceUriDetails {
     public static Builder builder(StorageObjectSourceUriDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucket;
         private @Nullable String destinationObjectIfMatchEtag;
@@ -146,11 +127,7 @@ public final class StorageObjectSourceUriDetails {
         private String region;
         private @Nullable String sourceObjectIfMatchEtag;
         private @Nullable String sourceVersionId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(StorageObjectSourceUriDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -163,39 +140,57 @@ public final class StorageObjectSourceUriDetails {
     	      this.sourceVersionId = defaults.sourceVersionId;
         }
 
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder destinationObjectIfMatchEtag(@Nullable String destinationObjectIfMatchEtag) {
             this.destinationObjectIfMatchEtag = destinationObjectIfMatchEtag;
             return this;
         }
+        @CustomType.Setter
         public Builder destinationObjectIfNoneMatchEtag(@Nullable String destinationObjectIfNoneMatchEtag) {
             this.destinationObjectIfNoneMatchEtag = destinationObjectIfNoneMatchEtag;
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder object(String object) {
             this.object = Objects.requireNonNull(object);
             return this;
         }
+        @CustomType.Setter
         public Builder region(String region) {
             this.region = Objects.requireNonNull(region);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceObjectIfMatchEtag(@Nullable String sourceObjectIfMatchEtag) {
             this.sourceObjectIfMatchEtag = sourceObjectIfMatchEtag;
             return this;
         }
+        @CustomType.Setter
         public Builder sourceVersionId(@Nullable String sourceVersionId) {
             this.sourceVersionId = sourceVersionId;
             return this;
-        }        public StorageObjectSourceUriDetails build() {
-            return new StorageObjectSourceUriDetails(bucket, destinationObjectIfMatchEtag, destinationObjectIfNoneMatchEtag, namespace, object, region, sourceObjectIfMatchEtag, sourceVersionId);
+        }
+        public StorageObjectSourceUriDetails build() {
+            final var o = new StorageObjectSourceUriDetails();
+            o.bucket = bucket;
+            o.destinationObjectIfMatchEtag = destinationObjectIfMatchEtag;
+            o.destinationObjectIfNoneMatchEtag = destinationObjectIfNoneMatchEtag;
+            o.namespace = namespace;
+            o.object = object;
+            o.region = region;
+            o.sourceObjectIfMatchEtag = sourceObjectIfMatchEtag;
+            o.sourceVersionId = sourceVersionId;
+            return o;
         }
     }
 }

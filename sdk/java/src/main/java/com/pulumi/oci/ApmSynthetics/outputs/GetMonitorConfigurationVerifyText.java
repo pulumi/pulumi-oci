@@ -13,13 +13,9 @@ public final class GetMonitorConfigurationVerifyText {
      * @return Verification text in the response.
      * 
      */
-    private final String text;
+    private String text;
 
-    @CustomType.Constructor
-    private GetMonitorConfigurationVerifyText(@CustomType.Parameter("text") String text) {
-        this.text = text;
-    }
-
+    private GetMonitorConfigurationVerifyText() {}
     /**
      * @return Verification text in the response.
      * 
@@ -35,24 +31,24 @@ public final class GetMonitorConfigurationVerifyText {
     public static Builder builder(GetMonitorConfigurationVerifyText defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String text;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitorConfigurationVerifyText defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.text = defaults.text;
         }
 
+        @CustomType.Setter
         public Builder text(String text) {
             this.text = Objects.requireNonNull(text);
             return this;
-        }        public GetMonitorConfigurationVerifyText build() {
-            return new GetMonitorConfigurationVerifyText(text);
+        }
+        public GetMonitorConfigurationVerifyText build() {
+            final var o = new GetMonitorConfigurationVerifyText();
+            o.text = text;
+            return o;
         }
     }
 }

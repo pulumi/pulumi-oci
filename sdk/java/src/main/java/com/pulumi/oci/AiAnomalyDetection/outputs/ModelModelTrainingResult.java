@@ -20,49 +20,34 @@ public final class ModelModelTrainingResult {
      * @return Accuracy metric for a signal.
      * 
      */
-    private final @Nullable Double fap;
+    private @Nullable Double fap;
     /**
      * @return A boolean value to indicate if train goal/targetFap is achieved for trained model
      * 
      */
-    private final @Nullable Boolean isTrainingGoalAchieved;
+    private @Nullable Boolean isTrainingGoalAchieved;
     /**
      * @return The model accuracy metric on timestamp level.
      * 
      */
-    private final @Nullable Double multivariateFap;
+    private @Nullable Double multivariateFap;
     /**
      * @return Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
      * 
      */
-    private final @Nullable List<ModelModelTrainingResultRowReductionDetail> rowReductionDetails;
+    private @Nullable List<ModelModelTrainingResultRowReductionDetail> rowReductionDetails;
     /**
      * @return The list of signal details.
      * 
      */
-    private final @Nullable List<ModelModelTrainingResultSignalDetail> signalDetails;
+    private @Nullable List<ModelModelTrainingResultSignalDetail> signalDetails;
     /**
      * @return A warning message to explain the reason when targetFap cannot be achieved for trained model
      * 
      */
-    private final @Nullable String warning;
+    private @Nullable String warning;
 
-    @CustomType.Constructor
-    private ModelModelTrainingResult(
-        @CustomType.Parameter("fap") @Nullable Double fap,
-        @CustomType.Parameter("isTrainingGoalAchieved") @Nullable Boolean isTrainingGoalAchieved,
-        @CustomType.Parameter("multivariateFap") @Nullable Double multivariateFap,
-        @CustomType.Parameter("rowReductionDetails") @Nullable List<ModelModelTrainingResultRowReductionDetail> rowReductionDetails,
-        @CustomType.Parameter("signalDetails") @Nullable List<ModelModelTrainingResultSignalDetail> signalDetails,
-        @CustomType.Parameter("warning") @Nullable String warning) {
-        this.fap = fap;
-        this.isTrainingGoalAchieved = isTrainingGoalAchieved;
-        this.multivariateFap = multivariateFap;
-        this.rowReductionDetails = rowReductionDetails;
-        this.signalDetails = signalDetails;
-        this.warning = warning;
-    }
-
+    private ModelModelTrainingResult() {}
     /**
      * @return Accuracy metric for a signal.
      * 
@@ -113,7 +98,7 @@ public final class ModelModelTrainingResult {
     public static Builder builder(ModelModelTrainingResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Double fap;
         private @Nullable Boolean isTrainingGoalAchieved;
@@ -121,11 +106,7 @@ public final class ModelModelTrainingResult {
         private @Nullable List<ModelModelTrainingResultRowReductionDetail> rowReductionDetails;
         private @Nullable List<ModelModelTrainingResultSignalDetail> signalDetails;
         private @Nullable String warning;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ModelModelTrainingResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.fap = defaults.fap;
@@ -136,18 +117,22 @@ public final class ModelModelTrainingResult {
     	      this.warning = defaults.warning;
         }
 
+        @CustomType.Setter
         public Builder fap(@Nullable Double fap) {
             this.fap = fap;
             return this;
         }
+        @CustomType.Setter
         public Builder isTrainingGoalAchieved(@Nullable Boolean isTrainingGoalAchieved) {
             this.isTrainingGoalAchieved = isTrainingGoalAchieved;
             return this;
         }
+        @CustomType.Setter
         public Builder multivariateFap(@Nullable Double multivariateFap) {
             this.multivariateFap = multivariateFap;
             return this;
         }
+        @CustomType.Setter
         public Builder rowReductionDetails(@Nullable List<ModelModelTrainingResultRowReductionDetail> rowReductionDetails) {
             this.rowReductionDetails = rowReductionDetails;
             return this;
@@ -155,6 +140,7 @@ public final class ModelModelTrainingResult {
         public Builder rowReductionDetails(ModelModelTrainingResultRowReductionDetail... rowReductionDetails) {
             return rowReductionDetails(List.of(rowReductionDetails));
         }
+        @CustomType.Setter
         public Builder signalDetails(@Nullable List<ModelModelTrainingResultSignalDetail> signalDetails) {
             this.signalDetails = signalDetails;
             return this;
@@ -162,11 +148,20 @@ public final class ModelModelTrainingResult {
         public Builder signalDetails(ModelModelTrainingResultSignalDetail... signalDetails) {
             return signalDetails(List.of(signalDetails));
         }
+        @CustomType.Setter
         public Builder warning(@Nullable String warning) {
             this.warning = warning;
             return this;
-        }        public ModelModelTrainingResult build() {
-            return new ModelModelTrainingResult(fap, isTrainingGoalAchieved, multivariateFap, rowReductionDetails, signalDetails, warning);
+        }
+        public ModelModelTrainingResult build() {
+            final var o = new ModelModelTrainingResult();
+            o.fap = fap;
+            o.isTrainingGoalAchieved = isTrainingGoalAchieved;
+            o.multivariateFap = multivariateFap;
+            o.rowReductionDetails = rowReductionDetails;
+            o.signalDetails = signalDetails;
+            o.warning = warning;
+            return o;
         }
     }
 }

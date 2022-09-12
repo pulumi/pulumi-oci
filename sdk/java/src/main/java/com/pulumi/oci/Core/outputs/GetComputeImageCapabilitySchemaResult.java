@@ -17,83 +17,56 @@ public final class GetComputeImageCapabilitySchemaResult {
      * @return The OCID of the compartment containing the compute global image capability schema
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The ocid of the compute global image capability schema
      * 
      */
-    private final String computeGlobalImageCapabilitySchemaId;
+    private String computeGlobalImageCapabilitySchemaId;
     /**
      * @return The name of the compute global image capability schema version
      * 
      */
-    private final String computeGlobalImageCapabilitySchemaVersionName;
-    private final String computeImageCapabilitySchemaId;
+    private String computeGlobalImageCapabilitySchemaVersionName;
+    private String computeImageCapabilitySchemaId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The compute image capability schema [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the image associated with this compute image capability schema
      * 
      */
-    private final String imageId;
-    private final @Nullable String isMergeEnabled;
+    private String imageId;
+    private @Nullable String isMergeEnabled;
     /**
      * @return A mapping of each capability name to its ImageCapabilityDescriptor.
      * 
      */
-    private final Map<String,Object> schemaData;
+    private Map<String,Object> schemaData;
     /**
      * @return The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetComputeImageCapabilitySchemaResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("computeGlobalImageCapabilitySchemaId") String computeGlobalImageCapabilitySchemaId,
-        @CustomType.Parameter("computeGlobalImageCapabilitySchemaVersionName") String computeGlobalImageCapabilitySchemaVersionName,
-        @CustomType.Parameter("computeImageCapabilitySchemaId") String computeImageCapabilitySchemaId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("imageId") String imageId,
-        @CustomType.Parameter("isMergeEnabled") @Nullable String isMergeEnabled,
-        @CustomType.Parameter("schemaData") Map<String,Object> schemaData,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.compartmentId = compartmentId;
-        this.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
-        this.computeGlobalImageCapabilitySchemaVersionName = computeGlobalImageCapabilitySchemaVersionName;
-        this.computeImageCapabilitySchemaId = computeImageCapabilitySchemaId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.imageId = imageId;
-        this.isMergeEnabled = isMergeEnabled;
-        this.schemaData = schemaData;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetComputeImageCapabilitySchemaResult() {}
     /**
      * @return The OCID of the compartment containing the compute global image capability schema
      * 
@@ -178,7 +151,7 @@ public final class GetComputeImageCapabilitySchemaResult {
     public static Builder builder(GetComputeImageCapabilitySchemaResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String computeGlobalImageCapabilitySchemaId;
@@ -192,11 +165,7 @@ public final class GetComputeImageCapabilitySchemaResult {
         private @Nullable String isMergeEnabled;
         private Map<String,Object> schemaData;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetComputeImageCapabilitySchemaResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -213,55 +182,81 @@ public final class GetComputeImageCapabilitySchemaResult {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder computeGlobalImageCapabilitySchemaId(String computeGlobalImageCapabilitySchemaId) {
             this.computeGlobalImageCapabilitySchemaId = Objects.requireNonNull(computeGlobalImageCapabilitySchemaId);
             return this;
         }
+        @CustomType.Setter
         public Builder computeGlobalImageCapabilitySchemaVersionName(String computeGlobalImageCapabilitySchemaVersionName) {
             this.computeGlobalImageCapabilitySchemaVersionName = Objects.requireNonNull(computeGlobalImageCapabilitySchemaVersionName);
             return this;
         }
+        @CustomType.Setter
         public Builder computeImageCapabilitySchemaId(String computeImageCapabilitySchemaId) {
             this.computeImageCapabilitySchemaId = Objects.requireNonNull(computeImageCapabilitySchemaId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder imageId(String imageId) {
             this.imageId = Objects.requireNonNull(imageId);
             return this;
         }
+        @CustomType.Setter
         public Builder isMergeEnabled(@Nullable String isMergeEnabled) {
             this.isMergeEnabled = isMergeEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder schemaData(Map<String,Object> schemaData) {
             this.schemaData = Objects.requireNonNull(schemaData);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetComputeImageCapabilitySchemaResult build() {
-            return new GetComputeImageCapabilitySchemaResult(compartmentId, computeGlobalImageCapabilitySchemaId, computeGlobalImageCapabilitySchemaVersionName, computeImageCapabilitySchemaId, definedTags, displayName, freeformTags, id, imageId, isMergeEnabled, schemaData, timeCreated);
+        }
+        public GetComputeImageCapabilitySchemaResult build() {
+            final var o = new GetComputeImageCapabilitySchemaResult();
+            o.compartmentId = compartmentId;
+            o.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
+            o.computeGlobalImageCapabilitySchemaVersionName = computeGlobalImageCapabilitySchemaVersionName;
+            o.computeImageCapabilitySchemaId = computeImageCapabilitySchemaId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.imageId = imageId;
+            o.isMergeEnabled = isMergeEnabled;
+            o.schemaData = schemaData;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

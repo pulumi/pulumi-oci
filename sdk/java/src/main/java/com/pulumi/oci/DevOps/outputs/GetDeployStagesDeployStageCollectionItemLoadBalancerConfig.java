@@ -14,35 +14,24 @@ public final class GetDeployStagesDeployStageCollectionItemLoadBalancerConfig {
      * @return Listen port for the backend server.
      * 
      */
-    private final Integer backendPort;
+    private Integer backendPort;
     /**
      * @return Name of the load balancer listener.
      * 
      */
-    private final String listenerName;
+    private String listenerName;
     /**
      * @return The OCID of the load balancer.
      * 
      */
-    private final String loadBalancerId;
+    private String loadBalancerId;
     /**
      * @return A filter to return only deployment stages that matches the given lifecycle state.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private GetDeployStagesDeployStageCollectionItemLoadBalancerConfig(
-        @CustomType.Parameter("backendPort") Integer backendPort,
-        @CustomType.Parameter("listenerName") String listenerName,
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId,
-        @CustomType.Parameter("state") String state) {
-        this.backendPort = backendPort;
-        this.listenerName = listenerName;
-        this.loadBalancerId = loadBalancerId;
-        this.state = state;
-    }
-
+    private GetDeployStagesDeployStageCollectionItemLoadBalancerConfig() {}
     /**
      * @return Listen port for the backend server.
      * 
@@ -79,17 +68,13 @@ public final class GetDeployStagesDeployStageCollectionItemLoadBalancerConfig {
     public static Builder builder(GetDeployStagesDeployStageCollectionItemLoadBalancerConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer backendPort;
         private String listenerName;
         private String loadBalancerId;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployStagesDeployStageCollectionItemLoadBalancerConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backendPort = defaults.backendPort;
@@ -98,23 +83,33 @@ public final class GetDeployStagesDeployStageCollectionItemLoadBalancerConfig {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder backendPort(Integer backendPort) {
             this.backendPort = Objects.requireNonNull(backendPort);
             return this;
         }
+        @CustomType.Setter
         public Builder listenerName(String listenerName) {
             this.listenerName = Objects.requireNonNull(listenerName);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetDeployStagesDeployStageCollectionItemLoadBalancerConfig build() {
-            return new GetDeployStagesDeployStageCollectionItemLoadBalancerConfig(backendPort, listenerName, loadBalancerId, state);
+        }
+        public GetDeployStagesDeployStageCollectionItemLoadBalancerConfig build() {
+            final var o = new GetDeployStagesDeployStageCollectionItemLoadBalancerConfig();
+            o.backendPort = backendPort;
+            o.listenerName = listenerName;
+            o.loadBalancerId = loadBalancerId;
+            o.state = state;
+            return o;
         }
     }
 }

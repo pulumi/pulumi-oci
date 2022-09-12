@@ -18,52 +18,35 @@ public final class GetVirtualDeploymentsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetVirtualDeploymentsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetVirtualDeploymentsFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The current state of the Resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of virtual_deployment_collection.
      * 
      */
-    private final List<GetVirtualDeploymentsVirtualDeploymentCollection> virtualDeploymentCollections;
+    private List<GetVirtualDeploymentsVirtualDeploymentCollection> virtualDeploymentCollections;
     /**
      * @return The OCID of the virtual service in which this virtual deployment is created.
      * 
      */
-    private final @Nullable String virtualServiceId;
+    private @Nullable String virtualServiceId;
 
-    @CustomType.Constructor
-    private GetVirtualDeploymentsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetVirtualDeploymentsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("virtualDeploymentCollections") List<GetVirtualDeploymentsVirtualDeploymentCollection> virtualDeploymentCollections,
-        @CustomType.Parameter("virtualServiceId") @Nullable String virtualServiceId) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.state = state;
-        this.virtualDeploymentCollections = virtualDeploymentCollections;
-        this.virtualServiceId = virtualServiceId;
-    }
-
+    private GetVirtualDeploymentsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -117,7 +100,7 @@ public final class GetVirtualDeploymentsResult {
     public static Builder builder(GetVirtualDeploymentsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetVirtualDeploymentsFilter> filters;
@@ -126,11 +109,7 @@ public final class GetVirtualDeploymentsResult {
         private @Nullable String state;
         private List<GetVirtualDeploymentsVirtualDeploymentCollection> virtualDeploymentCollections;
         private @Nullable String virtualServiceId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualDeploymentsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,10 +121,12 @@ public final class GetVirtualDeploymentsResult {
     	      this.virtualServiceId = defaults.virtualServiceId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVirtualDeploymentsFilter> filters) {
             this.filters = filters;
             return this;
@@ -153,18 +134,22 @@ public final class GetVirtualDeploymentsResult {
         public Builder filters(GetVirtualDeploymentsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder virtualDeploymentCollections(List<GetVirtualDeploymentsVirtualDeploymentCollection> virtualDeploymentCollections) {
             this.virtualDeploymentCollections = Objects.requireNonNull(virtualDeploymentCollections);
             return this;
@@ -172,11 +157,21 @@ public final class GetVirtualDeploymentsResult {
         public Builder virtualDeploymentCollections(GetVirtualDeploymentsVirtualDeploymentCollection... virtualDeploymentCollections) {
             return virtualDeploymentCollections(List.of(virtualDeploymentCollections));
         }
+        @CustomType.Setter
         public Builder virtualServiceId(@Nullable String virtualServiceId) {
             this.virtualServiceId = virtualServiceId;
             return this;
-        }        public GetVirtualDeploymentsResult build() {
-            return new GetVirtualDeploymentsResult(compartmentId, filters, id, name, state, virtualDeploymentCollections, virtualServiceId);
+        }
+        public GetVirtualDeploymentsResult build() {
+            final var o = new GetVirtualDeploymentsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.state = state;
+            o.virtualDeploymentCollections = virtualDeploymentCollections;
+            o.virtualServiceId = virtualServiceId;
+            return o;
         }
     }
 }

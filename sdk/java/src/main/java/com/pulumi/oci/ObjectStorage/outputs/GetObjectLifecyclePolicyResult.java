@@ -11,34 +11,21 @@ import java.util.Objects;
 
 @CustomType
 public final class GetObjectLifecyclePolicyResult {
-    private final String bucket;
-    private final String id;
-    private final String namespace;
+    private String bucket;
+    private String id;
+    private String namespace;
     /**
      * @return The live lifecycle policy on the bucket.
      * 
      */
-    private final List<GetObjectLifecyclePolicyRule> rules;
+    private List<GetObjectLifecyclePolicyRule> rules;
     /**
      * @return The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetObjectLifecyclePolicyResult(
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("rules") List<GetObjectLifecyclePolicyRule> rules,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.bucket = bucket;
-        this.id = id;
-        this.namespace = namespace;
-        this.rules = rules;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetObjectLifecyclePolicyResult() {}
     public String bucket() {
         return this.bucket;
     }
@@ -70,18 +57,14 @@ public final class GetObjectLifecyclePolicyResult {
     public static Builder builder(GetObjectLifecyclePolicyResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucket;
         private String id;
         private String namespace;
         private List<GetObjectLifecyclePolicyRule> rules;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetObjectLifecyclePolicyResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -91,18 +74,22 @@ public final class GetObjectLifecyclePolicyResult {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder rules(List<GetObjectLifecyclePolicyRule> rules) {
             this.rules = Objects.requireNonNull(rules);
             return this;
@@ -110,11 +97,19 @@ public final class GetObjectLifecyclePolicyResult {
         public Builder rules(GetObjectLifecyclePolicyRule... rules) {
             return rules(List.of(rules));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetObjectLifecyclePolicyResult build() {
-            return new GetObjectLifecyclePolicyResult(bucket, id, namespace, rules, timeCreated);
+        }
+        public GetObjectLifecyclePolicyResult build() {
+            final var o = new GetObjectLifecyclePolicyResult();
+            o.bucket = bucket;
+            o.id = id;
+            o.namespace = namespace;
+            o.rules = rules;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

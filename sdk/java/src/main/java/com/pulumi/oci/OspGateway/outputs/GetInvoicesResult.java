@@ -14,62 +14,33 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInvoicesResult {
-    private final String compartmentId;
-    private final @Nullable List<GetInvoicesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetInvoicesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of invoice_collection.
      * 
      */
-    private final List<GetInvoicesInvoiceCollection> invoiceCollections;
+    private List<GetInvoicesInvoiceCollection> invoiceCollections;
     /**
      * @return Invoice identifier which is generated on the on-premise sie. Pls note this is not an OCID
      * 
      */
-    private final @Nullable String invoiceId;
-    private final String ospHomeRegion;
-    private final @Nullable String searchText;
-    private final @Nullable List<String> statuses;
-    private final @Nullable String timeInvoiceEnd;
-    private final @Nullable String timeInvoiceStart;
-    private final @Nullable String timePaymentEnd;
-    private final @Nullable String timePaymentStart;
-    private final @Nullable List<String> types;
+    private @Nullable String invoiceId;
+    private String ospHomeRegion;
+    private @Nullable String searchText;
+    private @Nullable List<String> statuses;
+    private @Nullable String timeInvoiceEnd;
+    private @Nullable String timeInvoiceStart;
+    private @Nullable String timePaymentEnd;
+    private @Nullable String timePaymentStart;
+    private @Nullable List<String> types;
 
-    @CustomType.Constructor
-    private GetInvoicesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetInvoicesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("invoiceCollections") List<GetInvoicesInvoiceCollection> invoiceCollections,
-        @CustomType.Parameter("invoiceId") @Nullable String invoiceId,
-        @CustomType.Parameter("ospHomeRegion") String ospHomeRegion,
-        @CustomType.Parameter("searchText") @Nullable String searchText,
-        @CustomType.Parameter("statuses") @Nullable List<String> statuses,
-        @CustomType.Parameter("timeInvoiceEnd") @Nullable String timeInvoiceEnd,
-        @CustomType.Parameter("timeInvoiceStart") @Nullable String timeInvoiceStart,
-        @CustomType.Parameter("timePaymentEnd") @Nullable String timePaymentEnd,
-        @CustomType.Parameter("timePaymentStart") @Nullable String timePaymentStart,
-        @CustomType.Parameter("types") @Nullable List<String> types) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.invoiceCollections = invoiceCollections;
-        this.invoiceId = invoiceId;
-        this.ospHomeRegion = ospHomeRegion;
-        this.searchText = searchText;
-        this.statuses = statuses;
-        this.timeInvoiceEnd = timeInvoiceEnd;
-        this.timeInvoiceStart = timeInvoiceStart;
-        this.timePaymentEnd = timePaymentEnd;
-        this.timePaymentStart = timePaymentStart;
-        this.types = types;
-    }
-
+    private GetInvoicesResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -129,7 +100,7 @@ public final class GetInvoicesResult {
     public static Builder builder(GetInvoicesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetInvoicesFilter> filters;
@@ -144,11 +115,7 @@ public final class GetInvoicesResult {
         private @Nullable String timePaymentEnd;
         private @Nullable String timePaymentStart;
         private @Nullable List<String> types;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvoicesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -166,10 +133,12 @@ public final class GetInvoicesResult {
     	      this.types = defaults.types;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetInvoicesFilter> filters) {
             this.filters = filters;
             return this;
@@ -177,10 +146,12 @@ public final class GetInvoicesResult {
         public Builder filters(GetInvoicesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder invoiceCollections(List<GetInvoicesInvoiceCollection> invoiceCollections) {
             this.invoiceCollections = Objects.requireNonNull(invoiceCollections);
             return this;
@@ -188,18 +159,22 @@ public final class GetInvoicesResult {
         public Builder invoiceCollections(GetInvoicesInvoiceCollection... invoiceCollections) {
             return invoiceCollections(List.of(invoiceCollections));
         }
+        @CustomType.Setter
         public Builder invoiceId(@Nullable String invoiceId) {
             this.invoiceId = invoiceId;
             return this;
         }
+        @CustomType.Setter
         public Builder ospHomeRegion(String ospHomeRegion) {
             this.ospHomeRegion = Objects.requireNonNull(ospHomeRegion);
             return this;
         }
+        @CustomType.Setter
         public Builder searchText(@Nullable String searchText) {
             this.searchText = searchText;
             return this;
         }
+        @CustomType.Setter
         public Builder statuses(@Nullable List<String> statuses) {
             this.statuses = statuses;
             return this;
@@ -207,30 +182,50 @@ public final class GetInvoicesResult {
         public Builder statuses(String... statuses) {
             return statuses(List.of(statuses));
         }
+        @CustomType.Setter
         public Builder timeInvoiceEnd(@Nullable String timeInvoiceEnd) {
             this.timeInvoiceEnd = timeInvoiceEnd;
             return this;
         }
+        @CustomType.Setter
         public Builder timeInvoiceStart(@Nullable String timeInvoiceStart) {
             this.timeInvoiceStart = timeInvoiceStart;
             return this;
         }
+        @CustomType.Setter
         public Builder timePaymentEnd(@Nullable String timePaymentEnd) {
             this.timePaymentEnd = timePaymentEnd;
             return this;
         }
+        @CustomType.Setter
         public Builder timePaymentStart(@Nullable String timePaymentStart) {
             this.timePaymentStart = timePaymentStart;
             return this;
         }
+        @CustomType.Setter
         public Builder types(@Nullable List<String> types) {
             this.types = types;
             return this;
         }
         public Builder types(String... types) {
             return types(List.of(types));
-        }        public GetInvoicesResult build() {
-            return new GetInvoicesResult(compartmentId, filters, id, invoiceCollections, invoiceId, ospHomeRegion, searchText, statuses, timeInvoiceEnd, timeInvoiceStart, timePaymentEnd, timePaymentStart, types);
+        }
+        public GetInvoicesResult build() {
+            final var o = new GetInvoicesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.invoiceCollections = invoiceCollections;
+            o.invoiceId = invoiceId;
+            o.ospHomeRegion = ospHomeRegion;
+            o.searchText = searchText;
+            o.statuses = statuses;
+            o.timeInvoiceEnd = timeInvoiceEnd;
+            o.timeInvoiceStart = timeInvoiceStart;
+            o.timePaymentEnd = timePaymentEnd;
+            o.timePaymentStart = timePaymentStart;
+            o.types = types;
+            return o;
         }
     }
 }

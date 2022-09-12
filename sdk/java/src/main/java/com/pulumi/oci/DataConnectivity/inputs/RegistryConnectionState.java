@@ -25,14 +25,14 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
     public static final RegistryConnectionState Empty = new RegistryConnectionState();
 
     /**
-     * (Updatable) The properties for the connection.
+     * (Updatable) The properties of the connection.
      * 
      */
     @Import(name="connectionProperties")
     private @Nullable Output<List<RegistryConnectionConnectionPropertyArgs>> connectionProperties;
 
     /**
-     * @return (Updatable) The properties for the connection.
+     * @return (Updatable) The properties of the connection.
      * 
      */
     public Optional<Output<List<RegistryConnectionConnectionPropertyArgs>>> connectionProperties() {
@@ -70,14 +70,14 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) The default property for the connection.
+     * (Updatable) The default property of the connection.
      * 
      */
     @Import(name="isDefault")
     private @Nullable Output<Boolean> isDefault;
 
     /**
-     * @return (Updatable) The default property for the connection.
+     * @return (Updatable) The default property of the connection.
      * 
      */
     public Optional<Output<Boolean>> isDefault() {
@@ -100,14 +100,14 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     @Import(name="metadata")
     private @Nullable Output<RegistryConnectionMetadataArgs> metadata;
 
     /**
-     * @return (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     public Optional<Output<RegistryConnectionMetadataArgs>> metadata() {
@@ -115,14 +115,14 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) The object&#39;s type.
+     * (Updatable) The object type.
      * 
      */
     @Import(name="modelType")
     private @Nullable Output<String> modelType;
 
     /**
-     * @return (Updatable) The object&#39;s type.
+     * @return (Updatable) The object type.
      * 
      */
     public Optional<Output<String>> modelType() {
@@ -130,14 +130,14 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) The object&#39;s model version.
+     * (Updatable) The model version of the object.
      * 
      */
     @Import(name="modelVersion")
     private @Nullable Output<String> modelVersion;
 
     /**
-     * @return (Updatable) The object&#39;s model version.
+     * @return (Updatable) The model version of the object.
      * 
      */
     public Optional<Output<String>> modelVersion() {
@@ -145,14 +145,14 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Optional<Output<String>> name() {
@@ -205,14 +205,14 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) All the properties for the connection in a key-value map format.
+     * (Updatable) All the properties of the connection in a key-value map format.
      * 
      */
     @Import(name="properties")
     private @Nullable Output<Map<String,Object>> properties;
 
     /**
-     * @return (Updatable) All the properties for the connection in a key-value map format.
+     * @return (Updatable) All the properties of the connection in a key-value map format.
      * 
      */
     public Optional<Output<Map<String,Object>>> properties() {
@@ -220,14 +220,14 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
     }
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      * 
      */
     @Import(name="registryId")
     private @Nullable Output<String> registryId;
 
     /**
-     * @return The registry Ocid.
+     * @return The registry OCID.
      * 
      */
     public Optional<Output<String>> registryId() {
@@ -304,7 +304,7 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param connectionProperties (Updatable) The properties for the connection.
+         * @param connectionProperties (Updatable) The properties of the connection.
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param connectionProperties (Updatable) The properties for the connection.
+         * @param connectionProperties (Updatable) The properties of the connection.
          * 
          * @return builder
          * 
@@ -325,7 +325,7 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param connectionProperties (Updatable) The properties for the connection.
+         * @param connectionProperties (Updatable) The properties of the connection.
          * 
          * @return builder
          * 
@@ -377,7 +377,7 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param isDefault (Updatable) The default property for the connection.
+         * @param isDefault (Updatable) The default property of the connection.
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param isDefault (Updatable) The default property for the connection.
+         * @param isDefault (Updatable) The default property of the connection.
          * 
          * @return builder
          * 
@@ -419,7 +419,7 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param metadata (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * @param metadata (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          * 
          * @return builder
          * 
@@ -430,7 +430,7 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param metadata (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * @param metadata (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          * 
          * @return builder
          * 
@@ -440,7 +440,7 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param modelType (Updatable) The object&#39;s type.
+         * @param modelType (Updatable) The object type.
          * 
          * @return builder
          * 
@@ -451,7 +451,7 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param modelType (Updatable) The object&#39;s type.
+         * @param modelType (Updatable) The object type.
          * 
          * @return builder
          * 
@@ -461,7 +461,7 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param modelVersion (Updatable) The object&#39;s model version.
+         * @param modelVersion (Updatable) The model version of the object.
          * 
          * @return builder
          * 
@@ -472,7 +472,7 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param modelVersion (Updatable) The object&#39;s model version.
+         * @param modelVersion (Updatable) The model version of the object.
          * 
          * @return builder
          * 
@@ -482,7 +482,7 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -493,7 +493,7 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -566,7 +566,7 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param properties (Updatable) All the properties for the connection in a key-value map format.
+         * @param properties (Updatable) All the properties of the connection in a key-value map format.
          * 
          * @return builder
          * 
@@ -577,7 +577,7 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param properties (Updatable) All the properties for the connection in a key-value map format.
+         * @param properties (Updatable) All the properties of the connection in a key-value map format.
          * 
          * @return builder
          * 
@@ -587,7 +587,7 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param registryId The registry Ocid.
+         * @param registryId The registry OCID.
          * 
          * @return builder
          * 
@@ -598,7 +598,7 @@ public final class RegistryConnectionState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param registryId The registry Ocid.
+         * @param registryId The registry OCID.
          * 
          * @return builder
          * 

@@ -10,37 +10,26 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret {
-    private final String key;
+    private String key;
     /**
      * @return Type of the secrets mapped based on the policy.
      * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
      * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return OCID for the Vault Secret to be used.
      * 
      */
-    private final String vaultSecretId;
+    private String vaultSecretId;
     /**
      * @return Version number of the secret to be used.
      * 
      */
-    private final Integer versionNumber;
+    private Integer versionNumber;
 
-    @CustomType.Constructor
-    private GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret(
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("vaultSecretId") String vaultSecretId,
-        @CustomType.Parameter("versionNumber") Integer versionNumber) {
-        this.key = key;
-        this.type = type;
-        this.vaultSecretId = vaultSecretId;
-        this.versionNumber = versionNumber;
-    }
-
+    private GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret() {}
     public String key() {
         return this.key;
     }
@@ -75,17 +64,13 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
     public static Builder builder(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String key;
         private String type;
         private String vaultSecretId;
         private Integer versionNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.key = defaults.key;
@@ -94,23 +79,33 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
     	      this.versionNumber = defaults.versionNumber;
         }
 
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder vaultSecretId(String vaultSecretId) {
             this.vaultSecretId = Objects.requireNonNull(vaultSecretId);
             return this;
         }
+        @CustomType.Setter
         public Builder versionNumber(Integer versionNumber) {
             this.versionNumber = Objects.requireNonNull(versionNumber);
             return this;
-        }        public GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret build() {
-            return new GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret(key, type, vaultSecretId, versionNumber);
+        }
+        public GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret build() {
+            final var o = new GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret();
+            o.key = key;
+            o.type = type;
+            o.vaultSecretId = vaultSecretId;
+            o.versionNumber = versionNumber;
+            return o;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Pulumi.Oci.DataConnectivity
     /// <summary>
     /// This resource provides the Registry Folder resource in Oracle Cloud Infrastructure Data Connectivity service.
     /// 
-    /// Creates a folder under a specefied registry.
+    /// Creates a folder under a specified registry.
     /// 
     /// ## Import
     /// 
@@ -26,25 +26,25 @@ namespace Pulumi.Oci.DataConnectivity
     public partial class RegistryFolder : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) List of data assets which belongs to this folder
+        /// (Updatable) The list of data assets that belong to the folder.
         /// </summary>
         [Output("dataAssets")]
         public Output<ImmutableArray<Outputs.RegistryFolderDataAsset>> DataAssets { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) User-defined description for the folder.
+        /// (Updatable) User-defined description of the folder.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         /// </summary>
         [Output("identifier")]
         public Output<string> Identifier { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        /// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         /// </summary>
         [Output("key")]
         public Output<string> Key { get; private set; } = null!;
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.DataConnectivity
         public Output<string> ModelVersion { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -80,13 +80,13 @@ namespace Pulumi.Oci.DataConnectivity
         public Output<int> ObjectVersion { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A reference to the object's parent.
+        /// (Updatable) A reference to the parent object.
         /// </summary>
         [Output("parentRef")]
         public Output<Outputs.RegistryFolderParentRef> ParentRef { get; private set; } = null!;
 
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         [Output("registryId")]
         public Output<string> RegistryId { get; private set; } = null!;
@@ -141,7 +141,7 @@ namespace Pulumi.Oci.DataConnectivity
         private InputList<Inputs.RegistryFolderDataAssetArgs>? _dataAssets;
 
         /// <summary>
-        /// (Updatable) List of data assets which belongs to this folder
+        /// (Updatable) The list of data assets that belong to the folder.
         /// </summary>
         public InputList<Inputs.RegistryFolderDataAssetArgs> DataAssets
         {
@@ -150,19 +150,19 @@ namespace Pulumi.Oci.DataConnectivity
         }
 
         /// <summary>
-        /// (Updatable) User-defined description for the folder.
+        /// (Updatable) User-defined description of the folder.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         /// </summary>
         [Input("identifier", required: true)]
         public Input<string> Identifier { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        /// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -180,7 +180,7 @@ namespace Pulumi.Oci.DataConnectivity
         public Input<string>? ModelVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -198,13 +198,13 @@ namespace Pulumi.Oci.DataConnectivity
         public Input<int>? ObjectVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) A reference to the object's parent.
+        /// (Updatable) A reference to the parent object.
         /// </summary>
         [Input("parentRef")]
         public Input<Inputs.RegistryFolderParentRefArgs>? ParentRef { get; set; }
 
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         [Input("registryId", required: true)]
         public Input<string> RegistryId { get; set; } = null!;
@@ -221,7 +221,7 @@ namespace Pulumi.Oci.DataConnectivity
         private InputList<Inputs.RegistryFolderDataAssetGetArgs>? _dataAssets;
 
         /// <summary>
-        /// (Updatable) List of data assets which belongs to this folder
+        /// (Updatable) The list of data assets that belong to the folder.
         /// </summary>
         public InputList<Inputs.RegistryFolderDataAssetGetArgs> DataAssets
         {
@@ -230,19 +230,19 @@ namespace Pulumi.Oci.DataConnectivity
         }
 
         /// <summary>
-        /// (Updatable) User-defined description for the folder.
+        /// (Updatable) User-defined description of the folder.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         /// </summary>
         [Input("identifier")]
         public Input<string>? Identifier { get; set; }
 
         /// <summary>
-        /// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        /// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -260,7 +260,7 @@ namespace Pulumi.Oci.DataConnectivity
         public Input<string>? ModelVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -278,13 +278,13 @@ namespace Pulumi.Oci.DataConnectivity
         public Input<int>? ObjectVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) A reference to the object's parent.
+        /// (Updatable) A reference to the parent object.
         /// </summary>
         [Input("parentRef")]
         public Input<Inputs.RegistryFolderParentRefGetArgs>? ParentRef { get; set; }
 
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         [Input("registryId")]
         public Input<string>? RegistryId { get; set; }

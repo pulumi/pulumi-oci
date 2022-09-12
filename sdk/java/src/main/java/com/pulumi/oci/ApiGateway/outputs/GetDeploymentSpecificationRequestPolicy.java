@@ -18,42 +18,29 @@ public final class GetDeploymentSpecificationRequestPolicy {
      * @return Information on how to authenticate incoming requests.
      * 
      */
-    private final List<GetDeploymentSpecificationRequestPolicyAuthentication> authentications;
+    private List<GetDeploymentSpecificationRequestPolicyAuthentication> authentications;
     /**
      * @return Enable CORS (Cross-Origin-Resource-Sharing) request handling.
      * 
      */
-    private final List<GetDeploymentSpecificationRequestPolicyCor> cors;
+    private List<GetDeploymentSpecificationRequestPolicyCor> cors;
     /**
      * @return Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
      * 
      */
-    private final List<GetDeploymentSpecificationRequestPolicyMutualTl> mutualTls;
+    private List<GetDeploymentSpecificationRequestPolicyMutualTl> mutualTls;
     /**
      * @return Limit the number of requests that should be handled for the specified window using a specfic key.
      * 
      */
-    private final List<GetDeploymentSpecificationRequestPolicyRateLimiting> rateLimitings;
+    private List<GetDeploymentSpecificationRequestPolicyRateLimiting> rateLimitings;
     /**
      * @return Usage plan policies for this deployment
      * 
      */
-    private final List<GetDeploymentSpecificationRequestPolicyUsagePlan> usagePlans;
+    private List<GetDeploymentSpecificationRequestPolicyUsagePlan> usagePlans;
 
-    @CustomType.Constructor
-    private GetDeploymentSpecificationRequestPolicy(
-        @CustomType.Parameter("authentications") List<GetDeploymentSpecificationRequestPolicyAuthentication> authentications,
-        @CustomType.Parameter("cors") List<GetDeploymentSpecificationRequestPolicyCor> cors,
-        @CustomType.Parameter("mutualTls") List<GetDeploymentSpecificationRequestPolicyMutualTl> mutualTls,
-        @CustomType.Parameter("rateLimitings") List<GetDeploymentSpecificationRequestPolicyRateLimiting> rateLimitings,
-        @CustomType.Parameter("usagePlans") List<GetDeploymentSpecificationRequestPolicyUsagePlan> usagePlans) {
-        this.authentications = authentications;
-        this.cors = cors;
-        this.mutualTls = mutualTls;
-        this.rateLimitings = rateLimitings;
-        this.usagePlans = usagePlans;
-    }
-
+    private GetDeploymentSpecificationRequestPolicy() {}
     /**
      * @return Information on how to authenticate incoming requests.
      * 
@@ -97,18 +84,14 @@ public final class GetDeploymentSpecificationRequestPolicy {
     public static Builder builder(GetDeploymentSpecificationRequestPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentSpecificationRequestPolicyAuthentication> authentications;
         private List<GetDeploymentSpecificationRequestPolicyCor> cors;
         private List<GetDeploymentSpecificationRequestPolicyMutualTl> mutualTls;
         private List<GetDeploymentSpecificationRequestPolicyRateLimiting> rateLimitings;
         private List<GetDeploymentSpecificationRequestPolicyUsagePlan> usagePlans;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentSpecificationRequestPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authentications = defaults.authentications;
@@ -118,6 +101,7 @@ public final class GetDeploymentSpecificationRequestPolicy {
     	      this.usagePlans = defaults.usagePlans;
         }
 
+        @CustomType.Setter
         public Builder authentications(List<GetDeploymentSpecificationRequestPolicyAuthentication> authentications) {
             this.authentications = Objects.requireNonNull(authentications);
             return this;
@@ -125,6 +109,7 @@ public final class GetDeploymentSpecificationRequestPolicy {
         public Builder authentications(GetDeploymentSpecificationRequestPolicyAuthentication... authentications) {
             return authentications(List.of(authentications));
         }
+        @CustomType.Setter
         public Builder cors(List<GetDeploymentSpecificationRequestPolicyCor> cors) {
             this.cors = Objects.requireNonNull(cors);
             return this;
@@ -132,6 +117,7 @@ public final class GetDeploymentSpecificationRequestPolicy {
         public Builder cors(GetDeploymentSpecificationRequestPolicyCor... cors) {
             return cors(List.of(cors));
         }
+        @CustomType.Setter
         public Builder mutualTls(List<GetDeploymentSpecificationRequestPolicyMutualTl> mutualTls) {
             this.mutualTls = Objects.requireNonNull(mutualTls);
             return this;
@@ -139,6 +125,7 @@ public final class GetDeploymentSpecificationRequestPolicy {
         public Builder mutualTls(GetDeploymentSpecificationRequestPolicyMutualTl... mutualTls) {
             return mutualTls(List.of(mutualTls));
         }
+        @CustomType.Setter
         public Builder rateLimitings(List<GetDeploymentSpecificationRequestPolicyRateLimiting> rateLimitings) {
             this.rateLimitings = Objects.requireNonNull(rateLimitings);
             return this;
@@ -146,14 +133,22 @@ public final class GetDeploymentSpecificationRequestPolicy {
         public Builder rateLimitings(GetDeploymentSpecificationRequestPolicyRateLimiting... rateLimitings) {
             return rateLimitings(List.of(rateLimitings));
         }
+        @CustomType.Setter
         public Builder usagePlans(List<GetDeploymentSpecificationRequestPolicyUsagePlan> usagePlans) {
             this.usagePlans = Objects.requireNonNull(usagePlans);
             return this;
         }
         public Builder usagePlans(GetDeploymentSpecificationRequestPolicyUsagePlan... usagePlans) {
             return usagePlans(List.of(usagePlans));
-        }        public GetDeploymentSpecificationRequestPolicy build() {
-            return new GetDeploymentSpecificationRequestPolicy(authentications, cors, mutualTls, rateLimitings, usagePlans);
+        }
+        public GetDeploymentSpecificationRequestPolicy build() {
+            final var o = new GetDeploymentSpecificationRequestPolicy();
+            o.authentications = authentications;
+            o.cors = cors;
+            o.mutualTls = mutualTls;
+            o.rateLimitings = rateLimitings;
+            o.usagePlans = usagePlans;
+            return o;
         }
     }
 }

@@ -14,52 +14,35 @@ public final class GetLogAnalyticsCategoryResult {
      * @return The category description.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The category display name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
      * 
      */
-    private final Boolean isSystem;
+    private Boolean isSystem;
     /**
      * @return The unique name that identifies the category.
      * 
      */
-    private final String name;
-    private final String namespace;
+    private String name;
+    private String namespace;
     /**
      * @return The category type. Values include &#34;PRODUCT&#34;, &#34;TIER&#34;, &#34;VENDOR&#34; and &#34;GENERIC&#34;.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsCategoryResult(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isSystem") Boolean isSystem,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("type") String type) {
-        this.description = description;
-        this.displayName = displayName;
-        this.id = id;
-        this.isSystem = isSystem;
-        this.name = name;
-        this.namespace = namespace;
-        this.type = type;
-    }
-
+    private GetLogAnalyticsCategoryResult() {}
     /**
      * @return The category description.
      * 
@@ -113,7 +96,7 @@ public final class GetLogAnalyticsCategoryResult {
     public static Builder builder(GetLogAnalyticsCategoryResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String displayName;
@@ -122,11 +105,7 @@ public final class GetLogAnalyticsCategoryResult {
         private String name;
         private String namespace;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsCategoryResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -138,35 +117,51 @@ public final class GetLogAnalyticsCategoryResult {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = Objects.requireNonNull(isSystem);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetLogAnalyticsCategoryResult build() {
-            return new GetLogAnalyticsCategoryResult(description, displayName, id, isSystem, name, namespace, type);
+        }
+        public GetLogAnalyticsCategoryResult build() {
+            final var o = new GetLogAnalyticsCategoryResult();
+            o.description = description;
+            o.displayName = displayName;
+            o.id = id;
+            o.isSystem = isSystem;
+            o.name = name;
+            o.namespace = namespace;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -19,76 +19,51 @@ public final class GetMysqlDbSystemsResult {
      * @return The OCID of the compartment the DB System belongs in.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The OCID of the Configuration to be used for Instances in this DB System.
      * 
      */
-    private final @Nullable String configurationId;
+    private @Nullable String configurationId;
     /**
      * @return The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
      * 
      */
-    private final @Nullable String dbSystemId;
+    private @Nullable String dbSystemId;
     /**
      * @return The list of db_systems.
      * 
      */
-    private final List<GetMysqlDbSystemsDbSystem> dbSystems;
+    private List<GetMysqlDbSystemsDbSystem> dbSystems;
     /**
      * @return The user-friendly name for the DB System. It does not have to be unique.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetMysqlDbSystemsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetMysqlDbSystemsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return DEPRECATED -- please use `isHeatWaveClusterAttached` instead. If the DB System has an Analytics Cluster attached.
      * 
      */
-    private final @Nullable Boolean isAnalyticsClusterAttached;
+    private @Nullable Boolean isAnalyticsClusterAttached;
     /**
      * @return If the DB System has a HeatWave Cluster attached.
      * 
      */
-    private final @Nullable Boolean isHeatWaveClusterAttached;
-    private final @Nullable Boolean isUpToDate;
+    private @Nullable Boolean isHeatWaveClusterAttached;
+    private @Nullable Boolean isUpToDate;
     /**
      * @return The current state of the DB System.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetMysqlDbSystemsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("configurationId") @Nullable String configurationId,
-        @CustomType.Parameter("dbSystemId") @Nullable String dbSystemId,
-        @CustomType.Parameter("dbSystems") List<GetMysqlDbSystemsDbSystem> dbSystems,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetMysqlDbSystemsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isAnalyticsClusterAttached") @Nullable Boolean isAnalyticsClusterAttached,
-        @CustomType.Parameter("isHeatWaveClusterAttached") @Nullable Boolean isHeatWaveClusterAttached,
-        @CustomType.Parameter("isUpToDate") @Nullable Boolean isUpToDate,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.configurationId = configurationId;
-        this.dbSystemId = dbSystemId;
-        this.dbSystems = dbSystems;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
-        this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
-        this.isUpToDate = isUpToDate;
-        this.state = state;
-    }
-
+    private GetMysqlDbSystemsResult() {}
     /**
      * @return The OCID of the compartment the DB System belongs in.
      * 
@@ -166,7 +141,7 @@ public final class GetMysqlDbSystemsResult {
     public static Builder builder(GetMysqlDbSystemsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String configurationId;
@@ -179,11 +154,7 @@ public final class GetMysqlDbSystemsResult {
         private @Nullable Boolean isHeatWaveClusterAttached;
         private @Nullable Boolean isUpToDate;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMysqlDbSystemsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -199,18 +170,22 @@ public final class GetMysqlDbSystemsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder configurationId(@Nullable String configurationId) {
             this.configurationId = configurationId;
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
             this.dbSystemId = dbSystemId;
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystems(List<GetMysqlDbSystemsDbSystem> dbSystems) {
             this.dbSystems = Objects.requireNonNull(dbSystems);
             return this;
@@ -218,10 +193,12 @@ public final class GetMysqlDbSystemsResult {
         public Builder dbSystems(GetMysqlDbSystemsDbSystem... dbSystems) {
             return dbSystems(List.of(dbSystems));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetMysqlDbSystemsFilter> filters) {
             this.filters = filters;
             return this;
@@ -229,27 +206,45 @@ public final class GetMysqlDbSystemsResult {
         public Builder filters(GetMysqlDbSystemsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isAnalyticsClusterAttached(@Nullable Boolean isAnalyticsClusterAttached) {
             this.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
             return this;
         }
+        @CustomType.Setter
         public Builder isHeatWaveClusterAttached(@Nullable Boolean isHeatWaveClusterAttached) {
             this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
             return this;
         }
+        @CustomType.Setter
         public Builder isUpToDate(@Nullable Boolean isUpToDate) {
             this.isUpToDate = isUpToDate;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetMysqlDbSystemsResult build() {
-            return new GetMysqlDbSystemsResult(compartmentId, configurationId, dbSystemId, dbSystems, displayName, filters, id, isAnalyticsClusterAttached, isHeatWaveClusterAttached, isUpToDate, state);
+        }
+        public GetMysqlDbSystemsResult build() {
+            final var o = new GetMysqlDbSystemsResult();
+            o.compartmentId = compartmentId;
+            o.configurationId = configurationId;
+            o.dbSystemId = dbSystemId;
+            o.dbSystems = dbSystems;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
+            o.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
+            o.isUpToDate = isUpToDate;
+            o.state = state;
+            return o;
         }
     }
 }

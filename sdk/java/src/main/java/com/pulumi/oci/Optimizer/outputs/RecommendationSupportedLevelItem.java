@@ -15,13 +15,9 @@ public final class RecommendationSupportedLevelItem {
      * @return The name of the profile level.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private RecommendationSupportedLevelItem(@CustomType.Parameter("name") @Nullable String name) {
-        this.name = name;
-    }
-
+    private RecommendationSupportedLevelItem() {}
     /**
      * @return The name of the profile level.
      * 
@@ -37,24 +33,24 @@ public final class RecommendationSupportedLevelItem {
     public static Builder builder(RecommendationSupportedLevelItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RecommendationSupportedLevelItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public RecommendationSupportedLevelItem build() {
-            return new RecommendationSupportedLevelItem(name);
+        }
+        public RecommendationSupportedLevelItem build() {
+            final var o = new RecommendationSupportedLevelItem();
+            o.name = name;
+            return o;
         }
     }
 }

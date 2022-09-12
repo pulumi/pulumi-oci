@@ -13,56 +13,39 @@ public final class GetApiKeysApiKey {
      * @return The key&#39;s fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
      * 
      */
-    private final String fingerprint;
+    private String fingerprint;
     /**
      * @return An Oracle-assigned identifier for the key, in this format: TENANCY_OCID/USER_OCID/KEY_FINGERPRINT.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    private final String inactiveStatus;
+    private String inactiveStatus;
     /**
      * @return The key&#39;s value.
      * 
      */
-    private final String keyValue;
+    private String keyValue;
     /**
      * @return The API key&#39;s current state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The OCID of the user.
      * 
      */
-    private final String userId;
+    private String userId;
 
-    @CustomType.Constructor
-    private GetApiKeysApiKey(
-        @CustomType.Parameter("fingerprint") String fingerprint,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("inactiveStatus") String inactiveStatus,
-        @CustomType.Parameter("keyValue") String keyValue,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("userId") String userId) {
-        this.fingerprint = fingerprint;
-        this.id = id;
-        this.inactiveStatus = inactiveStatus;
-        this.keyValue = keyValue;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.userId = userId;
-    }
-
+    private GetApiKeysApiKey() {}
     /**
      * @return The key&#39;s fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
      * 
@@ -120,7 +103,7 @@ public final class GetApiKeysApiKey {
     public static Builder builder(GetApiKeysApiKey defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String fingerprint;
         private String id;
@@ -129,11 +112,7 @@ public final class GetApiKeysApiKey {
         private String state;
         private String timeCreated;
         private String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiKeysApiKey defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.fingerprint = defaults.fingerprint;
@@ -145,35 +124,51 @@ public final class GetApiKeysApiKey {
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder fingerprint(String fingerprint) {
             this.fingerprint = Objects.requireNonNull(fingerprint);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder inactiveStatus(String inactiveStatus) {
             this.inactiveStatus = Objects.requireNonNull(inactiveStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder keyValue(String keyValue) {
             this.keyValue = Objects.requireNonNull(keyValue);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder userId(String userId) {
             this.userId = Objects.requireNonNull(userId);
             return this;
-        }        public GetApiKeysApiKey build() {
-            return new GetApiKeysApiKey(fingerprint, id, inactiveStatus, keyValue, state, timeCreated, userId);
+        }
+        public GetApiKeysApiKey build() {
+            final var o = new GetApiKeysApiKey();
+            o.fingerprint = fingerprint;
+            o.id = id;
+            o.inactiveStatus = inactiveStatus;
+            o.keyValue = keyValue;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.userId = userId;
+            return o;
         }
     }
 }

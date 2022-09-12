@@ -5,75 +5,63 @@ package com.pulumi.oci.Analytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Analytics.outputs.GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone;
+import com.pulumi.oci.Analytics.outputs.GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetAnalyticsInstancePrivateAccessChannelResult {
-    private final String analyticsInstanceId;
+    private String analyticsInstanceId;
     /**
      * @return Display Name of the Private Access Channel.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
      * 
      */
-    private final List<String> egressSourceIpAddresses;
-    private final String id;
+    private List<String> egressSourceIpAddresses;
+    private String id;
     /**
      * @return IP Address of the Private Access channel.
      * 
      */
-    private final String ipAddress;
+    private String ipAddress;
     /**
      * @return Private Access Channel unique identifier key.
      * 
      */
-    private final String key;
-    private final String privateAccessChannelKey;
+    private String key;
+    /**
+     * @return Network Security Group OCIDs for an Analytics instance.
+     * 
+     */
+    private List<String> networkSecurityGroupIds;
+    private String privateAccessChannelKey;
     /**
      * @return List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
      * 
      */
-    private final List<GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone> privateSourceDnsZones;
+    private List<GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone> privateSourceDnsZones;
+    /**
+     * @return List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     * 
+     */
+    private List<GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost> privateSourceScanHosts;
     /**
      * @return OCID of the customer subnet connected to private access channel.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return OCID of the customer VCN peered with private access channel.
      * 
      */
-    private final String vcnId;
+    private String vcnId;
 
-    @CustomType.Constructor
-    private GetAnalyticsInstancePrivateAccessChannelResult(
-        @CustomType.Parameter("analyticsInstanceId") String analyticsInstanceId,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("egressSourceIpAddresses") List<String> egressSourceIpAddresses,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipAddress") String ipAddress,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("privateAccessChannelKey") String privateAccessChannelKey,
-        @CustomType.Parameter("privateSourceDnsZones") List<GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone> privateSourceDnsZones,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("vcnId") String vcnId) {
-        this.analyticsInstanceId = analyticsInstanceId;
-        this.displayName = displayName;
-        this.egressSourceIpAddresses = egressSourceIpAddresses;
-        this.id = id;
-        this.ipAddress = ipAddress;
-        this.key = key;
-        this.privateAccessChannelKey = privateAccessChannelKey;
-        this.privateSourceDnsZones = privateSourceDnsZones;
-        this.subnetId = subnetId;
-        this.vcnId = vcnId;
-    }
-
+    private GetAnalyticsInstancePrivateAccessChannelResult() {}
     public String analyticsInstanceId() {
         return this.analyticsInstanceId;
     }
@@ -108,6 +96,13 @@ public final class GetAnalyticsInstancePrivateAccessChannelResult {
     public String key() {
         return this.key;
     }
+    /**
+     * @return Network Security Group OCIDs for an Analytics instance.
+     * 
+     */
+    public List<String> networkSecurityGroupIds() {
+        return this.networkSecurityGroupIds;
+    }
     public String privateAccessChannelKey() {
         return this.privateAccessChannelKey;
     }
@@ -117,6 +112,13 @@ public final class GetAnalyticsInstancePrivateAccessChannelResult {
      */
     public List<GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone> privateSourceDnsZones() {
         return this.privateSourceDnsZones;
+    }
+    /**
+     * @return List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     * 
+     */
+    public List<GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost> privateSourceScanHosts() {
+        return this.privateSourceScanHosts;
     }
     /**
      * @return OCID of the customer subnet connected to private access channel.
@@ -140,7 +142,7 @@ public final class GetAnalyticsInstancePrivateAccessChannelResult {
     public static Builder builder(GetAnalyticsInstancePrivateAccessChannelResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String analyticsInstanceId;
         private String displayName;
@@ -148,15 +150,13 @@ public final class GetAnalyticsInstancePrivateAccessChannelResult {
         private String id;
         private String ipAddress;
         private String key;
+        private List<String> networkSecurityGroupIds;
         private String privateAccessChannelKey;
         private List<GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone> privateSourceDnsZones;
+        private List<GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost> privateSourceScanHosts;
         private String subnetId;
         private String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAnalyticsInstancePrivateAccessChannelResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.analyticsInstanceId = defaults.analyticsInstanceId;
@@ -165,20 +165,25 @@ public final class GetAnalyticsInstancePrivateAccessChannelResult {
     	      this.id = defaults.id;
     	      this.ipAddress = defaults.ipAddress;
     	      this.key = defaults.key;
+    	      this.networkSecurityGroupIds = defaults.networkSecurityGroupIds;
     	      this.privateAccessChannelKey = defaults.privateAccessChannelKey;
     	      this.privateSourceDnsZones = defaults.privateSourceDnsZones;
+    	      this.privateSourceScanHosts = defaults.privateSourceScanHosts;
     	      this.subnetId = defaults.subnetId;
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder analyticsInstanceId(String analyticsInstanceId) {
             this.analyticsInstanceId = Objects.requireNonNull(analyticsInstanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder egressSourceIpAddresses(List<String> egressSourceIpAddresses) {
             this.egressSourceIpAddresses = Objects.requireNonNull(egressSourceIpAddresses);
             return this;
@@ -186,22 +191,35 @@ public final class GetAnalyticsInstancePrivateAccessChannelResult {
         public Builder egressSourceIpAddresses(String... egressSourceIpAddresses) {
             return egressSourceIpAddresses(List.of(egressSourceIpAddresses));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = Objects.requireNonNull(ipAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
+        public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
+            this.networkSecurityGroupIds = Objects.requireNonNull(networkSecurityGroupIds);
+            return this;
+        }
+        public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
+            return networkSecurityGroupIds(List.of(networkSecurityGroupIds));
+        }
+        @CustomType.Setter
         public Builder privateAccessChannelKey(String privateAccessChannelKey) {
             this.privateAccessChannelKey = Objects.requireNonNull(privateAccessChannelKey);
             return this;
         }
+        @CustomType.Setter
         public Builder privateSourceDnsZones(List<GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone> privateSourceDnsZones) {
             this.privateSourceDnsZones = Objects.requireNonNull(privateSourceDnsZones);
             return this;
@@ -209,15 +227,39 @@ public final class GetAnalyticsInstancePrivateAccessChannelResult {
         public Builder privateSourceDnsZones(GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone... privateSourceDnsZones) {
             return privateSourceDnsZones(List.of(privateSourceDnsZones));
         }
+        @CustomType.Setter
+        public Builder privateSourceScanHosts(List<GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost> privateSourceScanHosts) {
+            this.privateSourceScanHosts = Objects.requireNonNull(privateSourceScanHosts);
+            return this;
+        }
+        public Builder privateSourceScanHosts(GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost... privateSourceScanHosts) {
+            return privateSourceScanHosts(List.of(privateSourceScanHosts));
+        }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(String vcnId) {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
-        }        public GetAnalyticsInstancePrivateAccessChannelResult build() {
-            return new GetAnalyticsInstancePrivateAccessChannelResult(analyticsInstanceId, displayName, egressSourceIpAddresses, id, ipAddress, key, privateAccessChannelKey, privateSourceDnsZones, subnetId, vcnId);
+        }
+        public GetAnalyticsInstancePrivateAccessChannelResult build() {
+            final var o = new GetAnalyticsInstancePrivateAccessChannelResult();
+            o.analyticsInstanceId = analyticsInstanceId;
+            o.displayName = displayName;
+            o.egressSourceIpAddresses = egressSourceIpAddresses;
+            o.id = id;
+            o.ipAddress = ipAddress;
+            o.key = key;
+            o.networkSecurityGroupIds = networkSecurityGroupIds;
+            o.privateAccessChannelKey = privateAccessChannelKey;
+            o.privateSourceDnsZones = privateSourceDnsZones;
+            o.privateSourceScanHosts = privateSourceScanHosts;
+            o.subnetId = subnetId;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

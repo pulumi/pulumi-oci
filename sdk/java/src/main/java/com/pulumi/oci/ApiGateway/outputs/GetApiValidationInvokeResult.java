@@ -11,28 +11,19 @@ import java.util.Objects;
 
 @CustomType
 public final class GetApiValidationInvokeResult {
-    private final String apiId;
+    private String apiId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return API validation results.
      * 
      */
-    private final List<GetApiValidationValidation> validations;
+    private List<GetApiValidationValidation> validations;
 
-    @CustomType.Constructor
-    private GetApiValidationInvokeResult(
-        @CustomType.Parameter("apiId") String apiId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("validations") List<GetApiValidationValidation> validations) {
-        this.apiId = apiId;
-        this.id = id;
-        this.validations = validations;
-    }
-
+    private GetApiValidationInvokeResult() {}
     public String apiId() {
         return this.apiId;
     }
@@ -58,16 +49,12 @@ public final class GetApiValidationInvokeResult {
     public static Builder builder(GetApiValidationInvokeResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apiId;
         private String id;
         private List<GetApiValidationValidation> validations;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiValidationInvokeResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apiId = defaults.apiId;
@@ -75,22 +62,30 @@ public final class GetApiValidationInvokeResult {
     	      this.validations = defaults.validations;
         }
 
+        @CustomType.Setter
         public Builder apiId(String apiId) {
             this.apiId = Objects.requireNonNull(apiId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder validations(List<GetApiValidationValidation> validations) {
             this.validations = Objects.requireNonNull(validations);
             return this;
         }
         public Builder validations(GetApiValidationValidation... validations) {
             return validations(List.of(validations));
-        }        public GetApiValidationInvokeResult build() {
-            return new GetApiValidationInvokeResult(apiId, id, validations);
+        }
+        public GetApiValidationInvokeResult build() {
+            final var o = new GetApiValidationInvokeResult();
+            o.apiId = apiId;
+            o.id = id;
+            o.validations = validations;
+            return o;
         }
     }
 }

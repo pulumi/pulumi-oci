@@ -16,42 +16,29 @@ public final class PathAnalysiProtocolParameters {
      * @return The destination port to use in a `PathAnalyzerTest` resource.
      * 
      */
-    private final @Nullable Integer destinationPort;
+    private @Nullable Integer destinationPort;
     /**
      * @return The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
      * 
      */
-    private final @Nullable Integer icmpCode;
+    private @Nullable Integer icmpCode;
     /**
      * @return The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
      * 
      */
-    private final @Nullable Integer icmpType;
+    private @Nullable Integer icmpType;
     /**
      * @return The source port to use in a `PathAnalyzerTest` resource.
      * 
      */
-    private final @Nullable Integer sourcePort;
+    private @Nullable Integer sourcePort;
     /**
      * @return The type of the `PathAnalysis` query.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private PathAnalysiProtocolParameters(
-        @CustomType.Parameter("destinationPort") @Nullable Integer destinationPort,
-        @CustomType.Parameter("icmpCode") @Nullable Integer icmpCode,
-        @CustomType.Parameter("icmpType") @Nullable Integer icmpType,
-        @CustomType.Parameter("sourcePort") @Nullable Integer sourcePort,
-        @CustomType.Parameter("type") String type) {
-        this.destinationPort = destinationPort;
-        this.icmpCode = icmpCode;
-        this.icmpType = icmpType;
-        this.sourcePort = sourcePort;
-        this.type = type;
-    }
-
+    private PathAnalysiProtocolParameters() {}
     /**
      * @return The destination port to use in a `PathAnalyzerTest` resource.
      * 
@@ -95,18 +82,14 @@ public final class PathAnalysiProtocolParameters {
     public static Builder builder(PathAnalysiProtocolParameters defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer destinationPort;
         private @Nullable Integer icmpCode;
         private @Nullable Integer icmpType;
         private @Nullable Integer sourcePort;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PathAnalysiProtocolParameters defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.destinationPort = defaults.destinationPort;
@@ -116,27 +99,39 @@ public final class PathAnalysiProtocolParameters {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder destinationPort(@Nullable Integer destinationPort) {
             this.destinationPort = destinationPort;
             return this;
         }
+        @CustomType.Setter
         public Builder icmpCode(@Nullable Integer icmpCode) {
             this.icmpCode = icmpCode;
             return this;
         }
+        @CustomType.Setter
         public Builder icmpType(@Nullable Integer icmpType) {
             this.icmpType = icmpType;
             return this;
         }
+        @CustomType.Setter
         public Builder sourcePort(@Nullable Integer sourcePort) {
             this.sourcePort = sourcePort;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public PathAnalysiProtocolParameters build() {
-            return new PathAnalysiProtocolParameters(destinationPort, icmpCode, icmpType, sourcePort, type);
+        }
+        public PathAnalysiProtocolParameters build() {
+            final var o = new PathAnalysiProtocolParameters();
+            o.destinationPort = destinationPort;
+            o.icmpCode = icmpCode;
+            o.icmpType = icmpType;
+            o.sourcePort = sourcePort;
+            o.type = type;
+            return o;
         }
     }
 }

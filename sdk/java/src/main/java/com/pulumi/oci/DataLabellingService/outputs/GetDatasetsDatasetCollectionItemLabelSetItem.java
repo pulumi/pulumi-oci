@@ -13,13 +13,9 @@ public final class GetDatasetsDatasetCollectionItemLabelSetItem {
      * @return An unique name for a label within its dataset.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetDatasetsDatasetCollectionItemLabelSetItem(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private GetDatasetsDatasetCollectionItemLabelSetItem() {}
     /**
      * @return An unique name for a label within its dataset.
      * 
@@ -35,24 +31,24 @@ public final class GetDatasetsDatasetCollectionItemLabelSetItem {
     public static Builder builder(GetDatasetsDatasetCollectionItemLabelSetItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatasetsDatasetCollectionItemLabelSetItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetDatasetsDatasetCollectionItemLabelSetItem build() {
-            return new GetDatasetsDatasetCollectionItemLabelSetItem(name);
+        }
+        public GetDatasetsDatasetCollectionItemLabelSetItem build() {
+            final var o = new GetDatasetsDatasetCollectionItemLabelSetItem();
+            o.name = name;
+            return o;
         }
     }
 }

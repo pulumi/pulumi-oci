@@ -13,21 +13,14 @@ public final class GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem {
      * @return The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
      * 
      */
-    private final String cidrBlock;
+    private String cidrBlock;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP pool containing the CIDR block.
      * 
      */
-    private final String publicIpPoolId;
+    private String publicIpPoolId;
 
-    @CustomType.Constructor
-    private GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem(
-        @CustomType.Parameter("cidrBlock") String cidrBlock,
-        @CustomType.Parameter("publicIpPoolId") String publicIpPoolId) {
-        this.cidrBlock = cidrBlock;
-        this.publicIpPoolId = publicIpPoolId;
-    }
-
+    private GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem() {}
     /**
      * @return The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
      * 
@@ -50,30 +43,32 @@ public final class GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem {
     public static Builder builder(GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String cidrBlock;
         private String publicIpPoolId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cidrBlock = defaults.cidrBlock;
     	      this.publicIpPoolId = defaults.publicIpPoolId;
         }
 
+        @CustomType.Setter
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = Objects.requireNonNull(cidrBlock);
             return this;
         }
+        @CustomType.Setter
         public Builder publicIpPoolId(String publicIpPoolId) {
             this.publicIpPoolId = Objects.requireNonNull(publicIpPoolId);
             return this;
-        }        public GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem build() {
-            return new GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem(cidrBlock, publicIpPoolId);
+        }
+        public GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem build() {
+            final var o = new GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem();
+            o.cidrBlock = cidrBlock;
+            o.publicIpPoolId = publicIpPoolId;
+            return o;
         }
     }
 }

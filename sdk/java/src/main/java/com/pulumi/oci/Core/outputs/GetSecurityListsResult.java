@@ -18,52 +18,35 @@ public final class GetSecurityListsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the security list.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetSecurityListsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetSecurityListsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of security_lists.
      * 
      */
-    private final List<GetSecurityListsSecurityList> securityLists;
+    private List<GetSecurityListsSecurityList> securityLists;
     /**
      * @return The security list&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
      * 
      */
-    private final @Nullable String vcnId;
+    private @Nullable String vcnId;
 
-    @CustomType.Constructor
-    private GetSecurityListsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetSecurityListsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("securityLists") List<GetSecurityListsSecurityList> securityLists,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("vcnId") @Nullable String vcnId) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.securityLists = securityLists;
-        this.state = state;
-        this.vcnId = vcnId;
-    }
-
+    private GetSecurityListsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the security list.
      * 
@@ -117,7 +100,7 @@ public final class GetSecurityListsResult {
     public static Builder builder(GetSecurityListsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -126,11 +109,7 @@ public final class GetSecurityListsResult {
         private List<GetSecurityListsSecurityList> securityLists;
         private @Nullable String state;
         private @Nullable String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityListsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,14 +121,17 @@ public final class GetSecurityListsResult {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSecurityListsFilter> filters) {
             this.filters = filters;
             return this;
@@ -157,10 +139,12 @@ public final class GetSecurityListsResult {
         public Builder filters(GetSecurityListsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder securityLists(List<GetSecurityListsSecurityList> securityLists) {
             this.securityLists = Objects.requireNonNull(securityLists);
             return this;
@@ -168,15 +152,26 @@ public final class GetSecurityListsResult {
         public Builder securityLists(GetSecurityListsSecurityList... securityLists) {
             return securityLists(List.of(securityLists));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
             this.vcnId = vcnId;
             return this;
-        }        public GetSecurityListsResult build() {
-            return new GetSecurityListsResult(compartmentId, displayName, filters, id, securityLists, state, vcnId);
+        }
+        public GetSecurityListsResult build() {
+            final var o = new GetSecurityListsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.securityLists = securityLists;
+            o.state = state;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

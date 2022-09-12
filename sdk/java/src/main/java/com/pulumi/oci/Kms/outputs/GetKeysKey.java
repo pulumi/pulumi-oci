@@ -21,127 +21,84 @@ public final class GetKeysKey {
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
      * 
      */
-    private final String currentKeyVersion;
+    private String currentKeyVersion;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
-    private final String desiredState;
+    private Map<String,Object> definedTags;
+    private String desiredState;
     /**
      * @return A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the key.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
      * 
      */
-    private final Boolean isPrimary;
+    private Boolean isPrimary;
     /**
      * @return The cryptographic properties of a key.
      * 
      */
-    private final List<GetKeysKeyKeyShape> keyShapes;
+    private List<GetKeysKeyKeyShape> keyShapes;
     /**
      * @return The service endpoint to perform management operations against. Management operations include &#39;Create,&#39; &#39;Update,&#39; &#39;List,&#39; &#39;Get,&#39; and &#39;Delete&#39; operations. See Vault Management endpoint.
      * 
      */
-    private final String managementEndpoint;
+    private String managementEndpoint;
     /**
      * @return A key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A  protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are  performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s  RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of  `SOFTWARE` are performed on the server.
      * 
      */
-    private final String protectionMode;
+    private String protectionMode;
     /**
      * @return Key replica details
      * 
      */
-    private final List<GetKeysKeyReplicaDetail> replicaDetails;
-    private final List<GetKeysKeyRestoreFromFile> restoreFromFiles;
-    private final List<GetKeysKeyRestoreFromObjectStore> restoreFromObjectStores;
-    private final Boolean restoreTrigger;
-    private final String restoredFromKeyId;
+    private List<GetKeysKeyReplicaDetail> replicaDetails;
+    private List<GetKeysKeyRestoreFromFile> restoreFromFiles;
+    private List<GetKeysKeyRestoreFromObjectStore> restoreFromObjectStores;
+    private Boolean restoreTrigger;
+    private String restoredFromKeyId;
     /**
      * @return The key&#39;s current lifecycle state.  Example: `ENABLED`
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return An optional property indicating when to delete the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeOfDeletion;
+    private String timeOfDeletion;
     /**
      * @return The OCID of the vault that contains this key.
      * 
      */
-    private final String vaultId;
+    private String vaultId;
 
-    @CustomType.Constructor
-    private GetKeysKey(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("currentKeyVersion") String currentKeyVersion,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("desiredState") String desiredState,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isPrimary") Boolean isPrimary,
-        @CustomType.Parameter("keyShapes") List<GetKeysKeyKeyShape> keyShapes,
-        @CustomType.Parameter("managementEndpoint") String managementEndpoint,
-        @CustomType.Parameter("protectionMode") String protectionMode,
-        @CustomType.Parameter("replicaDetails") List<GetKeysKeyReplicaDetail> replicaDetails,
-        @CustomType.Parameter("restoreFromFiles") List<GetKeysKeyRestoreFromFile> restoreFromFiles,
-        @CustomType.Parameter("restoreFromObjectStores") List<GetKeysKeyRestoreFromObjectStore> restoreFromObjectStores,
-        @CustomType.Parameter("restoreTrigger") Boolean restoreTrigger,
-        @CustomType.Parameter("restoredFromKeyId") String restoredFromKeyId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeOfDeletion") String timeOfDeletion,
-        @CustomType.Parameter("vaultId") String vaultId) {
-        this.compartmentId = compartmentId;
-        this.currentKeyVersion = currentKeyVersion;
-        this.definedTags = definedTags;
-        this.desiredState = desiredState;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isPrimary = isPrimary;
-        this.keyShapes = keyShapes;
-        this.managementEndpoint = managementEndpoint;
-        this.protectionMode = protectionMode;
-        this.replicaDetails = replicaDetails;
-        this.restoreFromFiles = restoreFromFiles;
-        this.restoreFromObjectStores = restoreFromObjectStores;
-        this.restoreTrigger = restoreTrigger;
-        this.restoredFromKeyId = restoredFromKeyId;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeOfDeletion = timeOfDeletion;
-        this.vaultId = vaultId;
-    }
-
+    private GetKeysKey() {}
     /**
      * @return The OCID of the compartment.
      * 
@@ -270,7 +227,7 @@ public final class GetKeysKey {
     public static Builder builder(GetKeysKey defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String currentKeyVersion;
@@ -292,11 +249,7 @@ public final class GetKeysKey {
         private String timeCreated;
         private String timeOfDeletion;
         private String vaultId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetKeysKey defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -321,38 +274,47 @@ public final class GetKeysKey {
     	      this.vaultId = defaults.vaultId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder currentKeyVersion(String currentKeyVersion) {
             this.currentKeyVersion = Objects.requireNonNull(currentKeyVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder desiredState(String desiredState) {
             this.desiredState = Objects.requireNonNull(desiredState);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isPrimary(Boolean isPrimary) {
             this.isPrimary = Objects.requireNonNull(isPrimary);
             return this;
         }
+        @CustomType.Setter
         public Builder keyShapes(List<GetKeysKeyKeyShape> keyShapes) {
             this.keyShapes = Objects.requireNonNull(keyShapes);
             return this;
@@ -360,14 +322,17 @@ public final class GetKeysKey {
         public Builder keyShapes(GetKeysKeyKeyShape... keyShapes) {
             return keyShapes(List.of(keyShapes));
         }
+        @CustomType.Setter
         public Builder managementEndpoint(String managementEndpoint) {
             this.managementEndpoint = Objects.requireNonNull(managementEndpoint);
             return this;
         }
+        @CustomType.Setter
         public Builder protectionMode(String protectionMode) {
             this.protectionMode = Objects.requireNonNull(protectionMode);
             return this;
         }
+        @CustomType.Setter
         public Builder replicaDetails(List<GetKeysKeyReplicaDetail> replicaDetails) {
             this.replicaDetails = Objects.requireNonNull(replicaDetails);
             return this;
@@ -375,6 +340,7 @@ public final class GetKeysKey {
         public Builder replicaDetails(GetKeysKeyReplicaDetail... replicaDetails) {
             return replicaDetails(List.of(replicaDetails));
         }
+        @CustomType.Setter
         public Builder restoreFromFiles(List<GetKeysKeyRestoreFromFile> restoreFromFiles) {
             this.restoreFromFiles = Objects.requireNonNull(restoreFromFiles);
             return this;
@@ -382,6 +348,7 @@ public final class GetKeysKey {
         public Builder restoreFromFiles(GetKeysKeyRestoreFromFile... restoreFromFiles) {
             return restoreFromFiles(List.of(restoreFromFiles));
         }
+        @CustomType.Setter
         public Builder restoreFromObjectStores(List<GetKeysKeyRestoreFromObjectStore> restoreFromObjectStores) {
             this.restoreFromObjectStores = Objects.requireNonNull(restoreFromObjectStores);
             return this;
@@ -389,31 +356,59 @@ public final class GetKeysKey {
         public Builder restoreFromObjectStores(GetKeysKeyRestoreFromObjectStore... restoreFromObjectStores) {
             return restoreFromObjectStores(List.of(restoreFromObjectStores));
         }
+        @CustomType.Setter
         public Builder restoreTrigger(Boolean restoreTrigger) {
             this.restoreTrigger = Objects.requireNonNull(restoreTrigger);
             return this;
         }
+        @CustomType.Setter
         public Builder restoredFromKeyId(String restoredFromKeyId) {
             this.restoredFromKeyId = Objects.requireNonNull(restoredFromKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
             this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
             return this;
         }
+        @CustomType.Setter
         public Builder vaultId(String vaultId) {
             this.vaultId = Objects.requireNonNull(vaultId);
             return this;
-        }        public GetKeysKey build() {
-            return new GetKeysKey(compartmentId, currentKeyVersion, definedTags, desiredState, displayName, freeformTags, id, isPrimary, keyShapes, managementEndpoint, protectionMode, replicaDetails, restoreFromFiles, restoreFromObjectStores, restoreTrigger, restoredFromKeyId, state, timeCreated, timeOfDeletion, vaultId);
+        }
+        public GetKeysKey build() {
+            final var o = new GetKeysKey();
+            o.compartmentId = compartmentId;
+            o.currentKeyVersion = currentKeyVersion;
+            o.definedTags = definedTags;
+            o.desiredState = desiredState;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isPrimary = isPrimary;
+            o.keyShapes = keyShapes;
+            o.managementEndpoint = managementEndpoint;
+            o.protectionMode = protectionMode;
+            o.replicaDetails = replicaDetails;
+            o.restoreFromFiles = restoreFromFiles;
+            o.restoreFromObjectStores = restoreFromObjectStores;
+            o.restoreTrigger = restoreTrigger;
+            o.restoredFromKeyId = restoredFromKeyId;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeOfDeletion = timeOfDeletion;
+            o.vaultId = vaultId;
+            return o;
         }
     }
 }

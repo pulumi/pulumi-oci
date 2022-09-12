@@ -16,21 +16,14 @@ public final class CertificateCertificateRevocationListDetail {
      * @return Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
      * 
      */
-    private final @Nullable List<String> customFormattedUrls;
+    private @Nullable List<String> customFormattedUrls;
     /**
      * @return The details of the Object Storage bucket configured to store the certificate revocation list (CRL).
      * 
      */
-    private final @Nullable List<CertificateCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs;
+    private @Nullable List<CertificateCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs;
 
-    @CustomType.Constructor
-    private CertificateCertificateRevocationListDetail(
-        @CustomType.Parameter("customFormattedUrls") @Nullable List<String> customFormattedUrls,
-        @CustomType.Parameter("objectStorageConfigs") @Nullable List<CertificateCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs) {
-        this.customFormattedUrls = customFormattedUrls;
-        this.objectStorageConfigs = objectStorageConfigs;
-    }
-
+    private CertificateCertificateRevocationListDetail() {}
     /**
      * @return Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
      * 
@@ -53,21 +46,18 @@ public final class CertificateCertificateRevocationListDetail {
     public static Builder builder(CertificateCertificateRevocationListDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> customFormattedUrls;
         private @Nullable List<CertificateCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CertificateCertificateRevocationListDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.customFormattedUrls = defaults.customFormattedUrls;
     	      this.objectStorageConfigs = defaults.objectStorageConfigs;
         }
 
+        @CustomType.Setter
         public Builder customFormattedUrls(@Nullable List<String> customFormattedUrls) {
             this.customFormattedUrls = customFormattedUrls;
             return this;
@@ -75,14 +65,19 @@ public final class CertificateCertificateRevocationListDetail {
         public Builder customFormattedUrls(String... customFormattedUrls) {
             return customFormattedUrls(List.of(customFormattedUrls));
         }
+        @CustomType.Setter
         public Builder objectStorageConfigs(@Nullable List<CertificateCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs) {
             this.objectStorageConfigs = objectStorageConfigs;
             return this;
         }
         public Builder objectStorageConfigs(CertificateCertificateRevocationListDetailObjectStorageConfig... objectStorageConfigs) {
             return objectStorageConfigs(List.of(objectStorageConfigs));
-        }        public CertificateCertificateRevocationListDetail build() {
-            return new CertificateCertificateRevocationListDetail(customFormattedUrls, objectStorageConfigs);
+        }
+        public CertificateCertificateRevocationListDetail build() {
+            final var o = new CertificateCertificateRevocationListDetail();
+            o.customFormattedUrls = customFormattedUrls;
+            o.objectStorageConfigs = objectStorageConfigs;
+            return o;
         }
     }
 }

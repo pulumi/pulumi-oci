@@ -13,79 +13,52 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutoScalingConfigurationResult {
-    private final String autoScalingConfigurationId;
-    private final String bdsInstanceId;
-    private final String clusterAdminPassword;
+    private String autoScalingConfigurationId;
+    private String bdsInstanceId;
+    private String clusterAdminPassword;
     /**
      * @return A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The unique identifier for the autoscale configuration.
      * 
      */
-    private final String id;
-    private final Boolean isEnabled;
+    private String id;
+    private Boolean isEnabled;
     /**
      * @return A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
      * 
      */
-    private final String nodeType;
+    private String nodeType;
     /**
      * @return This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      * 
      */
-    private final List<GetAutoScalingConfigurationPolicy> policies;
+    private List<GetAutoScalingConfigurationPolicy> policies;
     /**
      * @return Details of an autoscale policy.
      * 
      */
-    private final List<GetAutoScalingConfigurationPolicyDetail> policyDetails;
+    private List<GetAutoScalingConfigurationPolicyDetail> policyDetails;
     /**
      * @return The state of the autoscale configuration.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationResult(
-        @CustomType.Parameter("autoScalingConfigurationId") String autoScalingConfigurationId,
-        @CustomType.Parameter("bdsInstanceId") String bdsInstanceId,
-        @CustomType.Parameter("clusterAdminPassword") String clusterAdminPassword,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("nodeType") String nodeType,
-        @CustomType.Parameter("policies") List<GetAutoScalingConfigurationPolicy> policies,
-        @CustomType.Parameter("policyDetails") List<GetAutoScalingConfigurationPolicyDetail> policyDetails,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.autoScalingConfigurationId = autoScalingConfigurationId;
-        this.bdsInstanceId = bdsInstanceId;
-        this.clusterAdminPassword = clusterAdminPassword;
-        this.displayName = displayName;
-        this.id = id;
-        this.isEnabled = isEnabled;
-        this.nodeType = nodeType;
-        this.policies = policies;
-        this.policyDetails = policyDetails;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetAutoScalingConfigurationResult() {}
     public String autoScalingConfigurationId() {
         return this.autoScalingConfigurationId;
     }
@@ -162,7 +135,7 @@ public final class GetAutoScalingConfigurationResult {
     public static Builder builder(GetAutoScalingConfigurationResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String autoScalingConfigurationId;
         private String bdsInstanceId;
@@ -176,11 +149,7 @@ public final class GetAutoScalingConfigurationResult {
         private String state;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autoScalingConfigurationId = defaults.autoScalingConfigurationId;
@@ -197,34 +166,42 @@ public final class GetAutoScalingConfigurationResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder autoScalingConfigurationId(String autoScalingConfigurationId) {
             this.autoScalingConfigurationId = Objects.requireNonNull(autoScalingConfigurationId);
             return this;
         }
+        @CustomType.Setter
         public Builder bdsInstanceId(String bdsInstanceId) {
             this.bdsInstanceId = Objects.requireNonNull(bdsInstanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = Objects.requireNonNull(clusterAdminPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder nodeType(String nodeType) {
             this.nodeType = Objects.requireNonNull(nodeType);
             return this;
         }
+        @CustomType.Setter
         public Builder policies(List<GetAutoScalingConfigurationPolicy> policies) {
             this.policies = Objects.requireNonNull(policies);
             return this;
@@ -232,6 +209,7 @@ public final class GetAutoScalingConfigurationResult {
         public Builder policies(GetAutoScalingConfigurationPolicy... policies) {
             return policies(List.of(policies));
         }
+        @CustomType.Setter
         public Builder policyDetails(List<GetAutoScalingConfigurationPolicyDetail> policyDetails) {
             this.policyDetails = Objects.requireNonNull(policyDetails);
             return this;
@@ -239,19 +217,36 @@ public final class GetAutoScalingConfigurationResult {
         public Builder policyDetails(GetAutoScalingConfigurationPolicyDetail... policyDetails) {
             return policyDetails(List.of(policyDetails));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetAutoScalingConfigurationResult build() {
-            return new GetAutoScalingConfigurationResult(autoScalingConfigurationId, bdsInstanceId, clusterAdminPassword, displayName, id, isEnabled, nodeType, policies, policyDetails, state, timeCreated, timeUpdated);
+        }
+        public GetAutoScalingConfigurationResult build() {
+            final var o = new GetAutoScalingConfigurationResult();
+            o.autoScalingConfigurationId = autoScalingConfigurationId;
+            o.bdsInstanceId = bdsInstanceId;
+            o.clusterAdminPassword = clusterAdminPassword;
+            o.displayName = displayName;
+            o.id = id;
+            o.isEnabled = isEnabled;
+            o.nodeType = nodeType;
+            o.policies = policies;
+            o.policyDetails = policyDetails;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

@@ -37,17 +37,22 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.NewDataGuardAssociation(ctx, "testDataGuardAssociation", &Database.DataGuardAssociationArgs{
-//				CreationType:                 pulumi.Any(_var.Data_guard_association_creation_type),
-//				DatabaseAdminPassword:        pulumi.Any(_var.Data_guard_association_database_admin_password),
-//				DatabaseId:                   pulumi.Any(oci_database_database.Test_database.Id),
-//				DeleteStandbyDbHomeOnDelete:  pulumi.Any(_var.Data_guard_association_delete_standby_db_home_on_delete),
-//				ProtectionMode:               pulumi.Any(_var.Data_guard_association_protection_mode),
-//				TransportType:                pulumi.Any(_var.Data_guard_association_transport_type),
-//				AvailabilityDomain:           pulumi.Any(_var.Data_guard_association_availability_domain),
-//				BackupNetworkNsgIds:          pulumi.Any(_var.Data_guard_association_backup_network_nsg_ids),
-//				CpuCoreCount:                 pulumi.Any(_var.Data_guard_association_cpu_core_count),
-//				DatabaseDefinedTags:          pulumi.Any(_var.Data_guard_association_database_defined_tags),
-//				DatabaseFreeformTags:         pulumi.Any(_var.Data_guard_association_database_freeform_tags),
+//				CreationType:                pulumi.Any(_var.Data_guard_association_creation_type),
+//				DatabaseAdminPassword:       pulumi.Any(_var.Data_guard_association_database_admin_password),
+//				DatabaseId:                  pulumi.Any(oci_database_database.Test_database.Id),
+//				DeleteStandbyDbHomeOnDelete: pulumi.Any(_var.Data_guard_association_delete_standby_db_home_on_delete),
+//				ProtectionMode:              pulumi.Any(_var.Data_guard_association_protection_mode),
+//				TransportType:               pulumi.Any(_var.Data_guard_association_transport_type),
+//				AvailabilityDomain:          pulumi.Any(_var.Data_guard_association_availability_domain),
+//				BackupNetworkNsgIds:         pulumi.Any(_var.Data_guard_association_backup_network_nsg_ids),
+//				CpuCoreCount:                pulumi.Any(_var.Data_guard_association_cpu_core_count),
+//				DatabaseDefinedTags:         pulumi.Any(_var.Data_guard_association_database_defined_tags),
+//				DatabaseFreeformTags:        pulumi.Any(_var.Data_guard_association_database_freeform_tags),
+//				DataCollectionOptions: &database.DataGuardAssociationDataCollectionOptionsArgs{
+//					IsDiagnosticsEventsEnabled: pulumi.Any(_var.Data_guard_association_data_collection_options_is_diagnostics_events_enabled),
+//					IsHealthMonitoringEnabled:  pulumi.Any(_var.Data_guard_association_data_collection_options_is_health_monitoring_enabled),
+//					IsIncidentLogsEnabled:      pulumi.Any(_var.Data_guard_association_data_collection_options_is_incident_logs_enabled),
+//				},
 //				DatabaseSoftwareImageId:      pulumi.Any(oci_database_database_software_image.Test_database_software_image.Id),
 //				DbSystemDefinedTags:          pulumi.Any(_var.Data_guard_association_db_system_defined_tags),
 //				DbSystemFreeformTags:         pulumi.Any(_var.Data_guard_association_db_system_freeform_tags),
@@ -97,6 +102,8 @@ type DataGuardAssociation struct {
 	CreateAsync  pulumi.BoolPtrOutput `pulumi:"createAsync"`
 	// Specifies whether to create the peer database in an existing DB system or in a new DB system.
 	CreationType pulumi.StringOutput `pulumi:"creationType"`
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+	DataCollectionOptions DataGuardAssociationDataCollectionOptionsOutput `pulumi:"dataCollectionOptions"`
 	// (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
 	DatabaseAdminPassword pulumi.StringOutput `pulumi:"databaseAdminPassword"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -231,6 +238,8 @@ type dataGuardAssociationState struct {
 	CreateAsync  *bool `pulumi:"createAsync"`
 	// Specifies whether to create the peer database in an existing DB system or in a new DB system.
 	CreationType *string `pulumi:"creationType"`
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+	DataCollectionOptions *DataGuardAssociationDataCollectionOptions `pulumi:"dataCollectionOptions"`
 	// (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
 	DatabaseAdminPassword *string `pulumi:"databaseAdminPassword"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -319,6 +328,8 @@ type DataGuardAssociationState struct {
 	CreateAsync  pulumi.BoolPtrInput
 	// Specifies whether to create the peer database in an existing DB system or in a new DB system.
 	CreationType pulumi.StringPtrInput
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+	DataCollectionOptions DataGuardAssociationDataCollectionOptionsPtrInput
 	// (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
 	DatabaseAdminPassword pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -407,6 +418,8 @@ type dataGuardAssociationArgs struct {
 	CreateAsync  *bool `pulumi:"createAsync"`
 	// Specifies whether to create the peer database in an existing DB system or in a new DB system.
 	CreationType string `pulumi:"creationType"`
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+	DataCollectionOptions *DataGuardAssociationDataCollectionOptions `pulumi:"dataCollectionOptions"`
 	// (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
 	DatabaseAdminPassword string `pulumi:"databaseAdminPassword"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -478,6 +491,8 @@ type DataGuardAssociationArgs struct {
 	CreateAsync  pulumi.BoolPtrInput
 	// Specifies whether to create the peer database in an existing DB system or in a new DB system.
 	CreationType pulumi.StringInput
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+	DataCollectionOptions DataGuardAssociationDataCollectionOptionsPtrInput
 	// (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
 	DatabaseAdminPassword pulumi.StringInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -657,6 +672,13 @@ func (o DataGuardAssociationOutput) CreateAsync() pulumi.BoolPtrOutput {
 // Specifies whether to create the peer database in an existing DB system or in a new DB system.
 func (o DataGuardAssociationOutput) CreationType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.CreationType }).(pulumi.StringOutput)
+}
+
+// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+func (o DataGuardAssociationOutput) DataCollectionOptions() DataGuardAssociationDataCollectionOptionsOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) DataGuardAssociationDataCollectionOptionsOutput {
+		return v.DataCollectionOptions
+	}).(DataGuardAssociationDataCollectionOptionsOutput)
 }
 
 // (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.

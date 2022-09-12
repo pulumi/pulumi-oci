@@ -13,21 +13,14 @@ public final class BuildPipelineStageWaitCriteria {
      * @return (Updatable) The absolute wait duration. Minimum wait duration must be 5 seconds. Maximum wait duration can be up to 2 days.
      * 
      */
-    private final String waitDuration;
+    private String waitDuration;
     /**
      * @return (Updatable) Wait criteria type.
      * 
      */
-    private final String waitType;
+    private String waitType;
 
-    @CustomType.Constructor
-    private BuildPipelineStageWaitCriteria(
-        @CustomType.Parameter("waitDuration") String waitDuration,
-        @CustomType.Parameter("waitType") String waitType) {
-        this.waitDuration = waitDuration;
-        this.waitType = waitType;
-    }
-
+    private BuildPipelineStageWaitCriteria() {}
     /**
      * @return (Updatable) The absolute wait duration. Minimum wait duration must be 5 seconds. Maximum wait duration can be up to 2 days.
      * 
@@ -50,30 +43,32 @@ public final class BuildPipelineStageWaitCriteria {
     public static Builder builder(BuildPipelineStageWaitCriteria defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String waitDuration;
         private String waitType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BuildPipelineStageWaitCriteria defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.waitDuration = defaults.waitDuration;
     	      this.waitType = defaults.waitType;
         }
 
+        @CustomType.Setter
         public Builder waitDuration(String waitDuration) {
             this.waitDuration = Objects.requireNonNull(waitDuration);
             return this;
         }
+        @CustomType.Setter
         public Builder waitType(String waitType) {
             this.waitType = Objects.requireNonNull(waitType);
             return this;
-        }        public BuildPipelineStageWaitCriteria build() {
-            return new BuildPipelineStageWaitCriteria(waitDuration, waitType);
+        }
+        public BuildPipelineStageWaitCriteria build() {
+            final var o = new BuildPipelineStageWaitCriteria();
+            o.waitDuration = waitDuration;
+            o.waitType = waitType;
+            return o;
         }
     }
 }

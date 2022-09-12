@@ -13,35 +13,24 @@ public final class GetIpsecStatusTunnel {
      * @return The IP address of Oracle&#39;s VPN headend.  Example: `203.0.113.50`
      * 
      */
-    private final String ipAddress;
+    private String ipAddress;
     /**
      * @return The tunnel&#39;s current state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return When the state of the tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeStateModified;
+    private String timeStateModified;
 
-    @CustomType.Constructor
-    private GetIpsecStatusTunnel(
-        @CustomType.Parameter("ipAddress") String ipAddress,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeStateModified") String timeStateModified) {
-        this.ipAddress = ipAddress;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeStateModified = timeStateModified;
-    }
-
+    private GetIpsecStatusTunnel() {}
     /**
      * @return The IP address of Oracle&#39;s VPN headend.  Example: `203.0.113.50`
      * 
@@ -78,17 +67,13 @@ public final class GetIpsecStatusTunnel {
     public static Builder builder(GetIpsecStatusTunnel defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String ipAddress;
         private String state;
         private String timeCreated;
         private String timeStateModified;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIpsecStatusTunnel defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ipAddress = defaults.ipAddress;
@@ -97,23 +82,33 @@ public final class GetIpsecStatusTunnel {
     	      this.timeStateModified = defaults.timeStateModified;
         }
 
+        @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = Objects.requireNonNull(ipAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStateModified(String timeStateModified) {
             this.timeStateModified = Objects.requireNonNull(timeStateModified);
             return this;
-        }        public GetIpsecStatusTunnel build() {
-            return new GetIpsecStatusTunnel(ipAddress, state, timeCreated, timeStateModified);
+        }
+        public GetIpsecStatusTunnel build() {
+            final var o = new GetIpsecStatusTunnel();
+            o.ipAddress = ipAddress;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeStateModified = timeStateModified;
+            return o;
         }
     }
 }

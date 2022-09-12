@@ -14,34 +14,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProductLicenseConsumersResult {
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Boolean isCompartmentIdInSubtree;
+    private String id;
+    private @Nullable Boolean isCompartmentIdInSubtree;
     /**
      * @return Collection of product license consumers.
      * 
      */
-    private final List<GetProductLicenseConsumersItem> items;
-    private final String productLicenseId;
+    private List<GetProductLicenseConsumersItem> items;
+    private String productLicenseId;
 
-    @CustomType.Constructor
-    private GetProductLicenseConsumersResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isCompartmentIdInSubtree") @Nullable Boolean isCompartmentIdInSubtree,
-        @CustomType.Parameter("items") List<GetProductLicenseConsumersItem> items,
-        @CustomType.Parameter("productLicenseId") String productLicenseId) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
-        this.items = items;
-        this.productLicenseId = productLicenseId;
-    }
-
+    private GetProductLicenseConsumersResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -73,18 +60,14 @@ public final class GetProductLicenseConsumersResult {
     public static Builder builder(GetProductLicenseConsumersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private @Nullable Boolean isCompartmentIdInSubtree;
         private List<GetProductLicenseConsumersItem> items;
         private String productLicenseId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProductLicenseConsumersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -94,18 +77,22 @@ public final class GetProductLicenseConsumersResult {
     	      this.productLicenseId = defaults.productLicenseId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isCompartmentIdInSubtree(@Nullable Boolean isCompartmentIdInSubtree) {
             this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetProductLicenseConsumersItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -113,11 +100,19 @@ public final class GetProductLicenseConsumersResult {
         public Builder items(GetProductLicenseConsumersItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder productLicenseId(String productLicenseId) {
             this.productLicenseId = Objects.requireNonNull(productLicenseId);
             return this;
-        }        public GetProductLicenseConsumersResult build() {
-            return new GetProductLicenseConsumersResult(compartmentId, id, isCompartmentIdInSubtree, items, productLicenseId);
+        }
+        public GetProductLicenseConsumersResult build() {
+            final var o = new GetProductLicenseConsumersResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
+            o.items = items;
+            o.productLicenseId = productLicenseId;
+            return o;
         }
     }
 }

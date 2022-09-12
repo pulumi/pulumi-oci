@@ -13,21 +13,14 @@ public final class GetClustersClusterOptionKubernetesNetworkConfig {
      * @return The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
      * 
      */
-    private final String podsCidr;
+    private String podsCidr;
     /**
      * @return The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
      * 
      */
-    private final String servicesCidr;
+    private String servicesCidr;
 
-    @CustomType.Constructor
-    private GetClustersClusterOptionKubernetesNetworkConfig(
-        @CustomType.Parameter("podsCidr") String podsCidr,
-        @CustomType.Parameter("servicesCidr") String servicesCidr) {
-        this.podsCidr = podsCidr;
-        this.servicesCidr = servicesCidr;
-    }
-
+    private GetClustersClusterOptionKubernetesNetworkConfig() {}
     /**
      * @return The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
      * 
@@ -50,30 +43,32 @@ public final class GetClustersClusterOptionKubernetesNetworkConfig {
     public static Builder builder(GetClustersClusterOptionKubernetesNetworkConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String podsCidr;
         private String servicesCidr;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetClustersClusterOptionKubernetesNetworkConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.podsCidr = defaults.podsCidr;
     	      this.servicesCidr = defaults.servicesCidr;
         }
 
+        @CustomType.Setter
         public Builder podsCidr(String podsCidr) {
             this.podsCidr = Objects.requireNonNull(podsCidr);
             return this;
         }
+        @CustomType.Setter
         public Builder servicesCidr(String servicesCidr) {
             this.servicesCidr = Objects.requireNonNull(servicesCidr);
             return this;
-        }        public GetClustersClusterOptionKubernetesNetworkConfig build() {
-            return new GetClustersClusterOptionKubernetesNetworkConfig(podsCidr, servicesCidr);
+        }
+        public GetClustersClusterOptionKubernetesNetworkConfig build() {
+            final var o = new GetClustersClusterOptionKubernetesNetworkConfig();
+            o.podsCidr = podsCidr;
+            o.servicesCidr = servicesCidr;
+            return o;
         }
     }
 }

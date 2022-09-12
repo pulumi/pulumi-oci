@@ -16,59 +16,40 @@ public final class GetServiceEnvironmentResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The URL for the console.
      * 
      */
-    private final String consoleUrl;
+    private String consoleUrl;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Details for a service definition.
      * 
      */
-    private final List<GetServiceEnvironmentServiceDefinition> serviceDefinitions;
+    private List<GetServiceEnvironmentServiceDefinition> serviceDefinitions;
     /**
      * @return Array of service environment end points.
      * 
      */
-    private final List<GetServiceEnvironmentServiceEnvironmentEndpoint> serviceEnvironmentEndpoints;
-    private final String serviceEnvironmentId;
+    private List<GetServiceEnvironmentServiceEnvironmentEndpoint> serviceEnvironmentEndpoints;
+    private String serviceEnvironmentId;
     /**
      * @return Status of the entitlement registration for the service.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The unique subscription ID associated with the service environment ID.
      * 
      */
-    private final String subscriptionId;
+    private String subscriptionId;
 
-    @CustomType.Constructor
-    private GetServiceEnvironmentResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("consoleUrl") String consoleUrl,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("serviceDefinitions") List<GetServiceEnvironmentServiceDefinition> serviceDefinitions,
-        @CustomType.Parameter("serviceEnvironmentEndpoints") List<GetServiceEnvironmentServiceEnvironmentEndpoint> serviceEnvironmentEndpoints,
-        @CustomType.Parameter("serviceEnvironmentId") String serviceEnvironmentId,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("subscriptionId") String subscriptionId) {
-        this.compartmentId = compartmentId;
-        this.consoleUrl = consoleUrl;
-        this.id = id;
-        this.serviceDefinitions = serviceDefinitions;
-        this.serviceEnvironmentEndpoints = serviceEnvironmentEndpoints;
-        this.serviceEnvironmentId = serviceEnvironmentId;
-        this.status = status;
-        this.subscriptionId = subscriptionId;
-    }
-
+    private GetServiceEnvironmentResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
      * 
@@ -129,7 +110,7 @@ public final class GetServiceEnvironmentResult {
     public static Builder builder(GetServiceEnvironmentResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String consoleUrl;
@@ -139,11 +120,7 @@ public final class GetServiceEnvironmentResult {
         private String serviceEnvironmentId;
         private String status;
         private String subscriptionId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceEnvironmentResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -156,18 +133,22 @@ public final class GetServiceEnvironmentResult {
     	      this.subscriptionId = defaults.subscriptionId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder consoleUrl(String consoleUrl) {
             this.consoleUrl = Objects.requireNonNull(consoleUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceDefinitions(List<GetServiceEnvironmentServiceDefinition> serviceDefinitions) {
             this.serviceDefinitions = Objects.requireNonNull(serviceDefinitions);
             return this;
@@ -175,6 +156,7 @@ public final class GetServiceEnvironmentResult {
         public Builder serviceDefinitions(GetServiceEnvironmentServiceDefinition... serviceDefinitions) {
             return serviceDefinitions(List.of(serviceDefinitions));
         }
+        @CustomType.Setter
         public Builder serviceEnvironmentEndpoints(List<GetServiceEnvironmentServiceEnvironmentEndpoint> serviceEnvironmentEndpoints) {
             this.serviceEnvironmentEndpoints = Objects.requireNonNull(serviceEnvironmentEndpoints);
             return this;
@@ -182,19 +164,32 @@ public final class GetServiceEnvironmentResult {
         public Builder serviceEnvironmentEndpoints(GetServiceEnvironmentServiceEnvironmentEndpoint... serviceEnvironmentEndpoints) {
             return serviceEnvironmentEndpoints(List.of(serviceEnvironmentEndpoints));
         }
+        @CustomType.Setter
         public Builder serviceEnvironmentId(String serviceEnvironmentId) {
             this.serviceEnvironmentId = Objects.requireNonNull(serviceEnvironmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = Objects.requireNonNull(subscriptionId);
             return this;
-        }        public GetServiceEnvironmentResult build() {
-            return new GetServiceEnvironmentResult(compartmentId, consoleUrl, id, serviceDefinitions, serviceEnvironmentEndpoints, serviceEnvironmentId, status, subscriptionId);
+        }
+        public GetServiceEnvironmentResult build() {
+            final var o = new GetServiceEnvironmentResult();
+            o.compartmentId = compartmentId;
+            o.consoleUrl = consoleUrl;
+            o.id = id;
+            o.serviceDefinitions = serviceDefinitions;
+            o.serviceEnvironmentEndpoints = serviceEnvironmentEndpoints;
+            o.serviceEnvironmentId = serviceEnvironmentId;
+            o.status = status;
+            o.subscriptionId = subscriptionId;
+            return o;
         }
     }
 }

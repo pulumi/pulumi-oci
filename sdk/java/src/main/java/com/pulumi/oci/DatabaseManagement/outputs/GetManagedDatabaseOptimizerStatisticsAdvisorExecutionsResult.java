@@ -14,37 +14,22 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult {
-    private final @Nullable String endTimeLessThanOrEqualTo;
-    private final @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter> filters;
+    private @Nullable String endTimeLessThanOrEqualTo;
+    private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String managedDatabaseId;
+    private String id;
+    private String managedDatabaseId;
     /**
      * @return The list of optimizer_statistics_advisor_executions_collection.
      * 
      */
-    private final List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection> optimizerStatisticsAdvisorExecutionsCollections;
-    private final @Nullable String startTimeGreaterThanOrEqualTo;
+    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection> optimizerStatisticsAdvisorExecutionsCollections;
+    private @Nullable String startTimeGreaterThanOrEqualTo;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult(
-        @CustomType.Parameter("endTimeLessThanOrEqualTo") @Nullable String endTimeLessThanOrEqualTo,
-        @CustomType.Parameter("filters") @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("optimizerStatisticsAdvisorExecutionsCollections") List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection> optimizerStatisticsAdvisorExecutionsCollections,
-        @CustomType.Parameter("startTimeGreaterThanOrEqualTo") @Nullable String startTimeGreaterThanOrEqualTo) {
-        this.endTimeLessThanOrEqualTo = endTimeLessThanOrEqualTo;
-        this.filters = filters;
-        this.id = id;
-        this.managedDatabaseId = managedDatabaseId;
-        this.optimizerStatisticsAdvisorExecutionsCollections = optimizerStatisticsAdvisorExecutionsCollections;
-        this.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
-    }
-
+    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult() {}
     public Optional<String> endTimeLessThanOrEqualTo() {
         return Optional.ofNullable(this.endTimeLessThanOrEqualTo);
     }
@@ -79,7 +64,7 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult 
     public static Builder builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String endTimeLessThanOrEqualTo;
         private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter> filters;
@@ -87,11 +72,7 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult 
         private String managedDatabaseId;
         private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection> optimizerStatisticsAdvisorExecutionsCollections;
         private @Nullable String startTimeGreaterThanOrEqualTo;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.endTimeLessThanOrEqualTo = defaults.endTimeLessThanOrEqualTo;
@@ -102,10 +83,12 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult 
     	      this.startTimeGreaterThanOrEqualTo = defaults.startTimeGreaterThanOrEqualTo;
         }
 
+        @CustomType.Setter
         public Builder endTimeLessThanOrEqualTo(@Nullable String endTimeLessThanOrEqualTo) {
             this.endTimeLessThanOrEqualTo = endTimeLessThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -113,14 +96,17 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult 
         public Builder filters(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder optimizerStatisticsAdvisorExecutionsCollections(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection> optimizerStatisticsAdvisorExecutionsCollections) {
             this.optimizerStatisticsAdvisorExecutionsCollections = Objects.requireNonNull(optimizerStatisticsAdvisorExecutionsCollections);
             return this;
@@ -128,11 +114,20 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult 
         public Builder optimizerStatisticsAdvisorExecutionsCollections(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection... optimizerStatisticsAdvisorExecutionsCollections) {
             return optimizerStatisticsAdvisorExecutionsCollections(List.of(optimizerStatisticsAdvisorExecutionsCollections));
         }
+        @CustomType.Setter
         public Builder startTimeGreaterThanOrEqualTo(@Nullable String startTimeGreaterThanOrEqualTo) {
             this.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
             return this;
-        }        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult build() {
-            return new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult(endTimeLessThanOrEqualTo, filters, id, managedDatabaseId, optimizerStatisticsAdvisorExecutionsCollections, startTimeGreaterThanOrEqualTo);
+        }
+        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult build() {
+            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult();
+            o.endTimeLessThanOrEqualTo = endTimeLessThanOrEqualTo;
+            o.filters = filters;
+            o.id = id;
+            o.managedDatabaseId = managedDatabaseId;
+            o.optimizerStatisticsAdvisorExecutionsCollections = optimizerStatisticsAdvisorExecutionsCollections;
+            o.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
+            return o;
         }
     }
 }

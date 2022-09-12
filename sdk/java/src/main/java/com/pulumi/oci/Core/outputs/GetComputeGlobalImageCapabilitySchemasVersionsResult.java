@@ -18,38 +18,25 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionsResult {
      * @return The ocid of the compute global image capability schema
      * 
      */
-    private final String computeGlobalImageCapabilitySchemaId;
+    private String computeGlobalImageCapabilitySchemaId;
     /**
      * @return The list of compute_global_image_capability_schema_versions.
      * 
      */
-    private final List<GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion> computeGlobalImageCapabilitySchemaVersions;
+    private List<GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion> computeGlobalImageCapabilitySchemaVersions;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetComputeGlobalImageCapabilitySchemasVersionsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetComputeGlobalImageCapabilitySchemasVersionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetComputeGlobalImageCapabilitySchemasVersionsResult(
-        @CustomType.Parameter("computeGlobalImageCapabilitySchemaId") String computeGlobalImageCapabilitySchemaId,
-        @CustomType.Parameter("computeGlobalImageCapabilitySchemaVersions") List<GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion> computeGlobalImageCapabilitySchemaVersions,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetComputeGlobalImageCapabilitySchemasVersionsFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
-        this.computeGlobalImageCapabilitySchemaVersions = computeGlobalImageCapabilitySchemaVersions;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetComputeGlobalImageCapabilitySchemasVersionsResult() {}
     /**
      * @return The ocid of the compute global image capability schema
      * 
@@ -89,18 +76,14 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionsResult {
     public static Builder builder(GetComputeGlobalImageCapabilitySchemasVersionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String computeGlobalImageCapabilitySchemaId;
         private List<GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion> computeGlobalImageCapabilitySchemaVersions;
         private @Nullable String displayName;
         private @Nullable List<GetComputeGlobalImageCapabilitySchemasVersionsFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetComputeGlobalImageCapabilitySchemasVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.computeGlobalImageCapabilitySchemaId = defaults.computeGlobalImageCapabilitySchemaId;
@@ -110,10 +93,12 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionsResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder computeGlobalImageCapabilitySchemaId(String computeGlobalImageCapabilitySchemaId) {
             this.computeGlobalImageCapabilitySchemaId = Objects.requireNonNull(computeGlobalImageCapabilitySchemaId);
             return this;
         }
+        @CustomType.Setter
         public Builder computeGlobalImageCapabilitySchemaVersions(List<GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion> computeGlobalImageCapabilitySchemaVersions) {
             this.computeGlobalImageCapabilitySchemaVersions = Objects.requireNonNull(computeGlobalImageCapabilitySchemaVersions);
             return this;
@@ -121,10 +106,12 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionsResult {
         public Builder computeGlobalImageCapabilitySchemaVersions(GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapabilitySchemaVersion... computeGlobalImageCapabilitySchemaVersions) {
             return computeGlobalImageCapabilitySchemaVersions(List.of(computeGlobalImageCapabilitySchemaVersions));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetComputeGlobalImageCapabilitySchemasVersionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -132,11 +119,19 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionsResult {
         public Builder filters(GetComputeGlobalImageCapabilitySchemasVersionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetComputeGlobalImageCapabilitySchemasVersionsResult build() {
-            return new GetComputeGlobalImageCapabilitySchemasVersionsResult(computeGlobalImageCapabilitySchemaId, computeGlobalImageCapabilitySchemaVersions, displayName, filters, id);
+        }
+        public GetComputeGlobalImageCapabilitySchemasVersionsResult build() {
+            final var o = new GetComputeGlobalImageCapabilitySchemasVersionsResult();
+            o.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
+            o.computeGlobalImageCapabilitySchemaVersions = computeGlobalImageCapabilitySchemaVersions;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

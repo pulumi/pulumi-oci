@@ -13,35 +13,24 @@ public final class GetMysqlDbSystemChannelTarget {
      * @return The username for the replication applier of the target MySQL DB System.
      * 
      */
-    private final String applierUsername;
+    private String applierUsername;
     /**
      * @return The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
      * 
      */
-    private final String channelName;
+    private String channelName;
     /**
      * @return The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String dbSystemId;
+    private String dbSystemId;
     /**
      * @return The specific target identifier.
      * 
      */
-    private final String targetType;
+    private String targetType;
 
-    @CustomType.Constructor
-    private GetMysqlDbSystemChannelTarget(
-        @CustomType.Parameter("applierUsername") String applierUsername,
-        @CustomType.Parameter("channelName") String channelName,
-        @CustomType.Parameter("dbSystemId") String dbSystemId,
-        @CustomType.Parameter("targetType") String targetType) {
-        this.applierUsername = applierUsername;
-        this.channelName = channelName;
-        this.dbSystemId = dbSystemId;
-        this.targetType = targetType;
-    }
-
+    private GetMysqlDbSystemChannelTarget() {}
     /**
      * @return The username for the replication applier of the target MySQL DB System.
      * 
@@ -78,17 +67,13 @@ public final class GetMysqlDbSystemChannelTarget {
     public static Builder builder(GetMysqlDbSystemChannelTarget defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String applierUsername;
         private String channelName;
         private String dbSystemId;
         private String targetType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMysqlDbSystemChannelTarget defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applierUsername = defaults.applierUsername;
@@ -97,23 +82,33 @@ public final class GetMysqlDbSystemChannelTarget {
     	      this.targetType = defaults.targetType;
         }
 
+        @CustomType.Setter
         public Builder applierUsername(String applierUsername) {
             this.applierUsername = Objects.requireNonNull(applierUsername);
             return this;
         }
+        @CustomType.Setter
         public Builder channelName(String channelName) {
             this.channelName = Objects.requireNonNull(channelName);
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = Objects.requireNonNull(dbSystemId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetType(String targetType) {
             this.targetType = Objects.requireNonNull(targetType);
             return this;
-        }        public GetMysqlDbSystemChannelTarget build() {
-            return new GetMysqlDbSystemChannelTarget(applierUsername, channelName, dbSystemId, targetType);
+        }
+        public GetMysqlDbSystemChannelTarget build() {
+            final var o = new GetMysqlDbSystemChannelTarget();
+            o.applierUsername = applierUsername;
+            o.channelName = channelName;
+            o.dbSystemId = dbSystemId;
+            o.targetType = targetType;
+            return o;
         }
     }
 }

@@ -18,62 +18,41 @@ public final class GetBdsInstanceMetastoreConfigsResult {
      * @return The ID of BDS API Key used for metastore configuration. Set only if metastore&#39;s type is EXTERNAL.
      * 
      */
-    private final @Nullable String bdsApiKeyId;
-    private final String bdsInstanceId;
+    private @Nullable String bdsApiKeyId;
+    private String bdsInstanceId;
     /**
      * @return The list of bds_metastore_configurations.
      * 
      */
-    private final List<GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration> bdsMetastoreConfigurations;
+    private List<GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration> bdsMetastoreConfigurations;
     /**
      * @return The display name of metastore configuration
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetBdsInstanceMetastoreConfigsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetBdsInstanceMetastoreConfigsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the Data Catalog metastore. Set only if metastore&#39;s type is EXTERNAL.
      * 
      */
-    private final @Nullable String metastoreId;
+    private @Nullable String metastoreId;
     /**
      * @return The type of the metastore in the metastore configuration.
      * 
      */
-    private final @Nullable String metastoreType;
+    private @Nullable String metastoreType;
     /**
      * @return the lifecycle state of the metastore configuration.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetBdsInstanceMetastoreConfigsResult(
-        @CustomType.Parameter("bdsApiKeyId") @Nullable String bdsApiKeyId,
-        @CustomType.Parameter("bdsInstanceId") String bdsInstanceId,
-        @CustomType.Parameter("bdsMetastoreConfigurations") List<GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration> bdsMetastoreConfigurations,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetBdsInstanceMetastoreConfigsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("metastoreId") @Nullable String metastoreId,
-        @CustomType.Parameter("metastoreType") @Nullable String metastoreType,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.bdsApiKeyId = bdsApiKeyId;
-        this.bdsInstanceId = bdsInstanceId;
-        this.bdsMetastoreConfigurations = bdsMetastoreConfigurations;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.metastoreId = metastoreId;
-        this.metastoreType = metastoreType;
-        this.state = state;
-    }
-
+    private GetBdsInstanceMetastoreConfigsResult() {}
     /**
      * @return The ID of BDS API Key used for metastore configuration. Set only if metastore&#39;s type is EXTERNAL.
      * 
@@ -137,7 +116,7 @@ public final class GetBdsInstanceMetastoreConfigsResult {
     public static Builder builder(GetBdsInstanceMetastoreConfigsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String bdsApiKeyId;
         private String bdsInstanceId;
@@ -148,11 +127,7 @@ public final class GetBdsInstanceMetastoreConfigsResult {
         private @Nullable String metastoreId;
         private @Nullable String metastoreType;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBdsInstanceMetastoreConfigsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bdsApiKeyId = defaults.bdsApiKeyId;
@@ -166,14 +141,17 @@ public final class GetBdsInstanceMetastoreConfigsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder bdsApiKeyId(@Nullable String bdsApiKeyId) {
             this.bdsApiKeyId = bdsApiKeyId;
             return this;
         }
+        @CustomType.Setter
         public Builder bdsInstanceId(String bdsInstanceId) {
             this.bdsInstanceId = Objects.requireNonNull(bdsInstanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder bdsMetastoreConfigurations(List<GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration> bdsMetastoreConfigurations) {
             this.bdsMetastoreConfigurations = Objects.requireNonNull(bdsMetastoreConfigurations);
             return this;
@@ -181,10 +159,12 @@ public final class GetBdsInstanceMetastoreConfigsResult {
         public Builder bdsMetastoreConfigurations(GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration... bdsMetastoreConfigurations) {
             return bdsMetastoreConfigurations(List.of(bdsMetastoreConfigurations));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBdsInstanceMetastoreConfigsFilter> filters) {
             this.filters = filters;
             return this;
@@ -192,23 +172,38 @@ public final class GetBdsInstanceMetastoreConfigsResult {
         public Builder filters(GetBdsInstanceMetastoreConfigsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder metastoreId(@Nullable String metastoreId) {
             this.metastoreId = metastoreId;
             return this;
         }
+        @CustomType.Setter
         public Builder metastoreType(@Nullable String metastoreType) {
             this.metastoreType = metastoreType;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetBdsInstanceMetastoreConfigsResult build() {
-            return new GetBdsInstanceMetastoreConfigsResult(bdsApiKeyId, bdsInstanceId, bdsMetastoreConfigurations, displayName, filters, id, metastoreId, metastoreType, state);
+        }
+        public GetBdsInstanceMetastoreConfigsResult build() {
+            final var o = new GetBdsInstanceMetastoreConfigsResult();
+            o.bdsApiKeyId = bdsApiKeyId;
+            o.bdsInstanceId = bdsInstanceId;
+            o.bdsMetastoreConfigurations = bdsMetastoreConfigurations;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.metastoreId = metastoreId;
+            o.metastoreType = metastoreType;
+            o.state = state;
+            return o;
         }
     }
 }

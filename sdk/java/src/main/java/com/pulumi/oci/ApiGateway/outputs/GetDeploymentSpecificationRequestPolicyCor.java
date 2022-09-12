@@ -16,49 +16,34 @@ public final class GetDeploymentSpecificationRequestPolicyCor {
      * @return The list of headers that will be allowed from the client via the Access-Control-Allow-Headers header. &#39;*&#39; will allow all headers.
      * 
      */
-    private final List<String> allowedHeaders;
+    private List<String> allowedHeaders;
     /**
      * @return The list of allowed HTTP methods that will be returned for the preflight OPTIONS request in the Access-Control-Allow-Methods header. &#39;*&#39; will allow all methods.
      * 
      */
-    private final List<String> allowedMethods;
+    private List<String> allowedMethods;
     /**
      * @return The list of allowed origins that the CORS handler will use to respond to CORS requests. The gateway will send the Access-Control-Allow-Origin header with the best origin match for the circumstances. &#39;*&#39; will match any origins, and &#39;null&#39; will match queries from &#39;file:&#39; origins. All other origins must be qualified with the scheme, full hostname, and port if necessary.
      * 
      */
-    private final List<String> allowedOrigins;
+    private List<String> allowedOrigins;
     /**
      * @return The list of headers that the client will be allowed to see from the response as indicated by the Access-Control-Expose-Headers header. &#39;*&#39; will expose all headers.
      * 
      */
-    private final List<String> exposedHeaders;
+    private List<String> exposedHeaders;
     /**
      * @return Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
      * 
      */
-    private final Boolean isAllowCredentialsEnabled;
+    private Boolean isAllowCredentialsEnabled;
     /**
      * @return The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
      * 
      */
-    private final Integer maxAgeInSeconds;
+    private Integer maxAgeInSeconds;
 
-    @CustomType.Constructor
-    private GetDeploymentSpecificationRequestPolicyCor(
-        @CustomType.Parameter("allowedHeaders") List<String> allowedHeaders,
-        @CustomType.Parameter("allowedMethods") List<String> allowedMethods,
-        @CustomType.Parameter("allowedOrigins") List<String> allowedOrigins,
-        @CustomType.Parameter("exposedHeaders") List<String> exposedHeaders,
-        @CustomType.Parameter("isAllowCredentialsEnabled") Boolean isAllowCredentialsEnabled,
-        @CustomType.Parameter("maxAgeInSeconds") Integer maxAgeInSeconds) {
-        this.allowedHeaders = allowedHeaders;
-        this.allowedMethods = allowedMethods;
-        this.allowedOrigins = allowedOrigins;
-        this.exposedHeaders = exposedHeaders;
-        this.isAllowCredentialsEnabled = isAllowCredentialsEnabled;
-        this.maxAgeInSeconds = maxAgeInSeconds;
-    }
-
+    private GetDeploymentSpecificationRequestPolicyCor() {}
     /**
      * @return The list of headers that will be allowed from the client via the Access-Control-Allow-Headers header. &#39;*&#39; will allow all headers.
      * 
@@ -109,7 +94,7 @@ public final class GetDeploymentSpecificationRequestPolicyCor {
     public static Builder builder(GetDeploymentSpecificationRequestPolicyCor defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> allowedHeaders;
         private List<String> allowedMethods;
@@ -117,11 +102,7 @@ public final class GetDeploymentSpecificationRequestPolicyCor {
         private List<String> exposedHeaders;
         private Boolean isAllowCredentialsEnabled;
         private Integer maxAgeInSeconds;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentSpecificationRequestPolicyCor defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowedHeaders = defaults.allowedHeaders;
@@ -132,6 +113,7 @@ public final class GetDeploymentSpecificationRequestPolicyCor {
     	      this.maxAgeInSeconds = defaults.maxAgeInSeconds;
         }
 
+        @CustomType.Setter
         public Builder allowedHeaders(List<String> allowedHeaders) {
             this.allowedHeaders = Objects.requireNonNull(allowedHeaders);
             return this;
@@ -139,6 +121,7 @@ public final class GetDeploymentSpecificationRequestPolicyCor {
         public Builder allowedHeaders(String... allowedHeaders) {
             return allowedHeaders(List.of(allowedHeaders));
         }
+        @CustomType.Setter
         public Builder allowedMethods(List<String> allowedMethods) {
             this.allowedMethods = Objects.requireNonNull(allowedMethods);
             return this;
@@ -146,6 +129,7 @@ public final class GetDeploymentSpecificationRequestPolicyCor {
         public Builder allowedMethods(String... allowedMethods) {
             return allowedMethods(List.of(allowedMethods));
         }
+        @CustomType.Setter
         public Builder allowedOrigins(List<String> allowedOrigins) {
             this.allowedOrigins = Objects.requireNonNull(allowedOrigins);
             return this;
@@ -153,6 +137,7 @@ public final class GetDeploymentSpecificationRequestPolicyCor {
         public Builder allowedOrigins(String... allowedOrigins) {
             return allowedOrigins(List.of(allowedOrigins));
         }
+        @CustomType.Setter
         public Builder exposedHeaders(List<String> exposedHeaders) {
             this.exposedHeaders = Objects.requireNonNull(exposedHeaders);
             return this;
@@ -160,15 +145,25 @@ public final class GetDeploymentSpecificationRequestPolicyCor {
         public Builder exposedHeaders(String... exposedHeaders) {
             return exposedHeaders(List.of(exposedHeaders));
         }
+        @CustomType.Setter
         public Builder isAllowCredentialsEnabled(Boolean isAllowCredentialsEnabled) {
             this.isAllowCredentialsEnabled = Objects.requireNonNull(isAllowCredentialsEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder maxAgeInSeconds(Integer maxAgeInSeconds) {
             this.maxAgeInSeconds = Objects.requireNonNull(maxAgeInSeconds);
             return this;
-        }        public GetDeploymentSpecificationRequestPolicyCor build() {
-            return new GetDeploymentSpecificationRequestPolicyCor(allowedHeaders, allowedMethods, allowedOrigins, exposedHeaders, isAllowCredentialsEnabled, maxAgeInSeconds);
+        }
+        public GetDeploymentSpecificationRequestPolicyCor build() {
+            final var o = new GetDeploymentSpecificationRequestPolicyCor();
+            o.allowedHeaders = allowedHeaders;
+            o.allowedMethods = allowedMethods;
+            o.allowedOrigins = allowedOrigins;
+            o.exposedHeaders = exposedHeaders;
+            o.isAllowCredentialsEnabled = isAllowCredentialsEnabled;
+            o.maxAgeInSeconds = maxAgeInSeconds;
+            return o;
         }
     }
 }

@@ -13,55 +13,36 @@ public final class GetRepositoryMirrorRecordResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String mirrorRecordType;
+    private String id;
+    private String mirrorRecordType;
     /**
      * @return Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is Running PASSED - Mirroring Passed FAILED - Mirroring Failed
      * 
      */
-    private final String mirrorStatus;
-    private final String repositoryId;
+    private String mirrorStatus;
+    private String repositoryId;
     /**
      * @return The time taken to complete a mirror operation. Value is null if not completed.
      * 
      */
-    private final String timeEnded;
+    private String timeEnded;
     /**
      * @return The time to enqueue a mirror operation.
      * 
      */
-    private final String timeEnqueued;
+    private String timeEnqueued;
     /**
      * @return The time to start a mirror operation.
      * 
      */
-    private final String timeStarted;
+    private String timeStarted;
     /**
      * @return Workrequest ID to track current mirror operation.
      * 
      */
-    private final String workRequestId;
+    private String workRequestId;
 
-    @CustomType.Constructor
-    private GetRepositoryMirrorRecordResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("mirrorRecordType") String mirrorRecordType,
-        @CustomType.Parameter("mirrorStatus") String mirrorStatus,
-        @CustomType.Parameter("repositoryId") String repositoryId,
-        @CustomType.Parameter("timeEnded") String timeEnded,
-        @CustomType.Parameter("timeEnqueued") String timeEnqueued,
-        @CustomType.Parameter("timeStarted") String timeStarted,
-        @CustomType.Parameter("workRequestId") String workRequestId) {
-        this.id = id;
-        this.mirrorRecordType = mirrorRecordType;
-        this.mirrorStatus = mirrorStatus;
-        this.repositoryId = repositoryId;
-        this.timeEnded = timeEnded;
-        this.timeEnqueued = timeEnqueued;
-        this.timeStarted = timeStarted;
-        this.workRequestId = workRequestId;
-    }
-
+    private GetRepositoryMirrorRecordResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -118,7 +99,7 @@ public final class GetRepositoryMirrorRecordResult {
     public static Builder builder(GetRepositoryMirrorRecordResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String mirrorRecordType;
@@ -128,11 +109,7 @@ public final class GetRepositoryMirrorRecordResult {
         private String timeEnqueued;
         private String timeStarted;
         private String workRequestId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryMirrorRecordResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -145,39 +122,57 @@ public final class GetRepositoryMirrorRecordResult {
     	      this.workRequestId = defaults.workRequestId;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder mirrorRecordType(String mirrorRecordType) {
             this.mirrorRecordType = Objects.requireNonNull(mirrorRecordType);
             return this;
         }
+        @CustomType.Setter
         public Builder mirrorStatus(String mirrorStatus) {
             this.mirrorStatus = Objects.requireNonNull(mirrorStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
             this.timeEnded = Objects.requireNonNull(timeEnded);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnqueued(String timeEnqueued) {
             this.timeEnqueued = Objects.requireNonNull(timeEnqueued);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
         }
+        @CustomType.Setter
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = Objects.requireNonNull(workRequestId);
             return this;
-        }        public GetRepositoryMirrorRecordResult build() {
-            return new GetRepositoryMirrorRecordResult(id, mirrorRecordType, mirrorStatus, repositoryId, timeEnded, timeEnqueued, timeStarted, workRequestId);
+        }
+        public GetRepositoryMirrorRecordResult build() {
+            final var o = new GetRepositoryMirrorRecordResult();
+            o.id = id;
+            o.mirrorRecordType = mirrorRecordType;
+            o.mirrorStatus = mirrorStatus;
+            o.repositoryId = repositoryId;
+            o.timeEnded = timeEnded;
+            o.timeEnqueued = timeEnqueued;
+            o.timeStarted = timeStarted;
+            o.workRequestId = workRequestId;
+            return o;
         }
     }
 }

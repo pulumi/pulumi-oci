@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetFlexComponentsFlexComponentCollection {
-    private final List<GetFlexComponentsFlexComponentCollectionItem> items;
+    private List<GetFlexComponentsFlexComponentCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetFlexComponentsFlexComponentCollection(@CustomType.Parameter("items") List<GetFlexComponentsFlexComponentCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetFlexComponentsFlexComponentCollection() {}
     public List<GetFlexComponentsFlexComponentCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetFlexComponentsFlexComponentCollection {
     public static Builder builder(GetFlexComponentsFlexComponentCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetFlexComponentsFlexComponentCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFlexComponentsFlexComponentCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetFlexComponentsFlexComponentCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetFlexComponentsFlexComponentCollectionItem... items) {
             return items(List.of(items));
-        }        public GetFlexComponentsFlexComponentCollection build() {
-            return new GetFlexComponentsFlexComponentCollection(items);
+        }
+        public GetFlexComponentsFlexComponentCollection build() {
+            final var o = new GetFlexComponentsFlexComponentCollection();
+            o.items = items;
+            return o;
         }
     }
 }

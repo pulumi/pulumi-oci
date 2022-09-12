@@ -17,35 +17,24 @@ public final class GetBuildRunBuildOutput {
      * @return Specifies the list of artifact override arguments at the time of deployment.
      * 
      */
-    private final List<GetBuildRunBuildOutputArtifactOverrideParameter> artifactOverrideParameters;
+    private List<GetBuildRunBuildOutputArtifactOverrideParameter> artifactOverrideParameters;
     /**
      * @return Specifies the list of artifacts delivered through the Deliver Artifacts stage.
      * 
      */
-    private final List<GetBuildRunBuildOutputDeliveredArtifact> deliveredArtifacts;
+    private List<GetBuildRunBuildOutputDeliveredArtifact> deliveredArtifacts;
     /**
      * @return Specifies list of exported variables.
      * 
      */
-    private final List<GetBuildRunBuildOutputExportedVariable> exportedVariables;
+    private List<GetBuildRunBuildOutputExportedVariable> exportedVariables;
     /**
      * @return List of vulnerability audit summary.
      * 
      */
-    private final List<GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections;
+    private List<GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections;
 
-    @CustomType.Constructor
-    private GetBuildRunBuildOutput(
-        @CustomType.Parameter("artifactOverrideParameters") List<GetBuildRunBuildOutputArtifactOverrideParameter> artifactOverrideParameters,
-        @CustomType.Parameter("deliveredArtifacts") List<GetBuildRunBuildOutputDeliveredArtifact> deliveredArtifacts,
-        @CustomType.Parameter("exportedVariables") List<GetBuildRunBuildOutputExportedVariable> exportedVariables,
-        @CustomType.Parameter("vulnerabilityAuditSummaryCollections") List<GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections) {
-        this.artifactOverrideParameters = artifactOverrideParameters;
-        this.deliveredArtifacts = deliveredArtifacts;
-        this.exportedVariables = exportedVariables;
-        this.vulnerabilityAuditSummaryCollections = vulnerabilityAuditSummaryCollections;
-    }
-
+    private GetBuildRunBuildOutput() {}
     /**
      * @return Specifies the list of artifact override arguments at the time of deployment.
      * 
@@ -82,17 +71,13 @@ public final class GetBuildRunBuildOutput {
     public static Builder builder(GetBuildRunBuildOutput defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBuildRunBuildOutputArtifactOverrideParameter> artifactOverrideParameters;
         private List<GetBuildRunBuildOutputDeliveredArtifact> deliveredArtifacts;
         private List<GetBuildRunBuildOutputExportedVariable> exportedVariables;
         private List<GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunBuildOutput defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.artifactOverrideParameters = defaults.artifactOverrideParameters;
@@ -101,6 +86,7 @@ public final class GetBuildRunBuildOutput {
     	      this.vulnerabilityAuditSummaryCollections = defaults.vulnerabilityAuditSummaryCollections;
         }
 
+        @CustomType.Setter
         public Builder artifactOverrideParameters(List<GetBuildRunBuildOutputArtifactOverrideParameter> artifactOverrideParameters) {
             this.artifactOverrideParameters = Objects.requireNonNull(artifactOverrideParameters);
             return this;
@@ -108,6 +94,7 @@ public final class GetBuildRunBuildOutput {
         public Builder artifactOverrideParameters(GetBuildRunBuildOutputArtifactOverrideParameter... artifactOverrideParameters) {
             return artifactOverrideParameters(List.of(artifactOverrideParameters));
         }
+        @CustomType.Setter
         public Builder deliveredArtifacts(List<GetBuildRunBuildOutputDeliveredArtifact> deliveredArtifacts) {
             this.deliveredArtifacts = Objects.requireNonNull(deliveredArtifacts);
             return this;
@@ -115,6 +102,7 @@ public final class GetBuildRunBuildOutput {
         public Builder deliveredArtifacts(GetBuildRunBuildOutputDeliveredArtifact... deliveredArtifacts) {
             return deliveredArtifacts(List.of(deliveredArtifacts));
         }
+        @CustomType.Setter
         public Builder exportedVariables(List<GetBuildRunBuildOutputExportedVariable> exportedVariables) {
             this.exportedVariables = Objects.requireNonNull(exportedVariables);
             return this;
@@ -122,14 +110,21 @@ public final class GetBuildRunBuildOutput {
         public Builder exportedVariables(GetBuildRunBuildOutputExportedVariable... exportedVariables) {
             return exportedVariables(List.of(exportedVariables));
         }
+        @CustomType.Setter
         public Builder vulnerabilityAuditSummaryCollections(List<GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections) {
             this.vulnerabilityAuditSummaryCollections = Objects.requireNonNull(vulnerabilityAuditSummaryCollections);
             return this;
         }
         public Builder vulnerabilityAuditSummaryCollections(GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection... vulnerabilityAuditSummaryCollections) {
             return vulnerabilityAuditSummaryCollections(List.of(vulnerabilityAuditSummaryCollections));
-        }        public GetBuildRunBuildOutput build() {
-            return new GetBuildRunBuildOutput(artifactOverrideParameters, deliveredArtifacts, exportedVariables, vulnerabilityAuditSummaryCollections);
+        }
+        public GetBuildRunBuildOutput build() {
+            final var o = new GetBuildRunBuildOutput();
+            o.artifactOverrideParameters = artifactOverrideParameters;
+            o.deliveredArtifacts = deliveredArtifacts;
+            o.exportedVariables = exportedVariables;
+            o.vulnerabilityAuditSummaryCollections = vulnerabilityAuditSummaryCollections;
+            return o;
         }
     }
 }

@@ -18,73 +18,73 @@ public final class GetBudgetResult {
      * @return The actual spend in currency for the current budget cycle.
      * 
      */
-    private final Double actualSpend;
+    private Double actualSpend;
     /**
      * @return The total number of alert rules in the budget.
      * 
      */
-    private final Integer alertRuleCount;
+    private Integer alertRuleCount;
     /**
      * @return The amount of the budget, expressed in the currency of the customer&#39;s rate card.
      * 
      */
-    private final Integer amount;
-    private final String budgetId;
+    private Integer amount;
+    private String budgetId;
     /**
      * @return The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
      * 
      */
-    private final Integer budgetProcessingPeriodStartOffset;
+    private Integer budgetProcessingPeriodStartOffset;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The description of the budget.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The display name of the budget. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The forecasted spend in currency by the end of the current budget cycle.
      * 
      */
-    private final Double forecastedSpend;
+    private Double forecastedSpend;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the budget.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The type of the budget processing period. Valid values are INVOICE and MONTH.
      * 
      */
-    private final String processingPeriodType;
+    private String processingPeriodType;
     /**
      * @return The reset period for the budget.
      * 
      */
-    private final String resetPeriod;
+    private String resetPeriod;
     /**
      * @return The current state of the budget.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return This is DEPRECATED. For backwards compatability, the property is populated when the targetType is &#34;COMPARTMENT&#34;, and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
      * 
@@ -93,86 +93,39 @@ public final class GetBudgetResult {
      * 
      */
     @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'target_type' instead. */
-    private final String targetCompartmentId;
+    private String targetCompartmentId;
     /**
      * @return The type of target on which the budget is applied.
      * 
      */
-    private final String targetType;
+    private String targetType;
     /**
      * @return The list of targets on which the budget is applied. If the targetType is &#34;COMPARTMENT&#34;, the targets contain the list of compartment OCIDs. If the targetType is &#34;TAG&#34;, the targets contain the list of cost tracking tag identifiers in the form of &#34;{tagNamespace}.{tagKey}.{tagValue}&#34;.
      * 
      */
-    private final List<String> targets;
+    private List<String> targets;
     /**
      * @return The time that the budget was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time that the budget spend was last computed.
      * 
      */
-    private final String timeSpendComputed;
+    private String timeSpendComputed;
     /**
      * @return The time that the budget was updated.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return The version of the budget. Starts from 1 and increments by 1.
      * 
      */
-    private final Integer version;
+    private Integer version;
 
-    @CustomType.Constructor
-    private GetBudgetResult(
-        @CustomType.Parameter("actualSpend") Double actualSpend,
-        @CustomType.Parameter("alertRuleCount") Integer alertRuleCount,
-        @CustomType.Parameter("amount") Integer amount,
-        @CustomType.Parameter("budgetId") String budgetId,
-        @CustomType.Parameter("budgetProcessingPeriodStartOffset") Integer budgetProcessingPeriodStartOffset,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("forecastedSpend") Double forecastedSpend,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("processingPeriodType") String processingPeriodType,
-        @CustomType.Parameter("resetPeriod") String resetPeriod,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("targetCompartmentId") String targetCompartmentId,
-        @CustomType.Parameter("targetType") String targetType,
-        @CustomType.Parameter("targets") List<String> targets,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeSpendComputed") String timeSpendComputed,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("version") Integer version) {
-        this.actualSpend = actualSpend;
-        this.alertRuleCount = alertRuleCount;
-        this.amount = amount;
-        this.budgetId = budgetId;
-        this.budgetProcessingPeriodStartOffset = budgetProcessingPeriodStartOffset;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.forecastedSpend = forecastedSpend;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.processingPeriodType = processingPeriodType;
-        this.resetPeriod = resetPeriod;
-        this.state = state;
-        this.targetCompartmentId = targetCompartmentId;
-        this.targetType = targetType;
-        this.targets = targets;
-        this.timeCreated = timeCreated;
-        this.timeSpendComputed = timeSpendComputed;
-        this.timeUpdated = timeUpdated;
-        this.version = version;
-    }
-
+    private GetBudgetResult() {}
     /**
      * @return The actual spend in currency for the current budget cycle.
      * 
@@ -335,7 +288,7 @@ public final class GetBudgetResult {
     public static Builder builder(GetBudgetResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double actualSpend;
         private Integer alertRuleCount;
@@ -359,11 +312,7 @@ public final class GetBudgetResult {
         private String timeSpendComputed;
         private String timeUpdated;
         private Integer version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBudgetResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actualSpend = defaults.actualSpend;
@@ -390,74 +339,92 @@ public final class GetBudgetResult {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder actualSpend(Double actualSpend) {
             this.actualSpend = Objects.requireNonNull(actualSpend);
             return this;
         }
+        @CustomType.Setter
         public Builder alertRuleCount(Integer alertRuleCount) {
             this.alertRuleCount = Objects.requireNonNull(alertRuleCount);
             return this;
         }
+        @CustomType.Setter
         public Builder amount(Integer amount) {
             this.amount = Objects.requireNonNull(amount);
             return this;
         }
+        @CustomType.Setter
         public Builder budgetId(String budgetId) {
             this.budgetId = Objects.requireNonNull(budgetId);
             return this;
         }
+        @CustomType.Setter
         public Builder budgetProcessingPeriodStartOffset(Integer budgetProcessingPeriodStartOffset) {
             this.budgetProcessingPeriodStartOffset = Objects.requireNonNull(budgetProcessingPeriodStartOffset);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder forecastedSpend(Double forecastedSpend) {
             this.forecastedSpend = Objects.requireNonNull(forecastedSpend);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder processingPeriodType(String processingPeriodType) {
             this.processingPeriodType = Objects.requireNonNull(processingPeriodType);
             return this;
         }
+        @CustomType.Setter
         public Builder resetPeriod(String resetPeriod) {
             this.resetPeriod = Objects.requireNonNull(resetPeriod);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder targetCompartmentId(String targetCompartmentId) {
             this.targetCompartmentId = Objects.requireNonNull(targetCompartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetType(String targetType) {
             this.targetType = Objects.requireNonNull(targetType);
             return this;
         }
+        @CustomType.Setter
         public Builder targets(List<String> targets) {
             this.targets = Objects.requireNonNull(targets);
             return this;
@@ -465,23 +432,51 @@ public final class GetBudgetResult {
         public Builder targets(String... targets) {
             return targets(List.of(targets));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeSpendComputed(String timeSpendComputed) {
             this.timeSpendComputed = Objects.requireNonNull(timeSpendComputed);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder version(Integer version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetBudgetResult build() {
-            return new GetBudgetResult(actualSpend, alertRuleCount, amount, budgetId, budgetProcessingPeriodStartOffset, compartmentId, definedTags, description, displayName, forecastedSpend, freeformTags, id, processingPeriodType, resetPeriod, state, targetCompartmentId, targetType, targets, timeCreated, timeSpendComputed, timeUpdated, version);
+        }
+        public GetBudgetResult build() {
+            final var o = new GetBudgetResult();
+            o.actualSpend = actualSpend;
+            o.alertRuleCount = alertRuleCount;
+            o.amount = amount;
+            o.budgetId = budgetId;
+            o.budgetProcessingPeriodStartOffset = budgetProcessingPeriodStartOffset;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.forecastedSpend = forecastedSpend;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.processingPeriodType = processingPeriodType;
+            o.resetPeriod = resetPeriod;
+            o.state = state;
+            o.targetCompartmentId = targetCompartmentId;
+            o.targetType = targetType;
+            o.targets = targets;
+            o.timeCreated = timeCreated;
+            o.timeSpendComputed = timeSpendComputed;
+            o.timeUpdated = timeUpdated;
+            o.version = version;
+            return o;
         }
     }
 }

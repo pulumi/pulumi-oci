@@ -18,112 +18,79 @@ public final class GetFileSystemsFileSystem {
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
      * 
      */
-    private final Boolean isCloneParent;
+    private Boolean isCloneParent;
     /**
      * @return Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
      * 
      */
-    private final Boolean isHydrated;
+    private Boolean isHydrated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
      * 
      */
-    private final String kmsKeyId;
+    private String kmsKeyId;
     /**
      * @return Additional information about the current &#39;lifecycleState&#39;.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
      * 
      */
-    private final String meteredBytes;
+    private String meteredBytes;
     /**
      * @return Source information for the file system.
      * 
      */
-    private final List<GetFileSystemsFileSystemSourceDetail> sourceDetails;
+    private List<GetFileSystemsFileSystemSourceDetail> sourceDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
      * 
      */
-    private final String sourceSnapshotId;
+    private String sourceSnapshotId;
     /**
      * @return Filter results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetFileSystemsFileSystem(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isCloneParent") Boolean isCloneParent,
-        @CustomType.Parameter("isHydrated") Boolean isHydrated,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("meteredBytes") String meteredBytes,
-        @CustomType.Parameter("sourceDetails") List<GetFileSystemsFileSystemSourceDetail> sourceDetails,
-        @CustomType.Parameter("sourceSnapshotId") String sourceSnapshotId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isCloneParent = isCloneParent;
-        this.isHydrated = isHydrated;
-        this.kmsKeyId = kmsKeyId;
-        this.lifecycleDetails = lifecycleDetails;
-        this.meteredBytes = meteredBytes;
-        this.sourceDetails = sourceDetails;
-        this.sourceSnapshotId = sourceSnapshotId;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetFileSystemsFileSystem() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
@@ -237,7 +204,7 @@ public final class GetFileSystemsFileSystem {
     public static Builder builder(GetFileSystemsFileSystem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String compartmentId;
@@ -254,11 +221,7 @@ public final class GetFileSystemsFileSystem {
         private String sourceSnapshotId;
         private String state;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFileSystemsFileSystem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -278,50 +241,62 @@ public final class GetFileSystemsFileSystem {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isCloneParent(Boolean isCloneParent) {
             this.isCloneParent = Objects.requireNonNull(isCloneParent);
             return this;
         }
+        @CustomType.Setter
         public Builder isHydrated(Boolean isHydrated) {
             this.isHydrated = Objects.requireNonNull(isHydrated);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder meteredBytes(String meteredBytes) {
             this.meteredBytes = Objects.requireNonNull(meteredBytes);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceDetails(List<GetFileSystemsFileSystemSourceDetail> sourceDetails) {
             this.sourceDetails = Objects.requireNonNull(sourceDetails);
             return this;
@@ -329,19 +304,39 @@ public final class GetFileSystemsFileSystem {
         public Builder sourceDetails(GetFileSystemsFileSystemSourceDetail... sourceDetails) {
             return sourceDetails(List.of(sourceDetails));
         }
+        @CustomType.Setter
         public Builder sourceSnapshotId(String sourceSnapshotId) {
             this.sourceSnapshotId = Objects.requireNonNull(sourceSnapshotId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetFileSystemsFileSystem build() {
-            return new GetFileSystemsFileSystem(availabilityDomain, compartmentId, definedTags, displayName, freeformTags, id, isCloneParent, isHydrated, kmsKeyId, lifecycleDetails, meteredBytes, sourceDetails, sourceSnapshotId, state, timeCreated);
+        }
+        public GetFileSystemsFileSystem build() {
+            final var o = new GetFileSystemsFileSystem();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isCloneParent = isCloneParent;
+            o.isHydrated = isHydrated;
+            o.kmsKeyId = kmsKeyId;
+            o.lifecycleDetails = lifecycleDetails;
+            o.meteredBytes = meteredBytes;
+            o.sourceDetails = sourceDetails;
+            o.sourceSnapshotId = sourceSnapshotId;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

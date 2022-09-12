@@ -11,18 +11,18 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBackendSetHealthResult {
-    private final String backendSetName;
+    private String backendSetName;
     /**
      * @return A list of backend servers that are currently in the `CRITICAL` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.4:8080`
      * 
      */
-    private final List<String> criticalStateBackendNames;
+    private List<String> criticalStateBackendNames;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String loadBalancerId;
+    private String id;
+    private String loadBalancerId;
     /**
      * @return Overall health status of the backend set.
      * *  **OK:** All backend servers in the backend set return a status of `OK`.
@@ -31,43 +31,24 @@ public final class GetBackendSetHealthResult {
      * *  **UNKNOWN:** More than half of the backend set&#39;s backend servers return a status of `UNKNOWN`, the system was unable to retrieve metrics, or the backend set does not have a listener attached.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The total number of backend servers in this backend set.  Example: `7`
      * 
      */
-    private final Integer totalBackendCount;
+    private Integer totalBackendCount;
     /**
      * @return A list of backend servers that are currently in the `UNKNOWN` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.5:8080`
      * 
      */
-    private final List<String> unknownStateBackendNames;
+    private List<String> unknownStateBackendNames;
     /**
      * @return A list of backend servers that are currently in the `WARNING` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.3:8080`
      * 
      */
-    private final List<String> warningStateBackendNames;
+    private List<String> warningStateBackendNames;
 
-    @CustomType.Constructor
-    private GetBackendSetHealthResult(
-        @CustomType.Parameter("backendSetName") String backendSetName,
-        @CustomType.Parameter("criticalStateBackendNames") List<String> criticalStateBackendNames,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("totalBackendCount") Integer totalBackendCount,
-        @CustomType.Parameter("unknownStateBackendNames") List<String> unknownStateBackendNames,
-        @CustomType.Parameter("warningStateBackendNames") List<String> warningStateBackendNames) {
-        this.backendSetName = backendSetName;
-        this.criticalStateBackendNames = criticalStateBackendNames;
-        this.id = id;
-        this.loadBalancerId = loadBalancerId;
-        this.status = status;
-        this.totalBackendCount = totalBackendCount;
-        this.unknownStateBackendNames = unknownStateBackendNames;
-        this.warningStateBackendNames = warningStateBackendNames;
-    }
-
+    private GetBackendSetHealthResult() {}
     public String backendSetName() {
         return this.backendSetName;
     }
@@ -128,7 +109,7 @@ public final class GetBackendSetHealthResult {
     public static Builder builder(GetBackendSetHealthResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String backendSetName;
         private List<String> criticalStateBackendNames;
@@ -138,11 +119,7 @@ public final class GetBackendSetHealthResult {
         private Integer totalBackendCount;
         private List<String> unknownStateBackendNames;
         private List<String> warningStateBackendNames;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBackendSetHealthResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backendSetName = defaults.backendSetName;
@@ -155,10 +132,12 @@ public final class GetBackendSetHealthResult {
     	      this.warningStateBackendNames = defaults.warningStateBackendNames;
         }
 
+        @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
             this.backendSetName = Objects.requireNonNull(backendSetName);
             return this;
         }
+        @CustomType.Setter
         public Builder criticalStateBackendNames(List<String> criticalStateBackendNames) {
             this.criticalStateBackendNames = Objects.requireNonNull(criticalStateBackendNames);
             return this;
@@ -166,22 +145,27 @@ public final class GetBackendSetHealthResult {
         public Builder criticalStateBackendNames(String... criticalStateBackendNames) {
             return criticalStateBackendNames(List.of(criticalStateBackendNames));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder totalBackendCount(Integer totalBackendCount) {
             this.totalBackendCount = Objects.requireNonNull(totalBackendCount);
             return this;
         }
+        @CustomType.Setter
         public Builder unknownStateBackendNames(List<String> unknownStateBackendNames) {
             this.unknownStateBackendNames = Objects.requireNonNull(unknownStateBackendNames);
             return this;
@@ -189,14 +173,25 @@ public final class GetBackendSetHealthResult {
         public Builder unknownStateBackendNames(String... unknownStateBackendNames) {
             return unknownStateBackendNames(List.of(unknownStateBackendNames));
         }
+        @CustomType.Setter
         public Builder warningStateBackendNames(List<String> warningStateBackendNames) {
             this.warningStateBackendNames = Objects.requireNonNull(warningStateBackendNames);
             return this;
         }
         public Builder warningStateBackendNames(String... warningStateBackendNames) {
             return warningStateBackendNames(List.of(warningStateBackendNames));
-        }        public GetBackendSetHealthResult build() {
-            return new GetBackendSetHealthResult(backendSetName, criticalStateBackendNames, id, loadBalancerId, status, totalBackendCount, unknownStateBackendNames, warningStateBackendNames);
+        }
+        public GetBackendSetHealthResult build() {
+            final var o = new GetBackendSetHealthResult();
+            o.backendSetName = backendSetName;
+            o.criticalStateBackendNames = criticalStateBackendNames;
+            o.id = id;
+            o.loadBalancerId = loadBalancerId;
+            o.status = status;
+            o.totalBackendCount = totalBackendCount;
+            o.unknownStateBackendNames = unknownStateBackendNames;
+            o.warningStateBackendNames = warningStateBackendNames;
+            return o;
         }
     }
 }

@@ -13,56 +13,39 @@ public final class GetUserGroupMembershipsMembership {
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The OCID of the group.
      * 
      */
-    private final String groupId;
+    private String groupId;
     /**
      * @return The OCID of the membership.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    private final String inactiveState;
+    private String inactiveState;
     /**
      * @return The membership&#39;s current state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The OCID of the user.
      * 
      */
-    private final String userId;
+    private String userId;
 
-    @CustomType.Constructor
-    private GetUserGroupMembershipsMembership(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("groupId") String groupId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("inactiveState") String inactiveState,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("userId") String userId) {
-        this.compartmentId = compartmentId;
-        this.groupId = groupId;
-        this.id = id;
-        this.inactiveState = inactiveState;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.userId = userId;
-    }
-
+    private GetUserGroupMembershipsMembership() {}
     /**
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
@@ -120,7 +103,7 @@ public final class GetUserGroupMembershipsMembership {
     public static Builder builder(GetUserGroupMembershipsMembership defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String groupId;
@@ -129,11 +112,7 @@ public final class GetUserGroupMembershipsMembership {
         private String state;
         private String timeCreated;
         private String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUserGroupMembershipsMembership defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -145,35 +124,51 @@ public final class GetUserGroupMembershipsMembership {
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder groupId(String groupId) {
             this.groupId = Objects.requireNonNull(groupId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder inactiveState(String inactiveState) {
             this.inactiveState = Objects.requireNonNull(inactiveState);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder userId(String userId) {
             this.userId = Objects.requireNonNull(userId);
             return this;
-        }        public GetUserGroupMembershipsMembership build() {
-            return new GetUserGroupMembershipsMembership(compartmentId, groupId, id, inactiveState, state, timeCreated, userId);
+        }
+        public GetUserGroupMembershipsMembership build() {
+            final var o = new GetUserGroupMembershipsMembership();
+            o.compartmentId = compartmentId;
+            o.groupId = groupId;
+            o.id = id;
+            o.inactiveState = inactiveState;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.userId = userId;
+            return o;
         }
     }
 }

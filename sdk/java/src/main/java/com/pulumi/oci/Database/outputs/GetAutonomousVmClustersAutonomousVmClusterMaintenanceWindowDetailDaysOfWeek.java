@@ -13,13 +13,9 @@ public final class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDe
      * @return Name of the month of the year.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek() {}
     /**
      * @return Name of the month of the year.
      * 
@@ -35,24 +31,24 @@ public final class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDe
     public static Builder builder(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek build() {
-            return new GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek(name);
+        }
+        public GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek build() {
+            final var o = new GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek();
+            o.name = name;
+            return o;
         }
     }
 }

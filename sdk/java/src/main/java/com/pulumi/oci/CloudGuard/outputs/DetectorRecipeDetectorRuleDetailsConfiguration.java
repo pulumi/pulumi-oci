@@ -17,42 +17,29 @@ public final class DetectorRecipeDetectorRuleDetailsConfiguration {
      * @return (Updatable) Unique name of the configuration
      * 
      */
-    private final String configKey;
+    private String configKey;
     /**
      * @return (Updatable) configuration data type
      * 
      */
-    private final @Nullable String dataType;
+    private @Nullable String dataType;
     /**
      * @return (Updatable) configuration name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return (Updatable) configuration value
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
     /**
      * @return (Updatable) List of configuration values
      * 
      */
-    private final @Nullable List<DetectorRecipeDetectorRuleDetailsConfigurationValue> values;
+    private @Nullable List<DetectorRecipeDetectorRuleDetailsConfigurationValue> values;
 
-    @CustomType.Constructor
-    private DetectorRecipeDetectorRuleDetailsConfiguration(
-        @CustomType.Parameter("configKey") String configKey,
-        @CustomType.Parameter("dataType") @Nullable String dataType,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("value") @Nullable String value,
-        @CustomType.Parameter("values") @Nullable List<DetectorRecipeDetectorRuleDetailsConfigurationValue> values) {
-        this.configKey = configKey;
-        this.dataType = dataType;
-        this.name = name;
-        this.value = value;
-        this.values = values;
-    }
-
+    private DetectorRecipeDetectorRuleDetailsConfiguration() {}
     /**
      * @return (Updatable) Unique name of the configuration
      * 
@@ -96,18 +83,14 @@ public final class DetectorRecipeDetectorRuleDetailsConfiguration {
     public static Builder builder(DetectorRecipeDetectorRuleDetailsConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String configKey;
         private @Nullable String dataType;
         private String name;
         private @Nullable String value;
         private @Nullable List<DetectorRecipeDetectorRuleDetailsConfigurationValue> values;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DetectorRecipeDetectorRuleDetailsConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configKey = defaults.configKey;
@@ -117,30 +100,42 @@ public final class DetectorRecipeDetectorRuleDetailsConfiguration {
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
         public Builder configKey(String configKey) {
             this.configKey = Objects.requireNonNull(configKey);
             return this;
         }
+        @CustomType.Setter
         public Builder dataType(@Nullable String dataType) {
             this.dataType = dataType;
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
         }
+        @CustomType.Setter
         public Builder values(@Nullable List<DetectorRecipeDetectorRuleDetailsConfigurationValue> values) {
             this.values = values;
             return this;
         }
         public Builder values(DetectorRecipeDetectorRuleDetailsConfigurationValue... values) {
             return values(List.of(values));
-        }        public DetectorRecipeDetectorRuleDetailsConfiguration build() {
-            return new DetectorRecipeDetectorRuleDetailsConfiguration(configKey, dataType, name, value, values);
+        }
+        public DetectorRecipeDetectorRuleDetailsConfiguration build() {
+            final var o = new DetectorRecipeDetectorRuleDetailsConfiguration();
+            o.configKey = configKey;
+            o.dataType = dataType;
+            o.name = name;
+            o.value = value;
+            o.values = values;
+            return o;
         }
     }
 }

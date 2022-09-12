@@ -14,76 +14,51 @@ public final class GetVmClusterUpdateResult {
      * @return The possible actions that can be performed using this maintenance update.
      * 
      */
-    private final List<String> availableActions;
+    private List<String> availableActions;
     /**
      * @return Details of the maintenance update package.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The update action performed most recently using this maintenance update.
      * 
      */
-    private final String lastAction;
+    private String lastAction;
     /**
      * @return Descriptive text providing additional details about the lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The current state of the maintenance update. Dependent on value of `lastAction`.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the maintenance update was released.
      * 
      */
-    private final String timeReleased;
-    private final String updateId;
+    private String timeReleased;
+    private String updateId;
     /**
      * @return The type of VM cluster maintenance update.
      * 
      */
-    private final String updateType;
+    private String updateType;
     /**
      * @return The version of the maintenance update package.
      * 
      */
-    private final String version;
-    private final String vmClusterId;
+    private String version;
+    private String vmClusterId;
 
-    @CustomType.Constructor
-    private GetVmClusterUpdateResult(
-        @CustomType.Parameter("availableActions") List<String> availableActions,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lastAction") String lastAction,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeReleased") String timeReleased,
-        @CustomType.Parameter("updateId") String updateId,
-        @CustomType.Parameter("updateType") String updateType,
-        @CustomType.Parameter("version") String version,
-        @CustomType.Parameter("vmClusterId") String vmClusterId) {
-        this.availableActions = availableActions;
-        this.description = description;
-        this.id = id;
-        this.lastAction = lastAction;
-        this.lifecycleDetails = lifecycleDetails;
-        this.state = state;
-        this.timeReleased = timeReleased;
-        this.updateId = updateId;
-        this.updateType = updateType;
-        this.version = version;
-        this.vmClusterId = vmClusterId;
-    }
-
+    private GetVmClusterUpdateResult() {}
     /**
      * @return The possible actions that can be performed using this maintenance update.
      * 
@@ -161,7 +136,7 @@ public final class GetVmClusterUpdateResult {
     public static Builder builder(GetVmClusterUpdateResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> availableActions;
         private String description;
@@ -174,11 +149,7 @@ public final class GetVmClusterUpdateResult {
         private String updateType;
         private String version;
         private String vmClusterId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVmClusterUpdateResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availableActions = defaults.availableActions;
@@ -194,6 +165,7 @@ public final class GetVmClusterUpdateResult {
     	      this.vmClusterId = defaults.vmClusterId;
         }
 
+        @CustomType.Setter
         public Builder availableActions(List<String> availableActions) {
             this.availableActions = Objects.requireNonNull(availableActions);
             return this;
@@ -201,47 +173,70 @@ public final class GetVmClusterUpdateResult {
         public Builder availableActions(String... availableActions) {
             return availableActions(List.of(availableActions));
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lastAction(String lastAction) {
             this.lastAction = Objects.requireNonNull(lastAction);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeReleased(String timeReleased) {
             this.timeReleased = Objects.requireNonNull(timeReleased);
             return this;
         }
+        @CustomType.Setter
         public Builder updateId(String updateId) {
             this.updateId = Objects.requireNonNull(updateId);
             return this;
         }
+        @CustomType.Setter
         public Builder updateType(String updateType) {
             this.updateType = Objects.requireNonNull(updateType);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
         }
+        @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
             this.vmClusterId = Objects.requireNonNull(vmClusterId);
             return this;
-        }        public GetVmClusterUpdateResult build() {
-            return new GetVmClusterUpdateResult(availableActions, description, id, lastAction, lifecycleDetails, state, timeReleased, updateId, updateType, version, vmClusterId);
+        }
+        public GetVmClusterUpdateResult build() {
+            final var o = new GetVmClusterUpdateResult();
+            o.availableActions = availableActions;
+            o.description = description;
+            o.id = id;
+            o.lastAction = lastAction;
+            o.lifecycleDetails = lifecycleDetails;
+            o.state = state;
+            o.timeReleased = timeReleased;
+            o.updateId = updateId;
+            o.updateType = updateType;
+            o.version = version;
+            o.vmClusterId = vmClusterId;
+            return o;
         }
     }
 }

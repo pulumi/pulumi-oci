@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMaskingReportsMaskingReportCollection {
-    private final List<GetMaskingReportsMaskingReportCollectionItem> items;
+    private List<GetMaskingReportsMaskingReportCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetMaskingReportsMaskingReportCollection(@CustomType.Parameter("items") List<GetMaskingReportsMaskingReportCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetMaskingReportsMaskingReportCollection() {}
     public List<GetMaskingReportsMaskingReportCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetMaskingReportsMaskingReportCollection {
     public static Builder builder(GetMaskingReportsMaskingReportCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetMaskingReportsMaskingReportCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMaskingReportsMaskingReportCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetMaskingReportsMaskingReportCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetMaskingReportsMaskingReportCollectionItem... items) {
             return items(List.of(items));
-        }        public GetMaskingReportsMaskingReportCollection build() {
-            return new GetMaskingReportsMaskingReportCollection(items);
+        }
+        public GetMaskingReportsMaskingReportCollection build() {
+            final var o = new GetMaskingReportsMaskingReportCollection();
+            o.items = items;
+            return o;
         }
     }
 }

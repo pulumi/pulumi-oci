@@ -16,28 +16,19 @@ public final class GetDatabaseToolsConnectionKeyStore {
      * @return The key store content.
      * 
      */
-    private final List<GetDatabaseToolsConnectionKeyStoreKeyStoreContent> keyStoreContents;
+    private List<GetDatabaseToolsConnectionKeyStoreKeyStoreContent> keyStoreContents;
     /**
      * @return The key store password.
      * 
      */
-    private final List<GetDatabaseToolsConnectionKeyStoreKeyStorePassword> keyStorePasswords;
+    private List<GetDatabaseToolsConnectionKeyStoreKeyStorePassword> keyStorePasswords;
     /**
      * @return The key store type.
      * 
      */
-    private final String keyStoreType;
+    private String keyStoreType;
 
-    @CustomType.Constructor
-    private GetDatabaseToolsConnectionKeyStore(
-        @CustomType.Parameter("keyStoreContents") List<GetDatabaseToolsConnectionKeyStoreKeyStoreContent> keyStoreContents,
-        @CustomType.Parameter("keyStorePasswords") List<GetDatabaseToolsConnectionKeyStoreKeyStorePassword> keyStorePasswords,
-        @CustomType.Parameter("keyStoreType") String keyStoreType) {
-        this.keyStoreContents = keyStoreContents;
-        this.keyStorePasswords = keyStorePasswords;
-        this.keyStoreType = keyStoreType;
-    }
-
+    private GetDatabaseToolsConnectionKeyStore() {}
     /**
      * @return The key store content.
      * 
@@ -67,16 +58,12 @@ public final class GetDatabaseToolsConnectionKeyStore {
     public static Builder builder(GetDatabaseToolsConnectionKeyStore defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDatabaseToolsConnectionKeyStoreKeyStoreContent> keyStoreContents;
         private List<GetDatabaseToolsConnectionKeyStoreKeyStorePassword> keyStorePasswords;
         private String keyStoreType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseToolsConnectionKeyStore defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.keyStoreContents = defaults.keyStoreContents;
@@ -84,6 +71,7 @@ public final class GetDatabaseToolsConnectionKeyStore {
     	      this.keyStoreType = defaults.keyStoreType;
         }
 
+        @CustomType.Setter
         public Builder keyStoreContents(List<GetDatabaseToolsConnectionKeyStoreKeyStoreContent> keyStoreContents) {
             this.keyStoreContents = Objects.requireNonNull(keyStoreContents);
             return this;
@@ -91,6 +79,7 @@ public final class GetDatabaseToolsConnectionKeyStore {
         public Builder keyStoreContents(GetDatabaseToolsConnectionKeyStoreKeyStoreContent... keyStoreContents) {
             return keyStoreContents(List.of(keyStoreContents));
         }
+        @CustomType.Setter
         public Builder keyStorePasswords(List<GetDatabaseToolsConnectionKeyStoreKeyStorePassword> keyStorePasswords) {
             this.keyStorePasswords = Objects.requireNonNull(keyStorePasswords);
             return this;
@@ -98,11 +87,17 @@ public final class GetDatabaseToolsConnectionKeyStore {
         public Builder keyStorePasswords(GetDatabaseToolsConnectionKeyStoreKeyStorePassword... keyStorePasswords) {
             return keyStorePasswords(List.of(keyStorePasswords));
         }
+        @CustomType.Setter
         public Builder keyStoreType(String keyStoreType) {
             this.keyStoreType = Objects.requireNonNull(keyStoreType);
             return this;
-        }        public GetDatabaseToolsConnectionKeyStore build() {
-            return new GetDatabaseToolsConnectionKeyStore(keyStoreContents, keyStorePasswords, keyStoreType);
+        }
+        public GetDatabaseToolsConnectionKeyStore build() {
+            final var o = new GetDatabaseToolsConnectionKeyStore();
+            o.keyStoreContents = keyStoreContents;
+            o.keyStorePasswords = keyStorePasswords;
+            o.keyStoreType = keyStoreType;
+            return o;
         }
     }
 }

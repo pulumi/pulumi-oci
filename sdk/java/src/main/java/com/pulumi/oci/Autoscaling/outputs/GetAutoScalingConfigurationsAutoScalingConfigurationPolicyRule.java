@@ -16,35 +16,24 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
      * @return The action to take when autoscaling is triggered.
      * 
      */
-    private final List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction> actions;
+    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction> actions;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return ID of the condition that is assigned after creation.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Metric and threshold details for triggering an autoscaling action.
      * 
      */
-    private final List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics;
+    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule(
-        @CustomType.Parameter("actions") List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction> actions,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("metrics") List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics) {
-        this.actions = actions;
-        this.displayName = displayName;
-        this.id = id;
-        this.metrics = metrics;
-    }
-
+    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule() {}
     /**
      * @return The action to take when autoscaling is triggered.
      * 
@@ -81,17 +70,13 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
     public static Builder builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction> actions;
         private String displayName;
         private String id;
         private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actions = defaults.actions;
@@ -100,6 +85,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
     	      this.metrics = defaults.metrics;
         }
 
+        @CustomType.Setter
         public Builder actions(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction> actions) {
             this.actions = Objects.requireNonNull(actions);
             return this;
@@ -107,22 +93,31 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
         public Builder actions(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleAction... actions) {
             return actions(List.of(actions));
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder metrics(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics) {
             this.metrics = Objects.requireNonNull(metrics);
             return this;
         }
         public Builder metrics(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric... metrics) {
             return metrics(List.of(metrics));
-        }        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule build() {
-            return new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule(actions, displayName, id, metrics);
+        }
+        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule build() {
+            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule();
+            o.actions = actions;
+            o.displayName = displayName;
+            o.id = id;
+            o.metrics = metrics;
+            return o;
         }
     }
 }

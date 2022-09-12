@@ -15,112 +15,79 @@ public final class BdsInstanceClusterDetail {
      * @return The URL of Ambari
      * 
      */
-    private final @Nullable String ambariUrl;
+    private @Nullable String ambariUrl;
     /**
      * @return Cloud SQL cell version
      * 
      */
-    private final @Nullable String bdCellVersion;
+    private @Nullable String bdCellVersion;
     /**
      * @return BDA version installed in the cluster
      * 
      */
-    private final @Nullable String bdaVersion;
+    private @Nullable String bdaVersion;
     /**
      * @return Big Data Manager version installed in the cluster
      * 
      */
-    private final @Nullable String bdmVersion;
+    private @Nullable String bdmVersion;
     /**
      * @return Big Data Service version installed in the cluster
      * 
      */
-    private final @Nullable String bdsVersion;
+    private @Nullable String bdsVersion;
     /**
      * @return The URL of a Big Data Manager
      * 
      */
-    private final @Nullable String bigDataManagerUrl;
+    private @Nullable String bigDataManagerUrl;
     /**
      * @return The URL of a Cloudera Manager
      * 
      */
-    private final @Nullable String clouderaManagerUrl;
+    private @Nullable String clouderaManagerUrl;
     /**
      * @return Big Data SQL version
      * 
      */
-    private final @Nullable String csqlCellVersion;
+    private @Nullable String csqlCellVersion;
     /**
      * @return Query Server Database version
      * 
      */
-    private final @Nullable String dbVersion;
+    private @Nullable String dbVersion;
     /**
      * @return The URL of a Hue Server
      * 
      */
-    private final @Nullable String hueServerUrl;
+    private @Nullable String hueServerUrl;
     /**
      * @return The URL of the Jupyterhub.
      * 
      */
-    private final @Nullable String jupyterHubUrl;
+    private @Nullable String jupyterHubUrl;
     /**
      * @return Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
      * 
      */
-    private final @Nullable String odhVersion;
+    private @Nullable String odhVersion;
     /**
      * @return Oracle Linux version installed in the cluster
      * 
      */
-    private final @Nullable String osVersion;
+    private @Nullable String osVersion;
     /**
      * @return The time the BDS instance was created. An RFC3339 formatted datetime string
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
      * 
      */
-    private final @Nullable String timeRefreshed;
+    private @Nullable String timeRefreshed;
 
-    @CustomType.Constructor
-    private BdsInstanceClusterDetail(
-        @CustomType.Parameter("ambariUrl") @Nullable String ambariUrl,
-        @CustomType.Parameter("bdCellVersion") @Nullable String bdCellVersion,
-        @CustomType.Parameter("bdaVersion") @Nullable String bdaVersion,
-        @CustomType.Parameter("bdmVersion") @Nullable String bdmVersion,
-        @CustomType.Parameter("bdsVersion") @Nullable String bdsVersion,
-        @CustomType.Parameter("bigDataManagerUrl") @Nullable String bigDataManagerUrl,
-        @CustomType.Parameter("clouderaManagerUrl") @Nullable String clouderaManagerUrl,
-        @CustomType.Parameter("csqlCellVersion") @Nullable String csqlCellVersion,
-        @CustomType.Parameter("dbVersion") @Nullable String dbVersion,
-        @CustomType.Parameter("hueServerUrl") @Nullable String hueServerUrl,
-        @CustomType.Parameter("jupyterHubUrl") @Nullable String jupyterHubUrl,
-        @CustomType.Parameter("odhVersion") @Nullable String odhVersion,
-        @CustomType.Parameter("osVersion") @Nullable String osVersion,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated,
-        @CustomType.Parameter("timeRefreshed") @Nullable String timeRefreshed) {
-        this.ambariUrl = ambariUrl;
-        this.bdCellVersion = bdCellVersion;
-        this.bdaVersion = bdaVersion;
-        this.bdmVersion = bdmVersion;
-        this.bdsVersion = bdsVersion;
-        this.bigDataManagerUrl = bigDataManagerUrl;
-        this.clouderaManagerUrl = clouderaManagerUrl;
-        this.csqlCellVersion = csqlCellVersion;
-        this.dbVersion = dbVersion;
-        this.hueServerUrl = hueServerUrl;
-        this.jupyterHubUrl = jupyterHubUrl;
-        this.odhVersion = odhVersion;
-        this.osVersion = osVersion;
-        this.timeCreated = timeCreated;
-        this.timeRefreshed = timeRefreshed;
-    }
-
+    private BdsInstanceClusterDetail() {}
     /**
      * @return The URL of Ambari
      * 
@@ -234,7 +201,7 @@ public final class BdsInstanceClusterDetail {
     public static Builder builder(BdsInstanceClusterDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String ambariUrl;
         private @Nullable String bdCellVersion;
@@ -251,11 +218,7 @@ public final class BdsInstanceClusterDetail {
         private @Nullable String osVersion;
         private @Nullable String timeCreated;
         private @Nullable String timeRefreshed;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BdsInstanceClusterDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ambariUrl = defaults.ambariUrl;
@@ -275,67 +238,99 @@ public final class BdsInstanceClusterDetail {
     	      this.timeRefreshed = defaults.timeRefreshed;
         }
 
+        @CustomType.Setter
         public Builder ambariUrl(@Nullable String ambariUrl) {
             this.ambariUrl = ambariUrl;
             return this;
         }
+        @CustomType.Setter
         public Builder bdCellVersion(@Nullable String bdCellVersion) {
             this.bdCellVersion = bdCellVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder bdaVersion(@Nullable String bdaVersion) {
             this.bdaVersion = bdaVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder bdmVersion(@Nullable String bdmVersion) {
             this.bdmVersion = bdmVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder bdsVersion(@Nullable String bdsVersion) {
             this.bdsVersion = bdsVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder bigDataManagerUrl(@Nullable String bigDataManagerUrl) {
             this.bigDataManagerUrl = bigDataManagerUrl;
             return this;
         }
+        @CustomType.Setter
         public Builder clouderaManagerUrl(@Nullable String clouderaManagerUrl) {
             this.clouderaManagerUrl = clouderaManagerUrl;
             return this;
         }
+        @CustomType.Setter
         public Builder csqlCellVersion(@Nullable String csqlCellVersion) {
             this.csqlCellVersion = csqlCellVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder dbVersion(@Nullable String dbVersion) {
             this.dbVersion = dbVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder hueServerUrl(@Nullable String hueServerUrl) {
             this.hueServerUrl = hueServerUrl;
             return this;
         }
+        @CustomType.Setter
         public Builder jupyterHubUrl(@Nullable String jupyterHubUrl) {
             this.jupyterHubUrl = jupyterHubUrl;
             return this;
         }
+        @CustomType.Setter
         public Builder odhVersion(@Nullable String odhVersion) {
             this.odhVersion = odhVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder osVersion(@Nullable String osVersion) {
             this.osVersion = osVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
         public Builder timeRefreshed(@Nullable String timeRefreshed) {
             this.timeRefreshed = timeRefreshed;
             return this;
-        }        public BdsInstanceClusterDetail build() {
-            return new BdsInstanceClusterDetail(ambariUrl, bdCellVersion, bdaVersion, bdmVersion, bdsVersion, bigDataManagerUrl, clouderaManagerUrl, csqlCellVersion, dbVersion, hueServerUrl, jupyterHubUrl, odhVersion, osVersion, timeCreated, timeRefreshed);
+        }
+        public BdsInstanceClusterDetail build() {
+            final var o = new BdsInstanceClusterDetail();
+            o.ambariUrl = ambariUrl;
+            o.bdCellVersion = bdCellVersion;
+            o.bdaVersion = bdaVersion;
+            o.bdmVersion = bdmVersion;
+            o.bdsVersion = bdsVersion;
+            o.bigDataManagerUrl = bigDataManagerUrl;
+            o.clouderaManagerUrl = clouderaManagerUrl;
+            o.csqlCellVersion = csqlCellVersion;
+            o.dbVersion = dbVersion;
+            o.hueServerUrl = hueServerUrl;
+            o.jupyterHubUrl = jupyterHubUrl;
+            o.odhVersion = odhVersion;
+            o.osVersion = osVersion;
+            o.timeCreated = timeCreated;
+            o.timeRefreshed = timeRefreshed;
+            return o;
         }
     }
 }

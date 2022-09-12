@@ -11,33 +11,24 @@ import java.util.Objects;
 @CustomType
 public final class GetDetectorRecipeDetectorRuleCandidateResponderRule {
     /**
-     * @return Display name for DetectorRecipeDetectorRule.
+     * @return The display name of entity
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Ocid for detector recipe
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Preferred state
      * 
      */
-    private final Boolean isPreferred;
+    private Boolean isPreferred;
 
-    @CustomType.Constructor
-    private GetDetectorRecipeDetectorRuleCandidateResponderRule(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isPreferred") Boolean isPreferred) {
-        this.displayName = displayName;
-        this.id = id;
-        this.isPreferred = isPreferred;
-    }
-
+    private GetDetectorRecipeDetectorRuleCandidateResponderRule() {}
     /**
-     * @return Display name for DetectorRecipeDetectorRule.
+     * @return The display name of entity
      * 
      */
     public String displayName() {
@@ -65,16 +56,12 @@ public final class GetDetectorRecipeDetectorRuleCandidateResponderRule {
     public static Builder builder(GetDetectorRecipeDetectorRuleCandidateResponderRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private String id;
         private Boolean isPreferred;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDetectorRecipeDetectorRuleCandidateResponderRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -82,19 +69,27 @@ public final class GetDetectorRecipeDetectorRuleCandidateResponderRule {
     	      this.isPreferred = defaults.isPreferred;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isPreferred(Boolean isPreferred) {
             this.isPreferred = Objects.requireNonNull(isPreferred);
             return this;
-        }        public GetDetectorRecipeDetectorRuleCandidateResponderRule build() {
-            return new GetDetectorRecipeDetectorRuleCandidateResponderRule(displayName, id, isPreferred);
+        }
+        public GetDetectorRecipeDetectorRuleCandidateResponderRule build() {
+            final var o = new GetDetectorRecipeDetectorRuleCandidateResponderRule();
+            o.displayName = displayName;
+            o.id = id;
+            o.isPreferred = isPreferred;
+            return o;
         }
     }
 }

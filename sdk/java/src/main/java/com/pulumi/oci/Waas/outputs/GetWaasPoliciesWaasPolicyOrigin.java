@@ -16,38 +16,25 @@ public final class GetWaasPoliciesWaasPolicyOrigin {
      * @return A list of HTTP headers to forward to your origin.
      * 
      */
-    private final List<GetWaasPoliciesWaasPolicyOriginCustomHeader> customHeaders;
+    private List<GetWaasPoliciesWaasPolicyOriginCustomHeader> customHeaders;
     /**
      * @return The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
      * 
      */
-    private final Integer httpPort;
+    private Integer httpPort;
     /**
      * @return The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`. If `0` is specified - the origin is not used for HTTPS traffic.
      * 
      */
-    private final Integer httpsPort;
-    private final String label;
+    private Integer httpsPort;
+    private String label;
     /**
      * @return The URI of the origin. Does not support paths. Port numbers should be specified in the `httpPort` and `httpsPort` fields.
      * 
      */
-    private final String uri;
+    private String uri;
 
-    @CustomType.Constructor
-    private GetWaasPoliciesWaasPolicyOrigin(
-        @CustomType.Parameter("customHeaders") List<GetWaasPoliciesWaasPolicyOriginCustomHeader> customHeaders,
-        @CustomType.Parameter("httpPort") Integer httpPort,
-        @CustomType.Parameter("httpsPort") Integer httpsPort,
-        @CustomType.Parameter("label") String label,
-        @CustomType.Parameter("uri") String uri) {
-        this.customHeaders = customHeaders;
-        this.httpPort = httpPort;
-        this.httpsPort = httpsPort;
-        this.label = label;
-        this.uri = uri;
-    }
-
+    private GetWaasPoliciesWaasPolicyOrigin() {}
     /**
      * @return A list of HTTP headers to forward to your origin.
      * 
@@ -87,18 +74,14 @@ public final class GetWaasPoliciesWaasPolicyOrigin {
     public static Builder builder(GetWaasPoliciesWaasPolicyOrigin defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetWaasPoliciesWaasPolicyOriginCustomHeader> customHeaders;
         private Integer httpPort;
         private Integer httpsPort;
         private String label;
         private String uri;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyOrigin defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.customHeaders = defaults.customHeaders;
@@ -108,6 +91,7 @@ public final class GetWaasPoliciesWaasPolicyOrigin {
     	      this.uri = defaults.uri;
         }
 
+        @CustomType.Setter
         public Builder customHeaders(List<GetWaasPoliciesWaasPolicyOriginCustomHeader> customHeaders) {
             this.customHeaders = Objects.requireNonNull(customHeaders);
             return this;
@@ -115,23 +99,34 @@ public final class GetWaasPoliciesWaasPolicyOrigin {
         public Builder customHeaders(GetWaasPoliciesWaasPolicyOriginCustomHeader... customHeaders) {
             return customHeaders(List.of(customHeaders));
         }
+        @CustomType.Setter
         public Builder httpPort(Integer httpPort) {
             this.httpPort = Objects.requireNonNull(httpPort);
             return this;
         }
+        @CustomType.Setter
         public Builder httpsPort(Integer httpsPort) {
             this.httpsPort = Objects.requireNonNull(httpsPort);
             return this;
         }
+        @CustomType.Setter
         public Builder label(String label) {
             this.label = Objects.requireNonNull(label);
             return this;
         }
+        @CustomType.Setter
         public Builder uri(String uri) {
             this.uri = Objects.requireNonNull(uri);
             return this;
-        }        public GetWaasPoliciesWaasPolicyOrigin build() {
-            return new GetWaasPoliciesWaasPolicyOrigin(customHeaders, httpPort, httpsPort, label, uri);
+        }
+        public GetWaasPoliciesWaasPolicyOrigin build() {
+            final var o = new GetWaasPoliciesWaasPolicyOrigin();
+            o.customHeaders = customHeaders;
+            o.httpPort = httpPort;
+            o.httpsPort = httpsPort;
+            o.label = label;
+            o.uri = uri;
+            return o;
         }
     }
 }

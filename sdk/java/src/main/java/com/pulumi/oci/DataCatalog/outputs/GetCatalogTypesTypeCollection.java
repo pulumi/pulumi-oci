@@ -11,17 +11,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCatalogTypesTypeCollection {
-    private final Integer count;
-    private final List<GetCatalogTypesTypeCollectionItem> items;
+    private Integer count;
+    private List<GetCatalogTypesTypeCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetCatalogTypesTypeCollection(
-        @CustomType.Parameter("count") Integer count,
-        @CustomType.Parameter("items") List<GetCatalogTypesTypeCollectionItem> items) {
-        this.count = count;
-        this.items = items;
-    }
-
+    private GetCatalogTypesTypeCollection() {}
     public Integer count() {
         return this.count;
     }
@@ -36,33 +29,35 @@ public final class GetCatalogTypesTypeCollection {
     public static Builder builder(GetCatalogTypesTypeCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer count;
         private List<GetCatalogTypesTypeCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCatalogTypesTypeCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder count(Integer count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetCatalogTypesTypeCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetCatalogTypesTypeCollectionItem... items) {
             return items(List.of(items));
-        }        public GetCatalogTypesTypeCollection build() {
-            return new GetCatalogTypesTypeCollection(count, items);
+        }
+        public GetCatalogTypesTypeCollection build() {
+            final var o = new GetCatalogTypesTypeCollection();
+            o.count = count;
+            o.items = items;
+            return o;
         }
     }
 }

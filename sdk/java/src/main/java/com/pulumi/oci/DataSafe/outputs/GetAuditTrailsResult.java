@@ -15,72 +15,47 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditTrailsResult {
-    private final @Nullable String accessLevel;
+    private @Nullable String accessLevel;
     /**
      * @return The list of audit_trail_collection.
      * 
      */
-    private final List<GetAuditTrailsAuditTrailCollection> auditTrailCollections;
-    private final @Nullable String auditTrailId;
+    private List<GetAuditTrailsAuditTrailCollection> auditTrailCollections;
+    private @Nullable String auditTrailId;
     /**
      * @return The OCID of the compartment that contains the audit trail and its same as the compartment of audit profile resource.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The display name of the audit trail.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetAuditTrailsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetAuditTrailsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the audit trail.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The current sub-state of the audit trail.
      * 
      */
-    private final @Nullable String status;
+    private @Nullable String status;
     /**
      * @return The OCID of the Data Safe target for which the audit trail is created.
      * 
      */
-    private final @Nullable String targetId;
+    private @Nullable String targetId;
 
-    @CustomType.Constructor
-    private GetAuditTrailsResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("auditTrailCollections") List<GetAuditTrailsAuditTrailCollection> auditTrailCollections,
-        @CustomType.Parameter("auditTrailId") @Nullable String auditTrailId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetAuditTrailsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("status") @Nullable String status,
-        @CustomType.Parameter("targetId") @Nullable String targetId) {
-        this.accessLevel = accessLevel;
-        this.auditTrailCollections = auditTrailCollections;
-        this.auditTrailId = auditTrailId;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.status = status;
-        this.targetId = targetId;
-    }
-
+    private GetAuditTrailsResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -150,7 +125,7 @@ public final class GetAuditTrailsResult {
     public static Builder builder(GetAuditTrailsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private List<GetAuditTrailsAuditTrailCollection> auditTrailCollections;
@@ -163,11 +138,7 @@ public final class GetAuditTrailsResult {
         private @Nullable String state;
         private @Nullable String status;
         private @Nullable String targetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditTrailsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -183,10 +154,12 @@ public final class GetAuditTrailsResult {
     	      this.targetId = defaults.targetId;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder auditTrailCollections(List<GetAuditTrailsAuditTrailCollection> auditTrailCollections) {
             this.auditTrailCollections = Objects.requireNonNull(auditTrailCollections);
             return this;
@@ -194,22 +167,27 @@ public final class GetAuditTrailsResult {
         public Builder auditTrailCollections(GetAuditTrailsAuditTrailCollection... auditTrailCollections) {
             return auditTrailCollections(List.of(auditTrailCollections));
         }
+        @CustomType.Setter
         public Builder auditTrailId(@Nullable String auditTrailId) {
             this.auditTrailId = auditTrailId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAuditTrailsFilter> filters) {
             this.filters = filters;
             return this;
@@ -217,23 +195,40 @@ public final class GetAuditTrailsResult {
         public Builder filters(GetAuditTrailsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
             this.targetId = targetId;
             return this;
-        }        public GetAuditTrailsResult build() {
-            return new GetAuditTrailsResult(accessLevel, auditTrailCollections, auditTrailId, compartmentId, compartmentIdInSubtree, displayName, filters, id, state, status, targetId);
+        }
+        public GetAuditTrailsResult build() {
+            final var o = new GetAuditTrailsResult();
+            o.accessLevel = accessLevel;
+            o.auditTrailCollections = auditTrailCollections;
+            o.auditTrailId = auditTrailId;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.status = status;
+            o.targetId = targetId;
+            return o;
         }
     }
 }

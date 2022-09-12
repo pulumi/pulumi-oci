@@ -15,21 +15,14 @@ public final class GetJobAdvisorReportReportLocationDetail {
      * @return Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
      * 
      */
-    private final String locationInSource;
+    private String locationInSource;
     /**
      * @return Details to access Pre-Migration Advisor report in the specified Object Storage bucket, if any.
      * 
      */
-    private final List<GetJobAdvisorReportReportLocationDetailObjectStorageDetail> objectStorageDetails;
+    private List<GetJobAdvisorReportReportLocationDetailObjectStorageDetail> objectStorageDetails;
 
-    @CustomType.Constructor
-    private GetJobAdvisorReportReportLocationDetail(
-        @CustomType.Parameter("locationInSource") String locationInSource,
-        @CustomType.Parameter("objectStorageDetails") List<GetJobAdvisorReportReportLocationDetailObjectStorageDetail> objectStorageDetails) {
-        this.locationInSource = locationInSource;
-        this.objectStorageDetails = objectStorageDetails;
-    }
-
+    private GetJobAdvisorReportReportLocationDetail() {}
     /**
      * @return Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
      * 
@@ -52,33 +45,35 @@ public final class GetJobAdvisorReportReportLocationDetail {
     public static Builder builder(GetJobAdvisorReportReportLocationDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String locationInSource;
         private List<GetJobAdvisorReportReportLocationDetailObjectStorageDetail> objectStorageDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJobAdvisorReportReportLocationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.locationInSource = defaults.locationInSource;
     	      this.objectStorageDetails = defaults.objectStorageDetails;
         }
 
+        @CustomType.Setter
         public Builder locationInSource(String locationInSource) {
             this.locationInSource = Objects.requireNonNull(locationInSource);
             return this;
         }
+        @CustomType.Setter
         public Builder objectStorageDetails(List<GetJobAdvisorReportReportLocationDetailObjectStorageDetail> objectStorageDetails) {
             this.objectStorageDetails = Objects.requireNonNull(objectStorageDetails);
             return this;
         }
         public Builder objectStorageDetails(GetJobAdvisorReportReportLocationDetailObjectStorageDetail... objectStorageDetails) {
             return objectStorageDetails(List.of(objectStorageDetails));
-        }        public GetJobAdvisorReportReportLocationDetail build() {
-            return new GetJobAdvisorReportReportLocationDetail(locationInSource, objectStorageDetails);
+        }
+        public GetJobAdvisorReportReportLocationDetail build() {
+            final var o = new GetJobAdvisorReportReportLocationDetail();
+            o.locationInSource = locationInSource;
+            o.objectStorageDetails = objectStorageDetails;
+            return o;
         }
     }
 }

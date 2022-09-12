@@ -17,21 +17,14 @@ public final class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBac
      * @return Backup destination details.
      * 
      */
-    private final @Nullable List<AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails;
+    private @Nullable List<AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails;
     /**
      * @return Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
      * 
      */
-    private final @Nullable Integer recoveryWindowInDays;
+    private @Nullable Integer recoveryWindowInDays;
 
-    @CustomType.Constructor
-    private AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig(
-        @CustomType.Parameter("backupDestinationDetails") @Nullable List<AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails,
-        @CustomType.Parameter("recoveryWindowInDays") @Nullable Integer recoveryWindowInDays) {
-        this.backupDestinationDetails = backupDestinationDetails;
-        this.recoveryWindowInDays = recoveryWindowInDays;
-    }
-
+    private AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig() {}
     /**
      * @return Backup destination details.
      * 
@@ -54,21 +47,18 @@ public final class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBac
     public static Builder builder(AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails;
         private @Nullable Integer recoveryWindowInDays;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupDestinationDetails = defaults.backupDestinationDetails;
     	      this.recoveryWindowInDays = defaults.recoveryWindowInDays;
         }
 
+        @CustomType.Setter
         public Builder backupDestinationDetails(@Nullable List<AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails) {
             this.backupDestinationDetails = backupDestinationDetails;
             return this;
@@ -76,11 +66,16 @@ public final class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBac
         public Builder backupDestinationDetails(AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail... backupDestinationDetails) {
             return backupDestinationDetails(List.of(backupDestinationDetails));
         }
+        @CustomType.Setter
         public Builder recoveryWindowInDays(@Nullable Integer recoveryWindowInDays) {
             this.recoveryWindowInDays = recoveryWindowInDays;
             return this;
-        }        public AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig build() {
-            return new AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig(backupDestinationDetails, recoveryWindowInDays);
+        }
+        public AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig build() {
+            final var o = new AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig();
+            o.backupDestinationDetails = backupDestinationDetails;
+            o.recoveryWindowInDays = recoveryWindowInDays;
+            return o;
         }
     }
 }

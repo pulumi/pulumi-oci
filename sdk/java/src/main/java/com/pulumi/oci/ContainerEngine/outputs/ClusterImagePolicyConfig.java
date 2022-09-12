@@ -17,21 +17,14 @@ public final class ClusterImagePolicyConfig {
      * @return (Updatable) Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
      * 
      */
-    private final @Nullable Boolean isPolicyEnabled;
+    private @Nullable Boolean isPolicyEnabled;
     /**
      * @return (Updatable) A list of KMS key details.
      * 
      */
-    private final @Nullable List<ClusterImagePolicyConfigKeyDetail> keyDetails;
+    private @Nullable List<ClusterImagePolicyConfigKeyDetail> keyDetails;
 
-    @CustomType.Constructor
-    private ClusterImagePolicyConfig(
-        @CustomType.Parameter("isPolicyEnabled") @Nullable Boolean isPolicyEnabled,
-        @CustomType.Parameter("keyDetails") @Nullable List<ClusterImagePolicyConfigKeyDetail> keyDetails) {
-        this.isPolicyEnabled = isPolicyEnabled;
-        this.keyDetails = keyDetails;
-    }
-
+    private ClusterImagePolicyConfig() {}
     /**
      * @return (Updatable) Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
      * 
@@ -54,33 +47,35 @@ public final class ClusterImagePolicyConfig {
     public static Builder builder(ClusterImagePolicyConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isPolicyEnabled;
         private @Nullable List<ClusterImagePolicyConfigKeyDetail> keyDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ClusterImagePolicyConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isPolicyEnabled = defaults.isPolicyEnabled;
     	      this.keyDetails = defaults.keyDetails;
         }
 
+        @CustomType.Setter
         public Builder isPolicyEnabled(@Nullable Boolean isPolicyEnabled) {
             this.isPolicyEnabled = isPolicyEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder keyDetails(@Nullable List<ClusterImagePolicyConfigKeyDetail> keyDetails) {
             this.keyDetails = keyDetails;
             return this;
         }
         public Builder keyDetails(ClusterImagePolicyConfigKeyDetail... keyDetails) {
             return keyDetails(List.of(keyDetails));
-        }        public ClusterImagePolicyConfig build() {
-            return new ClusterImagePolicyConfig(isPolicyEnabled, keyDetails);
+        }
+        public ClusterImagePolicyConfig build() {
+            final var o = new ClusterImagePolicyConfig();
+            o.isPolicyEnabled = isPolicyEnabled;
+            o.keyDetails = keyDetails;
+            return o;
         }
     }
 }

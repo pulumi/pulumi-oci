@@ -14,21 +14,14 @@ public final class GetInstanceDevicesDevice {
      * @return A filter to return only available devices or only used devices.
      * 
      */
-    private final Boolean isAvailable;
+    private Boolean isAvailable;
     /**
      * @return A filter to return only devices that match the given name exactly.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetInstanceDevicesDevice(
-        @CustomType.Parameter("isAvailable") Boolean isAvailable,
-        @CustomType.Parameter("name") String name) {
-        this.isAvailable = isAvailable;
-        this.name = name;
-    }
-
+    private GetInstanceDevicesDevice() {}
     /**
      * @return A filter to return only available devices or only used devices.
      * 
@@ -51,30 +44,32 @@ public final class GetInstanceDevicesDevice {
     public static Builder builder(GetInstanceDevicesDevice defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isAvailable;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceDevicesDevice defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isAvailable = defaults.isAvailable;
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder isAvailable(Boolean isAvailable) {
             this.isAvailable = Objects.requireNonNull(isAvailable);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetInstanceDevicesDevice build() {
-            return new GetInstanceDevicesDevice(isAvailable, name);
+        }
+        public GetInstanceDevicesDevice build() {
+            final var o = new GetInstanceDevicesDevice();
+            o.isAvailable = isAvailable;
+            o.name = name;
+            return o;
         }
     }
 }

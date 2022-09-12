@@ -15,42 +15,29 @@ public final class VaultRestoreFromObjectStore {
      * @return (Updatable) Name of the bucket where vault was backed up
      * 
      */
-    private final @Nullable String bucket;
+    private @Nullable String bucket;
     /**
      * @return (Updatable) Type of backup to restore from. Values of &#34;BUCKET&#34;, &#34;PRE_AUTHENTICATED_REQUEST_URI&#34; are supported
      * 
      */
-    private final String destination;
+    private String destination;
     /**
      * @return (Updatable) Namespace of the bucket where vault was backed up
      * 
      */
-    private final @Nullable String namespace;
+    private @Nullable String namespace;
     /**
      * @return (Updatable) Object containing the backup
      * 
      */
-    private final @Nullable String object;
+    private @Nullable String object;
     /**
      * @return (Updatable) Pre-authenticated-request-uri of the backup* `restore_trigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
      * 
      */
-    private final @Nullable String uri;
+    private @Nullable String uri;
 
-    @CustomType.Constructor
-    private VaultRestoreFromObjectStore(
-        @CustomType.Parameter("bucket") @Nullable String bucket,
-        @CustomType.Parameter("destination") String destination,
-        @CustomType.Parameter("namespace") @Nullable String namespace,
-        @CustomType.Parameter("object") @Nullable String object,
-        @CustomType.Parameter("uri") @Nullable String uri) {
-        this.bucket = bucket;
-        this.destination = destination;
-        this.namespace = namespace;
-        this.object = object;
-        this.uri = uri;
-    }
-
+    private VaultRestoreFromObjectStore() {}
     /**
      * @return (Updatable) Name of the bucket where vault was backed up
      * 
@@ -94,18 +81,14 @@ public final class VaultRestoreFromObjectStore {
     public static Builder builder(VaultRestoreFromObjectStore defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String bucket;
         private String destination;
         private @Nullable String namespace;
         private @Nullable String object;
         private @Nullable String uri;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(VaultRestoreFromObjectStore defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -115,27 +98,39 @@ public final class VaultRestoreFromObjectStore {
     	      this.uri = defaults.uri;
         }
 
+        @CustomType.Setter
         public Builder bucket(@Nullable String bucket) {
             this.bucket = bucket;
             return this;
         }
+        @CustomType.Setter
         public Builder destination(String destination) {
             this.destination = Objects.requireNonNull(destination);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(@Nullable String namespace) {
             this.namespace = namespace;
             return this;
         }
+        @CustomType.Setter
         public Builder object(@Nullable String object) {
             this.object = object;
             return this;
         }
+        @CustomType.Setter
         public Builder uri(@Nullable String uri) {
             this.uri = uri;
             return this;
-        }        public VaultRestoreFromObjectStore build() {
-            return new VaultRestoreFromObjectStore(bucket, destination, namespace, object, uri);
+        }
+        public VaultRestoreFromObjectStore build() {
+            final var o = new VaultRestoreFromObjectStore();
+            o.bucket = bucket;
+            o.destination = destination;
+            o.namespace = namespace;
+            o.object = object;
+            o.uri = uri;
+            return o;
         }
     }
 }

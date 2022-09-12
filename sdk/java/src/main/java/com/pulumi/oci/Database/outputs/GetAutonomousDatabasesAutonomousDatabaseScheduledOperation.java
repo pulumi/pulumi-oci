@@ -15,28 +15,19 @@ public final class GetAutonomousDatabasesAutonomousDatabaseScheduledOperation {
      * @return Day of the week.
      * 
      */
-    private final List<GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeek> dayOfWeeks;
+    private List<GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeek> dayOfWeeks;
     /**
      * @return auto start time. value must be of ISO-8601 format &#34;HH:mm&#34;
      * 
      */
-    private final String scheduledStartTime;
+    private String scheduledStartTime;
     /**
      * @return auto stop time. value must be of ISO-8601 format &#34;HH:mm&#34;
      * 
      */
-    private final String scheduledStopTime;
+    private String scheduledStopTime;
 
-    @CustomType.Constructor
-    private GetAutonomousDatabasesAutonomousDatabaseScheduledOperation(
-        @CustomType.Parameter("dayOfWeeks") List<GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeek> dayOfWeeks,
-        @CustomType.Parameter("scheduledStartTime") String scheduledStartTime,
-        @CustomType.Parameter("scheduledStopTime") String scheduledStopTime) {
-        this.dayOfWeeks = dayOfWeeks;
-        this.scheduledStartTime = scheduledStartTime;
-        this.scheduledStopTime = scheduledStopTime;
-    }
-
+    private GetAutonomousDatabasesAutonomousDatabaseScheduledOperation() {}
     /**
      * @return Day of the week.
      * 
@@ -66,16 +57,12 @@ public final class GetAutonomousDatabasesAutonomousDatabaseScheduledOperation {
     public static Builder builder(GetAutonomousDatabasesAutonomousDatabaseScheduledOperation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeek> dayOfWeeks;
         private String scheduledStartTime;
         private String scheduledStopTime;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDatabasesAutonomousDatabaseScheduledOperation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dayOfWeeks = defaults.dayOfWeeks;
@@ -83,6 +70,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseScheduledOperation {
     	      this.scheduledStopTime = defaults.scheduledStopTime;
         }
 
+        @CustomType.Setter
         public Builder dayOfWeeks(List<GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeek> dayOfWeeks) {
             this.dayOfWeeks = Objects.requireNonNull(dayOfWeeks);
             return this;
@@ -90,15 +78,22 @@ public final class GetAutonomousDatabasesAutonomousDatabaseScheduledOperation {
         public Builder dayOfWeeks(GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeek... dayOfWeeks) {
             return dayOfWeeks(List.of(dayOfWeeks));
         }
+        @CustomType.Setter
         public Builder scheduledStartTime(String scheduledStartTime) {
             this.scheduledStartTime = Objects.requireNonNull(scheduledStartTime);
             return this;
         }
+        @CustomType.Setter
         public Builder scheduledStopTime(String scheduledStopTime) {
             this.scheduledStopTime = Objects.requireNonNull(scheduledStopTime);
             return this;
-        }        public GetAutonomousDatabasesAutonomousDatabaseScheduledOperation build() {
-            return new GetAutonomousDatabasesAutonomousDatabaseScheduledOperation(dayOfWeeks, scheduledStartTime, scheduledStopTime);
+        }
+        public GetAutonomousDatabasesAutonomousDatabaseScheduledOperation build() {
+            final var o = new GetAutonomousDatabasesAutonomousDatabaseScheduledOperation();
+            o.dayOfWeeks = dayOfWeeks;
+            o.scheduledStartTime = scheduledStartTime;
+            o.scheduledStopTime = scheduledStopTime;
+            return o;
         }
     }
 }

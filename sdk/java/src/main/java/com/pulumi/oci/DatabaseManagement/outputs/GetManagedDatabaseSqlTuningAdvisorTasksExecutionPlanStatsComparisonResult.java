@@ -12,44 +12,27 @@ import java.util.Objects;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult {
-    private final String executionId;
+    private String executionId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String managedDatabaseId;
+    private String id;
+    private String managedDatabaseId;
     /**
      * @return The statistics of a SQL execution plan.
      * 
      */
-    private final List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified> modifieds;
+    private List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified> modifieds;
     /**
      * @return The statistics of a SQL execution plan.
      * 
      */
-    private final List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal> originals;
-    private final String sqlObjectId;
-    private final String sqlTuningAdvisorTaskId;
+    private List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal> originals;
+    private String sqlObjectId;
+    private String sqlTuningAdvisorTaskId;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult(
-        @CustomType.Parameter("executionId") String executionId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("modifieds") List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified> modifieds,
-        @CustomType.Parameter("originals") List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal> originals,
-        @CustomType.Parameter("sqlObjectId") String sqlObjectId,
-        @CustomType.Parameter("sqlTuningAdvisorTaskId") String sqlTuningAdvisorTaskId) {
-        this.executionId = executionId;
-        this.id = id;
-        this.managedDatabaseId = managedDatabaseId;
-        this.modifieds = modifieds;
-        this.originals = originals;
-        this.sqlObjectId = sqlObjectId;
-        this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult() {}
     public String executionId() {
         return this.executionId;
     }
@@ -91,7 +74,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String executionId;
         private String id;
@@ -100,11 +83,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
         private List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal> originals;
         private String sqlObjectId;
         private String sqlTuningAdvisorTaskId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.executionId = defaults.executionId;
@@ -116,18 +95,22 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
     	      this.sqlTuningAdvisorTaskId = defaults.sqlTuningAdvisorTaskId;
         }
 
+        @CustomType.Setter
         public Builder executionId(String executionId) {
             this.executionId = Objects.requireNonNull(executionId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder modifieds(List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified> modifieds) {
             this.modifieds = Objects.requireNonNull(modifieds);
             return this;
@@ -135,6 +118,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
         public Builder modifieds(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified... modifieds) {
             return modifieds(List.of(modifieds));
         }
+        @CustomType.Setter
         public Builder originals(List<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal> originals) {
             this.originals = Objects.requireNonNull(originals);
             return this;
@@ -142,15 +126,26 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
         public Builder originals(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal... originals) {
             return originals(List.of(originals));
         }
+        @CustomType.Setter
         public Builder sqlObjectId(String sqlObjectId) {
             this.sqlObjectId = Objects.requireNonNull(sqlObjectId);
             return this;
         }
+        @CustomType.Setter
         public Builder sqlTuningAdvisorTaskId(String sqlTuningAdvisorTaskId) {
             this.sqlTuningAdvisorTaskId = Objects.requireNonNull(sqlTuningAdvisorTaskId);
             return this;
-        }        public GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult(executionId, id, managedDatabaseId, modifieds, originals, sqlObjectId, sqlTuningAdvisorTaskId);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult();
+            o.executionId = executionId;
+            o.id = id;
+            o.managedDatabaseId = managedDatabaseId;
+            o.modifieds = modifieds;
+            o.originals = originals;
+            o.sqlObjectId = sqlObjectId;
+            o.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
+            return o;
         }
     }
 }

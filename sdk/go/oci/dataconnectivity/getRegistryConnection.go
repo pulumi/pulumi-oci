@@ -53,31 +53,31 @@ func LookupRegistryConnection(ctx *pulumi.Context, args *LookupRegistryConnectio
 type LookupRegistryConnectionArgs struct {
 	// The connection key.
 	ConnectionKey string `pulumi:"connectionKey"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId string `pulumi:"registryId"`
 }
 
 // A collection of values returned by getRegistryConnection.
 type LookupRegistryConnectionResult struct {
 	ConnectionKey string `pulumi:"connectionKey"`
-	// The properties for the connection.
+	// The properties of the connection.
 	ConnectionProperties []GetRegistryConnectionConnectionProperty `pulumi:"connectionProperties"`
 	// The description of the aggregator.
 	Description string `pulumi:"description"`
 	Id          string `pulumi:"id"`
 	// The identifier of the aggregator.
 	Identifier string `pulumi:"identifier"`
-	// The default property for the connection.
+	// The default property of the connection.
 	IsDefault bool `pulumi:"isDefault"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadatas []GetRegistryConnectionMetadata `pulumi:"metadatas"`
-	// The object's type.
+	// The object type.
 	ModelType string `pulumi:"modelType"`
-	// The object's model version.
+	// The model version of the object.
 	ModelVersion string `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus int `pulumi:"objectStatus"`
@@ -85,7 +85,7 @@ type LookupRegistryConnectionResult struct {
 	ObjectVersion int `pulumi:"objectVersion"`
 	// The schema object.
 	PrimarySchemas []GetRegistryConnectionPrimarySchema `pulumi:"primarySchemas"`
-	// All the properties for the connection in a key-value map format.
+	// All the properties of the connection in a key-value map format.
 	Properties map[string]interface{} `pulumi:"properties"`
 	RegistryId string                 `pulumi:"registryId"`
 	// Information about the object and its parent.
@@ -111,7 +111,7 @@ func LookupRegistryConnectionOutput(ctx *pulumi.Context, args LookupRegistryConn
 type LookupRegistryConnectionOutputArgs struct {
 	// The connection key.
 	ConnectionKey pulumi.StringInput `pulumi:"connectionKey"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringInput `pulumi:"registryId"`
 }
 
@@ -138,7 +138,7 @@ func (o LookupRegistryConnectionResultOutput) ConnectionKey() pulumi.StringOutpu
 	return o.ApplyT(func(v LookupRegistryConnectionResult) string { return v.ConnectionKey }).(pulumi.StringOutput)
 }
 
-// The properties for the connection.
+// The properties of the connection.
 func (o LookupRegistryConnectionResultOutput) ConnectionProperties() GetRegistryConnectionConnectionPropertyArrayOutput {
 	return o.ApplyT(func(v LookupRegistryConnectionResult) []GetRegistryConnectionConnectionProperty {
 		return v.ConnectionProperties
@@ -159,7 +159,7 @@ func (o LookupRegistryConnectionResultOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryConnectionResult) string { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// The default property for the connection.
+// The default property of the connection.
 func (o LookupRegistryConnectionResultOutput) IsDefault() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupRegistryConnectionResult) bool { return v.IsDefault }).(pulumi.BoolOutput)
 }
@@ -169,22 +169,22 @@ func (o LookupRegistryConnectionResultOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryConnectionResult) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object including its key, name and when/who created/updated it.
+// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o LookupRegistryConnectionResultOutput) Metadatas() GetRegistryConnectionMetadataArrayOutput {
 	return o.ApplyT(func(v LookupRegistryConnectionResult) []GetRegistryConnectionMetadata { return v.Metadatas }).(GetRegistryConnectionMetadataArrayOutput)
 }
 
-// The object's type.
+// The object type.
 func (o LookupRegistryConnectionResultOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryConnectionResult) string { return v.ModelType }).(pulumi.StringOutput)
 }
 
-// The object's model version.
+// The model version of the object.
 func (o LookupRegistryConnectionResultOutput) ModelVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryConnectionResult) string { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o LookupRegistryConnectionResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryConnectionResult) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -204,7 +204,7 @@ func (o LookupRegistryConnectionResultOutput) PrimarySchemas() GetRegistryConnec
 	return o.ApplyT(func(v LookupRegistryConnectionResult) []GetRegistryConnectionPrimarySchema { return v.PrimarySchemas }).(GetRegistryConnectionPrimarySchemaArrayOutput)
 }
 
-// All the properties for the connection in a key-value map format.
+// All the properties of the connection in a key-value map format.
 func (o LookupRegistryConnectionResultOutput) Properties() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupRegistryConnectionResult) map[string]interface{} { return v.Properties }).(pulumi.MapOutput)
 }

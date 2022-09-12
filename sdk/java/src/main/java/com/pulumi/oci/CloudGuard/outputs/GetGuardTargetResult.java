@@ -20,136 +20,95 @@ public final class GetGuardTargetResult {
      * @return Compartment Identifier
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return ResponderRule description.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return ResponderRule display name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return List of inherited compartments
      * 
      */
-    private final List<String> inheritedByCompartments;
+    private List<String> inheritedByCompartments;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecyleDetails;
+    private String lifecyleDetails;
     /**
      * @return Total number of recipes attached to target
      * 
      */
-    private final Integer recipeCount;
+    private Integer recipeCount;
     /**
      * @return The current state of the ResponderRule.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return Details specific to the target type.
      * 
      */
-    private final List<GetGuardTargetTargetDetail> targetDetails;
+    private List<GetGuardTargetTargetDetail> targetDetails;
     /**
      * @return List of detector recipes associated with target
      * 
      */
-    private final List<GetGuardTargetTargetDetectorRecipe> targetDetectorRecipes;
-    private final String targetId;
+    private List<GetGuardTargetTargetDetectorRecipe> targetDetectorRecipes;
+    private String targetId;
     /**
      * @return Resource ID which the target uses to monitor
      * 
      */
-    private final String targetResourceId;
+    private String targetResourceId;
     /**
      * @return possible type of targets
      * 
      */
-    private final String targetResourceType;
+    private String targetResourceType;
     /**
      * @return List of responder recipes associated with target
      * 
      */
-    private final List<GetGuardTargetTargetResponderRecipe> targetResponderRecipes;
+    private List<GetGuardTargetTargetResponderRecipe> targetResponderRecipes;
     /**
      * @return The date and time the target was created. Format defined by RFC3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the target was updated. Format defined by RFC3339.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetGuardTargetResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("inheritedByCompartments") List<String> inheritedByCompartments,
-        @CustomType.Parameter("lifecyleDetails") String lifecyleDetails,
-        @CustomType.Parameter("recipeCount") Integer recipeCount,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("targetDetails") List<GetGuardTargetTargetDetail> targetDetails,
-        @CustomType.Parameter("targetDetectorRecipes") List<GetGuardTargetTargetDetectorRecipe> targetDetectorRecipes,
-        @CustomType.Parameter("targetId") String targetId,
-        @CustomType.Parameter("targetResourceId") String targetResourceId,
-        @CustomType.Parameter("targetResourceType") String targetResourceType,
-        @CustomType.Parameter("targetResponderRecipes") List<GetGuardTargetTargetResponderRecipe> targetResponderRecipes,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.inheritedByCompartments = inheritedByCompartments;
-        this.lifecyleDetails = lifecyleDetails;
-        this.recipeCount = recipeCount;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.targetDetails = targetDetails;
-        this.targetDetectorRecipes = targetDetectorRecipes;
-        this.targetId = targetId;
-        this.targetResourceId = targetResourceId;
-        this.targetResourceType = targetResourceType;
-        this.targetResponderRecipes = targetResponderRecipes;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetGuardTargetResult() {}
     /**
      * @return Compartment Identifier
      * 
@@ -287,7 +246,7 @@ public final class GetGuardTargetResult {
     public static Builder builder(GetGuardTargetResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -308,11 +267,7 @@ public final class GetGuardTargetResult {
         private List<GetGuardTargetTargetResponderRecipe> targetResponderRecipes;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGuardTargetResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -336,30 +291,37 @@ public final class GetGuardTargetResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder inheritedByCompartments(List<String> inheritedByCompartments) {
             this.inheritedByCompartments = Objects.requireNonNull(inheritedByCompartments);
             return this;
@@ -367,22 +329,27 @@ public final class GetGuardTargetResult {
         public Builder inheritedByCompartments(String... inheritedByCompartments) {
             return inheritedByCompartments(List.of(inheritedByCompartments));
         }
+        @CustomType.Setter
         public Builder lifecyleDetails(String lifecyleDetails) {
             this.lifecyleDetails = Objects.requireNonNull(lifecyleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder recipeCount(Integer recipeCount) {
             this.recipeCount = Objects.requireNonNull(recipeCount);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder targetDetails(List<GetGuardTargetTargetDetail> targetDetails) {
             this.targetDetails = Objects.requireNonNull(targetDetails);
             return this;
@@ -390,6 +357,7 @@ public final class GetGuardTargetResult {
         public Builder targetDetails(GetGuardTargetTargetDetail... targetDetails) {
             return targetDetails(List.of(targetDetails));
         }
+        @CustomType.Setter
         public Builder targetDetectorRecipes(List<GetGuardTargetTargetDetectorRecipe> targetDetectorRecipes) {
             this.targetDetectorRecipes = Objects.requireNonNull(targetDetectorRecipes);
             return this;
@@ -397,18 +365,22 @@ public final class GetGuardTargetResult {
         public Builder targetDetectorRecipes(GetGuardTargetTargetDetectorRecipe... targetDetectorRecipes) {
             return targetDetectorRecipes(List.of(targetDetectorRecipes));
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetResourceId(String targetResourceId) {
             this.targetResourceId = Objects.requireNonNull(targetResourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetResourceType(String targetResourceType) {
             this.targetResourceType = Objects.requireNonNull(targetResourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder targetResponderRecipes(List<GetGuardTargetTargetResponderRecipe> targetResponderRecipes) {
             this.targetResponderRecipes = Objects.requireNonNull(targetResponderRecipes);
             return this;
@@ -416,15 +388,38 @@ public final class GetGuardTargetResult {
         public Builder targetResponderRecipes(GetGuardTargetTargetResponderRecipe... targetResponderRecipes) {
             return targetResponderRecipes(List.of(targetResponderRecipes));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetGuardTargetResult build() {
-            return new GetGuardTargetResult(compartmentId, definedTags, description, displayName, freeformTags, id, inheritedByCompartments, lifecyleDetails, recipeCount, state, systemTags, targetDetails, targetDetectorRecipes, targetId, targetResourceId, targetResourceType, targetResponderRecipes, timeCreated, timeUpdated);
+        }
+        public GetGuardTargetResult build() {
+            final var o = new GetGuardTargetResult();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.inheritedByCompartments = inheritedByCompartments;
+            o.lifecyleDetails = lifecyleDetails;
+            o.recipeCount = recipeCount;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.targetDetails = targetDetails;
+            o.targetDetectorRecipes = targetDetectorRecipes;
+            o.targetId = targetId;
+            o.targetResourceId = targetResourceId;
+            o.targetResourceType = targetResourceType;
+            o.targetResponderRecipes = targetResponderRecipes;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

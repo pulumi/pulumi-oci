@@ -18,55 +18,36 @@ public final class GetRepositoriesResult {
      * @return The OCID of the repository&#39;s compartment.
      * 
      */
-    private final @Nullable String compartmentId;
-    private final @Nullable List<GetRepositoriesFilter> filters;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetRepositoriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Unique name of a repository. This value is mutable.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The OCID of the DevOps project containing the repository.
      * 
      */
-    private final @Nullable String projectId;
+    private @Nullable String projectId;
     /**
      * @return The list of repository_collection.
      * 
      */
-    private final List<GetRepositoriesRepositoryCollection> repositoryCollections;
-    private final @Nullable String repositoryId;
+    private List<GetRepositoriesRepositoryCollection> repositoryCollections;
+    private @Nullable String repositoryId;
     /**
      * @return The current state of the repository.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetRepositoriesResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetRepositoriesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("projectId") @Nullable String projectId,
-        @CustomType.Parameter("repositoryCollections") List<GetRepositoriesRepositoryCollection> repositoryCollections,
-        @CustomType.Parameter("repositoryId") @Nullable String repositoryId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.projectId = projectId;
-        this.repositoryCollections = repositoryCollections;
-        this.repositoryId = repositoryId;
-        this.state = state;
-    }
-
+    private GetRepositoriesResult() {}
     /**
      * @return The OCID of the repository&#39;s compartment.
      * 
@@ -123,7 +104,7 @@ public final class GetRepositoriesResult {
     public static Builder builder(GetRepositoriesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetRepositoriesFilter> filters;
@@ -133,11 +114,7 @@ public final class GetRepositoriesResult {
         private List<GetRepositoriesRepositoryCollection> repositoryCollections;
         private @Nullable String repositoryId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoriesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -150,10 +127,12 @@ public final class GetRepositoriesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRepositoriesFilter> filters) {
             this.filters = filters;
             return this;
@@ -161,18 +140,22 @@ public final class GetRepositoriesResult {
         public Builder filters(GetRepositoriesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
             this.projectId = projectId;
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryCollections(List<GetRepositoriesRepositoryCollection> repositoryCollections) {
             this.repositoryCollections = Objects.requireNonNull(repositoryCollections);
             return this;
@@ -180,15 +163,27 @@ public final class GetRepositoriesResult {
         public Builder repositoryCollections(GetRepositoriesRepositoryCollection... repositoryCollections) {
             return repositoryCollections(List.of(repositoryCollections));
         }
+        @CustomType.Setter
         public Builder repositoryId(@Nullable String repositoryId) {
             this.repositoryId = repositoryId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetRepositoriesResult build() {
-            return new GetRepositoriesResult(compartmentId, filters, id, name, projectId, repositoryCollections, repositoryId, state);
+        }
+        public GetRepositoriesResult build() {
+            final var o = new GetRepositoriesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.projectId = projectId;
+            o.repositoryCollections = repositoryCollections;
+            o.repositoryId = repositoryId;
+            o.state = state;
+            return o;
         }
     }
 }

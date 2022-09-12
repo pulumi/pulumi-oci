@@ -15,13 +15,9 @@ public final class ClusterImagePolicyConfigKeyDetail {
      * @return The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
      * 
      */
-    private final @Nullable String kmsKeyId;
+    private @Nullable String kmsKeyId;
 
-    @CustomType.Constructor
-    private ClusterImagePolicyConfigKeyDetail(@CustomType.Parameter("kmsKeyId") @Nullable String kmsKeyId) {
-        this.kmsKeyId = kmsKeyId;
-    }
-
+    private ClusterImagePolicyConfigKeyDetail() {}
     /**
      * @return The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
      * 
@@ -37,24 +33,24 @@ public final class ClusterImagePolicyConfigKeyDetail {
     public static Builder builder(ClusterImagePolicyConfigKeyDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String kmsKeyId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ClusterImagePolicyConfigKeyDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kmsKeyId = defaults.kmsKeyId;
         }
 
+        @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             return this;
-        }        public ClusterImagePolicyConfigKeyDetail build() {
-            return new ClusterImagePolicyConfigKeyDetail(kmsKeyId);
+        }
+        public ClusterImagePolicyConfigKeyDetail build() {
+            final var o = new ClusterImagePolicyConfigKeyDetail();
+            o.kmsKeyId = kmsKeyId;
+            return o;
         }
     }
 }

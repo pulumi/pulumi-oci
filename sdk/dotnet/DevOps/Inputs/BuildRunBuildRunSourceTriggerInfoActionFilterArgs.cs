@@ -24,6 +24,14 @@ namespace Pulumi.Oci.DevOps.Inputs
             set => _events = value;
         }
 
+        [Input("excludes")]
+        private InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs>? _excludes;
+        public InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs> Excludes
+        {
+            get => _excludes ?? (_excludes = new InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionFilterExcludeArgs>());
+            set => _excludes = value;
+        }
+
         [Input("includes")]
         private InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs>? _includes;
 

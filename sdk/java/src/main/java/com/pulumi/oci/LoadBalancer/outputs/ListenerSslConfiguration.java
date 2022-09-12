@@ -18,63 +18,44 @@ public final class ListenerSslConfiguration {
      * @return (Updatable) Ids for Oracle Cloud Infrastructure certificates service certificates. Currently only a single Id may be passed.  Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
      * 
      */
-    private final @Nullable List<String> certificateIds;
+    private @Nullable List<String> certificateIds;
     /**
      * @return (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
      * 
      */
-    private final @Nullable String certificateName;
+    private @Nullable String certificateName;
     /**
      * @return (Updatable) The name of the cipher suite to use for HTTPS or SSL connections.
      * 
      */
-    private final @Nullable String cipherSuiteName;
+    private @Nullable String cipherSuiteName;
     /**
      * @return (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
      * 
      */
-    private final @Nullable List<String> protocols;
+    private @Nullable List<String> protocols;
     /**
      * @return (Updatable) When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
      * 
      */
-    private final @Nullable String serverOrderPreference;
+    private @Nullable String serverOrderPreference;
     /**
      * @return (Updatable) Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
      * 
      */
-    private final @Nullable List<String> trustedCertificateAuthorityIds;
+    private @Nullable List<String> trustedCertificateAuthorityIds;
     /**
      * @return (Updatable) The maximum depth for peer certificate chain verification.  Example: `3`
      * 
      */
-    private final @Nullable Integer verifyDepth;
+    private @Nullable Integer verifyDepth;
     /**
      * @return (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
      * 
      */
-    private final @Nullable Boolean verifyPeerCertificate;
+    private @Nullable Boolean verifyPeerCertificate;
 
-    @CustomType.Constructor
-    private ListenerSslConfiguration(
-        @CustomType.Parameter("certificateIds") @Nullable List<String> certificateIds,
-        @CustomType.Parameter("certificateName") @Nullable String certificateName,
-        @CustomType.Parameter("cipherSuiteName") @Nullable String cipherSuiteName,
-        @CustomType.Parameter("protocols") @Nullable List<String> protocols,
-        @CustomType.Parameter("serverOrderPreference") @Nullable String serverOrderPreference,
-        @CustomType.Parameter("trustedCertificateAuthorityIds") @Nullable List<String> trustedCertificateAuthorityIds,
-        @CustomType.Parameter("verifyDepth") @Nullable Integer verifyDepth,
-        @CustomType.Parameter("verifyPeerCertificate") @Nullable Boolean verifyPeerCertificate) {
-        this.certificateIds = certificateIds;
-        this.certificateName = certificateName;
-        this.cipherSuiteName = cipherSuiteName;
-        this.protocols = protocols;
-        this.serverOrderPreference = serverOrderPreference;
-        this.trustedCertificateAuthorityIds = trustedCertificateAuthorityIds;
-        this.verifyDepth = verifyDepth;
-        this.verifyPeerCertificate = verifyPeerCertificate;
-    }
-
+    private ListenerSslConfiguration() {}
     /**
      * @return (Updatable) Ids for Oracle Cloud Infrastructure certificates service certificates. Currently only a single Id may be passed.  Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
      * 
@@ -139,7 +120,7 @@ public final class ListenerSslConfiguration {
     public static Builder builder(ListenerSslConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> certificateIds;
         private @Nullable String certificateName;
@@ -149,11 +130,7 @@ public final class ListenerSslConfiguration {
         private @Nullable List<String> trustedCertificateAuthorityIds;
         private @Nullable Integer verifyDepth;
         private @Nullable Boolean verifyPeerCertificate;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ListenerSslConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateIds = defaults.certificateIds;
@@ -166,6 +143,7 @@ public final class ListenerSslConfiguration {
     	      this.verifyPeerCertificate = defaults.verifyPeerCertificate;
         }
 
+        @CustomType.Setter
         public Builder certificateIds(@Nullable List<String> certificateIds) {
             this.certificateIds = certificateIds;
             return this;
@@ -173,14 +151,17 @@ public final class ListenerSslConfiguration {
         public Builder certificateIds(String... certificateIds) {
             return certificateIds(List.of(certificateIds));
         }
+        @CustomType.Setter
         public Builder certificateName(@Nullable String certificateName) {
             this.certificateName = certificateName;
             return this;
         }
+        @CustomType.Setter
         public Builder cipherSuiteName(@Nullable String cipherSuiteName) {
             this.cipherSuiteName = cipherSuiteName;
             return this;
         }
+        @CustomType.Setter
         public Builder protocols(@Nullable List<String> protocols) {
             this.protocols = protocols;
             return this;
@@ -188,10 +169,12 @@ public final class ListenerSslConfiguration {
         public Builder protocols(String... protocols) {
             return protocols(List.of(protocols));
         }
+        @CustomType.Setter
         public Builder serverOrderPreference(@Nullable String serverOrderPreference) {
             this.serverOrderPreference = serverOrderPreference;
             return this;
         }
+        @CustomType.Setter
         public Builder trustedCertificateAuthorityIds(@Nullable List<String> trustedCertificateAuthorityIds) {
             this.trustedCertificateAuthorityIds = trustedCertificateAuthorityIds;
             return this;
@@ -199,15 +182,27 @@ public final class ListenerSslConfiguration {
         public Builder trustedCertificateAuthorityIds(String... trustedCertificateAuthorityIds) {
             return trustedCertificateAuthorityIds(List.of(trustedCertificateAuthorityIds));
         }
+        @CustomType.Setter
         public Builder verifyDepth(@Nullable Integer verifyDepth) {
             this.verifyDepth = verifyDepth;
             return this;
         }
+        @CustomType.Setter
         public Builder verifyPeerCertificate(@Nullable Boolean verifyPeerCertificate) {
             this.verifyPeerCertificate = verifyPeerCertificate;
             return this;
-        }        public ListenerSslConfiguration build() {
-            return new ListenerSslConfiguration(certificateIds, certificateName, cipherSuiteName, protocols, serverOrderPreference, trustedCertificateAuthorityIds, verifyDepth, verifyPeerCertificate);
+        }
+        public ListenerSslConfiguration build() {
+            final var o = new ListenerSslConfiguration();
+            o.certificateIds = certificateIds;
+            o.certificateName = certificateName;
+            o.cipherSuiteName = cipherSuiteName;
+            o.protocols = protocols;
+            o.serverOrderPreference = serverOrderPreference;
+            o.trustedCertificateAuthorityIds = trustedCertificateAuthorityIds;
+            o.verifyDepth = verifyDepth;
+            o.verifyPeerCertificate = verifyPeerCertificate;
+            return o;
         }
     }
 }

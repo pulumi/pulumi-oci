@@ -14,13 +14,9 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollection {
      * @return A list of selectors for the instance group. UNION operator is used for combining the instances selected by each selector.
      * 
      */
-    private final List<GetDeployEnvironmentsDeployEnvironmentCollectionItem> items;
+    private List<GetDeployEnvironmentsDeployEnvironmentCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDeployEnvironmentsDeployEnvironmentCollection(@CustomType.Parameter("items") List<GetDeployEnvironmentsDeployEnvironmentCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDeployEnvironmentsDeployEnvironmentCollection() {}
     /**
      * @return A list of selectors for the instance group. UNION operator is used for combining the instances selected by each selector.
      * 
@@ -36,27 +32,27 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollection {
     public static Builder builder(GetDeployEnvironmentsDeployEnvironmentCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeployEnvironmentsDeployEnvironmentCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployEnvironmentsDeployEnvironmentCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDeployEnvironmentsDeployEnvironmentCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDeployEnvironmentsDeployEnvironmentCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDeployEnvironmentsDeployEnvironmentCollection build() {
-            return new GetDeployEnvironmentsDeployEnvironmentCollection(items);
+        }
+        public GetDeployEnvironmentsDeployEnvironmentCollection build() {
+            final var o = new GetDeployEnvironmentsDeployEnvironmentCollection();
+            o.items = items;
+            return o;
         }
     }
 }

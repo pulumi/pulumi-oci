@@ -14,70 +14,49 @@ public final class GetVmClusterUpdatesVmClusterUpdate {
      * @return The possible actions that can be performed using this maintenance update.
      * 
      */
-    private final List<String> availableActions;
+    private List<String> availableActions;
     /**
      * @return Details of the maintenance update package.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The update action performed most recently using this maintenance update.
      * 
      */
-    private final String lastAction;
+    private String lastAction;
     /**
      * @return Descriptive text providing additional details about the lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the maintenance update was released.
      * 
      */
-    private final String timeReleased;
+    private String timeReleased;
     /**
      * @return A filter to return only resources that match the given update type exactly.
      * 
      */
-    private final String updateType;
+    private String updateType;
     /**
      * @return The version of the maintenance update package.
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetVmClusterUpdatesVmClusterUpdate(
-        @CustomType.Parameter("availableActions") List<String> availableActions,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lastAction") String lastAction,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeReleased") String timeReleased,
-        @CustomType.Parameter("updateType") String updateType,
-        @CustomType.Parameter("version") String version) {
-        this.availableActions = availableActions;
-        this.description = description;
-        this.id = id;
-        this.lastAction = lastAction;
-        this.lifecycleDetails = lifecycleDetails;
-        this.state = state;
-        this.timeReleased = timeReleased;
-        this.updateType = updateType;
-        this.version = version;
-    }
-
+    private GetVmClusterUpdatesVmClusterUpdate() {}
     /**
      * @return The possible actions that can be performed using this maintenance update.
      * 
@@ -149,7 +128,7 @@ public final class GetVmClusterUpdatesVmClusterUpdate {
     public static Builder builder(GetVmClusterUpdatesVmClusterUpdate defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> availableActions;
         private String description;
@@ -160,11 +139,7 @@ public final class GetVmClusterUpdatesVmClusterUpdate {
         private String timeReleased;
         private String updateType;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVmClusterUpdatesVmClusterUpdate defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availableActions = defaults.availableActions;
@@ -178,6 +153,7 @@ public final class GetVmClusterUpdatesVmClusterUpdate {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder availableActions(List<String> availableActions) {
             this.availableActions = Objects.requireNonNull(availableActions);
             return this;
@@ -185,39 +161,58 @@ public final class GetVmClusterUpdatesVmClusterUpdate {
         public Builder availableActions(String... availableActions) {
             return availableActions(List.of(availableActions));
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lastAction(String lastAction) {
             this.lastAction = Objects.requireNonNull(lastAction);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeReleased(String timeReleased) {
             this.timeReleased = Objects.requireNonNull(timeReleased);
             return this;
         }
+        @CustomType.Setter
         public Builder updateType(String updateType) {
             this.updateType = Objects.requireNonNull(updateType);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetVmClusterUpdatesVmClusterUpdate build() {
-            return new GetVmClusterUpdatesVmClusterUpdate(availableActions, description, id, lastAction, lifecycleDetails, state, timeReleased, updateType, version);
+        }
+        public GetVmClusterUpdatesVmClusterUpdate build() {
+            final var o = new GetVmClusterUpdatesVmClusterUpdate();
+            o.availableActions = availableActions;
+            o.description = description;
+            o.id = id;
+            o.lastAction = lastAction;
+            o.lifecycleDetails = lifecycleDetails;
+            o.state = state;
+            o.timeReleased = timeReleased;
+            o.updateType = updateType;
+            o.version = version;
+            return o;
         }
     }
 }

@@ -9,20 +9,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSecurityAssessmentFindingFindingReference {
-    private final String cis;
-    private final String gdpr;
-    private final String stig;
+    private String cis;
+    private String gdpr;
+    private String stig;
 
-    @CustomType.Constructor
-    private GetSecurityAssessmentFindingFindingReference(
-        @CustomType.Parameter("cis") String cis,
-        @CustomType.Parameter("gdpr") String gdpr,
-        @CustomType.Parameter("stig") String stig) {
-        this.cis = cis;
-        this.gdpr = gdpr;
-        this.stig = stig;
-    }
-
+    private GetSecurityAssessmentFindingFindingReference() {}
     public String cis() {
         return this.cis;
     }
@@ -40,16 +31,12 @@ public final class GetSecurityAssessmentFindingFindingReference {
     public static Builder builder(GetSecurityAssessmentFindingFindingReference defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String cis;
         private String gdpr;
         private String stig;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityAssessmentFindingFindingReference defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cis = defaults.cis;
@@ -57,19 +44,27 @@ public final class GetSecurityAssessmentFindingFindingReference {
     	      this.stig = defaults.stig;
         }
 
+        @CustomType.Setter
         public Builder cis(String cis) {
             this.cis = Objects.requireNonNull(cis);
             return this;
         }
+        @CustomType.Setter
         public Builder gdpr(String gdpr) {
             this.gdpr = Objects.requireNonNull(gdpr);
             return this;
         }
+        @CustomType.Setter
         public Builder stig(String stig) {
             this.stig = Objects.requireNonNull(stig);
             return this;
-        }        public GetSecurityAssessmentFindingFindingReference build() {
-            return new GetSecurityAssessmentFindingFindingReference(cis, gdpr, stig);
+        }
+        public GetSecurityAssessmentFindingFindingReference build() {
+            final var o = new GetSecurityAssessmentFindingFindingReference();
+            o.cis = cis;
+            o.gdpr = gdpr;
+            o.stig = stig;
+            return o;
         }
     }
 }

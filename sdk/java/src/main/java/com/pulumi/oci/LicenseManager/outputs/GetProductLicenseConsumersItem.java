@@ -17,91 +17,64 @@ public final class GetProductLicenseConsumersItem {
      * @return Specifies if all options are available.
      * 
      */
-    private final Boolean areAllOptionsAvailable;
+    private Boolean areAllOptionsAvailable;
     /**
      * @return Specifies if the base license is available.
      * 
      */
-    private final Boolean isBaseLicenseAvailable;
+    private Boolean isBaseLicenseAvailable;
     /**
      * @return The product license unit.
      * 
      */
-    private final String licenseUnitType;
+    private String licenseUnitType;
     /**
      * @return Number of license units consumed by the resource.
      * 
      */
-    private final Double licenseUnitsConsumed;
+    private Double licenseUnitsConsumed;
     /**
      * @return Collection of missing product licenses.
      * 
      */
-    private final List<GetProductLicenseConsumersItemMissingProduct> missingProducts;
+    private List<GetProductLicenseConsumersItemMissingProduct> missingProducts;
     /**
      * @return The resource product name.
      * 
      */
-    private final String productName;
+    private String productName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the resource.
      * 
      */
-    private final String resourceCompartmentId;
+    private String resourceCompartmentId;
     /**
      * @return The display name of the compartment that contains the resource.
      * 
      */
-    private final String resourceCompartmentName;
+    private String resourceCompartmentName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    private final String resourceId;
+    private String resourceId;
     /**
      * @return The display name of the resource.
      * 
      */
-    private final String resourceName;
+    private String resourceName;
     /**
      * @return Number of units of the resource
      * 
      */
-    private final Double resourceUnitCount;
+    private Double resourceUnitCount;
     /**
      * @return The unit type for the resource.
      * 
      */
-    private final String resourceUnitType;
+    private String resourceUnitType;
 
-    @CustomType.Constructor
-    private GetProductLicenseConsumersItem(
-        @CustomType.Parameter("areAllOptionsAvailable") Boolean areAllOptionsAvailable,
-        @CustomType.Parameter("isBaseLicenseAvailable") Boolean isBaseLicenseAvailable,
-        @CustomType.Parameter("licenseUnitType") String licenseUnitType,
-        @CustomType.Parameter("licenseUnitsConsumed") Double licenseUnitsConsumed,
-        @CustomType.Parameter("missingProducts") List<GetProductLicenseConsumersItemMissingProduct> missingProducts,
-        @CustomType.Parameter("productName") String productName,
-        @CustomType.Parameter("resourceCompartmentId") String resourceCompartmentId,
-        @CustomType.Parameter("resourceCompartmentName") String resourceCompartmentName,
-        @CustomType.Parameter("resourceId") String resourceId,
-        @CustomType.Parameter("resourceName") String resourceName,
-        @CustomType.Parameter("resourceUnitCount") Double resourceUnitCount,
-        @CustomType.Parameter("resourceUnitType") String resourceUnitType) {
-        this.areAllOptionsAvailable = areAllOptionsAvailable;
-        this.isBaseLicenseAvailable = isBaseLicenseAvailable;
-        this.licenseUnitType = licenseUnitType;
-        this.licenseUnitsConsumed = licenseUnitsConsumed;
-        this.missingProducts = missingProducts;
-        this.productName = productName;
-        this.resourceCompartmentId = resourceCompartmentId;
-        this.resourceCompartmentName = resourceCompartmentName;
-        this.resourceId = resourceId;
-        this.resourceName = resourceName;
-        this.resourceUnitCount = resourceUnitCount;
-        this.resourceUnitType = resourceUnitType;
-    }
-
+    private GetProductLicenseConsumersItem() {}
     /**
      * @return Specifies if all options are available.
      * 
@@ -194,7 +167,7 @@ public final class GetProductLicenseConsumersItem {
     public static Builder builder(GetProductLicenseConsumersItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean areAllOptionsAvailable;
         private Boolean isBaseLicenseAvailable;
@@ -208,11 +181,7 @@ public final class GetProductLicenseConsumersItem {
         private String resourceName;
         private Double resourceUnitCount;
         private String resourceUnitType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProductLicenseConsumersItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.areAllOptionsAvailable = defaults.areAllOptionsAvailable;
@@ -229,22 +198,27 @@ public final class GetProductLicenseConsumersItem {
     	      this.resourceUnitType = defaults.resourceUnitType;
         }
 
+        @CustomType.Setter
         public Builder areAllOptionsAvailable(Boolean areAllOptionsAvailable) {
             this.areAllOptionsAvailable = Objects.requireNonNull(areAllOptionsAvailable);
             return this;
         }
+        @CustomType.Setter
         public Builder isBaseLicenseAvailable(Boolean isBaseLicenseAvailable) {
             this.isBaseLicenseAvailable = Objects.requireNonNull(isBaseLicenseAvailable);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseUnitType(String licenseUnitType) {
             this.licenseUnitType = Objects.requireNonNull(licenseUnitType);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseUnitsConsumed(Double licenseUnitsConsumed) {
             this.licenseUnitsConsumed = Objects.requireNonNull(licenseUnitsConsumed);
             return this;
         }
+        @CustomType.Setter
         public Builder missingProducts(List<GetProductLicenseConsumersItemMissingProduct> missingProducts) {
             this.missingProducts = Objects.requireNonNull(missingProducts);
             return this;
@@ -252,35 +226,56 @@ public final class GetProductLicenseConsumersItem {
         public Builder missingProducts(GetProductLicenseConsumersItemMissingProduct... missingProducts) {
             return missingProducts(List.of(missingProducts));
         }
+        @CustomType.Setter
         public Builder productName(String productName) {
             this.productName = Objects.requireNonNull(productName);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceCompartmentId(String resourceCompartmentId) {
             this.resourceCompartmentId = Objects.requireNonNull(resourceCompartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceCompartmentName(String resourceCompartmentName) {
             this.resourceCompartmentName = Objects.requireNonNull(resourceCompartmentName);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceId(String resourceId) {
             this.resourceId = Objects.requireNonNull(resourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceName(String resourceName) {
             this.resourceName = Objects.requireNonNull(resourceName);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceUnitCount(Double resourceUnitCount) {
             this.resourceUnitCount = Objects.requireNonNull(resourceUnitCount);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceUnitType(String resourceUnitType) {
             this.resourceUnitType = Objects.requireNonNull(resourceUnitType);
             return this;
-        }        public GetProductLicenseConsumersItem build() {
-            return new GetProductLicenseConsumersItem(areAllOptionsAvailable, isBaseLicenseAvailable, licenseUnitType, licenseUnitsConsumed, missingProducts, productName, resourceCompartmentId, resourceCompartmentName, resourceId, resourceName, resourceUnitCount, resourceUnitType);
+        }
+        public GetProductLicenseConsumersItem build() {
+            final var o = new GetProductLicenseConsumersItem();
+            o.areAllOptionsAvailable = areAllOptionsAvailable;
+            o.isBaseLicenseAvailable = isBaseLicenseAvailable;
+            o.licenseUnitType = licenseUnitType;
+            o.licenseUnitsConsumed = licenseUnitsConsumed;
+            o.missingProducts = missingProducts;
+            o.productName = productName;
+            o.resourceCompartmentId = resourceCompartmentId;
+            o.resourceCompartmentName = resourceCompartmentName;
+            o.resourceId = resourceId;
+            o.resourceName = resourceName;
+            o.resourceUnitCount = resourceUnitCount;
+            o.resourceUnitType = resourceUnitType;
+            return o;
         }
     }
 }

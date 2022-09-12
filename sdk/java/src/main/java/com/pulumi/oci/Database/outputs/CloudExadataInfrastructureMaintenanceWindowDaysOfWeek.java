@@ -13,13 +13,9 @@ public final class CloudExadataInfrastructureMaintenanceWindowDaysOfWeek {
      * @return (Updatable) Name of the month of the year.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private CloudExadataInfrastructureMaintenanceWindowDaysOfWeek(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private CloudExadataInfrastructureMaintenanceWindowDaysOfWeek() {}
     /**
      * @return (Updatable) Name of the month of the year.
      * 
@@ -35,24 +31,24 @@ public final class CloudExadataInfrastructureMaintenanceWindowDaysOfWeek {
     public static Builder builder(CloudExadataInfrastructureMaintenanceWindowDaysOfWeek defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CloudExadataInfrastructureMaintenanceWindowDaysOfWeek defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public CloudExadataInfrastructureMaintenanceWindowDaysOfWeek build() {
-            return new CloudExadataInfrastructureMaintenanceWindowDaysOfWeek(name);
+        }
+        public CloudExadataInfrastructureMaintenanceWindowDaysOfWeek build() {
+            final var o = new CloudExadataInfrastructureMaintenanceWindowDaysOfWeek();
+            o.name = name;
+            return o;
         }
     }
 }

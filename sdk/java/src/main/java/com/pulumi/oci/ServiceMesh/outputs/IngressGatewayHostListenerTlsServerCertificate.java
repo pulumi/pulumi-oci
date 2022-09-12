@@ -15,28 +15,19 @@ public final class IngressGatewayHostListenerTlsServerCertificate {
      * @return (Updatable) The OCID of the leaf certificate resource.
      * 
      */
-    private final @Nullable String certificateId;
+    private @Nullable String certificateId;
     /**
      * @return (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
      * 
      */
-    private final @Nullable String secretName;
+    private @Nullable String secretName;
     /**
      * @return (Updatable) Type of certificate.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private IngressGatewayHostListenerTlsServerCertificate(
-        @CustomType.Parameter("certificateId") @Nullable String certificateId,
-        @CustomType.Parameter("secretName") @Nullable String secretName,
-        @CustomType.Parameter("type") String type) {
-        this.certificateId = certificateId;
-        this.secretName = secretName;
-        this.type = type;
-    }
-
+    private IngressGatewayHostListenerTlsServerCertificate() {}
     /**
      * @return (Updatable) The OCID of the leaf certificate resource.
      * 
@@ -66,16 +57,12 @@ public final class IngressGatewayHostListenerTlsServerCertificate {
     public static Builder builder(IngressGatewayHostListenerTlsServerCertificate defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String certificateId;
         private @Nullable String secretName;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(IngressGatewayHostListenerTlsServerCertificate defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateId = defaults.certificateId;
@@ -83,19 +70,27 @@ public final class IngressGatewayHostListenerTlsServerCertificate {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder certificateId(@Nullable String certificateId) {
             this.certificateId = certificateId;
             return this;
         }
+        @CustomType.Setter
         public Builder secretName(@Nullable String secretName) {
             this.secretName = secretName;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public IngressGatewayHostListenerTlsServerCertificate build() {
-            return new IngressGatewayHostListenerTlsServerCertificate(certificateId, secretName, type);
+        }
+        public IngressGatewayHostListenerTlsServerCertificate build() {
+            final var o = new IngressGatewayHostListenerTlsServerCertificate();
+            o.certificateId = certificateId;
+            o.secretName = secretName;
+            o.type = type;
+            return o;
         }
     }
 }

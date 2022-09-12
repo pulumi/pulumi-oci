@@ -19,98 +19,37 @@ import java.util.Objects;
 
 @CustomType
 public final class GetShapeShape {
-    private final List<String> baselineOcpuUtilizations;
-    private final String billingType;
-    private final String gpuDescription;
-    private final Integer gpus;
-    private final Boolean isBilledForStoppedInstance;
-    private final Boolean isFlexible;
-    private final Boolean isLiveMigrationSupported;
-    private final Boolean isSubcore;
-    private final String localDiskDescription;
-    private final Integer localDisks;
-    private final Double localDisksTotalSizeInGbs;
-    private final List<GetShapeShapeMaxVnicAttachmentOption> maxVnicAttachmentOptions;
-    private final Integer maxVnicAttachments;
-    private final Double memoryInGbs;
-    private final List<GetShapeShapeMemoryOption> memoryOptions;
-    private final Double minTotalBaselineOcpusRequired;
-    private final String name;
-    private final Integer networkPorts;
-    private final Double networkingBandwidthInGbps;
-    private final List<GetShapeShapeNetworkingBandwidthOption> networkingBandwidthOptions;
-    private final List<GetShapeShapeOcpuOption> ocpuOptions;
-    private final Double ocpus;
-    private final List<GetShapeShapePlatformConfigOption> platformConfigOptions;
-    private final String processorDescription;
-    private final List<String> quotaNames;
-    private final Integer rdmaBandwidthInGbps;
-    private final Integer rdmaPorts;
-    private final List<GetShapeShapeRecommendedAlternative> recommendedAlternatives;
-    private final List<String> resizeCompatibleShapes;
+    private List<String> baselineOcpuUtilizations;
+    private String billingType;
+    private String gpuDescription;
+    private Integer gpus;
+    private Boolean isBilledForStoppedInstance;
+    private Boolean isFlexible;
+    private Boolean isLiveMigrationSupported;
+    private Boolean isSubcore;
+    private String localDiskDescription;
+    private Integer localDisks;
+    private Double localDisksTotalSizeInGbs;
+    private List<GetShapeShapeMaxVnicAttachmentOption> maxVnicAttachmentOptions;
+    private Integer maxVnicAttachments;
+    private Double memoryInGbs;
+    private List<GetShapeShapeMemoryOption> memoryOptions;
+    private Double minTotalBaselineOcpusRequired;
+    private String name;
+    private Integer networkPorts;
+    private Double networkingBandwidthInGbps;
+    private List<GetShapeShapeNetworkingBandwidthOption> networkingBandwidthOptions;
+    private List<GetShapeShapeOcpuOption> ocpuOptions;
+    private Double ocpus;
+    private List<GetShapeShapePlatformConfigOption> platformConfigOptions;
+    private String processorDescription;
+    private List<String> quotaNames;
+    private Integer rdmaBandwidthInGbps;
+    private Integer rdmaPorts;
+    private List<GetShapeShapeRecommendedAlternative> recommendedAlternatives;
+    private List<String> resizeCompatibleShapes;
 
-    @CustomType.Constructor
-    private GetShapeShape(
-        @CustomType.Parameter("baselineOcpuUtilizations") List<String> baselineOcpuUtilizations,
-        @CustomType.Parameter("billingType") String billingType,
-        @CustomType.Parameter("gpuDescription") String gpuDescription,
-        @CustomType.Parameter("gpus") Integer gpus,
-        @CustomType.Parameter("isBilledForStoppedInstance") Boolean isBilledForStoppedInstance,
-        @CustomType.Parameter("isFlexible") Boolean isFlexible,
-        @CustomType.Parameter("isLiveMigrationSupported") Boolean isLiveMigrationSupported,
-        @CustomType.Parameter("isSubcore") Boolean isSubcore,
-        @CustomType.Parameter("localDiskDescription") String localDiskDescription,
-        @CustomType.Parameter("localDisks") Integer localDisks,
-        @CustomType.Parameter("localDisksTotalSizeInGbs") Double localDisksTotalSizeInGbs,
-        @CustomType.Parameter("maxVnicAttachmentOptions") List<GetShapeShapeMaxVnicAttachmentOption> maxVnicAttachmentOptions,
-        @CustomType.Parameter("maxVnicAttachments") Integer maxVnicAttachments,
-        @CustomType.Parameter("memoryInGbs") Double memoryInGbs,
-        @CustomType.Parameter("memoryOptions") List<GetShapeShapeMemoryOption> memoryOptions,
-        @CustomType.Parameter("minTotalBaselineOcpusRequired") Double minTotalBaselineOcpusRequired,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("networkPorts") Integer networkPorts,
-        @CustomType.Parameter("networkingBandwidthInGbps") Double networkingBandwidthInGbps,
-        @CustomType.Parameter("networkingBandwidthOptions") List<GetShapeShapeNetworkingBandwidthOption> networkingBandwidthOptions,
-        @CustomType.Parameter("ocpuOptions") List<GetShapeShapeOcpuOption> ocpuOptions,
-        @CustomType.Parameter("ocpus") Double ocpus,
-        @CustomType.Parameter("platformConfigOptions") List<GetShapeShapePlatformConfigOption> platformConfigOptions,
-        @CustomType.Parameter("processorDescription") String processorDescription,
-        @CustomType.Parameter("quotaNames") List<String> quotaNames,
-        @CustomType.Parameter("rdmaBandwidthInGbps") Integer rdmaBandwidthInGbps,
-        @CustomType.Parameter("rdmaPorts") Integer rdmaPorts,
-        @CustomType.Parameter("recommendedAlternatives") List<GetShapeShapeRecommendedAlternative> recommendedAlternatives,
-        @CustomType.Parameter("resizeCompatibleShapes") List<String> resizeCompatibleShapes) {
-        this.baselineOcpuUtilizations = baselineOcpuUtilizations;
-        this.billingType = billingType;
-        this.gpuDescription = gpuDescription;
-        this.gpus = gpus;
-        this.isBilledForStoppedInstance = isBilledForStoppedInstance;
-        this.isFlexible = isFlexible;
-        this.isLiveMigrationSupported = isLiveMigrationSupported;
-        this.isSubcore = isSubcore;
-        this.localDiskDescription = localDiskDescription;
-        this.localDisks = localDisks;
-        this.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
-        this.maxVnicAttachmentOptions = maxVnicAttachmentOptions;
-        this.maxVnicAttachments = maxVnicAttachments;
-        this.memoryInGbs = memoryInGbs;
-        this.memoryOptions = memoryOptions;
-        this.minTotalBaselineOcpusRequired = minTotalBaselineOcpusRequired;
-        this.name = name;
-        this.networkPorts = networkPorts;
-        this.networkingBandwidthInGbps = networkingBandwidthInGbps;
-        this.networkingBandwidthOptions = networkingBandwidthOptions;
-        this.ocpuOptions = ocpuOptions;
-        this.ocpus = ocpus;
-        this.platformConfigOptions = platformConfigOptions;
-        this.processorDescription = processorDescription;
-        this.quotaNames = quotaNames;
-        this.rdmaBandwidthInGbps = rdmaBandwidthInGbps;
-        this.rdmaPorts = rdmaPorts;
-        this.recommendedAlternatives = recommendedAlternatives;
-        this.resizeCompatibleShapes = resizeCompatibleShapes;
-    }
-
+    private GetShapeShape() {}
     public List<String> baselineOcpuUtilizations() {
         return this.baselineOcpuUtilizations;
     }
@@ -206,7 +145,7 @@ public final class GetShapeShape {
     public static Builder builder(GetShapeShape defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> baselineOcpuUtilizations;
         private String billingType;
@@ -237,11 +176,7 @@ public final class GetShapeShape {
         private Integer rdmaPorts;
         private List<GetShapeShapeRecommendedAlternative> recommendedAlternatives;
         private List<String> resizeCompatibleShapes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapeShape defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baselineOcpuUtilizations = defaults.baselineOcpuUtilizations;
@@ -275,6 +210,7 @@ public final class GetShapeShape {
     	      this.resizeCompatibleShapes = defaults.resizeCompatibleShapes;
         }
 
+        @CustomType.Setter
         public Builder baselineOcpuUtilizations(List<String> baselineOcpuUtilizations) {
             this.baselineOcpuUtilizations = Objects.requireNonNull(baselineOcpuUtilizations);
             return this;
@@ -282,46 +218,57 @@ public final class GetShapeShape {
         public Builder baselineOcpuUtilizations(String... baselineOcpuUtilizations) {
             return baselineOcpuUtilizations(List.of(baselineOcpuUtilizations));
         }
+        @CustomType.Setter
         public Builder billingType(String billingType) {
             this.billingType = Objects.requireNonNull(billingType);
             return this;
         }
+        @CustomType.Setter
         public Builder gpuDescription(String gpuDescription) {
             this.gpuDescription = Objects.requireNonNull(gpuDescription);
             return this;
         }
+        @CustomType.Setter
         public Builder gpus(Integer gpus) {
             this.gpus = Objects.requireNonNull(gpus);
             return this;
         }
+        @CustomType.Setter
         public Builder isBilledForStoppedInstance(Boolean isBilledForStoppedInstance) {
             this.isBilledForStoppedInstance = Objects.requireNonNull(isBilledForStoppedInstance);
             return this;
         }
+        @CustomType.Setter
         public Builder isFlexible(Boolean isFlexible) {
             this.isFlexible = Objects.requireNonNull(isFlexible);
             return this;
         }
+        @CustomType.Setter
         public Builder isLiveMigrationSupported(Boolean isLiveMigrationSupported) {
             this.isLiveMigrationSupported = Objects.requireNonNull(isLiveMigrationSupported);
             return this;
         }
+        @CustomType.Setter
         public Builder isSubcore(Boolean isSubcore) {
             this.isSubcore = Objects.requireNonNull(isSubcore);
             return this;
         }
+        @CustomType.Setter
         public Builder localDiskDescription(String localDiskDescription) {
             this.localDiskDescription = Objects.requireNonNull(localDiskDescription);
             return this;
         }
+        @CustomType.Setter
         public Builder localDisks(Integer localDisks) {
             this.localDisks = Objects.requireNonNull(localDisks);
             return this;
         }
+        @CustomType.Setter
         public Builder localDisksTotalSizeInGbs(Double localDisksTotalSizeInGbs) {
             this.localDisksTotalSizeInGbs = Objects.requireNonNull(localDisksTotalSizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder maxVnicAttachmentOptions(List<GetShapeShapeMaxVnicAttachmentOption> maxVnicAttachmentOptions) {
             this.maxVnicAttachmentOptions = Objects.requireNonNull(maxVnicAttachmentOptions);
             return this;
@@ -329,14 +276,17 @@ public final class GetShapeShape {
         public Builder maxVnicAttachmentOptions(GetShapeShapeMaxVnicAttachmentOption... maxVnicAttachmentOptions) {
             return maxVnicAttachmentOptions(List.of(maxVnicAttachmentOptions));
         }
+        @CustomType.Setter
         public Builder maxVnicAttachments(Integer maxVnicAttachments) {
             this.maxVnicAttachments = Objects.requireNonNull(maxVnicAttachments);
             return this;
         }
+        @CustomType.Setter
         public Builder memoryInGbs(Double memoryInGbs) {
             this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder memoryOptions(List<GetShapeShapeMemoryOption> memoryOptions) {
             this.memoryOptions = Objects.requireNonNull(memoryOptions);
             return this;
@@ -344,22 +294,27 @@ public final class GetShapeShape {
         public Builder memoryOptions(GetShapeShapeMemoryOption... memoryOptions) {
             return memoryOptions(List.of(memoryOptions));
         }
+        @CustomType.Setter
         public Builder minTotalBaselineOcpusRequired(Double minTotalBaselineOcpusRequired) {
             this.minTotalBaselineOcpusRequired = Objects.requireNonNull(minTotalBaselineOcpusRequired);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder networkPorts(Integer networkPorts) {
             this.networkPorts = Objects.requireNonNull(networkPorts);
             return this;
         }
+        @CustomType.Setter
         public Builder networkingBandwidthInGbps(Double networkingBandwidthInGbps) {
             this.networkingBandwidthInGbps = Objects.requireNonNull(networkingBandwidthInGbps);
             return this;
         }
+        @CustomType.Setter
         public Builder networkingBandwidthOptions(List<GetShapeShapeNetworkingBandwidthOption> networkingBandwidthOptions) {
             this.networkingBandwidthOptions = Objects.requireNonNull(networkingBandwidthOptions);
             return this;
@@ -367,6 +322,7 @@ public final class GetShapeShape {
         public Builder networkingBandwidthOptions(GetShapeShapeNetworkingBandwidthOption... networkingBandwidthOptions) {
             return networkingBandwidthOptions(List.of(networkingBandwidthOptions));
         }
+        @CustomType.Setter
         public Builder ocpuOptions(List<GetShapeShapeOcpuOption> ocpuOptions) {
             this.ocpuOptions = Objects.requireNonNull(ocpuOptions);
             return this;
@@ -374,10 +330,12 @@ public final class GetShapeShape {
         public Builder ocpuOptions(GetShapeShapeOcpuOption... ocpuOptions) {
             return ocpuOptions(List.of(ocpuOptions));
         }
+        @CustomType.Setter
         public Builder ocpus(Double ocpus) {
             this.ocpus = Objects.requireNonNull(ocpus);
             return this;
         }
+        @CustomType.Setter
         public Builder platformConfigOptions(List<GetShapeShapePlatformConfigOption> platformConfigOptions) {
             this.platformConfigOptions = Objects.requireNonNull(platformConfigOptions);
             return this;
@@ -385,10 +343,12 @@ public final class GetShapeShape {
         public Builder platformConfigOptions(GetShapeShapePlatformConfigOption... platformConfigOptions) {
             return platformConfigOptions(List.of(platformConfigOptions));
         }
+        @CustomType.Setter
         public Builder processorDescription(String processorDescription) {
             this.processorDescription = Objects.requireNonNull(processorDescription);
             return this;
         }
+        @CustomType.Setter
         public Builder quotaNames(List<String> quotaNames) {
             this.quotaNames = Objects.requireNonNull(quotaNames);
             return this;
@@ -396,14 +356,17 @@ public final class GetShapeShape {
         public Builder quotaNames(String... quotaNames) {
             return quotaNames(List.of(quotaNames));
         }
+        @CustomType.Setter
         public Builder rdmaBandwidthInGbps(Integer rdmaBandwidthInGbps) {
             this.rdmaBandwidthInGbps = Objects.requireNonNull(rdmaBandwidthInGbps);
             return this;
         }
+        @CustomType.Setter
         public Builder rdmaPorts(Integer rdmaPorts) {
             this.rdmaPorts = Objects.requireNonNull(rdmaPorts);
             return this;
         }
+        @CustomType.Setter
         public Builder recommendedAlternatives(List<GetShapeShapeRecommendedAlternative> recommendedAlternatives) {
             this.recommendedAlternatives = Objects.requireNonNull(recommendedAlternatives);
             return this;
@@ -411,14 +374,46 @@ public final class GetShapeShape {
         public Builder recommendedAlternatives(GetShapeShapeRecommendedAlternative... recommendedAlternatives) {
             return recommendedAlternatives(List.of(recommendedAlternatives));
         }
+        @CustomType.Setter
         public Builder resizeCompatibleShapes(List<String> resizeCompatibleShapes) {
             this.resizeCompatibleShapes = Objects.requireNonNull(resizeCompatibleShapes);
             return this;
         }
         public Builder resizeCompatibleShapes(String... resizeCompatibleShapes) {
             return resizeCompatibleShapes(List.of(resizeCompatibleShapes));
-        }        public GetShapeShape build() {
-            return new GetShapeShape(baselineOcpuUtilizations, billingType, gpuDescription, gpus, isBilledForStoppedInstance, isFlexible, isLiveMigrationSupported, isSubcore, localDiskDescription, localDisks, localDisksTotalSizeInGbs, maxVnicAttachmentOptions, maxVnicAttachments, memoryInGbs, memoryOptions, minTotalBaselineOcpusRequired, name, networkPorts, networkingBandwidthInGbps, networkingBandwidthOptions, ocpuOptions, ocpus, platformConfigOptions, processorDescription, quotaNames, rdmaBandwidthInGbps, rdmaPorts, recommendedAlternatives, resizeCompatibleShapes);
+        }
+        public GetShapeShape build() {
+            final var o = new GetShapeShape();
+            o.baselineOcpuUtilizations = baselineOcpuUtilizations;
+            o.billingType = billingType;
+            o.gpuDescription = gpuDescription;
+            o.gpus = gpus;
+            o.isBilledForStoppedInstance = isBilledForStoppedInstance;
+            o.isFlexible = isFlexible;
+            o.isLiveMigrationSupported = isLiveMigrationSupported;
+            o.isSubcore = isSubcore;
+            o.localDiskDescription = localDiskDescription;
+            o.localDisks = localDisks;
+            o.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
+            o.maxVnicAttachmentOptions = maxVnicAttachmentOptions;
+            o.maxVnicAttachments = maxVnicAttachments;
+            o.memoryInGbs = memoryInGbs;
+            o.memoryOptions = memoryOptions;
+            o.minTotalBaselineOcpusRequired = minTotalBaselineOcpusRequired;
+            o.name = name;
+            o.networkPorts = networkPorts;
+            o.networkingBandwidthInGbps = networkingBandwidthInGbps;
+            o.networkingBandwidthOptions = networkingBandwidthOptions;
+            o.ocpuOptions = ocpuOptions;
+            o.ocpus = ocpus;
+            o.platformConfigOptions = platformConfigOptions;
+            o.processorDescription = processorDescription;
+            o.quotaNames = quotaNames;
+            o.rdmaBandwidthInGbps = rdmaBandwidthInGbps;
+            o.rdmaPorts = rdmaPorts;
+            o.recommendedAlternatives = recommendedAlternatives;
+            o.resizeCompatibleShapes = resizeCompatibleShapes;
+            return o;
         }
     }
 }

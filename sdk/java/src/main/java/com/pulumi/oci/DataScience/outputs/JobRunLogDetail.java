@@ -15,21 +15,14 @@ public final class JobRunLogDetail {
      * @return The log group id for where log objects are for job runs.
      * 
      */
-    private final @Nullable String logGroupId;
+    private @Nullable String logGroupId;
     /**
      * @return The log id the job run will push logs too.
      * 
      */
-    private final @Nullable String logId;
+    private @Nullable String logId;
 
-    @CustomType.Constructor
-    private JobRunLogDetail(
-        @CustomType.Parameter("logGroupId") @Nullable String logGroupId,
-        @CustomType.Parameter("logId") @Nullable String logId) {
-        this.logGroupId = logGroupId;
-        this.logId = logId;
-    }
-
+    private JobRunLogDetail() {}
     /**
      * @return The log group id for where log objects are for job runs.
      * 
@@ -52,30 +45,32 @@ public final class JobRunLogDetail {
     public static Builder builder(JobRunLogDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String logGroupId;
         private @Nullable String logId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(JobRunLogDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.logGroupId = defaults.logGroupId;
     	      this.logId = defaults.logId;
         }
 
+        @CustomType.Setter
         public Builder logGroupId(@Nullable String logGroupId) {
             this.logGroupId = logGroupId;
             return this;
         }
+        @CustomType.Setter
         public Builder logId(@Nullable String logId) {
             this.logId = logId;
             return this;
-        }        public JobRunLogDetail build() {
-            return new JobRunLogDetail(logGroupId, logId);
+        }
+        public JobRunLogDetail build() {
+            final var o = new JobRunLogDetail();
+            o.logGroupId = logGroupId;
+            o.logId = logId;
+            return o;
         }
     }
 }

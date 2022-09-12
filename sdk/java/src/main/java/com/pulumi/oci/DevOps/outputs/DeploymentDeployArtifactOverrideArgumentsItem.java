@@ -15,28 +15,19 @@ public final class DeploymentDeployArtifactOverrideArgumentsItem {
      * @return The OCID of the artifact to which this parameter applies.
      * 
      */
-    private final @Nullable String deployArtifactId;
+    private @Nullable String deployArtifactId;
     /**
      * @return Name of the parameter (case-sensitive).
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return value of the argument.
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
 
-    @CustomType.Constructor
-    private DeploymentDeployArtifactOverrideArgumentsItem(
-        @CustomType.Parameter("deployArtifactId") @Nullable String deployArtifactId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("value") @Nullable String value) {
-        this.deployArtifactId = deployArtifactId;
-        this.name = name;
-        this.value = value;
-    }
-
+    private DeploymentDeployArtifactOverrideArgumentsItem() {}
     /**
      * @return The OCID of the artifact to which this parameter applies.
      * 
@@ -66,16 +57,12 @@ public final class DeploymentDeployArtifactOverrideArgumentsItem {
     public static Builder builder(DeploymentDeployArtifactOverrideArgumentsItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String deployArtifactId;
         private @Nullable String name;
         private @Nullable String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentDeployArtifactOverrideArgumentsItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.deployArtifactId = defaults.deployArtifactId;
@@ -83,19 +70,27 @@ public final class DeploymentDeployArtifactOverrideArgumentsItem {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder deployArtifactId(@Nullable String deployArtifactId) {
             this.deployArtifactId = deployArtifactId;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
-        }        public DeploymentDeployArtifactOverrideArgumentsItem build() {
-            return new DeploymentDeployArtifactOverrideArgumentsItem(deployArtifactId, name, value);
+        }
+        public DeploymentDeployArtifactOverrideArgumentsItem build() {
+            final var o = new DeploymentDeployArtifactOverrideArgumentsItem();
+            o.deployArtifactId = deployArtifactId;
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

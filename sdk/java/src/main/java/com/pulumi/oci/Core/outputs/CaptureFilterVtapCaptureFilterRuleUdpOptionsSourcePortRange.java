@@ -13,21 +13,14 @@ public final class CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange {
      * @return (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
      * 
      */
-    private final Integer max;
+    private Integer max;
     /**
      * @return (Updatable) The minimum port number, which must not be greater than the maximum port number.
      * 
      */
-    private final Integer min;
+    private Integer min;
 
-    @CustomType.Constructor
-    private CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange(
-        @CustomType.Parameter("max") Integer max,
-        @CustomType.Parameter("min") Integer min) {
-        this.max = max;
-        this.min = min;
-    }
-
+    private CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange() {}
     /**
      * @return (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
      * 
@@ -50,30 +43,32 @@ public final class CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange {
     public static Builder builder(CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer max;
         private Integer min;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.max = defaults.max;
     	      this.min = defaults.min;
         }
 
+        @CustomType.Setter
         public Builder max(Integer max) {
             this.max = Objects.requireNonNull(max);
             return this;
         }
+        @CustomType.Setter
         public Builder min(Integer min) {
             this.min = Objects.requireNonNull(min);
             return this;
-        }        public CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange build() {
-            return new CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange(max, min);
+        }
+        public CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange build() {
+            final var o = new CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange();
+            o.max = max;
+            o.min = min;
+            return o;
         }
     }
 }

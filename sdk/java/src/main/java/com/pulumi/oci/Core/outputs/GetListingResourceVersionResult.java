@@ -11,45 +11,22 @@ import java.util.Objects;
 
 @CustomType
 public final class GetListingResourceVersionResult {
-    private final List<Integer> accessiblePorts;
-    private final List<String> allowedActions;
-    private final List<String> availableRegions;
-    private final List<String> compatibleShapes;
+    private List<Integer> accessiblePorts;
+    private List<String> allowedActions;
+    private List<String> availableRegions;
+    private List<String> compatibleShapes;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String listingId;
-    private final String listingResourceId;
-    private final String listingResourceVersion;
-    private final String resourceVersion;
-    private final String timePublished;
+    private String id;
+    private String listingId;
+    private String listingResourceId;
+    private String listingResourceVersion;
+    private String resourceVersion;
+    private String timePublished;
 
-    @CustomType.Constructor
-    private GetListingResourceVersionResult(
-        @CustomType.Parameter("accessiblePorts") List<Integer> accessiblePorts,
-        @CustomType.Parameter("allowedActions") List<String> allowedActions,
-        @CustomType.Parameter("availableRegions") List<String> availableRegions,
-        @CustomType.Parameter("compatibleShapes") List<String> compatibleShapes,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("listingId") String listingId,
-        @CustomType.Parameter("listingResourceId") String listingResourceId,
-        @CustomType.Parameter("listingResourceVersion") String listingResourceVersion,
-        @CustomType.Parameter("resourceVersion") String resourceVersion,
-        @CustomType.Parameter("timePublished") String timePublished) {
-        this.accessiblePorts = accessiblePorts;
-        this.allowedActions = allowedActions;
-        this.availableRegions = availableRegions;
-        this.compatibleShapes = compatibleShapes;
-        this.id = id;
-        this.listingId = listingId;
-        this.listingResourceId = listingResourceId;
-        this.listingResourceVersion = listingResourceVersion;
-        this.resourceVersion = resourceVersion;
-        this.timePublished = timePublished;
-    }
-
+    private GetListingResourceVersionResult() {}
     public List<Integer> accessiblePorts() {
         return this.accessiblePorts;
     }
@@ -92,7 +69,7 @@ public final class GetListingResourceVersionResult {
     public static Builder builder(GetListingResourceVersionResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<Integer> accessiblePorts;
         private List<String> allowedActions;
@@ -104,11 +81,7 @@ public final class GetListingResourceVersionResult {
         private String listingResourceVersion;
         private String resourceVersion;
         private String timePublished;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingResourceVersionResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessiblePorts = defaults.accessiblePorts;
@@ -123,6 +96,7 @@ public final class GetListingResourceVersionResult {
     	      this.timePublished = defaults.timePublished;
         }
 
+        @CustomType.Setter
         public Builder accessiblePorts(List<Integer> accessiblePorts) {
             this.accessiblePorts = Objects.requireNonNull(accessiblePorts);
             return this;
@@ -130,6 +104,7 @@ public final class GetListingResourceVersionResult {
         public Builder accessiblePorts(Integer... accessiblePorts) {
             return accessiblePorts(List.of(accessiblePorts));
         }
+        @CustomType.Setter
         public Builder allowedActions(List<String> allowedActions) {
             this.allowedActions = Objects.requireNonNull(allowedActions);
             return this;
@@ -137,6 +112,7 @@ public final class GetListingResourceVersionResult {
         public Builder allowedActions(String... allowedActions) {
             return allowedActions(List.of(allowedActions));
         }
+        @CustomType.Setter
         public Builder availableRegions(List<String> availableRegions) {
             this.availableRegions = Objects.requireNonNull(availableRegions);
             return this;
@@ -144,6 +120,7 @@ public final class GetListingResourceVersionResult {
         public Builder availableRegions(String... availableRegions) {
             return availableRegions(List.of(availableRegions));
         }
+        @CustomType.Setter
         public Builder compatibleShapes(List<String> compatibleShapes) {
             this.compatibleShapes = Objects.requireNonNull(compatibleShapes);
             return this;
@@ -151,31 +128,49 @@ public final class GetListingResourceVersionResult {
         public Builder compatibleShapes(String... compatibleShapes) {
             return compatibleShapes(List.of(compatibleShapes));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder listingId(String listingId) {
             this.listingId = Objects.requireNonNull(listingId);
             return this;
         }
+        @CustomType.Setter
         public Builder listingResourceId(String listingResourceId) {
             this.listingResourceId = Objects.requireNonNull(listingResourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder listingResourceVersion(String listingResourceVersion) {
             this.listingResourceVersion = Objects.requireNonNull(listingResourceVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceVersion(String resourceVersion) {
             this.resourceVersion = Objects.requireNonNull(resourceVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder timePublished(String timePublished) {
             this.timePublished = Objects.requireNonNull(timePublished);
             return this;
-        }        public GetListingResourceVersionResult build() {
-            return new GetListingResourceVersionResult(accessiblePorts, allowedActions, availableRegions, compatibleShapes, id, listingId, listingResourceId, listingResourceVersion, resourceVersion, timePublished);
+        }
+        public GetListingResourceVersionResult build() {
+            final var o = new GetListingResourceVersionResult();
+            o.accessiblePorts = accessiblePorts;
+            o.allowedActions = allowedActions;
+            o.availableRegions = availableRegions;
+            o.compatibleShapes = compatibleShapes;
+            o.id = id;
+            o.listingId = listingId;
+            o.listingResourceId = listingResourceId;
+            o.listingResourceVersion = listingResourceVersion;
+            o.resourceVersion = resourceVersion;
+            o.timePublished = timePublished;
+            return o;
         }
     }
 }

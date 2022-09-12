@@ -15,49 +15,34 @@ public final class GetVmClusterNetworkVmNetwork {
      * @return The network domain name.
      * 
      */
-    private final String domainName;
+    private String domainName;
     /**
      * @return The network gateway.
      * 
      */
-    private final String gateway;
+    private String gateway;
     /**
      * @return The network netmask.
      * 
      */
-    private final String netmask;
+    private String netmask;
     /**
      * @return The network type.
      * 
      */
-    private final String networkType;
+    private String networkType;
     /**
      * @return The list of node details.
      * 
      */
-    private final List<GetVmClusterNetworkVmNetworkNode> nodes;
+    private List<GetVmClusterNetworkVmNetworkNode> nodes;
     /**
      * @return The network VLAN ID.
      * 
      */
-    private final String vlanId;
+    private String vlanId;
 
-    @CustomType.Constructor
-    private GetVmClusterNetworkVmNetwork(
-        @CustomType.Parameter("domainName") String domainName,
-        @CustomType.Parameter("gateway") String gateway,
-        @CustomType.Parameter("netmask") String netmask,
-        @CustomType.Parameter("networkType") String networkType,
-        @CustomType.Parameter("nodes") List<GetVmClusterNetworkVmNetworkNode> nodes,
-        @CustomType.Parameter("vlanId") String vlanId) {
-        this.domainName = domainName;
-        this.gateway = gateway;
-        this.netmask = netmask;
-        this.networkType = networkType;
-        this.nodes = nodes;
-        this.vlanId = vlanId;
-    }
-
+    private GetVmClusterNetworkVmNetwork() {}
     /**
      * @return The network domain name.
      * 
@@ -108,7 +93,7 @@ public final class GetVmClusterNetworkVmNetwork {
     public static Builder builder(GetVmClusterNetworkVmNetwork defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String domainName;
         private String gateway;
@@ -116,11 +101,7 @@ public final class GetVmClusterNetworkVmNetwork {
         private String networkType;
         private List<GetVmClusterNetworkVmNetworkNode> nodes;
         private String vlanId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVmClusterNetworkVmNetwork defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.domainName = defaults.domainName;
@@ -131,22 +112,27 @@ public final class GetVmClusterNetworkVmNetwork {
     	      this.vlanId = defaults.vlanId;
         }
 
+        @CustomType.Setter
         public Builder domainName(String domainName) {
             this.domainName = Objects.requireNonNull(domainName);
             return this;
         }
+        @CustomType.Setter
         public Builder gateway(String gateway) {
             this.gateway = Objects.requireNonNull(gateway);
             return this;
         }
+        @CustomType.Setter
         public Builder netmask(String netmask) {
             this.netmask = Objects.requireNonNull(netmask);
             return this;
         }
+        @CustomType.Setter
         public Builder networkType(String networkType) {
             this.networkType = Objects.requireNonNull(networkType);
             return this;
         }
+        @CustomType.Setter
         public Builder nodes(List<GetVmClusterNetworkVmNetworkNode> nodes) {
             this.nodes = Objects.requireNonNull(nodes);
             return this;
@@ -154,11 +140,20 @@ public final class GetVmClusterNetworkVmNetwork {
         public Builder nodes(GetVmClusterNetworkVmNetworkNode... nodes) {
             return nodes(List.of(nodes));
         }
+        @CustomType.Setter
         public Builder vlanId(String vlanId) {
             this.vlanId = Objects.requireNonNull(vlanId);
             return this;
-        }        public GetVmClusterNetworkVmNetwork build() {
-            return new GetVmClusterNetworkVmNetwork(domainName, gateway, netmask, networkType, nodes, vlanId);
+        }
+        public GetVmClusterNetworkVmNetwork build() {
+            final var o = new GetVmClusterNetworkVmNetwork();
+            o.domainName = domainName;
+            o.gateway = gateway;
+            o.netmask = netmask;
+            o.networkType = networkType;
+            o.nodes = nodes;
+            o.vlanId = vlanId;
+            return o;
         }
     }
 }

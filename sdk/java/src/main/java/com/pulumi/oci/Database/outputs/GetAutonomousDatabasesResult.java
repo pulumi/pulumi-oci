@@ -19,22 +19,22 @@ public final class GetAutonomousDatabasesResult {
      * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final @Nullable String autonomousContainerDatabaseId;
+    private @Nullable String autonomousContainerDatabaseId;
     /**
      * @return The list of autonomous_databases.
      * 
      */
-    private final List<GetAutonomousDatabasesAutonomousDatabase> autonomousDatabases;
+    private List<GetAutonomousDatabasesAutonomousDatabase> autonomousDatabases;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A valid Oracle Database version for Autonomous Database.
      * 
      */
-    private final @Nullable String dbVersion;
+    private @Nullable String dbVersion;
     /**
      * @return The Autonomous Database workload type. The following values are valid:
      * * OLTP - indicates an Autonomous Transaction Processing database
@@ -43,74 +43,45 @@ public final class GetAutonomousDatabasesResult {
      * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      * 
      */
-    private final @Nullable String dbWorkload;
+    private @Nullable String dbWorkload;
     /**
      * @return The user-friendly name for the Autonomous Database. The name does not have to be unique.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetAutonomousDatabasesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetAutonomousDatabasesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The infrastructure type this resource belongs to.
      * 
      */
-    private final @Nullable String infrastructureType;
+    private @Nullable String infrastructureType;
     /**
      * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
-    private final @Nullable Boolean isDataGuardEnabled;
+    private @Nullable Boolean isDataGuardEnabled;
     /**
      * @return Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      * 
      */
-    private final @Nullable Boolean isFreeTier;
+    private @Nullable Boolean isFreeTier;
     /**
      * @return Indicates whether the Autonomous Database is a refreshable clone.
      * 
      */
-    private final @Nullable Boolean isRefreshableClone;
+    private @Nullable Boolean isRefreshableClone;
     /**
      * @return The current state of the Autonomous Database.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetAutonomousDatabasesResult(
-        @CustomType.Parameter("autonomousContainerDatabaseId") @Nullable String autonomousContainerDatabaseId,
-        @CustomType.Parameter("autonomousDatabases") List<GetAutonomousDatabasesAutonomousDatabase> autonomousDatabases,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dbVersion") @Nullable String dbVersion,
-        @CustomType.Parameter("dbWorkload") @Nullable String dbWorkload,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetAutonomousDatabasesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("infrastructureType") @Nullable String infrastructureType,
-        @CustomType.Parameter("isDataGuardEnabled") @Nullable Boolean isDataGuardEnabled,
-        @CustomType.Parameter("isFreeTier") @Nullable Boolean isFreeTier,
-        @CustomType.Parameter("isRefreshableClone") @Nullable Boolean isRefreshableClone,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
-        this.autonomousDatabases = autonomousDatabases;
-        this.compartmentId = compartmentId;
-        this.dbVersion = dbVersion;
-        this.dbWorkload = dbWorkload;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.infrastructureType = infrastructureType;
-        this.isDataGuardEnabled = isDataGuardEnabled;
-        this.isFreeTier = isFreeTier;
-        this.isRefreshableClone = isRefreshableClone;
-        this.state = state;
-    }
-
+    private GetAutonomousDatabasesResult() {}
     /**
      * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -210,7 +181,7 @@ public final class GetAutonomousDatabasesResult {
     public static Builder builder(GetAutonomousDatabasesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String autonomousContainerDatabaseId;
         private List<GetAutonomousDatabasesAutonomousDatabase> autonomousDatabases;
@@ -225,11 +196,7 @@ public final class GetAutonomousDatabasesResult {
         private @Nullable Boolean isFreeTier;
         private @Nullable Boolean isRefreshableClone;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDatabasesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousContainerDatabaseId = defaults.autonomousContainerDatabaseId;
@@ -247,10 +214,12 @@ public final class GetAutonomousDatabasesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder autonomousContainerDatabaseId(@Nullable String autonomousContainerDatabaseId) {
             this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             return this;
         }
+        @CustomType.Setter
         public Builder autonomousDatabases(List<GetAutonomousDatabasesAutonomousDatabase> autonomousDatabases) {
             this.autonomousDatabases = Objects.requireNonNull(autonomousDatabases);
             return this;
@@ -258,22 +227,27 @@ public final class GetAutonomousDatabasesResult {
         public Builder autonomousDatabases(GetAutonomousDatabasesAutonomousDatabase... autonomousDatabases) {
             return autonomousDatabases(List.of(autonomousDatabases));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbVersion(@Nullable String dbVersion) {
             this.dbVersion = dbVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder dbWorkload(@Nullable String dbWorkload) {
             this.dbWorkload = dbWorkload;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousDatabasesFilter> filters) {
             this.filters = filters;
             return this;
@@ -281,31 +255,52 @@ public final class GetAutonomousDatabasesResult {
         public Builder filters(GetAutonomousDatabasesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder infrastructureType(@Nullable String infrastructureType) {
             this.infrastructureType = infrastructureType;
             return this;
         }
+        @CustomType.Setter
         public Builder isDataGuardEnabled(@Nullable Boolean isDataGuardEnabled) {
             this.isDataGuardEnabled = isDataGuardEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder isFreeTier(@Nullable Boolean isFreeTier) {
             this.isFreeTier = isFreeTier;
             return this;
         }
+        @CustomType.Setter
         public Builder isRefreshableClone(@Nullable Boolean isRefreshableClone) {
             this.isRefreshableClone = isRefreshableClone;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetAutonomousDatabasesResult build() {
-            return new GetAutonomousDatabasesResult(autonomousContainerDatabaseId, autonomousDatabases, compartmentId, dbVersion, dbWorkload, displayName, filters, id, infrastructureType, isDataGuardEnabled, isFreeTier, isRefreshableClone, state);
+        }
+        public GetAutonomousDatabasesResult build() {
+            final var o = new GetAutonomousDatabasesResult();
+            o.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            o.autonomousDatabases = autonomousDatabases;
+            o.compartmentId = compartmentId;
+            o.dbVersion = dbVersion;
+            o.dbWorkload = dbWorkload;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.infrastructureType = infrastructureType;
+            o.isDataGuardEnabled = isDataGuardEnabled;
+            o.isFreeTier = isFreeTier;
+            o.isRefreshableClone = isRefreshableClone;
+            o.state = state;
+            return o;
         }
     }
 }

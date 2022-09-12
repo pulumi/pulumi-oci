@@ -10,31 +10,20 @@ import java.util.Objects;
 
 @CustomType
 public final class GetContainerConfigurationResult {
-    private final String compartmentId;
-    private final String id;
+    private String compartmentId;
+    private String id;
     /**
      * @return Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
      * 
      */
-    private final Boolean isRepositoryCreatedOnFirstPush;
+    private Boolean isRepositoryCreatedOnFirstPush;
     /**
      * @return The tenancy namespace used in the container repository path.
      * 
      */
-    private final String namespace;
+    private String namespace;
 
-    @CustomType.Constructor
-    private GetContainerConfigurationResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isRepositoryCreatedOnFirstPush") Boolean isRepositoryCreatedOnFirstPush,
-        @CustomType.Parameter("namespace") String namespace) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.isRepositoryCreatedOnFirstPush = isRepositoryCreatedOnFirstPush;
-        this.namespace = namespace;
-    }
-
+    private GetContainerConfigurationResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -63,17 +52,13 @@ public final class GetContainerConfigurationResult {
     public static Builder builder(GetContainerConfigurationResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private Boolean isRepositoryCreatedOnFirstPush;
         private String namespace;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetContainerConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -82,23 +67,33 @@ public final class GetContainerConfigurationResult {
     	      this.namespace = defaults.namespace;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isRepositoryCreatedOnFirstPush(Boolean isRepositoryCreatedOnFirstPush) {
             this.isRepositoryCreatedOnFirstPush = Objects.requireNonNull(isRepositoryCreatedOnFirstPush);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
-        }        public GetContainerConfigurationResult build() {
-            return new GetContainerConfigurationResult(compartmentId, id, isRepositoryCreatedOnFirstPush, namespace);
+        }
+        public GetContainerConfigurationResult build() {
+            final var o = new GetContainerConfigurationResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.isRepositoryCreatedOnFirstPush = isRepositoryCreatedOnFirstPush;
+            o.namespace = namespace;
+            return o;
         }
     }
 }

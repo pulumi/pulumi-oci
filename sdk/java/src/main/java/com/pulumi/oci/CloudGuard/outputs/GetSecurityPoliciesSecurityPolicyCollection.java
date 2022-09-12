@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSecurityPoliciesSecurityPolicyCollection {
-    private final List<GetSecurityPoliciesSecurityPolicyCollectionItem> items;
+    private List<GetSecurityPoliciesSecurityPolicyCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetSecurityPoliciesSecurityPolicyCollection(@CustomType.Parameter("items") List<GetSecurityPoliciesSecurityPolicyCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetSecurityPoliciesSecurityPolicyCollection() {}
     public List<GetSecurityPoliciesSecurityPolicyCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetSecurityPoliciesSecurityPolicyCollection {
     public static Builder builder(GetSecurityPoliciesSecurityPolicyCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSecurityPoliciesSecurityPolicyCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityPoliciesSecurityPolicyCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetSecurityPoliciesSecurityPolicyCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetSecurityPoliciesSecurityPolicyCollectionItem... items) {
             return items(List.of(items));
-        }        public GetSecurityPoliciesSecurityPolicyCollection build() {
-            return new GetSecurityPoliciesSecurityPolicyCollection(items);
+        }
+        public GetSecurityPoliciesSecurityPolicyCollection build() {
+            final var o = new GetSecurityPoliciesSecurityPolicyCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -18,38 +18,25 @@ public final class GetMonitoredInstancesResult {
      * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm). DisplayName is fetched from [Core Service API](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Instance/).
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetMonitoredInstancesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetMonitoredInstancesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of monitored_instance_collection.
      * 
      */
-    private final List<GetMonitoredInstancesMonitoredInstanceCollection> monitoredInstanceCollections;
+    private List<GetMonitoredInstancesMonitoredInstanceCollection> monitoredInstanceCollections;
 
-    @CustomType.Constructor
-    private GetMonitoredInstancesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetMonitoredInstancesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("monitoredInstanceCollections") List<GetMonitoredInstancesMonitoredInstanceCollection> monitoredInstanceCollections) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.monitoredInstanceCollections = monitoredInstanceCollections;
-    }
-
+    private GetMonitoredInstancesResult() {}
     /**
      * @return Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
@@ -89,18 +76,14 @@ public final class GetMonitoredInstancesResult {
     public static Builder builder(GetMonitoredInstancesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetMonitoredInstancesFilter> filters;
         private String id;
         private List<GetMonitoredInstancesMonitoredInstanceCollection> monitoredInstanceCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitoredInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -110,14 +93,17 @@ public final class GetMonitoredInstancesResult {
     	      this.monitoredInstanceCollections = defaults.monitoredInstanceCollections;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetMonitoredInstancesFilter> filters) {
             this.filters = filters;
             return this;
@@ -125,18 +111,27 @@ public final class GetMonitoredInstancesResult {
         public Builder filters(GetMonitoredInstancesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder monitoredInstanceCollections(List<GetMonitoredInstancesMonitoredInstanceCollection> monitoredInstanceCollections) {
             this.monitoredInstanceCollections = Objects.requireNonNull(monitoredInstanceCollections);
             return this;
         }
         public Builder monitoredInstanceCollections(GetMonitoredInstancesMonitoredInstanceCollection... monitoredInstanceCollections) {
             return monitoredInstanceCollections(List.of(monitoredInstanceCollections));
-        }        public GetMonitoredInstancesResult build() {
-            return new GetMonitoredInstancesResult(compartmentId, displayName, filters, id, monitoredInstanceCollections);
+        }
+        public GetMonitoredInstancesResult build() {
+            final var o = new GetMonitoredInstancesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.monitoredInstanceCollections = monitoredInstanceCollections;
+            return o;
         }
     }
 }

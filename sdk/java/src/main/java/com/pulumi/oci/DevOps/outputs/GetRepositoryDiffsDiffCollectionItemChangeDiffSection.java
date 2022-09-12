@@ -15,21 +15,14 @@ public final class GetRepositoryDiffsDiffCollectionItemChangeDiffSection {
      * @return The lines within changed section.
      * 
      */
-    private final List<GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine> lines;
+    private List<GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine> lines;
     /**
      * @return Type of change.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetRepositoryDiffsDiffCollectionItemChangeDiffSection(
-        @CustomType.Parameter("lines") List<GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine> lines,
-        @CustomType.Parameter("type") String type) {
-        this.lines = lines;
-        this.type = type;
-    }
-
+    private GetRepositoryDiffsDiffCollectionItemChangeDiffSection() {}
     /**
      * @return The lines within changed section.
      * 
@@ -52,21 +45,18 @@ public final class GetRepositoryDiffsDiffCollectionItemChangeDiffSection {
     public static Builder builder(GetRepositoryDiffsDiffCollectionItemChangeDiffSection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine> lines;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryDiffsDiffCollectionItemChangeDiffSection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.lines = defaults.lines;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder lines(List<GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine> lines) {
             this.lines = Objects.requireNonNull(lines);
             return this;
@@ -74,11 +64,16 @@ public final class GetRepositoryDiffsDiffCollectionItemChangeDiffSection {
         public Builder lines(GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine... lines) {
             return lines(List.of(lines));
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetRepositoryDiffsDiffCollectionItemChangeDiffSection build() {
-            return new GetRepositoryDiffsDiffCollectionItemChangeDiffSection(lines, type);
+        }
+        public GetRepositoryDiffsDiffCollectionItemChangeDiffSection build() {
+            final var o = new GetRepositoryDiffsDiffCollectionItemChangeDiffSection();
+            o.lines = lines;
+            o.type = type;
+            return o;
         }
     }
 }

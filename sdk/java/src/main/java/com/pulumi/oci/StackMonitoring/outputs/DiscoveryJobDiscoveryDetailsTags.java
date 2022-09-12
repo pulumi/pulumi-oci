@@ -16,13 +16,9 @@ public final class DiscoveryJobDiscoveryDetailsTags {
      * @return Key/Value pair of Property
      * 
      */
-    private final @Nullable Map<String,Object> propertiesMap;
+    private @Nullable Map<String,Object> propertiesMap;
 
-    @CustomType.Constructor
-    private DiscoveryJobDiscoveryDetailsTags(@CustomType.Parameter("propertiesMap") @Nullable Map<String,Object> propertiesMap) {
-        this.propertiesMap = propertiesMap;
-    }
-
+    private DiscoveryJobDiscoveryDetailsTags() {}
     /**
      * @return Key/Value pair of Property
      * 
@@ -38,24 +34,24 @@ public final class DiscoveryJobDiscoveryDetailsTags {
     public static Builder builder(DiscoveryJobDiscoveryDetailsTags defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Map<String,Object> propertiesMap;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DiscoveryJobDiscoveryDetailsTags defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.propertiesMap = defaults.propertiesMap;
         }
 
+        @CustomType.Setter
         public Builder propertiesMap(@Nullable Map<String,Object> propertiesMap) {
             this.propertiesMap = propertiesMap;
             return this;
-        }        public DiscoveryJobDiscoveryDetailsTags build() {
-            return new DiscoveryJobDiscoveryDetailsTags(propertiesMap);
+        }
+        public DiscoveryJobDiscoveryDetailsTags build() {
+            final var o = new DiscoveryJobDiscoveryDetailsTags();
+            o.propertiesMap = propertiesMap;
+            return o;
         }
     }
 }

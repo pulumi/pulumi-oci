@@ -13,13 +13,9 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperat
      * @return Name of the day of the week.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeek(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeek() {}
     /**
      * @return Name of the day of the week.
      * 
@@ -35,24 +31,24 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperat
     public static Builder builder(GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeek defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeek defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeek build() {
-            return new GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeek(name);
+        }
+        public GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeek build() {
+            final var o = new GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeek();
+            o.name = name;
+            return o;
         }
     }
 }

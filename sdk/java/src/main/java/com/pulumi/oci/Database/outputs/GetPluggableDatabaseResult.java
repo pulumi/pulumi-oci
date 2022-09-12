@@ -18,103 +18,68 @@ public final class GetPluggableDatabaseResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Connection strings to connect to an Oracle Pluggable Database.
      * 
      */
-    private final List<GetPluggableDatabaseConnectionString> connectionStrings;
+    private List<GetPluggableDatabaseConnectionString> connectionStrings;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
      * 
      */
-    private final String containerDatabaseId;
+    private String containerDatabaseId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pluggable database.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
      * 
      */
-    private final Boolean isRestricted;
+    private Boolean isRestricted;
     /**
      * @return Detailed message for the lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      * 
      */
-    private final String openMode;
-    private final String pdbAdminPassword;
+    private String openMode;
+    private String pdbAdminPassword;
     /**
      * @return The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      * 
      */
-    private final String pdbName;
-    private final String pluggableDatabaseId;
-    private final Boolean shouldPdbAdminAccountBeLocked;
+    private String pdbName;
+    private String pluggableDatabaseId;
+    private Boolean shouldPdbAdminAccountBeLocked;
     /**
      * @return The current state of the pluggable database.
      * 
      */
-    private final String state;
-    private final String tdeWalletPassword;
+    private String state;
+    private String tdeWalletPassword;
     /**
      * @return The date and time the pluggable database was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetPluggableDatabaseResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("connectionStrings") List<GetPluggableDatabaseConnectionString> connectionStrings,
-        @CustomType.Parameter("containerDatabaseId") String containerDatabaseId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isRestricted") Boolean isRestricted,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("openMode") String openMode,
-        @CustomType.Parameter("pdbAdminPassword") String pdbAdminPassword,
-        @CustomType.Parameter("pdbName") String pdbName,
-        @CustomType.Parameter("pluggableDatabaseId") String pluggableDatabaseId,
-        @CustomType.Parameter("shouldPdbAdminAccountBeLocked") Boolean shouldPdbAdminAccountBeLocked,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("tdeWalletPassword") String tdeWalletPassword,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.compartmentId = compartmentId;
-        this.connectionStrings = connectionStrings;
-        this.containerDatabaseId = containerDatabaseId;
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isRestricted = isRestricted;
-        this.lifecycleDetails = lifecycleDetails;
-        this.openMode = openMode;
-        this.pdbAdminPassword = pdbAdminPassword;
-        this.pdbName = pdbName;
-        this.pluggableDatabaseId = pluggableDatabaseId;
-        this.shouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
-        this.state = state;
-        this.tdeWalletPassword = tdeWalletPassword;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetPluggableDatabaseResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -219,7 +184,7 @@ public final class GetPluggableDatabaseResult {
     public static Builder builder(GetPluggableDatabaseResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetPluggableDatabaseConnectionString> connectionStrings;
@@ -237,11 +202,7 @@ public final class GetPluggableDatabaseResult {
         private String state;
         private String tdeWalletPassword;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPluggableDatabaseResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -262,10 +223,12 @@ public final class GetPluggableDatabaseResult {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder connectionStrings(List<GetPluggableDatabaseConnectionString> connectionStrings) {
             this.connectionStrings = Objects.requireNonNull(connectionStrings);
             return this;
@@ -273,63 +236,95 @@ public final class GetPluggableDatabaseResult {
         public Builder connectionStrings(GetPluggableDatabaseConnectionString... connectionStrings) {
             return connectionStrings(List.of(connectionStrings));
         }
+        @CustomType.Setter
         public Builder containerDatabaseId(String containerDatabaseId) {
             this.containerDatabaseId = Objects.requireNonNull(containerDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isRestricted(Boolean isRestricted) {
             this.isRestricted = Objects.requireNonNull(isRestricted);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder openMode(String openMode) {
             this.openMode = Objects.requireNonNull(openMode);
             return this;
         }
+        @CustomType.Setter
         public Builder pdbAdminPassword(String pdbAdminPassword) {
             this.pdbAdminPassword = Objects.requireNonNull(pdbAdminPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder pdbName(String pdbName) {
             this.pdbName = Objects.requireNonNull(pdbName);
             return this;
         }
+        @CustomType.Setter
         public Builder pluggableDatabaseId(String pluggableDatabaseId) {
             this.pluggableDatabaseId = Objects.requireNonNull(pluggableDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder shouldPdbAdminAccountBeLocked(Boolean shouldPdbAdminAccountBeLocked) {
             this.shouldPdbAdminAccountBeLocked = Objects.requireNonNull(shouldPdbAdminAccountBeLocked);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder tdeWalletPassword(String tdeWalletPassword) {
             this.tdeWalletPassword = Objects.requireNonNull(tdeWalletPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetPluggableDatabaseResult build() {
-            return new GetPluggableDatabaseResult(compartmentId, connectionStrings, containerDatabaseId, definedTags, freeformTags, id, isRestricted, lifecycleDetails, openMode, pdbAdminPassword, pdbName, pluggableDatabaseId, shouldPdbAdminAccountBeLocked, state, tdeWalletPassword, timeCreated);
+        }
+        public GetPluggableDatabaseResult build() {
+            final var o = new GetPluggableDatabaseResult();
+            o.compartmentId = compartmentId;
+            o.connectionStrings = connectionStrings;
+            o.containerDatabaseId = containerDatabaseId;
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isRestricted = isRestricted;
+            o.lifecycleDetails = lifecycleDetails;
+            o.openMode = openMode;
+            o.pdbAdminPassword = pdbAdminPassword;
+            o.pdbName = pdbName;
+            o.pluggableDatabaseId = pluggableDatabaseId;
+            o.shouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
+            o.state = state;
+            o.tdeWalletPassword = tdeWalletPassword;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

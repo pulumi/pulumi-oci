@@ -17,42 +17,29 @@ public final class GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion {
      * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      * 
      */
-    private final String dbWorkload;
+    private String dbWorkload;
     /**
      * @return A URL that points to a detailed description of the preview version.
      * 
      */
-    private final String details;
+    private String details;
     /**
      * @return The date and time when the preview version availability begins.
      * 
      */
-    private final String timePreviewBegin;
+    private String timePreviewBegin;
     /**
      * @return The date and time when the preview version availability ends.
      * 
      */
-    private final String timePreviewEnd;
+    private String timePreviewEnd;
     /**
      * @return A valid Autonomous Database preview version.
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion(
-        @CustomType.Parameter("dbWorkload") String dbWorkload,
-        @CustomType.Parameter("details") String details,
-        @CustomType.Parameter("timePreviewBegin") String timePreviewBegin,
-        @CustomType.Parameter("timePreviewEnd") String timePreviewEnd,
-        @CustomType.Parameter("version") String version) {
-        this.dbWorkload = dbWorkload;
-        this.details = details;
-        this.timePreviewBegin = timePreviewBegin;
-        this.timePreviewEnd = timePreviewEnd;
-        this.version = version;
-    }
-
+    private GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion() {}
     /**
      * @return The Autonomous Database workload type. The following values are valid:
      * * OLTP - indicates an Autonomous Transaction Processing database
@@ -100,18 +87,14 @@ public final class GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion {
     public static Builder builder(GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dbWorkload;
         private String details;
         private String timePreviewBegin;
         private String timePreviewEnd;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbWorkload = defaults.dbWorkload;
@@ -121,27 +104,39 @@ public final class GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder dbWorkload(String dbWorkload) {
             this.dbWorkload = Objects.requireNonNull(dbWorkload);
             return this;
         }
+        @CustomType.Setter
         public Builder details(String details) {
             this.details = Objects.requireNonNull(details);
             return this;
         }
+        @CustomType.Setter
         public Builder timePreviewBegin(String timePreviewBegin) {
             this.timePreviewBegin = Objects.requireNonNull(timePreviewBegin);
             return this;
         }
+        @CustomType.Setter
         public Builder timePreviewEnd(String timePreviewEnd) {
             this.timePreviewEnd = Objects.requireNonNull(timePreviewEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion build() {
-            return new GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion(dbWorkload, details, timePreviewBegin, timePreviewEnd, version);
+        }
+        public GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion build() {
+            final var o = new GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion();
+            o.dbWorkload = dbWorkload;
+            o.details = details;
+            o.timePreviewBegin = timePreviewBegin;
+            o.timePreviewEnd = timePreviewEnd;
+            o.version = version;
+            return o;
         }
     }
 }

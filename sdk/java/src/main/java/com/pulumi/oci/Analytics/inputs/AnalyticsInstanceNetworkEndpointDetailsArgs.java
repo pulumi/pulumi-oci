@@ -33,6 +33,21 @@ public final class AnalyticsInstanceNetworkEndpointDetailsArgs extends com.pulum
     }
 
     /**
+     * Network Security Group OCIDs for an Analytics instance.
+     * 
+     */
+    @Import(name="networkSecurityGroupIds")
+    private @Nullable Output<List<String>> networkSecurityGroupIds;
+
+    /**
+     * @return Network Security Group OCIDs for an Analytics instance.
+     * 
+     */
+    public Optional<Output<List<String>>> networkSecurityGroupIds() {
+        return Optional.ofNullable(this.networkSecurityGroupIds);
+    }
+
+    /**
      * The subnet OCID for the private endpoint.
      * 
      */
@@ -63,18 +78,33 @@ public final class AnalyticsInstanceNetworkEndpointDetailsArgs extends com.pulum
     }
 
     /**
-     * Source IP addresses or IP address ranges igress rules.
+     * Source IP addresses or IP address ranges in ingress rules.
      * 
      */
     @Import(name="whitelistedIps")
     private @Nullable Output<List<String>> whitelistedIps;
 
     /**
-     * @return Source IP addresses or IP address ranges igress rules.
+     * @return Source IP addresses or IP address ranges in ingress rules.
      * 
      */
     public Optional<Output<List<String>>> whitelistedIps() {
         return Optional.ofNullable(this.whitelistedIps);
+    }
+
+    /**
+     * Oracle Cloud Services that are allowed to access this Analytics instance.
+     * 
+     */
+    @Import(name="whitelistedServices")
+    private @Nullable Output<List<String>> whitelistedServices;
+
+    /**
+     * @return Oracle Cloud Services that are allowed to access this Analytics instance.
+     * 
+     */
+    public Optional<Output<List<String>>> whitelistedServices() {
+        return Optional.ofNullable(this.whitelistedServices);
     }
 
     /**
@@ -96,9 +126,11 @@ public final class AnalyticsInstanceNetworkEndpointDetailsArgs extends com.pulum
 
     private AnalyticsInstanceNetworkEndpointDetailsArgs(AnalyticsInstanceNetworkEndpointDetailsArgs $) {
         this.networkEndpointType = $.networkEndpointType;
+        this.networkSecurityGroupIds = $.networkSecurityGroupIds;
         this.subnetId = $.subnetId;
         this.vcnId = $.vcnId;
         this.whitelistedIps = $.whitelistedIps;
+        this.whitelistedServices = $.whitelistedServices;
         this.whitelistedVcns = $.whitelistedVcns;
     }
 
@@ -139,6 +171,37 @@ public final class AnalyticsInstanceNetworkEndpointDetailsArgs extends com.pulum
          */
         public Builder networkEndpointType(String networkEndpointType) {
             return networkEndpointType(Output.of(networkEndpointType));
+        }
+
+        /**
+         * @param networkSecurityGroupIds Network Security Group OCIDs for an Analytics instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkSecurityGroupIds(@Nullable Output<List<String>> networkSecurityGroupIds) {
+            $.networkSecurityGroupIds = networkSecurityGroupIds;
+            return this;
+        }
+
+        /**
+         * @param networkSecurityGroupIds Network Security Group OCIDs for an Analytics instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
+            return networkSecurityGroupIds(Output.of(networkSecurityGroupIds));
+        }
+
+        /**
+         * @param networkSecurityGroupIds Network Security Group OCIDs for an Analytics instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
+            return networkSecurityGroupIds(List.of(networkSecurityGroupIds));
         }
 
         /**
@@ -184,7 +247,7 @@ public final class AnalyticsInstanceNetworkEndpointDetailsArgs extends com.pulum
         }
 
         /**
-         * @param whitelistedIps Source IP addresses or IP address ranges igress rules.
+         * @param whitelistedIps Source IP addresses or IP address ranges in ingress rules.
          * 
          * @return builder
          * 
@@ -195,7 +258,7 @@ public final class AnalyticsInstanceNetworkEndpointDetailsArgs extends com.pulum
         }
 
         /**
-         * @param whitelistedIps Source IP addresses or IP address ranges igress rules.
+         * @param whitelistedIps Source IP addresses or IP address ranges in ingress rules.
          * 
          * @return builder
          * 
@@ -205,13 +268,44 @@ public final class AnalyticsInstanceNetworkEndpointDetailsArgs extends com.pulum
         }
 
         /**
-         * @param whitelistedIps Source IP addresses or IP address ranges igress rules.
+         * @param whitelistedIps Source IP addresses or IP address ranges in ingress rules.
          * 
          * @return builder
          * 
          */
         public Builder whitelistedIps(String... whitelistedIps) {
             return whitelistedIps(List.of(whitelistedIps));
+        }
+
+        /**
+         * @param whitelistedServices Oracle Cloud Services that are allowed to access this Analytics instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder whitelistedServices(@Nullable Output<List<String>> whitelistedServices) {
+            $.whitelistedServices = whitelistedServices;
+            return this;
+        }
+
+        /**
+         * @param whitelistedServices Oracle Cloud Services that are allowed to access this Analytics instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder whitelistedServices(List<String> whitelistedServices) {
+            return whitelistedServices(Output.of(whitelistedServices));
+        }
+
+        /**
+         * @param whitelistedServices Oracle Cloud Services that are allowed to access this Analytics instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder whitelistedServices(String... whitelistedServices) {
+            return whitelistedServices(List.of(whitelistedServices));
         }
 
         /**

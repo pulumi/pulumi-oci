@@ -17,27 +17,16 @@ public final class GetAnnotationFormatsResult {
      * @return The list of annotation_format_collection.
      * 
      */
-    private final List<GetAnnotationFormatsAnnotationFormatCollection> annotationFormatCollections;
-    private final String compartmentId;
-    private final @Nullable List<GetAnnotationFormatsFilter> filters;
+    private List<GetAnnotationFormatsAnnotationFormatCollection> annotationFormatCollections;
+    private String compartmentId;
+    private @Nullable List<GetAnnotationFormatsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetAnnotationFormatsResult(
-        @CustomType.Parameter("annotationFormatCollections") List<GetAnnotationFormatsAnnotationFormatCollection> annotationFormatCollections,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetAnnotationFormatsFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.annotationFormatCollections = annotationFormatCollections;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetAnnotationFormatsResult() {}
     /**
      * @return The list of annotation_format_collection.
      * 
@@ -66,17 +55,13 @@ public final class GetAnnotationFormatsResult {
     public static Builder builder(GetAnnotationFormatsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAnnotationFormatsAnnotationFormatCollection> annotationFormatCollections;
         private String compartmentId;
         private @Nullable List<GetAnnotationFormatsFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAnnotationFormatsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.annotationFormatCollections = defaults.annotationFormatCollections;
@@ -85,6 +70,7 @@ public final class GetAnnotationFormatsResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder annotationFormatCollections(List<GetAnnotationFormatsAnnotationFormatCollection> annotationFormatCollections) {
             this.annotationFormatCollections = Objects.requireNonNull(annotationFormatCollections);
             return this;
@@ -92,10 +78,12 @@ public final class GetAnnotationFormatsResult {
         public Builder annotationFormatCollections(GetAnnotationFormatsAnnotationFormatCollection... annotationFormatCollections) {
             return annotationFormatCollections(List.of(annotationFormatCollections));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAnnotationFormatsFilter> filters) {
             this.filters = filters;
             return this;
@@ -103,11 +91,18 @@ public final class GetAnnotationFormatsResult {
         public Builder filters(GetAnnotationFormatsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetAnnotationFormatsResult build() {
-            return new GetAnnotationFormatsResult(annotationFormatCollections, compartmentId, filters, id);
+        }
+        public GetAnnotationFormatsResult build() {
+            final var o = new GetAnnotationFormatsResult();
+            o.annotationFormatCollections = annotationFormatCollections;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

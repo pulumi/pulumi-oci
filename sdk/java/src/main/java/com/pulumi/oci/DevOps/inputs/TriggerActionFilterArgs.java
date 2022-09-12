@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DevOps.inputs.TriggerActionFilterExcludeArgs;
 import com.pulumi.oci.DevOps.inputs.TriggerActionFilterIncludeArgs;
 import java.lang.String;
 import java.util.List;
@@ -30,6 +31,13 @@ public final class TriggerActionFilterArgs extends com.pulumi.resources.Resource
      */
     public Optional<Output<List<String>>> events() {
         return Optional.ofNullable(this.events);
+    }
+
+    @Import(name="exclude")
+    private @Nullable Output<TriggerActionFilterExcludeArgs> exclude;
+
+    public Optional<Output<TriggerActionFilterExcludeArgs>> exclude() {
+        return Optional.ofNullable(this.exclude);
     }
 
     /**
@@ -66,6 +74,7 @@ public final class TriggerActionFilterArgs extends com.pulumi.resources.Resource
 
     private TriggerActionFilterArgs(TriggerActionFilterArgs $) {
         this.events = $.events;
+        this.exclude = $.exclude;
         this.include = $.include;
         this.triggerSource = $.triggerSource;
     }
@@ -117,6 +126,15 @@ public final class TriggerActionFilterArgs extends com.pulumi.resources.Resource
          */
         public Builder events(String... events) {
             return events(List.of(events));
+        }
+
+        public Builder exclude(@Nullable Output<TriggerActionFilterExcludeArgs> exclude) {
+            $.exclude = exclude;
+            return this;
+        }
+
+        public Builder exclude(TriggerActionFilterExcludeArgs exclude) {
+            return exclude(Output.of(exclude));
         }
 
         /**

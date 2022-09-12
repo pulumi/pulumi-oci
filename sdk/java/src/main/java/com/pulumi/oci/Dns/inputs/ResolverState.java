@@ -188,14 +188,14 @@ public final class ResolverState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Value must be `PRIVATE` when creating private name resolvers.
+     * If specified, must be `PRIVATE` when creating private name resolvers.
      * 
      */
     @Import(name="scope")
     private @Nullable Output<String> scope;
 
     /**
-     * @return Value must be `PRIVATE` when creating private name resolvers.
+     * @return If specified, must be `PRIVATE` when creating private name resolvers.
      * 
      */
     public Optional<Output<String>> scope() {
@@ -563,7 +563,7 @@ public final class ResolverState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scope Value must be `PRIVATE` when creating private name resolvers.
+         * @param scope If specified, must be `PRIVATE` when creating private name resolvers.
          * 
          * @return builder
          * 
@@ -574,7 +574,7 @@ public final class ResolverState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scope Value must be `PRIVATE` when creating private name resolvers.
+         * @param scope If specified, must be `PRIVATE` when creating private name resolvers.
          * 
          * @return builder
          * 

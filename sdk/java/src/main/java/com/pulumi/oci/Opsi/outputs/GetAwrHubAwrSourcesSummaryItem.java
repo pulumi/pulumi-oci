@@ -14,70 +14,49 @@ public final class GetAwrHubAwrSourcesSummaryItem {
      * @return Unique Awr Hub identifier
      * 
      */
-    private final String awrHubId;
+    private String awrHubId;
     /**
      * @return DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
      * 
      */
-    private final String awrSourceDatabaseId;
+    private String awrSourceDatabaseId;
     /**
      * @return Number of hours since last AWR snapshots import happened from the Source database.
      * 
      */
-    private final Double hoursSinceLastImport;
+    private Double hoursSinceLastImport;
     /**
      * @return The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
      * 
      */
-    private final Double maxSnapshotIdentifier;
+    private Double maxSnapshotIdentifier;
     /**
      * @return The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
      * 
      */
-    private final Double minSnapshotIdentifier;
+    private Double minSnapshotIdentifier;
     /**
      * @return Name for an Awr source database
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Number of AWR snapshots uploaded from the Source database.
      * 
      */
-    private final Double snapshotsUploaded;
+    private Double snapshotsUploaded;
     /**
      * @return The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeFirstSnapshotGenerated;
+    private String timeFirstSnapshotGenerated;
     /**
      * @return The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeLastSnapshotGenerated;
+    private String timeLastSnapshotGenerated;
 
-    @CustomType.Constructor
-    private GetAwrHubAwrSourcesSummaryItem(
-        @CustomType.Parameter("awrHubId") String awrHubId,
-        @CustomType.Parameter("awrSourceDatabaseId") String awrSourceDatabaseId,
-        @CustomType.Parameter("hoursSinceLastImport") Double hoursSinceLastImport,
-        @CustomType.Parameter("maxSnapshotIdentifier") Double maxSnapshotIdentifier,
-        @CustomType.Parameter("minSnapshotIdentifier") Double minSnapshotIdentifier,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("snapshotsUploaded") Double snapshotsUploaded,
-        @CustomType.Parameter("timeFirstSnapshotGenerated") String timeFirstSnapshotGenerated,
-        @CustomType.Parameter("timeLastSnapshotGenerated") String timeLastSnapshotGenerated) {
-        this.awrHubId = awrHubId;
-        this.awrSourceDatabaseId = awrSourceDatabaseId;
-        this.hoursSinceLastImport = hoursSinceLastImport;
-        this.maxSnapshotIdentifier = maxSnapshotIdentifier;
-        this.minSnapshotIdentifier = minSnapshotIdentifier;
-        this.name = name;
-        this.snapshotsUploaded = snapshotsUploaded;
-        this.timeFirstSnapshotGenerated = timeFirstSnapshotGenerated;
-        this.timeLastSnapshotGenerated = timeLastSnapshotGenerated;
-    }
-
+    private GetAwrHubAwrSourcesSummaryItem() {}
     /**
      * @return Unique Awr Hub identifier
      * 
@@ -149,7 +128,7 @@ public final class GetAwrHubAwrSourcesSummaryItem {
     public static Builder builder(GetAwrHubAwrSourcesSummaryItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String awrHubId;
         private String awrSourceDatabaseId;
@@ -160,11 +139,7 @@ public final class GetAwrHubAwrSourcesSummaryItem {
         private Double snapshotsUploaded;
         private String timeFirstSnapshotGenerated;
         private String timeLastSnapshotGenerated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAwrHubAwrSourcesSummaryItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.awrHubId = defaults.awrHubId;
@@ -178,43 +153,63 @@ public final class GetAwrHubAwrSourcesSummaryItem {
     	      this.timeLastSnapshotGenerated = defaults.timeLastSnapshotGenerated;
         }
 
+        @CustomType.Setter
         public Builder awrHubId(String awrHubId) {
             this.awrHubId = Objects.requireNonNull(awrHubId);
             return this;
         }
+        @CustomType.Setter
         public Builder awrSourceDatabaseId(String awrSourceDatabaseId) {
             this.awrSourceDatabaseId = Objects.requireNonNull(awrSourceDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder hoursSinceLastImport(Double hoursSinceLastImport) {
             this.hoursSinceLastImport = Objects.requireNonNull(hoursSinceLastImport);
             return this;
         }
+        @CustomType.Setter
         public Builder maxSnapshotIdentifier(Double maxSnapshotIdentifier) {
             this.maxSnapshotIdentifier = Objects.requireNonNull(maxSnapshotIdentifier);
             return this;
         }
+        @CustomType.Setter
         public Builder minSnapshotIdentifier(Double minSnapshotIdentifier) {
             this.minSnapshotIdentifier = Objects.requireNonNull(minSnapshotIdentifier);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder snapshotsUploaded(Double snapshotsUploaded) {
             this.snapshotsUploaded = Objects.requireNonNull(snapshotsUploaded);
             return this;
         }
+        @CustomType.Setter
         public Builder timeFirstSnapshotGenerated(String timeFirstSnapshotGenerated) {
             this.timeFirstSnapshotGenerated = Objects.requireNonNull(timeFirstSnapshotGenerated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastSnapshotGenerated(String timeLastSnapshotGenerated) {
             this.timeLastSnapshotGenerated = Objects.requireNonNull(timeLastSnapshotGenerated);
             return this;
-        }        public GetAwrHubAwrSourcesSummaryItem build() {
-            return new GetAwrHubAwrSourcesSummaryItem(awrHubId, awrSourceDatabaseId, hoursSinceLastImport, maxSnapshotIdentifier, minSnapshotIdentifier, name, snapshotsUploaded, timeFirstSnapshotGenerated, timeLastSnapshotGenerated);
+        }
+        public GetAwrHubAwrSourcesSummaryItem build() {
+            final var o = new GetAwrHubAwrSourcesSummaryItem();
+            o.awrHubId = awrHubId;
+            o.awrSourceDatabaseId = awrSourceDatabaseId;
+            o.hoursSinceLastImport = hoursSinceLastImport;
+            o.maxSnapshotIdentifier = maxSnapshotIdentifier;
+            o.minSnapshotIdentifier = minSnapshotIdentifier;
+            o.name = name;
+            o.snapshotsUploaded = snapshotsUploaded;
+            o.timeFirstSnapshotGenerated = timeFirstSnapshotGenerated;
+            o.timeLastSnapshotGenerated = timeLastSnapshotGenerated;
+            return o;
         }
     }
 }

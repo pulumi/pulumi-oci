@@ -15,28 +15,19 @@ public final class MigrationIncludeObject {
      * @return (Updatable) Name of the object (regular expression is allowed)
      * 
      */
-    private final String object;
+    private String object;
     /**
      * @return (Updatable) Owner of the object (regular expression is allowed)
      * 
      */
-    private final String owner;
+    private String owner;
     /**
      * @return (Updatable) Migration type.
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private MigrationIncludeObject(
-        @CustomType.Parameter("object") String object,
-        @CustomType.Parameter("owner") String owner,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.object = object;
-        this.owner = owner;
-        this.type = type;
-    }
-
+    private MigrationIncludeObject() {}
     /**
      * @return (Updatable) Name of the object (regular expression is allowed)
      * 
@@ -66,16 +57,12 @@ public final class MigrationIncludeObject {
     public static Builder builder(MigrationIncludeObject defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String object;
         private String owner;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MigrationIncludeObject defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.object = defaults.object;
@@ -83,19 +70,27 @@ public final class MigrationIncludeObject {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder object(String object) {
             this.object = Objects.requireNonNull(object);
             return this;
         }
+        @CustomType.Setter
         public Builder owner(String owner) {
             this.owner = Objects.requireNonNull(owner);
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public MigrationIncludeObject build() {
-            return new MigrationIncludeObject(object, owner, type);
+        }
+        public MigrationIncludeObject build() {
+            final var o = new MigrationIncludeObject();
+            o.object = object;
+            o.owner = owner;
+            o.type = type;
+            return o;
         }
     }
 }

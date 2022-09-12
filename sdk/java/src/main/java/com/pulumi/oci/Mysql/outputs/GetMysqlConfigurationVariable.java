@@ -15,57 +15,86 @@ public final class GetMysqlConfigurationVariable {
      * @return (&#34;autocommit&#34;)
      * 
      */
-    private final Boolean autocommit;
+    private Boolean autocommit;
+    /**
+     * @return If enabled, the server stores all temporary tables on disk rather than in memory.
+     * 
+     */
+    private Boolean bigTables;
     /**
      * @return Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
      * 
      */
-    private final Integer binlogExpireLogsSeconds;
+    private Integer binlogExpireLogsSeconds;
     /**
      * @return Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
      * 
      */
-    private final String binlogRowMetadata;
+    private String binlogRowMetadata;
     /**
      * @return When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
      * 
      */
-    private final String binlogRowValueOptions;
+    private String binlogRowValueOptions;
     /**
      * @return Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
      * 
      */
-    private final Boolean binlogTransactionCompression;
+    private Boolean binlogTransactionCompression;
     /**
      * @return (&#34;completion_type&#34;)
      * 
      */
-    private final String completionType;
+    private String completionType;
     /**
-     * @return (&#34;connect_timeout&#34;)
+     * @return The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
      * 
      */
-    private final Integer connectTimeout;
+    private Integer connectTimeout;
+    /**
+     * @return Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+     * 
+     */
+    private Integer connectionMemoryChunkSize;
+    /**
+     * @return Set the maximum amount of memory that can be used by a single user connection.
+     * 
+     */
+    private String connectionMemoryLimit;
     /**
      * @return (&#34;cte_max_recursion_depth&#34;)
      * 
      */
-    private final Integer cteMaxRecursionDepth;
+    private String cteMaxRecursionDepth;
     /**
      * @return (&#34;default_authentication_plugin&#34;)
      * 
      */
-    private final String defaultAuthenticationPlugin;
+    private String defaultAuthenticationPlugin;
     /**
      * @return (&#34;foreign_key_checks&#34;)
      * 
      */
-    private final Boolean foreignKeyChecks;
+    private Boolean foreignKeyChecks;
     /**
      * @return (&#34;generated_random_password_length&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
+     * @deprecated
+     * The &#39;generated_random_password_length&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * 
      */
-    private final Integer generatedRandomPasswordLength;
+    @Deprecated /* The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field. */
+    private Integer generatedRandomPasswordLength;
+    /**
+     * @return Set the total amount of memory that can be used by all user connections.
+     * 
+     */
+    private String globalConnectionMemoryLimit;
+    /**
+     * @return Determines whether the MySQL server calculates Global_connection_memory.
+     * 
+     */
+    private Boolean globalConnectionMemoryTracking;
     /**
      * @return * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
      * * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
@@ -74,336 +103,356 @@ public final class GetMysqlConfigurationVariable {
      * * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
      * 
      */
-    private final String groupReplicationConsistency;
+    private String groupReplicationConsistency;
     /**
      * @return (&#34;information_schema_stats_expiry&#34;)
      * 
      */
-    private final Integer informationSchemaStatsExpiry;
+    private Integer informationSchemaStatsExpiry;
+    /**
+     * @return Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+     * 
+     */
+    private Integer innodbBufferPoolDumpPct;
     /**
      * @return (&#34;innodb_buffer_pool_instances&#34;)
      * 
      */
-    private final Integer innodbBufferPoolInstances;
+    private Integer innodbBufferPoolInstances;
     /**
-     * @return (&#34;innodb_buffer_pool_size&#34;)
+     * @return The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
      * 
      */
-    private final String innodbBufferPoolSize;
+    private String innodbBufferPoolSize;
+    /**
+     * @return innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+     * 
+     */
+    private String innodbDdlBufferSize;
+    /**
+     * @return innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+     * 
+     */
+    private Integer innodbDdlThreads;
     /**
      * @return (&#34;innodb_ft_enable_stopword&#34;)
      * 
      */
-    private final Boolean innodbFtEnableStopword;
+    private Boolean innodbFtEnableStopword;
     /**
      * @return (&#34;innodb_ft_max_token_size&#34;)
      * 
      */
-    private final Integer innodbFtMaxTokenSize;
+    private Integer innodbFtMaxTokenSize;
     /**
      * @return (&#34;innodb_ft_min_token_size&#34;)
      * 
      */
-    private final Integer innodbFtMinTokenSize;
+    private Integer innodbFtMinTokenSize;
     /**
      * @return (&#34;innodb_ft_num_word_optimize&#34;)
      * 
      */
-    private final Integer innodbFtNumWordOptimize;
+    private Integer innodbFtNumWordOptimize;
     /**
      * @return (&#34;innodb_ft_result_cache_limit&#34;)
      * 
      */
-    private final Integer innodbFtResultCacheLimit;
+    private String innodbFtResultCacheLimit;
     /**
      * @return (&#34;innodb_ft_server_stopword_table&#34;)
      * 
      */
-    private final String innodbFtServerStopwordTable;
+    private String innodbFtServerStopwordTable;
     /**
      * @return (&#34;innodb_lock_wait_timeout&#34;)
      * 
      */
-    private final Integer innodbLockWaitTimeout;
+    private Integer innodbLockWaitTimeout;
     /**
-     * @return (&#34;innodb_max_purge_lag&#34;)
+     * @return Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
      * 
      */
-    private final Integer innodbMaxPurgeLag;
+    private Boolean innodbLogWriterThreads;
     /**
-     * @return (&#34;innodb_max_purge_lag_delay&#34;)
+     * @return The desired maximum purge lag in terms of transactions.
      * 
      */
-    private final Integer innodbMaxPurgeLagDelay;
+    private String innodbMaxPurgeLag;
+    /**
+     * @return The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
+     * 
+     */
+    private Integer innodbMaxPurgeLagDelay;
+    /**
+     * @return The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+     * 
+     */
+    private String innodbStatsPersistentSamplePages;
+    /**
+     * @return The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+     * 
+     */
+    private String innodbStatsTransientSamplePages;
+    /**
+     * @return The number of seconds the server waits for activity on an interactive connection before closing it.
+     * 
+     */
+    private Integer interactiveTimeout;
     /**
      * @return (&#34;local_infile&#34;)
      * 
      */
-    private final Boolean localInfile;
+    private Boolean localInfile;
     /**
      * @return (&#34;mandatory_roles&#34;)
      * 
      */
-    private final String mandatoryRoles;
+    private String mandatoryRoles;
+    /**
+     * @return The maximum size of one packet or any generated/intermediate string.
+     * 
+     */
+    private Integer maxAllowedPacket;
+    /**
+     * @return Sets the size of the transaction cache.
+     * 
+     */
+    private String maxBinlogCacheSize;
+    /**
+     * @return (&#34;max_connect_errors&#34;)
+     * 
+     */
+    private String maxConnectErrors;
     /**
      * @return (&#34;max_connections&#34;)
      * 
      */
-    private final Integer maxConnections;
+    private Integer maxConnections;
     /**
      * @return (&#34;max_execution_time&#34;)
      * 
      */
-    private final Integer maxExecutionTime;
+    private String maxExecutionTime;
+    /**
+     * @return This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+     * 
+     */
+    private String maxHeapTableSize;
     /**
      * @return (&#34;max_prepared_stmt_count&#34;)
      * 
      */
-    private final Integer maxPreparedStmtCount;
+    private Integer maxPreparedStmtCount;
     /**
      * @return (&#34;mysql_firewall_mode&#34;)
      * 
      */
-    private final Boolean mysqlFirewallMode;
+    private Boolean mysqlFirewallMode;
     /**
      * @return DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
      * 
-     */
-    private final Integer mysqlZstdDefaultCompressionLevel;
-    /**
-     * @return (&#34;mysqlx_connect_timeout&#34;) DEPRECATED -- variable should not be settable and will be ignored
+     * @deprecated
+     * The &#39;mysql_zstd_default_compression_level&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    private final Integer mysqlxConnectTimeout;
+    @Deprecated /* The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field. */
+    private Integer mysqlZstdDefaultCompressionLevel;
+    /**
+     * @return The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+     * 
+     */
+    private Integer mysqlxConnectTimeout;
     /**
      * @return Set the default compression level for the deflate algorithm. (&#34;mysqlx_deflate_default_compression_level&#34;)
      * 
      */
-    private final Integer mysqlxDeflateDefaultCompressionLevel;
+    private Integer mysqlxDeflateDefaultCompressionLevel;
     /**
      * @return Limit the upper bound of accepted compression levels for the deflate algorithm. (&#34;mysqlx_deflate_max_client_compression_level&#34;)
      * 
      */
-    private final Integer mysqlxDeflateMaxClientCompressionLevel;
+    private Integer mysqlxDeflateMaxClientCompressionLevel;
     /**
      * @return (&#34;mysqlx_document_id_unique_prefix&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
+     * @deprecated
+     * The &#39;mysqlx_document_id_unique_prefix&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * 
      */
-    private final Integer mysqlxDocumentIdUniquePrefix;
+    @Deprecated /* The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field. */
+    private Integer mysqlxDocumentIdUniquePrefix;
     /**
      * @return (&#34;mysqlx_enable_hello_notice&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
      */
-    private final Boolean mysqlxEnableHelloNotice;
+    private Boolean mysqlxEnableHelloNotice;
     /**
      * @return (&#34;mysqlx_idle_worker_thread_timeout&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     */
-    private final Integer mysqlxIdleWorkerThreadTimeout;
-    /**
-     * @return (&#34;mysqlx_interactive_timeout&#34;) DEPRECATED -- variable should not be settable and will be ignored
+     * @deprecated
+     * The &#39;mysqlx_idle_worker_thread_timeout&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    private final Integer mysqlxInteractiveTimeout;
+    @Deprecated /* The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field. */
+    private Integer mysqlxIdleWorkerThreadTimeout;
+    /**
+     * @return The number of seconds to wait for interactive clients to timeout.
+     * 
+     */
+    private Integer mysqlxInteractiveTimeout;
     /**
      * @return Set the default compression level for the lz4 algorithm. (&#34;mysqlx_lz4_default_compression_level&#34;)
      * 
      */
-    private final Integer mysqlxLz4defaultCompressionLevel;
+    private Integer mysqlxLz4defaultCompressionLevel;
     /**
      * @return Limit the upper bound of accepted compression levels for the lz4 algorithm. (&#34;mysqlx_lz4_max_client_compression_level&#34;)
      * 
      */
-    private final Integer mysqlxLz4maxClientCompressionLevel;
+    private Integer mysqlxLz4maxClientCompressionLevel;
     /**
-     * @return (&#34;mysqlx_max_allowed_packet&#34;) DEPRECATED -- variable should not be settable and will be ignored
+     * @return The maximum size of network packets that can be received by X Plugin.
      * 
      */
-    private final Integer mysqlxMaxAllowedPacket;
+    private Integer mysqlxMaxAllowedPacket;
     /**
      * @return (&#34;mysqlx_min_worker_threads&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     */
-    private final Integer mysqlxMinWorkerThreads;
-    /**
-     * @return (&#34;mysqlx_read_timeout&#34;) DEPRECATED -- variable should not be settable and will be ignored
+     * @deprecated
+     * The &#39;mysqlx_min_worker_threads&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    private final Integer mysqlxReadTimeout;
+    @Deprecated /* The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field. */
+    private Integer mysqlxMinWorkerThreads;
     /**
-     * @return (&#34;mysqlx_wait_timeout&#34;) DEPRECATED -- variable should not be settable and will be ignored
+     * @return The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
      * 
      */
-    private final Integer mysqlxWaitTimeout;
+    private Integer mysqlxReadTimeout;
     /**
-     * @return (&#34;mysqlx_write_timeout&#34;) DEPRECATED -- variable should not be settable and will be ignored
+     * @return The number of seconds that X Plugin waits for activity on a connection.
      * 
      */
-    private final Integer mysqlxWriteTimeout;
+    private Integer mysqlxWaitTimeout;
+    /**
+     * @return The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+     * 
+     */
+    private Integer mysqlxWriteTimeout;
     /**
      * @return Set the default compression level for the zstd algorithm. (&#34;mysqlx_zstd_default_compression_level&#34;)
      * 
      */
-    private final Integer mysqlxZstdDefaultCompressionLevel;
+    private Integer mysqlxZstdDefaultCompressionLevel;
     /**
      * @return Limit the upper bound of accepted compression levels for the zstd algorithm. (&#34;mysqlx_zstd_max_client_compression_level&#34;)
      * 
      */
-    private final Integer mysqlxZstdMaxClientCompressionLevel;
+    private Integer mysqlxZstdMaxClientCompressionLevel;
+    /**
+     * @return The number of seconds to wait for more data from a connection before aborting the read.
+     * 
+     */
+    private Integer netReadTimeout;
+    /**
+     * @return The number of seconds to wait for a block to be written to a connection before aborting the write.
+     * 
+     */
+    private Integer netWriteTimeout;
     /**
      * @return (&#34;parser_max_mem_size&#34;)
      * 
      */
-    private final Integer parserMaxMemSize;
+    private String parserMaxMemSize;
     /**
      * @return (&#34;query_alloc_block_size&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
+     * @deprecated
+     * The &#39;query_alloc_block_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * 
      */
-    private final Integer queryAllocBlockSize;
+    @Deprecated /* The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field. */
+    private String queryAllocBlockSize;
     /**
      * @return (&#34;query_prealloc_size&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
+     * @deprecated
+     * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * 
      */
-    private final Integer queryPreallocSize;
+    @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
+    private String queryPreallocSize;
+    /**
+     * @return regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+     * 
+     */
+    private Integer regexpTimeLimit;
+    /**
+     * @return Each session that must perform a sort allocates a buffer of this size.
+     * 
+     */
+    private String sortBufferSize;
     /**
      * @return (&#34;sql_mode&#34;)
      * 
      */
-    private final String sqlMode;
+    private String sqlMode;
     /**
      * @return (&#34;sql_require_primary_key&#34;)
      * 
      */
-    private final Boolean sqlRequirePrimaryKey;
+    private Boolean sqlRequirePrimaryKey;
     /**
      * @return (&#34;sql_warnings&#34;)
      * 
      */
-    private final Boolean sqlWarnings;
+    private Boolean sqlWarnings;
+    /**
+     * @return Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+     * 
+     */
+    private Boolean threadPoolDedicatedListeners;
+    /**
+     * @return Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+     * 
+     */
+    private Integer threadPoolMaxTransactionsLimit;
+    /**
+     * @return Initializes the time zone for each client that connects.
+     * 
+     */
+    private String timeZone;
+    /**
+     * @return The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+     * 
+     */
+    private String tmpTableSize;
     /**
      * @return (&#34;transaction_isolation&#34;)
      * 
      */
-    private final String transactionIsolation;
+    private String transactionIsolation;
+    /**
+     * @return The number of seconds the server waits for activity on a noninteractive connection before closing it.
+     * 
+     */
+    private Integer waitTimeout;
 
-    @CustomType.Constructor
-    private GetMysqlConfigurationVariable(
-        @CustomType.Parameter("autocommit") Boolean autocommit,
-        @CustomType.Parameter("binlogExpireLogsSeconds") Integer binlogExpireLogsSeconds,
-        @CustomType.Parameter("binlogRowMetadata") String binlogRowMetadata,
-        @CustomType.Parameter("binlogRowValueOptions") String binlogRowValueOptions,
-        @CustomType.Parameter("binlogTransactionCompression") Boolean binlogTransactionCompression,
-        @CustomType.Parameter("completionType") String completionType,
-        @CustomType.Parameter("connectTimeout") Integer connectTimeout,
-        @CustomType.Parameter("cteMaxRecursionDepth") Integer cteMaxRecursionDepth,
-        @CustomType.Parameter("defaultAuthenticationPlugin") String defaultAuthenticationPlugin,
-        @CustomType.Parameter("foreignKeyChecks") Boolean foreignKeyChecks,
-        @CustomType.Parameter("generatedRandomPasswordLength") Integer generatedRandomPasswordLength,
-        @CustomType.Parameter("groupReplicationConsistency") String groupReplicationConsistency,
-        @CustomType.Parameter("informationSchemaStatsExpiry") Integer informationSchemaStatsExpiry,
-        @CustomType.Parameter("innodbBufferPoolInstances") Integer innodbBufferPoolInstances,
-        @CustomType.Parameter("innodbBufferPoolSize") String innodbBufferPoolSize,
-        @CustomType.Parameter("innodbFtEnableStopword") Boolean innodbFtEnableStopword,
-        @CustomType.Parameter("innodbFtMaxTokenSize") Integer innodbFtMaxTokenSize,
-        @CustomType.Parameter("innodbFtMinTokenSize") Integer innodbFtMinTokenSize,
-        @CustomType.Parameter("innodbFtNumWordOptimize") Integer innodbFtNumWordOptimize,
-        @CustomType.Parameter("innodbFtResultCacheLimit") Integer innodbFtResultCacheLimit,
-        @CustomType.Parameter("innodbFtServerStopwordTable") String innodbFtServerStopwordTable,
-        @CustomType.Parameter("innodbLockWaitTimeout") Integer innodbLockWaitTimeout,
-        @CustomType.Parameter("innodbMaxPurgeLag") Integer innodbMaxPurgeLag,
-        @CustomType.Parameter("innodbMaxPurgeLagDelay") Integer innodbMaxPurgeLagDelay,
-        @CustomType.Parameter("localInfile") Boolean localInfile,
-        @CustomType.Parameter("mandatoryRoles") String mandatoryRoles,
-        @CustomType.Parameter("maxConnections") Integer maxConnections,
-        @CustomType.Parameter("maxExecutionTime") Integer maxExecutionTime,
-        @CustomType.Parameter("maxPreparedStmtCount") Integer maxPreparedStmtCount,
-        @CustomType.Parameter("mysqlFirewallMode") Boolean mysqlFirewallMode,
-        @CustomType.Parameter("mysqlZstdDefaultCompressionLevel") Integer mysqlZstdDefaultCompressionLevel,
-        @CustomType.Parameter("mysqlxConnectTimeout") Integer mysqlxConnectTimeout,
-        @CustomType.Parameter("mysqlxDeflateDefaultCompressionLevel") Integer mysqlxDeflateDefaultCompressionLevel,
-        @CustomType.Parameter("mysqlxDeflateMaxClientCompressionLevel") Integer mysqlxDeflateMaxClientCompressionLevel,
-        @CustomType.Parameter("mysqlxDocumentIdUniquePrefix") Integer mysqlxDocumentIdUniquePrefix,
-        @CustomType.Parameter("mysqlxEnableHelloNotice") Boolean mysqlxEnableHelloNotice,
-        @CustomType.Parameter("mysqlxIdleWorkerThreadTimeout") Integer mysqlxIdleWorkerThreadTimeout,
-        @CustomType.Parameter("mysqlxInteractiveTimeout") Integer mysqlxInteractiveTimeout,
-        @CustomType.Parameter("mysqlxLz4defaultCompressionLevel") Integer mysqlxLz4defaultCompressionLevel,
-        @CustomType.Parameter("mysqlxLz4maxClientCompressionLevel") Integer mysqlxLz4maxClientCompressionLevel,
-        @CustomType.Parameter("mysqlxMaxAllowedPacket") Integer mysqlxMaxAllowedPacket,
-        @CustomType.Parameter("mysqlxMinWorkerThreads") Integer mysqlxMinWorkerThreads,
-        @CustomType.Parameter("mysqlxReadTimeout") Integer mysqlxReadTimeout,
-        @CustomType.Parameter("mysqlxWaitTimeout") Integer mysqlxWaitTimeout,
-        @CustomType.Parameter("mysqlxWriteTimeout") Integer mysqlxWriteTimeout,
-        @CustomType.Parameter("mysqlxZstdDefaultCompressionLevel") Integer mysqlxZstdDefaultCompressionLevel,
-        @CustomType.Parameter("mysqlxZstdMaxClientCompressionLevel") Integer mysqlxZstdMaxClientCompressionLevel,
-        @CustomType.Parameter("parserMaxMemSize") Integer parserMaxMemSize,
-        @CustomType.Parameter("queryAllocBlockSize") Integer queryAllocBlockSize,
-        @CustomType.Parameter("queryPreallocSize") Integer queryPreallocSize,
-        @CustomType.Parameter("sqlMode") String sqlMode,
-        @CustomType.Parameter("sqlRequirePrimaryKey") Boolean sqlRequirePrimaryKey,
-        @CustomType.Parameter("sqlWarnings") Boolean sqlWarnings,
-        @CustomType.Parameter("transactionIsolation") String transactionIsolation) {
-        this.autocommit = autocommit;
-        this.binlogExpireLogsSeconds = binlogExpireLogsSeconds;
-        this.binlogRowMetadata = binlogRowMetadata;
-        this.binlogRowValueOptions = binlogRowValueOptions;
-        this.binlogTransactionCompression = binlogTransactionCompression;
-        this.completionType = completionType;
-        this.connectTimeout = connectTimeout;
-        this.cteMaxRecursionDepth = cteMaxRecursionDepth;
-        this.defaultAuthenticationPlugin = defaultAuthenticationPlugin;
-        this.foreignKeyChecks = foreignKeyChecks;
-        this.generatedRandomPasswordLength = generatedRandomPasswordLength;
-        this.groupReplicationConsistency = groupReplicationConsistency;
-        this.informationSchemaStatsExpiry = informationSchemaStatsExpiry;
-        this.innodbBufferPoolInstances = innodbBufferPoolInstances;
-        this.innodbBufferPoolSize = innodbBufferPoolSize;
-        this.innodbFtEnableStopword = innodbFtEnableStopword;
-        this.innodbFtMaxTokenSize = innodbFtMaxTokenSize;
-        this.innodbFtMinTokenSize = innodbFtMinTokenSize;
-        this.innodbFtNumWordOptimize = innodbFtNumWordOptimize;
-        this.innodbFtResultCacheLimit = innodbFtResultCacheLimit;
-        this.innodbFtServerStopwordTable = innodbFtServerStopwordTable;
-        this.innodbLockWaitTimeout = innodbLockWaitTimeout;
-        this.innodbMaxPurgeLag = innodbMaxPurgeLag;
-        this.innodbMaxPurgeLagDelay = innodbMaxPurgeLagDelay;
-        this.localInfile = localInfile;
-        this.mandatoryRoles = mandatoryRoles;
-        this.maxConnections = maxConnections;
-        this.maxExecutionTime = maxExecutionTime;
-        this.maxPreparedStmtCount = maxPreparedStmtCount;
-        this.mysqlFirewallMode = mysqlFirewallMode;
-        this.mysqlZstdDefaultCompressionLevel = mysqlZstdDefaultCompressionLevel;
-        this.mysqlxConnectTimeout = mysqlxConnectTimeout;
-        this.mysqlxDeflateDefaultCompressionLevel = mysqlxDeflateDefaultCompressionLevel;
-        this.mysqlxDeflateMaxClientCompressionLevel = mysqlxDeflateMaxClientCompressionLevel;
-        this.mysqlxDocumentIdUniquePrefix = mysqlxDocumentIdUniquePrefix;
-        this.mysqlxEnableHelloNotice = mysqlxEnableHelloNotice;
-        this.mysqlxIdleWorkerThreadTimeout = mysqlxIdleWorkerThreadTimeout;
-        this.mysqlxInteractiveTimeout = mysqlxInteractiveTimeout;
-        this.mysqlxLz4defaultCompressionLevel = mysqlxLz4defaultCompressionLevel;
-        this.mysqlxLz4maxClientCompressionLevel = mysqlxLz4maxClientCompressionLevel;
-        this.mysqlxMaxAllowedPacket = mysqlxMaxAllowedPacket;
-        this.mysqlxMinWorkerThreads = mysqlxMinWorkerThreads;
-        this.mysqlxReadTimeout = mysqlxReadTimeout;
-        this.mysqlxWaitTimeout = mysqlxWaitTimeout;
-        this.mysqlxWriteTimeout = mysqlxWriteTimeout;
-        this.mysqlxZstdDefaultCompressionLevel = mysqlxZstdDefaultCompressionLevel;
-        this.mysqlxZstdMaxClientCompressionLevel = mysqlxZstdMaxClientCompressionLevel;
-        this.parserMaxMemSize = parserMaxMemSize;
-        this.queryAllocBlockSize = queryAllocBlockSize;
-        this.queryPreallocSize = queryPreallocSize;
-        this.sqlMode = sqlMode;
-        this.sqlRequirePrimaryKey = sqlRequirePrimaryKey;
-        this.sqlWarnings = sqlWarnings;
-        this.transactionIsolation = transactionIsolation;
-    }
-
+    private GetMysqlConfigurationVariable() {}
     /**
      * @return (&#34;autocommit&#34;)
      * 
      */
     public Boolean autocommit() {
         return this.autocommit;
+    }
+    /**
+     * @return If enabled, the server stores all temporary tables on disk rather than in memory.
+     * 
+     */
+    public Boolean bigTables() {
+        return this.bigTables;
     }
     /**
      * @return Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
@@ -441,17 +490,31 @@ public final class GetMysqlConfigurationVariable {
         return this.completionType;
     }
     /**
-     * @return (&#34;connect_timeout&#34;)
+     * @return The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
      * 
      */
     public Integer connectTimeout() {
         return this.connectTimeout;
     }
     /**
+     * @return Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+     * 
+     */
+    public Integer connectionMemoryChunkSize() {
+        return this.connectionMemoryChunkSize;
+    }
+    /**
+     * @return Set the maximum amount of memory that can be used by a single user connection.
+     * 
+     */
+    public String connectionMemoryLimit() {
+        return this.connectionMemoryLimit;
+    }
+    /**
      * @return (&#34;cte_max_recursion_depth&#34;)
      * 
      */
-    public Integer cteMaxRecursionDepth() {
+    public String cteMaxRecursionDepth() {
         return this.cteMaxRecursionDepth;
     }
     /**
@@ -471,9 +534,27 @@ public final class GetMysqlConfigurationVariable {
     /**
      * @return (&#34;generated_random_password_length&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
+     * @deprecated
+     * The &#39;generated_random_password_length&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * 
      */
+    @Deprecated /* The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field. */
     public Integer generatedRandomPasswordLength() {
         return this.generatedRandomPasswordLength;
+    }
+    /**
+     * @return Set the total amount of memory that can be used by all user connections.
+     * 
+     */
+    public String globalConnectionMemoryLimit() {
+        return this.globalConnectionMemoryLimit;
+    }
+    /**
+     * @return Determines whether the MySQL server calculates Global_connection_memory.
+     * 
+     */
+    public Boolean globalConnectionMemoryTracking() {
+        return this.globalConnectionMemoryTracking;
     }
     /**
      * @return * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
@@ -494,6 +575,13 @@ public final class GetMysqlConfigurationVariable {
         return this.informationSchemaStatsExpiry;
     }
     /**
+     * @return Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+     * 
+     */
+    public Integer innodbBufferPoolDumpPct() {
+        return this.innodbBufferPoolDumpPct;
+    }
+    /**
      * @return (&#34;innodb_buffer_pool_instances&#34;)
      * 
      */
@@ -501,11 +589,25 @@ public final class GetMysqlConfigurationVariable {
         return this.innodbBufferPoolInstances;
     }
     /**
-     * @return (&#34;innodb_buffer_pool_size&#34;)
+     * @return The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
      * 
      */
     public String innodbBufferPoolSize() {
         return this.innodbBufferPoolSize;
+    }
+    /**
+     * @return innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+     * 
+     */
+    public String innodbDdlBufferSize() {
+        return this.innodbDdlBufferSize;
+    }
+    /**
+     * @return innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+     * 
+     */
+    public Integer innodbDdlThreads() {
+        return this.innodbDdlThreads;
     }
     /**
      * @return (&#34;innodb_ft_enable_stopword&#34;)
@@ -539,7 +641,7 @@ public final class GetMysqlConfigurationVariable {
      * @return (&#34;innodb_ft_result_cache_limit&#34;)
      * 
      */
-    public Integer innodbFtResultCacheLimit() {
+    public String innodbFtResultCacheLimit() {
         return this.innodbFtResultCacheLimit;
     }
     /**
@@ -557,18 +659,46 @@ public final class GetMysqlConfigurationVariable {
         return this.innodbLockWaitTimeout;
     }
     /**
-     * @return (&#34;innodb_max_purge_lag&#34;)
+     * @return Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
      * 
      */
-    public Integer innodbMaxPurgeLag() {
+    public Boolean innodbLogWriterThreads() {
+        return this.innodbLogWriterThreads;
+    }
+    /**
+     * @return The desired maximum purge lag in terms of transactions.
+     * 
+     */
+    public String innodbMaxPurgeLag() {
         return this.innodbMaxPurgeLag;
     }
     /**
-     * @return (&#34;innodb_max_purge_lag_delay&#34;)
+     * @return The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
      * 
      */
     public Integer innodbMaxPurgeLagDelay() {
         return this.innodbMaxPurgeLagDelay;
+    }
+    /**
+     * @return The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+     * 
+     */
+    public String innodbStatsPersistentSamplePages() {
+        return this.innodbStatsPersistentSamplePages;
+    }
+    /**
+     * @return The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+     * 
+     */
+    public String innodbStatsTransientSamplePages() {
+        return this.innodbStatsTransientSamplePages;
+    }
+    /**
+     * @return The number of seconds the server waits for activity on an interactive connection before closing it.
+     * 
+     */
+    public Integer interactiveTimeout() {
+        return this.interactiveTimeout;
     }
     /**
      * @return (&#34;local_infile&#34;)
@@ -585,6 +715,27 @@ public final class GetMysqlConfigurationVariable {
         return this.mandatoryRoles;
     }
     /**
+     * @return The maximum size of one packet or any generated/intermediate string.
+     * 
+     */
+    public Integer maxAllowedPacket() {
+        return this.maxAllowedPacket;
+    }
+    /**
+     * @return Sets the size of the transaction cache.
+     * 
+     */
+    public String maxBinlogCacheSize() {
+        return this.maxBinlogCacheSize;
+    }
+    /**
+     * @return (&#34;max_connect_errors&#34;)
+     * 
+     */
+    public String maxConnectErrors() {
+        return this.maxConnectErrors;
+    }
+    /**
      * @return (&#34;max_connections&#34;)
      * 
      */
@@ -595,8 +746,15 @@ public final class GetMysqlConfigurationVariable {
      * @return (&#34;max_execution_time&#34;)
      * 
      */
-    public Integer maxExecutionTime() {
+    public String maxExecutionTime() {
         return this.maxExecutionTime;
+    }
+    /**
+     * @return This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+     * 
+     */
+    public String maxHeapTableSize() {
+        return this.maxHeapTableSize;
     }
     /**
      * @return (&#34;max_prepared_stmt_count&#34;)
@@ -615,12 +773,16 @@ public final class GetMysqlConfigurationVariable {
     /**
      * @return DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
      * 
+     * @deprecated
+     * The &#39;mysql_zstd_default_compression_level&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * 
      */
+    @Deprecated /* The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field. */
     public Integer mysqlZstdDefaultCompressionLevel() {
         return this.mysqlZstdDefaultCompressionLevel;
     }
     /**
-     * @return (&#34;mysqlx_connect_timeout&#34;) DEPRECATED -- variable should not be settable and will be ignored
+     * @return The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
      * 
      */
     public Integer mysqlxConnectTimeout() {
@@ -643,7 +805,11 @@ public final class GetMysqlConfigurationVariable {
     /**
      * @return (&#34;mysqlx_document_id_unique_prefix&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
+     * @deprecated
+     * The &#39;mysqlx_document_id_unique_prefix&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * 
      */
+    @Deprecated /* The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field. */
     public Integer mysqlxDocumentIdUniquePrefix() {
         return this.mysqlxDocumentIdUniquePrefix;
     }
@@ -657,12 +823,16 @@ public final class GetMysqlConfigurationVariable {
     /**
      * @return (&#34;mysqlx_idle_worker_thread_timeout&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
+     * @deprecated
+     * The &#39;mysqlx_idle_worker_thread_timeout&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * 
      */
+    @Deprecated /* The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field. */
     public Integer mysqlxIdleWorkerThreadTimeout() {
         return this.mysqlxIdleWorkerThreadTimeout;
     }
     /**
-     * @return (&#34;mysqlx_interactive_timeout&#34;) DEPRECATED -- variable should not be settable and will be ignored
+     * @return The number of seconds to wait for interactive clients to timeout.
      * 
      */
     public Integer mysqlxInteractiveTimeout() {
@@ -683,7 +853,7 @@ public final class GetMysqlConfigurationVariable {
         return this.mysqlxLz4maxClientCompressionLevel;
     }
     /**
-     * @return (&#34;mysqlx_max_allowed_packet&#34;) DEPRECATED -- variable should not be settable and will be ignored
+     * @return The maximum size of network packets that can be received by X Plugin.
      * 
      */
     public Integer mysqlxMaxAllowedPacket() {
@@ -692,26 +862,30 @@ public final class GetMysqlConfigurationVariable {
     /**
      * @return (&#34;mysqlx_min_worker_threads&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
+     * @deprecated
+     * The &#39;mysqlx_min_worker_threads&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * 
      */
+    @Deprecated /* The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field. */
     public Integer mysqlxMinWorkerThreads() {
         return this.mysqlxMinWorkerThreads;
     }
     /**
-     * @return (&#34;mysqlx_read_timeout&#34;) DEPRECATED -- variable should not be settable and will be ignored
+     * @return The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
      * 
      */
     public Integer mysqlxReadTimeout() {
         return this.mysqlxReadTimeout;
     }
     /**
-     * @return (&#34;mysqlx_wait_timeout&#34;) DEPRECATED -- variable should not be settable and will be ignored
+     * @return The number of seconds that X Plugin waits for activity on a connection.
      * 
      */
     public Integer mysqlxWaitTimeout() {
         return this.mysqlxWaitTimeout;
     }
     /**
-     * @return (&#34;mysqlx_write_timeout&#34;) DEPRECATED -- variable should not be settable and will be ignored
+     * @return The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
      * 
      */
     public Integer mysqlxWriteTimeout() {
@@ -732,25 +906,61 @@ public final class GetMysqlConfigurationVariable {
         return this.mysqlxZstdMaxClientCompressionLevel;
     }
     /**
+     * @return The number of seconds to wait for more data from a connection before aborting the read.
+     * 
+     */
+    public Integer netReadTimeout() {
+        return this.netReadTimeout;
+    }
+    /**
+     * @return The number of seconds to wait for a block to be written to a connection before aborting the write.
+     * 
+     */
+    public Integer netWriteTimeout() {
+        return this.netWriteTimeout;
+    }
+    /**
      * @return (&#34;parser_max_mem_size&#34;)
      * 
      */
-    public Integer parserMaxMemSize() {
+    public String parserMaxMemSize() {
         return this.parserMaxMemSize;
     }
     /**
      * @return (&#34;query_alloc_block_size&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
+     * @deprecated
+     * The &#39;query_alloc_block_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * 
      */
-    public Integer queryAllocBlockSize() {
+    @Deprecated /* The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field. */
+    public String queryAllocBlockSize() {
         return this.queryAllocBlockSize;
     }
     /**
      * @return (&#34;query_prealloc_size&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
+     * @deprecated
+     * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * 
      */
-    public Integer queryPreallocSize() {
+    @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
+    public String queryPreallocSize() {
         return this.queryPreallocSize;
+    }
+    /**
+     * @return regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+     * 
+     */
+    public Integer regexpTimeLimit() {
+        return this.regexpTimeLimit;
+    }
+    /**
+     * @return Each session that must perform a sort allocates a buffer of this size.
+     * 
+     */
+    public String sortBufferSize() {
+        return this.sortBufferSize;
     }
     /**
      * @return (&#34;sql_mode&#34;)
@@ -774,11 +984,46 @@ public final class GetMysqlConfigurationVariable {
         return this.sqlWarnings;
     }
     /**
+     * @return Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+     * 
+     */
+    public Boolean threadPoolDedicatedListeners() {
+        return this.threadPoolDedicatedListeners;
+    }
+    /**
+     * @return Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+     * 
+     */
+    public Integer threadPoolMaxTransactionsLimit() {
+        return this.threadPoolMaxTransactionsLimit;
+    }
+    /**
+     * @return Initializes the time zone for each client that connects.
+     * 
+     */
+    public String timeZone() {
+        return this.timeZone;
+    }
+    /**
+     * @return The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+     * 
+     */
+    public String tmpTableSize() {
+        return this.tmpTableSize;
+    }
+    /**
      * @return (&#34;transaction_isolation&#34;)
      * 
      */
     public String transactionIsolation() {
         return this.transactionIsolation;
+    }
+    /**
+     * @return The number of seconds the server waits for activity on a noninteractive connection before closing it.
+     * 
+     */
+    public Integer waitTimeout() {
+        return this.waitTimeout;
     }
 
     public static Builder builder() {
@@ -788,36 +1033,52 @@ public final class GetMysqlConfigurationVariable {
     public static Builder builder(GetMysqlConfigurationVariable defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean autocommit;
+        private Boolean bigTables;
         private Integer binlogExpireLogsSeconds;
         private String binlogRowMetadata;
         private String binlogRowValueOptions;
         private Boolean binlogTransactionCompression;
         private String completionType;
         private Integer connectTimeout;
-        private Integer cteMaxRecursionDepth;
+        private Integer connectionMemoryChunkSize;
+        private String connectionMemoryLimit;
+        private String cteMaxRecursionDepth;
         private String defaultAuthenticationPlugin;
         private Boolean foreignKeyChecks;
         private Integer generatedRandomPasswordLength;
+        private String globalConnectionMemoryLimit;
+        private Boolean globalConnectionMemoryTracking;
         private String groupReplicationConsistency;
         private Integer informationSchemaStatsExpiry;
+        private Integer innodbBufferPoolDumpPct;
         private Integer innodbBufferPoolInstances;
         private String innodbBufferPoolSize;
+        private String innodbDdlBufferSize;
+        private Integer innodbDdlThreads;
         private Boolean innodbFtEnableStopword;
         private Integer innodbFtMaxTokenSize;
         private Integer innodbFtMinTokenSize;
         private Integer innodbFtNumWordOptimize;
-        private Integer innodbFtResultCacheLimit;
+        private String innodbFtResultCacheLimit;
         private String innodbFtServerStopwordTable;
         private Integer innodbLockWaitTimeout;
-        private Integer innodbMaxPurgeLag;
+        private Boolean innodbLogWriterThreads;
+        private String innodbMaxPurgeLag;
         private Integer innodbMaxPurgeLagDelay;
+        private String innodbStatsPersistentSamplePages;
+        private String innodbStatsTransientSamplePages;
+        private Integer interactiveTimeout;
         private Boolean localInfile;
         private String mandatoryRoles;
+        private Integer maxAllowedPacket;
+        private String maxBinlogCacheSize;
+        private String maxConnectErrors;
         private Integer maxConnections;
-        private Integer maxExecutionTime;
+        private String maxExecutionTime;
+        private String maxHeapTableSize;
         private Integer maxPreparedStmtCount;
         private Boolean mysqlFirewallMode;
         private Integer mysqlZstdDefaultCompressionLevel;
@@ -837,35 +1098,48 @@ public final class GetMysqlConfigurationVariable {
         private Integer mysqlxWriteTimeout;
         private Integer mysqlxZstdDefaultCompressionLevel;
         private Integer mysqlxZstdMaxClientCompressionLevel;
-        private Integer parserMaxMemSize;
-        private Integer queryAllocBlockSize;
-        private Integer queryPreallocSize;
+        private Integer netReadTimeout;
+        private Integer netWriteTimeout;
+        private String parserMaxMemSize;
+        private String queryAllocBlockSize;
+        private String queryPreallocSize;
+        private Integer regexpTimeLimit;
+        private String sortBufferSize;
         private String sqlMode;
         private Boolean sqlRequirePrimaryKey;
         private Boolean sqlWarnings;
+        private Boolean threadPoolDedicatedListeners;
+        private Integer threadPoolMaxTransactionsLimit;
+        private String timeZone;
+        private String tmpTableSize;
         private String transactionIsolation;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        private Integer waitTimeout;
+        public Builder() {}
         public Builder(GetMysqlConfigurationVariable defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autocommit = defaults.autocommit;
+    	      this.bigTables = defaults.bigTables;
     	      this.binlogExpireLogsSeconds = defaults.binlogExpireLogsSeconds;
     	      this.binlogRowMetadata = defaults.binlogRowMetadata;
     	      this.binlogRowValueOptions = defaults.binlogRowValueOptions;
     	      this.binlogTransactionCompression = defaults.binlogTransactionCompression;
     	      this.completionType = defaults.completionType;
     	      this.connectTimeout = defaults.connectTimeout;
+    	      this.connectionMemoryChunkSize = defaults.connectionMemoryChunkSize;
+    	      this.connectionMemoryLimit = defaults.connectionMemoryLimit;
     	      this.cteMaxRecursionDepth = defaults.cteMaxRecursionDepth;
     	      this.defaultAuthenticationPlugin = defaults.defaultAuthenticationPlugin;
     	      this.foreignKeyChecks = defaults.foreignKeyChecks;
     	      this.generatedRandomPasswordLength = defaults.generatedRandomPasswordLength;
+    	      this.globalConnectionMemoryLimit = defaults.globalConnectionMemoryLimit;
+    	      this.globalConnectionMemoryTracking = defaults.globalConnectionMemoryTracking;
     	      this.groupReplicationConsistency = defaults.groupReplicationConsistency;
     	      this.informationSchemaStatsExpiry = defaults.informationSchemaStatsExpiry;
+    	      this.innodbBufferPoolDumpPct = defaults.innodbBufferPoolDumpPct;
     	      this.innodbBufferPoolInstances = defaults.innodbBufferPoolInstances;
     	      this.innodbBufferPoolSize = defaults.innodbBufferPoolSize;
+    	      this.innodbDdlBufferSize = defaults.innodbDdlBufferSize;
+    	      this.innodbDdlThreads = defaults.innodbDdlThreads;
     	      this.innodbFtEnableStopword = defaults.innodbFtEnableStopword;
     	      this.innodbFtMaxTokenSize = defaults.innodbFtMaxTokenSize;
     	      this.innodbFtMinTokenSize = defaults.innodbFtMinTokenSize;
@@ -873,12 +1147,20 @@ public final class GetMysqlConfigurationVariable {
     	      this.innodbFtResultCacheLimit = defaults.innodbFtResultCacheLimit;
     	      this.innodbFtServerStopwordTable = defaults.innodbFtServerStopwordTable;
     	      this.innodbLockWaitTimeout = defaults.innodbLockWaitTimeout;
+    	      this.innodbLogWriterThreads = defaults.innodbLogWriterThreads;
     	      this.innodbMaxPurgeLag = defaults.innodbMaxPurgeLag;
     	      this.innodbMaxPurgeLagDelay = defaults.innodbMaxPurgeLagDelay;
+    	      this.innodbStatsPersistentSamplePages = defaults.innodbStatsPersistentSamplePages;
+    	      this.innodbStatsTransientSamplePages = defaults.innodbStatsTransientSamplePages;
+    	      this.interactiveTimeout = defaults.interactiveTimeout;
     	      this.localInfile = defaults.localInfile;
     	      this.mandatoryRoles = defaults.mandatoryRoles;
+    	      this.maxAllowedPacket = defaults.maxAllowedPacket;
+    	      this.maxBinlogCacheSize = defaults.maxBinlogCacheSize;
+    	      this.maxConnectErrors = defaults.maxConnectErrors;
     	      this.maxConnections = defaults.maxConnections;
     	      this.maxExecutionTime = defaults.maxExecutionTime;
+    	      this.maxHeapTableSize = defaults.maxHeapTableSize;
     	      this.maxPreparedStmtCount = defaults.maxPreparedStmtCount;
     	      this.mysqlFirewallMode = defaults.mysqlFirewallMode;
     	      this.mysqlZstdDefaultCompressionLevel = defaults.mysqlZstdDefaultCompressionLevel;
@@ -898,232 +1180,501 @@ public final class GetMysqlConfigurationVariable {
     	      this.mysqlxWriteTimeout = defaults.mysqlxWriteTimeout;
     	      this.mysqlxZstdDefaultCompressionLevel = defaults.mysqlxZstdDefaultCompressionLevel;
     	      this.mysqlxZstdMaxClientCompressionLevel = defaults.mysqlxZstdMaxClientCompressionLevel;
+    	      this.netReadTimeout = defaults.netReadTimeout;
+    	      this.netWriteTimeout = defaults.netWriteTimeout;
     	      this.parserMaxMemSize = defaults.parserMaxMemSize;
     	      this.queryAllocBlockSize = defaults.queryAllocBlockSize;
     	      this.queryPreallocSize = defaults.queryPreallocSize;
+    	      this.regexpTimeLimit = defaults.regexpTimeLimit;
+    	      this.sortBufferSize = defaults.sortBufferSize;
     	      this.sqlMode = defaults.sqlMode;
     	      this.sqlRequirePrimaryKey = defaults.sqlRequirePrimaryKey;
     	      this.sqlWarnings = defaults.sqlWarnings;
+    	      this.threadPoolDedicatedListeners = defaults.threadPoolDedicatedListeners;
+    	      this.threadPoolMaxTransactionsLimit = defaults.threadPoolMaxTransactionsLimit;
+    	      this.timeZone = defaults.timeZone;
+    	      this.tmpTableSize = defaults.tmpTableSize;
     	      this.transactionIsolation = defaults.transactionIsolation;
+    	      this.waitTimeout = defaults.waitTimeout;
         }
 
+        @CustomType.Setter
         public Builder autocommit(Boolean autocommit) {
             this.autocommit = Objects.requireNonNull(autocommit);
             return this;
         }
+        @CustomType.Setter
+        public Builder bigTables(Boolean bigTables) {
+            this.bigTables = Objects.requireNonNull(bigTables);
+            return this;
+        }
+        @CustomType.Setter
         public Builder binlogExpireLogsSeconds(Integer binlogExpireLogsSeconds) {
             this.binlogExpireLogsSeconds = Objects.requireNonNull(binlogExpireLogsSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder binlogRowMetadata(String binlogRowMetadata) {
             this.binlogRowMetadata = Objects.requireNonNull(binlogRowMetadata);
             return this;
         }
+        @CustomType.Setter
         public Builder binlogRowValueOptions(String binlogRowValueOptions) {
             this.binlogRowValueOptions = Objects.requireNonNull(binlogRowValueOptions);
             return this;
         }
+        @CustomType.Setter
         public Builder binlogTransactionCompression(Boolean binlogTransactionCompression) {
             this.binlogTransactionCompression = Objects.requireNonNull(binlogTransactionCompression);
             return this;
         }
+        @CustomType.Setter
         public Builder completionType(String completionType) {
             this.completionType = Objects.requireNonNull(completionType);
             return this;
         }
+        @CustomType.Setter
         public Builder connectTimeout(Integer connectTimeout) {
             this.connectTimeout = Objects.requireNonNull(connectTimeout);
             return this;
         }
-        public Builder cteMaxRecursionDepth(Integer cteMaxRecursionDepth) {
+        @CustomType.Setter
+        public Builder connectionMemoryChunkSize(Integer connectionMemoryChunkSize) {
+            this.connectionMemoryChunkSize = Objects.requireNonNull(connectionMemoryChunkSize);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder connectionMemoryLimit(String connectionMemoryLimit) {
+            this.connectionMemoryLimit = Objects.requireNonNull(connectionMemoryLimit);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cteMaxRecursionDepth(String cteMaxRecursionDepth) {
             this.cteMaxRecursionDepth = Objects.requireNonNull(cteMaxRecursionDepth);
             return this;
         }
+        @CustomType.Setter
         public Builder defaultAuthenticationPlugin(String defaultAuthenticationPlugin) {
             this.defaultAuthenticationPlugin = Objects.requireNonNull(defaultAuthenticationPlugin);
             return this;
         }
+        @CustomType.Setter
         public Builder foreignKeyChecks(Boolean foreignKeyChecks) {
             this.foreignKeyChecks = Objects.requireNonNull(foreignKeyChecks);
             return this;
         }
+        @CustomType.Setter
         public Builder generatedRandomPasswordLength(Integer generatedRandomPasswordLength) {
             this.generatedRandomPasswordLength = Objects.requireNonNull(generatedRandomPasswordLength);
             return this;
         }
+        @CustomType.Setter
+        public Builder globalConnectionMemoryLimit(String globalConnectionMemoryLimit) {
+            this.globalConnectionMemoryLimit = Objects.requireNonNull(globalConnectionMemoryLimit);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder globalConnectionMemoryTracking(Boolean globalConnectionMemoryTracking) {
+            this.globalConnectionMemoryTracking = Objects.requireNonNull(globalConnectionMemoryTracking);
+            return this;
+        }
+        @CustomType.Setter
         public Builder groupReplicationConsistency(String groupReplicationConsistency) {
             this.groupReplicationConsistency = Objects.requireNonNull(groupReplicationConsistency);
             return this;
         }
+        @CustomType.Setter
         public Builder informationSchemaStatsExpiry(Integer informationSchemaStatsExpiry) {
             this.informationSchemaStatsExpiry = Objects.requireNonNull(informationSchemaStatsExpiry);
             return this;
         }
+        @CustomType.Setter
+        public Builder innodbBufferPoolDumpPct(Integer innodbBufferPoolDumpPct) {
+            this.innodbBufferPoolDumpPct = Objects.requireNonNull(innodbBufferPoolDumpPct);
+            return this;
+        }
+        @CustomType.Setter
         public Builder innodbBufferPoolInstances(Integer innodbBufferPoolInstances) {
             this.innodbBufferPoolInstances = Objects.requireNonNull(innodbBufferPoolInstances);
             return this;
         }
+        @CustomType.Setter
         public Builder innodbBufferPoolSize(String innodbBufferPoolSize) {
             this.innodbBufferPoolSize = Objects.requireNonNull(innodbBufferPoolSize);
             return this;
         }
+        @CustomType.Setter
+        public Builder innodbDdlBufferSize(String innodbDdlBufferSize) {
+            this.innodbDdlBufferSize = Objects.requireNonNull(innodbDdlBufferSize);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder innodbDdlThreads(Integer innodbDdlThreads) {
+            this.innodbDdlThreads = Objects.requireNonNull(innodbDdlThreads);
+            return this;
+        }
+        @CustomType.Setter
         public Builder innodbFtEnableStopword(Boolean innodbFtEnableStopword) {
             this.innodbFtEnableStopword = Objects.requireNonNull(innodbFtEnableStopword);
             return this;
         }
+        @CustomType.Setter
         public Builder innodbFtMaxTokenSize(Integer innodbFtMaxTokenSize) {
             this.innodbFtMaxTokenSize = Objects.requireNonNull(innodbFtMaxTokenSize);
             return this;
         }
+        @CustomType.Setter
         public Builder innodbFtMinTokenSize(Integer innodbFtMinTokenSize) {
             this.innodbFtMinTokenSize = Objects.requireNonNull(innodbFtMinTokenSize);
             return this;
         }
+        @CustomType.Setter
         public Builder innodbFtNumWordOptimize(Integer innodbFtNumWordOptimize) {
             this.innodbFtNumWordOptimize = Objects.requireNonNull(innodbFtNumWordOptimize);
             return this;
         }
-        public Builder innodbFtResultCacheLimit(Integer innodbFtResultCacheLimit) {
+        @CustomType.Setter
+        public Builder innodbFtResultCacheLimit(String innodbFtResultCacheLimit) {
             this.innodbFtResultCacheLimit = Objects.requireNonNull(innodbFtResultCacheLimit);
             return this;
         }
+        @CustomType.Setter
         public Builder innodbFtServerStopwordTable(String innodbFtServerStopwordTable) {
             this.innodbFtServerStopwordTable = Objects.requireNonNull(innodbFtServerStopwordTable);
             return this;
         }
+        @CustomType.Setter
         public Builder innodbLockWaitTimeout(Integer innodbLockWaitTimeout) {
             this.innodbLockWaitTimeout = Objects.requireNonNull(innodbLockWaitTimeout);
             return this;
         }
-        public Builder innodbMaxPurgeLag(Integer innodbMaxPurgeLag) {
+        @CustomType.Setter
+        public Builder innodbLogWriterThreads(Boolean innodbLogWriterThreads) {
+            this.innodbLogWriterThreads = Objects.requireNonNull(innodbLogWriterThreads);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder innodbMaxPurgeLag(String innodbMaxPurgeLag) {
             this.innodbMaxPurgeLag = Objects.requireNonNull(innodbMaxPurgeLag);
             return this;
         }
+        @CustomType.Setter
         public Builder innodbMaxPurgeLagDelay(Integer innodbMaxPurgeLagDelay) {
             this.innodbMaxPurgeLagDelay = Objects.requireNonNull(innodbMaxPurgeLagDelay);
             return this;
         }
+        @CustomType.Setter
+        public Builder innodbStatsPersistentSamplePages(String innodbStatsPersistentSamplePages) {
+            this.innodbStatsPersistentSamplePages = Objects.requireNonNull(innodbStatsPersistentSamplePages);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder innodbStatsTransientSamplePages(String innodbStatsTransientSamplePages) {
+            this.innodbStatsTransientSamplePages = Objects.requireNonNull(innodbStatsTransientSamplePages);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder interactiveTimeout(Integer interactiveTimeout) {
+            this.interactiveTimeout = Objects.requireNonNull(interactiveTimeout);
+            return this;
+        }
+        @CustomType.Setter
         public Builder localInfile(Boolean localInfile) {
             this.localInfile = Objects.requireNonNull(localInfile);
             return this;
         }
+        @CustomType.Setter
         public Builder mandatoryRoles(String mandatoryRoles) {
             this.mandatoryRoles = Objects.requireNonNull(mandatoryRoles);
             return this;
         }
+        @CustomType.Setter
+        public Builder maxAllowedPacket(Integer maxAllowedPacket) {
+            this.maxAllowedPacket = Objects.requireNonNull(maxAllowedPacket);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxBinlogCacheSize(String maxBinlogCacheSize) {
+            this.maxBinlogCacheSize = Objects.requireNonNull(maxBinlogCacheSize);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxConnectErrors(String maxConnectErrors) {
+            this.maxConnectErrors = Objects.requireNonNull(maxConnectErrors);
+            return this;
+        }
+        @CustomType.Setter
         public Builder maxConnections(Integer maxConnections) {
             this.maxConnections = Objects.requireNonNull(maxConnections);
             return this;
         }
-        public Builder maxExecutionTime(Integer maxExecutionTime) {
+        @CustomType.Setter
+        public Builder maxExecutionTime(String maxExecutionTime) {
             this.maxExecutionTime = Objects.requireNonNull(maxExecutionTime);
             return this;
         }
+        @CustomType.Setter
+        public Builder maxHeapTableSize(String maxHeapTableSize) {
+            this.maxHeapTableSize = Objects.requireNonNull(maxHeapTableSize);
+            return this;
+        }
+        @CustomType.Setter
         public Builder maxPreparedStmtCount(Integer maxPreparedStmtCount) {
             this.maxPreparedStmtCount = Objects.requireNonNull(maxPreparedStmtCount);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlFirewallMode(Boolean mysqlFirewallMode) {
             this.mysqlFirewallMode = Objects.requireNonNull(mysqlFirewallMode);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlZstdDefaultCompressionLevel(Integer mysqlZstdDefaultCompressionLevel) {
             this.mysqlZstdDefaultCompressionLevel = Objects.requireNonNull(mysqlZstdDefaultCompressionLevel);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlxConnectTimeout(Integer mysqlxConnectTimeout) {
             this.mysqlxConnectTimeout = Objects.requireNonNull(mysqlxConnectTimeout);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlxDeflateDefaultCompressionLevel(Integer mysqlxDeflateDefaultCompressionLevel) {
             this.mysqlxDeflateDefaultCompressionLevel = Objects.requireNonNull(mysqlxDeflateDefaultCompressionLevel);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlxDeflateMaxClientCompressionLevel(Integer mysqlxDeflateMaxClientCompressionLevel) {
             this.mysqlxDeflateMaxClientCompressionLevel = Objects.requireNonNull(mysqlxDeflateMaxClientCompressionLevel);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlxDocumentIdUniquePrefix(Integer mysqlxDocumentIdUniquePrefix) {
             this.mysqlxDocumentIdUniquePrefix = Objects.requireNonNull(mysqlxDocumentIdUniquePrefix);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlxEnableHelloNotice(Boolean mysqlxEnableHelloNotice) {
             this.mysqlxEnableHelloNotice = Objects.requireNonNull(mysqlxEnableHelloNotice);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlxIdleWorkerThreadTimeout(Integer mysqlxIdleWorkerThreadTimeout) {
             this.mysqlxIdleWorkerThreadTimeout = Objects.requireNonNull(mysqlxIdleWorkerThreadTimeout);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlxInteractiveTimeout(Integer mysqlxInteractiveTimeout) {
             this.mysqlxInteractiveTimeout = Objects.requireNonNull(mysqlxInteractiveTimeout);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlxLz4defaultCompressionLevel(Integer mysqlxLz4defaultCompressionLevel) {
             this.mysqlxLz4defaultCompressionLevel = Objects.requireNonNull(mysqlxLz4defaultCompressionLevel);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlxLz4maxClientCompressionLevel(Integer mysqlxLz4maxClientCompressionLevel) {
             this.mysqlxLz4maxClientCompressionLevel = Objects.requireNonNull(mysqlxLz4maxClientCompressionLevel);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlxMaxAllowedPacket(Integer mysqlxMaxAllowedPacket) {
             this.mysqlxMaxAllowedPacket = Objects.requireNonNull(mysqlxMaxAllowedPacket);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlxMinWorkerThreads(Integer mysqlxMinWorkerThreads) {
             this.mysqlxMinWorkerThreads = Objects.requireNonNull(mysqlxMinWorkerThreads);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlxReadTimeout(Integer mysqlxReadTimeout) {
             this.mysqlxReadTimeout = Objects.requireNonNull(mysqlxReadTimeout);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlxWaitTimeout(Integer mysqlxWaitTimeout) {
             this.mysqlxWaitTimeout = Objects.requireNonNull(mysqlxWaitTimeout);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlxWriteTimeout(Integer mysqlxWriteTimeout) {
             this.mysqlxWriteTimeout = Objects.requireNonNull(mysqlxWriteTimeout);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlxZstdDefaultCompressionLevel(Integer mysqlxZstdDefaultCompressionLevel) {
             this.mysqlxZstdDefaultCompressionLevel = Objects.requireNonNull(mysqlxZstdDefaultCompressionLevel);
             return this;
         }
+        @CustomType.Setter
         public Builder mysqlxZstdMaxClientCompressionLevel(Integer mysqlxZstdMaxClientCompressionLevel) {
             this.mysqlxZstdMaxClientCompressionLevel = Objects.requireNonNull(mysqlxZstdMaxClientCompressionLevel);
             return this;
         }
-        public Builder parserMaxMemSize(Integer parserMaxMemSize) {
+        @CustomType.Setter
+        public Builder netReadTimeout(Integer netReadTimeout) {
+            this.netReadTimeout = Objects.requireNonNull(netReadTimeout);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder netWriteTimeout(Integer netWriteTimeout) {
+            this.netWriteTimeout = Objects.requireNonNull(netWriteTimeout);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder parserMaxMemSize(String parserMaxMemSize) {
             this.parserMaxMemSize = Objects.requireNonNull(parserMaxMemSize);
             return this;
         }
-        public Builder queryAllocBlockSize(Integer queryAllocBlockSize) {
+        @CustomType.Setter
+        public Builder queryAllocBlockSize(String queryAllocBlockSize) {
             this.queryAllocBlockSize = Objects.requireNonNull(queryAllocBlockSize);
             return this;
         }
-        public Builder queryPreallocSize(Integer queryPreallocSize) {
+        @CustomType.Setter
+        public Builder queryPreallocSize(String queryPreallocSize) {
             this.queryPreallocSize = Objects.requireNonNull(queryPreallocSize);
             return this;
         }
+        @CustomType.Setter
+        public Builder regexpTimeLimit(Integer regexpTimeLimit) {
+            this.regexpTimeLimit = Objects.requireNonNull(regexpTimeLimit);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sortBufferSize(String sortBufferSize) {
+            this.sortBufferSize = Objects.requireNonNull(sortBufferSize);
+            return this;
+        }
+        @CustomType.Setter
         public Builder sqlMode(String sqlMode) {
             this.sqlMode = Objects.requireNonNull(sqlMode);
             return this;
         }
+        @CustomType.Setter
         public Builder sqlRequirePrimaryKey(Boolean sqlRequirePrimaryKey) {
             this.sqlRequirePrimaryKey = Objects.requireNonNull(sqlRequirePrimaryKey);
             return this;
         }
+        @CustomType.Setter
         public Builder sqlWarnings(Boolean sqlWarnings) {
             this.sqlWarnings = Objects.requireNonNull(sqlWarnings);
             return this;
         }
+        @CustomType.Setter
+        public Builder threadPoolDedicatedListeners(Boolean threadPoolDedicatedListeners) {
+            this.threadPoolDedicatedListeners = Objects.requireNonNull(threadPoolDedicatedListeners);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder threadPoolMaxTransactionsLimit(Integer threadPoolMaxTransactionsLimit) {
+            this.threadPoolMaxTransactionsLimit = Objects.requireNonNull(threadPoolMaxTransactionsLimit);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeZone(String timeZone) {
+            this.timeZone = Objects.requireNonNull(timeZone);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder tmpTableSize(String tmpTableSize) {
+            this.tmpTableSize = Objects.requireNonNull(tmpTableSize);
+            return this;
+        }
+        @CustomType.Setter
         public Builder transactionIsolation(String transactionIsolation) {
             this.transactionIsolation = Objects.requireNonNull(transactionIsolation);
             return this;
-        }        public GetMysqlConfigurationVariable build() {
-            return new GetMysqlConfigurationVariable(autocommit, binlogExpireLogsSeconds, binlogRowMetadata, binlogRowValueOptions, binlogTransactionCompression, completionType, connectTimeout, cteMaxRecursionDepth, defaultAuthenticationPlugin, foreignKeyChecks, generatedRandomPasswordLength, groupReplicationConsistency, informationSchemaStatsExpiry, innodbBufferPoolInstances, innodbBufferPoolSize, innodbFtEnableStopword, innodbFtMaxTokenSize, innodbFtMinTokenSize, innodbFtNumWordOptimize, innodbFtResultCacheLimit, innodbFtServerStopwordTable, innodbLockWaitTimeout, innodbMaxPurgeLag, innodbMaxPurgeLagDelay, localInfile, mandatoryRoles, maxConnections, maxExecutionTime, maxPreparedStmtCount, mysqlFirewallMode, mysqlZstdDefaultCompressionLevel, mysqlxConnectTimeout, mysqlxDeflateDefaultCompressionLevel, mysqlxDeflateMaxClientCompressionLevel, mysqlxDocumentIdUniquePrefix, mysqlxEnableHelloNotice, mysqlxIdleWorkerThreadTimeout, mysqlxInteractiveTimeout, mysqlxLz4defaultCompressionLevel, mysqlxLz4maxClientCompressionLevel, mysqlxMaxAllowedPacket, mysqlxMinWorkerThreads, mysqlxReadTimeout, mysqlxWaitTimeout, mysqlxWriteTimeout, mysqlxZstdDefaultCompressionLevel, mysqlxZstdMaxClientCompressionLevel, parserMaxMemSize, queryAllocBlockSize, queryPreallocSize, sqlMode, sqlRequirePrimaryKey, sqlWarnings, transactionIsolation);
+        }
+        @CustomType.Setter
+        public Builder waitTimeout(Integer waitTimeout) {
+            this.waitTimeout = Objects.requireNonNull(waitTimeout);
+            return this;
+        }
+        public GetMysqlConfigurationVariable build() {
+            final var o = new GetMysqlConfigurationVariable();
+            o.autocommit = autocommit;
+            o.bigTables = bigTables;
+            o.binlogExpireLogsSeconds = binlogExpireLogsSeconds;
+            o.binlogRowMetadata = binlogRowMetadata;
+            o.binlogRowValueOptions = binlogRowValueOptions;
+            o.binlogTransactionCompression = binlogTransactionCompression;
+            o.completionType = completionType;
+            o.connectTimeout = connectTimeout;
+            o.connectionMemoryChunkSize = connectionMemoryChunkSize;
+            o.connectionMemoryLimit = connectionMemoryLimit;
+            o.cteMaxRecursionDepth = cteMaxRecursionDepth;
+            o.defaultAuthenticationPlugin = defaultAuthenticationPlugin;
+            o.foreignKeyChecks = foreignKeyChecks;
+            o.generatedRandomPasswordLength = generatedRandomPasswordLength;
+            o.globalConnectionMemoryLimit = globalConnectionMemoryLimit;
+            o.globalConnectionMemoryTracking = globalConnectionMemoryTracking;
+            o.groupReplicationConsistency = groupReplicationConsistency;
+            o.informationSchemaStatsExpiry = informationSchemaStatsExpiry;
+            o.innodbBufferPoolDumpPct = innodbBufferPoolDumpPct;
+            o.innodbBufferPoolInstances = innodbBufferPoolInstances;
+            o.innodbBufferPoolSize = innodbBufferPoolSize;
+            o.innodbDdlBufferSize = innodbDdlBufferSize;
+            o.innodbDdlThreads = innodbDdlThreads;
+            o.innodbFtEnableStopword = innodbFtEnableStopword;
+            o.innodbFtMaxTokenSize = innodbFtMaxTokenSize;
+            o.innodbFtMinTokenSize = innodbFtMinTokenSize;
+            o.innodbFtNumWordOptimize = innodbFtNumWordOptimize;
+            o.innodbFtResultCacheLimit = innodbFtResultCacheLimit;
+            o.innodbFtServerStopwordTable = innodbFtServerStopwordTable;
+            o.innodbLockWaitTimeout = innodbLockWaitTimeout;
+            o.innodbLogWriterThreads = innodbLogWriterThreads;
+            o.innodbMaxPurgeLag = innodbMaxPurgeLag;
+            o.innodbMaxPurgeLagDelay = innodbMaxPurgeLagDelay;
+            o.innodbStatsPersistentSamplePages = innodbStatsPersistentSamplePages;
+            o.innodbStatsTransientSamplePages = innodbStatsTransientSamplePages;
+            o.interactiveTimeout = interactiveTimeout;
+            o.localInfile = localInfile;
+            o.mandatoryRoles = mandatoryRoles;
+            o.maxAllowedPacket = maxAllowedPacket;
+            o.maxBinlogCacheSize = maxBinlogCacheSize;
+            o.maxConnectErrors = maxConnectErrors;
+            o.maxConnections = maxConnections;
+            o.maxExecutionTime = maxExecutionTime;
+            o.maxHeapTableSize = maxHeapTableSize;
+            o.maxPreparedStmtCount = maxPreparedStmtCount;
+            o.mysqlFirewallMode = mysqlFirewallMode;
+            o.mysqlZstdDefaultCompressionLevel = mysqlZstdDefaultCompressionLevel;
+            o.mysqlxConnectTimeout = mysqlxConnectTimeout;
+            o.mysqlxDeflateDefaultCompressionLevel = mysqlxDeflateDefaultCompressionLevel;
+            o.mysqlxDeflateMaxClientCompressionLevel = mysqlxDeflateMaxClientCompressionLevel;
+            o.mysqlxDocumentIdUniquePrefix = mysqlxDocumentIdUniquePrefix;
+            o.mysqlxEnableHelloNotice = mysqlxEnableHelloNotice;
+            o.mysqlxIdleWorkerThreadTimeout = mysqlxIdleWorkerThreadTimeout;
+            o.mysqlxInteractiveTimeout = mysqlxInteractiveTimeout;
+            o.mysqlxLz4defaultCompressionLevel = mysqlxLz4defaultCompressionLevel;
+            o.mysqlxLz4maxClientCompressionLevel = mysqlxLz4maxClientCompressionLevel;
+            o.mysqlxMaxAllowedPacket = mysqlxMaxAllowedPacket;
+            o.mysqlxMinWorkerThreads = mysqlxMinWorkerThreads;
+            o.mysqlxReadTimeout = mysqlxReadTimeout;
+            o.mysqlxWaitTimeout = mysqlxWaitTimeout;
+            o.mysqlxWriteTimeout = mysqlxWriteTimeout;
+            o.mysqlxZstdDefaultCompressionLevel = mysqlxZstdDefaultCompressionLevel;
+            o.mysqlxZstdMaxClientCompressionLevel = mysqlxZstdMaxClientCompressionLevel;
+            o.netReadTimeout = netReadTimeout;
+            o.netWriteTimeout = netWriteTimeout;
+            o.parserMaxMemSize = parserMaxMemSize;
+            o.queryAllocBlockSize = queryAllocBlockSize;
+            o.queryPreallocSize = queryPreallocSize;
+            o.regexpTimeLimit = regexpTimeLimit;
+            o.sortBufferSize = sortBufferSize;
+            o.sqlMode = sqlMode;
+            o.sqlRequirePrimaryKey = sqlRequirePrimaryKey;
+            o.sqlWarnings = sqlWarnings;
+            o.threadPoolDedicatedListeners = threadPoolDedicatedListeners;
+            o.threadPoolMaxTransactionsLimit = threadPoolMaxTransactionsLimit;
+            o.timeZone = timeZone;
+            o.tmpTableSize = tmpTableSize;
+            o.transactionIsolation = transactionIsolation;
+            o.waitTimeout = waitTimeout;
+            return o;
         }
     }
 }

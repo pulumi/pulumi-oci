@@ -13,28 +13,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkLoadBalancersPoliciesResult {
-    private final @Nullable List<GetNetworkLoadBalancersPoliciesFilter> filters;
+    private @Nullable List<GetNetworkLoadBalancersPoliciesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of network_load_balancers_policy_collection.
      * 
      */
-    private final List<GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection> networkLoadBalancersPolicyCollections;
+    private List<GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection> networkLoadBalancersPolicyCollections;
 
-    @CustomType.Constructor
-    private GetNetworkLoadBalancersPoliciesResult(
-        @CustomType.Parameter("filters") @Nullable List<GetNetworkLoadBalancersPoliciesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("networkLoadBalancersPolicyCollections") List<GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection> networkLoadBalancersPolicyCollections) {
-        this.filters = filters;
-        this.id = id;
-        this.networkLoadBalancersPolicyCollections = networkLoadBalancersPolicyCollections;
-    }
-
+    private GetNetworkLoadBalancersPoliciesResult() {}
     public List<GetNetworkLoadBalancersPoliciesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -60,16 +51,12 @@ public final class GetNetworkLoadBalancersPoliciesResult {
     public static Builder builder(GetNetworkLoadBalancersPoliciesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetNetworkLoadBalancersPoliciesFilter> filters;
         private String id;
         private List<GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection> networkLoadBalancersPolicyCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkLoadBalancersPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -77,6 +64,7 @@ public final class GetNetworkLoadBalancersPoliciesResult {
     	      this.networkLoadBalancersPolicyCollections = defaults.networkLoadBalancersPolicyCollections;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkLoadBalancersPoliciesFilter> filters) {
             this.filters = filters;
             return this;
@@ -84,18 +72,25 @@ public final class GetNetworkLoadBalancersPoliciesResult {
         public Builder filters(GetNetworkLoadBalancersPoliciesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder networkLoadBalancersPolicyCollections(List<GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection> networkLoadBalancersPolicyCollections) {
             this.networkLoadBalancersPolicyCollections = Objects.requireNonNull(networkLoadBalancersPolicyCollections);
             return this;
         }
         public Builder networkLoadBalancersPolicyCollections(GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection... networkLoadBalancersPolicyCollections) {
             return networkLoadBalancersPolicyCollections(List.of(networkLoadBalancersPolicyCollections));
-        }        public GetNetworkLoadBalancersPoliciesResult build() {
-            return new GetNetworkLoadBalancersPoliciesResult(filters, id, networkLoadBalancersPolicyCollections);
+        }
+        public GetNetworkLoadBalancersPoliciesResult build() {
+            final var o = new GetNetworkLoadBalancersPoliciesResult();
+            o.filters = filters;
+            o.id = id;
+            o.networkLoadBalancersPolicyCollections = networkLoadBalancersPolicyCollections;
+            return o;
         }
     }
 }

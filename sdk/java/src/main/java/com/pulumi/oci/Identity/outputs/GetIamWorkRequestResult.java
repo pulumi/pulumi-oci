@@ -16,73 +16,50 @@ public final class GetIamWorkRequestResult {
      * @return The OCID of the compartment containing this IAM work request.
      * 
      */
-    private final String compartmentId;
-    private final String iamWorkRequestId;
+    private String compartmentId;
+    private String iamWorkRequestId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The asynchronous operation tracked by this IAM work request.
      * 
      */
-    private final String operationType;
+    private String operationType;
     /**
      * @return How much progress the operation has made.
      * 
      */
-    private final Double percentComplete;
+    private Double percentComplete;
     /**
      * @return The resources this work request affects.
      * 
      */
-    private final List<GetIamWorkRequestResource> resources;
+    private List<GetIamWorkRequestResource> resources;
     /**
      * @return Status of the work request
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return Date and time the work was accepted, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeAccepted;
+    private String timeAccepted;
     /**
      * @return Date and time the work completed, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeFinished;
+    private String timeFinished;
     /**
      * @return Date and time the work started, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeStarted;
+    private String timeStarted;
 
-    @CustomType.Constructor
-    private GetIamWorkRequestResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("iamWorkRequestId") String iamWorkRequestId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("operationType") String operationType,
-        @CustomType.Parameter("percentComplete") Double percentComplete,
-        @CustomType.Parameter("resources") List<GetIamWorkRequestResource> resources,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("timeAccepted") String timeAccepted,
-        @CustomType.Parameter("timeFinished") String timeFinished,
-        @CustomType.Parameter("timeStarted") String timeStarted) {
-        this.compartmentId = compartmentId;
-        this.iamWorkRequestId = iamWorkRequestId;
-        this.id = id;
-        this.operationType = operationType;
-        this.percentComplete = percentComplete;
-        this.resources = resources;
-        this.status = status;
-        this.timeAccepted = timeAccepted;
-        this.timeFinished = timeFinished;
-        this.timeStarted = timeStarted;
-    }
-
+    private GetIamWorkRequestResult() {}
     /**
      * @return The OCID of the compartment containing this IAM work request.
      * 
@@ -157,7 +134,7 @@ public final class GetIamWorkRequestResult {
     public static Builder builder(GetIamWorkRequestResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String iamWorkRequestId;
@@ -169,11 +146,7 @@ public final class GetIamWorkRequestResult {
         private String timeAccepted;
         private String timeFinished;
         private String timeStarted;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIamWorkRequestResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -188,26 +161,32 @@ public final class GetIamWorkRequestResult {
     	      this.timeStarted = defaults.timeStarted;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder iamWorkRequestId(String iamWorkRequestId) {
             this.iamWorkRequestId = Objects.requireNonNull(iamWorkRequestId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder operationType(String operationType) {
             this.operationType = Objects.requireNonNull(operationType);
             return this;
         }
+        @CustomType.Setter
         public Builder percentComplete(Double percentComplete) {
             this.percentComplete = Objects.requireNonNull(percentComplete);
             return this;
         }
+        @CustomType.Setter
         public Builder resources(List<GetIamWorkRequestResource> resources) {
             this.resources = Objects.requireNonNull(resources);
             return this;
@@ -215,23 +194,39 @@ public final class GetIamWorkRequestResult {
         public Builder resources(GetIamWorkRequestResource... resources) {
             return resources(List.of(resources));
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder timeAccepted(String timeAccepted) {
             this.timeAccepted = Objects.requireNonNull(timeAccepted);
             return this;
         }
+        @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
             this.timeFinished = Objects.requireNonNull(timeFinished);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
-        }        public GetIamWorkRequestResult build() {
-            return new GetIamWorkRequestResult(compartmentId, iamWorkRequestId, id, operationType, percentComplete, resources, status, timeAccepted, timeFinished, timeStarted);
+        }
+        public GetIamWorkRequestResult build() {
+            final var o = new GetIamWorkRequestResult();
+            o.compartmentId = compartmentId;
+            o.iamWorkRequestId = iamWorkRequestId;
+            o.id = id;
+            o.operationType = operationType;
+            o.percentComplete = percentComplete;
+            o.resources = resources;
+            o.status = status;
+            o.timeAccepted = timeAccepted;
+            o.timeFinished = timeFinished;
+            o.timeStarted = timeStarted;
+            return o;
         }
     }
 }

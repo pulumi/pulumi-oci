@@ -67,7 +67,7 @@ type LookupDetectorRecipeResult struct {
 	DetectorRecipeId string `pulumi:"detectorRecipeId"`
 	// List of detector rules for the detector type for recipe - user input
 	DetectorRules []GetDetectorRecipeDetectorRule `pulumi:"detectorRules"`
-	// Display name for DetectorRecipeDetectorRule.
+	// The display name of entity
 	DisplayName string `pulumi:"displayName"`
 	// List of effective detector rules for the detector type for recipe after applying defaults
 	EffectiveDetectorRules []GetDetectorRecipeEffectiveDetectorRule `pulumi:"effectiveDetectorRules"`
@@ -83,6 +83,8 @@ type LookupDetectorRecipeResult struct {
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The recipe attached to targets
+	TargetIds []string `pulumi:"targetIds"`
 	// The date and time the detector recipe was created. Format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the detector recipe was updated. Format defined by RFC3339.
@@ -156,7 +158,7 @@ func (o LookupDetectorRecipeResultOutput) DetectorRules() GetDetectorRecipeDetec
 	return o.ApplyT(func(v LookupDetectorRecipeResult) []GetDetectorRecipeDetectorRule { return v.DetectorRules }).(GetDetectorRecipeDetectorRuleArrayOutput)
 }
 
-// Display name for DetectorRecipeDetectorRule.
+// The display name of entity
 func (o LookupDetectorRecipeResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -196,6 +198,11 @@ func (o LookupDetectorRecipeResultOutput) State() pulumi.StringOutput {
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o LookupDetectorRecipeResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The recipe attached to targets
+func (o LookupDetectorRecipeResultOutput) TargetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupDetectorRecipeResult) []string { return v.TargetIds }).(pulumi.StringArrayOutput)
 }
 
 // The date and time the detector recipe was created. Format defined by RFC3339.

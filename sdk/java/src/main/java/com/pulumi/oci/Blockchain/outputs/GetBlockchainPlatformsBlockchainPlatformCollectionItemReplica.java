@@ -13,28 +13,19 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica
      * @return Number of CA replicas
      * 
      */
-    private final Integer caCount;
+    private Integer caCount;
     /**
      * @return Number of console replicas
      * 
      */
-    private final Integer consoleCount;
+    private Integer consoleCount;
     /**
      * @return Number of REST proxy replicas
      * 
      */
-    private final Integer proxyCount;
+    private Integer proxyCount;
 
-    @CustomType.Constructor
-    private GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica(
-        @CustomType.Parameter("caCount") Integer caCount,
-        @CustomType.Parameter("consoleCount") Integer consoleCount,
-        @CustomType.Parameter("proxyCount") Integer proxyCount) {
-        this.caCount = caCount;
-        this.consoleCount = consoleCount;
-        this.proxyCount = proxyCount;
-    }
-
+    private GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica() {}
     /**
      * @return Number of CA replicas
      * 
@@ -64,16 +55,12 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica
     public static Builder builder(GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer caCount;
         private Integer consoleCount;
         private Integer proxyCount;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.caCount = defaults.caCount;
@@ -81,19 +68,27 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica
     	      this.proxyCount = defaults.proxyCount;
         }
 
+        @CustomType.Setter
         public Builder caCount(Integer caCount) {
             this.caCount = Objects.requireNonNull(caCount);
             return this;
         }
+        @CustomType.Setter
         public Builder consoleCount(Integer consoleCount) {
             this.consoleCount = Objects.requireNonNull(consoleCount);
             return this;
         }
+        @CustomType.Setter
         public Builder proxyCount(Integer proxyCount) {
             this.proxyCount = Objects.requireNonNull(proxyCount);
             return this;
-        }        public GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica build() {
-            return new GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica(caCount, consoleCount, proxyCount);
+        }
+        public GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica build() {
+            final var o = new GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica();
+            o.caCount = caCount;
+            o.consoleCount = consoleCount;
+            o.proxyCount = proxyCount;
+            return o;
         }
     }
 }

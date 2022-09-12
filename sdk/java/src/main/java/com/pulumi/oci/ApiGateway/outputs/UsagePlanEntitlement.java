@@ -19,42 +19,29 @@ public final class UsagePlanEntitlement {
      * @return (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
      * @return (Updatable) An entitlement name, unique within a usage plan.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return (Updatable) Quota policy for a usage plan.
      * 
      */
-    private final @Nullable UsagePlanEntitlementQuota quota;
+    private @Nullable UsagePlanEntitlementQuota quota;
     /**
      * @return (Updatable) Rate-limiting policy for a usage plan.
      * 
      */
-    private final @Nullable UsagePlanEntitlementRateLimit rateLimit;
+    private @Nullable UsagePlanEntitlementRateLimit rateLimit;
     /**
      * @return (Updatable) A collection of targeted deployments that the entitlement will be applied to.
      * 
      */
-    private final @Nullable List<UsagePlanEntitlementTarget> targets;
+    private @Nullable List<UsagePlanEntitlementTarget> targets;
 
-    @CustomType.Constructor
-    private UsagePlanEntitlement(
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("quota") @Nullable UsagePlanEntitlementQuota quota,
-        @CustomType.Parameter("rateLimit") @Nullable UsagePlanEntitlementRateLimit rateLimit,
-        @CustomType.Parameter("targets") @Nullable List<UsagePlanEntitlementTarget> targets) {
-        this.description = description;
-        this.name = name;
-        this.quota = quota;
-        this.rateLimit = rateLimit;
-        this.targets = targets;
-    }
-
+    private UsagePlanEntitlement() {}
     /**
      * @return (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      * 
@@ -98,18 +85,14 @@ public final class UsagePlanEntitlement {
     public static Builder builder(UsagePlanEntitlement defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String description;
         private String name;
         private @Nullable UsagePlanEntitlementQuota quota;
         private @Nullable UsagePlanEntitlementRateLimit rateLimit;
         private @Nullable List<UsagePlanEntitlementTarget> targets;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(UsagePlanEntitlement defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -119,30 +102,42 @@ public final class UsagePlanEntitlement {
     	      this.targets = defaults.targets;
         }
 
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder quota(@Nullable UsagePlanEntitlementQuota quota) {
             this.quota = quota;
             return this;
         }
+        @CustomType.Setter
         public Builder rateLimit(@Nullable UsagePlanEntitlementRateLimit rateLimit) {
             this.rateLimit = rateLimit;
             return this;
         }
+        @CustomType.Setter
         public Builder targets(@Nullable List<UsagePlanEntitlementTarget> targets) {
             this.targets = targets;
             return this;
         }
         public Builder targets(UsagePlanEntitlementTarget... targets) {
             return targets(List.of(targets));
-        }        public UsagePlanEntitlement build() {
-            return new UsagePlanEntitlement(description, name, quota, rateLimit, targets);
+        }
+        public UsagePlanEntitlement build() {
+            final var o = new UsagePlanEntitlement();
+            o.description = description;
+            o.name = name;
+            o.quota = quota;
+            o.rateLimit = rateLimit;
+            o.targets = targets;
+            return o;
         }
     }
 }

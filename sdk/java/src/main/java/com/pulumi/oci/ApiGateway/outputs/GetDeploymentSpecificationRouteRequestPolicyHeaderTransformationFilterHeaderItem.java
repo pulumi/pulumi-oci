@@ -13,13 +13,9 @@ public final class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformat
      * @return The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem() {}
     /**
      * @return The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
@@ -35,24 +31,24 @@ public final class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformat
     public static Builder builder(GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem build() {
-            return new GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem(name);
+        }
+        public GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem build() {
+            final var o = new GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem();
+            o.name = name;
+            return o;
         }
     }
 }

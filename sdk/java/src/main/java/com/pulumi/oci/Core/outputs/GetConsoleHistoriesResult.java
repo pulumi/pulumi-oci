@@ -18,52 +18,35 @@ public final class GetConsoleHistoriesResult {
      * @return The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of console_histories.
      * 
      */
-    private final List<GetConsoleHistoriesConsoleHistory> consoleHistories;
-    private final @Nullable List<GetConsoleHistoriesFilter> filters;
+    private List<GetConsoleHistoriesConsoleHistory> consoleHistories;
+    private @Nullable List<GetConsoleHistoriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the instance this console history was fetched from.
      * 
      */
-    private final @Nullable String instanceId;
+    private @Nullable String instanceId;
     /**
      * @return The current state of the console history.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetConsoleHistoriesResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("consoleHistories") List<GetConsoleHistoriesConsoleHistory> consoleHistories,
-        @CustomType.Parameter("filters") @Nullable List<GetConsoleHistoriesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instanceId") @Nullable String instanceId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.consoleHistories = consoleHistories;
-        this.filters = filters;
-        this.id = id;
-        this.instanceId = instanceId;
-        this.state = state;
-    }
-
+    private GetConsoleHistoriesResult() {}
     /**
      * @return The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
      * 
@@ -117,7 +100,7 @@ public final class GetConsoleHistoriesResult {
     public static Builder builder(GetConsoleHistoriesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
@@ -126,11 +109,7 @@ public final class GetConsoleHistoriesResult {
         private String id;
         private @Nullable String instanceId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConsoleHistoriesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -142,14 +121,17 @@ public final class GetConsoleHistoriesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder consoleHistories(List<GetConsoleHistoriesConsoleHistory> consoleHistories) {
             this.consoleHistories = Objects.requireNonNull(consoleHistories);
             return this;
@@ -157,6 +139,7 @@ public final class GetConsoleHistoriesResult {
         public Builder consoleHistories(GetConsoleHistoriesConsoleHistory... consoleHistories) {
             return consoleHistories(List.of(consoleHistories));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetConsoleHistoriesFilter> filters) {
             this.filters = filters;
             return this;
@@ -164,19 +147,31 @@ public final class GetConsoleHistoriesResult {
         public Builder filters(GetConsoleHistoriesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(@Nullable String instanceId) {
             this.instanceId = instanceId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetConsoleHistoriesResult build() {
-            return new GetConsoleHistoriesResult(availabilityDomain, compartmentId, consoleHistories, filters, id, instanceId, state);
+        }
+        public GetConsoleHistoriesResult build() {
+            final var o = new GetConsoleHistoriesResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.consoleHistories = consoleHistories;
+            o.filters = filters;
+            o.id = id;
+            o.instanceId = instanceId;
+            o.state = state;
+            return o;
         }
     }
 }

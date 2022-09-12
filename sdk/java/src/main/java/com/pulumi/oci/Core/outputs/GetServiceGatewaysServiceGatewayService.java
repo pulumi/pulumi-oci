@@ -13,21 +13,14 @@ public final class GetServiceGatewaysServiceGatewayService {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service.
      * 
      */
-    private final String serviceId;
+    private String serviceId;
     /**
      * @return The name of the service.
      * 
      */
-    private final String serviceName;
+    private String serviceName;
 
-    @CustomType.Constructor
-    private GetServiceGatewaysServiceGatewayService(
-        @CustomType.Parameter("serviceId") String serviceId,
-        @CustomType.Parameter("serviceName") String serviceName) {
-        this.serviceId = serviceId;
-        this.serviceName = serviceName;
-    }
-
+    private GetServiceGatewaysServiceGatewayService() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service.
      * 
@@ -50,30 +43,32 @@ public final class GetServiceGatewaysServiceGatewayService {
     public static Builder builder(GetServiceGatewaysServiceGatewayService defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String serviceId;
         private String serviceName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceGatewaysServiceGatewayService defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.serviceId = defaults.serviceId;
     	      this.serviceName = defaults.serviceName;
         }
 
+        @CustomType.Setter
         public Builder serviceId(String serviceId) {
             this.serviceId = Objects.requireNonNull(serviceId);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceName(String serviceName) {
             this.serviceName = Objects.requireNonNull(serviceName);
             return this;
-        }        public GetServiceGatewaysServiceGatewayService build() {
-            return new GetServiceGatewaysServiceGatewayService(serviceId, serviceName);
+        }
+        public GetServiceGatewaysServiceGatewayService build() {
+            final var o = new GetServiceGatewaysServiceGatewayService();
+            o.serviceId = serviceId;
+            o.serviceName = serviceName;
+            return o;
         }
     }
 }

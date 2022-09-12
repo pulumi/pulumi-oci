@@ -14,13 +14,9 @@ public final class GetAgentImagesAgentImageCollection {
      * @return Items in collection.
      * 
      */
-    private final List<GetAgentImagesAgentImageCollectionItem> items;
+    private List<GetAgentImagesAgentImageCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetAgentImagesAgentImageCollection(@CustomType.Parameter("items") List<GetAgentImagesAgentImageCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetAgentImagesAgentImageCollection() {}
     /**
      * @return Items in collection.
      * 
@@ -36,27 +32,27 @@ public final class GetAgentImagesAgentImageCollection {
     public static Builder builder(GetAgentImagesAgentImageCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAgentImagesAgentImageCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAgentImagesAgentImageCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetAgentImagesAgentImageCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAgentImagesAgentImageCollectionItem... items) {
             return items(List.of(items));
-        }        public GetAgentImagesAgentImageCollection build() {
-            return new GetAgentImagesAgentImageCollection(items);
+        }
+        public GetAgentImagesAgentImageCollection build() {
+            final var o = new GetAgentImagesAgentImageCollection();
+            o.items = items;
+            return o;
         }
     }
 }

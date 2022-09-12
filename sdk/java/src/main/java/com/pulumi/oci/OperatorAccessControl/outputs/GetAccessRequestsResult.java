@@ -18,58 +18,37 @@ public final class GetAccessRequestsResult {
      * @return The list of access_request_collection.
      * 
      */
-    private final List<GetAccessRequestsAccessRequestCollection> accessRequestCollections;
+    private List<GetAccessRequestsAccessRequestCollection> accessRequestCollections;
     /**
      * @return The OCID of the compartment that contains the access request.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetAccessRequestsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetAccessRequestsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the target resource.
      * 
      */
-    private final @Nullable String resourceName;
+    private @Nullable String resourceName;
     /**
      * @return resourceType for which the AccessRequest is applicable
      * 
      */
-    private final @Nullable String resourceType;
+    private @Nullable String resourceType;
     /**
      * @return The current state of the AccessRequest.
      * 
      */
-    private final @Nullable String state;
-    private final @Nullable String timeEnd;
-    private final @Nullable String timeStart;
+    private @Nullable String state;
+    private @Nullable String timeEnd;
+    private @Nullable String timeStart;
 
-    @CustomType.Constructor
-    private GetAccessRequestsResult(
-        @CustomType.Parameter("accessRequestCollections") List<GetAccessRequestsAccessRequestCollection> accessRequestCollections,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetAccessRequestsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("resourceName") @Nullable String resourceName,
-        @CustomType.Parameter("resourceType") @Nullable String resourceType,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("timeEnd") @Nullable String timeEnd,
-        @CustomType.Parameter("timeStart") @Nullable String timeStart) {
-        this.accessRequestCollections = accessRequestCollections;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.resourceName = resourceName;
-        this.resourceType = resourceType;
-        this.state = state;
-        this.timeEnd = timeEnd;
-        this.timeStart = timeStart;
-    }
-
+    private GetAccessRequestsResult() {}
     /**
      * @return The list of access_request_collection.
      * 
@@ -129,7 +108,7 @@ public final class GetAccessRequestsResult {
     public static Builder builder(GetAccessRequestsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAccessRequestsAccessRequestCollection> accessRequestCollections;
         private String compartmentId;
@@ -140,11 +119,7 @@ public final class GetAccessRequestsResult {
         private @Nullable String state;
         private @Nullable String timeEnd;
         private @Nullable String timeStart;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAccessRequestsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessRequestCollections = defaults.accessRequestCollections;
@@ -158,6 +133,7 @@ public final class GetAccessRequestsResult {
     	      this.timeStart = defaults.timeStart;
         }
 
+        @CustomType.Setter
         public Builder accessRequestCollections(List<GetAccessRequestsAccessRequestCollection> accessRequestCollections) {
             this.accessRequestCollections = Objects.requireNonNull(accessRequestCollections);
             return this;
@@ -165,10 +141,12 @@ public final class GetAccessRequestsResult {
         public Builder accessRequestCollections(GetAccessRequestsAccessRequestCollection... accessRequestCollections) {
             return accessRequestCollections(List.of(accessRequestCollections));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAccessRequestsFilter> filters) {
             this.filters = filters;
             return this;
@@ -176,31 +154,48 @@ public final class GetAccessRequestsResult {
         public Builder filters(GetAccessRequestsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceName(@Nullable String resourceName) {
             this.resourceName = resourceName;
             return this;
         }
+        @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
             this.resourceType = resourceType;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnd(@Nullable String timeEnd) {
             this.timeEnd = timeEnd;
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(@Nullable String timeStart) {
             this.timeStart = timeStart;
             return this;
-        }        public GetAccessRequestsResult build() {
-            return new GetAccessRequestsResult(accessRequestCollections, compartmentId, filters, id, resourceName, resourceType, state, timeEnd, timeStart);
+        }
+        public GetAccessRequestsResult build() {
+            final var o = new GetAccessRequestsResult();
+            o.accessRequestCollections = accessRequestCollections;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.resourceName = resourceName;
+            o.resourceType = resourceType;
+            o.state = state;
+            o.timeEnd = timeEnd;
+            o.timeStart = timeStart;
+            return o;
         }
     }
 }

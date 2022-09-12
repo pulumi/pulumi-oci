@@ -15,21 +15,14 @@ public final class ManagedInstanceGroupManagedInstance {
      * @return (Updatable) Managed Instance Group identifier
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return unique identifier that is immutable on creation
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
 
-    @CustomType.Constructor
-    private ManagedInstanceGroupManagedInstance(
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("id") @Nullable String id) {
-        this.displayName = displayName;
-        this.id = id;
-    }
-
+    private ManagedInstanceGroupManagedInstance() {}
     /**
      * @return (Updatable) Managed Instance Group identifier
      * 
@@ -52,30 +45,32 @@ public final class ManagedInstanceGroupManagedInstance {
     public static Builder builder(ManagedInstanceGroupManagedInstance defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String displayName;
         private @Nullable String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ManagedInstanceGroupManagedInstance defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
-        }        public ManagedInstanceGroupManagedInstance build() {
-            return new ManagedInstanceGroupManagedInstance(displayName, id);
+        }
+        public ManagedInstanceGroupManagedInstance build() {
+            final var o = new ManagedInstanceGroupManagedInstance();
+            o.displayName = displayName;
+            o.id = id;
+            return o;
         }
     }
 }

@@ -16,56 +16,39 @@ public final class InstancePoolLoadBalancer {
      * @return The name of the backend set on the load balancer to add instances to.
      * 
      */
-    private final String backendSetName;
+    private String backendSetName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
      * 
      */
-    private final @Nullable String instancePoolId;
+    private @Nullable String instancePoolId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to attach to the instance pool.
      * 
      */
-    private final String loadBalancerId;
+    private String loadBalancerId;
     /**
      * @return The port value to use when creating the backend set.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return Indicates which VNIC on each instance in the pool should be used to associate with the load balancer. Possible values are &#34;PrimaryVnic&#34; or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
      * 
      */
-    private final String vnicSelection;
+    private String vnicSelection;
 
-    @CustomType.Constructor
-    private InstancePoolLoadBalancer(
-        @CustomType.Parameter("backendSetName") String backendSetName,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("instancePoolId") @Nullable String instancePoolId,
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("vnicSelection") String vnicSelection) {
-        this.backendSetName = backendSetName;
-        this.id = id;
-        this.instancePoolId = instancePoolId;
-        this.loadBalancerId = loadBalancerId;
-        this.port = port;
-        this.state = state;
-        this.vnicSelection = vnicSelection;
-    }
-
+    private InstancePoolLoadBalancer() {}
     /**
      * @return The name of the backend set on the load balancer to add instances to.
      * 
@@ -123,7 +106,7 @@ public final class InstancePoolLoadBalancer {
     public static Builder builder(InstancePoolLoadBalancer defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String backendSetName;
         private @Nullable String id;
@@ -132,11 +115,7 @@ public final class InstancePoolLoadBalancer {
         private Integer port;
         private @Nullable String state;
         private String vnicSelection;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(InstancePoolLoadBalancer defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backendSetName = defaults.backendSetName;
@@ -148,35 +127,51 @@ public final class InstancePoolLoadBalancer {
     	      this.vnicSelection = defaults.vnicSelection;
         }
 
+        @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
             this.backendSetName = Objects.requireNonNull(backendSetName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder instancePoolId(@Nullable String instancePoolId) {
             this.instancePoolId = instancePoolId;
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder vnicSelection(String vnicSelection) {
             this.vnicSelection = Objects.requireNonNull(vnicSelection);
             return this;
-        }        public InstancePoolLoadBalancer build() {
-            return new InstancePoolLoadBalancer(backendSetName, id, instancePoolId, loadBalancerId, port, state, vnicSelection);
+        }
+        public InstancePoolLoadBalancer build() {
+            final var o = new InstancePoolLoadBalancer();
+            o.backendSetName = backendSetName;
+            o.id = id;
+            o.instancePoolId = instancePoolId;
+            o.loadBalancerId = loadBalancerId;
+            o.port = port;
+            o.state = state;
+            o.vnicSelection = vnicSelection;
+            return o;
         }
     }
 }

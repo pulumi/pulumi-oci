@@ -15,21 +15,14 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPo
      * @return Configures the logging policies for the access logs of an API Deployment.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog> accessLogs;
+    private List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog> accessLogs;
     /**
      * @return Configures the logging policies for the execution logs of an API Deployment.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLog> executionLogs;
+    private List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLog> executionLogs;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy(
-        @CustomType.Parameter("accessLogs") List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog> accessLogs,
-        @CustomType.Parameter("executionLogs") List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLog> executionLogs) {
-        this.accessLogs = accessLogs;
-        this.executionLogs = executionLogs;
-    }
-
+    private GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy() {}
     /**
      * @return Configures the logging policies for the access logs of an API Deployment.
      * 
@@ -52,21 +45,18 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPo
     public static Builder builder(GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog> accessLogs;
         private List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLog> executionLogs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLogs = defaults.accessLogs;
     	      this.executionLogs = defaults.executionLogs;
         }
 
+        @CustomType.Setter
         public Builder accessLogs(List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog> accessLogs) {
             this.accessLogs = Objects.requireNonNull(accessLogs);
             return this;
@@ -74,14 +64,19 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPo
         public Builder accessLogs(GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog... accessLogs) {
             return accessLogs(List.of(accessLogs));
         }
+        @CustomType.Setter
         public Builder executionLogs(List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLog> executionLogs) {
             this.executionLogs = Objects.requireNonNull(executionLogs);
             return this;
         }
         public Builder executionLogs(GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyExecutionLog... executionLogs) {
             return executionLogs(List.of(executionLogs));
-        }        public GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy build() {
-            return new GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy(accessLogs, executionLogs);
+        }
+        public GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy build() {
+            final var o = new GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy();
+            o.accessLogs = accessLogs;
+            o.executionLogs = executionLogs;
+            return o;
         }
     }
 }

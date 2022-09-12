@@ -15,28 +15,19 @@ public final class VolumeGroupBackupSourceDetails {
      * @return The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
      * 
      */
-    private final @Nullable String kmsKeyId;
+    private @Nullable String kmsKeyId;
     /**
      * @return The region of the volume backup source.
      * 
      */
-    private final String region;
+    private String region;
     /**
      * @return The OCID of the source volume group backup.
      * 
      */
-    private final String volumeGroupBackupId;
+    private String volumeGroupBackupId;
 
-    @CustomType.Constructor
-    private VolumeGroupBackupSourceDetails(
-        @CustomType.Parameter("kmsKeyId") @Nullable String kmsKeyId,
-        @CustomType.Parameter("region") String region,
-        @CustomType.Parameter("volumeGroupBackupId") String volumeGroupBackupId) {
-        this.kmsKeyId = kmsKeyId;
-        this.region = region;
-        this.volumeGroupBackupId = volumeGroupBackupId;
-    }
-
+    private VolumeGroupBackupSourceDetails() {}
     /**
      * @return The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
      * 
@@ -66,16 +57,12 @@ public final class VolumeGroupBackupSourceDetails {
     public static Builder builder(VolumeGroupBackupSourceDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String kmsKeyId;
         private String region;
         private String volumeGroupBackupId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(VolumeGroupBackupSourceDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kmsKeyId = defaults.kmsKeyId;
@@ -83,19 +70,27 @@ public final class VolumeGroupBackupSourceDetails {
     	      this.volumeGroupBackupId = defaults.volumeGroupBackupId;
         }
 
+        @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             return this;
         }
+        @CustomType.Setter
         public Builder region(String region) {
             this.region = Objects.requireNonNull(region);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeGroupBackupId(String volumeGroupBackupId) {
             this.volumeGroupBackupId = Objects.requireNonNull(volumeGroupBackupId);
             return this;
-        }        public VolumeGroupBackupSourceDetails build() {
-            return new VolumeGroupBackupSourceDetails(kmsKeyId, region, volumeGroupBackupId);
+        }
+        public VolumeGroupBackupSourceDetails build() {
+            final var o = new VolumeGroupBackupSourceDetails();
+            o.kmsKeyId = kmsKeyId;
+            o.region = region;
+            o.volumeGroupBackupId = volumeGroupBackupId;
+            return o;
         }
     }
 }

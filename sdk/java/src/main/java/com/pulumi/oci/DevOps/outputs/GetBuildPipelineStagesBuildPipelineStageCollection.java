@@ -14,13 +14,9 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollection {
      * @return Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
      * 
      */
-    private final List<GetBuildPipelineStagesBuildPipelineStageCollectionItem> items;
+    private List<GetBuildPipelineStagesBuildPipelineStageCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetBuildPipelineStagesBuildPipelineStageCollection(@CustomType.Parameter("items") List<GetBuildPipelineStagesBuildPipelineStageCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetBuildPipelineStagesBuildPipelineStageCollection() {}
     /**
      * @return Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
      * 
@@ -36,27 +32,27 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollection {
     public static Builder builder(GetBuildPipelineStagesBuildPipelineStageCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBuildPipelineStagesBuildPipelineStageCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildPipelineStagesBuildPipelineStageCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetBuildPipelineStagesBuildPipelineStageCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetBuildPipelineStagesBuildPipelineStageCollectionItem... items) {
             return items(List.of(items));
-        }        public GetBuildPipelineStagesBuildPipelineStageCollection build() {
-            return new GetBuildPipelineStagesBuildPipelineStageCollection(items);
+        }
+        public GetBuildPipelineStagesBuildPipelineStageCollection build() {
+            final var o = new GetBuildPipelineStagesBuildPipelineStageCollection();
+            o.items = items;
+            return o;
         }
     }
 }

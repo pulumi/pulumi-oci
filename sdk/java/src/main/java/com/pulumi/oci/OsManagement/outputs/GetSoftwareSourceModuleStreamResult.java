@@ -15,70 +15,49 @@ public final class GetSoftwareSourceModuleStreamResult {
      * @return The architecture for which the packages in this module stream were built
      * 
      */
-    private final String architecture;
+    private String architecture;
     /**
      * @return A description of the contents of the module stream
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates if this stream is the default for its module.
      * 
      */
-    private final Boolean isDefault;
+    private Boolean isDefault;
     /**
      * @return The name of the module that contains the stream
      * 
      */
-    private final String moduleName;
+    private String moduleName;
     /**
      * @return A list of packages that are contained by the stream.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management APIs that interact directly with packages.
      * 
      */
-    private final List<String> packages;
+    private List<String> packages;
     /**
      * @return A list of profiles that are part of the stream.  Each element in the list is the name of a profile.  The name is suitable to use as an argument to other OS Management APIs that interact directly with module stream profiles.  However, it is not URL encoded.
      * 
      */
-    private final List<String> profiles;
+    private List<String> profiles;
     /**
      * @return The OCID of the software source that provides this module stream.
      * 
      */
-    private final String softwareSourceId;
+    private String softwareSourceId;
     /**
      * @return The name of the stream
      * 
      */
-    private final String streamName;
+    private String streamName;
 
-    @CustomType.Constructor
-    private GetSoftwareSourceModuleStreamResult(
-        @CustomType.Parameter("architecture") String architecture,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isDefault") Boolean isDefault,
-        @CustomType.Parameter("moduleName") String moduleName,
-        @CustomType.Parameter("packages") List<String> packages,
-        @CustomType.Parameter("profiles") List<String> profiles,
-        @CustomType.Parameter("softwareSourceId") String softwareSourceId,
-        @CustomType.Parameter("streamName") String streamName) {
-        this.architecture = architecture;
-        this.description = description;
-        this.id = id;
-        this.isDefault = isDefault;
-        this.moduleName = moduleName;
-        this.packages = packages;
-        this.profiles = profiles;
-        this.softwareSourceId = softwareSourceId;
-        this.streamName = streamName;
-    }
-
+    private GetSoftwareSourceModuleStreamResult() {}
     /**
      * @return The architecture for which the packages in this module stream were built
      * 
@@ -150,7 +129,7 @@ public final class GetSoftwareSourceModuleStreamResult {
     public static Builder builder(GetSoftwareSourceModuleStreamResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String architecture;
         private String description;
@@ -161,11 +140,7 @@ public final class GetSoftwareSourceModuleStreamResult {
         private List<String> profiles;
         private String softwareSourceId;
         private String streamName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSoftwareSourceModuleStreamResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.architecture = defaults.architecture;
@@ -179,26 +154,32 @@ public final class GetSoftwareSourceModuleStreamResult {
     	      this.streamName = defaults.streamName;
         }
 
+        @CustomType.Setter
         public Builder architecture(String architecture) {
             this.architecture = Objects.requireNonNull(architecture);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = Objects.requireNonNull(isDefault);
             return this;
         }
+        @CustomType.Setter
         public Builder moduleName(String moduleName) {
             this.moduleName = Objects.requireNonNull(moduleName);
             return this;
         }
+        @CustomType.Setter
         public Builder packages(List<String> packages) {
             this.packages = Objects.requireNonNull(packages);
             return this;
@@ -206,6 +187,7 @@ public final class GetSoftwareSourceModuleStreamResult {
         public Builder packages(String... packages) {
             return packages(List.of(packages));
         }
+        @CustomType.Setter
         public Builder profiles(List<String> profiles) {
             this.profiles = Objects.requireNonNull(profiles);
             return this;
@@ -213,15 +195,28 @@ public final class GetSoftwareSourceModuleStreamResult {
         public Builder profiles(String... profiles) {
             return profiles(List.of(profiles));
         }
+        @CustomType.Setter
         public Builder softwareSourceId(String softwareSourceId) {
             this.softwareSourceId = Objects.requireNonNull(softwareSourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder streamName(String streamName) {
             this.streamName = Objects.requireNonNull(streamName);
             return this;
-        }        public GetSoftwareSourceModuleStreamResult build() {
-            return new GetSoftwareSourceModuleStreamResult(architecture, description, id, isDefault, moduleName, packages, profiles, softwareSourceId, streamName);
+        }
+        public GetSoftwareSourceModuleStreamResult build() {
+            final var o = new GetSoftwareSourceModuleStreamResult();
+            o.architecture = architecture;
+            o.description = description;
+            o.id = id;
+            o.isDefault = isDefault;
+            o.moduleName = moduleName;
+            o.packages = packages;
+            o.profiles = profiles;
+            o.softwareSourceId = softwareSourceId;
+            o.streamName = streamName;
+            return o;
         }
     }
 }

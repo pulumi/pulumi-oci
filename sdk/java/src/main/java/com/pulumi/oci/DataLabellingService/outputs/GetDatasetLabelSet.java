@@ -14,13 +14,9 @@ public final class GetDatasetLabelSet {
      * @return An ordered collection of labels that are unique by name.
      * 
      */
-    private final List<GetDatasetLabelSetItem> items;
+    private List<GetDatasetLabelSetItem> items;
 
-    @CustomType.Constructor
-    private GetDatasetLabelSet(@CustomType.Parameter("items") List<GetDatasetLabelSetItem> items) {
-        this.items = items;
-    }
-
+    private GetDatasetLabelSet() {}
     /**
      * @return An ordered collection of labels that are unique by name.
      * 
@@ -36,27 +32,27 @@ public final class GetDatasetLabelSet {
     public static Builder builder(GetDatasetLabelSet defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDatasetLabelSetItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatasetLabelSet defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDatasetLabelSetItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDatasetLabelSetItem... items) {
             return items(List.of(items));
-        }        public GetDatasetLabelSet build() {
-            return new GetDatasetLabelSet(items);
+        }
+        public GetDatasetLabelSet build() {
+            final var o = new GetDatasetLabelSet();
+            o.items = items;
+            return o;
         }
     }
 }

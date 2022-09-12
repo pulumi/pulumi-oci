@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
  * 
- * Adds the list of redeemable user email IDs for a subscription ID.
+ * Adds the list of redeemable user summary for a subscription ID.
  * 
  * ## Example Usage
  * ```java
@@ -48,6 +48,8 @@ import javax.annotation.Nullable;
  *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
  *             .items(SubscriptionRedeemableUserItemArgs.builder()
  *                 .emailId(oci_usage_proxy_email.test_email().id())
+ *                 .firstName(var_.subscription_redeemable_user_items_first_name())
+ *                 .lastName(var_.subscription_redeemable_user_items_last_name())
  *                 .build())
  *             .userId(oci_identity_user.test_user().id())
  *             .build());
@@ -68,14 +70,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser")
 public class SubscriptionRedeemableUser extends com.pulumi.resources.CustomResource {
     /**
-     * The list of email IDs to be added to the list of users that can redeem rewards.
+     * The list of new user to be added to the list of user that can redeem rewards.
      * 
      */
     @Export(name="items", type=List.class, parameters={SubscriptionRedeemableUserItem.class})
     private Output<List<SubscriptionRedeemableUserItem>> items;
 
     /**
-     * @return The list of email IDs to be added to the list of users that can redeem rewards.
+     * @return The list of new user to be added to the list of user that can redeem rewards.
      * 
      */
     public Output<List<SubscriptionRedeemableUserItem>> items() {

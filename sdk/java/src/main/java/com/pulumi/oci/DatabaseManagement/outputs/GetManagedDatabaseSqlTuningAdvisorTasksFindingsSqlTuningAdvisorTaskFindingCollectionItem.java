@@ -16,126 +16,89 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvis
      * @return The time benefit (in seconds) for the highest-rated finding for this object.
      * 
      */
-    private final Double dbTimeBenefit;
+    private Double dbTimeBenefit;
     /**
      * @return Indicates whether an alternative execution plan was reported for this SQL statement.
      * 
      */
-    private final Boolean isAlternativePlanFindingPresent;
+    private Boolean isAlternativePlanFindingPresent;
     /**
      * @return Indicates whether there is an error in this SQL statement.
      * 
      */
-    private final Boolean isErrorFindingPresent;
+    private Boolean isErrorFindingPresent;
     /**
      * @return Indicates whether an index recommendation was reported for this SQL statement.
      * 
      */
-    private final Boolean isIndexFindingPresent;
+    private Boolean isIndexFindingPresent;
     /**
      * @return Indicates whether a miscellaneous finding was reported for this SQL statement.
      * 
      */
-    private final Boolean isMiscellaneousFindingPresent;
+    private Boolean isMiscellaneousFindingPresent;
     /**
      * @return Indicates whether a restructure SQL recommendation was reported for this SQL statement.
      * 
      */
-    private final Boolean isRestructureSqlFindingPresent;
+    private Boolean isRestructureSqlFindingPresent;
     /**
      * @return Indicates whether a SQL Profile recommendation has been implemented for this SQL statement.
      * 
      */
-    private final Boolean isSqlProfileFindingImplemented;
+    private Boolean isSqlProfileFindingImplemented;
     /**
      * @return Indicates whether a SQL Profile recommendation was reported for this SQL statement.
      * 
      */
-    private final Boolean isSqlProfileFindingPresent;
+    private Boolean isSqlProfileFindingPresent;
     /**
      * @return Indicates whether a statistics recommendation was reported for this SQL statement.
      * 
      */
-    private final Boolean isStatsFindingPresent;
+    private Boolean isStatsFindingPresent;
     /**
      * @return Indicates whether the task timed out.
      * 
      */
-    private final Boolean isTimeoutFindingPresent;
+    private Boolean isTimeoutFindingPresent;
     /**
      * @return The parsing schema of the object.
      * 
      */
-    private final String parsingSchema;
+    private String parsingSchema;
     /**
      * @return The per-execution percentage benefit.
      * 
      */
-    private final Integer perExecutionPercentage;
+    private Integer perExecutionPercentage;
     /**
      * @return The unique key of this SQL statement.
      * 
      */
-    private final String sqlKey;
+    private String sqlKey;
     /**
      * @return The text of the SQL statement.
      * 
      */
-    private final String sqlText;
+    private String sqlText;
     /**
      * @return The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String sqlTuningAdvisorTaskId;
+    private String sqlTuningAdvisorTaskId;
     /**
      * @return The execution id of the analyzed SQL object. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String sqlTuningAdvisorTaskObjectExecutionId;
+    private String sqlTuningAdvisorTaskObjectExecutionId;
     /**
      * @return The key of the object to which these recommendations apply. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String sqlTuningAdvisorTaskObjectId;
+    private String sqlTuningAdvisorTaskObjectId;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem(
-        @CustomType.Parameter("dbTimeBenefit") Double dbTimeBenefit,
-        @CustomType.Parameter("isAlternativePlanFindingPresent") Boolean isAlternativePlanFindingPresent,
-        @CustomType.Parameter("isErrorFindingPresent") Boolean isErrorFindingPresent,
-        @CustomType.Parameter("isIndexFindingPresent") Boolean isIndexFindingPresent,
-        @CustomType.Parameter("isMiscellaneousFindingPresent") Boolean isMiscellaneousFindingPresent,
-        @CustomType.Parameter("isRestructureSqlFindingPresent") Boolean isRestructureSqlFindingPresent,
-        @CustomType.Parameter("isSqlProfileFindingImplemented") Boolean isSqlProfileFindingImplemented,
-        @CustomType.Parameter("isSqlProfileFindingPresent") Boolean isSqlProfileFindingPresent,
-        @CustomType.Parameter("isStatsFindingPresent") Boolean isStatsFindingPresent,
-        @CustomType.Parameter("isTimeoutFindingPresent") Boolean isTimeoutFindingPresent,
-        @CustomType.Parameter("parsingSchema") String parsingSchema,
-        @CustomType.Parameter("perExecutionPercentage") Integer perExecutionPercentage,
-        @CustomType.Parameter("sqlKey") String sqlKey,
-        @CustomType.Parameter("sqlText") String sqlText,
-        @CustomType.Parameter("sqlTuningAdvisorTaskId") String sqlTuningAdvisorTaskId,
-        @CustomType.Parameter("sqlTuningAdvisorTaskObjectExecutionId") String sqlTuningAdvisorTaskObjectExecutionId,
-        @CustomType.Parameter("sqlTuningAdvisorTaskObjectId") String sqlTuningAdvisorTaskObjectId) {
-        this.dbTimeBenefit = dbTimeBenefit;
-        this.isAlternativePlanFindingPresent = isAlternativePlanFindingPresent;
-        this.isErrorFindingPresent = isErrorFindingPresent;
-        this.isIndexFindingPresent = isIndexFindingPresent;
-        this.isMiscellaneousFindingPresent = isMiscellaneousFindingPresent;
-        this.isRestructureSqlFindingPresent = isRestructureSqlFindingPresent;
-        this.isSqlProfileFindingImplemented = isSqlProfileFindingImplemented;
-        this.isSqlProfileFindingPresent = isSqlProfileFindingPresent;
-        this.isStatsFindingPresent = isStatsFindingPresent;
-        this.isTimeoutFindingPresent = isTimeoutFindingPresent;
-        this.parsingSchema = parsingSchema;
-        this.perExecutionPercentage = perExecutionPercentage;
-        this.sqlKey = sqlKey;
-        this.sqlText = sqlText;
-        this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
-        this.sqlTuningAdvisorTaskObjectExecutionId = sqlTuningAdvisorTaskObjectExecutionId;
-        this.sqlTuningAdvisorTaskObjectId = sqlTuningAdvisorTaskObjectId;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem() {}
     /**
      * @return The time benefit (in seconds) for the highest-rated finding for this object.
      * 
@@ -263,7 +226,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvis
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double dbTimeBenefit;
         private Boolean isAlternativePlanFindingPresent;
@@ -282,11 +245,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvis
         private String sqlTuningAdvisorTaskId;
         private String sqlTuningAdvisorTaskObjectExecutionId;
         private String sqlTuningAdvisorTaskObjectId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbTimeBenefit = defaults.dbTimeBenefit;
@@ -308,75 +267,111 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvis
     	      this.sqlTuningAdvisorTaskObjectId = defaults.sqlTuningAdvisorTaskObjectId;
         }
 
+        @CustomType.Setter
         public Builder dbTimeBenefit(Double dbTimeBenefit) {
             this.dbTimeBenefit = Objects.requireNonNull(dbTimeBenefit);
             return this;
         }
+        @CustomType.Setter
         public Builder isAlternativePlanFindingPresent(Boolean isAlternativePlanFindingPresent) {
             this.isAlternativePlanFindingPresent = Objects.requireNonNull(isAlternativePlanFindingPresent);
             return this;
         }
+        @CustomType.Setter
         public Builder isErrorFindingPresent(Boolean isErrorFindingPresent) {
             this.isErrorFindingPresent = Objects.requireNonNull(isErrorFindingPresent);
             return this;
         }
+        @CustomType.Setter
         public Builder isIndexFindingPresent(Boolean isIndexFindingPresent) {
             this.isIndexFindingPresent = Objects.requireNonNull(isIndexFindingPresent);
             return this;
         }
+        @CustomType.Setter
         public Builder isMiscellaneousFindingPresent(Boolean isMiscellaneousFindingPresent) {
             this.isMiscellaneousFindingPresent = Objects.requireNonNull(isMiscellaneousFindingPresent);
             return this;
         }
+        @CustomType.Setter
         public Builder isRestructureSqlFindingPresent(Boolean isRestructureSqlFindingPresent) {
             this.isRestructureSqlFindingPresent = Objects.requireNonNull(isRestructureSqlFindingPresent);
             return this;
         }
+        @CustomType.Setter
         public Builder isSqlProfileFindingImplemented(Boolean isSqlProfileFindingImplemented) {
             this.isSqlProfileFindingImplemented = Objects.requireNonNull(isSqlProfileFindingImplemented);
             return this;
         }
+        @CustomType.Setter
         public Builder isSqlProfileFindingPresent(Boolean isSqlProfileFindingPresent) {
             this.isSqlProfileFindingPresent = Objects.requireNonNull(isSqlProfileFindingPresent);
             return this;
         }
+        @CustomType.Setter
         public Builder isStatsFindingPresent(Boolean isStatsFindingPresent) {
             this.isStatsFindingPresent = Objects.requireNonNull(isStatsFindingPresent);
             return this;
         }
+        @CustomType.Setter
         public Builder isTimeoutFindingPresent(Boolean isTimeoutFindingPresent) {
             this.isTimeoutFindingPresent = Objects.requireNonNull(isTimeoutFindingPresent);
             return this;
         }
+        @CustomType.Setter
         public Builder parsingSchema(String parsingSchema) {
             this.parsingSchema = Objects.requireNonNull(parsingSchema);
             return this;
         }
+        @CustomType.Setter
         public Builder perExecutionPercentage(Integer perExecutionPercentage) {
             this.perExecutionPercentage = Objects.requireNonNull(perExecutionPercentage);
             return this;
         }
+        @CustomType.Setter
         public Builder sqlKey(String sqlKey) {
             this.sqlKey = Objects.requireNonNull(sqlKey);
             return this;
         }
+        @CustomType.Setter
         public Builder sqlText(String sqlText) {
             this.sqlText = Objects.requireNonNull(sqlText);
             return this;
         }
+        @CustomType.Setter
         public Builder sqlTuningAdvisorTaskId(String sqlTuningAdvisorTaskId) {
             this.sqlTuningAdvisorTaskId = Objects.requireNonNull(sqlTuningAdvisorTaskId);
             return this;
         }
+        @CustomType.Setter
         public Builder sqlTuningAdvisorTaskObjectExecutionId(String sqlTuningAdvisorTaskObjectExecutionId) {
             this.sqlTuningAdvisorTaskObjectExecutionId = Objects.requireNonNull(sqlTuningAdvisorTaskObjectExecutionId);
             return this;
         }
+        @CustomType.Setter
         public Builder sqlTuningAdvisorTaskObjectId(String sqlTuningAdvisorTaskObjectId) {
             this.sqlTuningAdvisorTaskObjectId = Objects.requireNonNull(sqlTuningAdvisorTaskObjectId);
             return this;
-        }        public GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem(dbTimeBenefit, isAlternativePlanFindingPresent, isErrorFindingPresent, isIndexFindingPresent, isMiscellaneousFindingPresent, isRestructureSqlFindingPresent, isSqlProfileFindingImplemented, isSqlProfileFindingPresent, isStatsFindingPresent, isTimeoutFindingPresent, parsingSchema, perExecutionPercentage, sqlKey, sqlText, sqlTuningAdvisorTaskId, sqlTuningAdvisorTaskObjectExecutionId, sqlTuningAdvisorTaskObjectId);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollectionItem();
+            o.dbTimeBenefit = dbTimeBenefit;
+            o.isAlternativePlanFindingPresent = isAlternativePlanFindingPresent;
+            o.isErrorFindingPresent = isErrorFindingPresent;
+            o.isIndexFindingPresent = isIndexFindingPresent;
+            o.isMiscellaneousFindingPresent = isMiscellaneousFindingPresent;
+            o.isRestructureSqlFindingPresent = isRestructureSqlFindingPresent;
+            o.isSqlProfileFindingImplemented = isSqlProfileFindingImplemented;
+            o.isSqlProfileFindingPresent = isSqlProfileFindingPresent;
+            o.isStatsFindingPresent = isStatsFindingPresent;
+            o.isTimeoutFindingPresent = isTimeoutFindingPresent;
+            o.parsingSchema = parsingSchema;
+            o.perExecutionPercentage = perExecutionPercentage;
+            o.sqlKey = sqlKey;
+            o.sqlText = sqlText;
+            o.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
+            o.sqlTuningAdvisorTaskObjectExecutionId = sqlTuningAdvisorTaskObjectExecutionId;
+            o.sqlTuningAdvisorTaskObjectId = sqlTuningAdvisorTaskObjectId;
+            return o;
         }
     }
 }

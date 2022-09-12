@@ -16,28 +16,19 @@ public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidation {
      * @return The content of the request body.
      * 
      */
-    private final List<GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent> contents;
+    private List<GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent> contents;
     /**
      * @return Determines if the parameter is required in the request.
      * 
      */
-    private final Boolean required;
+    private Boolean required;
     /**
      * @return Validation behavior mode.
      * 
      */
-    private final String validationMode;
+    private String validationMode;
 
-    @CustomType.Constructor
-    private GetDeploymentSpecificationRouteRequestPolicyBodyValidation(
-        @CustomType.Parameter("contents") List<GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent> contents,
-        @CustomType.Parameter("required") Boolean required,
-        @CustomType.Parameter("validationMode") String validationMode) {
-        this.contents = contents;
-        this.required = required;
-        this.validationMode = validationMode;
-    }
-
+    private GetDeploymentSpecificationRouteRequestPolicyBodyValidation() {}
     /**
      * @return The content of the request body.
      * 
@@ -67,16 +58,12 @@ public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidation {
     public static Builder builder(GetDeploymentSpecificationRouteRequestPolicyBodyValidation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent> contents;
         private Boolean required;
         private String validationMode;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentSpecificationRouteRequestPolicyBodyValidation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.contents = defaults.contents;
@@ -84,6 +71,7 @@ public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidation {
     	      this.validationMode = defaults.validationMode;
         }
 
+        @CustomType.Setter
         public Builder contents(List<GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent> contents) {
             this.contents = Objects.requireNonNull(contents);
             return this;
@@ -91,15 +79,22 @@ public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidation {
         public Builder contents(GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent... contents) {
             return contents(List.of(contents));
         }
+        @CustomType.Setter
         public Builder required(Boolean required) {
             this.required = Objects.requireNonNull(required);
             return this;
         }
+        @CustomType.Setter
         public Builder validationMode(String validationMode) {
             this.validationMode = Objects.requireNonNull(validationMode);
             return this;
-        }        public GetDeploymentSpecificationRouteRequestPolicyBodyValidation build() {
-            return new GetDeploymentSpecificationRouteRequestPolicyBodyValidation(contents, required, validationMode);
+        }
+        public GetDeploymentSpecificationRouteRequestPolicyBodyValidation build() {
+            final var o = new GetDeploymentSpecificationRouteRequestPolicyBodyValidation();
+            o.contents = contents;
+            o.required = required;
+            o.validationMode = validationMode;
+            return o;
         }
     }
 }

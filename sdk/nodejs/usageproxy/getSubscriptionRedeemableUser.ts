@@ -8,7 +8,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
  *
- * Provides the email IDs of users that can redeem rewards for the given subscription ID.
+ * Provides the list of user summary that can redeem rewards for the given subscription ID.
  *
  * ## Example Usage
  *
@@ -54,7 +54,7 @@ export interface GetSubscriptionRedeemableUserArgs {
 export interface GetSubscriptionRedeemableUserResult {
     readonly id: string;
     /**
-     * The list of user email IDs that can redeem rewards.
+     * The list of user summary that can redeem rewards.
      */
     readonly items: outputs.UsageProxy.GetSubscriptionRedeemableUserItem[];
     readonly subscriptionId: string;

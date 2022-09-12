@@ -14,42 +14,29 @@ public final class GetDbVersionsDbVersion {
      * @return True if this version of the Oracle Database software is the latest version for a release.
      * 
      */
-    private final Boolean isLatestForMajorVersion;
+    private Boolean isLatestForMajorVersion;
     /**
      * @return True if this version of the Oracle Database software is the preview version.
      * 
      */
-    private final Boolean isPreviewDbVersion;
+    private Boolean isPreviewDbVersion;
     /**
      * @return If provided, filters the results to the set of database versions which are supported for Upgrade.
      * 
      */
-    private final Boolean isUpgradeSupported;
+    private Boolean isUpgradeSupported;
     /**
      * @return True if this version of the Oracle Database software supports pluggable databases.
      * 
      */
-    private final Boolean supportsPdb;
+    private Boolean supportsPdb;
     /**
      * @return A valid Oracle Database version.
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetDbVersionsDbVersion(
-        @CustomType.Parameter("isLatestForMajorVersion") Boolean isLatestForMajorVersion,
-        @CustomType.Parameter("isPreviewDbVersion") Boolean isPreviewDbVersion,
-        @CustomType.Parameter("isUpgradeSupported") Boolean isUpgradeSupported,
-        @CustomType.Parameter("supportsPdb") Boolean supportsPdb,
-        @CustomType.Parameter("version") String version) {
-        this.isLatestForMajorVersion = isLatestForMajorVersion;
-        this.isPreviewDbVersion = isPreviewDbVersion;
-        this.isUpgradeSupported = isUpgradeSupported;
-        this.supportsPdb = supportsPdb;
-        this.version = version;
-    }
-
+    private GetDbVersionsDbVersion() {}
     /**
      * @return True if this version of the Oracle Database software is the latest version for a release.
      * 
@@ -93,18 +80,14 @@ public final class GetDbVersionsDbVersion {
     public static Builder builder(GetDbVersionsDbVersion defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isLatestForMajorVersion;
         private Boolean isPreviewDbVersion;
         private Boolean isUpgradeSupported;
         private Boolean supportsPdb;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbVersionsDbVersion defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isLatestForMajorVersion = defaults.isLatestForMajorVersion;
@@ -114,27 +97,39 @@ public final class GetDbVersionsDbVersion {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder isLatestForMajorVersion(Boolean isLatestForMajorVersion) {
             this.isLatestForMajorVersion = Objects.requireNonNull(isLatestForMajorVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder isPreviewDbVersion(Boolean isPreviewDbVersion) {
             this.isPreviewDbVersion = Objects.requireNonNull(isPreviewDbVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder isUpgradeSupported(Boolean isUpgradeSupported) {
             this.isUpgradeSupported = Objects.requireNonNull(isUpgradeSupported);
             return this;
         }
+        @CustomType.Setter
         public Builder supportsPdb(Boolean supportsPdb) {
             this.supportsPdb = Objects.requireNonNull(supportsPdb);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetDbVersionsDbVersion build() {
-            return new GetDbVersionsDbVersion(isLatestForMajorVersion, isPreviewDbVersion, isUpgradeSupported, supportsPdb, version);
+        }
+        public GetDbVersionsDbVersion build() {
+            final var o = new GetDbVersionsDbVersion();
+            o.isLatestForMajorVersion = isLatestForMajorVersion;
+            o.isPreviewDbVersion = isPreviewDbVersion;
+            o.isUpgradeSupported = isUpgradeSupported;
+            o.supportsPdb = supportsPdb;
+            o.version = version;
+            return o;
         }
     }
 }

@@ -15,13 +15,9 @@ public final class GatewayIpAddress {
      * @return An IP address.
      * 
      */
-    private final @Nullable String ipAddress;
+    private @Nullable String ipAddress;
 
-    @CustomType.Constructor
-    private GatewayIpAddress(@CustomType.Parameter("ipAddress") @Nullable String ipAddress) {
-        this.ipAddress = ipAddress;
-    }
-
+    private GatewayIpAddress() {}
     /**
      * @return An IP address.
      * 
@@ -37,24 +33,24 @@ public final class GatewayIpAddress {
     public static Builder builder(GatewayIpAddress defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String ipAddress;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GatewayIpAddress defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ipAddress = defaults.ipAddress;
         }
 
+        @CustomType.Setter
         public Builder ipAddress(@Nullable String ipAddress) {
             this.ipAddress = ipAddress;
             return this;
-        }        public GatewayIpAddress build() {
-            return new GatewayIpAddress(ipAddress);
+        }
+        public GatewayIpAddress build() {
+            final var o = new GatewayIpAddress();
+            o.ipAddress = ipAddress;
+            return o;
         }
     }
 }

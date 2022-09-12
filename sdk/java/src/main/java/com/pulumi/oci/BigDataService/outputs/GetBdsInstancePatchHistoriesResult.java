@@ -14,41 +14,26 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBdsInstancePatchHistoriesResult {
-    private final String bdsInstanceId;
-    private final @Nullable List<GetBdsInstancePatchHistoriesFilter> filters;
+    private String bdsInstanceId;
+    private @Nullable List<GetBdsInstancePatchHistoriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of patch_histories.
      * 
      */
-    private final List<GetBdsInstancePatchHistoriesPatchHistory> patchHistories;
-    private final @Nullable String patchVersion;
+    private List<GetBdsInstancePatchHistoriesPatchHistory> patchHistories;
+    private @Nullable String patchVersion;
     /**
      * @return The status of this patch.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetBdsInstancePatchHistoriesResult(
-        @CustomType.Parameter("bdsInstanceId") String bdsInstanceId,
-        @CustomType.Parameter("filters") @Nullable List<GetBdsInstancePatchHistoriesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("patchHistories") List<GetBdsInstancePatchHistoriesPatchHistory> patchHistories,
-        @CustomType.Parameter("patchVersion") @Nullable String patchVersion,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.bdsInstanceId = bdsInstanceId;
-        this.filters = filters;
-        this.id = id;
-        this.patchHistories = patchHistories;
-        this.patchVersion = patchVersion;
-        this.state = state;
-    }
-
+    private GetBdsInstancePatchHistoriesResult() {}
     public String bdsInstanceId() {
         return this.bdsInstanceId;
     }
@@ -87,7 +72,7 @@ public final class GetBdsInstancePatchHistoriesResult {
     public static Builder builder(GetBdsInstancePatchHistoriesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bdsInstanceId;
         private @Nullable List<GetBdsInstancePatchHistoriesFilter> filters;
@@ -95,11 +80,7 @@ public final class GetBdsInstancePatchHistoriesResult {
         private List<GetBdsInstancePatchHistoriesPatchHistory> patchHistories;
         private @Nullable String patchVersion;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBdsInstancePatchHistoriesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bdsInstanceId = defaults.bdsInstanceId;
@@ -110,10 +91,12 @@ public final class GetBdsInstancePatchHistoriesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder bdsInstanceId(String bdsInstanceId) {
             this.bdsInstanceId = Objects.requireNonNull(bdsInstanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBdsInstancePatchHistoriesFilter> filters) {
             this.filters = filters;
             return this;
@@ -121,10 +104,12 @@ public final class GetBdsInstancePatchHistoriesResult {
         public Builder filters(GetBdsInstancePatchHistoriesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder patchHistories(List<GetBdsInstancePatchHistoriesPatchHistory> patchHistories) {
             this.patchHistories = Objects.requireNonNull(patchHistories);
             return this;
@@ -132,15 +117,25 @@ public final class GetBdsInstancePatchHistoriesResult {
         public Builder patchHistories(GetBdsInstancePatchHistoriesPatchHistory... patchHistories) {
             return patchHistories(List.of(patchHistories));
         }
+        @CustomType.Setter
         public Builder patchVersion(@Nullable String patchVersion) {
             this.patchVersion = patchVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetBdsInstancePatchHistoriesResult build() {
-            return new GetBdsInstancePatchHistoriesResult(bdsInstanceId, filters, id, patchHistories, patchVersion, state);
+        }
+        public GetBdsInstancePatchHistoriesResult build() {
+            final var o = new GetBdsInstancePatchHistoriesResult();
+            o.bdsInstanceId = bdsInstanceId;
+            o.filters = filters;
+            o.id = id;
+            o.patchHistories = patchHistories;
+            o.patchVersion = patchVersion;
+            o.state = state;
+            return o;
         }
     }
 }

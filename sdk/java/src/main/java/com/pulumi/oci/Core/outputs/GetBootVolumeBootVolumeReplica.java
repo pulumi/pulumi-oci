@@ -13,28 +13,19 @@ public final class GetBootVolumeBootVolumeReplica {
      * @return The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The boot volume replica&#39;s Oracle ID (OCID).
      * 
      */
-    private final String bootVolumeReplicaId;
+    private String bootVolumeReplicaId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
 
-    @CustomType.Constructor
-    private GetBootVolumeBootVolumeReplica(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("bootVolumeReplicaId") String bootVolumeReplicaId,
-        @CustomType.Parameter("displayName") String displayName) {
-        this.availabilityDomain = availabilityDomain;
-        this.bootVolumeReplicaId = bootVolumeReplicaId;
-        this.displayName = displayName;
-    }
-
+    private GetBootVolumeBootVolumeReplica() {}
     /**
      * @return The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
      * 
@@ -64,16 +55,12 @@ public final class GetBootVolumeBootVolumeReplica {
     public static Builder builder(GetBootVolumeBootVolumeReplica defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String bootVolumeReplicaId;
         private String displayName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBootVolumeBootVolumeReplica defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -81,19 +68,27 @@ public final class GetBootVolumeBootVolumeReplica {
     	      this.displayName = defaults.displayName;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder bootVolumeReplicaId(String bootVolumeReplicaId) {
             this.bootVolumeReplicaId = Objects.requireNonNull(bootVolumeReplicaId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
-        }        public GetBootVolumeBootVolumeReplica build() {
-            return new GetBootVolumeBootVolumeReplica(availabilityDomain, bootVolumeReplicaId, displayName);
+        }
+        public GetBootVolumeBootVolumeReplica build() {
+            final var o = new GetBootVolumeBootVolumeReplica();
+            o.availabilityDomain = availabilityDomain;
+            o.bootVolumeReplicaId = bootVolumeReplicaId;
+            o.displayName = displayName;
+            return o;
         }
     }
 }

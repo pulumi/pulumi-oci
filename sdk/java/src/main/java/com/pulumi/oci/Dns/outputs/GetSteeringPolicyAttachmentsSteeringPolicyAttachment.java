@@ -14,77 +14,54 @@ public final class GetSteeringPolicyAttachmentsSteeringPolicyAttachment {
      * @return The OCID of the compartment the resource belongs to.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The displayName of a resource.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The attached domain within the attached zone.
      * 
      */
-    private final String domainName;
+    private String domainName;
     /**
      * @return The OCID of a resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
      * 
      */
-    private final List<String> rtypes;
+    private List<String> rtypes;
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    private final String self;
+    private String self;
     /**
      * @return The state of a resource.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Search by steering policy OCID. Will match any resource whose steering policy ID matches the provided value.
      * 
      */
-    private final String steeringPolicyId;
+    private String steeringPolicyId;
     /**
      * @return The date and time the resource was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Search by zone OCID. Will match any resource whose zone ID matches the provided value.
      * 
      */
-    private final String zoneId;
+    private String zoneId;
 
-    @CustomType.Constructor
-    private GetSteeringPolicyAttachmentsSteeringPolicyAttachment(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("domainName") String domainName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("rtypes") List<String> rtypes,
-        @CustomType.Parameter("self") String self,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("steeringPolicyId") String steeringPolicyId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("zoneId") String zoneId) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.domainName = domainName;
-        this.id = id;
-        this.rtypes = rtypes;
-        this.self = self;
-        this.state = state;
-        this.steeringPolicyId = steeringPolicyId;
-        this.timeCreated = timeCreated;
-        this.zoneId = zoneId;
-    }
-
+    private GetSteeringPolicyAttachmentsSteeringPolicyAttachment() {}
     /**
      * @return The OCID of the compartment the resource belongs to.
      * 
@@ -163,7 +140,7 @@ public final class GetSteeringPolicyAttachmentsSteeringPolicyAttachment {
     public static Builder builder(GetSteeringPolicyAttachmentsSteeringPolicyAttachment defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String displayName;
@@ -175,11 +152,7 @@ public final class GetSteeringPolicyAttachmentsSteeringPolicyAttachment {
         private String steeringPolicyId;
         private String timeCreated;
         private String zoneId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSteeringPolicyAttachmentsSteeringPolicyAttachment defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -194,22 +167,27 @@ public final class GetSteeringPolicyAttachmentsSteeringPolicyAttachment {
     	      this.zoneId = defaults.zoneId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder domainName(String domainName) {
             this.domainName = Objects.requireNonNull(domainName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder rtypes(List<String> rtypes) {
             this.rtypes = Objects.requireNonNull(rtypes);
             return this;
@@ -217,27 +195,44 @@ public final class GetSteeringPolicyAttachmentsSteeringPolicyAttachment {
         public Builder rtypes(String... rtypes) {
             return rtypes(List.of(rtypes));
         }
+        @CustomType.Setter
         public Builder self(String self) {
             this.self = Objects.requireNonNull(self);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder steeringPolicyId(String steeringPolicyId) {
             this.steeringPolicyId = Objects.requireNonNull(steeringPolicyId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder zoneId(String zoneId) {
             this.zoneId = Objects.requireNonNull(zoneId);
             return this;
-        }        public GetSteeringPolicyAttachmentsSteeringPolicyAttachment build() {
-            return new GetSteeringPolicyAttachmentsSteeringPolicyAttachment(compartmentId, displayName, domainName, id, rtypes, self, state, steeringPolicyId, timeCreated, zoneId);
+        }
+        public GetSteeringPolicyAttachmentsSteeringPolicyAttachment build() {
+            final var o = new GetSteeringPolicyAttachmentsSteeringPolicyAttachment();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.domainName = domainName;
+            o.id = id;
+            o.rtypes = rtypes;
+            o.self = self;
+            o.state = state;
+            o.steeringPolicyId = steeringPolicyId;
+            o.timeCreated = timeCreated;
+            o.zoneId = zoneId;
+            return o;
         }
     }
 }

@@ -18,48 +18,31 @@ public final class GetSecretsResult {
      * @return The OCID of the compartment where you want to create the secret.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetSecretsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetSecretsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String name;
+    private String id;
+    private @Nullable String name;
     /**
      * @return The list of secrets.
      * 
      */
-    private final List<GetSecretsSecret> secrets;
+    private List<GetSecretsSecret> secrets;
     /**
      * @return The current lifecycle state of the secret.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The OCID of the Vault in which the secret exists
      * 
      */
-    private final @Nullable String vaultId;
+    private @Nullable String vaultId;
 
-    @CustomType.Constructor
-    private GetSecretsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetSecretsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("secrets") List<GetSecretsSecret> secrets,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("vaultId") @Nullable String vaultId) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.secrets = secrets;
-        this.state = state;
-        this.vaultId = vaultId;
-    }
-
+    private GetSecretsResult() {}
     /**
      * @return The OCID of the compartment where you want to create the secret.
      * 
@@ -109,7 +92,7 @@ public final class GetSecretsResult {
     public static Builder builder(GetSecretsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetSecretsFilter> filters;
@@ -118,11 +101,7 @@ public final class GetSecretsResult {
         private List<GetSecretsSecret> secrets;
         private @Nullable String state;
         private @Nullable String vaultId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecretsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,10 +113,12 @@ public final class GetSecretsResult {
     	      this.vaultId = defaults.vaultId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSecretsFilter> filters) {
             this.filters = filters;
             return this;
@@ -145,14 +126,17 @@ public final class GetSecretsResult {
         public Builder filters(GetSecretsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder secrets(List<GetSecretsSecret> secrets) {
             this.secrets = Objects.requireNonNull(secrets);
             return this;
@@ -160,15 +144,26 @@ public final class GetSecretsResult {
         public Builder secrets(GetSecretsSecret... secrets) {
             return secrets(List.of(secrets));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder vaultId(@Nullable String vaultId) {
             this.vaultId = vaultId;
             return this;
-        }        public GetSecretsResult build() {
-            return new GetSecretsResult(compartmentId, filters, id, name, secrets, state, vaultId);
+        }
+        public GetSecretsResult build() {
+            final var o = new GetSecretsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.secrets = secrets;
+            o.state = state;
+            o.vaultId = vaultId;
+            return o;
         }
     }
 }

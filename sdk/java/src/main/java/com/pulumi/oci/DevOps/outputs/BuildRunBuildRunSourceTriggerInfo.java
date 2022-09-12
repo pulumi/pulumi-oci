@@ -17,21 +17,14 @@ public final class BuildRunBuildRunSourceTriggerInfo {
      * @return The list of actions that are to be performed for this Trigger
      * 
      */
-    private final @Nullable List<BuildRunBuildRunSourceTriggerInfoAction> actions;
+    private @Nullable List<BuildRunBuildRunSourceTriggerInfoAction> actions;
     /**
      * @return (Updatable) Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
 
-    @CustomType.Constructor
-    private BuildRunBuildRunSourceTriggerInfo(
-        @CustomType.Parameter("actions") @Nullable List<BuildRunBuildRunSourceTriggerInfoAction> actions,
-        @CustomType.Parameter("displayName") @Nullable String displayName) {
-        this.actions = actions;
-        this.displayName = displayName;
-    }
-
+    private BuildRunBuildRunSourceTriggerInfo() {}
     /**
      * @return The list of actions that are to be performed for this Trigger
      * 
@@ -54,21 +47,18 @@ public final class BuildRunBuildRunSourceTriggerInfo {
     public static Builder builder(BuildRunBuildRunSourceTriggerInfo defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<BuildRunBuildRunSourceTriggerInfoAction> actions;
         private @Nullable String displayName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BuildRunBuildRunSourceTriggerInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actions = defaults.actions;
     	      this.displayName = defaults.displayName;
         }
 
+        @CustomType.Setter
         public Builder actions(@Nullable List<BuildRunBuildRunSourceTriggerInfoAction> actions) {
             this.actions = actions;
             return this;
@@ -76,11 +66,16 @@ public final class BuildRunBuildRunSourceTriggerInfo {
         public Builder actions(BuildRunBuildRunSourceTriggerInfoAction... actions) {
             return actions(List.of(actions));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
-        }        public BuildRunBuildRunSourceTriggerInfo build() {
-            return new BuildRunBuildRunSourceTriggerInfo(actions, displayName);
+        }
+        public BuildRunBuildRunSourceTriggerInfo build() {
+            final var o = new BuildRunBuildRunSourceTriggerInfo();
+            o.actions = actions;
+            o.displayName = displayName;
+            return o;
         }
     }
 }

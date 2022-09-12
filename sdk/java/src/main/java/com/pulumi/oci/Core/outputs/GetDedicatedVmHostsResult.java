@@ -19,61 +19,38 @@ public final class GetDedicatedVmHostsResult {
      * @return The availability domain the dedicated virtual machine host is running in.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The OCID of the compartment that contains the dedicated virtual machine host.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of dedicated_vm_hosts.
      * 
      */
-    private final List<GetDedicatedVmHostsDedicatedVmHost> dedicatedVmHosts;
+    private List<GetDedicatedVmHostsDedicatedVmHost> dedicatedVmHosts;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetDedicatedVmHostsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetDedicatedVmHostsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String instanceShapeName;
-    private final @Nullable Double remainingMemoryInGbsGreaterThanOrEqualTo;
-    private final @Nullable Double remainingOcpusGreaterThanOrEqualTo;
+    private String id;
+    private @Nullable String instanceShapeName;
+    private @Nullable Double remainingMemoryInGbsGreaterThanOrEqualTo;
+    private @Nullable Double remainingOcpusGreaterThanOrEqualTo;
     /**
      * @return The current state of the dedicated VM host.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetDedicatedVmHostsResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dedicatedVmHosts") List<GetDedicatedVmHostsDedicatedVmHost> dedicatedVmHosts,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetDedicatedVmHostsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instanceShapeName") @Nullable String instanceShapeName,
-        @CustomType.Parameter("remainingMemoryInGbsGreaterThanOrEqualTo") @Nullable Double remainingMemoryInGbsGreaterThanOrEqualTo,
-        @CustomType.Parameter("remainingOcpusGreaterThanOrEqualTo") @Nullable Double remainingOcpusGreaterThanOrEqualTo,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.dedicatedVmHosts = dedicatedVmHosts;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.instanceShapeName = instanceShapeName;
-        this.remainingMemoryInGbsGreaterThanOrEqualTo = remainingMemoryInGbsGreaterThanOrEqualTo;
-        this.remainingOcpusGreaterThanOrEqualTo = remainingOcpusGreaterThanOrEqualTo;
-        this.state = state;
-    }
-
+    private GetDedicatedVmHostsResult() {}
     /**
      * @return The availability domain the dedicated virtual machine host is running in.  Example: `Uocm:PHX-AD-1`
      * 
@@ -136,7 +113,7 @@ public final class GetDedicatedVmHostsResult {
     public static Builder builder(GetDedicatedVmHostsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
@@ -148,11 +125,7 @@ public final class GetDedicatedVmHostsResult {
         private @Nullable Double remainingMemoryInGbsGreaterThanOrEqualTo;
         private @Nullable Double remainingOcpusGreaterThanOrEqualTo;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDedicatedVmHostsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -167,14 +140,17 @@ public final class GetDedicatedVmHostsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dedicatedVmHosts(List<GetDedicatedVmHostsDedicatedVmHost> dedicatedVmHosts) {
             this.dedicatedVmHosts = Objects.requireNonNull(dedicatedVmHosts);
             return this;
@@ -182,10 +158,12 @@ public final class GetDedicatedVmHostsResult {
         public Builder dedicatedVmHosts(GetDedicatedVmHostsDedicatedVmHost... dedicatedVmHosts) {
             return dedicatedVmHosts(List.of(dedicatedVmHosts));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDedicatedVmHostsFilter> filters) {
             this.filters = filters;
             return this;
@@ -193,27 +171,44 @@ public final class GetDedicatedVmHostsResult {
         public Builder filters(GetDedicatedVmHostsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceShapeName(@Nullable String instanceShapeName) {
             this.instanceShapeName = instanceShapeName;
             return this;
         }
+        @CustomType.Setter
         public Builder remainingMemoryInGbsGreaterThanOrEqualTo(@Nullable Double remainingMemoryInGbsGreaterThanOrEqualTo) {
             this.remainingMemoryInGbsGreaterThanOrEqualTo = remainingMemoryInGbsGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder remainingOcpusGreaterThanOrEqualTo(@Nullable Double remainingOcpusGreaterThanOrEqualTo) {
             this.remainingOcpusGreaterThanOrEqualTo = remainingOcpusGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetDedicatedVmHostsResult build() {
-            return new GetDedicatedVmHostsResult(availabilityDomain, compartmentId, dedicatedVmHosts, displayName, filters, id, instanceShapeName, remainingMemoryInGbsGreaterThanOrEqualTo, remainingOcpusGreaterThanOrEqualTo, state);
+        }
+        public GetDedicatedVmHostsResult build() {
+            final var o = new GetDedicatedVmHostsResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.dedicatedVmHosts = dedicatedVmHosts;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.instanceShapeName = instanceShapeName;
+            o.remainingMemoryInGbsGreaterThanOrEqualTo = remainingMemoryInGbsGreaterThanOrEqualTo;
+            o.remainingOcpusGreaterThanOrEqualTo = remainingOcpusGreaterThanOrEqualTo;
+            o.state = state;
+            return o;
         }
     }
 }

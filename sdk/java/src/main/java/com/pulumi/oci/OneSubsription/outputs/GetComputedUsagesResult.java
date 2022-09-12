@@ -14,50 +14,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetComputedUsagesResult {
-    private final String compartmentId;
-    private final @Nullable String computedProduct;
+    private String compartmentId;
+    private @Nullable String computedProduct;
     /**
      * @return The list of computed_usages.
      * 
      */
-    private final List<GetComputedUsagesComputedUsage> computedUsages;
-    private final @Nullable List<GetComputedUsagesFilter> filters;
+    private List<GetComputedUsagesComputedUsage> computedUsages;
+    private @Nullable List<GetComputedUsagesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Product description
      * 
      */
-    private final @Nullable String parentProduct;
-    private final String subscriptionId;
-    private final String timeFrom;
-    private final String timeTo;
+    private @Nullable String parentProduct;
+    private String subscriptionId;
+    private String timeFrom;
+    private String timeTo;
 
-    @CustomType.Constructor
-    private GetComputedUsagesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("computedProduct") @Nullable String computedProduct,
-        @CustomType.Parameter("computedUsages") List<GetComputedUsagesComputedUsage> computedUsages,
-        @CustomType.Parameter("filters") @Nullable List<GetComputedUsagesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("parentProduct") @Nullable String parentProduct,
-        @CustomType.Parameter("subscriptionId") String subscriptionId,
-        @CustomType.Parameter("timeFrom") String timeFrom,
-        @CustomType.Parameter("timeTo") String timeTo) {
-        this.compartmentId = compartmentId;
-        this.computedProduct = computedProduct;
-        this.computedUsages = computedUsages;
-        this.filters = filters;
-        this.id = id;
-        this.parentProduct = parentProduct;
-        this.subscriptionId = subscriptionId;
-        this.timeFrom = timeFrom;
-        this.timeTo = timeTo;
-    }
-
+    private GetComputedUsagesResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -105,7 +84,7 @@ public final class GetComputedUsagesResult {
     public static Builder builder(GetComputedUsagesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String computedProduct;
@@ -116,11 +95,7 @@ public final class GetComputedUsagesResult {
         private String subscriptionId;
         private String timeFrom;
         private String timeTo;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetComputedUsagesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,14 +109,17 @@ public final class GetComputedUsagesResult {
     	      this.timeTo = defaults.timeTo;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder computedProduct(@Nullable String computedProduct) {
             this.computedProduct = computedProduct;
             return this;
         }
+        @CustomType.Setter
         public Builder computedUsages(List<GetComputedUsagesComputedUsage> computedUsages) {
             this.computedUsages = Objects.requireNonNull(computedUsages);
             return this;
@@ -149,6 +127,7 @@ public final class GetComputedUsagesResult {
         public Builder computedUsages(GetComputedUsagesComputedUsage... computedUsages) {
             return computedUsages(List.of(computedUsages));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetComputedUsagesFilter> filters) {
             this.filters = filters;
             return this;
@@ -156,27 +135,43 @@ public final class GetComputedUsagesResult {
         public Builder filters(GetComputedUsagesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder parentProduct(@Nullable String parentProduct) {
             this.parentProduct = parentProduct;
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = Objects.requireNonNull(subscriptionId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeFrom(String timeFrom) {
             this.timeFrom = Objects.requireNonNull(timeFrom);
             return this;
         }
+        @CustomType.Setter
         public Builder timeTo(String timeTo) {
             this.timeTo = Objects.requireNonNull(timeTo);
             return this;
-        }        public GetComputedUsagesResult build() {
-            return new GetComputedUsagesResult(compartmentId, computedProduct, computedUsages, filters, id, parentProduct, subscriptionId, timeFrom, timeTo);
+        }
+        public GetComputedUsagesResult build() {
+            final var o = new GetComputedUsagesResult();
+            o.compartmentId = compartmentId;
+            o.computedProduct = computedProduct;
+            o.computedUsages = computedUsages;
+            o.filters = filters;
+            o.id = id;
+            o.parentProduct = parentProduct;
+            o.subscriptionId = subscriptionId;
+            o.timeFrom = timeFrom;
+            o.timeTo = timeTo;
+            return o;
         }
     }
 }

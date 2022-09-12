@@ -14,13 +14,9 @@ public final class GetDeploymentsDeploymentCollectionItemDeploymentArgument {
      * @return A list of stage predecessors for a stage.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionItemDeploymentArgumentItem> items;
+    private List<GetDeploymentsDeploymentCollectionItemDeploymentArgumentItem> items;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollectionItemDeploymentArgument(@CustomType.Parameter("items") List<GetDeploymentsDeploymentCollectionItemDeploymentArgumentItem> items) {
-        this.items = items;
-    }
-
+    private GetDeploymentsDeploymentCollectionItemDeploymentArgument() {}
     /**
      * @return A list of stage predecessors for a stage.
      * 
@@ -36,27 +32,27 @@ public final class GetDeploymentsDeploymentCollectionItemDeploymentArgument {
     public static Builder builder(GetDeploymentsDeploymentCollectionItemDeploymentArgument defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentsDeploymentCollectionItemDeploymentArgumentItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionItemDeploymentArgument defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDeploymentsDeploymentCollectionItemDeploymentArgumentItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDeploymentsDeploymentCollectionItemDeploymentArgumentItem... items) {
             return items(List.of(items));
-        }        public GetDeploymentsDeploymentCollectionItemDeploymentArgument build() {
-            return new GetDeploymentsDeploymentCollectionItemDeploymentArgument(items);
+        }
+        public GetDeploymentsDeploymentCollectionItemDeploymentArgument build() {
+            final var o = new GetDeploymentsDeploymentCollectionItemDeploymentArgument();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -14,41 +14,26 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSupportedHostShapesResult {
-    private final String compartmentId;
-    private final @Nullable List<GetSupportedHostShapesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetSupportedHostShapesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of the supported compute shapes for ESXi hosts.
      * 
      */
-    private final List<GetSupportedHostShapesItem> items;
+    private List<GetSupportedHostShapesItem> items;
     /**
      * @return The name of the supported compute shape.
      * 
      */
-    private final @Nullable String name;
-    private final @Nullable String sddcType;
+    private @Nullable String name;
+    private @Nullable String sddcType;
 
-    @CustomType.Constructor
-    private GetSupportedHostShapesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetSupportedHostShapesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetSupportedHostShapesItem> items,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("sddcType") @Nullable String sddcType) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.items = items;
-        this.name = name;
-        this.sddcType = sddcType;
-    }
-
+    private GetSupportedHostShapesResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -87,7 +72,7 @@ public final class GetSupportedHostShapesResult {
     public static Builder builder(GetSupportedHostShapesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetSupportedHostShapesFilter> filters;
@@ -95,11 +80,7 @@ public final class GetSupportedHostShapesResult {
         private List<GetSupportedHostShapesItem> items;
         private @Nullable String name;
         private @Nullable String sddcType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSupportedHostShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -110,10 +91,12 @@ public final class GetSupportedHostShapesResult {
     	      this.sddcType = defaults.sddcType;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSupportedHostShapesFilter> filters) {
             this.filters = filters;
             return this;
@@ -121,10 +104,12 @@ public final class GetSupportedHostShapesResult {
         public Builder filters(GetSupportedHostShapesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetSupportedHostShapesItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -132,15 +117,25 @@ public final class GetSupportedHostShapesResult {
         public Builder items(GetSupportedHostShapesItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder sddcType(@Nullable String sddcType) {
             this.sddcType = sddcType;
             return this;
-        }        public GetSupportedHostShapesResult build() {
-            return new GetSupportedHostShapesResult(compartmentId, filters, id, items, name, sddcType);
+        }
+        public GetSupportedHostShapesResult build() {
+            final var o = new GetSupportedHostShapesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.items = items;
+            o.name = name;
+            o.sddcType = sddcType;
+            return o;
         }
     }
 }

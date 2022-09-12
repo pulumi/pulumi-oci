@@ -13,28 +13,19 @@ public final class GetWorkRequestErrorsWorkRequestError {
      * @return A short error code that defines the error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
      * 
      */
-    private final String code;
+    private String code;
     /**
      * @return A human-readable error string.
      * 
      */
-    private final String message;
+    private String message;
     /**
      * @return The date and time the error occurred.
      * 
      */
-    private final String timestamp;
+    private String timestamp;
 
-    @CustomType.Constructor
-    private GetWorkRequestErrorsWorkRequestError(
-        @CustomType.Parameter("code") String code,
-        @CustomType.Parameter("message") String message,
-        @CustomType.Parameter("timestamp") String timestamp) {
-        this.code = code;
-        this.message = message;
-        this.timestamp = timestamp;
-    }
-
+    private GetWorkRequestErrorsWorkRequestError() {}
     /**
      * @return A short error code that defines the error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
      * 
@@ -64,16 +55,12 @@ public final class GetWorkRequestErrorsWorkRequestError {
     public static Builder builder(GetWorkRequestErrorsWorkRequestError defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String code;
         private String message;
         private String timestamp;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWorkRequestErrorsWorkRequestError defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.code = defaults.code;
@@ -81,19 +68,27 @@ public final class GetWorkRequestErrorsWorkRequestError {
     	      this.timestamp = defaults.timestamp;
         }
 
+        @CustomType.Setter
         public Builder code(String code) {
             this.code = Objects.requireNonNull(code);
             return this;
         }
+        @CustomType.Setter
         public Builder message(String message) {
             this.message = Objects.requireNonNull(message);
             return this;
         }
+        @CustomType.Setter
         public Builder timestamp(String timestamp) {
             this.timestamp = Objects.requireNonNull(timestamp);
             return this;
-        }        public GetWorkRequestErrorsWorkRequestError build() {
-            return new GetWorkRequestErrorsWorkRequestError(code, message, timestamp);
+        }
+        public GetWorkRequestErrorsWorkRequestError build() {
+            final var o = new GetWorkRequestErrorsWorkRequestError();
+            o.code = code;
+            o.message = message;
+            o.timestamp = timestamp;
+            return o;
         }
     }
 }

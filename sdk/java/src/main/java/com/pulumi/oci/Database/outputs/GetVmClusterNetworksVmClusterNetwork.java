@@ -19,108 +19,75 @@ public final class GetVmClusterNetworksVmClusterNetwork {
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The list of DNS server IP addresses. Maximum of 3 allowed.
      * 
      */
-    private final List<String> dns;
+    private List<String> dns;
     /**
      * @return The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String exadataInfrastructureId;
+    private String exadataInfrastructureId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The list of NTP server IP addresses. Maximum of 3 allowed.
      * 
      */
-    private final List<String> ntps;
+    private List<String> ntps;
     /**
      * @return The SCAN details.
      * 
      */
-    private final List<GetVmClusterNetworksVmClusterNetworkScan> scans;
+    private List<GetVmClusterNetworksVmClusterNetworkScan> scans;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time when the VM cluster network was created.
      * 
      */
-    private final String timeCreated;
-    private final Boolean validateVmClusterNetwork;
+    private String timeCreated;
+    private Boolean validateVmClusterNetwork;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
      * 
      */
-    private final String vmClusterId;
+    private String vmClusterId;
     /**
      * @return Details of the client and backup networks.
      * 
      */
-    private final List<GetVmClusterNetworksVmClusterNetworkVmNetwork> vmNetworks;
+    private List<GetVmClusterNetworksVmClusterNetworkVmNetwork> vmNetworks;
 
-    @CustomType.Constructor
-    private GetVmClusterNetworksVmClusterNetwork(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("dns") List<String> dns,
-        @CustomType.Parameter("exadataInfrastructureId") String exadataInfrastructureId,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("ntps") List<String> ntps,
-        @CustomType.Parameter("scans") List<GetVmClusterNetworksVmClusterNetworkScan> scans,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("validateVmClusterNetwork") Boolean validateVmClusterNetwork,
-        @CustomType.Parameter("vmClusterId") String vmClusterId,
-        @CustomType.Parameter("vmNetworks") List<GetVmClusterNetworksVmClusterNetworkVmNetwork> vmNetworks) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.dns = dns;
-        this.exadataInfrastructureId = exadataInfrastructureId;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.ntps = ntps;
-        this.scans = scans;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.validateVmClusterNetwork = validateVmClusterNetwork;
-        this.vmClusterId = vmClusterId;
-        this.vmNetworks = vmNetworks;
-    }
-
+    private GetVmClusterNetworksVmClusterNetwork() {}
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -230,7 +197,7 @@ public final class GetVmClusterNetworksVmClusterNetwork {
     public static Builder builder(GetVmClusterNetworksVmClusterNetwork defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -247,11 +214,7 @@ public final class GetVmClusterNetworksVmClusterNetwork {
         private Boolean validateVmClusterNetwork;
         private String vmClusterId;
         private List<GetVmClusterNetworksVmClusterNetworkVmNetwork> vmNetworks;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVmClusterNetworksVmClusterNetwork defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -271,18 +234,22 @@ public final class GetVmClusterNetworksVmClusterNetwork {
     	      this.vmNetworks = defaults.vmNetworks;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder dns(List<String> dns) {
             this.dns = Objects.requireNonNull(dns);
             return this;
@@ -290,22 +257,27 @@ public final class GetVmClusterNetworksVmClusterNetwork {
         public Builder dns(String... dns) {
             return dns(List.of(dns));
         }
+        @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
             this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder ntps(List<String> ntps) {
             this.ntps = Objects.requireNonNull(ntps);
             return this;
@@ -313,6 +285,7 @@ public final class GetVmClusterNetworksVmClusterNetwork {
         public Builder ntps(String... ntps) {
             return ntps(List.of(ntps));
         }
+        @CustomType.Setter
         public Builder scans(List<GetVmClusterNetworksVmClusterNetworkScan> scans) {
             this.scans = Objects.requireNonNull(scans);
             return this;
@@ -320,30 +293,52 @@ public final class GetVmClusterNetworksVmClusterNetwork {
         public Builder scans(GetVmClusterNetworksVmClusterNetworkScan... scans) {
             return scans(List.of(scans));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder validateVmClusterNetwork(Boolean validateVmClusterNetwork) {
             this.validateVmClusterNetwork = Objects.requireNonNull(validateVmClusterNetwork);
             return this;
         }
+        @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
             this.vmClusterId = Objects.requireNonNull(vmClusterId);
             return this;
         }
+        @CustomType.Setter
         public Builder vmNetworks(List<GetVmClusterNetworksVmClusterNetworkVmNetwork> vmNetworks) {
             this.vmNetworks = Objects.requireNonNull(vmNetworks);
             return this;
         }
         public Builder vmNetworks(GetVmClusterNetworksVmClusterNetworkVmNetwork... vmNetworks) {
             return vmNetworks(List.of(vmNetworks));
-        }        public GetVmClusterNetworksVmClusterNetwork build() {
-            return new GetVmClusterNetworksVmClusterNetwork(compartmentId, definedTags, displayName, dns, exadataInfrastructureId, freeformTags, id, lifecycleDetails, ntps, scans, state, timeCreated, validateVmClusterNetwork, vmClusterId, vmNetworks);
+        }
+        public GetVmClusterNetworksVmClusterNetwork build() {
+            final var o = new GetVmClusterNetworksVmClusterNetwork();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.dns = dns;
+            o.exadataInfrastructureId = exadataInfrastructureId;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.ntps = ntps;
+            o.scans = scans;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.validateVmClusterNetwork = validateVmClusterNetwork;
+            o.vmClusterId = vmClusterId;
+            o.vmNetworks = vmNetworks;
+            return o;
         }
     }
 }

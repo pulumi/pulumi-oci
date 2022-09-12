@@ -16,104 +16,71 @@ public final class GetCertificateResult {
      * @return The data of the leaf certificate in pem format.
      * 
      */
-    private final String certificate;
-    private final String certificateId;
+    private String certificate;
+    private String certificateId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The intermediate certificate data associated with the certificate in pem format.
      * 
      */
-    private final String intermediateCertificates;
+    private String intermediateCertificates;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    private final String lifecycleDetails;
-    private final String privateKey;
+    private String lifecycleDetails;
+    private String privateKey;
     /**
      * @return The current state of the certificate.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The entity to be secured by the certificate and additional host names.
      * 
      */
-    private final List<String> subjectNames;
+    private List<String> subjectNames;
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the certificate will expire.
      * 
      */
-    private final String timeNotValidAfter;
+    private String timeNotValidAfter;
     /**
      * @return The time this resource was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetCertificateResult(
-        @CustomType.Parameter("certificate") String certificate,
-        @CustomType.Parameter("certificateId") String certificateId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("intermediateCertificates") String intermediateCertificates,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("privateKey") String privateKey,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subjectNames") List<String> subjectNames,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeNotValidAfter") String timeNotValidAfter,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.certificate = certificate;
-        this.certificateId = certificateId;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.intermediateCertificates = intermediateCertificates;
-        this.lifecycleDetails = lifecycleDetails;
-        this.privateKey = privateKey;
-        this.state = state;
-        this.subjectNames = subjectNames;
-        this.timeCreated = timeCreated;
-        this.timeNotValidAfter = timeNotValidAfter;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetCertificateResult() {}
     /**
      * @return The data of the leaf certificate in pem format.
      * 
@@ -219,7 +186,7 @@ public final class GetCertificateResult {
     public static Builder builder(GetCertificateResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String certificate;
         private String certificateId;
@@ -236,11 +203,7 @@ public final class GetCertificateResult {
         private String timeCreated;
         private String timeNotValidAfter;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificateResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificate = defaults.certificate;
@@ -260,50 +223,62 @@ public final class GetCertificateResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder certificate(String certificate) {
             this.certificate = Objects.requireNonNull(certificate);
             return this;
         }
+        @CustomType.Setter
         public Builder certificateId(String certificateId) {
             this.certificateId = Objects.requireNonNull(certificateId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder intermediateCertificates(String intermediateCertificates) {
             this.intermediateCertificates = Objects.requireNonNull(intermediateCertificates);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder privateKey(String privateKey) {
             this.privateKey = Objects.requireNonNull(privateKey);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subjectNames(List<String> subjectNames) {
             this.subjectNames = Objects.requireNonNull(subjectNames);
             return this;
@@ -311,19 +286,39 @@ public final class GetCertificateResult {
         public Builder subjectNames(String... subjectNames) {
             return subjectNames(List.of(subjectNames));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeNotValidAfter(String timeNotValidAfter) {
             this.timeNotValidAfter = Objects.requireNonNull(timeNotValidAfter);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetCertificateResult build() {
-            return new GetCertificateResult(certificate, certificateId, compartmentId, definedTags, displayName, freeformTags, id, intermediateCertificates, lifecycleDetails, privateKey, state, subjectNames, timeCreated, timeNotValidAfter, timeUpdated);
+        }
+        public GetCertificateResult build() {
+            final var o = new GetCertificateResult();
+            o.certificate = certificate;
+            o.certificateId = certificateId;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.intermediateCertificates = intermediateCertificates;
+            o.lifecycleDetails = lifecycleDetails;
+            o.privateKey = privateKey;
+            o.state = state;
+            o.subjectNames = subjectNames;
+            o.timeCreated = timeCreated;
+            o.timeNotValidAfter = timeNotValidAfter;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

@@ -18,15 +18,15 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string DefaultConnection;
         /// <summary>
-        /// A user defined description for the object.
+        /// A user-defined description for the object.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// The external key for the object.
+        /// The external key of the object.
         /// </summary>
         public readonly string ExternalKey;
         /// <summary>
-        /// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        /// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         /// </summary>
         public readonly string Identifier;
         /// <summary>
@@ -38,11 +38,11 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// A summary type containing information about the object including its key, name and when/who created/updated it.
+        /// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         /// </summary>
         public readonly Outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataResult Metadata;
         /// <summary>
-        /// The property which disciminates the subtypes.
+        /// The property which differentiates the subtypes.
         /// </summary>
         public readonly string ModelType;
         /// <summary>
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly int ObjectVersion;
         /// <summary>
-        /// A reference to the object's parent.
+        /// A reference to the parent object.
         /// </summary>
         public readonly Outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaParentRefResult ParentRef;
         /// <summary>

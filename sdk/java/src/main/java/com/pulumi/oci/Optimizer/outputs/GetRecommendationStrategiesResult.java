@@ -15,44 +15,27 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRecommendationStrategiesResult {
-    private final String compartmentId;
-    private final Boolean compartmentIdInSubtree;
-    private final @Nullable List<GetRecommendationStrategiesFilter> filters;
+    private String compartmentId;
+    private Boolean compartmentIdInSubtree;
+    private @Nullable List<GetRecommendationStrategiesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the strategy parameter.
      * 
      */
-    private final @Nullable String name;
-    private final @Nullable String recommendationName;
+    private @Nullable String name;
+    private @Nullable String recommendationName;
     /**
      * @return The list of recommendation_strategy_collection.
      * 
      */
-    private final List<GetRecommendationStrategiesRecommendationStrategyCollection> recommendationStrategyCollections;
+    private List<GetRecommendationStrategiesRecommendationStrategyCollection> recommendationStrategyCollections;
 
-    @CustomType.Constructor
-    private GetRecommendationStrategiesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("filters") @Nullable List<GetRecommendationStrategiesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("recommendationName") @Nullable String recommendationName,
-        @CustomType.Parameter("recommendationStrategyCollections") List<GetRecommendationStrategiesRecommendationStrategyCollection> recommendationStrategyCollections) {
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.recommendationName = recommendationName;
-        this.recommendationStrategyCollections = recommendationStrategyCollections;
-    }
-
+    private GetRecommendationStrategiesResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -94,7 +77,7 @@ public final class GetRecommendationStrategiesResult {
     public static Builder builder(GetRecommendationStrategiesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Boolean compartmentIdInSubtree;
@@ -103,11 +86,7 @@ public final class GetRecommendationStrategiesResult {
         private @Nullable String name;
         private @Nullable String recommendationName;
         private List<GetRecommendationStrategiesRecommendationStrategyCollection> recommendationStrategyCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRecommendationStrategiesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -119,14 +98,17 @@ public final class GetRecommendationStrategiesResult {
     	      this.recommendationStrategyCollections = defaults.recommendationStrategyCollections;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRecommendationStrategiesFilter> filters) {
             this.filters = filters;
             return this;
@@ -134,26 +116,39 @@ public final class GetRecommendationStrategiesResult {
         public Builder filters(GetRecommendationStrategiesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder recommendationName(@Nullable String recommendationName) {
             this.recommendationName = recommendationName;
             return this;
         }
+        @CustomType.Setter
         public Builder recommendationStrategyCollections(List<GetRecommendationStrategiesRecommendationStrategyCollection> recommendationStrategyCollections) {
             this.recommendationStrategyCollections = Objects.requireNonNull(recommendationStrategyCollections);
             return this;
         }
         public Builder recommendationStrategyCollections(GetRecommendationStrategiesRecommendationStrategyCollection... recommendationStrategyCollections) {
             return recommendationStrategyCollections(List.of(recommendationStrategyCollections));
-        }        public GetRecommendationStrategiesResult build() {
-            return new GetRecommendationStrategiesResult(compartmentId, compartmentIdInSubtree, filters, id, name, recommendationName, recommendationStrategyCollections);
+        }
+        public GetRecommendationStrategiesResult build() {
+            final var o = new GetRecommendationStrategiesResult();
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.recommendationName = recommendationName;
+            o.recommendationStrategyCollections = recommendationStrategyCollections;
+            return o;
         }
     }
 }

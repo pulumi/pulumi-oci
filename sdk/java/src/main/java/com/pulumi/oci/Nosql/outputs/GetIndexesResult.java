@@ -18,48 +18,31 @@ public final class GetIndexesResult {
      * @return Compartment Identifier.
      * 
      */
-    private final @Nullable String compartmentId;
-    private final @Nullable List<GetIndexesFilter> filters;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetIndexesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of index_collection.
      * 
      */
-    private final List<GetIndexesIndexCollection> indexCollections;
+    private List<GetIndexesIndexCollection> indexCollections;
     /**
      * @return Index name.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The state of an index.
      * 
      */
-    private final @Nullable String state;
-    private final String tableNameOrId;
+    private @Nullable String state;
+    private String tableNameOrId;
 
-    @CustomType.Constructor
-    private GetIndexesResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetIndexesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("indexCollections") List<GetIndexesIndexCollection> indexCollections,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("tableNameOrId") String tableNameOrId) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.indexCollections = indexCollections;
-        this.name = name;
-        this.state = state;
-        this.tableNameOrId = tableNameOrId;
-    }
-
+    private GetIndexesResult() {}
     /**
      * @return Compartment Identifier.
      * 
@@ -109,7 +92,7 @@ public final class GetIndexesResult {
     public static Builder builder(GetIndexesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetIndexesFilter> filters;
@@ -118,11 +101,7 @@ public final class GetIndexesResult {
         private @Nullable String name;
         private @Nullable String state;
         private String tableNameOrId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIndexesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,10 +113,12 @@ public final class GetIndexesResult {
     	      this.tableNameOrId = defaults.tableNameOrId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetIndexesFilter> filters) {
             this.filters = filters;
             return this;
@@ -145,10 +126,12 @@ public final class GetIndexesResult {
         public Builder filters(GetIndexesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder indexCollections(List<GetIndexesIndexCollection> indexCollections) {
             this.indexCollections = Objects.requireNonNull(indexCollections);
             return this;
@@ -156,19 +139,31 @@ public final class GetIndexesResult {
         public Builder indexCollections(GetIndexesIndexCollection... indexCollections) {
             return indexCollections(List.of(indexCollections));
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder tableNameOrId(String tableNameOrId) {
             this.tableNameOrId = Objects.requireNonNull(tableNameOrId);
             return this;
-        }        public GetIndexesResult build() {
-            return new GetIndexesResult(compartmentId, filters, id, indexCollections, name, state, tableNameOrId);
+        }
+        public GetIndexesResult build() {
+            final var o = new GetIndexesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.indexCollections = indexCollections;
+            o.name = name;
+            o.state = state;
+            o.tableNameOrId = tableNameOrId;
+            return o;
         }
     }
 }

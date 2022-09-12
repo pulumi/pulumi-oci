@@ -13,21 +13,14 @@ public final class GetCertificateAuthorityVersionValidity {
      * @return The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeOfValidityNotAfter;
+    private String timeOfValidityNotAfter;
     /**
      * @return The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeOfValidityNotBefore;
+    private String timeOfValidityNotBefore;
 
-    @CustomType.Constructor
-    private GetCertificateAuthorityVersionValidity(
-        @CustomType.Parameter("timeOfValidityNotAfter") String timeOfValidityNotAfter,
-        @CustomType.Parameter("timeOfValidityNotBefore") String timeOfValidityNotBefore) {
-        this.timeOfValidityNotAfter = timeOfValidityNotAfter;
-        this.timeOfValidityNotBefore = timeOfValidityNotBefore;
-    }
-
+    private GetCertificateAuthorityVersionValidity() {}
     /**
      * @return The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
@@ -50,30 +43,32 @@ public final class GetCertificateAuthorityVersionValidity {
     public static Builder builder(GetCertificateAuthorityVersionValidity defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String timeOfValidityNotAfter;
         private String timeOfValidityNotBefore;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificateAuthorityVersionValidity defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.timeOfValidityNotAfter = defaults.timeOfValidityNotAfter;
     	      this.timeOfValidityNotBefore = defaults.timeOfValidityNotBefore;
         }
 
+        @CustomType.Setter
         public Builder timeOfValidityNotAfter(String timeOfValidityNotAfter) {
             this.timeOfValidityNotAfter = Objects.requireNonNull(timeOfValidityNotAfter);
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfValidityNotBefore(String timeOfValidityNotBefore) {
             this.timeOfValidityNotBefore = Objects.requireNonNull(timeOfValidityNotBefore);
             return this;
-        }        public GetCertificateAuthorityVersionValidity build() {
-            return new GetCertificateAuthorityVersionValidity(timeOfValidityNotAfter, timeOfValidityNotBefore);
+        }
+        public GetCertificateAuthorityVersionValidity build() {
+            final var o = new GetCertificateAuthorityVersionValidity();
+            o.timeOfValidityNotAfter = timeOfValidityNotAfter;
+            o.timeOfValidityNotBefore = timeOfValidityNotBefore;
+            return o;
         }
     }
 }

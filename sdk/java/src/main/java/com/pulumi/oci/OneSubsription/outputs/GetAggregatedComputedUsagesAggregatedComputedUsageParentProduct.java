@@ -13,56 +13,39 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsageParentProdu
      * @return Metered service billing category
      * 
      */
-    private final String billingCategory;
+    private String billingCategory;
     /**
      * @return Product name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Product part number
      * 
      */
-    private final String partNumber;
+    private String partNumber;
     /**
      * @return Product category
      * 
      */
-    private final String productCategory;
+    private String productCategory;
     /**
      * @return Product provisioning group
      * 
      */
-    private final String provisioningGroup;
+    private String provisioningGroup;
     /**
      * @return Rate card part type of Product
      * 
      */
-    private final String ucmRateCardPartType;
+    private String ucmRateCardPartType;
     /**
      * @return Unit of Measure
      * 
      */
-    private final String unitOfMeasure;
+    private String unitOfMeasure;
 
-    @CustomType.Constructor
-    private GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct(
-        @CustomType.Parameter("billingCategory") String billingCategory,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("partNumber") String partNumber,
-        @CustomType.Parameter("productCategory") String productCategory,
-        @CustomType.Parameter("provisioningGroup") String provisioningGroup,
-        @CustomType.Parameter("ucmRateCardPartType") String ucmRateCardPartType,
-        @CustomType.Parameter("unitOfMeasure") String unitOfMeasure) {
-        this.billingCategory = billingCategory;
-        this.name = name;
-        this.partNumber = partNumber;
-        this.productCategory = productCategory;
-        this.provisioningGroup = provisioningGroup;
-        this.ucmRateCardPartType = ucmRateCardPartType;
-        this.unitOfMeasure = unitOfMeasure;
-    }
-
+    private GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct() {}
     /**
      * @return Metered service billing category
      * 
@@ -120,7 +103,7 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsageParentProdu
     public static Builder builder(GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String billingCategory;
         private String name;
@@ -129,11 +112,7 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsageParentProdu
         private String provisioningGroup;
         private String ucmRateCardPartType;
         private String unitOfMeasure;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.billingCategory = defaults.billingCategory;
@@ -145,35 +124,51 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsageParentProdu
     	      this.unitOfMeasure = defaults.unitOfMeasure;
         }
 
+        @CustomType.Setter
         public Builder billingCategory(String billingCategory) {
             this.billingCategory = Objects.requireNonNull(billingCategory);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder partNumber(String partNumber) {
             this.partNumber = Objects.requireNonNull(partNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder productCategory(String productCategory) {
             this.productCategory = Objects.requireNonNull(productCategory);
             return this;
         }
+        @CustomType.Setter
         public Builder provisioningGroup(String provisioningGroup) {
             this.provisioningGroup = Objects.requireNonNull(provisioningGroup);
             return this;
         }
+        @CustomType.Setter
         public Builder ucmRateCardPartType(String ucmRateCardPartType) {
             this.ucmRateCardPartType = Objects.requireNonNull(ucmRateCardPartType);
             return this;
         }
+        @CustomType.Setter
         public Builder unitOfMeasure(String unitOfMeasure) {
             this.unitOfMeasure = Objects.requireNonNull(unitOfMeasure);
             return this;
-        }        public GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct build() {
-            return new GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct(billingCategory, name, partNumber, productCategory, provisioningGroup, ucmRateCardPartType, unitOfMeasure);
+        }
+        public GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct build() {
+            final var o = new GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct();
+            o.billingCategory = billingCategory;
+            o.name = name;
+            o.partNumber = partNumber;
+            o.productCategory = productCategory;
+            o.provisioningGroup = provisioningGroup;
+            o.ucmRateCardPartType = ucmRateCardPartType;
+            o.unitOfMeasure = unitOfMeasure;
+            return o;
         }
     }
 }

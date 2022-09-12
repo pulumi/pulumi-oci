@@ -18,49 +18,34 @@ public final class MonitoredResourcesSearchAssociationItem {
      * @return Association type to be created between source and destination resources
      * 
      */
-    private final @Nullable String associationType;
+    private @Nullable String associationType;
     /**
      * @return Association Resource Details
      * 
      */
-    private final @Nullable List<MonitoredResourcesSearchAssociationItemDestinationResourceDetail> destinationResourceDetails;
+    private @Nullable List<MonitoredResourcesSearchAssociationItemDestinationResourceDetail> destinationResourceDetails;
     /**
      * @return Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    private final @Nullable String destinationResourceId;
+    private @Nullable String destinationResourceId;
     /**
      * @return Association Resource Details
      * 
      */
-    private final @Nullable List<MonitoredResourcesSearchAssociationItemSourceResourceDetail> sourceResourceDetails;
+    private @Nullable List<MonitoredResourcesSearchAssociationItemSourceResourceDetail> sourceResourceDetails;
     /**
      * @return Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    private final @Nullable String sourceResourceId;
+    private @Nullable String sourceResourceId;
     /**
      * @return The time the the association was created. An RFC3339 formatted datetime string
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
 
-    @CustomType.Constructor
-    private MonitoredResourcesSearchAssociationItem(
-        @CustomType.Parameter("associationType") @Nullable String associationType,
-        @CustomType.Parameter("destinationResourceDetails") @Nullable List<MonitoredResourcesSearchAssociationItemDestinationResourceDetail> destinationResourceDetails,
-        @CustomType.Parameter("destinationResourceId") @Nullable String destinationResourceId,
-        @CustomType.Parameter("sourceResourceDetails") @Nullable List<MonitoredResourcesSearchAssociationItemSourceResourceDetail> sourceResourceDetails,
-        @CustomType.Parameter("sourceResourceId") @Nullable String sourceResourceId,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated) {
-        this.associationType = associationType;
-        this.destinationResourceDetails = destinationResourceDetails;
-        this.destinationResourceId = destinationResourceId;
-        this.sourceResourceDetails = sourceResourceDetails;
-        this.sourceResourceId = sourceResourceId;
-        this.timeCreated = timeCreated;
-    }
-
+    private MonitoredResourcesSearchAssociationItem() {}
     /**
      * @return Association type to be created between source and destination resources
      * 
@@ -111,7 +96,7 @@ public final class MonitoredResourcesSearchAssociationItem {
     public static Builder builder(MonitoredResourcesSearchAssociationItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String associationType;
         private @Nullable List<MonitoredResourcesSearchAssociationItemDestinationResourceDetail> destinationResourceDetails;
@@ -119,11 +104,7 @@ public final class MonitoredResourcesSearchAssociationItem {
         private @Nullable List<MonitoredResourcesSearchAssociationItemSourceResourceDetail> sourceResourceDetails;
         private @Nullable String sourceResourceId;
         private @Nullable String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MonitoredResourcesSearchAssociationItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.associationType = defaults.associationType;
@@ -134,10 +115,12 @@ public final class MonitoredResourcesSearchAssociationItem {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder associationType(@Nullable String associationType) {
             this.associationType = associationType;
             return this;
         }
+        @CustomType.Setter
         public Builder destinationResourceDetails(@Nullable List<MonitoredResourcesSearchAssociationItemDestinationResourceDetail> destinationResourceDetails) {
             this.destinationResourceDetails = destinationResourceDetails;
             return this;
@@ -145,10 +128,12 @@ public final class MonitoredResourcesSearchAssociationItem {
         public Builder destinationResourceDetails(MonitoredResourcesSearchAssociationItemDestinationResourceDetail... destinationResourceDetails) {
             return destinationResourceDetails(List.of(destinationResourceDetails));
         }
+        @CustomType.Setter
         public Builder destinationResourceId(@Nullable String destinationResourceId) {
             this.destinationResourceId = destinationResourceId;
             return this;
         }
+        @CustomType.Setter
         public Builder sourceResourceDetails(@Nullable List<MonitoredResourcesSearchAssociationItemSourceResourceDetail> sourceResourceDetails) {
             this.sourceResourceDetails = sourceResourceDetails;
             return this;
@@ -156,15 +141,25 @@ public final class MonitoredResourcesSearchAssociationItem {
         public Builder sourceResourceDetails(MonitoredResourcesSearchAssociationItemSourceResourceDetail... sourceResourceDetails) {
             return sourceResourceDetails(List.of(sourceResourceDetails));
         }
+        @CustomType.Setter
         public Builder sourceResourceId(@Nullable String sourceResourceId) {
             this.sourceResourceId = sourceResourceId;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
-        }        public MonitoredResourcesSearchAssociationItem build() {
-            return new MonitoredResourcesSearchAssociationItem(associationType, destinationResourceDetails, destinationResourceId, sourceResourceDetails, sourceResourceId, timeCreated);
+        }
+        public MonitoredResourcesSearchAssociationItem build() {
+            final var o = new MonitoredResourcesSearchAssociationItem();
+            o.associationType = associationType;
+            o.destinationResourceDetails = destinationResourceDetails;
+            o.destinationResourceId = destinationResourceId;
+            o.sourceResourceDetails = sourceResourceDetails;
+            o.sourceResourceId = sourceResourceId;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

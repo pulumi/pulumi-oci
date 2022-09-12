@@ -16,12 +16,12 @@ public final class DhcpOptionsOption {
      * @return (Updatable) If you set `serverType` to `CustomDnsServer`, specify the IP address of at least one DNS server of your choice (three maximum).
      * 
      */
-    private final @Nullable List<String> customDnsServers;
+    private @Nullable List<String> customDnsServers;
     /**
      * @return (Updatable) A single search domain name according to [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). During a DNS query, the OS will append this search domain name to the value being queried.
      * 
      */
-    private final @Nullable List<String> searchDomainNames;
+    private @Nullable List<String> searchDomainNames;
     /**
      * @return (Updatable)
      * * **VcnLocal:** Reserved for future use.
@@ -29,25 +29,14 @@ public final class DhcpOptionsOption {
      * * **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
      * 
      */
-    private final @Nullable String serverType;
+    private @Nullable String serverType;
     /**
      * @return (Updatable) The specific DHCP option. Either `DomainNameServer` (for [DhcpDnsOption](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DhcpDnsOption/)) or `SearchDomain` (for [DhcpSearchDomainOption](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DhcpSearchDomainOption/)).
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private DhcpOptionsOption(
-        @CustomType.Parameter("customDnsServers") @Nullable List<String> customDnsServers,
-        @CustomType.Parameter("searchDomainNames") @Nullable List<String> searchDomainNames,
-        @CustomType.Parameter("serverType") @Nullable String serverType,
-        @CustomType.Parameter("type") String type) {
-        this.customDnsServers = customDnsServers;
-        this.searchDomainNames = searchDomainNames;
-        this.serverType = serverType;
-        this.type = type;
-    }
-
+    private DhcpOptionsOption() {}
     /**
      * @return (Updatable) If you set `serverType` to `CustomDnsServer`, specify the IP address of at least one DNS server of your choice (three maximum).
      * 
@@ -87,17 +76,13 @@ public final class DhcpOptionsOption {
     public static Builder builder(DhcpOptionsOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> customDnsServers;
         private @Nullable List<String> searchDomainNames;
         private @Nullable String serverType;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DhcpOptionsOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.customDnsServers = defaults.customDnsServers;
@@ -106,6 +91,7 @@ public final class DhcpOptionsOption {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder customDnsServers(@Nullable List<String> customDnsServers) {
             this.customDnsServers = customDnsServers;
             return this;
@@ -113,6 +99,7 @@ public final class DhcpOptionsOption {
         public Builder customDnsServers(String... customDnsServers) {
             return customDnsServers(List.of(customDnsServers));
         }
+        @CustomType.Setter
         public Builder searchDomainNames(@Nullable List<String> searchDomainNames) {
             this.searchDomainNames = searchDomainNames;
             return this;
@@ -120,15 +107,23 @@ public final class DhcpOptionsOption {
         public Builder searchDomainNames(String... searchDomainNames) {
             return searchDomainNames(List.of(searchDomainNames));
         }
+        @CustomType.Setter
         public Builder serverType(@Nullable String serverType) {
             this.serverType = serverType;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public DhcpOptionsOption build() {
-            return new DhcpOptionsOption(customDnsServers, searchDomainNames, serverType, type);
+        }
+        public DhcpOptionsOption build() {
+            final var o = new DhcpOptionsOption();
+            o.customDnsServers = customDnsServers;
+            o.searchDomainNames = searchDomainNames;
+            o.serverType = serverType;
+            o.type = type;
+            return o;
         }
     }
 }

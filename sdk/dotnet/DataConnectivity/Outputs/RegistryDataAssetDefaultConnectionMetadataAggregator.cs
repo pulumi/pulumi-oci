@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
     public sealed class RegistryDataAssetDefaultConnectionMetadataAggregator
     {
         /// <summary>
-        /// (Updatable) A user defined description for the object.
+        /// (Updatable) A user-defined description for the object.
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         /// </summary>
         public readonly string? Identifier;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         public readonly string? Name;
         /// <summary>

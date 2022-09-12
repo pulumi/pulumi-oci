@@ -13,28 +13,19 @@ public final class GetIpsecConfigTunnel {
      * @return The IP address of Oracle&#39;s VPN headend.  Example: ` 203.0.113.50  `
      * 
      */
-    private final String ipAddress;
+    private String ipAddress;
     /**
      * @return The shared secret of the IPSec tunnel.
      * 
      */
-    private final String sharedSecret;
+    private String sharedSecret;
     /**
      * @return The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetIpsecConfigTunnel(
-        @CustomType.Parameter("ipAddress") String ipAddress,
-        @CustomType.Parameter("sharedSecret") String sharedSecret,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.ipAddress = ipAddress;
-        this.sharedSecret = sharedSecret;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetIpsecConfigTunnel() {}
     /**
      * @return The IP address of Oracle&#39;s VPN headend.  Example: ` 203.0.113.50  `
      * 
@@ -64,16 +55,12 @@ public final class GetIpsecConfigTunnel {
     public static Builder builder(GetIpsecConfigTunnel defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String ipAddress;
         private String sharedSecret;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIpsecConfigTunnel defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ipAddress = defaults.ipAddress;
@@ -81,19 +68,27 @@ public final class GetIpsecConfigTunnel {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = Objects.requireNonNull(ipAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder sharedSecret(String sharedSecret) {
             this.sharedSecret = Objects.requireNonNull(sharedSecret);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetIpsecConfigTunnel build() {
-            return new GetIpsecConfigTunnel(ipAddress, sharedSecret, timeCreated);
+        }
+        public GetIpsecConfigTunnel build() {
+            final var o = new GetIpsecConfigTunnel();
+            o.ipAddress = ipAddress;
+            o.sharedSecret = sharedSecret;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

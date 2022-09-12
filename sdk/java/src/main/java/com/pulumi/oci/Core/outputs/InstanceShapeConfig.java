@@ -17,91 +17,64 @@ public final class InstanceShapeConfig {
      * @return (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
      * 
      */
-    private final @Nullable String baselineOcpuUtilization;
+    private @Nullable String baselineOcpuUtilization;
     /**
      * @return A short description of the instance&#39;s graphics processing unit (GPU).
      * 
      */
-    private final @Nullable String gpuDescription;
+    private @Nullable String gpuDescription;
     /**
      * @return The number of GPUs available to the instance.
      * 
      */
-    private final @Nullable Integer gpus;
+    private @Nullable Integer gpus;
     /**
      * @return A short description of the local disks available to this instance.
      * 
      */
-    private final @Nullable String localDiskDescription;
+    private @Nullable String localDiskDescription;
     /**
      * @return The number of local disks available to the instance.
      * 
      */
-    private final @Nullable Integer localDisks;
+    private @Nullable Integer localDisks;
     /**
      * @return The aggregate size of all local disks, in gigabytes.
      * 
      */
-    private final @Nullable Double localDisksTotalSizeInGbs;
+    private @Nullable Double localDisksTotalSizeInGbs;
     /**
      * @return The maximum number of VNIC attachments for the instance.
      * 
      */
-    private final @Nullable Integer maxVnicAttachments;
+    private @Nullable Integer maxVnicAttachments;
     /**
      * @return (Updatable) The total amount of memory available to the instance, in gigabytes.
      * 
      */
-    private final @Nullable Double memoryInGbs;
+    private @Nullable Double memoryInGbs;
     /**
      * @return The networking bandwidth available to the instance, in gigabits per second.
      * 
      */
-    private final @Nullable Double networkingBandwidthInGbps;
+    private @Nullable Double networkingBandwidthInGbps;
     /**
      * @return (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
      * 
      */
-    private final @Nullable Integer nvmes;
+    private @Nullable Integer nvmes;
     /**
      * @return (Updatable) The total number of OCPUs available to the instance.
      * 
      */
-    private final @Nullable Double ocpus;
+    private @Nullable Double ocpus;
     /**
      * @return A short description of the instance&#39;s processor (CPU).
      * 
      */
-    private final @Nullable String processorDescription;
+    private @Nullable String processorDescription;
 
-    @CustomType.Constructor
-    private InstanceShapeConfig(
-        @CustomType.Parameter("baselineOcpuUtilization") @Nullable String baselineOcpuUtilization,
-        @CustomType.Parameter("gpuDescription") @Nullable String gpuDescription,
-        @CustomType.Parameter("gpus") @Nullable Integer gpus,
-        @CustomType.Parameter("localDiskDescription") @Nullable String localDiskDescription,
-        @CustomType.Parameter("localDisks") @Nullable Integer localDisks,
-        @CustomType.Parameter("localDisksTotalSizeInGbs") @Nullable Double localDisksTotalSizeInGbs,
-        @CustomType.Parameter("maxVnicAttachments") @Nullable Integer maxVnicAttachments,
-        @CustomType.Parameter("memoryInGbs") @Nullable Double memoryInGbs,
-        @CustomType.Parameter("networkingBandwidthInGbps") @Nullable Double networkingBandwidthInGbps,
-        @CustomType.Parameter("nvmes") @Nullable Integer nvmes,
-        @CustomType.Parameter("ocpus") @Nullable Double ocpus,
-        @CustomType.Parameter("processorDescription") @Nullable String processorDescription) {
-        this.baselineOcpuUtilization = baselineOcpuUtilization;
-        this.gpuDescription = gpuDescription;
-        this.gpus = gpus;
-        this.localDiskDescription = localDiskDescription;
-        this.localDisks = localDisks;
-        this.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
-        this.maxVnicAttachments = maxVnicAttachments;
-        this.memoryInGbs = memoryInGbs;
-        this.networkingBandwidthInGbps = networkingBandwidthInGbps;
-        this.nvmes = nvmes;
-        this.ocpus = ocpus;
-        this.processorDescription = processorDescription;
-    }
-
+    private InstanceShapeConfig() {}
     /**
      * @return (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
      * 
@@ -194,7 +167,7 @@ public final class InstanceShapeConfig {
     public static Builder builder(InstanceShapeConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String baselineOcpuUtilization;
         private @Nullable String gpuDescription;
@@ -208,11 +181,7 @@ public final class InstanceShapeConfig {
         private @Nullable Integer nvmes;
         private @Nullable Double ocpus;
         private @Nullable String processorDescription;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(InstanceShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baselineOcpuUtilization = defaults.baselineOcpuUtilization;
@@ -229,55 +198,81 @@ public final class InstanceShapeConfig {
     	      this.processorDescription = defaults.processorDescription;
         }
 
+        @CustomType.Setter
         public Builder baselineOcpuUtilization(@Nullable String baselineOcpuUtilization) {
             this.baselineOcpuUtilization = baselineOcpuUtilization;
             return this;
         }
+        @CustomType.Setter
         public Builder gpuDescription(@Nullable String gpuDescription) {
             this.gpuDescription = gpuDescription;
             return this;
         }
+        @CustomType.Setter
         public Builder gpus(@Nullable Integer gpus) {
             this.gpus = gpus;
             return this;
         }
+        @CustomType.Setter
         public Builder localDiskDescription(@Nullable String localDiskDescription) {
             this.localDiskDescription = localDiskDescription;
             return this;
         }
+        @CustomType.Setter
         public Builder localDisks(@Nullable Integer localDisks) {
             this.localDisks = localDisks;
             return this;
         }
+        @CustomType.Setter
         public Builder localDisksTotalSizeInGbs(@Nullable Double localDisksTotalSizeInGbs) {
             this.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
             return this;
         }
+        @CustomType.Setter
         public Builder maxVnicAttachments(@Nullable Integer maxVnicAttachments) {
             this.maxVnicAttachments = maxVnicAttachments;
             return this;
         }
+        @CustomType.Setter
         public Builder memoryInGbs(@Nullable Double memoryInGbs) {
             this.memoryInGbs = memoryInGbs;
             return this;
         }
+        @CustomType.Setter
         public Builder networkingBandwidthInGbps(@Nullable Double networkingBandwidthInGbps) {
             this.networkingBandwidthInGbps = networkingBandwidthInGbps;
             return this;
         }
+        @CustomType.Setter
         public Builder nvmes(@Nullable Integer nvmes) {
             this.nvmes = nvmes;
             return this;
         }
+        @CustomType.Setter
         public Builder ocpus(@Nullable Double ocpus) {
             this.ocpus = ocpus;
             return this;
         }
+        @CustomType.Setter
         public Builder processorDescription(@Nullable String processorDescription) {
             this.processorDescription = processorDescription;
             return this;
-        }        public InstanceShapeConfig build() {
-            return new InstanceShapeConfig(baselineOcpuUtilization, gpuDescription, gpus, localDiskDescription, localDisks, localDisksTotalSizeInGbs, maxVnicAttachments, memoryInGbs, networkingBandwidthInGbps, nvmes, ocpus, processorDescription);
+        }
+        public InstanceShapeConfig build() {
+            final var o = new InstanceShapeConfig();
+            o.baselineOcpuUtilization = baselineOcpuUtilization;
+            o.gpuDescription = gpuDescription;
+            o.gpus = gpus;
+            o.localDiskDescription = localDiskDescription;
+            o.localDisks = localDisks;
+            o.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
+            o.maxVnicAttachments = maxVnicAttachments;
+            o.memoryInGbs = memoryInGbs;
+            o.networkingBandwidthInGbps = networkingBandwidthInGbps;
+            o.nvmes = nvmes;
+            o.ocpus = ocpus;
+            o.processorDescription = processorDescription;
+            return o;
         }
     }
 }

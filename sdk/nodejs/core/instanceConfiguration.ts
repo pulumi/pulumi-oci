@@ -39,6 +39,10 @@ import * as utilities from "../utilities";
  *                 useChap: _var.instance_configuration_instance_details_block_volumes_attach_details_use_chap,
  *             },
  *             createDetails: {
+ *                 autotunePolicies: [{
+ *                     autotuneType: _var.instance_configuration_instance_details_block_volumes_create_details_autotune_policies_autotune_type,
+ *                     maxVpusPerGb: _var.instance_configuration_instance_details_block_volumes_create_details_autotune_policies_max_vpus_per_gb,
+ *                 }],
  *                 availabilityDomain: _var.instance_configuration_instance_details_block_volumes_create_details_availability_domain,
  *                 backupPolicyId: data.oci_core_volume_backup_policies.test_volume_backup_policies.volume_backup_policies[0].id,
  *                 compartmentId: _var.compartment_id,

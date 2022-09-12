@@ -13,21 +13,14 @@ public final class GetMigrationDataTransferMediumDetailObjectStorageDetail {
      * @return Bucket name.
      * 
      */
-    private final String bucket;
+    private String bucket;
     /**
      * @return Namespace name of the object store bucket.
      * 
      */
-    private final String namespace;
+    private String namespace;
 
-    @CustomType.Constructor
-    private GetMigrationDataTransferMediumDetailObjectStorageDetail(
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("namespace") String namespace) {
-        this.bucket = bucket;
-        this.namespace = namespace;
-    }
-
+    private GetMigrationDataTransferMediumDetailObjectStorageDetail() {}
     /**
      * @return Bucket name.
      * 
@@ -50,30 +43,32 @@ public final class GetMigrationDataTransferMediumDetailObjectStorageDetail {
     public static Builder builder(GetMigrationDataTransferMediumDetailObjectStorageDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucket;
         private String namespace;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationDataTransferMediumDetailObjectStorageDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
     	      this.namespace = defaults.namespace;
         }
 
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
-        }        public GetMigrationDataTransferMediumDetailObjectStorageDetail build() {
-            return new GetMigrationDataTransferMediumDetailObjectStorageDetail(bucket, namespace);
+        }
+        public GetMigrationDataTransferMediumDetailObjectStorageDetail build() {
+            final var o = new GetMigrationDataTransferMediumDetailObjectStorageDetail();
+            o.bucket = bucket;
+            o.namespace = namespace;
+            return o;
         }
     }
 }

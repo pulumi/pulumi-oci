@@ -15,28 +15,19 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItem {
      * @return The total count for the aggregation metric.
      * 
      */
-    private final String count;
+    private String count;
     /**
      * @return The scope of analytics data.
      * 
      */
-    private final List<GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension> dimensions;
+    private List<GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension> dimensions;
     /**
      * @return The name of the aggregation metric.
      * 
      */
-    private final String metricName;
+    private String metricName;
 
-    @CustomType.Constructor
-    private GetMaskingAnalyticsMaskingAnalyticsCollectionItem(
-        @CustomType.Parameter("count") String count,
-        @CustomType.Parameter("dimensions") List<GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension> dimensions,
-        @CustomType.Parameter("metricName") String metricName) {
-        this.count = count;
-        this.dimensions = dimensions;
-        this.metricName = metricName;
-    }
-
+    private GetMaskingAnalyticsMaskingAnalyticsCollectionItem() {}
     /**
      * @return The total count for the aggregation metric.
      * 
@@ -66,16 +57,12 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItem {
     public static Builder builder(GetMaskingAnalyticsMaskingAnalyticsCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String count;
         private List<GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension> dimensions;
         private String metricName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMaskingAnalyticsMaskingAnalyticsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
@@ -83,10 +70,12 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItem {
     	      this.metricName = defaults.metricName;
         }
 
+        @CustomType.Setter
         public Builder count(String count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder dimensions(List<GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension> dimensions) {
             this.dimensions = Objects.requireNonNull(dimensions);
             return this;
@@ -94,11 +83,17 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItem {
         public Builder dimensions(GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension... dimensions) {
             return dimensions(List.of(dimensions));
         }
+        @CustomType.Setter
         public Builder metricName(String metricName) {
             this.metricName = Objects.requireNonNull(metricName);
             return this;
-        }        public GetMaskingAnalyticsMaskingAnalyticsCollectionItem build() {
-            return new GetMaskingAnalyticsMaskingAnalyticsCollectionItem(count, dimensions, metricName);
+        }
+        public GetMaskingAnalyticsMaskingAnalyticsCollectionItem build() {
+            final var o = new GetMaskingAnalyticsMaskingAnalyticsCollectionItem();
+            o.count = count;
+            o.dimensions = dimensions;
+            o.metricName = metricName;
+            return o;
         }
     }
 }

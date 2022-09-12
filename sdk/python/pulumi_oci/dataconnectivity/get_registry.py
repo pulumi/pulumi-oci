@@ -87,7 +87,7 @@ class GetRegistryResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Data Connectivity Management Registry display name, registries can be renamed
+        Data Connectivity Management registry display name; registries can be renamed.
         """
         return pulumi.get(self, "display_name")
 
@@ -95,7 +95,7 @@ class GetRegistryResult:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -103,7 +103,7 @@ class GetRegistryResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        Unique identifier that is immutable on creation
+        A unique identifier that is immutable on creation.
         """
         return pulumi.get(self, "id")
 
@@ -116,7 +116,7 @@ class GetRegistryResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors
+        Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn't available. FAILED   - The resource is in a failed state due to validation or other errors.
         """
         return pulumi.get(self, "state")
 
@@ -132,7 +132,7 @@ class GetRegistryResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -140,7 +140,7 @@ class GetRegistryResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -148,7 +148,7 @@ class GetRegistryResult:
     @pulumi.getter(name="updatedBy")
     def updated_by(self) -> str:
         """
-        Name of the user who updated the DCMS Registry.
+        Name of the user who updated the DCMS registry.
         """
         return pulumi.get(self, "updated_by")
 
@@ -178,7 +178,7 @@ def get_registry(registry_id: Optional[str] = None,
     """
     This data source provides details about a specific Registry resource in Oracle Cloud Infrastructure Data Connectivity service.
 
-    Gets a Data Connectivity Management Registry by identifier
+    Retrieves a Data Connectivity Management registry using the specified identifier.
 
     ## Example Usage
 
@@ -190,7 +190,7 @@ def get_registry(registry_id: Optional[str] = None,
     ```
 
 
-    :param str registry_id: The registry Ocid.
+    :param str registry_id: The registry OCID.
     """
     __args__ = dict()
     __args__['registryId'] = registry_id
@@ -218,7 +218,7 @@ def get_registry_output(registry_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Registry resource in Oracle Cloud Infrastructure Data Connectivity service.
 
-    Gets a Data Connectivity Management Registry by identifier
+    Retrieves a Data Connectivity Management registry using the specified identifier.
 
     ## Example Usage
 
@@ -230,6 +230,6 @@ def get_registry_output(registry_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
-    :param str registry_id: The registry Ocid.
+    :param str registry_id: The registry OCID.
     """
     ...

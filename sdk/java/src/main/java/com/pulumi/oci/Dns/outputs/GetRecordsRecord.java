@@ -17,7 +17,7 @@ public final class GetRecordsRecord {
      * @return The OCID of the compartment the resource belongs to.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
      * 
@@ -26,27 +26,27 @@ public final class GetRecordsRecord {
      * 
      */
     @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
-    private final String domain;
+    private String domain;
     /**
      * @return A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
      * 
      */
-    private final Boolean isProtected;
+    private Boolean isProtected;
     /**
      * @return The record&#39;s data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
      * 
      */
-    private final @Nullable String rdata;
+    private @Nullable String rdata;
     /**
      * @return A unique identifier for the record within its zone.
      * 
      */
-    private final String recordHash;
+    private String recordHash;
     /**
      * @return The latest version of the record&#39;s zone in which its RRSet differs from the preceding version.
      * 
      */
-    private final String rrsetVersion;
+    private String rrsetVersion;
     /**
      * @return Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
      * 
@@ -55,12 +55,12 @@ public final class GetRecordsRecord {
      * 
      */
     @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
-    private final String rtype;
+    private String rtype;
     /**
      * @return The Time To Live for the record, in seconds.
      * 
      */
-    private final @Nullable Integer ttl;
+    private @Nullable Integer ttl;
     /**
      * @return The name or OCID of the target zone.
      * 
@@ -69,30 +69,9 @@ public final class GetRecordsRecord {
      * 
      */
     @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
-    private final String zoneNameOrId;
+    private String zoneNameOrId;
 
-    @CustomType.Constructor
-    private GetRecordsRecord(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("domain") String domain,
-        @CustomType.Parameter("isProtected") Boolean isProtected,
-        @CustomType.Parameter("rdata") @Nullable String rdata,
-        @CustomType.Parameter("recordHash") String recordHash,
-        @CustomType.Parameter("rrsetVersion") String rrsetVersion,
-        @CustomType.Parameter("rtype") String rtype,
-        @CustomType.Parameter("ttl") @Nullable Integer ttl,
-        @CustomType.Parameter("zoneNameOrId") String zoneNameOrId) {
-        this.compartmentId = compartmentId;
-        this.domain = domain;
-        this.isProtected = isProtected;
-        this.rdata = rdata;
-        this.recordHash = recordHash;
-        this.rrsetVersion = rrsetVersion;
-        this.rtype = rtype;
-        this.ttl = ttl;
-        this.zoneNameOrId = zoneNameOrId;
-    }
-
+    private GetRecordsRecord() {}
     /**
      * @return The OCID of the compartment the resource belongs to.
      * 
@@ -176,7 +155,7 @@ public final class GetRecordsRecord {
     public static Builder builder(GetRecordsRecord defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private String domain;
@@ -187,11 +166,7 @@ public final class GetRecordsRecord {
         private String rtype;
         private @Nullable Integer ttl;
         private String zoneNameOrId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRecordsRecord defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -205,43 +180,63 @@ public final class GetRecordsRecord {
     	      this.zoneNameOrId = defaults.zoneNameOrId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder domain(String domain) {
             this.domain = Objects.requireNonNull(domain);
             return this;
         }
+        @CustomType.Setter
         public Builder isProtected(Boolean isProtected) {
             this.isProtected = Objects.requireNonNull(isProtected);
             return this;
         }
+        @CustomType.Setter
         public Builder rdata(@Nullable String rdata) {
             this.rdata = rdata;
             return this;
         }
+        @CustomType.Setter
         public Builder recordHash(String recordHash) {
             this.recordHash = Objects.requireNonNull(recordHash);
             return this;
         }
+        @CustomType.Setter
         public Builder rrsetVersion(String rrsetVersion) {
             this.rrsetVersion = Objects.requireNonNull(rrsetVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder rtype(String rtype) {
             this.rtype = Objects.requireNonNull(rtype);
             return this;
         }
+        @CustomType.Setter
         public Builder ttl(@Nullable Integer ttl) {
             this.ttl = ttl;
             return this;
         }
+        @CustomType.Setter
         public Builder zoneNameOrId(String zoneNameOrId) {
             this.zoneNameOrId = Objects.requireNonNull(zoneNameOrId);
             return this;
-        }        public GetRecordsRecord build() {
-            return new GetRecordsRecord(compartmentId, domain, isProtected, rdata, recordHash, rrsetVersion, rtype, ttl, zoneNameOrId);
+        }
+        public GetRecordsRecord build() {
+            final var o = new GetRecordsRecord();
+            o.compartmentId = compartmentId;
+            o.domain = domain;
+            o.isProtected = isProtected;
+            o.rdata = rdata;
+            o.recordHash = recordHash;
+            o.rrsetVersion = rrsetVersion;
+            o.rtype = rtype;
+            o.ttl = ttl;
+            o.zoneNameOrId = zoneNameOrId;
+            return o;
         }
     }
 }

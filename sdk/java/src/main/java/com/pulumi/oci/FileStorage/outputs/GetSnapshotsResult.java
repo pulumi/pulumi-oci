@@ -18,38 +18,25 @@ public final class GetSnapshotsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
      * 
      */
-    private final String fileSystemId;
-    private final @Nullable List<GetSnapshotsFilter> filters;
+    private String fileSystemId;
+    private @Nullable List<GetSnapshotsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of snapshots.
      * 
      */
-    private final List<GetSnapshotsSnapshot> snapshots;
+    private List<GetSnapshotsSnapshot> snapshots;
     /**
      * @return The current state of the snapshot.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetSnapshotsResult(
-        @CustomType.Parameter("fileSystemId") String fileSystemId,
-        @CustomType.Parameter("filters") @Nullable List<GetSnapshotsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("snapshots") List<GetSnapshotsSnapshot> snapshots,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.fileSystemId = fileSystemId;
-        this.filters = filters;
-        this.id = id;
-        this.snapshots = snapshots;
-        this.state = state;
-    }
-
+    private GetSnapshotsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
      * 
@@ -89,18 +76,14 @@ public final class GetSnapshotsResult {
     public static Builder builder(GetSnapshotsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String fileSystemId;
         private @Nullable List<GetSnapshotsFilter> filters;
         private @Nullable String id;
         private List<GetSnapshotsSnapshot> snapshots;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSnapshotsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.fileSystemId = defaults.fileSystemId;
@@ -110,10 +93,12 @@ public final class GetSnapshotsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder fileSystemId(String fileSystemId) {
             this.fileSystemId = Objects.requireNonNull(fileSystemId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSnapshotsFilter> filters) {
             this.filters = filters;
             return this;
@@ -121,10 +106,12 @@ public final class GetSnapshotsResult {
         public Builder filters(GetSnapshotsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder snapshots(List<GetSnapshotsSnapshot> snapshots) {
             this.snapshots = Objects.requireNonNull(snapshots);
             return this;
@@ -132,11 +119,19 @@ public final class GetSnapshotsResult {
         public Builder snapshots(GetSnapshotsSnapshot... snapshots) {
             return snapshots(List.of(snapshots));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetSnapshotsResult build() {
-            return new GetSnapshotsResult(fileSystemId, filters, id, snapshots, state);
+        }
+        public GetSnapshotsResult build() {
+            final var o = new GetSnapshotsResult();
+            o.fileSystemId = fileSystemId;
+            o.filters = filters;
+            o.id = id;
+            o.snapshots = snapshots;
+            o.state = state;
+            return o;
         }
     }
 }

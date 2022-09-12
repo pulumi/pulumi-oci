@@ -18,38 +18,25 @@ public final class PolicyOrigin {
      * @return (Updatable) A list of HTTP headers to forward to your origin.
      * 
      */
-    private final @Nullable List<PolicyOriginCustomHeader> customHeaders;
+    private @Nullable List<PolicyOriginCustomHeader> customHeaders;
     /**
      * @return (Updatable) The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
      * 
      */
-    private final @Nullable Integer httpPort;
+    private @Nullable Integer httpPort;
     /**
      * @return (Updatable) The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`. If `0` is specified - the origin is not used for HTTPS traffic.
      * 
      */
-    private final @Nullable Integer httpsPort;
-    private final String label;
+    private @Nullable Integer httpsPort;
+    private String label;
     /**
      * @return (Updatable) The URI of the origin. Does not support paths. Port numbers should be specified in the `httpPort` and `httpsPort` fields.
      * 
      */
-    private final String uri;
+    private String uri;
 
-    @CustomType.Constructor
-    private PolicyOrigin(
-        @CustomType.Parameter("customHeaders") @Nullable List<PolicyOriginCustomHeader> customHeaders,
-        @CustomType.Parameter("httpPort") @Nullable Integer httpPort,
-        @CustomType.Parameter("httpsPort") @Nullable Integer httpsPort,
-        @CustomType.Parameter("label") String label,
-        @CustomType.Parameter("uri") String uri) {
-        this.customHeaders = customHeaders;
-        this.httpPort = httpPort;
-        this.httpsPort = httpsPort;
-        this.label = label;
-        this.uri = uri;
-    }
-
+    private PolicyOrigin() {}
     /**
      * @return (Updatable) A list of HTTP headers to forward to your origin.
      * 
@@ -89,18 +76,14 @@ public final class PolicyOrigin {
     public static Builder builder(PolicyOrigin defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<PolicyOriginCustomHeader> customHeaders;
         private @Nullable Integer httpPort;
         private @Nullable Integer httpsPort;
         private String label;
         private String uri;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PolicyOrigin defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.customHeaders = defaults.customHeaders;
@@ -110,6 +93,7 @@ public final class PolicyOrigin {
     	      this.uri = defaults.uri;
         }
 
+        @CustomType.Setter
         public Builder customHeaders(@Nullable List<PolicyOriginCustomHeader> customHeaders) {
             this.customHeaders = customHeaders;
             return this;
@@ -117,23 +101,34 @@ public final class PolicyOrigin {
         public Builder customHeaders(PolicyOriginCustomHeader... customHeaders) {
             return customHeaders(List.of(customHeaders));
         }
+        @CustomType.Setter
         public Builder httpPort(@Nullable Integer httpPort) {
             this.httpPort = httpPort;
             return this;
         }
+        @CustomType.Setter
         public Builder httpsPort(@Nullable Integer httpsPort) {
             this.httpsPort = httpsPort;
             return this;
         }
+        @CustomType.Setter
         public Builder label(String label) {
             this.label = Objects.requireNonNull(label);
             return this;
         }
+        @CustomType.Setter
         public Builder uri(String uri) {
             this.uri = Objects.requireNonNull(uri);
             return this;
-        }        public PolicyOrigin build() {
-            return new PolicyOrigin(customHeaders, httpPort, httpsPort, label, uri);
+        }
+        public PolicyOrigin build() {
+            final var o = new PolicyOrigin();
+            o.customHeaders = customHeaders;
+            o.httpPort = httpPort;
+            o.httpsPort = httpsPort;
+            o.label = label;
+            o.uri = uri;
+            return o;
         }
     }
 }

@@ -13,84 +13,59 @@ public final class GetSubscriptionSubscriptionPaymentOption {
      * @return Credit card type.
      * 
      */
-    private final String creditCardType;
+    private String creditCardType;
     /**
      * @return The email address of the paypal user.
      * 
      */
-    private final String emailAddress;
+    private String emailAddress;
     /**
      * @return Agreement id for the paypal account.
      * 
      */
-    private final String extBillingAgreementId;
+    private String extBillingAgreementId;
     /**
      * @return First name of the paypal user.
      * 
      */
-    private final String firstName;
+    private String firstName;
     /**
      * @return Last four digits of the card.
      * 
      */
-    private final String lastDigits;
+    private String lastDigits;
     /**
      * @return Last name of the paypal user.
      * 
      */
-    private final String lastName;
+    private String lastName;
     /**
      * @return Name on the credit card.
      * 
      */
-    private final String nameOnCard;
+    private String nameOnCard;
     /**
      * @return Payment method
      * 
      */
-    private final String paymentMethod;
+    private String paymentMethod;
     /**
      * @return Expired date of the credit card.
      * 
      */
-    private final String timeExpiration;
+    private String timeExpiration;
     /**
      * @return Wallet instrument internal id.
      * 
      */
-    private final String walletInstrumentId;
+    private String walletInstrumentId;
     /**
      * @return Wallet transaction id.
      * 
      */
-    private final String walletTransactionId;
+    private String walletTransactionId;
 
-    @CustomType.Constructor
-    private GetSubscriptionSubscriptionPaymentOption(
-        @CustomType.Parameter("creditCardType") String creditCardType,
-        @CustomType.Parameter("emailAddress") String emailAddress,
-        @CustomType.Parameter("extBillingAgreementId") String extBillingAgreementId,
-        @CustomType.Parameter("firstName") String firstName,
-        @CustomType.Parameter("lastDigits") String lastDigits,
-        @CustomType.Parameter("lastName") String lastName,
-        @CustomType.Parameter("nameOnCard") String nameOnCard,
-        @CustomType.Parameter("paymentMethod") String paymentMethod,
-        @CustomType.Parameter("timeExpiration") String timeExpiration,
-        @CustomType.Parameter("walletInstrumentId") String walletInstrumentId,
-        @CustomType.Parameter("walletTransactionId") String walletTransactionId) {
-        this.creditCardType = creditCardType;
-        this.emailAddress = emailAddress;
-        this.extBillingAgreementId = extBillingAgreementId;
-        this.firstName = firstName;
-        this.lastDigits = lastDigits;
-        this.lastName = lastName;
-        this.nameOnCard = nameOnCard;
-        this.paymentMethod = paymentMethod;
-        this.timeExpiration = timeExpiration;
-        this.walletInstrumentId = walletInstrumentId;
-        this.walletTransactionId = walletTransactionId;
-    }
-
+    private GetSubscriptionSubscriptionPaymentOption() {}
     /**
      * @return Credit card type.
      * 
@@ -176,7 +151,7 @@ public final class GetSubscriptionSubscriptionPaymentOption {
     public static Builder builder(GetSubscriptionSubscriptionPaymentOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String creditCardType;
         private String emailAddress;
@@ -189,11 +164,7 @@ public final class GetSubscriptionSubscriptionPaymentOption {
         private String timeExpiration;
         private String walletInstrumentId;
         private String walletTransactionId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionSubscriptionPaymentOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.creditCardType = defaults.creditCardType;
@@ -209,51 +180,75 @@ public final class GetSubscriptionSubscriptionPaymentOption {
     	      this.walletTransactionId = defaults.walletTransactionId;
         }
 
+        @CustomType.Setter
         public Builder creditCardType(String creditCardType) {
             this.creditCardType = Objects.requireNonNull(creditCardType);
             return this;
         }
+        @CustomType.Setter
         public Builder emailAddress(String emailAddress) {
             this.emailAddress = Objects.requireNonNull(emailAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder extBillingAgreementId(String extBillingAgreementId) {
             this.extBillingAgreementId = Objects.requireNonNull(extBillingAgreementId);
             return this;
         }
+        @CustomType.Setter
         public Builder firstName(String firstName) {
             this.firstName = Objects.requireNonNull(firstName);
             return this;
         }
+        @CustomType.Setter
         public Builder lastDigits(String lastDigits) {
             this.lastDigits = Objects.requireNonNull(lastDigits);
             return this;
         }
+        @CustomType.Setter
         public Builder lastName(String lastName) {
             this.lastName = Objects.requireNonNull(lastName);
             return this;
         }
+        @CustomType.Setter
         public Builder nameOnCard(String nameOnCard) {
             this.nameOnCard = Objects.requireNonNull(nameOnCard);
             return this;
         }
+        @CustomType.Setter
         public Builder paymentMethod(String paymentMethod) {
             this.paymentMethod = Objects.requireNonNull(paymentMethod);
             return this;
         }
+        @CustomType.Setter
         public Builder timeExpiration(String timeExpiration) {
             this.timeExpiration = Objects.requireNonNull(timeExpiration);
             return this;
         }
+        @CustomType.Setter
         public Builder walletInstrumentId(String walletInstrumentId) {
             this.walletInstrumentId = Objects.requireNonNull(walletInstrumentId);
             return this;
         }
+        @CustomType.Setter
         public Builder walletTransactionId(String walletTransactionId) {
             this.walletTransactionId = Objects.requireNonNull(walletTransactionId);
             return this;
-        }        public GetSubscriptionSubscriptionPaymentOption build() {
-            return new GetSubscriptionSubscriptionPaymentOption(creditCardType, emailAddress, extBillingAgreementId, firstName, lastDigits, lastName, nameOnCard, paymentMethod, timeExpiration, walletInstrumentId, walletTransactionId);
+        }
+        public GetSubscriptionSubscriptionPaymentOption build() {
+            final var o = new GetSubscriptionSubscriptionPaymentOption();
+            o.creditCardType = creditCardType;
+            o.emailAddress = emailAddress;
+            o.extBillingAgreementId = extBillingAgreementId;
+            o.firstName = firstName;
+            o.lastDigits = lastDigits;
+            o.lastName = lastName;
+            o.nameOnCard = nameOnCard;
+            o.paymentMethod = paymentMethod;
+            o.timeExpiration = timeExpiration;
+            o.walletInstrumentId = walletInstrumentId;
+            o.walletTransactionId = walletTransactionId;
+            return o;
         }
     }
 }

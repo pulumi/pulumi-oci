@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetScriptsScriptCollection {
-    private final List<GetScriptsScriptCollectionItem> items;
+    private List<GetScriptsScriptCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetScriptsScriptCollection(@CustomType.Parameter("items") List<GetScriptsScriptCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetScriptsScriptCollection() {}
     public List<GetScriptsScriptCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetScriptsScriptCollection {
     public static Builder builder(GetScriptsScriptCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetScriptsScriptCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetScriptsScriptCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetScriptsScriptCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetScriptsScriptCollectionItem... items) {
             return items(List.of(items));
-        }        public GetScriptsScriptCollection build() {
-            return new GetScriptsScriptCollection(items);
+        }
+        public GetScriptsScriptCollection build() {
+            final var o = new GetScriptsScriptCollection();
+            o.items = items;
+            return o;
         }
     }
 }

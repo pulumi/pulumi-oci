@@ -16,21 +16,14 @@ public final class CaptureFilterVtapCaptureFilterRuleUdpOptions {
      * @return (Updatable)
      * 
      */
-    private final @Nullable CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRange destinationPortRange;
+    private @Nullable CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRange destinationPortRange;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange sourcePortRange;
+    private @Nullable CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange sourcePortRange;
 
-    @CustomType.Constructor
-    private CaptureFilterVtapCaptureFilterRuleUdpOptions(
-        @CustomType.Parameter("destinationPortRange") @Nullable CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRange destinationPortRange,
-        @CustomType.Parameter("sourcePortRange") @Nullable CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange sourcePortRange) {
-        this.destinationPortRange = destinationPortRange;
-        this.sourcePortRange = sourcePortRange;
-    }
-
+    private CaptureFilterVtapCaptureFilterRuleUdpOptions() {}
     /**
      * @return (Updatable)
      * 
@@ -53,30 +46,32 @@ public final class CaptureFilterVtapCaptureFilterRuleUdpOptions {
     public static Builder builder(CaptureFilterVtapCaptureFilterRuleUdpOptions defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRange destinationPortRange;
         private @Nullable CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange sourcePortRange;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CaptureFilterVtapCaptureFilterRuleUdpOptions defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.destinationPortRange = defaults.destinationPortRange;
     	      this.sourcePortRange = defaults.sourcePortRange;
         }
 
+        @CustomType.Setter
         public Builder destinationPortRange(@Nullable CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRange destinationPortRange) {
             this.destinationPortRange = destinationPortRange;
             return this;
         }
+        @CustomType.Setter
         public Builder sourcePortRange(@Nullable CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange sourcePortRange) {
             this.sourcePortRange = sourcePortRange;
             return this;
-        }        public CaptureFilterVtapCaptureFilterRuleUdpOptions build() {
-            return new CaptureFilterVtapCaptureFilterRuleUdpOptions(destinationPortRange, sourcePortRange);
+        }
+        public CaptureFilterVtapCaptureFilterRuleUdpOptions build() {
+            final var o = new CaptureFilterVtapCaptureFilterRuleUdpOptions();
+            o.destinationPortRange = destinationPortRange;
+            o.sourcePortRange = sourcePortRange;
+            return o;
         }
     }
 }

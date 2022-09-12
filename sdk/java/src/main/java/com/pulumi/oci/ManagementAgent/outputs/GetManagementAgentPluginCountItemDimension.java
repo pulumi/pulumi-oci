@@ -13,21 +13,14 @@ public final class GetManagementAgentPluginCountItemDimension {
      * @return Management Agent Plugin Display Name
      * 
      */
-    private final String pluginDisplayName;
+    private String pluginDisplayName;
     /**
      * @return Management Agent Plugin Name
      * 
      */
-    private final String pluginName;
+    private String pluginName;
 
-    @CustomType.Constructor
-    private GetManagementAgentPluginCountItemDimension(
-        @CustomType.Parameter("pluginDisplayName") String pluginDisplayName,
-        @CustomType.Parameter("pluginName") String pluginName) {
-        this.pluginDisplayName = pluginDisplayName;
-        this.pluginName = pluginName;
-    }
-
+    private GetManagementAgentPluginCountItemDimension() {}
     /**
      * @return Management Agent Plugin Display Name
      * 
@@ -50,30 +43,32 @@ public final class GetManagementAgentPluginCountItemDimension {
     public static Builder builder(GetManagementAgentPluginCountItemDimension defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String pluginDisplayName;
         private String pluginName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagementAgentPluginCountItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.pluginDisplayName = defaults.pluginDisplayName;
     	      this.pluginName = defaults.pluginName;
         }
 
+        @CustomType.Setter
         public Builder pluginDisplayName(String pluginDisplayName) {
             this.pluginDisplayName = Objects.requireNonNull(pluginDisplayName);
             return this;
         }
+        @CustomType.Setter
         public Builder pluginName(String pluginName) {
             this.pluginName = Objects.requireNonNull(pluginName);
             return this;
-        }        public GetManagementAgentPluginCountItemDimension build() {
-            return new GetManagementAgentPluginCountItemDimension(pluginDisplayName, pluginName);
+        }
+        public GetManagementAgentPluginCountItemDimension build() {
+            final var o = new GetManagementAgentPluginCountItemDimension();
+            o.pluginDisplayName = pluginDisplayName;
+            o.pluginName = pluginName;
+            return o;
         }
     }
 }

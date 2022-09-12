@@ -15,21 +15,14 @@ public final class GetServiceConnectorSourceMonitoringSourceNamespaceDetail {
      * @return The type descriminator.
      * 
      */
-    private final String kind;
+    private String kind;
     /**
      * @return The namespaces for the compartment-specific list.
      * 
      */
-    private final List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace> namespaces;
+    private List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace> namespaces;
 
-    @CustomType.Constructor
-    private GetServiceConnectorSourceMonitoringSourceNamespaceDetail(
-        @CustomType.Parameter("kind") String kind,
-        @CustomType.Parameter("namespaces") List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace> namespaces) {
-        this.kind = kind;
-        this.namespaces = namespaces;
-    }
-
+    private GetServiceConnectorSourceMonitoringSourceNamespaceDetail() {}
     /**
      * @return The type descriminator.
      * 
@@ -52,33 +45,35 @@ public final class GetServiceConnectorSourceMonitoringSourceNamespaceDetail {
     public static Builder builder(GetServiceConnectorSourceMonitoringSourceNamespaceDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String kind;
         private List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace> namespaces;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceConnectorSourceMonitoringSourceNamespaceDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kind = defaults.kind;
     	      this.namespaces = defaults.namespaces;
         }
 
+        @CustomType.Setter
         public Builder kind(String kind) {
             this.kind = Objects.requireNonNull(kind);
             return this;
         }
+        @CustomType.Setter
         public Builder namespaces(List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace> namespaces) {
             this.namespaces = Objects.requireNonNull(namespaces);
             return this;
         }
         public Builder namespaces(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace... namespaces) {
             return namespaces(List.of(namespaces));
-        }        public GetServiceConnectorSourceMonitoringSourceNamespaceDetail build() {
-            return new GetServiceConnectorSourceMonitoringSourceNamespaceDetail(kind, namespaces);
+        }
+        public GetServiceConnectorSourceMonitoringSourceNamespaceDetail build() {
+            final var o = new GetServiceConnectorSourceMonitoringSourceNamespaceDetail();
+            o.kind = kind;
+            o.namespaces = namespaces;
+            return o;
         }
     }
 }

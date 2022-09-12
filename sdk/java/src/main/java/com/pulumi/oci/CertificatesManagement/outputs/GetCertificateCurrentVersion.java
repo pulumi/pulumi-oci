@@ -17,84 +17,59 @@ public final class GetCertificateCurrentVersion {
      * @return The OCID of the certificate.
      * 
      */
-    private final String certificateId;
+    private String certificateId;
     /**
      * @return The version number of the issuing certificate authority (CA).
      * 
      */
-    private final String issuerCaVersionNumber;
+    private String issuerCaVersionNumber;
     /**
      * @return The current revocation status of the entity.
      * 
      */
-    private final List<GetCertificateCurrentVersionRevocationStatus> revocationStatuses;
+    private List<GetCertificateCurrentVersionRevocationStatus> revocationStatuses;
     /**
      * @return Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
      * 
      */
-    private final String serialNumber;
+    private String serialNumber;
     /**
      * @return A list of rotation states for this certificate version.
      * 
      */
-    private final List<String> stages;
+    private List<String> stages;
     /**
      * @return A list of subject alternative names.
      * 
      */
-    private final List<GetCertificateCurrentVersionSubjectAlternativeName> subjectAlternativeNames;
+    private List<GetCertificateCurrentVersionSubjectAlternativeName> subjectAlternativeNames;
     /**
      * @return A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeOfDeletion;
+    private String timeOfDeletion;
     /**
      * @return An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
      * 
      */
-    private final List<GetCertificateCurrentVersionValidity> validities;
+    private List<GetCertificateCurrentVersionValidity> validities;
     /**
      * @return The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
      * 
      */
-    private final String versionName;
+    private String versionName;
     /**
      * @return The version number of the certificate.
      * 
      */
-    private final String versionNumber;
+    private String versionNumber;
 
-    @CustomType.Constructor
-    private GetCertificateCurrentVersion(
-        @CustomType.Parameter("certificateId") String certificateId,
-        @CustomType.Parameter("issuerCaVersionNumber") String issuerCaVersionNumber,
-        @CustomType.Parameter("revocationStatuses") List<GetCertificateCurrentVersionRevocationStatus> revocationStatuses,
-        @CustomType.Parameter("serialNumber") String serialNumber,
-        @CustomType.Parameter("stages") List<String> stages,
-        @CustomType.Parameter("subjectAlternativeNames") List<GetCertificateCurrentVersionSubjectAlternativeName> subjectAlternativeNames,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeOfDeletion") String timeOfDeletion,
-        @CustomType.Parameter("validities") List<GetCertificateCurrentVersionValidity> validities,
-        @CustomType.Parameter("versionName") String versionName,
-        @CustomType.Parameter("versionNumber") String versionNumber) {
-        this.certificateId = certificateId;
-        this.issuerCaVersionNumber = issuerCaVersionNumber;
-        this.revocationStatuses = revocationStatuses;
-        this.serialNumber = serialNumber;
-        this.stages = stages;
-        this.subjectAlternativeNames = subjectAlternativeNames;
-        this.timeCreated = timeCreated;
-        this.timeOfDeletion = timeOfDeletion;
-        this.validities = validities;
-        this.versionName = versionName;
-        this.versionNumber = versionNumber;
-    }
-
+    private GetCertificateCurrentVersion() {}
     /**
      * @return The OCID of the certificate.
      * 
@@ -180,7 +155,7 @@ public final class GetCertificateCurrentVersion {
     public static Builder builder(GetCertificateCurrentVersion defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String certificateId;
         private String issuerCaVersionNumber;
@@ -193,11 +168,7 @@ public final class GetCertificateCurrentVersion {
         private List<GetCertificateCurrentVersionValidity> validities;
         private String versionName;
         private String versionNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificateCurrentVersion defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateId = defaults.certificateId;
@@ -213,14 +184,17 @@ public final class GetCertificateCurrentVersion {
     	      this.versionNumber = defaults.versionNumber;
         }
 
+        @CustomType.Setter
         public Builder certificateId(String certificateId) {
             this.certificateId = Objects.requireNonNull(certificateId);
             return this;
         }
+        @CustomType.Setter
         public Builder issuerCaVersionNumber(String issuerCaVersionNumber) {
             this.issuerCaVersionNumber = Objects.requireNonNull(issuerCaVersionNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder revocationStatuses(List<GetCertificateCurrentVersionRevocationStatus> revocationStatuses) {
             this.revocationStatuses = Objects.requireNonNull(revocationStatuses);
             return this;
@@ -228,10 +202,12 @@ public final class GetCertificateCurrentVersion {
         public Builder revocationStatuses(GetCertificateCurrentVersionRevocationStatus... revocationStatuses) {
             return revocationStatuses(List.of(revocationStatuses));
         }
+        @CustomType.Setter
         public Builder serialNumber(String serialNumber) {
             this.serialNumber = Objects.requireNonNull(serialNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder stages(List<String> stages) {
             this.stages = Objects.requireNonNull(stages);
             return this;
@@ -239,6 +215,7 @@ public final class GetCertificateCurrentVersion {
         public Builder stages(String... stages) {
             return stages(List.of(stages));
         }
+        @CustomType.Setter
         public Builder subjectAlternativeNames(List<GetCertificateCurrentVersionSubjectAlternativeName> subjectAlternativeNames) {
             this.subjectAlternativeNames = Objects.requireNonNull(subjectAlternativeNames);
             return this;
@@ -246,14 +223,17 @@ public final class GetCertificateCurrentVersion {
         public Builder subjectAlternativeNames(GetCertificateCurrentVersionSubjectAlternativeName... subjectAlternativeNames) {
             return subjectAlternativeNames(List.of(subjectAlternativeNames));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
             this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
             return this;
         }
+        @CustomType.Setter
         public Builder validities(List<GetCertificateCurrentVersionValidity> validities) {
             this.validities = Objects.requireNonNull(validities);
             return this;
@@ -261,15 +241,30 @@ public final class GetCertificateCurrentVersion {
         public Builder validities(GetCertificateCurrentVersionValidity... validities) {
             return validities(List.of(validities));
         }
+        @CustomType.Setter
         public Builder versionName(String versionName) {
             this.versionName = Objects.requireNonNull(versionName);
             return this;
         }
+        @CustomType.Setter
         public Builder versionNumber(String versionNumber) {
             this.versionNumber = Objects.requireNonNull(versionNumber);
             return this;
-        }        public GetCertificateCurrentVersion build() {
-            return new GetCertificateCurrentVersion(certificateId, issuerCaVersionNumber, revocationStatuses, serialNumber, stages, subjectAlternativeNames, timeCreated, timeOfDeletion, validities, versionName, versionNumber);
+        }
+        public GetCertificateCurrentVersion build() {
+            final var o = new GetCertificateCurrentVersion();
+            o.certificateId = certificateId;
+            o.issuerCaVersionNumber = issuerCaVersionNumber;
+            o.revocationStatuses = revocationStatuses;
+            o.serialNumber = serialNumber;
+            o.stages = stages;
+            o.subjectAlternativeNames = subjectAlternativeNames;
+            o.timeCreated = timeCreated;
+            o.timeOfDeletion = timeOfDeletion;
+            o.validities = validities;
+            o.versionName = versionName;
+            o.versionNumber = versionNumber;
+            return o;
         }
     }
 }

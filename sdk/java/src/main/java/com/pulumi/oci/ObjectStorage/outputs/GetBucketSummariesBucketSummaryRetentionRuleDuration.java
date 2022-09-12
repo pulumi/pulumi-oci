@@ -9,17 +9,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBucketSummariesBucketSummaryRetentionRuleDuration {
-    private final String timeAmount;
-    private final String timeUnit;
+    private String timeAmount;
+    private String timeUnit;
 
-    @CustomType.Constructor
-    private GetBucketSummariesBucketSummaryRetentionRuleDuration(
-        @CustomType.Parameter("timeAmount") String timeAmount,
-        @CustomType.Parameter("timeUnit") String timeUnit) {
-        this.timeAmount = timeAmount;
-        this.timeUnit = timeUnit;
-    }
-
+    private GetBucketSummariesBucketSummaryRetentionRuleDuration() {}
     public String timeAmount() {
         return this.timeAmount;
     }
@@ -34,30 +27,32 @@ public final class GetBucketSummariesBucketSummaryRetentionRuleDuration {
     public static Builder builder(GetBucketSummariesBucketSummaryRetentionRuleDuration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String timeAmount;
         private String timeUnit;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBucketSummariesBucketSummaryRetentionRuleDuration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.timeAmount = defaults.timeAmount;
     	      this.timeUnit = defaults.timeUnit;
         }
 
+        @CustomType.Setter
         public Builder timeAmount(String timeAmount) {
             this.timeAmount = Objects.requireNonNull(timeAmount);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUnit(String timeUnit) {
             this.timeUnit = Objects.requireNonNull(timeUnit);
             return this;
-        }        public GetBucketSummariesBucketSummaryRetentionRuleDuration build() {
-            return new GetBucketSummariesBucketSummaryRetentionRuleDuration(timeAmount, timeUnit);
+        }
+        public GetBucketSummariesBucketSummaryRetentionRuleDuration build() {
+            final var o = new GetBucketSummariesBucketSummaryRetentionRuleDuration();
+            o.timeAmount = timeAmount;
+            o.timeUnit = timeUnit;
+            return o;
         }
     }
 }

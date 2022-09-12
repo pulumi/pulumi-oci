@@ -15,13 +15,9 @@ public final class VaultReplicaDetail {
      * @return ReplicationId associated with a vault operation
      * 
      */
-    private final @Nullable String replicationId;
+    private @Nullable String replicationId;
 
-    @CustomType.Constructor
-    private VaultReplicaDetail(@CustomType.Parameter("replicationId") @Nullable String replicationId) {
-        this.replicationId = replicationId;
-    }
-
+    private VaultReplicaDetail() {}
     /**
      * @return ReplicationId associated with a vault operation
      * 
@@ -37,24 +33,24 @@ public final class VaultReplicaDetail {
     public static Builder builder(VaultReplicaDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String replicationId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(VaultReplicaDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.replicationId = defaults.replicationId;
         }
 
+        @CustomType.Setter
         public Builder replicationId(@Nullable String replicationId) {
             this.replicationId = replicationId;
             return this;
-        }        public VaultReplicaDetail build() {
-            return new VaultReplicaDetail(replicationId);
+        }
+        public VaultReplicaDetail build() {
+            final var o = new VaultReplicaDetail();
+            o.replicationId = replicationId;
+            return o;
         }
     }
 }

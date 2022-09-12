@@ -13,105 +13,74 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAccessPolicyResult {
-    private final String accessPolicyId;
+    private String accessPolicyId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The OCID of the service mesh in which this access policy is created.
      * 
      */
-    private final String meshId;
+    private String meshId;
     /**
      * @return A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return List of applicable rules.
      * 
      */
-    private final List<GetAccessPolicyRule> rules;
+    private List<GetAccessPolicyRule> rules;
     /**
      * @return The current state of the Resource.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time when this resource was created in an RFC3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time when this resource was updated in an RFC3339 formatted datetime string.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetAccessPolicyResult(
-        @CustomType.Parameter("accessPolicyId") String accessPolicyId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("meshId") String meshId,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("rules") List<GetAccessPolicyRule> rules,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.accessPolicyId = accessPolicyId;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.meshId = meshId;
-        this.name = name;
-        this.rules = rules;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetAccessPolicyResult() {}
     public String accessPolicyId() {
         return this.accessPolicyId;
     }
@@ -214,7 +183,7 @@ public final class GetAccessPolicyResult {
     public static Builder builder(GetAccessPolicyResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String accessPolicyId;
         private String compartmentId;
@@ -230,11 +199,7 @@ public final class GetAccessPolicyResult {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAccessPolicyResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessPolicyId = defaults.accessPolicyId;
@@ -253,42 +218,52 @@ public final class GetAccessPolicyResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder accessPolicyId(String accessPolicyId) {
             this.accessPolicyId = Objects.requireNonNull(accessPolicyId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder meshId(String meshId) {
             this.meshId = Objects.requireNonNull(meshId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder rules(List<GetAccessPolicyRule> rules) {
             this.rules = Objects.requireNonNull(rules);
             return this;
@@ -296,23 +271,43 @@ public final class GetAccessPolicyResult {
         public Builder rules(GetAccessPolicyRule... rules) {
             return rules(List.of(rules));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetAccessPolicyResult build() {
-            return new GetAccessPolicyResult(accessPolicyId, compartmentId, definedTags, description, freeformTags, id, lifecycleDetails, meshId, name, rules, state, systemTags, timeCreated, timeUpdated);
+        }
+        public GetAccessPolicyResult build() {
+            final var o = new GetAccessPolicyResult();
+            o.accessPolicyId = accessPolicyId;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.meshId = meshId;
+            o.name = name;
+            o.rules = rules;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

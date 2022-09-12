@@ -14,21 +14,14 @@ public final class GetJobExecutionsStatusItem {
      * @return The number of job executions of a particular status.
      * 
      */
-    private final Integer count;
+    private Integer count;
     /**
      * @return The status of the job execution.
      * 
      */
-    private final String status;
+    private String status;
 
-    @CustomType.Constructor
-    private GetJobExecutionsStatusItem(
-        @CustomType.Parameter("count") Integer count,
-        @CustomType.Parameter("status") String status) {
-        this.count = count;
-        this.status = status;
-    }
-
+    private GetJobExecutionsStatusItem() {}
     /**
      * @return The number of job executions of a particular status.
      * 
@@ -51,30 +44,32 @@ public final class GetJobExecutionsStatusItem {
     public static Builder builder(GetJobExecutionsStatusItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer count;
         private String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJobExecutionsStatusItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder count(Integer count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
-        }        public GetJobExecutionsStatusItem build() {
-            return new GetJobExecutionsStatusItem(count, status);
+        }
+        public GetJobExecutionsStatusItem build() {
+            final var o = new GetJobExecutionsStatusItem();
+            o.count = count;
+            o.status = status;
+            return o;
         }
     }
 }

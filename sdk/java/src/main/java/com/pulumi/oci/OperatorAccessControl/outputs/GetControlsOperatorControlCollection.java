@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetControlsOperatorControlCollection {
-    private final List<GetControlsOperatorControlCollectionItem> items;
+    private List<GetControlsOperatorControlCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetControlsOperatorControlCollection(@CustomType.Parameter("items") List<GetControlsOperatorControlCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetControlsOperatorControlCollection() {}
     public List<GetControlsOperatorControlCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetControlsOperatorControlCollection {
     public static Builder builder(GetControlsOperatorControlCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetControlsOperatorControlCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetControlsOperatorControlCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetControlsOperatorControlCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetControlsOperatorControlCollectionItem... items) {
             return items(List.of(items));
-        }        public GetControlsOperatorControlCollection build() {
-            return new GetControlsOperatorControlCollection(items);
+        }
+        public GetControlsOperatorControlCollection build() {
+            final var o = new GetControlsOperatorControlCollection();
+            o.items = items;
+            return o;
         }
     }
 }

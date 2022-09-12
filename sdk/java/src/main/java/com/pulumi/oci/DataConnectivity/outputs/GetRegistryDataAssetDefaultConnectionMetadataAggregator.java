@@ -10,54 +10,41 @@ import java.util.Objects;
 @CustomType
 public final class GetRegistryDataAssetDefaultConnectionMetadataAggregator {
     /**
-     * @return A user defined description for the object.
+     * @return A user-defined description for the object.
      * 
      */
-    private final String description;
+    private String description;
     /**
-     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
-    private final String identifier;
+    private String identifier;
     /**
      * @return The identifying key for the object.
      * 
      */
-    private final String key;
+    private String key;
     /**
-     * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Specific DataAsset Type
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetRegistryDataAssetDefaultConnectionMetadataAggregator(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("identifier") String identifier,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("type") String type) {
-        this.description = description;
-        this.identifier = identifier;
-        this.key = key;
-        this.name = name;
-        this.type = type;
-    }
-
+    private GetRegistryDataAssetDefaultConnectionMetadataAggregator() {}
     /**
-     * @return A user defined description for the object.
+     * @return A user-defined description for the object.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public String identifier() {
@@ -71,7 +58,7 @@ public final class GetRegistryDataAssetDefaultConnectionMetadataAggregator {
         return this.key;
     }
     /**
-     * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public String name() {
@@ -92,18 +79,14 @@ public final class GetRegistryDataAssetDefaultConnectionMetadataAggregator {
     public static Builder builder(GetRegistryDataAssetDefaultConnectionMetadataAggregator defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String identifier;
         private String key;
         private String name;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryDataAssetDefaultConnectionMetadataAggregator defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -113,27 +96,39 @@ public final class GetRegistryDataAssetDefaultConnectionMetadataAggregator {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(String identifier) {
             this.identifier = Objects.requireNonNull(identifier);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetRegistryDataAssetDefaultConnectionMetadataAggregator build() {
-            return new GetRegistryDataAssetDefaultConnectionMetadataAggregator(description, identifier, key, name, type);
+        }
+        public GetRegistryDataAssetDefaultConnectionMetadataAggregator build() {
+            final var o = new GetRegistryDataAssetDefaultConnectionMetadataAggregator();
+            o.description = description;
+            o.identifier = identifier;
+            o.key = key;
+            o.name = name;
+            o.type = type;
+            return o;
         }
     }
 }

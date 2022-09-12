@@ -65,6 +65,7 @@ import (
 //					},
 //					HoursOfDays:                  pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_hours_of_day),
 //					IsCustomActionTimeoutEnabled: pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_is_custom_action_timeout_enabled),
+//					IsMonthlyPatchingEnabled:     pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_is_monthly_patching_enabled),
 //					LeadTimeInWeeks:              pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_lead_time_in_weeks),
 //					Months: database.AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArray{
 //						&database.AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs{

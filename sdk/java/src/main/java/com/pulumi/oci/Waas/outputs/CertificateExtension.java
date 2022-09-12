@@ -16,28 +16,19 @@ public final class CertificateExtension {
      * @return The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
      * 
      */
-    private final @Nullable Boolean isCritical;
+    private @Nullable Boolean isCritical;
     /**
      * @return The certificate extension name.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The certificate extension value.
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
 
-    @CustomType.Constructor
-    private CertificateExtension(
-        @CustomType.Parameter("isCritical") @Nullable Boolean isCritical,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("value") @Nullable String value) {
-        this.isCritical = isCritical;
-        this.name = name;
-        this.value = value;
-    }
-
+    private CertificateExtension() {}
     /**
      * @return The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
      * 
@@ -67,16 +58,12 @@ public final class CertificateExtension {
     public static Builder builder(CertificateExtension defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isCritical;
         private @Nullable String name;
         private @Nullable String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CertificateExtension defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isCritical = defaults.isCritical;
@@ -84,19 +71,27 @@ public final class CertificateExtension {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder isCritical(@Nullable Boolean isCritical) {
             this.isCritical = isCritical;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
-        }        public CertificateExtension build() {
-            return new CertificateExtension(isCritical, name, value);
+        }
+        public CertificateExtension build() {
+            final var o = new CertificateExtension();
+            o.isCritical = isCritical;
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

@@ -14,34 +14,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbSystemShapesResult {
-    private final @Nullable String availabilityDomain;
-    private final String compartmentId;
+    private @Nullable String availabilityDomain;
+    private String compartmentId;
     /**
      * @return The list of db_system_shapes.
      * 
      */
-    private final List<GetDbSystemShapesDbSystemShape> dbSystemShapes;
-    private final @Nullable List<GetDbSystemShapesFilter> filters;
+    private List<GetDbSystemShapesDbSystemShape> dbSystemShapes;
+    private @Nullable List<GetDbSystemShapesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetDbSystemShapesResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dbSystemShapes") List<GetDbSystemShapesDbSystemShape> dbSystemShapes,
-        @CustomType.Parameter("filters") @Nullable List<GetDbSystemShapesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.dbSystemShapes = dbSystemShapes;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetDbSystemShapesResult() {}
     public Optional<String> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
     }
@@ -73,18 +60,14 @@ public final class GetDbSystemShapesResult {
     public static Builder builder(GetDbSystemShapesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
         private List<GetDbSystemShapesDbSystemShape> dbSystemShapes;
         private @Nullable List<GetDbSystemShapesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbSystemShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -94,14 +77,17 @@ public final class GetDbSystemShapesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemShapes(List<GetDbSystemShapesDbSystemShape> dbSystemShapes) {
             this.dbSystemShapes = Objects.requireNonNull(dbSystemShapes);
             return this;
@@ -109,6 +95,7 @@ public final class GetDbSystemShapesResult {
         public Builder dbSystemShapes(GetDbSystemShapesDbSystemShape... dbSystemShapes) {
             return dbSystemShapes(List.of(dbSystemShapes));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDbSystemShapesFilter> filters) {
             this.filters = filters;
             return this;
@@ -116,11 +103,19 @@ public final class GetDbSystemShapesResult {
         public Builder filters(GetDbSystemShapesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetDbSystemShapesResult build() {
-            return new GetDbSystemShapesResult(availabilityDomain, compartmentId, dbSystemShapes, filters, id);
+        }
+        public GetDbSystemShapesResult build() {
+            final var o = new GetDbSystemShapesResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.dbSystemShapes = dbSystemShapes;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

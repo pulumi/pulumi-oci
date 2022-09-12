@@ -15,21 +15,14 @@ public final class ApiValidationResult {
      * @return Name of the validation.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return Result of the validation.
      * 
      */
-    private final @Nullable String result;
+    private @Nullable String result;
 
-    @CustomType.Constructor
-    private ApiValidationResult(
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("result") @Nullable String result) {
-        this.name = name;
-        this.result = result;
-    }
-
+    private ApiValidationResult() {}
     /**
      * @return Name of the validation.
      * 
@@ -52,30 +45,32 @@ public final class ApiValidationResult {
     public static Builder builder(ApiValidationResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String name;
         private @Nullable String result;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ApiValidationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.result = defaults.result;
         }
 
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder result(@Nullable String result) {
             this.result = result;
             return this;
-        }        public ApiValidationResult build() {
-            return new ApiValidationResult(name, result);
+        }
+        public ApiValidationResult build() {
+            final var o = new ApiValidationResult();
+            o.name = name;
+            o.result = result;
+            return o;
         }
     }
 }

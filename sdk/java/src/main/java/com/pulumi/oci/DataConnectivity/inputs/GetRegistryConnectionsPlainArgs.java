@@ -84,14 +84,14 @@ public final class GetRegistryConnectionsPlainArgs extends com.pulumi.resources.
     }
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      * 
      */
     @Import(name="registryId", required=true)
     private String registryId;
 
     /**
-     * @return The registry Ocid.
+     * @return The registry OCID.
      * 
      */
     public String registryId() {
@@ -207,7 +207,7 @@ public final class GetRegistryConnectionsPlainArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param registryId The registry Ocid.
+         * @param registryId The registry OCID.
          * 
          * @return builder
          * 

@@ -16,21 +16,14 @@ public final class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric {
      * @return (Updatable) Allowed value is CPU_UTILIZATION.
      * 
      */
-    private final @Nullable String metricType;
+    private @Nullable String metricType;
     /**
      * @return (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
      * 
      */
-    private final @Nullable AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold threshold;
+    private @Nullable AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold threshold;
 
-    @CustomType.Constructor
-    private AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric(
-        @CustomType.Parameter("metricType") @Nullable String metricType,
-        @CustomType.Parameter("threshold") @Nullable AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold threshold) {
-        this.metricType = metricType;
-        this.threshold = threshold;
-    }
-
+    private AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric() {}
     /**
      * @return (Updatable) Allowed value is CPU_UTILIZATION.
      * 
@@ -53,30 +46,32 @@ public final class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric {
     public static Builder builder(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String metricType;
         private @Nullable AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold threshold;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.metricType = defaults.metricType;
     	      this.threshold = defaults.threshold;
         }
 
+        @CustomType.Setter
         public Builder metricType(@Nullable String metricType) {
             this.metricType = metricType;
             return this;
         }
+        @CustomType.Setter
         public Builder threshold(@Nullable AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThreshold threshold) {
             this.threshold = threshold;
             return this;
-        }        public AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric build() {
-            return new AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric(metricType, threshold);
+        }
+        public AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric build() {
+            final var o = new AutoScalingConfigurationPolicyDetailsScaleUpConfigMetric();
+            o.metricType = metricType;
+            o.threshold = threshold;
+            return o;
         }
     }
 }

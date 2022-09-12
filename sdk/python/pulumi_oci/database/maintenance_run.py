@@ -25,6 +25,8 @@ class MaintenanceRunArgs:
                  is_resume_patching: Optional[pulumi.Input[bool]] = None,
                  patch_id: Optional[pulumi.Input[str]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
+                 target_db_server_version: Optional[pulumi.Input[str]] = None,
+                 target_storage_server_version: Optional[pulumi.Input[str]] = None,
                  time_scheduled: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MaintenanceRun resource.
@@ -37,6 +39,8 @@ class MaintenanceRunArgs:
         :param pulumi.Input[bool] is_resume_patching: (Updatable) If true, then the patching is resumed and the next component will be patched immediately.
         :param pulumi.Input[str] patch_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param pulumi.Input[str] target_db_server_version: (Updatable) The target database server system software version for the patching operation.
+        :param pulumi.Input[str] target_storage_server_version: (Updatable) The target storage cell system software version for the patching operation.
         :param pulumi.Input[str] time_scheduled: (Updatable) The scheduled date and time of the maintenance run to update.
         """
         pulumi.set(__self__, "maintenance_run_id", maintenance_run_id)
@@ -56,6 +60,10 @@ class MaintenanceRunArgs:
             pulumi.set(__self__, "patch_id", patch_id)
         if patching_mode is not None:
             pulumi.set(__self__, "patching_mode", patching_mode)
+        if target_db_server_version is not None:
+            pulumi.set(__self__, "target_db_server_version", target_db_server_version)
+        if target_storage_server_version is not None:
+            pulumi.set(__self__, "target_storage_server_version", target_storage_server_version)
         if time_scheduled is not None:
             pulumi.set(__self__, "time_scheduled", time_scheduled)
 
@@ -168,6 +176,30 @@ class MaintenanceRunArgs:
         pulumi.set(self, "patching_mode", value)
 
     @property
+    @pulumi.getter(name="targetDbServerVersion")
+    def target_db_server_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The target database server system software version for the patching operation.
+        """
+        return pulumi.get(self, "target_db_server_version")
+
+    @target_db_server_version.setter
+    def target_db_server_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "target_db_server_version", value)
+
+    @property
+    @pulumi.getter(name="targetStorageServerVersion")
+    def target_storage_server_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The target storage cell system software version for the patching operation.
+        """
+        return pulumi.get(self, "target_storage_server_version")
+
+    @target_storage_server_version.setter
+    def target_storage_server_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "target_storage_server_version", value)
+
+    @property
     @pulumi.getter(name="timeScheduled")
     def time_scheduled(self) -> Optional[pulumi.Input[str]]:
         """
@@ -240,10 +272,10 @@ class _MaintenanceRunState:
         :param pulumi.Input[str] patching_status: The status of the patching operation.
         :param pulumi.Input[str] peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         :param pulumi.Input[str] state: The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
-        :param pulumi.Input[str] target_db_server_version: The target software version for the database server patching operation.
+        :param pulumi.Input[str] target_db_server_version: (Updatable) The target database server system software version for the patching operation.
         :param pulumi.Input[str] target_resource_id: The ID of the target resource on which the maintenance run occurs.
         :param pulumi.Input[str] target_resource_type: The type of the target resource on which the maintenance run occurs.
-        :param pulumi.Input[str] target_storage_server_version: The target Cell version that is to be patched to.
+        :param pulumi.Input[str] target_storage_server_version: (Updatable) The target storage cell system software version for the patching operation.
         :param pulumi.Input[str] time_ended: The date and time the maintenance run was completed.
         :param pulumi.Input[str] time_scheduled: (Updatable) The scheduled date and time of the maintenance run to update.
         :param pulumi.Input[str] time_started: The date and time the maintenance run starts.
@@ -603,7 +635,7 @@ class _MaintenanceRunState:
     @pulumi.getter(name="targetDbServerVersion")
     def target_db_server_version(self) -> Optional[pulumi.Input[str]]:
         """
-        The target software version for the database server patching operation.
+        (Updatable) The target database server system software version for the patching operation.
         """
         return pulumi.get(self, "target_db_server_version")
 
@@ -639,7 +671,7 @@ class _MaintenanceRunState:
     @pulumi.getter(name="targetStorageServerVersion")
     def target_storage_server_version(self) -> Optional[pulumi.Input[str]]:
         """
-        The target Cell version that is to be patched to.
+        (Updatable) The target storage cell system software version for the patching operation.
         """
         return pulumi.get(self, "target_storage_server_version")
 
@@ -698,6 +730,8 @@ class MaintenanceRun(pulumi.CustomResource):
                  maintenance_run_id: Optional[pulumi.Input[str]] = None,
                  patch_id: Optional[pulumi.Input[str]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
+                 target_db_server_version: Optional[pulumi.Input[str]] = None,
+                 target_storage_server_version: Optional[pulumi.Input[str]] = None,
                  time_scheduled: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -724,6 +758,8 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[str] maintenance_run_id: The maintenance run OCID.
         :param pulumi.Input[str] patch_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
         :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param pulumi.Input[str] target_db_server_version: (Updatable) The target database server system software version for the patching operation.
+        :param pulumi.Input[str] target_storage_server_version: (Updatable) The target storage cell system software version for the patching operation.
         :param pulumi.Input[str] time_scheduled: (Updatable) The scheduled date and time of the maintenance run to update.
         """
         ...
@@ -769,6 +805,8 @@ class MaintenanceRun(pulumi.CustomResource):
                  maintenance_run_id: Optional[pulumi.Input[str]] = None,
                  patch_id: Optional[pulumi.Input[str]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
+                 target_db_server_version: Optional[pulumi.Input[str]] = None,
+                 target_storage_server_version: Optional[pulumi.Input[str]] = None,
                  time_scheduled: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -790,6 +828,8 @@ class MaintenanceRun(pulumi.CustomResource):
             __props__.__dict__["maintenance_run_id"] = maintenance_run_id
             __props__.__dict__["patch_id"] = patch_id
             __props__.__dict__["patching_mode"] = patching_mode
+            __props__.__dict__["target_db_server_version"] = target_db_server_version
+            __props__.__dict__["target_storage_server_version"] = target_storage_server_version
             __props__.__dict__["time_scheduled"] = time_scheduled
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["current_patching_component"] = None
@@ -806,10 +846,8 @@ class MaintenanceRun(pulumi.CustomResource):
             __props__.__dict__["patching_status"] = None
             __props__.__dict__["peer_maintenance_run_id"] = None
             __props__.__dict__["state"] = None
-            __props__.__dict__["target_db_server_version"] = None
             __props__.__dict__["target_resource_id"] = None
             __props__.__dict__["target_resource_type"] = None
-            __props__.__dict__["target_storage_server_version"] = None
             __props__.__dict__["time_ended"] = None
             __props__.__dict__["time_started"] = None
         super(MaintenanceRun, __self__).__init__(
@@ -884,10 +922,10 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[str] patching_status: The status of the patching operation.
         :param pulumi.Input[str] peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         :param pulumi.Input[str] state: The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
-        :param pulumi.Input[str] target_db_server_version: The target software version for the database server patching operation.
+        :param pulumi.Input[str] target_db_server_version: (Updatable) The target database server system software version for the patching operation.
         :param pulumi.Input[str] target_resource_id: The ID of the target resource on which the maintenance run occurs.
         :param pulumi.Input[str] target_resource_type: The type of the target resource on which the maintenance run occurs.
-        :param pulumi.Input[str] target_storage_server_version: The target Cell version that is to be patched to.
+        :param pulumi.Input[str] target_storage_server_version: (Updatable) The target storage cell system software version for the patching operation.
         :param pulumi.Input[str] time_ended: The date and time the maintenance run was completed.
         :param pulumi.Input[str] time_scheduled: (Updatable) The scheduled date and time of the maintenance run to update.
         :param pulumi.Input[str] time_started: The date and time the maintenance run starts.
@@ -1125,7 +1163,7 @@ class MaintenanceRun(pulumi.CustomResource):
     @pulumi.getter(name="targetDbServerVersion")
     def target_db_server_version(self) -> pulumi.Output[str]:
         """
-        The target software version for the database server patching operation.
+        (Updatable) The target database server system software version for the patching operation.
         """
         return pulumi.get(self, "target_db_server_version")
 
@@ -1149,7 +1187,7 @@ class MaintenanceRun(pulumi.CustomResource):
     @pulumi.getter(name="targetStorageServerVersion")
     def target_storage_server_version(self) -> pulumi.Output[str]:
         """
-        The target Cell version that is to be patched to.
+        (Updatable) The target storage cell system software version for the patching operation.
         """
         return pulumi.get(self, "target_storage_server_version")
 

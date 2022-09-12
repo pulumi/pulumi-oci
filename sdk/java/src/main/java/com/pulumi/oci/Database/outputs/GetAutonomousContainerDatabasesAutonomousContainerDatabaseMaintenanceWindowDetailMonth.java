@@ -13,13 +13,9 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMai
      * @return Name of the month of the year.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth() {}
     /**
      * @return Name of the month of the year.
      * 
@@ -35,24 +31,24 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMai
     public static Builder builder(GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth build() {
-            return new GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth(name);
+        }
+        public GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth build() {
+            final var o = new GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth();
+            o.name = name;
+            return o;
         }
     }
 }

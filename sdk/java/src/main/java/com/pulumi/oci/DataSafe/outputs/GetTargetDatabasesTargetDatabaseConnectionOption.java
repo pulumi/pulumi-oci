@@ -15,28 +15,19 @@ public final class GetTargetDatabasesTargetDatabaseConnectionOption {
      * * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
      * 
      */
-    private final String connectionType;
+    private String connectionType;
     /**
      * @return The OCID of the Data Safe private endpoint.
      * 
      */
-    private final String datasafePrivateEndpointId;
+    private String datasafePrivateEndpointId;
     /**
      * @return The OCID of the on-premises connector.
      * 
      */
-    private final String onPremConnectorId;
+    private String onPremConnectorId;
 
-    @CustomType.Constructor
-    private GetTargetDatabasesTargetDatabaseConnectionOption(
-        @CustomType.Parameter("connectionType") String connectionType,
-        @CustomType.Parameter("datasafePrivateEndpointId") String datasafePrivateEndpointId,
-        @CustomType.Parameter("onPremConnectorId") String onPremConnectorId) {
-        this.connectionType = connectionType;
-        this.datasafePrivateEndpointId = datasafePrivateEndpointId;
-        this.onPremConnectorId = onPremConnectorId;
-    }
-
+    private GetTargetDatabasesTargetDatabaseConnectionOption() {}
     /**
      * @return The connection type used to connect to the database. Allowed values:
      * * PRIVATE_ENDPOINT - Represents connection through private endpoint in Data Safe.
@@ -68,16 +59,12 @@ public final class GetTargetDatabasesTargetDatabaseConnectionOption {
     public static Builder builder(GetTargetDatabasesTargetDatabaseConnectionOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String connectionType;
         private String datasafePrivateEndpointId;
         private String onPremConnectorId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTargetDatabasesTargetDatabaseConnectionOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.connectionType = defaults.connectionType;
@@ -85,19 +72,27 @@ public final class GetTargetDatabasesTargetDatabaseConnectionOption {
     	      this.onPremConnectorId = defaults.onPremConnectorId;
         }
 
+        @CustomType.Setter
         public Builder connectionType(String connectionType) {
             this.connectionType = Objects.requireNonNull(connectionType);
             return this;
         }
+        @CustomType.Setter
         public Builder datasafePrivateEndpointId(String datasafePrivateEndpointId) {
             this.datasafePrivateEndpointId = Objects.requireNonNull(datasafePrivateEndpointId);
             return this;
         }
+        @CustomType.Setter
         public Builder onPremConnectorId(String onPremConnectorId) {
             this.onPremConnectorId = Objects.requireNonNull(onPremConnectorId);
             return this;
-        }        public GetTargetDatabasesTargetDatabaseConnectionOption build() {
-            return new GetTargetDatabasesTargetDatabaseConnectionOption(connectionType, datasafePrivateEndpointId, onPremConnectorId);
+        }
+        public GetTargetDatabasesTargetDatabaseConnectionOption build() {
+            final var o = new GetTargetDatabasesTargetDatabaseConnectionOption();
+            o.connectionType = connectionType;
+            o.datasafePrivateEndpointId = datasafePrivateEndpointId;
+            o.onPremConnectorId = onPremConnectorId;
+            return o;
         }
     }
 }

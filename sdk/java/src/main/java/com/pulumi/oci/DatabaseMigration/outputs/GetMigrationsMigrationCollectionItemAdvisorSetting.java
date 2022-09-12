@@ -13,21 +13,14 @@ public final class GetMigrationsMigrationCollectionItemAdvisorSetting {
      * @return True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
      * 
      */
-    private final Boolean isIgnoreErrors;
+    private Boolean isIgnoreErrors;
     /**
      * @return True to skip the Pre-Migration Advisor execution. Default is false.
      * 
      */
-    private final Boolean isSkipAdvisor;
+    private Boolean isSkipAdvisor;
 
-    @CustomType.Constructor
-    private GetMigrationsMigrationCollectionItemAdvisorSetting(
-        @CustomType.Parameter("isIgnoreErrors") Boolean isIgnoreErrors,
-        @CustomType.Parameter("isSkipAdvisor") Boolean isSkipAdvisor) {
-        this.isIgnoreErrors = isIgnoreErrors;
-        this.isSkipAdvisor = isSkipAdvisor;
-    }
-
+    private GetMigrationsMigrationCollectionItemAdvisorSetting() {}
     /**
      * @return True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
      * 
@@ -50,30 +43,32 @@ public final class GetMigrationsMigrationCollectionItemAdvisorSetting {
     public static Builder builder(GetMigrationsMigrationCollectionItemAdvisorSetting defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isIgnoreErrors;
         private Boolean isSkipAdvisor;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemAdvisorSetting defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isIgnoreErrors = defaults.isIgnoreErrors;
     	      this.isSkipAdvisor = defaults.isSkipAdvisor;
         }
 
+        @CustomType.Setter
         public Builder isIgnoreErrors(Boolean isIgnoreErrors) {
             this.isIgnoreErrors = Objects.requireNonNull(isIgnoreErrors);
             return this;
         }
+        @CustomType.Setter
         public Builder isSkipAdvisor(Boolean isSkipAdvisor) {
             this.isSkipAdvisor = Objects.requireNonNull(isSkipAdvisor);
             return this;
-        }        public GetMigrationsMigrationCollectionItemAdvisorSetting build() {
-            return new GetMigrationsMigrationCollectionItemAdvisorSetting(isIgnoreErrors, isSkipAdvisor);
+        }
+        public GetMigrationsMigrationCollectionItemAdvisorSetting build() {
+            final var o = new GetMigrationsMigrationCollectionItemAdvisorSetting();
+            o.isIgnoreErrors = isIgnoreErrors;
+            o.isSkipAdvisor = isSkipAdvisor;
+            return o;
         }
     }
 }

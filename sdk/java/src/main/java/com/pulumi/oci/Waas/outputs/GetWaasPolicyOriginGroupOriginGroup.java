@@ -14,17 +14,10 @@ public final class GetWaasPolicyOriginGroupOriginGroup {
      * @return The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
      * 
      */
-    private final String origin;
-    private final Integer weight;
+    private String origin;
+    private Integer weight;
 
-    @CustomType.Constructor
-    private GetWaasPolicyOriginGroupOriginGroup(
-        @CustomType.Parameter("origin") String origin,
-        @CustomType.Parameter("weight") Integer weight) {
-        this.origin = origin;
-        this.weight = weight;
-    }
-
+    private GetWaasPolicyOriginGroupOriginGroup() {}
     /**
      * @return The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
      * 
@@ -43,30 +36,32 @@ public final class GetWaasPolicyOriginGroupOriginGroup {
     public static Builder builder(GetWaasPolicyOriginGroupOriginGroup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String origin;
         private Integer weight;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWaasPolicyOriginGroupOriginGroup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.origin = defaults.origin;
     	      this.weight = defaults.weight;
         }
 
+        @CustomType.Setter
         public Builder origin(String origin) {
             this.origin = Objects.requireNonNull(origin);
             return this;
         }
+        @CustomType.Setter
         public Builder weight(Integer weight) {
             this.weight = Objects.requireNonNull(weight);
             return this;
-        }        public GetWaasPolicyOriginGroupOriginGroup build() {
-            return new GetWaasPolicyOriginGroupOriginGroup(origin, weight);
+        }
+        public GetWaasPolicyOriginGroupOriginGroup build() {
+            final var o = new GetWaasPolicyOriginGroupOriginGroup();
+            o.origin = origin;
+            o.weight = weight;
+            return o;
         }
     }
 }

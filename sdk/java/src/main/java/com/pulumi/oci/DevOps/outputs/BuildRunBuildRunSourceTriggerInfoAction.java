@@ -17,28 +17,19 @@ public final class BuildRunBuildRunSourceTriggerInfoAction {
      * @return The OCID of the build pipeline.
      * 
      */
-    private final @Nullable String buildPipelineId;
+    private @Nullable String buildPipelineId;
     /**
      * @return The filters for the trigger.
      * 
      */
-    private final @Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilter> filters;
+    private @Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilter> filters;
     /**
      * @return The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private BuildRunBuildRunSourceTriggerInfoAction(
-        @CustomType.Parameter("buildPipelineId") @Nullable String buildPipelineId,
-        @CustomType.Parameter("filters") @Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilter> filters,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.buildPipelineId = buildPipelineId;
-        this.filters = filters;
-        this.type = type;
-    }
-
+    private BuildRunBuildRunSourceTriggerInfoAction() {}
     /**
      * @return The OCID of the build pipeline.
      * 
@@ -68,16 +59,12 @@ public final class BuildRunBuildRunSourceTriggerInfoAction {
     public static Builder builder(BuildRunBuildRunSourceTriggerInfoAction defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String buildPipelineId;
         private @Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilter> filters;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BuildRunBuildRunSourceTriggerInfoAction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.buildPipelineId = defaults.buildPipelineId;
@@ -85,10 +72,12 @@ public final class BuildRunBuildRunSourceTriggerInfoAction {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder buildPipelineId(@Nullable String buildPipelineId) {
             this.buildPipelineId = buildPipelineId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilter> filters) {
             this.filters = filters;
             return this;
@@ -96,11 +85,17 @@ public final class BuildRunBuildRunSourceTriggerInfoAction {
         public Builder filters(BuildRunBuildRunSourceTriggerInfoActionFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public BuildRunBuildRunSourceTriggerInfoAction build() {
-            return new BuildRunBuildRunSourceTriggerInfoAction(buildPipelineId, filters, type);
+        }
+        public BuildRunBuildRunSourceTriggerInfoAction build() {
+            final var o = new BuildRunBuildRunSourceTriggerInfoAction();
+            o.buildPipelineId = buildPipelineId;
+            o.filters = filters;
+            o.type = type;
+            return o;
         }
     }
 }

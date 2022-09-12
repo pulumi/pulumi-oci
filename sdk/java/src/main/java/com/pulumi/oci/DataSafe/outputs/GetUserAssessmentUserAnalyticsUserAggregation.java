@@ -14,13 +14,9 @@ public final class GetUserAssessmentUserAnalyticsUserAggregation {
      * @return The array of user aggregation data.
      * 
      */
-    private final List<GetUserAssessmentUserAnalyticsUserAggregationItem> items;
+    private List<GetUserAssessmentUserAnalyticsUserAggregationItem> items;
 
-    @CustomType.Constructor
-    private GetUserAssessmentUserAnalyticsUserAggregation(@CustomType.Parameter("items") List<GetUserAssessmentUserAnalyticsUserAggregationItem> items) {
-        this.items = items;
-    }
-
+    private GetUserAssessmentUserAnalyticsUserAggregation() {}
     /**
      * @return The array of user aggregation data.
      * 
@@ -36,27 +32,27 @@ public final class GetUserAssessmentUserAnalyticsUserAggregation {
     public static Builder builder(GetUserAssessmentUserAnalyticsUserAggregation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetUserAssessmentUserAnalyticsUserAggregationItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUserAssessmentUserAnalyticsUserAggregation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetUserAssessmentUserAnalyticsUserAggregationItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetUserAssessmentUserAnalyticsUserAggregationItem... items) {
             return items(List.of(items));
-        }        public GetUserAssessmentUserAnalyticsUserAggregation build() {
-            return new GetUserAssessmentUserAnalyticsUserAggregation(items);
+        }
+        public GetUserAssessmentUserAnalyticsUserAggregation build() {
+            final var o = new GetUserAssessmentUserAnalyticsUserAggregation();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -15,28 +15,19 @@ public final class GetDiscoveryJobDiscoveryDetailCredentialItem {
      * @return Name of Credential
      * 
      */
-    private final String credentialName;
+    private String credentialName;
     /**
      * @return Name of Credential Type
      * 
      */
-    private final String credentialType;
+    private String credentialType;
     /**
      * @return Property Details
      * 
      */
-    private final List<GetDiscoveryJobDiscoveryDetailCredentialItemProperty> properties;
+    private List<GetDiscoveryJobDiscoveryDetailCredentialItemProperty> properties;
 
-    @CustomType.Constructor
-    private GetDiscoveryJobDiscoveryDetailCredentialItem(
-        @CustomType.Parameter("credentialName") String credentialName,
-        @CustomType.Parameter("credentialType") String credentialType,
-        @CustomType.Parameter("properties") List<GetDiscoveryJobDiscoveryDetailCredentialItemProperty> properties) {
-        this.credentialName = credentialName;
-        this.credentialType = credentialType;
-        this.properties = properties;
-    }
-
+    private GetDiscoveryJobDiscoveryDetailCredentialItem() {}
     /**
      * @return Name of Credential
      * 
@@ -66,16 +57,12 @@ public final class GetDiscoveryJobDiscoveryDetailCredentialItem {
     public static Builder builder(GetDiscoveryJobDiscoveryDetailCredentialItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String credentialName;
         private String credentialType;
         private List<GetDiscoveryJobDiscoveryDetailCredentialItemProperty> properties;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDiscoveryJobDiscoveryDetailCredentialItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.credentialName = defaults.credentialName;
@@ -83,22 +70,30 @@ public final class GetDiscoveryJobDiscoveryDetailCredentialItem {
     	      this.properties = defaults.properties;
         }
 
+        @CustomType.Setter
         public Builder credentialName(String credentialName) {
             this.credentialName = Objects.requireNonNull(credentialName);
             return this;
         }
+        @CustomType.Setter
         public Builder credentialType(String credentialType) {
             this.credentialType = Objects.requireNonNull(credentialType);
             return this;
         }
+        @CustomType.Setter
         public Builder properties(List<GetDiscoveryJobDiscoveryDetailCredentialItemProperty> properties) {
             this.properties = Objects.requireNonNull(properties);
             return this;
         }
         public Builder properties(GetDiscoveryJobDiscoveryDetailCredentialItemProperty... properties) {
             return properties(List.of(properties));
-        }        public GetDiscoveryJobDiscoveryDetailCredentialItem build() {
-            return new GetDiscoveryJobDiscoveryDetailCredentialItem(credentialName, credentialType, properties);
+        }
+        public GetDiscoveryJobDiscoveryDetailCredentialItem build() {
+            final var o = new GetDiscoveryJobDiscoveryDetailCredentialItem();
+            o.credentialName = credentialName;
+            o.credentialType = credentialType;
+            o.properties = properties;
+            return o;
         }
     }
 }

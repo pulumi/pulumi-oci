@@ -14,42 +14,29 @@ public final class GetHttpRedirectTarget {
      * @return The host portion of the redirect.
      * 
      */
-    private final String host;
+    private String host;
     /**
      * @return The path component of the target URL (e.g., &#34;/path/to/resource&#34; in &#34;https://target.example.com/path/to/resource?redirected&#34;), which can be empty, static, or request-copying, or request-prefixing. Use of \ is not permitted except to escape a following \, {, or }. An empty value is treated the same as static &#34;/&#34;. A static value must begin with a leading &#34;/&#34;, optionally followed by other path characters. A request-copying value must exactly match &#34;{path}&#34;, and will be replaced with the path component of the request URL (including its initial &#34;/&#34;). A request-prefixing value must start with &#34;/&#34; and end with a non-escaped &#34;{path}&#34;, which will be replaced with the path component of the request URL (including its initial &#34;/&#34;). Only one such replacement token is allowed.
      * 
      */
-    private final String path;
+    private String path;
     /**
      * @return Port number of the target destination of the redirect, default to match protocol
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return The protocol used for the target, http or https.
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return The query component of the target URL (e.g., &#34;?redirected&#34; in &#34;https://target.example.com/path/to/resource?redirected&#34;), which can be empty, static, or request-copying. Use of \ is not permitted except to escape a following \, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading &#34;?&#34;, optionally followed by other query characters. A request-copying value must exactly match &#34;{query}&#34;, and will be replaced with the query component of the request URL (including a leading &#34;?&#34; if and only if the request URL includes a query component).
      * 
      */
-    private final String query;
+    private String query;
 
-    @CustomType.Constructor
-    private GetHttpRedirectTarget(
-        @CustomType.Parameter("host") String host,
-        @CustomType.Parameter("path") String path,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("query") String query) {
-        this.host = host;
-        this.path = path;
-        this.port = port;
-        this.protocol = protocol;
-        this.query = query;
-    }
-
+    private GetHttpRedirectTarget() {}
     /**
      * @return The host portion of the redirect.
      * 
@@ -93,18 +80,14 @@ public final class GetHttpRedirectTarget {
     public static Builder builder(GetHttpRedirectTarget defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String host;
         private String path;
         private Integer port;
         private String protocol;
         private String query;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetHttpRedirectTarget defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.host = defaults.host;
@@ -114,27 +97,39 @@ public final class GetHttpRedirectTarget {
     	      this.query = defaults.query;
         }
 
+        @CustomType.Setter
         public Builder host(String host) {
             this.host = Objects.requireNonNull(host);
             return this;
         }
+        @CustomType.Setter
         public Builder path(String path) {
             this.path = Objects.requireNonNull(path);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder query(String query) {
             this.query = Objects.requireNonNull(query);
             return this;
-        }        public GetHttpRedirectTarget build() {
-            return new GetHttpRedirectTarget(host, path, port, protocol, query);
+        }
+        public GetHttpRedirectTarget build() {
+            final var o = new GetHttpRedirectTarget();
+            o.host = host;
+            o.path = path;
+            o.port = port;
+            o.protocol = protocol;
+            o.query = query;
+            return o;
         }
     }
 }

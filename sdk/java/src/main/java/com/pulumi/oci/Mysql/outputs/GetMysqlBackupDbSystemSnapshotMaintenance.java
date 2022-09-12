@@ -13,13 +13,9 @@ public final class GetMysqlBackupDbSystemSnapshotMaintenance {
      * @return The start time of the maintenance window.
      * 
      */
-    private final String windowStartTime;
+    private String windowStartTime;
 
-    @CustomType.Constructor
-    private GetMysqlBackupDbSystemSnapshotMaintenance(@CustomType.Parameter("windowStartTime") String windowStartTime) {
-        this.windowStartTime = windowStartTime;
-    }
-
+    private GetMysqlBackupDbSystemSnapshotMaintenance() {}
     /**
      * @return The start time of the maintenance window.
      * 
@@ -35,24 +31,24 @@ public final class GetMysqlBackupDbSystemSnapshotMaintenance {
     public static Builder builder(GetMysqlBackupDbSystemSnapshotMaintenance defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String windowStartTime;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMysqlBackupDbSystemSnapshotMaintenance defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.windowStartTime = defaults.windowStartTime;
         }
 
+        @CustomType.Setter
         public Builder windowStartTime(String windowStartTime) {
             this.windowStartTime = Objects.requireNonNull(windowStartTime);
             return this;
-        }        public GetMysqlBackupDbSystemSnapshotMaintenance build() {
-            return new GetMysqlBackupDbSystemSnapshotMaintenance(windowStartTime);
+        }
+        public GetMysqlBackupDbSystemSnapshotMaintenance build() {
+            final var o = new GetMysqlBackupDbSystemSnapshotMaintenance();
+            o.windowStartTime = windowStartTime;
+            return o;
         }
     }
 }

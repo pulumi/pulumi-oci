@@ -18,42 +18,29 @@ public final class PublicationPackageDetails {
      * @return The end user license agreeement (EULA) that consumers of this listing must accept.
      * 
      */
-    private final List<PublicationPackageDetailsEula> eulas;
+    private List<PublicationPackageDetailsEula> eulas;
     /**
      * @return The unique identifier for the base image of the publication.
      * 
      */
-    private final @Nullable String imageId;
+    private @Nullable String imageId;
     /**
      * @return The operating system used by the listing.
      * 
      */
-    private final PublicationPackageDetailsOperatingSystem operatingSystem;
+    private PublicationPackageDetailsOperatingSystem operatingSystem;
     /**
      * @return The package&#39;s type.
      * 
      */
-    private final String packageType;
+    private String packageType;
     /**
      * @return The package version.
      * 
      */
-    private final String packageVersion;
+    private String packageVersion;
 
-    @CustomType.Constructor
-    private PublicationPackageDetails(
-        @CustomType.Parameter("eulas") List<PublicationPackageDetailsEula> eulas,
-        @CustomType.Parameter("imageId") @Nullable String imageId,
-        @CustomType.Parameter("operatingSystem") PublicationPackageDetailsOperatingSystem operatingSystem,
-        @CustomType.Parameter("packageType") String packageType,
-        @CustomType.Parameter("packageVersion") String packageVersion) {
-        this.eulas = eulas;
-        this.imageId = imageId;
-        this.operatingSystem = operatingSystem;
-        this.packageType = packageType;
-        this.packageVersion = packageVersion;
-    }
-
+    private PublicationPackageDetails() {}
     /**
      * @return The end user license agreeement (EULA) that consumers of this listing must accept.
      * 
@@ -97,18 +84,14 @@ public final class PublicationPackageDetails {
     public static Builder builder(PublicationPackageDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<PublicationPackageDetailsEula> eulas;
         private @Nullable String imageId;
         private PublicationPackageDetailsOperatingSystem operatingSystem;
         private String packageType;
         private String packageVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PublicationPackageDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.eulas = defaults.eulas;
@@ -118,6 +101,7 @@ public final class PublicationPackageDetails {
     	      this.packageVersion = defaults.packageVersion;
         }
 
+        @CustomType.Setter
         public Builder eulas(List<PublicationPackageDetailsEula> eulas) {
             this.eulas = Objects.requireNonNull(eulas);
             return this;
@@ -125,23 +109,34 @@ public final class PublicationPackageDetails {
         public Builder eulas(PublicationPackageDetailsEula... eulas) {
             return eulas(List.of(eulas));
         }
+        @CustomType.Setter
         public Builder imageId(@Nullable String imageId) {
             this.imageId = imageId;
             return this;
         }
+        @CustomType.Setter
         public Builder operatingSystem(PublicationPackageDetailsOperatingSystem operatingSystem) {
             this.operatingSystem = Objects.requireNonNull(operatingSystem);
             return this;
         }
+        @CustomType.Setter
         public Builder packageType(String packageType) {
             this.packageType = Objects.requireNonNull(packageType);
             return this;
         }
+        @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
             this.packageVersion = Objects.requireNonNull(packageVersion);
             return this;
-        }        public PublicationPackageDetails build() {
-            return new PublicationPackageDetails(eulas, imageId, operatingSystem, packageType, packageVersion);
+        }
+        public PublicationPackageDetails build() {
+            final var o = new PublicationPackageDetails();
+            o.eulas = eulas;
+            o.imageId = imageId;
+            o.operatingSystem = operatingSystem;
+            o.packageType = packageType;
+            o.packageVersion = packageVersion;
+            return o;
         }
     }
 }

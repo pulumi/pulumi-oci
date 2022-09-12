@@ -14,48 +14,31 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBastionsResult {
-    private final @Nullable String bastionId;
-    private final @Nullable String bastionLifecycleState;
+    private @Nullable String bastionId;
+    private @Nullable String bastionLifecycleState;
     /**
      * @return The list of bastions.
      * 
      */
-    private final List<GetBastionsBastion> bastions;
+    private List<GetBastionsBastion> bastions;
     /**
      * @return The unique identifier (OCID) of the compartment where the bastion is located.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetBastionsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetBastionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the bastion, which can&#39;t be changed after creation.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private GetBastionsResult(
-        @CustomType.Parameter("bastionId") @Nullable String bastionId,
-        @CustomType.Parameter("bastionLifecycleState") @Nullable String bastionLifecycleState,
-        @CustomType.Parameter("bastions") List<GetBastionsBastion> bastions,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetBastionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name) {
-        this.bastionId = bastionId;
-        this.bastionLifecycleState = bastionLifecycleState;
-        this.bastions = bastions;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-    }
-
+    private GetBastionsResult() {}
     public Optional<String> bastionId() {
         return Optional.ofNullable(this.bastionId);
     }
@@ -101,7 +84,7 @@ public final class GetBastionsResult {
     public static Builder builder(GetBastionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String bastionId;
         private @Nullable String bastionLifecycleState;
@@ -110,11 +93,7 @@ public final class GetBastionsResult {
         private @Nullable List<GetBastionsFilter> filters;
         private String id;
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBastionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bastionId = defaults.bastionId;
@@ -126,14 +105,17 @@ public final class GetBastionsResult {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder bastionId(@Nullable String bastionId) {
             this.bastionId = bastionId;
             return this;
         }
+        @CustomType.Setter
         public Builder bastionLifecycleState(@Nullable String bastionLifecycleState) {
             this.bastionLifecycleState = bastionLifecycleState;
             return this;
         }
+        @CustomType.Setter
         public Builder bastions(List<GetBastionsBastion> bastions) {
             this.bastions = Objects.requireNonNull(bastions);
             return this;
@@ -141,10 +123,12 @@ public final class GetBastionsResult {
         public Builder bastions(GetBastionsBastion... bastions) {
             return bastions(List.of(bastions));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBastionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -152,15 +136,26 @@ public final class GetBastionsResult {
         public Builder filters(GetBastionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public GetBastionsResult build() {
-            return new GetBastionsResult(bastionId, bastionLifecycleState, bastions, compartmentId, filters, id, name);
+        }
+        public GetBastionsResult build() {
+            final var o = new GetBastionsResult();
+            o.bastionId = bastionId;
+            o.bastionLifecycleState = bastionLifecycleState;
+            o.bastions = bastions;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            return o;
         }
     }
 }

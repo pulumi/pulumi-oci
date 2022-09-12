@@ -17,42 +17,29 @@ public final class ReportDefinitionColumnInfo {
      * @return (Updatable) Specifies the data type of the column.
      * 
      */
-    private final @Nullable String dataType;
+    private @Nullable String dataType;
     /**
      * @return (Updatable) Specifies the name of the report definition.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return (Updatable) Specifies the order in which the summary must be displayed.
      * 
      */
-    private final Integer displayOrder;
+    private Integer displayOrder;
     /**
      * @return (Updatable) Name of the column that must be sorted.
      * 
      */
-    private final String fieldName;
+    private String fieldName;
     /**
      * @return (Updatable) Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    private final Boolean isHidden;
+    private Boolean isHidden;
 
-    @CustomType.Constructor
-    private ReportDefinitionColumnInfo(
-        @CustomType.Parameter("dataType") @Nullable String dataType,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("displayOrder") Integer displayOrder,
-        @CustomType.Parameter("fieldName") String fieldName,
-        @CustomType.Parameter("isHidden") Boolean isHidden) {
-        this.dataType = dataType;
-        this.displayName = displayName;
-        this.displayOrder = displayOrder;
-        this.fieldName = fieldName;
-        this.isHidden = isHidden;
-    }
-
+    private ReportDefinitionColumnInfo() {}
     /**
      * @return (Updatable) Specifies the data type of the column.
      * 
@@ -96,18 +83,14 @@ public final class ReportDefinitionColumnInfo {
     public static Builder builder(ReportDefinitionColumnInfo defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String dataType;
         private String displayName;
         private Integer displayOrder;
         private String fieldName;
         private Boolean isHidden;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ReportDefinitionColumnInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dataType = defaults.dataType;
@@ -117,27 +100,39 @@ public final class ReportDefinitionColumnInfo {
     	      this.isHidden = defaults.isHidden;
         }
 
+        @CustomType.Setter
         public Builder dataType(@Nullable String dataType) {
             this.dataType = dataType;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder displayOrder(Integer displayOrder) {
             this.displayOrder = Objects.requireNonNull(displayOrder);
             return this;
         }
+        @CustomType.Setter
         public Builder fieldName(String fieldName) {
             this.fieldName = Objects.requireNonNull(fieldName);
             return this;
         }
+        @CustomType.Setter
         public Builder isHidden(Boolean isHidden) {
             this.isHidden = Objects.requireNonNull(isHidden);
             return this;
-        }        public ReportDefinitionColumnInfo build() {
-            return new ReportDefinitionColumnInfo(dataType, displayName, displayOrder, fieldName, isHidden);
+        }
+        public ReportDefinitionColumnInfo build() {
+            final var o = new ReportDefinitionColumnInfo();
+            o.dataType = dataType;
+            o.displayName = displayName;
+            o.displayOrder = displayOrder;
+            o.fieldName = fieldName;
+            o.isHidden = isHidden;
+            return o;
         }
     }
 }

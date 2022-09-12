@@ -11,105 +11,74 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAgentsAgentCollectionItem {
-    private final String agentId;
+    private String agentId;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the resource
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return ODMS Agent public key.
      * 
      */
-    private final String publicKey;
+    private String publicKey;
     /**
      * @return The current state of the Database Migration Deployment.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The OCID of the Stream
      * 
      */
-    private final String streamId;
+    private String streamId;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time the Agent was created. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time of the last Agent details update. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return ODMS Agent version
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetAgentsAgentCollectionItem(
-        @CustomType.Parameter("agentId") String agentId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("publicKey") String publicKey,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("streamId") String streamId,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("version") String version) {
-        this.agentId = agentId;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.publicKey = publicKey;
-        this.state = state;
-        this.streamId = streamId;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.version = version;
-    }
-
+    private GetAgentsAgentCollectionItem() {}
     public String agentId() {
         return this.agentId;
     }
@@ -212,7 +181,7 @@ public final class GetAgentsAgentCollectionItem {
     public static Builder builder(GetAgentsAgentCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String agentId;
         private String compartmentId;
@@ -228,11 +197,7 @@ public final class GetAgentsAgentCollectionItem {
         private String timeCreated;
         private String timeUpdated;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAgentsAgentCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.agentId = defaults.agentId;
@@ -251,63 +216,93 @@ public final class GetAgentsAgentCollectionItem {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder agentId(String agentId) {
             this.agentId = Objects.requireNonNull(agentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder publicKey(String publicKey) {
             this.publicKey = Objects.requireNonNull(publicKey);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder streamId(String streamId) {
             this.streamId = Objects.requireNonNull(streamId);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetAgentsAgentCollectionItem build() {
-            return new GetAgentsAgentCollectionItem(agentId, compartmentId, definedTags, displayName, freeformTags, id, lifecycleDetails, publicKey, state, streamId, systemTags, timeCreated, timeUpdated, version);
+        }
+        public GetAgentsAgentCollectionItem build() {
+            final var o = new GetAgentsAgentCollectionItem();
+            o.agentId = agentId;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.publicKey = publicKey;
+            o.state = state;
+            o.streamId = streamId;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.version = version;
+            return o;
         }
     }
 }

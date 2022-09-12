@@ -115,9 +115,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int CpusEnabled;
         /// <summary>
-        /// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        /// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVmClusterDataCollectionOptionResult> DataCollectionOptions;
+        /// <summary>
+        /// Size of the DATA disk group in GBs.
+        /// </summary>
         public readonly double DataStorageSizeInGb;
         /// <summary>
         /// Size, in terabytes, of the DATA disk group.

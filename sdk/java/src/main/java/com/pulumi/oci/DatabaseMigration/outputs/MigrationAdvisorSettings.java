@@ -15,21 +15,14 @@ public final class MigrationAdvisorSettings {
      * @return (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
      * 
      */
-    private final @Nullable Boolean isIgnoreErrors;
+    private @Nullable Boolean isIgnoreErrors;
     /**
      * @return (Updatable) True to skip the Pre-Migration Advisor execution. Default is false.
      * 
      */
-    private final @Nullable Boolean isSkipAdvisor;
+    private @Nullable Boolean isSkipAdvisor;
 
-    @CustomType.Constructor
-    private MigrationAdvisorSettings(
-        @CustomType.Parameter("isIgnoreErrors") @Nullable Boolean isIgnoreErrors,
-        @CustomType.Parameter("isSkipAdvisor") @Nullable Boolean isSkipAdvisor) {
-        this.isIgnoreErrors = isIgnoreErrors;
-        this.isSkipAdvisor = isSkipAdvisor;
-    }
-
+    private MigrationAdvisorSettings() {}
     /**
      * @return (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
      * 
@@ -52,30 +45,32 @@ public final class MigrationAdvisorSettings {
     public static Builder builder(MigrationAdvisorSettings defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isIgnoreErrors;
         private @Nullable Boolean isSkipAdvisor;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MigrationAdvisorSettings defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isIgnoreErrors = defaults.isIgnoreErrors;
     	      this.isSkipAdvisor = defaults.isSkipAdvisor;
         }
 
+        @CustomType.Setter
         public Builder isIgnoreErrors(@Nullable Boolean isIgnoreErrors) {
             this.isIgnoreErrors = isIgnoreErrors;
             return this;
         }
+        @CustomType.Setter
         public Builder isSkipAdvisor(@Nullable Boolean isSkipAdvisor) {
             this.isSkipAdvisor = isSkipAdvisor;
             return this;
-        }        public MigrationAdvisorSettings build() {
-            return new MigrationAdvisorSettings(isIgnoreErrors, isSkipAdvisor);
+        }
+        public MigrationAdvisorSettings build() {
+            final var o = new MigrationAdvisorSettings();
+            o.isIgnoreErrors = isIgnoreErrors;
+            o.isSkipAdvisor = isSkipAdvisor;
+            return o;
         }
     }
 }

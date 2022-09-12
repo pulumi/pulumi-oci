@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DevOps.outputs.TriggerActionFilterIncludeFileFilter;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -15,27 +16,24 @@ public final class TriggerActionFilterInclude {
      * @return (Updatable) The target branch for pull requests; not applicable for push requests.
      * 
      */
-    private final @Nullable String baseRef;
+    private @Nullable String baseRef;
+    private @Nullable TriggerActionFilterIncludeFileFilter fileFilter;
     /**
      * @return (Updatable) Branch for push event; source branch for pull requests.
      * 
      */
-    private final @Nullable String headRef;
+    private @Nullable String headRef;
 
-    @CustomType.Constructor
-    private TriggerActionFilterInclude(
-        @CustomType.Parameter("baseRef") @Nullable String baseRef,
-        @CustomType.Parameter("headRef") @Nullable String headRef) {
-        this.baseRef = baseRef;
-        this.headRef = headRef;
-    }
-
+    private TriggerActionFilterInclude() {}
     /**
      * @return (Updatable) The target branch for pull requests; not applicable for push requests.
      * 
      */
     public Optional<String> baseRef() {
         return Optional.ofNullable(this.baseRef);
+    }
+    public Optional<TriggerActionFilterIncludeFileFilter> fileFilter() {
+        return Optional.ofNullable(this.fileFilter);
     }
     /**
      * @return (Updatable) Branch for push event; source branch for pull requests.
@@ -52,30 +50,40 @@ public final class TriggerActionFilterInclude {
     public static Builder builder(TriggerActionFilterInclude defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String baseRef;
+        private @Nullable TriggerActionFilterIncludeFileFilter fileFilter;
         private @Nullable String headRef;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(TriggerActionFilterInclude defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baseRef = defaults.baseRef;
+    	      this.fileFilter = defaults.fileFilter;
     	      this.headRef = defaults.headRef;
         }
 
+        @CustomType.Setter
         public Builder baseRef(@Nullable String baseRef) {
             this.baseRef = baseRef;
             return this;
         }
+        @CustomType.Setter
+        public Builder fileFilter(@Nullable TriggerActionFilterIncludeFileFilter fileFilter) {
+            this.fileFilter = fileFilter;
+            return this;
+        }
+        @CustomType.Setter
         public Builder headRef(@Nullable String headRef) {
             this.headRef = headRef;
             return this;
-        }        public TriggerActionFilterInclude build() {
-            return new TriggerActionFilterInclude(baseRef, headRef);
+        }
+        public TriggerActionFilterInclude build() {
+            final var o = new TriggerActionFilterInclude();
+            o.baseRef = baseRef;
+            o.fileFilter = fileFilter;
+            o.headRef = headRef;
+            return o;
         }
     }
 }

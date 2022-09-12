@@ -19,78 +19,49 @@ public final class GetContainerSignaturesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The list of container_image_signature_collection.
      * 
      */
-    private final List<GetContainerSignaturesContainerImageSignatureCollection> containerImageSignatureCollections;
+    private List<GetContainerSignaturesContainerImageSignatureCollection> containerImageSignatureCollections;
     /**
      * @return The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.  Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetContainerSignaturesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetContainerSignaturesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String imageDigest;
+    private String id;
+    private @Nullable String imageDigest;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
      * 
      */
-    private final @Nullable String imageId;
+    private @Nullable String imageId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyId used to sign the container image.  Example: `ocid1.key.oc1..exampleuniqueID`
      * 
      */
-    private final @Nullable String kmsKeyId;
+    private @Nullable String kmsKeyId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
      * 
      */
-    private final @Nullable String kmsKeyVersionId;
-    private final @Nullable String repositoryId;
-    private final @Nullable String repositoryName;
+    private @Nullable String kmsKeyVersionId;
+    private @Nullable String repositoryId;
+    private @Nullable String repositoryName;
     /**
      * @return The algorithm to be used for signing. These are the only supported signing algorithms for container images.
      * 
      */
-    private final @Nullable String signingAlgorithm;
+    private @Nullable String signingAlgorithm;
 
-    @CustomType.Constructor
-    private GetContainerSignaturesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("containerImageSignatureCollections") List<GetContainerSignaturesContainerImageSignatureCollection> containerImageSignatureCollections,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetContainerSignaturesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("imageDigest") @Nullable String imageDigest,
-        @CustomType.Parameter("imageId") @Nullable String imageId,
-        @CustomType.Parameter("kmsKeyId") @Nullable String kmsKeyId,
-        @CustomType.Parameter("kmsKeyVersionId") @Nullable String kmsKeyVersionId,
-        @CustomType.Parameter("repositoryId") @Nullable String repositoryId,
-        @CustomType.Parameter("repositoryName") @Nullable String repositoryName,
-        @CustomType.Parameter("signingAlgorithm") @Nullable String signingAlgorithm) {
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.containerImageSignatureCollections = containerImageSignatureCollections;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.imageDigest = imageDigest;
-        this.imageId = imageId;
-        this.kmsKeyId = kmsKeyId;
-        this.kmsKeyVersionId = kmsKeyVersionId;
-        this.repositoryId = repositoryId;
-        this.repositoryName = repositoryName;
-        this.signingAlgorithm = signingAlgorithm;
-    }
-
+    private GetContainerSignaturesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.
      * 
@@ -170,7 +141,7 @@ public final class GetContainerSignaturesResult {
     public static Builder builder(GetContainerSignaturesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
@@ -185,11 +156,7 @@ public final class GetContainerSignaturesResult {
         private @Nullable String repositoryId;
         private @Nullable String repositoryName;
         private @Nullable String signingAlgorithm;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetContainerSignaturesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -207,14 +174,17 @@ public final class GetContainerSignaturesResult {
     	      this.signingAlgorithm = defaults.signingAlgorithm;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder containerImageSignatureCollections(List<GetContainerSignaturesContainerImageSignatureCollection> containerImageSignatureCollections) {
             this.containerImageSignatureCollections = Objects.requireNonNull(containerImageSignatureCollections);
             return this;
@@ -222,10 +192,12 @@ public final class GetContainerSignaturesResult {
         public Builder containerImageSignatureCollections(GetContainerSignaturesContainerImageSignatureCollection... containerImageSignatureCollections) {
             return containerImageSignatureCollections(List.of(containerImageSignatureCollections));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetContainerSignaturesFilter> filters) {
             this.filters = filters;
             return this;
@@ -233,39 +205,62 @@ public final class GetContainerSignaturesResult {
         public Builder filters(GetContainerSignaturesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder imageDigest(@Nullable String imageDigest) {
             this.imageDigest = imageDigest;
             return this;
         }
+        @CustomType.Setter
         public Builder imageId(@Nullable String imageId) {
             this.imageId = imageId;
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyVersionId(@Nullable String kmsKeyVersionId) {
             this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(@Nullable String repositoryId) {
             this.repositoryId = repositoryId;
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryName(@Nullable String repositoryName) {
             this.repositoryName = repositoryName;
             return this;
         }
+        @CustomType.Setter
         public Builder signingAlgorithm(@Nullable String signingAlgorithm) {
             this.signingAlgorithm = signingAlgorithm;
             return this;
-        }        public GetContainerSignaturesResult build() {
-            return new GetContainerSignaturesResult(compartmentId, compartmentIdInSubtree, containerImageSignatureCollections, displayName, filters, id, imageDigest, imageId, kmsKeyId, kmsKeyVersionId, repositoryId, repositoryName, signingAlgorithm);
+        }
+        public GetContainerSignaturesResult build() {
+            final var o = new GetContainerSignaturesResult();
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.containerImageSignatureCollections = containerImageSignatureCollections;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.imageDigest = imageDigest;
+            o.imageId = imageId;
+            o.kmsKeyId = kmsKeyId;
+            o.kmsKeyVersionId = kmsKeyVersionId;
+            o.repositoryId = repositoryId;
+            o.repositoryName = repositoryName;
+            o.signingAlgorithm = signingAlgorithm;
+            return o;
         }
     }
 }

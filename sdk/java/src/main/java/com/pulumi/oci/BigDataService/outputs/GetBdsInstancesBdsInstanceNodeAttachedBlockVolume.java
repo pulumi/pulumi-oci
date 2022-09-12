@@ -13,21 +13,14 @@ public final class GetBdsInstancesBdsInstanceNodeAttachedBlockVolume {
      * @return The OCID of the volume attachment.
      * 
      */
-    private final String volumeAttachmentId;
+    private String volumeAttachmentId;
     /**
      * @return The size of the volume in GBs.
      * 
      */
-    private final String volumeSizeInGbs;
+    private String volumeSizeInGbs;
 
-    @CustomType.Constructor
-    private GetBdsInstancesBdsInstanceNodeAttachedBlockVolume(
-        @CustomType.Parameter("volumeAttachmentId") String volumeAttachmentId,
-        @CustomType.Parameter("volumeSizeInGbs") String volumeSizeInGbs) {
-        this.volumeAttachmentId = volumeAttachmentId;
-        this.volumeSizeInGbs = volumeSizeInGbs;
-    }
-
+    private GetBdsInstancesBdsInstanceNodeAttachedBlockVolume() {}
     /**
      * @return The OCID of the volume attachment.
      * 
@@ -50,30 +43,32 @@ public final class GetBdsInstancesBdsInstanceNodeAttachedBlockVolume {
     public static Builder builder(GetBdsInstancesBdsInstanceNodeAttachedBlockVolume defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String volumeAttachmentId;
         private String volumeSizeInGbs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBdsInstancesBdsInstanceNodeAttachedBlockVolume defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.volumeAttachmentId = defaults.volumeAttachmentId;
     	      this.volumeSizeInGbs = defaults.volumeSizeInGbs;
         }
 
+        @CustomType.Setter
         public Builder volumeAttachmentId(String volumeAttachmentId) {
             this.volumeAttachmentId = Objects.requireNonNull(volumeAttachmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeSizeInGbs(String volumeSizeInGbs) {
             this.volumeSizeInGbs = Objects.requireNonNull(volumeSizeInGbs);
             return this;
-        }        public GetBdsInstancesBdsInstanceNodeAttachedBlockVolume build() {
-            return new GetBdsInstancesBdsInstanceNodeAttachedBlockVolume(volumeAttachmentId, volumeSizeInGbs);
+        }
+        public GetBdsInstancesBdsInstanceNodeAttachedBlockVolume build() {
+            final var o = new GetBdsInstancesBdsInstanceNodeAttachedBlockVolume();
+            o.volumeAttachmentId = volumeAttachmentId;
+            o.volumeSizeInGbs = volumeSizeInGbs;
+            return o;
         }
     }
 }

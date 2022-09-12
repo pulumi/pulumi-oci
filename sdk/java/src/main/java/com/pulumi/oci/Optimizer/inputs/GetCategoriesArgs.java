@@ -19,6 +19,21 @@ public final class GetCategoriesArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetCategoriesArgs Empty = new GetCategoriesArgs();
 
     /**
+     * A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+     * 
+     */
+    @Import(name="childTenancyIds")
+    private @Nullable Output<List<String>> childTenancyIds;
+
+    /**
+     * @return A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+     * 
+     */
+    public Optional<Output<List<String>>> childTenancyIds() {
+        return Optional.ofNullable(this.childTenancyIds);
+    }
+
+    /**
      * The OCID of the compartment.
      * 
      */
@@ -56,6 +71,21 @@ public final class GetCategoriesArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+     * 
+     */
+    @Import(name="includeOrganization")
+    private @Nullable Output<Boolean> includeOrganization;
+
+    /**
+     * @return When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+     * 
+     */
+    public Optional<Output<Boolean>> includeOrganization() {
+        return Optional.ofNullable(this.includeOrganization);
+    }
+
+    /**
      * Optional. A filter that returns results that match the name specified.
      * 
      */
@@ -88,9 +118,11 @@ public final class GetCategoriesArgs extends com.pulumi.resources.InvokeArgs {
     private GetCategoriesArgs() {}
 
     private GetCategoriesArgs(GetCategoriesArgs $) {
+        this.childTenancyIds = $.childTenancyIds;
         this.compartmentId = $.compartmentId;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
+        this.includeOrganization = $.includeOrganization;
         this.name = $.name;
         this.state = $.state;
     }
@@ -111,6 +143,37 @@ public final class GetCategoriesArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder(GetCategoriesArgs defaults) {
             $ = new GetCategoriesArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param childTenancyIds A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder childTenancyIds(@Nullable Output<List<String>> childTenancyIds) {
+            $.childTenancyIds = childTenancyIds;
+            return this;
+        }
+
+        /**
+         * @param childTenancyIds A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder childTenancyIds(List<String> childTenancyIds) {
+            return childTenancyIds(Output.of(childTenancyIds));
+        }
+
+        /**
+         * @param childTenancyIds A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder childTenancyIds(String... childTenancyIds) {
+            return childTenancyIds(List.of(childTenancyIds));
         }
 
         /**
@@ -166,6 +229,27 @@ public final class GetCategoriesArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder filters(GetCategoriesFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param includeOrganization When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder includeOrganization(@Nullable Output<Boolean> includeOrganization) {
+            $.includeOrganization = includeOrganization;
+            return this;
+        }
+
+        /**
+         * @param includeOrganization When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder includeOrganization(Boolean includeOrganization) {
+            return includeOrganization(Output.of(includeOrganization));
         }
 
         /**

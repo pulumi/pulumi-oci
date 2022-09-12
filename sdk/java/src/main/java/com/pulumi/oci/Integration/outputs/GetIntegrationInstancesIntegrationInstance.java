@@ -23,157 +23,110 @@ public final class GetIntegrationInstancesIntegrationInstance {
      * @return A list of alternate custom endpoints used for the integration instance URL.
      * 
      */
-    private final List<GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints;
+    private List<GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints;
     /**
      * @return A list of associated attachments to other services
      * 
      */
-    private final List<GetIntegrationInstancesIntegrationInstanceAttachment> attachments;
+    private List<GetIntegrationInstancesIntegrationInstanceAttachment> attachments;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The entitlement used for billing purposes.
      * 
      */
-    private final String consumptionModel;
+    private String consumptionModel;
     /**
      * @return Details for a custom endpoint for the integration instance.
      * 
      */
-    private final List<GetIntegrationInstancesIntegrationInstanceCustomEndpoint> customEndpoints;
+    private List<GetIntegrationInstancesIntegrationInstanceCustomEndpoint> customEndpoints;
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The Virtual Cloud Network OCID.
      * 
      */
-    private final String id;
-    private final String idcsAt;
+    private String id;
+    private String idcsAt;
     /**
      * @return Information for IDCS access
      * 
      */
-    private final List<GetIntegrationInstancesIntegrationInstanceIdcsInfo> idcsInfos;
+    private List<GetIntegrationInstancesIntegrationInstanceIdcsInfo> idcsInfos;
     /**
      * @return The Integration Instance URL.
      * 
      */
-    private final String instanceUrl;
+    private String instanceUrl;
     /**
      * @return Standard or Enterprise type
      * 
      */
-    private final String integrationInstanceType;
+    private String integrationInstanceType;
     /**
      * @return Bring your own license.
      * 
      */
-    private final Boolean isByol;
+    private Boolean isByol;
     /**
      * @return The file server is enabled or not.
      * 
      */
-    private final Boolean isFileServerEnabled;
+    private Boolean isFileServerEnabled;
     /**
      * @return Visual Builder is enabled or not.
      * 
      */
-    private final Boolean isVisualBuilderEnabled;
+    private Boolean isVisualBuilderEnabled;
     /**
      * @return The number of configured message packs (if any)
      * 
      */
-    private final Integer messagePacks;
+    private Integer messagePacks;
     /**
      * @return Base representation of a network endpoint.
      * 
      */
-    private final List<GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails;
+    private List<GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails;
     /**
      * @return Life cycle state to query on.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String stateMessage;
+    private String stateMessage;
     /**
      * @return The time the the Integration Instance was created. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetIntegrationInstancesIntegrationInstance(
-        @CustomType.Parameter("alternateCustomEndpoints") List<GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints,
-        @CustomType.Parameter("attachments") List<GetIntegrationInstancesIntegrationInstanceAttachment> attachments,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("consumptionModel") String consumptionModel,
-        @CustomType.Parameter("customEndpoints") List<GetIntegrationInstancesIntegrationInstanceCustomEndpoint> customEndpoints,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("idcsAt") String idcsAt,
-        @CustomType.Parameter("idcsInfos") List<GetIntegrationInstancesIntegrationInstanceIdcsInfo> idcsInfos,
-        @CustomType.Parameter("instanceUrl") String instanceUrl,
-        @CustomType.Parameter("integrationInstanceType") String integrationInstanceType,
-        @CustomType.Parameter("isByol") Boolean isByol,
-        @CustomType.Parameter("isFileServerEnabled") Boolean isFileServerEnabled,
-        @CustomType.Parameter("isVisualBuilderEnabled") Boolean isVisualBuilderEnabled,
-        @CustomType.Parameter("messagePacks") Integer messagePacks,
-        @CustomType.Parameter("networkEndpointDetails") List<GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("stateMessage") String stateMessage,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.alternateCustomEndpoints = alternateCustomEndpoints;
-        this.attachments = attachments;
-        this.compartmentId = compartmentId;
-        this.consumptionModel = consumptionModel;
-        this.customEndpoints = customEndpoints;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.idcsAt = idcsAt;
-        this.idcsInfos = idcsInfos;
-        this.instanceUrl = instanceUrl;
-        this.integrationInstanceType = integrationInstanceType;
-        this.isByol = isByol;
-        this.isFileServerEnabled = isFileServerEnabled;
-        this.isVisualBuilderEnabled = isVisualBuilderEnabled;
-        this.messagePacks = messagePacks;
-        this.networkEndpointDetails = networkEndpointDetails;
-        this.state = state;
-        this.stateMessage = stateMessage;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetIntegrationInstancesIntegrationInstance() {}
     /**
      * @return A list of alternate custom endpoints used for the integration instance URL.
      * 
@@ -332,7 +285,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
     public static Builder builder(GetIntegrationInstancesIntegrationInstance defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints;
         private List<GetIntegrationInstancesIntegrationInstanceAttachment> attachments;
@@ -356,11 +309,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
         private String stateMessage;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIntegrationInstancesIntegrationInstance defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alternateCustomEndpoints = defaults.alternateCustomEndpoints;
@@ -387,6 +336,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder alternateCustomEndpoints(List<GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints) {
             this.alternateCustomEndpoints = Objects.requireNonNull(alternateCustomEndpoints);
             return this;
@@ -394,6 +344,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
         public Builder alternateCustomEndpoints(GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint... alternateCustomEndpoints) {
             return alternateCustomEndpoints(List.of(alternateCustomEndpoints));
         }
+        @CustomType.Setter
         public Builder attachments(List<GetIntegrationInstancesIntegrationInstanceAttachment> attachments) {
             this.attachments = Objects.requireNonNull(attachments);
             return this;
@@ -401,14 +352,17 @@ public final class GetIntegrationInstancesIntegrationInstance {
         public Builder attachments(GetIntegrationInstancesIntegrationInstanceAttachment... attachments) {
             return attachments(List.of(attachments));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder consumptionModel(String consumptionModel) {
             this.consumptionModel = Objects.requireNonNull(consumptionModel);
             return this;
         }
+        @CustomType.Setter
         public Builder customEndpoints(List<GetIntegrationInstancesIntegrationInstanceCustomEndpoint> customEndpoints) {
             this.customEndpoints = Objects.requireNonNull(customEndpoints);
             return this;
@@ -416,26 +370,32 @@ public final class GetIntegrationInstancesIntegrationInstance {
         public Builder customEndpoints(GetIntegrationInstancesIntegrationInstanceCustomEndpoint... customEndpoints) {
             return customEndpoints(List.of(customEndpoints));
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder idcsAt(String idcsAt) {
             this.idcsAt = Objects.requireNonNull(idcsAt);
             return this;
         }
+        @CustomType.Setter
         public Builder idcsInfos(List<GetIntegrationInstancesIntegrationInstanceIdcsInfo> idcsInfos) {
             this.idcsInfos = Objects.requireNonNull(idcsInfos);
             return this;
@@ -443,30 +403,37 @@ public final class GetIntegrationInstancesIntegrationInstance {
         public Builder idcsInfos(GetIntegrationInstancesIntegrationInstanceIdcsInfo... idcsInfos) {
             return idcsInfos(List.of(idcsInfos));
         }
+        @CustomType.Setter
         public Builder instanceUrl(String instanceUrl) {
             this.instanceUrl = Objects.requireNonNull(instanceUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder integrationInstanceType(String integrationInstanceType) {
             this.integrationInstanceType = Objects.requireNonNull(integrationInstanceType);
             return this;
         }
+        @CustomType.Setter
         public Builder isByol(Boolean isByol) {
             this.isByol = Objects.requireNonNull(isByol);
             return this;
         }
+        @CustomType.Setter
         public Builder isFileServerEnabled(Boolean isFileServerEnabled) {
             this.isFileServerEnabled = Objects.requireNonNull(isFileServerEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isVisualBuilderEnabled(Boolean isVisualBuilderEnabled) {
             this.isVisualBuilderEnabled = Objects.requireNonNull(isVisualBuilderEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder messagePacks(Integer messagePacks) {
             this.messagePacks = Objects.requireNonNull(messagePacks);
             return this;
         }
+        @CustomType.Setter
         public Builder networkEndpointDetails(List<GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails) {
             this.networkEndpointDetails = Objects.requireNonNull(networkEndpointDetails);
             return this;
@@ -474,23 +441,51 @@ public final class GetIntegrationInstancesIntegrationInstance {
         public Builder networkEndpointDetails(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail... networkEndpointDetails) {
             return networkEndpointDetails(List.of(networkEndpointDetails));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder stateMessage(String stateMessage) {
             this.stateMessage = Objects.requireNonNull(stateMessage);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetIntegrationInstancesIntegrationInstance build() {
-            return new GetIntegrationInstancesIntegrationInstance(alternateCustomEndpoints, attachments, compartmentId, consumptionModel, customEndpoints, definedTags, displayName, freeformTags, id, idcsAt, idcsInfos, instanceUrl, integrationInstanceType, isByol, isFileServerEnabled, isVisualBuilderEnabled, messagePacks, networkEndpointDetails, state, stateMessage, timeCreated, timeUpdated);
+        }
+        public GetIntegrationInstancesIntegrationInstance build() {
+            final var o = new GetIntegrationInstancesIntegrationInstance();
+            o.alternateCustomEndpoints = alternateCustomEndpoints;
+            o.attachments = attachments;
+            o.compartmentId = compartmentId;
+            o.consumptionModel = consumptionModel;
+            o.customEndpoints = customEndpoints;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.idcsAt = idcsAt;
+            o.idcsInfos = idcsInfos;
+            o.instanceUrl = instanceUrl;
+            o.integrationInstanceType = integrationInstanceType;
+            o.isByol = isByol;
+            o.isFileServerEnabled = isFileServerEnabled;
+            o.isVisualBuilderEnabled = isVisualBuilderEnabled;
+            o.messagePacks = messagePacks;
+            o.networkEndpointDetails = networkEndpointDetails;
+            o.state = state;
+            o.stateMessage = stateMessage;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

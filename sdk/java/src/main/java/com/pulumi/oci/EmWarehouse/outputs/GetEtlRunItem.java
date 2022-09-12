@@ -15,84 +15,59 @@ public final class GetEtlRunItem {
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Data read by the dataflow run
      * 
      */
-    private final String dataReadInBytes;
+    private String dataReadInBytes;
     /**
      * @return Data written by the dataflow run
      * 
      */
-    private final String dataWritten;
+    private String dataWritten;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Details of the lifecycle state
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Dataflow run duration
      * 
      */
-    private final String runDurationInMilliseconds;
+    private String runDurationInMilliseconds;
     /**
      * @return The current state of the etlRun.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Time when the dataflow run was created
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Time when the dataflow run was updated
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetEtlRunItem(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dataReadInBytes") String dataReadInBytes,
-        @CustomType.Parameter("dataWritten") String dataWritten,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("runDurationInMilliseconds") String runDurationInMilliseconds,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.dataReadInBytes = dataReadInBytes;
-        this.dataWritten = dataWritten;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.lifecycleDetails = lifecycleDetails;
-        this.runDurationInMilliseconds = runDurationInMilliseconds;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetEtlRunItem() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
@@ -178,7 +153,7 @@ public final class GetEtlRunItem {
     public static Builder builder(GetEtlRunItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String dataReadInBytes;
@@ -191,11 +166,7 @@ public final class GetEtlRunItem {
         private String state;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEtlRunItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -211,51 +182,75 @@ public final class GetEtlRunItem {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dataReadInBytes(String dataReadInBytes) {
             this.dataReadInBytes = Objects.requireNonNull(dataReadInBytes);
             return this;
         }
+        @CustomType.Setter
         public Builder dataWritten(String dataWritten) {
             this.dataWritten = Objects.requireNonNull(dataWritten);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder runDurationInMilliseconds(String runDurationInMilliseconds) {
             this.runDurationInMilliseconds = Objects.requireNonNull(runDurationInMilliseconds);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetEtlRunItem build() {
-            return new GetEtlRunItem(compartmentId, dataReadInBytes, dataWritten, definedTags, displayName, freeformTags, lifecycleDetails, runDurationInMilliseconds, state, timeCreated, timeUpdated);
+        }
+        public GetEtlRunItem build() {
+            final var o = new GetEtlRunItem();
+            o.compartmentId = compartmentId;
+            o.dataReadInBytes = dataReadInBytes;
+            o.dataWritten = dataWritten;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.lifecycleDetails = lifecycleDetails;
+            o.runDurationInMilliseconds = runDurationInMilliseconds;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

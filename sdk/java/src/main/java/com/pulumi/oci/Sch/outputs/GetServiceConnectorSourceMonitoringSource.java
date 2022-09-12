@@ -15,21 +15,14 @@ public final class GetServiceConnectorSourceMonitoringSource {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Discriminator for namespaces in the compartment-specific list.
      * 
      */
-    private final List<GetServiceConnectorSourceMonitoringSourceNamespaceDetail> namespaceDetails;
+    private List<GetServiceConnectorSourceMonitoringSourceNamespaceDetail> namespaceDetails;
 
-    @CustomType.Constructor
-    private GetServiceConnectorSourceMonitoringSource(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("namespaceDetails") List<GetServiceConnectorSourceMonitoringSourceNamespaceDetail> namespaceDetails) {
-        this.compartmentId = compartmentId;
-        this.namespaceDetails = namespaceDetails;
-    }
-
+    private GetServiceConnectorSourceMonitoringSource() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
      * 
@@ -52,33 +45,35 @@ public final class GetServiceConnectorSourceMonitoringSource {
     public static Builder builder(GetServiceConnectorSourceMonitoringSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetServiceConnectorSourceMonitoringSourceNamespaceDetail> namespaceDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceConnectorSourceMonitoringSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.namespaceDetails = defaults.namespaceDetails;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder namespaceDetails(List<GetServiceConnectorSourceMonitoringSourceNamespaceDetail> namespaceDetails) {
             this.namespaceDetails = Objects.requireNonNull(namespaceDetails);
             return this;
         }
         public Builder namespaceDetails(GetServiceConnectorSourceMonitoringSourceNamespaceDetail... namespaceDetails) {
             return namespaceDetails(List.of(namespaceDetails));
-        }        public GetServiceConnectorSourceMonitoringSource build() {
-            return new GetServiceConnectorSourceMonitoringSource(compartmentId, namespaceDetails);
+        }
+        public GetServiceConnectorSourceMonitoringSource build() {
+            final var o = new GetServiceConnectorSourceMonitoringSource();
+            o.compartmentId = compartmentId;
+            o.namespaceDetails = namespaceDetails;
+            return o;
         }
     }
 }

@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbSystemPatchesResult {
-    private final String dbSystemId;
-    private final @Nullable List<GetDbSystemPatchesFilter> filters;
+    private String dbSystemId;
+    private @Nullable List<GetDbSystemPatchesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of patches.
      * 
      */
-    private final List<GetDbSystemPatchesPatch> patches;
+    private List<GetDbSystemPatchesPatch> patches;
 
-    @CustomType.Constructor
-    private GetDbSystemPatchesResult(
-        @CustomType.Parameter("dbSystemId") String dbSystemId,
-        @CustomType.Parameter("filters") @Nullable List<GetDbSystemPatchesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("patches") List<GetDbSystemPatchesPatch> patches) {
-        this.dbSystemId = dbSystemId;
-        this.filters = filters;
-        this.id = id;
-        this.patches = patches;
-    }
-
+    private GetDbSystemPatchesResult() {}
     public String dbSystemId() {
         return this.dbSystemId;
     }
@@ -66,17 +55,13 @@ public final class GetDbSystemPatchesResult {
     public static Builder builder(GetDbSystemPatchesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dbSystemId;
         private @Nullable List<GetDbSystemPatchesFilter> filters;
         private String id;
         private List<GetDbSystemPatchesPatch> patches;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbSystemPatchesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbSystemId = defaults.dbSystemId;
@@ -85,10 +70,12 @@ public final class GetDbSystemPatchesResult {
     	      this.patches = defaults.patches;
         }
 
+        @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = Objects.requireNonNull(dbSystemId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDbSystemPatchesFilter> filters) {
             this.filters = filters;
             return this;
@@ -96,18 +83,26 @@ public final class GetDbSystemPatchesResult {
         public Builder filters(GetDbSystemPatchesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder patches(List<GetDbSystemPatchesPatch> patches) {
             this.patches = Objects.requireNonNull(patches);
             return this;
         }
         public Builder patches(GetDbSystemPatchesPatch... patches) {
             return patches(List.of(patches));
-        }        public GetDbSystemPatchesResult build() {
-            return new GetDbSystemPatchesResult(dbSystemId, filters, id, patches);
+        }
+        public GetDbSystemPatchesResult build() {
+            final var o = new GetDbSystemPatchesResult();
+            o.dbSystemId = dbSystemId;
+            o.filters = filters;
+            o.id = id;
+            o.patches = patches;
+            return o;
         }
     }
 }

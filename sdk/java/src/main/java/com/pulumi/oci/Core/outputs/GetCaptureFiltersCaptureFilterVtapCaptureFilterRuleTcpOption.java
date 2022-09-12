@@ -11,17 +11,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption {
-    private final List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange> destinationPortRanges;
-    private final List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange> sourcePortRanges;
+    private List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange> destinationPortRanges;
+    private List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange> sourcePortRanges;
 
-    @CustomType.Constructor
-    private GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption(
-        @CustomType.Parameter("destinationPortRanges") List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange> destinationPortRanges,
-        @CustomType.Parameter("sourcePortRanges") List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange> sourcePortRanges) {
-        this.destinationPortRanges = destinationPortRanges;
-        this.sourcePortRanges = sourcePortRanges;
-    }
-
+    private GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption() {}
     public List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange> destinationPortRanges() {
         return this.destinationPortRanges;
     }
@@ -36,21 +29,18 @@ public final class GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption 
     public static Builder builder(GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange> destinationPortRanges;
         private List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange> sourcePortRanges;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.destinationPortRanges = defaults.destinationPortRanges;
     	      this.sourcePortRanges = defaults.sourcePortRanges;
         }
 
+        @CustomType.Setter
         public Builder destinationPortRanges(List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange> destinationPortRanges) {
             this.destinationPortRanges = Objects.requireNonNull(destinationPortRanges);
             return this;
@@ -58,14 +48,19 @@ public final class GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption 
         public Builder destinationPortRanges(GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange... destinationPortRanges) {
             return destinationPortRanges(List.of(destinationPortRanges));
         }
+        @CustomType.Setter
         public Builder sourcePortRanges(List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange> sourcePortRanges) {
             this.sourcePortRanges = Objects.requireNonNull(sourcePortRanges);
             return this;
         }
         public Builder sourcePortRanges(GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange... sourcePortRanges) {
             return sourcePortRanges(List.of(sourcePortRanges));
-        }        public GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption build() {
-            return new GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption(destinationPortRanges, sourcePortRanges);
+        }
+        public GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption build() {
+            final var o = new GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption();
+            o.destinationPortRanges = destinationPortRanges;
+            o.sourcePortRanges = sourcePortRanges;
+            return o;
         }
     }
 }

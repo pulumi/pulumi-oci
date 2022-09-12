@@ -15,35 +15,24 @@ public final class ScriptMonitorStatusCountMap {
      * @return Number of disabled monitors using the script.
      * 
      */
-    private final @Nullable Integer disabled;
+    private @Nullable Integer disabled;
     /**
      * @return Number of enabled monitors using the script.
      * 
      */
-    private final @Nullable Integer enabled;
+    private @Nullable Integer enabled;
     /**
      * @return Number of invalid monitors using the script.
      * 
      */
-    private final @Nullable Integer invalid;
+    private @Nullable Integer invalid;
     /**
      * @return Total number of monitors using the script.
      * 
      */
-    private final @Nullable Integer total;
+    private @Nullable Integer total;
 
-    @CustomType.Constructor
-    private ScriptMonitorStatusCountMap(
-        @CustomType.Parameter("disabled") @Nullable Integer disabled,
-        @CustomType.Parameter("enabled") @Nullable Integer enabled,
-        @CustomType.Parameter("invalid") @Nullable Integer invalid,
-        @CustomType.Parameter("total") @Nullable Integer total) {
-        this.disabled = disabled;
-        this.enabled = enabled;
-        this.invalid = invalid;
-        this.total = total;
-    }
-
+    private ScriptMonitorStatusCountMap() {}
     /**
      * @return Number of disabled monitors using the script.
      * 
@@ -80,17 +69,13 @@ public final class ScriptMonitorStatusCountMap {
     public static Builder builder(ScriptMonitorStatusCountMap defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer disabled;
         private @Nullable Integer enabled;
         private @Nullable Integer invalid;
         private @Nullable Integer total;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ScriptMonitorStatusCountMap defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.disabled = defaults.disabled;
@@ -99,23 +84,33 @@ public final class ScriptMonitorStatusCountMap {
     	      this.total = defaults.total;
         }
 
+        @CustomType.Setter
         public Builder disabled(@Nullable Integer disabled) {
             this.disabled = disabled;
             return this;
         }
+        @CustomType.Setter
         public Builder enabled(@Nullable Integer enabled) {
             this.enabled = enabled;
             return this;
         }
+        @CustomType.Setter
         public Builder invalid(@Nullable Integer invalid) {
             this.invalid = invalid;
             return this;
         }
+        @CustomType.Setter
         public Builder total(@Nullable Integer total) {
             this.total = total;
             return this;
-        }        public ScriptMonitorStatusCountMap build() {
-            return new ScriptMonitorStatusCountMap(disabled, enabled, invalid, total);
+        }
+        public ScriptMonitorStatusCountMap build() {
+            final var o = new ScriptMonitorStatusCountMap();
+            o.disabled = disabled;
+            o.enabled = enabled;
+            o.invalid = invalid;
+            o.total = total;
+            return o;
         }
     }
 }

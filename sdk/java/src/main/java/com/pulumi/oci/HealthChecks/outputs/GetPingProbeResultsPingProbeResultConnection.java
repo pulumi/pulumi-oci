@@ -14,21 +14,14 @@ public final class GetPingProbeResultsPingProbeResultConnection {
      * @return The connection IP address.
      * 
      */
-    private final String address;
+    private String address;
     /**
      * @return The port.
      * 
      */
-    private final Integer port;
+    private Integer port;
 
-    @CustomType.Constructor
-    private GetPingProbeResultsPingProbeResultConnection(
-        @CustomType.Parameter("address") String address,
-        @CustomType.Parameter("port") Integer port) {
-        this.address = address;
-        this.port = port;
-    }
-
+    private GetPingProbeResultsPingProbeResultConnection() {}
     /**
      * @return The connection IP address.
      * 
@@ -51,30 +44,32 @@ public final class GetPingProbeResultsPingProbeResultConnection {
     public static Builder builder(GetPingProbeResultsPingProbeResultConnection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String address;
         private Integer port;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPingProbeResultsPingProbeResultConnection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.address = defaults.address;
     	      this.port = defaults.port;
         }
 
+        @CustomType.Setter
         public Builder address(String address) {
             this.address = Objects.requireNonNull(address);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
-        }        public GetPingProbeResultsPingProbeResultConnection build() {
-            return new GetPingProbeResultsPingProbeResultConnection(address, port);
+        }
+        public GetPingProbeResultsPingProbeResultConnection build() {
+            final var o = new GetPingProbeResultsPingProbeResultConnection();
+            o.address = address;
+            o.port = port;
+            return o;
         }
     }
 }

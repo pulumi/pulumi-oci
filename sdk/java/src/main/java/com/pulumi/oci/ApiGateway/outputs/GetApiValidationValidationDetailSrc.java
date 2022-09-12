@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetApiValidationValidationDetailSrc {
-    private final List<Object> items;
+    private List<Object> items;
 
-    @CustomType.Constructor
-    private GetApiValidationValidationDetailSrc(@CustomType.Parameter("items") List<Object> items) {
-        this.items = items;
-    }
-
+    private GetApiValidationValidationDetailSrc() {}
     public List<Object> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetApiValidationValidationDetailSrc {
     public static Builder builder(GetApiValidationValidationDetailSrc defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<Object> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiValidationValidationDetailSrc defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<Object> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(Object... items) {
             return items(List.of(items));
-        }        public GetApiValidationValidationDetailSrc build() {
-            return new GetApiValidationValidationDetailSrc(items);
+        }
+        public GetApiValidationValidationDetailSrc build() {
+            final var o = new GetApiValidationValidationDetailSrc();
+            o.items = items;
+            return o;
         }
     }
 }

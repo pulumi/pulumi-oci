@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetVbInstanceApplicationsApplicationSummaryCollection {
-    private final List<GetVbInstanceApplicationsApplicationSummaryCollectionItem> items;
+    private List<GetVbInstanceApplicationsApplicationSummaryCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetVbInstanceApplicationsApplicationSummaryCollection(@CustomType.Parameter("items") List<GetVbInstanceApplicationsApplicationSummaryCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetVbInstanceApplicationsApplicationSummaryCollection() {}
     public List<GetVbInstanceApplicationsApplicationSummaryCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetVbInstanceApplicationsApplicationSummaryCollection {
     public static Builder builder(GetVbInstanceApplicationsApplicationSummaryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetVbInstanceApplicationsApplicationSummaryCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVbInstanceApplicationsApplicationSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetVbInstanceApplicationsApplicationSummaryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetVbInstanceApplicationsApplicationSummaryCollectionItem... items) {
             return items(List.of(items));
-        }        public GetVbInstanceApplicationsApplicationSummaryCollection build() {
-            return new GetVbInstanceApplicationsApplicationSummaryCollection(items);
+        }
+        public GetVbInstanceApplicationsApplicationSummaryCollection build() {
+            final var o = new GetVbInstanceApplicationsApplicationSummaryCollection();
+            o.items = items;
+            return o;
         }
     }
 }

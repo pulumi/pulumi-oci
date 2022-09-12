@@ -17,26 +17,25 @@ __all__ = ['ResolverArgs', 'Resolver']
 class ResolverArgs:
     def __init__(__self__, *,
                  resolver_id: pulumi.Input[str],
-                 scope: pulumi.Input[str],
                  attached_views: Optional[pulumi.Input[Sequence[pulumi.Input['ResolverAttachedViewArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]]] = None):
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]]] = None,
+                 scope: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Resolver resource.
         :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
-        :param pulumi.Input[str] scope: Value must be `PRIVATE` when creating private name resolvers.
         :param pulumi.Input[Sequence[pulumi.Input['ResolverAttachedViewArgs']]] attached_views: (Updatable) The attached views. Views are evaluated in order.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the owning compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The display name of the resolver.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
+        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers.
         """
         pulumi.set(__self__, "resolver_id", resolver_id)
-        pulumi.set(__self__, "scope", scope)
         if attached_views is not None:
             pulumi.set(__self__, "attached_views", attached_views)
         if compartment_id is not None:
@@ -49,6 +48,8 @@ class ResolverArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
 
     @property
     @pulumi.getter(name="resolverId")
@@ -61,18 +62,6 @@ class ResolverArgs:
     @resolver_id.setter
     def resolver_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "resolver_id", value)
-
-    @property
-    @pulumi.getter
-    def scope(self) -> pulumi.Input[str]:
-        """
-        Value must be `PRIVATE` when creating private name resolvers.
-        """
-        return pulumi.get(self, "scope")
-
-    @scope.setter
-    def scope(self, value: pulumi.Input[str]):
-        pulumi.set(self, "scope", value)
 
     @property
     @pulumi.getter(name="attachedViews")
@@ -146,6 +135,18 @@ class ResolverArgs:
     def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
+    @property
+    @pulumi.getter
+    def scope(self) -> Optional[pulumi.Input[str]]:
+        """
+        If specified, must be `PRIVATE` when creating private name resolvers.
+        """
+        return pulumi.get(self, "scope")
+
+    @scope.setter
+    def scope(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scope", value)
+
 
 @pulumi.input_type
 class _ResolverState:
@@ -179,7 +180,7 @@ class _ResolverState:
         :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
         :param pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[str] scope: Value must be `PRIVATE` when creating private name resolvers.
+        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers.
         :param pulumi.Input[str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[str] state: The current state of the resource.
         :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
@@ -354,7 +355,7 @@ class _ResolverState:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        Value must be `PRIVATE` when creating private name resolvers.
+        If specified, must be `PRIVATE` when creating private name resolvers.
         """
         return pulumi.get(self, "scope")
 
@@ -428,23 +429,17 @@ class Resolver(pulumi.CustomResource):
         """
         This resource provides the Resolver resource in Oracle Cloud Infrastructure DNS service.
 
-        Updates the specified resolver with your new information. Requires a `PRIVATE` scope query parameter.
+        Updates the specified resolver with your new information.
 
         Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until created VCN's state shows as Available in OCI console before updating DNS resolver properties.
         Also a VCN cannot be deleted while its resolver has resolver endpoints. Additionally a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove the rules from a resolver user needs to update the resolver resource. Since DNS Resolver gets deleted when VCN is deleted there is no support for Delete for DNS Resolver.
 
         ## Import
 
-        For legacy Resolvers that were created without using `scope`, these Resolvers can be imported using the `id`, e.g.
+        Resolvers can be imported using their OCID, e.g.
 
         ```sh
          $ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
-        ```
-
-         For Resolvers created using `scope`, these Resolvers can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Dns/resolver:Resolver test_resolver "resolverId/{resolverId}/scope/{scope}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -456,7 +451,7 @@ class Resolver(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverRuleArgs']]]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[str] scope: Value must be `PRIVATE` when creating private name resolvers.
+        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers.
         """
         ...
     @overload
@@ -467,23 +462,17 @@ class Resolver(pulumi.CustomResource):
         """
         This resource provides the Resolver resource in Oracle Cloud Infrastructure DNS service.
 
-        Updates the specified resolver with your new information. Requires a `PRIVATE` scope query parameter.
+        Updates the specified resolver with your new information.
 
         Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until created VCN's state shows as Available in OCI console before updating DNS resolver properties.
         Also a VCN cannot be deleted while its resolver has resolver endpoints. Additionally a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove the rules from a resolver user needs to update the resolver resource. Since DNS Resolver gets deleted when VCN is deleted there is no support for Delete for DNS Resolver.
 
         ## Import
 
-        For legacy Resolvers that were created without using `scope`, these Resolvers can be imported using the `id`, e.g.
+        Resolvers can be imported using their OCID, e.g.
 
         ```sh
          $ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
-        ```
-
-         For Resolvers created using `scope`, these Resolvers can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Dns/resolver:Resolver test_resolver "resolverId/{resolverId}/scope/{scope}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -527,8 +516,6 @@ class Resolver(pulumi.CustomResource):
                 raise TypeError("Missing required property 'resolver_id'")
             __props__.__dict__["resolver_id"] = resolver_id
             __props__.__dict__["rules"] = rules
-            if scope is None and not opts.urn:
-                raise TypeError("Missing required property 'scope'")
             __props__.__dict__["scope"] = scope
             __props__.__dict__["attached_vcn_id"] = None
             __props__.__dict__["default_view_id"] = None
@@ -582,7 +569,7 @@ class Resolver(pulumi.CustomResource):
         :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverRuleArgs']]]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[str] scope: Value must be `PRIVATE` when creating private name resolvers.
+        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers.
         :param pulumi.Input[str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[str] state: The current state of the resource.
         :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
@@ -700,9 +687,9 @@ class Resolver(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def scope(self) -> pulumi.Output[str]:
+    def scope(self) -> pulumi.Output[Optional[str]]:
         """
-        Value must be `PRIVATE` when creating private name resolvers.
+        If specified, must be `PRIVATE` when creating private name resolvers.
         """
         return pulumi.get(self, "scope")
 

@@ -11,19 +11,19 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBackendHealthResult {
-    private final String backendName;
-    private final String backendSetName;
+    private String backendName;
+    private String backendSetName;
     /**
      * @return A list of the most recent health check results returned for the specified backend server.
      * 
      */
-    private final List<GetBackendHealthHealthCheckResult> healthCheckResults;
+    private List<GetBackendHealthHealthCheckResult> healthCheckResults;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String loadBalancerId;
+    private String id;
+    private String loadBalancerId;
     /**
      * @return The general health status of the specified backend server as reported by the primary and standby load balancers.
      * *   **OK:** Both health checks returned `OK`.
@@ -32,24 +32,9 @@ public final class GetBackendHealthResult {
      * *   **UNKNOWN:** One or both health checks returned `UNKNOWN`, or the system was unable to retrieve metrics at this time.
      * 
      */
-    private final String status;
+    private String status;
 
-    @CustomType.Constructor
-    private GetBackendHealthResult(
-        @CustomType.Parameter("backendName") String backendName,
-        @CustomType.Parameter("backendSetName") String backendSetName,
-        @CustomType.Parameter("healthCheckResults") List<GetBackendHealthHealthCheckResult> healthCheckResults,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId,
-        @CustomType.Parameter("status") String status) {
-        this.backendName = backendName;
-        this.backendSetName = backendSetName;
-        this.healthCheckResults = healthCheckResults;
-        this.id = id;
-        this.loadBalancerId = loadBalancerId;
-        this.status = status;
-    }
-
+    private GetBackendHealthResult() {}
     public String backendName() {
         return this.backendName;
     }
@@ -92,7 +77,7 @@ public final class GetBackendHealthResult {
     public static Builder builder(GetBackendHealthResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String backendName;
         private String backendSetName;
@@ -100,11 +85,7 @@ public final class GetBackendHealthResult {
         private String id;
         private String loadBalancerId;
         private String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBackendHealthResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backendName = defaults.backendName;
@@ -115,14 +96,17 @@ public final class GetBackendHealthResult {
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder backendName(String backendName) {
             this.backendName = Objects.requireNonNull(backendName);
             return this;
         }
+        @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
             this.backendSetName = Objects.requireNonNull(backendSetName);
             return this;
         }
+        @CustomType.Setter
         public Builder healthCheckResults(List<GetBackendHealthHealthCheckResult> healthCheckResults) {
             this.healthCheckResults = Objects.requireNonNull(healthCheckResults);
             return this;
@@ -130,19 +114,30 @@ public final class GetBackendHealthResult {
         public Builder healthCheckResults(GetBackendHealthHealthCheckResult... healthCheckResults) {
             return healthCheckResults(List.of(healthCheckResults));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
-        }        public GetBackendHealthResult build() {
-            return new GetBackendHealthResult(backendName, backendSetName, healthCheckResults, id, loadBalancerId, status);
+        }
+        public GetBackendHealthResult build() {
+            final var o = new GetBackendHealthResult();
+            o.backendName = backendName;
+            o.backendSetName = backendSetName;
+            o.healthCheckResults = healthCheckResults;
+            o.id = id;
+            o.loadBalancerId = loadBalancerId;
+            o.status = status;
+            return o;
         }
     }
 }

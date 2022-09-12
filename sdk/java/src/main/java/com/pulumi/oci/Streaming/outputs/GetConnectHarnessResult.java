@@ -15,66 +15,45 @@ public final class GetConnectHarnessResult {
      * @return The OCID of the compartment that contains the connect harness.
      * 
      */
-    private final String compartmentId;
-    private final String connectHarnessId;
+    private String compartmentId;
+    private String connectHarnessId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}&#39;
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the connect harness.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Any additional details about the current state of the connect harness.
      * 
      */
-    private final String lifecycleStateDetails;
+    private String lifecycleStateDetails;
     /**
      * @return The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The current state of the connect harness.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the connect harness was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetConnectHarnessResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("connectHarnessId") String connectHarnessId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleStateDetails") String lifecycleStateDetails,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.compartmentId = compartmentId;
-        this.connectHarnessId = connectHarnessId;
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleStateDetails = lifecycleStateDetails;
-        this.name = name;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetConnectHarnessResult() {}
     /**
      * @return The OCID of the compartment that contains the connect harness.
      * 
@@ -142,7 +121,7 @@ public final class GetConnectHarnessResult {
     public static Builder builder(GetConnectHarnessResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String connectHarnessId;
@@ -153,11 +132,7 @@ public final class GetConnectHarnessResult {
         private String name;
         private String state;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConnectHarnessResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -171,43 +146,63 @@ public final class GetConnectHarnessResult {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder connectHarnessId(String connectHarnessId) {
             this.connectHarnessId = Objects.requireNonNull(connectHarnessId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleStateDetails(String lifecycleStateDetails) {
             this.lifecycleStateDetails = Objects.requireNonNull(lifecycleStateDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetConnectHarnessResult build() {
-            return new GetConnectHarnessResult(compartmentId, connectHarnessId, definedTags, freeformTags, id, lifecycleStateDetails, name, state, timeCreated);
+        }
+        public GetConnectHarnessResult build() {
+            final var o = new GetConnectHarnessResult();
+            o.compartmentId = compartmentId;
+            o.connectHarnessId = connectHarnessId;
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleStateDetails = lifecycleStateDetails;
+            o.name = name;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

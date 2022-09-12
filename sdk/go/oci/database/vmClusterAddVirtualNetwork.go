@@ -64,9 +64,10 @@ type VmClusterAddVirtualNetwork struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The number of enabled CPU cores.
 	CpusEnabled pulumi.IntOutput `pulumi:"cpusEnabled"`
-	// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput `pulumi:"dataCollectionOptions"`
-	DataStorageSizeInGb   pulumi.Float64Output                                      `pulumi:"dataStorageSizeInGb"`
+	// Size of the DATA disk group in GBs.
+	DataStorageSizeInGb pulumi.Float64Output `pulumi:"dataStorageSizeInGb"`
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs pulumi.Float64Output `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage allocated in GBs.
@@ -153,9 +154,10 @@ type vmClusterAddVirtualNetworkState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The number of enabled CPU cores.
 	CpusEnabled *int `pulumi:"cpusEnabled"`
-	// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions []VmClusterAddVirtualNetworkDataCollectionOption `pulumi:"dataCollectionOptions"`
-	DataStorageSizeInGb   *float64                                         `pulumi:"dataStorageSizeInGb"`
+	// Size of the DATA disk group in GBs.
+	DataStorageSizeInGb *float64 `pulumi:"dataStorageSizeInGb"`
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs *float64 `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage allocated in GBs.
@@ -208,9 +210,10 @@ type VmClusterAddVirtualNetworkState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The number of enabled CPU cores.
 	CpusEnabled pulumi.IntPtrInput
-	// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions VmClusterAddVirtualNetworkDataCollectionOptionArrayInput
-	DataStorageSizeInGb   pulumi.Float64PtrInput
+	// Size of the DATA disk group in GBs.
+	DataStorageSizeInGb pulumi.Float64PtrInput
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs pulumi.Float64PtrInput
 	// The local node storage allocated in GBs.
@@ -374,13 +377,14 @@ func (o VmClusterAddVirtualNetworkOutput) CpusEnabled() pulumi.IntOutput {
 	return o.ApplyT(func(v *VmClusterAddVirtualNetwork) pulumi.IntOutput { return v.CpusEnabled }).(pulumi.IntOutput)
 }
 
-// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 func (o VmClusterAddVirtualNetworkOutput) DataCollectionOptions() VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput {
 	return o.ApplyT(func(v *VmClusterAddVirtualNetwork) VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput {
 		return v.DataCollectionOptions
 	}).(VmClusterAddVirtualNetworkDataCollectionOptionArrayOutput)
 }
 
+// Size of the DATA disk group in GBs.
 func (o VmClusterAddVirtualNetworkOutput) DataStorageSizeInGb() pulumi.Float64Output {
 	return o.ApplyT(func(v *VmClusterAddVirtualNetwork) pulumi.Float64Output { return v.DataStorageSizeInGb }).(pulumi.Float64Output)
 }

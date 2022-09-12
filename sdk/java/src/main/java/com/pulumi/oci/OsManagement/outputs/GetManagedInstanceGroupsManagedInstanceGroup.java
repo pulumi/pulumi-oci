@@ -18,73 +18,50 @@ public final class GetManagedInstanceGroupsManagedInstanceGroup {
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Information specified by the user about the managed instance group
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return unique identifier that is immutable on creation
      * 
      */
-    private final String id;
-    private final Integer managedInstanceCount;
+    private String id;
+    private Integer managedInstanceCount;
     /**
      * @return list of Managed Instances in the group
      * 
      */
-    private final List<GetManagedInstanceGroupsManagedInstanceGroupManagedInstance> managedInstances;
+    private List<GetManagedInstanceGroupsManagedInstanceGroupManagedInstance> managedInstances;
     /**
      * @return The OS family for which to list resources.
      * 
      */
-    private final String osFamily;
+    private String osFamily;
     /**
      * @return The current lifecycle state for the object.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private GetManagedInstanceGroupsManagedInstanceGroup(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managedInstanceCount") Integer managedInstanceCount,
-        @CustomType.Parameter("managedInstances") List<GetManagedInstanceGroupsManagedInstanceGroupManagedInstance> managedInstances,
-        @CustomType.Parameter("osFamily") String osFamily,
-        @CustomType.Parameter("state") String state) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.managedInstanceCount = managedInstanceCount;
-        this.managedInstances = managedInstances;
-        this.osFamily = osFamily;
-        this.state = state;
-    }
-
+    private GetManagedInstanceGroupsManagedInstanceGroup() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
@@ -159,7 +136,7 @@ public final class GetManagedInstanceGroupsManagedInstanceGroup {
     public static Builder builder(GetManagedInstanceGroupsManagedInstanceGroup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -171,11 +148,7 @@ public final class GetManagedInstanceGroupsManagedInstanceGroup {
         private List<GetManagedInstanceGroupsManagedInstanceGroupManagedInstance> managedInstances;
         private String osFamily;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedInstanceGroupsManagedInstanceGroup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -190,34 +163,42 @@ public final class GetManagedInstanceGroupsManagedInstanceGroup {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managedInstanceCount(Integer managedInstanceCount) {
             this.managedInstanceCount = Objects.requireNonNull(managedInstanceCount);
             return this;
         }
+        @CustomType.Setter
         public Builder managedInstances(List<GetManagedInstanceGroupsManagedInstanceGroupManagedInstance> managedInstances) {
             this.managedInstances = Objects.requireNonNull(managedInstances);
             return this;
@@ -225,15 +206,29 @@ public final class GetManagedInstanceGroupsManagedInstanceGroup {
         public Builder managedInstances(GetManagedInstanceGroupsManagedInstanceGroupManagedInstance... managedInstances) {
             return managedInstances(List.of(managedInstances));
         }
+        @CustomType.Setter
         public Builder osFamily(String osFamily) {
             this.osFamily = Objects.requireNonNull(osFamily);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetManagedInstanceGroupsManagedInstanceGroup build() {
-            return new GetManagedInstanceGroupsManagedInstanceGroup(compartmentId, definedTags, description, displayName, freeformTags, id, managedInstanceCount, managedInstances, osFamily, state);
+        }
+        public GetManagedInstanceGroupsManagedInstanceGroup build() {
+            final var o = new GetManagedInstanceGroupsManagedInstanceGroup();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.managedInstanceCount = managedInstanceCount;
+            o.managedInstances = managedInstances;
+            o.osFamily = osFamily;
+            o.state = state;
+            return o;
         }
     }
 }

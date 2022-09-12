@@ -9,64 +9,45 @@ import java.util.Objects;
 
 @CustomType
 public final class GetObjectsObject {
-    private final String archivalState;
+    private String archivalState;
     /**
      * @return The current entity tag (ETag) for the object.
      * 
      */
-    private final String etag;
+    private String etag;
     /**
      * @return Base64-encoded MD5 hash of the object data.
      * 
      */
-    private final String md5;
+    private String md5;
     /**
      * @return The name of the object.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Size of the object in bytes.
      * 
      */
-    private final String size;
+    private String size;
     /**
      * @return The storage tier that the object is stored in.
      * * `archival-state` - Archival state of an object. This field is set only for objects in Archive tier.
      * 
      */
-    private final String storageTier;
+    private String storageTier;
     /**
      * @return The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616#section-14.29).
      * 
      */
-    private final String timeModified;
+    private String timeModified;
 
-    @CustomType.Constructor
-    private GetObjectsObject(
-        @CustomType.Parameter("archivalState") String archivalState,
-        @CustomType.Parameter("etag") String etag,
-        @CustomType.Parameter("md5") String md5,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("size") String size,
-        @CustomType.Parameter("storageTier") String storageTier,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeModified") String timeModified) {
-        this.archivalState = archivalState;
-        this.etag = etag;
-        this.md5 = md5;
-        this.name = name;
-        this.size = size;
-        this.storageTier = storageTier;
-        this.timeCreated = timeCreated;
-        this.timeModified = timeModified;
-    }
-
+    private GetObjectsObject() {}
     public String archivalState() {
         return this.archivalState;
     }
@@ -128,7 +109,7 @@ public final class GetObjectsObject {
     public static Builder builder(GetObjectsObject defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String archivalState;
         private String etag;
@@ -138,11 +119,7 @@ public final class GetObjectsObject {
         private String storageTier;
         private String timeCreated;
         private String timeModified;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetObjectsObject defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.archivalState = defaults.archivalState;
@@ -155,39 +132,57 @@ public final class GetObjectsObject {
     	      this.timeModified = defaults.timeModified;
         }
 
+        @CustomType.Setter
         public Builder archivalState(String archivalState) {
             this.archivalState = Objects.requireNonNull(archivalState);
             return this;
         }
+        @CustomType.Setter
         public Builder etag(String etag) {
             this.etag = Objects.requireNonNull(etag);
             return this;
         }
+        @CustomType.Setter
         public Builder md5(String md5) {
             this.md5 = Objects.requireNonNull(md5);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder size(String size) {
             this.size = Objects.requireNonNull(size);
             return this;
         }
+        @CustomType.Setter
         public Builder storageTier(String storageTier) {
             this.storageTier = Objects.requireNonNull(storageTier);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeModified(String timeModified) {
             this.timeModified = Objects.requireNonNull(timeModified);
             return this;
-        }        public GetObjectsObject build() {
-            return new GetObjectsObject(archivalState, etag, md5, name, size, storageTier, timeCreated, timeModified);
+        }
+        public GetObjectsObject build() {
+            final var o = new GetObjectsObject();
+            o.archivalState = archivalState;
+            o.etag = etag;
+            o.md5 = md5;
+            o.name = name;
+            o.size = size;
+            o.storageTier = storageTier;
+            o.timeCreated = timeCreated;
+            o.timeModified = timeModified;
+            return o;
         }
     }
 }

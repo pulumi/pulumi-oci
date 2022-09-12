@@ -13,13 +13,9 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestination {
      * @return (Updatable) The OCID of the resource.
      * 
      */
-    private final String logObjectId;
+    private String logObjectId;
 
-    @CustomType.Constructor
-    private UnifiedAgentConfigurationServiceConfigurationDestination(@CustomType.Parameter("logObjectId") String logObjectId) {
-        this.logObjectId = logObjectId;
-    }
-
+    private UnifiedAgentConfigurationServiceConfigurationDestination() {}
     /**
      * @return (Updatable) The OCID of the resource.
      * 
@@ -35,24 +31,24 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestination {
     public static Builder builder(UnifiedAgentConfigurationServiceConfigurationDestination defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String logObjectId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(UnifiedAgentConfigurationServiceConfigurationDestination defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.logObjectId = defaults.logObjectId;
         }
 
+        @CustomType.Setter
         public Builder logObjectId(String logObjectId) {
             this.logObjectId = Objects.requireNonNull(logObjectId);
             return this;
-        }        public UnifiedAgentConfigurationServiceConfigurationDestination build() {
-            return new UnifiedAgentConfigurationServiceConfigurationDestination(logObjectId);
+        }
+        public UnifiedAgentConfigurationServiceConfigurationDestination build() {
+            final var o = new UnifiedAgentConfigurationServiceConfigurationDestination();
+            o.logObjectId = logObjectId;
+            return o;
         }
     }
 }

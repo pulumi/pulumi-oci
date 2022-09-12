@@ -18,52 +18,35 @@ public final class GetRepositoryRefsResult {
      * @return Commit ID pointed to by the new branch.
      * 
      */
-    private final @Nullable String commitId;
-    private final @Nullable List<GetRepositoryRefsFilter> filters;
+    private @Nullable String commitId;
+    private @Nullable List<GetRepositoryRefsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Unique reference name inside a repository.
      * 
      */
-    private final @Nullable String refName;
+    private @Nullable String refName;
     /**
      * @return The type of reference (BRANCH or TAG).
      * 
      */
-    private final @Nullable String refType;
+    private @Nullable String refType;
     /**
      * @return The OCID of the repository containing the reference.
      * 
      */
-    private final String repositoryId;
+    private String repositoryId;
     /**
      * @return The list of repository_ref_collection.
      * 
      */
-    private final List<GetRepositoryRefsRepositoryRefCollection> repositoryRefCollections;
+    private List<GetRepositoryRefsRepositoryRefCollection> repositoryRefCollections;
 
-    @CustomType.Constructor
-    private GetRepositoryRefsResult(
-        @CustomType.Parameter("commitId") @Nullable String commitId,
-        @CustomType.Parameter("filters") @Nullable List<GetRepositoryRefsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("refName") @Nullable String refName,
-        @CustomType.Parameter("refType") @Nullable String refType,
-        @CustomType.Parameter("repositoryId") String repositoryId,
-        @CustomType.Parameter("repositoryRefCollections") List<GetRepositoryRefsRepositoryRefCollection> repositoryRefCollections) {
-        this.commitId = commitId;
-        this.filters = filters;
-        this.id = id;
-        this.refName = refName;
-        this.refType = refType;
-        this.repositoryId = repositoryId;
-        this.repositoryRefCollections = repositoryRefCollections;
-    }
-
+    private GetRepositoryRefsResult() {}
     /**
      * @return Commit ID pointed to by the new branch.
      * 
@@ -117,7 +100,7 @@ public final class GetRepositoryRefsResult {
     public static Builder builder(GetRepositoryRefsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String commitId;
         private @Nullable List<GetRepositoryRefsFilter> filters;
@@ -126,11 +109,7 @@ public final class GetRepositoryRefsResult {
         private @Nullable String refType;
         private String repositoryId;
         private List<GetRepositoryRefsRepositoryRefCollection> repositoryRefCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryRefsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.commitId = defaults.commitId;
@@ -142,10 +121,12 @@ public final class GetRepositoryRefsResult {
     	      this.repositoryRefCollections = defaults.repositoryRefCollections;
         }
 
+        @CustomType.Setter
         public Builder commitId(@Nullable String commitId) {
             this.commitId = commitId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRepositoryRefsFilter> filters) {
             this.filters = filters;
             return this;
@@ -153,30 +134,44 @@ public final class GetRepositoryRefsResult {
         public Builder filters(GetRepositoryRefsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder refName(@Nullable String refName) {
             this.refName = refName;
             return this;
         }
+        @CustomType.Setter
         public Builder refType(@Nullable String refType) {
             this.refType = refType;
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryRefCollections(List<GetRepositoryRefsRepositoryRefCollection> repositoryRefCollections) {
             this.repositoryRefCollections = Objects.requireNonNull(repositoryRefCollections);
             return this;
         }
         public Builder repositoryRefCollections(GetRepositoryRefsRepositoryRefCollection... repositoryRefCollections) {
             return repositoryRefCollections(List.of(repositoryRefCollections));
-        }        public GetRepositoryRefsResult build() {
-            return new GetRepositoryRefsResult(commitId, filters, id, refName, refType, repositoryId, repositoryRefCollections);
+        }
+        public GetRepositoryRefsResult build() {
+            final var o = new GetRepositoryRefsResult();
+            o.commitId = commitId;
+            o.filters = filters;
+            o.id = id;
+            o.refName = refName;
+            o.refType = refType;
+            o.repositoryId = repositoryId;
+            o.repositoryRefCollections = repositoryRefCollections;
+            return o;
         }
     }
 }

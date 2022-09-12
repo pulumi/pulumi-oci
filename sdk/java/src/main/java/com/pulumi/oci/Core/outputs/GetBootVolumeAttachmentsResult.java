@@ -18,52 +18,35 @@ public final class GetBootVolumeAttachmentsResult {
      * @return The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The list of boot_volume_attachments.
      * 
      */
-    private final List<GetBootVolumeAttachmentsBootVolumeAttachment> bootVolumeAttachments;
+    private List<GetBootVolumeAttachmentsBootVolumeAttachment> bootVolumeAttachments;
     /**
      * @return The OCID of the boot volume.
      * 
      */
-    private final @Nullable String bootVolumeId;
+    private @Nullable String bootVolumeId;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetBootVolumeAttachmentsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetBootVolumeAttachmentsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the instance the boot volume is attached to.
      * 
      */
-    private final @Nullable String instanceId;
+    private @Nullable String instanceId;
 
-    @CustomType.Constructor
-    private GetBootVolumeAttachmentsResult(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("bootVolumeAttachments") List<GetBootVolumeAttachmentsBootVolumeAttachment> bootVolumeAttachments,
-        @CustomType.Parameter("bootVolumeId") @Nullable String bootVolumeId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetBootVolumeAttachmentsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instanceId") @Nullable String instanceId) {
-        this.availabilityDomain = availabilityDomain;
-        this.bootVolumeAttachments = bootVolumeAttachments;
-        this.bootVolumeId = bootVolumeId;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.instanceId = instanceId;
-    }
-
+    private GetBootVolumeAttachmentsResult() {}
     /**
      * @return The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
      * 
@@ -117,7 +100,7 @@ public final class GetBootVolumeAttachmentsResult {
     public static Builder builder(GetBootVolumeAttachmentsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private List<GetBootVolumeAttachmentsBootVolumeAttachment> bootVolumeAttachments;
@@ -126,11 +109,7 @@ public final class GetBootVolumeAttachmentsResult {
         private @Nullable List<GetBootVolumeAttachmentsFilter> filters;
         private String id;
         private @Nullable String instanceId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBootVolumeAttachmentsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -142,10 +121,12 @@ public final class GetBootVolumeAttachmentsResult {
     	      this.instanceId = defaults.instanceId;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder bootVolumeAttachments(List<GetBootVolumeAttachmentsBootVolumeAttachment> bootVolumeAttachments) {
             this.bootVolumeAttachments = Objects.requireNonNull(bootVolumeAttachments);
             return this;
@@ -153,14 +134,17 @@ public final class GetBootVolumeAttachmentsResult {
         public Builder bootVolumeAttachments(GetBootVolumeAttachmentsBootVolumeAttachment... bootVolumeAttachments) {
             return bootVolumeAttachments(List.of(bootVolumeAttachments));
         }
+        @CustomType.Setter
         public Builder bootVolumeId(@Nullable String bootVolumeId) {
             this.bootVolumeId = bootVolumeId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBootVolumeAttachmentsFilter> filters) {
             this.filters = filters;
             return this;
@@ -168,15 +152,26 @@ public final class GetBootVolumeAttachmentsResult {
         public Builder filters(GetBootVolumeAttachmentsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(@Nullable String instanceId) {
             this.instanceId = instanceId;
             return this;
-        }        public GetBootVolumeAttachmentsResult build() {
-            return new GetBootVolumeAttachmentsResult(availabilityDomain, bootVolumeAttachments, bootVolumeId, compartmentId, filters, id, instanceId);
+        }
+        public GetBootVolumeAttachmentsResult build() {
+            final var o = new GetBootVolumeAttachmentsResult();
+            o.availabilityDomain = availabilityDomain;
+            o.bootVolumeAttachments = bootVolumeAttachments;
+            o.bootVolumeId = bootVolumeId;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.instanceId = instanceId;
+            return o;
         }
     }
 }

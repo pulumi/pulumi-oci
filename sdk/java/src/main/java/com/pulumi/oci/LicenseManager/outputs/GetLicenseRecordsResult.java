@@ -13,35 +13,24 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLicenseRecordsResult {
-    private final @Nullable List<GetLicenseRecordsFilter> filters;
+    private @Nullable List<GetLicenseRecordsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of license_record_collection.
      * 
      */
-    private final List<GetLicenseRecordsLicenseRecordCollection> licenseRecordCollections;
+    private List<GetLicenseRecordsLicenseRecordCollection> licenseRecordCollections;
     /**
      * @return The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which the license record is associated.
      * 
      */
-    private final String productLicenseId;
+    private String productLicenseId;
 
-    @CustomType.Constructor
-    private GetLicenseRecordsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetLicenseRecordsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("licenseRecordCollections") List<GetLicenseRecordsLicenseRecordCollection> licenseRecordCollections,
-        @CustomType.Parameter("productLicenseId") String productLicenseId) {
-        this.filters = filters;
-        this.id = id;
-        this.licenseRecordCollections = licenseRecordCollections;
-        this.productLicenseId = productLicenseId;
-    }
-
+    private GetLicenseRecordsResult() {}
     public List<GetLicenseRecordsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -74,17 +63,13 @@ public final class GetLicenseRecordsResult {
     public static Builder builder(GetLicenseRecordsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetLicenseRecordsFilter> filters;
         private String id;
         private List<GetLicenseRecordsLicenseRecordCollection> licenseRecordCollections;
         private String productLicenseId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLicenseRecordsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -93,6 +78,7 @@ public final class GetLicenseRecordsResult {
     	      this.productLicenseId = defaults.productLicenseId;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetLicenseRecordsFilter> filters) {
             this.filters = filters;
             return this;
@@ -100,10 +86,12 @@ public final class GetLicenseRecordsResult {
         public Builder filters(GetLicenseRecordsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseRecordCollections(List<GetLicenseRecordsLicenseRecordCollection> licenseRecordCollections) {
             this.licenseRecordCollections = Objects.requireNonNull(licenseRecordCollections);
             return this;
@@ -111,11 +99,18 @@ public final class GetLicenseRecordsResult {
         public Builder licenseRecordCollections(GetLicenseRecordsLicenseRecordCollection... licenseRecordCollections) {
             return licenseRecordCollections(List.of(licenseRecordCollections));
         }
+        @CustomType.Setter
         public Builder productLicenseId(String productLicenseId) {
             this.productLicenseId = Objects.requireNonNull(productLicenseId);
             return this;
-        }        public GetLicenseRecordsResult build() {
-            return new GetLicenseRecordsResult(filters, id, licenseRecordCollections, productLicenseId);
+        }
+        public GetLicenseRecordsResult build() {
+            final var o = new GetLicenseRecordsResult();
+            o.filters = filters;
+            o.id = id;
+            o.licenseRecordCollections = licenseRecordCollections;
+            o.productLicenseId = productLicenseId;
+            return o;
         }
     }
 }

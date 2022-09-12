@@ -14,77 +14,54 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The OCID of the boot volume.
      * 
      */
-    private final String bootVolumeId;
+    private String bootVolumeId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Refer the top-level definition of encryptionInTransitType. The default value is NONE.
      * 
      */
-    private final String encryptionInTransitType;
+    private String encryptionInTransitType;
     /**
      * @return The OCID of the boot volume attachment.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the instance.
      * 
      */
-    private final String instanceId;
+    private String instanceId;
     /**
      * @return Whether in-transit encryption for the boot volume&#39;s paravirtualized attachment is enabled or not.
      * 
      */
-    private final Boolean isPvEncryptionInTransitEnabled;
+    private Boolean isPvEncryptionInTransitEnabled;
     /**
      * @return The current state of the boot volume attachment.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the boot volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetBootVolumeAttachmentsBootVolumeAttachment(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("bootVolumeId") String bootVolumeId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("encryptionInTransitType") String encryptionInTransitType,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instanceId") String instanceId,
-        @CustomType.Parameter("isPvEncryptionInTransitEnabled") Boolean isPvEncryptionInTransitEnabled,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.availabilityDomain = availabilityDomain;
-        this.bootVolumeId = bootVolumeId;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.encryptionInTransitType = encryptionInTransitType;
-        this.id = id;
-        this.instanceId = instanceId;
-        this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetBootVolumeAttachmentsBootVolumeAttachment() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
@@ -163,7 +140,7 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
     public static Builder builder(GetBootVolumeAttachmentsBootVolumeAttachment defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String bootVolumeId;
@@ -175,11 +152,7 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
         private Boolean isPvEncryptionInTransitEnabled;
         private String state;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBootVolumeAttachmentsBootVolumeAttachment defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -194,47 +167,69 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder bootVolumeId(String bootVolumeId) {
             this.bootVolumeId = Objects.requireNonNull(bootVolumeId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder encryptionInTransitType(String encryptionInTransitType) {
             this.encryptionInTransitType = Objects.requireNonNull(encryptionInTransitType);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(String instanceId) {
             this.instanceId = Objects.requireNonNull(instanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
             this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetBootVolumeAttachmentsBootVolumeAttachment build() {
-            return new GetBootVolumeAttachmentsBootVolumeAttachment(availabilityDomain, bootVolumeId, compartmentId, displayName, encryptionInTransitType, id, instanceId, isPvEncryptionInTransitEnabled, state, timeCreated);
+        }
+        public GetBootVolumeAttachmentsBootVolumeAttachment build() {
+            final var o = new GetBootVolumeAttachmentsBootVolumeAttachment();
+            o.availabilityDomain = availabilityDomain;
+            o.bootVolumeId = bootVolumeId;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.encryptionInTransitType = encryptionInTransitType;
+            o.id = id;
+            o.instanceId = instanceId;
+            o.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

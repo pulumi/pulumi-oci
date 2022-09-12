@@ -13,21 +13,14 @@ public final class GetKeyStoreAssociatedDatabase {
      * @return The name of the database that is associated with the key store.
      * 
      */
-    private final String dbName;
+    private String dbName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetKeyStoreAssociatedDatabase(
-        @CustomType.Parameter("dbName") String dbName,
-        @CustomType.Parameter("id") String id) {
-        this.dbName = dbName;
-        this.id = id;
-    }
-
+    private GetKeyStoreAssociatedDatabase() {}
     /**
      * @return The name of the database that is associated with the key store.
      * 
@@ -50,30 +43,32 @@ public final class GetKeyStoreAssociatedDatabase {
     public static Builder builder(GetKeyStoreAssociatedDatabase defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dbName;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetKeyStoreAssociatedDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbName = defaults.dbName;
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder dbName(String dbName) {
             this.dbName = Objects.requireNonNull(dbName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetKeyStoreAssociatedDatabase build() {
-            return new GetKeyStoreAssociatedDatabase(dbName, id);
+        }
+        public GetKeyStoreAssociatedDatabase build() {
+            final var o = new GetKeyStoreAssociatedDatabase();
+            o.dbName = dbName;
+            o.id = id;
+            return o;
         }
     }
 }

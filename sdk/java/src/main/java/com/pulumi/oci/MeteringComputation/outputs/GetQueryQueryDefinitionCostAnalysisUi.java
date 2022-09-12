@@ -14,21 +14,14 @@ public final class GetQueryQueryDefinitionCostAnalysisUi {
      * @return The graph type.
      * 
      */
-    private final String graph;
+    private String graph;
     /**
      * @return A cumulative graph.
      * 
      */
-    private final Boolean isCumulativeGraph;
+    private Boolean isCumulativeGraph;
 
-    @CustomType.Constructor
-    private GetQueryQueryDefinitionCostAnalysisUi(
-        @CustomType.Parameter("graph") String graph,
-        @CustomType.Parameter("isCumulativeGraph") Boolean isCumulativeGraph) {
-        this.graph = graph;
-        this.isCumulativeGraph = isCumulativeGraph;
-    }
-
+    private GetQueryQueryDefinitionCostAnalysisUi() {}
     /**
      * @return The graph type.
      * 
@@ -51,30 +44,32 @@ public final class GetQueryQueryDefinitionCostAnalysisUi {
     public static Builder builder(GetQueryQueryDefinitionCostAnalysisUi defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String graph;
         private Boolean isCumulativeGraph;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetQueryQueryDefinitionCostAnalysisUi defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.graph = defaults.graph;
     	      this.isCumulativeGraph = defaults.isCumulativeGraph;
         }
 
+        @CustomType.Setter
         public Builder graph(String graph) {
             this.graph = Objects.requireNonNull(graph);
             return this;
         }
+        @CustomType.Setter
         public Builder isCumulativeGraph(Boolean isCumulativeGraph) {
             this.isCumulativeGraph = Objects.requireNonNull(isCumulativeGraph);
             return this;
-        }        public GetQueryQueryDefinitionCostAnalysisUi build() {
-            return new GetQueryQueryDefinitionCostAnalysisUi(graph, isCumulativeGraph);
+        }
+        public GetQueryQueryDefinitionCostAnalysisUi build() {
+            final var o = new GetQueryQueryDefinitionCostAnalysisUi();
+            o.graph = graph;
+            o.isCumulativeGraph = isCumulativeGraph;
+            return o;
         }
     }
 }

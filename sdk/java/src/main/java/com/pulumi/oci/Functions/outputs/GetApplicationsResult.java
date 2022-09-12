@@ -18,45 +18,30 @@ public final class GetApplicationsResult {
      * @return The list of applications.
      * 
      */
-    private final List<GetApplicationsApplication> applications;
+    private List<GetApplicationsApplication> applications;
     /**
      * @return The OCID of the compartment that contains the application.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The display name of the application. The display name is unique within the compartment containing the application.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetApplicationsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetApplicationsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The current state of the application.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetApplicationsResult(
-        @CustomType.Parameter("applications") List<GetApplicationsApplication> applications,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetApplicationsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.applications = applications;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetApplicationsResult() {}
     /**
      * @return The list of applications.
      * 
@@ -103,7 +88,7 @@ public final class GetApplicationsResult {
     public static Builder builder(GetApplicationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetApplicationsApplication> applications;
         private String compartmentId;
@@ -111,11 +96,7 @@ public final class GetApplicationsResult {
         private @Nullable List<GetApplicationsFilter> filters;
         private @Nullable String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApplicationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applications = defaults.applications;
@@ -126,6 +107,7 @@ public final class GetApplicationsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder applications(List<GetApplicationsApplication> applications) {
             this.applications = Objects.requireNonNull(applications);
             return this;
@@ -133,14 +115,17 @@ public final class GetApplicationsResult {
         public Builder applications(GetApplicationsApplication... applications) {
             return applications(List.of(applications));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetApplicationsFilter> filters) {
             this.filters = filters;
             return this;
@@ -148,15 +133,25 @@ public final class GetApplicationsResult {
         public Builder filters(GetApplicationsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetApplicationsResult build() {
-            return new GetApplicationsResult(applications, compartmentId, displayName, filters, id, state);
+        }
+        public GetApplicationsResult build() {
+            final var o = new GetApplicationsResult();
+            o.applications = applications;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

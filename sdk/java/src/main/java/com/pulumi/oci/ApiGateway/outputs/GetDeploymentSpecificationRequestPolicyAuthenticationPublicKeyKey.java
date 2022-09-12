@@ -14,70 +14,49 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationPublicKe
      * @return The algorithm intended for use with this key.
      * 
      */
-    private final String alg;
+    private String alg;
     /**
      * @return The base64 url encoded exponent of the RSA public key represented by this key.
      * 
      */
-    private final String e;
+    private String e;
     /**
      * @return The format of the public key.
      * 
      */
-    private final String format;
+    private String format;
     /**
      * @return Name of the claim.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return The operations for which this key is to be used.
      * 
      */
-    private final List<String> keyOps;
+    private List<String> keyOps;
     /**
      * @return A unique key ID. This key will be used to verify the signature of a JWT with matching &#34;kid&#34;.
      * 
      */
-    private final String kid;
+    private String kid;
     /**
      * @return The key type.
      * 
      */
-    private final String kty;
+    private String kty;
     /**
      * @return The base64 url encoded modulus of the RSA public key represented by this key.
      * 
      */
-    private final String n;
+    private String n;
     /**
      * @return The intended use of the public key.
      * 
      */
-    private final String use;
+    private String use;
 
-    @CustomType.Constructor
-    private GetDeploymentSpecificationRequestPolicyAuthenticationPublicKeyKey(
-        @CustomType.Parameter("alg") String alg,
-        @CustomType.Parameter("e") String e,
-        @CustomType.Parameter("format") String format,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("keyOps") List<String> keyOps,
-        @CustomType.Parameter("kid") String kid,
-        @CustomType.Parameter("kty") String kty,
-        @CustomType.Parameter("n") String n,
-        @CustomType.Parameter("use") String use) {
-        this.alg = alg;
-        this.e = e;
-        this.format = format;
-        this.key = key;
-        this.keyOps = keyOps;
-        this.kid = kid;
-        this.kty = kty;
-        this.n = n;
-        this.use = use;
-    }
-
+    private GetDeploymentSpecificationRequestPolicyAuthenticationPublicKeyKey() {}
     /**
      * @return The algorithm intended for use with this key.
      * 
@@ -149,7 +128,7 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationPublicKe
     public static Builder builder(GetDeploymentSpecificationRequestPolicyAuthenticationPublicKeyKey defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String alg;
         private String e;
@@ -160,11 +139,7 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationPublicKe
         private String kty;
         private String n;
         private String use;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentSpecificationRequestPolicyAuthenticationPublicKeyKey defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alg = defaults.alg;
@@ -178,22 +153,27 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationPublicKe
     	      this.use = defaults.use;
         }
 
+        @CustomType.Setter
         public Builder alg(String alg) {
             this.alg = Objects.requireNonNull(alg);
             return this;
         }
+        @CustomType.Setter
         public Builder e(String e) {
             this.e = Objects.requireNonNull(e);
             return this;
         }
+        @CustomType.Setter
         public Builder format(String format) {
             this.format = Objects.requireNonNull(format);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder keyOps(List<String> keyOps) {
             this.keyOps = Objects.requireNonNull(keyOps);
             return this;
@@ -201,23 +181,38 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationPublicKe
         public Builder keyOps(String... keyOps) {
             return keyOps(List.of(keyOps));
         }
+        @CustomType.Setter
         public Builder kid(String kid) {
             this.kid = Objects.requireNonNull(kid);
             return this;
         }
+        @CustomType.Setter
         public Builder kty(String kty) {
             this.kty = Objects.requireNonNull(kty);
             return this;
         }
+        @CustomType.Setter
         public Builder n(String n) {
             this.n = Objects.requireNonNull(n);
             return this;
         }
+        @CustomType.Setter
         public Builder use(String use) {
             this.use = Objects.requireNonNull(use);
             return this;
-        }        public GetDeploymentSpecificationRequestPolicyAuthenticationPublicKeyKey build() {
-            return new GetDeploymentSpecificationRequestPolicyAuthenticationPublicKeyKey(alg, e, format, key, keyOps, kid, kty, n, use);
+        }
+        public GetDeploymentSpecificationRequestPolicyAuthenticationPublicKeyKey build() {
+            final var o = new GetDeploymentSpecificationRequestPolicyAuthenticationPublicKeyKey();
+            o.alg = alg;
+            o.e = e;
+            o.format = format;
+            o.key = key;
+            o.keyOps = keyOps;
+            o.kid = kid;
+            o.kty = kty;
+            o.n = n;
+            o.use = use;
+            return o;
         }
     }
 }

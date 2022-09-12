@@ -13,28 +13,19 @@ public final class GetNodePoolOptionSource {
      * @return The OCID of the image.
      * 
      */
-    private final String imageId;
+    private String imageId;
     /**
      * @return The user-friendly name of the entity corresponding to the OCID.
      * 
      */
-    private final String sourceName;
+    private String sourceName;
     /**
      * @return The source type of this option. `IMAGE` means the OCID is of an image.
      * 
      */
-    private final String sourceType;
+    private String sourceType;
 
-    @CustomType.Constructor
-    private GetNodePoolOptionSource(
-        @CustomType.Parameter("imageId") String imageId,
-        @CustomType.Parameter("sourceName") String sourceName,
-        @CustomType.Parameter("sourceType") String sourceType) {
-        this.imageId = imageId;
-        this.sourceName = sourceName;
-        this.sourceType = sourceType;
-    }
-
+    private GetNodePoolOptionSource() {}
     /**
      * @return The OCID of the image.
      * 
@@ -64,16 +55,12 @@ public final class GetNodePoolOptionSource {
     public static Builder builder(GetNodePoolOptionSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String imageId;
         private String sourceName;
         private String sourceType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNodePoolOptionSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.imageId = defaults.imageId;
@@ -81,19 +68,27 @@ public final class GetNodePoolOptionSource {
     	      this.sourceType = defaults.sourceType;
         }
 
+        @CustomType.Setter
         public Builder imageId(String imageId) {
             this.imageId = Objects.requireNonNull(imageId);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceName(String sourceName) {
             this.sourceName = Objects.requireNonNull(sourceName);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
-        }        public GetNodePoolOptionSource build() {
-            return new GetNodePoolOptionSource(imageId, sourceName, sourceType);
+        }
+        public GetNodePoolOptionSource build() {
+            final var o = new GetNodePoolOptionSource();
+            o.imageId = imageId;
+            o.sourceName = sourceName;
+            o.sourceType = sourceType;
+            return o;
         }
     }
 }

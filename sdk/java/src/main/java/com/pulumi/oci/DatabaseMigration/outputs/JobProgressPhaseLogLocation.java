@@ -15,28 +15,19 @@ public final class JobProgressPhaseLogLocation {
      * @return Name of the bucket containing the log file.
      * 
      */
-    private final @Nullable String bucket;
+    private @Nullable String bucket;
     /**
      * @return Object Storage namespace.
      * 
      */
-    private final @Nullable String namespace;
+    private @Nullable String namespace;
     /**
      * @return Name of the object (regular expression is allowed)
      * 
      */
-    private final @Nullable String object;
+    private @Nullable String object;
 
-    @CustomType.Constructor
-    private JobProgressPhaseLogLocation(
-        @CustomType.Parameter("bucket") @Nullable String bucket,
-        @CustomType.Parameter("namespace") @Nullable String namespace,
-        @CustomType.Parameter("object") @Nullable String object) {
-        this.bucket = bucket;
-        this.namespace = namespace;
-        this.object = object;
-    }
-
+    private JobProgressPhaseLogLocation() {}
     /**
      * @return Name of the bucket containing the log file.
      * 
@@ -66,16 +57,12 @@ public final class JobProgressPhaseLogLocation {
     public static Builder builder(JobProgressPhaseLogLocation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String bucket;
         private @Nullable String namespace;
         private @Nullable String object;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(JobProgressPhaseLogLocation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -83,19 +70,27 @@ public final class JobProgressPhaseLogLocation {
     	      this.object = defaults.object;
         }
 
+        @CustomType.Setter
         public Builder bucket(@Nullable String bucket) {
             this.bucket = bucket;
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(@Nullable String namespace) {
             this.namespace = namespace;
             return this;
         }
+        @CustomType.Setter
         public Builder object(@Nullable String object) {
             this.object = object;
             return this;
-        }        public JobProgressPhaseLogLocation build() {
-            return new JobProgressPhaseLogLocation(bucket, namespace, object);
+        }
+        public JobProgressPhaseLogLocation build() {
+            final var o = new JobProgressPhaseLogLocation();
+            o.bucket = bucket;
+            o.namespace = namespace;
+            o.object = object;
+            return o;
         }
     }
 }

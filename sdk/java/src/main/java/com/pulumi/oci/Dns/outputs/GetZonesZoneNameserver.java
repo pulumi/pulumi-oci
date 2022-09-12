@@ -13,13 +13,9 @@ public final class GetZonesZoneNameserver {
      * @return The hostname of the nameserver.
      * 
      */
-    private final String hostname;
+    private String hostname;
 
-    @CustomType.Constructor
-    private GetZonesZoneNameserver(@CustomType.Parameter("hostname") String hostname) {
-        this.hostname = hostname;
-    }
-
+    private GetZonesZoneNameserver() {}
     /**
      * @return The hostname of the nameserver.
      * 
@@ -35,24 +31,24 @@ public final class GetZonesZoneNameserver {
     public static Builder builder(GetZonesZoneNameserver defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String hostname;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetZonesZoneNameserver defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostname = defaults.hostname;
         }
 
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
-        }        public GetZonesZoneNameserver build() {
-            return new GetZonesZoneNameserver(hostname);
+        }
+        public GetZonesZoneNameserver build() {
+            final var o = new GetZonesZoneNameserver();
+            o.hostname = hostname;
+            return o;
         }
     }
 }

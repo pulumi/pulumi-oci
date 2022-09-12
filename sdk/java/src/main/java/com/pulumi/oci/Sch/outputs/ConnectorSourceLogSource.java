@@ -15,28 +15,19 @@ public final class ConnectorSourceLogSource {
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
      * 
      */
-    private final @Nullable String logGroupId;
+    private @Nullable String logGroupId;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
      * 
      */
-    private final @Nullable String logId;
+    private @Nullable String logId;
 
-    @CustomType.Constructor
-    private ConnectorSourceLogSource(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("logGroupId") @Nullable String logGroupId,
-        @CustomType.Parameter("logId") @Nullable String logId) {
-        this.compartmentId = compartmentId;
-        this.logGroupId = logGroupId;
-        this.logId = logId;
-    }
-
+    private ConnectorSourceLogSource() {}
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
      * 
@@ -66,16 +57,12 @@ public final class ConnectorSourceLogSource {
     public static Builder builder(ConnectorSourceLogSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String logGroupId;
         private @Nullable String logId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConnectorSourceLogSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -83,19 +70,27 @@ public final class ConnectorSourceLogSource {
     	      this.logId = defaults.logId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder logGroupId(@Nullable String logGroupId) {
             this.logGroupId = logGroupId;
             return this;
         }
+        @CustomType.Setter
         public Builder logId(@Nullable String logId) {
             this.logId = logId;
             return this;
-        }        public ConnectorSourceLogSource build() {
-            return new ConnectorSourceLogSource(compartmentId, logGroupId, logId);
+        }
+        public ConnectorSourceLogSource build() {
+            final var o = new ConnectorSourceLogSource();
+            o.compartmentId = compartmentId;
+            o.logGroupId = logGroupId;
+            o.logId = logId;
+            return o;
         }
     }
 }

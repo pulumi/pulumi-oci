@@ -19,40 +19,23 @@ public final class GetManagedDatabasesDatabaseParametersResult {
      * @return The list of database_parameters_collection.
      * 
      */
-    private final List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollection> databaseParametersCollections;
-    private final @Nullable List<GetManagedDatabasesDatabaseParametersFilter> filters;
+    private List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollection> databaseParametersCollections;
+    private @Nullable List<GetManagedDatabasesDatabaseParametersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Boolean isAllowedValuesIncluded;
-    private final String managedDatabaseId;
+    private String id;
+    private @Nullable Boolean isAllowedValuesIncluded;
+    private String managedDatabaseId;
     /**
      * @return The parameter name.
      * 
      */
-    private final @Nullable String name;
-    private final @Nullable String source;
+    private @Nullable String name;
+    private @Nullable String source;
 
-    @CustomType.Constructor
-    private GetManagedDatabasesDatabaseParametersResult(
-        @CustomType.Parameter("databaseParametersCollections") List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollection> databaseParametersCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetManagedDatabasesDatabaseParametersFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isAllowedValuesIncluded") @Nullable Boolean isAllowedValuesIncluded,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("source") @Nullable String source) {
-        this.databaseParametersCollections = databaseParametersCollections;
-        this.filters = filters;
-        this.id = id;
-        this.isAllowedValuesIncluded = isAllowedValuesIncluded;
-        this.managedDatabaseId = managedDatabaseId;
-        this.name = name;
-        this.source = source;
-    }
-
+    private GetManagedDatabasesDatabaseParametersResult() {}
     /**
      * @return The list of database_parameters_collection.
      * 
@@ -94,7 +77,7 @@ public final class GetManagedDatabasesDatabaseParametersResult {
     public static Builder builder(GetManagedDatabasesDatabaseParametersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollection> databaseParametersCollections;
         private @Nullable List<GetManagedDatabasesDatabaseParametersFilter> filters;
@@ -103,11 +86,7 @@ public final class GetManagedDatabasesDatabaseParametersResult {
         private String managedDatabaseId;
         private @Nullable String name;
         private @Nullable String source;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabasesDatabaseParametersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.databaseParametersCollections = defaults.databaseParametersCollections;
@@ -119,6 +98,7 @@ public final class GetManagedDatabasesDatabaseParametersResult {
     	      this.source = defaults.source;
         }
 
+        @CustomType.Setter
         public Builder databaseParametersCollections(List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollection> databaseParametersCollections) {
             this.databaseParametersCollections = Objects.requireNonNull(databaseParametersCollections);
             return this;
@@ -126,6 +106,7 @@ public final class GetManagedDatabasesDatabaseParametersResult {
         public Builder databaseParametersCollections(GetManagedDatabasesDatabaseParametersDatabaseParametersCollection... databaseParametersCollections) {
             return databaseParametersCollections(List.of(databaseParametersCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabasesDatabaseParametersFilter> filters) {
             this.filters = filters;
             return this;
@@ -133,27 +114,41 @@ public final class GetManagedDatabasesDatabaseParametersResult {
         public Builder filters(GetManagedDatabasesDatabaseParametersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isAllowedValuesIncluded(@Nullable Boolean isAllowedValuesIncluded) {
             this.isAllowedValuesIncluded = isAllowedValuesIncluded;
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder source(@Nullable String source) {
             this.source = source;
             return this;
-        }        public GetManagedDatabasesDatabaseParametersResult build() {
-            return new GetManagedDatabasesDatabaseParametersResult(databaseParametersCollections, filters, id, isAllowedValuesIncluded, managedDatabaseId, name, source);
+        }
+        public GetManagedDatabasesDatabaseParametersResult build() {
+            final var o = new GetManagedDatabasesDatabaseParametersResult();
+            o.databaseParametersCollections = databaseParametersCollections;
+            o.filters = filters;
+            o.id = id;
+            o.isAllowedValuesIncluded = isAllowedValuesIncluded;
+            o.managedDatabaseId = managedDatabaseId;
+            o.name = name;
+            o.source = source;
+            return o;
         }
     }
 }

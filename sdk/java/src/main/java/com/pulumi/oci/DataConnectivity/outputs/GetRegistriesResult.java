@@ -19,44 +19,27 @@ public final class GetRegistriesResult {
      * @return Compartment Identifier
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetRegistriesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetRegistriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Boolean isDeepLookup;
-    private final @Nullable String name;
+    private String id;
+    private @Nullable Boolean isDeepLookup;
+    private @Nullable String name;
     /**
      * @return The list of registry_summary_collection.
      * 
      */
-    private final List<GetRegistriesRegistrySummaryCollection> registrySummaryCollections;
+    private List<GetRegistriesRegistrySummaryCollection> registrySummaryCollections;
     /**
-     * @return Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn&#39;t available FAILED   - The resource is in a failed state due to validation or other errors
+     * @return Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn&#39;t available. FAILED   - The resource is in a failed state due to validation or other errors.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetRegistriesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetRegistriesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isDeepLookup") @Nullable Boolean isDeepLookup,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("registrySummaryCollections") List<GetRegistriesRegistrySummaryCollection> registrySummaryCollections,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.isDeepLookup = isDeepLookup;
-        this.name = name;
-        this.registrySummaryCollections = registrySummaryCollections;
-        this.state = state;
-    }
-
+    private GetRegistriesResult() {}
     /**
      * @return Compartment Identifier
      * 
@@ -88,7 +71,7 @@ public final class GetRegistriesResult {
         return this.registrySummaryCollections;
     }
     /**
-     * @return Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn&#39;t available FAILED   - The resource is in a failed state due to validation or other errors
+     * @return Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn&#39;t available. FAILED   - The resource is in a failed state due to validation or other errors.
      * 
      */
     public Optional<String> state() {
@@ -102,7 +85,7 @@ public final class GetRegistriesResult {
     public static Builder builder(GetRegistriesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetRegistriesFilter> filters;
@@ -111,11 +94,7 @@ public final class GetRegistriesResult {
         private @Nullable String name;
         private List<GetRegistriesRegistrySummaryCollection> registrySummaryCollections;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistriesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -127,10 +106,12 @@ public final class GetRegistriesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRegistriesFilter> filters) {
             this.filters = filters;
             return this;
@@ -138,18 +119,22 @@ public final class GetRegistriesResult {
         public Builder filters(GetRegistriesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isDeepLookup(@Nullable Boolean isDeepLookup) {
             this.isDeepLookup = isDeepLookup;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder registrySummaryCollections(List<GetRegistriesRegistrySummaryCollection> registrySummaryCollections) {
             this.registrySummaryCollections = Objects.requireNonNull(registrySummaryCollections);
             return this;
@@ -157,11 +142,21 @@ public final class GetRegistriesResult {
         public Builder registrySummaryCollections(GetRegistriesRegistrySummaryCollection... registrySummaryCollections) {
             return registrySummaryCollections(List.of(registrySummaryCollections));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetRegistriesResult build() {
-            return new GetRegistriesResult(compartmentId, filters, id, isDeepLookup, name, registrySummaryCollections, state);
+        }
+        public GetRegistriesResult build() {
+            final var o = new GetRegistriesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.isDeepLookup = isDeepLookup;
+            o.name = name;
+            o.registrySummaryCollections = registrySummaryCollections;
+            o.state = state;
+            return o;
         }
     }
 }

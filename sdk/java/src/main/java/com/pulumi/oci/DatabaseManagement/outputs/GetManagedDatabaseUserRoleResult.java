@@ -17,34 +17,21 @@ public final class GetManagedDatabaseUserRoleResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return An array of roles.
      * 
      */
-    private final List<GetManagedDatabaseUserRoleItem> items;
-    private final String managedDatabaseId;
+    private List<GetManagedDatabaseUserRoleItem> items;
+    private String managedDatabaseId;
     /**
      * @return The name of the role granted to the user.
      * 
      */
-    private final @Nullable String name;
-    private final String userName;
+    private @Nullable String name;
+    private String userName;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseUserRoleResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetManagedDatabaseUserRoleItem> items,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("userName") String userName) {
-        this.id = id;
-        this.items = items;
-        this.managedDatabaseId = managedDatabaseId;
-        this.name = name;
-        this.userName = userName;
-    }
-
+    private GetManagedDatabaseUserRoleResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -80,18 +67,14 @@ public final class GetManagedDatabaseUserRoleResult {
     public static Builder builder(GetManagedDatabaseUserRoleResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private List<GetManagedDatabaseUserRoleItem> items;
         private String managedDatabaseId;
         private @Nullable String name;
         private String userName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseUserRoleResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -101,10 +84,12 @@ public final class GetManagedDatabaseUserRoleResult {
     	      this.userName = defaults.userName;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabaseUserRoleItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -112,19 +97,29 @@ public final class GetManagedDatabaseUserRoleResult {
         public Builder items(GetManagedDatabaseUserRoleItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder userName(String userName) {
             this.userName = Objects.requireNonNull(userName);
             return this;
-        }        public GetManagedDatabaseUserRoleResult build() {
-            return new GetManagedDatabaseUserRoleResult(id, items, managedDatabaseId, name, userName);
+        }
+        public GetManagedDatabaseUserRoleResult build() {
+            final var o = new GetManagedDatabaseUserRoleResult();
+            o.id = id;
+            o.items = items;
+            o.managedDatabaseId = managedDatabaseId;
+            o.name = name;
+            o.userName = userName;
+            return o;
         }
     }
 }

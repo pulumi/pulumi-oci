@@ -13,13 +13,9 @@ public final class GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy {
      * @return Specifies if PITR is enabled or disabled.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
 
-    @CustomType.Constructor
-    private GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy(@CustomType.Parameter("isEnabled") Boolean isEnabled) {
-        this.isEnabled = isEnabled;
-    }
-
+    private GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy() {}
     /**
      * @return Specifies if PITR is enabled or disabled.
      * 
@@ -35,24 +31,24 @@ public final class GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy {
     public static Builder builder(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isEnabled = defaults.isEnabled;
         }
 
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
-        }        public GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy build() {
-            return new GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy(isEnabled);
+        }
+        public GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy build() {
+            final var o = new GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy();
+            o.isEnabled = isEnabled;
+            return o;
         }
     }
 }

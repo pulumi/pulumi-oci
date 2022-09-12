@@ -14,35 +14,24 @@ public final class GetTablesTableCollectionSchemaColumn {
      * @return The column default value.
      * 
      */
-    private final String defaultValue;
+    private String defaultValue;
     /**
      * @return The column nullable flag.
      * 
      */
-    private final Boolean isNullable;
+    private Boolean isNullable;
     /**
      * @return A shell-globbing-style (*?[]) filter for names.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The column type.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetTablesTableCollectionSchemaColumn(
-        @CustomType.Parameter("defaultValue") String defaultValue,
-        @CustomType.Parameter("isNullable") Boolean isNullable,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("type") String type) {
-        this.defaultValue = defaultValue;
-        this.isNullable = isNullable;
-        this.name = name;
-        this.type = type;
-    }
-
+    private GetTablesTableCollectionSchemaColumn() {}
     /**
      * @return The column default value.
      * 
@@ -79,17 +68,13 @@ public final class GetTablesTableCollectionSchemaColumn {
     public static Builder builder(GetTablesTableCollectionSchemaColumn defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String defaultValue;
         private Boolean isNullable;
         private String name;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTablesTableCollectionSchemaColumn defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultValue = defaults.defaultValue;
@@ -98,23 +83,33 @@ public final class GetTablesTableCollectionSchemaColumn {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = Objects.requireNonNull(defaultValue);
             return this;
         }
+        @CustomType.Setter
         public Builder isNullable(Boolean isNullable) {
             this.isNullable = Objects.requireNonNull(isNullable);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetTablesTableCollectionSchemaColumn build() {
-            return new GetTablesTableCollectionSchemaColumn(defaultValue, isNullable, name, type);
+        }
+        public GetTablesTableCollectionSchemaColumn build() {
+            final var o = new GetTablesTableCollectionSchemaColumn();
+            o.defaultValue = defaultValue;
+            o.isNullable = isNullable;
+            o.name = name;
+            o.type = type;
+            return o;
         }
     }
 }

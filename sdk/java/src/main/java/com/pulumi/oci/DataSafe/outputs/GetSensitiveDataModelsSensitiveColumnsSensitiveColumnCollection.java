@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection {
-    private final List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem> items;
+    private List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection(@CustomType.Parameter("items") List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection() {}
     public List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
     public static Builder builder(GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem... items) {
             return items(List.of(items));
-        }        public GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection build() {
-            return new GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection(items);
+        }
+        public GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection build() {
+            final var o = new GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection();
+            o.items = items;
+            return o;
         }
     }
 }

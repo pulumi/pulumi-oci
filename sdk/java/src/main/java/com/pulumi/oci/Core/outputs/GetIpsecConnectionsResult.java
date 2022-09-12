@@ -18,45 +18,30 @@ public final class GetIpsecConnectionsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of connections.
      * 
      */
-    private final List<GetIpsecConnectionsConnection> connections;
+    private List<GetIpsecConnectionsConnection> connections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
      * 
      */
-    private final @Nullable String cpeId;
+    private @Nullable String cpeId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      * 
      */
-    private final @Nullable String drgId;
-    private final @Nullable List<GetIpsecConnectionsFilter> filters;
+    private @Nullable String drgId;
+    private @Nullable List<GetIpsecConnectionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetIpsecConnectionsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("connections") List<GetIpsecConnectionsConnection> connections,
-        @CustomType.Parameter("cpeId") @Nullable String cpeId,
-        @CustomType.Parameter("drgId") @Nullable String drgId,
-        @CustomType.Parameter("filters") @Nullable List<GetIpsecConnectionsFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.compartmentId = compartmentId;
-        this.connections = connections;
-        this.cpeId = cpeId;
-        this.drgId = drgId;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetIpsecConnectionsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
      * 
@@ -103,7 +88,7 @@ public final class GetIpsecConnectionsResult {
     public static Builder builder(GetIpsecConnectionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetIpsecConnectionsConnection> connections;
@@ -111,11 +96,7 @@ public final class GetIpsecConnectionsResult {
         private @Nullable String drgId;
         private @Nullable List<GetIpsecConnectionsFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIpsecConnectionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +107,12 @@ public final class GetIpsecConnectionsResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder connections(List<GetIpsecConnectionsConnection> connections) {
             this.connections = Objects.requireNonNull(connections);
             return this;
@@ -137,14 +120,17 @@ public final class GetIpsecConnectionsResult {
         public Builder connections(GetIpsecConnectionsConnection... connections) {
             return connections(List.of(connections));
         }
+        @CustomType.Setter
         public Builder cpeId(@Nullable String cpeId) {
             this.cpeId = cpeId;
             return this;
         }
+        @CustomType.Setter
         public Builder drgId(@Nullable String drgId) {
             this.drgId = drgId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetIpsecConnectionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -152,11 +138,20 @@ public final class GetIpsecConnectionsResult {
         public Builder filters(GetIpsecConnectionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetIpsecConnectionsResult build() {
-            return new GetIpsecConnectionsResult(compartmentId, connections, cpeId, drgId, filters, id);
+        }
+        public GetIpsecConnectionsResult build() {
+            final var o = new GetIpsecConnectionsResult();
+            o.compartmentId = compartmentId;
+            o.connections = connections;
+            o.cpeId = cpeId;
+            o.drgId = drgId;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

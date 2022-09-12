@@ -17,42 +17,29 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
      * @return Type of returned HTTP response body.
      * 
      */
-    private final List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody> bodies;
+    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody> bodies;
     /**
      * @return Response code.
      * 
      */
-    private final Integer code;
+    private Integer code;
     /**
      * @return Adds headers defined in this array for HTTP response.
      * 
      */
-    private final List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader> headers;
+    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader> headers;
     /**
      * @return Rule name. Must be unique within the module.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Type of WebAppFirewallPolicyRule.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction(
-        @CustomType.Parameter("bodies") List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody> bodies,
-        @CustomType.Parameter("code") Integer code,
-        @CustomType.Parameter("headers") List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader> headers,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("type") String type) {
-        this.bodies = bodies;
-        this.code = code;
-        this.headers = headers;
-        this.name = name;
-        this.type = type;
-    }
-
+    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction() {}
     /**
      * @return Type of returned HTTP response body.
      * 
@@ -96,18 +83,14 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
     public static Builder builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody> bodies;
         private Integer code;
         private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader> headers;
         private String name;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bodies = defaults.bodies;
@@ -117,6 +100,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder bodies(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody> bodies) {
             this.bodies = Objects.requireNonNull(bodies);
             return this;
@@ -124,10 +108,12 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
         public Builder bodies(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody... bodies) {
             return bodies(List.of(bodies));
         }
+        @CustomType.Setter
         public Builder code(Integer code) {
             this.code = Objects.requireNonNull(code);
             return this;
         }
+        @CustomType.Setter
         public Builder headers(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader> headers) {
             this.headers = Objects.requireNonNull(headers);
             return this;
@@ -135,15 +121,24 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
         public Builder headers(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader... headers) {
             return headers(List.of(headers));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction build() {
-            return new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction(bodies, code, headers, name, type);
+        }
+        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction build() {
+            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction();
+            o.bodies = bodies;
+            o.code = code;
+            o.headers = headers;
+            o.name = name;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -16,63 +16,44 @@ public final class BackendSetHealthChecker {
      * @return (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
      * 
      */
-    private final @Nullable Integer intervalMs;
+    private @Nullable Integer intervalMs;
     /**
      * @return (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
      * 
      */
-    private final @Nullable Integer port;
+    private @Nullable Integer port;
     /**
      * @return (Updatable) The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
      * 
      */
-    private final @Nullable String responseBodyRegex;
+    private @Nullable String responseBodyRegex;
     /**
      * @return (Updatable) The number of retries to attempt before a backend server is considered &#34;unhealthy&#34;. This number also applies when recovering a server to the &#34;healthy&#34; state.  Example: `3`
      * 
      */
-    private final @Nullable Integer retries;
+    private @Nullable Integer retries;
     /**
      * @return (Updatable) The status code a healthy backend server should return.  Example: `200`
      * 
      */
-    private final @Nullable Integer returnCode;
+    private @Nullable Integer returnCode;
     /**
      * @return (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period.  Example: `3000`
      * 
      */
-    private final @Nullable Integer timeoutInMillis;
+    private @Nullable Integer timeoutInMillis;
     /**
      * @return (Updatable) The path against which to run the health check.  Example: `/healthcheck`
      * 
      */
-    private final @Nullable String urlPath;
+    private @Nullable String urlPath;
 
-    @CustomType.Constructor
-    private BackendSetHealthChecker(
-        @CustomType.Parameter("intervalMs") @Nullable Integer intervalMs,
-        @CustomType.Parameter("port") @Nullable Integer port,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("responseBodyRegex") @Nullable String responseBodyRegex,
-        @CustomType.Parameter("retries") @Nullable Integer retries,
-        @CustomType.Parameter("returnCode") @Nullable Integer returnCode,
-        @CustomType.Parameter("timeoutInMillis") @Nullable Integer timeoutInMillis,
-        @CustomType.Parameter("urlPath") @Nullable String urlPath) {
-        this.intervalMs = intervalMs;
-        this.port = port;
-        this.protocol = protocol;
-        this.responseBodyRegex = responseBodyRegex;
-        this.retries = retries;
-        this.returnCode = returnCode;
-        this.timeoutInMillis = timeoutInMillis;
-        this.urlPath = urlPath;
-    }
-
+    private BackendSetHealthChecker() {}
     /**
      * @return (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
      * 
@@ -137,7 +118,7 @@ public final class BackendSetHealthChecker {
     public static Builder builder(BackendSetHealthChecker defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer intervalMs;
         private @Nullable Integer port;
@@ -147,11 +128,7 @@ public final class BackendSetHealthChecker {
         private @Nullable Integer returnCode;
         private @Nullable Integer timeoutInMillis;
         private @Nullable String urlPath;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BackendSetHealthChecker defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.intervalMs = defaults.intervalMs;
@@ -164,39 +141,57 @@ public final class BackendSetHealthChecker {
     	      this.urlPath = defaults.urlPath;
         }
 
+        @CustomType.Setter
         public Builder intervalMs(@Nullable Integer intervalMs) {
             this.intervalMs = intervalMs;
             return this;
         }
+        @CustomType.Setter
         public Builder port(@Nullable Integer port) {
             this.port = port;
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder responseBodyRegex(@Nullable String responseBodyRegex) {
             this.responseBodyRegex = responseBodyRegex;
             return this;
         }
+        @CustomType.Setter
         public Builder retries(@Nullable Integer retries) {
             this.retries = retries;
             return this;
         }
+        @CustomType.Setter
         public Builder returnCode(@Nullable Integer returnCode) {
             this.returnCode = returnCode;
             return this;
         }
+        @CustomType.Setter
         public Builder timeoutInMillis(@Nullable Integer timeoutInMillis) {
             this.timeoutInMillis = timeoutInMillis;
             return this;
         }
+        @CustomType.Setter
         public Builder urlPath(@Nullable String urlPath) {
             this.urlPath = urlPath;
             return this;
-        }        public BackendSetHealthChecker build() {
-            return new BackendSetHealthChecker(intervalMs, port, protocol, responseBodyRegex, retries, returnCode, timeoutInMillis, urlPath);
+        }
+        public BackendSetHealthChecker build() {
+            final var o = new BackendSetHealthChecker();
+            o.intervalMs = intervalMs;
+            o.port = port;
+            o.protocol = protocol;
+            o.responseBodyRegex = responseBodyRegex;
+            o.retries = retries;
+            o.returnCode = returnCode;
+            o.timeoutInMillis = timeoutInMillis;
+            o.urlPath = urlPath;
+            return o;
         }
     }
 }

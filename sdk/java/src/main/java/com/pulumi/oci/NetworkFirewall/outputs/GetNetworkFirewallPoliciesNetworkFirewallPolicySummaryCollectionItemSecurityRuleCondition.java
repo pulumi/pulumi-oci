@@ -14,35 +14,24 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
      * @return An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
      */
-    private final List<String> applications;
+    private List<String> applications;
     /**
      * @return An array of IP address list names to be evaluated against the traffic destination address.
      * 
      */
-    private final List<String> destinations;
+    private List<String> destinations;
     /**
      * @return An array of IP address list names to be evaluated against the traffic source address.
      * 
      */
-    private final List<String> sources;
+    private List<String> sources;
     /**
      * @return An array of URL pattern list names to be evaluated against the HTTP(S) request target.
      * 
      */
-    private final List<String> urls;
+    private List<String> urls;
 
-    @CustomType.Constructor
-    private GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition(
-        @CustomType.Parameter("applications") List<String> applications,
-        @CustomType.Parameter("destinations") List<String> destinations,
-        @CustomType.Parameter("sources") List<String> sources,
-        @CustomType.Parameter("urls") List<String> urls) {
-        this.applications = applications;
-        this.destinations = destinations;
-        this.sources = sources;
-        this.urls = urls;
-    }
-
+    private GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition() {}
     /**
      * @return An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
      * 
@@ -79,17 +68,13 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
     public static Builder builder(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> applications;
         private List<String> destinations;
         private List<String> sources;
         private List<String> urls;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applications = defaults.applications;
@@ -98,6 +83,7 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
     	      this.urls = defaults.urls;
         }
 
+        @CustomType.Setter
         public Builder applications(List<String> applications) {
             this.applications = Objects.requireNonNull(applications);
             return this;
@@ -105,6 +91,7 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
         public Builder applications(String... applications) {
             return applications(List.of(applications));
         }
+        @CustomType.Setter
         public Builder destinations(List<String> destinations) {
             this.destinations = Objects.requireNonNull(destinations);
             return this;
@@ -112,6 +99,7 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
         public Builder destinations(String... destinations) {
             return destinations(List.of(destinations));
         }
+        @CustomType.Setter
         public Builder sources(List<String> sources) {
             this.sources = Objects.requireNonNull(sources);
             return this;
@@ -119,14 +107,21 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
         public Builder sources(String... sources) {
             return sources(List.of(sources));
         }
+        @CustomType.Setter
         public Builder urls(List<String> urls) {
             this.urls = Objects.requireNonNull(urls);
             return this;
         }
         public Builder urls(String... urls) {
             return urls(List.of(urls));
-        }        public GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition build() {
-            return new GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition(applications, destinations, sources, urls);
+        }
+        public GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition build() {
+            final var o = new GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleCondition();
+            o.applications = applications;
+            o.destinations = destinations;
+            o.sources = sources;
+            o.urls = urls;
+            return o;
         }
     }
 }

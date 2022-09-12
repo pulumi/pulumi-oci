@@ -17,84 +17,59 @@ public final class AuditPolicyAuditSpecification {
      * @return The category to which the audit policy belongs.
      * 
      */
-    private final @Nullable String auditPolicyCategory;
+    private @Nullable String auditPolicyCategory;
     /**
      * @return Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
      * 
      */
-    private final @Nullable String auditPolicyName;
+    private @Nullable String auditPolicyName;
     /**
      * @return Indicates the names of corresponding database policy ( or policies) in the target database.
      * 
      */
-    private final @Nullable List<String> databasePolicyNames;
+    private @Nullable List<String> databasePolicyNames;
     /**
      * @return Indicates whether the policy has been enabled, disabled or partially enabled in the target database. The status is PARTIALLY_ENABLED if any of the constituent database audit policies is not enabled.
      * 
      */
-    private final @Nullable String enableStatus;
+    private @Nullable String enableStatus;
     /**
      * @return Indicates on whom the audit policy is enabled.
      * 
      */
-    private final @Nullable String enabledEntities;
+    private @Nullable String enabledEntities;
     /**
      * @return Indicates whether the policy is already created on the target database.
      * 
      */
-    private final @Nullable Boolean isCreated;
+    private @Nullable Boolean isCreated;
     /**
      * @return Indicates whether the policy by default is enabled for all users with no flexibility to alter the enablement conditions.
      * 
      */
-    private final @Nullable Boolean isEnabledForAllUsers;
+    private @Nullable Boolean isEnabledForAllUsers;
     /**
      * @return Indicates whether the audit policy is one of the seeded policies provided by Oracle Data Safe.
      * 
      */
-    private final @Nullable Boolean isSeededInDataSafe;
+    private @Nullable Boolean isSeededInDataSafe;
     /**
      * @return Indicates whether the audit policy is one of the predefined policies provided by Oracle Database.
      * 
      */
-    private final @Nullable Boolean isSeededInTarget;
+    private @Nullable Boolean isSeededInTarget;
     /**
      * @return Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
      * 
      */
-    private final @Nullable Boolean isViewOnly;
+    private @Nullable Boolean isViewOnly;
     /**
      * @return Provides information about the policy that has been only partially enabled.
      * 
      */
-    private final @Nullable String partiallyEnabledMsg;
+    private @Nullable String partiallyEnabledMsg;
 
-    @CustomType.Constructor
-    private AuditPolicyAuditSpecification(
-        @CustomType.Parameter("auditPolicyCategory") @Nullable String auditPolicyCategory,
-        @CustomType.Parameter("auditPolicyName") @Nullable String auditPolicyName,
-        @CustomType.Parameter("databasePolicyNames") @Nullable List<String> databasePolicyNames,
-        @CustomType.Parameter("enableStatus") @Nullable String enableStatus,
-        @CustomType.Parameter("enabledEntities") @Nullable String enabledEntities,
-        @CustomType.Parameter("isCreated") @Nullable Boolean isCreated,
-        @CustomType.Parameter("isEnabledForAllUsers") @Nullable Boolean isEnabledForAllUsers,
-        @CustomType.Parameter("isSeededInDataSafe") @Nullable Boolean isSeededInDataSafe,
-        @CustomType.Parameter("isSeededInTarget") @Nullable Boolean isSeededInTarget,
-        @CustomType.Parameter("isViewOnly") @Nullable Boolean isViewOnly,
-        @CustomType.Parameter("partiallyEnabledMsg") @Nullable String partiallyEnabledMsg) {
-        this.auditPolicyCategory = auditPolicyCategory;
-        this.auditPolicyName = auditPolicyName;
-        this.databasePolicyNames = databasePolicyNames;
-        this.enableStatus = enableStatus;
-        this.enabledEntities = enabledEntities;
-        this.isCreated = isCreated;
-        this.isEnabledForAllUsers = isEnabledForAllUsers;
-        this.isSeededInDataSafe = isSeededInDataSafe;
-        this.isSeededInTarget = isSeededInTarget;
-        this.isViewOnly = isViewOnly;
-        this.partiallyEnabledMsg = partiallyEnabledMsg;
-    }
-
+    private AuditPolicyAuditSpecification() {}
     /**
      * @return The category to which the audit policy belongs.
      * 
@@ -180,7 +155,7 @@ public final class AuditPolicyAuditSpecification {
     public static Builder builder(AuditPolicyAuditSpecification defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String auditPolicyCategory;
         private @Nullable String auditPolicyName;
@@ -193,11 +168,7 @@ public final class AuditPolicyAuditSpecification {
         private @Nullable Boolean isSeededInTarget;
         private @Nullable Boolean isViewOnly;
         private @Nullable String partiallyEnabledMsg;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AuditPolicyAuditSpecification defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.auditPolicyCategory = defaults.auditPolicyCategory;
@@ -213,14 +184,17 @@ public final class AuditPolicyAuditSpecification {
     	      this.partiallyEnabledMsg = defaults.partiallyEnabledMsg;
         }
 
+        @CustomType.Setter
         public Builder auditPolicyCategory(@Nullable String auditPolicyCategory) {
             this.auditPolicyCategory = auditPolicyCategory;
             return this;
         }
+        @CustomType.Setter
         public Builder auditPolicyName(@Nullable String auditPolicyName) {
             this.auditPolicyName = auditPolicyName;
             return this;
         }
+        @CustomType.Setter
         public Builder databasePolicyNames(@Nullable List<String> databasePolicyNames) {
             this.databasePolicyNames = databasePolicyNames;
             return this;
@@ -228,39 +202,60 @@ public final class AuditPolicyAuditSpecification {
         public Builder databasePolicyNames(String... databasePolicyNames) {
             return databasePolicyNames(List.of(databasePolicyNames));
         }
+        @CustomType.Setter
         public Builder enableStatus(@Nullable String enableStatus) {
             this.enableStatus = enableStatus;
             return this;
         }
+        @CustomType.Setter
         public Builder enabledEntities(@Nullable String enabledEntities) {
             this.enabledEntities = enabledEntities;
             return this;
         }
+        @CustomType.Setter
         public Builder isCreated(@Nullable Boolean isCreated) {
             this.isCreated = isCreated;
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabledForAllUsers(@Nullable Boolean isEnabledForAllUsers) {
             this.isEnabledForAllUsers = isEnabledForAllUsers;
             return this;
         }
+        @CustomType.Setter
         public Builder isSeededInDataSafe(@Nullable Boolean isSeededInDataSafe) {
             this.isSeededInDataSafe = isSeededInDataSafe;
             return this;
         }
+        @CustomType.Setter
         public Builder isSeededInTarget(@Nullable Boolean isSeededInTarget) {
             this.isSeededInTarget = isSeededInTarget;
             return this;
         }
+        @CustomType.Setter
         public Builder isViewOnly(@Nullable Boolean isViewOnly) {
             this.isViewOnly = isViewOnly;
             return this;
         }
+        @CustomType.Setter
         public Builder partiallyEnabledMsg(@Nullable String partiallyEnabledMsg) {
             this.partiallyEnabledMsg = partiallyEnabledMsg;
             return this;
-        }        public AuditPolicyAuditSpecification build() {
-            return new AuditPolicyAuditSpecification(auditPolicyCategory, auditPolicyName, databasePolicyNames, enableStatus, enabledEntities, isCreated, isEnabledForAllUsers, isSeededInDataSafe, isSeededInTarget, isViewOnly, partiallyEnabledMsg);
+        }
+        public AuditPolicyAuditSpecification build() {
+            final var o = new AuditPolicyAuditSpecification();
+            o.auditPolicyCategory = auditPolicyCategory;
+            o.auditPolicyName = auditPolicyName;
+            o.databasePolicyNames = databasePolicyNames;
+            o.enableStatus = enableStatus;
+            o.enabledEntities = enabledEntities;
+            o.isCreated = isCreated;
+            o.isEnabledForAllUsers = isEnabledForAllUsers;
+            o.isSeededInDataSafe = isSeededInDataSafe;
+            o.isSeededInTarget = isSeededInTarget;
+            o.isViewOnly = isViewOnly;
+            o.partiallyEnabledMsg = partiallyEnabledMsg;
+            return o;
         }
     }
 }

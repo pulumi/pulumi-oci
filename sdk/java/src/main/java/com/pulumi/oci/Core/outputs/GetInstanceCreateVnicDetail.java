@@ -13,64 +13,39 @@ import java.util.Objects;
 
 @CustomType
 public final class GetInstanceCreateVnicDetail {
-    private final Boolean assignPrivateDnsRecord;
-    private final String assignPublicIp;
+    private Boolean assignPrivateDnsRecord;
+    private String assignPublicIp;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The hostname for the instance VNIC&#39;s primary private IP.
      * 
      */
-    private final String hostnameLabel;
-    private final List<String> nsgIds;
+    private String hostnameLabel;
+    private List<String> nsgIds;
     /**
      * @return The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
      * 
      */
-    private final String privateIp;
-    private final Boolean skipSourceDestCheck;
-    private final String subnetId;
-    private final String vlanId;
+    private String privateIp;
+    private Boolean skipSourceDestCheck;
+    private String subnetId;
+    private String vlanId;
 
-    @CustomType.Constructor
-    private GetInstanceCreateVnicDetail(
-        @CustomType.Parameter("assignPrivateDnsRecord") Boolean assignPrivateDnsRecord,
-        @CustomType.Parameter("assignPublicIp") String assignPublicIp,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("hostnameLabel") String hostnameLabel,
-        @CustomType.Parameter("nsgIds") List<String> nsgIds,
-        @CustomType.Parameter("privateIp") String privateIp,
-        @CustomType.Parameter("skipSourceDestCheck") Boolean skipSourceDestCheck,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("vlanId") String vlanId) {
-        this.assignPrivateDnsRecord = assignPrivateDnsRecord;
-        this.assignPublicIp = assignPublicIp;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.hostnameLabel = hostnameLabel;
-        this.nsgIds = nsgIds;
-        this.privateIp = privateIp;
-        this.skipSourceDestCheck = skipSourceDestCheck;
-        this.subnetId = subnetId;
-        this.vlanId = vlanId;
-    }
-
+    private GetInstanceCreateVnicDetail() {}
     public Boolean assignPrivateDnsRecord() {
         return this.assignPrivateDnsRecord;
     }
@@ -132,7 +107,7 @@ public final class GetInstanceCreateVnicDetail {
     public static Builder builder(GetInstanceCreateVnicDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean assignPrivateDnsRecord;
         private String assignPublicIp;
@@ -145,11 +120,7 @@ public final class GetInstanceCreateVnicDetail {
         private Boolean skipSourceDestCheck;
         private String subnetId;
         private String vlanId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceCreateVnicDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.assignPrivateDnsRecord = defaults.assignPrivateDnsRecord;
@@ -165,30 +136,37 @@ public final class GetInstanceCreateVnicDetail {
     	      this.vlanId = defaults.vlanId;
         }
 
+        @CustomType.Setter
         public Builder assignPrivateDnsRecord(Boolean assignPrivateDnsRecord) {
             this.assignPrivateDnsRecord = Objects.requireNonNull(assignPrivateDnsRecord);
             return this;
         }
+        @CustomType.Setter
         public Builder assignPublicIp(String assignPublicIp) {
             this.assignPublicIp = Objects.requireNonNull(assignPublicIp);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder hostnameLabel(String hostnameLabel) {
             this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
             return this;
         }
+        @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             this.nsgIds = Objects.requireNonNull(nsgIds);
             return this;
@@ -196,23 +174,40 @@ public final class GetInstanceCreateVnicDetail {
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
+        @CustomType.Setter
         public Builder privateIp(String privateIp) {
             this.privateIp = Objects.requireNonNull(privateIp);
             return this;
         }
+        @CustomType.Setter
         public Builder skipSourceDestCheck(Boolean skipSourceDestCheck) {
             this.skipSourceDestCheck = Objects.requireNonNull(skipSourceDestCheck);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder vlanId(String vlanId) {
             this.vlanId = Objects.requireNonNull(vlanId);
             return this;
-        }        public GetInstanceCreateVnicDetail build() {
-            return new GetInstanceCreateVnicDetail(assignPrivateDnsRecord, assignPublicIp, definedTags, displayName, freeformTags, hostnameLabel, nsgIds, privateIp, skipSourceDestCheck, subnetId, vlanId);
+        }
+        public GetInstanceCreateVnicDetail build() {
+            final var o = new GetInstanceCreateVnicDetail();
+            o.assignPrivateDnsRecord = assignPrivateDnsRecord;
+            o.assignPublicIp = assignPublicIp;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.hostnameLabel = hostnameLabel;
+            o.nsgIds = nsgIds;
+            o.privateIp = privateIp;
+            o.skipSourceDestCheck = skipSourceDestCheck;
+            o.subnetId = subnetId;
+            o.vlanId = vlanId;
+            return o;
         }
     }
 }

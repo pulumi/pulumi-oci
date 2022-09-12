@@ -14,49 +14,34 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectSta
      * @return Name of the object.
      * 
      */
-    private final String object;
+    private String object;
     /**
      * @return Numerical representation of the object.
      * 
      */
-    private final String objectHashValue;
+    private String objectHashValue;
     /**
      * @return Type of the object.
      * 
      */
-    private final String objectType;
+    private String objectType;
     /**
      * @return Type of statistics problem related to the object.
      * 
      */
-    private final String problemType;
+    private String problemType;
     /**
      * @return The number of the times the object is referenced within the SQL Tuning advisor task findings.
      * 
      */
-    private final Integer referenceCount;
+    private Integer referenceCount;
     /**
      * @return Schema of the object.
      * 
      */
-    private final String schema;
+    private String schema;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding(
-        @CustomType.Parameter("object") String object,
-        @CustomType.Parameter("objectHashValue") String objectHashValue,
-        @CustomType.Parameter("objectType") String objectType,
-        @CustomType.Parameter("problemType") String problemType,
-        @CustomType.Parameter("referenceCount") Integer referenceCount,
-        @CustomType.Parameter("schema") String schema) {
-        this.object = object;
-        this.objectHashValue = objectHashValue;
-        this.objectType = objectType;
-        this.problemType = problemType;
-        this.referenceCount = referenceCount;
-        this.schema = schema;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding() {}
     /**
      * @return Name of the object.
      * 
@@ -107,7 +92,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectSta
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String object;
         private String objectHashValue;
@@ -115,11 +100,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectSta
         private String problemType;
         private Integer referenceCount;
         private String schema;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.object = defaults.object;
@@ -130,31 +111,45 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectSta
     	      this.schema = defaults.schema;
         }
 
+        @CustomType.Setter
         public Builder object(String object) {
             this.object = Objects.requireNonNull(object);
             return this;
         }
+        @CustomType.Setter
         public Builder objectHashValue(String objectHashValue) {
             this.objectHashValue = Objects.requireNonNull(objectHashValue);
             return this;
         }
+        @CustomType.Setter
         public Builder objectType(String objectType) {
             this.objectType = Objects.requireNonNull(objectType);
             return this;
         }
+        @CustomType.Setter
         public Builder problemType(String problemType) {
             this.problemType = Objects.requireNonNull(problemType);
             return this;
         }
+        @CustomType.Setter
         public Builder referenceCount(Integer referenceCount) {
             this.referenceCount = Objects.requireNonNull(referenceCount);
             return this;
         }
+        @CustomType.Setter
         public Builder schema(String schema) {
             this.schema = Objects.requireNonNull(schema);
             return this;
-        }        public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding(object, objectHashValue, objectType, problemType, referenceCount, schema);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding();
+            o.object = object;
+            o.objectHashValue = objectHashValue;
+            o.objectType = objectType;
+            o.problemType = problemType;
+            o.referenceCount = referenceCount;
+            o.schema = schema;
+            return o;
         }
     }
 }

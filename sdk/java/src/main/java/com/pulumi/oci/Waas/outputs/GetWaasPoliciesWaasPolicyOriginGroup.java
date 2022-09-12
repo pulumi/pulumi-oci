@@ -11,17 +11,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetWaasPoliciesWaasPolicyOriginGroup {
-    private final String label;
-    private final List<GetWaasPoliciesWaasPolicyOriginGroupOriginGroup> originGroups;
+    private String label;
+    private List<GetWaasPoliciesWaasPolicyOriginGroupOriginGroup> originGroups;
 
-    @CustomType.Constructor
-    private GetWaasPoliciesWaasPolicyOriginGroup(
-        @CustomType.Parameter("label") String label,
-        @CustomType.Parameter("originGroups") List<GetWaasPoliciesWaasPolicyOriginGroupOriginGroup> originGroups) {
-        this.label = label;
-        this.originGroups = originGroups;
-    }
-
+    private GetWaasPoliciesWaasPolicyOriginGroup() {}
     public String label() {
         return this.label;
     }
@@ -36,33 +29,35 @@ public final class GetWaasPoliciesWaasPolicyOriginGroup {
     public static Builder builder(GetWaasPoliciesWaasPolicyOriginGroup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String label;
         private List<GetWaasPoliciesWaasPolicyOriginGroupOriginGroup> originGroups;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyOriginGroup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.label = defaults.label;
     	      this.originGroups = defaults.originGroups;
         }
 
+        @CustomType.Setter
         public Builder label(String label) {
             this.label = Objects.requireNonNull(label);
             return this;
         }
+        @CustomType.Setter
         public Builder originGroups(List<GetWaasPoliciesWaasPolicyOriginGroupOriginGroup> originGroups) {
             this.originGroups = Objects.requireNonNull(originGroups);
             return this;
         }
         public Builder originGroups(GetWaasPoliciesWaasPolicyOriginGroupOriginGroup... originGroups) {
             return originGroups(List.of(originGroups));
-        }        public GetWaasPoliciesWaasPolicyOriginGroup build() {
-            return new GetWaasPoliciesWaasPolicyOriginGroup(label, originGroups);
+        }
+        public GetWaasPoliciesWaasPolicyOriginGroup build() {
+            final var o = new GetWaasPoliciesWaasPolicyOriginGroup();
+            o.label = label;
+            o.originGroups = originGroups;
+            return o;
         }
     }
 }

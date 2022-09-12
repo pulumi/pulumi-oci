@@ -15,84 +15,59 @@ public final class SubscriptionBillingAddress {
      * @return (Updatable) Address identifier.
      * 
      */
-    private final @Nullable String addressKey;
+    private @Nullable String addressKey;
     /**
      * @return (Updatable) Name of the city.
      * 
      */
-    private final @Nullable String city;
+    private @Nullable String city;
     /**
      * @return (Updatable) Name of the customer company.
      * 
      */
-    private final @Nullable String companyName;
+    private @Nullable String companyName;
     /**
      * @return (Updatable) Country of the address.
      * 
      */
-    private final @Nullable String country;
+    private @Nullable String country;
     /**
      * @return (Updatable) The email address of the paypal user.
      * 
      */
-    private final @Nullable String emailAddress;
+    private @Nullable String emailAddress;
     /**
      * @return (Updatable) First name of the paypal user.
      * 
      */
-    private final @Nullable String firstName;
+    private @Nullable String firstName;
     /**
      * @return (Updatable) Last name of the paypal user.
      * 
      */
-    private final @Nullable String lastName;
+    private @Nullable String lastName;
     /**
      * @return (Updatable) Address line 1.
      * 
      */
-    private final @Nullable String line1;
+    private @Nullable String line1;
     /**
      * @return (Updatable) Address line 2.
      * 
      */
-    private final @Nullable String line2;
+    private @Nullable String line2;
     /**
      * @return (Updatable) Post code of the address.
      * 
      */
-    private final @Nullable String postalCode;
+    private @Nullable String postalCode;
     /**
      * @return (Updatable) State of the address.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private SubscriptionBillingAddress(
-        @CustomType.Parameter("addressKey") @Nullable String addressKey,
-        @CustomType.Parameter("city") @Nullable String city,
-        @CustomType.Parameter("companyName") @Nullable String companyName,
-        @CustomType.Parameter("country") @Nullable String country,
-        @CustomType.Parameter("emailAddress") @Nullable String emailAddress,
-        @CustomType.Parameter("firstName") @Nullable String firstName,
-        @CustomType.Parameter("lastName") @Nullable String lastName,
-        @CustomType.Parameter("line1") @Nullable String line1,
-        @CustomType.Parameter("line2") @Nullable String line2,
-        @CustomType.Parameter("postalCode") @Nullable String postalCode,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.addressKey = addressKey;
-        this.city = city;
-        this.companyName = companyName;
-        this.country = country;
-        this.emailAddress = emailAddress;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.line1 = line1;
-        this.line2 = line2;
-        this.postalCode = postalCode;
-        this.state = state;
-    }
-
+    private SubscriptionBillingAddress() {}
     /**
      * @return (Updatable) Address identifier.
      * 
@@ -178,7 +153,7 @@ public final class SubscriptionBillingAddress {
     public static Builder builder(SubscriptionBillingAddress defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String addressKey;
         private @Nullable String city;
@@ -191,11 +166,7 @@ public final class SubscriptionBillingAddress {
         private @Nullable String line2;
         private @Nullable String postalCode;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(SubscriptionBillingAddress defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.addressKey = defaults.addressKey;
@@ -211,51 +182,75 @@ public final class SubscriptionBillingAddress {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder addressKey(@Nullable String addressKey) {
             this.addressKey = addressKey;
             return this;
         }
+        @CustomType.Setter
         public Builder city(@Nullable String city) {
             this.city = city;
             return this;
         }
+        @CustomType.Setter
         public Builder companyName(@Nullable String companyName) {
             this.companyName = companyName;
             return this;
         }
+        @CustomType.Setter
         public Builder country(@Nullable String country) {
             this.country = country;
             return this;
         }
+        @CustomType.Setter
         public Builder emailAddress(@Nullable String emailAddress) {
             this.emailAddress = emailAddress;
             return this;
         }
+        @CustomType.Setter
         public Builder firstName(@Nullable String firstName) {
             this.firstName = firstName;
             return this;
         }
+        @CustomType.Setter
         public Builder lastName(@Nullable String lastName) {
             this.lastName = lastName;
             return this;
         }
+        @CustomType.Setter
         public Builder line1(@Nullable String line1) {
             this.line1 = line1;
             return this;
         }
+        @CustomType.Setter
         public Builder line2(@Nullable String line2) {
             this.line2 = line2;
             return this;
         }
+        @CustomType.Setter
         public Builder postalCode(@Nullable String postalCode) {
             this.postalCode = postalCode;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public SubscriptionBillingAddress build() {
-            return new SubscriptionBillingAddress(addressKey, city, companyName, country, emailAddress, firstName, lastName, line1, line2, postalCode, state);
+        }
+        public SubscriptionBillingAddress build() {
+            final var o = new SubscriptionBillingAddress();
+            o.addressKey = addressKey;
+            o.city = city;
+            o.companyName = companyName;
+            o.country = country;
+            o.emailAddress = emailAddress;
+            o.firstName = firstName;
+            o.lastName = lastName;
+            o.line1 = line1;
+            o.line2 = line2;
+            o.postalCode = postalCode;
+            o.state = state;
+            return o;
         }
     }
 }

@@ -13,22 +13,15 @@ public final class GetAutonomousDatabasesAutonomousDatabaseApexDetail {
      * @return The Oracle APEX Application Development version.
      * 
      */
-    private final String apexVersion;
+    private String apexVersion;
     /**
      * @return The Oracle REST Data Services (ORDS) version.
      * *`are_primary_whitelisted_ips_used` - This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It&#39;s value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It&#39;s value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
      * 
      */
-    private final String ordsVersion;
+    private String ordsVersion;
 
-    @CustomType.Constructor
-    private GetAutonomousDatabasesAutonomousDatabaseApexDetail(
-        @CustomType.Parameter("apexVersion") String apexVersion,
-        @CustomType.Parameter("ordsVersion") String ordsVersion) {
-        this.apexVersion = apexVersion;
-        this.ordsVersion = ordsVersion;
-    }
-
+    private GetAutonomousDatabasesAutonomousDatabaseApexDetail() {}
     /**
      * @return The Oracle APEX Application Development version.
      * 
@@ -52,30 +45,32 @@ public final class GetAutonomousDatabasesAutonomousDatabaseApexDetail {
     public static Builder builder(GetAutonomousDatabasesAutonomousDatabaseApexDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apexVersion;
         private String ordsVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDatabasesAutonomousDatabaseApexDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apexVersion = defaults.apexVersion;
     	      this.ordsVersion = defaults.ordsVersion;
         }
 
+        @CustomType.Setter
         public Builder apexVersion(String apexVersion) {
             this.apexVersion = Objects.requireNonNull(apexVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder ordsVersion(String ordsVersion) {
             this.ordsVersion = Objects.requireNonNull(ordsVersion);
             return this;
-        }        public GetAutonomousDatabasesAutonomousDatabaseApexDetail build() {
-            return new GetAutonomousDatabasesAutonomousDatabaseApexDetail(apexVersion, ordsVersion);
+        }
+        public GetAutonomousDatabasesAutonomousDatabaseApexDetail build() {
+            final var o = new GetAutonomousDatabasesAutonomousDatabaseApexDetail();
+            o.apexVersion = apexVersion;
+            o.ordsVersion = ordsVersion;
+            return o;
         }
     }
 }

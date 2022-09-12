@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSubscribersSubscriberCollection {
-    private final List<GetSubscribersSubscriberCollectionItem> items;
+    private List<GetSubscribersSubscriberCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetSubscribersSubscriberCollection(@CustomType.Parameter("items") List<GetSubscribersSubscriberCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetSubscribersSubscriberCollection() {}
     public List<GetSubscribersSubscriberCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetSubscribersSubscriberCollection {
     public static Builder builder(GetSubscribersSubscriberCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSubscribersSubscriberCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscribersSubscriberCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetSubscribersSubscriberCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetSubscribersSubscriberCollectionItem... items) {
             return items(List.of(items));
-        }        public GetSubscribersSubscriberCollection build() {
-            return new GetSubscribersSubscriberCollection(items);
+        }
+        public GetSubscribersSubscriberCollection build() {
+            final var o = new GetSubscribersSubscriberCollection();
+            o.items = items;
+            return o;
         }
     }
 }

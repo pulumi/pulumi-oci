@@ -9,13 +9,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetShapeShapeRecommendedAlternative {
-    private final String shapeName;
+    private String shapeName;
 
-    @CustomType.Constructor
-    private GetShapeShapeRecommendedAlternative(@CustomType.Parameter("shapeName") String shapeName) {
-        this.shapeName = shapeName;
-    }
-
+    private GetShapeShapeRecommendedAlternative() {}
     public String shapeName() {
         return this.shapeName;
     }
@@ -27,24 +23,24 @@ public final class GetShapeShapeRecommendedAlternative {
     public static Builder builder(GetShapeShapeRecommendedAlternative defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String shapeName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapeShapeRecommendedAlternative defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.shapeName = defaults.shapeName;
         }
 
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             this.shapeName = Objects.requireNonNull(shapeName);
             return this;
-        }        public GetShapeShapeRecommendedAlternative build() {
-            return new GetShapeShapeRecommendedAlternative(shapeName);
+        }
+        public GetShapeShapeRecommendedAlternative build() {
+            final var o = new GetShapeShapeRecommendedAlternative();
+            o.shapeName = shapeName;
+            return o;
         }
     }
 }

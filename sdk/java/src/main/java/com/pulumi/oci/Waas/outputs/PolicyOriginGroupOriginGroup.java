@@ -16,17 +16,10 @@ public final class PolicyOriginGroupOriginGroup {
      * @return (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
      * 
      */
-    private final String origin;
-    private final @Nullable Integer weight;
+    private String origin;
+    private @Nullable Integer weight;
 
-    @CustomType.Constructor
-    private PolicyOriginGroupOriginGroup(
-        @CustomType.Parameter("origin") String origin,
-        @CustomType.Parameter("weight") @Nullable Integer weight) {
-        this.origin = origin;
-        this.weight = weight;
-    }
-
+    private PolicyOriginGroupOriginGroup() {}
     /**
      * @return (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
      * 
@@ -45,30 +38,32 @@ public final class PolicyOriginGroupOriginGroup {
     public static Builder builder(PolicyOriginGroupOriginGroup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String origin;
         private @Nullable Integer weight;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PolicyOriginGroupOriginGroup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.origin = defaults.origin;
     	      this.weight = defaults.weight;
         }
 
+        @CustomType.Setter
         public Builder origin(String origin) {
             this.origin = Objects.requireNonNull(origin);
             return this;
         }
+        @CustomType.Setter
         public Builder weight(@Nullable Integer weight) {
             this.weight = weight;
             return this;
-        }        public PolicyOriginGroupOriginGroup build() {
-            return new PolicyOriginGroupOriginGroup(origin, weight);
+        }
+        public PolicyOriginGroupOriginGroup build() {
+            final var o = new PolicyOriginGroupOriginGroup();
+            o.origin = origin;
+            o.weight = weight;
+            return o;
         }
     }
 }

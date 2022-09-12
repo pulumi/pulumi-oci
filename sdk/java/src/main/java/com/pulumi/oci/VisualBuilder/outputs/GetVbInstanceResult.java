@@ -20,125 +20,86 @@ public final class GetVbInstanceResult {
      * @return A list of alternate custom endpoints used for the vb instance URL.
      * 
      */
-    private final List<GetVbInstanceAlternateCustomEndpoint> alternateCustomEndpoints;
+    private List<GetVbInstanceAlternateCustomEndpoint> alternateCustomEndpoints;
     /**
      * @return Compartment Identifier.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The entitlement used for billing purposes.
      * 
      */
-    private final String consumptionModel;
+    private String consumptionModel;
     /**
      * @return Details for a custom endpoint for the vb instance.
      * 
      */
-    private final List<GetVbInstanceCustomEndpoint> customEndpoints;
+    private List<GetVbInstanceCustomEndpoint> customEndpoints;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Vb Instance Identifier, can be renamed.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final String id;
-    private final String idcsOpenId;
+    private String id;
+    private String idcsOpenId;
     /**
      * @return The Vb Instance URL.
      * 
      */
-    private final String instanceUrl;
+    private String instanceUrl;
     /**
      * @return Visual Builder is enabled or not.
      * 
      */
-    private final Boolean isVisualBuilderEnabled;
+    private Boolean isVisualBuilderEnabled;
     /**
      * @return The number of Nodes
      * 
      */
-    private final Integer nodeCount;
+    private Integer nodeCount;
     /**
      * @return The current state of the vb instance.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String stateMessage;
+    private String stateMessage;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time the the VbInstance was created. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the VbInstance was updated. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeUpdated;
-    private final String vbInstanceId;
+    private String timeUpdated;
+    private String vbInstanceId;
 
-    @CustomType.Constructor
-    private GetVbInstanceResult(
-        @CustomType.Parameter("alternateCustomEndpoints") List<GetVbInstanceAlternateCustomEndpoint> alternateCustomEndpoints,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("consumptionModel") String consumptionModel,
-        @CustomType.Parameter("customEndpoints") List<GetVbInstanceCustomEndpoint> customEndpoints,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("idcsOpenId") String idcsOpenId,
-        @CustomType.Parameter("instanceUrl") String instanceUrl,
-        @CustomType.Parameter("isVisualBuilderEnabled") Boolean isVisualBuilderEnabled,
-        @CustomType.Parameter("nodeCount") Integer nodeCount,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("stateMessage") String stateMessage,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("vbInstanceId") String vbInstanceId) {
-        this.alternateCustomEndpoints = alternateCustomEndpoints;
-        this.compartmentId = compartmentId;
-        this.consumptionModel = consumptionModel;
-        this.customEndpoints = customEndpoints;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.idcsOpenId = idcsOpenId;
-        this.instanceUrl = instanceUrl;
-        this.isVisualBuilderEnabled = isVisualBuilderEnabled;
-        this.nodeCount = nodeCount;
-        this.state = state;
-        this.stateMessage = stateMessage;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.vbInstanceId = vbInstanceId;
-    }
-
+    private GetVbInstanceResult() {}
     /**
      * @return A list of alternate custom endpoints used for the vb instance URL.
      * 
@@ -265,7 +226,7 @@ public final class GetVbInstanceResult {
     public static Builder builder(GetVbInstanceResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetVbInstanceAlternateCustomEndpoint> alternateCustomEndpoints;
         private String compartmentId;
@@ -285,11 +246,7 @@ public final class GetVbInstanceResult {
         private String timeCreated;
         private String timeUpdated;
         private String vbInstanceId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVbInstanceResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alternateCustomEndpoints = defaults.alternateCustomEndpoints;
@@ -312,6 +269,7 @@ public final class GetVbInstanceResult {
     	      this.vbInstanceId = defaults.vbInstanceId;
         }
 
+        @CustomType.Setter
         public Builder alternateCustomEndpoints(List<GetVbInstanceAlternateCustomEndpoint> alternateCustomEndpoints) {
             this.alternateCustomEndpoints = Objects.requireNonNull(alternateCustomEndpoints);
             return this;
@@ -319,14 +277,17 @@ public final class GetVbInstanceResult {
         public Builder alternateCustomEndpoints(GetVbInstanceAlternateCustomEndpoint... alternateCustomEndpoints) {
             return alternateCustomEndpoints(List.of(alternateCustomEndpoints));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder consumptionModel(String consumptionModel) {
             this.consumptionModel = Objects.requireNonNull(consumptionModel);
             return this;
         }
+        @CustomType.Setter
         public Builder customEndpoints(List<GetVbInstanceCustomEndpoint> customEndpoints) {
             this.customEndpoints = Objects.requireNonNull(customEndpoints);
             return this;
@@ -334,63 +295,97 @@ public final class GetVbInstanceResult {
         public Builder customEndpoints(GetVbInstanceCustomEndpoint... customEndpoints) {
             return customEndpoints(List.of(customEndpoints));
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder idcsOpenId(String idcsOpenId) {
             this.idcsOpenId = Objects.requireNonNull(idcsOpenId);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceUrl(String instanceUrl) {
             this.instanceUrl = Objects.requireNonNull(instanceUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder isVisualBuilderEnabled(Boolean isVisualBuilderEnabled) {
             this.isVisualBuilderEnabled = Objects.requireNonNull(isVisualBuilderEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder nodeCount(Integer nodeCount) {
             this.nodeCount = Objects.requireNonNull(nodeCount);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder stateMessage(String stateMessage) {
             this.stateMessage = Objects.requireNonNull(stateMessage);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder vbInstanceId(String vbInstanceId) {
             this.vbInstanceId = Objects.requireNonNull(vbInstanceId);
             return this;
-        }        public GetVbInstanceResult build() {
-            return new GetVbInstanceResult(alternateCustomEndpoints, compartmentId, consumptionModel, customEndpoints, definedTags, displayName, freeformTags, id, idcsOpenId, instanceUrl, isVisualBuilderEnabled, nodeCount, state, stateMessage, systemTags, timeCreated, timeUpdated, vbInstanceId);
+        }
+        public GetVbInstanceResult build() {
+            final var o = new GetVbInstanceResult();
+            o.alternateCustomEndpoints = alternateCustomEndpoints;
+            o.compartmentId = compartmentId;
+            o.consumptionModel = consumptionModel;
+            o.customEndpoints = customEndpoints;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.idcsOpenId = idcsOpenId;
+            o.instanceUrl = instanceUrl;
+            o.isVisualBuilderEnabled = isVisualBuilderEnabled;
+            o.nodeCount = nodeCount;
+            o.state = state;
+            o.stateMessage = stateMessage;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.vbInstanceId = vbInstanceId;
+            return o;
         }
     }
 }

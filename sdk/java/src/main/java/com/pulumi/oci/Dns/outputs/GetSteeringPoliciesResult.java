@@ -18,68 +18,43 @@ public final class GetSteeringPoliciesResult {
      * @return The OCID of the compartment containing the steering policy.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable String displayNameContains;
-    private final @Nullable List<GetSteeringPoliciesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable String displayNameContains;
+    private @Nullable List<GetSteeringPoliciesFilter> filters;
     /**
      * @return The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
      * 
      */
-    private final @Nullable String healthCheckMonitorId;
+    private @Nullable String healthCheckMonitorId;
     /**
      * @return The OCID of the resource.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The current state of the resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of steering_policies.
      * 
      */
-    private final List<GetSteeringPoliciesSteeringPolicy> steeringPolicies;
+    private List<GetSteeringPoliciesSteeringPolicy> steeringPolicies;
     /**
      * @return A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management&#39;s rules in a different order to produce the desired results when answering DNS queries.
      * 
      */
-    private final @Nullable String template;
-    private final @Nullable String timeCreatedGreaterThanOrEqualTo;
-    private final @Nullable String timeCreatedLessThan;
+    private @Nullable String template;
+    private @Nullable String timeCreatedGreaterThanOrEqualTo;
+    private @Nullable String timeCreatedLessThan;
 
-    @CustomType.Constructor
-    private GetSteeringPoliciesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("displayNameContains") @Nullable String displayNameContains,
-        @CustomType.Parameter("filters") @Nullable List<GetSteeringPoliciesFilter> filters,
-        @CustomType.Parameter("healthCheckMonitorId") @Nullable String healthCheckMonitorId,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("steeringPolicies") List<GetSteeringPoliciesSteeringPolicy> steeringPolicies,
-        @CustomType.Parameter("template") @Nullable String template,
-        @CustomType.Parameter("timeCreatedGreaterThanOrEqualTo") @Nullable String timeCreatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeCreatedLessThan") @Nullable String timeCreatedLessThan) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.displayNameContains = displayNameContains;
-        this.filters = filters;
-        this.healthCheckMonitorId = healthCheckMonitorId;
-        this.id = id;
-        this.state = state;
-        this.steeringPolicies = steeringPolicies;
-        this.template = template;
-        this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-        this.timeCreatedLessThan = timeCreatedLessThan;
-    }
-
+    private GetSteeringPoliciesResult() {}
     /**
      * @return The OCID of the compartment containing the steering policy.
      * 
@@ -149,7 +124,7 @@ public final class GetSteeringPoliciesResult {
     public static Builder builder(GetSteeringPoliciesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -162,11 +137,7 @@ public final class GetSteeringPoliciesResult {
         private @Nullable String template;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSteeringPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -182,18 +153,22 @@ public final class GetSteeringPoliciesResult {
     	      this.timeCreatedLessThan = defaults.timeCreatedLessThan;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder displayNameContains(@Nullable String displayNameContains) {
             this.displayNameContains = displayNameContains;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSteeringPoliciesFilter> filters) {
             this.filters = filters;
             return this;
@@ -201,18 +176,22 @@ public final class GetSteeringPoliciesResult {
         public Builder filters(GetSteeringPoliciesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder healthCheckMonitorId(@Nullable String healthCheckMonitorId) {
             this.healthCheckMonitorId = healthCheckMonitorId;
             return this;
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder steeringPolicies(List<GetSteeringPoliciesSteeringPolicy> steeringPolicies) {
             this.steeringPolicies = Objects.requireNonNull(steeringPolicies);
             return this;
@@ -220,19 +199,35 @@ public final class GetSteeringPoliciesResult {
         public Builder steeringPolicies(GetSteeringPoliciesSteeringPolicy... steeringPolicies) {
             return steeringPolicies(List.of(steeringPolicies));
         }
+        @CustomType.Setter
         public Builder template(@Nullable String template) {
             this.template = template;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
-        }        public GetSteeringPoliciesResult build() {
-            return new GetSteeringPoliciesResult(compartmentId, displayName, displayNameContains, filters, healthCheckMonitorId, id, state, steeringPolicies, template, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan);
+        }
+        public GetSteeringPoliciesResult build() {
+            final var o = new GetSteeringPoliciesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.displayNameContains = displayNameContains;
+            o.filters = filters;
+            o.healthCheckMonitorId = healthCheckMonitorId;
+            o.id = id;
+            o.state = state;
+            o.steeringPolicies = steeringPolicies;
+            o.template = template;
+            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            o.timeCreatedLessThan = timeCreatedLessThan;
+            return o;
         }
     }
 }

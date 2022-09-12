@@ -15,35 +15,24 @@ public final class GetBuildRunBuildRunSource {
      * @return The DevOps code repository identifier that invoked the build run.
      * 
      */
-    private final String repositoryId;
+    private String repositoryId;
     /**
      * @return The source from which the build run is triggered.
      * 
      */
-    private final String sourceType;
+    private String sourceType;
     /**
      * @return The trigger that invoked the build run.
      * 
      */
-    private final String triggerId;
+    private String triggerId;
     /**
      * @return Trigger details that need to be used for the BuildRun
      * 
      */
-    private final List<GetBuildRunBuildRunSourceTriggerInfo> triggerInfos;
+    private List<GetBuildRunBuildRunSourceTriggerInfo> triggerInfos;
 
-    @CustomType.Constructor
-    private GetBuildRunBuildRunSource(
-        @CustomType.Parameter("repositoryId") String repositoryId,
-        @CustomType.Parameter("sourceType") String sourceType,
-        @CustomType.Parameter("triggerId") String triggerId,
-        @CustomType.Parameter("triggerInfos") List<GetBuildRunBuildRunSourceTriggerInfo> triggerInfos) {
-        this.repositoryId = repositoryId;
-        this.sourceType = sourceType;
-        this.triggerId = triggerId;
-        this.triggerInfos = triggerInfos;
-    }
-
+    private GetBuildRunBuildRunSource() {}
     /**
      * @return The DevOps code repository identifier that invoked the build run.
      * 
@@ -80,17 +69,13 @@ public final class GetBuildRunBuildRunSource {
     public static Builder builder(GetBuildRunBuildRunSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String repositoryId;
         private String sourceType;
         private String triggerId;
         private List<GetBuildRunBuildRunSourceTriggerInfo> triggerInfos;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunBuildRunSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.repositoryId = defaults.repositoryId;
@@ -99,26 +84,36 @@ public final class GetBuildRunBuildRunSource {
     	      this.triggerInfos = defaults.triggerInfos;
         }
 
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder triggerId(String triggerId) {
             this.triggerId = Objects.requireNonNull(triggerId);
             return this;
         }
+        @CustomType.Setter
         public Builder triggerInfos(List<GetBuildRunBuildRunSourceTriggerInfo> triggerInfos) {
             this.triggerInfos = Objects.requireNonNull(triggerInfos);
             return this;
         }
         public Builder triggerInfos(GetBuildRunBuildRunSourceTriggerInfo... triggerInfos) {
             return triggerInfos(List.of(triggerInfos));
-        }        public GetBuildRunBuildRunSource build() {
-            return new GetBuildRunBuildRunSource(repositoryId, sourceType, triggerId, triggerInfos);
+        }
+        public GetBuildRunBuildRunSource build() {
+            final var o = new GetBuildRunBuildRunSource();
+            o.repositoryId = repositoryId;
+            o.sourceType = sourceType;
+            o.triggerId = triggerId;
+            o.triggerInfos = triggerInfos;
+            return o;
         }
     }
 }

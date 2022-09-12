@@ -13,21 +13,14 @@ public final class GetDeploymentSpecificationRouteBackendHeader {
      * @return The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Value of the header.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetDeploymentSpecificationRouteBackendHeader(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("value") String value) {
-        this.name = name;
-        this.value = value;
-    }
-
+    private GetDeploymentSpecificationRouteBackendHeader() {}
     /**
      * @return The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
@@ -50,30 +43,32 @@ public final class GetDeploymentSpecificationRouteBackendHeader {
     public static Builder builder(GetDeploymentSpecificationRouteBackendHeader defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentSpecificationRouteBackendHeader defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetDeploymentSpecificationRouteBackendHeader build() {
-            return new GetDeploymentSpecificationRouteBackendHeader(name, value);
+        }
+        public GetDeploymentSpecificationRouteBackendHeader build() {
+            final var o = new GetDeploymentSpecificationRouteBackendHeader();
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

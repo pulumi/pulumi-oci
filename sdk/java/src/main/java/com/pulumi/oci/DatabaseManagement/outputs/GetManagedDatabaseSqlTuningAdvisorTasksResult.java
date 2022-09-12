@@ -14,47 +14,28 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
-    private final @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFilter> filters;
+    private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String managedDatabaseId;
+    private String id;
+    private String managedDatabaseId;
     /**
      * @return The name of the SQL Tuning Advisor task.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The list of sql_tuning_advisor_task_collection.
      * 
      */
-    private final List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection> sqlTuningAdvisorTaskCollections;
-    private final @Nullable String status;
-    private final @Nullable String timeGreaterThanOrEqualTo;
-    private final @Nullable String timeLessThanOrEqualTo;
+    private List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection> sqlTuningAdvisorTaskCollections;
+    private @Nullable String status;
+    private @Nullable String timeGreaterThanOrEqualTo;
+    private @Nullable String timeLessThanOrEqualTo;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTasksResult(
-        @CustomType.Parameter("filters") @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("sqlTuningAdvisorTaskCollections") List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection> sqlTuningAdvisorTaskCollections,
-        @CustomType.Parameter("status") @Nullable String status,
-        @CustomType.Parameter("timeGreaterThanOrEqualTo") @Nullable String timeGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeLessThanOrEqualTo") @Nullable String timeLessThanOrEqualTo) {
-        this.filters = filters;
-        this.id = id;
-        this.managedDatabaseId = managedDatabaseId;
-        this.name = name;
-        this.sqlTuningAdvisorTaskCollections = sqlTuningAdvisorTaskCollections;
-        this.status = status;
-        this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
-        this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTasksResult() {}
     public List<GetManagedDatabaseSqlTuningAdvisorTasksFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -99,7 +80,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTasksResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFilter> filters;
         private String id;
@@ -109,11 +90,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
         private @Nullable String status;
         private @Nullable String timeGreaterThanOrEqualTo;
         private @Nullable String timeLessThanOrEqualTo;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -126,6 +103,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
     	      this.timeLessThanOrEqualTo = defaults.timeLessThanOrEqualTo;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFilter> filters) {
             this.filters = filters;
             return this;
@@ -133,18 +111,22 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
         public Builder filters(GetManagedDatabaseSqlTuningAdvisorTasksFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder sqlTuningAdvisorTaskCollections(List<GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection> sqlTuningAdvisorTaskCollections) {
             this.sqlTuningAdvisorTaskCollections = Objects.requireNonNull(sqlTuningAdvisorTaskCollections);
             return this;
@@ -152,19 +134,32 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksResult {
         public Builder sqlTuningAdvisorTaskCollections(GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollection... sqlTuningAdvisorTaskCollections) {
             return sqlTuningAdvisorTaskCollections(List.of(sqlTuningAdvisorTaskCollections));
         }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
         }
+        @CustomType.Setter
         public Builder timeGreaterThanOrEqualTo(@Nullable String timeGreaterThanOrEqualTo) {
             this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeLessThanOrEqualTo(@Nullable String timeLessThanOrEqualTo) {
             this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
             return this;
-        }        public GetManagedDatabaseSqlTuningAdvisorTasksResult build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTasksResult(filters, id, managedDatabaseId, name, sqlTuningAdvisorTaskCollections, status, timeGreaterThanOrEqualTo, timeLessThanOrEqualTo);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTasksResult build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksResult();
+            o.filters = filters;
+            o.id = id;
+            o.managedDatabaseId = managedDatabaseId;
+            o.name = name;
+            o.sqlTuningAdvisorTaskCollections = sqlTuningAdvisorTaskCollections;
+            o.status = status;
+            o.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
+            o.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
+            return o;
         }
     }
 }

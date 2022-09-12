@@ -15,48 +15,31 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetHttpProbeResultsResult {
-    private final @Nullable List<GetHttpProbeResultsFilter> filters;
+    private @Nullable List<GetHttpProbeResultsFilter> filters;
     /**
      * @return The list of http_probe_results.
      * 
      */
-    private final List<GetHttpProbeResultsHttpProbeResult> httpProbeResults;
+    private List<GetHttpProbeResultsHttpProbeResult> httpProbeResults;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the monitor or on-demand probe responsible for creating this result.
      * 
      */
-    private final String probeConfigurationId;
-    private final @Nullable Double startTimeGreaterThanOrEqualTo;
-    private final @Nullable Double startTimeLessThanOrEqualTo;
+    private String probeConfigurationId;
+    private @Nullable Double startTimeGreaterThanOrEqualTo;
+    private @Nullable Double startTimeLessThanOrEqualTo;
     /**
      * @return The target hostname or IP address of the probe.
      * 
      */
-    private final @Nullable String target;
+    private @Nullable String target;
 
-    @CustomType.Constructor
-    private GetHttpProbeResultsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetHttpProbeResultsFilter> filters,
-        @CustomType.Parameter("httpProbeResults") List<GetHttpProbeResultsHttpProbeResult> httpProbeResults,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("probeConfigurationId") String probeConfigurationId,
-        @CustomType.Parameter("startTimeGreaterThanOrEqualTo") @Nullable Double startTimeGreaterThanOrEqualTo,
-        @CustomType.Parameter("startTimeLessThanOrEqualTo") @Nullable Double startTimeLessThanOrEqualTo,
-        @CustomType.Parameter("target") @Nullable String target) {
-        this.filters = filters;
-        this.httpProbeResults = httpProbeResults;
-        this.id = id;
-        this.probeConfigurationId = probeConfigurationId;
-        this.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
-        this.startTimeLessThanOrEqualTo = startTimeLessThanOrEqualTo;
-        this.target = target;
-    }
-
+    private GetHttpProbeResultsResult() {}
     public List<GetHttpProbeResultsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -102,7 +85,7 @@ public final class GetHttpProbeResultsResult {
     public static Builder builder(GetHttpProbeResultsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetHttpProbeResultsFilter> filters;
         private List<GetHttpProbeResultsHttpProbeResult> httpProbeResults;
@@ -111,11 +94,7 @@ public final class GetHttpProbeResultsResult {
         private @Nullable Double startTimeGreaterThanOrEqualTo;
         private @Nullable Double startTimeLessThanOrEqualTo;
         private @Nullable String target;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetHttpProbeResultsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -127,6 +106,7 @@ public final class GetHttpProbeResultsResult {
     	      this.target = defaults.target;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetHttpProbeResultsFilter> filters) {
             this.filters = filters;
             return this;
@@ -134,6 +114,7 @@ public final class GetHttpProbeResultsResult {
         public Builder filters(GetHttpProbeResultsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder httpProbeResults(List<GetHttpProbeResultsHttpProbeResult> httpProbeResults) {
             this.httpProbeResults = Objects.requireNonNull(httpProbeResults);
             return this;
@@ -141,27 +122,41 @@ public final class GetHttpProbeResultsResult {
         public Builder httpProbeResults(GetHttpProbeResultsHttpProbeResult... httpProbeResults) {
             return httpProbeResults(List.of(httpProbeResults));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder probeConfigurationId(String probeConfigurationId) {
             this.probeConfigurationId = Objects.requireNonNull(probeConfigurationId);
             return this;
         }
+        @CustomType.Setter
         public Builder startTimeGreaterThanOrEqualTo(@Nullable Double startTimeGreaterThanOrEqualTo) {
             this.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder startTimeLessThanOrEqualTo(@Nullable Double startTimeLessThanOrEqualTo) {
             this.startTimeLessThanOrEqualTo = startTimeLessThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder target(@Nullable String target) {
             this.target = target;
             return this;
-        }        public GetHttpProbeResultsResult build() {
-            return new GetHttpProbeResultsResult(filters, httpProbeResults, id, probeConfigurationId, startTimeGreaterThanOrEqualTo, startTimeLessThanOrEqualTo, target);
+        }
+        public GetHttpProbeResultsResult build() {
+            final var o = new GetHttpProbeResultsResult();
+            o.filters = filters;
+            o.httpProbeResults = httpProbeResults;
+            o.id = id;
+            o.probeConfigurationId = probeConfigurationId;
+            o.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
+            o.startTimeLessThanOrEqualTo = startTimeLessThanOrEqualTo;
+            o.target = target;
+            return o;
         }
     }
 }

@@ -15,21 +15,14 @@ public final class ConfigScriptParameterMonitorScriptParameter {
      * @return (Updatable) Name of the parameter.
      * 
      */
-    private final @Nullable String paramName;
+    private @Nullable String paramName;
     /**
      * @return (Updatable) Value of the parameter.
      * 
      */
-    private final @Nullable String paramValue;
+    private @Nullable String paramValue;
 
-    @CustomType.Constructor
-    private ConfigScriptParameterMonitorScriptParameter(
-        @CustomType.Parameter("paramName") @Nullable String paramName,
-        @CustomType.Parameter("paramValue") @Nullable String paramValue) {
-        this.paramName = paramName;
-        this.paramValue = paramValue;
-    }
-
+    private ConfigScriptParameterMonitorScriptParameter() {}
     /**
      * @return (Updatable) Name of the parameter.
      * 
@@ -52,30 +45,32 @@ public final class ConfigScriptParameterMonitorScriptParameter {
     public static Builder builder(ConfigScriptParameterMonitorScriptParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String paramName;
         private @Nullable String paramValue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConfigScriptParameterMonitorScriptParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.paramName = defaults.paramName;
     	      this.paramValue = defaults.paramValue;
         }
 
+        @CustomType.Setter
         public Builder paramName(@Nullable String paramName) {
             this.paramName = paramName;
             return this;
         }
+        @CustomType.Setter
         public Builder paramValue(@Nullable String paramValue) {
             this.paramValue = paramValue;
             return this;
-        }        public ConfigScriptParameterMonitorScriptParameter build() {
-            return new ConfigScriptParameterMonitorScriptParameter(paramName, paramValue);
+        }
+        public ConfigScriptParameterMonitorScriptParameter build() {
+            final var o = new ConfigScriptParameterMonitorScriptParameter();
+            o.paramName = paramName;
+            o.paramValue = paramValue;
+            return o;
         }
     }
 }

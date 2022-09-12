@@ -14,35 +14,24 @@ public final class GetNamespaceResult {
      * @return The is the tenancy ID
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return This indicates if the tenancy is onboarded to Logging Analytics
      * 
      */
-    private final Boolean isOnboarded;
+    private Boolean isOnboarded;
     /**
      * @return This is the namespace name of a tenancy
      * 
      */
-    private final String namespace;
+    private String namespace;
 
-    @CustomType.Constructor
-    private GetNamespaceResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isOnboarded") Boolean isOnboarded,
-        @CustomType.Parameter("namespace") String namespace) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.isOnboarded = isOnboarded;
-        this.namespace = namespace;
-    }
-
+    private GetNamespaceResult() {}
     /**
      * @return The is the tenancy ID
      * 
@@ -79,17 +68,13 @@ public final class GetNamespaceResult {
     public static Builder builder(GetNamespaceResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private Boolean isOnboarded;
         private String namespace;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNamespaceResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -98,23 +83,33 @@ public final class GetNamespaceResult {
     	      this.namespace = defaults.namespace;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isOnboarded(Boolean isOnboarded) {
             this.isOnboarded = Objects.requireNonNull(isOnboarded);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
-        }        public GetNamespaceResult build() {
-            return new GetNamespaceResult(compartmentId, id, isOnboarded, namespace);
+        }
+        public GetNamespaceResult build() {
+            final var o = new GetNamespaceResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.isOnboarded = isOnboarded;
+            o.namespace = namespace;
+            return o;
         }
     }
 }

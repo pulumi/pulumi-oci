@@ -9,24 +9,15 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBootVolumeBackupsBootVolumeBackupSourceDetail {
-    private final String bootVolumeBackupId;
+    private String bootVolumeBackupId;
     /**
      * @return The OCID of the Key Management master encryption assigned to the boot volume backup. For more information about the Key Management service and encryption keys, see [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      * 
      */
-    private final String kmsKeyId;
-    private final String region;
+    private String kmsKeyId;
+    private String region;
 
-    @CustomType.Constructor
-    private GetBootVolumeBackupsBootVolumeBackupSourceDetail(
-        @CustomType.Parameter("bootVolumeBackupId") String bootVolumeBackupId,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("region") String region) {
-        this.bootVolumeBackupId = bootVolumeBackupId;
-        this.kmsKeyId = kmsKeyId;
-        this.region = region;
-    }
-
+    private GetBootVolumeBackupsBootVolumeBackupSourceDetail() {}
     public String bootVolumeBackupId() {
         return this.bootVolumeBackupId;
     }
@@ -48,16 +39,12 @@ public final class GetBootVolumeBackupsBootVolumeBackupSourceDetail {
     public static Builder builder(GetBootVolumeBackupsBootVolumeBackupSourceDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bootVolumeBackupId;
         private String kmsKeyId;
         private String region;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBootVolumeBackupsBootVolumeBackupSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bootVolumeBackupId = defaults.bootVolumeBackupId;
@@ -65,19 +52,27 @@ public final class GetBootVolumeBackupsBootVolumeBackupSourceDetail {
     	      this.region = defaults.region;
         }
 
+        @CustomType.Setter
         public Builder bootVolumeBackupId(String bootVolumeBackupId) {
             this.bootVolumeBackupId = Objects.requireNonNull(bootVolumeBackupId);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder region(String region) {
             this.region = Objects.requireNonNull(region);
             return this;
-        }        public GetBootVolumeBackupsBootVolumeBackupSourceDetail build() {
-            return new GetBootVolumeBackupsBootVolumeBackupSourceDetail(bootVolumeBackupId, kmsKeyId, region);
+        }
+        public GetBootVolumeBackupsBootVolumeBackupSourceDetail build() {
+            final var o = new GetBootVolumeBackupsBootVolumeBackupSourceDetail();
+            o.bootVolumeBackupId = bootVolumeBackupId;
+            o.kmsKeyId = kmsKeyId;
+            o.region = region;
+            return o;
         }
     }
 }

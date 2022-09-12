@@ -13,31 +13,20 @@ public final class GetConnectionsConnectionCollectionItemSshDetail {
      * @return Name of the host the SSH key is valid for.
      * 
      */
-    private final String host;
-    private final String sshkey;
+    private String host;
+    private String sshkey;
     /**
      * @return Sudo location
      * 
      */
-    private final String sudoLocation;
+    private String sudoLocation;
     /**
      * @return SSH user
      * 
      */
-    private final String user;
+    private String user;
 
-    @CustomType.Constructor
-    private GetConnectionsConnectionCollectionItemSshDetail(
-        @CustomType.Parameter("host") String host,
-        @CustomType.Parameter("sshkey") String sshkey,
-        @CustomType.Parameter("sudoLocation") String sudoLocation,
-        @CustomType.Parameter("user") String user) {
-        this.host = host;
-        this.sshkey = sshkey;
-        this.sudoLocation = sudoLocation;
-        this.user = user;
-    }
-
+    private GetConnectionsConnectionCollectionItemSshDetail() {}
     /**
      * @return Name of the host the SSH key is valid for.
      * 
@@ -70,17 +59,13 @@ public final class GetConnectionsConnectionCollectionItemSshDetail {
     public static Builder builder(GetConnectionsConnectionCollectionItemSshDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String host;
         private String sshkey;
         private String sudoLocation;
         private String user;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConnectionsConnectionCollectionItemSshDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.host = defaults.host;
@@ -89,23 +74,33 @@ public final class GetConnectionsConnectionCollectionItemSshDetail {
     	      this.user = defaults.user;
         }
 
+        @CustomType.Setter
         public Builder host(String host) {
             this.host = Objects.requireNonNull(host);
             return this;
         }
+        @CustomType.Setter
         public Builder sshkey(String sshkey) {
             this.sshkey = Objects.requireNonNull(sshkey);
             return this;
         }
+        @CustomType.Setter
         public Builder sudoLocation(String sudoLocation) {
             this.sudoLocation = Objects.requireNonNull(sudoLocation);
             return this;
         }
+        @CustomType.Setter
         public Builder user(String user) {
             this.user = Objects.requireNonNull(user);
             return this;
-        }        public GetConnectionsConnectionCollectionItemSshDetail build() {
-            return new GetConnectionsConnectionCollectionItemSshDetail(host, sshkey, sudoLocation, user);
+        }
+        public GetConnectionsConnectionCollectionItemSshDetail build() {
+            final var o = new GetConnectionsConnectionCollectionItemSshDetail();
+            o.host = host;
+            o.sshkey = sshkey;
+            o.sudoLocation = sudoLocation;
+            o.user = user;
+            return o;
         }
     }
 }

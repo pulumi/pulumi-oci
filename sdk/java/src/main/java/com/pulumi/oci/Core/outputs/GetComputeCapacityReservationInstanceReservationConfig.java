@@ -15,42 +15,29 @@ public final class GetComputeCapacityReservationInstanceReservationConfig {
      * @return The fault domain of this reservation configuration.  If a value is not supplied, this reservation configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
      * 
      */
-    private final String faultDomain;
+    private String faultDomain;
     /**
      * @return The shape to use when launching instances using compute capacity reservations. The shape determines the number of CPUs, the amount of memory, and other resources allocated to the instance. You can list all available shapes by calling [ListComputeCapacityReservationInstanceShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/computeCapacityReservationInstanceShapes/ListComputeCapacityReservationInstanceShapes).
      * 
      */
-    private final String instanceShape;
+    private String instanceShape;
     /**
      * @return The shape configuration requested when launching instances in a compute capacity reservation.
      * 
      */
-    private final List<GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig> instanceShapeConfigs;
+    private List<GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig> instanceShapeConfigs;
     /**
      * @return The total number of instances that can be launched from the capacity configuration.
      * 
      */
-    private final String reservedCount;
+    private String reservedCount;
     /**
      * @return The amount of capacity in use out of the total capacity reserved in this capacity configuration.
      * 
      */
-    private final String usedCount;
+    private String usedCount;
 
-    @CustomType.Constructor
-    private GetComputeCapacityReservationInstanceReservationConfig(
-        @CustomType.Parameter("faultDomain") String faultDomain,
-        @CustomType.Parameter("instanceShape") String instanceShape,
-        @CustomType.Parameter("instanceShapeConfigs") List<GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig> instanceShapeConfigs,
-        @CustomType.Parameter("reservedCount") String reservedCount,
-        @CustomType.Parameter("usedCount") String usedCount) {
-        this.faultDomain = faultDomain;
-        this.instanceShape = instanceShape;
-        this.instanceShapeConfigs = instanceShapeConfigs;
-        this.reservedCount = reservedCount;
-        this.usedCount = usedCount;
-    }
-
+    private GetComputeCapacityReservationInstanceReservationConfig() {}
     /**
      * @return The fault domain of this reservation configuration.  If a value is not supplied, this reservation configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
      * 
@@ -94,18 +81,14 @@ public final class GetComputeCapacityReservationInstanceReservationConfig {
     public static Builder builder(GetComputeCapacityReservationInstanceReservationConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String faultDomain;
         private String instanceShape;
         private List<GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig> instanceShapeConfigs;
         private String reservedCount;
         private String usedCount;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetComputeCapacityReservationInstanceReservationConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.faultDomain = defaults.faultDomain;
@@ -115,14 +98,17 @@ public final class GetComputeCapacityReservationInstanceReservationConfig {
     	      this.usedCount = defaults.usedCount;
         }
 
+        @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = Objects.requireNonNull(faultDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceShape(String instanceShape) {
             this.instanceShape = Objects.requireNonNull(instanceShape);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceShapeConfigs(List<GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig> instanceShapeConfigs) {
             this.instanceShapeConfigs = Objects.requireNonNull(instanceShapeConfigs);
             return this;
@@ -130,15 +116,24 @@ public final class GetComputeCapacityReservationInstanceReservationConfig {
         public Builder instanceShapeConfigs(GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig... instanceShapeConfigs) {
             return instanceShapeConfigs(List.of(instanceShapeConfigs));
         }
+        @CustomType.Setter
         public Builder reservedCount(String reservedCount) {
             this.reservedCount = Objects.requireNonNull(reservedCount);
             return this;
         }
+        @CustomType.Setter
         public Builder usedCount(String usedCount) {
             this.usedCount = Objects.requireNonNull(usedCount);
             return this;
-        }        public GetComputeCapacityReservationInstanceReservationConfig build() {
-            return new GetComputeCapacityReservationInstanceReservationConfig(faultDomain, instanceShape, instanceShapeConfigs, reservedCount, usedCount);
+        }
+        public GetComputeCapacityReservationInstanceReservationConfig build() {
+            final var o = new GetComputeCapacityReservationInstanceReservationConfig();
+            o.faultDomain = faultDomain;
+            o.instanceShape = instanceShape;
+            o.instanceShapeConfigs = instanceShapeConfigs;
+            o.reservedCount = reservedCount;
+            o.usedCount = usedCount;
+            return o;
         }
     }
 }

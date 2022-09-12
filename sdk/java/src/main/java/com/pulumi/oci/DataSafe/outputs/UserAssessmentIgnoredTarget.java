@@ -11,24 +11,15 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class UserAssessmentIgnoredTarget {
-    private final @Nullable String lifecycleState;
+    private @Nullable String lifecycleState;
     /**
      * @return The OCID of the target database on which the user assessment is to be run.
      * 
      */
-    private final @Nullable String targetId;
-    private final @Nullable String userAssessmentId;
+    private @Nullable String targetId;
+    private @Nullable String userAssessmentId;
 
-    @CustomType.Constructor
-    private UserAssessmentIgnoredTarget(
-        @CustomType.Parameter("lifecycleState") @Nullable String lifecycleState,
-        @CustomType.Parameter("targetId") @Nullable String targetId,
-        @CustomType.Parameter("userAssessmentId") @Nullable String userAssessmentId) {
-        this.lifecycleState = lifecycleState;
-        this.targetId = targetId;
-        this.userAssessmentId = userAssessmentId;
-    }
-
+    private UserAssessmentIgnoredTarget() {}
     public Optional<String> lifecycleState() {
         return Optional.ofNullable(this.lifecycleState);
     }
@@ -50,16 +41,12 @@ public final class UserAssessmentIgnoredTarget {
     public static Builder builder(UserAssessmentIgnoredTarget defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String lifecycleState;
         private @Nullable String targetId;
         private @Nullable String userAssessmentId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(UserAssessmentIgnoredTarget defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.lifecycleState = defaults.lifecycleState;
@@ -67,19 +54,27 @@ public final class UserAssessmentIgnoredTarget {
     	      this.userAssessmentId = defaults.userAssessmentId;
         }
 
+        @CustomType.Setter
         public Builder lifecycleState(@Nullable String lifecycleState) {
             this.lifecycleState = lifecycleState;
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
             this.targetId = targetId;
             return this;
         }
+        @CustomType.Setter
         public Builder userAssessmentId(@Nullable String userAssessmentId) {
             this.userAssessmentId = userAssessmentId;
             return this;
-        }        public UserAssessmentIgnoredTarget build() {
-            return new UserAssessmentIgnoredTarget(lifecycleState, targetId, userAssessmentId);
+        }
+        public UserAssessmentIgnoredTarget build() {
+            final var o = new UserAssessmentIgnoredTarget();
+            o.lifecycleState = lifecycleState;
+            o.targetId = targetId;
+            o.userAssessmentId = userAssessmentId;
+            return o;
         }
     }
 }

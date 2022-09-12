@@ -17,64 +17,45 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
      * @return Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
      * 
      */
-    private final String actionName;
+    private String actionName;
     /**
      * @return An expression that determines whether or not the rule action should be executed.
      * 
      */
-    private final String condition;
+    private String condition;
     /**
      * @return The language used to parse condition from field `condition`. Available languages:
      * * **JMESPATH** an extended JMESPath language syntax.
      * 
      */
-    private final String conditionLanguage;
+    private String conditionLanguage;
     /**
      * @return Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
      * 
      */
-    private final Boolean isBodyInspectionEnabled;
+    private Boolean isBodyInspectionEnabled;
     /**
      * @return Rule name. Must be unique within the module.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
      * 
      */
-    private final List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability> protectionCapabilities;
+    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability> protectionCapabilities;
     /**
      * @return Settings for protection capabilities
      * 
      */
-    private final List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting> protectionCapabilitySettings;
+    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting> protectionCapabilitySettings;
     /**
      * @return Type of WebAppFirewallPolicyRule.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule(
-        @CustomType.Parameter("actionName") String actionName,
-        @CustomType.Parameter("condition") String condition,
-        @CustomType.Parameter("conditionLanguage") String conditionLanguage,
-        @CustomType.Parameter("isBodyInspectionEnabled") Boolean isBodyInspectionEnabled,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("protectionCapabilities") List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability> protectionCapabilities,
-        @CustomType.Parameter("protectionCapabilitySettings") List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting> protectionCapabilitySettings,
-        @CustomType.Parameter("type") String type) {
-        this.actionName = actionName;
-        this.condition = condition;
-        this.conditionLanguage = conditionLanguage;
-        this.isBodyInspectionEnabled = isBodyInspectionEnabled;
-        this.name = name;
-        this.protectionCapabilities = protectionCapabilities;
-        this.protectionCapabilitySettings = protectionCapabilitySettings;
-        this.type = type;
-    }
-
+    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule() {}
     /**
      * @return Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
      * 
@@ -140,7 +121,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
     public static Builder builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String actionName;
         private String condition;
@@ -150,11 +131,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
         private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability> protectionCapabilities;
         private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting> protectionCapabilitySettings;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actionName = defaults.actionName;
@@ -167,26 +144,32 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder actionName(String actionName) {
             this.actionName = Objects.requireNonNull(actionName);
             return this;
         }
+        @CustomType.Setter
         public Builder condition(String condition) {
             this.condition = Objects.requireNonNull(condition);
             return this;
         }
+        @CustomType.Setter
         public Builder conditionLanguage(String conditionLanguage) {
             this.conditionLanguage = Objects.requireNonNull(conditionLanguage);
             return this;
         }
+        @CustomType.Setter
         public Builder isBodyInspectionEnabled(Boolean isBodyInspectionEnabled) {
             this.isBodyInspectionEnabled = Objects.requireNonNull(isBodyInspectionEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder protectionCapabilities(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability> protectionCapabilities) {
             this.protectionCapabilities = Objects.requireNonNull(protectionCapabilities);
             return this;
@@ -194,6 +177,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
         public Builder protectionCapabilities(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability... protectionCapabilities) {
             return protectionCapabilities(List.of(protectionCapabilities));
         }
+        @CustomType.Setter
         public Builder protectionCapabilitySettings(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting> protectionCapabilitySettings) {
             this.protectionCapabilitySettings = Objects.requireNonNull(protectionCapabilitySettings);
             return this;
@@ -201,11 +185,22 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
         public Builder protectionCapabilitySettings(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting... protectionCapabilitySettings) {
             return protectionCapabilitySettings(List.of(protectionCapabilitySettings));
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule build() {
-            return new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule(actionName, condition, conditionLanguage, isBodyInspectionEnabled, name, protectionCapabilities, protectionCapabilitySettings, type);
+        }
+        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule build() {
+            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRule();
+            o.actionName = actionName;
+            o.condition = condition;
+            o.conditionLanguage = conditionLanguage;
+            o.isBodyInspectionEnabled = isBodyInspectionEnabled;
+            o.name = name;
+            o.protectionCapabilities = protectionCapabilities;
+            o.protectionCapabilitySettings = protectionCapabilitySettings;
+            o.type = type;
+            return o;
         }
     }
 }

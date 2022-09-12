@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetQueriesQueryCollection {
-    private final List<GetQueriesQueryCollectionItem> items;
+    private List<GetQueriesQueryCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetQueriesQueryCollection(@CustomType.Parameter("items") List<GetQueriesQueryCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetQueriesQueryCollection() {}
     public List<GetQueriesQueryCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetQueriesQueryCollection {
     public static Builder builder(GetQueriesQueryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetQueriesQueryCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetQueriesQueryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetQueriesQueryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetQueriesQueryCollectionItem... items) {
             return items(List.of(items));
-        }        public GetQueriesQueryCollection build() {
-            return new GetQueriesQueryCollection(items);
+        }
+        public GetQueriesQueryCollection build() {
+            final var o = new GetQueriesQueryCollection();
+            o.items = items;
+            return o;
         }
     }
 }

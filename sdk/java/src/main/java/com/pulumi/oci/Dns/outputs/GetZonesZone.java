@@ -20,120 +20,85 @@ public final class GetZonesZone {
      * @return The OCID of the compartment the resource belongs to.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      * 
      */
-    private final List<GetZonesZoneExternalMaster> externalMasters;
+    private List<GetZonesZoneExternalMaster> externalMasters;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the zone.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      * 
      */
-    private final Boolean isProtected;
+    private Boolean isProtected;
     /**
      * @return A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The authoritative nameservers for the zone.
      * 
      */
-    private final List<GetZonesZoneNameserver> nameservers;
+    private List<GetZonesZoneNameserver> nameservers;
     /**
      * @return Specifies to operate only on resources that have a matching DNS scope. This value will be null
      * for zones in the global DNS and `PRIVATE` when listing private zones.
      * 
      */
-    private final String scope;
+    private String scope;
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    private final String self;
+    private String self;
     /**
      * @return The current serial of the zone. As seen in the zone&#39;s SOA record.
      * 
      */
-    private final Integer serial;
+    private Integer serial;
     /**
      * @return The state of a resource.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone&#39;s SOA record is derived.
      * 
      */
-    private final String version;
+    private String version;
     /**
      * @return The OCID of the view the resource is associated with.
      * 
      */
-    private final String viewId;
+    private String viewId;
     /**
      * @return Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
      * 
      */
-    private final String zoneType;
+    private String zoneType;
 
-    @CustomType.Constructor
-    private GetZonesZone(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("externalMasters") List<GetZonesZoneExternalMaster> externalMasters,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isProtected") Boolean isProtected,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("nameservers") List<GetZonesZoneNameserver> nameservers,
-        @CustomType.Parameter("scope") String scope,
-        @CustomType.Parameter("self") String self,
-        @CustomType.Parameter("serial") Integer serial,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("version") String version,
-        @CustomType.Parameter("viewId") String viewId,
-        @CustomType.Parameter("zoneType") String zoneType) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.externalMasters = externalMasters;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isProtected = isProtected;
-        this.name = name;
-        this.nameservers = nameservers;
-        this.scope = scope;
-        this.self = self;
-        this.serial = serial;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.version = version;
-        this.viewId = viewId;
-        this.zoneType = zoneType;
-    }
-
+    private GetZonesZone() {}
     /**
      * @return The OCID of the compartment the resource belongs to.
      * 
@@ -255,7 +220,7 @@ public final class GetZonesZone {
     public static Builder builder(GetZonesZone defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -273,11 +238,7 @@ public final class GetZonesZone {
         private String version;
         private String viewId;
         private String zoneType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetZonesZone defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -298,14 +259,17 @@ public final class GetZonesZone {
     	      this.zoneType = defaults.zoneType;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder externalMasters(List<GetZonesZoneExternalMaster> externalMasters) {
             this.externalMasters = Objects.requireNonNull(externalMasters);
             return this;
@@ -313,22 +277,27 @@ public final class GetZonesZone {
         public Builder externalMasters(GetZonesZoneExternalMaster... externalMasters) {
             return externalMasters(List.of(externalMasters));
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isProtected(Boolean isProtected) {
             this.isProtected = Objects.requireNonNull(isProtected);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder nameservers(List<GetZonesZoneNameserver> nameservers) {
             this.nameservers = Objects.requireNonNull(nameservers);
             return this;
@@ -336,39 +305,65 @@ public final class GetZonesZone {
         public Builder nameservers(GetZonesZoneNameserver... nameservers) {
             return nameservers(List.of(nameservers));
         }
+        @CustomType.Setter
         public Builder scope(String scope) {
             this.scope = Objects.requireNonNull(scope);
             return this;
         }
+        @CustomType.Setter
         public Builder self(String self) {
             this.self = Objects.requireNonNull(self);
             return this;
         }
+        @CustomType.Setter
         public Builder serial(Integer serial) {
             this.serial = Objects.requireNonNull(serial);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
         }
+        @CustomType.Setter
         public Builder viewId(String viewId) {
             this.viewId = Objects.requireNonNull(viewId);
             return this;
         }
+        @CustomType.Setter
         public Builder zoneType(String zoneType) {
             this.zoneType = Objects.requireNonNull(zoneType);
             return this;
-        }        public GetZonesZone build() {
-            return new GetZonesZone(compartmentId, definedTags, externalMasters, freeformTags, id, isProtected, name, nameservers, scope, self, serial, state, timeCreated, version, viewId, zoneType);
+        }
+        public GetZonesZone build() {
+            final var o = new GetZonesZone();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.externalMasters = externalMasters;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isProtected = isProtected;
+            o.name = name;
+            o.nameservers = nameservers;
+            o.scope = scope;
+            o.self = self;
+            o.serial = serial;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.version = version;
+            o.viewId = viewId;
+            o.zoneType = zoneType;
+            return o;
         }
     }
 }

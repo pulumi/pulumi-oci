@@ -15,63 +15,44 @@ public final class AutonomousDatabaseConnectionStringProfile {
      * @return Consumer group used by the connection.
      * 
      */
-    private final @Nullable String consumerGroup;
+    private @Nullable String consumerGroup;
     /**
      * @return (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return Host format used in connection string.
      * 
      */
-    private final @Nullable String hostFormat;
+    private @Nullable String hostFormat;
     /**
      * @return Protocol used by the connection.
      * 
      */
-    private final @Nullable String protocol;
+    private @Nullable String protocol;
     /**
      * @return Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use `DIRECT` for direct hand-offs. Use `REDIRECT` to redirect the session.
      * 
      */
-    private final @Nullable String sessionMode;
+    private @Nullable String sessionMode;
     /**
      * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
      * 
      */
-    private final @Nullable String syntaxFormat;
+    private @Nullable String syntaxFormat;
     /**
      * @return Specifies whether the TLS handshake is using one-way (`SERVER`) or mutual (`MUTUAL`) authentication.
      * 
      */
-    private final @Nullable String tlsAuthentication;
+    private @Nullable String tlsAuthentication;
     /**
      * @return Connection string value.
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
 
-    @CustomType.Constructor
-    private AutonomousDatabaseConnectionStringProfile(
-        @CustomType.Parameter("consumerGroup") @Nullable String consumerGroup,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("hostFormat") @Nullable String hostFormat,
-        @CustomType.Parameter("protocol") @Nullable String protocol,
-        @CustomType.Parameter("sessionMode") @Nullable String sessionMode,
-        @CustomType.Parameter("syntaxFormat") @Nullable String syntaxFormat,
-        @CustomType.Parameter("tlsAuthentication") @Nullable String tlsAuthentication,
-        @CustomType.Parameter("value") @Nullable String value) {
-        this.consumerGroup = consumerGroup;
-        this.displayName = displayName;
-        this.hostFormat = hostFormat;
-        this.protocol = protocol;
-        this.sessionMode = sessionMode;
-        this.syntaxFormat = syntaxFormat;
-        this.tlsAuthentication = tlsAuthentication;
-        this.value = value;
-    }
-
+    private AutonomousDatabaseConnectionStringProfile() {}
     /**
      * @return Consumer group used by the connection.
      * 
@@ -136,7 +117,7 @@ public final class AutonomousDatabaseConnectionStringProfile {
     public static Builder builder(AutonomousDatabaseConnectionStringProfile defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String consumerGroup;
         private @Nullable String displayName;
@@ -146,11 +127,7 @@ public final class AutonomousDatabaseConnectionStringProfile {
         private @Nullable String syntaxFormat;
         private @Nullable String tlsAuthentication;
         private @Nullable String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutonomousDatabaseConnectionStringProfile defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.consumerGroup = defaults.consumerGroup;
@@ -163,39 +140,57 @@ public final class AutonomousDatabaseConnectionStringProfile {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder consumerGroup(@Nullable String consumerGroup) {
             this.consumerGroup = consumerGroup;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder hostFormat(@Nullable String hostFormat) {
             this.hostFormat = hostFormat;
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(@Nullable String protocol) {
             this.protocol = protocol;
             return this;
         }
+        @CustomType.Setter
         public Builder sessionMode(@Nullable String sessionMode) {
             this.sessionMode = sessionMode;
             return this;
         }
+        @CustomType.Setter
         public Builder syntaxFormat(@Nullable String syntaxFormat) {
             this.syntaxFormat = syntaxFormat;
             return this;
         }
+        @CustomType.Setter
         public Builder tlsAuthentication(@Nullable String tlsAuthentication) {
             this.tlsAuthentication = tlsAuthentication;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
-        }        public AutonomousDatabaseConnectionStringProfile build() {
-            return new AutonomousDatabaseConnectionStringProfile(consumerGroup, displayName, hostFormat, protocol, sessionMode, syntaxFormat, tlsAuthentication, value);
+        }
+        public AutonomousDatabaseConnectionStringProfile build() {
+            final var o = new AutonomousDatabaseConnectionStringProfile();
+            o.consumerGroup = consumerGroup;
+            o.displayName = displayName;
+            o.hostFormat = hostFormat;
+            o.protocol = protocol;
+            o.sessionMode = sessionMode;
+            o.syntaxFormat = syntaxFormat;
+            o.tlsAuthentication = tlsAuthentication;
+            o.value = value;
+            return o;
         }
     }
 }

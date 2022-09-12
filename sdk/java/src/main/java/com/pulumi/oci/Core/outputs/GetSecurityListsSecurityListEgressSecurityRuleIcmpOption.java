@@ -13,21 +13,14 @@ public final class GetSecurityListsSecurityListEgressSecurityRuleIcmpOption {
      * @return The ICMP code (optional).
      * 
      */
-    private final Integer code;
+    private Integer code;
     /**
      * @return The ICMP type.
      * 
      */
-    private final Integer type;
+    private Integer type;
 
-    @CustomType.Constructor
-    private GetSecurityListsSecurityListEgressSecurityRuleIcmpOption(
-        @CustomType.Parameter("code") Integer code,
-        @CustomType.Parameter("type") Integer type) {
-        this.code = code;
-        this.type = type;
-    }
-
+    private GetSecurityListsSecurityListEgressSecurityRuleIcmpOption() {}
     /**
      * @return The ICMP code (optional).
      * 
@@ -50,30 +43,32 @@ public final class GetSecurityListsSecurityListEgressSecurityRuleIcmpOption {
     public static Builder builder(GetSecurityListsSecurityListEgressSecurityRuleIcmpOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer code;
         private Integer type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityListsSecurityListEgressSecurityRuleIcmpOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.code = defaults.code;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder code(Integer code) {
             this.code = Objects.requireNonNull(code);
             return this;
         }
+        @CustomType.Setter
         public Builder type(Integer type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetSecurityListsSecurityListEgressSecurityRuleIcmpOption build() {
-            return new GetSecurityListsSecurityListEgressSecurityRuleIcmpOption(code, type);
+        }
+        public GetSecurityListsSecurityListEgressSecurityRuleIcmpOption build() {
+            final var o = new GetSecurityListsSecurityListEgressSecurityRuleIcmpOption();
+            o.code = code;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -13,13 +13,9 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
      * @return The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem() {}
     /**
      * @return The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
@@ -35,24 +31,24 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
     public static Builder builder(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem build() {
-            return new GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem(name);
+        }
+        public GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem build() {
+            final var o = new GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem();
+            o.name = name;
+            return o;
         }
     }
 }

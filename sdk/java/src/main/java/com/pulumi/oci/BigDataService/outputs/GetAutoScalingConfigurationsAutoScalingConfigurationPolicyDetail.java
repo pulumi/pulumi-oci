@@ -15,38 +15,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail {
-    private final String actionType;
-    private final String policyType;
-    private final List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig> scaleDownConfigs;
-    private final List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig> scaleInConfigs;
-    private final List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig> scaleOutConfigs;
-    private final List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig> scaleUpConfigs;
-    private final List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail> scheduleDetails;
-    private final String timezone;
-    private final String triggerType;
+    private String actionType;
+    private String policyType;
+    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig> scaleDownConfigs;
+    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig> scaleInConfigs;
+    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig> scaleOutConfigs;
+    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig> scaleUpConfigs;
+    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail> scheduleDetails;
+    private String timezone;
+    private String triggerType;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail(
-        @CustomType.Parameter("actionType") String actionType,
-        @CustomType.Parameter("policyType") String policyType,
-        @CustomType.Parameter("scaleDownConfigs") List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig> scaleDownConfigs,
-        @CustomType.Parameter("scaleInConfigs") List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig> scaleInConfigs,
-        @CustomType.Parameter("scaleOutConfigs") List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig> scaleOutConfigs,
-        @CustomType.Parameter("scaleUpConfigs") List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig> scaleUpConfigs,
-        @CustomType.Parameter("scheduleDetails") List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail> scheduleDetails,
-        @CustomType.Parameter("timezone") String timezone,
-        @CustomType.Parameter("triggerType") String triggerType) {
-        this.actionType = actionType;
-        this.policyType = policyType;
-        this.scaleDownConfigs = scaleDownConfigs;
-        this.scaleInConfigs = scaleInConfigs;
-        this.scaleOutConfigs = scaleOutConfigs;
-        this.scaleUpConfigs = scaleUpConfigs;
-        this.scheduleDetails = scheduleDetails;
-        this.timezone = timezone;
-        this.triggerType = triggerType;
-    }
-
+    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail() {}
     public String actionType() {
         return this.actionType;
     }
@@ -82,7 +61,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     public static Builder builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String actionType;
         private String policyType;
@@ -93,11 +72,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
         private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail> scheduleDetails;
         private String timezone;
         private String triggerType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actionType = defaults.actionType;
@@ -111,14 +86,17 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     	      this.triggerType = defaults.triggerType;
         }
 
+        @CustomType.Setter
         public Builder actionType(String actionType) {
             this.actionType = Objects.requireNonNull(actionType);
             return this;
         }
+        @CustomType.Setter
         public Builder policyType(String policyType) {
             this.policyType = Objects.requireNonNull(policyType);
             return this;
         }
+        @CustomType.Setter
         public Builder scaleDownConfigs(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig> scaleDownConfigs) {
             this.scaleDownConfigs = Objects.requireNonNull(scaleDownConfigs);
             return this;
@@ -126,6 +104,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
         public Builder scaleDownConfigs(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleDownConfig... scaleDownConfigs) {
             return scaleDownConfigs(List.of(scaleDownConfigs));
         }
+        @CustomType.Setter
         public Builder scaleInConfigs(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig> scaleInConfigs) {
             this.scaleInConfigs = Objects.requireNonNull(scaleInConfigs);
             return this;
@@ -133,6 +112,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
         public Builder scaleInConfigs(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig... scaleInConfigs) {
             return scaleInConfigs(List.of(scaleInConfigs));
         }
+        @CustomType.Setter
         public Builder scaleOutConfigs(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig> scaleOutConfigs) {
             this.scaleOutConfigs = Objects.requireNonNull(scaleOutConfigs);
             return this;
@@ -140,6 +120,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
         public Builder scaleOutConfigs(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig... scaleOutConfigs) {
             return scaleOutConfigs(List.of(scaleOutConfigs));
         }
+        @CustomType.Setter
         public Builder scaleUpConfigs(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig> scaleUpConfigs) {
             this.scaleUpConfigs = Objects.requireNonNull(scaleUpConfigs);
             return this;
@@ -147,6 +128,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
         public Builder scaleUpConfigs(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig... scaleUpConfigs) {
             return scaleUpConfigs(List.of(scaleUpConfigs));
         }
+        @CustomType.Setter
         public Builder scheduleDetails(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail> scheduleDetails) {
             this.scheduleDetails = Objects.requireNonNull(scheduleDetails);
             return this;
@@ -154,15 +136,28 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
         public Builder scheduleDetails(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail... scheduleDetails) {
             return scheduleDetails(List.of(scheduleDetails));
         }
+        @CustomType.Setter
         public Builder timezone(String timezone) {
             this.timezone = Objects.requireNonNull(timezone);
             return this;
         }
+        @CustomType.Setter
         public Builder triggerType(String triggerType) {
             this.triggerType = Objects.requireNonNull(triggerType);
             return this;
-        }        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail build() {
-            return new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail(actionType, policyType, scaleDownConfigs, scaleInConfigs, scaleOutConfigs, scaleUpConfigs, scheduleDetails, timezone, triggerType);
+        }
+        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail build() {
+            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail();
+            o.actionType = actionType;
+            o.policyType = policyType;
+            o.scaleDownConfigs = scaleDownConfigs;
+            o.scaleInConfigs = scaleInConfigs;
+            o.scaleOutConfigs = scaleOutConfigs;
+            o.scaleUpConfigs = scaleUpConfigs;
+            o.scheduleDetails = scheduleDetails;
+            o.timezone = timezone;
+            o.triggerType = triggerType;
+            return o;
         }
     }
 }

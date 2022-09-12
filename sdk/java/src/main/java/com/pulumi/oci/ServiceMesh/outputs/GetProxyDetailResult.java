@@ -13,21 +13,14 @@ public final class GetProxyDetailResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Proxy container image version to be deployed.
      * 
      */
-    private final String proxyImage;
+    private String proxyImage;
 
-    @CustomType.Constructor
-    private GetProxyDetailResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("proxyImage") String proxyImage) {
-        this.id = id;
-        this.proxyImage = proxyImage;
-    }
-
+    private GetProxyDetailResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -50,30 +43,32 @@ public final class GetProxyDetailResult {
     public static Builder builder(GetProxyDetailResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String proxyImage;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProxyDetailResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
     	      this.proxyImage = defaults.proxyImage;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder proxyImage(String proxyImage) {
             this.proxyImage = Objects.requireNonNull(proxyImage);
             return this;
-        }        public GetProxyDetailResult build() {
-            return new GetProxyDetailResult(id, proxyImage);
+        }
+        public GetProxyDetailResult build() {
+            final var o = new GetProxyDetailResult();
+            o.id = id;
+            o.proxyImage = proxyImage;
+            return o;
         }
     }
 }

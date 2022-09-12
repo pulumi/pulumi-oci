@@ -17,91 +17,64 @@ public final class GetNetworkSourcesNetworkSource {
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The description you assign to the network source. Does not have to be unique, and it&#39;s changeable.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the network source.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    private final String inactiveState;
+    private String inactiveState;
     /**
      * @return A filter to only return resources that match the given name exactly.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return A list of allowed public IP addresses and CIDR ranges.
      * 
      */
-    private final List<String> publicSourceLists;
+    private List<String> publicSourceLists;
     /**
      * @return A list of services allowed to make on-behalf-of requests. These requests can have different source IPs than those specified in the network source. Currently, only `all` and `none` are supported. The default is `all`.
      * 
      */
-    private final List<String> services;
+    private List<String> services;
     /**
      * @return A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return A list of allowed VCN OCID and IP range pairs. Example:`&#34;vcnId&#34;: &#34;ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID&#34;, &#34;ipRanges&#34;: [ &#34;129.213.39.0/24&#34; ]`
      * 
      */
-    private final List<GetNetworkSourcesNetworkSourceVirtualSourceList> virtualSourceLists;
+    private List<GetNetworkSourcesNetworkSourceVirtualSourceList> virtualSourceLists;
 
-    @CustomType.Constructor
-    private GetNetworkSourcesNetworkSource(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("inactiveState") String inactiveState,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("publicSourceLists") List<String> publicSourceLists,
-        @CustomType.Parameter("services") List<String> services,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("virtualSourceLists") List<GetNetworkSourcesNetworkSourceVirtualSourceList> virtualSourceLists) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.inactiveState = inactiveState;
-        this.name = name;
-        this.publicSourceLists = publicSourceLists;
-        this.services = services;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.virtualSourceLists = virtualSourceLists;
-    }
-
+    private GetNetworkSourcesNetworkSource() {}
     /**
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
@@ -194,7 +167,7 @@ public final class GetNetworkSourcesNetworkSource {
     public static Builder builder(GetNetworkSourcesNetworkSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -208,11 +181,7 @@ public final class GetNetworkSourcesNetworkSource {
         private String state;
         private String timeCreated;
         private List<GetNetworkSourcesNetworkSourceVirtualSourceList> virtualSourceLists;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkSourcesNetworkSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -229,34 +198,42 @@ public final class GetNetworkSourcesNetworkSource {
     	      this.virtualSourceLists = defaults.virtualSourceLists;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder inactiveState(String inactiveState) {
             this.inactiveState = Objects.requireNonNull(inactiveState);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder publicSourceLists(List<String> publicSourceLists) {
             this.publicSourceLists = Objects.requireNonNull(publicSourceLists);
             return this;
@@ -264,6 +241,7 @@ public final class GetNetworkSourcesNetworkSource {
         public Builder publicSourceLists(String... publicSourceLists) {
             return publicSourceLists(List.of(publicSourceLists));
         }
+        @CustomType.Setter
         public Builder services(List<String> services) {
             this.services = Objects.requireNonNull(services);
             return this;
@@ -271,22 +249,39 @@ public final class GetNetworkSourcesNetworkSource {
         public Builder services(String... services) {
             return services(List.of(services));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder virtualSourceLists(List<GetNetworkSourcesNetworkSourceVirtualSourceList> virtualSourceLists) {
             this.virtualSourceLists = Objects.requireNonNull(virtualSourceLists);
             return this;
         }
         public Builder virtualSourceLists(GetNetworkSourcesNetworkSourceVirtualSourceList... virtualSourceLists) {
             return virtualSourceLists(List.of(virtualSourceLists));
-        }        public GetNetworkSourcesNetworkSource build() {
-            return new GetNetworkSourcesNetworkSource(compartmentId, definedTags, description, freeformTags, id, inactiveState, name, publicSourceLists, services, state, timeCreated, virtualSourceLists);
+        }
+        public GetNetworkSourcesNetworkSource build() {
+            final var o = new GetNetworkSourcesNetworkSource();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.inactiveState = inactiveState;
+            o.name = name;
+            o.publicSourceLists = publicSourceLists;
+            o.services = services;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.virtualSourceLists = virtualSourceLists;
+            return o;
         }
     }
 }

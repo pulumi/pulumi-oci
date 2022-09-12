@@ -53,33 +53,33 @@ func LookupRegistryFolder(ctx *pulumi.Context, args *LookupRegistryFolderArgs, o
 type LookupRegistryFolderArgs struct {
 	// The folder ID.
 	FolderKey string `pulumi:"folderKey"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId string `pulumi:"registryId"`
 }
 
 // A collection of values returned by getRegistryFolder.
 type LookupRegistryFolderResult struct {
-	// List of data assets which belongs to this folder
+	// The list of data assets that belong to the folder.
 	DataAssets []GetRegistryFolderDataAsset `pulumi:"dataAssets"`
-	// User-defined description for the folder.
+	// User-defined description of the folder.
 	Description string `pulumi:"description"`
 	FolderKey   string `pulumi:"folderKey"`
 	Id          string `pulumi:"id"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+	// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 	Key string `pulumi:"key"`
 	// The type of the folder.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus int `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
 	ObjectVersion int `pulumi:"objectVersion"`
-	// A reference to the object's parent.
+	// A reference to the parent object.
 	ParentReves []GetRegistryFolderParentRef `pulumi:"parentReves"`
 	RegistryId  string                       `pulumi:"registryId"`
 }
@@ -101,7 +101,7 @@ func LookupRegistryFolderOutput(ctx *pulumi.Context, args LookupRegistryFolderOu
 type LookupRegistryFolderOutputArgs struct {
 	// The folder ID.
 	FolderKey pulumi.StringInput `pulumi:"folderKey"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringInput `pulumi:"registryId"`
 }
 
@@ -124,12 +124,12 @@ func (o LookupRegistryFolderResultOutput) ToLookupRegistryFolderResultOutputWith
 	return o
 }
 
-// List of data assets which belongs to this folder
+// The list of data assets that belong to the folder.
 func (o LookupRegistryFolderResultOutput) DataAssets() GetRegistryFolderDataAssetArrayOutput {
 	return o.ApplyT(func(v LookupRegistryFolderResult) []GetRegistryFolderDataAsset { return v.DataAssets }).(GetRegistryFolderDataAssetArrayOutput)
 }
 
-// User-defined description for the folder.
+// User-defined description of the folder.
 func (o LookupRegistryFolderResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryFolderResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -142,12 +142,12 @@ func (o LookupRegistryFolderResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryFolderResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o LookupRegistryFolderResultOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryFolderResult) string { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 func (o LookupRegistryFolderResultOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryFolderResult) string { return v.Key }).(pulumi.StringOutput)
 }
@@ -162,7 +162,7 @@ func (o LookupRegistryFolderResultOutput) ModelVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryFolderResult) string { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o LookupRegistryFolderResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryFolderResult) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -177,7 +177,7 @@ func (o LookupRegistryFolderResultOutput) ObjectVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupRegistryFolderResult) int { return v.ObjectVersion }).(pulumi.IntOutput)
 }
 
-// A reference to the object's parent.
+// A reference to the parent object.
 func (o LookupRegistryFolderResultOutput) ParentReves() GetRegistryFolderParentRefArrayOutput {
 	return o.ApplyT(func(v LookupRegistryFolderResult) []GetRegistryFolderParentRef { return v.ParentReves }).(GetRegistryFolderParentRefArrayOutput)
 }

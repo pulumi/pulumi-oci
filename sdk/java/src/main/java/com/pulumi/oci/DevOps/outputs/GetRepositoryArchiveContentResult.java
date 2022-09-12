@@ -11,27 +11,16 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryArchiveContentResult {
-    private final @Nullable String format;
+    private @Nullable String format;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String refName;
-    private final String repositoryId;
+    private String id;
+    private @Nullable String refName;
+    private String repositoryId;
 
-    @CustomType.Constructor
-    private GetRepositoryArchiveContentResult(
-        @CustomType.Parameter("format") @Nullable String format,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("refName") @Nullable String refName,
-        @CustomType.Parameter("repositoryId") String repositoryId) {
-        this.format = format;
-        this.id = id;
-        this.refName = refName;
-        this.repositoryId = repositoryId;
-    }
-
+    private GetRepositoryArchiveContentResult() {}
     public Optional<String> format() {
         return Optional.ofNullable(this.format);
     }
@@ -56,17 +45,13 @@ public final class GetRepositoryArchiveContentResult {
     public static Builder builder(GetRepositoryArchiveContentResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String format;
         private String id;
         private @Nullable String refName;
         private String repositoryId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryArchiveContentResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.format = defaults.format;
@@ -75,23 +60,33 @@ public final class GetRepositoryArchiveContentResult {
     	      this.repositoryId = defaults.repositoryId;
         }
 
+        @CustomType.Setter
         public Builder format(@Nullable String format) {
             this.format = format;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder refName(@Nullable String refName) {
             this.refName = refName;
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
-        }        public GetRepositoryArchiveContentResult build() {
-            return new GetRepositoryArchiveContentResult(format, id, refName, repositoryId);
+        }
+        public GetRepositoryArchiveContentResult build() {
+            final var o = new GetRepositoryArchiveContentResult();
+            o.format = format;
+            o.id = id;
+            o.refName = refName;
+            o.repositoryId = repositoryId;
+            return o;
         }
     }
 }

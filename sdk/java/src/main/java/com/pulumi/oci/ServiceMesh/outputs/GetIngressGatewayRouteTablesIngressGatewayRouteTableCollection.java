@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection {
-    private final List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem> items;
+    private List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection(@CustomType.Parameter("items") List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection() {}
     public List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectio
     public static Builder builder(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem... items) {
             return items(List.of(items));
-        }        public GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection build() {
-            return new GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection(items);
+        }
+        public GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection build() {
+            final var o = new GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -15,70 +15,49 @@ public final class BuildRunBuildOutputDeliveredArtifactItem {
      * @return The OCID of the artifact registry repository used by the DeliverArtifactStage
      * 
      */
-    private final @Nullable String artifactRepositoryId;
+    private @Nullable String artifactRepositoryId;
     /**
      * @return Type of artifact delivered.
      * 
      */
-    private final @Nullable String artifactType;
+    private @Nullable String artifactType;
     /**
      * @return The hash of the container registry artifact pushed by the Deliver Artifacts stage.
      * 
      */
-    private final @Nullable String deliveredArtifactHash;
+    private @Nullable String deliveredArtifactHash;
     /**
      * @return The OCID of the artifact pushed by the Deliver Artifacts stage.
      * 
      */
-    private final @Nullable String deliveredArtifactId;
+    private @Nullable String deliveredArtifactId;
     /**
      * @return The OCID of the deployment artifact definition.
      * 
      */
-    private final @Nullable String deployArtifactId;
+    private @Nullable String deployArtifactId;
     /**
      * @return The imageUri of the OCIR artifact pushed by the DeliverArtifactStage
      * 
      */
-    private final @Nullable String imageUri;
+    private @Nullable String imageUri;
     /**
      * @return Name of the output artifact defined in the build specification file.
      * 
      */
-    private final @Nullable String outputArtifactName;
+    private @Nullable String outputArtifactName;
     /**
      * @return Path of the repository where artifact was pushed
      * 
      */
-    private final @Nullable String path;
+    private @Nullable String path;
     /**
      * @return Version of the artifact pushed
      * 
      */
-    private final @Nullable String version;
+    private @Nullable String version;
 
-    @CustomType.Constructor
-    private BuildRunBuildOutputDeliveredArtifactItem(
-        @CustomType.Parameter("artifactRepositoryId") @Nullable String artifactRepositoryId,
-        @CustomType.Parameter("artifactType") @Nullable String artifactType,
-        @CustomType.Parameter("deliveredArtifactHash") @Nullable String deliveredArtifactHash,
-        @CustomType.Parameter("deliveredArtifactId") @Nullable String deliveredArtifactId,
-        @CustomType.Parameter("deployArtifactId") @Nullable String deployArtifactId,
-        @CustomType.Parameter("imageUri") @Nullable String imageUri,
-        @CustomType.Parameter("outputArtifactName") @Nullable String outputArtifactName,
-        @CustomType.Parameter("path") @Nullable String path,
-        @CustomType.Parameter("version") @Nullable String version) {
-        this.artifactRepositoryId = artifactRepositoryId;
-        this.artifactType = artifactType;
-        this.deliveredArtifactHash = deliveredArtifactHash;
-        this.deliveredArtifactId = deliveredArtifactId;
-        this.deployArtifactId = deployArtifactId;
-        this.imageUri = imageUri;
-        this.outputArtifactName = outputArtifactName;
-        this.path = path;
-        this.version = version;
-    }
-
+    private BuildRunBuildOutputDeliveredArtifactItem() {}
     /**
      * @return The OCID of the artifact registry repository used by the DeliverArtifactStage
      * 
@@ -150,7 +129,7 @@ public final class BuildRunBuildOutputDeliveredArtifactItem {
     public static Builder builder(BuildRunBuildOutputDeliveredArtifactItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String artifactRepositoryId;
         private @Nullable String artifactType;
@@ -161,11 +140,7 @@ public final class BuildRunBuildOutputDeliveredArtifactItem {
         private @Nullable String outputArtifactName;
         private @Nullable String path;
         private @Nullable String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BuildRunBuildOutputDeliveredArtifactItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.artifactRepositoryId = defaults.artifactRepositoryId;
@@ -179,43 +154,63 @@ public final class BuildRunBuildOutputDeliveredArtifactItem {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder artifactRepositoryId(@Nullable String artifactRepositoryId) {
             this.artifactRepositoryId = artifactRepositoryId;
             return this;
         }
+        @CustomType.Setter
         public Builder artifactType(@Nullable String artifactType) {
             this.artifactType = artifactType;
             return this;
         }
+        @CustomType.Setter
         public Builder deliveredArtifactHash(@Nullable String deliveredArtifactHash) {
             this.deliveredArtifactHash = deliveredArtifactHash;
             return this;
         }
+        @CustomType.Setter
         public Builder deliveredArtifactId(@Nullable String deliveredArtifactId) {
             this.deliveredArtifactId = deliveredArtifactId;
             return this;
         }
+        @CustomType.Setter
         public Builder deployArtifactId(@Nullable String deployArtifactId) {
             this.deployArtifactId = deployArtifactId;
             return this;
         }
+        @CustomType.Setter
         public Builder imageUri(@Nullable String imageUri) {
             this.imageUri = imageUri;
             return this;
         }
+        @CustomType.Setter
         public Builder outputArtifactName(@Nullable String outputArtifactName) {
             this.outputArtifactName = outputArtifactName;
             return this;
         }
+        @CustomType.Setter
         public Builder path(@Nullable String path) {
             this.path = path;
             return this;
         }
+        @CustomType.Setter
         public Builder version(@Nullable String version) {
             this.version = version;
             return this;
-        }        public BuildRunBuildOutputDeliveredArtifactItem build() {
-            return new BuildRunBuildOutputDeliveredArtifactItem(artifactRepositoryId, artifactType, deliveredArtifactHash, deliveredArtifactId, deployArtifactId, imageUri, outputArtifactName, path, version);
+        }
+        public BuildRunBuildOutputDeliveredArtifactItem build() {
+            final var o = new BuildRunBuildOutputDeliveredArtifactItem();
+            o.artifactRepositoryId = artifactRepositoryId;
+            o.artifactType = artifactType;
+            o.deliveredArtifactHash = deliveredArtifactHash;
+            o.deliveredArtifactId = deliveredArtifactId;
+            o.deployArtifactId = deployArtifactId;
+            o.imageUri = imageUri;
+            o.outputArtifactName = outputArtifactName;
+            o.path = path;
+            o.version = version;
+            return o;
         }
     }
 }

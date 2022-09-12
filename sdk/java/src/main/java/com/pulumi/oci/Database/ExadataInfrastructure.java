@@ -86,6 +86,7 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .hoursOfDays(var_.exadata_infrastructure_maintenance_window_hours_of_day())
  *                 .isCustomActionTimeoutEnabled(var_.exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled())
+ *                 .isMonthlyPatchingEnabled(var_.exadata_infrastructure_maintenance_window_is_monthly_patching_enabled())
  *                 .leadTimeInWeeks(var_.exadata_infrastructure_maintenance_window_lead_time_in_weeks())
  *                 .months(ExadataInfrastructureMaintenanceWindowMonthArgs.builder()
  *                     .name(var_.exadata_infrastructure_maintenance_window_months_name())

@@ -15,13 +15,9 @@ public final class PublicationSupportedOperatingSystem {
      * @return (Updatable) The name of the contact.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private PublicationSupportedOperatingSystem(@CustomType.Parameter("name") @Nullable String name) {
-        this.name = name;
-    }
-
+    private PublicationSupportedOperatingSystem() {}
     /**
      * @return (Updatable) The name of the contact.
      * 
@@ -37,24 +33,24 @@ public final class PublicationSupportedOperatingSystem {
     public static Builder builder(PublicationSupportedOperatingSystem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PublicationSupportedOperatingSystem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public PublicationSupportedOperatingSystem build() {
-            return new PublicationSupportedOperatingSystem(name);
+        }
+        public PublicationSupportedOperatingSystem build() {
+            final var o = new PublicationSupportedOperatingSystem();
+            o.name = name;
+            return o;
         }
     }
 }

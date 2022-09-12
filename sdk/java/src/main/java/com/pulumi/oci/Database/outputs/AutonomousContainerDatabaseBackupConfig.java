@@ -16,21 +16,14 @@ public final class AutonomousContainerDatabaseBackupConfig {
      * @return Backup destination details.
      * 
      */
-    private final @Nullable AutonomousContainerDatabaseBackupConfigBackupDestinationDetails backupDestinationDetails;
+    private @Nullable AutonomousContainerDatabaseBackupConfigBackupDestinationDetails backupDestinationDetails;
     /**
      * @return Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
      * 
      */
-    private final @Nullable Integer recoveryWindowInDays;
+    private @Nullable Integer recoveryWindowInDays;
 
-    @CustomType.Constructor
-    private AutonomousContainerDatabaseBackupConfig(
-        @CustomType.Parameter("backupDestinationDetails") @Nullable AutonomousContainerDatabaseBackupConfigBackupDestinationDetails backupDestinationDetails,
-        @CustomType.Parameter("recoveryWindowInDays") @Nullable Integer recoveryWindowInDays) {
-        this.backupDestinationDetails = backupDestinationDetails;
-        this.recoveryWindowInDays = recoveryWindowInDays;
-    }
-
+    private AutonomousContainerDatabaseBackupConfig() {}
     /**
      * @return Backup destination details.
      * 
@@ -53,30 +46,32 @@ public final class AutonomousContainerDatabaseBackupConfig {
     public static Builder builder(AutonomousContainerDatabaseBackupConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable AutonomousContainerDatabaseBackupConfigBackupDestinationDetails backupDestinationDetails;
         private @Nullable Integer recoveryWindowInDays;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutonomousContainerDatabaseBackupConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupDestinationDetails = defaults.backupDestinationDetails;
     	      this.recoveryWindowInDays = defaults.recoveryWindowInDays;
         }
 
+        @CustomType.Setter
         public Builder backupDestinationDetails(@Nullable AutonomousContainerDatabaseBackupConfigBackupDestinationDetails backupDestinationDetails) {
             this.backupDestinationDetails = backupDestinationDetails;
             return this;
         }
+        @CustomType.Setter
         public Builder recoveryWindowInDays(@Nullable Integer recoveryWindowInDays) {
             this.recoveryWindowInDays = recoveryWindowInDays;
             return this;
-        }        public AutonomousContainerDatabaseBackupConfig build() {
-            return new AutonomousContainerDatabaseBackupConfig(backupDestinationDetails, recoveryWindowInDays);
+        }
+        public AutonomousContainerDatabaseBackupConfig build() {
+            final var o = new AutonomousContainerDatabaseBackupConfig();
+            o.backupDestinationDetails = backupDestinationDetails;
+            o.recoveryWindowInDays = recoveryWindowInDays;
+            return o;
         }
     }
 }

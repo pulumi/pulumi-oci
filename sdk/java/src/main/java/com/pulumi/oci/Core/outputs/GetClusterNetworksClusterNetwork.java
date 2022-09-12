@@ -18,77 +18,54 @@ public final class GetClusterNetworksClusterNetwork {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The instance pools in the cluster network.
      * 
      */
-    private final List<GetClusterNetworksClusterNetworkInstancePool> instancePools;
+    private List<GetClusterNetworksClusterNetworkInstancePool> instancePools;
     /**
      * @return The location for where the instance pools in a cluster network will place instances.
      * 
      */
-    private final List<GetClusterNetworksClusterNetworkPlacementConfiguration> placementConfigurations;
+    private List<GetClusterNetworksClusterNetworkPlacementConfiguration> placementConfigurations;
     /**
      * @return A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the resource was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetClusterNetworksClusterNetwork(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instancePools") List<GetClusterNetworksClusterNetworkInstancePool> instancePools,
-        @CustomType.Parameter("placementConfigurations") List<GetClusterNetworksClusterNetworkPlacementConfiguration> placementConfigurations,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.instancePools = instancePools;
-        this.placementConfigurations = placementConfigurations;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetClusterNetworksClusterNetwork() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -167,7 +144,7 @@ public final class GetClusterNetworksClusterNetwork {
     public static Builder builder(GetClusterNetworksClusterNetwork defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -179,11 +156,7 @@ public final class GetClusterNetworksClusterNetwork {
         private String state;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetClusterNetworksClusterNetwork defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -198,26 +171,32 @@ public final class GetClusterNetworksClusterNetwork {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instancePools(List<GetClusterNetworksClusterNetworkInstancePool> instancePools) {
             this.instancePools = Objects.requireNonNull(instancePools);
             return this;
@@ -225,6 +204,7 @@ public final class GetClusterNetworksClusterNetwork {
         public Builder instancePools(GetClusterNetworksClusterNetworkInstancePool... instancePools) {
             return instancePools(List.of(instancePools));
         }
+        @CustomType.Setter
         public Builder placementConfigurations(List<GetClusterNetworksClusterNetworkPlacementConfiguration> placementConfigurations) {
             this.placementConfigurations = Objects.requireNonNull(placementConfigurations);
             return this;
@@ -232,19 +212,34 @@ public final class GetClusterNetworksClusterNetwork {
         public Builder placementConfigurations(GetClusterNetworksClusterNetworkPlacementConfiguration... placementConfigurations) {
             return placementConfigurations(List.of(placementConfigurations));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetClusterNetworksClusterNetwork build() {
-            return new GetClusterNetworksClusterNetwork(compartmentId, definedTags, displayName, freeformTags, id, instancePools, placementConfigurations, state, timeCreated, timeUpdated);
+        }
+        public GetClusterNetworksClusterNetwork build() {
+            final var o = new GetClusterNetworksClusterNetwork();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.instancePools = instancePools;
+            o.placementConfigurations = placementConfigurations;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

@@ -14,41 +14,26 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabasesUserProxyUsersResult {
-    private final @Nullable List<GetManagedDatabasesUserProxyUsersFilter> filters;
+    private @Nullable List<GetManagedDatabasesUserProxyUsersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String managedDatabaseId;
+    private String id;
+    private String managedDatabaseId;
     /**
      * @return The name of a proxy user or the name of the client user.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The list of proxy_user_collection.
      * 
      */
-    private final List<GetManagedDatabasesUserProxyUsersProxyUserCollection> proxyUserCollections;
-    private final String userName;
+    private List<GetManagedDatabasesUserProxyUsersProxyUserCollection> proxyUserCollections;
+    private String userName;
 
-    @CustomType.Constructor
-    private GetManagedDatabasesUserProxyUsersResult(
-        @CustomType.Parameter("filters") @Nullable List<GetManagedDatabasesUserProxyUsersFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("proxyUserCollections") List<GetManagedDatabasesUserProxyUsersProxyUserCollection> proxyUserCollections,
-        @CustomType.Parameter("userName") String userName) {
-        this.filters = filters;
-        this.id = id;
-        this.managedDatabaseId = managedDatabaseId;
-        this.name = name;
-        this.proxyUserCollections = proxyUserCollections;
-        this.userName = userName;
-    }
-
+    private GetManagedDatabasesUserProxyUsersResult() {}
     public List<GetManagedDatabasesUserProxyUsersFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -87,7 +72,7 @@ public final class GetManagedDatabasesUserProxyUsersResult {
     public static Builder builder(GetManagedDatabasesUserProxyUsersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetManagedDatabasesUserProxyUsersFilter> filters;
         private String id;
@@ -95,11 +80,7 @@ public final class GetManagedDatabasesUserProxyUsersResult {
         private @Nullable String name;
         private List<GetManagedDatabasesUserProxyUsersProxyUserCollection> proxyUserCollections;
         private String userName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabasesUserProxyUsersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -110,6 +91,7 @@ public final class GetManagedDatabasesUserProxyUsersResult {
     	      this.userName = defaults.userName;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabasesUserProxyUsersFilter> filters) {
             this.filters = filters;
             return this;
@@ -117,18 +99,22 @@ public final class GetManagedDatabasesUserProxyUsersResult {
         public Builder filters(GetManagedDatabasesUserProxyUsersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder proxyUserCollections(List<GetManagedDatabasesUserProxyUsersProxyUserCollection> proxyUserCollections) {
             this.proxyUserCollections = Objects.requireNonNull(proxyUserCollections);
             return this;
@@ -136,11 +122,20 @@ public final class GetManagedDatabasesUserProxyUsersResult {
         public Builder proxyUserCollections(GetManagedDatabasesUserProxyUsersProxyUserCollection... proxyUserCollections) {
             return proxyUserCollections(List.of(proxyUserCollections));
         }
+        @CustomType.Setter
         public Builder userName(String userName) {
             this.userName = Objects.requireNonNull(userName);
             return this;
-        }        public GetManagedDatabasesUserProxyUsersResult build() {
-            return new GetManagedDatabasesUserProxyUsersResult(filters, id, managedDatabaseId, name, proxyUserCollections, userName);
+        }
+        public GetManagedDatabasesUserProxyUsersResult build() {
+            final var o = new GetManagedDatabasesUserProxyUsersResult();
+            o.filters = filters;
+            o.id = id;
+            o.managedDatabaseId = managedDatabaseId;
+            o.name = name;
+            o.proxyUserCollections = proxyUserCollections;
+            o.userName = userName;
+            return o;
         }
     }
 }

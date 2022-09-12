@@ -19,68 +19,56 @@ public final class GetRecommendationsResult {
      * @return The unique OCID associated with the category.
      * 
      */
-    private final String categoryId;
+    private @Nullable String categoryId;
+    private @Nullable String categoryName;
+    private @Nullable List<String> childTenancyIds;
     /**
      * @return The OCID of the tenancy. The tenancy is the root compartment.
      * 
      */
-    private final String compartmentId;
-    private final Boolean compartmentIdInSubtree;
-    private final @Nullable List<GetRecommendationsFilter> filters;
+    private String compartmentId;
+    private Boolean compartmentIdInSubtree;
+    private @Nullable List<GetRecommendationsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
+    private @Nullable Boolean includeOrganization;
     /**
      * @return The name of the profile level.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The list of recommendation_collection.
      * 
      */
-    private final List<GetRecommendationsRecommendationCollection> recommendationCollections;
+    private List<GetRecommendationsRecommendationCollection> recommendationCollections;
     /**
      * @return The recommendation&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The current status of the recommendation.
      * 
      */
-    private final @Nullable String status;
+    private @Nullable String status;
 
-    @CustomType.Constructor
-    private GetRecommendationsResult(
-        @CustomType.Parameter("categoryId") String categoryId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("filters") @Nullable List<GetRecommendationsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("recommendationCollections") List<GetRecommendationsRecommendationCollection> recommendationCollections,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("status") @Nullable String status) {
-        this.categoryId = categoryId;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.recommendationCollections = recommendationCollections;
-        this.state = state;
-        this.status = status;
-    }
-
+    private GetRecommendationsResult() {}
     /**
      * @return The unique OCID associated with the category.
      * 
      */
-    public String categoryId() {
-        return this.categoryId;
+    public Optional<String> categoryId() {
+        return Optional.ofNullable(this.categoryId);
+    }
+    public Optional<String> categoryName() {
+        return Optional.ofNullable(this.categoryName);
+    }
+    public List<String> childTenancyIds() {
+        return this.childTenancyIds == null ? List.of() : this.childTenancyIds;
     }
     /**
      * @return The OCID of the tenancy. The tenancy is the root compartment.
@@ -101,6 +89,9 @@ public final class GetRecommendationsResult {
      */
     public String id() {
         return this.id;
+    }
+    public Optional<Boolean> includeOrganization() {
+        return Optional.ofNullable(this.includeOrganization);
     }
     /**
      * @return The name of the profile level.
@@ -138,47 +129,66 @@ public final class GetRecommendationsResult {
     public static Builder builder(GetRecommendationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
-        private String categoryId;
+        private @Nullable String categoryId;
+        private @Nullable String categoryName;
+        private @Nullable List<String> childTenancyIds;
         private String compartmentId;
         private Boolean compartmentIdInSubtree;
         private @Nullable List<GetRecommendationsFilter> filters;
         private String id;
+        private @Nullable Boolean includeOrganization;
         private @Nullable String name;
         private List<GetRecommendationsRecommendationCollection> recommendationCollections;
         private @Nullable String state;
         private @Nullable String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRecommendationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.categoryId = defaults.categoryId;
+    	      this.categoryName = defaults.categoryName;
+    	      this.childTenancyIds = defaults.childTenancyIds;
     	      this.compartmentId = defaults.compartmentId;
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.includeOrganization = defaults.includeOrganization;
     	      this.name = defaults.name;
     	      this.recommendationCollections = defaults.recommendationCollections;
     	      this.state = defaults.state;
     	      this.status = defaults.status;
         }
 
-        public Builder categoryId(String categoryId) {
-            this.categoryId = Objects.requireNonNull(categoryId);
+        @CustomType.Setter
+        public Builder categoryId(@Nullable String categoryId) {
+            this.categoryId = categoryId;
             return this;
         }
+        @CustomType.Setter
+        public Builder categoryName(@Nullable String categoryName) {
+            this.categoryName = categoryName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder childTenancyIds(@Nullable List<String> childTenancyIds) {
+            this.childTenancyIds = childTenancyIds;
+            return this;
+        }
+        public Builder childTenancyIds(String... childTenancyIds) {
+            return childTenancyIds(List.of(childTenancyIds));
+        }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRecommendationsFilter> filters) {
             this.filters = filters;
             return this;
@@ -186,14 +196,22 @@ public final class GetRecommendationsResult {
         public Builder filters(GetRecommendationsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
+        public Builder includeOrganization(@Nullable Boolean includeOrganization) {
+            this.includeOrganization = includeOrganization;
+            return this;
+        }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder recommendationCollections(List<GetRecommendationsRecommendationCollection> recommendationCollections) {
             this.recommendationCollections = Objects.requireNonNull(recommendationCollections);
             return this;
@@ -201,15 +219,31 @@ public final class GetRecommendationsResult {
         public Builder recommendationCollections(GetRecommendationsRecommendationCollection... recommendationCollections) {
             return recommendationCollections(List.of(recommendationCollections));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
-        }        public GetRecommendationsResult build() {
-            return new GetRecommendationsResult(categoryId, compartmentId, compartmentIdInSubtree, filters, id, name, recommendationCollections, state, status);
+        }
+        public GetRecommendationsResult build() {
+            final var o = new GetRecommendationsResult();
+            o.categoryId = categoryId;
+            o.categoryName = categoryName;
+            o.childTenancyIds = childTenancyIds;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.filters = filters;
+            o.id = id;
+            o.includeOrganization = includeOrganization;
+            o.name = name;
+            o.recommendationCollections = recommendationCollections;
+            o.state = state;
+            o.status = status;
+            return o;
         }
     }
 }

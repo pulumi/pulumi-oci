@@ -15,28 +15,19 @@ public final class GetBuildRunBuildRunProgress {
      * @return Map of stage OCIDs to build pipeline stage run progress model.
      * 
      */
-    private final Map<String,Object> buildPipelineStageRunProgress;
+    private Map<String,Object> buildPipelineStageRunProgress;
     /**
      * @return The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private final String timeFinished;
+    private String timeFinished;
     /**
      * @return The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private final String timeStarted;
+    private String timeStarted;
 
-    @CustomType.Constructor
-    private GetBuildRunBuildRunProgress(
-        @CustomType.Parameter("buildPipelineStageRunProgress") Map<String,Object> buildPipelineStageRunProgress,
-        @CustomType.Parameter("timeFinished") String timeFinished,
-        @CustomType.Parameter("timeStarted") String timeStarted) {
-        this.buildPipelineStageRunProgress = buildPipelineStageRunProgress;
-        this.timeFinished = timeFinished;
-        this.timeStarted = timeStarted;
-    }
-
+    private GetBuildRunBuildRunProgress() {}
     /**
      * @return Map of stage OCIDs to build pipeline stage run progress model.
      * 
@@ -66,16 +57,12 @@ public final class GetBuildRunBuildRunProgress {
     public static Builder builder(GetBuildRunBuildRunProgress defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> buildPipelineStageRunProgress;
         private String timeFinished;
         private String timeStarted;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunBuildRunProgress defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.buildPipelineStageRunProgress = defaults.buildPipelineStageRunProgress;
@@ -83,19 +70,27 @@ public final class GetBuildRunBuildRunProgress {
     	      this.timeStarted = defaults.timeStarted;
         }
 
+        @CustomType.Setter
         public Builder buildPipelineStageRunProgress(Map<String,Object> buildPipelineStageRunProgress) {
             this.buildPipelineStageRunProgress = Objects.requireNonNull(buildPipelineStageRunProgress);
             return this;
         }
+        @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
             this.timeFinished = Objects.requireNonNull(timeFinished);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
-        }        public GetBuildRunBuildRunProgress build() {
-            return new GetBuildRunBuildRunProgress(buildPipelineStageRunProgress, timeFinished, timeStarted);
+        }
+        public GetBuildRunBuildRunProgress build() {
+            final var o = new GetBuildRunBuildRunProgress();
+            o.buildPipelineStageRunProgress = buildPipelineStageRunProgress;
+            o.timeFinished = timeFinished;
+            o.timeStarted = timeStarted;
+            return o;
         }
     }
 }

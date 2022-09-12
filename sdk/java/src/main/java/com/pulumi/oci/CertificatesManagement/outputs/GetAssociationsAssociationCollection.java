@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAssociationsAssociationCollection {
-    private final List<GetAssociationsAssociationCollectionItem> items;
+    private List<GetAssociationsAssociationCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetAssociationsAssociationCollection(@CustomType.Parameter("items") List<GetAssociationsAssociationCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetAssociationsAssociationCollection() {}
     public List<GetAssociationsAssociationCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetAssociationsAssociationCollection {
     public static Builder builder(GetAssociationsAssociationCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAssociationsAssociationCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAssociationsAssociationCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetAssociationsAssociationCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAssociationsAssociationCollectionItem... items) {
             return items(List.of(items));
-        }        public GetAssociationsAssociationCollection build() {
-            return new GetAssociationsAssociationCollection(items);
+        }
+        public GetAssociationsAssociationCollection build() {
+            final var o = new GetAssociationsAssociationCollection();
+            o.items = items;
+            return o;
         }
     }
 }

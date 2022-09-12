@@ -16,49 +16,34 @@ public final class AuthenticationPolicyPasswordPolicy {
      * @return (Updatable) At least one lower case character required.
      * 
      */
-    private final @Nullable Boolean isLowercaseCharactersRequired;
+    private @Nullable Boolean isLowercaseCharactersRequired;
     /**
      * @return (Updatable) At least one numeric character required.
      * 
      */
-    private final @Nullable Boolean isNumericCharactersRequired;
+    private @Nullable Boolean isNumericCharactersRequired;
     /**
      * @return (Updatable) At least one special character required.
      * 
      */
-    private final @Nullable Boolean isSpecialCharactersRequired;
+    private @Nullable Boolean isSpecialCharactersRequired;
     /**
      * @return (Updatable) At least one uppercase character required.
      * 
      */
-    private final @Nullable Boolean isUppercaseCharactersRequired;
+    private @Nullable Boolean isUppercaseCharactersRequired;
     /**
      * @return (Updatable) User name is allowed to be part of the password.
      * 
      */
-    private final @Nullable Boolean isUsernameContainmentAllowed;
+    private @Nullable Boolean isUsernameContainmentAllowed;
     /**
      * @return (Updatable) Minimum password length required.
      * 
      */
-    private final @Nullable Integer minimumPasswordLength;
+    private @Nullable Integer minimumPasswordLength;
 
-    @CustomType.Constructor
-    private AuthenticationPolicyPasswordPolicy(
-        @CustomType.Parameter("isLowercaseCharactersRequired") @Nullable Boolean isLowercaseCharactersRequired,
-        @CustomType.Parameter("isNumericCharactersRequired") @Nullable Boolean isNumericCharactersRequired,
-        @CustomType.Parameter("isSpecialCharactersRequired") @Nullable Boolean isSpecialCharactersRequired,
-        @CustomType.Parameter("isUppercaseCharactersRequired") @Nullable Boolean isUppercaseCharactersRequired,
-        @CustomType.Parameter("isUsernameContainmentAllowed") @Nullable Boolean isUsernameContainmentAllowed,
-        @CustomType.Parameter("minimumPasswordLength") @Nullable Integer minimumPasswordLength) {
-        this.isLowercaseCharactersRequired = isLowercaseCharactersRequired;
-        this.isNumericCharactersRequired = isNumericCharactersRequired;
-        this.isSpecialCharactersRequired = isSpecialCharactersRequired;
-        this.isUppercaseCharactersRequired = isUppercaseCharactersRequired;
-        this.isUsernameContainmentAllowed = isUsernameContainmentAllowed;
-        this.minimumPasswordLength = minimumPasswordLength;
-    }
-
+    private AuthenticationPolicyPasswordPolicy() {}
     /**
      * @return (Updatable) At least one lower case character required.
      * 
@@ -109,7 +94,7 @@ public final class AuthenticationPolicyPasswordPolicy {
     public static Builder builder(AuthenticationPolicyPasswordPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isLowercaseCharactersRequired;
         private @Nullable Boolean isNumericCharactersRequired;
@@ -117,11 +102,7 @@ public final class AuthenticationPolicyPasswordPolicy {
         private @Nullable Boolean isUppercaseCharactersRequired;
         private @Nullable Boolean isUsernameContainmentAllowed;
         private @Nullable Integer minimumPasswordLength;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AuthenticationPolicyPasswordPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isLowercaseCharactersRequired = defaults.isLowercaseCharactersRequired;
@@ -132,31 +113,45 @@ public final class AuthenticationPolicyPasswordPolicy {
     	      this.minimumPasswordLength = defaults.minimumPasswordLength;
         }
 
+        @CustomType.Setter
         public Builder isLowercaseCharactersRequired(@Nullable Boolean isLowercaseCharactersRequired) {
             this.isLowercaseCharactersRequired = isLowercaseCharactersRequired;
             return this;
         }
+        @CustomType.Setter
         public Builder isNumericCharactersRequired(@Nullable Boolean isNumericCharactersRequired) {
             this.isNumericCharactersRequired = isNumericCharactersRequired;
             return this;
         }
+        @CustomType.Setter
         public Builder isSpecialCharactersRequired(@Nullable Boolean isSpecialCharactersRequired) {
             this.isSpecialCharactersRequired = isSpecialCharactersRequired;
             return this;
         }
+        @CustomType.Setter
         public Builder isUppercaseCharactersRequired(@Nullable Boolean isUppercaseCharactersRequired) {
             this.isUppercaseCharactersRequired = isUppercaseCharactersRequired;
             return this;
         }
+        @CustomType.Setter
         public Builder isUsernameContainmentAllowed(@Nullable Boolean isUsernameContainmentAllowed) {
             this.isUsernameContainmentAllowed = isUsernameContainmentAllowed;
             return this;
         }
+        @CustomType.Setter
         public Builder minimumPasswordLength(@Nullable Integer minimumPasswordLength) {
             this.minimumPasswordLength = minimumPasswordLength;
             return this;
-        }        public AuthenticationPolicyPasswordPolicy build() {
-            return new AuthenticationPolicyPasswordPolicy(isLowercaseCharactersRequired, isNumericCharactersRequired, isSpecialCharactersRequired, isUppercaseCharactersRequired, isUsernameContainmentAllowed, minimumPasswordLength);
+        }
+        public AuthenticationPolicyPasswordPolicy build() {
+            final var o = new AuthenticationPolicyPasswordPolicy();
+            o.isLowercaseCharactersRequired = isLowercaseCharactersRequired;
+            o.isNumericCharactersRequired = isNumericCharactersRequired;
+            o.isSpecialCharactersRequired = isSpecialCharactersRequired;
+            o.isUppercaseCharactersRequired = isUppercaseCharactersRequired;
+            o.isUsernameContainmentAllowed = isUsernameContainmentAllowed;
+            o.minimumPasswordLength = minimumPasswordLength;
+            return o;
         }
     }
 }

@@ -16,49 +16,34 @@ public final class GetCertificateAuthorityCertificateAuthorityConfig {
      * @return The origin of the CA.
      * 
      */
-    private final String configType;
+    private String configType;
     /**
      * @return The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
      * 
      */
-    private final String issuerCertificateAuthorityId;
+    private String issuerCertificateAuthorityId;
     /**
      * @return The algorithm used to sign public key certificates that the CA issues.
      * 
      */
-    private final String signingAlgorithm;
+    private String signingAlgorithm;
     /**
      * @return The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
-    private final List<GetCertificateAuthorityCertificateAuthorityConfigSubject> subjects;
+    private List<GetCertificateAuthorityCertificateAuthorityConfigSubject> subjects;
     /**
      * @return An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
      * 
      */
-    private final List<GetCertificateAuthorityCertificateAuthorityConfigValidity> validities;
+    private List<GetCertificateAuthorityCertificateAuthorityConfigValidity> validities;
     /**
      * @return The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
      * 
      */
-    private final String versionName;
+    private String versionName;
 
-    @CustomType.Constructor
-    private GetCertificateAuthorityCertificateAuthorityConfig(
-        @CustomType.Parameter("configType") String configType,
-        @CustomType.Parameter("issuerCertificateAuthorityId") String issuerCertificateAuthorityId,
-        @CustomType.Parameter("signingAlgorithm") String signingAlgorithm,
-        @CustomType.Parameter("subjects") List<GetCertificateAuthorityCertificateAuthorityConfigSubject> subjects,
-        @CustomType.Parameter("validities") List<GetCertificateAuthorityCertificateAuthorityConfigValidity> validities,
-        @CustomType.Parameter("versionName") String versionName) {
-        this.configType = configType;
-        this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
-        this.signingAlgorithm = signingAlgorithm;
-        this.subjects = subjects;
-        this.validities = validities;
-        this.versionName = versionName;
-    }
-
+    private GetCertificateAuthorityCertificateAuthorityConfig() {}
     /**
      * @return The origin of the CA.
      * 
@@ -109,7 +94,7 @@ public final class GetCertificateAuthorityCertificateAuthorityConfig {
     public static Builder builder(GetCertificateAuthorityCertificateAuthorityConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String configType;
         private String issuerCertificateAuthorityId;
@@ -117,11 +102,7 @@ public final class GetCertificateAuthorityCertificateAuthorityConfig {
         private List<GetCertificateAuthorityCertificateAuthorityConfigSubject> subjects;
         private List<GetCertificateAuthorityCertificateAuthorityConfigValidity> validities;
         private String versionName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificateAuthorityCertificateAuthorityConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configType = defaults.configType;
@@ -132,18 +113,22 @@ public final class GetCertificateAuthorityCertificateAuthorityConfig {
     	      this.versionName = defaults.versionName;
         }
 
+        @CustomType.Setter
         public Builder configType(String configType) {
             this.configType = Objects.requireNonNull(configType);
             return this;
         }
+        @CustomType.Setter
         public Builder issuerCertificateAuthorityId(String issuerCertificateAuthorityId) {
             this.issuerCertificateAuthorityId = Objects.requireNonNull(issuerCertificateAuthorityId);
             return this;
         }
+        @CustomType.Setter
         public Builder signingAlgorithm(String signingAlgorithm) {
             this.signingAlgorithm = Objects.requireNonNull(signingAlgorithm);
             return this;
         }
+        @CustomType.Setter
         public Builder subjects(List<GetCertificateAuthorityCertificateAuthorityConfigSubject> subjects) {
             this.subjects = Objects.requireNonNull(subjects);
             return this;
@@ -151,6 +136,7 @@ public final class GetCertificateAuthorityCertificateAuthorityConfig {
         public Builder subjects(GetCertificateAuthorityCertificateAuthorityConfigSubject... subjects) {
             return subjects(List.of(subjects));
         }
+        @CustomType.Setter
         public Builder validities(List<GetCertificateAuthorityCertificateAuthorityConfigValidity> validities) {
             this.validities = Objects.requireNonNull(validities);
             return this;
@@ -158,11 +144,20 @@ public final class GetCertificateAuthorityCertificateAuthorityConfig {
         public Builder validities(GetCertificateAuthorityCertificateAuthorityConfigValidity... validities) {
             return validities(List.of(validities));
         }
+        @CustomType.Setter
         public Builder versionName(String versionName) {
             this.versionName = Objects.requireNonNull(versionName);
             return this;
-        }        public GetCertificateAuthorityCertificateAuthorityConfig build() {
-            return new GetCertificateAuthorityCertificateAuthorityConfig(configType, issuerCertificateAuthorityId, signingAlgorithm, subjects, validities, versionName);
+        }
+        public GetCertificateAuthorityCertificateAuthorityConfig build() {
+            final var o = new GetCertificateAuthorityCertificateAuthorityConfig();
+            o.configType = configType;
+            o.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
+            o.signingAlgorithm = signingAlgorithm;
+            o.subjects = subjects;
+            o.validities = validities;
+            o.versionName = versionName;
+            return o;
         }
     }
 }

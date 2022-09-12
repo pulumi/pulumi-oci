@@ -16,21 +16,14 @@ public final class ApplicationTraceConfig {
      * @return (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
      * 
      */
-    private final @Nullable String domainId;
+    private @Nullable String domainId;
     /**
      * @return (Updatable) Define if tracing is enabled for the resource.
      * 
      */
-    private final @Nullable Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
 
-    @CustomType.Constructor
-    private ApplicationTraceConfig(
-        @CustomType.Parameter("domainId") @Nullable String domainId,
-        @CustomType.Parameter("isEnabled") @Nullable Boolean isEnabled) {
-        this.domainId = domainId;
-        this.isEnabled = isEnabled;
-    }
-
+    private ApplicationTraceConfig() {}
     /**
      * @return (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
      * 
@@ -53,30 +46,32 @@ public final class ApplicationTraceConfig {
     public static Builder builder(ApplicationTraceConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String domainId;
         private @Nullable Boolean isEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ApplicationTraceConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.domainId = defaults.domainId;
     	      this.isEnabled = defaults.isEnabled;
         }
 
+        @CustomType.Setter
         public Builder domainId(@Nullable String domainId) {
             this.domainId = domainId;
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
             this.isEnabled = isEnabled;
             return this;
-        }        public ApplicationTraceConfig build() {
-            return new ApplicationTraceConfig(domainId, isEnabled);
+        }
+        public ApplicationTraceConfig build() {
+            final var o = new ApplicationTraceConfig();
+            o.domainId = domainId;
+            o.isEnabled = isEnabled;
+            return o;
         }
     }
 }

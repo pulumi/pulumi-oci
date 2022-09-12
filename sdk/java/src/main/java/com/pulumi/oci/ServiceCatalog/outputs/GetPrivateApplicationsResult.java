@@ -18,41 +18,26 @@ public final class GetPrivateApplicationsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the private application resides.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The name used to refer to the uploaded data.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetPrivateApplicationsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetPrivateApplicationsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of private_application_collection.
      * 
      */
-    private final List<GetPrivateApplicationsPrivateApplicationCollection> privateApplicationCollections;
-    private final @Nullable String privateApplicationId;
+    private List<GetPrivateApplicationsPrivateApplicationCollection> privateApplicationCollections;
+    private @Nullable String privateApplicationId;
 
-    @CustomType.Constructor
-    private GetPrivateApplicationsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetPrivateApplicationsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("privateApplicationCollections") List<GetPrivateApplicationsPrivateApplicationCollection> privateApplicationCollections,
-        @CustomType.Parameter("privateApplicationId") @Nullable String privateApplicationId) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.privateApplicationCollections = privateApplicationCollections;
-        this.privateApplicationId = privateApplicationId;
-    }
-
+    private GetPrivateApplicationsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the private application resides.
      * 
@@ -95,7 +80,7 @@ public final class GetPrivateApplicationsResult {
     public static Builder builder(GetPrivateApplicationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -103,11 +88,7 @@ public final class GetPrivateApplicationsResult {
         private String id;
         private List<GetPrivateApplicationsPrivateApplicationCollection> privateApplicationCollections;
         private @Nullable String privateApplicationId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPrivateApplicationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -118,14 +99,17 @@ public final class GetPrivateApplicationsResult {
     	      this.privateApplicationId = defaults.privateApplicationId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetPrivateApplicationsFilter> filters) {
             this.filters = filters;
             return this;
@@ -133,10 +117,12 @@ public final class GetPrivateApplicationsResult {
         public Builder filters(GetPrivateApplicationsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder privateApplicationCollections(List<GetPrivateApplicationsPrivateApplicationCollection> privateApplicationCollections) {
             this.privateApplicationCollections = Objects.requireNonNull(privateApplicationCollections);
             return this;
@@ -144,11 +130,20 @@ public final class GetPrivateApplicationsResult {
         public Builder privateApplicationCollections(GetPrivateApplicationsPrivateApplicationCollection... privateApplicationCollections) {
             return privateApplicationCollections(List.of(privateApplicationCollections));
         }
+        @CustomType.Setter
         public Builder privateApplicationId(@Nullable String privateApplicationId) {
             this.privateApplicationId = privateApplicationId;
             return this;
-        }        public GetPrivateApplicationsResult build() {
-            return new GetPrivateApplicationsResult(compartmentId, displayName, filters, id, privateApplicationCollections, privateApplicationId);
+        }
+        public GetPrivateApplicationsResult build() {
+            final var o = new GetPrivateApplicationsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.privateApplicationCollections = privateApplicationCollections;
+            o.privateApplicationId = privateApplicationId;
+            return o;
         }
     }
 }

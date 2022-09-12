@@ -1769,6 +1769,1834 @@ func (o MysqlBackupDbSystemSnapshotMaintenanceArrayOutput) Index(i pulumi.IntInp
 	}).(MysqlBackupDbSystemSnapshotMaintenanceOutput)
 }
 
+type MysqlConfigurationInitVariables struct {
+	// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+	LowerCaseTableNames *string `pulumi:"lowerCaseTableNames"`
+}
+
+// MysqlConfigurationInitVariablesInput is an input type that accepts MysqlConfigurationInitVariablesArgs and MysqlConfigurationInitVariablesOutput values.
+// You can construct a concrete instance of `MysqlConfigurationInitVariablesInput` via:
+//
+//	MysqlConfigurationInitVariablesArgs{...}
+type MysqlConfigurationInitVariablesInput interface {
+	pulumi.Input
+
+	ToMysqlConfigurationInitVariablesOutput() MysqlConfigurationInitVariablesOutput
+	ToMysqlConfigurationInitVariablesOutputWithContext(context.Context) MysqlConfigurationInitVariablesOutput
+}
+
+type MysqlConfigurationInitVariablesArgs struct {
+	// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+	LowerCaseTableNames pulumi.StringPtrInput `pulumi:"lowerCaseTableNames"`
+}
+
+func (MysqlConfigurationInitVariablesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlConfigurationInitVariables)(nil)).Elem()
+}
+
+func (i MysqlConfigurationInitVariablesArgs) ToMysqlConfigurationInitVariablesOutput() MysqlConfigurationInitVariablesOutput {
+	return i.ToMysqlConfigurationInitVariablesOutputWithContext(context.Background())
+}
+
+func (i MysqlConfigurationInitVariablesArgs) ToMysqlConfigurationInitVariablesOutputWithContext(ctx context.Context) MysqlConfigurationInitVariablesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationInitVariablesOutput)
+}
+
+func (i MysqlConfigurationInitVariablesArgs) ToMysqlConfigurationInitVariablesPtrOutput() MysqlConfigurationInitVariablesPtrOutput {
+	return i.ToMysqlConfigurationInitVariablesPtrOutputWithContext(context.Background())
+}
+
+func (i MysqlConfigurationInitVariablesArgs) ToMysqlConfigurationInitVariablesPtrOutputWithContext(ctx context.Context) MysqlConfigurationInitVariablesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationInitVariablesOutput).ToMysqlConfigurationInitVariablesPtrOutputWithContext(ctx)
+}
+
+// MysqlConfigurationInitVariablesPtrInput is an input type that accepts MysqlConfigurationInitVariablesArgs, MysqlConfigurationInitVariablesPtr and MysqlConfigurationInitVariablesPtrOutput values.
+// You can construct a concrete instance of `MysqlConfigurationInitVariablesPtrInput` via:
+//
+//	        MysqlConfigurationInitVariablesArgs{...}
+//
+//	or:
+//
+//	        nil
+type MysqlConfigurationInitVariablesPtrInput interface {
+	pulumi.Input
+
+	ToMysqlConfigurationInitVariablesPtrOutput() MysqlConfigurationInitVariablesPtrOutput
+	ToMysqlConfigurationInitVariablesPtrOutputWithContext(context.Context) MysqlConfigurationInitVariablesPtrOutput
+}
+
+type mysqlConfigurationInitVariablesPtrType MysqlConfigurationInitVariablesArgs
+
+func MysqlConfigurationInitVariablesPtr(v *MysqlConfigurationInitVariablesArgs) MysqlConfigurationInitVariablesPtrInput {
+	return (*mysqlConfigurationInitVariablesPtrType)(v)
+}
+
+func (*mysqlConfigurationInitVariablesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlConfigurationInitVariables)(nil)).Elem()
+}
+
+func (i *mysqlConfigurationInitVariablesPtrType) ToMysqlConfigurationInitVariablesPtrOutput() MysqlConfigurationInitVariablesPtrOutput {
+	return i.ToMysqlConfigurationInitVariablesPtrOutputWithContext(context.Background())
+}
+
+func (i *mysqlConfigurationInitVariablesPtrType) ToMysqlConfigurationInitVariablesPtrOutputWithContext(ctx context.Context) MysqlConfigurationInitVariablesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationInitVariablesPtrOutput)
+}
+
+type MysqlConfigurationInitVariablesOutput struct{ *pulumi.OutputState }
+
+func (MysqlConfigurationInitVariablesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlConfigurationInitVariables)(nil)).Elem()
+}
+
+func (o MysqlConfigurationInitVariablesOutput) ToMysqlConfigurationInitVariablesOutput() MysqlConfigurationInitVariablesOutput {
+	return o
+}
+
+func (o MysqlConfigurationInitVariablesOutput) ToMysqlConfigurationInitVariablesOutputWithContext(ctx context.Context) MysqlConfigurationInitVariablesOutput {
+	return o
+}
+
+func (o MysqlConfigurationInitVariablesOutput) ToMysqlConfigurationInitVariablesPtrOutput() MysqlConfigurationInitVariablesPtrOutput {
+	return o.ToMysqlConfigurationInitVariablesPtrOutputWithContext(context.Background())
+}
+
+func (o MysqlConfigurationInitVariablesOutput) ToMysqlConfigurationInitVariablesPtrOutputWithContext(ctx context.Context) MysqlConfigurationInitVariablesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlConfigurationInitVariables) *MysqlConfigurationInitVariables {
+		return &v
+	}).(MysqlConfigurationInitVariablesPtrOutput)
+}
+
+// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+func (o MysqlConfigurationInitVariablesOutput) LowerCaseTableNames() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationInitVariables) *string { return v.LowerCaseTableNames }).(pulumi.StringPtrOutput)
+}
+
+type MysqlConfigurationInitVariablesPtrOutput struct{ *pulumi.OutputState }
+
+func (MysqlConfigurationInitVariablesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlConfigurationInitVariables)(nil)).Elem()
+}
+
+func (o MysqlConfigurationInitVariablesPtrOutput) ToMysqlConfigurationInitVariablesPtrOutput() MysqlConfigurationInitVariablesPtrOutput {
+	return o
+}
+
+func (o MysqlConfigurationInitVariablesPtrOutput) ToMysqlConfigurationInitVariablesPtrOutputWithContext(ctx context.Context) MysqlConfigurationInitVariablesPtrOutput {
+	return o
+}
+
+func (o MysqlConfigurationInitVariablesPtrOutput) Elem() MysqlConfigurationInitVariablesOutput {
+	return o.ApplyT(func(v *MysqlConfigurationInitVariables) MysqlConfigurationInitVariables {
+		if v != nil {
+			return *v
+		}
+		var ret MysqlConfigurationInitVariables
+		return ret
+	}).(MysqlConfigurationInitVariablesOutput)
+}
+
+// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+func (o MysqlConfigurationInitVariablesPtrOutput) LowerCaseTableNames() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationInitVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LowerCaseTableNames
+	}).(pulumi.StringPtrOutput)
+}
+
+type MysqlConfigurationVariables struct {
+	// ("autocommit")
+	Autocommit *bool `pulumi:"autocommit"`
+	// If enabled, the server stores all temporary tables on disk rather than in memory.
+	BigTables *bool `pulumi:"bigTables"`
+	// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+	BinlogExpireLogsSeconds *int `pulumi:"binlogExpireLogsSeconds"`
+	// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+	BinlogRowMetadata *string `pulumi:"binlogRowMetadata"`
+	// When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+	BinlogRowValueOptions *string `pulumi:"binlogRowValueOptions"`
+	// Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+	BinlogTransactionCompression *bool `pulumi:"binlogTransactionCompression"`
+	// ("completionType")
+	CompletionType *string `pulumi:"completionType"`
+	// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
+	ConnectTimeout *int `pulumi:"connectTimeout"`
+	// Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+	ConnectionMemoryChunkSize *int `pulumi:"connectionMemoryChunkSize"`
+	// Set the maximum amount of memory that can be used by a single user connection.
+	ConnectionMemoryLimit *string `pulumi:"connectionMemoryLimit"`
+	// ("cteMaxRecursionDepth")
+	CteMaxRecursionDepth *string `pulumi:"cteMaxRecursionDepth"`
+	// ("defaultAuthenticationPlugin")
+	DefaultAuthenticationPlugin *string `pulumi:"defaultAuthenticationPlugin"`
+	// ("foreignKeyChecks")
+	ForeignKeyChecks *bool `pulumi:"foreignKeyChecks"`
+	// ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
+	GeneratedRandomPasswordLength *int `pulumi:"generatedRandomPasswordLength"`
+	// Set the total amount of memory that can be used by all user connections.
+	GlobalConnectionMemoryLimit *string `pulumi:"globalConnectionMemoryLimit"`
+	// Determines whether the MySQL server calculates Global_connection_memory.
+	GlobalConnectionMemoryTracking *bool `pulumi:"globalConnectionMemoryTracking"`
+	// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
+	// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
+	// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+	// * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+	// * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+	GroupReplicationConsistency *string `pulumi:"groupReplicationConsistency"`
+	// ("informationSchemaStatsExpiry")
+	InformationSchemaStatsExpiry *int `pulumi:"informationSchemaStatsExpiry"`
+	// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+	InnodbBufferPoolDumpPct *int `pulumi:"innodbBufferPoolDumpPct"`
+	// ("innodbBufferPoolInstances")
+	InnodbBufferPoolInstances *int `pulumi:"innodbBufferPoolInstances"`
+	// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+	InnodbBufferPoolSize *string `pulumi:"innodbBufferPoolSize"`
+	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+	InnodbDdlBufferSize *string `pulumi:"innodbDdlBufferSize"`
+	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+	InnodbDdlThreads *int `pulumi:"innodbDdlThreads"`
+	// ("innodbFtEnableStopword")
+	InnodbFtEnableStopword *bool `pulumi:"innodbFtEnableStopword"`
+	// ("innodbFtMaxTokenSize")
+	InnodbFtMaxTokenSize *int `pulumi:"innodbFtMaxTokenSize"`
+	// ("innodbFtMinTokenSize")
+	InnodbFtMinTokenSize *int `pulumi:"innodbFtMinTokenSize"`
+	// ("innodbFtNumWordOptimize")
+	InnodbFtNumWordOptimize *int `pulumi:"innodbFtNumWordOptimize"`
+	// ("innodbFtResultCacheLimit")
+	InnodbFtResultCacheLimit *string `pulumi:"innodbFtResultCacheLimit"`
+	// ("innodbFtServerStopwordTable")
+	InnodbFtServerStopwordTable *string `pulumi:"innodbFtServerStopwordTable"`
+	// ("innodbLockWaitTimeout")
+	InnodbLockWaitTimeout *int `pulumi:"innodbLockWaitTimeout"`
+	// Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+	InnodbLogWriterThreads *bool `pulumi:"innodbLogWriterThreads"`
+	// The desired maximum purge lag in terms of transactions.
+	InnodbMaxPurgeLag *string `pulumi:"innodbMaxPurgeLag"`
+	// The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
+	InnodbMaxPurgeLagDelay *int `pulumi:"innodbMaxPurgeLagDelay"`
+	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+	InnodbStatsPersistentSamplePages *string `pulumi:"innodbStatsPersistentSamplePages"`
+	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+	InnodbStatsTransientSamplePages *string `pulumi:"innodbStatsTransientSamplePages"`
+	// The number of seconds the server waits for activity on an interactive connection before closing it.
+	InteractiveTimeout *int `pulumi:"interactiveTimeout"`
+	// ("localInfile")
+	LocalInfile *bool `pulumi:"localInfile"`
+	// ("mandatoryRoles")
+	MandatoryRoles *string `pulumi:"mandatoryRoles"`
+	// The maximum size of one packet or any generated/intermediate string.
+	MaxAllowedPacket *int `pulumi:"maxAllowedPacket"`
+	// Sets the size of the transaction cache.
+	MaxBinlogCacheSize *string `pulumi:"maxBinlogCacheSize"`
+	// ("maxConnectErrors")
+	MaxConnectErrors *string `pulumi:"maxConnectErrors"`
+	// ("maxConnections")
+	MaxConnections *int `pulumi:"maxConnections"`
+	// ("maxExecutionTime")
+	MaxExecutionTime *string `pulumi:"maxExecutionTime"`
+	// This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+	MaxHeapTableSize *string `pulumi:"maxHeapTableSize"`
+	// ("maxPreparedStmtCount")
+	MaxPreparedStmtCount *int `pulumi:"maxPreparedStmtCount"`
+	// ("mysqlFirewallMode")
+	MysqlFirewallMode *bool `pulumi:"mysqlFirewallMode"`
+	// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+	//
+	// Deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
+	MysqlZstdDefaultCompressionLevel *int `pulumi:"mysqlZstdDefaultCompressionLevel"`
+	// The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+	MysqlxConnectTimeout *int `pulumi:"mysqlxConnectTimeout"`
+	// Set the default compression level for the deflate algorithm. ("mysqlxDeflateDefaultCompressionLevel")
+	MysqlxDeflateDefaultCompressionLevel *int `pulumi:"mysqlxDeflateDefaultCompressionLevel"`
+	// Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlxDeflateMaxClientCompressionLevel")
+	MysqlxDeflateMaxClientCompressionLevel *int `pulumi:"mysqlxDeflateMaxClientCompressionLevel"`
+	// ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
+	MysqlxDocumentIdUniquePrefix *int `pulumi:"mysqlxDocumentIdUniquePrefix"`
+	// ("mysqlxEnableHelloNotice") DEPRECATED -- variable should not be settable and will be ignored
+	MysqlxEnableHelloNotice *bool `pulumi:"mysqlxEnableHelloNotice"`
+	// ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
+	MysqlxIdleWorkerThreadTimeout *int `pulumi:"mysqlxIdleWorkerThreadTimeout"`
+	// The number of seconds to wait for interactive clients to timeout.
+	MysqlxInteractiveTimeout *int `pulumi:"mysqlxInteractiveTimeout"`
+	// Set the default compression level for the lz4 algorithm. ("mysqlxLz4DefaultCompressionLevel")
+	MysqlxLz4defaultCompressionLevel *int `pulumi:"mysqlxLz4defaultCompressionLevel"`
+	// Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlxLz4MaxClientCompressionLevel")
+	MysqlxLz4maxClientCompressionLevel *int `pulumi:"mysqlxLz4maxClientCompressionLevel"`
+	// The maximum size of network packets that can be received by X Plugin.
+	MysqlxMaxAllowedPacket *int `pulumi:"mysqlxMaxAllowedPacket"`
+	// ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
+	MysqlxMinWorkerThreads *int `pulumi:"mysqlxMinWorkerThreads"`
+	// The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+	MysqlxReadTimeout *int `pulumi:"mysqlxReadTimeout"`
+	// The number of seconds that X Plugin waits for activity on a connection.
+	MysqlxWaitTimeout *int `pulumi:"mysqlxWaitTimeout"`
+	// The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+	MysqlxWriteTimeout *int `pulumi:"mysqlxWriteTimeout"`
+	// Set the default compression level for the zstd algorithm. ("mysqlxZstdDefaultCompressionLevel")
+	MysqlxZstdDefaultCompressionLevel *int `pulumi:"mysqlxZstdDefaultCompressionLevel"`
+	// Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlxZstdMaxClientCompressionLevel")
+	MysqlxZstdMaxClientCompressionLevel *int `pulumi:"mysqlxZstdMaxClientCompressionLevel"`
+	// The number of seconds to wait for more data from a connection before aborting the read.
+	NetReadTimeout *int `pulumi:"netReadTimeout"`
+	// The number of seconds to wait for a block to be written to a connection before aborting the write.
+	NetWriteTimeout *int `pulumi:"netWriteTimeout"`
+	// ("parserMaxMemSize")
+	ParserMaxMemSize *string `pulumi:"parserMaxMemSize"`
+	// ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
+	QueryAllocBlockSize *string `pulumi:"queryAllocBlockSize"`
+	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+	QueryPreallocSize *string `pulumi:"queryPreallocSize"`
+	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+	RegexpTimeLimit *int `pulumi:"regexpTimeLimit"`
+	// Each session that must perform a sort allocates a buffer of this size.
+	SortBufferSize *string `pulumi:"sortBufferSize"`
+	// ("sqlMode")
+	SqlMode *string `pulumi:"sqlMode"`
+	// ("sqlRequirePrimaryKey")
+	SqlRequirePrimaryKey *bool `pulumi:"sqlRequirePrimaryKey"`
+	// ("sqlWarnings")
+	SqlWarnings *bool `pulumi:"sqlWarnings"`
+	// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+	ThreadPoolDedicatedListeners *bool `pulumi:"threadPoolDedicatedListeners"`
+	// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+	ThreadPoolMaxTransactionsLimit *int `pulumi:"threadPoolMaxTransactionsLimit"`
+	// Initializes the time zone for each client that connects.
+	TimeZone *string `pulumi:"timeZone"`
+	// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+	TmpTableSize *string `pulumi:"tmpTableSize"`
+	// ("transactionIsolation")
+	TransactionIsolation *string `pulumi:"transactionIsolation"`
+	// The number of seconds the server waits for activity on a noninteractive connection before closing it.
+	WaitTimeout *int `pulumi:"waitTimeout"`
+}
+
+// MysqlConfigurationVariablesInput is an input type that accepts MysqlConfigurationVariablesArgs and MysqlConfigurationVariablesOutput values.
+// You can construct a concrete instance of `MysqlConfigurationVariablesInput` via:
+//
+//	MysqlConfigurationVariablesArgs{...}
+type MysqlConfigurationVariablesInput interface {
+	pulumi.Input
+
+	ToMysqlConfigurationVariablesOutput() MysqlConfigurationVariablesOutput
+	ToMysqlConfigurationVariablesOutputWithContext(context.Context) MysqlConfigurationVariablesOutput
+}
+
+type MysqlConfigurationVariablesArgs struct {
+	// ("autocommit")
+	Autocommit pulumi.BoolPtrInput `pulumi:"autocommit"`
+	// If enabled, the server stores all temporary tables on disk rather than in memory.
+	BigTables pulumi.BoolPtrInput `pulumi:"bigTables"`
+	// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+	BinlogExpireLogsSeconds pulumi.IntPtrInput `pulumi:"binlogExpireLogsSeconds"`
+	// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+	BinlogRowMetadata pulumi.StringPtrInput `pulumi:"binlogRowMetadata"`
+	// When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+	BinlogRowValueOptions pulumi.StringPtrInput `pulumi:"binlogRowValueOptions"`
+	// Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+	BinlogTransactionCompression pulumi.BoolPtrInput `pulumi:"binlogTransactionCompression"`
+	// ("completionType")
+	CompletionType pulumi.StringPtrInput `pulumi:"completionType"`
+	// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
+	ConnectTimeout pulumi.IntPtrInput `pulumi:"connectTimeout"`
+	// Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+	ConnectionMemoryChunkSize pulumi.IntPtrInput `pulumi:"connectionMemoryChunkSize"`
+	// Set the maximum amount of memory that can be used by a single user connection.
+	ConnectionMemoryLimit pulumi.StringPtrInput `pulumi:"connectionMemoryLimit"`
+	// ("cteMaxRecursionDepth")
+	CteMaxRecursionDepth pulumi.StringPtrInput `pulumi:"cteMaxRecursionDepth"`
+	// ("defaultAuthenticationPlugin")
+	DefaultAuthenticationPlugin pulumi.StringPtrInput `pulumi:"defaultAuthenticationPlugin"`
+	// ("foreignKeyChecks")
+	ForeignKeyChecks pulumi.BoolPtrInput `pulumi:"foreignKeyChecks"`
+	// ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
+	GeneratedRandomPasswordLength pulumi.IntPtrInput `pulumi:"generatedRandomPasswordLength"`
+	// Set the total amount of memory that can be used by all user connections.
+	GlobalConnectionMemoryLimit pulumi.StringPtrInput `pulumi:"globalConnectionMemoryLimit"`
+	// Determines whether the MySQL server calculates Global_connection_memory.
+	GlobalConnectionMemoryTracking pulumi.BoolPtrInput `pulumi:"globalConnectionMemoryTracking"`
+	// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
+	// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
+	// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+	// * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+	// * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+	GroupReplicationConsistency pulumi.StringPtrInput `pulumi:"groupReplicationConsistency"`
+	// ("informationSchemaStatsExpiry")
+	InformationSchemaStatsExpiry pulumi.IntPtrInput `pulumi:"informationSchemaStatsExpiry"`
+	// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+	InnodbBufferPoolDumpPct pulumi.IntPtrInput `pulumi:"innodbBufferPoolDumpPct"`
+	// ("innodbBufferPoolInstances")
+	InnodbBufferPoolInstances pulumi.IntPtrInput `pulumi:"innodbBufferPoolInstances"`
+	// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+	InnodbBufferPoolSize pulumi.StringPtrInput `pulumi:"innodbBufferPoolSize"`
+	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+	InnodbDdlBufferSize pulumi.StringPtrInput `pulumi:"innodbDdlBufferSize"`
+	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+	InnodbDdlThreads pulumi.IntPtrInput `pulumi:"innodbDdlThreads"`
+	// ("innodbFtEnableStopword")
+	InnodbFtEnableStopword pulumi.BoolPtrInput `pulumi:"innodbFtEnableStopword"`
+	// ("innodbFtMaxTokenSize")
+	InnodbFtMaxTokenSize pulumi.IntPtrInput `pulumi:"innodbFtMaxTokenSize"`
+	// ("innodbFtMinTokenSize")
+	InnodbFtMinTokenSize pulumi.IntPtrInput `pulumi:"innodbFtMinTokenSize"`
+	// ("innodbFtNumWordOptimize")
+	InnodbFtNumWordOptimize pulumi.IntPtrInput `pulumi:"innodbFtNumWordOptimize"`
+	// ("innodbFtResultCacheLimit")
+	InnodbFtResultCacheLimit pulumi.StringPtrInput `pulumi:"innodbFtResultCacheLimit"`
+	// ("innodbFtServerStopwordTable")
+	InnodbFtServerStopwordTable pulumi.StringPtrInput `pulumi:"innodbFtServerStopwordTable"`
+	// ("innodbLockWaitTimeout")
+	InnodbLockWaitTimeout pulumi.IntPtrInput `pulumi:"innodbLockWaitTimeout"`
+	// Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+	InnodbLogWriterThreads pulumi.BoolPtrInput `pulumi:"innodbLogWriterThreads"`
+	// The desired maximum purge lag in terms of transactions.
+	InnodbMaxPurgeLag pulumi.StringPtrInput `pulumi:"innodbMaxPurgeLag"`
+	// The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
+	InnodbMaxPurgeLagDelay pulumi.IntPtrInput `pulumi:"innodbMaxPurgeLagDelay"`
+	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+	InnodbStatsPersistentSamplePages pulumi.StringPtrInput `pulumi:"innodbStatsPersistentSamplePages"`
+	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+	InnodbStatsTransientSamplePages pulumi.StringPtrInput `pulumi:"innodbStatsTransientSamplePages"`
+	// The number of seconds the server waits for activity on an interactive connection before closing it.
+	InteractiveTimeout pulumi.IntPtrInput `pulumi:"interactiveTimeout"`
+	// ("localInfile")
+	LocalInfile pulumi.BoolPtrInput `pulumi:"localInfile"`
+	// ("mandatoryRoles")
+	MandatoryRoles pulumi.StringPtrInput `pulumi:"mandatoryRoles"`
+	// The maximum size of one packet or any generated/intermediate string.
+	MaxAllowedPacket pulumi.IntPtrInput `pulumi:"maxAllowedPacket"`
+	// Sets the size of the transaction cache.
+	MaxBinlogCacheSize pulumi.StringPtrInput `pulumi:"maxBinlogCacheSize"`
+	// ("maxConnectErrors")
+	MaxConnectErrors pulumi.StringPtrInput `pulumi:"maxConnectErrors"`
+	// ("maxConnections")
+	MaxConnections pulumi.IntPtrInput `pulumi:"maxConnections"`
+	// ("maxExecutionTime")
+	MaxExecutionTime pulumi.StringPtrInput `pulumi:"maxExecutionTime"`
+	// This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+	MaxHeapTableSize pulumi.StringPtrInput `pulumi:"maxHeapTableSize"`
+	// ("maxPreparedStmtCount")
+	MaxPreparedStmtCount pulumi.IntPtrInput `pulumi:"maxPreparedStmtCount"`
+	// ("mysqlFirewallMode")
+	MysqlFirewallMode pulumi.BoolPtrInput `pulumi:"mysqlFirewallMode"`
+	// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+	//
+	// Deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
+	MysqlZstdDefaultCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlZstdDefaultCompressionLevel"`
+	// The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+	MysqlxConnectTimeout pulumi.IntPtrInput `pulumi:"mysqlxConnectTimeout"`
+	// Set the default compression level for the deflate algorithm. ("mysqlxDeflateDefaultCompressionLevel")
+	MysqlxDeflateDefaultCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlxDeflateDefaultCompressionLevel"`
+	// Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlxDeflateMaxClientCompressionLevel")
+	MysqlxDeflateMaxClientCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlxDeflateMaxClientCompressionLevel"`
+	// ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
+	MysqlxDocumentIdUniquePrefix pulumi.IntPtrInput `pulumi:"mysqlxDocumentIdUniquePrefix"`
+	// ("mysqlxEnableHelloNotice") DEPRECATED -- variable should not be settable and will be ignored
+	MysqlxEnableHelloNotice pulumi.BoolPtrInput `pulumi:"mysqlxEnableHelloNotice"`
+	// ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
+	MysqlxIdleWorkerThreadTimeout pulumi.IntPtrInput `pulumi:"mysqlxIdleWorkerThreadTimeout"`
+	// The number of seconds to wait for interactive clients to timeout.
+	MysqlxInteractiveTimeout pulumi.IntPtrInput `pulumi:"mysqlxInteractiveTimeout"`
+	// Set the default compression level for the lz4 algorithm. ("mysqlxLz4DefaultCompressionLevel")
+	MysqlxLz4defaultCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlxLz4defaultCompressionLevel"`
+	// Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlxLz4MaxClientCompressionLevel")
+	MysqlxLz4maxClientCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlxLz4maxClientCompressionLevel"`
+	// The maximum size of network packets that can be received by X Plugin.
+	MysqlxMaxAllowedPacket pulumi.IntPtrInput `pulumi:"mysqlxMaxAllowedPacket"`
+	// ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
+	MysqlxMinWorkerThreads pulumi.IntPtrInput `pulumi:"mysqlxMinWorkerThreads"`
+	// The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+	MysqlxReadTimeout pulumi.IntPtrInput `pulumi:"mysqlxReadTimeout"`
+	// The number of seconds that X Plugin waits for activity on a connection.
+	MysqlxWaitTimeout pulumi.IntPtrInput `pulumi:"mysqlxWaitTimeout"`
+	// The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+	MysqlxWriteTimeout pulumi.IntPtrInput `pulumi:"mysqlxWriteTimeout"`
+	// Set the default compression level for the zstd algorithm. ("mysqlxZstdDefaultCompressionLevel")
+	MysqlxZstdDefaultCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlxZstdDefaultCompressionLevel"`
+	// Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlxZstdMaxClientCompressionLevel")
+	MysqlxZstdMaxClientCompressionLevel pulumi.IntPtrInput `pulumi:"mysqlxZstdMaxClientCompressionLevel"`
+	// The number of seconds to wait for more data from a connection before aborting the read.
+	NetReadTimeout pulumi.IntPtrInput `pulumi:"netReadTimeout"`
+	// The number of seconds to wait for a block to be written to a connection before aborting the write.
+	NetWriteTimeout pulumi.IntPtrInput `pulumi:"netWriteTimeout"`
+	// ("parserMaxMemSize")
+	ParserMaxMemSize pulumi.StringPtrInput `pulumi:"parserMaxMemSize"`
+	// ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
+	QueryAllocBlockSize pulumi.StringPtrInput `pulumi:"queryAllocBlockSize"`
+	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+	QueryPreallocSize pulumi.StringPtrInput `pulumi:"queryPreallocSize"`
+	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+	RegexpTimeLimit pulumi.IntPtrInput `pulumi:"regexpTimeLimit"`
+	// Each session that must perform a sort allocates a buffer of this size.
+	SortBufferSize pulumi.StringPtrInput `pulumi:"sortBufferSize"`
+	// ("sqlMode")
+	SqlMode pulumi.StringPtrInput `pulumi:"sqlMode"`
+	// ("sqlRequirePrimaryKey")
+	SqlRequirePrimaryKey pulumi.BoolPtrInput `pulumi:"sqlRequirePrimaryKey"`
+	// ("sqlWarnings")
+	SqlWarnings pulumi.BoolPtrInput `pulumi:"sqlWarnings"`
+	// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+	ThreadPoolDedicatedListeners pulumi.BoolPtrInput `pulumi:"threadPoolDedicatedListeners"`
+	// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+	ThreadPoolMaxTransactionsLimit pulumi.IntPtrInput `pulumi:"threadPoolMaxTransactionsLimit"`
+	// Initializes the time zone for each client that connects.
+	TimeZone pulumi.StringPtrInput `pulumi:"timeZone"`
+	// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+	TmpTableSize pulumi.StringPtrInput `pulumi:"tmpTableSize"`
+	// ("transactionIsolation")
+	TransactionIsolation pulumi.StringPtrInput `pulumi:"transactionIsolation"`
+	// The number of seconds the server waits for activity on a noninteractive connection before closing it.
+	WaitTimeout pulumi.IntPtrInput `pulumi:"waitTimeout"`
+}
+
+func (MysqlConfigurationVariablesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlConfigurationVariables)(nil)).Elem()
+}
+
+func (i MysqlConfigurationVariablesArgs) ToMysqlConfigurationVariablesOutput() MysqlConfigurationVariablesOutput {
+	return i.ToMysqlConfigurationVariablesOutputWithContext(context.Background())
+}
+
+func (i MysqlConfigurationVariablesArgs) ToMysqlConfigurationVariablesOutputWithContext(ctx context.Context) MysqlConfigurationVariablesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationVariablesOutput)
+}
+
+func (i MysqlConfigurationVariablesArgs) ToMysqlConfigurationVariablesPtrOutput() MysqlConfigurationVariablesPtrOutput {
+	return i.ToMysqlConfigurationVariablesPtrOutputWithContext(context.Background())
+}
+
+func (i MysqlConfigurationVariablesArgs) ToMysqlConfigurationVariablesPtrOutputWithContext(ctx context.Context) MysqlConfigurationVariablesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationVariablesOutput).ToMysqlConfigurationVariablesPtrOutputWithContext(ctx)
+}
+
+// MysqlConfigurationVariablesPtrInput is an input type that accepts MysqlConfigurationVariablesArgs, MysqlConfigurationVariablesPtr and MysqlConfigurationVariablesPtrOutput values.
+// You can construct a concrete instance of `MysqlConfigurationVariablesPtrInput` via:
+//
+//	        MysqlConfigurationVariablesArgs{...}
+//
+//	or:
+//
+//	        nil
+type MysqlConfigurationVariablesPtrInput interface {
+	pulumi.Input
+
+	ToMysqlConfigurationVariablesPtrOutput() MysqlConfigurationVariablesPtrOutput
+	ToMysqlConfigurationVariablesPtrOutputWithContext(context.Context) MysqlConfigurationVariablesPtrOutput
+}
+
+type mysqlConfigurationVariablesPtrType MysqlConfigurationVariablesArgs
+
+func MysqlConfigurationVariablesPtr(v *MysqlConfigurationVariablesArgs) MysqlConfigurationVariablesPtrInput {
+	return (*mysqlConfigurationVariablesPtrType)(v)
+}
+
+func (*mysqlConfigurationVariablesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlConfigurationVariables)(nil)).Elem()
+}
+
+func (i *mysqlConfigurationVariablesPtrType) ToMysqlConfigurationVariablesPtrOutput() MysqlConfigurationVariablesPtrOutput {
+	return i.ToMysqlConfigurationVariablesPtrOutputWithContext(context.Background())
+}
+
+func (i *mysqlConfigurationVariablesPtrType) ToMysqlConfigurationVariablesPtrOutputWithContext(ctx context.Context) MysqlConfigurationVariablesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlConfigurationVariablesPtrOutput)
+}
+
+type MysqlConfigurationVariablesOutput struct{ *pulumi.OutputState }
+
+func (MysqlConfigurationVariablesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlConfigurationVariables)(nil)).Elem()
+}
+
+func (o MysqlConfigurationVariablesOutput) ToMysqlConfigurationVariablesOutput() MysqlConfigurationVariablesOutput {
+	return o
+}
+
+func (o MysqlConfigurationVariablesOutput) ToMysqlConfigurationVariablesOutputWithContext(ctx context.Context) MysqlConfigurationVariablesOutput {
+	return o
+}
+
+func (o MysqlConfigurationVariablesOutput) ToMysqlConfigurationVariablesPtrOutput() MysqlConfigurationVariablesPtrOutput {
+	return o.ToMysqlConfigurationVariablesPtrOutputWithContext(context.Background())
+}
+
+func (o MysqlConfigurationVariablesOutput) ToMysqlConfigurationVariablesPtrOutputWithContext(ctx context.Context) MysqlConfigurationVariablesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlConfigurationVariables) *MysqlConfigurationVariables {
+		return &v
+	}).(MysqlConfigurationVariablesPtrOutput)
+}
+
+// ("autocommit")
+func (o MysqlConfigurationVariablesOutput) Autocommit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.Autocommit }).(pulumi.BoolPtrOutput)
+}
+
+// If enabled, the server stores all temporary tables on disk rather than in memory.
+func (o MysqlConfigurationVariablesOutput) BigTables() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.BigTables }).(pulumi.BoolPtrOutput)
+}
+
+// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+func (o MysqlConfigurationVariablesOutput) BinlogExpireLogsSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.BinlogExpireLogsSeconds }).(pulumi.IntPtrOutput)
+}
+
+// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+func (o MysqlConfigurationVariablesOutput) BinlogRowMetadata() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.BinlogRowMetadata }).(pulumi.StringPtrOutput)
+}
+
+// When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+func (o MysqlConfigurationVariablesOutput) BinlogRowValueOptions() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.BinlogRowValueOptions }).(pulumi.StringPtrOutput)
+}
+
+// Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+func (o MysqlConfigurationVariablesOutput) BinlogTransactionCompression() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.BinlogTransactionCompression }).(pulumi.BoolPtrOutput)
+}
+
+// ("completionType")
+func (o MysqlConfigurationVariablesOutput) CompletionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.CompletionType }).(pulumi.StringPtrOutput)
+}
+
+// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
+func (o MysqlConfigurationVariablesOutput) ConnectTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.ConnectTimeout }).(pulumi.IntPtrOutput)
+}
+
+// Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+func (o MysqlConfigurationVariablesOutput) ConnectionMemoryChunkSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.ConnectionMemoryChunkSize }).(pulumi.IntPtrOutput)
+}
+
+// Set the maximum amount of memory that can be used by a single user connection.
+func (o MysqlConfigurationVariablesOutput) ConnectionMemoryLimit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.ConnectionMemoryLimit }).(pulumi.StringPtrOutput)
+}
+
+// ("cteMaxRecursionDepth")
+func (o MysqlConfigurationVariablesOutput) CteMaxRecursionDepth() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.CteMaxRecursionDepth }).(pulumi.StringPtrOutput)
+}
+
+// ("defaultAuthenticationPlugin")
+func (o MysqlConfigurationVariablesOutput) DefaultAuthenticationPlugin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.DefaultAuthenticationPlugin }).(pulumi.StringPtrOutput)
+}
+
+// ("foreignKeyChecks")
+func (o MysqlConfigurationVariablesOutput) ForeignKeyChecks() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.ForeignKeyChecks }).(pulumi.BoolPtrOutput)
+}
+
+// ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o MysqlConfigurationVariablesOutput) GeneratedRandomPasswordLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.GeneratedRandomPasswordLength }).(pulumi.IntPtrOutput)
+}
+
+// Set the total amount of memory that can be used by all user connections.
+func (o MysqlConfigurationVariablesOutput) GlobalConnectionMemoryLimit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.GlobalConnectionMemoryLimit }).(pulumi.StringPtrOutput)
+}
+
+// Determines whether the MySQL server calculates Global_connection_memory.
+func (o MysqlConfigurationVariablesOutput) GlobalConnectionMemoryTracking() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.GlobalConnectionMemoryTracking }).(pulumi.BoolPtrOutput)
+}
+
+// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
+// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
+// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+// * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+// * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+func (o MysqlConfigurationVariablesOutput) GroupReplicationConsistency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.GroupReplicationConsistency }).(pulumi.StringPtrOutput)
+}
+
+// ("informationSchemaStatsExpiry")
+func (o MysqlConfigurationVariablesOutput) InformationSchemaStatsExpiry() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.InformationSchemaStatsExpiry }).(pulumi.IntPtrOutput)
+}
+
+// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+func (o MysqlConfigurationVariablesOutput) InnodbBufferPoolDumpPct() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.InnodbBufferPoolDumpPct }).(pulumi.IntPtrOutput)
+}
+
+// ("innodbBufferPoolInstances")
+func (o MysqlConfigurationVariablesOutput) InnodbBufferPoolInstances() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.InnodbBufferPoolInstances }).(pulumi.IntPtrOutput)
+}
+
+// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+func (o MysqlConfigurationVariablesOutput) InnodbBufferPoolSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.InnodbBufferPoolSize }).(pulumi.StringPtrOutput)
+}
+
+// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+func (o MysqlConfigurationVariablesOutput) InnodbDdlBufferSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.InnodbDdlBufferSize }).(pulumi.StringPtrOutput)
+}
+
+// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+func (o MysqlConfigurationVariablesOutput) InnodbDdlThreads() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.InnodbDdlThreads }).(pulumi.IntPtrOutput)
+}
+
+// ("innodbFtEnableStopword")
+func (o MysqlConfigurationVariablesOutput) InnodbFtEnableStopword() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.InnodbFtEnableStopword }).(pulumi.BoolPtrOutput)
+}
+
+// ("innodbFtMaxTokenSize")
+func (o MysqlConfigurationVariablesOutput) InnodbFtMaxTokenSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.InnodbFtMaxTokenSize }).(pulumi.IntPtrOutput)
+}
+
+// ("innodbFtMinTokenSize")
+func (o MysqlConfigurationVariablesOutput) InnodbFtMinTokenSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.InnodbFtMinTokenSize }).(pulumi.IntPtrOutput)
+}
+
+// ("innodbFtNumWordOptimize")
+func (o MysqlConfigurationVariablesOutput) InnodbFtNumWordOptimize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.InnodbFtNumWordOptimize }).(pulumi.IntPtrOutput)
+}
+
+// ("innodbFtResultCacheLimit")
+func (o MysqlConfigurationVariablesOutput) InnodbFtResultCacheLimit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.InnodbFtResultCacheLimit }).(pulumi.StringPtrOutput)
+}
+
+// ("innodbFtServerStopwordTable")
+func (o MysqlConfigurationVariablesOutput) InnodbFtServerStopwordTable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.InnodbFtServerStopwordTable }).(pulumi.StringPtrOutput)
+}
+
+// ("innodbLockWaitTimeout")
+func (o MysqlConfigurationVariablesOutput) InnodbLockWaitTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.InnodbLockWaitTimeout }).(pulumi.IntPtrOutput)
+}
+
+// Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+func (o MysqlConfigurationVariablesOutput) InnodbLogWriterThreads() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.InnodbLogWriterThreads }).(pulumi.BoolPtrOutput)
+}
+
+// The desired maximum purge lag in terms of transactions.
+func (o MysqlConfigurationVariablesOutput) InnodbMaxPurgeLag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.InnodbMaxPurgeLag }).(pulumi.StringPtrOutput)
+}
+
+// The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
+func (o MysqlConfigurationVariablesOutput) InnodbMaxPurgeLagDelay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.InnodbMaxPurgeLagDelay }).(pulumi.IntPtrOutput)
+}
+
+// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+func (o MysqlConfigurationVariablesOutput) InnodbStatsPersistentSamplePages() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.InnodbStatsPersistentSamplePages }).(pulumi.StringPtrOutput)
+}
+
+// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+func (o MysqlConfigurationVariablesOutput) InnodbStatsTransientSamplePages() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.InnodbStatsTransientSamplePages }).(pulumi.StringPtrOutput)
+}
+
+// The number of seconds the server waits for activity on an interactive connection before closing it.
+func (o MysqlConfigurationVariablesOutput) InteractiveTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.InteractiveTimeout }).(pulumi.IntPtrOutput)
+}
+
+// ("localInfile")
+func (o MysqlConfigurationVariablesOutput) LocalInfile() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.LocalInfile }).(pulumi.BoolPtrOutput)
+}
+
+// ("mandatoryRoles")
+func (o MysqlConfigurationVariablesOutput) MandatoryRoles() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.MandatoryRoles }).(pulumi.StringPtrOutput)
+}
+
+// The maximum size of one packet or any generated/intermediate string.
+func (o MysqlConfigurationVariablesOutput) MaxAllowedPacket() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MaxAllowedPacket }).(pulumi.IntPtrOutput)
+}
+
+// Sets the size of the transaction cache.
+func (o MysqlConfigurationVariablesOutput) MaxBinlogCacheSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.MaxBinlogCacheSize }).(pulumi.StringPtrOutput)
+}
+
+// ("maxConnectErrors")
+func (o MysqlConfigurationVariablesOutput) MaxConnectErrors() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.MaxConnectErrors }).(pulumi.StringPtrOutput)
+}
+
+// ("maxConnections")
+func (o MysqlConfigurationVariablesOutput) MaxConnections() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MaxConnections }).(pulumi.IntPtrOutput)
+}
+
+// ("maxExecutionTime")
+func (o MysqlConfigurationVariablesOutput) MaxExecutionTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.MaxExecutionTime }).(pulumi.StringPtrOutput)
+}
+
+// This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+func (o MysqlConfigurationVariablesOutput) MaxHeapTableSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.MaxHeapTableSize }).(pulumi.StringPtrOutput)
+}
+
+// ("maxPreparedStmtCount")
+func (o MysqlConfigurationVariablesOutput) MaxPreparedStmtCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MaxPreparedStmtCount }).(pulumi.IntPtrOutput)
+}
+
+// ("mysqlFirewallMode")
+func (o MysqlConfigurationVariablesOutput) MysqlFirewallMode() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.MysqlFirewallMode }).(pulumi.BoolPtrOutput)
+}
+
+// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+//
+// Deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o MysqlConfigurationVariablesOutput) MysqlZstdDefaultCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MysqlZstdDefaultCompressionLevel }).(pulumi.IntPtrOutput)
+}
+
+// The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+func (o MysqlConfigurationVariablesOutput) MysqlxConnectTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MysqlxConnectTimeout }).(pulumi.IntPtrOutput)
+}
+
+// Set the default compression level for the deflate algorithm. ("mysqlxDeflateDefaultCompressionLevel")
+func (o MysqlConfigurationVariablesOutput) MysqlxDeflateDefaultCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MysqlxDeflateDefaultCompressionLevel }).(pulumi.IntPtrOutput)
+}
+
+// Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlxDeflateMaxClientCompressionLevel")
+func (o MysqlConfigurationVariablesOutput) MysqlxDeflateMaxClientCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MysqlxDeflateMaxClientCompressionLevel }).(pulumi.IntPtrOutput)
+}
+
+// ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o MysqlConfigurationVariablesOutput) MysqlxDocumentIdUniquePrefix() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MysqlxDocumentIdUniquePrefix }).(pulumi.IntPtrOutput)
+}
+
+// ("mysqlxEnableHelloNotice") DEPRECATED -- variable should not be settable and will be ignored
+func (o MysqlConfigurationVariablesOutput) MysqlxEnableHelloNotice() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.MysqlxEnableHelloNotice }).(pulumi.BoolPtrOutput)
+}
+
+// ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o MysqlConfigurationVariablesOutput) MysqlxIdleWorkerThreadTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MysqlxIdleWorkerThreadTimeout }).(pulumi.IntPtrOutput)
+}
+
+// The number of seconds to wait for interactive clients to timeout.
+func (o MysqlConfigurationVariablesOutput) MysqlxInteractiveTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MysqlxInteractiveTimeout }).(pulumi.IntPtrOutput)
+}
+
+// Set the default compression level for the lz4 algorithm. ("mysqlxLz4DefaultCompressionLevel")
+func (o MysqlConfigurationVariablesOutput) MysqlxLz4defaultCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MysqlxLz4defaultCompressionLevel }).(pulumi.IntPtrOutput)
+}
+
+// Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlxLz4MaxClientCompressionLevel")
+func (o MysqlConfigurationVariablesOutput) MysqlxLz4maxClientCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MysqlxLz4maxClientCompressionLevel }).(pulumi.IntPtrOutput)
+}
+
+// The maximum size of network packets that can be received by X Plugin.
+func (o MysqlConfigurationVariablesOutput) MysqlxMaxAllowedPacket() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MysqlxMaxAllowedPacket }).(pulumi.IntPtrOutput)
+}
+
+// ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o MysqlConfigurationVariablesOutput) MysqlxMinWorkerThreads() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MysqlxMinWorkerThreads }).(pulumi.IntPtrOutput)
+}
+
+// The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+func (o MysqlConfigurationVariablesOutput) MysqlxReadTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MysqlxReadTimeout }).(pulumi.IntPtrOutput)
+}
+
+// The number of seconds that X Plugin waits for activity on a connection.
+func (o MysqlConfigurationVariablesOutput) MysqlxWaitTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MysqlxWaitTimeout }).(pulumi.IntPtrOutput)
+}
+
+// The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+func (o MysqlConfigurationVariablesOutput) MysqlxWriteTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MysqlxWriteTimeout }).(pulumi.IntPtrOutput)
+}
+
+// Set the default compression level for the zstd algorithm. ("mysqlxZstdDefaultCompressionLevel")
+func (o MysqlConfigurationVariablesOutput) MysqlxZstdDefaultCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MysqlxZstdDefaultCompressionLevel }).(pulumi.IntPtrOutput)
+}
+
+// Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlxZstdMaxClientCompressionLevel")
+func (o MysqlConfigurationVariablesOutput) MysqlxZstdMaxClientCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.MysqlxZstdMaxClientCompressionLevel }).(pulumi.IntPtrOutput)
+}
+
+// The number of seconds to wait for more data from a connection before aborting the read.
+func (o MysqlConfigurationVariablesOutput) NetReadTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.NetReadTimeout }).(pulumi.IntPtrOutput)
+}
+
+// The number of seconds to wait for a block to be written to a connection before aborting the write.
+func (o MysqlConfigurationVariablesOutput) NetWriteTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.NetWriteTimeout }).(pulumi.IntPtrOutput)
+}
+
+// ("parserMaxMemSize")
+func (o MysqlConfigurationVariablesOutput) ParserMaxMemSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.ParserMaxMemSize }).(pulumi.StringPtrOutput)
+}
+
+// ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o MysqlConfigurationVariablesOutput) QueryAllocBlockSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.QueryAllocBlockSize }).(pulumi.StringPtrOutput)
+}
+
+// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o MysqlConfigurationVariablesOutput) QueryPreallocSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.QueryPreallocSize }).(pulumi.StringPtrOutput)
+}
+
+// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+func (o MysqlConfigurationVariablesOutput) RegexpTimeLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.RegexpTimeLimit }).(pulumi.IntPtrOutput)
+}
+
+// Each session that must perform a sort allocates a buffer of this size.
+func (o MysqlConfigurationVariablesOutput) SortBufferSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.SortBufferSize }).(pulumi.StringPtrOutput)
+}
+
+// ("sqlMode")
+func (o MysqlConfigurationVariablesOutput) SqlMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.SqlMode }).(pulumi.StringPtrOutput)
+}
+
+// ("sqlRequirePrimaryKey")
+func (o MysqlConfigurationVariablesOutput) SqlRequirePrimaryKey() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.SqlRequirePrimaryKey }).(pulumi.BoolPtrOutput)
+}
+
+// ("sqlWarnings")
+func (o MysqlConfigurationVariablesOutput) SqlWarnings() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.SqlWarnings }).(pulumi.BoolPtrOutput)
+}
+
+// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+func (o MysqlConfigurationVariablesOutput) ThreadPoolDedicatedListeners() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *bool { return v.ThreadPoolDedicatedListeners }).(pulumi.BoolPtrOutput)
+}
+
+// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+func (o MysqlConfigurationVariablesOutput) ThreadPoolMaxTransactionsLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.ThreadPoolMaxTransactionsLimit }).(pulumi.IntPtrOutput)
+}
+
+// Initializes the time zone for each client that connects.
+func (o MysqlConfigurationVariablesOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.TimeZone }).(pulumi.StringPtrOutput)
+}
+
+// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+func (o MysqlConfigurationVariablesOutput) TmpTableSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.TmpTableSize }).(pulumi.StringPtrOutput)
+}
+
+// ("transactionIsolation")
+func (o MysqlConfigurationVariablesOutput) TransactionIsolation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *string { return v.TransactionIsolation }).(pulumi.StringPtrOutput)
+}
+
+// The number of seconds the server waits for activity on a noninteractive connection before closing it.
+func (o MysqlConfigurationVariablesOutput) WaitTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlConfigurationVariables) *int { return v.WaitTimeout }).(pulumi.IntPtrOutput)
+}
+
+type MysqlConfigurationVariablesPtrOutput struct{ *pulumi.OutputState }
+
+func (MysqlConfigurationVariablesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlConfigurationVariables)(nil)).Elem()
+}
+
+func (o MysqlConfigurationVariablesPtrOutput) ToMysqlConfigurationVariablesPtrOutput() MysqlConfigurationVariablesPtrOutput {
+	return o
+}
+
+func (o MysqlConfigurationVariablesPtrOutput) ToMysqlConfigurationVariablesPtrOutputWithContext(ctx context.Context) MysqlConfigurationVariablesPtrOutput {
+	return o
+}
+
+func (o MysqlConfigurationVariablesPtrOutput) Elem() MysqlConfigurationVariablesOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) MysqlConfigurationVariables {
+		if v != nil {
+			return *v
+		}
+		var ret MysqlConfigurationVariables
+		return ret
+	}).(MysqlConfigurationVariablesOutput)
+}
+
+// ("autocommit")
+func (o MysqlConfigurationVariablesPtrOutput) Autocommit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Autocommit
+	}).(pulumi.BoolPtrOutput)
+}
+
+// If enabled, the server stores all temporary tables on disk rather than in memory.
+func (o MysqlConfigurationVariablesPtrOutput) BigTables() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.BigTables
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+func (o MysqlConfigurationVariablesPtrOutput) BinlogExpireLogsSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BinlogExpireLogsSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+func (o MysqlConfigurationVariablesPtrOutput) BinlogRowMetadata() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BinlogRowMetadata
+	}).(pulumi.StringPtrOutput)
+}
+
+// When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+func (o MysqlConfigurationVariablesPtrOutput) BinlogRowValueOptions() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BinlogRowValueOptions
+	}).(pulumi.StringPtrOutput)
+}
+
+// Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+func (o MysqlConfigurationVariablesPtrOutput) BinlogTransactionCompression() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.BinlogTransactionCompression
+	}).(pulumi.BoolPtrOutput)
+}
+
+// ("completionType")
+func (o MysqlConfigurationVariablesPtrOutput) CompletionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CompletionType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
+func (o MysqlConfigurationVariablesPtrOutput) ConnectTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ConnectTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+func (o MysqlConfigurationVariablesPtrOutput) ConnectionMemoryChunkSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ConnectionMemoryChunkSize
+	}).(pulumi.IntPtrOutput)
+}
+
+// Set the maximum amount of memory that can be used by a single user connection.
+func (o MysqlConfigurationVariablesPtrOutput) ConnectionMemoryLimit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ConnectionMemoryLimit
+	}).(pulumi.StringPtrOutput)
+}
+
+// ("cteMaxRecursionDepth")
+func (o MysqlConfigurationVariablesPtrOutput) CteMaxRecursionDepth() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CteMaxRecursionDepth
+	}).(pulumi.StringPtrOutput)
+}
+
+// ("defaultAuthenticationPlugin")
+func (o MysqlConfigurationVariablesPtrOutput) DefaultAuthenticationPlugin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DefaultAuthenticationPlugin
+	}).(pulumi.StringPtrOutput)
+}
+
+// ("foreignKeyChecks")
+func (o MysqlConfigurationVariablesPtrOutput) ForeignKeyChecks() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ForeignKeyChecks
+	}).(pulumi.BoolPtrOutput)
+}
+
+// ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o MysqlConfigurationVariablesPtrOutput) GeneratedRandomPasswordLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.GeneratedRandomPasswordLength
+	}).(pulumi.IntPtrOutput)
+}
+
+// Set the total amount of memory that can be used by all user connections.
+func (o MysqlConfigurationVariablesPtrOutput) GlobalConnectionMemoryLimit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GlobalConnectionMemoryLimit
+	}).(pulumi.StringPtrOutput)
+}
+
+// Determines whether the MySQL server calculates Global_connection_memory.
+func (o MysqlConfigurationVariablesPtrOutput) GlobalConnectionMemoryTracking() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.GlobalConnectionMemoryTracking
+	}).(pulumi.BoolPtrOutput)
+}
+
+// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
+// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
+// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+// * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+// * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+func (o MysqlConfigurationVariablesPtrOutput) GroupReplicationConsistency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GroupReplicationConsistency
+	}).(pulumi.StringPtrOutput)
+}
+
+// ("informationSchemaStatsExpiry")
+func (o MysqlConfigurationVariablesPtrOutput) InformationSchemaStatsExpiry() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InformationSchemaStatsExpiry
+	}).(pulumi.IntPtrOutput)
+}
+
+// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+func (o MysqlConfigurationVariablesPtrOutput) InnodbBufferPoolDumpPct() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbBufferPoolDumpPct
+	}).(pulumi.IntPtrOutput)
+}
+
+// ("innodbBufferPoolInstances")
+func (o MysqlConfigurationVariablesPtrOutput) InnodbBufferPoolInstances() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbBufferPoolInstances
+	}).(pulumi.IntPtrOutput)
+}
+
+// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+func (o MysqlConfigurationVariablesPtrOutput) InnodbBufferPoolSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbBufferPoolSize
+	}).(pulumi.StringPtrOutput)
+}
+
+// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+func (o MysqlConfigurationVariablesPtrOutput) InnodbDdlBufferSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbDdlBufferSize
+	}).(pulumi.StringPtrOutput)
+}
+
+// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+func (o MysqlConfigurationVariablesPtrOutput) InnodbDdlThreads() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbDdlThreads
+	}).(pulumi.IntPtrOutput)
+}
+
+// ("innodbFtEnableStopword")
+func (o MysqlConfigurationVariablesPtrOutput) InnodbFtEnableStopword() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbFtEnableStopword
+	}).(pulumi.BoolPtrOutput)
+}
+
+// ("innodbFtMaxTokenSize")
+func (o MysqlConfigurationVariablesPtrOutput) InnodbFtMaxTokenSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbFtMaxTokenSize
+	}).(pulumi.IntPtrOutput)
+}
+
+// ("innodbFtMinTokenSize")
+func (o MysqlConfigurationVariablesPtrOutput) InnodbFtMinTokenSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbFtMinTokenSize
+	}).(pulumi.IntPtrOutput)
+}
+
+// ("innodbFtNumWordOptimize")
+func (o MysqlConfigurationVariablesPtrOutput) InnodbFtNumWordOptimize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbFtNumWordOptimize
+	}).(pulumi.IntPtrOutput)
+}
+
+// ("innodbFtResultCacheLimit")
+func (o MysqlConfigurationVariablesPtrOutput) InnodbFtResultCacheLimit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbFtResultCacheLimit
+	}).(pulumi.StringPtrOutput)
+}
+
+// ("innodbFtServerStopwordTable")
+func (o MysqlConfigurationVariablesPtrOutput) InnodbFtServerStopwordTable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbFtServerStopwordTable
+	}).(pulumi.StringPtrOutput)
+}
+
+// ("innodbLockWaitTimeout")
+func (o MysqlConfigurationVariablesPtrOutput) InnodbLockWaitTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbLockWaitTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+func (o MysqlConfigurationVariablesPtrOutput) InnodbLogWriterThreads() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbLogWriterThreads
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The desired maximum purge lag in terms of transactions.
+func (o MysqlConfigurationVariablesPtrOutput) InnodbMaxPurgeLag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbMaxPurgeLag
+	}).(pulumi.StringPtrOutput)
+}
+
+// The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
+func (o MysqlConfigurationVariablesPtrOutput) InnodbMaxPurgeLagDelay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbMaxPurgeLagDelay
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+func (o MysqlConfigurationVariablesPtrOutput) InnodbStatsPersistentSamplePages() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbStatsPersistentSamplePages
+	}).(pulumi.StringPtrOutput)
+}
+
+// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+func (o MysqlConfigurationVariablesPtrOutput) InnodbStatsTransientSamplePages() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InnodbStatsTransientSamplePages
+	}).(pulumi.StringPtrOutput)
+}
+
+// The number of seconds the server waits for activity on an interactive connection before closing it.
+func (o MysqlConfigurationVariablesPtrOutput) InteractiveTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InteractiveTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// ("localInfile")
+func (o MysqlConfigurationVariablesPtrOutput) LocalInfile() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.LocalInfile
+	}).(pulumi.BoolPtrOutput)
+}
+
+// ("mandatoryRoles")
+func (o MysqlConfigurationVariablesPtrOutput) MandatoryRoles() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MandatoryRoles
+	}).(pulumi.StringPtrOutput)
+}
+
+// The maximum size of one packet or any generated/intermediate string.
+func (o MysqlConfigurationVariablesPtrOutput) MaxAllowedPacket() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxAllowedPacket
+	}).(pulumi.IntPtrOutput)
+}
+
+// Sets the size of the transaction cache.
+func (o MysqlConfigurationVariablesPtrOutput) MaxBinlogCacheSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaxBinlogCacheSize
+	}).(pulumi.StringPtrOutput)
+}
+
+// ("maxConnectErrors")
+func (o MysqlConfigurationVariablesPtrOutput) MaxConnectErrors() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaxConnectErrors
+	}).(pulumi.StringPtrOutput)
+}
+
+// ("maxConnections")
+func (o MysqlConfigurationVariablesPtrOutput) MaxConnections() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxConnections
+	}).(pulumi.IntPtrOutput)
+}
+
+// ("maxExecutionTime")
+func (o MysqlConfigurationVariablesPtrOutput) MaxExecutionTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaxExecutionTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+func (o MysqlConfigurationVariablesPtrOutput) MaxHeapTableSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaxHeapTableSize
+	}).(pulumi.StringPtrOutput)
+}
+
+// ("maxPreparedStmtCount")
+func (o MysqlConfigurationVariablesPtrOutput) MaxPreparedStmtCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxPreparedStmtCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// ("mysqlFirewallMode")
+func (o MysqlConfigurationVariablesPtrOutput) MysqlFirewallMode() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlFirewallMode
+	}).(pulumi.BoolPtrOutput)
+}
+
+// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+//
+// Deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o MysqlConfigurationVariablesPtrOutput) MysqlZstdDefaultCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlZstdDefaultCompressionLevel
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+func (o MysqlConfigurationVariablesPtrOutput) MysqlxConnectTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlxConnectTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// Set the default compression level for the deflate algorithm. ("mysqlxDeflateDefaultCompressionLevel")
+func (o MysqlConfigurationVariablesPtrOutput) MysqlxDeflateDefaultCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlxDeflateDefaultCompressionLevel
+	}).(pulumi.IntPtrOutput)
+}
+
+// Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlxDeflateMaxClientCompressionLevel")
+func (o MysqlConfigurationVariablesPtrOutput) MysqlxDeflateMaxClientCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlxDeflateMaxClientCompressionLevel
+	}).(pulumi.IntPtrOutput)
+}
+
+// ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o MysqlConfigurationVariablesPtrOutput) MysqlxDocumentIdUniquePrefix() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlxDocumentIdUniquePrefix
+	}).(pulumi.IntPtrOutput)
+}
+
+// ("mysqlxEnableHelloNotice") DEPRECATED -- variable should not be settable and will be ignored
+func (o MysqlConfigurationVariablesPtrOutput) MysqlxEnableHelloNotice() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlxEnableHelloNotice
+	}).(pulumi.BoolPtrOutput)
+}
+
+// ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o MysqlConfigurationVariablesPtrOutput) MysqlxIdleWorkerThreadTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlxIdleWorkerThreadTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of seconds to wait for interactive clients to timeout.
+func (o MysqlConfigurationVariablesPtrOutput) MysqlxInteractiveTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlxInteractiveTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// Set the default compression level for the lz4 algorithm. ("mysqlxLz4DefaultCompressionLevel")
+func (o MysqlConfigurationVariablesPtrOutput) MysqlxLz4defaultCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlxLz4defaultCompressionLevel
+	}).(pulumi.IntPtrOutput)
+}
+
+// Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlxLz4MaxClientCompressionLevel")
+func (o MysqlConfigurationVariablesPtrOutput) MysqlxLz4maxClientCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlxLz4maxClientCompressionLevel
+	}).(pulumi.IntPtrOutput)
+}
+
+// The maximum size of network packets that can be received by X Plugin.
+func (o MysqlConfigurationVariablesPtrOutput) MysqlxMaxAllowedPacket() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlxMaxAllowedPacket
+	}).(pulumi.IntPtrOutput)
+}
+
+// ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o MysqlConfigurationVariablesPtrOutput) MysqlxMinWorkerThreads() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlxMinWorkerThreads
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+func (o MysqlConfigurationVariablesPtrOutput) MysqlxReadTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlxReadTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of seconds that X Plugin waits for activity on a connection.
+func (o MysqlConfigurationVariablesPtrOutput) MysqlxWaitTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlxWaitTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+func (o MysqlConfigurationVariablesPtrOutput) MysqlxWriteTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlxWriteTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// Set the default compression level for the zstd algorithm. ("mysqlxZstdDefaultCompressionLevel")
+func (o MysqlConfigurationVariablesPtrOutput) MysqlxZstdDefaultCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlxZstdDefaultCompressionLevel
+	}).(pulumi.IntPtrOutput)
+}
+
+// Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlxZstdMaxClientCompressionLevel")
+func (o MysqlConfigurationVariablesPtrOutput) MysqlxZstdMaxClientCompressionLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlxZstdMaxClientCompressionLevel
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of seconds to wait for more data from a connection before aborting the read.
+func (o MysqlConfigurationVariablesPtrOutput) NetReadTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.NetReadTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of seconds to wait for a block to be written to a connection before aborting the write.
+func (o MysqlConfigurationVariablesPtrOutput) NetWriteTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.NetWriteTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// ("parserMaxMemSize")
+func (o MysqlConfigurationVariablesPtrOutput) ParserMaxMemSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ParserMaxMemSize
+	}).(pulumi.StringPtrOutput)
+}
+
+// ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o MysqlConfigurationVariablesPtrOutput) QueryAllocBlockSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.QueryAllocBlockSize
+	}).(pulumi.StringPtrOutput)
+}
+
+// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o MysqlConfigurationVariablesPtrOutput) QueryPreallocSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.QueryPreallocSize
+	}).(pulumi.StringPtrOutput)
+}
+
+// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+func (o MysqlConfigurationVariablesPtrOutput) RegexpTimeLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RegexpTimeLimit
+	}).(pulumi.IntPtrOutput)
+}
+
+// Each session that must perform a sort allocates a buffer of this size.
+func (o MysqlConfigurationVariablesPtrOutput) SortBufferSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SortBufferSize
+	}).(pulumi.StringPtrOutput)
+}
+
+// ("sqlMode")
+func (o MysqlConfigurationVariablesPtrOutput) SqlMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SqlMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// ("sqlRequirePrimaryKey")
+func (o MysqlConfigurationVariablesPtrOutput) SqlRequirePrimaryKey() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.SqlRequirePrimaryKey
+	}).(pulumi.BoolPtrOutput)
+}
+
+// ("sqlWarnings")
+func (o MysqlConfigurationVariablesPtrOutput) SqlWarnings() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.SqlWarnings
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+func (o MysqlConfigurationVariablesPtrOutput) ThreadPoolDedicatedListeners() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ThreadPoolDedicatedListeners
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+func (o MysqlConfigurationVariablesPtrOutput) ThreadPoolMaxTransactionsLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ThreadPoolMaxTransactionsLimit
+	}).(pulumi.IntPtrOutput)
+}
+
+// Initializes the time zone for each client that connects.
+func (o MysqlConfigurationVariablesPtrOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeZone
+	}).(pulumi.StringPtrOutput)
+}
+
+// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+func (o MysqlConfigurationVariablesPtrOutput) TmpTableSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TmpTableSize
+	}).(pulumi.StringPtrOutput)
+}
+
+// ("transactionIsolation")
+func (o MysqlConfigurationVariablesPtrOutput) TransactionIsolation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TransactionIsolation
+	}).(pulumi.StringPtrOutput)
+}
+
+// The number of seconds the server waits for activity on a noninteractive connection before closing it.
+func (o MysqlConfigurationVariablesPtrOutput) WaitTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlConfigurationVariables) *int {
+		if v == nil {
+			return nil
+		}
+		return v.WaitTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
 type MysqlDbSystemAnalyticsCluster struct {
 	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
 	ClusterSize *int `pulumi:"clusterSize"`
@@ -7303,9 +9131,108 @@ func (o GetMysqlBackupsFilterArrayOutput) Index(i pulumi.IntInput) GetMysqlBacku
 	}).(GetMysqlBackupsFilterOutput)
 }
 
+type GetMysqlConfigurationInitVariable struct {
+	// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+	LowerCaseTableNames string `pulumi:"lowerCaseTableNames"`
+}
+
+// GetMysqlConfigurationInitVariableInput is an input type that accepts GetMysqlConfigurationInitVariableArgs and GetMysqlConfigurationInitVariableOutput values.
+// You can construct a concrete instance of `GetMysqlConfigurationInitVariableInput` via:
+//
+//	GetMysqlConfigurationInitVariableArgs{...}
+type GetMysqlConfigurationInitVariableInput interface {
+	pulumi.Input
+
+	ToGetMysqlConfigurationInitVariableOutput() GetMysqlConfigurationInitVariableOutput
+	ToGetMysqlConfigurationInitVariableOutputWithContext(context.Context) GetMysqlConfigurationInitVariableOutput
+}
+
+type GetMysqlConfigurationInitVariableArgs struct {
+	// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+	LowerCaseTableNames pulumi.StringInput `pulumi:"lowerCaseTableNames"`
+}
+
+func (GetMysqlConfigurationInitVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlConfigurationInitVariable)(nil)).Elem()
+}
+
+func (i GetMysqlConfigurationInitVariableArgs) ToGetMysqlConfigurationInitVariableOutput() GetMysqlConfigurationInitVariableOutput {
+	return i.ToGetMysqlConfigurationInitVariableOutputWithContext(context.Background())
+}
+
+func (i GetMysqlConfigurationInitVariableArgs) ToGetMysqlConfigurationInitVariableOutputWithContext(ctx context.Context) GetMysqlConfigurationInitVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationInitVariableOutput)
+}
+
+// GetMysqlConfigurationInitVariableArrayInput is an input type that accepts GetMysqlConfigurationInitVariableArray and GetMysqlConfigurationInitVariableArrayOutput values.
+// You can construct a concrete instance of `GetMysqlConfigurationInitVariableArrayInput` via:
+//
+//	GetMysqlConfigurationInitVariableArray{ GetMysqlConfigurationInitVariableArgs{...} }
+type GetMysqlConfigurationInitVariableArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlConfigurationInitVariableArrayOutput() GetMysqlConfigurationInitVariableArrayOutput
+	ToGetMysqlConfigurationInitVariableArrayOutputWithContext(context.Context) GetMysqlConfigurationInitVariableArrayOutput
+}
+
+type GetMysqlConfigurationInitVariableArray []GetMysqlConfigurationInitVariableInput
+
+func (GetMysqlConfigurationInitVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlConfigurationInitVariable)(nil)).Elem()
+}
+
+func (i GetMysqlConfigurationInitVariableArray) ToGetMysqlConfigurationInitVariableArrayOutput() GetMysqlConfigurationInitVariableArrayOutput {
+	return i.ToGetMysqlConfigurationInitVariableArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlConfigurationInitVariableArray) ToGetMysqlConfigurationInitVariableArrayOutputWithContext(ctx context.Context) GetMysqlConfigurationInitVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationInitVariableArrayOutput)
+}
+
+type GetMysqlConfigurationInitVariableOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlConfigurationInitVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlConfigurationInitVariable)(nil)).Elem()
+}
+
+func (o GetMysqlConfigurationInitVariableOutput) ToGetMysqlConfigurationInitVariableOutput() GetMysqlConfigurationInitVariableOutput {
+	return o
+}
+
+func (o GetMysqlConfigurationInitVariableOutput) ToGetMysqlConfigurationInitVariableOutputWithContext(ctx context.Context) GetMysqlConfigurationInitVariableOutput {
+	return o
+}
+
+// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+func (o GetMysqlConfigurationInitVariableOutput) LowerCaseTableNames() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationInitVariable) string { return v.LowerCaseTableNames }).(pulumi.StringOutput)
+}
+
+type GetMysqlConfigurationInitVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlConfigurationInitVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlConfigurationInitVariable)(nil)).Elem()
+}
+
+func (o GetMysqlConfigurationInitVariableArrayOutput) ToGetMysqlConfigurationInitVariableArrayOutput() GetMysqlConfigurationInitVariableArrayOutput {
+	return o
+}
+
+func (o GetMysqlConfigurationInitVariableArrayOutput) ToGetMysqlConfigurationInitVariableArrayOutputWithContext(ctx context.Context) GetMysqlConfigurationInitVariableArrayOutput {
+	return o
+}
+
+func (o GetMysqlConfigurationInitVariableArrayOutput) Index(i pulumi.IntInput) GetMysqlConfigurationInitVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlConfigurationInitVariable {
+		return vs[0].([]GetMysqlConfigurationInitVariable)[vs[1].(int)]
+	}).(GetMysqlConfigurationInitVariableOutput)
+}
+
 type GetMysqlConfigurationVariable struct {
 	// ("autocommit")
 	Autocommit bool `pulumi:"autocommit"`
+	// If enabled, the server stores all temporary tables on disk rather than in memory.
+	BigTables bool `pulumi:"bigTables"`
 	// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
 	BinlogExpireLogsSeconds int `pulumi:"binlogExpireLogsSeconds"`
 	// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
@@ -7316,16 +9243,26 @@ type GetMysqlConfigurationVariable struct {
 	BinlogTransactionCompression bool `pulumi:"binlogTransactionCompression"`
 	// ("completionType")
 	CompletionType string `pulumi:"completionType"`
-	// ("connectTimeout")
+	// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
 	ConnectTimeout int `pulumi:"connectTimeout"`
+	// Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+	ConnectionMemoryChunkSize int `pulumi:"connectionMemoryChunkSize"`
+	// Set the maximum amount of memory that can be used by a single user connection.
+	ConnectionMemoryLimit string `pulumi:"connectionMemoryLimit"`
 	// ("cteMaxRecursionDepth")
-	CteMaxRecursionDepth int `pulumi:"cteMaxRecursionDepth"`
+	CteMaxRecursionDepth string `pulumi:"cteMaxRecursionDepth"`
 	// ("defaultAuthenticationPlugin")
 	DefaultAuthenticationPlugin string `pulumi:"defaultAuthenticationPlugin"`
 	// ("foreignKeyChecks")
 	ForeignKeyChecks bool `pulumi:"foreignKeyChecks"`
 	// ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
 	GeneratedRandomPasswordLength int `pulumi:"generatedRandomPasswordLength"`
+	// Set the total amount of memory that can be used by all user connections.
+	GlobalConnectionMemoryLimit string `pulumi:"globalConnectionMemoryLimit"`
+	// Determines whether the MySQL server calculates Global_connection_memory.
+	GlobalConnectionMemoryTracking bool `pulumi:"globalConnectionMemoryTracking"`
 	// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
 	// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
 	// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -7334,10 +9271,16 @@ type GetMysqlConfigurationVariable struct {
 	GroupReplicationConsistency string `pulumi:"groupReplicationConsistency"`
 	// ("informationSchemaStatsExpiry")
 	InformationSchemaStatsExpiry int `pulumi:"informationSchemaStatsExpiry"`
+	// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+	InnodbBufferPoolDumpPct int `pulumi:"innodbBufferPoolDumpPct"`
 	// ("innodbBufferPoolInstances")
 	InnodbBufferPoolInstances int `pulumi:"innodbBufferPoolInstances"`
-	// ("innodbBufferPoolSize")
+	// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
 	InnodbBufferPoolSize string `pulumi:"innodbBufferPoolSize"`
+	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+	InnodbDdlBufferSize string `pulumi:"innodbDdlBufferSize"`
+	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+	InnodbDdlThreads int `pulumi:"innodbDdlThreads"`
 	// ("innodbFtEnableStopword")
 	InnodbFtEnableStopword bool `pulumi:"innodbFtEnableStopword"`
 	// ("innodbFtMaxTokenSize")
@@ -7347,75 +9290,121 @@ type GetMysqlConfigurationVariable struct {
 	// ("innodbFtNumWordOptimize")
 	InnodbFtNumWordOptimize int `pulumi:"innodbFtNumWordOptimize"`
 	// ("innodbFtResultCacheLimit")
-	InnodbFtResultCacheLimit int `pulumi:"innodbFtResultCacheLimit"`
+	InnodbFtResultCacheLimit string `pulumi:"innodbFtResultCacheLimit"`
 	// ("innodbFtServerStopwordTable")
 	InnodbFtServerStopwordTable string `pulumi:"innodbFtServerStopwordTable"`
 	// ("innodbLockWaitTimeout")
 	InnodbLockWaitTimeout int `pulumi:"innodbLockWaitTimeout"`
-	// ("innodbMaxPurgeLag")
-	InnodbMaxPurgeLag int `pulumi:"innodbMaxPurgeLag"`
-	// ("innodbMaxPurgeLagDelay")
+	// Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+	InnodbLogWriterThreads bool `pulumi:"innodbLogWriterThreads"`
+	// The desired maximum purge lag in terms of transactions.
+	InnodbMaxPurgeLag string `pulumi:"innodbMaxPurgeLag"`
+	// The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
 	InnodbMaxPurgeLagDelay int `pulumi:"innodbMaxPurgeLagDelay"`
+	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+	InnodbStatsPersistentSamplePages string `pulumi:"innodbStatsPersistentSamplePages"`
+	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+	InnodbStatsTransientSamplePages string `pulumi:"innodbStatsTransientSamplePages"`
+	// The number of seconds the server waits for activity on an interactive connection before closing it.
+	InteractiveTimeout int `pulumi:"interactiveTimeout"`
 	// ("localInfile")
 	LocalInfile bool `pulumi:"localInfile"`
 	// ("mandatoryRoles")
 	MandatoryRoles string `pulumi:"mandatoryRoles"`
+	// The maximum size of one packet or any generated/intermediate string.
+	MaxAllowedPacket int `pulumi:"maxAllowedPacket"`
+	// Sets the size of the transaction cache.
+	MaxBinlogCacheSize string `pulumi:"maxBinlogCacheSize"`
+	// ("maxConnectErrors")
+	MaxConnectErrors string `pulumi:"maxConnectErrors"`
 	// ("maxConnections")
 	MaxConnections int `pulumi:"maxConnections"`
 	// ("maxExecutionTime")
-	MaxExecutionTime int `pulumi:"maxExecutionTime"`
+	MaxExecutionTime string `pulumi:"maxExecutionTime"`
+	// This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+	MaxHeapTableSize string `pulumi:"maxHeapTableSize"`
 	// ("maxPreparedStmtCount")
 	MaxPreparedStmtCount int `pulumi:"maxPreparedStmtCount"`
 	// ("mysqlFirewallMode")
 	MysqlFirewallMode bool `pulumi:"mysqlFirewallMode"`
 	// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+	//
+	// Deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlZstdDefaultCompressionLevel int `pulumi:"mysqlZstdDefaultCompressionLevel"`
-	// ("mysqlxConnectTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
 	MysqlxConnectTimeout int `pulumi:"mysqlxConnectTimeout"`
 	// Set the default compression level for the deflate algorithm. ("mysqlxDeflateDefaultCompressionLevel")
 	MysqlxDeflateDefaultCompressionLevel int `pulumi:"mysqlxDeflateDefaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlxDeflateMaxClientCompressionLevel")
 	MysqlxDeflateMaxClientCompressionLevel int `pulumi:"mysqlxDeflateMaxClientCompressionLevel"`
 	// ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlxDocumentIdUniquePrefix int `pulumi:"mysqlxDocumentIdUniquePrefix"`
 	// ("mysqlxEnableHelloNotice") DEPRECATED -- variable should not be settable and will be ignored
 	MysqlxEnableHelloNotice bool `pulumi:"mysqlxEnableHelloNotice"`
 	// ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlxIdleWorkerThreadTimeout int `pulumi:"mysqlxIdleWorkerThreadTimeout"`
-	// ("mysqlxInteractiveTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds to wait for interactive clients to timeout.
 	MysqlxInteractiveTimeout int `pulumi:"mysqlxInteractiveTimeout"`
 	// Set the default compression level for the lz4 algorithm. ("mysqlxLz4DefaultCompressionLevel")
 	MysqlxLz4defaultCompressionLevel int `pulumi:"mysqlxLz4defaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlxLz4MaxClientCompressionLevel")
 	MysqlxLz4maxClientCompressionLevel int `pulumi:"mysqlxLz4maxClientCompressionLevel"`
-	// ("mysqlxMaxAllowedPacket") DEPRECATED -- variable should not be settable and will be ignored
+	// The maximum size of network packets that can be received by X Plugin.
 	MysqlxMaxAllowedPacket int `pulumi:"mysqlxMaxAllowedPacket"`
 	// ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlxMinWorkerThreads int `pulumi:"mysqlxMinWorkerThreads"`
-	// ("mysqlxReadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
 	MysqlxReadTimeout int `pulumi:"mysqlxReadTimeout"`
-	// ("mysqlxWaitTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds that X Plugin waits for activity on a connection.
 	MysqlxWaitTimeout int `pulumi:"mysqlxWaitTimeout"`
-	// ("mysqlxWriteTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
 	MysqlxWriteTimeout int `pulumi:"mysqlxWriteTimeout"`
 	// Set the default compression level for the zstd algorithm. ("mysqlxZstdDefaultCompressionLevel")
 	MysqlxZstdDefaultCompressionLevel int `pulumi:"mysqlxZstdDefaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlxZstdMaxClientCompressionLevel")
 	MysqlxZstdMaxClientCompressionLevel int `pulumi:"mysqlxZstdMaxClientCompressionLevel"`
+	// The number of seconds to wait for more data from a connection before aborting the read.
+	NetReadTimeout int `pulumi:"netReadTimeout"`
+	// The number of seconds to wait for a block to be written to a connection before aborting the write.
+	NetWriteTimeout int `pulumi:"netWriteTimeout"`
 	// ("parserMaxMemSize")
-	ParserMaxMemSize int `pulumi:"parserMaxMemSize"`
+	ParserMaxMemSize string `pulumi:"parserMaxMemSize"`
 	// ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
-	QueryAllocBlockSize int `pulumi:"queryAllocBlockSize"`
+	//
+	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
+	QueryAllocBlockSize string `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
-	QueryPreallocSize int `pulumi:"queryPreallocSize"`
+	//
+	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+	QueryPreallocSize string `pulumi:"queryPreallocSize"`
+	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+	RegexpTimeLimit int `pulumi:"regexpTimeLimit"`
+	// Each session that must perform a sort allocates a buffer of this size.
+	SortBufferSize string `pulumi:"sortBufferSize"`
 	// ("sqlMode")
 	SqlMode string `pulumi:"sqlMode"`
 	// ("sqlRequirePrimaryKey")
 	SqlRequirePrimaryKey bool `pulumi:"sqlRequirePrimaryKey"`
 	// ("sqlWarnings")
 	SqlWarnings bool `pulumi:"sqlWarnings"`
+	// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+	ThreadPoolDedicatedListeners bool `pulumi:"threadPoolDedicatedListeners"`
+	// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+	ThreadPoolMaxTransactionsLimit int `pulumi:"threadPoolMaxTransactionsLimit"`
+	// Initializes the time zone for each client that connects.
+	TimeZone string `pulumi:"timeZone"`
+	// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+	TmpTableSize string `pulumi:"tmpTableSize"`
 	// ("transactionIsolation")
 	TransactionIsolation string `pulumi:"transactionIsolation"`
+	// The number of seconds the server waits for activity on a noninteractive connection before closing it.
+	WaitTimeout int `pulumi:"waitTimeout"`
 }
 
 // GetMysqlConfigurationVariableInput is an input type that accepts GetMysqlConfigurationVariableArgs and GetMysqlConfigurationVariableOutput values.
@@ -7432,6 +9421,8 @@ type GetMysqlConfigurationVariableInput interface {
 type GetMysqlConfigurationVariableArgs struct {
 	// ("autocommit")
 	Autocommit pulumi.BoolInput `pulumi:"autocommit"`
+	// If enabled, the server stores all temporary tables on disk rather than in memory.
+	BigTables pulumi.BoolInput `pulumi:"bigTables"`
 	// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
 	BinlogExpireLogsSeconds pulumi.IntInput `pulumi:"binlogExpireLogsSeconds"`
 	// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
@@ -7442,16 +9433,26 @@ type GetMysqlConfigurationVariableArgs struct {
 	BinlogTransactionCompression pulumi.BoolInput `pulumi:"binlogTransactionCompression"`
 	// ("completionType")
 	CompletionType pulumi.StringInput `pulumi:"completionType"`
-	// ("connectTimeout")
+	// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
 	ConnectTimeout pulumi.IntInput `pulumi:"connectTimeout"`
+	// Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+	ConnectionMemoryChunkSize pulumi.IntInput `pulumi:"connectionMemoryChunkSize"`
+	// Set the maximum amount of memory that can be used by a single user connection.
+	ConnectionMemoryLimit pulumi.StringInput `pulumi:"connectionMemoryLimit"`
 	// ("cteMaxRecursionDepth")
-	CteMaxRecursionDepth pulumi.IntInput `pulumi:"cteMaxRecursionDepth"`
+	CteMaxRecursionDepth pulumi.StringInput `pulumi:"cteMaxRecursionDepth"`
 	// ("defaultAuthenticationPlugin")
 	DefaultAuthenticationPlugin pulumi.StringInput `pulumi:"defaultAuthenticationPlugin"`
 	// ("foreignKeyChecks")
 	ForeignKeyChecks pulumi.BoolInput `pulumi:"foreignKeyChecks"`
 	// ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
 	GeneratedRandomPasswordLength pulumi.IntInput `pulumi:"generatedRandomPasswordLength"`
+	// Set the total amount of memory that can be used by all user connections.
+	GlobalConnectionMemoryLimit pulumi.StringInput `pulumi:"globalConnectionMemoryLimit"`
+	// Determines whether the MySQL server calculates Global_connection_memory.
+	GlobalConnectionMemoryTracking pulumi.BoolInput `pulumi:"globalConnectionMemoryTracking"`
 	// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
 	// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
 	// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -7460,10 +9461,16 @@ type GetMysqlConfigurationVariableArgs struct {
 	GroupReplicationConsistency pulumi.StringInput `pulumi:"groupReplicationConsistency"`
 	// ("informationSchemaStatsExpiry")
 	InformationSchemaStatsExpiry pulumi.IntInput `pulumi:"informationSchemaStatsExpiry"`
+	// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+	InnodbBufferPoolDumpPct pulumi.IntInput `pulumi:"innodbBufferPoolDumpPct"`
 	// ("innodbBufferPoolInstances")
 	InnodbBufferPoolInstances pulumi.IntInput `pulumi:"innodbBufferPoolInstances"`
-	// ("innodbBufferPoolSize")
+	// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
 	InnodbBufferPoolSize pulumi.StringInput `pulumi:"innodbBufferPoolSize"`
+	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+	InnodbDdlBufferSize pulumi.StringInput `pulumi:"innodbDdlBufferSize"`
+	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+	InnodbDdlThreads pulumi.IntInput `pulumi:"innodbDdlThreads"`
 	// ("innodbFtEnableStopword")
 	InnodbFtEnableStopword pulumi.BoolInput `pulumi:"innodbFtEnableStopword"`
 	// ("innodbFtMaxTokenSize")
@@ -7473,75 +9480,121 @@ type GetMysqlConfigurationVariableArgs struct {
 	// ("innodbFtNumWordOptimize")
 	InnodbFtNumWordOptimize pulumi.IntInput `pulumi:"innodbFtNumWordOptimize"`
 	// ("innodbFtResultCacheLimit")
-	InnodbFtResultCacheLimit pulumi.IntInput `pulumi:"innodbFtResultCacheLimit"`
+	InnodbFtResultCacheLimit pulumi.StringInput `pulumi:"innodbFtResultCacheLimit"`
 	// ("innodbFtServerStopwordTable")
 	InnodbFtServerStopwordTable pulumi.StringInput `pulumi:"innodbFtServerStopwordTable"`
 	// ("innodbLockWaitTimeout")
 	InnodbLockWaitTimeout pulumi.IntInput `pulumi:"innodbLockWaitTimeout"`
-	// ("innodbMaxPurgeLag")
-	InnodbMaxPurgeLag pulumi.IntInput `pulumi:"innodbMaxPurgeLag"`
-	// ("innodbMaxPurgeLagDelay")
+	// Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+	InnodbLogWriterThreads pulumi.BoolInput `pulumi:"innodbLogWriterThreads"`
+	// The desired maximum purge lag in terms of transactions.
+	InnodbMaxPurgeLag pulumi.StringInput `pulumi:"innodbMaxPurgeLag"`
+	// The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
 	InnodbMaxPurgeLagDelay pulumi.IntInput `pulumi:"innodbMaxPurgeLagDelay"`
+	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+	InnodbStatsPersistentSamplePages pulumi.StringInput `pulumi:"innodbStatsPersistentSamplePages"`
+	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+	InnodbStatsTransientSamplePages pulumi.StringInput `pulumi:"innodbStatsTransientSamplePages"`
+	// The number of seconds the server waits for activity on an interactive connection before closing it.
+	InteractiveTimeout pulumi.IntInput `pulumi:"interactiveTimeout"`
 	// ("localInfile")
 	LocalInfile pulumi.BoolInput `pulumi:"localInfile"`
 	// ("mandatoryRoles")
 	MandatoryRoles pulumi.StringInput `pulumi:"mandatoryRoles"`
+	// The maximum size of one packet or any generated/intermediate string.
+	MaxAllowedPacket pulumi.IntInput `pulumi:"maxAllowedPacket"`
+	// Sets the size of the transaction cache.
+	MaxBinlogCacheSize pulumi.StringInput `pulumi:"maxBinlogCacheSize"`
+	// ("maxConnectErrors")
+	MaxConnectErrors pulumi.StringInput `pulumi:"maxConnectErrors"`
 	// ("maxConnections")
 	MaxConnections pulumi.IntInput `pulumi:"maxConnections"`
 	// ("maxExecutionTime")
-	MaxExecutionTime pulumi.IntInput `pulumi:"maxExecutionTime"`
+	MaxExecutionTime pulumi.StringInput `pulumi:"maxExecutionTime"`
+	// This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+	MaxHeapTableSize pulumi.StringInput `pulumi:"maxHeapTableSize"`
 	// ("maxPreparedStmtCount")
 	MaxPreparedStmtCount pulumi.IntInput `pulumi:"maxPreparedStmtCount"`
 	// ("mysqlFirewallMode")
 	MysqlFirewallMode pulumi.BoolInput `pulumi:"mysqlFirewallMode"`
 	// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+	//
+	// Deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlZstdDefaultCompressionLevel pulumi.IntInput `pulumi:"mysqlZstdDefaultCompressionLevel"`
-	// ("mysqlxConnectTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
 	MysqlxConnectTimeout pulumi.IntInput `pulumi:"mysqlxConnectTimeout"`
 	// Set the default compression level for the deflate algorithm. ("mysqlxDeflateDefaultCompressionLevel")
 	MysqlxDeflateDefaultCompressionLevel pulumi.IntInput `pulumi:"mysqlxDeflateDefaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlxDeflateMaxClientCompressionLevel")
 	MysqlxDeflateMaxClientCompressionLevel pulumi.IntInput `pulumi:"mysqlxDeflateMaxClientCompressionLevel"`
 	// ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlxDocumentIdUniquePrefix pulumi.IntInput `pulumi:"mysqlxDocumentIdUniquePrefix"`
 	// ("mysqlxEnableHelloNotice") DEPRECATED -- variable should not be settable and will be ignored
 	MysqlxEnableHelloNotice pulumi.BoolInput `pulumi:"mysqlxEnableHelloNotice"`
 	// ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlxIdleWorkerThreadTimeout pulumi.IntInput `pulumi:"mysqlxIdleWorkerThreadTimeout"`
-	// ("mysqlxInteractiveTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds to wait for interactive clients to timeout.
 	MysqlxInteractiveTimeout pulumi.IntInput `pulumi:"mysqlxInteractiveTimeout"`
 	// Set the default compression level for the lz4 algorithm. ("mysqlxLz4DefaultCompressionLevel")
 	MysqlxLz4defaultCompressionLevel pulumi.IntInput `pulumi:"mysqlxLz4defaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlxLz4MaxClientCompressionLevel")
 	MysqlxLz4maxClientCompressionLevel pulumi.IntInput `pulumi:"mysqlxLz4maxClientCompressionLevel"`
-	// ("mysqlxMaxAllowedPacket") DEPRECATED -- variable should not be settable and will be ignored
+	// The maximum size of network packets that can be received by X Plugin.
 	MysqlxMaxAllowedPacket pulumi.IntInput `pulumi:"mysqlxMaxAllowedPacket"`
 	// ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlxMinWorkerThreads pulumi.IntInput `pulumi:"mysqlxMinWorkerThreads"`
-	// ("mysqlxReadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
 	MysqlxReadTimeout pulumi.IntInput `pulumi:"mysqlxReadTimeout"`
-	// ("mysqlxWaitTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds that X Plugin waits for activity on a connection.
 	MysqlxWaitTimeout pulumi.IntInput `pulumi:"mysqlxWaitTimeout"`
-	// ("mysqlxWriteTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
 	MysqlxWriteTimeout pulumi.IntInput `pulumi:"mysqlxWriteTimeout"`
 	// Set the default compression level for the zstd algorithm. ("mysqlxZstdDefaultCompressionLevel")
 	MysqlxZstdDefaultCompressionLevel pulumi.IntInput `pulumi:"mysqlxZstdDefaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlxZstdMaxClientCompressionLevel")
 	MysqlxZstdMaxClientCompressionLevel pulumi.IntInput `pulumi:"mysqlxZstdMaxClientCompressionLevel"`
+	// The number of seconds to wait for more data from a connection before aborting the read.
+	NetReadTimeout pulumi.IntInput `pulumi:"netReadTimeout"`
+	// The number of seconds to wait for a block to be written to a connection before aborting the write.
+	NetWriteTimeout pulumi.IntInput `pulumi:"netWriteTimeout"`
 	// ("parserMaxMemSize")
-	ParserMaxMemSize pulumi.IntInput `pulumi:"parserMaxMemSize"`
+	ParserMaxMemSize pulumi.StringInput `pulumi:"parserMaxMemSize"`
 	// ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
-	QueryAllocBlockSize pulumi.IntInput `pulumi:"queryAllocBlockSize"`
+	//
+	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
+	QueryAllocBlockSize pulumi.StringInput `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
-	QueryPreallocSize pulumi.IntInput `pulumi:"queryPreallocSize"`
+	//
+	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+	QueryPreallocSize pulumi.StringInput `pulumi:"queryPreallocSize"`
+	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+	RegexpTimeLimit pulumi.IntInput `pulumi:"regexpTimeLimit"`
+	// Each session that must perform a sort allocates a buffer of this size.
+	SortBufferSize pulumi.StringInput `pulumi:"sortBufferSize"`
 	// ("sqlMode")
 	SqlMode pulumi.StringInput `pulumi:"sqlMode"`
 	// ("sqlRequirePrimaryKey")
 	SqlRequirePrimaryKey pulumi.BoolInput `pulumi:"sqlRequirePrimaryKey"`
 	// ("sqlWarnings")
 	SqlWarnings pulumi.BoolInput `pulumi:"sqlWarnings"`
+	// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+	ThreadPoolDedicatedListeners pulumi.BoolInput `pulumi:"threadPoolDedicatedListeners"`
+	// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+	ThreadPoolMaxTransactionsLimit pulumi.IntInput `pulumi:"threadPoolMaxTransactionsLimit"`
+	// Initializes the time zone for each client that connects.
+	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+	// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+	TmpTableSize pulumi.StringInput `pulumi:"tmpTableSize"`
 	// ("transactionIsolation")
 	TransactionIsolation pulumi.StringInput `pulumi:"transactionIsolation"`
+	// The number of seconds the server waits for activity on a noninteractive connection before closing it.
+	WaitTimeout pulumi.IntInput `pulumi:"waitTimeout"`
 }
 
 func (GetMysqlConfigurationVariableArgs) ElementType() reflect.Type {
@@ -7600,6 +9653,11 @@ func (o GetMysqlConfigurationVariableOutput) Autocommit() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.Autocommit }).(pulumi.BoolOutput)
 }
 
+// If enabled, the server stores all temporary tables on disk rather than in memory.
+func (o GetMysqlConfigurationVariableOutput) BigTables() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.BigTables }).(pulumi.BoolOutput)
+}
+
 // Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
 func (o GetMysqlConfigurationVariableOutput) BinlogExpireLogsSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.BinlogExpireLogsSeconds }).(pulumi.IntOutput)
@@ -7625,14 +9683,24 @@ func (o GetMysqlConfigurationVariableOutput) CompletionType() pulumi.StringOutpu
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.CompletionType }).(pulumi.StringOutput)
 }
 
-// ("connectTimeout")
+// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
 func (o GetMysqlConfigurationVariableOutput) ConnectTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.ConnectTimeout }).(pulumi.IntOutput)
 }
 
+// Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+func (o GetMysqlConfigurationVariableOutput) ConnectionMemoryChunkSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.ConnectionMemoryChunkSize }).(pulumi.IntOutput)
+}
+
+// Set the maximum amount of memory that can be used by a single user connection.
+func (o GetMysqlConfigurationVariableOutput) ConnectionMemoryLimit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.ConnectionMemoryLimit }).(pulumi.StringOutput)
+}
+
 // ("cteMaxRecursionDepth")
-func (o GetMysqlConfigurationVariableOutput) CteMaxRecursionDepth() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.CteMaxRecursionDepth }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) CteMaxRecursionDepth() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.CteMaxRecursionDepth }).(pulumi.StringOutput)
 }
 
 // ("defaultAuthenticationPlugin")
@@ -7646,8 +9714,20 @@ func (o GetMysqlConfigurationVariableOutput) ForeignKeyChecks() pulumi.BoolOutpu
 }
 
 // ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o GetMysqlConfigurationVariableOutput) GeneratedRandomPasswordLength() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.GeneratedRandomPasswordLength }).(pulumi.IntOutput)
+}
+
+// Set the total amount of memory that can be used by all user connections.
+func (o GetMysqlConfigurationVariableOutput) GlobalConnectionMemoryLimit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.GlobalConnectionMemoryLimit }).(pulumi.StringOutput)
+}
+
+// Determines whether the MySQL server calculates Global_connection_memory.
+func (o GetMysqlConfigurationVariableOutput) GlobalConnectionMemoryTracking() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.GlobalConnectionMemoryTracking }).(pulumi.BoolOutput)
 }
 
 // * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
@@ -7664,14 +9744,29 @@ func (o GetMysqlConfigurationVariableOutput) InformationSchemaStatsExpiry() pulu
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InformationSchemaStatsExpiry }).(pulumi.IntOutput)
 }
 
+// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+func (o GetMysqlConfigurationVariableOutput) InnodbBufferPoolDumpPct() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbBufferPoolDumpPct }).(pulumi.IntOutput)
+}
+
 // ("innodbBufferPoolInstances")
 func (o GetMysqlConfigurationVariableOutput) InnodbBufferPoolInstances() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbBufferPoolInstances }).(pulumi.IntOutput)
 }
 
-// ("innodbBufferPoolSize")
+// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
 func (o GetMysqlConfigurationVariableOutput) InnodbBufferPoolSize() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbBufferPoolSize }).(pulumi.StringOutput)
+}
+
+// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+func (o GetMysqlConfigurationVariableOutput) InnodbDdlBufferSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbDdlBufferSize }).(pulumi.StringOutput)
+}
+
+// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+func (o GetMysqlConfigurationVariableOutput) InnodbDdlThreads() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbDdlThreads }).(pulumi.IntOutput)
 }
 
 // ("innodbFtEnableStopword")
@@ -7695,8 +9790,8 @@ func (o GetMysqlConfigurationVariableOutput) InnodbFtNumWordOptimize() pulumi.In
 }
 
 // ("innodbFtResultCacheLimit")
-func (o GetMysqlConfigurationVariableOutput) InnodbFtResultCacheLimit() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbFtResultCacheLimit }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) InnodbFtResultCacheLimit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbFtResultCacheLimit }).(pulumi.StringOutput)
 }
 
 // ("innodbFtServerStopwordTable")
@@ -7709,14 +9804,34 @@ func (o GetMysqlConfigurationVariableOutput) InnodbLockWaitTimeout() pulumi.IntO
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbLockWaitTimeout }).(pulumi.IntOutput)
 }
 
-// ("innodbMaxPurgeLag")
-func (o GetMysqlConfigurationVariableOutput) InnodbMaxPurgeLag() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbMaxPurgeLag }).(pulumi.IntOutput)
+// Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+func (o GetMysqlConfigurationVariableOutput) InnodbLogWriterThreads() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.InnodbLogWriterThreads }).(pulumi.BoolOutput)
 }
 
-// ("innodbMaxPurgeLagDelay")
+// The desired maximum purge lag in terms of transactions.
+func (o GetMysqlConfigurationVariableOutput) InnodbMaxPurgeLag() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbMaxPurgeLag }).(pulumi.StringOutput)
+}
+
+// The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
 func (o GetMysqlConfigurationVariableOutput) InnodbMaxPurgeLagDelay() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InnodbMaxPurgeLagDelay }).(pulumi.IntOutput)
+}
+
+// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+func (o GetMysqlConfigurationVariableOutput) InnodbStatsPersistentSamplePages() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbStatsPersistentSamplePages }).(pulumi.StringOutput)
+}
+
+// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+func (o GetMysqlConfigurationVariableOutput) InnodbStatsTransientSamplePages() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.InnodbStatsTransientSamplePages }).(pulumi.StringOutput)
+}
+
+// The number of seconds the server waits for activity on an interactive connection before closing it.
+func (o GetMysqlConfigurationVariableOutput) InteractiveTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.InteractiveTimeout }).(pulumi.IntOutput)
 }
 
 // ("localInfile")
@@ -7729,14 +9844,34 @@ func (o GetMysqlConfigurationVariableOutput) MandatoryRoles() pulumi.StringOutpu
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.MandatoryRoles }).(pulumi.StringOutput)
 }
 
+// The maximum size of one packet or any generated/intermediate string.
+func (o GetMysqlConfigurationVariableOutput) MaxAllowedPacket() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MaxAllowedPacket }).(pulumi.IntOutput)
+}
+
+// Sets the size of the transaction cache.
+func (o GetMysqlConfigurationVariableOutput) MaxBinlogCacheSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.MaxBinlogCacheSize }).(pulumi.StringOutput)
+}
+
+// ("maxConnectErrors")
+func (o GetMysqlConfigurationVariableOutput) MaxConnectErrors() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.MaxConnectErrors }).(pulumi.StringOutput)
+}
+
 // ("maxConnections")
 func (o GetMysqlConfigurationVariableOutput) MaxConnections() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MaxConnections }).(pulumi.IntOutput)
 }
 
 // ("maxExecutionTime")
-func (o GetMysqlConfigurationVariableOutput) MaxExecutionTime() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MaxExecutionTime }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) MaxExecutionTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.MaxExecutionTime }).(pulumi.StringOutput)
+}
+
+// This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+func (o GetMysqlConfigurationVariableOutput) MaxHeapTableSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.MaxHeapTableSize }).(pulumi.StringOutput)
 }
 
 // ("maxPreparedStmtCount")
@@ -7750,11 +9885,13 @@ func (o GetMysqlConfigurationVariableOutput) MysqlFirewallMode() pulumi.BoolOutp
 }
 
 // DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+//
+// Deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o GetMysqlConfigurationVariableOutput) MysqlZstdDefaultCompressionLevel() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlZstdDefaultCompressionLevel }).(pulumi.IntOutput)
 }
 
-// ("mysqlxConnectTimeout") DEPRECATED -- variable should not be settable and will be ignored
+// The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
 func (o GetMysqlConfigurationVariableOutput) MysqlxConnectTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxConnectTimeout }).(pulumi.IntOutput)
 }
@@ -7770,6 +9907,8 @@ func (o GetMysqlConfigurationVariableOutput) MysqlxDeflateMaxClientCompressionLe
 }
 
 // ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o GetMysqlConfigurationVariableOutput) MysqlxDocumentIdUniquePrefix() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxDocumentIdUniquePrefix }).(pulumi.IntOutput)
 }
@@ -7780,11 +9919,13 @@ func (o GetMysqlConfigurationVariableOutput) MysqlxEnableHelloNotice() pulumi.Bo
 }
 
 // ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o GetMysqlConfigurationVariableOutput) MysqlxIdleWorkerThreadTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxIdleWorkerThreadTimeout }).(pulumi.IntOutput)
 }
 
-// ("mysqlxInteractiveTimeout") DEPRECATED -- variable should not be settable and will be ignored
+// The number of seconds to wait for interactive clients to timeout.
 func (o GetMysqlConfigurationVariableOutput) MysqlxInteractiveTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxInteractiveTimeout }).(pulumi.IntOutput)
 }
@@ -7799,27 +9940,29 @@ func (o GetMysqlConfigurationVariableOutput) MysqlxLz4maxClientCompressionLevel(
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxLz4maxClientCompressionLevel }).(pulumi.IntOutput)
 }
 
-// ("mysqlxMaxAllowedPacket") DEPRECATED -- variable should not be settable and will be ignored
+// The maximum size of network packets that can be received by X Plugin.
 func (o GetMysqlConfigurationVariableOutput) MysqlxMaxAllowedPacket() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxMaxAllowedPacket }).(pulumi.IntOutput)
 }
 
 // ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
+//
+// Deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o GetMysqlConfigurationVariableOutput) MysqlxMinWorkerThreads() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxMinWorkerThreads }).(pulumi.IntOutput)
 }
 
-// ("mysqlxReadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+// The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
 func (o GetMysqlConfigurationVariableOutput) MysqlxReadTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxReadTimeout }).(pulumi.IntOutput)
 }
 
-// ("mysqlxWaitTimeout") DEPRECATED -- variable should not be settable and will be ignored
+// The number of seconds that X Plugin waits for activity on a connection.
 func (o GetMysqlConfigurationVariableOutput) MysqlxWaitTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxWaitTimeout }).(pulumi.IntOutput)
 }
 
-// ("mysqlxWriteTimeout") DEPRECATED -- variable should not be settable and will be ignored
+// The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
 func (o GetMysqlConfigurationVariableOutput) MysqlxWriteTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxWriteTimeout }).(pulumi.IntOutput)
 }
@@ -7834,19 +9977,43 @@ func (o GetMysqlConfigurationVariableOutput) MysqlxZstdMaxClientCompressionLevel
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.MysqlxZstdMaxClientCompressionLevel }).(pulumi.IntOutput)
 }
 
+// The number of seconds to wait for more data from a connection before aborting the read.
+func (o GetMysqlConfigurationVariableOutput) NetReadTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.NetReadTimeout }).(pulumi.IntOutput)
+}
+
+// The number of seconds to wait for a block to be written to a connection before aborting the write.
+func (o GetMysqlConfigurationVariableOutput) NetWriteTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.NetWriteTimeout }).(pulumi.IntOutput)
+}
+
 // ("parserMaxMemSize")
-func (o GetMysqlConfigurationVariableOutput) ParserMaxMemSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.ParserMaxMemSize }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationVariableOutput) ParserMaxMemSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.ParserMaxMemSize }).(pulumi.StringOutput)
 }
 
 // ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
-func (o GetMysqlConfigurationVariableOutput) QueryAllocBlockSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.QueryAllocBlockSize }).(pulumi.IntOutput)
+//
+// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o GetMysqlConfigurationVariableOutput) QueryAllocBlockSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.QueryAllocBlockSize }).(pulumi.StringOutput)
 }
 
 // ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
-func (o GetMysqlConfigurationVariableOutput) QueryPreallocSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.QueryPreallocSize }).(pulumi.IntOutput)
+//
+// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o GetMysqlConfigurationVariableOutput) QueryPreallocSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.QueryPreallocSize }).(pulumi.StringOutput)
+}
+
+// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+func (o GetMysqlConfigurationVariableOutput) RegexpTimeLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.RegexpTimeLimit }).(pulumi.IntOutput)
+}
+
+// Each session that must perform a sort allocates a buffer of this size.
+func (o GetMysqlConfigurationVariableOutput) SortBufferSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.SortBufferSize }).(pulumi.StringOutput)
 }
 
 // ("sqlMode")
@@ -7864,9 +10031,34 @@ func (o GetMysqlConfigurationVariableOutput) SqlWarnings() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.SqlWarnings }).(pulumi.BoolOutput)
 }
 
+// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+func (o GetMysqlConfigurationVariableOutput) ThreadPoolDedicatedListeners() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) bool { return v.ThreadPoolDedicatedListeners }).(pulumi.BoolOutput)
+}
+
+// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+func (o GetMysqlConfigurationVariableOutput) ThreadPoolMaxTransactionsLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.ThreadPoolMaxTransactionsLimit }).(pulumi.IntOutput)
+}
+
+// Initializes the time zone for each client that connects.
+func (o GetMysqlConfigurationVariableOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+func (o GetMysqlConfigurationVariableOutput) TmpTableSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.TmpTableSize }).(pulumi.StringOutput)
+}
+
 // ("transactionIsolation")
 func (o GetMysqlConfigurationVariableOutput) TransactionIsolation() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationVariable) string { return v.TransactionIsolation }).(pulumi.StringOutput)
+}
+
+// The number of seconds the server waits for activity on a noninteractive connection before closing it.
+func (o GetMysqlConfigurationVariableOutput) WaitTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationVariable) int { return v.WaitTimeout }).(pulumi.IntOutput)
 }
 
 type GetMysqlConfigurationVariableArrayOutput struct{ *pulumi.OutputState }
@@ -7902,6 +10094,8 @@ type GetMysqlConfigurationsConfiguration struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the Configuration.
 	Id string `pulumi:"id"`
+	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	InitVariables []GetMysqlConfigurationsConfigurationInitVariable `pulumi:"initVariables"`
 	// The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
 	ParentConfigurationId string `pulumi:"parentConfigurationId"`
 	// The requested Shape name.
@@ -7914,8 +10108,8 @@ type GetMysqlConfigurationsConfiguration struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The requested Configuration types.
 	Type string `pulumi:"type"`
-	// User controllable service variables.
-	Variables GetMysqlConfigurationsConfigurationVariables `pulumi:"variables"`
+	// User-defined service variables.
+	Variables []GetMysqlConfigurationsConfigurationVariable `pulumi:"variables"`
 }
 
 // GetMysqlConfigurationsConfigurationInput is an input type that accepts GetMysqlConfigurationsConfigurationArgs and GetMysqlConfigurationsConfigurationOutput values.
@@ -7942,6 +10136,8 @@ type GetMysqlConfigurationsConfigurationArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the Configuration.
 	Id pulumi.StringInput `pulumi:"id"`
+	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+	InitVariables GetMysqlConfigurationsConfigurationInitVariableArrayInput `pulumi:"initVariables"`
 	// The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
 	ParentConfigurationId pulumi.StringInput `pulumi:"parentConfigurationId"`
 	// The requested Shape name.
@@ -7954,8 +10150,8 @@ type GetMysqlConfigurationsConfigurationArgs struct {
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// The requested Configuration types.
 	Type pulumi.StringInput `pulumi:"type"`
-	// User controllable service variables.
-	Variables GetMysqlConfigurationsConfigurationVariablesInput `pulumi:"variables"`
+	// User-defined service variables.
+	Variables GetMysqlConfigurationsConfigurationVariableArrayInput `pulumi:"variables"`
 }
 
 func (GetMysqlConfigurationsConfigurationArgs) ElementType() reflect.Type {
@@ -8039,6 +10235,13 @@ func (o GetMysqlConfigurationsConfigurationOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+func (o GetMysqlConfigurationsConfigurationOutput) InitVariables() GetMysqlConfigurationsConfigurationInitVariableArrayOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) []GetMysqlConfigurationsConfigurationInitVariable {
+		return v.InitVariables
+	}).(GetMysqlConfigurationsConfigurationInitVariableArrayOutput)
+}
+
 // The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
 func (o GetMysqlConfigurationsConfigurationOutput) ParentConfigurationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) string { return v.ParentConfigurationId }).(pulumi.StringOutput)
@@ -8069,11 +10272,11 @@ func (o GetMysqlConfigurationsConfigurationOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// User controllable service variables.
-func (o GetMysqlConfigurationsConfigurationOutput) Variables() GetMysqlConfigurationsConfigurationVariablesOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) GetMysqlConfigurationsConfigurationVariables {
+// User-defined service variables.
+func (o GetMysqlConfigurationsConfigurationOutput) Variables() GetMysqlConfigurationsConfigurationVariableArrayOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) []GetMysqlConfigurationsConfigurationVariable {
 		return v.Variables
-	}).(GetMysqlConfigurationsConfigurationVariablesOutput)
+	}).(GetMysqlConfigurationsConfigurationVariableArrayOutput)
 }
 
 type GetMysqlConfigurationsConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -8096,9 +10299,108 @@ func (o GetMysqlConfigurationsConfigurationArrayOutput) Index(i pulumi.IntInput)
 	}).(GetMysqlConfigurationsConfigurationOutput)
 }
 
-type GetMysqlConfigurationsConfigurationVariables struct {
+type GetMysqlConfigurationsConfigurationInitVariable struct {
+	// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+	LowerCaseTableNames string `pulumi:"lowerCaseTableNames"`
+}
+
+// GetMysqlConfigurationsConfigurationInitVariableInput is an input type that accepts GetMysqlConfigurationsConfigurationInitVariableArgs and GetMysqlConfigurationsConfigurationInitVariableOutput values.
+// You can construct a concrete instance of `GetMysqlConfigurationsConfigurationInitVariableInput` via:
+//
+//	GetMysqlConfigurationsConfigurationInitVariableArgs{...}
+type GetMysqlConfigurationsConfigurationInitVariableInput interface {
+	pulumi.Input
+
+	ToGetMysqlConfigurationsConfigurationInitVariableOutput() GetMysqlConfigurationsConfigurationInitVariableOutput
+	ToGetMysqlConfigurationsConfigurationInitVariableOutputWithContext(context.Context) GetMysqlConfigurationsConfigurationInitVariableOutput
+}
+
+type GetMysqlConfigurationsConfigurationInitVariableArgs struct {
+	// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+	LowerCaseTableNames pulumi.StringInput `pulumi:"lowerCaseTableNames"`
+}
+
+func (GetMysqlConfigurationsConfigurationInitVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlConfigurationsConfigurationInitVariable)(nil)).Elem()
+}
+
+func (i GetMysqlConfigurationsConfigurationInitVariableArgs) ToGetMysqlConfigurationsConfigurationInitVariableOutput() GetMysqlConfigurationsConfigurationInitVariableOutput {
+	return i.ToGetMysqlConfigurationsConfigurationInitVariableOutputWithContext(context.Background())
+}
+
+func (i GetMysqlConfigurationsConfigurationInitVariableArgs) ToGetMysqlConfigurationsConfigurationInitVariableOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationInitVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationInitVariableOutput)
+}
+
+// GetMysqlConfigurationsConfigurationInitVariableArrayInput is an input type that accepts GetMysqlConfigurationsConfigurationInitVariableArray and GetMysqlConfigurationsConfigurationInitVariableArrayOutput values.
+// You can construct a concrete instance of `GetMysqlConfigurationsConfigurationInitVariableArrayInput` via:
+//
+//	GetMysqlConfigurationsConfigurationInitVariableArray{ GetMysqlConfigurationsConfigurationInitVariableArgs{...} }
+type GetMysqlConfigurationsConfigurationInitVariableArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlConfigurationsConfigurationInitVariableArrayOutput() GetMysqlConfigurationsConfigurationInitVariableArrayOutput
+	ToGetMysqlConfigurationsConfigurationInitVariableArrayOutputWithContext(context.Context) GetMysqlConfigurationsConfigurationInitVariableArrayOutput
+}
+
+type GetMysqlConfigurationsConfigurationInitVariableArray []GetMysqlConfigurationsConfigurationInitVariableInput
+
+func (GetMysqlConfigurationsConfigurationInitVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlConfigurationsConfigurationInitVariable)(nil)).Elem()
+}
+
+func (i GetMysqlConfigurationsConfigurationInitVariableArray) ToGetMysqlConfigurationsConfigurationInitVariableArrayOutput() GetMysqlConfigurationsConfigurationInitVariableArrayOutput {
+	return i.ToGetMysqlConfigurationsConfigurationInitVariableArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlConfigurationsConfigurationInitVariableArray) ToGetMysqlConfigurationsConfigurationInitVariableArrayOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationInitVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationInitVariableArrayOutput)
+}
+
+type GetMysqlConfigurationsConfigurationInitVariableOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlConfigurationsConfigurationInitVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlConfigurationsConfigurationInitVariable)(nil)).Elem()
+}
+
+func (o GetMysqlConfigurationsConfigurationInitVariableOutput) ToGetMysqlConfigurationsConfigurationInitVariableOutput() GetMysqlConfigurationsConfigurationInitVariableOutput {
+	return o
+}
+
+func (o GetMysqlConfigurationsConfigurationInitVariableOutput) ToGetMysqlConfigurationsConfigurationInitVariableOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationInitVariableOutput {
+	return o
+}
+
+// Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+func (o GetMysqlConfigurationsConfigurationInitVariableOutput) LowerCaseTableNames() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationInitVariable) string { return v.LowerCaseTableNames }).(pulumi.StringOutput)
+}
+
+type GetMysqlConfigurationsConfigurationInitVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlConfigurationsConfigurationInitVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlConfigurationsConfigurationInitVariable)(nil)).Elem()
+}
+
+func (o GetMysqlConfigurationsConfigurationInitVariableArrayOutput) ToGetMysqlConfigurationsConfigurationInitVariableArrayOutput() GetMysqlConfigurationsConfigurationInitVariableArrayOutput {
+	return o
+}
+
+func (o GetMysqlConfigurationsConfigurationInitVariableArrayOutput) ToGetMysqlConfigurationsConfigurationInitVariableArrayOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationInitVariableArrayOutput {
+	return o
+}
+
+func (o GetMysqlConfigurationsConfigurationInitVariableArrayOutput) Index(i pulumi.IntInput) GetMysqlConfigurationsConfigurationInitVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlConfigurationsConfigurationInitVariable {
+		return vs[0].([]GetMysqlConfigurationsConfigurationInitVariable)[vs[1].(int)]
+	}).(GetMysqlConfigurationsConfigurationInitVariableOutput)
+}
+
+type GetMysqlConfigurationsConfigurationVariable struct {
 	// ("autocommit")
 	Autocommit bool `pulumi:"autocommit"`
+	// If enabled, the server stores all temporary tables on disk rather than in memory.
+	BigTables bool `pulumi:"bigTables"`
 	// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
 	BinlogExpireLogsSeconds int `pulumi:"binlogExpireLogsSeconds"`
 	// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
@@ -8109,16 +10411,26 @@ type GetMysqlConfigurationsConfigurationVariables struct {
 	BinlogTransactionCompression bool `pulumi:"binlogTransactionCompression"`
 	// ("completionType")
 	CompletionType string `pulumi:"completionType"`
-	// ("connectTimeout")
+	// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
 	ConnectTimeout int `pulumi:"connectTimeout"`
+	// Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+	ConnectionMemoryChunkSize int `pulumi:"connectionMemoryChunkSize"`
+	// Set the maximum amount of memory that can be used by a single user connection.
+	ConnectionMemoryLimit string `pulumi:"connectionMemoryLimit"`
 	// ("cteMaxRecursionDepth")
-	CteMaxRecursionDepth int `pulumi:"cteMaxRecursionDepth"`
+	CteMaxRecursionDepth string `pulumi:"cteMaxRecursionDepth"`
 	// ("defaultAuthenticationPlugin")
 	DefaultAuthenticationPlugin string `pulumi:"defaultAuthenticationPlugin"`
 	// ("foreignKeyChecks")
 	ForeignKeyChecks bool `pulumi:"foreignKeyChecks"`
 	// ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
 	GeneratedRandomPasswordLength int `pulumi:"generatedRandomPasswordLength"`
+	// Set the total amount of memory that can be used by all user connections.
+	GlobalConnectionMemoryLimit string `pulumi:"globalConnectionMemoryLimit"`
+	// Determines whether the MySQL server calculates Global_connection_memory.
+	GlobalConnectionMemoryTracking bool `pulumi:"globalConnectionMemoryTracking"`
 	// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
 	// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
 	// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -8127,10 +10439,16 @@ type GetMysqlConfigurationsConfigurationVariables struct {
 	GroupReplicationConsistency string `pulumi:"groupReplicationConsistency"`
 	// ("informationSchemaStatsExpiry")
 	InformationSchemaStatsExpiry int `pulumi:"informationSchemaStatsExpiry"`
+	// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+	InnodbBufferPoolDumpPct int `pulumi:"innodbBufferPoolDumpPct"`
 	// ("innodbBufferPoolInstances")
 	InnodbBufferPoolInstances int `pulumi:"innodbBufferPoolInstances"`
-	// ("innodbBufferPoolSize")
+	// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
 	InnodbBufferPoolSize string `pulumi:"innodbBufferPoolSize"`
+	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+	InnodbDdlBufferSize string `pulumi:"innodbDdlBufferSize"`
+	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+	InnodbDdlThreads int `pulumi:"innodbDdlThreads"`
 	// ("innodbFtEnableStopword")
 	InnodbFtEnableStopword bool `pulumi:"innodbFtEnableStopword"`
 	// ("innodbFtMaxTokenSize")
@@ -8140,91 +10458,139 @@ type GetMysqlConfigurationsConfigurationVariables struct {
 	// ("innodbFtNumWordOptimize")
 	InnodbFtNumWordOptimize int `pulumi:"innodbFtNumWordOptimize"`
 	// ("innodbFtResultCacheLimit")
-	InnodbFtResultCacheLimit int `pulumi:"innodbFtResultCacheLimit"`
+	InnodbFtResultCacheLimit string `pulumi:"innodbFtResultCacheLimit"`
 	// ("innodbFtServerStopwordTable")
 	InnodbFtServerStopwordTable string `pulumi:"innodbFtServerStopwordTable"`
 	// ("innodbLockWaitTimeout")
 	InnodbLockWaitTimeout int `pulumi:"innodbLockWaitTimeout"`
-	// ("innodbMaxPurgeLag")
-	InnodbMaxPurgeLag int `pulumi:"innodbMaxPurgeLag"`
-	// ("innodbMaxPurgeLagDelay")
+	// Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+	InnodbLogWriterThreads bool `pulumi:"innodbLogWriterThreads"`
+	// The desired maximum purge lag in terms of transactions.
+	InnodbMaxPurgeLag string `pulumi:"innodbMaxPurgeLag"`
+	// The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
 	InnodbMaxPurgeLagDelay int `pulumi:"innodbMaxPurgeLagDelay"`
+	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+	InnodbStatsPersistentSamplePages string `pulumi:"innodbStatsPersistentSamplePages"`
+	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+	InnodbStatsTransientSamplePages string `pulumi:"innodbStatsTransientSamplePages"`
+	// The number of seconds the server waits for activity on an interactive connection before closing it.
+	InteractiveTimeout int `pulumi:"interactiveTimeout"`
 	// ("localInfile")
 	LocalInfile bool `pulumi:"localInfile"`
 	// ("mandatoryRoles")
 	MandatoryRoles string `pulumi:"mandatoryRoles"`
+	// The maximum size of one packet or any generated/intermediate string.
+	MaxAllowedPacket int `pulumi:"maxAllowedPacket"`
+	// Sets the size of the transaction cache.
+	MaxBinlogCacheSize string `pulumi:"maxBinlogCacheSize"`
+	// ("maxConnectErrors")
+	MaxConnectErrors string `pulumi:"maxConnectErrors"`
 	// ("maxConnections")
 	MaxConnections int `pulumi:"maxConnections"`
 	// ("maxExecutionTime")
-	MaxExecutionTime int `pulumi:"maxExecutionTime"`
+	MaxExecutionTime string `pulumi:"maxExecutionTime"`
+	// This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+	MaxHeapTableSize string `pulumi:"maxHeapTableSize"`
 	// ("maxPreparedStmtCount")
 	MaxPreparedStmtCount int `pulumi:"maxPreparedStmtCount"`
 	// ("mysqlFirewallMode")
 	MysqlFirewallMode bool `pulumi:"mysqlFirewallMode"`
 	// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+	//
+	// Deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlZstdDefaultCompressionLevel int `pulumi:"mysqlZstdDefaultCompressionLevel"`
-	// ("mysqlxConnectTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
 	MysqlxConnectTimeout int `pulumi:"mysqlxConnectTimeout"`
 	// Set the default compression level for the deflate algorithm. ("mysqlxDeflateDefaultCompressionLevel")
 	MysqlxDeflateDefaultCompressionLevel int `pulumi:"mysqlxDeflateDefaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlxDeflateMaxClientCompressionLevel")
 	MysqlxDeflateMaxClientCompressionLevel int `pulumi:"mysqlxDeflateMaxClientCompressionLevel"`
 	// ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlxDocumentIdUniquePrefix int `pulumi:"mysqlxDocumentIdUniquePrefix"`
 	// ("mysqlxEnableHelloNotice") DEPRECATED -- variable should not be settable and will be ignored
 	MysqlxEnableHelloNotice bool `pulumi:"mysqlxEnableHelloNotice"`
 	// ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlxIdleWorkerThreadTimeout int `pulumi:"mysqlxIdleWorkerThreadTimeout"`
-	// ("mysqlxInteractiveTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds to wait for interactive clients to timeout.
 	MysqlxInteractiveTimeout int `pulumi:"mysqlxInteractiveTimeout"`
 	// Set the default compression level for the lz4 algorithm. ("mysqlxLz4DefaultCompressionLevel")
 	MysqlxLz4defaultCompressionLevel int `pulumi:"mysqlxLz4defaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlxLz4MaxClientCompressionLevel")
 	MysqlxLz4maxClientCompressionLevel int `pulumi:"mysqlxLz4maxClientCompressionLevel"`
-	// ("mysqlxMaxAllowedPacket") DEPRECATED -- variable should not be settable and will be ignored
+	// The maximum size of network packets that can be received by X Plugin.
 	MysqlxMaxAllowedPacket int `pulumi:"mysqlxMaxAllowedPacket"`
 	// ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlxMinWorkerThreads int `pulumi:"mysqlxMinWorkerThreads"`
-	// ("mysqlxReadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
 	MysqlxReadTimeout int `pulumi:"mysqlxReadTimeout"`
-	// ("mysqlxWaitTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds that X Plugin waits for activity on a connection.
 	MysqlxWaitTimeout int `pulumi:"mysqlxWaitTimeout"`
-	// ("mysqlxWriteTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
 	MysqlxWriteTimeout int `pulumi:"mysqlxWriteTimeout"`
 	// Set the default compression level for the zstd algorithm. ("mysqlxZstdDefaultCompressionLevel")
 	MysqlxZstdDefaultCompressionLevel int `pulumi:"mysqlxZstdDefaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlxZstdMaxClientCompressionLevel")
 	MysqlxZstdMaxClientCompressionLevel int `pulumi:"mysqlxZstdMaxClientCompressionLevel"`
+	// The number of seconds to wait for more data from a connection before aborting the read.
+	NetReadTimeout int `pulumi:"netReadTimeout"`
+	// The number of seconds to wait for a block to be written to a connection before aborting the write.
+	NetWriteTimeout int `pulumi:"netWriteTimeout"`
 	// ("parserMaxMemSize")
-	ParserMaxMemSize int `pulumi:"parserMaxMemSize"`
+	ParserMaxMemSize string `pulumi:"parserMaxMemSize"`
 	// ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
-	QueryAllocBlockSize int `pulumi:"queryAllocBlockSize"`
+	//
+	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
+	QueryAllocBlockSize string `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
-	QueryPreallocSize int `pulumi:"queryPreallocSize"`
+	//
+	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+	QueryPreallocSize string `pulumi:"queryPreallocSize"`
+	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+	RegexpTimeLimit int `pulumi:"regexpTimeLimit"`
+	// Each session that must perform a sort allocates a buffer of this size.
+	SortBufferSize string `pulumi:"sortBufferSize"`
 	// ("sqlMode")
 	SqlMode string `pulumi:"sqlMode"`
 	// ("sqlRequirePrimaryKey")
 	SqlRequirePrimaryKey bool `pulumi:"sqlRequirePrimaryKey"`
 	// ("sqlWarnings")
 	SqlWarnings bool `pulumi:"sqlWarnings"`
+	// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+	ThreadPoolDedicatedListeners bool `pulumi:"threadPoolDedicatedListeners"`
+	// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+	ThreadPoolMaxTransactionsLimit int `pulumi:"threadPoolMaxTransactionsLimit"`
+	// Initializes the time zone for each client that connects.
+	TimeZone string `pulumi:"timeZone"`
+	// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+	TmpTableSize string `pulumi:"tmpTableSize"`
 	// ("transactionIsolation")
 	TransactionIsolation string `pulumi:"transactionIsolation"`
+	// The number of seconds the server waits for activity on a noninteractive connection before closing it.
+	WaitTimeout int `pulumi:"waitTimeout"`
 }
 
-// GetMysqlConfigurationsConfigurationVariablesInput is an input type that accepts GetMysqlConfigurationsConfigurationVariablesArgs and GetMysqlConfigurationsConfigurationVariablesOutput values.
-// You can construct a concrete instance of `GetMysqlConfigurationsConfigurationVariablesInput` via:
+// GetMysqlConfigurationsConfigurationVariableInput is an input type that accepts GetMysqlConfigurationsConfigurationVariableArgs and GetMysqlConfigurationsConfigurationVariableOutput values.
+// You can construct a concrete instance of `GetMysqlConfigurationsConfigurationVariableInput` via:
 //
-//	GetMysqlConfigurationsConfigurationVariablesArgs{...}
-type GetMysqlConfigurationsConfigurationVariablesInput interface {
+//	GetMysqlConfigurationsConfigurationVariableArgs{...}
+type GetMysqlConfigurationsConfigurationVariableInput interface {
 	pulumi.Input
 
-	ToGetMysqlConfigurationsConfigurationVariablesOutput() GetMysqlConfigurationsConfigurationVariablesOutput
-	ToGetMysqlConfigurationsConfigurationVariablesOutputWithContext(context.Context) GetMysqlConfigurationsConfigurationVariablesOutput
+	ToGetMysqlConfigurationsConfigurationVariableOutput() GetMysqlConfigurationsConfigurationVariableOutput
+	ToGetMysqlConfigurationsConfigurationVariableOutputWithContext(context.Context) GetMysqlConfigurationsConfigurationVariableOutput
 }
 
-type GetMysqlConfigurationsConfigurationVariablesArgs struct {
+type GetMysqlConfigurationsConfigurationVariableArgs struct {
 	// ("autocommit")
 	Autocommit pulumi.BoolInput `pulumi:"autocommit"`
+	// If enabled, the server stores all temporary tables on disk rather than in memory.
+	BigTables pulumi.BoolInput `pulumi:"bigTables"`
 	// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
 	BinlogExpireLogsSeconds pulumi.IntInput `pulumi:"binlogExpireLogsSeconds"`
 	// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
@@ -8235,16 +10601,26 @@ type GetMysqlConfigurationsConfigurationVariablesArgs struct {
 	BinlogTransactionCompression pulumi.BoolInput `pulumi:"binlogTransactionCompression"`
 	// ("completionType")
 	CompletionType pulumi.StringInput `pulumi:"completionType"`
-	// ("connectTimeout")
+	// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
 	ConnectTimeout pulumi.IntInput `pulumi:"connectTimeout"`
+	// Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+	ConnectionMemoryChunkSize pulumi.IntInput `pulumi:"connectionMemoryChunkSize"`
+	// Set the maximum amount of memory that can be used by a single user connection.
+	ConnectionMemoryLimit pulumi.StringInput `pulumi:"connectionMemoryLimit"`
 	// ("cteMaxRecursionDepth")
-	CteMaxRecursionDepth pulumi.IntInput `pulumi:"cteMaxRecursionDepth"`
+	CteMaxRecursionDepth pulumi.StringInput `pulumi:"cteMaxRecursionDepth"`
 	// ("defaultAuthenticationPlugin")
 	DefaultAuthenticationPlugin pulumi.StringInput `pulumi:"defaultAuthenticationPlugin"`
 	// ("foreignKeyChecks")
 	ForeignKeyChecks pulumi.BoolInput `pulumi:"foreignKeyChecks"`
 	// ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
 	GeneratedRandomPasswordLength pulumi.IntInput `pulumi:"generatedRandomPasswordLength"`
+	// Set the total amount of memory that can be used by all user connections.
+	GlobalConnectionMemoryLimit pulumi.StringInput `pulumi:"globalConnectionMemoryLimit"`
+	// Determines whether the MySQL server calculates Global_connection_memory.
+	GlobalConnectionMemoryTracking pulumi.BoolInput `pulumi:"globalConnectionMemoryTracking"`
 	// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
 	// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
 	// * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
@@ -8253,10 +10629,16 @@ type GetMysqlConfigurationsConfigurationVariablesArgs struct {
 	GroupReplicationConsistency pulumi.StringInput `pulumi:"groupReplicationConsistency"`
 	// ("informationSchemaStatsExpiry")
 	InformationSchemaStatsExpiry pulumi.IntInput `pulumi:"informationSchemaStatsExpiry"`
+	// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+	InnodbBufferPoolDumpPct pulumi.IntInput `pulumi:"innodbBufferPoolDumpPct"`
 	// ("innodbBufferPoolInstances")
 	InnodbBufferPoolInstances pulumi.IntInput `pulumi:"innodbBufferPoolInstances"`
-	// ("innodbBufferPoolSize")
+	// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
 	InnodbBufferPoolSize pulumi.StringInput `pulumi:"innodbBufferPoolSize"`
+	// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+	InnodbDdlBufferSize pulumi.StringInput `pulumi:"innodbDdlBufferSize"`
+	// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+	InnodbDdlThreads pulumi.IntInput `pulumi:"innodbDdlThreads"`
 	// ("innodbFtEnableStopword")
 	InnodbFtEnableStopword pulumi.BoolInput `pulumi:"innodbFtEnableStopword"`
 	// ("innodbFtMaxTokenSize")
@@ -8266,156 +10648,254 @@ type GetMysqlConfigurationsConfigurationVariablesArgs struct {
 	// ("innodbFtNumWordOptimize")
 	InnodbFtNumWordOptimize pulumi.IntInput `pulumi:"innodbFtNumWordOptimize"`
 	// ("innodbFtResultCacheLimit")
-	InnodbFtResultCacheLimit pulumi.IntInput `pulumi:"innodbFtResultCacheLimit"`
+	InnodbFtResultCacheLimit pulumi.StringInput `pulumi:"innodbFtResultCacheLimit"`
 	// ("innodbFtServerStopwordTable")
 	InnodbFtServerStopwordTable pulumi.StringInput `pulumi:"innodbFtServerStopwordTable"`
 	// ("innodbLockWaitTimeout")
 	InnodbLockWaitTimeout pulumi.IntInput `pulumi:"innodbLockWaitTimeout"`
-	// ("innodbMaxPurgeLag")
-	InnodbMaxPurgeLag pulumi.IntInput `pulumi:"innodbMaxPurgeLag"`
-	// ("innodbMaxPurgeLagDelay")
+	// Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+	InnodbLogWriterThreads pulumi.BoolInput `pulumi:"innodbLogWriterThreads"`
+	// The desired maximum purge lag in terms of transactions.
+	InnodbMaxPurgeLag pulumi.StringInput `pulumi:"innodbMaxPurgeLag"`
+	// The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
 	InnodbMaxPurgeLagDelay pulumi.IntInput `pulumi:"innodbMaxPurgeLagDelay"`
+	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+	InnodbStatsPersistentSamplePages pulumi.StringInput `pulumi:"innodbStatsPersistentSamplePages"`
+	// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+	InnodbStatsTransientSamplePages pulumi.StringInput `pulumi:"innodbStatsTransientSamplePages"`
+	// The number of seconds the server waits for activity on an interactive connection before closing it.
+	InteractiveTimeout pulumi.IntInput `pulumi:"interactiveTimeout"`
 	// ("localInfile")
 	LocalInfile pulumi.BoolInput `pulumi:"localInfile"`
 	// ("mandatoryRoles")
 	MandatoryRoles pulumi.StringInput `pulumi:"mandatoryRoles"`
+	// The maximum size of one packet or any generated/intermediate string.
+	MaxAllowedPacket pulumi.IntInput `pulumi:"maxAllowedPacket"`
+	// Sets the size of the transaction cache.
+	MaxBinlogCacheSize pulumi.StringInput `pulumi:"maxBinlogCacheSize"`
+	// ("maxConnectErrors")
+	MaxConnectErrors pulumi.StringInput `pulumi:"maxConnectErrors"`
 	// ("maxConnections")
 	MaxConnections pulumi.IntInput `pulumi:"maxConnections"`
 	// ("maxExecutionTime")
-	MaxExecutionTime pulumi.IntInput `pulumi:"maxExecutionTime"`
+	MaxExecutionTime pulumi.StringInput `pulumi:"maxExecutionTime"`
+	// This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+	MaxHeapTableSize pulumi.StringInput `pulumi:"maxHeapTableSize"`
 	// ("maxPreparedStmtCount")
 	MaxPreparedStmtCount pulumi.IntInput `pulumi:"maxPreparedStmtCount"`
 	// ("mysqlFirewallMode")
 	MysqlFirewallMode pulumi.BoolInput `pulumi:"mysqlFirewallMode"`
 	// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+	//
+	// Deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlZstdDefaultCompressionLevel pulumi.IntInput `pulumi:"mysqlZstdDefaultCompressionLevel"`
-	// ("mysqlxConnectTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
 	MysqlxConnectTimeout pulumi.IntInput `pulumi:"mysqlxConnectTimeout"`
 	// Set the default compression level for the deflate algorithm. ("mysqlxDeflateDefaultCompressionLevel")
 	MysqlxDeflateDefaultCompressionLevel pulumi.IntInput `pulumi:"mysqlxDeflateDefaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlxDeflateMaxClientCompressionLevel")
 	MysqlxDeflateMaxClientCompressionLevel pulumi.IntInput `pulumi:"mysqlxDeflateMaxClientCompressionLevel"`
 	// ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlxDocumentIdUniquePrefix pulumi.IntInput `pulumi:"mysqlxDocumentIdUniquePrefix"`
 	// ("mysqlxEnableHelloNotice") DEPRECATED -- variable should not be settable and will be ignored
 	MysqlxEnableHelloNotice pulumi.BoolInput `pulumi:"mysqlxEnableHelloNotice"`
 	// ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlxIdleWorkerThreadTimeout pulumi.IntInput `pulumi:"mysqlxIdleWorkerThreadTimeout"`
-	// ("mysqlxInteractiveTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds to wait for interactive clients to timeout.
 	MysqlxInteractiveTimeout pulumi.IntInput `pulumi:"mysqlxInteractiveTimeout"`
 	// Set the default compression level for the lz4 algorithm. ("mysqlxLz4DefaultCompressionLevel")
 	MysqlxLz4defaultCompressionLevel pulumi.IntInput `pulumi:"mysqlxLz4defaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlxLz4MaxClientCompressionLevel")
 	MysqlxLz4maxClientCompressionLevel pulumi.IntInput `pulumi:"mysqlxLz4maxClientCompressionLevel"`
-	// ("mysqlxMaxAllowedPacket") DEPRECATED -- variable should not be settable and will be ignored
+	// The maximum size of network packets that can be received by X Plugin.
 	MysqlxMaxAllowedPacket pulumi.IntInput `pulumi:"mysqlxMaxAllowedPacket"`
 	// ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
+	//
+	// Deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
 	MysqlxMinWorkerThreads pulumi.IntInput `pulumi:"mysqlxMinWorkerThreads"`
-	// ("mysqlxReadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
 	MysqlxReadTimeout pulumi.IntInput `pulumi:"mysqlxReadTimeout"`
-	// ("mysqlxWaitTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds that X Plugin waits for activity on a connection.
 	MysqlxWaitTimeout pulumi.IntInput `pulumi:"mysqlxWaitTimeout"`
-	// ("mysqlxWriteTimeout") DEPRECATED -- variable should not be settable and will be ignored
+	// The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
 	MysqlxWriteTimeout pulumi.IntInput `pulumi:"mysqlxWriteTimeout"`
 	// Set the default compression level for the zstd algorithm. ("mysqlxZstdDefaultCompressionLevel")
 	MysqlxZstdDefaultCompressionLevel pulumi.IntInput `pulumi:"mysqlxZstdDefaultCompressionLevel"`
 	// Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlxZstdMaxClientCompressionLevel")
 	MysqlxZstdMaxClientCompressionLevel pulumi.IntInput `pulumi:"mysqlxZstdMaxClientCompressionLevel"`
+	// The number of seconds to wait for more data from a connection before aborting the read.
+	NetReadTimeout pulumi.IntInput `pulumi:"netReadTimeout"`
+	// The number of seconds to wait for a block to be written to a connection before aborting the write.
+	NetWriteTimeout pulumi.IntInput `pulumi:"netWriteTimeout"`
 	// ("parserMaxMemSize")
-	ParserMaxMemSize pulumi.IntInput `pulumi:"parserMaxMemSize"`
+	ParserMaxMemSize pulumi.StringInput `pulumi:"parserMaxMemSize"`
 	// ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
-	QueryAllocBlockSize pulumi.IntInput `pulumi:"queryAllocBlockSize"`
+	//
+	// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
+	QueryAllocBlockSize pulumi.StringInput `pulumi:"queryAllocBlockSize"`
 	// ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
-	QueryPreallocSize pulumi.IntInput `pulumi:"queryPreallocSize"`
+	//
+	// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+	QueryPreallocSize pulumi.StringInput `pulumi:"queryPreallocSize"`
+	// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+	RegexpTimeLimit pulumi.IntInput `pulumi:"regexpTimeLimit"`
+	// Each session that must perform a sort allocates a buffer of this size.
+	SortBufferSize pulumi.StringInput `pulumi:"sortBufferSize"`
 	// ("sqlMode")
 	SqlMode pulumi.StringInput `pulumi:"sqlMode"`
 	// ("sqlRequirePrimaryKey")
 	SqlRequirePrimaryKey pulumi.BoolInput `pulumi:"sqlRequirePrimaryKey"`
 	// ("sqlWarnings")
 	SqlWarnings pulumi.BoolInput `pulumi:"sqlWarnings"`
+	// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+	ThreadPoolDedicatedListeners pulumi.BoolInput `pulumi:"threadPoolDedicatedListeners"`
+	// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+	ThreadPoolMaxTransactionsLimit pulumi.IntInput `pulumi:"threadPoolMaxTransactionsLimit"`
+	// Initializes the time zone for each client that connects.
+	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+	// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+	TmpTableSize pulumi.StringInput `pulumi:"tmpTableSize"`
 	// ("transactionIsolation")
 	TransactionIsolation pulumi.StringInput `pulumi:"transactionIsolation"`
+	// The number of seconds the server waits for activity on a noninteractive connection before closing it.
+	WaitTimeout pulumi.IntInput `pulumi:"waitTimeout"`
 }
 
-func (GetMysqlConfigurationsConfigurationVariablesArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlConfigurationsConfigurationVariables)(nil)).Elem()
+func (GetMysqlConfigurationsConfigurationVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlConfigurationsConfigurationVariable)(nil)).Elem()
 }
 
-func (i GetMysqlConfigurationsConfigurationVariablesArgs) ToGetMysqlConfigurationsConfigurationVariablesOutput() GetMysqlConfigurationsConfigurationVariablesOutput {
-	return i.ToGetMysqlConfigurationsConfigurationVariablesOutputWithContext(context.Background())
+func (i GetMysqlConfigurationsConfigurationVariableArgs) ToGetMysqlConfigurationsConfigurationVariableOutput() GetMysqlConfigurationsConfigurationVariableOutput {
+	return i.ToGetMysqlConfigurationsConfigurationVariableOutputWithContext(context.Background())
 }
 
-func (i GetMysqlConfigurationsConfigurationVariablesArgs) ToGetMysqlConfigurationsConfigurationVariablesOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationVariablesOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationVariablesOutput)
+func (i GetMysqlConfigurationsConfigurationVariableArgs) ToGetMysqlConfigurationsConfigurationVariableOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationVariableOutput)
 }
 
-type GetMysqlConfigurationsConfigurationVariablesOutput struct{ *pulumi.OutputState }
+// GetMysqlConfigurationsConfigurationVariableArrayInput is an input type that accepts GetMysqlConfigurationsConfigurationVariableArray and GetMysqlConfigurationsConfigurationVariableArrayOutput values.
+// You can construct a concrete instance of `GetMysqlConfigurationsConfigurationVariableArrayInput` via:
+//
+//	GetMysqlConfigurationsConfigurationVariableArray{ GetMysqlConfigurationsConfigurationVariableArgs{...} }
+type GetMysqlConfigurationsConfigurationVariableArrayInput interface {
+	pulumi.Input
 
-func (GetMysqlConfigurationsConfigurationVariablesOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlConfigurationsConfigurationVariables)(nil)).Elem()
+	ToGetMysqlConfigurationsConfigurationVariableArrayOutput() GetMysqlConfigurationsConfigurationVariableArrayOutput
+	ToGetMysqlConfigurationsConfigurationVariableArrayOutputWithContext(context.Context) GetMysqlConfigurationsConfigurationVariableArrayOutput
 }
 
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) ToGetMysqlConfigurationsConfigurationVariablesOutput() GetMysqlConfigurationsConfigurationVariablesOutput {
+type GetMysqlConfigurationsConfigurationVariableArray []GetMysqlConfigurationsConfigurationVariableInput
+
+func (GetMysqlConfigurationsConfigurationVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlConfigurationsConfigurationVariable)(nil)).Elem()
+}
+
+func (i GetMysqlConfigurationsConfigurationVariableArray) ToGetMysqlConfigurationsConfigurationVariableArrayOutput() GetMysqlConfigurationsConfigurationVariableArrayOutput {
+	return i.ToGetMysqlConfigurationsConfigurationVariableArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlConfigurationsConfigurationVariableArray) ToGetMysqlConfigurationsConfigurationVariableArrayOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlConfigurationsConfigurationVariableArrayOutput)
+}
+
+type GetMysqlConfigurationsConfigurationVariableOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlConfigurationsConfigurationVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlConfigurationsConfigurationVariable)(nil)).Elem()
+}
+
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ToGetMysqlConfigurationsConfigurationVariableOutput() GetMysqlConfigurationsConfigurationVariableOutput {
 	return o
 }
 
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) ToGetMysqlConfigurationsConfigurationVariablesOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationVariablesOutput {
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ToGetMysqlConfigurationsConfigurationVariableOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationVariableOutput {
 	return o
 }
 
 // ("autocommit")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) Autocommit() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) bool { return v.Autocommit }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) Autocommit() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.Autocommit }).(pulumi.BoolOutput)
+}
+
+// If enabled, the server stores all temporary tables on disk rather than in memory.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) BigTables() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.BigTables }).(pulumi.BoolOutput)
 }
 
 // Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) BinlogExpireLogsSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.BinlogExpireLogsSeconds }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) BinlogExpireLogsSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.BinlogExpireLogsSeconds }).(pulumi.IntOutput)
 }
 
 // Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) BinlogRowMetadata() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) string { return v.BinlogRowMetadata }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) BinlogRowMetadata() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.BinlogRowMetadata }).(pulumi.StringOutput)
 }
 
 // When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) BinlogRowValueOptions() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) string { return v.BinlogRowValueOptions }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) BinlogRowValueOptions() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.BinlogRowValueOptions }).(pulumi.StringOutput)
 }
 
 // Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) BinlogTransactionCompression() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) bool { return v.BinlogTransactionCompression }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) BinlogTransactionCompression() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.BinlogTransactionCompression }).(pulumi.BoolOutput)
 }
 
 // ("completionType")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) CompletionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) string { return v.CompletionType }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) CompletionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.CompletionType }).(pulumi.StringOutput)
 }
 
-// ("connectTimeout")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) ConnectTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.ConnectTimeout }).(pulumi.IntOutput)
+// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ConnectTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.ConnectTimeout }).(pulumi.IntOutput)
+}
+
+// Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ConnectionMemoryChunkSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.ConnectionMemoryChunkSize }).(pulumi.IntOutput)
+}
+
+// Set the maximum amount of memory that can be used by a single user connection.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ConnectionMemoryLimit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.ConnectionMemoryLimit }).(pulumi.StringOutput)
 }
 
 // ("cteMaxRecursionDepth")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) CteMaxRecursionDepth() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.CteMaxRecursionDepth }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) CteMaxRecursionDepth() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.CteMaxRecursionDepth }).(pulumi.StringOutput)
 }
 
 // ("defaultAuthenticationPlugin")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) DefaultAuthenticationPlugin() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) string { return v.DefaultAuthenticationPlugin }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) DefaultAuthenticationPlugin() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.DefaultAuthenticationPlugin }).(pulumi.StringOutput)
 }
 
 // ("foreignKeyChecks")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) ForeignKeyChecks() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) bool { return v.ForeignKeyChecks }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ForeignKeyChecks() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.ForeignKeyChecks }).(pulumi.BoolOutput)
 }
 
 // ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) GeneratedRandomPasswordLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.GeneratedRandomPasswordLength }).(pulumi.IntOutput)
+//
+// Deprecated: The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) GeneratedRandomPasswordLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.GeneratedRandomPasswordLength }).(pulumi.IntOutput)
+}
+
+// Set the total amount of memory that can be used by all user connections.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) GlobalConnectionMemoryLimit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.GlobalConnectionMemoryLimit }).(pulumi.StringOutput)
+}
+
+// Determines whether the MySQL server calculates Global_connection_memory.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) GlobalConnectionMemoryTracking() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.GlobalConnectionMemoryTracking }).(pulumi.BoolOutput)
 }
 
 // * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
@@ -8423,222 +10903,352 @@ func (o GetMysqlConfigurationsConfigurationVariablesOutput) GeneratedRandomPassw
 // * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
 // * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
 // * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) GroupReplicationConsistency() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) string { return v.GroupReplicationConsistency }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) GroupReplicationConsistency() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.GroupReplicationConsistency }).(pulumi.StringOutput)
 }
 
 // ("informationSchemaStatsExpiry")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) InformationSchemaStatsExpiry() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.InformationSchemaStatsExpiry }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InformationSchemaStatsExpiry() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InformationSchemaStatsExpiry }).(pulumi.IntOutput)
+}
+
+// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbBufferPoolDumpPct() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbBufferPoolDumpPct }).(pulumi.IntOutput)
 }
 
 // ("innodbBufferPoolInstances")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) InnodbBufferPoolInstances() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.InnodbBufferPoolInstances }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbBufferPoolInstances() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbBufferPoolInstances }).(pulumi.IntOutput)
 }
 
-// ("innodbBufferPoolSize")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) InnodbBufferPoolSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) string { return v.InnodbBufferPoolSize }).(pulumi.StringOutput)
+// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbBufferPoolSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbBufferPoolSize }).(pulumi.StringOutput)
+}
+
+// innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbDdlBufferSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbDdlBufferSize }).(pulumi.StringOutput)
+}
+
+// innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbDdlThreads() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbDdlThreads }).(pulumi.IntOutput)
 }
 
 // ("innodbFtEnableStopword")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) InnodbFtEnableStopword() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) bool { return v.InnodbFtEnableStopword }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbFtEnableStopword() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.InnodbFtEnableStopword }).(pulumi.BoolOutput)
 }
 
 // ("innodbFtMaxTokenSize")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) InnodbFtMaxTokenSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.InnodbFtMaxTokenSize }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbFtMaxTokenSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbFtMaxTokenSize }).(pulumi.IntOutput)
 }
 
 // ("innodbFtMinTokenSize")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) InnodbFtMinTokenSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.InnodbFtMinTokenSize }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbFtMinTokenSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbFtMinTokenSize }).(pulumi.IntOutput)
 }
 
 // ("innodbFtNumWordOptimize")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) InnodbFtNumWordOptimize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.InnodbFtNumWordOptimize }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbFtNumWordOptimize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbFtNumWordOptimize }).(pulumi.IntOutput)
 }
 
 // ("innodbFtResultCacheLimit")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) InnodbFtResultCacheLimit() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.InnodbFtResultCacheLimit }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbFtResultCacheLimit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbFtResultCacheLimit }).(pulumi.StringOutput)
 }
 
 // ("innodbFtServerStopwordTable")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) InnodbFtServerStopwordTable() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) string { return v.InnodbFtServerStopwordTable }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbFtServerStopwordTable() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbFtServerStopwordTable }).(pulumi.StringOutput)
 }
 
 // ("innodbLockWaitTimeout")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) InnodbLockWaitTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.InnodbLockWaitTimeout }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbLockWaitTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbLockWaitTimeout }).(pulumi.IntOutput)
 }
 
-// ("innodbMaxPurgeLag")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) InnodbMaxPurgeLag() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.InnodbMaxPurgeLag }).(pulumi.IntOutput)
+// Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbLogWriterThreads() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.InnodbLogWriterThreads }).(pulumi.BoolOutput)
 }
 
-// ("innodbMaxPurgeLagDelay")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) InnodbMaxPurgeLagDelay() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.InnodbMaxPurgeLagDelay }).(pulumi.IntOutput)
+// The desired maximum purge lag in terms of transactions.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbMaxPurgeLag() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbMaxPurgeLag }).(pulumi.StringOutput)
+}
+
+// The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbMaxPurgeLagDelay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InnodbMaxPurgeLagDelay }).(pulumi.IntOutput)
+}
+
+// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbStatsPersistentSamplePages() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbStatsPersistentSamplePages }).(pulumi.StringOutput)
+}
+
+// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InnodbStatsTransientSamplePages() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.InnodbStatsTransientSamplePages }).(pulumi.StringOutput)
+}
+
+// The number of seconds the server waits for activity on an interactive connection before closing it.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) InteractiveTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.InteractiveTimeout }).(pulumi.IntOutput)
 }
 
 // ("localInfile")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) LocalInfile() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) bool { return v.LocalInfile }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) LocalInfile() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.LocalInfile }).(pulumi.BoolOutput)
 }
 
 // ("mandatoryRoles")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MandatoryRoles() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) string { return v.MandatoryRoles }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MandatoryRoles() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.MandatoryRoles }).(pulumi.StringOutput)
+}
+
+// The maximum size of one packet or any generated/intermediate string.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxAllowedPacket() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MaxAllowedPacket }).(pulumi.IntOutput)
+}
+
+// Sets the size of the transaction cache.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxBinlogCacheSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.MaxBinlogCacheSize }).(pulumi.StringOutput)
+}
+
+// ("maxConnectErrors")
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxConnectErrors() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.MaxConnectErrors }).(pulumi.StringOutput)
 }
 
 // ("maxConnections")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MaxConnections() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.MaxConnections }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxConnections() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MaxConnections }).(pulumi.IntOutput)
 }
 
 // ("maxExecutionTime")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MaxExecutionTime() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.MaxExecutionTime }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxExecutionTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.MaxExecutionTime }).(pulumi.StringOutput)
+}
+
+// This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxHeapTableSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.MaxHeapTableSize }).(pulumi.StringOutput)
 }
 
 // ("maxPreparedStmtCount")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MaxPreparedStmtCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.MaxPreparedStmtCount }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MaxPreparedStmtCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MaxPreparedStmtCount }).(pulumi.IntOutput)
 }
 
 // ("mysqlFirewallMode")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MysqlFirewallMode() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) bool { return v.MysqlFirewallMode }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlFirewallMode() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.MysqlFirewallMode }).(pulumi.BoolOutput)
 }
 
 // DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MysqlZstdDefaultCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.MysqlZstdDefaultCompressionLevel }).(pulumi.IntOutput)
+//
+// Deprecated: The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlZstdDefaultCompressionLevel() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlZstdDefaultCompressionLevel }).(pulumi.IntOutput)
 }
 
-// ("mysqlxConnectTimeout") DEPRECATED -- variable should not be settable and will be ignored
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MysqlxConnectTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.MysqlxConnectTimeout }).(pulumi.IntOutput)
+// The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxConnectTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxConnectTimeout }).(pulumi.IntOutput)
 }
 
 // Set the default compression level for the deflate algorithm. ("mysqlxDeflateDefaultCompressionLevel")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MysqlxDeflateDefaultCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int {
-		return v.MysqlxDeflateDefaultCompressionLevel
-	}).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxDeflateDefaultCompressionLevel() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxDeflateDefaultCompressionLevel }).(pulumi.IntOutput)
 }
 
 // Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlxDeflateMaxClientCompressionLevel")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MysqlxDeflateMaxClientCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int {
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxDeflateMaxClientCompressionLevel() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int {
 		return v.MysqlxDeflateMaxClientCompressionLevel
 	}).(pulumi.IntOutput)
 }
 
 // ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MysqlxDocumentIdUniquePrefix() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.MysqlxDocumentIdUniquePrefix }).(pulumi.IntOutput)
+//
+// Deprecated: The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxDocumentIdUniquePrefix() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxDocumentIdUniquePrefix }).(pulumi.IntOutput)
 }
 
 // ("mysqlxEnableHelloNotice") DEPRECATED -- variable should not be settable and will be ignored
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MysqlxEnableHelloNotice() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) bool { return v.MysqlxEnableHelloNotice }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxEnableHelloNotice() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.MysqlxEnableHelloNotice }).(pulumi.BoolOutput)
 }
 
 // ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MysqlxIdleWorkerThreadTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.MysqlxIdleWorkerThreadTimeout }).(pulumi.IntOutput)
+//
+// Deprecated: The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxIdleWorkerThreadTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxIdleWorkerThreadTimeout }).(pulumi.IntOutput)
 }
 
-// ("mysqlxInteractiveTimeout") DEPRECATED -- variable should not be settable and will be ignored
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MysqlxInteractiveTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.MysqlxInteractiveTimeout }).(pulumi.IntOutput)
+// The number of seconds to wait for interactive clients to timeout.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxInteractiveTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxInteractiveTimeout }).(pulumi.IntOutput)
 }
 
 // Set the default compression level for the lz4 algorithm. ("mysqlxLz4DefaultCompressionLevel")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MysqlxLz4defaultCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.MysqlxLz4defaultCompressionLevel }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxLz4defaultCompressionLevel() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxLz4defaultCompressionLevel }).(pulumi.IntOutput)
 }
 
 // Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlxLz4MaxClientCompressionLevel")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MysqlxLz4maxClientCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.MysqlxLz4maxClientCompressionLevel }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxLz4maxClientCompressionLevel() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxLz4maxClientCompressionLevel }).(pulumi.IntOutput)
 }
 
-// ("mysqlxMaxAllowedPacket") DEPRECATED -- variable should not be settable and will be ignored
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MysqlxMaxAllowedPacket() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.MysqlxMaxAllowedPacket }).(pulumi.IntOutput)
+// The maximum size of network packets that can be received by X Plugin.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxMaxAllowedPacket() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxMaxAllowedPacket }).(pulumi.IntOutput)
 }
 
 // ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MysqlxMinWorkerThreads() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.MysqlxMinWorkerThreads }).(pulumi.IntOutput)
+//
+// Deprecated: The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxMinWorkerThreads() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxMinWorkerThreads }).(pulumi.IntOutput)
 }
 
-// ("mysqlxReadTimeout") DEPRECATED -- variable should not be settable and will be ignored
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MysqlxReadTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.MysqlxReadTimeout }).(pulumi.IntOutput)
+// The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxReadTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxReadTimeout }).(pulumi.IntOutput)
 }
 
-// ("mysqlxWaitTimeout") DEPRECATED -- variable should not be settable and will be ignored
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MysqlxWaitTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.MysqlxWaitTimeout }).(pulumi.IntOutput)
+// The number of seconds that X Plugin waits for activity on a connection.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxWaitTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxWaitTimeout }).(pulumi.IntOutput)
 }
 
-// ("mysqlxWriteTimeout") DEPRECATED -- variable should not be settable and will be ignored
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MysqlxWriteTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.MysqlxWriteTimeout }).(pulumi.IntOutput)
+// The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxWriteTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxWriteTimeout }).(pulumi.IntOutput)
 }
 
 // Set the default compression level for the zstd algorithm. ("mysqlxZstdDefaultCompressionLevel")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MysqlxZstdDefaultCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.MysqlxZstdDefaultCompressionLevel }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxZstdDefaultCompressionLevel() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxZstdDefaultCompressionLevel }).(pulumi.IntOutput)
 }
 
 // Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlxZstdMaxClientCompressionLevel")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) MysqlxZstdMaxClientCompressionLevel() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.MysqlxZstdMaxClientCompressionLevel }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) MysqlxZstdMaxClientCompressionLevel() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.MysqlxZstdMaxClientCompressionLevel }).(pulumi.IntOutput)
+}
+
+// The number of seconds to wait for more data from a connection before aborting the read.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) NetReadTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.NetReadTimeout }).(pulumi.IntOutput)
+}
+
+// The number of seconds to wait for a block to be written to a connection before aborting the write.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) NetWriteTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.NetWriteTimeout }).(pulumi.IntOutput)
 }
 
 // ("parserMaxMemSize")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) ParserMaxMemSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.ParserMaxMemSize }).(pulumi.IntOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ParserMaxMemSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.ParserMaxMemSize }).(pulumi.StringOutput)
 }
 
 // ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) QueryAllocBlockSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.QueryAllocBlockSize }).(pulumi.IntOutput)
+//
+// Deprecated: The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) QueryAllocBlockSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.QueryAllocBlockSize }).(pulumi.StringOutput)
 }
 
 // ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) QueryPreallocSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) int { return v.QueryPreallocSize }).(pulumi.IntOutput)
+//
+// Deprecated: The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) QueryPreallocSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.QueryPreallocSize }).(pulumi.StringOutput)
+}
+
+// regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) RegexpTimeLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.RegexpTimeLimit }).(pulumi.IntOutput)
+}
+
+// Each session that must perform a sort allocates a buffer of this size.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) SortBufferSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.SortBufferSize }).(pulumi.StringOutput)
 }
 
 // ("sqlMode")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) SqlMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) string { return v.SqlMode }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) SqlMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.SqlMode }).(pulumi.StringOutput)
 }
 
 // ("sqlRequirePrimaryKey")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) SqlRequirePrimaryKey() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) bool { return v.SqlRequirePrimaryKey }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) SqlRequirePrimaryKey() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.SqlRequirePrimaryKey }).(pulumi.BoolOutput)
 }
 
 // ("sqlWarnings")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) SqlWarnings() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) bool { return v.SqlWarnings }).(pulumi.BoolOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) SqlWarnings() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.SqlWarnings }).(pulumi.BoolOutput)
+}
+
+// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ThreadPoolDedicatedListeners() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) bool { return v.ThreadPoolDedicatedListeners }).(pulumi.BoolOutput)
+}
+
+// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) ThreadPoolMaxTransactionsLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.ThreadPoolMaxTransactionsLimit }).(pulumi.IntOutput)
+}
+
+// Initializes the time zone for each client that connects.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) TmpTableSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.TmpTableSize }).(pulumi.StringOutput)
 }
 
 // ("transactionIsolation")
-func (o GetMysqlConfigurationsConfigurationVariablesOutput) TransactionIsolation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariables) string { return v.TransactionIsolation }).(pulumi.StringOutput)
+func (o GetMysqlConfigurationsConfigurationVariableOutput) TransactionIsolation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) string { return v.TransactionIsolation }).(pulumi.StringOutput)
+}
+
+// The number of seconds the server waits for activity on a noninteractive connection before closing it.
+func (o GetMysqlConfigurationsConfigurationVariableOutput) WaitTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfigurationVariable) int { return v.WaitTimeout }).(pulumi.IntOutput)
+}
+
+type GetMysqlConfigurationsConfigurationVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlConfigurationsConfigurationVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlConfigurationsConfigurationVariable)(nil)).Elem()
+}
+
+func (o GetMysqlConfigurationsConfigurationVariableArrayOutput) ToGetMysqlConfigurationsConfigurationVariableArrayOutput() GetMysqlConfigurationsConfigurationVariableArrayOutput {
+	return o
+}
+
+func (o GetMysqlConfigurationsConfigurationVariableArrayOutput) ToGetMysqlConfigurationsConfigurationVariableArrayOutputWithContext(ctx context.Context) GetMysqlConfigurationsConfigurationVariableArrayOutput {
+	return o
+}
+
+func (o GetMysqlConfigurationsConfigurationVariableArrayOutput) Index(i pulumi.IntInput) GetMysqlConfigurationsConfigurationVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlConfigurationsConfigurationVariable {
+		return vs[0].([]GetMysqlConfigurationsConfigurationVariable)[vs[1].(int)]
+	}).(GetMysqlConfigurationsConfigurationVariableOutput)
 }
 
 type GetMysqlConfigurationsFilter struct {
@@ -13406,6 +16016,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotEndpointArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotMaintenanceInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotMaintenanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotMaintenanceArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotMaintenanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationInitVariablesInput)(nil)).Elem(), MysqlConfigurationInitVariablesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationInitVariablesPtrInput)(nil)).Elem(), MysqlConfigurationInitVariablesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationVariablesInput)(nil)).Elem(), MysqlConfigurationVariablesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationVariablesPtrInput)(nil)).Elem(), MysqlConfigurationVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemAnalyticsClusterInput)(nil)).Elem(), MysqlDbSystemAnalyticsClusterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemAnalyticsClusterArrayInput)(nil)).Elem(), MysqlDbSystemAnalyticsClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemBackupPolicyInput)(nil)).Elem(), MysqlDbSystemBackupPolicyArgs{})
@@ -13482,11 +16096,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsFilterInput)(nil)).Elem(), GetMysqlBackupsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsFilterArrayInput)(nil)).Elem(), GetMysqlBackupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationInitVariableInput)(nil)).Elem(), GetMysqlConfigurationInitVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationInitVariableArrayInput)(nil)).Elem(), GetMysqlConfigurationInitVariableArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationVariableInput)(nil)).Elem(), GetMysqlConfigurationVariableArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationVariableArrayInput)(nil)).Elem(), GetMysqlConfigurationVariableArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsConfigurationInput)(nil)).Elem(), GetMysqlConfigurationsConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsConfigurationArrayInput)(nil)).Elem(), GetMysqlConfigurationsConfigurationArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsConfigurationVariablesInput)(nil)).Elem(), GetMysqlConfigurationsConfigurationVariablesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsConfigurationInitVariableInput)(nil)).Elem(), GetMysqlConfigurationsConfigurationInitVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsConfigurationInitVariableArrayInput)(nil)).Elem(), GetMysqlConfigurationsConfigurationInitVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsConfigurationVariableInput)(nil)).Elem(), GetMysqlConfigurationsConfigurationVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsConfigurationVariableArrayInput)(nil)).Elem(), GetMysqlConfigurationsConfigurationVariableArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsFilterInput)(nil)).Elem(), GetMysqlConfigurationsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationsFilterArrayInput)(nil)).Elem(), GetMysqlConfigurationsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemAnalyticsClusterInput)(nil)).Elem(), GetMysqlDbSystemAnalyticsClusterArgs{})
@@ -13581,6 +16200,10 @@ func init() {
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotEndpointArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotMaintenanceOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotMaintenanceArrayOutput{})
+	pulumi.RegisterOutputType(MysqlConfigurationInitVariablesOutput{})
+	pulumi.RegisterOutputType(MysqlConfigurationInitVariablesPtrOutput{})
+	pulumi.RegisterOutputType(MysqlConfigurationVariablesOutput{})
+	pulumi.RegisterOutputType(MysqlConfigurationVariablesPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemAnalyticsClusterOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemAnalyticsClusterArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemBackupPolicyOutput{})
@@ -13657,11 +16280,16 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsFilterOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlConfigurationInitVariableOutput{})
+	pulumi.RegisterOutputType(GetMysqlConfigurationInitVariableArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationVariableOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationVariableArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationsConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationsConfigurationArrayOutput{})
-	pulumi.RegisterOutputType(GetMysqlConfigurationsConfigurationVariablesOutput{})
+	pulumi.RegisterOutputType(GetMysqlConfigurationsConfigurationInitVariableOutput{})
+	pulumi.RegisterOutputType(GetMysqlConfigurationsConfigurationInitVariableArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlConfigurationsConfigurationVariableOutput{})
+	pulumi.RegisterOutputType(GetMysqlConfigurationsConfigurationVariableArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationsFilterOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemAnalyticsClusterOutput{})

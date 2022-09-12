@@ -16,12 +16,12 @@ public final class PolicyPolicyConfigLoadBalancingMethod {
      * @return (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
      * 
      */
-    private final @Nullable String domain;
+    private @Nullable String domain;
     /**
      * @return (Updatable) The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.
      * 
      */
-    private final @Nullable Integer expirationTimeInSeconds;
+    private @Nullable Integer expirationTimeInSeconds;
     /**
      * @return (Updatable) Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
      * * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
@@ -29,25 +29,14 @@ public final class PolicyPolicyConfigLoadBalancingMethod {
      * * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client&#39;s next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
      * 
      */
-    private final String method;
+    private String method;
     /**
      * @return (Updatable) The unique name of the whitelist.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private PolicyPolicyConfigLoadBalancingMethod(
-        @CustomType.Parameter("domain") @Nullable String domain,
-        @CustomType.Parameter("expirationTimeInSeconds") @Nullable Integer expirationTimeInSeconds,
-        @CustomType.Parameter("method") String method,
-        @CustomType.Parameter("name") @Nullable String name) {
-        this.domain = domain;
-        this.expirationTimeInSeconds = expirationTimeInSeconds;
-        this.method = method;
-        this.name = name;
-    }
-
+    private PolicyPolicyConfigLoadBalancingMethod() {}
     /**
      * @return (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
      * 
@@ -87,17 +76,13 @@ public final class PolicyPolicyConfigLoadBalancingMethod {
     public static Builder builder(PolicyPolicyConfigLoadBalancingMethod defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String domain;
         private @Nullable Integer expirationTimeInSeconds;
         private String method;
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PolicyPolicyConfigLoadBalancingMethod defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.domain = defaults.domain;
@@ -106,23 +91,33 @@ public final class PolicyPolicyConfigLoadBalancingMethod {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder domain(@Nullable String domain) {
             this.domain = domain;
             return this;
         }
+        @CustomType.Setter
         public Builder expirationTimeInSeconds(@Nullable Integer expirationTimeInSeconds) {
             this.expirationTimeInSeconds = expirationTimeInSeconds;
             return this;
         }
+        @CustomType.Setter
         public Builder method(String method) {
             this.method = Objects.requireNonNull(method);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public PolicyPolicyConfigLoadBalancingMethod build() {
-            return new PolicyPolicyConfigLoadBalancingMethod(domain, expirationTimeInSeconds, method, name);
+        }
+        public PolicyPolicyConfigLoadBalancingMethod build() {
+            final var o = new PolicyPolicyConfigLoadBalancingMethod();
+            o.domain = domain;
+            o.expirationTimeInSeconds = expirationTimeInSeconds;
+            o.method = method;
+            o.name = name;
+            return o;
         }
     }
 }

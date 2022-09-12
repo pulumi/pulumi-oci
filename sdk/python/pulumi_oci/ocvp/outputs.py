@@ -12,12 +12,18 @@ from . import outputs
 
 __all__ = [
     'SddcHcxOnPremLicense',
+    'SddcUpgradeLicense',
+    'SddcVsphereUpgradeObject',
     'GetExsiHostsEsxiHostCollectionResult',
     'GetExsiHostsFilterResult',
     'GetSddcHcxOnPremLicenseResult',
+    'GetSddcUpgradeLicenseResult',
+    'GetSddcVsphereUpgradeObjectResult',
     'GetSddcsFilterResult',
     'GetSddcsSddcCollectionResult',
     'GetSddcsSddcCollectionHcxOnPremLicenseResult',
+    'GetSddcsSddcCollectionUpgradeLicenseResult',
+    'GetSddcsSddcCollectionVsphereUpgradeObjectResult',
     'GetSupportedHostShapesFilterResult',
     'GetSupportedHostShapesItemResult',
     'GetSupportedSkusFilterResult',
@@ -89,6 +95,106 @@ class SddcHcxOnPremLicense(dict):
 
 
 @pulumi.output_type
+class SddcUpgradeLicense(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "licenseKey":
+            suggest = "license_key"
+        elif key == "licenseType":
+            suggest = "license_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SddcUpgradeLicense. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SddcUpgradeLicense.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SddcUpgradeLicense.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 license_key: Optional[str] = None,
+                 license_type: Optional[str] = None):
+        """
+        :param str license_key: vSphere license key value.
+        :param str license_type: vSphere license type.
+        """
+        if license_key is not None:
+            pulumi.set(__self__, "license_key", license_key)
+        if license_type is not None:
+            pulumi.set(__self__, "license_type", license_type)
+
+    @property
+    @pulumi.getter(name="licenseKey")
+    def license_key(self) -> Optional[str]:
+        """
+        vSphere license key value.
+        """
+        return pulumi.get(self, "license_key")
+
+    @property
+    @pulumi.getter(name="licenseType")
+    def license_type(self) -> Optional[str]:
+        """
+        vSphere license type.
+        """
+        return pulumi.get(self, "license_type")
+
+
+@pulumi.output_type
+class SddcVsphereUpgradeObject(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "downloadLink":
+            suggest = "download_link"
+        elif key == "linkDescription":
+            suggest = "link_description"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SddcVsphereUpgradeObject. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SddcVsphereUpgradeObject.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SddcVsphereUpgradeObject.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 download_link: Optional[str] = None,
+                 link_description: Optional[str] = None):
+        """
+        :param str download_link: Binary object download link.
+        :param str link_description: Binary object description.
+        """
+        if download_link is not None:
+            pulumi.set(__self__, "download_link", download_link)
+        if link_description is not None:
+            pulumi.set(__self__, "link_description", link_description)
+
+    @property
+    @pulumi.getter(name="downloadLink")
+    def download_link(self) -> Optional[str]:
+        """
+        Binary object download link.
+        """
+        return pulumi.get(self, "download_link")
+
+    @property
+    @pulumi.getter(name="linkDescription")
+    def link_description(self) -> Optional[str]:
+        """
+        Binary object description.
+        """
+        return pulumi.get(self, "link_description")
+
+
+@pulumi.output_type
 class GetExsiHostsEsxiHostCollectionResult(dict):
     def __init__(__self__, *,
                  billing_contract_end_date: str,
@@ -106,11 +212,14 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
                  host_shape_name: str,
                  id: str,
                  next_sku: str,
+                 non_upgraded_esxi_host_id: str,
                  replacement_esxi_host_id: str,
                  sddc_id: str,
                  state: str,
                  time_created: str,
-                 time_updated: str):
+                 time_updated: str,
+                 upgraded_replacement_esxi_host_id: str,
+                 vmware_software_version: str):
         """
         :param str billing_contract_end_date: Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
         :param str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
@@ -127,11 +236,14 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         :param str host_shape_name: The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
         :param str next_sku: The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        :param str non_upgraded_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
         :param str replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
         :param str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
         :param str state: The lifecycle state of the resource.
         :param str time_created: The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param str time_updated: The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str upgraded_replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+        :param str vmware_software_version: The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
         """
         pulumi.set(__self__, "billing_contract_end_date", billing_contract_end_date)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
@@ -148,11 +260,14 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         pulumi.set(__self__, "host_shape_name", host_shape_name)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "next_sku", next_sku)
+        pulumi.set(__self__, "non_upgraded_esxi_host_id", non_upgraded_esxi_host_id)
         pulumi.set(__self__, "replacement_esxi_host_id", replacement_esxi_host_id)
         pulumi.set(__self__, "sddc_id", sddc_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "upgraded_replacement_esxi_host_id", upgraded_replacement_esxi_host_id)
+        pulumi.set(__self__, "vmware_software_version", vmware_software_version)
 
     @property
     @pulumi.getter(name="billingContractEndDate")
@@ -275,6 +390,14 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         return pulumi.get(self, "next_sku")
 
     @property
+    @pulumi.getter(name="nonUpgradedEsxiHostId")
+    def non_upgraded_esxi_host_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
+        """
+        return pulumi.get(self, "non_upgraded_esxi_host_id")
+
+    @property
     @pulumi.getter(name="replacementEsxiHostId")
     def replacement_esxi_host_id(self) -> str:
         """
@@ -313,6 +436,22 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="upgradedReplacementEsxiHostId")
+    def upgraded_replacement_esxi_host_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+        """
+        return pulumi.get(self, "upgraded_replacement_esxi_host_id")
+
+    @property
+    @pulumi.getter(name="vmwareSoftwareVersion")
+    def vmware_software_version(self) -> str:
+        """
+        The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+        """
+        return pulumi.get(self, "vmware_software_version")
 
 
 @pulumi.output_type
@@ -380,6 +519,64 @@ class GetSddcHcxOnPremLicenseResult(dict):
         Name of the system that consumed the HCX on-premise license
         """
         return pulumi.get(self, "system_name")
+
+
+@pulumi.output_type
+class GetSddcUpgradeLicenseResult(dict):
+    def __init__(__self__, *,
+                 license_key: str,
+                 license_type: str):
+        """
+        :param str license_key: vSphere license key value.
+        :param str license_type: vSphere license type.
+        """
+        pulumi.set(__self__, "license_key", license_key)
+        pulumi.set(__self__, "license_type", license_type)
+
+    @property
+    @pulumi.getter(name="licenseKey")
+    def license_key(self) -> str:
+        """
+        vSphere license key value.
+        """
+        return pulumi.get(self, "license_key")
+
+    @property
+    @pulumi.getter(name="licenseType")
+    def license_type(self) -> str:
+        """
+        vSphere license type.
+        """
+        return pulumi.get(self, "license_type")
+
+
+@pulumi.output_type
+class GetSddcVsphereUpgradeObjectResult(dict):
+    def __init__(__self__, *,
+                 download_link: str,
+                 link_description: str):
+        """
+        :param str download_link: Binary object download link.
+        :param str link_description: Binary object description.
+        """
+        pulumi.set(__self__, "download_link", download_link)
+        pulumi.set(__self__, "link_description", link_description)
+
+    @property
+    @pulumi.getter(name="downloadLink")
+    def download_link(self) -> str:
+        """
+        Binary object download link.
+        """
+        return pulumi.get(self, "download_link")
+
+    @property
+    @pulumi.getter(name="linkDescription")
+    def link_description(self) -> str:
+        """
+        Binary object description.
+        """
+        return pulumi.get(self, "link_description")
 
 
 @pulumi.output_type
@@ -458,6 +655,7 @@ class GetSddcsSddcCollectionResult(dict):
                  time_hcx_billing_cycle_end: str,
                  time_hcx_license_status_updated: str,
                  time_updated: str,
+                 upgrade_licenses: Sequence['outputs.GetSddcsSddcCollectionUpgradeLicenseResult'],
                  vcenter_fqdn: str,
                  vcenter_initial_password: str,
                  vcenter_private_ip_id: str,
@@ -465,6 +663,8 @@ class GetSddcsSddcCollectionResult(dict):
                  vmotion_vlan_id: str,
                  vmware_software_version: str,
                  vsan_vlan_id: str,
+                 vsphere_upgrade_guide: str,
+                 vsphere_upgrade_objects: Sequence['outputs.GetSddcsSddcCollectionVsphereUpgradeObjectResult'],
                  vsphere_vlan_id: str,
                  workload_network_cidr: str):
         """
@@ -511,6 +711,7 @@ class GetSddcsSddcCollectionResult(dict):
         :param str time_hcx_billing_cycle_end: The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param str time_hcx_license_status_updated: The date and time the SDDC's HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param str time_updated: The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param Sequence['GetSddcsSddcCollectionUpgradeLicenseArgs'] upgrade_licenses: The vSphere licenses to be used when upgrade SDDC.
         :param str vcenter_fqdn: The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
         :param str vcenter_initial_password: The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
         :param str vcenter_private_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
@@ -518,6 +719,8 @@ class GetSddcsSddcCollectionResult(dict):
         :param str vmotion_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
         :param str vmware_software_version: In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
         :param str vsan_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
+        :param str vsphere_upgrade_guide: The link of guidance to upgrade vSphere.
+        :param Sequence['GetSddcsSddcCollectionVsphereUpgradeObjectArgs'] vsphere_upgrade_objects: The links of binary objects needed for upgrade vSphere.
         :param str vsphere_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
         :param str workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
         """
@@ -567,6 +770,7 @@ class GetSddcsSddcCollectionResult(dict):
         pulumi.set(__self__, "time_hcx_billing_cycle_end", time_hcx_billing_cycle_end)
         pulumi.set(__self__, "time_hcx_license_status_updated", time_hcx_license_status_updated)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "upgrade_licenses", upgrade_licenses)
         pulumi.set(__self__, "vcenter_fqdn", vcenter_fqdn)
         pulumi.set(__self__, "vcenter_initial_password", vcenter_initial_password)
         pulumi.set(__self__, "vcenter_private_ip_id", vcenter_private_ip_id)
@@ -574,6 +778,8 @@ class GetSddcsSddcCollectionResult(dict):
         pulumi.set(__self__, "vmotion_vlan_id", vmotion_vlan_id)
         pulumi.set(__self__, "vmware_software_version", vmware_software_version)
         pulumi.set(__self__, "vsan_vlan_id", vsan_vlan_id)
+        pulumi.set(__self__, "vsphere_upgrade_guide", vsphere_upgrade_guide)
+        pulumi.set(__self__, "vsphere_upgrade_objects", vsphere_upgrade_objects)
         pulumi.set(__self__, "vsphere_vlan_id", vsphere_vlan_id)
         pulumi.set(__self__, "workload_network_cidr", workload_network_cidr)
 
@@ -937,6 +1143,14 @@ class GetSddcsSddcCollectionResult(dict):
         return pulumi.get(self, "time_updated")
 
     @property
+    @pulumi.getter(name="upgradeLicenses")
+    def upgrade_licenses(self) -> Sequence['outputs.GetSddcsSddcCollectionUpgradeLicenseResult']:
+        """
+        The vSphere licenses to be used when upgrade SDDC.
+        """
+        return pulumi.get(self, "upgrade_licenses")
+
+    @property
     @pulumi.getter(name="vcenterFqdn")
     def vcenter_fqdn(self) -> str:
         """
@@ -993,6 +1207,22 @@ class GetSddcsSddcCollectionResult(dict):
         return pulumi.get(self, "vsan_vlan_id")
 
     @property
+    @pulumi.getter(name="vsphereUpgradeGuide")
+    def vsphere_upgrade_guide(self) -> str:
+        """
+        The link of guidance to upgrade vSphere.
+        """
+        return pulumi.get(self, "vsphere_upgrade_guide")
+
+    @property
+    @pulumi.getter(name="vsphereUpgradeObjects")
+    def vsphere_upgrade_objects(self) -> Sequence['outputs.GetSddcsSddcCollectionVsphereUpgradeObjectResult']:
+        """
+        The links of binary objects needed for upgrade vSphere.
+        """
+        return pulumi.get(self, "vsphere_upgrade_objects")
+
+    @property
     @pulumi.getter(name="vsphereVlanId")
     def vsphere_vlan_id(self) -> str:
         """
@@ -1047,6 +1277,64 @@ class GetSddcsSddcCollectionHcxOnPremLicenseResult(dict):
         Name of the system that consumed the HCX on-premise license
         """
         return pulumi.get(self, "system_name")
+
+
+@pulumi.output_type
+class GetSddcsSddcCollectionUpgradeLicenseResult(dict):
+    def __init__(__self__, *,
+                 license_key: str,
+                 license_type: str):
+        """
+        :param str license_key: vSphere license key value.
+        :param str license_type: vSphere license type.
+        """
+        pulumi.set(__self__, "license_key", license_key)
+        pulumi.set(__self__, "license_type", license_type)
+
+    @property
+    @pulumi.getter(name="licenseKey")
+    def license_key(self) -> str:
+        """
+        vSphere license key value.
+        """
+        return pulumi.get(self, "license_key")
+
+    @property
+    @pulumi.getter(name="licenseType")
+    def license_type(self) -> str:
+        """
+        vSphere license type.
+        """
+        return pulumi.get(self, "license_type")
+
+
+@pulumi.output_type
+class GetSddcsSddcCollectionVsphereUpgradeObjectResult(dict):
+    def __init__(__self__, *,
+                 download_link: str,
+                 link_description: str):
+        """
+        :param str download_link: Binary object download link.
+        :param str link_description: Binary object description.
+        """
+        pulumi.set(__self__, "download_link", download_link)
+        pulumi.set(__self__, "link_description", link_description)
+
+    @property
+    @pulumi.getter(name="downloadLink")
+    def download_link(self) -> str:
+        """
+        Binary object download link.
+        """
+        return pulumi.get(self, "download_link")
+
+    @property
+    @pulumi.getter(name="linkDescription")
+    def link_description(self) -> str:
+        """
+        Binary object description.
+        """
+        return pulumi.get(self, "link_description")
 
 
 @pulumi.output_type

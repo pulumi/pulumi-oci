@@ -15,28 +15,19 @@ public final class CertificateAuthorityCertificateAuthorityRule {
      * @return (Updatable) A property indicating the maximum validity duration, in days, of subordinate CA&#39;s issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
      */
-    private final @Nullable String certificateAuthorityMaxValidityDuration;
+    private @Nullable String certificateAuthorityMaxValidityDuration;
     /**
      * @return (Updatable) A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
      */
-    private final @Nullable String leafCertificateMaxValidityDuration;
+    private @Nullable String leafCertificateMaxValidityDuration;
     /**
      * @return (Updatable) The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
      * 
      */
-    private final String ruleType;
+    private String ruleType;
 
-    @CustomType.Constructor
-    private CertificateAuthorityCertificateAuthorityRule(
-        @CustomType.Parameter("certificateAuthorityMaxValidityDuration") @Nullable String certificateAuthorityMaxValidityDuration,
-        @CustomType.Parameter("leafCertificateMaxValidityDuration") @Nullable String leafCertificateMaxValidityDuration,
-        @CustomType.Parameter("ruleType") String ruleType) {
-        this.certificateAuthorityMaxValidityDuration = certificateAuthorityMaxValidityDuration;
-        this.leafCertificateMaxValidityDuration = leafCertificateMaxValidityDuration;
-        this.ruleType = ruleType;
-    }
-
+    private CertificateAuthorityCertificateAuthorityRule() {}
     /**
      * @return (Updatable) A property indicating the maximum validity duration, in days, of subordinate CA&#39;s issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
@@ -66,16 +57,12 @@ public final class CertificateAuthorityCertificateAuthorityRule {
     public static Builder builder(CertificateAuthorityCertificateAuthorityRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String certificateAuthorityMaxValidityDuration;
         private @Nullable String leafCertificateMaxValidityDuration;
         private String ruleType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CertificateAuthorityCertificateAuthorityRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateAuthorityMaxValidityDuration = defaults.certificateAuthorityMaxValidityDuration;
@@ -83,19 +70,27 @@ public final class CertificateAuthorityCertificateAuthorityRule {
     	      this.ruleType = defaults.ruleType;
         }
 
+        @CustomType.Setter
         public Builder certificateAuthorityMaxValidityDuration(@Nullable String certificateAuthorityMaxValidityDuration) {
             this.certificateAuthorityMaxValidityDuration = certificateAuthorityMaxValidityDuration;
             return this;
         }
+        @CustomType.Setter
         public Builder leafCertificateMaxValidityDuration(@Nullable String leafCertificateMaxValidityDuration) {
             this.leafCertificateMaxValidityDuration = leafCertificateMaxValidityDuration;
             return this;
         }
+        @CustomType.Setter
         public Builder ruleType(String ruleType) {
             this.ruleType = Objects.requireNonNull(ruleType);
             return this;
-        }        public CertificateAuthorityCertificateAuthorityRule build() {
-            return new CertificateAuthorityCertificateAuthorityRule(certificateAuthorityMaxValidityDuration, leafCertificateMaxValidityDuration, ruleType);
+        }
+        public CertificateAuthorityCertificateAuthorityRule build() {
+            final var o = new CertificateAuthorityCertificateAuthorityRule();
+            o.certificateAuthorityMaxValidityDuration = certificateAuthorityMaxValidityDuration;
+            o.leafCertificateMaxValidityDuration = leafCertificateMaxValidityDuration;
+            o.ruleType = ruleType;
+            return o;
         }
     }
 }

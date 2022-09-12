@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetRegistryConnectionsConnectionSummaryCollection {
-    private final List<GetRegistryConnectionsConnectionSummaryCollectionItem> items;
+    private List<GetRegistryConnectionsConnectionSummaryCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetRegistryConnectionsConnectionSummaryCollection(@CustomType.Parameter("items") List<GetRegistryConnectionsConnectionSummaryCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetRegistryConnectionsConnectionSummaryCollection() {}
     public List<GetRegistryConnectionsConnectionSummaryCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetRegistryConnectionsConnectionSummaryCollection {
     public static Builder builder(GetRegistryConnectionsConnectionSummaryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRegistryConnectionsConnectionSummaryCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryConnectionsConnectionSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetRegistryConnectionsConnectionSummaryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetRegistryConnectionsConnectionSummaryCollectionItem... items) {
             return items(List.of(items));
-        }        public GetRegistryConnectionsConnectionSummaryCollection build() {
-            return new GetRegistryConnectionsConnectionSummaryCollection(items);
+        }
+        public GetRegistryConnectionsConnectionSummaryCollection build() {
+            final var o = new GetRegistryConnectionsConnectionSummaryCollection();
+            o.items = items;
+            return o;
         }
     }
 }

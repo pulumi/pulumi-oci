@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryMirrorRecordsResult {
-    private final @Nullable List<GetRepositoryMirrorRecordsFilter> filters;
+    private @Nullable List<GetRepositoryMirrorRecordsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String repositoryId;
+    private String id;
+    private String repositoryId;
     /**
      * @return The list of repository_mirror_record_collection.
      * 
      */
-    private final List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection> repositoryMirrorRecordCollections;
+    private List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection> repositoryMirrorRecordCollections;
 
-    @CustomType.Constructor
-    private GetRepositoryMirrorRecordsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetRepositoryMirrorRecordsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("repositoryId") String repositoryId,
-        @CustomType.Parameter("repositoryMirrorRecordCollections") List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection> repositoryMirrorRecordCollections) {
-        this.filters = filters;
-        this.id = id;
-        this.repositoryId = repositoryId;
-        this.repositoryMirrorRecordCollections = repositoryMirrorRecordCollections;
-    }
-
+    private GetRepositoryMirrorRecordsResult() {}
     public List<GetRepositoryMirrorRecordsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -66,17 +55,13 @@ public final class GetRepositoryMirrorRecordsResult {
     public static Builder builder(GetRepositoryMirrorRecordsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetRepositoryMirrorRecordsFilter> filters;
         private String id;
         private String repositoryId;
         private List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection> repositoryMirrorRecordCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryMirrorRecordsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -85,6 +70,7 @@ public final class GetRepositoryMirrorRecordsResult {
     	      this.repositoryMirrorRecordCollections = defaults.repositoryMirrorRecordCollections;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRepositoryMirrorRecordsFilter> filters) {
             this.filters = filters;
             return this;
@@ -92,22 +78,31 @@ public final class GetRepositoryMirrorRecordsResult {
         public Builder filters(GetRepositoryMirrorRecordsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryMirrorRecordCollections(List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection> repositoryMirrorRecordCollections) {
             this.repositoryMirrorRecordCollections = Objects.requireNonNull(repositoryMirrorRecordCollections);
             return this;
         }
         public Builder repositoryMirrorRecordCollections(GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection... repositoryMirrorRecordCollections) {
             return repositoryMirrorRecordCollections(List.of(repositoryMirrorRecordCollections));
-        }        public GetRepositoryMirrorRecordsResult build() {
-            return new GetRepositoryMirrorRecordsResult(filters, id, repositoryId, repositoryMirrorRecordCollections);
+        }
+        public GetRepositoryMirrorRecordsResult build() {
+            final var o = new GetRepositoryMirrorRecordsResult();
+            o.filters = filters;
+            o.id = id;
+            o.repositoryId = repositoryId;
+            o.repositoryMirrorRecordCollections = repositoryMirrorRecordCollections;
+            return o;
         }
     }
 }

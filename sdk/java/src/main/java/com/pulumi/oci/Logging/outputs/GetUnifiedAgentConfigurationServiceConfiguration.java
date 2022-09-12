@@ -16,24 +16,15 @@ public final class GetUnifiedAgentConfigurationServiceConfiguration {
      * @return Type of Unified Agent service configuration.
      * 
      */
-    private final String configurationType;
+    private String configurationType;
     /**
      * @return Logging destination object.
      * 
      */
-    private final List<GetUnifiedAgentConfigurationServiceConfigurationDestination> destinations;
-    private final List<GetUnifiedAgentConfigurationServiceConfigurationSource> sources;
+    private List<GetUnifiedAgentConfigurationServiceConfigurationDestination> destinations;
+    private List<GetUnifiedAgentConfigurationServiceConfigurationSource> sources;
 
-    @CustomType.Constructor
-    private GetUnifiedAgentConfigurationServiceConfiguration(
-        @CustomType.Parameter("configurationType") String configurationType,
-        @CustomType.Parameter("destinations") List<GetUnifiedAgentConfigurationServiceConfigurationDestination> destinations,
-        @CustomType.Parameter("sources") List<GetUnifiedAgentConfigurationServiceConfigurationSource> sources) {
-        this.configurationType = configurationType;
-        this.destinations = destinations;
-        this.sources = sources;
-    }
-
+    private GetUnifiedAgentConfigurationServiceConfiguration() {}
     /**
      * @return Type of Unified Agent service configuration.
      * 
@@ -59,16 +50,12 @@ public final class GetUnifiedAgentConfigurationServiceConfiguration {
     public static Builder builder(GetUnifiedAgentConfigurationServiceConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String configurationType;
         private List<GetUnifiedAgentConfigurationServiceConfigurationDestination> destinations;
         private List<GetUnifiedAgentConfigurationServiceConfigurationSource> sources;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUnifiedAgentConfigurationServiceConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configurationType = defaults.configurationType;
@@ -76,10 +63,12 @@ public final class GetUnifiedAgentConfigurationServiceConfiguration {
     	      this.sources = defaults.sources;
         }
 
+        @CustomType.Setter
         public Builder configurationType(String configurationType) {
             this.configurationType = Objects.requireNonNull(configurationType);
             return this;
         }
+        @CustomType.Setter
         public Builder destinations(List<GetUnifiedAgentConfigurationServiceConfigurationDestination> destinations) {
             this.destinations = Objects.requireNonNull(destinations);
             return this;
@@ -87,14 +76,20 @@ public final class GetUnifiedAgentConfigurationServiceConfiguration {
         public Builder destinations(GetUnifiedAgentConfigurationServiceConfigurationDestination... destinations) {
             return destinations(List.of(destinations));
         }
+        @CustomType.Setter
         public Builder sources(List<GetUnifiedAgentConfigurationServiceConfigurationSource> sources) {
             this.sources = Objects.requireNonNull(sources);
             return this;
         }
         public Builder sources(GetUnifiedAgentConfigurationServiceConfigurationSource... sources) {
             return sources(List.of(sources));
-        }        public GetUnifiedAgentConfigurationServiceConfiguration build() {
-            return new GetUnifiedAgentConfigurationServiceConfiguration(configurationType, destinations, sources);
+        }
+        public GetUnifiedAgentConfigurationServiceConfiguration build() {
+            final var o = new GetUnifiedAgentConfigurationServiceConfiguration();
+            o.configurationType = configurationType;
+            o.destinations = destinations;
+            o.sources = sources;
+            return o;
         }
     }
 }

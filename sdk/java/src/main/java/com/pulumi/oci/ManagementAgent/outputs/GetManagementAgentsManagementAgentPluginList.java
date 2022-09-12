@@ -14,56 +14,39 @@ public final class GetManagementAgentsManagementAgentPluginList {
      * @return flag indicating whether the plugin is in enabled mode or disabled mode.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return Management Agent Plugin Identifier, can be renamed
      * 
      */
-    private final String pluginDisplayName;
+    private String pluginDisplayName;
     /**
      * @return Plugin Id
      * 
      */
-    private final String pluginId;
+    private String pluginId;
     /**
      * @return Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of &#39;None&#39; can be provided and this will return only Management Agents having no plugin installed. Example: [&#34;PluginA&#34;]
      * 
      */
-    private final String pluginName;
+    private String pluginName;
     /**
      * @return Plugin Status
      * 
      */
-    private final String pluginStatus;
+    private String pluginStatus;
     /**
      * @return Status message of the Plugin
      * 
      */
-    private final String pluginStatusMessage;
+    private String pluginStatusMessage;
     /**
      * @return Plugin Version
      * 
      */
-    private final String pluginVersion;
+    private String pluginVersion;
 
-    @CustomType.Constructor
-    private GetManagementAgentsManagementAgentPluginList(
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("pluginDisplayName") String pluginDisplayName,
-        @CustomType.Parameter("pluginId") String pluginId,
-        @CustomType.Parameter("pluginName") String pluginName,
-        @CustomType.Parameter("pluginStatus") String pluginStatus,
-        @CustomType.Parameter("pluginStatusMessage") String pluginStatusMessage,
-        @CustomType.Parameter("pluginVersion") String pluginVersion) {
-        this.isEnabled = isEnabled;
-        this.pluginDisplayName = pluginDisplayName;
-        this.pluginId = pluginId;
-        this.pluginName = pluginName;
-        this.pluginStatus = pluginStatus;
-        this.pluginStatusMessage = pluginStatusMessage;
-        this.pluginVersion = pluginVersion;
-    }
-
+    private GetManagementAgentsManagementAgentPluginList() {}
     /**
      * @return flag indicating whether the plugin is in enabled mode or disabled mode.
      * 
@@ -121,7 +104,7 @@ public final class GetManagementAgentsManagementAgentPluginList {
     public static Builder builder(GetManagementAgentsManagementAgentPluginList defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isEnabled;
         private String pluginDisplayName;
@@ -130,11 +113,7 @@ public final class GetManagementAgentsManagementAgentPluginList {
         private String pluginStatus;
         private String pluginStatusMessage;
         private String pluginVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagementAgentsManagementAgentPluginList defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isEnabled = defaults.isEnabled;
@@ -146,35 +125,51 @@ public final class GetManagementAgentsManagementAgentPluginList {
     	      this.pluginVersion = defaults.pluginVersion;
         }
 
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder pluginDisplayName(String pluginDisplayName) {
             this.pluginDisplayName = Objects.requireNonNull(pluginDisplayName);
             return this;
         }
+        @CustomType.Setter
         public Builder pluginId(String pluginId) {
             this.pluginId = Objects.requireNonNull(pluginId);
             return this;
         }
+        @CustomType.Setter
         public Builder pluginName(String pluginName) {
             this.pluginName = Objects.requireNonNull(pluginName);
             return this;
         }
+        @CustomType.Setter
         public Builder pluginStatus(String pluginStatus) {
             this.pluginStatus = Objects.requireNonNull(pluginStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder pluginStatusMessage(String pluginStatusMessage) {
             this.pluginStatusMessage = Objects.requireNonNull(pluginStatusMessage);
             return this;
         }
+        @CustomType.Setter
         public Builder pluginVersion(String pluginVersion) {
             this.pluginVersion = Objects.requireNonNull(pluginVersion);
             return this;
-        }        public GetManagementAgentsManagementAgentPluginList build() {
-            return new GetManagementAgentsManagementAgentPluginList(isEnabled, pluginDisplayName, pluginId, pluginName, pluginStatus, pluginStatusMessage, pluginVersion);
+        }
+        public GetManagementAgentsManagementAgentPluginList build() {
+            final var o = new GetManagementAgentsManagementAgentPluginList();
+            o.isEnabled = isEnabled;
+            o.pluginDisplayName = pluginDisplayName;
+            o.pluginId = pluginId;
+            o.pluginName = pluginName;
+            o.pluginStatus = pluginStatus;
+            o.pluginStatusMessage = pluginStatusMessage;
+            o.pluginVersion = pluginVersion;
+            return o;
         }
     }
 }

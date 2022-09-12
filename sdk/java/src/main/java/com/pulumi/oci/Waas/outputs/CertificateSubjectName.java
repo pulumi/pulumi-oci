@@ -15,56 +15,39 @@ public final class CertificateSubjectName {
      * @return The fully qualified domain name used for DNS lookups of the server.
      * 
      */
-    private final @Nullable String commonName;
+    private @Nullable String commonName;
     /**
      * @return ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO&#39;s website](https://www.iso.org/obp/ui/#search/code/).
      * 
      */
-    private final @Nullable String country;
+    private @Nullable String country;
     /**
      * @return The email address of the server&#39;s administrator.
      * 
      */
-    private final @Nullable String emailAddress;
+    private @Nullable String emailAddress;
     /**
      * @return The city in which the organization is located.
      * 
      */
-    private final @Nullable String locality;
+    private @Nullable String locality;
     /**
      * @return The organization name.
      * 
      */
-    private final @Nullable String organization;
+    private @Nullable String organization;
     /**
      * @return The field to differentiate between divisions within an organization.
      * 
      */
-    private final @Nullable String organizationalUnit;
+    private @Nullable String organizationalUnit;
     /**
      * @return The province where the organization is located.
      * 
      */
-    private final @Nullable String stateProvince;
+    private @Nullable String stateProvince;
 
-    @CustomType.Constructor
-    private CertificateSubjectName(
-        @CustomType.Parameter("commonName") @Nullable String commonName,
-        @CustomType.Parameter("country") @Nullable String country,
-        @CustomType.Parameter("emailAddress") @Nullable String emailAddress,
-        @CustomType.Parameter("locality") @Nullable String locality,
-        @CustomType.Parameter("organization") @Nullable String organization,
-        @CustomType.Parameter("organizationalUnit") @Nullable String organizationalUnit,
-        @CustomType.Parameter("stateProvince") @Nullable String stateProvince) {
-        this.commonName = commonName;
-        this.country = country;
-        this.emailAddress = emailAddress;
-        this.locality = locality;
-        this.organization = organization;
-        this.organizationalUnit = organizationalUnit;
-        this.stateProvince = stateProvince;
-    }
-
+    private CertificateSubjectName() {}
     /**
      * @return The fully qualified domain name used for DNS lookups of the server.
      * 
@@ -122,7 +105,7 @@ public final class CertificateSubjectName {
     public static Builder builder(CertificateSubjectName defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String commonName;
         private @Nullable String country;
@@ -131,11 +114,7 @@ public final class CertificateSubjectName {
         private @Nullable String organization;
         private @Nullable String organizationalUnit;
         private @Nullable String stateProvince;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CertificateSubjectName defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.commonName = defaults.commonName;
@@ -147,35 +126,51 @@ public final class CertificateSubjectName {
     	      this.stateProvince = defaults.stateProvince;
         }
 
+        @CustomType.Setter
         public Builder commonName(@Nullable String commonName) {
             this.commonName = commonName;
             return this;
         }
+        @CustomType.Setter
         public Builder country(@Nullable String country) {
             this.country = country;
             return this;
         }
+        @CustomType.Setter
         public Builder emailAddress(@Nullable String emailAddress) {
             this.emailAddress = emailAddress;
             return this;
         }
+        @CustomType.Setter
         public Builder locality(@Nullable String locality) {
             this.locality = locality;
             return this;
         }
+        @CustomType.Setter
         public Builder organization(@Nullable String organization) {
             this.organization = organization;
             return this;
         }
+        @CustomType.Setter
         public Builder organizationalUnit(@Nullable String organizationalUnit) {
             this.organizationalUnit = organizationalUnit;
             return this;
         }
+        @CustomType.Setter
         public Builder stateProvince(@Nullable String stateProvince) {
             this.stateProvince = stateProvince;
             return this;
-        }        public CertificateSubjectName build() {
-            return new CertificateSubjectName(commonName, country, emailAddress, locality, organization, organizationalUnit, stateProvince);
+        }
+        public CertificateSubjectName build() {
+            final var o = new CertificateSubjectName();
+            o.commonName = commonName;
+            o.country = country;
+            o.emailAddress = emailAddress;
+            o.locality = locality;
+            o.organization = organization;
+            o.organizationalUnit = organizationalUnit;
+            o.stateProvince = stateProvince;
+            return o;
         }
     }
 }

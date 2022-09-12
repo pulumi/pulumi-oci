@@ -15,66 +15,45 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetChannelsResult {
-    private final @Nullable String channelId;
+    private @Nullable String channelId;
     /**
      * @return The list of channels.
      * 
      */
-    private final List<GetChannelsChannel> channels;
+    private List<GetChannelsChannel> channels;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The OCID of the source DB System.
      * 
      */
-    private final @Nullable String dbSystemId;
+    private @Nullable String dbSystemId;
     /**
      * @return The user-friendly name for the Channel. It does not have to be unique.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetChannelsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetChannelsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Whether the Channel has been enabled by the user.
      * 
      */
-    private final @Nullable Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return The state of the Channel.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetChannelsResult(
-        @CustomType.Parameter("channelId") @Nullable String channelId,
-        @CustomType.Parameter("channels") List<GetChannelsChannel> channels,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dbSystemId") @Nullable String dbSystemId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetChannelsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isEnabled") @Nullable Boolean isEnabled,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.channelId = channelId;
-        this.channels = channels;
-        this.compartmentId = compartmentId;
-        this.dbSystemId = dbSystemId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.isEnabled = isEnabled;
-        this.state = state;
-    }
-
+    private GetChannelsResult() {}
     public Optional<String> channelId() {
         return Optional.ofNullable(this.channelId);
     }
@@ -138,7 +117,7 @@ public final class GetChannelsResult {
     public static Builder builder(GetChannelsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String channelId;
         private List<GetChannelsChannel> channels;
@@ -149,11 +128,7 @@ public final class GetChannelsResult {
         private String id;
         private @Nullable Boolean isEnabled;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetChannelsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.channelId = defaults.channelId;
@@ -167,10 +142,12 @@ public final class GetChannelsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder channelId(@Nullable String channelId) {
             this.channelId = channelId;
             return this;
         }
+        @CustomType.Setter
         public Builder channels(List<GetChannelsChannel> channels) {
             this.channels = Objects.requireNonNull(channels);
             return this;
@@ -178,18 +155,22 @@ public final class GetChannelsResult {
         public Builder channels(GetChannelsChannel... channels) {
             return channels(List.of(channels));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
             this.dbSystemId = dbSystemId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetChannelsFilter> filters) {
             this.filters = filters;
             return this;
@@ -197,19 +178,33 @@ public final class GetChannelsResult {
         public Builder filters(GetChannelsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
             this.isEnabled = isEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetChannelsResult build() {
-            return new GetChannelsResult(channelId, channels, compartmentId, dbSystemId, displayName, filters, id, isEnabled, state);
+        }
+        public GetChannelsResult build() {
+            final var o = new GetChannelsResult();
+            o.channelId = channelId;
+            o.channels = channels;
+            o.compartmentId = compartmentId;
+            o.dbSystemId = dbSystemId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.isEnabled = isEnabled;
+            o.state = state;
+            return o;
         }
     }
 }

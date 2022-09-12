@@ -13,70 +13,49 @@ public final class GetAppCatalogListingResult {
      * @return Listing&#39;s contact URL.
      * 
      */
-    private final String contactUrl;
+    private String contactUrl;
     /**
      * @return Description of the listing.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return the region free ocid of the listing resource.
      * 
      */
-    private final String listingId;
+    private String listingId;
     /**
      * @return Publisher&#39;s logo URL.
      * 
      */
-    private final String publisherLogoUrl;
+    private String publisherLogoUrl;
     /**
      * @return The name of the publisher who published this listing.
      * 
      */
-    private final String publisherName;
+    private String publisherName;
     /**
      * @return The short summary for the listing.
      * 
      */
-    private final String summary;
+    private String summary;
     /**
      * @return Date and time the listing was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
      * 
      */
-    private final String timePublished;
+    private String timePublished;
 
-    @CustomType.Constructor
-    private GetAppCatalogListingResult(
-        @CustomType.Parameter("contactUrl") String contactUrl,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("listingId") String listingId,
-        @CustomType.Parameter("publisherLogoUrl") String publisherLogoUrl,
-        @CustomType.Parameter("publisherName") String publisherName,
-        @CustomType.Parameter("summary") String summary,
-        @CustomType.Parameter("timePublished") String timePublished) {
-        this.contactUrl = contactUrl;
-        this.description = description;
-        this.displayName = displayName;
-        this.id = id;
-        this.listingId = listingId;
-        this.publisherLogoUrl = publisherLogoUrl;
-        this.publisherName = publisherName;
-        this.summary = summary;
-        this.timePublished = timePublished;
-    }
-
+    private GetAppCatalogListingResult() {}
     /**
      * @return Listing&#39;s contact URL.
      * 
@@ -148,7 +127,7 @@ public final class GetAppCatalogListingResult {
     public static Builder builder(GetAppCatalogListingResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String contactUrl;
         private String description;
@@ -159,11 +138,7 @@ public final class GetAppCatalogListingResult {
         private String publisherName;
         private String summary;
         private String timePublished;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAppCatalogListingResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.contactUrl = defaults.contactUrl;
@@ -177,43 +152,63 @@ public final class GetAppCatalogListingResult {
     	      this.timePublished = defaults.timePublished;
         }
 
+        @CustomType.Setter
         public Builder contactUrl(String contactUrl) {
             this.contactUrl = Objects.requireNonNull(contactUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder listingId(String listingId) {
             this.listingId = Objects.requireNonNull(listingId);
             return this;
         }
+        @CustomType.Setter
         public Builder publisherLogoUrl(String publisherLogoUrl) {
             this.publisherLogoUrl = Objects.requireNonNull(publisherLogoUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder publisherName(String publisherName) {
             this.publisherName = Objects.requireNonNull(publisherName);
             return this;
         }
+        @CustomType.Setter
         public Builder summary(String summary) {
             this.summary = Objects.requireNonNull(summary);
             return this;
         }
+        @CustomType.Setter
         public Builder timePublished(String timePublished) {
             this.timePublished = Objects.requireNonNull(timePublished);
             return this;
-        }        public GetAppCatalogListingResult build() {
-            return new GetAppCatalogListingResult(contactUrl, description, displayName, id, listingId, publisherLogoUrl, publisherName, summary, timePublished);
+        }
+        public GetAppCatalogListingResult build() {
+            final var o = new GetAppCatalogListingResult();
+            o.contactUrl = contactUrl;
+            o.description = description;
+            o.displayName = displayName;
+            o.id = id;
+            o.listingId = listingId;
+            o.publisherLogoUrl = publisherLogoUrl;
+            o.publisherName = publisherName;
+            o.summary = summary;
+            o.timePublished = timePublished;
+            return o;
         }
     }
 }

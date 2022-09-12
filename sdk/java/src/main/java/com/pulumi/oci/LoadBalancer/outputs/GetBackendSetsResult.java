@@ -17,27 +17,16 @@ public final class GetBackendSetsResult {
      * @return The list of backendsets.
      * 
      */
-    private final List<GetBackendSetsBackendset> backendsets;
-    private final @Nullable List<GetBackendSetsFilter> filters;
+    private List<GetBackendSetsBackendset> backendsets;
+    private @Nullable List<GetBackendSetsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String loadBalancerId;
+    private String id;
+    private String loadBalancerId;
 
-    @CustomType.Constructor
-    private GetBackendSetsResult(
-        @CustomType.Parameter("backendsets") List<GetBackendSetsBackendset> backendsets,
-        @CustomType.Parameter("filters") @Nullable List<GetBackendSetsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId) {
-        this.backendsets = backendsets;
-        this.filters = filters;
-        this.id = id;
-        this.loadBalancerId = loadBalancerId;
-    }
-
+    private GetBackendSetsResult() {}
     /**
      * @return The list of backendsets.
      * 
@@ -66,17 +55,13 @@ public final class GetBackendSetsResult {
     public static Builder builder(GetBackendSetsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBackendSetsBackendset> backendsets;
         private @Nullable List<GetBackendSetsFilter> filters;
         private String id;
         private String loadBalancerId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBackendSetsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backendsets = defaults.backendsets;
@@ -85,6 +70,7 @@ public final class GetBackendSetsResult {
     	      this.loadBalancerId = defaults.loadBalancerId;
         }
 
+        @CustomType.Setter
         public Builder backendsets(List<GetBackendSetsBackendset> backendsets) {
             this.backendsets = Objects.requireNonNull(backendsets);
             return this;
@@ -92,6 +78,7 @@ public final class GetBackendSetsResult {
         public Builder backendsets(GetBackendSetsBackendset... backendsets) {
             return backendsets(List.of(backendsets));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBackendSetsFilter> filters) {
             this.filters = filters;
             return this;
@@ -99,15 +86,23 @@ public final class GetBackendSetsResult {
         public Builder filters(GetBackendSetsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
-        }        public GetBackendSetsResult build() {
-            return new GetBackendSetsResult(backendsets, filters, id, loadBalancerId);
+        }
+        public GetBackendSetsResult build() {
+            final var o = new GetBackendSetsResult();
+            o.backendsets = backendsets;
+            o.filters = filters;
+            o.id = id;
+            o.loadBalancerId = loadBalancerId;
+            return o;
         }
     }
 }

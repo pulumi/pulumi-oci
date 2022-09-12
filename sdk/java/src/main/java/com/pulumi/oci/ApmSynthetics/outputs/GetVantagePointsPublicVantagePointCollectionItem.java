@@ -15,28 +15,19 @@ public final class GetVantagePointsPublicVantagePointCollectionItem {
      * @return A filter to return only the resources that match the entire display name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Geographic summary of a vantage point.
      * 
      */
-    private final List<GetVantagePointsPublicVantagePointCollectionItemGeo> geos;
+    private List<GetVantagePointsPublicVantagePointCollectionItemGeo> geos;
     /**
      * @return A filter to return only the resources that match the entire name.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetVantagePointsPublicVantagePointCollectionItem(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("geos") List<GetVantagePointsPublicVantagePointCollectionItemGeo> geos,
-        @CustomType.Parameter("name") String name) {
-        this.displayName = displayName;
-        this.geos = geos;
-        this.name = name;
-    }
-
+    private GetVantagePointsPublicVantagePointCollectionItem() {}
     /**
      * @return A filter to return only the resources that match the entire display name.
      * 
@@ -66,16 +57,12 @@ public final class GetVantagePointsPublicVantagePointCollectionItem {
     public static Builder builder(GetVantagePointsPublicVantagePointCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private List<GetVantagePointsPublicVantagePointCollectionItemGeo> geos;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVantagePointsPublicVantagePointCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -83,10 +70,12 @@ public final class GetVantagePointsPublicVantagePointCollectionItem {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder geos(List<GetVantagePointsPublicVantagePointCollectionItemGeo> geos) {
             this.geos = Objects.requireNonNull(geos);
             return this;
@@ -94,11 +83,17 @@ public final class GetVantagePointsPublicVantagePointCollectionItem {
         public Builder geos(GetVantagePointsPublicVantagePointCollectionItemGeo... geos) {
             return geos(List.of(geos));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetVantagePointsPublicVantagePointCollectionItem build() {
-            return new GetVantagePointsPublicVantagePointCollectionItem(displayName, geos, name);
+        }
+        public GetVantagePointsPublicVantagePointCollectionItem build() {
+            final var o = new GetVantagePointsPublicVantagePointCollectionItem();
+            o.displayName = displayName;
+            o.geos = geos;
+            o.name = name;
+            return o;
         }
     }
 }

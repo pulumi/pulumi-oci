@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly Outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionResult ConfigDefinition;
         /// <summary>
-        /// A user defined description for the object.
+        /// A user-defined description for the object.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// The property which disciminates the subtypes.
+        /// The property which differentiates the subtypes.
         /// </summary>
         public readonly string ModelType;
         /// <summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly int ObjectStatus;
         /// <summary>
-        /// A reference to the object's parent.
+        /// A reference to the parent object.
         /// </summary>
         public readonly Outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRefResult ParentRef;
         /// <summary>

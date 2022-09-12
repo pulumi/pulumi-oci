@@ -18,52 +18,35 @@ public final class GetDatabaseToolsConnectionsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of database_tools_connection_collection.
      * 
      */
-    private final List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection> databaseToolsConnectionCollections;
+    private List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection> databaseToolsConnectionCollections;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetDatabaseToolsConnectionsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetDatabaseToolsConnectionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the Database Tools connection.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The Database Tools connection type.
      * 
      */
-    private final @Nullable List<String> types;
+    private @Nullable List<String> types;
 
-    @CustomType.Constructor
-    private GetDatabaseToolsConnectionsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("databaseToolsConnectionCollections") List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection> databaseToolsConnectionCollections,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetDatabaseToolsConnectionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("types") @Nullable List<String> types) {
-        this.compartmentId = compartmentId;
-        this.databaseToolsConnectionCollections = databaseToolsConnectionCollections;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.types = types;
-    }
-
+    private GetDatabaseToolsConnectionsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      * 
@@ -117,7 +100,7 @@ public final class GetDatabaseToolsConnectionsResult {
     public static Builder builder(GetDatabaseToolsConnectionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection> databaseToolsConnectionCollections;
@@ -126,11 +109,7 @@ public final class GetDatabaseToolsConnectionsResult {
         private String id;
         private @Nullable String state;
         private @Nullable List<String> types;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseToolsConnectionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,10 +121,12 @@ public final class GetDatabaseToolsConnectionsResult {
     	      this.types = defaults.types;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseToolsConnectionCollections(List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection> databaseToolsConnectionCollections) {
             this.databaseToolsConnectionCollections = Objects.requireNonNull(databaseToolsConnectionCollections);
             return this;
@@ -153,10 +134,12 @@ public final class GetDatabaseToolsConnectionsResult {
         public Builder databaseToolsConnectionCollections(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection... databaseToolsConnectionCollections) {
             return databaseToolsConnectionCollections(List.of(databaseToolsConnectionCollections));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDatabaseToolsConnectionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -164,22 +147,34 @@ public final class GetDatabaseToolsConnectionsResult {
         public Builder filters(GetDatabaseToolsConnectionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder types(@Nullable List<String> types) {
             this.types = types;
             return this;
         }
         public Builder types(String... types) {
             return types(List.of(types));
-        }        public GetDatabaseToolsConnectionsResult build() {
-            return new GetDatabaseToolsConnectionsResult(compartmentId, databaseToolsConnectionCollections, displayName, filters, id, state, types);
+        }
+        public GetDatabaseToolsConnectionsResult build() {
+            final var o = new GetDatabaseToolsConnectionsResult();
+            o.compartmentId = compartmentId;
+            o.databaseToolsConnectionCollections = databaseToolsConnectionCollections;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.types = types;
+            return o;
         }
     }
 }

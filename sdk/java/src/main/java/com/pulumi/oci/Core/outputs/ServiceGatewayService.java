@@ -15,21 +15,14 @@ public final class ServiceGatewayService {
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/).
      * 
      */
-    private final String serviceId;
+    private String serviceId;
     /**
      * @return The name of the service.
      * 
      */
-    private final @Nullable String serviceName;
+    private @Nullable String serviceName;
 
-    @CustomType.Constructor
-    private ServiceGatewayService(
-        @CustomType.Parameter("serviceId") String serviceId,
-        @CustomType.Parameter("serviceName") @Nullable String serviceName) {
-        this.serviceId = serviceId;
-        this.serviceName = serviceName;
-    }
-
+    private ServiceGatewayService() {}
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/).
      * 
@@ -52,30 +45,32 @@ public final class ServiceGatewayService {
     public static Builder builder(ServiceGatewayService defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String serviceId;
         private @Nullable String serviceName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ServiceGatewayService defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.serviceId = defaults.serviceId;
     	      this.serviceName = defaults.serviceName;
         }
 
+        @CustomType.Setter
         public Builder serviceId(String serviceId) {
             this.serviceId = Objects.requireNonNull(serviceId);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceName(@Nullable String serviceName) {
             this.serviceName = serviceName;
             return this;
-        }        public ServiceGatewayService build() {
-            return new ServiceGatewayService(serviceId, serviceName);
+        }
+        public ServiceGatewayService build() {
+            final var o = new ServiceGatewayService();
+            o.serviceId = serviceId;
+            o.serviceName = serviceName;
+            return o;
         }
     }
 }

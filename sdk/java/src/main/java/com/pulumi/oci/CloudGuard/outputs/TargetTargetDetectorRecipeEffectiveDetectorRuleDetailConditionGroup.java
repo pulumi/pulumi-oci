@@ -15,21 +15,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditio
      * @return (Updatable) compartment associated with condition
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return (Updatable) Base condition object
      * 
      */
-    private final @Nullable String condition;
+    private @Nullable String condition;
 
-    @CustomType.Constructor
-    private TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("condition") @Nullable String condition) {
-        this.compartmentId = compartmentId;
-        this.condition = condition;
-    }
-
+    private TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup() {}
     /**
      * @return (Updatable) compartment associated with condition
      * 
@@ -52,30 +45,32 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditio
     public static Builder builder(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String condition;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.condition = defaults.condition;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder condition(@Nullable String condition) {
             this.condition = condition;
             return this;
-        }        public TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup build() {
-            return new TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup(compartmentId, condition);
+        }
+        public TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup build() {
+            final var o = new TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup();
+            o.compartmentId = compartmentId;
+            o.condition = condition;
+            return o;
         }
     }
 }

@@ -17,40 +17,23 @@ public final class GetManagedDatabaseSqlTuningAdvisorTaskResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A list of SQL Tuning Advisor tasks.
      * 
      */
-    private final List<GetManagedDatabaseSqlTuningAdvisorTaskItem> items;
-    private final String managedDatabaseId;
+    private List<GetManagedDatabaseSqlTuningAdvisorTaskItem> items;
+    private String managedDatabaseId;
     /**
      * @return The name of the SQL Tuning Advisor task.
      * 
      */
-    private final @Nullable String name;
-    private final @Nullable String status;
-    private final @Nullable String timeGreaterThanOrEqualTo;
-    private final @Nullable String timeLessThanOrEqualTo;
+    private @Nullable String name;
+    private @Nullable String status;
+    private @Nullable String timeGreaterThanOrEqualTo;
+    private @Nullable String timeLessThanOrEqualTo;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTaskResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetManagedDatabaseSqlTuningAdvisorTaskItem> items,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("status") @Nullable String status,
-        @CustomType.Parameter("timeGreaterThanOrEqualTo") @Nullable String timeGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeLessThanOrEqualTo") @Nullable String timeLessThanOrEqualTo) {
-        this.id = id;
-        this.items = items;
-        this.managedDatabaseId = managedDatabaseId;
-        this.name = name;
-        this.status = status;
-        this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
-        this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTaskResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -92,7 +75,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTaskResult {
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTaskResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private List<GetManagedDatabaseSqlTuningAdvisorTaskItem> items;
@@ -101,11 +84,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTaskResult {
         private @Nullable String status;
         private @Nullable String timeGreaterThanOrEqualTo;
         private @Nullable String timeLessThanOrEqualTo;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTaskResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -117,10 +96,12 @@ public final class GetManagedDatabaseSqlTuningAdvisorTaskResult {
     	      this.timeLessThanOrEqualTo = defaults.timeLessThanOrEqualTo;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabaseSqlTuningAdvisorTaskItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -128,27 +109,41 @@ public final class GetManagedDatabaseSqlTuningAdvisorTaskResult {
         public Builder items(GetManagedDatabaseSqlTuningAdvisorTaskItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
         }
+        @CustomType.Setter
         public Builder timeGreaterThanOrEqualTo(@Nullable String timeGreaterThanOrEqualTo) {
             this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeLessThanOrEqualTo(@Nullable String timeLessThanOrEqualTo) {
             this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
             return this;
-        }        public GetManagedDatabaseSqlTuningAdvisorTaskResult build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTaskResult(id, items, managedDatabaseId, name, status, timeGreaterThanOrEqualTo, timeLessThanOrEqualTo);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTaskResult build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTaskResult();
+            o.id = id;
+            o.items = items;
+            o.managedDatabaseId = managedDatabaseId;
+            o.name = name;
+            o.status = status;
+            o.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
+            o.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
+            return o;
         }
     }
 }

@@ -14,35 +14,24 @@ public final class GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServe
      * @return Estimated time, in minutes, to patch one database server.
      * 
      */
-    private final Integer estimatedPatchDuration;
+    private Integer estimatedPatchDuration;
     /**
      * @return The status of the patching operation.
      * 
      */
-    private final String patchingStatus;
+    private String patchingStatus;
     /**
      * @return The time when the patching operation ended.
      * 
      */
-    private final String timePatchingEnded;
+    private String timePatchingEnded;
     /**
      * @return The time when the patching operation started.
      * 
      */
-    private final String timePatchingStarted;
+    private String timePatchingStarted;
 
-    @CustomType.Constructor
-    private GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail(
-        @CustomType.Parameter("estimatedPatchDuration") Integer estimatedPatchDuration,
-        @CustomType.Parameter("patchingStatus") String patchingStatus,
-        @CustomType.Parameter("timePatchingEnded") String timePatchingEnded,
-        @CustomType.Parameter("timePatchingStarted") String timePatchingStarted) {
-        this.estimatedPatchDuration = estimatedPatchDuration;
-        this.patchingStatus = patchingStatus;
-        this.timePatchingEnded = timePatchingEnded;
-        this.timePatchingStarted = timePatchingStarted;
-    }
-
+    private GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail() {}
     /**
      * @return Estimated time, in minutes, to patch one database server.
      * 
@@ -79,17 +68,13 @@ public final class GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServe
     public static Builder builder(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer estimatedPatchDuration;
         private String patchingStatus;
         private String timePatchingEnded;
         private String timePatchingStarted;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.estimatedPatchDuration = defaults.estimatedPatchDuration;
@@ -98,23 +83,33 @@ public final class GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServe
     	      this.timePatchingStarted = defaults.timePatchingStarted;
         }
 
+        @CustomType.Setter
         public Builder estimatedPatchDuration(Integer estimatedPatchDuration) {
             this.estimatedPatchDuration = Objects.requireNonNull(estimatedPatchDuration);
             return this;
         }
+        @CustomType.Setter
         public Builder patchingStatus(String patchingStatus) {
             this.patchingStatus = Objects.requireNonNull(patchingStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder timePatchingEnded(String timePatchingEnded) {
             this.timePatchingEnded = Objects.requireNonNull(timePatchingEnded);
             return this;
         }
+        @CustomType.Setter
         public Builder timePatchingStarted(String timePatchingStarted) {
             this.timePatchingStarted = Objects.requireNonNull(timePatchingStarted);
             return this;
-        }        public GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail build() {
-            return new GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail(estimatedPatchDuration, patchingStatus, timePatchingEnded, timePatchingStarted);
+        }
+        public GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail build() {
+            final var o = new GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail();
+            o.estimatedPatchDuration = estimatedPatchDuration;
+            o.patchingStatus = patchingStatus;
+            o.timePatchingEnded = timePatchingEnded;
+            o.timePatchingStarted = timePatchingStarted;
+            return o;
         }
     }
 }

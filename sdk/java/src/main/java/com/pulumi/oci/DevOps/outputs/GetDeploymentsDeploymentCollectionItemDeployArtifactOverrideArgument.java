@@ -14,13 +14,9 @@ public final class GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideA
      * @return A list of stage predecessors for a stage.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem> items;
+    private List<GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem> items;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgument(@CustomType.Parameter("items") List<GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem> items) {
-        this.items = items;
-    }
-
+    private GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgument() {}
     /**
      * @return A list of stage predecessors for a stage.
      * 
@@ -36,27 +32,27 @@ public final class GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideA
     public static Builder builder(GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgument defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgument defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem... items) {
             return items(List.of(items));
-        }        public GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgument build() {
-            return new GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgument(items);
+        }
+        public GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgument build() {
+            final var o = new GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgument();
+            o.items = items;
+            return o;
         }
     }
 }

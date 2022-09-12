@@ -16,21 +16,14 @@ public final class DeploymentSpecificationRouteRequestPoliciesAuthorization {
      * @return (Updatable) A user whose scope includes any of these access ranges is allowed on this route. Access ranges are case-sensitive.
      * 
      */
-    private final @Nullable List<String> allowedScopes;
+    private @Nullable List<String> allowedScopes;
     /**
      * @return (Updatable) Type of the Response Cache Store Policy.
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationRouteRequestPoliciesAuthorization(
-        @CustomType.Parameter("allowedScopes") @Nullable List<String> allowedScopes,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.allowedScopes = allowedScopes;
-        this.type = type;
-    }
-
+    private DeploymentSpecificationRouteRequestPoliciesAuthorization() {}
     /**
      * @return (Updatable) A user whose scope includes any of these access ranges is allowed on this route. Access ranges are case-sensitive.
      * 
@@ -53,21 +46,18 @@ public final class DeploymentSpecificationRouteRequestPoliciesAuthorization {
     public static Builder builder(DeploymentSpecificationRouteRequestPoliciesAuthorization defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> allowedScopes;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationRouteRequestPoliciesAuthorization defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowedScopes = defaults.allowedScopes;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder allowedScopes(@Nullable List<String> allowedScopes) {
             this.allowedScopes = allowedScopes;
             return this;
@@ -75,11 +65,16 @@ public final class DeploymentSpecificationRouteRequestPoliciesAuthorization {
         public Builder allowedScopes(String... allowedScopes) {
             return allowedScopes(List.of(allowedScopes));
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public DeploymentSpecificationRouteRequestPoliciesAuthorization build() {
-            return new DeploymentSpecificationRouteRequestPoliciesAuthorization(allowedScopes, type);
+        }
+        public DeploymentSpecificationRouteRequestPoliciesAuthorization build() {
+            final var o = new DeploymentSpecificationRouteRequestPoliciesAuthorization();
+            o.allowedScopes = allowedScopes;
+            o.type = type;
+            return o;
         }
     }
 }

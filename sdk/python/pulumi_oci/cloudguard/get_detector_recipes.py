@@ -82,7 +82,7 @@ class GetDetectorRecipesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        Display name for DetectorRecipeDetectorRule.
+        The display name of entity
         """
         return pulumi.get(self, "display_name")
 

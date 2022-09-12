@@ -14,73 +14,50 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbHomesResult {
-    private final @Nullable String backupId;
+    private @Nullable String backupId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of db_homes.
      * 
      */
-    private final List<GetDbHomesDbHome> dbHomes;
+    private List<GetDbHomesDbHome> dbHomes;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    private final @Nullable String dbSystemId;
+    private @Nullable String dbSystemId;
     /**
      * @return The Oracle Database version.
      * 
      */
-    private final @Nullable String dbVersion;
+    private @Nullable String dbVersion;
     /**
      * @return The user-provided name for the Database Home. The name does not need to be unique.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetDbHomesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetDbHomesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the Database Home.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      * 
      */
-    private final @Nullable String vmClusterId;
+    private @Nullable String vmClusterId;
 
-    @CustomType.Constructor
-    private GetDbHomesResult(
-        @CustomType.Parameter("backupId") @Nullable String backupId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dbHomes") List<GetDbHomesDbHome> dbHomes,
-        @CustomType.Parameter("dbSystemId") @Nullable String dbSystemId,
-        @CustomType.Parameter("dbVersion") @Nullable String dbVersion,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetDbHomesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("vmClusterId") @Nullable String vmClusterId) {
-        this.backupId = backupId;
-        this.compartmentId = compartmentId;
-        this.dbHomes = dbHomes;
-        this.dbSystemId = dbSystemId;
-        this.dbVersion = dbVersion;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.vmClusterId = vmClusterId;
-    }
-
+    private GetDbHomesResult() {}
     public Optional<String> backupId() {
         return Optional.ofNullable(this.backupId);
     }
@@ -151,7 +128,7 @@ public final class GetDbHomesResult {
     public static Builder builder(GetDbHomesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String backupId;
         private String compartmentId;
@@ -163,11 +140,7 @@ public final class GetDbHomesResult {
         private String id;
         private @Nullable String state;
         private @Nullable String vmClusterId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbHomesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupId = defaults.backupId;
@@ -182,14 +155,17 @@ public final class GetDbHomesResult {
     	      this.vmClusterId = defaults.vmClusterId;
         }
 
+        @CustomType.Setter
         public Builder backupId(@Nullable String backupId) {
             this.backupId = backupId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbHomes(List<GetDbHomesDbHome> dbHomes) {
             this.dbHomes = Objects.requireNonNull(dbHomes);
             return this;
@@ -197,18 +173,22 @@ public final class GetDbHomesResult {
         public Builder dbHomes(GetDbHomesDbHome... dbHomes) {
             return dbHomes(List.of(dbHomes));
         }
+        @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
             this.dbSystemId = dbSystemId;
             return this;
         }
+        @CustomType.Setter
         public Builder dbVersion(@Nullable String dbVersion) {
             this.dbVersion = dbVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDbHomesFilter> filters) {
             this.filters = filters;
             return this;
@@ -216,19 +196,34 @@ public final class GetDbHomesResult {
         public Builder filters(GetDbHomesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder vmClusterId(@Nullable String vmClusterId) {
             this.vmClusterId = vmClusterId;
             return this;
-        }        public GetDbHomesResult build() {
-            return new GetDbHomesResult(backupId, compartmentId, dbHomes, dbSystemId, dbVersion, displayName, filters, id, state, vmClusterId);
+        }
+        public GetDbHomesResult build() {
+            final var o = new GetDbHomesResult();
+            o.backupId = backupId;
+            o.compartmentId = compartmentId;
+            o.dbHomes = dbHomes;
+            o.dbSystemId = dbSystemId;
+            o.dbVersion = dbVersion;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.vmClusterId = vmClusterId;
+            return o;
         }
     }
 }

@@ -18,161 +18,114 @@ public final class GetSoftwareSourcesSoftwareSource {
      * @return The architecture type supported by the Software Source
      * 
      */
-    private final String archType;
+    private String archType;
     /**
      * @return list of the Managed Instances associated with this Software Sources
      * 
      */
-    private final List<GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance> associatedManagedInstances;
+    private List<GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance> associatedManagedInstances;
     /**
      * @return The yum repository checksum type used by this software source
      * 
      */
-    private final String checksumType;
+    private String checksumType;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Information specified by the user about the software source
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Fingerprint of the GPG key for this software source
      * 
      */
-    private final String gpgKeyFingerprint;
+    private String gpgKeyFingerprint;
     /**
      * @return ID of the GPG key for this software source
      * 
      */
-    private final String gpgKeyId;
+    private String gpgKeyId;
     /**
      * @return URL of the GPG key for this software source
      * 
      */
-    private final String gpgKeyUrl;
+    private String gpgKeyUrl;
     /**
      * @return OCID for the Software Source
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Email address of the person maintaining this software source
      * 
      */
-    private final String maintainerEmail;
+    private String maintainerEmail;
     /**
      * @return Name of the person maintaining this software source
      * 
      */
-    private final String maintainerName;
+    private String maintainerName;
     /**
      * @return Phone number of the person maintaining this software source
      * 
      */
-    private final String maintainerPhone;
+    private String maintainerPhone;
     /**
      * @return Number of packages
      * 
      */
-    private final Integer packages;
+    private Integer packages;
     /**
      * @return OCID for the parent software source, if there is one
      * 
      */
-    private final String parentId;
+    private String parentId;
     /**
      * @return Display name the parent software source, if there is one
      * 
      */
-    private final String parentName;
+    private String parentName;
     /**
      * @return Type of the Software Source
      * 
      */
-    private final String repoType;
+    private String repoType;
     /**
      * @return The current lifecycle state for the object.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return status of the software source.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return URL for the repostiory
      * 
      */
-    private final String url;
+    private String url;
 
-    @CustomType.Constructor
-    private GetSoftwareSourcesSoftwareSource(
-        @CustomType.Parameter("archType") String archType,
-        @CustomType.Parameter("associatedManagedInstances") List<GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance> associatedManagedInstances,
-        @CustomType.Parameter("checksumType") String checksumType,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("gpgKeyFingerprint") String gpgKeyFingerprint,
-        @CustomType.Parameter("gpgKeyId") String gpgKeyId,
-        @CustomType.Parameter("gpgKeyUrl") String gpgKeyUrl,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("maintainerEmail") String maintainerEmail,
-        @CustomType.Parameter("maintainerName") String maintainerName,
-        @CustomType.Parameter("maintainerPhone") String maintainerPhone,
-        @CustomType.Parameter("packages") Integer packages,
-        @CustomType.Parameter("parentId") String parentId,
-        @CustomType.Parameter("parentName") String parentName,
-        @CustomType.Parameter("repoType") String repoType,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("url") String url) {
-        this.archType = archType;
-        this.associatedManagedInstances = associatedManagedInstances;
-        this.checksumType = checksumType;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.gpgKeyFingerprint = gpgKeyFingerprint;
-        this.gpgKeyId = gpgKeyId;
-        this.gpgKeyUrl = gpgKeyUrl;
-        this.id = id;
-        this.maintainerEmail = maintainerEmail;
-        this.maintainerName = maintainerName;
-        this.maintainerPhone = maintainerPhone;
-        this.packages = packages;
-        this.parentId = parentId;
-        this.parentName = parentName;
-        this.repoType = repoType;
-        this.state = state;
-        this.status = status;
-        this.url = url;
-    }
-
+    private GetSoftwareSourcesSoftwareSource() {}
     /**
      * @return The architecture type supported by the Software Source
      * 
@@ -335,7 +288,7 @@ public final class GetSoftwareSourcesSoftwareSource {
     public static Builder builder(GetSoftwareSourcesSoftwareSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String archType;
         private List<GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance> associatedManagedInstances;
@@ -359,11 +312,7 @@ public final class GetSoftwareSourcesSoftwareSource {
         private String state;
         private String status;
         private String url;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSoftwareSourcesSoftwareSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.archType = defaults.archType;
@@ -390,10 +339,12 @@ public final class GetSoftwareSourcesSoftwareSource {
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
         public Builder archType(String archType) {
             this.archType = Objects.requireNonNull(archType);
             return this;
         }
+        @CustomType.Setter
         public Builder associatedManagedInstances(List<GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance> associatedManagedInstances) {
             this.associatedManagedInstances = Objects.requireNonNull(associatedManagedInstances);
             return this;
@@ -401,87 +352,131 @@ public final class GetSoftwareSourcesSoftwareSource {
         public Builder associatedManagedInstances(GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance... associatedManagedInstances) {
             return associatedManagedInstances(List.of(associatedManagedInstances));
         }
+        @CustomType.Setter
         public Builder checksumType(String checksumType) {
             this.checksumType = Objects.requireNonNull(checksumType);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder gpgKeyFingerprint(String gpgKeyFingerprint) {
             this.gpgKeyFingerprint = Objects.requireNonNull(gpgKeyFingerprint);
             return this;
         }
+        @CustomType.Setter
         public Builder gpgKeyId(String gpgKeyId) {
             this.gpgKeyId = Objects.requireNonNull(gpgKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder gpgKeyUrl(String gpgKeyUrl) {
             this.gpgKeyUrl = Objects.requireNonNull(gpgKeyUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder maintainerEmail(String maintainerEmail) {
             this.maintainerEmail = Objects.requireNonNull(maintainerEmail);
             return this;
         }
+        @CustomType.Setter
         public Builder maintainerName(String maintainerName) {
             this.maintainerName = Objects.requireNonNull(maintainerName);
             return this;
         }
+        @CustomType.Setter
         public Builder maintainerPhone(String maintainerPhone) {
             this.maintainerPhone = Objects.requireNonNull(maintainerPhone);
             return this;
         }
+        @CustomType.Setter
         public Builder packages(Integer packages) {
             this.packages = Objects.requireNonNull(packages);
             return this;
         }
+        @CustomType.Setter
         public Builder parentId(String parentId) {
             this.parentId = Objects.requireNonNull(parentId);
             return this;
         }
+        @CustomType.Setter
         public Builder parentName(String parentName) {
             this.parentName = Objects.requireNonNull(parentName);
             return this;
         }
+        @CustomType.Setter
         public Builder repoType(String repoType) {
             this.repoType = Objects.requireNonNull(repoType);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder url(String url) {
             this.url = Objects.requireNonNull(url);
             return this;
-        }        public GetSoftwareSourcesSoftwareSource build() {
-            return new GetSoftwareSourcesSoftwareSource(archType, associatedManagedInstances, checksumType, compartmentId, definedTags, description, displayName, freeformTags, gpgKeyFingerprint, gpgKeyId, gpgKeyUrl, id, maintainerEmail, maintainerName, maintainerPhone, packages, parentId, parentName, repoType, state, status, url);
+        }
+        public GetSoftwareSourcesSoftwareSource build() {
+            final var o = new GetSoftwareSourcesSoftwareSource();
+            o.archType = archType;
+            o.associatedManagedInstances = associatedManagedInstances;
+            o.checksumType = checksumType;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.gpgKeyFingerprint = gpgKeyFingerprint;
+            o.gpgKeyId = gpgKeyId;
+            o.gpgKeyUrl = gpgKeyUrl;
+            o.id = id;
+            o.maintainerEmail = maintainerEmail;
+            o.maintainerName = maintainerName;
+            o.maintainerPhone = maintainerPhone;
+            o.packages = packages;
+            o.parentId = parentId;
+            o.parentName = parentName;
+            o.repoType = repoType;
+            o.state = state;
+            o.status = status;
+            o.url = url;
+            return o;
         }
     }
 }

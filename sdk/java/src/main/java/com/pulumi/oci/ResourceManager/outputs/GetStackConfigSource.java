@@ -9,20 +9,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetStackConfigSource {
-    private final String configSourceType;
-    private final String workingDirectory;
-    private final String zipFileBase64encoded;
+    private String configSourceType;
+    private String workingDirectory;
+    private String zipFileBase64encoded;
 
-    @CustomType.Constructor
-    private GetStackConfigSource(
-        @CustomType.Parameter("configSourceType") String configSourceType,
-        @CustomType.Parameter("workingDirectory") String workingDirectory,
-        @CustomType.Parameter("zipFileBase64encoded") String zipFileBase64encoded) {
-        this.configSourceType = configSourceType;
-        this.workingDirectory = workingDirectory;
-        this.zipFileBase64encoded = zipFileBase64encoded;
-    }
-
+    private GetStackConfigSource() {}
     public String configSourceType() {
         return this.configSourceType;
     }
@@ -40,16 +31,12 @@ public final class GetStackConfigSource {
     public static Builder builder(GetStackConfigSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String configSourceType;
         private String workingDirectory;
         private String zipFileBase64encoded;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetStackConfigSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configSourceType = defaults.configSourceType;
@@ -57,19 +44,27 @@ public final class GetStackConfigSource {
     	      this.zipFileBase64encoded = defaults.zipFileBase64encoded;
         }
 
+        @CustomType.Setter
         public Builder configSourceType(String configSourceType) {
             this.configSourceType = Objects.requireNonNull(configSourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder workingDirectory(String workingDirectory) {
             this.workingDirectory = Objects.requireNonNull(workingDirectory);
             return this;
         }
+        @CustomType.Setter
         public Builder zipFileBase64encoded(String zipFileBase64encoded) {
             this.zipFileBase64encoded = Objects.requireNonNull(zipFileBase64encoded);
             return this;
-        }        public GetStackConfigSource build() {
-            return new GetStackConfigSource(configSourceType, workingDirectory, zipFileBase64encoded);
+        }
+        public GetStackConfigSource build() {
+            final var o = new GetStackConfigSource();
+            o.configSourceType = configSourceType;
+            o.workingDirectory = workingDirectory;
+            o.zipFileBase64encoded = zipFileBase64encoded;
+            return o;
         }
     }
 }

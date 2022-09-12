@@ -14,42 +14,29 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolPar
      * @return The destination port to use in a `PathAnalyzerTest` resource.
      * 
      */
-    private final Integer destinationPort;
+    private Integer destinationPort;
     /**
      * @return The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
      * 
      */
-    private final Integer icmpCode;
+    private Integer icmpCode;
     /**
      * @return The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
      * 
      */
-    private final Integer icmpType;
+    private Integer icmpType;
     /**
      * @return The source port to use in a `PathAnalyzerTest` resource.
      * 
      */
-    private final Integer sourcePort;
+    private Integer sourcePort;
     /**
      * @return The type of the `Endpoint`.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter(
-        @CustomType.Parameter("destinationPort") Integer destinationPort,
-        @CustomType.Parameter("icmpCode") Integer icmpCode,
-        @CustomType.Parameter("icmpType") Integer icmpType,
-        @CustomType.Parameter("sourcePort") Integer sourcePort,
-        @CustomType.Parameter("type") String type) {
-        this.destinationPort = destinationPort;
-        this.icmpCode = icmpCode;
-        this.icmpType = icmpType;
-        this.sourcePort = sourcePort;
-        this.type = type;
-    }
-
+    private GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter() {}
     /**
      * @return The destination port to use in a `PathAnalyzerTest` resource.
      * 
@@ -93,18 +80,14 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolPar
     public static Builder builder(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer destinationPort;
         private Integer icmpCode;
         private Integer icmpType;
         private Integer sourcePort;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.destinationPort = defaults.destinationPort;
@@ -114,27 +97,39 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolPar
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder destinationPort(Integer destinationPort) {
             this.destinationPort = Objects.requireNonNull(destinationPort);
             return this;
         }
+        @CustomType.Setter
         public Builder icmpCode(Integer icmpCode) {
             this.icmpCode = Objects.requireNonNull(icmpCode);
             return this;
         }
+        @CustomType.Setter
         public Builder icmpType(Integer icmpType) {
             this.icmpType = Objects.requireNonNull(icmpType);
             return this;
         }
+        @CustomType.Setter
         public Builder sourcePort(Integer sourcePort) {
             this.sourcePort = Objects.requireNonNull(sourcePort);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter build() {
-            return new GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter(destinationPort, icmpCode, icmpType, sourcePort, type);
+        }
+        public GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter build() {
+            final var o = new GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter();
+            o.destinationPort = destinationPort;
+            o.icmpCode = icmpCode;
+            o.icmpType = icmpType;
+            o.sourcePort = sourcePort;
+            o.type = type;
+            return o;
         }
     }
 }

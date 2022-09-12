@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNamespacesNamespaceCollection {
-    private final List<GetNamespacesNamespaceCollectionItem> items;
+    private List<GetNamespacesNamespaceCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetNamespacesNamespaceCollection(@CustomType.Parameter("items") List<GetNamespacesNamespaceCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetNamespacesNamespaceCollection() {}
     public List<GetNamespacesNamespaceCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetNamespacesNamespaceCollection {
     public static Builder builder(GetNamespacesNamespaceCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetNamespacesNamespaceCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNamespacesNamespaceCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetNamespacesNamespaceCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetNamespacesNamespaceCollectionItem... items) {
             return items(List.of(items));
-        }        public GetNamespacesNamespaceCollection build() {
-            return new GetNamespacesNamespaceCollection(items);
+        }
+        public GetNamespacesNamespaceCollection build() {
+            final var o = new GetNamespacesNamespaceCollection();
+            o.items = items;
+            return o;
         }
     }
 }

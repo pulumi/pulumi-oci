@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// This data source provides the list of Resource Actions in Oracle Cloud Infrastructure Optimizer service.
         /// 
-        /// Lists the Cloud Advisor resource actions that are supported by the specified recommendation.
+        /// Lists the Cloud Advisor resource actions that are supported.
         /// 
         /// 
         /// {{% examples %}}
@@ -32,8 +32,11 @@ namespace Pulumi.Oci.Optimizer
         ///     {
         ///         CompartmentId = @var.Compartment_id,
         ///         CompartmentIdInSubtree = @var.Resource_action_compartment_id_in_subtree,
-        ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
+        ///         ChildTenancyIds = @var.Resource_action_child_tenancy_ids,
+        ///         IncludeOrganization = @var.Resource_action_include_organization,
         ///         Name = @var.Resource_action_name,
+        ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
+        ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
         ///         ResourceType = @var.Resource_action_resource_type,
         ///         State = @var.Resource_action_state,
         ///         Status = @var.Resource_action_status,
@@ -50,7 +53,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// This data source provides the list of Resource Actions in Oracle Cloud Infrastructure Optimizer service.
         /// 
-        /// Lists the Cloud Advisor resource actions that are supported by the specified recommendation.
+        /// Lists the Cloud Advisor resource actions that are supported.
         /// 
         /// 
         /// {{% examples %}}
@@ -68,8 +71,11 @@ namespace Pulumi.Oci.Optimizer
         ///     {
         ///         CompartmentId = @var.Compartment_id,
         ///         CompartmentIdInSubtree = @var.Resource_action_compartment_id_in_subtree,
-        ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
+        ///         ChildTenancyIds = @var.Resource_action_child_tenancy_ids,
+        ///         IncludeOrganization = @var.Resource_action_include_organization,
         ///         Name = @var.Resource_action_name,
+        ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
+        ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
         ///         ResourceType = @var.Resource_action_resource_type,
         ///         State = @var.Resource_action_state,
         ///         Status = @var.Resource_action_status,
@@ -87,6 +93,18 @@ namespace Pulumi.Oci.Optimizer
 
     public sealed class GetResourceActionsArgs : global::Pulumi.InvokeArgs
     {
+        [Input("childTenancyIds")]
+        private List<string>? _childTenancyIds;
+
+        /// <summary>
+        /// A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+        /// </summary>
+        public List<string> ChildTenancyIds
+        {
+            get => _childTenancyIds ?? (_childTenancyIds = new List<string>());
+            set => _childTenancyIds = value;
+        }
+
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
@@ -108,6 +126,12 @@ namespace Pulumi.Oci.Optimizer
         }
 
         /// <summary>
+        /// When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+        /// </summary>
+        [Input("includeOrganization")]
+        public bool? IncludeOrganization { get; set; }
+
+        /// <summary>
         /// Optional. A filter that returns results that match the name specified.
         /// </summary>
         [Input("name")]
@@ -116,8 +140,14 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// The unique OCID associated with the recommendation.
         /// </summary>
-        [Input("recommendationId", required: true)]
-        public string RecommendationId { get; set; } = null!;
+        [Input("recommendationId")]
+        public string? RecommendationId { get; set; }
+
+        /// <summary>
+        /// Optional. A filter that returns results that match the recommendation name specified.
+        /// </summary>
+        [Input("recommendationName")]
+        public string? RecommendationName { get; set; }
 
         /// <summary>
         /// Optional. A filter that returns results that match the resource type specified.
@@ -145,6 +175,18 @@ namespace Pulumi.Oci.Optimizer
 
     public sealed class GetResourceActionsInvokeArgs : global::Pulumi.InvokeArgs
     {
+        [Input("childTenancyIds")]
+        private InputList<string>? _childTenancyIds;
+
+        /// <summary>
+        /// A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+        /// </summary>
+        public InputList<string> ChildTenancyIds
+        {
+            get => _childTenancyIds ?? (_childTenancyIds = new InputList<string>());
+            set => _childTenancyIds = value;
+        }
+
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
@@ -166,6 +208,12 @@ namespace Pulumi.Oci.Optimizer
         }
 
         /// <summary>
+        /// When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+        /// </summary>
+        [Input("includeOrganization")]
+        public Input<bool>? IncludeOrganization { get; set; }
+
+        /// <summary>
         /// Optional. A filter that returns results that match the name specified.
         /// </summary>
         [Input("name")]
@@ -174,8 +222,14 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// The unique OCID associated with the recommendation.
         /// </summary>
-        [Input("recommendationId", required: true)]
-        public Input<string> RecommendationId { get; set; } = null!;
+        [Input("recommendationId")]
+        public Input<string>? RecommendationId { get; set; }
+
+        /// <summary>
+        /// Optional. A filter that returns results that match the recommendation name specified.
+        /// </summary>
+        [Input("recommendationName")]
+        public Input<string>? RecommendationName { get; set; }
 
         /// <summary>
         /// Optional. A filter that returns results that match the resource type specified.
@@ -205,6 +259,7 @@ namespace Pulumi.Oci.Optimizer
     [OutputType]
     public sealed class GetResourceActionsResult
     {
+        public readonly ImmutableArray<string> ChildTenancyIds;
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
@@ -215,6 +270,7 @@ namespace Pulumi.Oci.Optimizer
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool? IncludeOrganization;
         /// <summary>
         /// The name assigned to the resource.
         /// </summary>
@@ -222,7 +278,8 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// The unique OCID associated with the recommendation.
         /// </summary>
-        public readonly string RecommendationId;
+        public readonly string? RecommendationId;
+        public readonly string? RecommendationName;
         /// <summary>
         /// The list of resource_action_collection.
         /// </summary>
@@ -242,6 +299,8 @@ namespace Pulumi.Oci.Optimizer
 
         [OutputConstructor]
         private GetResourceActionsResult(
+            ImmutableArray<string> childTenancyIds,
+
             string compartmentId,
 
             bool compartmentIdInSubtree,
@@ -250,9 +309,13 @@ namespace Pulumi.Oci.Optimizer
 
             string id,
 
+            bool? includeOrganization,
+
             string? name,
 
-            string recommendationId,
+            string? recommendationId,
+
+            string? recommendationName,
 
             ImmutableArray<Outputs.GetResourceActionsResourceActionCollectionResult> resourceActionCollections,
 
@@ -262,12 +325,15 @@ namespace Pulumi.Oci.Optimizer
 
             string? status)
         {
+            ChildTenancyIds = childTenancyIds;
             CompartmentId = compartmentId;
             CompartmentIdInSubtree = compartmentIdInSubtree;
             Filters = filters;
             Id = id;
+            IncludeOrganization = includeOrganization;
             Name = name;
             RecommendationId = recommendationId;
+            RecommendationName = recommendationName;
             ResourceActionCollections = resourceActionCollections;
             ResourceType = resourceType;
             State = state;

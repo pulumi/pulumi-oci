@@ -13,24 +13,15 @@ public final class GetLogSetsCountResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return This is the total number of log sets the tenancy has configured.
      * 
      */
-    private final String logSetsCount;
-    private final String namespace;
+    private String logSetsCount;
+    private String namespace;
 
-    @CustomType.Constructor
-    private GetLogSetsCountResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("logSetsCount") String logSetsCount,
-        @CustomType.Parameter("namespace") String namespace) {
-        this.id = id;
-        this.logSetsCount = logSetsCount;
-        this.namespace = namespace;
-    }
-
+    private GetLogSetsCountResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -56,16 +47,12 @@ public final class GetLogSetsCountResult {
     public static Builder builder(GetLogSetsCountResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String logSetsCount;
         private String namespace;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogSetsCountResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -73,19 +60,27 @@ public final class GetLogSetsCountResult {
     	      this.namespace = defaults.namespace;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder logSetsCount(String logSetsCount) {
             this.logSetsCount = Objects.requireNonNull(logSetsCount);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
-        }        public GetLogSetsCountResult build() {
-            return new GetLogSetsCountResult(id, logSetsCount, namespace);
+        }
+        public GetLogSetsCountResult build() {
+            final var o = new GetLogSetsCountResult();
+            o.id = id;
+            o.logSetsCount = logSetsCount;
+            o.namespace = namespace;
+            return o;
         }
     }
 }

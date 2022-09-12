@@ -14,13 +14,9 @@ public final class GetAwrHubAwrSnapshotsAwrSnapshotCollection {
      * @return A list of AWR snapshot summary data.
      * 
      */
-    private final List<GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem> items;
+    private List<GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetAwrHubAwrSnapshotsAwrSnapshotCollection(@CustomType.Parameter("items") List<GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetAwrHubAwrSnapshotsAwrSnapshotCollection() {}
     /**
      * @return A list of AWR snapshot summary data.
      * 
@@ -36,27 +32,27 @@ public final class GetAwrHubAwrSnapshotsAwrSnapshotCollection {
     public static Builder builder(GetAwrHubAwrSnapshotsAwrSnapshotCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAwrHubAwrSnapshotsAwrSnapshotCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAwrHubAwrSnapshotsAwrSnapshotCollectionItem... items) {
             return items(List.of(items));
-        }        public GetAwrHubAwrSnapshotsAwrSnapshotCollection build() {
-            return new GetAwrHubAwrSnapshotsAwrSnapshotCollection(items);
+        }
+        public GetAwrHubAwrSnapshotsAwrSnapshotCollection build() {
+            final var o = new GetAwrHubAwrSnapshotsAwrSnapshotCollection();
+            o.items = items;
+            return o;
         }
     }
 }

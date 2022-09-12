@@ -11,26 +11,13 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig {
-    private final Integer maxMemoryPerNode;
-    private final Integer maxOcpusPerNode;
-    private final Integer memoryStepSize;
-    private final List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric> metrics;
-    private final Integer ocpuStepSize;
+    private Integer maxMemoryPerNode;
+    private Integer maxOcpusPerNode;
+    private Integer memoryStepSize;
+    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric> metrics;
+    private Integer ocpuStepSize;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig(
-        @CustomType.Parameter("maxMemoryPerNode") Integer maxMemoryPerNode,
-        @CustomType.Parameter("maxOcpusPerNode") Integer maxOcpusPerNode,
-        @CustomType.Parameter("memoryStepSize") Integer memoryStepSize,
-        @CustomType.Parameter("metrics") List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric> metrics,
-        @CustomType.Parameter("ocpuStepSize") Integer ocpuStepSize) {
-        this.maxMemoryPerNode = maxMemoryPerNode;
-        this.maxOcpusPerNode = maxOcpusPerNode;
-        this.memoryStepSize = memoryStepSize;
-        this.metrics = metrics;
-        this.ocpuStepSize = ocpuStepSize;
-    }
-
+    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig() {}
     public Integer maxMemoryPerNode() {
         return this.maxMemoryPerNode;
     }
@@ -54,18 +41,14 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     public static Builder builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer maxMemoryPerNode;
         private Integer maxOcpusPerNode;
         private Integer memoryStepSize;
         private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric> metrics;
         private Integer ocpuStepSize;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.maxMemoryPerNode = defaults.maxMemoryPerNode;
@@ -75,18 +58,22 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     	      this.ocpuStepSize = defaults.ocpuStepSize;
         }
 
+        @CustomType.Setter
         public Builder maxMemoryPerNode(Integer maxMemoryPerNode) {
             this.maxMemoryPerNode = Objects.requireNonNull(maxMemoryPerNode);
             return this;
         }
+        @CustomType.Setter
         public Builder maxOcpusPerNode(Integer maxOcpusPerNode) {
             this.maxOcpusPerNode = Objects.requireNonNull(maxOcpusPerNode);
             return this;
         }
+        @CustomType.Setter
         public Builder memoryStepSize(Integer memoryStepSize) {
             this.memoryStepSize = Objects.requireNonNull(memoryStepSize);
             return this;
         }
+        @CustomType.Setter
         public Builder metrics(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric> metrics) {
             this.metrics = Objects.requireNonNull(metrics);
             return this;
@@ -94,11 +81,19 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
         public Builder metrics(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric... metrics) {
             return metrics(List.of(metrics));
         }
+        @CustomType.Setter
         public Builder ocpuStepSize(Integer ocpuStepSize) {
             this.ocpuStepSize = Objects.requireNonNull(ocpuStepSize);
             return this;
-        }        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig build() {
-            return new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig(maxMemoryPerNode, maxOcpusPerNode, memoryStepSize, metrics, ocpuStepSize);
+        }
+        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig build() {
+            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfig();
+            o.maxMemoryPerNode = maxMemoryPerNode;
+            o.maxOcpusPerNode = maxOcpusPerNode;
+            o.memoryStepSize = memoryStepSize;
+            o.metrics = metrics;
+            o.ocpuStepSize = ocpuStepSize;
+            return o;
         }
     }
 }

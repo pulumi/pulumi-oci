@@ -17,63 +17,44 @@ public final class GetMetricsMetric {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
      * 
      */
-    private final Boolean compartmentIdInSubtree;
+    private Boolean compartmentIdInSubtree;
     /**
      * @return Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `&#34;resourceId&#34;: &#34;ocid1.instance.region1.phx.exampleuniqueID&#34;`
      * 
      */
-    private final Map<String,Object> dimensionFilters;
+    private Map<String,Object> dimensionFilters;
     /**
      * @return Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `&#34;resourceId&#34;: &#34;ocid1.instance.region1.phx.exampleuniqueID&#34;`
      * 
      */
-    private final Map<String,Object> dimensions;
+    private Map<String,Object> dimensions;
     /**
      * @return Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the &#34;namespace&#34; field. Supported fields: namespace, name, resourceGroup.
      * 
      */
-    private final List<String> groupBies;
+    private List<String> groupBies;
     /**
      * @return The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The source service or application to use when searching for metric definitions.  Example: `oci_computeagent`
      * 
      */
-    private final String namespace;
+    private String namespace;
     /**
      * @return Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
      * 
      */
-    private final String resourceGroup;
+    private String resourceGroup;
 
-    @CustomType.Constructor
-    private GetMetricsMetric(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("dimensionFilters") Map<String,Object> dimensionFilters,
-        @CustomType.Parameter("dimensions") Map<String,Object> dimensions,
-        @CustomType.Parameter("groupBies") List<String> groupBies,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("resourceGroup") String resourceGroup) {
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.dimensionFilters = dimensionFilters;
-        this.dimensions = dimensions;
-        this.groupBies = groupBies;
-        this.name = name;
-        this.namespace = namespace;
-        this.resourceGroup = resourceGroup;
-    }
-
+    private GetMetricsMetric() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
      * 
@@ -138,7 +119,7 @@ public final class GetMetricsMetric {
     public static Builder builder(GetMetricsMetric defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Boolean compartmentIdInSubtree;
@@ -148,11 +129,7 @@ public final class GetMetricsMetric {
         private String name;
         private String namespace;
         private String resourceGroup;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMetricsMetric defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -165,22 +142,27 @@ public final class GetMetricsMetric {
     	      this.resourceGroup = defaults.resourceGroup;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
             return this;
         }
+        @CustomType.Setter
         public Builder dimensionFilters(Map<String,Object> dimensionFilters) {
             this.dimensionFilters = Objects.requireNonNull(dimensionFilters);
             return this;
         }
+        @CustomType.Setter
         public Builder dimensions(Map<String,Object> dimensions) {
             this.dimensions = Objects.requireNonNull(dimensions);
             return this;
         }
+        @CustomType.Setter
         public Builder groupBies(List<String> groupBies) {
             this.groupBies = Objects.requireNonNull(groupBies);
             return this;
@@ -188,19 +170,32 @@ public final class GetMetricsMetric {
         public Builder groupBies(String... groupBies) {
             return groupBies(List.of(groupBies));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceGroup(String resourceGroup) {
             this.resourceGroup = Objects.requireNonNull(resourceGroup);
             return this;
-        }        public GetMetricsMetric build() {
-            return new GetMetricsMetric(compartmentId, compartmentIdInSubtree, dimensionFilters, dimensions, groupBies, name, namespace, resourceGroup);
+        }
+        public GetMetricsMetric build() {
+            final var o = new GetMetricsMetric();
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.dimensionFilters = dimensionFilters;
+            o.dimensions = dimensions;
+            o.groupBies = groupBies;
+            o.name = name;
+            o.namespace = namespace;
+            o.resourceGroup = resourceGroup;
+            return o;
         }
     }
 }

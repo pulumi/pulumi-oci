@@ -14,13 +14,9 @@ public final class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection {
      * @return The details in the SQL tuning set summary.
      * 
      */
-    private final List<GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem> items;
+    private List<GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection(@CustomType.Parameter("items") List<GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection() {}
     /**
      * @return The details in the SQL tuning set summary.
      * 
@@ -36,27 +32,27 @@ public final class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection {
     public static Builder builder(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem... items) {
             return items(List.of(items));
-        }        public GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection build() {
-            return new GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection(items);
+        }
+        public GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection build() {
+            final var o = new GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -15,35 +15,24 @@ public final class PublicationSupportContact {
      * @return (Updatable) The email of the contact.
      * 
      */
-    private final @Nullable String email;
+    private @Nullable String email;
     /**
      * @return (Updatable) The name of the contact.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) The phone number of the contact.
      * 
      */
-    private final @Nullable String phone;
+    private @Nullable String phone;
     /**
      * @return (Updatable) The email subject line to use when contacting support.
      * 
      */
-    private final @Nullable String subject;
+    private @Nullable String subject;
 
-    @CustomType.Constructor
-    private PublicationSupportContact(
-        @CustomType.Parameter("email") @Nullable String email,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("phone") @Nullable String phone,
-        @CustomType.Parameter("subject") @Nullable String subject) {
-        this.email = email;
-        this.name = name;
-        this.phone = phone;
-        this.subject = subject;
-    }
-
+    private PublicationSupportContact() {}
     /**
      * @return (Updatable) The email of the contact.
      * 
@@ -80,17 +69,13 @@ public final class PublicationSupportContact {
     public static Builder builder(PublicationSupportContact defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String email;
         private @Nullable String name;
         private @Nullable String phone;
         private @Nullable String subject;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PublicationSupportContact defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.email = defaults.email;
@@ -99,23 +84,33 @@ public final class PublicationSupportContact {
     	      this.subject = defaults.subject;
         }
 
+        @CustomType.Setter
         public Builder email(@Nullable String email) {
             this.email = email;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder phone(@Nullable String phone) {
             this.phone = phone;
             return this;
         }
+        @CustomType.Setter
         public Builder subject(@Nullable String subject) {
             this.subject = subject;
             return this;
-        }        public PublicationSupportContact build() {
-            return new PublicationSupportContact(email, name, phone, subject);
+        }
+        public PublicationSupportContact build() {
+            final var o = new PublicationSupportContact();
+            o.email = email;
+            o.name = name;
+            o.phone = phone;
+            o.subject = subject;
+            return o;
         }
     }
 }

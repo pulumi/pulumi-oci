@@ -15,21 +15,14 @@ public final class GetApplicationImagePolicyConfig {
      * @return Define if image signature verification policy is enabled for the application.
      * 
      */
-    private final Boolean isPolicyEnabled;
+    private Boolean isPolicyEnabled;
     /**
      * @return A list of KMS key details.
      * 
      */
-    private final List<GetApplicationImagePolicyConfigKeyDetail> keyDetails;
+    private List<GetApplicationImagePolicyConfigKeyDetail> keyDetails;
 
-    @CustomType.Constructor
-    private GetApplicationImagePolicyConfig(
-        @CustomType.Parameter("isPolicyEnabled") Boolean isPolicyEnabled,
-        @CustomType.Parameter("keyDetails") List<GetApplicationImagePolicyConfigKeyDetail> keyDetails) {
-        this.isPolicyEnabled = isPolicyEnabled;
-        this.keyDetails = keyDetails;
-    }
-
+    private GetApplicationImagePolicyConfig() {}
     /**
      * @return Define if image signature verification policy is enabled for the application.
      * 
@@ -52,33 +45,35 @@ public final class GetApplicationImagePolicyConfig {
     public static Builder builder(GetApplicationImagePolicyConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isPolicyEnabled;
         private List<GetApplicationImagePolicyConfigKeyDetail> keyDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApplicationImagePolicyConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isPolicyEnabled = defaults.isPolicyEnabled;
     	      this.keyDetails = defaults.keyDetails;
         }
 
+        @CustomType.Setter
         public Builder isPolicyEnabled(Boolean isPolicyEnabled) {
             this.isPolicyEnabled = Objects.requireNonNull(isPolicyEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder keyDetails(List<GetApplicationImagePolicyConfigKeyDetail> keyDetails) {
             this.keyDetails = Objects.requireNonNull(keyDetails);
             return this;
         }
         public Builder keyDetails(GetApplicationImagePolicyConfigKeyDetail... keyDetails) {
             return keyDetails(List.of(keyDetails));
-        }        public GetApplicationImagePolicyConfig build() {
-            return new GetApplicationImagePolicyConfig(isPolicyEnabled, keyDetails);
+        }
+        public GetApplicationImagePolicyConfig build() {
+            final var o = new GetApplicationImagePolicyConfig();
+            o.isPolicyEnabled = isPolicyEnabled;
+            o.keyDetails = keyDetails;
+            return o;
         }
     }
 }

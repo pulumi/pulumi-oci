@@ -13,21 +13,14 @@ public final class GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo {
      * @return The platform or software version of the CPE device.
      * 
      */
-    private final String platformSoftwareVersion;
+    private String platformSoftwareVersion;
     /**
      * @return The vendor that makes the CPE device.
      * 
      */
-    private final String vendor;
+    private String vendor;
 
-    @CustomType.Constructor
-    private GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo(
-        @CustomType.Parameter("platformSoftwareVersion") String platformSoftwareVersion,
-        @CustomType.Parameter("vendor") String vendor) {
-        this.platformSoftwareVersion = platformSoftwareVersion;
-        this.vendor = vendor;
-    }
-
+    private GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo() {}
     /**
      * @return The platform or software version of the CPE device.
      * 
@@ -50,30 +43,32 @@ public final class GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo {
     public static Builder builder(GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String platformSoftwareVersion;
         private String vendor;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.platformSoftwareVersion = defaults.platformSoftwareVersion;
     	      this.vendor = defaults.vendor;
         }
 
+        @CustomType.Setter
         public Builder platformSoftwareVersion(String platformSoftwareVersion) {
             this.platformSoftwareVersion = Objects.requireNonNull(platformSoftwareVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder vendor(String vendor) {
             this.vendor = Objects.requireNonNull(vendor);
             return this;
-        }        public GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo build() {
-            return new GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo(platformSoftwareVersion, vendor);
+        }
+        public GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo build() {
+            final var o = new GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfo();
+            o.platformSoftwareVersion = platformSoftwareVersion;
+            o.vendor = vendor;
+            return o;
         }
     }
 }

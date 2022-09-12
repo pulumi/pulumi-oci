@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMeshesMeshCollection {
-    private final List<GetMeshesMeshCollectionItem> items;
+    private List<GetMeshesMeshCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetMeshesMeshCollection(@CustomType.Parameter("items") List<GetMeshesMeshCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetMeshesMeshCollection() {}
     public List<GetMeshesMeshCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetMeshesMeshCollection {
     public static Builder builder(GetMeshesMeshCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetMeshesMeshCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMeshesMeshCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetMeshesMeshCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetMeshesMeshCollectionItem... items) {
             return items(List.of(items));
-        }        public GetMeshesMeshCollection build() {
-            return new GetMeshesMeshCollection(items);
+        }
+        public GetMeshesMeshCollection build() {
+            final var o = new GetMeshesMeshCollection();
+            o.items = items;
+            return o;
         }
     }
 }

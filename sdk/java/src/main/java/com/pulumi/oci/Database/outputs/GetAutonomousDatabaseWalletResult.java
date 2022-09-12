@@ -18,37 +18,22 @@ public final class GetAutonomousDatabaseWalletResult {
      * 
      */
     @Deprecated /* The 'data.oci_database_autonomous_database_wallet' resource has been deprecated. Please use 'oci_database_autonomous_database_wallet' instead. */
-    private final String autonomousDatabaseId;
-    private final @Nullable Boolean base64EncodeContent;
+    private String autonomousDatabaseId;
+    private @Nullable Boolean base64EncodeContent;
     /**
      * @return content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
      * 
      */
-    private final String content;
-    private final @Nullable String generateType;
+    private String content;
+    private @Nullable String generateType;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String password;
+    private String id;
+    private String password;
 
-    @CustomType.Constructor
-    private GetAutonomousDatabaseWalletResult(
-        @CustomType.Parameter("autonomousDatabaseId") String autonomousDatabaseId,
-        @CustomType.Parameter("base64EncodeContent") @Nullable Boolean base64EncodeContent,
-        @CustomType.Parameter("content") String content,
-        @CustomType.Parameter("generateType") @Nullable String generateType,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("password") String password) {
-        this.autonomousDatabaseId = autonomousDatabaseId;
-        this.base64EncodeContent = base64EncodeContent;
-        this.content = content;
-        this.generateType = generateType;
-        this.id = id;
-        this.password = password;
-    }
-
+    private GetAutonomousDatabaseWalletResult() {}
     /**
      * @deprecated
      * The &#39;data.oci_database_autonomous_database_wallet&#39; resource has been deprecated. Please use &#39;oci_database_autonomous_database_wallet&#39; instead.
@@ -89,7 +74,7 @@ public final class GetAutonomousDatabaseWalletResult {
     public static Builder builder(GetAutonomousDatabaseWalletResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String autonomousDatabaseId;
         private @Nullable Boolean base64EncodeContent;
@@ -97,11 +82,7 @@ public final class GetAutonomousDatabaseWalletResult {
         private @Nullable String generateType;
         private String id;
         private String password;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDatabaseWalletResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousDatabaseId = defaults.autonomousDatabaseId;
@@ -112,31 +93,45 @@ public final class GetAutonomousDatabaseWalletResult {
     	      this.password = defaults.password;
         }
 
+        @CustomType.Setter
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
             this.autonomousDatabaseId = Objects.requireNonNull(autonomousDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder base64EncodeContent(@Nullable Boolean base64EncodeContent) {
             this.base64EncodeContent = base64EncodeContent;
             return this;
         }
+        @CustomType.Setter
         public Builder content(String content) {
             this.content = Objects.requireNonNull(content);
             return this;
         }
+        @CustomType.Setter
         public Builder generateType(@Nullable String generateType) {
             this.generateType = generateType;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder password(String password) {
             this.password = Objects.requireNonNull(password);
             return this;
-        }        public GetAutonomousDatabaseWalletResult build() {
-            return new GetAutonomousDatabaseWalletResult(autonomousDatabaseId, base64EncodeContent, content, generateType, id, password);
+        }
+        public GetAutonomousDatabaseWalletResult build() {
+            final var o = new GetAutonomousDatabaseWalletResult();
+            o.autonomousDatabaseId = autonomousDatabaseId;
+            o.base64EncodeContent = base64EncodeContent;
+            o.content = content;
+            o.generateType = generateType;
+            o.id = id;
+            o.password = password;
+            return o;
         }
     }
 }

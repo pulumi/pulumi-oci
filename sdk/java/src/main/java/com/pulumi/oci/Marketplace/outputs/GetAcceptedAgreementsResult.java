@@ -14,59 +14,40 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAcceptedAgreementsResult {
-    private final @Nullable String acceptedAgreementId;
+    private @Nullable String acceptedAgreementId;
     /**
      * @return The list of accepted_agreements.
      * 
      */
-    private final List<GetAcceptedAgreementsAcceptedAgreement> acceptedAgreements;
+    private List<GetAcceptedAgreementsAcceptedAgreement> acceptedAgreements;
     /**
      * @return The unique identifier for the compartment where the agreement was accepted.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A display name for the accepted agreement.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetAcceptedAgreementsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetAcceptedAgreementsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The unique identifier for the listing associated with the agreement.
      * 
      */
-    private final @Nullable String listingId;
+    private @Nullable String listingId;
     /**
      * @return The package version associated with the agreement.
      * 
      */
-    private final @Nullable String packageVersion;
+    private @Nullable String packageVersion;
 
-    @CustomType.Constructor
-    private GetAcceptedAgreementsResult(
-        @CustomType.Parameter("acceptedAgreementId") @Nullable String acceptedAgreementId,
-        @CustomType.Parameter("acceptedAgreements") List<GetAcceptedAgreementsAcceptedAgreement> acceptedAgreements,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetAcceptedAgreementsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("listingId") @Nullable String listingId,
-        @CustomType.Parameter("packageVersion") @Nullable String packageVersion) {
-        this.acceptedAgreementId = acceptedAgreementId;
-        this.acceptedAgreements = acceptedAgreements;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.listingId = listingId;
-        this.packageVersion = packageVersion;
-    }
-
+    private GetAcceptedAgreementsResult() {}
     public Optional<String> acceptedAgreementId() {
         return Optional.ofNullable(this.acceptedAgreementId);
     }
@@ -123,7 +104,7 @@ public final class GetAcceptedAgreementsResult {
     public static Builder builder(GetAcceptedAgreementsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String acceptedAgreementId;
         private List<GetAcceptedAgreementsAcceptedAgreement> acceptedAgreements;
@@ -133,11 +114,7 @@ public final class GetAcceptedAgreementsResult {
         private String id;
         private @Nullable String listingId;
         private @Nullable String packageVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAcceptedAgreementsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.acceptedAgreementId = defaults.acceptedAgreementId;
@@ -150,10 +127,12 @@ public final class GetAcceptedAgreementsResult {
     	      this.packageVersion = defaults.packageVersion;
         }
 
+        @CustomType.Setter
         public Builder acceptedAgreementId(@Nullable String acceptedAgreementId) {
             this.acceptedAgreementId = acceptedAgreementId;
             return this;
         }
+        @CustomType.Setter
         public Builder acceptedAgreements(List<GetAcceptedAgreementsAcceptedAgreement> acceptedAgreements) {
             this.acceptedAgreements = Objects.requireNonNull(acceptedAgreements);
             return this;
@@ -161,14 +140,17 @@ public final class GetAcceptedAgreementsResult {
         public Builder acceptedAgreements(GetAcceptedAgreementsAcceptedAgreement... acceptedAgreements) {
             return acceptedAgreements(List.of(acceptedAgreements));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAcceptedAgreementsFilter> filters) {
             this.filters = filters;
             return this;
@@ -176,19 +158,32 @@ public final class GetAcceptedAgreementsResult {
         public Builder filters(GetAcceptedAgreementsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder listingId(@Nullable String listingId) {
             this.listingId = listingId;
             return this;
         }
+        @CustomType.Setter
         public Builder packageVersion(@Nullable String packageVersion) {
             this.packageVersion = packageVersion;
             return this;
-        }        public GetAcceptedAgreementsResult build() {
-            return new GetAcceptedAgreementsResult(acceptedAgreementId, acceptedAgreements, compartmentId, displayName, filters, id, listingId, packageVersion);
+        }
+        public GetAcceptedAgreementsResult build() {
+            final var o = new GetAcceptedAgreementsResult();
+            o.acceptedAgreementId = acceptedAgreementId;
+            o.acceptedAgreements = acceptedAgreements;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.listingId = listingId;
+            o.packageVersion = packageVersion;
+            return o;
         }
     }
 }

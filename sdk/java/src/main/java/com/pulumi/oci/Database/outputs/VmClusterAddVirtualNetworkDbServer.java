@@ -13,13 +13,9 @@ public final class VmClusterAddVirtualNetworkDbServer {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
      * 
      */
-    private final String dbServerId;
+    private String dbServerId;
 
-    @CustomType.Constructor
-    private VmClusterAddVirtualNetworkDbServer(@CustomType.Parameter("dbServerId") String dbServerId) {
-        this.dbServerId = dbServerId;
-    }
-
+    private VmClusterAddVirtualNetworkDbServer() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
      * 
@@ -35,24 +31,24 @@ public final class VmClusterAddVirtualNetworkDbServer {
     public static Builder builder(VmClusterAddVirtualNetworkDbServer defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dbServerId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(VmClusterAddVirtualNetworkDbServer defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbServerId = defaults.dbServerId;
         }
 
+        @CustomType.Setter
         public Builder dbServerId(String dbServerId) {
             this.dbServerId = Objects.requireNonNull(dbServerId);
             return this;
-        }        public VmClusterAddVirtualNetworkDbServer build() {
-            return new VmClusterAddVirtualNetworkDbServer(dbServerId);
+        }
+        public VmClusterAddVirtualNetworkDbServer build() {
+            final var o = new VmClusterAddVirtualNetworkDbServer();
+            o.dbServerId = dbServerId;
+            return o;
         }
     }
 }

@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection {
-    private final List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem> items;
+    private List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection(@CustomType.Parameter("items") List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection() {}
     public List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivat
     public static Builder builder(GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem... items) {
             return items(List.of(items));
-        }        public GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection build() {
-            return new GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection(items);
+        }
+        public GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection build() {
+            final var o = new GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection();
+            o.items = items;
+            return o;
         }
     }
 }

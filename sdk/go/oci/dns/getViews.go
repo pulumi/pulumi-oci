@@ -35,7 +35,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Dns.GetViews(ctx, &dns.GetViewsArgs{
 //				CompartmentId: _var.Compartment_id,
-//				Scope:         "PRIVATE",
+//				Scope:         pulumi.StringRef("PRIVATE"),
 //				DisplayName:   pulumi.StringRef(_var.View_display_name),
 //				Id:            pulumi.StringRef(_var.View_id),
 //				State:         pulumi.StringRef(_var.View_state),
@@ -67,7 +67,7 @@ type GetViewsArgs struct {
 	// The OCID of a resource.
 	Id *string `pulumi:"id"`
 	// Value must be `PRIVATE` when listing private views.
-	Scope string `pulumi:"scope"`
+	Scope *string `pulumi:"scope"`
 	// The state of a resource.
 	State *string `pulumi:"state"`
 }
@@ -81,7 +81,7 @@ type GetViewsResult struct {
 	Filters     []GetViewsFilter `pulumi:"filters"`
 	// The OCID of the view.
 	Id    *string `pulumi:"id"`
-	Scope string  `pulumi:"scope"`
+	Scope *string `pulumi:"scope"`
 	// The current state of the resource.
 	State *string `pulumi:"state"`
 	// The list of views.
@@ -111,7 +111,7 @@ type GetViewsOutputArgs struct {
 	// The OCID of a resource.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Value must be `PRIVATE` when listing private views.
-	Scope pulumi.StringInput `pulumi:"scope"`
+	Scope pulumi.StringPtrInput `pulumi:"scope"`
 	// The state of a resource.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
@@ -154,8 +154,8 @@ func (o GetViewsResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetViewsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o GetViewsResultOutput) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v GetViewsResult) string { return v.Scope }).(pulumi.StringOutput)
+func (o GetViewsResultOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetViewsResult) *string { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the resource.

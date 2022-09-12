@@ -10,23 +10,12 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig {
-    private final Integer targetMemoryPerNode;
-    private final Integer targetOcpusPerNode;
-    private final String targetShape;
-    private final String timeRecurrence;
+    private Integer targetMemoryPerNode;
+    private Integer targetOcpusPerNode;
+    private String targetShape;
+    private String timeRecurrence;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig(
-        @CustomType.Parameter("targetMemoryPerNode") Integer targetMemoryPerNode,
-        @CustomType.Parameter("targetOcpusPerNode") Integer targetOcpusPerNode,
-        @CustomType.Parameter("targetShape") String targetShape,
-        @CustomType.Parameter("timeRecurrence") String timeRecurrence) {
-        this.targetMemoryPerNode = targetMemoryPerNode;
-        this.targetOcpusPerNode = targetOcpusPerNode;
-        this.targetShape = targetShape;
-        this.timeRecurrence = timeRecurrence;
-    }
-
+    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig() {}
     public Integer targetMemoryPerNode() {
         return this.targetMemoryPerNode;
     }
@@ -47,17 +36,13 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     public static Builder builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer targetMemoryPerNode;
         private Integer targetOcpusPerNode;
         private String targetShape;
         private String timeRecurrence;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.targetMemoryPerNode = defaults.targetMemoryPerNode;
@@ -66,23 +51,33 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     	      this.timeRecurrence = defaults.timeRecurrence;
         }
 
+        @CustomType.Setter
         public Builder targetMemoryPerNode(Integer targetMemoryPerNode) {
             this.targetMemoryPerNode = Objects.requireNonNull(targetMemoryPerNode);
             return this;
         }
+        @CustomType.Setter
         public Builder targetOcpusPerNode(Integer targetOcpusPerNode) {
             this.targetOcpusPerNode = Objects.requireNonNull(targetOcpusPerNode);
             return this;
         }
+        @CustomType.Setter
         public Builder targetShape(String targetShape) {
             this.targetShape = Objects.requireNonNull(targetShape);
             return this;
         }
+        @CustomType.Setter
         public Builder timeRecurrence(String timeRecurrence) {
             this.timeRecurrence = Objects.requireNonNull(timeRecurrence);
             return this;
-        }        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig build() {
-            return new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig(targetMemoryPerNode, targetOcpusPerNode, targetShape, timeRecurrence);
+        }
+        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig build() {
+            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig();
+            o.targetMemoryPerNode = targetMemoryPerNode;
+            o.targetOcpusPerNode = targetOcpusPerNode;
+            o.targetShape = targetShape;
+            o.timeRecurrence = timeRecurrence;
+            return o;
         }
     }
 }

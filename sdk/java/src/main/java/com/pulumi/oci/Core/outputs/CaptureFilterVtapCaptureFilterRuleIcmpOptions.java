@@ -15,21 +15,14 @@ public final class CaptureFilterVtapCaptureFilterRuleIcmpOptions {
      * @return (Updatable) The ICMP code (optional).
      * 
      */
-    private final @Nullable Integer code;
+    private @Nullable Integer code;
     /**
      * @return (Updatable) The ICMP type.
      * 
      */
-    private final Integer type;
+    private Integer type;
 
-    @CustomType.Constructor
-    private CaptureFilterVtapCaptureFilterRuleIcmpOptions(
-        @CustomType.Parameter("code") @Nullable Integer code,
-        @CustomType.Parameter("type") Integer type) {
-        this.code = code;
-        this.type = type;
-    }
-
+    private CaptureFilterVtapCaptureFilterRuleIcmpOptions() {}
     /**
      * @return (Updatable) The ICMP code (optional).
      * 
@@ -52,30 +45,32 @@ public final class CaptureFilterVtapCaptureFilterRuleIcmpOptions {
     public static Builder builder(CaptureFilterVtapCaptureFilterRuleIcmpOptions defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer code;
         private Integer type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CaptureFilterVtapCaptureFilterRuleIcmpOptions defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.code = defaults.code;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder code(@Nullable Integer code) {
             this.code = code;
             return this;
         }
+        @CustomType.Setter
         public Builder type(Integer type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public CaptureFilterVtapCaptureFilterRuleIcmpOptions build() {
-            return new CaptureFilterVtapCaptureFilterRuleIcmpOptions(code, type);
+        }
+        public CaptureFilterVtapCaptureFilterRuleIcmpOptions build() {
+            final var o = new CaptureFilterVtapCaptureFilterRuleIcmpOptions();
+            o.code = code;
+            o.type = type;
+            return o;
         }
     }
 }

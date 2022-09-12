@@ -14,41 +14,26 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabasesUserSystemPrivilegesResult {
-    private final @Nullable List<GetManagedDatabasesUserSystemPrivilegesFilter> filters;
+    private @Nullable List<GetManagedDatabasesUserSystemPrivilegesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String managedDatabaseId;
+    private String id;
+    private String managedDatabaseId;
     /**
      * @return The name of a system privilege.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The list of system_privilege_collection.
      * 
      */
-    private final List<GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollection> systemPrivilegeCollections;
-    private final String userName;
+    private List<GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollection> systemPrivilegeCollections;
+    private String userName;
 
-    @CustomType.Constructor
-    private GetManagedDatabasesUserSystemPrivilegesResult(
-        @CustomType.Parameter("filters") @Nullable List<GetManagedDatabasesUserSystemPrivilegesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("systemPrivilegeCollections") List<GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollection> systemPrivilegeCollections,
-        @CustomType.Parameter("userName") String userName) {
-        this.filters = filters;
-        this.id = id;
-        this.managedDatabaseId = managedDatabaseId;
-        this.name = name;
-        this.systemPrivilegeCollections = systemPrivilegeCollections;
-        this.userName = userName;
-    }
-
+    private GetManagedDatabasesUserSystemPrivilegesResult() {}
     public List<GetManagedDatabasesUserSystemPrivilegesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -87,7 +72,7 @@ public final class GetManagedDatabasesUserSystemPrivilegesResult {
     public static Builder builder(GetManagedDatabasesUserSystemPrivilegesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetManagedDatabasesUserSystemPrivilegesFilter> filters;
         private String id;
@@ -95,11 +80,7 @@ public final class GetManagedDatabasesUserSystemPrivilegesResult {
         private @Nullable String name;
         private List<GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollection> systemPrivilegeCollections;
         private String userName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabasesUserSystemPrivilegesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -110,6 +91,7 @@ public final class GetManagedDatabasesUserSystemPrivilegesResult {
     	      this.userName = defaults.userName;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabasesUserSystemPrivilegesFilter> filters) {
             this.filters = filters;
             return this;
@@ -117,18 +99,22 @@ public final class GetManagedDatabasesUserSystemPrivilegesResult {
         public Builder filters(GetManagedDatabasesUserSystemPrivilegesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder systemPrivilegeCollections(List<GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollection> systemPrivilegeCollections) {
             this.systemPrivilegeCollections = Objects.requireNonNull(systemPrivilegeCollections);
             return this;
@@ -136,11 +122,20 @@ public final class GetManagedDatabasesUserSystemPrivilegesResult {
         public Builder systemPrivilegeCollections(GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollection... systemPrivilegeCollections) {
             return systemPrivilegeCollections(List.of(systemPrivilegeCollections));
         }
+        @CustomType.Setter
         public Builder userName(String userName) {
             this.userName = Objects.requireNonNull(userName);
             return this;
-        }        public GetManagedDatabasesUserSystemPrivilegesResult build() {
-            return new GetManagedDatabasesUserSystemPrivilegesResult(filters, id, managedDatabaseId, name, systemPrivilegeCollections, userName);
+        }
+        public GetManagedDatabasesUserSystemPrivilegesResult build() {
+            final var o = new GetManagedDatabasesUserSystemPrivilegesResult();
+            o.filters = filters;
+            o.id = id;
+            o.managedDatabaseId = managedDatabaseId;
+            o.name = name;
+            o.systemPrivilegeCollections = systemPrivilegeCollections;
+            o.userName = userName;
+            return o;
         }
     }
 }

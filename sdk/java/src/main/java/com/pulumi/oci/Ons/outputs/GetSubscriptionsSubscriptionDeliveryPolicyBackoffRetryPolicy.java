@@ -14,21 +14,14 @@ public final class GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy 
      * @return The maximum retry duration in milliseconds.
      * 
      */
-    private final Integer maxRetryDuration;
+    private Integer maxRetryDuration;
     /**
      * @return The type of delivery policy. Default value: EXPONENTIAL.
      * 
      */
-    private final String policyType;
+    private String policyType;
 
-    @CustomType.Constructor
-    private GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy(
-        @CustomType.Parameter("maxRetryDuration") Integer maxRetryDuration,
-        @CustomType.Parameter("policyType") String policyType) {
-        this.maxRetryDuration = maxRetryDuration;
-        this.policyType = policyType;
-    }
-
+    private GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy() {}
     /**
      * @return The maximum retry duration in milliseconds.
      * 
@@ -51,30 +44,32 @@ public final class GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy 
     public static Builder builder(GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer maxRetryDuration;
         private String policyType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.maxRetryDuration = defaults.maxRetryDuration;
     	      this.policyType = defaults.policyType;
         }
 
+        @CustomType.Setter
         public Builder maxRetryDuration(Integer maxRetryDuration) {
             this.maxRetryDuration = Objects.requireNonNull(maxRetryDuration);
             return this;
         }
+        @CustomType.Setter
         public Builder policyType(String policyType) {
             this.policyType = Objects.requireNonNull(policyType);
             return this;
-        }        public GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy build() {
-            return new GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy(maxRetryDuration, policyType);
+        }
+        public GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy build() {
+            final var o = new GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy();
+            o.maxRetryDuration = maxRetryDuration;
+            o.policyType = policyType;
+            return o;
         }
     }
 }

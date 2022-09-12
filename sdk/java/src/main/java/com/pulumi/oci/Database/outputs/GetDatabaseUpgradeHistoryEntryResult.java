@@ -13,99 +13,68 @@ public final class GetDatabaseUpgradeHistoryEntryResult {
      * @return The database upgrade action.
      * 
      */
-    private final String action;
-    private final String databaseId;
+    private String action;
+    private String databaseId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: &#34;-upgradeTimezone false -keepEvents&#34;
      * 
      */
-    private final String options;
+    private String options;
     /**
      * @return The source of the Oracle Database software to be used for the upgrade.
      * * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
      * * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
      * 
      */
-    private final String source;
+    private String source;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
-    private final String sourceDbHomeId;
+    private String sourceDbHomeId;
     /**
      * @return Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return the database software image used for upgrading database.
      * 
      */
-    private final String targetDatabaseSoftwareImageId;
+    private String targetDatabaseSoftwareImageId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
-    private final String targetDbHomeId;
+    private String targetDbHomeId;
     /**
      * @return A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      * 
      */
-    private final String targetDbVersion;
+    private String targetDbVersion;
     /**
      * @return The date and time when the database upgrade ended.
      * 
      */
-    private final String timeEnded;
+    private String timeEnded;
     /**
      * @return The date and time when the database upgrade started.
      * 
      */
-    private final String timeStarted;
-    private final String upgradeHistoryEntryId;
+    private String timeStarted;
+    private String upgradeHistoryEntryId;
 
-    @CustomType.Constructor
-    private GetDatabaseUpgradeHistoryEntryResult(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("databaseId") String databaseId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("options") String options,
-        @CustomType.Parameter("source") String source,
-        @CustomType.Parameter("sourceDbHomeId") String sourceDbHomeId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("targetDatabaseSoftwareImageId") String targetDatabaseSoftwareImageId,
-        @CustomType.Parameter("targetDbHomeId") String targetDbHomeId,
-        @CustomType.Parameter("targetDbVersion") String targetDbVersion,
-        @CustomType.Parameter("timeEnded") String timeEnded,
-        @CustomType.Parameter("timeStarted") String timeStarted,
-        @CustomType.Parameter("upgradeHistoryEntryId") String upgradeHistoryEntryId) {
-        this.action = action;
-        this.databaseId = databaseId;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.options = options;
-        this.source = source;
-        this.sourceDbHomeId = sourceDbHomeId;
-        this.state = state;
-        this.targetDatabaseSoftwareImageId = targetDatabaseSoftwareImageId;
-        this.targetDbHomeId = targetDbHomeId;
-        this.targetDbVersion = targetDbVersion;
-        this.timeEnded = timeEnded;
-        this.timeStarted = timeStarted;
-        this.upgradeHistoryEntryId = upgradeHistoryEntryId;
-    }
-
+    private GetDatabaseUpgradeHistoryEntryResult() {}
     /**
      * @return The database upgrade action.
      * 
@@ -206,7 +175,7 @@ public final class GetDatabaseUpgradeHistoryEntryResult {
     public static Builder builder(GetDatabaseUpgradeHistoryEntryResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private String databaseId;
@@ -222,11 +191,7 @@ public final class GetDatabaseUpgradeHistoryEntryResult {
         private String timeEnded;
         private String timeStarted;
         private String upgradeHistoryEntryId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseUpgradeHistoryEntryResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -245,63 +210,93 @@ public final class GetDatabaseUpgradeHistoryEntryResult {
     	      this.upgradeHistoryEntryId = defaults.upgradeHistoryEntryId;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseId(String databaseId) {
             this.databaseId = Objects.requireNonNull(databaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder options(String options) {
             this.options = Objects.requireNonNull(options);
             return this;
         }
+        @CustomType.Setter
         public Builder source(String source) {
             this.source = Objects.requireNonNull(source);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceDbHomeId(String sourceDbHomeId) {
             this.sourceDbHomeId = Objects.requireNonNull(sourceDbHomeId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder targetDatabaseSoftwareImageId(String targetDatabaseSoftwareImageId) {
             this.targetDatabaseSoftwareImageId = Objects.requireNonNull(targetDatabaseSoftwareImageId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetDbHomeId(String targetDbHomeId) {
             this.targetDbHomeId = Objects.requireNonNull(targetDbHomeId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetDbVersion(String targetDbVersion) {
             this.targetDbVersion = Objects.requireNonNull(targetDbVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
             this.timeEnded = Objects.requireNonNull(timeEnded);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
         }
+        @CustomType.Setter
         public Builder upgradeHistoryEntryId(String upgradeHistoryEntryId) {
             this.upgradeHistoryEntryId = Objects.requireNonNull(upgradeHistoryEntryId);
             return this;
-        }        public GetDatabaseUpgradeHistoryEntryResult build() {
-            return new GetDatabaseUpgradeHistoryEntryResult(action, databaseId, id, lifecycleDetails, options, source, sourceDbHomeId, state, targetDatabaseSoftwareImageId, targetDbHomeId, targetDbVersion, timeEnded, timeStarted, upgradeHistoryEntryId);
+        }
+        public GetDatabaseUpgradeHistoryEntryResult build() {
+            final var o = new GetDatabaseUpgradeHistoryEntryResult();
+            o.action = action;
+            o.databaseId = databaseId;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.options = options;
+            o.source = source;
+            o.sourceDbHomeId = sourceDbHomeId;
+            o.state = state;
+            o.targetDatabaseSoftwareImageId = targetDatabaseSoftwareImageId;
+            o.targetDbHomeId = targetDbHomeId;
+            o.targetDbVersion = targetDbVersion;
+            o.timeEnded = timeEnded;
+            o.timeStarted = timeStarted;
+            o.upgradeHistoryEntryId = upgradeHistoryEntryId;
+            return o;
         }
     }
 }

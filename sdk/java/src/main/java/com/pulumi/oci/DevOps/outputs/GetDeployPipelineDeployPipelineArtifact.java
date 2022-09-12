@@ -14,13 +14,9 @@ public final class GetDeployPipelineDeployPipelineArtifact {
      * @return List of parameters defined for a deployment pipeline.
      * 
      */
-    private final List<GetDeployPipelineDeployPipelineArtifactItem> items;
+    private List<GetDeployPipelineDeployPipelineArtifactItem> items;
 
-    @CustomType.Constructor
-    private GetDeployPipelineDeployPipelineArtifact(@CustomType.Parameter("items") List<GetDeployPipelineDeployPipelineArtifactItem> items) {
-        this.items = items;
-    }
-
+    private GetDeployPipelineDeployPipelineArtifact() {}
     /**
      * @return List of parameters defined for a deployment pipeline.
      * 
@@ -36,27 +32,27 @@ public final class GetDeployPipelineDeployPipelineArtifact {
     public static Builder builder(GetDeployPipelineDeployPipelineArtifact defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeployPipelineDeployPipelineArtifactItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployPipelineDeployPipelineArtifact defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDeployPipelineDeployPipelineArtifactItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDeployPipelineDeployPipelineArtifactItem... items) {
             return items(List.of(items));
-        }        public GetDeployPipelineDeployPipelineArtifact build() {
-            return new GetDeployPipelineDeployPipelineArtifact(items);
+        }
+        public GetDeployPipelineDeployPipelineArtifact build() {
+            final var o = new GetDeployPipelineDeployPipelineArtifact();
+            o.items = items;
+            return o;
         }
     }
 }

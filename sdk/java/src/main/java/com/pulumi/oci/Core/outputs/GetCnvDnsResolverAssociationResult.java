@@ -14,31 +14,20 @@ public final class GetCnvDnsResolverAssociationResult {
      * is created, we will create it asynchronously. It would be null until it is actually created.
      * 
      */
-    private final String dnsResolverId;
+    private String dnsResolverId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String state;
+    private String id;
+    private String state;
     /**
      * @return The OCID of the VCN in the association.
      * 
      */
-    private final String vcnId;
+    private String vcnId;
 
-    @CustomType.Constructor
-    private GetCnvDnsResolverAssociationResult(
-        @CustomType.Parameter("dnsResolverId") String dnsResolverId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("vcnId") String vcnId) {
-        this.dnsResolverId = dnsResolverId;
-        this.id = id;
-        this.state = state;
-        this.vcnId = vcnId;
-    }
-
+    private GetCnvDnsResolverAssociationResult() {}
     /**
      * @return The OCID of the DNS resolver in the association. We won&#39;t have the DNS resolver id as soon as vcn
      * is created, we will create it asynchronously. It would be null until it is actually created.
@@ -72,17 +61,13 @@ public final class GetCnvDnsResolverAssociationResult {
     public static Builder builder(GetCnvDnsResolverAssociationResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dnsResolverId;
         private String id;
         private String state;
         private String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCnvDnsResolverAssociationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dnsResolverId = defaults.dnsResolverId;
@@ -91,23 +76,33 @@ public final class GetCnvDnsResolverAssociationResult {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder dnsResolverId(String dnsResolverId) {
             this.dnsResolverId = Objects.requireNonNull(dnsResolverId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(String vcnId) {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
-        }        public GetCnvDnsResolverAssociationResult build() {
-            return new GetCnvDnsResolverAssociationResult(dnsResolverId, id, state, vcnId);
+        }
+        public GetCnvDnsResolverAssociationResult build() {
+            final var o = new GetCnvDnsResolverAssociationResult();
+            o.dnsResolverId = dnsResolverId;
+            o.id = id;
+            o.state = state;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

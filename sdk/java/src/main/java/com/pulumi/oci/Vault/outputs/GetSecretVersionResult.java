@@ -14,73 +14,50 @@ public final class GetSecretVersionResult {
      * @return The content type of the secret version&#39;s secret contents.
      * 
      */
-    private final String contentType;
+    private String contentType;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the secret version. A name is unique across versions of a secret.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The OCID of the secret.
      * 
      */
-    private final String secretId;
-    private final String secretVersionNumber;
+    private String secretId;
+    private String secretVersionNumber;
     /**
      * @return A list of possible rotation states for the secret version. A secret version marked `CURRENT` is currently in use. A secret version marked `PENDING` is staged and available for use, but has not been applied on the target system and, therefore, has not been rotated into current, active use. The secret most recently uploaded to a vault is always marked `LATEST`. (The first version of a secret is always marked as both `CURRENT` and `LATEST`.) A secret version marked `PREVIOUS` is the secret version that was most recently marked `CURRENT`, before the last secret version rotation. A secret version marked `DEPRECATED` is neither current, pending, nor the previous one in use. Only secret versions marked `DEPRECATED` can be scheduled for deletion.
      * 
      */
-    private final List<String> stages;
+    private List<String> stages;
     /**
      * @return A optional property indicating when the secret version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeOfCurrentVersionExpiry;
+    private String timeOfCurrentVersionExpiry;
     /**
      * @return An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeOfDeletion;
+    private String timeOfDeletion;
     /**
      * @return The version number of the secret.
      * 
      */
-    private final String versionNumber;
+    private String versionNumber;
 
-    @CustomType.Constructor
-    private GetSecretVersionResult(
-        @CustomType.Parameter("contentType") String contentType,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("secretId") String secretId,
-        @CustomType.Parameter("secretVersionNumber") String secretVersionNumber,
-        @CustomType.Parameter("stages") List<String> stages,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeOfCurrentVersionExpiry") String timeOfCurrentVersionExpiry,
-        @CustomType.Parameter("timeOfDeletion") String timeOfDeletion,
-        @CustomType.Parameter("versionNumber") String versionNumber) {
-        this.contentType = contentType;
-        this.id = id;
-        this.name = name;
-        this.secretId = secretId;
-        this.secretVersionNumber = secretVersionNumber;
-        this.stages = stages;
-        this.timeCreated = timeCreated;
-        this.timeOfCurrentVersionExpiry = timeOfCurrentVersionExpiry;
-        this.timeOfDeletion = timeOfDeletion;
-        this.versionNumber = versionNumber;
-    }
-
+    private GetSecretVersionResult() {}
     /**
      * @return The content type of the secret version&#39;s secret contents.
      * 
@@ -155,7 +132,7 @@ public final class GetSecretVersionResult {
     public static Builder builder(GetSecretVersionResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String contentType;
         private String id;
@@ -167,11 +144,7 @@ public final class GetSecretVersionResult {
         private String timeOfCurrentVersionExpiry;
         private String timeOfDeletion;
         private String versionNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecretVersionResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.contentType = defaults.contentType;
@@ -186,26 +159,32 @@ public final class GetSecretVersionResult {
     	      this.versionNumber = defaults.versionNumber;
         }
 
+        @CustomType.Setter
         public Builder contentType(String contentType) {
             this.contentType = Objects.requireNonNull(contentType);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder secretId(String secretId) {
             this.secretId = Objects.requireNonNull(secretId);
             return this;
         }
+        @CustomType.Setter
         public Builder secretVersionNumber(String secretVersionNumber) {
             this.secretVersionNumber = Objects.requireNonNull(secretVersionNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder stages(List<String> stages) {
             this.stages = Objects.requireNonNull(stages);
             return this;
@@ -213,23 +192,39 @@ public final class GetSecretVersionResult {
         public Builder stages(String... stages) {
             return stages(List.of(stages));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfCurrentVersionExpiry(String timeOfCurrentVersionExpiry) {
             this.timeOfCurrentVersionExpiry = Objects.requireNonNull(timeOfCurrentVersionExpiry);
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
             this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
             return this;
         }
+        @CustomType.Setter
         public Builder versionNumber(String versionNumber) {
             this.versionNumber = Objects.requireNonNull(versionNumber);
             return this;
-        }        public GetSecretVersionResult build() {
-            return new GetSecretVersionResult(contentType, id, name, secretId, secretVersionNumber, stages, timeCreated, timeOfCurrentVersionExpiry, timeOfDeletion, versionNumber);
+        }
+        public GetSecretVersionResult build() {
+            final var o = new GetSecretVersionResult();
+            o.contentType = contentType;
+            o.id = id;
+            o.name = name;
+            o.secretId = secretId;
+            o.secretVersionNumber = secretVersionNumber;
+            o.stages = stages;
+            o.timeCreated = timeCreated;
+            o.timeOfCurrentVersionExpiry = timeOfCurrentVersionExpiry;
+            o.timeOfDeletion = timeOfDeletion;
+            o.versionNumber = versionNumber;
+            return o;
         }
     }
 }

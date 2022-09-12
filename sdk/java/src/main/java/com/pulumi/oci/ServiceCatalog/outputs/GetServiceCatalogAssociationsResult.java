@@ -18,48 +18,31 @@ public final class GetServiceCatalogAssociationsResult {
      * @return Identifier of the entity being associated with service catalog.
      * 
      */
-    private final @Nullable String entityId;
+    private @Nullable String entityId;
     /**
      * @return The type of the entity that is associated with the service catalog.
      * 
      */
-    private final @Nullable String entityType;
-    private final @Nullable List<GetServiceCatalogAssociationsFilter> filters;
+    private @Nullable String entityType;
+    private @Nullable List<GetServiceCatalogAssociationsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of service_catalog_association_collection.
      * 
      */
-    private final List<GetServiceCatalogAssociationsServiceCatalogAssociationCollection> serviceCatalogAssociationCollections;
-    private final @Nullable String serviceCatalogAssociationId;
+    private List<GetServiceCatalogAssociationsServiceCatalogAssociationCollection> serviceCatalogAssociationCollections;
+    private @Nullable String serviceCatalogAssociationId;
     /**
      * @return Identifier of the service catalog.
      * 
      */
-    private final @Nullable String serviceCatalogId;
+    private @Nullable String serviceCatalogId;
 
-    @CustomType.Constructor
-    private GetServiceCatalogAssociationsResult(
-        @CustomType.Parameter("entityId") @Nullable String entityId,
-        @CustomType.Parameter("entityType") @Nullable String entityType,
-        @CustomType.Parameter("filters") @Nullable List<GetServiceCatalogAssociationsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("serviceCatalogAssociationCollections") List<GetServiceCatalogAssociationsServiceCatalogAssociationCollection> serviceCatalogAssociationCollections,
-        @CustomType.Parameter("serviceCatalogAssociationId") @Nullable String serviceCatalogAssociationId,
-        @CustomType.Parameter("serviceCatalogId") @Nullable String serviceCatalogId) {
-        this.entityId = entityId;
-        this.entityType = entityType;
-        this.filters = filters;
-        this.id = id;
-        this.serviceCatalogAssociationCollections = serviceCatalogAssociationCollections;
-        this.serviceCatalogAssociationId = serviceCatalogAssociationId;
-        this.serviceCatalogId = serviceCatalogId;
-    }
-
+    private GetServiceCatalogAssociationsResult() {}
     /**
      * @return Identifier of the entity being associated with service catalog.
      * 
@@ -109,7 +92,7 @@ public final class GetServiceCatalogAssociationsResult {
     public static Builder builder(GetServiceCatalogAssociationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String entityId;
         private @Nullable String entityType;
@@ -118,11 +101,7 @@ public final class GetServiceCatalogAssociationsResult {
         private List<GetServiceCatalogAssociationsServiceCatalogAssociationCollection> serviceCatalogAssociationCollections;
         private @Nullable String serviceCatalogAssociationId;
         private @Nullable String serviceCatalogId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceCatalogAssociationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.entityId = defaults.entityId;
@@ -134,14 +113,17 @@ public final class GetServiceCatalogAssociationsResult {
     	      this.serviceCatalogId = defaults.serviceCatalogId;
         }
 
+        @CustomType.Setter
         public Builder entityId(@Nullable String entityId) {
             this.entityId = entityId;
             return this;
         }
+        @CustomType.Setter
         public Builder entityType(@Nullable String entityType) {
             this.entityType = entityType;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetServiceCatalogAssociationsFilter> filters) {
             this.filters = filters;
             return this;
@@ -149,10 +131,12 @@ public final class GetServiceCatalogAssociationsResult {
         public Builder filters(GetServiceCatalogAssociationsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceCatalogAssociationCollections(List<GetServiceCatalogAssociationsServiceCatalogAssociationCollection> serviceCatalogAssociationCollections) {
             this.serviceCatalogAssociationCollections = Objects.requireNonNull(serviceCatalogAssociationCollections);
             return this;
@@ -160,15 +144,26 @@ public final class GetServiceCatalogAssociationsResult {
         public Builder serviceCatalogAssociationCollections(GetServiceCatalogAssociationsServiceCatalogAssociationCollection... serviceCatalogAssociationCollections) {
             return serviceCatalogAssociationCollections(List.of(serviceCatalogAssociationCollections));
         }
+        @CustomType.Setter
         public Builder serviceCatalogAssociationId(@Nullable String serviceCatalogAssociationId) {
             this.serviceCatalogAssociationId = serviceCatalogAssociationId;
             return this;
         }
+        @CustomType.Setter
         public Builder serviceCatalogId(@Nullable String serviceCatalogId) {
             this.serviceCatalogId = serviceCatalogId;
             return this;
-        }        public GetServiceCatalogAssociationsResult build() {
-            return new GetServiceCatalogAssociationsResult(entityId, entityType, filters, id, serviceCatalogAssociationCollections, serviceCatalogAssociationId, serviceCatalogId);
+        }
+        public GetServiceCatalogAssociationsResult build() {
+            final var o = new GetServiceCatalogAssociationsResult();
+            o.entityId = entityId;
+            o.entityType = entityType;
+            o.filters = filters;
+            o.id = id;
+            o.serviceCatalogAssociationCollections = serviceCatalogAssociationCollections;
+            o.serviceCatalogAssociationId = serviceCatalogAssociationId;
+            o.serviceCatalogId = serviceCatalogId;
+            return o;
         }
     }
 }

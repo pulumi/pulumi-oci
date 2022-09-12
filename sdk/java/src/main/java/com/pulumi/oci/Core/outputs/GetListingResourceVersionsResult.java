@@ -13,27 +13,16 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListingResourceVersionsResult {
-    private final List<GetListingResourceVersionsAppCatalogListingResourceVersion> appCatalogListingResourceVersions;
-    private final @Nullable List<GetListingResourceVersionsFilter> filters;
+    private List<GetListingResourceVersionsAppCatalogListingResourceVersion> appCatalogListingResourceVersions;
+    private @Nullable List<GetListingResourceVersionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String listingId;
+    private String id;
+    private String listingId;
 
-    @CustomType.Constructor
-    private GetListingResourceVersionsResult(
-        @CustomType.Parameter("appCatalogListingResourceVersions") List<GetListingResourceVersionsAppCatalogListingResourceVersion> appCatalogListingResourceVersions,
-        @CustomType.Parameter("filters") @Nullable List<GetListingResourceVersionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("listingId") String listingId) {
-        this.appCatalogListingResourceVersions = appCatalogListingResourceVersions;
-        this.filters = filters;
-        this.id = id;
-        this.listingId = listingId;
-    }
-
+    private GetListingResourceVersionsResult() {}
     public List<GetListingResourceVersionsAppCatalogListingResourceVersion> appCatalogListingResourceVersions() {
         return this.appCatalogListingResourceVersions;
     }
@@ -58,17 +47,13 @@ public final class GetListingResourceVersionsResult {
     public static Builder builder(GetListingResourceVersionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetListingResourceVersionsAppCatalogListingResourceVersion> appCatalogListingResourceVersions;
         private @Nullable List<GetListingResourceVersionsFilter> filters;
         private String id;
         private String listingId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingResourceVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.appCatalogListingResourceVersions = defaults.appCatalogListingResourceVersions;
@@ -77,6 +62,7 @@ public final class GetListingResourceVersionsResult {
     	      this.listingId = defaults.listingId;
         }
 
+        @CustomType.Setter
         public Builder appCatalogListingResourceVersions(List<GetListingResourceVersionsAppCatalogListingResourceVersion> appCatalogListingResourceVersions) {
             this.appCatalogListingResourceVersions = Objects.requireNonNull(appCatalogListingResourceVersions);
             return this;
@@ -84,6 +70,7 @@ public final class GetListingResourceVersionsResult {
         public Builder appCatalogListingResourceVersions(GetListingResourceVersionsAppCatalogListingResourceVersion... appCatalogListingResourceVersions) {
             return appCatalogListingResourceVersions(List.of(appCatalogListingResourceVersions));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetListingResourceVersionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -91,15 +78,23 @@ public final class GetListingResourceVersionsResult {
         public Builder filters(GetListingResourceVersionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder listingId(String listingId) {
             this.listingId = Objects.requireNonNull(listingId);
             return this;
-        }        public GetListingResourceVersionsResult build() {
-            return new GetListingResourceVersionsResult(appCatalogListingResourceVersions, filters, id, listingId);
+        }
+        public GetListingResourceVersionsResult build() {
+            final var o = new GetListingResourceVersionsResult();
+            o.appCatalogListingResourceVersions = appCatalogListingResourceVersions;
+            o.filters = filters;
+            o.id = id;
+            o.listingId = listingId;
+            return o;
         }
     }
 }

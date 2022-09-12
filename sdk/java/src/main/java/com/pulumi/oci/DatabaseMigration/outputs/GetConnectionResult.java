@@ -21,149 +21,102 @@ public final class GetConnectionResult {
      * @return Database Administrator Credentials details.
      * 
      */
-    private final List<GetConnectionAdminCredential> adminCredentials;
+    private List<GetConnectionAdminCredential> adminCredentials;
     /**
      * @return This name is the distinguished name used while creating the certificate on target database.
      * 
      */
-    private final String certificateTdn;
+    private String certificateTdn;
     /**
      * @return OCID of the compartment where the secret containing the credentials will be created.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Connect Descriptor details.
      * 
      */
-    private final List<GetConnectionConnectDescriptor> connectDescriptors;
-    private final String connectionId;
+    private List<GetConnectionConnectDescriptor> connectDescriptors;
+    private String connectionId;
     /**
      * @return OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
      * 
      */
-    private final String credentialsSecretId;
+    private String credentialsSecretId;
     /**
      * @return The OCID of the cloud database.
      * 
      */
-    private final String databaseId;
+    private String databaseId;
     /**
      * @return Database connection type.
      * 
      */
-    private final String databaseType;
+    private String databaseType;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Database Connection display name identifier.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Oracle Cloud Infrastructure Private Endpoint configuration details.
      * 
      */
-    private final List<GetConnectionPrivateEndpoint> privateEndpoints;
+    private List<GetConnectionPrivateEndpoint> privateEndpoints;
     /**
      * @return Details of the SSH key that will be used.
      * 
      */
-    private final List<GetConnectionSshDetail> sshDetails;
+    private List<GetConnectionSshDetail> sshDetails;
     /**
      * @return The current state of the Connection resource.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time the Connection resource was created. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time of the last Connection resource details update. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeUpdated;
-    private final String tlsKeystore;
-    private final String tlsWallet;
+    private String timeUpdated;
+    private String tlsKeystore;
+    private String tlsWallet;
     /**
      * @return Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
      * 
      */
-    private final List<GetConnectionVaultDetail> vaultDetails;
+    private List<GetConnectionVaultDetail> vaultDetails;
 
-    @CustomType.Constructor
-    private GetConnectionResult(
-        @CustomType.Parameter("adminCredentials") List<GetConnectionAdminCredential> adminCredentials,
-        @CustomType.Parameter("certificateTdn") String certificateTdn,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("connectDescriptors") List<GetConnectionConnectDescriptor> connectDescriptors,
-        @CustomType.Parameter("connectionId") String connectionId,
-        @CustomType.Parameter("credentialsSecretId") String credentialsSecretId,
-        @CustomType.Parameter("databaseId") String databaseId,
-        @CustomType.Parameter("databaseType") String databaseType,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("privateEndpoints") List<GetConnectionPrivateEndpoint> privateEndpoints,
-        @CustomType.Parameter("sshDetails") List<GetConnectionSshDetail> sshDetails,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("tlsKeystore") String tlsKeystore,
-        @CustomType.Parameter("tlsWallet") String tlsWallet,
-        @CustomType.Parameter("vaultDetails") List<GetConnectionVaultDetail> vaultDetails) {
-        this.adminCredentials = adminCredentials;
-        this.certificateTdn = certificateTdn;
-        this.compartmentId = compartmentId;
-        this.connectDescriptors = connectDescriptors;
-        this.connectionId = connectionId;
-        this.credentialsSecretId = credentialsSecretId;
-        this.databaseId = databaseId;
-        this.databaseType = databaseType;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.privateEndpoints = privateEndpoints;
-        this.sshDetails = sshDetails;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.tlsKeystore = tlsKeystore;
-        this.tlsWallet = tlsWallet;
-        this.vaultDetails = vaultDetails;
-    }
-
+    private GetConnectionResult() {}
     /**
      * @return Database Administrator Credentials details.
      * 
@@ -314,7 +267,7 @@ public final class GetConnectionResult {
     public static Builder builder(GetConnectionResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetConnectionAdminCredential> adminCredentials;
         private String certificateTdn;
@@ -338,11 +291,7 @@ public final class GetConnectionResult {
         private String tlsKeystore;
         private String tlsWallet;
         private List<GetConnectionVaultDetail> vaultDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConnectionResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminCredentials = defaults.adminCredentials;
@@ -369,6 +318,7 @@ public final class GetConnectionResult {
     	      this.vaultDetails = defaults.vaultDetails;
         }
 
+        @CustomType.Setter
         public Builder adminCredentials(List<GetConnectionAdminCredential> adminCredentials) {
             this.adminCredentials = Objects.requireNonNull(adminCredentials);
             return this;
@@ -376,14 +326,17 @@ public final class GetConnectionResult {
         public Builder adminCredentials(GetConnectionAdminCredential... adminCredentials) {
             return adminCredentials(List.of(adminCredentials));
         }
+        @CustomType.Setter
         public Builder certificateTdn(String certificateTdn) {
             this.certificateTdn = Objects.requireNonNull(certificateTdn);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder connectDescriptors(List<GetConnectionConnectDescriptor> connectDescriptors) {
             this.connectDescriptors = Objects.requireNonNull(connectDescriptors);
             return this;
@@ -391,42 +344,52 @@ public final class GetConnectionResult {
         public Builder connectDescriptors(GetConnectionConnectDescriptor... connectDescriptors) {
             return connectDescriptors(List.of(connectDescriptors));
         }
+        @CustomType.Setter
         public Builder connectionId(String connectionId) {
             this.connectionId = Objects.requireNonNull(connectionId);
             return this;
         }
+        @CustomType.Setter
         public Builder credentialsSecretId(String credentialsSecretId) {
             this.credentialsSecretId = Objects.requireNonNull(credentialsSecretId);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseId(String databaseId) {
             this.databaseId = Objects.requireNonNull(databaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseType(String databaseType) {
             this.databaseType = Objects.requireNonNull(databaseType);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder privateEndpoints(List<GetConnectionPrivateEndpoint> privateEndpoints) {
             this.privateEndpoints = Objects.requireNonNull(privateEndpoints);
             return this;
@@ -434,6 +397,7 @@ public final class GetConnectionResult {
         public Builder privateEndpoints(GetConnectionPrivateEndpoint... privateEndpoints) {
             return privateEndpoints(List.of(privateEndpoints));
         }
+        @CustomType.Setter
         public Builder sshDetails(List<GetConnectionSshDetail> sshDetails) {
             this.sshDetails = Objects.requireNonNull(sshDetails);
             return this;
@@ -441,38 +405,69 @@ public final class GetConnectionResult {
         public Builder sshDetails(GetConnectionSshDetail... sshDetails) {
             return sshDetails(List.of(sshDetails));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder tlsKeystore(String tlsKeystore) {
             this.tlsKeystore = Objects.requireNonNull(tlsKeystore);
             return this;
         }
+        @CustomType.Setter
         public Builder tlsWallet(String tlsWallet) {
             this.tlsWallet = Objects.requireNonNull(tlsWallet);
             return this;
         }
+        @CustomType.Setter
         public Builder vaultDetails(List<GetConnectionVaultDetail> vaultDetails) {
             this.vaultDetails = Objects.requireNonNull(vaultDetails);
             return this;
         }
         public Builder vaultDetails(GetConnectionVaultDetail... vaultDetails) {
             return vaultDetails(List.of(vaultDetails));
-        }        public GetConnectionResult build() {
-            return new GetConnectionResult(adminCredentials, certificateTdn, compartmentId, connectDescriptors, connectionId, credentialsSecretId, databaseId, databaseType, definedTags, displayName, freeformTags, id, lifecycleDetails, privateEndpoints, sshDetails, state, systemTags, timeCreated, timeUpdated, tlsKeystore, tlsWallet, vaultDetails);
+        }
+        public GetConnectionResult build() {
+            final var o = new GetConnectionResult();
+            o.adminCredentials = adminCredentials;
+            o.certificateTdn = certificateTdn;
+            o.compartmentId = compartmentId;
+            o.connectDescriptors = connectDescriptors;
+            o.connectionId = connectionId;
+            o.credentialsSecretId = credentialsSecretId;
+            o.databaseId = databaseId;
+            o.databaseType = databaseType;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.privateEndpoints = privateEndpoints;
+            o.sshDetails = sshDetails;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.tlsKeystore = tlsKeystore;
+            o.tlsWallet = tlsWallet;
+            o.vaultDetails = vaultDetails;
+            return o;
         }
     }
 }

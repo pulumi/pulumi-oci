@@ -14,27 +14,27 @@ public final class GetCrossConnectStatusResult {
      * @return The OCID of the cross-connect.
      * 
      */
-    private final String crossConnectId;
+    private String crossConnectId;
     /**
      * @return Encryption status of the CrossConnect
      * 
      */
-    private final String encryptionStatus;
+    private String encryptionStatus;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Whether Oracle&#39;s side of the interface is up or down.
      * 
      */
-    private final String interfaceState;
+    private String interfaceState;
     /**
      * @return The light level of the cross-connect (in dBm).  Example: `14.0`
      * 
      */
-    private final Double lightLevelIndBm;
+    private Double lightLevelIndBm;
     /**
      * @return Status indicator corresponding to the light level.
      * * **NO_LIGHT:** No measurable light
@@ -44,24 +44,9 @@ public final class GetCrossConnectStatusResult {
      * * **GOOD:** Good light level
      * 
      */
-    private final String lightLevelIndicator;
+    private String lightLevelIndicator;
 
-    @CustomType.Constructor
-    private GetCrossConnectStatusResult(
-        @CustomType.Parameter("crossConnectId") String crossConnectId,
-        @CustomType.Parameter("encryptionStatus") String encryptionStatus,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("interfaceState") String interfaceState,
-        @CustomType.Parameter("lightLevelIndBm") Double lightLevelIndBm,
-        @CustomType.Parameter("lightLevelIndicator") String lightLevelIndicator) {
-        this.crossConnectId = crossConnectId;
-        this.encryptionStatus = encryptionStatus;
-        this.id = id;
-        this.interfaceState = interfaceState;
-        this.lightLevelIndBm = lightLevelIndBm;
-        this.lightLevelIndicator = lightLevelIndicator;
-    }
-
+    private GetCrossConnectStatusResult() {}
     /**
      * @return The OCID of the cross-connect.
      * 
@@ -117,7 +102,7 @@ public final class GetCrossConnectStatusResult {
     public static Builder builder(GetCrossConnectStatusResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String crossConnectId;
         private String encryptionStatus;
@@ -125,11 +110,7 @@ public final class GetCrossConnectStatusResult {
         private String interfaceState;
         private Double lightLevelIndBm;
         private String lightLevelIndicator;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCrossConnectStatusResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.crossConnectId = defaults.crossConnectId;
@@ -140,31 +121,45 @@ public final class GetCrossConnectStatusResult {
     	      this.lightLevelIndicator = defaults.lightLevelIndicator;
         }
 
+        @CustomType.Setter
         public Builder crossConnectId(String crossConnectId) {
             this.crossConnectId = Objects.requireNonNull(crossConnectId);
             return this;
         }
+        @CustomType.Setter
         public Builder encryptionStatus(String encryptionStatus) {
             this.encryptionStatus = Objects.requireNonNull(encryptionStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder interfaceState(String interfaceState) {
             this.interfaceState = Objects.requireNonNull(interfaceState);
             return this;
         }
+        @CustomType.Setter
         public Builder lightLevelIndBm(Double lightLevelIndBm) {
             this.lightLevelIndBm = Objects.requireNonNull(lightLevelIndBm);
             return this;
         }
+        @CustomType.Setter
         public Builder lightLevelIndicator(String lightLevelIndicator) {
             this.lightLevelIndicator = Objects.requireNonNull(lightLevelIndicator);
             return this;
-        }        public GetCrossConnectStatusResult build() {
-            return new GetCrossConnectStatusResult(crossConnectId, encryptionStatus, id, interfaceState, lightLevelIndBm, lightLevelIndicator);
+        }
+        public GetCrossConnectStatusResult build() {
+            final var o = new GetCrossConnectStatusResult();
+            o.crossConnectId = crossConnectId;
+            o.encryptionStatus = encryptionStatus;
+            o.id = id;
+            o.interfaceState = interfaceState;
+            o.lightLevelIndBm = lightLevelIndBm;
+            o.lightLevelIndicator = lightLevelIndicator;
+            return o;
         }
     }
 }

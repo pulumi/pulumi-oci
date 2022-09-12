@@ -14,84 +14,59 @@ public final class GetInvoiceLastPaymentDetail {
      * @return Amount that paid
      * 
      */
-    private final Double amountPaid;
+    private Double amountPaid;
     /**
      * @return Credit card type
      * 
      */
-    private final String creditCardType;
+    private String creditCardType;
     /**
      * @return Last four routing digits of the card
      * 
      */
-    private final String echeckRouting;
+    private String echeckRouting;
     /**
      * @return Last four digits of the card
      * 
      */
-    private final String lastDigits;
+    private String lastDigits;
     /**
      * @return Name on the credit card
      * 
      */
-    private final String nameOnCard;
+    private String nameOnCard;
     /**
      * @return example
      * 
      */
-    private final String paidBy;
+    private String paidBy;
     /**
      * @return Payment method
      * 
      */
-    private final String paymentMethod;
+    private String paymentMethod;
     /**
      * @return The id (email address) of the paypal payment
      * 
      */
-    private final String paypalId;
+    private String paypalId;
     /**
      * @return paypal payment reference
      * 
      */
-    private final String paypalReference;
+    private String paypalReference;
     /**
      * @return Expired date of the credit card
      * 
      */
-    private final String timeExpiration;
+    private String timeExpiration;
     /**
      * @return Paid the invoice on this day
      * 
      */
-    private final String timePaidOn;
+    private String timePaidOn;
 
-    @CustomType.Constructor
-    private GetInvoiceLastPaymentDetail(
-        @CustomType.Parameter("amountPaid") Double amountPaid,
-        @CustomType.Parameter("creditCardType") String creditCardType,
-        @CustomType.Parameter("echeckRouting") String echeckRouting,
-        @CustomType.Parameter("lastDigits") String lastDigits,
-        @CustomType.Parameter("nameOnCard") String nameOnCard,
-        @CustomType.Parameter("paidBy") String paidBy,
-        @CustomType.Parameter("paymentMethod") String paymentMethod,
-        @CustomType.Parameter("paypalId") String paypalId,
-        @CustomType.Parameter("paypalReference") String paypalReference,
-        @CustomType.Parameter("timeExpiration") String timeExpiration,
-        @CustomType.Parameter("timePaidOn") String timePaidOn) {
-        this.amountPaid = amountPaid;
-        this.creditCardType = creditCardType;
-        this.echeckRouting = echeckRouting;
-        this.lastDigits = lastDigits;
-        this.nameOnCard = nameOnCard;
-        this.paidBy = paidBy;
-        this.paymentMethod = paymentMethod;
-        this.paypalId = paypalId;
-        this.paypalReference = paypalReference;
-        this.timeExpiration = timeExpiration;
-        this.timePaidOn = timePaidOn;
-    }
-
+    private GetInvoiceLastPaymentDetail() {}
     /**
      * @return Amount that paid
      * 
@@ -177,7 +152,7 @@ public final class GetInvoiceLastPaymentDetail {
     public static Builder builder(GetInvoiceLastPaymentDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double amountPaid;
         private String creditCardType;
@@ -190,11 +165,7 @@ public final class GetInvoiceLastPaymentDetail {
         private String paypalReference;
         private String timeExpiration;
         private String timePaidOn;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvoiceLastPaymentDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.amountPaid = defaults.amountPaid;
@@ -210,51 +181,75 @@ public final class GetInvoiceLastPaymentDetail {
     	      this.timePaidOn = defaults.timePaidOn;
         }
 
+        @CustomType.Setter
         public Builder amountPaid(Double amountPaid) {
             this.amountPaid = Objects.requireNonNull(amountPaid);
             return this;
         }
+        @CustomType.Setter
         public Builder creditCardType(String creditCardType) {
             this.creditCardType = Objects.requireNonNull(creditCardType);
             return this;
         }
+        @CustomType.Setter
         public Builder echeckRouting(String echeckRouting) {
             this.echeckRouting = Objects.requireNonNull(echeckRouting);
             return this;
         }
+        @CustomType.Setter
         public Builder lastDigits(String lastDigits) {
             this.lastDigits = Objects.requireNonNull(lastDigits);
             return this;
         }
+        @CustomType.Setter
         public Builder nameOnCard(String nameOnCard) {
             this.nameOnCard = Objects.requireNonNull(nameOnCard);
             return this;
         }
+        @CustomType.Setter
         public Builder paidBy(String paidBy) {
             this.paidBy = Objects.requireNonNull(paidBy);
             return this;
         }
+        @CustomType.Setter
         public Builder paymentMethod(String paymentMethod) {
             this.paymentMethod = Objects.requireNonNull(paymentMethod);
             return this;
         }
+        @CustomType.Setter
         public Builder paypalId(String paypalId) {
             this.paypalId = Objects.requireNonNull(paypalId);
             return this;
         }
+        @CustomType.Setter
         public Builder paypalReference(String paypalReference) {
             this.paypalReference = Objects.requireNonNull(paypalReference);
             return this;
         }
+        @CustomType.Setter
         public Builder timeExpiration(String timeExpiration) {
             this.timeExpiration = Objects.requireNonNull(timeExpiration);
             return this;
         }
+        @CustomType.Setter
         public Builder timePaidOn(String timePaidOn) {
             this.timePaidOn = Objects.requireNonNull(timePaidOn);
             return this;
-        }        public GetInvoiceLastPaymentDetail build() {
-            return new GetInvoiceLastPaymentDetail(amountPaid, creditCardType, echeckRouting, lastDigits, nameOnCard, paidBy, paymentMethod, paypalId, paypalReference, timeExpiration, timePaidOn);
+        }
+        public GetInvoiceLastPaymentDetail build() {
+            final var o = new GetInvoiceLastPaymentDetail();
+            o.amountPaid = amountPaid;
+            o.creditCardType = creditCardType;
+            o.echeckRouting = echeckRouting;
+            o.lastDigits = lastDigits;
+            o.nameOnCard = nameOnCard;
+            o.paidBy = paidBy;
+            o.paymentMethod = paymentMethod;
+            o.paypalId = paypalId;
+            o.paypalReference = paypalReference;
+            o.timeExpiration = timeExpiration;
+            o.timePaidOn = timePaidOn;
+            return o;
         }
     }
 }

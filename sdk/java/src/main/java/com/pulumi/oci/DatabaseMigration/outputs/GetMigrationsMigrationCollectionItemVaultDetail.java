@@ -13,28 +13,19 @@ public final class GetMigrationsMigrationCollectionItemVaultDetail {
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return OCID of the vault encryption key
      * 
      */
-    private final String keyId;
+    private String keyId;
     /**
      * @return OCID of the vault
      * 
      */
-    private final String vaultId;
+    private String vaultId;
 
-    @CustomType.Constructor
-    private GetMigrationsMigrationCollectionItemVaultDetail(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("keyId") String keyId,
-        @CustomType.Parameter("vaultId") String vaultId) {
-        this.compartmentId = compartmentId;
-        this.keyId = keyId;
-        this.vaultId = vaultId;
-    }
-
+    private GetMigrationsMigrationCollectionItemVaultDetail() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
@@ -64,16 +55,12 @@ public final class GetMigrationsMigrationCollectionItemVaultDetail {
     public static Builder builder(GetMigrationsMigrationCollectionItemVaultDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String keyId;
         private String vaultId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemVaultDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -81,19 +68,27 @@ public final class GetMigrationsMigrationCollectionItemVaultDetail {
     	      this.vaultId = defaults.vaultId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder keyId(String keyId) {
             this.keyId = Objects.requireNonNull(keyId);
             return this;
         }
+        @CustomType.Setter
         public Builder vaultId(String vaultId) {
             this.vaultId = Objects.requireNonNull(vaultId);
             return this;
-        }        public GetMigrationsMigrationCollectionItemVaultDetail build() {
-            return new GetMigrationsMigrationCollectionItemVaultDetail(compartmentId, keyId, vaultId);
+        }
+        public GetMigrationsMigrationCollectionItemVaultDetail build() {
+            final var o = new GetMigrationsMigrationCollectionItemVaultDetail();
+            o.compartmentId = compartmentId;
+            o.keyId = keyId;
+            o.vaultId = vaultId;
+            return o;
         }
     }
 }

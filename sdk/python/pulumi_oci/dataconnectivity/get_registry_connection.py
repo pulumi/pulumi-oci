@@ -87,7 +87,7 @@ class GetRegistryConnectionResult:
     @pulumi.getter(name="connectionProperties")
     def connection_properties(self) -> Sequence['outputs.GetRegistryConnectionConnectionPropertyResult']:
         """
-        The properties for the connection.
+        The properties of the connection.
         """
         return pulumi.get(self, "connection_properties")
 
@@ -116,7 +116,7 @@ class GetRegistryConnectionResult:
     @pulumi.getter(name="isDefault")
     def is_default(self) -> bool:
         """
-        The default property for the connection.
+        The default property of the connection.
         """
         return pulumi.get(self, "is_default")
 
@@ -132,7 +132,7 @@ class GetRegistryConnectionResult:
     @pulumi.getter
     def metadatas(self) -> Sequence['outputs.GetRegistryConnectionMetadataResult']:
         """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadatas")
 
@@ -140,7 +140,7 @@ class GetRegistryConnectionResult:
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        The object's type.
+        The object type.
         """
         return pulumi.get(self, "model_type")
 
@@ -148,7 +148,7 @@ class GetRegistryConnectionResult:
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> str:
         """
-        The object's model version.
+        The model version of the object.
         """
         return pulumi.get(self, "model_version")
 
@@ -156,7 +156,7 @@ class GetRegistryConnectionResult:
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -188,7 +188,7 @@ class GetRegistryConnectionResult:
     @pulumi.getter
     def properties(self) -> Mapping[str, Any]:
         """
-        All the properties for the connection in a key-value map format.
+        All the properties of the connection in a key-value map format.
         """
         return pulumi.get(self, "properties")
 
@@ -260,7 +260,7 @@ def get_registry_connection(connection_key: Optional[str] = None,
 
 
     :param str connection_key: The connection key.
-    :param str registry_id: The registry Ocid.
+    :param str registry_id: The registry OCID.
     """
     __args__ = dict()
     __args__['connectionKey'] = connection_key
@@ -310,6 +310,6 @@ def get_registry_connection_output(connection_key: Optional[pulumi.Input[str]] =
 
 
     :param str connection_key: The connection key.
-    :param str registry_id: The registry Ocid.
+    :param str registry_id: The registry OCID.
     """
     ...

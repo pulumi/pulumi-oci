@@ -13,21 +13,14 @@ public final class GetMigrationDumpTransferDetailSource {
      * @return Type of dump transfer to use during migration in source or target host. Default kind is CURL
      * 
      */
-    private final String kind;
+    private String kind;
     /**
      * @return Path to the Oracle Cloud Infrastructure CLI installation in the node.
      * 
      */
-    private final String ociHome;
+    private String ociHome;
 
-    @CustomType.Constructor
-    private GetMigrationDumpTransferDetailSource(
-        @CustomType.Parameter("kind") String kind,
-        @CustomType.Parameter("ociHome") String ociHome) {
-        this.kind = kind;
-        this.ociHome = ociHome;
-    }
-
+    private GetMigrationDumpTransferDetailSource() {}
     /**
      * @return Type of dump transfer to use during migration in source or target host. Default kind is CURL
      * 
@@ -50,30 +43,32 @@ public final class GetMigrationDumpTransferDetailSource {
     public static Builder builder(GetMigrationDumpTransferDetailSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String kind;
         private String ociHome;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationDumpTransferDetailSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kind = defaults.kind;
     	      this.ociHome = defaults.ociHome;
         }
 
+        @CustomType.Setter
         public Builder kind(String kind) {
             this.kind = Objects.requireNonNull(kind);
             return this;
         }
+        @CustomType.Setter
         public Builder ociHome(String ociHome) {
             this.ociHome = Objects.requireNonNull(ociHome);
             return this;
-        }        public GetMigrationDumpTransferDetailSource build() {
-            return new GetMigrationDumpTransferDetailSource(kind, ociHome);
+        }
+        public GetMigrationDumpTransferDetailSource build() {
+            final var o = new GetMigrationDumpTransferDetailSource();
+            o.kind = kind;
+            o.ociHome = ociHome;
+            return o;
         }
     }
 }

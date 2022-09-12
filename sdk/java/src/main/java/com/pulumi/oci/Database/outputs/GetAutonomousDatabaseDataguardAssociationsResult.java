@@ -17,31 +17,20 @@ public final class GetAutonomousDatabaseDataguardAssociationsResult {
      * @return The list of autonomous_database_dataguard_associations.
      * 
      */
-    private final List<GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation> autonomousDatabaseDataguardAssociations;
+    private List<GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation> autonomousDatabaseDataguardAssociations;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database that has a relationship with the peer Autonomous Database.
      * 
      */
-    private final String autonomousDatabaseId;
-    private final @Nullable List<GetAutonomousDatabaseDataguardAssociationsFilter> filters;
+    private String autonomousDatabaseId;
+    private @Nullable List<GetAutonomousDatabaseDataguardAssociationsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetAutonomousDatabaseDataguardAssociationsResult(
-        @CustomType.Parameter("autonomousDatabaseDataguardAssociations") List<GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation> autonomousDatabaseDataguardAssociations,
-        @CustomType.Parameter("autonomousDatabaseId") String autonomousDatabaseId,
-        @CustomType.Parameter("filters") @Nullable List<GetAutonomousDatabaseDataguardAssociationsFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.autonomousDatabaseDataguardAssociations = autonomousDatabaseDataguardAssociations;
-        this.autonomousDatabaseId = autonomousDatabaseId;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetAutonomousDatabaseDataguardAssociationsResult() {}
     /**
      * @return The list of autonomous_database_dataguard_associations.
      * 
@@ -74,17 +63,13 @@ public final class GetAutonomousDatabaseDataguardAssociationsResult {
     public static Builder builder(GetAutonomousDatabaseDataguardAssociationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation> autonomousDatabaseDataguardAssociations;
         private String autonomousDatabaseId;
         private @Nullable List<GetAutonomousDatabaseDataguardAssociationsFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDatabaseDataguardAssociationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousDatabaseDataguardAssociations = defaults.autonomousDatabaseDataguardAssociations;
@@ -93,6 +78,7 @@ public final class GetAutonomousDatabaseDataguardAssociationsResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder autonomousDatabaseDataguardAssociations(List<GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation> autonomousDatabaseDataguardAssociations) {
             this.autonomousDatabaseDataguardAssociations = Objects.requireNonNull(autonomousDatabaseDataguardAssociations);
             return this;
@@ -100,10 +86,12 @@ public final class GetAutonomousDatabaseDataguardAssociationsResult {
         public Builder autonomousDatabaseDataguardAssociations(GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation... autonomousDatabaseDataguardAssociations) {
             return autonomousDatabaseDataguardAssociations(List.of(autonomousDatabaseDataguardAssociations));
         }
+        @CustomType.Setter
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
             this.autonomousDatabaseId = Objects.requireNonNull(autonomousDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousDatabaseDataguardAssociationsFilter> filters) {
             this.filters = filters;
             return this;
@@ -111,11 +99,18 @@ public final class GetAutonomousDatabaseDataguardAssociationsResult {
         public Builder filters(GetAutonomousDatabaseDataguardAssociationsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetAutonomousDatabaseDataguardAssociationsResult build() {
-            return new GetAutonomousDatabaseDataguardAssociationsResult(autonomousDatabaseDataguardAssociations, autonomousDatabaseId, filters, id);
+        }
+        public GetAutonomousDatabaseDataguardAssociationsResult build() {
+            final var o = new GetAutonomousDatabaseDataguardAssociationsResult();
+            o.autonomousDatabaseDataguardAssociations = autonomousDatabaseDataguardAssociations;
+            o.autonomousDatabaseId = autonomousDatabaseId;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

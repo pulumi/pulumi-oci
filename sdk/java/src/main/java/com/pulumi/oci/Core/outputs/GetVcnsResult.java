@@ -18,45 +18,30 @@ public final class GetVcnsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VCN.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetVcnsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetVcnsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The VCN&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of virtual_networks.
      * 
      */
-    private final List<GetVcnsVirtualNetwork> virtualNetworks;
+    private List<GetVcnsVirtualNetwork> virtualNetworks;
 
-    @CustomType.Constructor
-    private GetVcnsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetVcnsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("virtualNetworks") List<GetVcnsVirtualNetwork> virtualNetworks) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.virtualNetworks = virtualNetworks;
-    }
-
+    private GetVcnsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VCN.
      * 
@@ -103,7 +88,7 @@ public final class GetVcnsResult {
     public static Builder builder(GetVcnsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetVcnsResult {
         private String id;
         private @Nullable String state;
         private List<GetVcnsVirtualNetwork> virtualNetworks;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVcnsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetVcnsResult {
     	      this.virtualNetworks = defaults.virtualNetworks;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVcnsFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,22 +125,33 @@ public final class GetVcnsResult {
         public Builder filters(GetVcnsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder virtualNetworks(List<GetVcnsVirtualNetwork> virtualNetworks) {
             this.virtualNetworks = Objects.requireNonNull(virtualNetworks);
             return this;
         }
         public Builder virtualNetworks(GetVcnsVirtualNetwork... virtualNetworks) {
             return virtualNetworks(List.of(virtualNetworks));
-        }        public GetVcnsResult build() {
-            return new GetVcnsResult(compartmentId, displayName, filters, id, state, virtualNetworks);
+        }
+        public GetVcnsResult build() {
+            final var o = new GetVcnsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.virtualNetworks = virtualNetworks;
+            return o;
         }
     }
 }

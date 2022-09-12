@@ -15,37 +15,26 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetails {
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
      * 
      */
-    private final @Nullable String databaseSoftwareImageId;
+    private @Nullable String databaseSoftwareImageId;
     /**
      * @return A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      * 
      */
-    private final @Nullable String dbVersion;
+    private @Nullable String dbVersion;
     /**
      * @return Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: &#34;-upgradeTimezone false -keepEvents&#34;
      * 
      */
-    private final @Nullable String options;
+    private @Nullable String options;
     /**
      * @return The source of the Oracle Database software to be used for the upgrade.
      * * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
      * * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
      * 
      */
-    private final @Nullable String source;
+    private @Nullable String source;
 
-    @CustomType.Constructor
-    private DatabaseUpgradeDatabaseUpgradeSourceDetails(
-        @CustomType.Parameter("databaseSoftwareImageId") @Nullable String databaseSoftwareImageId,
-        @CustomType.Parameter("dbVersion") @Nullable String dbVersion,
-        @CustomType.Parameter("options") @Nullable String options,
-        @CustomType.Parameter("source") @Nullable String source) {
-        this.databaseSoftwareImageId = databaseSoftwareImageId;
-        this.dbVersion = dbVersion;
-        this.options = options;
-        this.source = source;
-    }
-
+    private DatabaseUpgradeDatabaseUpgradeSourceDetails() {}
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
      * 
@@ -84,17 +73,13 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetails {
     public static Builder builder(DatabaseUpgradeDatabaseUpgradeSourceDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String databaseSoftwareImageId;
         private @Nullable String dbVersion;
         private @Nullable String options;
         private @Nullable String source;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DatabaseUpgradeDatabaseUpgradeSourceDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.databaseSoftwareImageId = defaults.databaseSoftwareImageId;
@@ -103,23 +88,33 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetails {
     	      this.source = defaults.source;
         }
 
+        @CustomType.Setter
         public Builder databaseSoftwareImageId(@Nullable String databaseSoftwareImageId) {
             this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
+        @CustomType.Setter
         public Builder dbVersion(@Nullable String dbVersion) {
             this.dbVersion = dbVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder options(@Nullable String options) {
             this.options = options;
             return this;
         }
+        @CustomType.Setter
         public Builder source(@Nullable String source) {
             this.source = source;
             return this;
-        }        public DatabaseUpgradeDatabaseUpgradeSourceDetails build() {
-            return new DatabaseUpgradeDatabaseUpgradeSourceDetails(databaseSoftwareImageId, dbVersion, options, source);
+        }
+        public DatabaseUpgradeDatabaseUpgradeSourceDetails build() {
+            final var o = new DatabaseUpgradeDatabaseUpgradeSourceDetails();
+            o.databaseSoftwareImageId = databaseSoftwareImageId;
+            o.dbVersion = dbVersion;
+            o.options = options;
+            o.source = source;
+            return o;
         }
     }
 }

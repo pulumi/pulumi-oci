@@ -9,17 +9,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPublicationPackageDetailEula {
-    private final String eulaType;
-    private final String licenseText;
+    private String eulaType;
+    private String licenseText;
 
-    @CustomType.Constructor
-    private GetPublicationPackageDetailEula(
-        @CustomType.Parameter("eulaType") String eulaType,
-        @CustomType.Parameter("licenseText") String licenseText) {
-        this.eulaType = eulaType;
-        this.licenseText = licenseText;
-    }
-
+    private GetPublicationPackageDetailEula() {}
     public String eulaType() {
         return this.eulaType;
     }
@@ -34,30 +27,32 @@ public final class GetPublicationPackageDetailEula {
     public static Builder builder(GetPublicationPackageDetailEula defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String eulaType;
         private String licenseText;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPublicationPackageDetailEula defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.eulaType = defaults.eulaType;
     	      this.licenseText = defaults.licenseText;
         }
 
+        @CustomType.Setter
         public Builder eulaType(String eulaType) {
             this.eulaType = Objects.requireNonNull(eulaType);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseText(String licenseText) {
             this.licenseText = Objects.requireNonNull(licenseText);
             return this;
-        }        public GetPublicationPackageDetailEula build() {
-            return new GetPublicationPackageDetailEula(eulaType, licenseText);
+        }
+        public GetPublicationPackageDetailEula build() {
+            final var o = new GetPublicationPackageDetailEula();
+            o.eulaType = eulaType;
+            o.licenseText = licenseText;
+            return o;
         }
     }
 }

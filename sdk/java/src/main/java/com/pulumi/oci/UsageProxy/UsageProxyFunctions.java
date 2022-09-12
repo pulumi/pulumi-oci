@@ -15,6 +15,10 @@ import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUserArgs;
 import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUserPlainArgs;
 import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUsersArgs;
 import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUsersPlainArgs;
+import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionArgs;
+import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionPlainArgs;
+import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionsArgs;
+import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionsPlainArgs;
 import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardArgs;
 import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardPlainArgs;
 import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardsArgs;
@@ -23,6 +27,8 @@ import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionProductResult;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionProductsResult;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRedeemableUserResult;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRedeemableUsersResult;
+import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRedemptionResult;
+import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRedemptionsResult;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRewardResult;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRewardsResult;
 import com.pulumi.oci.Utilities;
@@ -368,7 +374,7 @@ public final class UsageProxyFunctions {
     /**
      * This data source provides details about a specific Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
      * 
-     * Provides the email IDs of users that can redeem rewards for the given subscription ID.
+     * Provides the list of user summary that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
      * ```java
@@ -408,7 +414,7 @@ public final class UsageProxyFunctions {
     /**
      * This data source provides details about a specific Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
      * 
-     * Provides the email IDs of users that can redeem rewards for the given subscription ID.
+     * Provides the list of user summary that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
      * ```java
@@ -448,7 +454,7 @@ public final class UsageProxyFunctions {
     /**
      * This data source provides details about a specific Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
      * 
-     * Provides the email IDs of users that can redeem rewards for the given subscription ID.
+     * Provides the list of user summary that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
      * ```java
@@ -488,7 +494,7 @@ public final class UsageProxyFunctions {
     /**
      * This data source provides details about a specific Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
      * 
-     * Provides the email IDs of users that can redeem rewards for the given subscription ID.
+     * Provides the list of user summary that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
      * ```java
@@ -528,7 +534,7 @@ public final class UsageProxyFunctions {
     /**
      * This data source provides the list of Subscription Redeemable Users in Oracle Cloud Infrastructure Usage Proxy service.
      * 
-     * Provides the email IDs of users that can redeem rewards for the given subscription ID.
+     * Provides the list of user summary that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
      * ```java
@@ -568,7 +574,7 @@ public final class UsageProxyFunctions {
     /**
      * This data source provides the list of Subscription Redeemable Users in Oracle Cloud Infrastructure Usage Proxy service.
      * 
-     * Provides the email IDs of users that can redeem rewards for the given subscription ID.
+     * Provides the list of user summary that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
      * ```java
@@ -608,7 +614,7 @@ public final class UsageProxyFunctions {
     /**
      * This data source provides the list of Subscription Redeemable Users in Oracle Cloud Infrastructure Usage Proxy service.
      * 
-     * Provides the email IDs of users that can redeem rewards for the given subscription ID.
+     * Provides the list of user summary that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
      * ```java
@@ -648,7 +654,7 @@ public final class UsageProxyFunctions {
     /**
      * This data source provides the list of Subscription Redeemable Users in Oracle Cloud Infrastructure Usage Proxy service.
      * 
-     * Provides the email IDs of users that can redeem rewards for the given subscription ID.
+     * Provides the list of user summary that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
      * ```java
@@ -684,6 +690,342 @@ public final class UsageProxyFunctions {
      */
     public static CompletableFuture<GetSubscriptionRedeemableUsersResult> getSubscriptionRedeemableUsersPlain(GetSubscriptionRedeemableUsersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:UsageProxy/getSubscriptionRedeemableUsers:getSubscriptionRedeemableUsers", TypeShape.of(GetSubscriptionRedeemableUsersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscription Redemption resource in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the list of redemption for the subscription ID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedemption = UsageProxyFunctions.getSubscriptionRedemption(GetSubscriptionRedemptionArgs.builder()
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .timeRedeemedGreaterThanOrEqualTo(var_.subscription_redemption_time_redeemed_greater_than_or_equal_to())
+     *             .timeRedeemedLessThan(var_.subscription_redemption_time_redeemed_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSubscriptionRedemptionResult> getSubscriptionRedemption(GetSubscriptionRedemptionArgs args) {
+        return getSubscriptionRedemption(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subscription Redemption resource in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the list of redemption for the subscription ID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedemption = UsageProxyFunctions.getSubscriptionRedemption(GetSubscriptionRedemptionArgs.builder()
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .timeRedeemedGreaterThanOrEqualTo(var_.subscription_redemption_time_redeemed_greater_than_or_equal_to())
+     *             .timeRedeemedLessThan(var_.subscription_redemption_time_redeemed_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSubscriptionRedemptionResult> getSubscriptionRedemptionPlain(GetSubscriptionRedemptionPlainArgs args) {
+        return getSubscriptionRedemptionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subscription Redemption resource in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the list of redemption for the subscription ID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedemption = UsageProxyFunctions.getSubscriptionRedemption(GetSubscriptionRedemptionArgs.builder()
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .timeRedeemedGreaterThanOrEqualTo(var_.subscription_redemption_time_redeemed_greater_than_or_equal_to())
+     *             .timeRedeemedLessThan(var_.subscription_redemption_time_redeemed_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSubscriptionRedemptionResult> getSubscriptionRedemption(GetSubscriptionRedemptionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:UsageProxy/getSubscriptionRedemption:getSubscriptionRedemption", TypeShape.of(GetSubscriptionRedemptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscription Redemption resource in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the list of redemption for the subscription ID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedemption = UsageProxyFunctions.getSubscriptionRedemption(GetSubscriptionRedemptionArgs.builder()
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .timeRedeemedGreaterThanOrEqualTo(var_.subscription_redemption_time_redeemed_greater_than_or_equal_to())
+     *             .timeRedeemedLessThan(var_.subscription_redemption_time_redeemed_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSubscriptionRedemptionResult> getSubscriptionRedemptionPlain(GetSubscriptionRedemptionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:UsageProxy/getSubscriptionRedemption:getSubscriptionRedemption", TypeShape.of(GetSubscriptionRedemptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subscription Redemptions in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the list of redemption for the subscription ID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedemptions = UsageProxyFunctions.getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs.builder()
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .timeRedeemedGreaterThanOrEqualTo(var_.subscription_redemption_time_redeemed_greater_than_or_equal_to())
+     *             .timeRedeemedLessThan(var_.subscription_redemption_time_redeemed_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSubscriptionRedemptionsResult> getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs args) {
+        return getSubscriptionRedemptions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subscription Redemptions in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the list of redemption for the subscription ID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedemptions = UsageProxyFunctions.getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs.builder()
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .timeRedeemedGreaterThanOrEqualTo(var_.subscription_redemption_time_redeemed_greater_than_or_equal_to())
+     *             .timeRedeemedLessThan(var_.subscription_redemption_time_redeemed_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSubscriptionRedemptionsResult> getSubscriptionRedemptionsPlain(GetSubscriptionRedemptionsPlainArgs args) {
+        return getSubscriptionRedemptionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Subscription Redemptions in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the list of redemption for the subscription ID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedemptions = UsageProxyFunctions.getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs.builder()
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .timeRedeemedGreaterThanOrEqualTo(var_.subscription_redemption_time_redeemed_greater_than_or_equal_to())
+     *             .timeRedeemedLessThan(var_.subscription_redemption_time_redeemed_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSubscriptionRedemptionsResult> getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:UsageProxy/getSubscriptionRedemptions:getSubscriptionRedemptions", TypeShape.of(GetSubscriptionRedemptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Subscription Redemptions in Oracle Cloud Infrastructure Usage Proxy service.
+     * 
+     * Returns the list of redemption for the subscription ID.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedemptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedemptions = UsageProxyFunctions.getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs.builder()
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .timeRedeemedGreaterThanOrEqualTo(var_.subscription_redemption_time_redeemed_greater_than_or_equal_to())
+     *             .timeRedeemedLessThan(var_.subscription_redemption_time_redeemed_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSubscriptionRedemptionsResult> getSubscriptionRedemptionsPlain(GetSubscriptionRedemptionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:UsageProxy/getSubscriptionRedemptions:getSubscriptionRedemptions", TypeShape.of(GetSubscriptionRedemptionsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Subscription Reward resource in Oracle Cloud Infrastructure Usage Proxy service.

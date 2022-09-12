@@ -14,21 +14,14 @@ public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectio
      * @return A filter to return only resources that match the entire name given.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The port of the ingress gateway host listener. Leave empty to match all ports for the host.
      * 
      */
-    private final Integer port;
+    private Integer port;
 
-    @CustomType.Constructor
-    private GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("port") Integer port) {
-        this.name = name;
-        this.port = port;
-    }
-
+    private GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost() {}
     /**
      * @return A filter to return only resources that match the entire name given.
      * 
@@ -51,30 +44,32 @@ public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectio
     public static Builder builder(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private Integer port;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.port = defaults.port;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
-        }        public GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost build() {
-            return new GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost(name, port);
+        }
+        public GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost build() {
+            final var o = new GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost();
+            o.name = name;
+            o.port = port;
+            return o;
         }
     }
 }

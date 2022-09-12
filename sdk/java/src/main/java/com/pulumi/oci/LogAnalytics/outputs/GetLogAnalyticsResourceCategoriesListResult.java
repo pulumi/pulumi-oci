@@ -18,40 +18,23 @@ public final class GetLogAnalyticsResourceCategoriesListResult {
      * @return An array of categories. The array contents include detailed information about the distinct set of categories assigned to all the listed resources under items.
      * 
      */
-    private final List<GetLogAnalyticsResourceCategoriesListCategory> categories;
+    private List<GetLogAnalyticsResourceCategoriesListCategory> categories;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A list of resources and their category assignments
      * 
      */
-    private final List<GetLogAnalyticsResourceCategoriesListItem> items;
-    private final String namespace;
-    private final @Nullable String resourceCategories;
-    private final @Nullable String resourceIds;
-    private final @Nullable String resourceTypes;
+    private List<GetLogAnalyticsResourceCategoriesListItem> items;
+    private String namespace;
+    private @Nullable String resourceCategories;
+    private @Nullable String resourceIds;
+    private @Nullable String resourceTypes;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsResourceCategoriesListResult(
-        @CustomType.Parameter("categories") List<GetLogAnalyticsResourceCategoriesListCategory> categories,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetLogAnalyticsResourceCategoriesListItem> items,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("resourceCategories") @Nullable String resourceCategories,
-        @CustomType.Parameter("resourceIds") @Nullable String resourceIds,
-        @CustomType.Parameter("resourceTypes") @Nullable String resourceTypes) {
-        this.categories = categories;
-        this.id = id;
-        this.items = items;
-        this.namespace = namespace;
-        this.resourceCategories = resourceCategories;
-        this.resourceIds = resourceIds;
-        this.resourceTypes = resourceTypes;
-    }
-
+    private GetLogAnalyticsResourceCategoriesListResult() {}
     /**
      * @return An array of categories. The array contents include detailed information about the distinct set of categories assigned to all the listed resources under items.
      * 
@@ -93,7 +76,7 @@ public final class GetLogAnalyticsResourceCategoriesListResult {
     public static Builder builder(GetLogAnalyticsResourceCategoriesListResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetLogAnalyticsResourceCategoriesListCategory> categories;
         private String id;
@@ -102,11 +85,7 @@ public final class GetLogAnalyticsResourceCategoriesListResult {
         private @Nullable String resourceCategories;
         private @Nullable String resourceIds;
         private @Nullable String resourceTypes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsResourceCategoriesListResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.categories = defaults.categories;
@@ -118,6 +97,7 @@ public final class GetLogAnalyticsResourceCategoriesListResult {
     	      this.resourceTypes = defaults.resourceTypes;
         }
 
+        @CustomType.Setter
         public Builder categories(List<GetLogAnalyticsResourceCategoriesListCategory> categories) {
             this.categories = Objects.requireNonNull(categories);
             return this;
@@ -125,10 +105,12 @@ public final class GetLogAnalyticsResourceCategoriesListResult {
         public Builder categories(GetLogAnalyticsResourceCategoriesListCategory... categories) {
             return categories(List.of(categories));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetLogAnalyticsResourceCategoriesListItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -136,23 +118,36 @@ public final class GetLogAnalyticsResourceCategoriesListResult {
         public Builder items(GetLogAnalyticsResourceCategoriesListItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceCategories(@Nullable String resourceCategories) {
             this.resourceCategories = resourceCategories;
             return this;
         }
+        @CustomType.Setter
         public Builder resourceIds(@Nullable String resourceIds) {
             this.resourceIds = resourceIds;
             return this;
         }
+        @CustomType.Setter
         public Builder resourceTypes(@Nullable String resourceTypes) {
             this.resourceTypes = resourceTypes;
             return this;
-        }        public GetLogAnalyticsResourceCategoriesListResult build() {
-            return new GetLogAnalyticsResourceCategoriesListResult(categories, id, items, namespace, resourceCategories, resourceIds, resourceTypes);
+        }
+        public GetLogAnalyticsResourceCategoriesListResult build() {
+            final var o = new GetLogAnalyticsResourceCategoriesListResult();
+            o.categories = categories;
+            o.id = id;
+            o.items = items;
+            o.namespace = namespace;
+            o.resourceCategories = resourceCategories;
+            o.resourceIds = resourceIds;
+            o.resourceTypes = resourceTypes;
+            return o;
         }
     }
 }

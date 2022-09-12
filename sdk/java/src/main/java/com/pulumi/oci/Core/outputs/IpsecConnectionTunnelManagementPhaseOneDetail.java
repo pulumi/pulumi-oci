@@ -13,44 +13,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class IpsecConnectionTunnelManagementPhaseOneDetail {
-    private final @Nullable String customAuthenticationAlgorithm;
-    private final @Nullable String customDhGroup;
-    private final @Nullable String customEncryptionAlgorithm;
-    private final @Nullable Boolean isCustomPhaseOneConfig;
-    private final @Nullable Boolean isIkeEstablished;
-    private final @Nullable Integer lifetime;
-    private final @Nullable String negotiatedAuthenticationAlgorithm;
-    private final @Nullable String negotiatedDhGroup;
-    private final @Nullable String negotiatedEncryptionAlgorithm;
-    private final @Nullable String remainingLifetime;
-    private final @Nullable String remainingLifetimeLastRetrieved;
+    private @Nullable String customAuthenticationAlgorithm;
+    private @Nullable String customDhGroup;
+    private @Nullable String customEncryptionAlgorithm;
+    private @Nullable Boolean isCustomPhaseOneConfig;
+    private @Nullable Boolean isIkeEstablished;
+    private @Nullable Integer lifetime;
+    private @Nullable String negotiatedAuthenticationAlgorithm;
+    private @Nullable String negotiatedDhGroup;
+    private @Nullable String negotiatedEncryptionAlgorithm;
+    private @Nullable String remainingLifetime;
+    private @Nullable String remainingLifetimeLastRetrieved;
 
-    @CustomType.Constructor
-    private IpsecConnectionTunnelManagementPhaseOneDetail(
-        @CustomType.Parameter("customAuthenticationAlgorithm") @Nullable String customAuthenticationAlgorithm,
-        @CustomType.Parameter("customDhGroup") @Nullable String customDhGroup,
-        @CustomType.Parameter("customEncryptionAlgorithm") @Nullable String customEncryptionAlgorithm,
-        @CustomType.Parameter("isCustomPhaseOneConfig") @Nullable Boolean isCustomPhaseOneConfig,
-        @CustomType.Parameter("isIkeEstablished") @Nullable Boolean isIkeEstablished,
-        @CustomType.Parameter("lifetime") @Nullable Integer lifetime,
-        @CustomType.Parameter("negotiatedAuthenticationAlgorithm") @Nullable String negotiatedAuthenticationAlgorithm,
-        @CustomType.Parameter("negotiatedDhGroup") @Nullable String negotiatedDhGroup,
-        @CustomType.Parameter("negotiatedEncryptionAlgorithm") @Nullable String negotiatedEncryptionAlgorithm,
-        @CustomType.Parameter("remainingLifetime") @Nullable String remainingLifetime,
-        @CustomType.Parameter("remainingLifetimeLastRetrieved") @Nullable String remainingLifetimeLastRetrieved) {
-        this.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
-        this.customDhGroup = customDhGroup;
-        this.customEncryptionAlgorithm = customEncryptionAlgorithm;
-        this.isCustomPhaseOneConfig = isCustomPhaseOneConfig;
-        this.isIkeEstablished = isIkeEstablished;
-        this.lifetime = lifetime;
-        this.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
-        this.negotiatedDhGroup = negotiatedDhGroup;
-        this.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
-        this.remainingLifetime = remainingLifetime;
-        this.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
-    }
-
+    private IpsecConnectionTunnelManagementPhaseOneDetail() {}
     public Optional<String> customAuthenticationAlgorithm() {
         return Optional.ofNullable(this.customAuthenticationAlgorithm);
     }
@@ -92,7 +67,7 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetail {
     public static Builder builder(IpsecConnectionTunnelManagementPhaseOneDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String customAuthenticationAlgorithm;
         private @Nullable String customDhGroup;
@@ -105,11 +80,7 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetail {
         private @Nullable String negotiatedEncryptionAlgorithm;
         private @Nullable String remainingLifetime;
         private @Nullable String remainingLifetimeLastRetrieved;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(IpsecConnectionTunnelManagementPhaseOneDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.customAuthenticationAlgorithm = defaults.customAuthenticationAlgorithm;
@@ -125,51 +96,75 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetail {
     	      this.remainingLifetimeLastRetrieved = defaults.remainingLifetimeLastRetrieved;
         }
 
+        @CustomType.Setter
         public Builder customAuthenticationAlgorithm(@Nullable String customAuthenticationAlgorithm) {
             this.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
             return this;
         }
+        @CustomType.Setter
         public Builder customDhGroup(@Nullable String customDhGroup) {
             this.customDhGroup = customDhGroup;
             return this;
         }
+        @CustomType.Setter
         public Builder customEncryptionAlgorithm(@Nullable String customEncryptionAlgorithm) {
             this.customEncryptionAlgorithm = customEncryptionAlgorithm;
             return this;
         }
+        @CustomType.Setter
         public Builder isCustomPhaseOneConfig(@Nullable Boolean isCustomPhaseOneConfig) {
             this.isCustomPhaseOneConfig = isCustomPhaseOneConfig;
             return this;
         }
+        @CustomType.Setter
         public Builder isIkeEstablished(@Nullable Boolean isIkeEstablished) {
             this.isIkeEstablished = isIkeEstablished;
             return this;
         }
+        @CustomType.Setter
         public Builder lifetime(@Nullable Integer lifetime) {
             this.lifetime = lifetime;
             return this;
         }
+        @CustomType.Setter
         public Builder negotiatedAuthenticationAlgorithm(@Nullable String negotiatedAuthenticationAlgorithm) {
             this.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
             return this;
         }
+        @CustomType.Setter
         public Builder negotiatedDhGroup(@Nullable String negotiatedDhGroup) {
             this.negotiatedDhGroup = negotiatedDhGroup;
             return this;
         }
+        @CustomType.Setter
         public Builder negotiatedEncryptionAlgorithm(@Nullable String negotiatedEncryptionAlgorithm) {
             this.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
             return this;
         }
+        @CustomType.Setter
         public Builder remainingLifetime(@Nullable String remainingLifetime) {
             this.remainingLifetime = remainingLifetime;
             return this;
         }
+        @CustomType.Setter
         public Builder remainingLifetimeLastRetrieved(@Nullable String remainingLifetimeLastRetrieved) {
             this.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
             return this;
-        }        public IpsecConnectionTunnelManagementPhaseOneDetail build() {
-            return new IpsecConnectionTunnelManagementPhaseOneDetail(customAuthenticationAlgorithm, customDhGroup, customEncryptionAlgorithm, isCustomPhaseOneConfig, isIkeEstablished, lifetime, negotiatedAuthenticationAlgorithm, negotiatedDhGroup, negotiatedEncryptionAlgorithm, remainingLifetime, remainingLifetimeLastRetrieved);
+        }
+        public IpsecConnectionTunnelManagementPhaseOneDetail build() {
+            final var o = new IpsecConnectionTunnelManagementPhaseOneDetail();
+            o.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
+            o.customDhGroup = customDhGroup;
+            o.customEncryptionAlgorithm = customEncryptionAlgorithm;
+            o.isCustomPhaseOneConfig = isCustomPhaseOneConfig;
+            o.isIkeEstablished = isIkeEstablished;
+            o.lifetime = lifetime;
+            o.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
+            o.negotiatedDhGroup = negotiatedDhGroup;
+            o.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
+            o.remainingLifetime = remainingLifetime;
+            o.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
+            return o;
         }
     }
 }

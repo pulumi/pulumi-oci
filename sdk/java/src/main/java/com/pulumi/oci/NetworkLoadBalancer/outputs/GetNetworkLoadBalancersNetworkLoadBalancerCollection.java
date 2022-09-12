@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNetworkLoadBalancersNetworkLoadBalancerCollection {
-    private final List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem> items;
+    private List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetNetworkLoadBalancersNetworkLoadBalancerCollection(@CustomType.Parameter("items") List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetNetworkLoadBalancersNetworkLoadBalancerCollection() {}
     public List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollection {
     public static Builder builder(GetNetworkLoadBalancersNetworkLoadBalancerCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkLoadBalancersNetworkLoadBalancerCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem... items) {
             return items(List.of(items));
-        }        public GetNetworkLoadBalancersNetworkLoadBalancerCollection build() {
-            return new GetNetworkLoadBalancersNetworkLoadBalancerCollection(items);
+        }
+        public GetNetworkLoadBalancersNetworkLoadBalancerCollection build() {
+            final var o = new GetNetworkLoadBalancersNetworkLoadBalancerCollection();
+            o.items = items;
+            return o;
         }
     }
 }

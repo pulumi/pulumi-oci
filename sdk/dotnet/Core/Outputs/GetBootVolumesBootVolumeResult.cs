@@ -14,9 +14,13 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetBootVolumesBootVolumeResult
     {
         /// <summary>
-        /// The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+        /// The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
         /// </summary>
         public readonly string AutoTunedVpusPerGb;
+        /// <summary>
+        /// The list of autotune policies enabled for this volume.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetBootVolumesBootVolumeAutotunePolicyResult> AutotunePolicies;
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
@@ -52,7 +56,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string ImageId;
         /// <summary>
-        /// Specifies whether the auto-tune performance is enabled for this boot volume.
+        /// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         /// </summary>
         public readonly bool IsAutoTuneEnabled;
         /// <summary>
@@ -97,6 +101,8 @@ namespace Pulumi.Oci.Core.Outputs
         private GetBootVolumesBootVolumeResult(
             string autoTunedVpusPerGb,
 
+            ImmutableArray<Outputs.GetBootVolumesBootVolumeAutotunePolicyResult> autotunePolicies,
+
             string availabilityDomain,
 
             string backupPolicyId,
@@ -140,6 +146,7 @@ namespace Pulumi.Oci.Core.Outputs
             string vpusPerGb)
         {
             AutoTunedVpusPerGb = autoTunedVpusPerGb;
+            AutotunePolicies = autotunePolicies;
             AvailabilityDomain = availabilityDomain;
             BackupPolicyId = backupPolicyId;
             BootVolumeReplicas = bootVolumeReplicas;

@@ -12,89 +12,72 @@ import java.util.Objects;
 @CustomType
 public final class GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute {
     /**
-     * @return Attribute type details
+     * @return The attribute type details.
      * 
      */
-    private final String attributeType;
+    private String attributeType;
     /**
-     * @return True if Attribute is encoded.
+     * @return True if attribute is encoded.
      * 
      */
-    private final Boolean isBase64encoded;
+    private Boolean isBase64encoded;
     /**
-     * @return True if Attribute is generated.
+     * @return True if attribute is generated.
      * 
      */
-    private final Boolean isGenerated;
+    private Boolean isGenerated;
     /**
-     * @return True if Attribute is mandatory.
+     * @return True if attribute is mandatory.
      * 
      */
-    private final Boolean isMandatory;
+    private Boolean isMandatory;
     /**
-     * @return True if Attribute is sensitive.
+     * @return True if attribute is sensitive.
      * 
      */
-    private final Boolean isSensitive;
+    private Boolean isSensitive;
     /**
      * @return Used to filter by the name of the object.
      * 
      */
-    private final String name;
+    private String name;
     /**
-     * @return List of valid key list
+     * @return The list of valid keys.
      * 
      */
-    private final List<String> validKeyLists;
+    private List<String> validKeyLists;
 
-    @CustomType.Constructor
-    private GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute(
-        @CustomType.Parameter("attributeType") String attributeType,
-        @CustomType.Parameter("isBase64encoded") Boolean isBase64encoded,
-        @CustomType.Parameter("isGenerated") Boolean isGenerated,
-        @CustomType.Parameter("isMandatory") Boolean isMandatory,
-        @CustomType.Parameter("isSensitive") Boolean isSensitive,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("validKeyLists") List<String> validKeyLists) {
-        this.attributeType = attributeType;
-        this.isBase64encoded = isBase64encoded;
-        this.isGenerated = isGenerated;
-        this.isMandatory = isMandatory;
-        this.isSensitive = isSensitive;
-        this.name = name;
-        this.validKeyLists = validKeyLists;
-    }
-
+    private GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute() {}
     /**
-     * @return Attribute type details
+     * @return The attribute type details.
      * 
      */
     public String attributeType() {
         return this.attributeType;
     }
     /**
-     * @return True if Attribute is encoded.
+     * @return True if attribute is encoded.
      * 
      */
     public Boolean isBase64encoded() {
         return this.isBase64encoded;
     }
     /**
-     * @return True if Attribute is generated.
+     * @return True if attribute is generated.
      * 
      */
     public Boolean isGenerated() {
         return this.isGenerated;
     }
     /**
-     * @return True if Attribute is mandatory.
+     * @return True if attribute is mandatory.
      * 
      */
     public Boolean isMandatory() {
         return this.isMandatory;
     }
     /**
-     * @return True if Attribute is sensitive.
+     * @return True if attribute is sensitive.
      * 
      */
     public Boolean isSensitive() {
@@ -108,7 +91,7 @@ public final class GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute 
         return this.name;
     }
     /**
-     * @return List of valid key list
+     * @return The list of valid keys.
      * 
      */
     public List<String> validKeyLists() {
@@ -122,7 +105,7 @@ public final class GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute 
     public static Builder builder(GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String attributeType;
         private Boolean isBase64encoded;
@@ -131,11 +114,7 @@ public final class GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute 
         private Boolean isSensitive;
         private String name;
         private List<String> validKeyLists;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.attributeType = defaults.attributeType;
@@ -147,38 +126,54 @@ public final class GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute 
     	      this.validKeyLists = defaults.validKeyLists;
         }
 
+        @CustomType.Setter
         public Builder attributeType(String attributeType) {
             this.attributeType = Objects.requireNonNull(attributeType);
             return this;
         }
+        @CustomType.Setter
         public Builder isBase64encoded(Boolean isBase64encoded) {
             this.isBase64encoded = Objects.requireNonNull(isBase64encoded);
             return this;
         }
+        @CustomType.Setter
         public Builder isGenerated(Boolean isGenerated) {
             this.isGenerated = Objects.requireNonNull(isGenerated);
             return this;
         }
+        @CustomType.Setter
         public Builder isMandatory(Boolean isMandatory) {
             this.isMandatory = Objects.requireNonNull(isMandatory);
             return this;
         }
+        @CustomType.Setter
         public Builder isSensitive(Boolean isSensitive) {
             this.isSensitive = Objects.requireNonNull(isSensitive);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder validKeyLists(List<String> validKeyLists) {
             this.validKeyLists = Objects.requireNonNull(validKeyLists);
             return this;
         }
         public Builder validKeyLists(String... validKeyLists) {
             return validKeyLists(List.of(validKeyLists));
-        }        public GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute build() {
-            return new GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute(attributeType, isBase64encoded, isGenerated, isMandatory, isSensitive, name, validKeyLists);
+        }
+        public GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute build() {
+            final var o = new GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute();
+            o.attributeType = attributeType;
+            o.isBase64encoded = isBase64encoded;
+            o.isGenerated = isGenerated;
+            o.isMandatory = isMandatory;
+            o.isSensitive = isSensitive;
+            o.name = name;
+            o.validKeyLists = validKeyLists;
+            return o;
         }
     }
 }

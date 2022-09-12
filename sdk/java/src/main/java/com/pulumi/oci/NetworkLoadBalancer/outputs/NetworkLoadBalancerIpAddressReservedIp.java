@@ -15,13 +15,9 @@ public final class NetworkLoadBalancerIpAddressReservedIp {
      * @return OCID of the reserved public IP address created with the virtual cloud network.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
 
-    @CustomType.Constructor
-    private NetworkLoadBalancerIpAddressReservedIp(@CustomType.Parameter("id") @Nullable String id) {
-        this.id = id;
-    }
-
+    private NetworkLoadBalancerIpAddressReservedIp() {}
     /**
      * @return OCID of the reserved public IP address created with the virtual cloud network.
      * 
@@ -37,24 +33,24 @@ public final class NetworkLoadBalancerIpAddressReservedIp {
     public static Builder builder(NetworkLoadBalancerIpAddressReservedIp defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NetworkLoadBalancerIpAddressReservedIp defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
-        }        public NetworkLoadBalancerIpAddressReservedIp build() {
-            return new NetworkLoadBalancerIpAddressReservedIp(id);
+        }
+        public NetworkLoadBalancerIpAddressReservedIp build() {
+            final var o = new NetworkLoadBalancerIpAddressReservedIp();
+            o.id = id;
+            return o;
         }
     }
 }

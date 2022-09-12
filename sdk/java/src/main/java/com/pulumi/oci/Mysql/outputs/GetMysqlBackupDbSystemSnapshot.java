@@ -22,175 +22,124 @@ public final class GetMysqlBackupDbSystemSnapshot {
      * @return The username for the administrative user.
      * 
      */
-    private final String adminUsername;
+    private String adminUsername;
     /**
      * @return The Availability Domain where the primary DB System should be located.
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The Backup policy for the DB System.
      * 
      */
-    private final List<GetMysqlBackupDbSystemSnapshotBackupPolicy> backupPolicies;
+    private List<GetMysqlBackupDbSystemSnapshotBackupPolicy> backupPolicies;
     /**
      * @return The OCID of the compartment the DB System belongs in.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The OCID of the Configuration to be used for Instances in this DB System.
      * 
      */
-    private final String configurationId;
+    private String configurationId;
     /**
      * @return Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
      * 
      */
-    private final String crashRecovery;
+    private String crashRecovery;
     /**
      * @return Initial size of the data volume in GiBs that will be created and attached.
      * 
      */
-    private final Integer dataStorageSizeInGb;
+    private Integer dataStorageSizeInGb;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The Deletion policy for the DB System.
      * 
      */
-    private final List<GetMysqlBackupDbSystemSnapshotDeletionPolicy> deletionPolicies;
+    private List<GetMysqlBackupDbSystemSnapshotDeletionPolicy> deletionPolicies;
     /**
      * @return A user-supplied description for the backup.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A user-supplied display name for the backup.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The network endpoints available for this DB System.
      * 
      */
-    private final List<GetMysqlBackupDbSystemSnapshotEndpoint> endpoints;
+    private List<GetMysqlBackupDbSystemSnapshotEndpoint> endpoints;
     /**
      * @return The name of the Fault Domain the DB System is located in.
      * 
      */
-    private final String faultDomain;
+    private String faultDomain;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP&#39;s fully qualified domain name (FQDN) (for example, &#34;dbsystem-1&#34; in FQDN &#34;dbsystem-1.subnet123.vcn1.oraclevcn.com&#34;). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
      * 
      */
-    private final String hostnameLabel;
+    private String hostnameLabel;
     /**
      * @return OCID of the backup itself
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet&#39;s CIDR. This will be a &#34;dotted-quad&#34; style IPv4 address.
      * 
      */
-    private final String ipAddress;
+    private String ipAddress;
     /**
      * @return Specifies if the DB System is highly available.
      * 
      */
-    private final Boolean isHighlyAvailable;
+    private Boolean isHighlyAvailable;
     /**
      * @return The Maintenance Policy for the DB System.
      * 
      */
-    private final List<GetMysqlBackupDbSystemSnapshotMaintenance> maintenances;
+    private List<GetMysqlBackupDbSystemSnapshotMaintenance> maintenances;
     /**
      * @return The MySQL server version of the DB System used for backup.
      * 
      */
-    private final String mysqlVersion;
+    private String mysqlVersion;
     /**
      * @return The port for primary endpoint of the DB System to listen on.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
      * 
      */
-    private final Integer portX;
+    private Integer portX;
     /**
      * @return The shape of the DB System instance used for backup.
      * 
      */
-    private final String shapeName;
+    private String shapeName;
     /**
      * @return The OCID of the subnet the DB System is associated with.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
 
-    @CustomType.Constructor
-    private GetMysqlBackupDbSystemSnapshot(
-        @CustomType.Parameter("adminUsername") String adminUsername,
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("backupPolicies") List<GetMysqlBackupDbSystemSnapshotBackupPolicy> backupPolicies,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("configurationId") String configurationId,
-        @CustomType.Parameter("crashRecovery") String crashRecovery,
-        @CustomType.Parameter("dataStorageSizeInGb") Integer dataStorageSizeInGb,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("deletionPolicies") List<GetMysqlBackupDbSystemSnapshotDeletionPolicy> deletionPolicies,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("endpoints") List<GetMysqlBackupDbSystemSnapshotEndpoint> endpoints,
-        @CustomType.Parameter("faultDomain") String faultDomain,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("hostnameLabel") String hostnameLabel,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipAddress") String ipAddress,
-        @CustomType.Parameter("isHighlyAvailable") Boolean isHighlyAvailable,
-        @CustomType.Parameter("maintenances") List<GetMysqlBackupDbSystemSnapshotMaintenance> maintenances,
-        @CustomType.Parameter("mysqlVersion") String mysqlVersion,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("portX") Integer portX,
-        @CustomType.Parameter("shapeName") String shapeName,
-        @CustomType.Parameter("subnetId") String subnetId) {
-        this.adminUsername = adminUsername;
-        this.availabilityDomain = availabilityDomain;
-        this.backupPolicies = backupPolicies;
-        this.compartmentId = compartmentId;
-        this.configurationId = configurationId;
-        this.crashRecovery = crashRecovery;
-        this.dataStorageSizeInGb = dataStorageSizeInGb;
-        this.definedTags = definedTags;
-        this.deletionPolicies = deletionPolicies;
-        this.description = description;
-        this.displayName = displayName;
-        this.endpoints = endpoints;
-        this.faultDomain = faultDomain;
-        this.freeformTags = freeformTags;
-        this.hostnameLabel = hostnameLabel;
-        this.id = id;
-        this.ipAddress = ipAddress;
-        this.isHighlyAvailable = isHighlyAvailable;
-        this.maintenances = maintenances;
-        this.mysqlVersion = mysqlVersion;
-        this.port = port;
-        this.portX = portX;
-        this.shapeName = shapeName;
-        this.subnetId = subnetId;
-    }
-
+    private GetMysqlBackupDbSystemSnapshot() {}
     /**
      * @return The username for the administrative user.
      * 
@@ -367,7 +316,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
     public static Builder builder(GetMysqlBackupDbSystemSnapshot defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String adminUsername;
         private String availabilityDomain;
@@ -393,11 +342,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
         private Integer portX;
         private String shapeName;
         private String subnetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMysqlBackupDbSystemSnapshot defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminUsername = defaults.adminUsername;
@@ -426,14 +371,17 @@ public final class GetMysqlBackupDbSystemSnapshot {
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
         public Builder adminUsername(String adminUsername) {
             this.adminUsername = Objects.requireNonNull(adminUsername);
             return this;
         }
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder backupPolicies(List<GetMysqlBackupDbSystemSnapshotBackupPolicy> backupPolicies) {
             this.backupPolicies = Objects.requireNonNull(backupPolicies);
             return this;
@@ -441,26 +389,32 @@ public final class GetMysqlBackupDbSystemSnapshot {
         public Builder backupPolicies(GetMysqlBackupDbSystemSnapshotBackupPolicy... backupPolicies) {
             return backupPolicies(List.of(backupPolicies));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder configurationId(String configurationId) {
             this.configurationId = Objects.requireNonNull(configurationId);
             return this;
         }
+        @CustomType.Setter
         public Builder crashRecovery(String crashRecovery) {
             this.crashRecovery = Objects.requireNonNull(crashRecovery);
             return this;
         }
+        @CustomType.Setter
         public Builder dataStorageSizeInGb(Integer dataStorageSizeInGb) {
             this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder deletionPolicies(List<GetMysqlBackupDbSystemSnapshotDeletionPolicy> deletionPolicies) {
             this.deletionPolicies = Objects.requireNonNull(deletionPolicies);
             return this;
@@ -468,14 +422,17 @@ public final class GetMysqlBackupDbSystemSnapshot {
         public Builder deletionPolicies(GetMysqlBackupDbSystemSnapshotDeletionPolicy... deletionPolicies) {
             return deletionPolicies(List.of(deletionPolicies));
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder endpoints(List<GetMysqlBackupDbSystemSnapshotEndpoint> endpoints) {
             this.endpoints = Objects.requireNonNull(endpoints);
             return this;
@@ -483,30 +440,37 @@ public final class GetMysqlBackupDbSystemSnapshot {
         public Builder endpoints(GetMysqlBackupDbSystemSnapshotEndpoint... endpoints) {
             return endpoints(List.of(endpoints));
         }
+        @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = Objects.requireNonNull(faultDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder hostnameLabel(String hostnameLabel) {
             this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = Objects.requireNonNull(ipAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder isHighlyAvailable(Boolean isHighlyAvailable) {
             this.isHighlyAvailable = Objects.requireNonNull(isHighlyAvailable);
             return this;
         }
+        @CustomType.Setter
         public Builder maintenances(List<GetMysqlBackupDbSystemSnapshotMaintenance> maintenances) {
             this.maintenances = Objects.requireNonNull(maintenances);
             return this;
@@ -514,27 +478,58 @@ public final class GetMysqlBackupDbSystemSnapshot {
         public Builder maintenances(GetMysqlBackupDbSystemSnapshotMaintenance... maintenances) {
             return maintenances(List.of(maintenances));
         }
+        @CustomType.Setter
         public Builder mysqlVersion(String mysqlVersion) {
             this.mysqlVersion = Objects.requireNonNull(mysqlVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder portX(Integer portX) {
             this.portX = Objects.requireNonNull(portX);
             return this;
         }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             this.shapeName = Objects.requireNonNull(shapeName);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
-        }        public GetMysqlBackupDbSystemSnapshot build() {
-            return new GetMysqlBackupDbSystemSnapshot(adminUsername, availabilityDomain, backupPolicies, compartmentId, configurationId, crashRecovery, dataStorageSizeInGb, definedTags, deletionPolicies, description, displayName, endpoints, faultDomain, freeformTags, hostnameLabel, id, ipAddress, isHighlyAvailable, maintenances, mysqlVersion, port, portX, shapeName, subnetId);
+        }
+        public GetMysqlBackupDbSystemSnapshot build() {
+            final var o = new GetMysqlBackupDbSystemSnapshot();
+            o.adminUsername = adminUsername;
+            o.availabilityDomain = availabilityDomain;
+            o.backupPolicies = backupPolicies;
+            o.compartmentId = compartmentId;
+            o.configurationId = configurationId;
+            o.crashRecovery = crashRecovery;
+            o.dataStorageSizeInGb = dataStorageSizeInGb;
+            o.definedTags = definedTags;
+            o.deletionPolicies = deletionPolicies;
+            o.description = description;
+            o.displayName = displayName;
+            o.endpoints = endpoints;
+            o.faultDomain = faultDomain;
+            o.freeformTags = freeformTags;
+            o.hostnameLabel = hostnameLabel;
+            o.id = id;
+            o.ipAddress = ipAddress;
+            o.isHighlyAvailable = isHighlyAvailable;
+            o.maintenances = maintenances;
+            o.mysqlVersion = mysqlVersion;
+            o.port = port;
+            o.portX = portX;
+            o.shapeName = shapeName;
+            o.subnetId = subnetId;
+            return o;
         }
     }
 }

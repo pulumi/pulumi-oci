@@ -21,49 +21,34 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicy {
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Specifies if PITR is enabled or disabled.
      * 
      */
-    private final @Nullable Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return The PITR policy for the DB System.
      * 
      */
-    private final @Nullable List<MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy> pitrPolicies;
+    private @Nullable List<MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy> pitrPolicies;
     /**
      * @return (Updatable) Number of days to retain this backup.
      * 
      */
-    private final @Nullable Integer retentionInDays;
+    private @Nullable Integer retentionInDays;
     /**
      * @return The start time of the maintenance window.
      * 
      */
-    private final @Nullable String windowStartTime;
+    private @Nullable String windowStartTime;
 
-    @CustomType.Constructor
-    private MysqlBackupDbSystemSnapshotBackupPolicy(
-        @CustomType.Parameter("definedTags") @Nullable Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") @Nullable Map<String,Object> freeformTags,
-        @CustomType.Parameter("isEnabled") @Nullable Boolean isEnabled,
-        @CustomType.Parameter("pitrPolicies") @Nullable List<MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy> pitrPolicies,
-        @CustomType.Parameter("retentionInDays") @Nullable Integer retentionInDays,
-        @CustomType.Parameter("windowStartTime") @Nullable String windowStartTime) {
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-        this.isEnabled = isEnabled;
-        this.pitrPolicies = pitrPolicies;
-        this.retentionInDays = retentionInDays;
-        this.windowStartTime = windowStartTime;
-    }
-
+    private MysqlBackupDbSystemSnapshotBackupPolicy() {}
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -114,7 +99,7 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicy {
     public static Builder builder(MysqlBackupDbSystemSnapshotBackupPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Map<String,Object> definedTags;
         private @Nullable Map<String,Object> freeformTags;
@@ -122,11 +107,7 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicy {
         private @Nullable List<MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy> pitrPolicies;
         private @Nullable Integer retentionInDays;
         private @Nullable String windowStartTime;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MysqlBackupDbSystemSnapshotBackupPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.definedTags = defaults.definedTags;
@@ -137,18 +118,22 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicy {
     	      this.windowStartTime = defaults.windowStartTime;
         }
 
+        @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
             this.definedTags = definedTags;
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
             this.freeformTags = freeformTags;
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
             this.isEnabled = isEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder pitrPolicies(@Nullable List<MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy> pitrPolicies) {
             this.pitrPolicies = pitrPolicies;
             return this;
@@ -156,15 +141,25 @@ public final class MysqlBackupDbSystemSnapshotBackupPolicy {
         public Builder pitrPolicies(MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy... pitrPolicies) {
             return pitrPolicies(List.of(pitrPolicies));
         }
+        @CustomType.Setter
         public Builder retentionInDays(@Nullable Integer retentionInDays) {
             this.retentionInDays = retentionInDays;
             return this;
         }
+        @CustomType.Setter
         public Builder windowStartTime(@Nullable String windowStartTime) {
             this.windowStartTime = windowStartTime;
             return this;
-        }        public MysqlBackupDbSystemSnapshotBackupPolicy build() {
-            return new MysqlBackupDbSystemSnapshotBackupPolicy(definedTags, freeformTags, isEnabled, pitrPolicies, retentionInDays, windowStartTime);
+        }
+        public MysqlBackupDbSystemSnapshotBackupPolicy build() {
+            final var o = new MysqlBackupDbSystemSnapshotBackupPolicy();
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            o.isEnabled = isEnabled;
+            o.pitrPolicies = pitrPolicies;
+            o.retentionInDays = retentionInDays;
+            o.windowStartTime = windowStartTime;
+            return o;
         }
     }
 }

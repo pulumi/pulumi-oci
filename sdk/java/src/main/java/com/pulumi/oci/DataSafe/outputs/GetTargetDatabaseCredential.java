@@ -13,21 +13,14 @@ public final class GetTargetDatabaseCredential {
      * @return The password of the database user.
      * 
      */
-    private final String password;
+    private String password;
     /**
      * @return The database user name.
      * 
      */
-    private final String userName;
+    private String userName;
 
-    @CustomType.Constructor
-    private GetTargetDatabaseCredential(
-        @CustomType.Parameter("password") String password,
-        @CustomType.Parameter("userName") String userName) {
-        this.password = password;
-        this.userName = userName;
-    }
-
+    private GetTargetDatabaseCredential() {}
     /**
      * @return The password of the database user.
      * 
@@ -50,30 +43,32 @@ public final class GetTargetDatabaseCredential {
     public static Builder builder(GetTargetDatabaseCredential defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String password;
         private String userName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTargetDatabaseCredential defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.password = defaults.password;
     	      this.userName = defaults.userName;
         }
 
+        @CustomType.Setter
         public Builder password(String password) {
             this.password = Objects.requireNonNull(password);
             return this;
         }
+        @CustomType.Setter
         public Builder userName(String userName) {
             this.userName = Objects.requireNonNull(userName);
             return this;
-        }        public GetTargetDatabaseCredential build() {
-            return new GetTargetDatabaseCredential(password, userName);
+        }
+        public GetTargetDatabaseCredential build() {
+            final var o = new GetTargetDatabaseCredential();
+            o.password = password;
+            o.userName = userName;
+            return o;
         }
     }
 }

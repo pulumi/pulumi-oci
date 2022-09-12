@@ -14,35 +14,24 @@ public final class GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndV
      * @return For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
      * 
      */
-    private final Integer targetMemoryPerNode;
+    private Integer targetMemoryPerNode;
     /**
      * @return For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
      * 
      */
-    private final Integer targetOcpusPerNode;
+    private Integer targetOcpusPerNode;
     /**
      * @return For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
      * 
      */
-    private final String targetShape;
+    private String targetShape;
     /**
      * @return Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
      * 
      */
-    private final String timeRecurrence;
+    private String timeRecurrence;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig(
-        @CustomType.Parameter("targetMemoryPerNode") Integer targetMemoryPerNode,
-        @CustomType.Parameter("targetOcpusPerNode") Integer targetOcpusPerNode,
-        @CustomType.Parameter("targetShape") String targetShape,
-        @CustomType.Parameter("timeRecurrence") String timeRecurrence) {
-        this.targetMemoryPerNode = targetMemoryPerNode;
-        this.targetOcpusPerNode = targetOcpusPerNode;
-        this.targetShape = targetShape;
-        this.timeRecurrence = timeRecurrence;
-    }
-
+    private GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig() {}
     /**
      * @return For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
      * 
@@ -79,17 +68,13 @@ public final class GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndV
     public static Builder builder(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer targetMemoryPerNode;
         private Integer targetOcpusPerNode;
         private String targetShape;
         private String timeRecurrence;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.targetMemoryPerNode = defaults.targetMemoryPerNode;
@@ -98,23 +83,33 @@ public final class GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndV
     	      this.timeRecurrence = defaults.timeRecurrence;
         }
 
+        @CustomType.Setter
         public Builder targetMemoryPerNode(Integer targetMemoryPerNode) {
             this.targetMemoryPerNode = Objects.requireNonNull(targetMemoryPerNode);
             return this;
         }
+        @CustomType.Setter
         public Builder targetOcpusPerNode(Integer targetOcpusPerNode) {
             this.targetOcpusPerNode = Objects.requireNonNull(targetOcpusPerNode);
             return this;
         }
+        @CustomType.Setter
         public Builder targetShape(String targetShape) {
             this.targetShape = Objects.requireNonNull(targetShape);
             return this;
         }
+        @CustomType.Setter
         public Builder timeRecurrence(String timeRecurrence) {
             this.timeRecurrence = Objects.requireNonNull(timeRecurrence);
             return this;
-        }        public GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig build() {
-            return new GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig(targetMemoryPerNode, targetOcpusPerNode, targetShape, timeRecurrence);
+        }
+        public GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig build() {
+            final var o = new GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig();
+            o.targetMemoryPerNode = targetMemoryPerNode;
+            o.targetOcpusPerNode = targetOcpusPerNode;
+            o.targetShape = targetShape;
+            o.timeRecurrence = timeRecurrence;
+            return o;
         }
     }
 }

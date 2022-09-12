@@ -15,21 +15,14 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
      * @return (Updatable) The list of headers.
      * 
      */
-    private final List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem> items;
+    private List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem> items;
     /**
      * @return (Updatable) Type of the Response Cache Store Policy.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParameters(
-        @CustomType.Parameter("items") List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem> items,
-        @CustomType.Parameter("type") String type) {
-        this.items = items;
-        this.type = type;
-    }
-
+    private DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParameters() {}
     /**
      * @return (Updatable) The list of headers.
      * 
@@ -52,21 +45,18 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
     public static Builder builder(DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParameters defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem> items;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParameters defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder items(List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -74,11 +64,16 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
         public Builder items(DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParameters build() {
-            return new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParameters(items, type);
+        }
+        public DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParameters build() {
+            final var o = new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParameters();
+            o.items = items;
+            o.type = type;
+            return o;
         }
     }
 }

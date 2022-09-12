@@ -13,28 +13,19 @@ public final class GetTraceSpanSummaryServiceSummary {
      * @return Number of spans with errors for serviceName in the trace.
      * 
      */
-    private final String errorSpans;
+    private String errorSpans;
     /**
      * @return Name associated with the service.
      * 
      */
-    private final String spanServiceName;
+    private String spanServiceName;
     /**
      * @return Number of spans for serviceName in the trace.
      * 
      */
-    private final String totalSpans;
+    private String totalSpans;
 
-    @CustomType.Constructor
-    private GetTraceSpanSummaryServiceSummary(
-        @CustomType.Parameter("errorSpans") String errorSpans,
-        @CustomType.Parameter("spanServiceName") String spanServiceName,
-        @CustomType.Parameter("totalSpans") String totalSpans) {
-        this.errorSpans = errorSpans;
-        this.spanServiceName = spanServiceName;
-        this.totalSpans = totalSpans;
-    }
-
+    private GetTraceSpanSummaryServiceSummary() {}
     /**
      * @return Number of spans with errors for serviceName in the trace.
      * 
@@ -64,16 +55,12 @@ public final class GetTraceSpanSummaryServiceSummary {
     public static Builder builder(GetTraceSpanSummaryServiceSummary defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String errorSpans;
         private String spanServiceName;
         private String totalSpans;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTraceSpanSummaryServiceSummary defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.errorSpans = defaults.errorSpans;
@@ -81,19 +68,27 @@ public final class GetTraceSpanSummaryServiceSummary {
     	      this.totalSpans = defaults.totalSpans;
         }
 
+        @CustomType.Setter
         public Builder errorSpans(String errorSpans) {
             this.errorSpans = Objects.requireNonNull(errorSpans);
             return this;
         }
+        @CustomType.Setter
         public Builder spanServiceName(String spanServiceName) {
             this.spanServiceName = Objects.requireNonNull(spanServiceName);
             return this;
         }
+        @CustomType.Setter
         public Builder totalSpans(String totalSpans) {
             this.totalSpans = Objects.requireNonNull(totalSpans);
             return this;
-        }        public GetTraceSpanSummaryServiceSummary build() {
-            return new GetTraceSpanSummaryServiceSummary(errorSpans, spanServiceName, totalSpans);
+        }
+        public GetTraceSpanSummaryServiceSummary build() {
+            final var o = new GetTraceSpanSummaryServiceSummary();
+            o.errorSpans = errorSpans;
+            o.spanServiceName = spanServiceName;
+            o.totalSpans = totalSpans;
+            return o;
         }
     }
 }

@@ -13,13 +13,9 @@ public final class GetAuditProfileAnalyticItemDimension {
      * @return Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
      * 
      */
-    private final Boolean isPaidUsageEnabled;
+    private Boolean isPaidUsageEnabled;
 
-    @CustomType.Constructor
-    private GetAuditProfileAnalyticItemDimension(@CustomType.Parameter("isPaidUsageEnabled") Boolean isPaidUsageEnabled) {
-        this.isPaidUsageEnabled = isPaidUsageEnabled;
-    }
-
+    private GetAuditProfileAnalyticItemDimension() {}
     /**
      * @return Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
      * 
@@ -35,24 +31,24 @@ public final class GetAuditProfileAnalyticItemDimension {
     public static Builder builder(GetAuditProfileAnalyticItemDimension defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isPaidUsageEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditProfileAnalyticItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isPaidUsageEnabled = defaults.isPaidUsageEnabled;
         }
 
+        @CustomType.Setter
         public Builder isPaidUsageEnabled(Boolean isPaidUsageEnabled) {
             this.isPaidUsageEnabled = Objects.requireNonNull(isPaidUsageEnabled);
             return this;
-        }        public GetAuditProfileAnalyticItemDimension build() {
-            return new GetAuditProfileAnalyticItemDimension(isPaidUsageEnabled);
+        }
+        public GetAuditProfileAnalyticItemDimension build() {
+            final var o = new GetAuditProfileAnalyticItemDimension();
+            o.isPaidUsageEnabled = isPaidUsageEnabled;
+            return o;
         }
     }
 }

@@ -16,98 +16,69 @@ public final class GetWaasPoliciesWaasPolicyWafConfigProtectionSetting {
      * @return The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the &#34;Restrict HTTP Request Methods&#34; rule (key: 911100).
      * 
      */
-    private final List<String> allowedHttpMethods;
+    private List<String> allowedHttpMethods;
     /**
      * @return If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
      * 
      */
-    private final String blockAction;
+    private String blockAction;
     /**
      * @return The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
      * 
      */
-    private final String blockErrorPageCode;
+    private String blockErrorPageCode;
     /**
      * @return The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
      * 
      */
-    private final String blockErrorPageDescription;
+    private String blockErrorPageDescription;
     /**
      * @return The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to &#39;Access to the website is blocked.&#39;
      * 
      */
-    private final String blockErrorPageMessage;
+    private String blockErrorPageMessage;
     /**
      * @return The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
      * 
      */
-    private final Integer blockResponseCode;
+    private Integer blockResponseCode;
     /**
      * @return Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
      * 
      */
-    private final Boolean isResponseInspected;
+    private Boolean isResponseInspected;
     /**
      * @return The maximum number of arguments allowed to be passed to your application before an action is taken. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `255`. This setting only applies if a corresponding protection rule is enabled, such as the &#34;Number of Arguments Limits&#34; rule (key: 960335).  Example: If `maxArgumentCount` to `2` for the Max Number of Arguments protection rule (key: 960335), the following requests would be blocked: `GET /myapp/path?query=one&amp;query=two&amp;query=three` `POST /myapp/path` with Body `{&#34;argument1&#34;:&#34;one&#34;,&#34;argument2&#34;:&#34;two&#34;,&#34;argument3&#34;:&#34;three&#34;}`
      * 
      */
-    private final Integer maxArgumentCount;
+    private Integer maxArgumentCount;
     /**
      * @return The maximum length allowed for each argument name, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `400`. This setting only applies if a corresponding protection rule is enabled, such as the &#34;Values Limits&#34; rule (key: 960208).
      * 
      */
-    private final Integer maxNameLengthPerArgument;
+    private Integer maxNameLengthPerArgument;
     /**
      * @return The maximum response size to be fully inspected, in binary kilobytes (KiB). Anything over this limit will be partially inspected. If unspecified, defaults to `1024`.
      * 
      */
-    private final Integer maxResponseSizeInKiB;
+    private Integer maxResponseSizeInKiB;
     /**
      * @return The maximum length allowed for the sum of the argument name and value, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `64000`. This setting only applies if a corresponding protection rule is enabled, such as the &#34;Total Arguments Limits&#34; rule (key: 960341).
      * 
      */
-    private final Integer maxTotalNameLengthOfArguments;
+    private Integer maxTotalNameLengthOfArguments;
     /**
      * @return The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `[&#34;text/html&#34;, &#34;text/plain&#34;, &#34;text/xml&#34;]`.
      * 
      */
-    private final List<String> mediaTypes;
+    private List<String> mediaTypes;
     /**
      * @return The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
      * 
      */
-    private final Integer recommendationsPeriodInDays;
+    private Integer recommendationsPeriodInDays;
 
-    @CustomType.Constructor
-    private GetWaasPoliciesWaasPolicyWafConfigProtectionSetting(
-        @CustomType.Parameter("allowedHttpMethods") List<String> allowedHttpMethods,
-        @CustomType.Parameter("blockAction") String blockAction,
-        @CustomType.Parameter("blockErrorPageCode") String blockErrorPageCode,
-        @CustomType.Parameter("blockErrorPageDescription") String blockErrorPageDescription,
-        @CustomType.Parameter("blockErrorPageMessage") String blockErrorPageMessage,
-        @CustomType.Parameter("blockResponseCode") Integer blockResponseCode,
-        @CustomType.Parameter("isResponseInspected") Boolean isResponseInspected,
-        @CustomType.Parameter("maxArgumentCount") Integer maxArgumentCount,
-        @CustomType.Parameter("maxNameLengthPerArgument") Integer maxNameLengthPerArgument,
-        @CustomType.Parameter("maxResponseSizeInKiB") Integer maxResponseSizeInKiB,
-        @CustomType.Parameter("maxTotalNameLengthOfArguments") Integer maxTotalNameLengthOfArguments,
-        @CustomType.Parameter("mediaTypes") List<String> mediaTypes,
-        @CustomType.Parameter("recommendationsPeriodInDays") Integer recommendationsPeriodInDays) {
-        this.allowedHttpMethods = allowedHttpMethods;
-        this.blockAction = blockAction;
-        this.blockErrorPageCode = blockErrorPageCode;
-        this.blockErrorPageDescription = blockErrorPageDescription;
-        this.blockErrorPageMessage = blockErrorPageMessage;
-        this.blockResponseCode = blockResponseCode;
-        this.isResponseInspected = isResponseInspected;
-        this.maxArgumentCount = maxArgumentCount;
-        this.maxNameLengthPerArgument = maxNameLengthPerArgument;
-        this.maxResponseSizeInKiB = maxResponseSizeInKiB;
-        this.maxTotalNameLengthOfArguments = maxTotalNameLengthOfArguments;
-        this.mediaTypes = mediaTypes;
-        this.recommendationsPeriodInDays = recommendationsPeriodInDays;
-    }
-
+    private GetWaasPoliciesWaasPolicyWafConfigProtectionSetting() {}
     /**
      * @return The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the &#34;Restrict HTTP Request Methods&#34; rule (key: 911100).
      * 
@@ -207,7 +178,7 @@ public final class GetWaasPoliciesWaasPolicyWafConfigProtectionSetting {
     public static Builder builder(GetWaasPoliciesWaasPolicyWafConfigProtectionSetting defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> allowedHttpMethods;
         private String blockAction;
@@ -222,11 +193,7 @@ public final class GetWaasPoliciesWaasPolicyWafConfigProtectionSetting {
         private Integer maxTotalNameLengthOfArguments;
         private List<String> mediaTypes;
         private Integer recommendationsPeriodInDays;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyWafConfigProtectionSetting defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowedHttpMethods = defaults.allowedHttpMethods;
@@ -244,6 +211,7 @@ public final class GetWaasPoliciesWaasPolicyWafConfigProtectionSetting {
     	      this.recommendationsPeriodInDays = defaults.recommendationsPeriodInDays;
         }
 
+        @CustomType.Setter
         public Builder allowedHttpMethods(List<String> allowedHttpMethods) {
             this.allowedHttpMethods = Objects.requireNonNull(allowedHttpMethods);
             return this;
@@ -251,46 +219,57 @@ public final class GetWaasPoliciesWaasPolicyWafConfigProtectionSetting {
         public Builder allowedHttpMethods(String... allowedHttpMethods) {
             return allowedHttpMethods(List.of(allowedHttpMethods));
         }
+        @CustomType.Setter
         public Builder blockAction(String blockAction) {
             this.blockAction = Objects.requireNonNull(blockAction);
             return this;
         }
+        @CustomType.Setter
         public Builder blockErrorPageCode(String blockErrorPageCode) {
             this.blockErrorPageCode = Objects.requireNonNull(blockErrorPageCode);
             return this;
         }
+        @CustomType.Setter
         public Builder blockErrorPageDescription(String blockErrorPageDescription) {
             this.blockErrorPageDescription = Objects.requireNonNull(blockErrorPageDescription);
             return this;
         }
+        @CustomType.Setter
         public Builder blockErrorPageMessage(String blockErrorPageMessage) {
             this.blockErrorPageMessage = Objects.requireNonNull(blockErrorPageMessage);
             return this;
         }
+        @CustomType.Setter
         public Builder blockResponseCode(Integer blockResponseCode) {
             this.blockResponseCode = Objects.requireNonNull(blockResponseCode);
             return this;
         }
+        @CustomType.Setter
         public Builder isResponseInspected(Boolean isResponseInspected) {
             this.isResponseInspected = Objects.requireNonNull(isResponseInspected);
             return this;
         }
+        @CustomType.Setter
         public Builder maxArgumentCount(Integer maxArgumentCount) {
             this.maxArgumentCount = Objects.requireNonNull(maxArgumentCount);
             return this;
         }
+        @CustomType.Setter
         public Builder maxNameLengthPerArgument(Integer maxNameLengthPerArgument) {
             this.maxNameLengthPerArgument = Objects.requireNonNull(maxNameLengthPerArgument);
             return this;
         }
+        @CustomType.Setter
         public Builder maxResponseSizeInKiB(Integer maxResponseSizeInKiB) {
             this.maxResponseSizeInKiB = Objects.requireNonNull(maxResponseSizeInKiB);
             return this;
         }
+        @CustomType.Setter
         public Builder maxTotalNameLengthOfArguments(Integer maxTotalNameLengthOfArguments) {
             this.maxTotalNameLengthOfArguments = Objects.requireNonNull(maxTotalNameLengthOfArguments);
             return this;
         }
+        @CustomType.Setter
         public Builder mediaTypes(List<String> mediaTypes) {
             this.mediaTypes = Objects.requireNonNull(mediaTypes);
             return this;
@@ -298,11 +277,27 @@ public final class GetWaasPoliciesWaasPolicyWafConfigProtectionSetting {
         public Builder mediaTypes(String... mediaTypes) {
             return mediaTypes(List.of(mediaTypes));
         }
+        @CustomType.Setter
         public Builder recommendationsPeriodInDays(Integer recommendationsPeriodInDays) {
             this.recommendationsPeriodInDays = Objects.requireNonNull(recommendationsPeriodInDays);
             return this;
-        }        public GetWaasPoliciesWaasPolicyWafConfigProtectionSetting build() {
-            return new GetWaasPoliciesWaasPolicyWafConfigProtectionSetting(allowedHttpMethods, blockAction, blockErrorPageCode, blockErrorPageDescription, blockErrorPageMessage, blockResponseCode, isResponseInspected, maxArgumentCount, maxNameLengthPerArgument, maxResponseSizeInKiB, maxTotalNameLengthOfArguments, mediaTypes, recommendationsPeriodInDays);
+        }
+        public GetWaasPoliciesWaasPolicyWafConfigProtectionSetting build() {
+            final var o = new GetWaasPoliciesWaasPolicyWafConfigProtectionSetting();
+            o.allowedHttpMethods = allowedHttpMethods;
+            o.blockAction = blockAction;
+            o.blockErrorPageCode = blockErrorPageCode;
+            o.blockErrorPageDescription = blockErrorPageDescription;
+            o.blockErrorPageMessage = blockErrorPageMessage;
+            o.blockResponseCode = blockResponseCode;
+            o.isResponseInspected = isResponseInspected;
+            o.maxArgumentCount = maxArgumentCount;
+            o.maxNameLengthPerArgument = maxNameLengthPerArgument;
+            o.maxResponseSizeInKiB = maxResponseSizeInKiB;
+            o.maxTotalNameLengthOfArguments = maxTotalNameLengthOfArguments;
+            o.mediaTypes = mediaTypes;
+            o.recommendationsPeriodInDays = recommendationsPeriodInDays;
+            return o;
         }
     }
 }

@@ -15,49 +15,34 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFind
      * @return Columns of the index.
      * 
      */
-    private final List<String> indexColumns;
+    private List<String> indexColumns;
     /**
      * @return Numerical representation of the index.
      * 
      */
-    private final String indexHashValue;
+    private String indexHashValue;
     /**
      * @return Name of the index.
      * 
      */
-    private final String indexName;
+    private String indexName;
     /**
      * @return The number of the times the object is referenced within the SQL Tuning advisor task findings.
      * 
      */
-    private final Integer referenceCount;
+    private Integer referenceCount;
     /**
      * @return Schema of the object.
      * 
      */
-    private final String schema;
+    private String schema;
     /**
      * @return Table&#39;s name related to the index.
      * 
      */
-    private final String tableName;
+    private String tableName;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding(
-        @CustomType.Parameter("indexColumns") List<String> indexColumns,
-        @CustomType.Parameter("indexHashValue") String indexHashValue,
-        @CustomType.Parameter("indexName") String indexName,
-        @CustomType.Parameter("referenceCount") Integer referenceCount,
-        @CustomType.Parameter("schema") String schema,
-        @CustomType.Parameter("tableName") String tableName) {
-        this.indexColumns = indexColumns;
-        this.indexHashValue = indexHashValue;
-        this.indexName = indexName;
-        this.referenceCount = referenceCount;
-        this.schema = schema;
-        this.tableName = tableName;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding() {}
     /**
      * @return Columns of the index.
      * 
@@ -108,7 +93,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFind
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> indexColumns;
         private String indexHashValue;
@@ -116,11 +101,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFind
         private Integer referenceCount;
         private String schema;
         private String tableName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.indexColumns = defaults.indexColumns;
@@ -131,6 +112,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFind
     	      this.tableName = defaults.tableName;
         }
 
+        @CustomType.Setter
         public Builder indexColumns(List<String> indexColumns) {
             this.indexColumns = Objects.requireNonNull(indexColumns);
             return this;
@@ -138,27 +120,40 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFind
         public Builder indexColumns(String... indexColumns) {
             return indexColumns(List.of(indexColumns));
         }
+        @CustomType.Setter
         public Builder indexHashValue(String indexHashValue) {
             this.indexHashValue = Objects.requireNonNull(indexHashValue);
             return this;
         }
+        @CustomType.Setter
         public Builder indexName(String indexName) {
             this.indexName = Objects.requireNonNull(indexName);
             return this;
         }
+        @CustomType.Setter
         public Builder referenceCount(Integer referenceCount) {
             this.referenceCount = Objects.requireNonNull(referenceCount);
             return this;
         }
+        @CustomType.Setter
         public Builder schema(String schema) {
             this.schema = Objects.requireNonNull(schema);
             return this;
         }
+        @CustomType.Setter
         public Builder tableName(String tableName) {
             this.tableName = Objects.requireNonNull(tableName);
             return this;
-        }        public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding(indexColumns, indexHashValue, indexName, referenceCount, schema, tableName);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding();
+            o.indexColumns = indexColumns;
+            o.indexHashValue = indexHashValue;
+            o.indexName = indexName;
+            o.referenceCount = referenceCount;
+            o.schema = schema;
+            o.tableName = tableName;
+            return o;
         }
     }
 }

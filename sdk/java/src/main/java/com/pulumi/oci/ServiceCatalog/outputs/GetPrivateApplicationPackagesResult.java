@@ -18,48 +18,31 @@ public final class GetPrivateApplicationPackagesResult {
      * @return The display name of the package.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetPrivateApplicationPackagesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetPrivateApplicationPackagesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The specified package&#39;s type.
      * 
      */
-    private final @Nullable List<String> packageTypes;
+    private @Nullable List<String> packageTypes;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application where the package is hosted.
      * 
      */
-    private final String privateApplicationId;
+    private String privateApplicationId;
     /**
      * @return The list of private_application_package_collection.
      * 
      */
-    private final List<GetPrivateApplicationPackagesPrivateApplicationPackageCollection> privateApplicationPackageCollections;
-    private final @Nullable String privateApplicationPackageId;
+    private List<GetPrivateApplicationPackagesPrivateApplicationPackageCollection> privateApplicationPackageCollections;
+    private @Nullable String privateApplicationPackageId;
 
-    @CustomType.Constructor
-    private GetPrivateApplicationPackagesResult(
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetPrivateApplicationPackagesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("packageTypes") @Nullable List<String> packageTypes,
-        @CustomType.Parameter("privateApplicationId") String privateApplicationId,
-        @CustomType.Parameter("privateApplicationPackageCollections") List<GetPrivateApplicationPackagesPrivateApplicationPackageCollection> privateApplicationPackageCollections,
-        @CustomType.Parameter("privateApplicationPackageId") @Nullable String privateApplicationPackageId) {
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.packageTypes = packageTypes;
-        this.privateApplicationId = privateApplicationId;
-        this.privateApplicationPackageCollections = privateApplicationPackageCollections;
-        this.privateApplicationPackageId = privateApplicationPackageId;
-    }
-
+    private GetPrivateApplicationPackagesResult() {}
     /**
      * @return The display name of the package.
      * 
@@ -109,7 +92,7 @@ public final class GetPrivateApplicationPackagesResult {
     public static Builder builder(GetPrivateApplicationPackagesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String displayName;
         private @Nullable List<GetPrivateApplicationPackagesFilter> filters;
@@ -118,11 +101,7 @@ public final class GetPrivateApplicationPackagesResult {
         private String privateApplicationId;
         private List<GetPrivateApplicationPackagesPrivateApplicationPackageCollection> privateApplicationPackageCollections;
         private @Nullable String privateApplicationPackageId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPrivateApplicationPackagesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -134,10 +113,12 @@ public final class GetPrivateApplicationPackagesResult {
     	      this.privateApplicationPackageId = defaults.privateApplicationPackageId;
         }
 
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetPrivateApplicationPackagesFilter> filters) {
             this.filters = filters;
             return this;
@@ -145,10 +126,12 @@ public final class GetPrivateApplicationPackagesResult {
         public Builder filters(GetPrivateApplicationPackagesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder packageTypes(@Nullable List<String> packageTypes) {
             this.packageTypes = packageTypes;
             return this;
@@ -156,10 +139,12 @@ public final class GetPrivateApplicationPackagesResult {
         public Builder packageTypes(String... packageTypes) {
             return packageTypes(List.of(packageTypes));
         }
+        @CustomType.Setter
         public Builder privateApplicationId(String privateApplicationId) {
             this.privateApplicationId = Objects.requireNonNull(privateApplicationId);
             return this;
         }
+        @CustomType.Setter
         public Builder privateApplicationPackageCollections(List<GetPrivateApplicationPackagesPrivateApplicationPackageCollection> privateApplicationPackageCollections) {
             this.privateApplicationPackageCollections = Objects.requireNonNull(privateApplicationPackageCollections);
             return this;
@@ -167,11 +152,21 @@ public final class GetPrivateApplicationPackagesResult {
         public Builder privateApplicationPackageCollections(GetPrivateApplicationPackagesPrivateApplicationPackageCollection... privateApplicationPackageCollections) {
             return privateApplicationPackageCollections(List.of(privateApplicationPackageCollections));
         }
+        @CustomType.Setter
         public Builder privateApplicationPackageId(@Nullable String privateApplicationPackageId) {
             this.privateApplicationPackageId = privateApplicationPackageId;
             return this;
-        }        public GetPrivateApplicationPackagesResult build() {
-            return new GetPrivateApplicationPackagesResult(displayName, filters, id, packageTypes, privateApplicationId, privateApplicationPackageCollections, privateApplicationPackageId);
+        }
+        public GetPrivateApplicationPackagesResult build() {
+            final var o = new GetPrivateApplicationPackagesResult();
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.packageTypes = packageTypes;
+            o.privateApplicationId = privateApplicationId;
+            o.privateApplicationPackageCollections = privateApplicationPackageCollections;
+            o.privateApplicationPackageId = privateApplicationPackageId;
+            return o;
         }
     }
 }

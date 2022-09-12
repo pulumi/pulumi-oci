@@ -13,13 +13,9 @@ public final class GetResolverAttachedView {
      * @return The OCID of the view.
      * 
      */
-    private final String viewId;
+    private String viewId;
 
-    @CustomType.Constructor
-    private GetResolverAttachedView(@CustomType.Parameter("viewId") String viewId) {
-        this.viewId = viewId;
-    }
-
+    private GetResolverAttachedView() {}
     /**
      * @return The OCID of the view.
      * 
@@ -35,24 +31,24 @@ public final class GetResolverAttachedView {
     public static Builder builder(GetResolverAttachedView defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String viewId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetResolverAttachedView defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.viewId = defaults.viewId;
         }
 
+        @CustomType.Setter
         public Builder viewId(String viewId) {
             this.viewId = Objects.requireNonNull(viewId);
             return this;
-        }        public GetResolverAttachedView build() {
-            return new GetResolverAttachedView(viewId);
+        }
+        public GetResolverAttachedView build() {
+            final var o = new GetResolverAttachedView();
+            o.viewId = viewId;
+            return o;
         }
     }
 }

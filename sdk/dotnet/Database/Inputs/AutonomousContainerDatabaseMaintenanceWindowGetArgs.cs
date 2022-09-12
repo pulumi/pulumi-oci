@@ -50,6 +50,12 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<bool>? IsCustomActionTimeoutEnabled { get; set; }
 
         /// <summary>
+        /// (Updatable) If true, enables the monthly patching option.
+        /// </summary>
+        [Input("isMonthlyPatchingEnabled")]
+        public Input<bool>? IsMonthlyPatchingEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         /// </summary>
         [Input("leadTimeInWeeks")]

@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCertificatesCertificateCollection {
-    private final List<GetCertificatesCertificateCollectionItem> items;
+    private List<GetCertificatesCertificateCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetCertificatesCertificateCollection(@CustomType.Parameter("items") List<GetCertificatesCertificateCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetCertificatesCertificateCollection() {}
     public List<GetCertificatesCertificateCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetCertificatesCertificateCollection {
     public static Builder builder(GetCertificatesCertificateCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCertificatesCertificateCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificatesCertificateCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetCertificatesCertificateCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetCertificatesCertificateCollectionItem... items) {
             return items(List.of(items));
-        }        public GetCertificatesCertificateCollection build() {
-            return new GetCertificatesCertificateCollection(items);
+        }
+        public GetCertificatesCertificateCollection build() {
+            final var o = new GetCertificatesCertificateCollection();
+            o.items = items;
+            return o;
         }
     }
 }

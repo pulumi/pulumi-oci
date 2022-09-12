@@ -26,15 +26,15 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Data Connectivity Management Registry display name, registries can be renamed
+        /// Data Connectivity Management registry display name; registries can be renamed.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Unique identifier that is immutable on creation
+        /// A unique identifier that is immutable on creation.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -46,15 +46,15 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string StateMessage;
         /// <summary>
-        /// The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+        /// Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+        /// Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Name of the user who updated the DCMS Registry.
+        /// Name of the user who updated the DCMS registry.
         /// </summary>
         public readonly string UpdatedBy;
 

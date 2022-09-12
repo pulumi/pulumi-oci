@@ -15,24 +15,15 @@ public final class GetListenerRulesListenerRule {
      * @return The name of the rule set that the rule belongs to.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return A rule object that applies to the listener.
      * 
      */
-    private final List<GetListenerRulesListenerRuleRule> rules;
-    private final String state;
+    private List<GetListenerRulesListenerRuleRule> rules;
+    private String state;
 
-    @CustomType.Constructor
-    private GetListenerRulesListenerRule(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("rules") List<GetListenerRulesListenerRuleRule> rules,
-        @CustomType.Parameter("state") String state) {
-        this.name = name;
-        this.rules = rules;
-        this.state = state;
-    }
-
+    private GetListenerRulesListenerRule() {}
     /**
      * @return The name of the rule set that the rule belongs to.
      * 
@@ -58,16 +49,12 @@ public final class GetListenerRulesListenerRule {
     public static Builder builder(GetListenerRulesListenerRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private List<GetListenerRulesListenerRuleRule> rules;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListenerRulesListenerRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
@@ -75,10 +62,12 @@ public final class GetListenerRulesListenerRule {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder rules(List<GetListenerRulesListenerRuleRule> rules) {
             this.rules = Objects.requireNonNull(rules);
             return this;
@@ -86,11 +75,17 @@ public final class GetListenerRulesListenerRule {
         public Builder rules(GetListenerRulesListenerRuleRule... rules) {
             return rules(List.of(rules));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetListenerRulesListenerRule build() {
-            return new GetListenerRulesListenerRule(name, rules, state);
+        }
+        public GetListenerRulesListenerRule build() {
+            final var o = new GetListenerRulesListenerRule();
+            o.name = name;
+            o.rules = rules;
+            o.state = state;
+            return o;
         }
     }
 }

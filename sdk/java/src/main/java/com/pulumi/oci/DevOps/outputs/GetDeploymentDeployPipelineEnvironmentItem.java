@@ -15,28 +15,19 @@ public final class GetDeploymentDeployPipelineEnvironmentItem {
      * @return The OCID of an Environment
      * 
      */
-    private final String deployEnvironmentId;
+    private String deployEnvironmentId;
     /**
      * @return List of stages.
      * 
      */
-    private final List<GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStage> deployPipelineStages;
+    private List<GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStage> deployPipelineStages;
     /**
      * @return Deployment identifier which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
 
-    @CustomType.Constructor
-    private GetDeploymentDeployPipelineEnvironmentItem(
-        @CustomType.Parameter("deployEnvironmentId") String deployEnvironmentId,
-        @CustomType.Parameter("deployPipelineStages") List<GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStage> deployPipelineStages,
-        @CustomType.Parameter("displayName") String displayName) {
-        this.deployEnvironmentId = deployEnvironmentId;
-        this.deployPipelineStages = deployPipelineStages;
-        this.displayName = displayName;
-    }
-
+    private GetDeploymentDeployPipelineEnvironmentItem() {}
     /**
      * @return The OCID of an Environment
      * 
@@ -66,16 +57,12 @@ public final class GetDeploymentDeployPipelineEnvironmentItem {
     public static Builder builder(GetDeploymentDeployPipelineEnvironmentItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String deployEnvironmentId;
         private List<GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStage> deployPipelineStages;
         private String displayName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentDeployPipelineEnvironmentItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.deployEnvironmentId = defaults.deployEnvironmentId;
@@ -83,10 +70,12 @@ public final class GetDeploymentDeployPipelineEnvironmentItem {
     	      this.displayName = defaults.displayName;
         }
 
+        @CustomType.Setter
         public Builder deployEnvironmentId(String deployEnvironmentId) {
             this.deployEnvironmentId = Objects.requireNonNull(deployEnvironmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder deployPipelineStages(List<GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStage> deployPipelineStages) {
             this.deployPipelineStages = Objects.requireNonNull(deployPipelineStages);
             return this;
@@ -94,11 +83,17 @@ public final class GetDeploymentDeployPipelineEnvironmentItem {
         public Builder deployPipelineStages(GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStage... deployPipelineStages) {
             return deployPipelineStages(List.of(deployPipelineStages));
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
-        }        public GetDeploymentDeployPipelineEnvironmentItem build() {
-            return new GetDeploymentDeployPipelineEnvironmentItem(deployEnvironmentId, deployPipelineStages, displayName);
+        }
+        public GetDeploymentDeployPipelineEnvironmentItem build() {
+            final var o = new GetDeploymentDeployPipelineEnvironmentItem();
+            o.deployEnvironmentId = deployEnvironmentId;
+            o.deployPipelineStages = deployPipelineStages;
+            o.displayName = displayName;
+            return o;
         }
     }
 }

@@ -15,21 +15,14 @@ public final class ManagedInstanceManagedInstanceGroup {
      * @return User friendly name
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return software source identifier
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
 
-    @CustomType.Constructor
-    private ManagedInstanceManagedInstanceGroup(
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("id") @Nullable String id) {
-        this.displayName = displayName;
-        this.id = id;
-    }
-
+    private ManagedInstanceManagedInstanceGroup() {}
     /**
      * @return User friendly name
      * 
@@ -52,30 +45,32 @@ public final class ManagedInstanceManagedInstanceGroup {
     public static Builder builder(ManagedInstanceManagedInstanceGroup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String displayName;
         private @Nullable String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ManagedInstanceManagedInstanceGroup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
-        }        public ManagedInstanceManagedInstanceGroup build() {
-            return new ManagedInstanceManagedInstanceGroup(displayName, id);
+        }
+        public ManagedInstanceManagedInstanceGroup build() {
+            final var o = new ManagedInstanceManagedInstanceGroup();
+            o.displayName = displayName;
+            o.id = id;
+            return o;
         }
     }
 }

@@ -13,34 +13,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkRequestLogEntriesResult {
-    private final String compartmentId;
-    private final @Nullable List<GetWorkRequestLogEntriesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetWorkRequestLogEntriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String workRequestId;
+    private String id;
+    private String workRequestId;
     /**
      * @return The list of work_request_log_entries.
      * 
      */
-    private final List<GetWorkRequestLogEntriesWorkRequestLogEntry> workRequestLogEntries;
+    private List<GetWorkRequestLogEntriesWorkRequestLogEntry> workRequestLogEntries;
 
-    @CustomType.Constructor
-    private GetWorkRequestLogEntriesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetWorkRequestLogEntriesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("workRequestId") String workRequestId,
-        @CustomType.Parameter("workRequestLogEntries") List<GetWorkRequestLogEntriesWorkRequestLogEntry> workRequestLogEntries) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.workRequestId = workRequestId;
-        this.workRequestLogEntries = workRequestLogEntries;
-    }
-
+    private GetWorkRequestLogEntriesResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -72,18 +59,14 @@ public final class GetWorkRequestLogEntriesResult {
     public static Builder builder(GetWorkRequestLogEntriesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetWorkRequestLogEntriesFilter> filters;
         private String id;
         private String workRequestId;
         private List<GetWorkRequestLogEntriesWorkRequestLogEntry> workRequestLogEntries;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWorkRequestLogEntriesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -93,10 +76,12 @@ public final class GetWorkRequestLogEntriesResult {
     	      this.workRequestLogEntries = defaults.workRequestLogEntries;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetWorkRequestLogEntriesFilter> filters) {
             this.filters = filters;
             return this;
@@ -104,22 +89,32 @@ public final class GetWorkRequestLogEntriesResult {
         public Builder filters(GetWorkRequestLogEntriesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = Objects.requireNonNull(workRequestId);
             return this;
         }
+        @CustomType.Setter
         public Builder workRequestLogEntries(List<GetWorkRequestLogEntriesWorkRequestLogEntry> workRequestLogEntries) {
             this.workRequestLogEntries = Objects.requireNonNull(workRequestLogEntries);
             return this;
         }
         public Builder workRequestLogEntries(GetWorkRequestLogEntriesWorkRequestLogEntry... workRequestLogEntries) {
             return workRequestLogEntries(List.of(workRequestLogEntries));
-        }        public GetWorkRequestLogEntriesResult build() {
-            return new GetWorkRequestLogEntriesResult(compartmentId, filters, id, workRequestId, workRequestLogEntries);
+        }
+        public GetWorkRequestLogEntriesResult build() {
+            final var o = new GetWorkRequestLogEntriesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.workRequestId = workRequestId;
+            o.workRequestLogEntries = workRequestLogEntries;
+            return o;
         }
     }
 }

@@ -14,35 +14,24 @@ public final class GetUsagePlanEntitlementQuota {
      * @return What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
      * 
      */
-    private final String operationOnBreach;
+    private String operationOnBreach;
     /**
      * @return The policy that controls when quotas will reset. Example: `CALENDAR`
      * 
      */
-    private final String resetPolicy;
+    private String resetPolicy;
     /**
      * @return The unit of time over which rate limits are calculated. Example: `SECOND`
      * 
      */
-    private final String unit;
+    private String unit;
     /**
      * @return The number of requests that can be made per time period.
      * 
      */
-    private final Integer value;
+    private Integer value;
 
-    @CustomType.Constructor
-    private GetUsagePlanEntitlementQuota(
-        @CustomType.Parameter("operationOnBreach") String operationOnBreach,
-        @CustomType.Parameter("resetPolicy") String resetPolicy,
-        @CustomType.Parameter("unit") String unit,
-        @CustomType.Parameter("value") Integer value) {
-        this.operationOnBreach = operationOnBreach;
-        this.resetPolicy = resetPolicy;
-        this.unit = unit;
-        this.value = value;
-    }
-
+    private GetUsagePlanEntitlementQuota() {}
     /**
      * @return What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
      * 
@@ -79,17 +68,13 @@ public final class GetUsagePlanEntitlementQuota {
     public static Builder builder(GetUsagePlanEntitlementQuota defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String operationOnBreach;
         private String resetPolicy;
         private String unit;
         private Integer value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUsagePlanEntitlementQuota defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.operationOnBreach = defaults.operationOnBreach;
@@ -98,23 +83,33 @@ public final class GetUsagePlanEntitlementQuota {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder operationOnBreach(String operationOnBreach) {
             this.operationOnBreach = Objects.requireNonNull(operationOnBreach);
             return this;
         }
+        @CustomType.Setter
         public Builder resetPolicy(String resetPolicy) {
             this.resetPolicy = Objects.requireNonNull(resetPolicy);
             return this;
         }
+        @CustomType.Setter
         public Builder unit(String unit) {
             this.unit = Objects.requireNonNull(unit);
             return this;
         }
+        @CustomType.Setter
         public Builder value(Integer value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetUsagePlanEntitlementQuota build() {
-            return new GetUsagePlanEntitlementQuota(operationOnBreach, resetPolicy, unit, value);
+        }
+        public GetUsagePlanEntitlementQuota build() {
+            final var o = new GetUsagePlanEntitlementQuota();
+            o.operationOnBreach = operationOnBreach;
+            o.resetPolicy = resetPolicy;
+            o.unit = unit;
+            o.value = value;
+            return o;
         }
     }
 }

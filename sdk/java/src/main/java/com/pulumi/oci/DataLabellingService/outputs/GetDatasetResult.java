@@ -20,122 +20,85 @@ public final class GetDatasetResult {
      * @return The annotation format name required for labeling records.
      * 
      */
-    private final String annotationFormat;
+    private String annotationFormat;
     /**
      * @return The OCID of the compartment of the resource.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
      * 
      */
-    private final List<GetDatasetDatasetFormatDetail> datasetFormatDetails;
-    private final String datasetId;
+    private List<GetDatasetDatasetFormatDetail> datasetFormatDetails;
+    private String datasetId;
     /**
      * @return This allows the customer to specify the source of the dataset.
      * 
      */
-    private final List<GetDatasetDatasetSourceDetail> datasetSourceDetails;
+    private List<GetDatasetDatasetSourceDetail> datasetSourceDetails;
     /**
      * @return The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user provided description of the dataset
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A user-friendly display name for the resource.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the Dataset.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
-    private final List<GetDatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations;
+    private List<GetDatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations;
     /**
      * @return An ordered collection of labels that are unique by name.
      * 
      */
-    private final List<GetDatasetLabelSet> labelSets;
+    private List<GetDatasetLabelSet> labelSets;
     /**
      * @return The labeling instructions for human labelers in rich text format
      * 
      */
-    private final String labelingInstructions;
+    private String labelingInstructions;
     /**
      * @return A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the resource was created, in the timestamp format defined by RFC3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the resource was last updated, in the timestamp format defined by RFC3339.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetDatasetResult(
-        @CustomType.Parameter("annotationFormat") String annotationFormat,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("datasetFormatDetails") List<GetDatasetDatasetFormatDetail> datasetFormatDetails,
-        @CustomType.Parameter("datasetId") String datasetId,
-        @CustomType.Parameter("datasetSourceDetails") List<GetDatasetDatasetSourceDetail> datasetSourceDetails,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("initialRecordGenerationConfigurations") List<GetDatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations,
-        @CustomType.Parameter("labelSets") List<GetDatasetLabelSet> labelSets,
-        @CustomType.Parameter("labelingInstructions") String labelingInstructions,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.annotationFormat = annotationFormat;
-        this.compartmentId = compartmentId;
-        this.datasetFormatDetails = datasetFormatDetails;
-        this.datasetId = datasetId;
-        this.datasetSourceDetails = datasetSourceDetails;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.initialRecordGenerationConfigurations = initialRecordGenerationConfigurations;
-        this.labelSets = labelSets;
-        this.labelingInstructions = labelingInstructions;
-        this.lifecycleDetails = lifecycleDetails;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetDatasetResult() {}
     /**
      * @return The annotation format name required for labeling records.
      * 
@@ -259,7 +222,7 @@ public final class GetDatasetResult {
     public static Builder builder(GetDatasetResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String annotationFormat;
         private String compartmentId;
@@ -278,11 +241,7 @@ public final class GetDatasetResult {
         private String state;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatasetResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.annotationFormat = defaults.annotationFormat;
@@ -304,14 +263,17 @@ public final class GetDatasetResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder annotationFormat(String annotationFormat) {
             this.annotationFormat = Objects.requireNonNull(annotationFormat);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder datasetFormatDetails(List<GetDatasetDatasetFormatDetail> datasetFormatDetails) {
             this.datasetFormatDetails = Objects.requireNonNull(datasetFormatDetails);
             return this;
@@ -319,10 +281,12 @@ public final class GetDatasetResult {
         public Builder datasetFormatDetails(GetDatasetDatasetFormatDetail... datasetFormatDetails) {
             return datasetFormatDetails(List.of(datasetFormatDetails));
         }
+        @CustomType.Setter
         public Builder datasetId(String datasetId) {
             this.datasetId = Objects.requireNonNull(datasetId);
             return this;
         }
+        @CustomType.Setter
         public Builder datasetSourceDetails(List<GetDatasetDatasetSourceDetail> datasetSourceDetails) {
             this.datasetSourceDetails = Objects.requireNonNull(datasetSourceDetails);
             return this;
@@ -330,26 +294,32 @@ public final class GetDatasetResult {
         public Builder datasetSourceDetails(GetDatasetDatasetSourceDetail... datasetSourceDetails) {
             return datasetSourceDetails(List.of(datasetSourceDetails));
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder initialRecordGenerationConfigurations(List<GetDatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations) {
             this.initialRecordGenerationConfigurations = Objects.requireNonNull(initialRecordGenerationConfigurations);
             return this;
@@ -357,6 +327,7 @@ public final class GetDatasetResult {
         public Builder initialRecordGenerationConfigurations(GetDatasetInitialRecordGenerationConfiguration... initialRecordGenerationConfigurations) {
             return initialRecordGenerationConfigurations(List.of(initialRecordGenerationConfigurations));
         }
+        @CustomType.Setter
         public Builder labelSets(List<GetDatasetLabelSet> labelSets) {
             this.labelSets = Objects.requireNonNull(labelSets);
             return this;
@@ -364,27 +335,51 @@ public final class GetDatasetResult {
         public Builder labelSets(GetDatasetLabelSet... labelSets) {
             return labelSets(List.of(labelSets));
         }
+        @CustomType.Setter
         public Builder labelingInstructions(String labelingInstructions) {
             this.labelingInstructions = Objects.requireNonNull(labelingInstructions);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetDatasetResult build() {
-            return new GetDatasetResult(annotationFormat, compartmentId, datasetFormatDetails, datasetId, datasetSourceDetails, definedTags, description, displayName, freeformTags, id, initialRecordGenerationConfigurations, labelSets, labelingInstructions, lifecycleDetails, state, timeCreated, timeUpdated);
+        }
+        public GetDatasetResult build() {
+            final var o = new GetDatasetResult();
+            o.annotationFormat = annotationFormat;
+            o.compartmentId = compartmentId;
+            o.datasetFormatDetails = datasetFormatDetails;
+            o.datasetId = datasetId;
+            o.datasetSourceDetails = datasetSourceDetails;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.initialRecordGenerationConfigurations = initialRecordGenerationConfigurations;
+            o.labelSets = labelSets;
+            o.labelingInstructions = labelingInstructions;
+            o.lifecycleDetails = lifecycleDetails;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

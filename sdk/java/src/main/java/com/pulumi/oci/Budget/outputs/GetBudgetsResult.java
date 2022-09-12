@@ -18,52 +18,35 @@ public final class GetBudgetsResult {
      * @return The list of budgets.
      * 
      */
-    private final List<GetBudgetsBudget> budgets;
+    private List<GetBudgetsBudget> budgets;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The display name of the budget. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetBudgetsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetBudgetsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the budget.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The type of target on which the budget is applied.
      * 
      */
-    private final @Nullable String targetType;
+    private @Nullable String targetType;
 
-    @CustomType.Constructor
-    private GetBudgetsResult(
-        @CustomType.Parameter("budgets") List<GetBudgetsBudget> budgets,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetBudgetsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("targetType") @Nullable String targetType) {
-        this.budgets = budgets;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.targetType = targetType;
-    }
-
+    private GetBudgetsResult() {}
     /**
      * @return The list of budgets.
      * 
@@ -117,7 +100,7 @@ public final class GetBudgetsResult {
     public static Builder builder(GetBudgetsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBudgetsBudget> budgets;
         private String compartmentId;
@@ -126,11 +109,7 @@ public final class GetBudgetsResult {
         private String id;
         private @Nullable String state;
         private @Nullable String targetType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBudgetsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.budgets = defaults.budgets;
@@ -142,6 +121,7 @@ public final class GetBudgetsResult {
     	      this.targetType = defaults.targetType;
         }
 
+        @CustomType.Setter
         public Builder budgets(List<GetBudgetsBudget> budgets) {
             this.budgets = Objects.requireNonNull(budgets);
             return this;
@@ -149,14 +129,17 @@ public final class GetBudgetsResult {
         public Builder budgets(GetBudgetsBudget... budgets) {
             return budgets(List.of(budgets));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBudgetsFilter> filters) {
             this.filters = filters;
             return this;
@@ -164,19 +147,31 @@ public final class GetBudgetsResult {
         public Builder filters(GetBudgetsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder targetType(@Nullable String targetType) {
             this.targetType = targetType;
             return this;
-        }        public GetBudgetsResult build() {
-            return new GetBudgetsResult(budgets, compartmentId, displayName, filters, id, state, targetType);
+        }
+        public GetBudgetsResult build() {
+            final var o = new GetBudgetsResult();
+            o.budgets = budgets;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.targetType = targetType;
+            return o;
         }
     }
 }

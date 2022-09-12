@@ -17,34 +17,21 @@ public final class GetManagedDatabasesUserProxyUserResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return An array of user resources.
      * 
      */
-    private final List<GetManagedDatabasesUserProxyUserItem> items;
-    private final String managedDatabaseId;
+    private List<GetManagedDatabasesUserProxyUserItem> items;
+    private String managedDatabaseId;
     /**
      * @return The name of a proxy user or the name of the client user.
      * 
      */
-    private final @Nullable String name;
-    private final String userName;
+    private @Nullable String name;
+    private String userName;
 
-    @CustomType.Constructor
-    private GetManagedDatabasesUserProxyUserResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetManagedDatabasesUserProxyUserItem> items,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("userName") String userName) {
-        this.id = id;
-        this.items = items;
-        this.managedDatabaseId = managedDatabaseId;
-        this.name = name;
-        this.userName = userName;
-    }
-
+    private GetManagedDatabasesUserProxyUserResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -80,18 +67,14 @@ public final class GetManagedDatabasesUserProxyUserResult {
     public static Builder builder(GetManagedDatabasesUserProxyUserResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private List<GetManagedDatabasesUserProxyUserItem> items;
         private String managedDatabaseId;
         private @Nullable String name;
         private String userName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabasesUserProxyUserResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -101,10 +84,12 @@ public final class GetManagedDatabasesUserProxyUserResult {
     	      this.userName = defaults.userName;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabasesUserProxyUserItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -112,19 +97,29 @@ public final class GetManagedDatabasesUserProxyUserResult {
         public Builder items(GetManagedDatabasesUserProxyUserItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder userName(String userName) {
             this.userName = Objects.requireNonNull(userName);
             return this;
-        }        public GetManagedDatabasesUserProxyUserResult build() {
-            return new GetManagedDatabasesUserProxyUserResult(id, items, managedDatabaseId, name, userName);
+        }
+        public GetManagedDatabasesUserProxyUserResult build() {
+            final var o = new GetManagedDatabasesUserProxyUserResult();
+            o.id = id;
+            o.items = items;
+            o.managedDatabaseId = managedDatabaseId;
+            o.name = name;
+            o.userName = userName;
+            return o;
         }
     }
 }

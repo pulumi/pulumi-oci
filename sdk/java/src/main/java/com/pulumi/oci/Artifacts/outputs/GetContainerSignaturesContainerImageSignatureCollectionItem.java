@@ -13,84 +13,59 @@ public final class GetContainerSignaturesContainerImageSignatureCollectionItem {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The id of the user or principal that created the resource.
      * 
      */
-    private final String createdBy;
+    private String createdBy;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containerimagesignature.oc1..exampleuniqueID`
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A filter to return a container image summary only for the specified container image OCID.
      * 
      */
-    private final String imageId;
+    private String imageId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
      * 
      */
-    private final String kmsKeyId;
+    private String kmsKeyId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
      * 
      */
-    private final String kmsKeyVersionId;
+    private String kmsKeyVersionId;
     /**
      * @return The base64 encoded signature payload that was signed.
      * 
      */
-    private final String message;
+    private String message;
     /**
      * @return The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
      * 
      */
-    private final String signature;
+    private String signature;
     /**
      * @return The algorithm to be used for signing. These are the only supported signing algorithms for container images.
      * 
      */
-    private final String signingAlgorithm;
+    private String signingAlgorithm;
     /**
      * @return An RFC 3339 timestamp indicating when the image was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetContainerSignaturesContainerImageSignatureCollectionItem(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("createdBy") String createdBy,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("imageId") String imageId,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("kmsKeyVersionId") String kmsKeyVersionId,
-        @CustomType.Parameter("message") String message,
-        @CustomType.Parameter("signature") String signature,
-        @CustomType.Parameter("signingAlgorithm") String signingAlgorithm,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.compartmentId = compartmentId;
-        this.createdBy = createdBy;
-        this.displayName = displayName;
-        this.id = id;
-        this.imageId = imageId;
-        this.kmsKeyId = kmsKeyId;
-        this.kmsKeyVersionId = kmsKeyVersionId;
-        this.message = message;
-        this.signature = signature;
-        this.signingAlgorithm = signingAlgorithm;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetContainerSignaturesContainerImageSignatureCollectionItem() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -176,7 +151,7 @@ public final class GetContainerSignaturesContainerImageSignatureCollectionItem {
     public static Builder builder(GetContainerSignaturesContainerImageSignatureCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String createdBy;
@@ -189,11 +164,7 @@ public final class GetContainerSignaturesContainerImageSignatureCollectionItem {
         private String signature;
         private String signingAlgorithm;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetContainerSignaturesContainerImageSignatureCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -209,51 +180,75 @@ public final class GetContainerSignaturesContainerImageSignatureCollectionItem {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder createdBy(String createdBy) {
             this.createdBy = Objects.requireNonNull(createdBy);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder imageId(String imageId) {
             this.imageId = Objects.requireNonNull(imageId);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
             this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
             return this;
         }
+        @CustomType.Setter
         public Builder message(String message) {
             this.message = Objects.requireNonNull(message);
             return this;
         }
+        @CustomType.Setter
         public Builder signature(String signature) {
             this.signature = Objects.requireNonNull(signature);
             return this;
         }
+        @CustomType.Setter
         public Builder signingAlgorithm(String signingAlgorithm) {
             this.signingAlgorithm = Objects.requireNonNull(signingAlgorithm);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetContainerSignaturesContainerImageSignatureCollectionItem build() {
-            return new GetContainerSignaturesContainerImageSignatureCollectionItem(compartmentId, createdBy, displayName, id, imageId, kmsKeyId, kmsKeyVersionId, message, signature, signingAlgorithm, timeCreated);
+        }
+        public GetContainerSignaturesContainerImageSignatureCollectionItem build() {
+            final var o = new GetContainerSignaturesContainerImageSignatureCollectionItem();
+            o.compartmentId = compartmentId;
+            o.createdBy = createdBy;
+            o.displayName = displayName;
+            o.id = id;
+            o.imageId = imageId;
+            o.kmsKeyId = kmsKeyId;
+            o.kmsKeyVersionId = kmsKeyVersionId;
+            o.message = message;
+            o.signature = signature;
+            o.signingAlgorithm = signingAlgorithm;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

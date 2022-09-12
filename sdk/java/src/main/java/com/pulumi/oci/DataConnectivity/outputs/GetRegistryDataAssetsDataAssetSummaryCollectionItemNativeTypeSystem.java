@@ -16,103 +16,76 @@ import java.util.Objects;
 @CustomType
 public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystem {
     /**
-     * @return A user defined description for the object.
+     * @return A user-defined description for the object.
      * 
      */
-    private final String description;
+    private String description;
     /**
-     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
-    private final String identifier;
+    private String identifier;
     /**
      * @return The identifying key for the object.
      * 
      */
-    private final String key;
+    private String key;
     /**
-     * @return The property which disciminates the subtypes.
+     * @return The property which differentiates the subtypes.
      * 
      */
-    private final String modelType;
+    private String modelType;
     /**
      * @return The model version of an object.
      * 
      */
-    private final String modelVersion;
+    private String modelVersion;
     /**
      * @return Used to filter by the name of the object.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private final Integer objectStatus;
+    private Integer objectStatus;
     /**
      * @return The version of the object that is used to track changes in the object instance.
      * 
      */
-    private final Integer objectVersion;
+    private Integer objectVersion;
     /**
-     * @return A reference to the object&#39;s parent.
+     * @return A reference to the parent object.
      * 
      */
-    private final GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRef parentRef;
+    private GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRef parentRef;
     /**
      * @return The type system to map from.
      * 
      */
-    private final Map<String,Object> typeMappingFrom;
+    private Map<String,Object> typeMappingFrom;
     /**
      * @return The type system to map to.
      * 
      */
-    private final Map<String,Object> typeMappingTo;
+    private Map<String,Object> typeMappingTo;
     /**
      * @return An array of types.
      * 
      */
-    private final List<GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType> types;
+    private List<GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType> types;
 
-    @CustomType.Constructor
-    private GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystem(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("identifier") String identifier,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("modelType") String modelType,
-        @CustomType.Parameter("modelVersion") String modelVersion,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("objectStatus") Integer objectStatus,
-        @CustomType.Parameter("objectVersion") Integer objectVersion,
-        @CustomType.Parameter("parentRef") GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRef parentRef,
-        @CustomType.Parameter("typeMappingFrom") Map<String,Object> typeMappingFrom,
-        @CustomType.Parameter("typeMappingTo") Map<String,Object> typeMappingTo,
-        @CustomType.Parameter("types") List<GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType> types) {
-        this.description = description;
-        this.identifier = identifier;
-        this.key = key;
-        this.modelType = modelType;
-        this.modelVersion = modelVersion;
-        this.name = name;
-        this.objectStatus = objectStatus;
-        this.objectVersion = objectVersion;
-        this.parentRef = parentRef;
-        this.typeMappingFrom = typeMappingFrom;
-        this.typeMappingTo = typeMappingTo;
-        this.types = types;
-    }
-
+    private GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystem() {}
     /**
-     * @return A user defined description for the object.
+     * @return A user-defined description for the object.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public String identifier() {
@@ -126,7 +99,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeType
         return this.key;
     }
     /**
-     * @return The property which disciminates the subtypes.
+     * @return The property which differentiates the subtypes.
      * 
      */
     public String modelType() {
@@ -161,7 +134,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeType
         return this.objectVersion;
     }
     /**
-     * @return A reference to the object&#39;s parent.
+     * @return A reference to the parent object.
      * 
      */
     public GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRef parentRef() {
@@ -196,7 +169,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeType
     public static Builder builder(GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String identifier;
@@ -210,11 +183,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeType
         private Map<String,Object> typeMappingFrom;
         private Map<String,Object> typeMappingTo;
         private List<GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType> types;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -231,58 +200,84 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeType
     	      this.types = defaults.types;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(String identifier) {
             this.identifier = Objects.requireNonNull(identifier);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder modelType(String modelType) {
             this.modelType = Objects.requireNonNull(modelType);
             return this;
         }
+        @CustomType.Setter
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = Objects.requireNonNull(modelVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = Objects.requireNonNull(objectStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = Objects.requireNonNull(objectVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder parentRef(GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRef parentRef) {
             this.parentRef = Objects.requireNonNull(parentRef);
             return this;
         }
+        @CustomType.Setter
         public Builder typeMappingFrom(Map<String,Object> typeMappingFrom) {
             this.typeMappingFrom = Objects.requireNonNull(typeMappingFrom);
             return this;
         }
+        @CustomType.Setter
         public Builder typeMappingTo(Map<String,Object> typeMappingTo) {
             this.typeMappingTo = Objects.requireNonNull(typeMappingTo);
             return this;
         }
+        @CustomType.Setter
         public Builder types(List<GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType> types) {
             this.types = Objects.requireNonNull(types);
             return this;
         }
         public Builder types(GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType... types) {
             return types(List.of(types));
-        }        public GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystem build() {
-            return new GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystem(description, identifier, key, modelType, modelVersion, name, objectStatus, objectVersion, parentRef, typeMappingFrom, typeMappingTo, types);
+        }
+        public GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystem build() {
+            final var o = new GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystem();
+            o.description = description;
+            o.identifier = identifier;
+            o.key = key;
+            o.modelType = modelType;
+            o.modelVersion = modelVersion;
+            o.name = name;
+            o.objectStatus = objectStatus;
+            o.objectVersion = objectVersion;
+            o.parentRef = parentRef;
+            o.typeMappingFrom = typeMappingFrom;
+            o.typeMappingTo = typeMappingTo;
+            o.types = types;
+            return o;
         }
     }
 }

@@ -14,28 +14,19 @@ public final class GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy {
      * @return Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
      * 
      */
-    private final String automaticBackupRetention;
+    private String automaticBackupRetention;
     /**
      * @return Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
      * 
      */
-    private final String finalBackup;
+    private String finalBackup;
     /**
      * @return Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
      * 
      */
-    private final Boolean isDeleteProtected;
+    private Boolean isDeleteProtected;
 
-    @CustomType.Constructor
-    private GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy(
-        @CustomType.Parameter("automaticBackupRetention") String automaticBackupRetention,
-        @CustomType.Parameter("finalBackup") String finalBackup,
-        @CustomType.Parameter("isDeleteProtected") Boolean isDeleteProtected) {
-        this.automaticBackupRetention = automaticBackupRetention;
-        this.finalBackup = finalBackup;
-        this.isDeleteProtected = isDeleteProtected;
-    }
-
+    private GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy() {}
     /**
      * @return Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
      * 
@@ -65,16 +56,12 @@ public final class GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy {
     public static Builder builder(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String automaticBackupRetention;
         private String finalBackup;
         private Boolean isDeleteProtected;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.automaticBackupRetention = defaults.automaticBackupRetention;
@@ -82,19 +69,27 @@ public final class GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy {
     	      this.isDeleteProtected = defaults.isDeleteProtected;
         }
 
+        @CustomType.Setter
         public Builder automaticBackupRetention(String automaticBackupRetention) {
             this.automaticBackupRetention = Objects.requireNonNull(automaticBackupRetention);
             return this;
         }
+        @CustomType.Setter
         public Builder finalBackup(String finalBackup) {
             this.finalBackup = Objects.requireNonNull(finalBackup);
             return this;
         }
+        @CustomType.Setter
         public Builder isDeleteProtected(Boolean isDeleteProtected) {
             this.isDeleteProtected = Objects.requireNonNull(isDeleteProtected);
             return this;
-        }        public GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy build() {
-            return new GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy(automaticBackupRetention, finalBackup, isDeleteProtected);
+        }
+        public GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy build() {
+            final var o = new GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy();
+            o.automaticBackupRetention = automaticBackupRetention;
+            o.finalBackup = finalBackup;
+            o.isDeleteProtected = isDeleteProtected;
+            return o;
         }
     }
 }

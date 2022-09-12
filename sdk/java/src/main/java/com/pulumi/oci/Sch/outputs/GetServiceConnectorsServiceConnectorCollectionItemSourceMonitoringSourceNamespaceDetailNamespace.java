@@ -15,21 +15,14 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
      * @return The metrics to query for the specified metric namespace.
      * 
      */
-    private final List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric> metrics;
+    private List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric> metrics;
     /**
      * @return The namespace.
      * 
      */
-    private final String namespace;
+    private String namespace;
 
-    @CustomType.Constructor
-    private GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace(
-        @CustomType.Parameter("metrics") List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric> metrics,
-        @CustomType.Parameter("namespace") String namespace) {
-        this.metrics = metrics;
-        this.namespace = namespace;
-    }
-
+    private GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace() {}
     /**
      * @return The metrics to query for the specified metric namespace.
      * 
@@ -52,21 +45,18 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
     public static Builder builder(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric> metrics;
         private String namespace;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.metrics = defaults.metrics;
     	      this.namespace = defaults.namespace;
         }
 
+        @CustomType.Setter
         public Builder metrics(List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric> metrics) {
             this.metrics = Objects.requireNonNull(metrics);
             return this;
@@ -74,11 +64,16 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
         public Builder metrics(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric... metrics) {
             return metrics(List.of(metrics));
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
-        }        public GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace build() {
-            return new GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace(metrics, namespace);
+        }
+        public GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace build() {
+            final var o = new GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace();
+            o.metrics = metrics;
+            o.namespace = namespace;
+            return o;
         }
     }
 }

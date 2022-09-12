@@ -15,70 +15,49 @@ public final class GetSecurityAssessmentFindingsFinding {
      * @return The OCID of the assessment that generated this finding.
      * 
      */
-    private final String assessmentId;
+    private String assessmentId;
     /**
      * @return The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
      * 
      */
-    private final List<String> details;
+    private List<String> details;
     /**
      * @return The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
      * 
      */
-    private final List<GetSecurityAssessmentFindingsFindingReference> references;
+    private List<GetSecurityAssessmentFindingsFindingReference> references;
     /**
      * @return The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
      * 
      */
-    private final String remarks;
+    private String remarks;
     /**
      * @return A filter to return only findings of a particular risk level.
      * 
      */
-    private final String severity;
+    private String severity;
     /**
      * @return The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
      * 
      */
-    private final String summary;
+    private String summary;
     /**
      * @return The OCID of the target database.
      * 
      */
-    private final String targetId;
+    private String targetId;
     /**
      * @return The short title for the finding.
      * 
      */
-    private final String title;
+    private String title;
 
-    @CustomType.Constructor
-    private GetSecurityAssessmentFindingsFinding(
-        @CustomType.Parameter("assessmentId") String assessmentId,
-        @CustomType.Parameter("details") List<String> details,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("references") List<GetSecurityAssessmentFindingsFindingReference> references,
-        @CustomType.Parameter("remarks") String remarks,
-        @CustomType.Parameter("severity") String severity,
-        @CustomType.Parameter("summary") String summary,
-        @CustomType.Parameter("targetId") String targetId,
-        @CustomType.Parameter("title") String title) {
-        this.assessmentId = assessmentId;
-        this.details = details;
-        this.key = key;
-        this.references = references;
-        this.remarks = remarks;
-        this.severity = severity;
-        this.summary = summary;
-        this.targetId = targetId;
-        this.title = title;
-    }
-
+    private GetSecurityAssessmentFindingsFinding() {}
     /**
      * @return The OCID of the assessment that generated this finding.
      * 
@@ -150,7 +129,7 @@ public final class GetSecurityAssessmentFindingsFinding {
     public static Builder builder(GetSecurityAssessmentFindingsFinding defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String assessmentId;
         private List<String> details;
@@ -161,11 +140,7 @@ public final class GetSecurityAssessmentFindingsFinding {
         private String summary;
         private String targetId;
         private String title;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityAssessmentFindingsFinding defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.assessmentId = defaults.assessmentId;
@@ -179,10 +154,12 @@ public final class GetSecurityAssessmentFindingsFinding {
     	      this.title = defaults.title;
         }
 
+        @CustomType.Setter
         public Builder assessmentId(String assessmentId) {
             this.assessmentId = Objects.requireNonNull(assessmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder details(List<String> details) {
             this.details = Objects.requireNonNull(details);
             return this;
@@ -190,10 +167,12 @@ public final class GetSecurityAssessmentFindingsFinding {
         public Builder details(String... details) {
             return details(List.of(details));
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder references(List<GetSecurityAssessmentFindingsFindingReference> references) {
             this.references = Objects.requireNonNull(references);
             return this;
@@ -201,27 +180,43 @@ public final class GetSecurityAssessmentFindingsFinding {
         public Builder references(GetSecurityAssessmentFindingsFindingReference... references) {
             return references(List.of(references));
         }
+        @CustomType.Setter
         public Builder remarks(String remarks) {
             this.remarks = Objects.requireNonNull(remarks);
             return this;
         }
+        @CustomType.Setter
         public Builder severity(String severity) {
             this.severity = Objects.requireNonNull(severity);
             return this;
         }
+        @CustomType.Setter
         public Builder summary(String summary) {
             this.summary = Objects.requireNonNull(summary);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
         }
+        @CustomType.Setter
         public Builder title(String title) {
             this.title = Objects.requireNonNull(title);
             return this;
-        }        public GetSecurityAssessmentFindingsFinding build() {
-            return new GetSecurityAssessmentFindingsFinding(assessmentId, details, key, references, remarks, severity, summary, targetId, title);
+        }
+        public GetSecurityAssessmentFindingsFinding build() {
+            final var o = new GetSecurityAssessmentFindingsFinding();
+            o.assessmentId = assessmentId;
+            o.details = details;
+            o.key = key;
+            o.references = references;
+            o.remarks = remarks;
+            o.severity = severity;
+            o.summary = summary;
+            o.targetId = targetId;
+            o.title = title;
+            return o;
         }
     }
 }

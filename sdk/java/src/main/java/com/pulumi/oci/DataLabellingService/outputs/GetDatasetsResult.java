@@ -18,52 +18,35 @@ public final class GetDatasetsResult {
      * @return The annotation format name required for labeling records.
      * 
      */
-    private final @Nullable String annotationFormat;
+    private @Nullable String annotationFormat;
     /**
      * @return The OCID of the compartment of the resource.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of dataset_collection.
      * 
      */
-    private final List<GetDatasetsDatasetCollection> datasetCollections;
+    private List<GetDatasetsDatasetCollection> datasetCollections;
     /**
      * @return A user-friendly display name for the resource.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetDatasetsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetDatasetsFilter> filters;
     /**
      * @return The OCID of the Dataset.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetDatasetsResult(
-        @CustomType.Parameter("annotationFormat") @Nullable String annotationFormat,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("datasetCollections") List<GetDatasetsDatasetCollection> datasetCollections,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetDatasetsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.annotationFormat = annotationFormat;
-        this.compartmentId = compartmentId;
-        this.datasetCollections = datasetCollections;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetDatasetsResult() {}
     /**
      * @return The annotation format name required for labeling records.
      * 
@@ -117,7 +100,7 @@ public final class GetDatasetsResult {
     public static Builder builder(GetDatasetsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String annotationFormat;
         private String compartmentId;
@@ -126,11 +109,7 @@ public final class GetDatasetsResult {
         private @Nullable List<GetDatasetsFilter> filters;
         private @Nullable String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatasetsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.annotationFormat = defaults.annotationFormat;
@@ -142,14 +121,17 @@ public final class GetDatasetsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder annotationFormat(@Nullable String annotationFormat) {
             this.annotationFormat = annotationFormat;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder datasetCollections(List<GetDatasetsDatasetCollection> datasetCollections) {
             this.datasetCollections = Objects.requireNonNull(datasetCollections);
             return this;
@@ -157,10 +139,12 @@ public final class GetDatasetsResult {
         public Builder datasetCollections(GetDatasetsDatasetCollection... datasetCollections) {
             return datasetCollections(List.of(datasetCollections));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDatasetsFilter> filters) {
             this.filters = filters;
             return this;
@@ -168,15 +152,26 @@ public final class GetDatasetsResult {
         public Builder filters(GetDatasetsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetDatasetsResult build() {
-            return new GetDatasetsResult(annotationFormat, compartmentId, datasetCollections, displayName, filters, id, state);
+        }
+        public GetDatasetsResult build() {
+            final var o = new GetDatasetsResult();
+            o.annotationFormat = annotationFormat;
+            o.compartmentId = compartmentId;
+            o.datasetCollections = datasetCollections;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

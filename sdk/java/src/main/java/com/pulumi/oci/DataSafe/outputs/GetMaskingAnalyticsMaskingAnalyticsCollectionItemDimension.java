@@ -13,21 +13,14 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension {
      * @return The OCID of the masking policy..
      * 
      */
-    private final String policyId;
+    private String policyId;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private final String targetId;
+    private String targetId;
 
-    @CustomType.Constructor
-    private GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension(
-        @CustomType.Parameter("policyId") String policyId,
-        @CustomType.Parameter("targetId") String targetId) {
-        this.policyId = policyId;
-        this.targetId = targetId;
-    }
-
+    private GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension() {}
     /**
      * @return The OCID of the masking policy..
      * 
@@ -50,30 +43,32 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension {
     public static Builder builder(GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String policyId;
         private String targetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.policyId = defaults.policyId;
     	      this.targetId = defaults.targetId;
         }
 
+        @CustomType.Setter
         public Builder policyId(String policyId) {
             this.policyId = Objects.requireNonNull(policyId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
-        }        public GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension build() {
-            return new GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension(policyId, targetId);
+        }
+        public GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension build() {
+            final var o = new GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension();
+            o.policyId = policyId;
+            o.targetId = targetId;
+            return o;
         }
     }
 }

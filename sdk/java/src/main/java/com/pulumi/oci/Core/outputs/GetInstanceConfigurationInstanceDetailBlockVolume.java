@@ -16,28 +16,19 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolume {
      * @return Volume attachmentDetails. Please see [AttachVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AttachVolumeDetails/)
      * 
      */
-    private final List<GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail> attachDetails;
+    private List<GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail> attachDetails;
     /**
      * @return Creates a new block volume. Please see [CreateVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVolumeDetails/)
      * 
      */
-    private final List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail> createDetails;
+    private List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail> createDetails;
     /**
      * @return The OCID of the volume.
      * 
      */
-    private final String volumeId;
+    private String volumeId;
 
-    @CustomType.Constructor
-    private GetInstanceConfigurationInstanceDetailBlockVolume(
-        @CustomType.Parameter("attachDetails") List<GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail> attachDetails,
-        @CustomType.Parameter("createDetails") List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail> createDetails,
-        @CustomType.Parameter("volumeId") String volumeId) {
-        this.attachDetails = attachDetails;
-        this.createDetails = createDetails;
-        this.volumeId = volumeId;
-    }
-
+    private GetInstanceConfigurationInstanceDetailBlockVolume() {}
     /**
      * @return Volume attachmentDetails. Please see [AttachVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AttachVolumeDetails/)
      * 
@@ -67,16 +58,12 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolume {
     public static Builder builder(GetInstanceConfigurationInstanceDetailBlockVolume defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail> attachDetails;
         private List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail> createDetails;
         private String volumeId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceConfigurationInstanceDetailBlockVolume defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.attachDetails = defaults.attachDetails;
@@ -84,6 +71,7 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolume {
     	      this.volumeId = defaults.volumeId;
         }
 
+        @CustomType.Setter
         public Builder attachDetails(List<GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail> attachDetails) {
             this.attachDetails = Objects.requireNonNull(attachDetails);
             return this;
@@ -91,6 +79,7 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolume {
         public Builder attachDetails(GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail... attachDetails) {
             return attachDetails(List.of(attachDetails));
         }
+        @CustomType.Setter
         public Builder createDetails(List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail> createDetails) {
             this.createDetails = Objects.requireNonNull(createDetails);
             return this;
@@ -98,11 +87,17 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolume {
         public Builder createDetails(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail... createDetails) {
             return createDetails(List.of(createDetails));
         }
+        @CustomType.Setter
         public Builder volumeId(String volumeId) {
             this.volumeId = Objects.requireNonNull(volumeId);
             return this;
-        }        public GetInstanceConfigurationInstanceDetailBlockVolume build() {
-            return new GetInstanceConfigurationInstanceDetailBlockVolume(attachDetails, createDetails, volumeId);
+        }
+        public GetInstanceConfigurationInstanceDetailBlockVolume build() {
+            final var o = new GetInstanceConfigurationInstanceDetailBlockVolume();
+            o.attachDetails = attachDetails;
+            o.createDetails = createDetails;
+            o.volumeId = volumeId;
+            return o;
         }
     }
 }

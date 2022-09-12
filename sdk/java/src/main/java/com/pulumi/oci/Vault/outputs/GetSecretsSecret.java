@@ -18,122 +18,85 @@ public final class GetSecretsSecret {
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The version number of the secret version that&#39;s currently in use.
      * 
      */
-    private final String currentVersionNumber;
+    private String currentVersionNumber;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A brief description of the secret. Avoid entering confidential information.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the secret.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the master encryption key that is used to encrypt the secret.
      * 
      */
-    private final String keyId;
+    private String keyId;
     /**
      * @return Additional information about the current lifecycle state of the secret.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
      * 
      */
-    private final Map<String,Object> metadata;
-    private final List<GetSecretsSecretSecretContent> secretContents;
+    private Map<String,Object> metadata;
+    private List<GetSecretsSecretSecretContent> secretContents;
     /**
      * @return The user-friendly name of the secret. Avoid entering confidential information.
      * 
      */
-    private final String secretName;
+    private String secretName;
     /**
      * @return A list of rules that control how the secret is used and managed.
      * 
      */
-    private final List<GetSecretsSecretSecretRule> secretRules;
+    private List<GetSecretsSecretSecretRule> secretRules;
     /**
      * @return A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeOfCurrentVersionExpiry;
+    private String timeOfCurrentVersionExpiry;
     /**
      * @return An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeOfDeletion;
+    private String timeOfDeletion;
     /**
      * @return The OCID of the vault.
      * 
      */
-    private final String vaultId;
+    private String vaultId;
 
-    @CustomType.Constructor
-    private GetSecretsSecret(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("currentVersionNumber") String currentVersionNumber,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("keyId") String keyId,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("metadata") Map<String,Object> metadata,
-        @CustomType.Parameter("secretContents") List<GetSecretsSecretSecretContent> secretContents,
-        @CustomType.Parameter("secretName") String secretName,
-        @CustomType.Parameter("secretRules") List<GetSecretsSecretSecretRule> secretRules,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeOfCurrentVersionExpiry") String timeOfCurrentVersionExpiry,
-        @CustomType.Parameter("timeOfDeletion") String timeOfDeletion,
-        @CustomType.Parameter("vaultId") String vaultId) {
-        this.compartmentId = compartmentId;
-        this.currentVersionNumber = currentVersionNumber;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.keyId = keyId;
-        this.lifecycleDetails = lifecycleDetails;
-        this.metadata = metadata;
-        this.secretContents = secretContents;
-        this.secretName = secretName;
-        this.secretRules = secretRules;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeOfCurrentVersionExpiry = timeOfCurrentVersionExpiry;
-        this.timeOfDeletion = timeOfDeletion;
-        this.vaultId = vaultId;
-    }
-
+    private GetSecretsSecret() {}
     /**
      * @return The OCID of the compartment.
      * 
@@ -257,7 +220,7 @@ public final class GetSecretsSecret {
     public static Builder builder(GetSecretsSecret defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String currentVersionNumber;
@@ -276,11 +239,7 @@ public final class GetSecretsSecret {
         private String timeOfCurrentVersionExpiry;
         private String timeOfDeletion;
         private String vaultId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecretsSecret defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -302,42 +261,52 @@ public final class GetSecretsSecret {
     	      this.vaultId = defaults.vaultId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder currentVersionNumber(String currentVersionNumber) {
             this.currentVersionNumber = Objects.requireNonNull(currentVersionNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder keyId(String keyId) {
             this.keyId = Objects.requireNonNull(keyId);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder metadata(Map<String,Object> metadata) {
             this.metadata = Objects.requireNonNull(metadata);
             return this;
         }
+        @CustomType.Setter
         public Builder secretContents(List<GetSecretsSecretSecretContent> secretContents) {
             this.secretContents = Objects.requireNonNull(secretContents);
             return this;
@@ -345,10 +314,12 @@ public final class GetSecretsSecret {
         public Builder secretContents(GetSecretsSecretSecretContent... secretContents) {
             return secretContents(List.of(secretContents));
         }
+        @CustomType.Setter
         public Builder secretName(String secretName) {
             this.secretName = Objects.requireNonNull(secretName);
             return this;
         }
+        @CustomType.Setter
         public Builder secretRules(List<GetSecretsSecretSecretRule> secretRules) {
             this.secretRules = Objects.requireNonNull(secretRules);
             return this;
@@ -356,27 +327,51 @@ public final class GetSecretsSecret {
         public Builder secretRules(GetSecretsSecretSecretRule... secretRules) {
             return secretRules(List.of(secretRules));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfCurrentVersionExpiry(String timeOfCurrentVersionExpiry) {
             this.timeOfCurrentVersionExpiry = Objects.requireNonNull(timeOfCurrentVersionExpiry);
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
             this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
             return this;
         }
+        @CustomType.Setter
         public Builder vaultId(String vaultId) {
             this.vaultId = Objects.requireNonNull(vaultId);
             return this;
-        }        public GetSecretsSecret build() {
-            return new GetSecretsSecret(compartmentId, currentVersionNumber, definedTags, description, freeformTags, id, keyId, lifecycleDetails, metadata, secretContents, secretName, secretRules, state, timeCreated, timeOfCurrentVersionExpiry, timeOfDeletion, vaultId);
+        }
+        public GetSecretsSecret build() {
+            final var o = new GetSecretsSecret();
+            o.compartmentId = compartmentId;
+            o.currentVersionNumber = currentVersionNumber;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.keyId = keyId;
+            o.lifecycleDetails = lifecycleDetails;
+            o.metadata = metadata;
+            o.secretContents = secretContents;
+            o.secretName = secretName;
+            o.secretRules = secretRules;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeOfCurrentVersionExpiry = timeOfCurrentVersionExpiry;
+            o.timeOfDeletion = timeOfDeletion;
+            o.vaultId = vaultId;
+            return o;
         }
     }
 }

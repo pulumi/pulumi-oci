@@ -15,42 +15,29 @@ public final class GetSubscriptionProductsProductCollectionItemItem {
      * @return The earned rewards for the product.
      * 
      */
-    private final Double earnedRewards;
+    private Double earnedRewards;
     /**
      * @return The boolean parameter to indicate if the product is eligible to earn rewards.
      * 
      */
-    private final Boolean isEligibleToEarnRewards;
+    private Boolean isEligibleToEarnRewards;
     /**
      * @return The rate card product name.
      * 
      */
-    private final String productName;
+    private String productName;
     /**
      * @return The rate card product number.
      * 
      */
-    private final String productNumber;
+    private String productNumber;
     /**
      * @return The rate card product usage amount.
      * 
      */
-    private final Double usageAmount;
+    private Double usageAmount;
 
-    @CustomType.Constructor
-    private GetSubscriptionProductsProductCollectionItemItem(
-        @CustomType.Parameter("earnedRewards") Double earnedRewards,
-        @CustomType.Parameter("isEligibleToEarnRewards") Boolean isEligibleToEarnRewards,
-        @CustomType.Parameter("productName") String productName,
-        @CustomType.Parameter("productNumber") String productNumber,
-        @CustomType.Parameter("usageAmount") Double usageAmount) {
-        this.earnedRewards = earnedRewards;
-        this.isEligibleToEarnRewards = isEligibleToEarnRewards;
-        this.productName = productName;
-        this.productNumber = productNumber;
-        this.usageAmount = usageAmount;
-    }
-
+    private GetSubscriptionProductsProductCollectionItemItem() {}
     /**
      * @return The earned rewards for the product.
      * 
@@ -94,18 +81,14 @@ public final class GetSubscriptionProductsProductCollectionItemItem {
     public static Builder builder(GetSubscriptionProductsProductCollectionItemItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double earnedRewards;
         private Boolean isEligibleToEarnRewards;
         private String productName;
         private String productNumber;
         private Double usageAmount;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionProductsProductCollectionItemItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.earnedRewards = defaults.earnedRewards;
@@ -115,27 +98,39 @@ public final class GetSubscriptionProductsProductCollectionItemItem {
     	      this.usageAmount = defaults.usageAmount;
         }
 
+        @CustomType.Setter
         public Builder earnedRewards(Double earnedRewards) {
             this.earnedRewards = Objects.requireNonNull(earnedRewards);
             return this;
         }
+        @CustomType.Setter
         public Builder isEligibleToEarnRewards(Boolean isEligibleToEarnRewards) {
             this.isEligibleToEarnRewards = Objects.requireNonNull(isEligibleToEarnRewards);
             return this;
         }
+        @CustomType.Setter
         public Builder productName(String productName) {
             this.productName = Objects.requireNonNull(productName);
             return this;
         }
+        @CustomType.Setter
         public Builder productNumber(String productNumber) {
             this.productNumber = Objects.requireNonNull(productNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder usageAmount(Double usageAmount) {
             this.usageAmount = Objects.requireNonNull(usageAmount);
             return this;
-        }        public GetSubscriptionProductsProductCollectionItemItem build() {
-            return new GetSubscriptionProductsProductCollectionItemItem(earnedRewards, isEligibleToEarnRewards, productName, productNumber, usageAmount);
+        }
+        public GetSubscriptionProductsProductCollectionItemItem build() {
+            final var o = new GetSubscriptionProductsProductCollectionItemItem();
+            o.earnedRewards = earnedRewards;
+            o.isEligibleToEarnRewards = isEligibleToEarnRewards;
+            o.productName = productName;
+            o.productNumber = productNumber;
+            o.usageAmount = usageAmount;
+            return o;
         }
     }
 }

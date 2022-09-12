@@ -13,24 +13,15 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataMaskRulesFilter {
-    private final String name;
-    private final @Nullable Boolean regex;
+    private String name;
+    private @Nullable Boolean regex;
     /**
      * @return Types of Targets
      * 
      */
-    private final List<String> values;
+    private List<String> values;
 
-    @CustomType.Constructor
-    private GetDataMaskRulesFilter(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("regex") @Nullable Boolean regex,
-        @CustomType.Parameter("values") List<String> values) {
-        this.name = name;
-        this.regex = regex;
-        this.values = values;
-    }
-
+    private GetDataMaskRulesFilter() {}
     public String name() {
         return this.name;
     }
@@ -52,16 +43,12 @@ public final class GetDataMaskRulesFilter {
     public static Builder builder(GetDataMaskRulesFilter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private @Nullable Boolean regex;
         private List<String> values;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDataMaskRulesFilter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
@@ -69,22 +56,30 @@ public final class GetDataMaskRulesFilter {
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder regex(@Nullable Boolean regex) {
             this.regex = regex;
             return this;
         }
+        @CustomType.Setter
         public Builder values(List<String> values) {
             this.values = Objects.requireNonNull(values);
             return this;
         }
         public Builder values(String... values) {
             return values(List.of(values));
-        }        public GetDataMaskRulesFilter build() {
-            return new GetDataMaskRulesFilter(name, regex, values);
+        }
+        public GetDataMaskRulesFilter build() {
+            final var o = new GetDataMaskRulesFilter();
+            o.name = name;
+            o.regex = regex;
+            o.values = values;
+            return o;
         }
     }
 }

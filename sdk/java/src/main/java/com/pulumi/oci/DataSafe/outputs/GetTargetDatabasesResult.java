@@ -15,75 +15,48 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetDatabasesResult {
-    private final @Nullable String accessLevel;
-    private final @Nullable String associatedResourceId;
+    private @Nullable String accessLevel;
+    private @Nullable String associatedResourceId;
     /**
      * @return The OCID of the compartment which contains the Data Safe target database.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The database type.
      * 
      */
-    private final @Nullable String databaseType;
+    private @Nullable String databaseType;
     /**
      * @return The display name of the target database in Data Safe.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetTargetDatabasesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetTargetDatabasesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The infrastructure type the database is running on.
      * 
      */
-    private final @Nullable String infrastructureType;
+    private @Nullable String infrastructureType;
     /**
      * @return The current state of the target database in Data Safe.
      * 
      */
-    private final @Nullable String state;
-    private final @Nullable String targetDatabaseId;
+    private @Nullable String state;
+    private @Nullable String targetDatabaseId;
     /**
      * @return The list of target_databases.
      * 
      */
-    private final List<GetTargetDatabasesTargetDatabase> targetDatabases;
+    private List<GetTargetDatabasesTargetDatabase> targetDatabases;
 
-    @CustomType.Constructor
-    private GetTargetDatabasesResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("associatedResourceId") @Nullable String associatedResourceId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("databaseType") @Nullable String databaseType,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetTargetDatabasesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("infrastructureType") @Nullable String infrastructureType,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("targetDatabaseId") @Nullable String targetDatabaseId,
-        @CustomType.Parameter("targetDatabases") List<GetTargetDatabasesTargetDatabase> targetDatabases) {
-        this.accessLevel = accessLevel;
-        this.associatedResourceId = associatedResourceId;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.databaseType = databaseType;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.infrastructureType = infrastructureType;
-        this.state = state;
-        this.targetDatabaseId = targetDatabaseId;
-        this.targetDatabases = targetDatabases;
-    }
-
+    private GetTargetDatabasesResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -156,7 +129,7 @@ public final class GetTargetDatabasesResult {
     public static Builder builder(GetTargetDatabasesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private @Nullable String associatedResourceId;
@@ -170,11 +143,7 @@ public final class GetTargetDatabasesResult {
         private @Nullable String state;
         private @Nullable String targetDatabaseId;
         private List<GetTargetDatabasesTargetDatabase> targetDatabases;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTargetDatabasesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -191,30 +160,37 @@ public final class GetTargetDatabasesResult {
     	      this.targetDatabases = defaults.targetDatabases;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder associatedResourceId(@Nullable String associatedResourceId) {
             this.associatedResourceId = associatedResourceId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder databaseType(@Nullable String databaseType) {
             this.databaseType = databaseType;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetTargetDatabasesFilter> filters) {
             this.filters = filters;
             return this;
@@ -222,30 +198,49 @@ public final class GetTargetDatabasesResult {
         public Builder filters(GetTargetDatabasesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder infrastructureType(@Nullable String infrastructureType) {
             this.infrastructureType = infrastructureType;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder targetDatabaseId(@Nullable String targetDatabaseId) {
             this.targetDatabaseId = targetDatabaseId;
             return this;
         }
+        @CustomType.Setter
         public Builder targetDatabases(List<GetTargetDatabasesTargetDatabase> targetDatabases) {
             this.targetDatabases = Objects.requireNonNull(targetDatabases);
             return this;
         }
         public Builder targetDatabases(GetTargetDatabasesTargetDatabase... targetDatabases) {
             return targetDatabases(List.of(targetDatabases));
-        }        public GetTargetDatabasesResult build() {
-            return new GetTargetDatabasesResult(accessLevel, associatedResourceId, compartmentId, compartmentIdInSubtree, databaseType, displayName, filters, id, infrastructureType, state, targetDatabaseId, targetDatabases);
+        }
+        public GetTargetDatabasesResult build() {
+            final var o = new GetTargetDatabasesResult();
+            o.accessLevel = accessLevel;
+            o.associatedResourceId = associatedResourceId;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.databaseType = databaseType;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.infrastructureType = infrastructureType;
+            o.state = state;
+            o.targetDatabaseId = targetDatabaseId;
+            o.targetDatabases = targetDatabases;
+            return o;
         }
     }
 }

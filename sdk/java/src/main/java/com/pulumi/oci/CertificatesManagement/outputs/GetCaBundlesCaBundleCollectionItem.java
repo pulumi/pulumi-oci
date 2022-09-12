@@ -11,77 +11,54 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCaBundlesCaBundleCollectionItem {
-    private final String caBundlePem;
+    private String caBundlePem;
     /**
      * @return A filter that returns only resources that match the given compartment OCID.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A brief description of the CA bundle.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the CA bundle.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Additional information about the current lifecycle state of the CA bundle.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return A filter that returns only resources that match the specified name.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return A property indicating when the CA bundle was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetCaBundlesCaBundleCollectionItem(
-        @CustomType.Parameter("caBundlePem") String caBundlePem,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.caBundlePem = caBundlePem;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.name = name;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetCaBundlesCaBundleCollectionItem() {}
     public String caBundlePem() {
         return this.caBundlePem;
     }
@@ -156,7 +133,7 @@ public final class GetCaBundlesCaBundleCollectionItem {
     public static Builder builder(GetCaBundlesCaBundleCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String caBundlePem;
         private String compartmentId;
@@ -168,11 +145,7 @@ public final class GetCaBundlesCaBundleCollectionItem {
         private String name;
         private String state;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCaBundlesCaBundleCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.caBundlePem = defaults.caBundlePem;
@@ -187,47 +160,69 @@ public final class GetCaBundlesCaBundleCollectionItem {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder caBundlePem(String caBundlePem) {
             this.caBundlePem = Objects.requireNonNull(caBundlePem);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetCaBundlesCaBundleCollectionItem build() {
-            return new GetCaBundlesCaBundleCollectionItem(caBundlePem, compartmentId, definedTags, description, freeformTags, id, lifecycleDetails, name, state, timeCreated);
+        }
+        public GetCaBundlesCaBundleCollectionItem build() {
+            final var o = new GetCaBundlesCaBundleCollectionItem();
+            o.caBundlePem = caBundlePem;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.name = name;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

@@ -18,59 +18,40 @@ public final class GetDeploymentsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of deployment_collection.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollection> deploymentCollections;
+    private List<GetDeploymentsDeploymentCollection> deploymentCollections;
     /**
      * @return An object&#39;s Display Name.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetDeploymentsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetDeploymentsFilter> filters;
     /**
      * @return A three-label Fully Qualified Domain Name (FQDN) for a resource.
      * 
      */
-    private final @Nullable String fqdn;
+    private @Nullable String fqdn;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Possible GGS lifecycle sub-states.
      * 
      */
-    private final @Nullable String lifecycleSubState;
+    private @Nullable String lifecycleSubState;
     /**
      * @return Possible lifecycle states.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetDeploymentsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("deploymentCollections") List<GetDeploymentsDeploymentCollection> deploymentCollections,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetDeploymentsFilter> filters,
-        @CustomType.Parameter("fqdn") @Nullable String fqdn,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleSubState") @Nullable String lifecycleSubState,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.deploymentCollections = deploymentCollections;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.fqdn = fqdn;
-        this.id = id;
-        this.lifecycleSubState = lifecycleSubState;
-        this.state = state;
-    }
-
+    private GetDeploymentsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
@@ -131,7 +112,7 @@ public final class GetDeploymentsResult {
     public static Builder builder(GetDeploymentsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetDeploymentsDeploymentCollection> deploymentCollections;
@@ -141,11 +122,7 @@ public final class GetDeploymentsResult {
         private String id;
         private @Nullable String lifecycleSubState;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -158,10 +135,12 @@ public final class GetDeploymentsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder deploymentCollections(List<GetDeploymentsDeploymentCollection> deploymentCollections) {
             this.deploymentCollections = Objects.requireNonNull(deploymentCollections);
             return this;
@@ -169,10 +148,12 @@ public final class GetDeploymentsResult {
         public Builder deploymentCollections(GetDeploymentsDeploymentCollection... deploymentCollections) {
             return deploymentCollections(List.of(deploymentCollections));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDeploymentsFilter> filters) {
             this.filters = filters;
             return this;
@@ -180,23 +161,37 @@ public final class GetDeploymentsResult {
         public Builder filters(GetDeploymentsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder fqdn(@Nullable String fqdn) {
             this.fqdn = fqdn;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleSubState(@Nullable String lifecycleSubState) {
             this.lifecycleSubState = lifecycleSubState;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetDeploymentsResult build() {
-            return new GetDeploymentsResult(compartmentId, deploymentCollections, displayName, filters, fqdn, id, lifecycleSubState, state);
+        }
+        public GetDeploymentsResult build() {
+            final var o = new GetDeploymentsResult();
+            o.compartmentId = compartmentId;
+            o.deploymentCollections = deploymentCollections;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.fqdn = fqdn;
+            o.id = id;
+            o.lifecycleSubState = lifecycleSubState;
+            o.state = state;
+            return o;
         }
     }
 }

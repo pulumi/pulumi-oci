@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail;
 import java.lang.Object;
 import java.lang.String;
@@ -14,76 +15,65 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail {
     /**
+     * @return The list of autotune policies enabled for this volume.
+     * 
+     */
+    private List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy> autotunePolicies;
+    /**
      * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
      * 
      */
-    private final String backupPolicyId;
+    private String backupPolicyId;
     /**
      * @return The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the Key Management key to assign as the master encryption key for the volume.
      * 
      */
-    private final String kmsKeyId;
+    private String kmsKeyId;
     /**
      * @return The size of the volume in GBs.
      * 
      */
-    private final String sizeInGbs;
-    private final List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail> sourceDetails;
+    private String sizeInGbs;
+    private List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail> sourceDetails;
     /**
      * @return The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
      */
-    private final String vpusPerGb;
+    private String vpusPerGb;
 
-    @CustomType.Constructor
-    private GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("backupPolicyId") String backupPolicyId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("sizeInGbs") String sizeInGbs,
-        @CustomType.Parameter("sourceDetails") List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail> sourceDetails,
-        @CustomType.Parameter("vpusPerGb") String vpusPerGb) {
-        this.availabilityDomain = availabilityDomain;
-        this.backupPolicyId = backupPolicyId;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.kmsKeyId = kmsKeyId;
-        this.sizeInGbs = sizeInGbs;
-        this.sourceDetails = sourceDetails;
-        this.vpusPerGb = vpusPerGb;
+    private GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail() {}
+    /**
+     * @return The list of autotune policies enabled for this volume.
+     * 
+     */
+    public List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy> autotunePolicies() {
+        return this.autotunePolicies;
     }
-
     /**
      * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
@@ -158,8 +148,9 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail
     public static Builder builder(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
+        private List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy> autotunePolicies;
         private String availabilityDomain;
         private String backupPolicyId;
         private String compartmentId;
@@ -170,13 +161,10 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail
         private String sizeInGbs;
         private List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail> sourceDetails;
         private String vpusPerGb;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.autotunePolicies = defaults.autotunePolicies;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.backupPolicyId = defaults.backupPolicyId;
     	      this.compartmentId = defaults.compartmentId;
@@ -189,38 +177,55 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail
     	      this.vpusPerGb = defaults.vpusPerGb;
         }
 
+        @CustomType.Setter
+        public Builder autotunePolicies(List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy> autotunePolicies) {
+            this.autotunePolicies = Objects.requireNonNull(autotunePolicies);
+            return this;
+        }
+        public Builder autotunePolicies(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy... autotunePolicies) {
+            return autotunePolicies(List.of(autotunePolicies));
+        }
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder backupPolicyId(String backupPolicyId) {
             this.backupPolicyId = Objects.requireNonNull(backupPolicyId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder sizeInGbs(String sizeInGbs) {
             this.sizeInGbs = Objects.requireNonNull(sizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceDetails(List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail> sourceDetails) {
             this.sourceDetails = Objects.requireNonNull(sourceDetails);
             return this;
@@ -228,11 +233,25 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail
         public Builder sourceDetails(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail... sourceDetails) {
             return sourceDetails(List.of(sourceDetails));
         }
+        @CustomType.Setter
         public Builder vpusPerGb(String vpusPerGb) {
             this.vpusPerGb = Objects.requireNonNull(vpusPerGb);
             return this;
-        }        public GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail build() {
-            return new GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail(availabilityDomain, backupPolicyId, compartmentId, definedTags, displayName, freeformTags, kmsKeyId, sizeInGbs, sourceDetails, vpusPerGb);
+        }
+        public GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail build() {
+            final var o = new GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail();
+            o.autotunePolicies = autotunePolicies;
+            o.availabilityDomain = availabilityDomain;
+            o.backupPolicyId = backupPolicyId;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.kmsKeyId = kmsKeyId;
+            o.sizeInGbs = sizeInGbs;
+            o.sourceDetails = sourceDetails;
+            o.vpusPerGb = vpusPerGb;
+            return o;
         }
     }
 }

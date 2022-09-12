@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAuditPoliciesAuditPolicyCollection {
-    private final List<GetAuditPoliciesAuditPolicyCollectionItem> items;
+    private List<GetAuditPoliciesAuditPolicyCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetAuditPoliciesAuditPolicyCollection(@CustomType.Parameter("items") List<GetAuditPoliciesAuditPolicyCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetAuditPoliciesAuditPolicyCollection() {}
     public List<GetAuditPoliciesAuditPolicyCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetAuditPoliciesAuditPolicyCollection {
     public static Builder builder(GetAuditPoliciesAuditPolicyCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAuditPoliciesAuditPolicyCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditPoliciesAuditPolicyCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetAuditPoliciesAuditPolicyCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAuditPoliciesAuditPolicyCollectionItem... items) {
             return items(List.of(items));
-        }        public GetAuditPoliciesAuditPolicyCollection build() {
-            return new GetAuditPoliciesAuditPolicyCollection(items);
+        }
+        public GetAuditPoliciesAuditPolicyCollection build() {
+            final var o = new GetAuditPoliciesAuditPolicyCollection();
+            o.items = items;
+            return o;
         }
     }
 }

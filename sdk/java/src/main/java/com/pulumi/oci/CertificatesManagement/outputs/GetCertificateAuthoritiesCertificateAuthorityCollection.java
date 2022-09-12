@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCertificateAuthoritiesCertificateAuthorityCollection {
-    private final List<GetCertificateAuthoritiesCertificateAuthorityCollectionItem> items;
+    private List<GetCertificateAuthoritiesCertificateAuthorityCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetCertificateAuthoritiesCertificateAuthorityCollection(@CustomType.Parameter("items") List<GetCertificateAuthoritiesCertificateAuthorityCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetCertificateAuthoritiesCertificateAuthorityCollection() {}
     public List<GetCertificateAuthoritiesCertificateAuthorityCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollection {
     public static Builder builder(GetCertificateAuthoritiesCertificateAuthorityCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCertificateAuthoritiesCertificateAuthorityCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificateAuthoritiesCertificateAuthorityCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetCertificateAuthoritiesCertificateAuthorityCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetCertificateAuthoritiesCertificateAuthorityCollectionItem... items) {
             return items(List.of(items));
-        }        public GetCertificateAuthoritiesCertificateAuthorityCollection build() {
-            return new GetCertificateAuthoritiesCertificateAuthorityCollection(items);
+        }
+        public GetCertificateAuthoritiesCertificateAuthorityCollection build() {
+            final var o = new GetCertificateAuthoritiesCertificateAuthorityCollection();
+            o.items = items;
+            return o;
         }
     }
 }

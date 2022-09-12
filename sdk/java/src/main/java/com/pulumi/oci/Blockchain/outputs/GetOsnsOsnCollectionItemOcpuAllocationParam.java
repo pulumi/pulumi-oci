@@ -13,13 +13,9 @@ public final class GetOsnsOsnCollectionItemOcpuAllocationParam {
      * @return Number of OCPU allocation
      * 
      */
-    private final Double ocpuAllocationNumber;
+    private Double ocpuAllocationNumber;
 
-    @CustomType.Constructor
-    private GetOsnsOsnCollectionItemOcpuAllocationParam(@CustomType.Parameter("ocpuAllocationNumber") Double ocpuAllocationNumber) {
-        this.ocpuAllocationNumber = ocpuAllocationNumber;
-    }
-
+    private GetOsnsOsnCollectionItemOcpuAllocationParam() {}
     /**
      * @return Number of OCPU allocation
      * 
@@ -35,24 +31,24 @@ public final class GetOsnsOsnCollectionItemOcpuAllocationParam {
     public static Builder builder(GetOsnsOsnCollectionItemOcpuAllocationParam defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double ocpuAllocationNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOsnsOsnCollectionItemOcpuAllocationParam defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ocpuAllocationNumber = defaults.ocpuAllocationNumber;
         }
 
+        @CustomType.Setter
         public Builder ocpuAllocationNumber(Double ocpuAllocationNumber) {
             this.ocpuAllocationNumber = Objects.requireNonNull(ocpuAllocationNumber);
             return this;
-        }        public GetOsnsOsnCollectionItemOcpuAllocationParam build() {
-            return new GetOsnsOsnCollectionItemOcpuAllocationParam(ocpuAllocationNumber);
+        }
+        public GetOsnsOsnCollectionItemOcpuAllocationParam build() {
+            final var o = new GetOsnsOsnCollectionItemOcpuAllocationParam();
+            o.ocpuAllocationNumber = ocpuAllocationNumber;
+            return o;
         }
     }
 }

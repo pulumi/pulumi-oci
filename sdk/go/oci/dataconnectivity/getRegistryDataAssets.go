@@ -58,11 +58,11 @@ func GetRegistryDataAssets(ctx *pulumi.Context, args *GetRegistryDataAssetsArgs,
 
 // A collection of arguments for invoking getRegistryDataAssets.
 type GetRegistryDataAssetsArgs struct {
-	// Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+	// Endpoint IDs used for data-plane APIs to filter or prefer specific endpoint.
 	EndpointIds []string `pulumi:"endpointIds"`
-	// Endpoints which will be excluded while listing dataAssets
+	// Endpoints which will be excluded while listing data assets.
 	ExcludeEndpointIds []string `pulumi:"excludeEndpointIds"`
-	// Types which wont be listed while listing dataAsset/Connection
+	// The types that will be excluded from the list of data assets/connections.
 	ExcludeTypes []string `pulumi:"excludeTypes"`
 	// If value is FAVORITES_ONLY, then only objects marked as favorite by the requesting user will be included in result. If value is NON_FAVORITES_ONLY, then objects marked as favorites by the requesting user will be skipped. If value is ALL or if not specified, all objects, irrespective of favorites or not will be returned. Default is ALL.
 	FavoritesQueryParam *string `pulumi:"favoritesQueryParam"`
@@ -71,11 +71,11 @@ type GetRegistryDataAssetsArgs struct {
 	Filters []GetRegistryDataAssetsFilter `pulumi:"filters"`
 	// Unique key of the folder.
 	FolderId *string `pulumi:"folderId"`
-	// DataAsset type which needs to be listed while listing dataAssets
+	// Artifact type which needs to be listed while listing Artifacts.
 	IncludeTypes []string `pulumi:"includeTypes"`
 	// Used to filter by the name of the object.
 	Name *string `pulumi:"name"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId string `pulumi:"registryId"`
 	// Specific DataAsset Type
 	Type *string `pulumi:"type"`
@@ -95,7 +95,7 @@ type GetRegistryDataAssetsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id           string   `pulumi:"id"`
 	IncludeTypes []string `pulumi:"includeTypes"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name       *string `pulumi:"name"`
 	RegistryId string  `pulumi:"registryId"`
 	// Specific DataAsset Type
@@ -117,11 +117,11 @@ func GetRegistryDataAssetsOutput(ctx *pulumi.Context, args GetRegistryDataAssets
 
 // A collection of arguments for invoking getRegistryDataAssets.
 type GetRegistryDataAssetsOutputArgs struct {
-	// Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+	// Endpoint IDs used for data-plane APIs to filter or prefer specific endpoint.
 	EndpointIds pulumi.StringArrayInput `pulumi:"endpointIds"`
-	// Endpoints which will be excluded while listing dataAssets
+	// Endpoints which will be excluded while listing data assets.
 	ExcludeEndpointIds pulumi.StringArrayInput `pulumi:"excludeEndpointIds"`
-	// Types which wont be listed while listing dataAsset/Connection
+	// The types that will be excluded from the list of data assets/connections.
 	ExcludeTypes pulumi.StringArrayInput `pulumi:"excludeTypes"`
 	// If value is FAVORITES_ONLY, then only objects marked as favorite by the requesting user will be included in result. If value is NON_FAVORITES_ONLY, then objects marked as favorites by the requesting user will be skipped. If value is ALL or if not specified, all objects, irrespective of favorites or not will be returned. Default is ALL.
 	FavoritesQueryParam pulumi.StringPtrInput `pulumi:"favoritesQueryParam"`
@@ -130,11 +130,11 @@ type GetRegistryDataAssetsOutputArgs struct {
 	Filters GetRegistryDataAssetsFilterArrayInput `pulumi:"filters"`
 	// Unique key of the folder.
 	FolderId pulumi.StringPtrInput `pulumi:"folderId"`
-	// DataAsset type which needs to be listed while listing dataAssets
+	// Artifact type which needs to be listed while listing Artifacts.
 	IncludeTypes pulumi.StringArrayInput `pulumi:"includeTypes"`
 	// Used to filter by the name of the object.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringInput `pulumi:"registryId"`
 	// Specific DataAsset Type
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -203,7 +203,7 @@ func (o GetRegistryDataAssetsResultOutput) IncludeTypes() pulumi.StringArrayOutp
 	return o.ApplyT(func(v GetRegistryDataAssetsResult) []string { return v.IncludeTypes }).(pulumi.StringArrayOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryDataAssetsResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRegistryDataAssetsResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }

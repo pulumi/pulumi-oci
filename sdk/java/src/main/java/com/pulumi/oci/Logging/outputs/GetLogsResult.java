@@ -18,58 +18,37 @@ public final class GetLogsResult {
      * @return The user-friendly display name. This must be unique within the enclosing resource, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetLogsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetLogsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Log group OCID.
      * 
      */
-    private final String logGroupId;
+    private String logGroupId;
     /**
      * @return The logType that the log object is for, whether custom or service.
      * 
      */
-    private final @Nullable String logType;
+    private @Nullable String logType;
     /**
      * @return The list of logs.
      * 
      */
-    private final List<GetLogsLog> logs;
-    private final @Nullable String sourceResource;
-    private final @Nullable String sourceService;
+    private List<GetLogsLog> logs;
+    private @Nullable String sourceResource;
+    private @Nullable String sourceService;
     /**
      * @return The pipeline state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetLogsResult(
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetLogsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("logGroupId") String logGroupId,
-        @CustomType.Parameter("logType") @Nullable String logType,
-        @CustomType.Parameter("logs") List<GetLogsLog> logs,
-        @CustomType.Parameter("sourceResource") @Nullable String sourceResource,
-        @CustomType.Parameter("sourceService") @Nullable String sourceService,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.logGroupId = logGroupId;
-        this.logType = logType;
-        this.logs = logs;
-        this.sourceResource = sourceResource;
-        this.sourceService = sourceService;
-        this.state = state;
-    }
-
+    private GetLogsResult() {}
     /**
      * @return The user-friendly display name. This must be unique within the enclosing resource, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -129,7 +108,7 @@ public final class GetLogsResult {
     public static Builder builder(GetLogsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String displayName;
         private @Nullable List<GetLogsFilter> filters;
@@ -140,11 +119,7 @@ public final class GetLogsResult {
         private @Nullable String sourceResource;
         private @Nullable String sourceService;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -158,10 +133,12 @@ public final class GetLogsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetLogsFilter> filters) {
             this.filters = filters;
             return this;
@@ -169,18 +146,22 @@ public final class GetLogsResult {
         public Builder filters(GetLogsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = Objects.requireNonNull(logGroupId);
             return this;
         }
+        @CustomType.Setter
         public Builder logType(@Nullable String logType) {
             this.logType = logType;
             return this;
         }
+        @CustomType.Setter
         public Builder logs(List<GetLogsLog> logs) {
             this.logs = Objects.requireNonNull(logs);
             return this;
@@ -188,19 +169,33 @@ public final class GetLogsResult {
         public Builder logs(GetLogsLog... logs) {
             return logs(List.of(logs));
         }
+        @CustomType.Setter
         public Builder sourceResource(@Nullable String sourceResource) {
             this.sourceResource = sourceResource;
             return this;
         }
+        @CustomType.Setter
         public Builder sourceService(@Nullable String sourceService) {
             this.sourceService = sourceService;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetLogsResult build() {
-            return new GetLogsResult(displayName, filters, id, logGroupId, logType, logs, sourceResource, sourceService, state);
+        }
+        public GetLogsResult build() {
+            final var o = new GetLogsResult();
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.logGroupId = logGroupId;
+            o.logType = logType;
+            o.logs = logs;
+            o.sourceResource = sourceResource;
+            o.sourceService = sourceService;
+            o.state = state;
+            return o;
         }
     }
 }

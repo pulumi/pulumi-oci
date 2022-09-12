@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServicesResult {
-    private final String compartmentId;
-    private final @Nullable List<GetServicesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetServicesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of services.
      * 
      */
-    private final List<GetServicesService> services;
+    private List<GetServicesService> services;
 
-    @CustomType.Constructor
-    private GetServicesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetServicesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("services") List<GetServicesService> services) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.services = services;
-    }
-
+    private GetServicesResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -66,17 +55,13 @@ public final class GetServicesResult {
     public static Builder builder(GetServicesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetServicesFilter> filters;
         private String id;
         private List<GetServicesService> services;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServicesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -85,10 +70,12 @@ public final class GetServicesResult {
     	      this.services = defaults.services;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetServicesFilter> filters) {
             this.filters = filters;
             return this;
@@ -96,18 +83,26 @@ public final class GetServicesResult {
         public Builder filters(GetServicesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder services(List<GetServicesService> services) {
             this.services = Objects.requireNonNull(services);
             return this;
         }
         public Builder services(GetServicesService... services) {
             return services(List.of(services));
-        }        public GetServicesResult build() {
-            return new GetServicesResult(compartmentId, filters, id, services);
+        }
+        public GetServicesResult build() {
+            final var o = new GetServicesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.services = services;
+            return o;
         }
     }
 }

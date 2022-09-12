@@ -18,27 +18,16 @@ public final class GetCategoriesResult {
      * @return The list of categories.
      * 
      */
-    private final List<GetCategoriesCategory> categories;
-    private final @Nullable String compartmentId;
-    private final @Nullable List<GetCategoriesFilter> filters;
+    private List<GetCategoriesCategory> categories;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetCategoriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetCategoriesResult(
-        @CustomType.Parameter("categories") List<GetCategoriesCategory> categories,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetCategoriesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.categories = categories;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetCategoriesResult() {}
     /**
      * @return The list of categories.
      * 
@@ -67,17 +56,13 @@ public final class GetCategoriesResult {
     public static Builder builder(GetCategoriesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCategoriesCategory> categories;
         private @Nullable String compartmentId;
         private @Nullable List<GetCategoriesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCategoriesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.categories = defaults.categories;
@@ -86,6 +71,7 @@ public final class GetCategoriesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder categories(List<GetCategoriesCategory> categories) {
             this.categories = Objects.requireNonNull(categories);
             return this;
@@ -93,10 +79,12 @@ public final class GetCategoriesResult {
         public Builder categories(GetCategoriesCategory... categories) {
             return categories(List.of(categories));
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetCategoriesFilter> filters) {
             this.filters = filters;
             return this;
@@ -104,11 +92,18 @@ public final class GetCategoriesResult {
         public Builder filters(GetCategoriesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetCategoriesResult build() {
-            return new GetCategoriesResult(categories, compartmentId, filters, id);
+        }
+        public GetCategoriesResult build() {
+            final var o = new GetCategoriesResult();
+            o.categories = categories;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

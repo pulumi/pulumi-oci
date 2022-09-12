@@ -15,35 +15,24 @@ public final class CrossConnectMacsecPropertiesPrimaryKey {
      * @return Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
      * 
      */
-    private final String connectivityAssociationKeySecretId;
+    private String connectivityAssociationKeySecretId;
     /**
      * @return The secret version of the `connectivityAssociationKey` secret in Vault.
      * 
      */
-    private final @Nullable String connectivityAssociationKeySecretVersion;
+    private @Nullable String connectivityAssociationKeySecretVersion;
     /**
      * @return Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
      * 
      */
-    private final String connectivityAssociationNameSecretId;
+    private String connectivityAssociationNameSecretId;
     /**
      * @return The secret version of the connectivity association name secret in Vault.
      * 
      */
-    private final @Nullable String connectivityAssociationNameSecretVersion;
+    private @Nullable String connectivityAssociationNameSecretVersion;
 
-    @CustomType.Constructor
-    private CrossConnectMacsecPropertiesPrimaryKey(
-        @CustomType.Parameter("connectivityAssociationKeySecretId") String connectivityAssociationKeySecretId,
-        @CustomType.Parameter("connectivityAssociationKeySecretVersion") @Nullable String connectivityAssociationKeySecretVersion,
-        @CustomType.Parameter("connectivityAssociationNameSecretId") String connectivityAssociationNameSecretId,
-        @CustomType.Parameter("connectivityAssociationNameSecretVersion") @Nullable String connectivityAssociationNameSecretVersion) {
-        this.connectivityAssociationKeySecretId = connectivityAssociationKeySecretId;
-        this.connectivityAssociationKeySecretVersion = connectivityAssociationKeySecretVersion;
-        this.connectivityAssociationNameSecretId = connectivityAssociationNameSecretId;
-        this.connectivityAssociationNameSecretVersion = connectivityAssociationNameSecretVersion;
-    }
-
+    private CrossConnectMacsecPropertiesPrimaryKey() {}
     /**
      * @return Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
      * 
@@ -80,17 +69,13 @@ public final class CrossConnectMacsecPropertiesPrimaryKey {
     public static Builder builder(CrossConnectMacsecPropertiesPrimaryKey defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String connectivityAssociationKeySecretId;
         private @Nullable String connectivityAssociationKeySecretVersion;
         private String connectivityAssociationNameSecretId;
         private @Nullable String connectivityAssociationNameSecretVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CrossConnectMacsecPropertiesPrimaryKey defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.connectivityAssociationKeySecretId = defaults.connectivityAssociationKeySecretId;
@@ -99,23 +84,33 @@ public final class CrossConnectMacsecPropertiesPrimaryKey {
     	      this.connectivityAssociationNameSecretVersion = defaults.connectivityAssociationNameSecretVersion;
         }
 
+        @CustomType.Setter
         public Builder connectivityAssociationKeySecretId(String connectivityAssociationKeySecretId) {
             this.connectivityAssociationKeySecretId = Objects.requireNonNull(connectivityAssociationKeySecretId);
             return this;
         }
+        @CustomType.Setter
         public Builder connectivityAssociationKeySecretVersion(@Nullable String connectivityAssociationKeySecretVersion) {
             this.connectivityAssociationKeySecretVersion = connectivityAssociationKeySecretVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder connectivityAssociationNameSecretId(String connectivityAssociationNameSecretId) {
             this.connectivityAssociationNameSecretId = Objects.requireNonNull(connectivityAssociationNameSecretId);
             return this;
         }
+        @CustomType.Setter
         public Builder connectivityAssociationNameSecretVersion(@Nullable String connectivityAssociationNameSecretVersion) {
             this.connectivityAssociationNameSecretVersion = connectivityAssociationNameSecretVersion;
             return this;
-        }        public CrossConnectMacsecPropertiesPrimaryKey build() {
-            return new CrossConnectMacsecPropertiesPrimaryKey(connectivityAssociationKeySecretId, connectivityAssociationKeySecretVersion, connectivityAssociationNameSecretId, connectivityAssociationNameSecretVersion);
+        }
+        public CrossConnectMacsecPropertiesPrimaryKey build() {
+            final var o = new CrossConnectMacsecPropertiesPrimaryKey();
+            o.connectivityAssociationKeySecretId = connectivityAssociationKeySecretId;
+            o.connectivityAssociationKeySecretVersion = connectivityAssociationKeySecretVersion;
+            o.connectivityAssociationNameSecretId = connectivityAssociationNameSecretId;
+            o.connectivityAssociationNameSecretVersion = connectivityAssociationNameSecretVersion;
+            return o;
         }
     }
 }

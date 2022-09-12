@@ -13,13 +13,9 @@ public final class GetAutonomousDatabaseScheduledOperationDayOfWeek {
      * @return Name of the day of the week.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetAutonomousDatabaseScheduledOperationDayOfWeek(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private GetAutonomousDatabaseScheduledOperationDayOfWeek() {}
     /**
      * @return Name of the day of the week.
      * 
@@ -35,24 +31,24 @@ public final class GetAutonomousDatabaseScheduledOperationDayOfWeek {
     public static Builder builder(GetAutonomousDatabaseScheduledOperationDayOfWeek defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDatabaseScheduledOperationDayOfWeek defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetAutonomousDatabaseScheduledOperationDayOfWeek build() {
-            return new GetAutonomousDatabaseScheduledOperationDayOfWeek(name);
+        }
+        public GetAutonomousDatabaseScheduledOperationDayOfWeek build() {
+            final var o = new GetAutonomousDatabaseScheduledOperationDayOfWeek();
+            o.name = name;
+            return o;
         }
     }
 }

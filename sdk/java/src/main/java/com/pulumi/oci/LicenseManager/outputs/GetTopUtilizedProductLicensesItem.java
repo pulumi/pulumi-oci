@@ -16,56 +16,39 @@ public final class GetTopUtilizedProductLicensesItem {
      * @return Specifies if the license unit count is unlimited.
      * 
      */
-    private final Boolean isUnlimited;
+    private Boolean isUnlimited;
     /**
      * @return The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String productLicenseId;
+    private String productLicenseId;
     /**
      * @return The product type.
      * 
      */
-    private final String productType;
+    private String productType;
     /**
      * @return The current product license status.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return Total number of license units in the product license provided by the user.
      * 
      */
-    private final Integer totalLicenseUnitCount;
+    private Integer totalLicenseUnitCount;
     /**
      * @return Number of license units consumed.
      * 
      */
-    private final Double totalUnitsConsumed;
+    private Double totalUnitsConsumed;
     /**
      * @return The product license unit.
      * 
      */
-    private final String unitType;
+    private String unitType;
 
-    @CustomType.Constructor
-    private GetTopUtilizedProductLicensesItem(
-        @CustomType.Parameter("isUnlimited") Boolean isUnlimited,
-        @CustomType.Parameter("productLicenseId") String productLicenseId,
-        @CustomType.Parameter("productType") String productType,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("totalLicenseUnitCount") Integer totalLicenseUnitCount,
-        @CustomType.Parameter("totalUnitsConsumed") Double totalUnitsConsumed,
-        @CustomType.Parameter("unitType") String unitType) {
-        this.isUnlimited = isUnlimited;
-        this.productLicenseId = productLicenseId;
-        this.productType = productType;
-        this.status = status;
-        this.totalLicenseUnitCount = totalLicenseUnitCount;
-        this.totalUnitsConsumed = totalUnitsConsumed;
-        this.unitType = unitType;
-    }
-
+    private GetTopUtilizedProductLicensesItem() {}
     /**
      * @return Specifies if the license unit count is unlimited.
      * 
@@ -123,7 +106,7 @@ public final class GetTopUtilizedProductLicensesItem {
     public static Builder builder(GetTopUtilizedProductLicensesItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isUnlimited;
         private String productLicenseId;
@@ -132,11 +115,7 @@ public final class GetTopUtilizedProductLicensesItem {
         private Integer totalLicenseUnitCount;
         private Double totalUnitsConsumed;
         private String unitType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTopUtilizedProductLicensesItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isUnlimited = defaults.isUnlimited;
@@ -148,35 +127,51 @@ public final class GetTopUtilizedProductLicensesItem {
     	      this.unitType = defaults.unitType;
         }
 
+        @CustomType.Setter
         public Builder isUnlimited(Boolean isUnlimited) {
             this.isUnlimited = Objects.requireNonNull(isUnlimited);
             return this;
         }
+        @CustomType.Setter
         public Builder productLicenseId(String productLicenseId) {
             this.productLicenseId = Objects.requireNonNull(productLicenseId);
             return this;
         }
+        @CustomType.Setter
         public Builder productType(String productType) {
             this.productType = Objects.requireNonNull(productType);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder totalLicenseUnitCount(Integer totalLicenseUnitCount) {
             this.totalLicenseUnitCount = Objects.requireNonNull(totalLicenseUnitCount);
             return this;
         }
+        @CustomType.Setter
         public Builder totalUnitsConsumed(Double totalUnitsConsumed) {
             this.totalUnitsConsumed = Objects.requireNonNull(totalUnitsConsumed);
             return this;
         }
+        @CustomType.Setter
         public Builder unitType(String unitType) {
             this.unitType = Objects.requireNonNull(unitType);
             return this;
-        }        public GetTopUtilizedProductLicensesItem build() {
-            return new GetTopUtilizedProductLicensesItem(isUnlimited, productLicenseId, productType, status, totalLicenseUnitCount, totalUnitsConsumed, unitType);
+        }
+        public GetTopUtilizedProductLicensesItem build() {
+            final var o = new GetTopUtilizedProductLicensesItem();
+            o.isUnlimited = isUnlimited;
+            o.productLicenseId = productLicenseId;
+            o.productType = productType;
+            o.status = status;
+            o.totalLicenseUnitCount = totalLicenseUnitCount;
+            o.totalUnitsConsumed = totalUnitsConsumed;
+            o.unitType = unitType;
+            return o;
         }
     }
 }

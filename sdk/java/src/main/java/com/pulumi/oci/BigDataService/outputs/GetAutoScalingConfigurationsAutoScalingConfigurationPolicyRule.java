@@ -11,17 +11,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule {
-    private final String action;
-    private final List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics;
+    private String action;
+    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("metrics") List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics) {
-        this.action = action;
-        this.metrics = metrics;
-    }
-
+    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule() {}
     public String action() {
         return this.action;
     }
@@ -36,33 +29,35 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
     public static Builder builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
     	      this.metrics = defaults.metrics;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder metrics(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics) {
             this.metrics = Objects.requireNonNull(metrics);
             return this;
         }
         public Builder metrics(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric... metrics) {
             return metrics(List.of(metrics));
-        }        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule build() {
-            return new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule(action, metrics);
+        }
+        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule build() {
+            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule();
+            o.action = action;
+            o.metrics = metrics;
+            return o;
         }
     }
 }

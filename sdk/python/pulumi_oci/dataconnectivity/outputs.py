@@ -174,7 +174,7 @@ class RegistryConnectionConnectionProperty(dict):
                  name: Optional[str] = None,
                  value: Optional[str] = None):
         """
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str value: (Updatable) The value for the connection name property.
         """
         if name is not None:
@@ -186,7 +186,7 @@ class RegistryConnectionConnectionProperty(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -253,14 +253,14 @@ class RegistryConnectionMetadata(dict):
                  updated_by: Optional[str] = None,
                  updated_by_name: Optional[str] = None):
         """
-        :param 'RegistryConnectionMetadataAggregatorArgs' aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param 'RegistryConnectionMetadataAggregatorArgs' aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str aggregator_key: (Updatable) The owning object's key for this object.
         :param str created_by: (Updatable) The user that created the object.
         :param str created_by_name: (Updatable) The user that created the object.
-        :param str identifier_path: (Updatable) The full path to identify this object.
+        :param str identifier_path: (Updatable) The full path to identify the object.
         :param Mapping[str, Any] info_fields: (Updatable) Information property fields.
-        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: (Updatable) The registry version.
         :param str time_created: (Updatable) The date and time that the object was created.
         :param str time_updated: (Updatable) The date and time that the object was updated.
@@ -298,7 +298,7 @@ class RegistryConnectionMetadata(dict):
     @pulumi.getter
     def aggregator(self) -> Optional['outputs.RegistryConnectionMetadataAggregator']:
         """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -330,7 +330,7 @@ class RegistryConnectionMetadata(dict):
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[str]:
         """
-        (Updatable) The full path to identify this object.
+        (Updatable) The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -346,7 +346,7 @@ class RegistryConnectionMetadata(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -354,7 +354,7 @@ class RegistryConnectionMetadata(dict):
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -411,7 +411,7 @@ class RegistryConnectionMetadataAggregator(dict):
         :param str description: (Updatable) The description of the aggregator.
         :param str identifier: (Updatable) The identifier of the aggregator.
         :param str key: (Updatable) The identifying key for the object.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: (Updatable) Specific Connection Type
         """
         if description is not None:
@@ -453,7 +453,7 @@ class RegistryConnectionMetadataAggregator(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -519,17 +519,17 @@ class RegistryConnectionPrimarySchema(dict):
         """
         :param str identifier: (Updatable) The identifier of the aggregator.
         :param str key: (Updatable) The identifying key for the object.
-        :param str model_type: (Updatable) The object's type.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str model_type: (Updatable) The object type.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str default_connection: (Updatable) The default connection key.
         :param str description: (Updatable) The description of the aggregator.
-        :param str external_key: (Updatable) The external key for the object.
+        :param str external_key: (Updatable) The external key of the object.
         :param bool is_has_containers: (Updatable) Specifies whether the schema has containers.
-        :param 'RegistryConnectionPrimarySchemaMetadataArgs' metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param str model_version: (Updatable) The object's model version.
+        :param 'RegistryConnectionPrimarySchemaMetadataArgs' metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
+        :param str model_version: (Updatable) The model version of the object.
         :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: (Updatable) The version of the object that is used to track changes in the object instance.
-        :param 'RegistryConnectionPrimarySchemaParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        :param 'RegistryConnectionPrimarySchemaParentRefArgs' parent_ref: (Updatable) A reference to the parent object.
         :param str resource_name: (Updatable) A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
         """
         pulumi.set(__self__, "identifier", identifier)
@@ -577,7 +577,7 @@ class RegistryConnectionPrimarySchema(dict):
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        (Updatable) The object's type.
+        (Updatable) The object type.
         """
         return pulumi.get(self, "model_type")
 
@@ -585,7 +585,7 @@ class RegistryConnectionPrimarySchema(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -609,7 +609,7 @@ class RegistryConnectionPrimarySchema(dict):
     @pulumi.getter(name="externalKey")
     def external_key(self) -> Optional[str]:
         """
-        (Updatable) The external key for the object.
+        (Updatable) The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -625,7 +625,7 @@ class RegistryConnectionPrimarySchema(dict):
     @pulumi.getter
     def metadata(self) -> Optional['outputs.RegistryConnectionPrimarySchemaMetadata']:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -633,7 +633,7 @@ class RegistryConnectionPrimarySchema(dict):
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[str]:
         """
-        (Updatable) The object's model version.
+        (Updatable) The model version of the object.
         """
         return pulumi.get(self, "model_version")
 
@@ -657,7 +657,7 @@ class RegistryConnectionPrimarySchema(dict):
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional['outputs.RegistryConnectionPrimarySchemaParentRef']:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -724,14 +724,14 @@ class RegistryConnectionPrimarySchemaMetadata(dict):
                  updated_by: Optional[str] = None,
                  updated_by_name: Optional[str] = None):
         """
-        :param 'RegistryConnectionPrimarySchemaMetadataAggregatorArgs' aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param 'RegistryConnectionPrimarySchemaMetadataAggregatorArgs' aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str aggregator_key: (Updatable) The owning object's key for this object.
         :param str created_by: (Updatable) The user that created the object.
         :param str created_by_name: (Updatable) The user that created the object.
-        :param str identifier_path: (Updatable) The full path to identify this object.
+        :param str identifier_path: (Updatable) The full path to identify the object.
         :param Mapping[str, Any] info_fields: (Updatable) Information property fields.
-        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: (Updatable) The registry version.
         :param str time_created: (Updatable) The date and time that the object was created.
         :param str time_updated: (Updatable) The date and time that the object was updated.
@@ -769,7 +769,7 @@ class RegistryConnectionPrimarySchemaMetadata(dict):
     @pulumi.getter
     def aggregator(self) -> Optional['outputs.RegistryConnectionPrimarySchemaMetadataAggregator']:
         """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -801,7 +801,7 @@ class RegistryConnectionPrimarySchemaMetadata(dict):
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[str]:
         """
-        (Updatable) The full path to identify this object.
+        (Updatable) The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -817,7 +817,7 @@ class RegistryConnectionPrimarySchemaMetadata(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -825,7 +825,7 @@ class RegistryConnectionPrimarySchemaMetadata(dict):
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -882,7 +882,7 @@ class RegistryConnectionPrimarySchemaMetadataAggregator(dict):
         :param str description: (Updatable) The description of the aggregator.
         :param str identifier: (Updatable) The identifier of the aggregator.
         :param str key: (Updatable) The identifying key for the object.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: (Updatable) Specific Connection Type
         """
         if description is not None:
@@ -924,7 +924,7 @@ class RegistryConnectionPrimarySchemaMetadataAggregator(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -1005,15 +1005,15 @@ class RegistryConnectionRegistryMetadata(dict):
                  updated_by_user_name: Optional[str] = None):
         """
         :param str aggregator_key: (Updatable) The owning object's key for this object.
-        :param str created_by_user_id: (Updatable) The id of the user who created the object.
+        :param str created_by_user_id: (Updatable) The ID of the user who created the object.
         :param str created_by_user_name: (Updatable) The name of the user who created the object.
-        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
+        :param bool is_favorite: (Updatable) Specifies whether the object is a favorite.
         :param str key: (Updatable) The identifying key for the object.
-        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: (Updatable) The registry version.
         :param str time_created: (Updatable) The date and time that the object was created.
         :param str time_updated: (Updatable) The date and time that the object was updated.
-        :param str updated_by_user_id: (Updatable) The id of the user who updated the object.
+        :param str updated_by_user_id: (Updatable) The ID of the user who updated the object.
         :param str updated_by_user_name: (Updatable) The name of the user who updated the object.
         """
         if aggregator_key is not None:
@@ -1051,7 +1051,7 @@ class RegistryConnectionRegistryMetadata(dict):
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> Optional[str]:
         """
-        (Updatable) The id of the user who created the object.
+        (Updatable) The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -1067,7 +1067,7 @@ class RegistryConnectionRegistryMetadata(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -1083,7 +1083,7 @@ class RegistryConnectionRegistryMetadata(dict):
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -1115,7 +1115,7 @@ class RegistryConnectionRegistryMetadata(dict):
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> Optional[str]:
         """
-        (Updatable) The id of the user who updated the object.
+        (Updatable) The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -1178,15 +1178,15 @@ class RegistryDataAssetDefaultConnection(dict):
                  registry_metadata: Optional['outputs.RegistryDataAssetDefaultConnectionRegistryMetadata'] = None,
                  type: Optional[str] = None):
         """
-        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str model_type: (Updatable) The property which disciminates the subtypes.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str model_type: (Updatable) The property which differentiates the subtypes.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param Mapping[str, Any] properties: (Updatable) All the properties for the data asset in a key-value map format.
-        :param Sequence['RegistryDataAssetDefaultConnectionConnectionPropertyArgs'] connection_properties: (Updatable) The properties for the connection.
-        :param str description: (Updatable) A user defined description for the object.
-        :param bool is_default: (Updatable) The default property for the connection.
+        :param Sequence['RegistryDataAssetDefaultConnectionConnectionPropertyArgs'] connection_properties: (Updatable) The properties of the connection.
+        :param str description: (Updatable) A user-defined description for the object.
+        :param bool is_default: (Updatable) The default property of the connection.
         :param str key: (Updatable) The identifying key for the object.
-        :param 'RegistryDataAssetDefaultConnectionMetadataArgs' metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param 'RegistryDataAssetDefaultConnectionMetadataArgs' metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         :param str model_version: (Updatable) The model version of an object.
         :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: (Updatable) The version of the object that is used to track changes in the object instance.
@@ -1225,7 +1225,7 @@ class RegistryDataAssetDefaultConnection(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -1233,7 +1233,7 @@ class RegistryDataAssetDefaultConnection(dict):
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        (Updatable) The property which disciminates the subtypes.
+        (Updatable) The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -1241,7 +1241,7 @@ class RegistryDataAssetDefaultConnection(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -1257,7 +1257,7 @@ class RegistryDataAssetDefaultConnection(dict):
     @pulumi.getter(name="connectionProperties")
     def connection_properties(self) -> Optional[Sequence['outputs.RegistryDataAssetDefaultConnectionConnectionProperty']]:
         """
-        (Updatable) The properties for the connection.
+        (Updatable) The properties of the connection.
         """
         return pulumi.get(self, "connection_properties")
 
@@ -1265,7 +1265,7 @@ class RegistryDataAssetDefaultConnection(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) A user defined description for the object.
+        (Updatable) A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -1273,7 +1273,7 @@ class RegistryDataAssetDefaultConnection(dict):
     @pulumi.getter(name="isDefault")
     def is_default(self) -> Optional[bool]:
         """
-        (Updatable) The default property for the connection.
+        (Updatable) The default property of the connection.
         """
         return pulumi.get(self, "is_default")
 
@@ -1289,7 +1289,7 @@ class RegistryDataAssetDefaultConnection(dict):
     @pulumi.getter
     def metadata(self) -> Optional['outputs.RegistryDataAssetDefaultConnectionMetadata']:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -1348,7 +1348,7 @@ class RegistryDataAssetDefaultConnectionConnectionProperty(dict):
                  name: Optional[str] = None,
                  value: Optional[str] = None):
         """
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str value: (Updatable) The value for the connection name property.
         """
         if name is not None:
@@ -1360,7 +1360,7 @@ class RegistryDataAssetDefaultConnectionConnectionProperty(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -1427,14 +1427,14 @@ class RegistryDataAssetDefaultConnectionMetadata(dict):
                  updated_by: Optional[str] = None,
                  updated_by_name: Optional[str] = None):
         """
-        :param 'RegistryDataAssetDefaultConnectionMetadataAggregatorArgs' aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param 'RegistryDataAssetDefaultConnectionMetadataAggregatorArgs' aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str aggregator_key: (Updatable) The owning object's key for this object.
         :param str created_by: (Updatable) The user that created the object.
         :param str created_by_name: (Updatable) The user that created the object.
-        :param str identifier_path: (Updatable) The full path to identify this object.
+        :param str identifier_path: (Updatable) The full path to identify the object.
         :param Mapping[str, Any] info_fields: (Updatable) Information property fields.
-        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: (Updatable) The registry version.
         :param str time_created: (Updatable) The date and time that the object was created.
         :param str time_updated: (Updatable) The date and time that the object was updated.
@@ -1472,7 +1472,7 @@ class RegistryDataAssetDefaultConnectionMetadata(dict):
     @pulumi.getter
     def aggregator(self) -> Optional['outputs.RegistryDataAssetDefaultConnectionMetadataAggregator']:
         """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -1504,7 +1504,7 @@ class RegistryDataAssetDefaultConnectionMetadata(dict):
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[str]:
         """
-        (Updatable) The full path to identify this object.
+        (Updatable) The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -1520,7 +1520,7 @@ class RegistryDataAssetDefaultConnectionMetadata(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -1528,7 +1528,7 @@ class RegistryDataAssetDefaultConnectionMetadata(dict):
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -1582,10 +1582,10 @@ class RegistryDataAssetDefaultConnectionMetadataAggregator(dict):
                  name: Optional[str] = None,
                  type: Optional[str] = None):
         """
-        :param str description: (Updatable) A user defined description for the object.
-        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str description: (Updatable) A user-defined description for the object.
+        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param str key: (Updatable) The identifying key for the object.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: (Updatable) Specific DataAsset Type
         """
         if description is not None:
@@ -1603,7 +1603,7 @@ class RegistryDataAssetDefaultConnectionMetadataAggregator(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) A user defined description for the object.
+        (Updatable) A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -1611,7 +1611,7 @@ class RegistryDataAssetDefaultConnectionMetadataAggregator(dict):
     @pulumi.getter
     def identifier(self) -> Optional[str]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -1627,7 +1627,7 @@ class RegistryDataAssetDefaultConnectionMetadataAggregator(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -1691,19 +1691,19 @@ class RegistryDataAssetDefaultConnectionPrimarySchema(dict):
                  parent_ref: Optional['outputs.RegistryDataAssetDefaultConnectionPrimarySchemaParentRef'] = None,
                  resource_name: Optional[str] = None):
         """
-        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param str key: (Updatable) The identifying key for the object.
-        :param str model_type: (Updatable) The property which disciminates the subtypes.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str model_type: (Updatable) The property which differentiates the subtypes.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str default_connection: (Updatable) The default connection key.
-        :param str description: (Updatable) A user defined description for the object.
-        :param str external_key: (Updatable) The external key for the object.
+        :param str description: (Updatable) A user-defined description for the object.
+        :param str external_key: (Updatable) The external key of the object.
         :param bool is_has_containers: (Updatable) Specifies whether the schema has containers.
-        :param 'RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs' metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param 'RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs' metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         :param str model_version: (Updatable) The model version of an object.
         :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: (Updatable) The version of the object that is used to track changes in the object instance.
-        :param 'RegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        :param 'RegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs' parent_ref: (Updatable) A reference to the parent object.
         :param str resource_name: (Updatable) A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
         """
         pulumi.set(__self__, "identifier", identifier)
@@ -1735,7 +1735,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchema(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -1751,7 +1751,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchema(dict):
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        (Updatable) The property which disciminates the subtypes.
+        (Updatable) The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -1759,7 +1759,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchema(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -1775,7 +1775,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchema(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) A user defined description for the object.
+        (Updatable) A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -1783,7 +1783,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchema(dict):
     @pulumi.getter(name="externalKey")
     def external_key(self) -> Optional[str]:
         """
-        (Updatable) The external key for the object.
+        (Updatable) The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -1799,7 +1799,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchema(dict):
     @pulumi.getter
     def metadata(self) -> Optional['outputs.RegistryDataAssetDefaultConnectionPrimarySchemaMetadata']:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -1831,7 +1831,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchema(dict):
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional['outputs.RegistryDataAssetDefaultConnectionPrimarySchemaParentRef']:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -1898,14 +1898,14 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaMetadata(dict):
                  updated_by: Optional[str] = None,
                  updated_by_name: Optional[str] = None):
         """
-        :param 'RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs' aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param 'RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs' aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str aggregator_key: (Updatable) The owning object's key for this object.
         :param str created_by: (Updatable) The user that created the object.
         :param str created_by_name: (Updatable) The user that created the object.
-        :param str identifier_path: (Updatable) The full path to identify this object.
+        :param str identifier_path: (Updatable) The full path to identify the object.
         :param Mapping[str, Any] info_fields: (Updatable) Information property fields.
-        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: (Updatable) The registry version.
         :param str time_created: (Updatable) The date and time that the object was created.
         :param str time_updated: (Updatable) The date and time that the object was updated.
@@ -1943,7 +1943,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaMetadata(dict):
     @pulumi.getter
     def aggregator(self) -> Optional['outputs.RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator']:
         """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -1975,7 +1975,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaMetadata(dict):
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[str]:
         """
-        (Updatable) The full path to identify this object.
+        (Updatable) The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -1991,7 +1991,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaMetadata(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -1999,7 +1999,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaMetadata(dict):
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -2053,10 +2053,10 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator(dict):
                  name: Optional[str] = None,
                  type: Optional[str] = None):
         """
-        :param str description: (Updatable) A user defined description for the object.
-        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str description: (Updatable) A user-defined description for the object.
+        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param str key: (Updatable) The identifying key for the object.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: (Updatable) Specific DataAsset Type
         """
         if description is not None:
@@ -2074,7 +2074,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) A user defined description for the object.
+        (Updatable) A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -2082,7 +2082,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator(dict):
     @pulumi.getter
     def identifier(self) -> Optional[str]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -2098,7 +2098,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -2179,15 +2179,15 @@ class RegistryDataAssetDefaultConnectionRegistryMetadata(dict):
                  updated_by_user_name: Optional[str] = None):
         """
         :param str aggregator_key: (Updatable) The owning object's key for this object.
-        :param str created_by_user_id: (Updatable) The id of the user who created the object.
+        :param str created_by_user_id: (Updatable) The ID of the user who created the object.
         :param str created_by_user_name: (Updatable) The name of the user who created the object.
-        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
+        :param bool is_favorite: (Updatable) Specifies whether the object is a favorite.
         :param str key: (Updatable) The identifying key for the object.
-        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: (Updatable) The registry version.
         :param str time_created: (Updatable) The date and time that the object was created.
         :param str time_updated: (Updatable) The date and time that the object was updated.
-        :param str updated_by_user_id: (Updatable) The id of the user who updated the object.
+        :param str updated_by_user_id: (Updatable) The ID of the user who updated the object.
         :param str updated_by_user_name: (Updatable) The name of the user who updated the object.
         """
         if aggregator_key is not None:
@@ -2225,7 +2225,7 @@ class RegistryDataAssetDefaultConnectionRegistryMetadata(dict):
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> Optional[str]:
         """
-        (Updatable) The id of the user who created the object.
+        (Updatable) The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -2241,7 +2241,7 @@ class RegistryDataAssetDefaultConnectionRegistryMetadata(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -2257,7 +2257,7 @@ class RegistryDataAssetDefaultConnectionRegistryMetadata(dict):
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -2289,7 +2289,7 @@ class RegistryDataAssetDefaultConnectionRegistryMetadata(dict):
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> Optional[str]:
         """
-        (Updatable) The id of the user who updated the object.
+        (Updatable) The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -2356,14 +2356,14 @@ class RegistryDataAssetMetadata(dict):
                  updated_by: Optional[str] = None,
                  updated_by_name: Optional[str] = None):
         """
-        :param 'RegistryDataAssetMetadataAggregatorArgs' aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param 'RegistryDataAssetMetadataAggregatorArgs' aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str aggregator_key: (Updatable) The owning object's key for this object.
         :param str created_by: (Updatable) The user that created the object.
         :param str created_by_name: (Updatable) The user that created the object.
-        :param str identifier_path: (Updatable) The full path to identify this object.
+        :param str identifier_path: (Updatable) The full path to identify the object.
         :param Mapping[str, Any] info_fields: (Updatable) Information property fields.
-        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: (Updatable) The registry version.
         :param str time_created: (Updatable) The date and time that the object was created.
         :param str time_updated: (Updatable) The date and time that the object was updated.
@@ -2401,7 +2401,7 @@ class RegistryDataAssetMetadata(dict):
     @pulumi.getter
     def aggregator(self) -> Optional['outputs.RegistryDataAssetMetadataAggregator']:
         """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -2433,7 +2433,7 @@ class RegistryDataAssetMetadata(dict):
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[str]:
         """
-        (Updatable) The full path to identify this object.
+        (Updatable) The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -2449,7 +2449,7 @@ class RegistryDataAssetMetadata(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -2457,7 +2457,7 @@ class RegistryDataAssetMetadata(dict):
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -2511,10 +2511,10 @@ class RegistryDataAssetMetadataAggregator(dict):
                  name: Optional[str] = None,
                  type: Optional[str] = None):
         """
-        :param str description: (Updatable) A user defined description for the object.
-        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str description: (Updatable) A user-defined description for the object.
+        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param str key: (Updatable) The identifying key for the object.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: (Updatable) Specific DataAsset Type
         """
         if description is not None:
@@ -2532,7 +2532,7 @@ class RegistryDataAssetMetadataAggregator(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) A user defined description for the object.
+        (Updatable) A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -2540,7 +2540,7 @@ class RegistryDataAssetMetadataAggregator(dict):
     @pulumi.getter
     def identifier(self) -> Optional[str]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -2556,7 +2556,7 @@ class RegistryDataAssetMetadataAggregator(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -2614,15 +2614,15 @@ class RegistryDataAssetNativeTypeSystem(dict):
                  type_mapping_to: Optional[Mapping[str, Any]] = None,
                  types: Optional[Sequence['outputs.RegistryDataAssetNativeTypeSystemType']] = None):
         """
-        :param str description: (Updatable) A user defined description for the object.
-        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str description: (Updatable) A user-defined description for the object.
+        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param str key: (Updatable) The identifying key for the object.
-        :param str model_type: (Updatable) The property which disciminates the subtypes.
+        :param str model_type: (Updatable) The property which differentiates the subtypes.
         :param str model_version: (Updatable) The model version of an object.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: (Updatable) The version of the object that is used to track changes in the object instance.
-        :param 'RegistryDataAssetNativeTypeSystemParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        :param 'RegistryDataAssetNativeTypeSystemParentRefArgs' parent_ref: (Updatable) A reference to the parent object.
         :param Mapping[str, Any] type_mapping_from: (Updatable) The type system to map from.
         :param Mapping[str, Any] type_mapping_to: (Updatable) The type system to map to.
         :param Sequence['RegistryDataAssetNativeTypeSystemTypeArgs'] types: (Updatable) An array of types.
@@ -2656,7 +2656,7 @@ class RegistryDataAssetNativeTypeSystem(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) A user defined description for the object.
+        (Updatable) A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -2664,7 +2664,7 @@ class RegistryDataAssetNativeTypeSystem(dict):
     @pulumi.getter
     def identifier(self) -> Optional[str]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -2680,7 +2680,7 @@ class RegistryDataAssetNativeTypeSystem(dict):
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[str]:
         """
-        (Updatable) The property which disciminates the subtypes.
+        (Updatable) The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -2696,7 +2696,7 @@ class RegistryDataAssetNativeTypeSystem(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -2720,7 +2720,7 @@ class RegistryDataAssetNativeTypeSystem(dict):
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional['outputs.RegistryDataAssetNativeTypeSystemParentRef']:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -2811,15 +2811,15 @@ class RegistryDataAssetNativeTypeSystemType(dict):
                  parent_ref: Optional['outputs.RegistryDataAssetNativeTypeSystemTypeParentRef'] = None,
                  type_system_name: Optional[str] = None):
         """
-        :param str model_type: (Updatable) The property which disciminates the subtypes.
+        :param str model_type: (Updatable) The property which differentiates the subtypes.
         :param 'RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs' config_definition: (Updatable) The configuration details of a configurable object. This contains one or more config param definitions.
-        :param str description: (Updatable) A user defined description for the object.
+        :param str description: (Updatable) A user-defined description for the object.
         :param str dt_type: (Updatable) The data type.
         :param str key: (Updatable) The identifying key for the object.
         :param str model_version: (Updatable) The model version of an object.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param 'RegistryDataAssetNativeTypeSystemTypeParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        :param 'RegistryDataAssetNativeTypeSystemTypeParentRefArgs' parent_ref: (Updatable) A reference to the parent object.
         :param str type_system_name: (Updatable) The data type system name.
         """
         pulumi.set(__self__, "model_type", model_type)
@@ -2846,7 +2846,7 @@ class RegistryDataAssetNativeTypeSystemType(dict):
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        (Updatable) The property which disciminates the subtypes.
+        (Updatable) The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -2862,7 +2862,7 @@ class RegistryDataAssetNativeTypeSystemType(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) A user defined description for the object.
+        (Updatable) A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -2894,7 +2894,7 @@ class RegistryDataAssetNativeTypeSystemType(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -2910,7 +2910,7 @@ class RegistryDataAssetNativeTypeSystemType(dict):
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional['outputs.RegistryDataAssetNativeTypeSystemTypeParentRef']:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -2963,13 +2963,13 @@ class RegistryDataAssetNativeTypeSystemTypeConfigDefinition(dict):
                  parent_ref: Optional['outputs.RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRef'] = None):
         """
         :param Mapping[str, Any] config_parameter_definitions: (Updatable) The parameter configuration details.
-        :param bool is_contained: (Updatable) Specifies whether the configuration is contained or not.
+        :param bool is_contained: (Updatable) Specifies whether the configuration is contained.
         :param str key: (Updatable) The identifying key for the object.
-        :param str model_type: (Updatable) The property which disciminates the subtypes.
+        :param str model_type: (Updatable) The property which differentiates the subtypes.
         :param str model_version: (Updatable) The model version of an object.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param 'RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        :param 'RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs' parent_ref: (Updatable) A reference to the parent object.
         """
         if config_parameter_definitions is not None:
             pulumi.set(__self__, "config_parameter_definitions", config_parameter_definitions)
@@ -3000,7 +3000,7 @@ class RegistryDataAssetNativeTypeSystemTypeConfigDefinition(dict):
     @pulumi.getter(name="isContained")
     def is_contained(self) -> Optional[bool]:
         """
-        (Updatable) Specifies whether the configuration is contained or not.
+        (Updatable) Specifies whether the configuration is contained.
         """
         return pulumi.get(self, "is_contained")
 
@@ -3016,7 +3016,7 @@ class RegistryDataAssetNativeTypeSystemTypeConfigDefinition(dict):
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[str]:
         """
-        (Updatable) The property which disciminates the subtypes.
+        (Updatable) The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -3032,7 +3032,7 @@ class RegistryDataAssetNativeTypeSystemTypeConfigDefinition(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -3048,7 +3048,7 @@ class RegistryDataAssetNativeTypeSystemTypeConfigDefinition(dict):
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional['outputs.RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRef']:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -3140,15 +3140,15 @@ class RegistryDataAssetRegistryMetadata(dict):
                  updated_by_user_name: Optional[str] = None):
         """
         :param str aggregator_key: (Updatable) The owning object's key for this object.
-        :param str created_by_user_id: (Updatable) The id of the user who created the object.
+        :param str created_by_user_id: (Updatable) The ID of the user who created the object.
         :param str created_by_user_name: (Updatable) The name of the user who created the object.
-        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
+        :param bool is_favorite: (Updatable) Specifies whether the object is a favorite.
         :param str key: (Updatable) The identifying key for the object.
-        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: (Updatable) The registry version.
         :param str time_created: (Updatable) The date and time that the object was created.
         :param str time_updated: (Updatable) The date and time that the object was updated.
-        :param str updated_by_user_id: (Updatable) The id of the user who updated the object.
+        :param str updated_by_user_id: (Updatable) The ID of the user who updated the object.
         :param str updated_by_user_name: (Updatable) The name of the user who updated the object.
         """
         if aggregator_key is not None:
@@ -3186,7 +3186,7 @@ class RegistryDataAssetRegistryMetadata(dict):
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> Optional[str]:
         """
-        (Updatable) The id of the user who created the object.
+        (Updatable) The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -3202,7 +3202,7 @@ class RegistryDataAssetRegistryMetadata(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -3218,7 +3218,7 @@ class RegistryDataAssetRegistryMetadata(dict):
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -3250,7 +3250,7 @@ class RegistryDataAssetRegistryMetadata(dict):
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> Optional[str]:
         """
-        (Updatable) The id of the user who updated the object.
+        (Updatable) The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -3316,14 +3316,14 @@ class RegistryFolderDataAsset(dict):
                  registry_metadata: Optional['outputs.RegistryFolderDataAssetRegistryMetadata'] = None,
                  type: Optional[str] = None):
         """
-        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param Mapping[str, Any] asset_properties: (Updatable) Additional properties for the data asset.
         :param 'RegistryFolderDataAssetDefaultConnectionArgs' default_connection: (Updatable) The default connection key.
-        :param str description: (Updatable) User-defined description for the folder.
-        :param str external_key: (Updatable) The external key for the object.
-        :param 'RegistryFolderDataAssetMetadataArgs' metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param str description: (Updatable) User-defined description of the folder.
+        :param str external_key: (Updatable) The external key of the object.
+        :param 'RegistryFolderDataAssetMetadataArgs' metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         :param str model_type: (Updatable) The type of the folder.
         :param str model_version: (Updatable) The model version of an object.
         :param 'RegistryFolderDataAssetNativeTypeSystemArgs' native_type_system: (Updatable) The type system maps from and to a type.
@@ -3367,7 +3367,7 @@ class RegistryFolderDataAsset(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -3375,7 +3375,7 @@ class RegistryFolderDataAsset(dict):
     @pulumi.getter
     def key(self) -> str:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -3383,7 +3383,7 @@ class RegistryFolderDataAsset(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -3407,7 +3407,7 @@ class RegistryFolderDataAsset(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -3415,7 +3415,7 @@ class RegistryFolderDataAsset(dict):
     @pulumi.getter(name="externalKey")
     def external_key(self) -> Optional[str]:
         """
-        (Updatable) The external key for the object.
+        (Updatable) The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -3423,7 +3423,7 @@ class RegistryFolderDataAsset(dict):
     @pulumi.getter
     def metadata(self) -> Optional['outputs.RegistryFolderDataAssetMetadata']:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -3542,13 +3542,13 @@ class RegistryFolderDataAssetDefaultConnection(dict):
                  registry_metadata: Optional['outputs.RegistryFolderDataAssetDefaultConnectionRegistryMetadata'] = None,
                  type: Optional[str] = None):
         """
-        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param Sequence['RegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs'] connection_properties: (Updatable) The properties for the connection.
-        :param str description: (Updatable) User-defined description for the folder.
-        :param bool is_default: (Updatable) The default property for the connection.
-        :param 'RegistryFolderDataAssetDefaultConnectionMetadataArgs' metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param Sequence['RegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs'] connection_properties: (Updatable) The properties of the connection.
+        :param str description: (Updatable) User-defined description of the folder.
+        :param bool is_default: (Updatable) The default property of the connection.
+        :param 'RegistryFolderDataAssetDefaultConnectionMetadataArgs' metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         :param str model_type: (Updatable) The type of the folder.
         :param str model_version: (Updatable) The model version of an object.
         :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
@@ -3590,7 +3590,7 @@ class RegistryFolderDataAssetDefaultConnection(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -3598,7 +3598,7 @@ class RegistryFolderDataAssetDefaultConnection(dict):
     @pulumi.getter
     def key(self) -> str:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -3606,7 +3606,7 @@ class RegistryFolderDataAssetDefaultConnection(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -3614,7 +3614,7 @@ class RegistryFolderDataAssetDefaultConnection(dict):
     @pulumi.getter(name="connectionProperties")
     def connection_properties(self) -> Optional[Sequence['outputs.RegistryFolderDataAssetDefaultConnectionConnectionProperty']]:
         """
-        (Updatable) The properties for the connection.
+        (Updatable) The properties of the connection.
         """
         return pulumi.get(self, "connection_properties")
 
@@ -3622,7 +3622,7 @@ class RegistryFolderDataAssetDefaultConnection(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -3630,7 +3630,7 @@ class RegistryFolderDataAssetDefaultConnection(dict):
     @pulumi.getter(name="isDefault")
     def is_default(self) -> Optional[bool]:
         """
-        (Updatable) The default property for the connection.
+        (Updatable) The default property of the connection.
         """
         return pulumi.get(self, "is_default")
 
@@ -3638,7 +3638,7 @@ class RegistryFolderDataAssetDefaultConnection(dict):
     @pulumi.getter
     def metadata(self) -> Optional['outputs.RegistryFolderDataAssetDefaultConnectionMetadata']:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -3713,7 +3713,7 @@ class RegistryFolderDataAssetDefaultConnectionConnectionProperty(dict):
                  name: Optional[str] = None,
                  value: Optional[str] = None):
         """
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str value: (Updatable) The value for the connection name property.
         """
         if name is not None:
@@ -3725,7 +3725,7 @@ class RegistryFolderDataAssetDefaultConnectionConnectionProperty(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -3792,14 +3792,14 @@ class RegistryFolderDataAssetDefaultConnectionMetadata(dict):
                  updated_by: Optional[str] = None,
                  updated_by_name: Optional[str] = None):
         """
-        :param 'RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs' aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param 'RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs' aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str aggregator_key: (Updatable) The owning object's key for this object.
         :param str created_by: (Updatable) The user that created the object.
         :param str created_by_name: (Updatable) The user that created the object.
-        :param str identifier_path: (Updatable) The full path to identify this object.
+        :param str identifier_path: (Updatable) The full path to identify the object.
         :param Mapping[str, Any] info_fields: (Updatable) Information property fields.
-        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: (Updatable) The registry version.
         :param str time_created: (Updatable) The date and time that the object was created.
         :param str time_updated: (Updatable) The date and time that the object was updated.
@@ -3837,7 +3837,7 @@ class RegistryFolderDataAssetDefaultConnectionMetadata(dict):
     @pulumi.getter
     def aggregator(self) -> Optional['outputs.RegistryFolderDataAssetDefaultConnectionMetadataAggregator']:
         """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -3869,7 +3869,7 @@ class RegistryFolderDataAssetDefaultConnectionMetadata(dict):
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[str]:
         """
-        (Updatable) The full path to identify this object.
+        (Updatable) The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -3885,7 +3885,7 @@ class RegistryFolderDataAssetDefaultConnectionMetadata(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -3893,7 +3893,7 @@ class RegistryFolderDataAssetDefaultConnectionMetadata(dict):
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -3947,10 +3947,10 @@ class RegistryFolderDataAssetDefaultConnectionMetadataAggregator(dict):
                  name: Optional[str] = None,
                  type: Optional[str] = None):
         """
-        :param str description: (Updatable) User-defined description for the folder.
-        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str description: (Updatable) User-defined description of the folder.
+        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: (Updatable) Specific DataAsset Type
         """
         if description is not None:
@@ -3968,7 +3968,7 @@ class RegistryFolderDataAssetDefaultConnectionMetadataAggregator(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -3976,7 +3976,7 @@ class RegistryFolderDataAssetDefaultConnectionMetadataAggregator(dict):
     @pulumi.getter
     def identifier(self) -> Optional[str]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -3984,7 +3984,7 @@ class RegistryFolderDataAssetDefaultConnectionMetadataAggregator(dict):
     @pulumi.getter
     def key(self) -> Optional[str]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -3992,7 +3992,7 @@ class RegistryFolderDataAssetDefaultConnectionMetadataAggregator(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -4056,19 +4056,19 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchema(dict):
                  parent_ref: Optional['outputs.RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef'] = None,
                  resource_name: Optional[str] = None):
         """
-        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param str model_type: (Updatable) The type of the folder.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str default_connection: (Updatable) The default connection key.
-        :param str description: (Updatable) User-defined description for the folder.
-        :param str external_key: (Updatable) The external key for the object.
+        :param str description: (Updatable) User-defined description of the folder.
+        :param str external_key: (Updatable) The external key of the object.
         :param bool is_has_containers: (Updatable) Specifies whether the schema has containers.
-        :param 'RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs' metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param 'RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs' metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         :param str model_version: (Updatable) The model version of an object.
         :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: (Updatable) The version of the object that is used to track changes in the object instance.
-        :param 'RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        :param 'RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs' parent_ref: (Updatable) A reference to the parent object.
         :param str resource_name: (Updatable) A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
         """
         pulumi.set(__self__, "identifier", identifier)
@@ -4100,7 +4100,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchema(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -4108,7 +4108,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchema(dict):
     @pulumi.getter
     def key(self) -> str:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -4124,7 +4124,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchema(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -4140,7 +4140,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchema(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -4148,7 +4148,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchema(dict):
     @pulumi.getter(name="externalKey")
     def external_key(self) -> Optional[str]:
         """
-        (Updatable) The external key for the object.
+        (Updatable) The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -4164,7 +4164,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchema(dict):
     @pulumi.getter
     def metadata(self) -> Optional['outputs.RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata']:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -4196,7 +4196,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchema(dict):
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional['outputs.RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef']:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -4263,14 +4263,14 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata(dict):
                  updated_by: Optional[str] = None,
                  updated_by_name: Optional[str] = None):
         """
-        :param 'RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs' aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param 'RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs' aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str aggregator_key: (Updatable) The owning object's key for this object.
         :param str created_by: (Updatable) The user that created the object.
         :param str created_by_name: (Updatable) The user that created the object.
-        :param str identifier_path: (Updatable) The full path to identify this object.
+        :param str identifier_path: (Updatable) The full path to identify the object.
         :param Mapping[str, Any] info_fields: (Updatable) Information property fields.
-        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: (Updatable) The registry version.
         :param str time_created: (Updatable) The date and time that the object was created.
         :param str time_updated: (Updatable) The date and time that the object was updated.
@@ -4308,7 +4308,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata(dict):
     @pulumi.getter
     def aggregator(self) -> Optional['outputs.RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator']:
         """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -4340,7 +4340,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata(dict):
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[str]:
         """
-        (Updatable) The full path to identify this object.
+        (Updatable) The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -4356,7 +4356,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -4364,7 +4364,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata(dict):
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -4418,10 +4418,10 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator(di
                  name: Optional[str] = None,
                  type: Optional[str] = None):
         """
-        :param str description: (Updatable) User-defined description for the folder.
-        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str description: (Updatable) User-defined description of the folder.
+        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: (Updatable) Specific DataAsset Type
         """
         if description is not None:
@@ -4439,7 +4439,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator(di
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -4447,7 +4447,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator(di
     @pulumi.getter
     def identifier(self) -> Optional[str]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -4455,7 +4455,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator(di
     @pulumi.getter
     def key(self) -> Optional[str]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -4463,7 +4463,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator(di
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -4544,15 +4544,15 @@ class RegistryFolderDataAssetDefaultConnectionRegistryMetadata(dict):
                  updated_by_user_name: Optional[str] = None):
         """
         :param str aggregator_key: (Updatable) The owning object's key for this object.
-        :param str created_by_user_id: (Updatable) The id of the user who created the object.
+        :param str created_by_user_id: (Updatable) The ID of the user who created the object.
         :param str created_by_user_name: (Updatable) The name of the user who created the object.
-        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param str key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param str key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: (Updatable) The registry version.
         :param str time_created: (Updatable) The date and time that the object was created.
         :param str time_updated: (Updatable) The date and time that the object was updated.
-        :param str updated_by_user_id: (Updatable) The id of the user who updated the object.
+        :param str updated_by_user_id: (Updatable) The ID of the user who updated the object.
         :param str updated_by_user_name: (Updatable) The name of the user who updated the object.
         """
         if aggregator_key is not None:
@@ -4590,7 +4590,7 @@ class RegistryFolderDataAssetDefaultConnectionRegistryMetadata(dict):
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> Optional[str]:
         """
-        (Updatable) The id of the user who created the object.
+        (Updatable) The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -4606,7 +4606,7 @@ class RegistryFolderDataAssetDefaultConnectionRegistryMetadata(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -4614,7 +4614,7 @@ class RegistryFolderDataAssetDefaultConnectionRegistryMetadata(dict):
     @pulumi.getter
     def key(self) -> Optional[str]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -4622,7 +4622,7 @@ class RegistryFolderDataAssetDefaultConnectionRegistryMetadata(dict):
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -4654,7 +4654,7 @@ class RegistryFolderDataAssetDefaultConnectionRegistryMetadata(dict):
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> Optional[str]:
         """
-        (Updatable) The id of the user who updated the object.
+        (Updatable) The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -4721,14 +4721,14 @@ class RegistryFolderDataAssetMetadata(dict):
                  updated_by: Optional[str] = None,
                  updated_by_name: Optional[str] = None):
         """
-        :param 'RegistryFolderDataAssetMetadataAggregatorArgs' aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param 'RegistryFolderDataAssetMetadataAggregatorArgs' aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str aggregator_key: (Updatable) The owning object's key for this object.
         :param str created_by: (Updatable) The user that created the object.
         :param str created_by_name: (Updatable) The user that created the object.
-        :param str identifier_path: (Updatable) The full path to identify this object.
+        :param str identifier_path: (Updatable) The full path to identify the object.
         :param Mapping[str, Any] info_fields: (Updatable) Information property fields.
-        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: (Updatable) The registry version.
         :param str time_created: (Updatable) The date and time that the object was created.
         :param str time_updated: (Updatable) The date and time that the object was updated.
@@ -4766,7 +4766,7 @@ class RegistryFolderDataAssetMetadata(dict):
     @pulumi.getter
     def aggregator(self) -> Optional['outputs.RegistryFolderDataAssetMetadataAggregator']:
         """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -4798,7 +4798,7 @@ class RegistryFolderDataAssetMetadata(dict):
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[str]:
         """
-        (Updatable) The full path to identify this object.
+        (Updatable) The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -4814,7 +4814,7 @@ class RegistryFolderDataAssetMetadata(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -4822,7 +4822,7 @@ class RegistryFolderDataAssetMetadata(dict):
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -4876,10 +4876,10 @@ class RegistryFolderDataAssetMetadataAggregator(dict):
                  name: Optional[str] = None,
                  type: Optional[str] = None):
         """
-        :param str description: (Updatable) User-defined description for the folder.
-        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str description: (Updatable) User-defined description of the folder.
+        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: (Updatable) Specific DataAsset Type
         """
         if description is not None:
@@ -4897,7 +4897,7 @@ class RegistryFolderDataAssetMetadataAggregator(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -4905,7 +4905,7 @@ class RegistryFolderDataAssetMetadataAggregator(dict):
     @pulumi.getter
     def identifier(self) -> Optional[str]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -4913,7 +4913,7 @@ class RegistryFolderDataAssetMetadataAggregator(dict):
     @pulumi.getter
     def key(self) -> Optional[str]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -4921,7 +4921,7 @@ class RegistryFolderDataAssetMetadataAggregator(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -4979,15 +4979,15 @@ class RegistryFolderDataAssetNativeTypeSystem(dict):
                  type_mapping_to: Optional[Mapping[str, Any]] = None,
                  types: Optional[Sequence['outputs.RegistryFolderDataAssetNativeTypeSystemType']] = None):
         """
-        :param str description: (Updatable) User-defined description for the folder.
-        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param str description: (Updatable) User-defined description of the folder.
+        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param str model_type: (Updatable) The type of the folder.
         :param str model_version: (Updatable) The model version of an object.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: (Updatable) The version of the object that is used to track changes in the object instance.
-        :param 'RegistryFolderDataAssetNativeTypeSystemParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        :param 'RegistryFolderDataAssetNativeTypeSystemParentRefArgs' parent_ref: (Updatable) A reference to the parent object.
         :param Mapping[str, Any] type_mapping_from: (Updatable) The type system to map from.
         :param Mapping[str, Any] type_mapping_to: (Updatable) The type system to map to.
         :param Sequence['RegistryFolderDataAssetNativeTypeSystemTypeArgs'] types: (Updatable) An array of types.
@@ -5021,7 +5021,7 @@ class RegistryFolderDataAssetNativeTypeSystem(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -5029,7 +5029,7 @@ class RegistryFolderDataAssetNativeTypeSystem(dict):
     @pulumi.getter
     def identifier(self) -> Optional[str]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -5037,7 +5037,7 @@ class RegistryFolderDataAssetNativeTypeSystem(dict):
     @pulumi.getter
     def key(self) -> Optional[str]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -5061,7 +5061,7 @@ class RegistryFolderDataAssetNativeTypeSystem(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -5085,7 +5085,7 @@ class RegistryFolderDataAssetNativeTypeSystem(dict):
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional['outputs.RegistryFolderDataAssetNativeTypeSystemParentRef']:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -5178,13 +5178,13 @@ class RegistryFolderDataAssetNativeTypeSystemType(dict):
         """
         :param str model_type: (Updatable) The type of the folder.
         :param 'RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs' config_definition: (Updatable) The configuration details of a configurable object. This contains one or more config param definitions.
-        :param str description: (Updatable) User-defined description for the folder.
+        :param str description: (Updatable) User-defined description of the folder.
         :param str dt_type: (Updatable) The data type.
-        :param str key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param str key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param str model_version: (Updatable) The model version of an object.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param 'RegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        :param 'RegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs' parent_ref: (Updatable) A reference to the parent object.
         :param str type_system_name: (Updatable) The data type system name.
         """
         pulumi.set(__self__, "model_type", model_type)
@@ -5227,7 +5227,7 @@ class RegistryFolderDataAssetNativeTypeSystemType(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -5243,7 +5243,7 @@ class RegistryFolderDataAssetNativeTypeSystemType(dict):
     @pulumi.getter
     def key(self) -> Optional[str]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -5259,7 +5259,7 @@ class RegistryFolderDataAssetNativeTypeSystemType(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -5275,7 +5275,7 @@ class RegistryFolderDataAssetNativeTypeSystemType(dict):
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional['outputs.RegistryFolderDataAssetNativeTypeSystemTypeParentRef']:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -5328,13 +5328,13 @@ class RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition(dict):
                  parent_ref: Optional['outputs.RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef'] = None):
         """
         :param Mapping[str, Any] config_parameter_definitions: (Updatable) The parameter configuration details.
-        :param bool is_contained: (Updatable) Specifies whether the configuration is contained or not.
-        :param str key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param bool is_contained: (Updatable) Specifies whether the configuration is contained.
+        :param str key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param str model_type: (Updatable) The type of the folder.
         :param str model_version: (Updatable) The model version of an object.
-        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param 'RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        :param 'RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs' parent_ref: (Updatable) A reference to the parent object.
         """
         if config_parameter_definitions is not None:
             pulumi.set(__self__, "config_parameter_definitions", config_parameter_definitions)
@@ -5365,7 +5365,7 @@ class RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition(dict):
     @pulumi.getter(name="isContained")
     def is_contained(self) -> Optional[bool]:
         """
-        (Updatable) Specifies whether the configuration is contained or not.
+        (Updatable) Specifies whether the configuration is contained.
         """
         return pulumi.get(self, "is_contained")
 
@@ -5373,7 +5373,7 @@ class RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition(dict):
     @pulumi.getter
     def key(self) -> Optional[str]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -5397,7 +5397,7 @@ class RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -5413,7 +5413,7 @@ class RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition(dict):
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional['outputs.RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef']:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -5505,15 +5505,15 @@ class RegistryFolderDataAssetRegistryMetadata(dict):
                  updated_by_user_name: Optional[str] = None):
         """
         :param str aggregator_key: (Updatable) The owning object's key for this object.
-        :param str created_by_user_id: (Updatable) The id of the user who created the object.
+        :param str created_by_user_id: (Updatable) The ID of the user who created the object.
         :param str created_by_user_name: (Updatable) The name of the user who created the object.
-        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param str key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param str key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: (Updatable) The registry version.
         :param str time_created: (Updatable) The date and time that the object was created.
         :param str time_updated: (Updatable) The date and time that the object was updated.
-        :param str updated_by_user_id: (Updatable) The id of the user who updated the object.
+        :param str updated_by_user_id: (Updatable) The ID of the user who updated the object.
         :param str updated_by_user_name: (Updatable) The name of the user who updated the object.
         """
         if aggregator_key is not None:
@@ -5551,7 +5551,7 @@ class RegistryFolderDataAssetRegistryMetadata(dict):
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> Optional[str]:
         """
-        (Updatable) The id of the user who created the object.
+        (Updatable) The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -5567,7 +5567,7 @@ class RegistryFolderDataAssetRegistryMetadata(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[bool]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -5575,7 +5575,7 @@ class RegistryFolderDataAssetRegistryMetadata(dict):
     @pulumi.getter
     def key(self) -> Optional[str]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -5583,7 +5583,7 @@ class RegistryFolderDataAssetRegistryMetadata(dict):
     @pulumi.getter
     def labels(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -5615,7 +5615,7 @@ class RegistryFolderDataAssetRegistryMetadata(dict):
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> Optional[str]:
         """
-        (Updatable) The id of the user who updated the object.
+        (Updatable) The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -5710,14 +5710,14 @@ class GetRegistriesRegistrySummaryCollectionItemResult(dict):
         :param str compartment_id: The OCID of the compartment containing the resources you want to list.
         :param Mapping[str, Any] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Registry description
-        :param str display_name: Data Connectivity Management Registry display name, registries can be renamed
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: Unique identifier that is immutable on creation
+        :param str display_name: Data Connectivity Management registry display name; registries can be renamed.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param str id: A unique identifier that is immutable on creation.
         :param str state: Lifecycle state of the resource.
         :param str state_message: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str time_created: The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
-        :param str updated_by: Name of the user who updated the DCMS Registry.
+        :param str time_created: Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
+        :param str time_updated: Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
+        :param str updated_by: Name of the user who updated the DCMS registry.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -5759,7 +5759,7 @@ class GetRegistriesRegistrySummaryCollectionItemResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Data Connectivity Management Registry display name, registries can be renamed
+        Data Connectivity Management registry display name; registries can be renamed.
         """
         return pulumi.get(self, "display_name")
 
@@ -5767,7 +5767,7 @@ class GetRegistriesRegistrySummaryCollectionItemResult(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -5775,7 +5775,7 @@ class GetRegistriesRegistrySummaryCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        Unique identifier that is immutable on creation
+        A unique identifier that is immutable on creation.
         """
         return pulumi.get(self, "id")
 
@@ -5799,7 +5799,7 @@ class GetRegistriesRegistrySummaryCollectionItemResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -5807,7 +5807,7 @@ class GetRegistriesRegistrySummaryCollectionItemResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -5815,7 +5815,7 @@ class GetRegistriesRegistrySummaryCollectionItemResult(dict):
     @pulumi.getter(name="updatedBy")
     def updated_by(self) -> str:
         """
-        Name of the user who updated the DCMS Registry.
+        Name of the user who updated the DCMS registry.
         """
         return pulumi.get(self, "updated_by")
 
@@ -5826,7 +5826,7 @@ class GetRegistryConnectionConnectionPropertyResult(dict):
                  name: str,
                  value: str):
         """
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str value: The value for the connection name property.
         """
         pulumi.set(__self__, "name", name)
@@ -5836,7 +5836,7 @@ class GetRegistryConnectionConnectionPropertyResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -5867,13 +5867,13 @@ class GetRegistryConnectionMetadataResult(dict):
                  updated_by_name: str):
         """
         :param str aggregator_key: The owning object's key for this object.
-        :param Sequence['GetRegistryConnectionMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param Sequence['GetRegistryConnectionMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
+        :param str identifier_path: The full path to identify the object.
         :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
@@ -5906,7 +5906,7 @@ class GetRegistryConnectionMetadataResult(dict):
     @pulumi.getter
     def aggregators(self) -> Sequence['outputs.GetRegistryConnectionMetadataAggregatorResult']:
         """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
+        A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregators")
 
@@ -5930,7 +5930,7 @@ class GetRegistryConnectionMetadataResult(dict):
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> str:
         """
-        The full path to identify this object.
+        The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -5946,7 +5946,7 @@ class GetRegistryConnectionMetadataResult(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -5954,7 +5954,7 @@ class GetRegistryConnectionMetadataResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -6011,7 +6011,7 @@ class GetRegistryConnectionMetadataAggregatorResult(dict):
         :param str description: The description of the aggregator.
         :param str identifier: The identifier of the aggregator.
         :param str key: The identifying key for the object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: Specific Connection Type
         """
         pulumi.set(__self__, "description", description)
@@ -6048,7 +6048,7 @@ class GetRegistryConnectionMetadataAggregatorResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -6081,17 +6081,17 @@ class GetRegistryConnectionPrimarySchemaResult(dict):
         """
         :param str default_connection: The default connection key.
         :param str description: The description of the aggregator.
-        :param str external_key: The external key for the object.
+        :param str external_key: The external key of the object.
         :param str identifier: The identifier of the aggregator.
         :param bool is_has_containers: Specifies whether the schema has containers.
         :param str key: The identifying key for the object.
-        :param Sequence['GetRegistryConnectionPrimarySchemaMetadataArgs'] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param str model_type: The object's type.
-        :param str model_version: The object's model version.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param Sequence['GetRegistryConnectionPrimarySchemaMetadataArgs'] metadatas: A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
+        :param str model_type: The object type.
+        :param str model_version: The model version of the object.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: The version of the object that is used to track changes in the object instance.
-        :param Sequence['GetRegistryConnectionPrimarySchemaParentRefArgs'] parent_reves: A reference to the object's parent.
+        :param Sequence['GetRegistryConnectionPrimarySchemaParentRefArgs'] parent_reves: A reference to the parent object.
         :param str resource_name: A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
         """
         pulumi.set(__self__, "default_connection", default_connection)
@@ -6129,7 +6129,7 @@ class GetRegistryConnectionPrimarySchemaResult(dict):
     @pulumi.getter(name="externalKey")
     def external_key(self) -> str:
         """
-        The external key for the object.
+        The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -6161,7 +6161,7 @@ class GetRegistryConnectionPrimarySchemaResult(dict):
     @pulumi.getter
     def metadatas(self) -> Sequence['outputs.GetRegistryConnectionPrimarySchemaMetadataResult']:
         """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadatas")
 
@@ -6169,7 +6169,7 @@ class GetRegistryConnectionPrimarySchemaResult(dict):
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        The object's type.
+        The object type.
         """
         return pulumi.get(self, "model_type")
 
@@ -6177,7 +6177,7 @@ class GetRegistryConnectionPrimarySchemaResult(dict):
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> str:
         """
-        The object's model version.
+        The model version of the object.
         """
         return pulumi.get(self, "model_version")
 
@@ -6185,7 +6185,7 @@ class GetRegistryConnectionPrimarySchemaResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -6209,7 +6209,7 @@ class GetRegistryConnectionPrimarySchemaResult(dict):
     @pulumi.getter(name="parentReves")
     def parent_reves(self) -> Sequence['outputs.GetRegistryConnectionPrimarySchemaParentRefResult']:
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_reves")
 
@@ -6240,13 +6240,13 @@ class GetRegistryConnectionPrimarySchemaMetadataResult(dict):
                  updated_by_name: str):
         """
         :param str aggregator_key: The owning object's key for this object.
-        :param Sequence['GetRegistryConnectionPrimarySchemaMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param Sequence['GetRegistryConnectionPrimarySchemaMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
+        :param str identifier_path: The full path to identify the object.
         :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
@@ -6279,7 +6279,7 @@ class GetRegistryConnectionPrimarySchemaMetadataResult(dict):
     @pulumi.getter
     def aggregators(self) -> Sequence['outputs.GetRegistryConnectionPrimarySchemaMetadataAggregatorResult']:
         """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
+        A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregators")
 
@@ -6303,7 +6303,7 @@ class GetRegistryConnectionPrimarySchemaMetadataResult(dict):
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> str:
         """
-        The full path to identify this object.
+        The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -6319,7 +6319,7 @@ class GetRegistryConnectionPrimarySchemaMetadataResult(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -6327,7 +6327,7 @@ class GetRegistryConnectionPrimarySchemaMetadataResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -6384,7 +6384,7 @@ class GetRegistryConnectionPrimarySchemaMetadataAggregatorResult(dict):
         :param str description: The description of the aggregator.
         :param str identifier: The identifier of the aggregator.
         :param str key: The identifying key for the object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: Specific Connection Type
         """
         pulumi.set(__self__, "description", description)
@@ -6421,7 +6421,7 @@ class GetRegistryConnectionPrimarySchemaMetadataAggregatorResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -6468,15 +6468,15 @@ class GetRegistryConnectionRegistryMetadataResult(dict):
                  updated_by_user_name: str):
         """
         :param str aggregator_key: The owning object's key for this object.
-        :param str created_by_user_id: The id of the user who created the object.
+        :param str created_by_user_id: The ID of the user who created the object.
         :param str created_by_user_name: The name of the user who created the object.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
+        :param bool is_favorite: Specifies whether the object is a favorite.
         :param str key: The identifying key for the object.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
-        :param str updated_by_user_id: The id of the user who updated the object.
+        :param str updated_by_user_id: The ID of the user who updated the object.
         :param str updated_by_user_name: The name of the user who updated the object.
         """
         pulumi.set(__self__, "aggregator_key", aggregator_key)
@@ -6503,7 +6503,7 @@ class GetRegistryConnectionRegistryMetadataResult(dict):
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> str:
         """
-        The id of the user who created the object.
+        The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -6519,7 +6519,7 @@ class GetRegistryConnectionRegistryMetadataResult(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -6535,7 +6535,7 @@ class GetRegistryConnectionRegistryMetadataResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -6567,7 +6567,7 @@ class GetRegistryConnectionRegistryMetadataResult(dict):
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> str:
         """
-        The id of the user who updated the object.
+        The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -6612,20 +6612,20 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemResult(dict):
                  registry_metadata: 'outputs.GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataResult',
                  type: str):
         """
-        :param Sequence['GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyArgs'] connection_properties: The properties for the connection.
+        :param Sequence['GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyArgs'] connection_properties: The properties of the connection.
         :param str description: The description of the aggregator.
         :param str identifier: The identifier of the aggregator.
-        :param bool is_default: The default property for the connection.
+        :param bool is_default: The default property of the connection.
         :param str key: The identifying key for the object.
-        :param 'GetRegistryConnectionsConnectionSummaryCollectionItemMetadataArgs' metadata: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param str model_type: The object's type.
-        :param str model_version: The object's model version.
+        :param 'GetRegistryConnectionsConnectionSummaryCollectionItemMetadataArgs' metadata: A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
+        :param str model_type: The object type.
+        :param str model_version: The model version of the object.
         :param str name: Used to filter by the name of the object.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: The version of the object that is used to track changes in the object instance.
         :param 'GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaArgs' primary_schema: The schema object.
-        :param Mapping[str, Any] properties: All the properties for the connection in a key-value map format.
-        :param str registry_id: The registry Ocid.
+        :param Mapping[str, Any] properties: All the properties of the connection in a key-value map format.
+        :param str registry_id: The registry OCID.
         :param 'GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataArgs' registry_metadata: Information about the object and its parent.
         :param str type: Type of the object to filter the results with.
         """
@@ -6650,7 +6650,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemResult(dict):
     @pulumi.getter(name="connectionProperties")
     def connection_properties(self) -> Sequence['outputs.GetRegistryConnectionsConnectionSummaryCollectionItemConnectionPropertyResult']:
         """
-        The properties for the connection.
+        The properties of the connection.
         """
         return pulumi.get(self, "connection_properties")
 
@@ -6674,7 +6674,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemResult(dict):
     @pulumi.getter(name="isDefault")
     def is_default(self) -> bool:
         """
-        The default property for the connection.
+        The default property of the connection.
         """
         return pulumi.get(self, "is_default")
 
@@ -6690,7 +6690,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemResult(dict):
     @pulumi.getter
     def metadata(self) -> 'outputs.GetRegistryConnectionsConnectionSummaryCollectionItemMetadataResult':
         """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -6698,7 +6698,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemResult(dict):
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        The object's type.
+        The object type.
         """
         return pulumi.get(self, "model_type")
 
@@ -6706,7 +6706,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemResult(dict):
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> str:
         """
-        The object's model version.
+        The model version of the object.
         """
         return pulumi.get(self, "model_version")
 
@@ -6746,7 +6746,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemResult(dict):
     @pulumi.getter
     def properties(self) -> Mapping[str, Any]:
         """
-        All the properties for the connection in a key-value map format.
+        All the properties of the connection in a key-value map format.
         """
         return pulumi.get(self, "properties")
 
@@ -6754,7 +6754,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemResult(dict):
     @pulumi.getter(name="registryId")
     def registry_id(self) -> str:
         """
-        The registry Ocid.
+        The registry OCID.
         """
         return pulumi.get(self, "registry_id")
 
@@ -6821,14 +6821,14 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemMetadataResult(dict):
                  updated_by: str,
                  updated_by_name: str):
         """
-        :param 'GetRegistryConnectionsConnectionSummaryCollectionItemMetadataAggregatorArgs' aggregator: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param 'GetRegistryConnectionsConnectionSummaryCollectionItemMetadataAggregatorArgs' aggregator: A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str aggregator_key: The owning object's key for this object.
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
+        :param str identifier_path: The full path to identify the object.
         :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
@@ -6853,7 +6853,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemMetadataResult(dict):
     @pulumi.getter
     def aggregator(self) -> 'outputs.GetRegistryConnectionsConnectionSummaryCollectionItemMetadataAggregatorResult':
         """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
+        A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -6885,7 +6885,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemMetadataResult(dict):
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> str:
         """
-        The full path to identify this object.
+        The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -6901,7 +6901,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemMetadataResult(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -6909,7 +6909,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemMetadataResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -7036,17 +7036,17 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaResult(d
         """
         :param str default_connection: The default connection key.
         :param str description: The description of the aggregator.
-        :param str external_key: The external key for the object.
+        :param str external_key: The external key of the object.
         :param str identifier: The identifier of the aggregator.
         :param bool is_has_containers: Specifies whether the schema has containers.
         :param str key: The identifying key for the object.
-        :param 'GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataArgs' metadata: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param str model_type: The object's type.
-        :param str model_version: The object's model version.
+        :param 'GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataArgs' metadata: A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
+        :param str model_type: The object type.
+        :param str model_version: The model version of the object.
         :param str name: Used to filter by the name of the object.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: The version of the object that is used to track changes in the object instance.
-        :param 'GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRefArgs' parent_ref: A reference to the object's parent.
+        :param 'GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRefArgs' parent_ref: A reference to the parent object.
         :param str resource_name: A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
         """
         pulumi.set(__self__, "default_connection", default_connection)
@@ -7084,7 +7084,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaResult(d
     @pulumi.getter(name="externalKey")
     def external_key(self) -> str:
         """
-        The external key for the object.
+        The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -7116,7 +7116,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaResult(d
     @pulumi.getter
     def metadata(self) -> 'outputs.GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataResult':
         """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -7124,7 +7124,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaResult(d
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        The object's type.
+        The object type.
         """
         return pulumi.get(self, "model_type")
 
@@ -7132,7 +7132,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaResult(d
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> str:
         """
-        The object's model version.
+        The model version of the object.
         """
         return pulumi.get(self, "model_version")
 
@@ -7164,7 +7164,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaResult(d
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> 'outputs.GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRefResult':
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -7194,14 +7194,14 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata
                  updated_by: str,
                  updated_by_name: str):
         """
-        :param 'GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregatorArgs' aggregator: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param 'GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregatorArgs' aggregator: A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str aggregator_key: The owning object's key for this object.
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
+        :param str identifier_path: The full path to identify the object.
         :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
@@ -7226,7 +7226,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata
     @pulumi.getter
     def aggregator(self) -> 'outputs.GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregatorResult':
         """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
+        A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -7258,7 +7258,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> str:
         """
-        The full path to identify this object.
+        The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -7274,7 +7274,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -7282,7 +7282,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -7423,15 +7423,15 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataResul
                  updated_by_user_name: str):
         """
         :param str aggregator_key: The owning object's key for this object.
-        :param str created_by_user_id: The id of the user who created the object.
+        :param str created_by_user_id: The ID of the user who created the object.
         :param str created_by_user_name: The name of the user who created the object.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
+        :param bool is_favorite: Specifies whether the object is a favorite.
         :param str key: The identifying key for the object.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
-        :param str updated_by_user_id: The id of the user who updated the object.
+        :param str updated_by_user_id: The ID of the user who updated the object.
         :param str updated_by_user_name: The name of the user who updated the object.
         """
         pulumi.set(__self__, "aggregator_key", aggregator_key)
@@ -7458,7 +7458,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataResul
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> str:
         """
-        The id of the user who created the object.
+        The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -7474,7 +7474,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataResul
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -7490,7 +7490,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataResul
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -7522,7 +7522,7 @@ class GetRegistryConnectionsConnectionSummaryCollectionItemRegistryMetadataResul
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> str:
         """
-        The id of the user who updated the object.
+        The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -7587,15 +7587,15 @@ class GetRegistryDataAssetDefaultConnectionResult(dict):
                  registry_metadatas: Sequence['outputs.GetRegistryDataAssetDefaultConnectionRegistryMetadataResult'],
                  type: str):
         """
-        :param Sequence['GetRegistryDataAssetDefaultConnectionConnectionPropertyArgs'] connection_properties: The properties for the connection.
-        :param str description: A user defined description for the object.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param bool is_default: The default property for the connection.
+        :param Sequence['GetRegistryDataAssetDefaultConnectionConnectionPropertyArgs'] connection_properties: The properties of the connection.
+        :param str description: A user-defined description for the object.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param bool is_default: The default property of the connection.
         :param str key: The identifying key for the object.
-        :param Sequence['GetRegistryDataAssetDefaultConnectionMetadataArgs'] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param str model_type: The property which disciminates the subtypes.
+        :param Sequence['GetRegistryDataAssetDefaultConnectionMetadataArgs'] metadatas: A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
+        :param str model_type: The property which differentiates the subtypes.
         :param str model_version: The model version of an object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: The version of the object that is used to track changes in the object instance.
         :param Sequence['GetRegistryDataAssetDefaultConnectionPrimarySchemaArgs'] primary_schemas: The schema object.
@@ -7623,7 +7623,7 @@ class GetRegistryDataAssetDefaultConnectionResult(dict):
     @pulumi.getter(name="connectionProperties")
     def connection_properties(self) -> Sequence['outputs.GetRegistryDataAssetDefaultConnectionConnectionPropertyResult']:
         """
-        The properties for the connection.
+        The properties of the connection.
         """
         return pulumi.get(self, "connection_properties")
 
@@ -7631,7 +7631,7 @@ class GetRegistryDataAssetDefaultConnectionResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        A user defined description for the object.
+        A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -7639,7 +7639,7 @@ class GetRegistryDataAssetDefaultConnectionResult(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -7647,7 +7647,7 @@ class GetRegistryDataAssetDefaultConnectionResult(dict):
     @pulumi.getter(name="isDefault")
     def is_default(self) -> bool:
         """
-        The default property for the connection.
+        The default property of the connection.
         """
         return pulumi.get(self, "is_default")
 
@@ -7663,7 +7663,7 @@ class GetRegistryDataAssetDefaultConnectionResult(dict):
     @pulumi.getter
     def metadatas(self) -> Sequence['outputs.GetRegistryDataAssetDefaultConnectionMetadataResult']:
         """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadatas")
 
@@ -7671,7 +7671,7 @@ class GetRegistryDataAssetDefaultConnectionResult(dict):
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        The property which disciminates the subtypes.
+        The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -7687,7 +7687,7 @@ class GetRegistryDataAssetDefaultConnectionResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -7746,7 +7746,7 @@ class GetRegistryDataAssetDefaultConnectionConnectionPropertyResult(dict):
                  name: str,
                  value: str):
         """
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str value: The value for the connection name property.
         """
         pulumi.set(__self__, "name", name)
@@ -7756,7 +7756,7 @@ class GetRegistryDataAssetDefaultConnectionConnectionPropertyResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -7787,13 +7787,13 @@ class GetRegistryDataAssetDefaultConnectionMetadataResult(dict):
                  updated_by_name: str):
         """
         :param str aggregator_key: The owning object's key for this object.
-        :param Sequence['GetRegistryDataAssetDefaultConnectionMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param Sequence['GetRegistryDataAssetDefaultConnectionMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
+        :param str identifier_path: The full path to identify the object.
         :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
@@ -7826,7 +7826,7 @@ class GetRegistryDataAssetDefaultConnectionMetadataResult(dict):
     @pulumi.getter
     def aggregators(self) -> Sequence['outputs.GetRegistryDataAssetDefaultConnectionMetadataAggregatorResult']:
         """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
+        A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregators")
 
@@ -7850,7 +7850,7 @@ class GetRegistryDataAssetDefaultConnectionMetadataResult(dict):
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> str:
         """
-        The full path to identify this object.
+        The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -7866,7 +7866,7 @@ class GetRegistryDataAssetDefaultConnectionMetadataResult(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -7874,7 +7874,7 @@ class GetRegistryDataAssetDefaultConnectionMetadataResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -7928,10 +7928,10 @@ class GetRegistryDataAssetDefaultConnectionMetadataAggregatorResult(dict):
                  name: str,
                  type: str):
         """
-        :param str description: A user defined description for the object.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str description: A user-defined description for the object.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param str key: The identifying key for the object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: Specific DataAsset Type
         """
         pulumi.set(__self__, "description", description)
@@ -7944,7 +7944,7 @@ class GetRegistryDataAssetDefaultConnectionMetadataAggregatorResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        A user defined description for the object.
+        A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -7952,7 +7952,7 @@ class GetRegistryDataAssetDefaultConnectionMetadataAggregatorResult(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -7968,7 +7968,7 @@ class GetRegistryDataAssetDefaultConnectionMetadataAggregatorResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -8000,18 +8000,18 @@ class GetRegistryDataAssetDefaultConnectionPrimarySchemaResult(dict):
                  resource_name: str):
         """
         :param str default_connection: The default connection key.
-        :param str description: A user defined description for the object.
-        :param str external_key: The external key for the object.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str description: A user-defined description for the object.
+        :param str external_key: The external key of the object.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param bool is_has_containers: Specifies whether the schema has containers.
         :param str key: The identifying key for the object.
-        :param Sequence['GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs'] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param str model_type: The property which disciminates the subtypes.
+        :param Sequence['GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs'] metadatas: A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
+        :param str model_type: The property which differentiates the subtypes.
         :param str model_version: The model version of an object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: The version of the object that is used to track changes in the object instance.
-        :param Sequence['GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs'] parent_reves: A reference to the object's parent.
+        :param Sequence['GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs'] parent_reves: A reference to the parent object.
         :param str resource_name: A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
         """
         pulumi.set(__self__, "default_connection", default_connection)
@@ -8041,7 +8041,7 @@ class GetRegistryDataAssetDefaultConnectionPrimarySchemaResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        A user defined description for the object.
+        A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -8049,7 +8049,7 @@ class GetRegistryDataAssetDefaultConnectionPrimarySchemaResult(dict):
     @pulumi.getter(name="externalKey")
     def external_key(self) -> str:
         """
-        The external key for the object.
+        The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -8057,7 +8057,7 @@ class GetRegistryDataAssetDefaultConnectionPrimarySchemaResult(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -8081,7 +8081,7 @@ class GetRegistryDataAssetDefaultConnectionPrimarySchemaResult(dict):
     @pulumi.getter
     def metadatas(self) -> Sequence['outputs.GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataResult']:
         """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadatas")
 
@@ -8089,7 +8089,7 @@ class GetRegistryDataAssetDefaultConnectionPrimarySchemaResult(dict):
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        The property which disciminates the subtypes.
+        The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -8105,7 +8105,7 @@ class GetRegistryDataAssetDefaultConnectionPrimarySchemaResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -8129,7 +8129,7 @@ class GetRegistryDataAssetDefaultConnectionPrimarySchemaResult(dict):
     @pulumi.getter(name="parentReves")
     def parent_reves(self) -> Sequence['outputs.GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRefResult']:
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_reves")
 
@@ -8160,13 +8160,13 @@ class GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataResult(dict):
                  updated_by_name: str):
         """
         :param str aggregator_key: The owning object's key for this object.
-        :param Sequence['GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param Sequence['GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
+        :param str identifier_path: The full path to identify the object.
         :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
@@ -8199,7 +8199,7 @@ class GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataResult(dict):
     @pulumi.getter
     def aggregators(self) -> Sequence['outputs.GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorResult']:
         """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
+        A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregators")
 
@@ -8223,7 +8223,7 @@ class GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataResult(dict):
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> str:
         """
-        The full path to identify this object.
+        The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -8239,7 +8239,7 @@ class GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataResult(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -8247,7 +8247,7 @@ class GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -8301,10 +8301,10 @@ class GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorResult
                  name: str,
                  type: str):
         """
-        :param str description: A user defined description for the object.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str description: A user-defined description for the object.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param str key: The identifying key for the object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: Specific DataAsset Type
         """
         pulumi.set(__self__, "description", description)
@@ -8317,7 +8317,7 @@ class GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorResult
     @pulumi.getter
     def description(self) -> str:
         """
-        A user defined description for the object.
+        A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -8325,7 +8325,7 @@ class GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorResult
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -8341,7 +8341,7 @@ class GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorResult
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -8388,15 +8388,15 @@ class GetRegistryDataAssetDefaultConnectionRegistryMetadataResult(dict):
                  updated_by_user_name: str):
         """
         :param str aggregator_key: The owning object's key for this object.
-        :param str created_by_user_id: The id of the user who created the object.
+        :param str created_by_user_id: The ID of the user who created the object.
         :param str created_by_user_name: The name of the user who created the object.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
+        :param bool is_favorite: Specifies whether the object is a favorite.
         :param str key: The identifying key for the object.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
-        :param str updated_by_user_id: The id of the user who updated the object.
+        :param str updated_by_user_id: The ID of the user who updated the object.
         :param str updated_by_user_name: The name of the user who updated the object.
         """
         pulumi.set(__self__, "aggregator_key", aggregator_key)
@@ -8423,7 +8423,7 @@ class GetRegistryDataAssetDefaultConnectionRegistryMetadataResult(dict):
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> str:
         """
-        The id of the user who created the object.
+        The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -8439,7 +8439,7 @@ class GetRegistryDataAssetDefaultConnectionRegistryMetadataResult(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -8455,7 +8455,7 @@ class GetRegistryDataAssetDefaultConnectionRegistryMetadataResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -8487,7 +8487,7 @@ class GetRegistryDataAssetDefaultConnectionRegistryMetadataResult(dict):
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> str:
         """
-        The id of the user who updated the object.
+        The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -8518,13 +8518,13 @@ class GetRegistryDataAssetMetadataResult(dict):
                  updated_by_name: str):
         """
         :param str aggregator_key: The owning object's key for this object.
-        :param Sequence['GetRegistryDataAssetMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param Sequence['GetRegistryDataAssetMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
+        :param str identifier_path: The full path to identify the object.
         :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
@@ -8557,7 +8557,7 @@ class GetRegistryDataAssetMetadataResult(dict):
     @pulumi.getter
     def aggregators(self) -> Sequence['outputs.GetRegistryDataAssetMetadataAggregatorResult']:
         """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
+        A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregators")
 
@@ -8581,7 +8581,7 @@ class GetRegistryDataAssetMetadataResult(dict):
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> str:
         """
-        The full path to identify this object.
+        The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -8597,7 +8597,7 @@ class GetRegistryDataAssetMetadataResult(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -8605,7 +8605,7 @@ class GetRegistryDataAssetMetadataResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -8659,10 +8659,10 @@ class GetRegistryDataAssetMetadataAggregatorResult(dict):
                  name: str,
                  type: str):
         """
-        :param str description: A user defined description for the object.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str description: A user-defined description for the object.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param str key: The identifying key for the object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: Specific DataAsset Type
         """
         pulumi.set(__self__, "description", description)
@@ -8675,7 +8675,7 @@ class GetRegistryDataAssetMetadataAggregatorResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        A user defined description for the object.
+        A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -8683,7 +8683,7 @@ class GetRegistryDataAssetMetadataAggregatorResult(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -8699,7 +8699,7 @@ class GetRegistryDataAssetMetadataAggregatorResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -8728,15 +8728,15 @@ class GetRegistryDataAssetNativeTypeSystemResult(dict):
                  type_mapping_to: Mapping[str, Any],
                  types: Sequence['outputs.GetRegistryDataAssetNativeTypeSystemTypeResult']):
         """
-        :param str description: A user defined description for the object.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str description: A user-defined description for the object.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param str key: The identifying key for the object.
-        :param str model_type: The property which disciminates the subtypes.
+        :param str model_type: The property which differentiates the subtypes.
         :param str model_version: The model version of an object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: The version of the object that is used to track changes in the object instance.
-        :param Sequence['GetRegistryDataAssetNativeTypeSystemParentRefArgs'] parent_reves: A reference to the object's parent.
+        :param Sequence['GetRegistryDataAssetNativeTypeSystemParentRefArgs'] parent_reves: A reference to the parent object.
         :param Mapping[str, Any] type_mapping_from: The type system to map from.
         :param Mapping[str, Any] type_mapping_to: The type system to map to.
         :param Sequence['GetRegistryDataAssetNativeTypeSystemTypeArgs'] types: An array of types.
@@ -8758,7 +8758,7 @@ class GetRegistryDataAssetNativeTypeSystemResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        A user defined description for the object.
+        A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -8766,7 +8766,7 @@ class GetRegistryDataAssetNativeTypeSystemResult(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -8782,7 +8782,7 @@ class GetRegistryDataAssetNativeTypeSystemResult(dict):
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        The property which disciminates the subtypes.
+        The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -8798,7 +8798,7 @@ class GetRegistryDataAssetNativeTypeSystemResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -8822,7 +8822,7 @@ class GetRegistryDataAssetNativeTypeSystemResult(dict):
     @pulumi.getter(name="parentReves")
     def parent_reves(self) -> Sequence['outputs.GetRegistryDataAssetNativeTypeSystemParentRefResult']:
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_reves")
 
@@ -8884,14 +8884,14 @@ class GetRegistryDataAssetNativeTypeSystemTypeResult(dict):
                  type_system_name: str):
         """
         :param Sequence['GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs'] config_definitions: The configuration details of a configurable object. This contains one or more config param definitions.
-        :param str description: A user defined description for the object.
+        :param str description: A user-defined description for the object.
         :param str dt_type: The data type.
         :param str key: The identifying key for the object.
-        :param str model_type: The property which disciminates the subtypes.
+        :param str model_type: The property which differentiates the subtypes.
         :param str model_version: The model version of an object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param Sequence['GetRegistryDataAssetNativeTypeSystemTypeParentRefArgs'] parent_reves: A reference to the object's parent.
+        :param Sequence['GetRegistryDataAssetNativeTypeSystemTypeParentRefArgs'] parent_reves: A reference to the parent object.
         :param str type_system_name: The data type system name.
         """
         pulumi.set(__self__, "config_definitions", config_definitions)
@@ -8917,7 +8917,7 @@ class GetRegistryDataAssetNativeTypeSystemTypeResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        A user defined description for the object.
+        A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -8941,7 +8941,7 @@ class GetRegistryDataAssetNativeTypeSystemTypeResult(dict):
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        The property which disciminates the subtypes.
+        The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -8957,7 +8957,7 @@ class GetRegistryDataAssetNativeTypeSystemTypeResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -8973,7 +8973,7 @@ class GetRegistryDataAssetNativeTypeSystemTypeResult(dict):
     @pulumi.getter(name="parentReves")
     def parent_reves(self) -> Sequence['outputs.GetRegistryDataAssetNativeTypeSystemTypeParentRefResult']:
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_reves")
 
@@ -8999,13 +8999,13 @@ class GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionResult(dict):
                  parent_reves: Sequence['outputs.GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefResult']):
         """
         :param Mapping[str, Any] config_parameter_definitions: The parameter configuration details.
-        :param bool is_contained: Specifies whether the configuration is contained or not.
+        :param bool is_contained: Specifies whether the configuration is contained.
         :param str key: The identifying key for the object.
-        :param str model_type: The property which disciminates the subtypes.
+        :param str model_type: The property which differentiates the subtypes.
         :param str model_version: The model version of an object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param Sequence['GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs'] parent_reves: A reference to the object's parent.
+        :param Sequence['GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs'] parent_reves: A reference to the parent object.
         """
         pulumi.set(__self__, "config_parameter_definitions", config_parameter_definitions)
         pulumi.set(__self__, "is_contained", is_contained)
@@ -9028,7 +9028,7 @@ class GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionResult(dict):
     @pulumi.getter(name="isContained")
     def is_contained(self) -> bool:
         """
-        Specifies whether the configuration is contained or not.
+        Specifies whether the configuration is contained.
         """
         return pulumi.get(self, "is_contained")
 
@@ -9044,7 +9044,7 @@ class GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionResult(dict):
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        The property which disciminates the subtypes.
+        The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -9060,7 +9060,7 @@ class GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -9076,7 +9076,7 @@ class GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionResult(dict):
     @pulumi.getter(name="parentReves")
     def parent_reves(self) -> Sequence['outputs.GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefResult']:
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_reves")
 
@@ -9133,15 +9133,15 @@ class GetRegistryDataAssetRegistryMetadataResult(dict):
                  updated_by_user_name: str):
         """
         :param str aggregator_key: The owning object's key for this object.
-        :param str created_by_user_id: The id of the user who created the object.
+        :param str created_by_user_id: The ID of the user who created the object.
         :param str created_by_user_name: The name of the user who created the object.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
+        :param bool is_favorite: Specifies whether the object is a favorite.
         :param str key: The identifying key for the object.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
-        :param str updated_by_user_id: The id of the user who updated the object.
+        :param str updated_by_user_id: The ID of the user who updated the object.
         :param str updated_by_user_name: The name of the user who updated the object.
         """
         pulumi.set(__self__, "aggregator_key", aggregator_key)
@@ -9168,7 +9168,7 @@ class GetRegistryDataAssetRegistryMetadataResult(dict):
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> str:
         """
-        The id of the user who created the object.
+        The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -9184,7 +9184,7 @@ class GetRegistryDataAssetRegistryMetadataResult(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -9200,7 +9200,7 @@ class GetRegistryDataAssetRegistryMetadataResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -9232,7 +9232,7 @@ class GetRegistryDataAssetRegistryMetadataResult(dict):
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> str:
         """
-        The id of the user who updated the object.
+        The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -9281,20 +9281,20 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemResult(dict):
         """
         :param Mapping[str, Any] asset_properties: Additional properties for the data asset.
         :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionArgs' default_connection: The default connection key.
-        :param str description: A user defined description for the object.
+        :param str description: A user-defined description for the object.
         :param Sequence[str] end_points: The list of endpoints with which this data asset is associated.
-        :param str external_key: The external key for the object.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str external_key: The external key of the object.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param str key: The identifying key for the object.
-        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataArgs' metadata: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param str model_type: The property which disciminates the subtypes.
+        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataArgs' metadata: A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
+        :param str model_type: The property which differentiates the subtypes.
         :param str model_version: The model version of an object.
         :param str name: Used to filter by the name of the object.
         :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemArgs' native_type_system: The type system maps from and to a type.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: The version of the object that is used to track changes in the object instance.
         :param Mapping[str, Any] properties: All the properties for the data asset in a key-value map format.
-        :param str registry_id: The registry Ocid.
+        :param str registry_id: The registry OCID.
         :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataArgs' registry_metadata: Information about the object and its parent.
         :param str type: Specific DataAsset Type
         """
@@ -9337,7 +9337,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        A user defined description for the object.
+        A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -9353,7 +9353,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemResult(dict):
     @pulumi.getter(name="externalKey")
     def external_key(self) -> str:
         """
-        The external key for the object.
+        The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -9361,7 +9361,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemResult(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -9377,7 +9377,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemResult(dict):
     @pulumi.getter
     def metadata(self) -> 'outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataResult':
         """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -9385,7 +9385,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemResult(dict):
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        The property which disciminates the subtypes.
+        The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -9441,7 +9441,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemResult(dict):
     @pulumi.getter(name="registryId")
     def registry_id(self) -> str:
         """
-        The registry Ocid.
+        The registry OCID.
         """
         return pulumi.get(self, "registry_id")
 
@@ -9481,13 +9481,13 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionResult
                  registry_metadata: 'outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadataResult',
                  type: str):
         """
-        :param Sequence['GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyArgs'] connection_properties: The properties for the connection.
-        :param str description: A user defined description for the object.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param bool is_default: The default property for the connection.
+        :param Sequence['GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyArgs'] connection_properties: The properties of the connection.
+        :param str description: A user-defined description for the object.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param bool is_default: The default property of the connection.
         :param str key: The identifying key for the object.
-        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataArgs' metadata: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param str model_type: The property which disciminates the subtypes.
+        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataArgs' metadata: A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
+        :param str model_type: The property which differentiates the subtypes.
         :param str model_version: The model version of an object.
         :param str name: Used to filter by the name of the object.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
@@ -9517,7 +9517,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionResult
     @pulumi.getter(name="connectionProperties")
     def connection_properties(self) -> Sequence['outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionPropertyResult']:
         """
-        The properties for the connection.
+        The properties of the connection.
         """
         return pulumi.get(self, "connection_properties")
 
@@ -9525,7 +9525,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionResult
     @pulumi.getter
     def description(self) -> str:
         """
-        A user defined description for the object.
+        A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -9533,7 +9533,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionResult
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -9541,7 +9541,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionResult
     @pulumi.getter(name="isDefault")
     def is_default(self) -> bool:
         """
-        The default property for the connection.
+        The default property of the connection.
         """
         return pulumi.get(self, "is_default")
 
@@ -9557,7 +9557,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionResult
     @pulumi.getter
     def metadata(self) -> 'outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataResult':
         """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -9565,7 +9565,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionResult
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        The property which disciminates the subtypes.
+        The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -9680,14 +9680,14 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetada
                  updated_by: str,
                  updated_by_name: str):
         """
-        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregatorArgs' aggregator: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregatorArgs' aggregator: A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str aggregator_key: The owning object's key for this object.
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
+        :param str identifier_path: The full path to identify the object.
         :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
@@ -9712,7 +9712,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetada
     @pulumi.getter
     def aggregator(self) -> 'outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregatorResult':
         """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
+        A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -9744,7 +9744,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetada
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> str:
         """
-        The full path to identify this object.
+        The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -9760,7 +9760,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetada
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -9768,7 +9768,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetada
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -9822,8 +9822,8 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetada
                  name: str,
                  type: str):
         """
-        :param str description: A user defined description for the object.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str description: A user-defined description for the object.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param str key: The identifying key for the object.
         :param str name: Used to filter by the name of the object.
         :param str type: Specific DataAsset Type
@@ -9838,7 +9838,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetada
     @pulumi.getter
     def description(self) -> str:
         """
-        A user defined description for the object.
+        A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -9846,7 +9846,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetada
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -9894,18 +9894,18 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimar
                  resource_name: str):
         """
         :param str default_connection: The default connection key.
-        :param str description: A user defined description for the object.
-        :param str external_key: The external key for the object.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str description: A user-defined description for the object.
+        :param str external_key: The external key of the object.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param bool is_has_containers: Specifies whether the schema has containers.
         :param str key: The identifying key for the object.
-        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataArgs' metadata: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param str model_type: The property which disciminates the subtypes.
+        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataArgs' metadata: A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
+        :param str model_type: The property which differentiates the subtypes.
         :param str model_version: The model version of an object.
         :param str name: Used to filter by the name of the object.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: The version of the object that is used to track changes in the object instance.
-        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaParentRefArgs' parent_ref: A reference to the object's parent.
+        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaParentRefArgs' parent_ref: A reference to the parent object.
         :param str resource_name: A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
         """
         pulumi.set(__self__, "default_connection", default_connection)
@@ -9935,7 +9935,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimar
     @pulumi.getter
     def description(self) -> str:
         """
-        A user defined description for the object.
+        A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -9943,7 +9943,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimar
     @pulumi.getter(name="externalKey")
     def external_key(self) -> str:
         """
-        The external key for the object.
+        The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -9951,7 +9951,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimar
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -9975,7 +9975,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimar
     @pulumi.getter
     def metadata(self) -> 'outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataResult':
         """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -9983,7 +9983,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimar
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        The property which disciminates the subtypes.
+        The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -10023,7 +10023,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimar
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> 'outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaParentRefResult':
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -10053,14 +10053,14 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimar
                  updated_by: str,
                  updated_by_name: str):
         """
-        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregatorArgs' aggregator: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregatorArgs' aggregator: A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str aggregator_key: The owning object's key for this object.
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
+        :param str identifier_path: The full path to identify the object.
         :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
@@ -10085,7 +10085,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimar
     @pulumi.getter
     def aggregator(self) -> 'outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregatorResult':
         """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
+        A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -10117,7 +10117,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimar
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> str:
         """
-        The full path to identify this object.
+        The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -10133,7 +10133,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimar
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -10141,7 +10141,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimar
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -10195,8 +10195,8 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimar
                  name: str,
                  type: str):
         """
-        :param str description: A user defined description for the object.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str description: A user-defined description for the object.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param str key: The identifying key for the object.
         :param str name: Used to filter by the name of the object.
         :param str type: Specific DataAsset Type
@@ -10211,7 +10211,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimar
     @pulumi.getter
     def description(self) -> str:
         """
-        A user defined description for the object.
+        A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -10219,7 +10219,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimar
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -10282,15 +10282,15 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegist
                  updated_by_user_name: str):
         """
         :param str aggregator_key: The owning object's key for this object.
-        :param str created_by_user_id: The id of the user who created the object.
+        :param str created_by_user_id: The ID of the user who created the object.
         :param str created_by_user_name: The name of the user who created the object.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
+        :param bool is_favorite: Specifies whether the object is a favorite.
         :param str key: The identifying key for the object.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
-        :param str updated_by_user_id: The id of the user who updated the object.
+        :param str updated_by_user_id: The ID of the user who updated the object.
         :param str updated_by_user_name: The name of the user who updated the object.
         """
         pulumi.set(__self__, "aggregator_key", aggregator_key)
@@ -10317,7 +10317,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegist
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> str:
         """
-        The id of the user who created the object.
+        The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -10333,7 +10333,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegist
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -10349,7 +10349,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegist
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -10381,7 +10381,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegist
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> str:
         """
-        The id of the user who updated the object.
+        The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -10411,14 +10411,14 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataResult(dict):
                  updated_by: str,
                  updated_by_name: str):
         """
-        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorArgs' aggregator: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorArgs' aggregator: A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str aggregator_key: The owning object's key for this object.
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
+        :param str identifier_path: The full path to identify the object.
         :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
@@ -10443,7 +10443,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataResult(dict):
     @pulumi.getter
     def aggregator(self) -> 'outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorResult':
         """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
+        A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -10475,7 +10475,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataResult(dict):
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> str:
         """
-        The full path to identify this object.
+        The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -10491,7 +10491,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataResult(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -10499,7 +10499,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -10553,8 +10553,8 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorResul
                  name: str,
                  type: str):
         """
-        :param str description: A user defined description for the object.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str description: A user-defined description for the object.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param str key: The identifying key for the object.
         :param str name: Used to filter by the name of the object.
         :param str type: Specific DataAsset Type
@@ -10569,7 +10569,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorResul
     @pulumi.getter
     def description(self) -> str:
         """
-        A user defined description for the object.
+        A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -10577,7 +10577,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregatorResul
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -10622,15 +10622,15 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemResult(
                  type_mapping_to: Mapping[str, Any],
                  types: Sequence['outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeResult']):
         """
-        :param str description: A user defined description for the object.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str description: A user-defined description for the object.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param str key: The identifying key for the object.
-        :param str model_type: The property which disciminates the subtypes.
+        :param str model_type: The property which differentiates the subtypes.
         :param str model_version: The model version of an object.
         :param str name: Used to filter by the name of the object.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: The version of the object that is used to track changes in the object instance.
-        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRefArgs' parent_ref: A reference to the object's parent.
+        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRefArgs' parent_ref: A reference to the parent object.
         :param Mapping[str, Any] type_mapping_from: The type system to map from.
         :param Mapping[str, Any] type_mapping_to: The type system to map to.
         :param Sequence['GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeArgs'] types: An array of types.
@@ -10652,7 +10652,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemResult(
     @pulumi.getter
     def description(self) -> str:
         """
-        A user defined description for the object.
+        A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -10660,7 +10660,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemResult(
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -10676,7 +10676,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemResult(
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        The property which disciminates the subtypes.
+        The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -10716,7 +10716,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemResult(
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> 'outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRefResult':
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -10778,14 +10778,14 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeRes
                  type_system_name: str):
         """
         :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionArgs' config_definition: The configuration details of a configurable object. This contains one or more config param definitions.
-        :param str description: A user defined description for the object.
+        :param str description: A user-defined description for the object.
         :param str dt_type: The data type.
         :param str key: The identifying key for the object.
-        :param str model_type: The property which disciminates the subtypes.
+        :param str model_type: The property which differentiates the subtypes.
         :param str model_version: The model version of an object.
         :param str name: Used to filter by the name of the object.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRefArgs' parent_ref: A reference to the object's parent.
+        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRefArgs' parent_ref: A reference to the parent object.
         :param str type_system_name: The data type system name.
         """
         pulumi.set(__self__, "config_definition", config_definition)
@@ -10811,7 +10811,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeRes
     @pulumi.getter
     def description(self) -> str:
         """
-        A user defined description for the object.
+        A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -10835,7 +10835,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeRes
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        The property which disciminates the subtypes.
+        The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -10867,7 +10867,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeRes
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> 'outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRefResult':
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -10893,13 +10893,13 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeCon
                  parent_ref: 'outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionParentRefResult'):
         """
         :param Mapping[str, Any] config_parameter_definitions: The parameter configuration details.
-        :param bool is_contained: Specifies whether the configuration is contained or not.
+        :param bool is_contained: Specifies whether the configuration is contained.
         :param str key: The identifying key for the object.
-        :param str model_type: The property which disciminates the subtypes.
+        :param str model_type: The property which differentiates the subtypes.
         :param str model_version: The model version of an object.
         :param str name: Used to filter by the name of the object.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionParentRefArgs' parent_ref: A reference to the object's parent.
+        :param 'GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionParentRefArgs' parent_ref: A reference to the parent object.
         """
         pulumi.set(__self__, "config_parameter_definitions", config_parameter_definitions)
         pulumi.set(__self__, "is_contained", is_contained)
@@ -10922,7 +10922,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeCon
     @pulumi.getter(name="isContained")
     def is_contained(self) -> bool:
         """
-        Specifies whether the configuration is contained or not.
+        Specifies whether the configuration is contained.
         """
         return pulumi.get(self, "is_contained")
 
@@ -10938,7 +10938,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeCon
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        The property which disciminates the subtypes.
+        The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -10970,7 +10970,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeCon
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> 'outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionParentRefResult':
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -11027,15 +11027,15 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataResult(
                  updated_by_user_name: str):
         """
         :param str aggregator_key: The owning object's key for this object.
-        :param str created_by_user_id: The id of the user who created the object.
+        :param str created_by_user_id: The ID of the user who created the object.
         :param str created_by_user_name: The name of the user who created the object.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
+        :param bool is_favorite: Specifies whether the object is a favorite.
         :param str key: The identifying key for the object.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
-        :param str updated_by_user_id: The id of the user who updated the object.
+        :param str updated_by_user_id: The ID of the user who updated the object.
         :param str updated_by_user_name: The name of the user who updated the object.
         """
         pulumi.set(__self__, "aggregator_key", aggregator_key)
@@ -11062,7 +11062,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataResult(
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> str:
         """
-        The id of the user who created the object.
+        The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -11078,7 +11078,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataResult(
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -11094,7 +11094,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataResult(
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -11126,7 +11126,7 @@ class GetRegistryDataAssetsDataAssetSummaryCollectionItemRegistryMetadataResult(
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> str:
         """
-        The id of the user who updated the object.
+        The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -11194,14 +11194,14 @@ class GetRegistryFolderDataAssetResult(dict):
         """
         :param Mapping[str, Any] asset_properties: Additional properties for the data asset.
         :param Sequence['GetRegistryFolderDataAssetDefaultConnectionArgs'] default_connections: The default connection key.
-        :param str description: User-defined description for the folder.
-        :param str external_key: The external key for the object.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param Sequence['GetRegistryFolderDataAssetMetadataArgs'] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param str description: User-defined description of the folder.
+        :param str external_key: The external key of the object.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param Sequence['GetRegistryFolderDataAssetMetadataArgs'] metadatas: A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         :param str model_type: The type of the folder.
         :param str model_version: The model version of an object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param Sequence['GetRegistryFolderDataAssetNativeTypeSystemArgs'] native_type_systems: The type system maps from and to a type.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: The version of the object that is used to track changes in the object instance.
@@ -11246,7 +11246,7 @@ class GetRegistryFolderDataAssetResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        User-defined description for the folder.
+        User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -11254,7 +11254,7 @@ class GetRegistryFolderDataAssetResult(dict):
     @pulumi.getter(name="externalKey")
     def external_key(self) -> str:
         """
-        The external key for the object.
+        The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -11262,7 +11262,7 @@ class GetRegistryFolderDataAssetResult(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -11270,7 +11270,7 @@ class GetRegistryFolderDataAssetResult(dict):
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -11278,7 +11278,7 @@ class GetRegistryFolderDataAssetResult(dict):
     @pulumi.getter
     def metadatas(self) -> Sequence['outputs.GetRegistryFolderDataAssetMetadataResult']:
         """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadatas")
 
@@ -11302,7 +11302,7 @@ class GetRegistryFolderDataAssetResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -11374,15 +11374,15 @@ class GetRegistryFolderDataAssetDefaultConnectionResult(dict):
                  registry_metadatas: Sequence['outputs.GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataResult'],
                  type: str):
         """
-        :param Sequence['GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs'] connection_properties: The properties for the connection.
-        :param str description: User-defined description for the folder.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param bool is_default: The default property for the connection.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param Sequence['GetRegistryFolderDataAssetDefaultConnectionMetadataArgs'] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param Sequence['GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs'] connection_properties: The properties of the connection.
+        :param str description: User-defined description of the folder.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param bool is_default: The default property of the connection.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param Sequence['GetRegistryFolderDataAssetDefaultConnectionMetadataArgs'] metadatas: A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         :param str model_type: The type of the folder.
         :param str model_version: The model version of an object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: The version of the object that is used to track changes in the object instance.
         :param Sequence['GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs'] primary_schemas: The schema object.
@@ -11410,7 +11410,7 @@ class GetRegistryFolderDataAssetDefaultConnectionResult(dict):
     @pulumi.getter(name="connectionProperties")
     def connection_properties(self) -> Sequence['outputs.GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyResult']:
         """
-        The properties for the connection.
+        The properties of the connection.
         """
         return pulumi.get(self, "connection_properties")
 
@@ -11418,7 +11418,7 @@ class GetRegistryFolderDataAssetDefaultConnectionResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        User-defined description for the folder.
+        User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -11426,7 +11426,7 @@ class GetRegistryFolderDataAssetDefaultConnectionResult(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -11434,7 +11434,7 @@ class GetRegistryFolderDataAssetDefaultConnectionResult(dict):
     @pulumi.getter(name="isDefault")
     def is_default(self) -> bool:
         """
-        The default property for the connection.
+        The default property of the connection.
         """
         return pulumi.get(self, "is_default")
 
@@ -11442,7 +11442,7 @@ class GetRegistryFolderDataAssetDefaultConnectionResult(dict):
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -11450,7 +11450,7 @@ class GetRegistryFolderDataAssetDefaultConnectionResult(dict):
     @pulumi.getter
     def metadatas(self) -> Sequence['outputs.GetRegistryFolderDataAssetDefaultConnectionMetadataResult']:
         """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadatas")
 
@@ -11474,7 +11474,7 @@ class GetRegistryFolderDataAssetDefaultConnectionResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -11533,7 +11533,7 @@ class GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyResult(dict):
                  name: str,
                  value: str):
         """
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str value: The value for the connection name property.
         """
         pulumi.set(__self__, "name", name)
@@ -11543,7 +11543,7 @@ class GetRegistryFolderDataAssetDefaultConnectionConnectionPropertyResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -11574,13 +11574,13 @@ class GetRegistryFolderDataAssetDefaultConnectionMetadataResult(dict):
                  updated_by_name: str):
         """
         :param str aggregator_key: The owning object's key for this object.
-        :param Sequence['GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param Sequence['GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
+        :param str identifier_path: The full path to identify the object.
         :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
@@ -11613,7 +11613,7 @@ class GetRegistryFolderDataAssetDefaultConnectionMetadataResult(dict):
     @pulumi.getter
     def aggregators(self) -> Sequence['outputs.GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorResult']:
         """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
+        A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregators")
 
@@ -11637,7 +11637,7 @@ class GetRegistryFolderDataAssetDefaultConnectionMetadataResult(dict):
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> str:
         """
-        The full path to identify this object.
+        The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -11653,7 +11653,7 @@ class GetRegistryFolderDataAssetDefaultConnectionMetadataResult(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -11661,7 +11661,7 @@ class GetRegistryFolderDataAssetDefaultConnectionMetadataResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -11715,10 +11715,10 @@ class GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorResult(dict):
                  name: str,
                  type: str):
         """
-        :param str description: User-defined description for the folder.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str description: User-defined description of the folder.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: Specific DataAsset Type
         """
         pulumi.set(__self__, "description", description)
@@ -11731,7 +11731,7 @@ class GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        User-defined description for the folder.
+        User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -11739,7 +11739,7 @@ class GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorResult(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -11747,7 +11747,7 @@ class GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorResult(dict):
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -11755,7 +11755,7 @@ class GetRegistryFolderDataAssetDefaultConnectionMetadataAggregatorResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -11787,18 +11787,18 @@ class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaResult(dict):
                  resource_name: str):
         """
         :param str default_connection: The default connection key.
-        :param str description: User-defined description for the folder.
-        :param str external_key: The external key for the object.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str description: User-defined description of the folder.
+        :param str external_key: The external key of the object.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param bool is_has_containers: Specifies whether the schema has containers.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param Sequence['GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs'] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param Sequence['GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs'] metadatas: A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         :param str model_type: The type of the folder.
         :param str model_version: The model version of an object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: The version of the object that is used to track changes in the object instance.
-        :param Sequence['GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs'] parent_reves: A reference to the object's parent.
+        :param Sequence['GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs'] parent_reves: A reference to the parent object.
         :param str resource_name: A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
         """
         pulumi.set(__self__, "default_connection", default_connection)
@@ -11828,7 +11828,7 @@ class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        User-defined description for the folder.
+        User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -11836,7 +11836,7 @@ class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaResult(dict):
     @pulumi.getter(name="externalKey")
     def external_key(self) -> str:
         """
-        The external key for the object.
+        The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -11844,7 +11844,7 @@ class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaResult(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -11860,7 +11860,7 @@ class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaResult(dict):
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -11868,7 +11868,7 @@ class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaResult(dict):
     @pulumi.getter
     def metadatas(self) -> Sequence['outputs.GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataResult']:
         """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadatas")
 
@@ -11892,7 +11892,7 @@ class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -11916,7 +11916,7 @@ class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaResult(dict):
     @pulumi.getter(name="parentReves")
     def parent_reves(self) -> Sequence['outputs.GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefResult']:
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_reves")
 
@@ -11947,13 +11947,13 @@ class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataResult(dic
                  updated_by_name: str):
         """
         :param str aggregator_key: The owning object's key for this object.
-        :param Sequence['GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param Sequence['GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
+        :param str identifier_path: The full path to identify the object.
         :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
@@ -11986,7 +11986,7 @@ class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataResult(dic
     @pulumi.getter
     def aggregators(self) -> Sequence['outputs.GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorResult']:
         """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
+        A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregators")
 
@@ -12010,7 +12010,7 @@ class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataResult(dic
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> str:
         """
-        The full path to identify this object.
+        The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -12026,7 +12026,7 @@ class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataResult(dic
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -12034,7 +12034,7 @@ class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataResult(dic
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -12088,10 +12088,10 @@ class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator
                  name: str,
                  type: str):
         """
-        :param str description: User-defined description for the folder.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str description: User-defined description of the folder.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: Specific DataAsset Type
         """
         pulumi.set(__self__, "description", description)
@@ -12104,7 +12104,7 @@ class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator
     @pulumi.getter
     def description(self) -> str:
         """
-        User-defined description for the folder.
+        User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -12112,7 +12112,7 @@ class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -12120,7 +12120,7 @@ class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -12128,7 +12128,7 @@ class GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -12175,15 +12175,15 @@ class GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataResult(dict):
                  updated_by_user_name: str):
         """
         :param str aggregator_key: The owning object's key for this object.
-        :param str created_by_user_id: The id of the user who created the object.
+        :param str created_by_user_id: The ID of the user who created the object.
         :param str created_by_user_name: The name of the user who created the object.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
-        :param str updated_by_user_id: The id of the user who updated the object.
+        :param str updated_by_user_id: The ID of the user who updated the object.
         :param str updated_by_user_name: The name of the user who updated the object.
         """
         pulumi.set(__self__, "aggregator_key", aggregator_key)
@@ -12210,7 +12210,7 @@ class GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataResult(dict):
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> str:
         """
-        The id of the user who created the object.
+        The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -12226,7 +12226,7 @@ class GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataResult(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -12234,7 +12234,7 @@ class GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataResult(dict):
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -12242,7 +12242,7 @@ class GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -12274,7 +12274,7 @@ class GetRegistryFolderDataAssetDefaultConnectionRegistryMetadataResult(dict):
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> str:
         """
-        The id of the user who updated the object.
+        The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -12305,13 +12305,13 @@ class GetRegistryFolderDataAssetMetadataResult(dict):
                  updated_by_name: str):
         """
         :param str aggregator_key: The owning object's key for this object.
-        :param Sequence['GetRegistryFolderDataAssetMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param Sequence['GetRegistryFolderDataAssetMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
+        :param str identifier_path: The full path to identify the object.
         :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
@@ -12344,7 +12344,7 @@ class GetRegistryFolderDataAssetMetadataResult(dict):
     @pulumi.getter
     def aggregators(self) -> Sequence['outputs.GetRegistryFolderDataAssetMetadataAggregatorResult']:
         """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
+        A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregators")
 
@@ -12368,7 +12368,7 @@ class GetRegistryFolderDataAssetMetadataResult(dict):
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> str:
         """
-        The full path to identify this object.
+        The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -12384,7 +12384,7 @@ class GetRegistryFolderDataAssetMetadataResult(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -12392,7 +12392,7 @@ class GetRegistryFolderDataAssetMetadataResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -12446,10 +12446,10 @@ class GetRegistryFolderDataAssetMetadataAggregatorResult(dict):
                  name: str,
                  type: str):
         """
-        :param str description: User-defined description for the folder.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str description: User-defined description of the folder.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: Specific DataAsset Type
         """
         pulumi.set(__self__, "description", description)
@@ -12462,7 +12462,7 @@ class GetRegistryFolderDataAssetMetadataAggregatorResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        User-defined description for the folder.
+        User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -12470,7 +12470,7 @@ class GetRegistryFolderDataAssetMetadataAggregatorResult(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -12478,7 +12478,7 @@ class GetRegistryFolderDataAssetMetadataAggregatorResult(dict):
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -12486,7 +12486,7 @@ class GetRegistryFolderDataAssetMetadataAggregatorResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -12515,15 +12515,15 @@ class GetRegistryFolderDataAssetNativeTypeSystemResult(dict):
                  type_mapping_to: Mapping[str, Any],
                  types: Sequence['outputs.GetRegistryFolderDataAssetNativeTypeSystemTypeResult']):
         """
-        :param str description: User-defined description for the folder.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param str description: User-defined description of the folder.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param str model_type: The type of the folder.
         :param str model_version: The model version of an object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: The version of the object that is used to track changes in the object instance.
-        :param Sequence['GetRegistryFolderDataAssetNativeTypeSystemParentRefArgs'] parent_reves: A reference to the object's parent.
+        :param Sequence['GetRegistryFolderDataAssetNativeTypeSystemParentRefArgs'] parent_reves: A reference to the parent object.
         :param Mapping[str, Any] type_mapping_from: The type system to map from.
         :param Mapping[str, Any] type_mapping_to: The type system to map to.
         :param Sequence['GetRegistryFolderDataAssetNativeTypeSystemTypeArgs'] types: An array of types.
@@ -12545,7 +12545,7 @@ class GetRegistryFolderDataAssetNativeTypeSystemResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        User-defined description for the folder.
+        User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -12553,7 +12553,7 @@ class GetRegistryFolderDataAssetNativeTypeSystemResult(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -12561,7 +12561,7 @@ class GetRegistryFolderDataAssetNativeTypeSystemResult(dict):
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -12585,7 +12585,7 @@ class GetRegistryFolderDataAssetNativeTypeSystemResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -12609,7 +12609,7 @@ class GetRegistryFolderDataAssetNativeTypeSystemResult(dict):
     @pulumi.getter(name="parentReves")
     def parent_reves(self) -> Sequence['outputs.GetRegistryFolderDataAssetNativeTypeSystemParentRefResult']:
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_reves")
 
@@ -12671,14 +12671,14 @@ class GetRegistryFolderDataAssetNativeTypeSystemTypeResult(dict):
                  type_system_name: str):
         """
         :param Sequence['GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs'] config_definitions: The configuration details of a configurable object. This contains one or more config param definitions.
-        :param str description: User-defined description for the folder.
+        :param str description: User-defined description of the folder.
         :param str dt_type: The data type.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param str model_type: The type of the folder.
         :param str model_version: The model version of an object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param Sequence['GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs'] parent_reves: A reference to the object's parent.
+        :param Sequence['GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs'] parent_reves: A reference to the parent object.
         :param str type_system_name: The data type system name.
         """
         pulumi.set(__self__, "config_definitions", config_definitions)
@@ -12704,7 +12704,7 @@ class GetRegistryFolderDataAssetNativeTypeSystemTypeResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        User-defined description for the folder.
+        User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -12720,7 +12720,7 @@ class GetRegistryFolderDataAssetNativeTypeSystemTypeResult(dict):
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -12744,7 +12744,7 @@ class GetRegistryFolderDataAssetNativeTypeSystemTypeResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -12760,7 +12760,7 @@ class GetRegistryFolderDataAssetNativeTypeSystemTypeResult(dict):
     @pulumi.getter(name="parentReves")
     def parent_reves(self) -> Sequence['outputs.GetRegistryFolderDataAssetNativeTypeSystemTypeParentRefResult']:
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_reves")
 
@@ -12786,13 +12786,13 @@ class GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionResult(dict)
                  parent_reves: Sequence['outputs.GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefResult']):
         """
         :param Mapping[str, Any] config_parameter_definitions: The parameter configuration details.
-        :param bool is_contained: Specifies whether the configuration is contained or not.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param bool is_contained: Specifies whether the configuration is contained.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param str model_type: The type of the folder.
         :param str model_version: The model version of an object.
-        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str name: Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param Sequence['GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs'] parent_reves: A reference to the object's parent.
+        :param Sequence['GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs'] parent_reves: A reference to the parent object.
         """
         pulumi.set(__self__, "config_parameter_definitions", config_parameter_definitions)
         pulumi.set(__self__, "is_contained", is_contained)
@@ -12815,7 +12815,7 @@ class GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionResult(dict)
     @pulumi.getter(name="isContained")
     def is_contained(self) -> bool:
         """
-        Specifies whether the configuration is contained or not.
+        Specifies whether the configuration is contained.
         """
         return pulumi.get(self, "is_contained")
 
@@ -12823,7 +12823,7 @@ class GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionResult(dict)
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -12847,7 +12847,7 @@ class GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionResult(dict)
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -12863,7 +12863,7 @@ class GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionResult(dict)
     @pulumi.getter(name="parentReves")
     def parent_reves(self) -> Sequence['outputs.GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefResult']:
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_reves")
 
@@ -12920,15 +12920,15 @@ class GetRegistryFolderDataAssetRegistryMetadataResult(dict):
                  updated_by_user_name: str):
         """
         :param str aggregator_key: The owning object's key for this object.
-        :param str created_by_user_id: The id of the user who created the object.
+        :param str created_by_user_id: The ID of the user who created the object.
         :param str created_by_user_name: The name of the user who created the object.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
-        :param str updated_by_user_id: The id of the user who updated the object.
+        :param str updated_by_user_id: The ID of the user who updated the object.
         :param str updated_by_user_name: The name of the user who updated the object.
         """
         pulumi.set(__self__, "aggregator_key", aggregator_key)
@@ -12955,7 +12955,7 @@ class GetRegistryFolderDataAssetRegistryMetadataResult(dict):
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> str:
         """
-        The id of the user who created the object.
+        The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -12971,7 +12971,7 @@ class GetRegistryFolderDataAssetRegistryMetadataResult(dict):
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -12979,7 +12979,7 @@ class GetRegistryFolderDataAssetRegistryMetadataResult(dict):
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -12987,7 +12987,7 @@ class GetRegistryFolderDataAssetRegistryMetadataResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -13019,7 +13019,7 @@ class GetRegistryFolderDataAssetRegistryMetadataResult(dict):
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> str:
         """
-        The id of the user who updated the object.
+        The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -13110,17 +13110,17 @@ class GetRegistryFoldersFolderSummaryCollectionItemResult(dict):
                  parent_ref: 'outputs.GetRegistryFoldersFolderSummaryCollectionItemParentRefResult',
                  registry_id: str):
         """
-        :param Sequence['GetRegistryFoldersFolderSummaryCollectionItemDataAssetArgs'] data_assets: List of data assets which belongs to this folder
-        :param str description: User-defined description for the folder.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param Sequence['GetRegistryFoldersFolderSummaryCollectionItemDataAssetArgs'] data_assets: The list of data assets that belong to the folder.
+        :param str description: User-defined description of the folder.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param str model_type: The type of the folder.
         :param str model_version: The model version of an object.
         :param str name: Used to filter by the name of the object.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: The version of the object that is used to track changes in the object instance.
-        :param 'GetRegistryFoldersFolderSummaryCollectionItemParentRefArgs' parent_ref: A reference to the object's parent.
-        :param str registry_id: The registry Ocid.
+        :param 'GetRegistryFoldersFolderSummaryCollectionItemParentRefArgs' parent_ref: A reference to the parent object.
+        :param str registry_id: The registry OCID.
         """
         pulumi.set(__self__, "data_assets", data_assets)
         pulumi.set(__self__, "description", description)
@@ -13138,7 +13138,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemResult(dict):
     @pulumi.getter(name="dataAssets")
     def data_assets(self) -> Sequence['outputs.GetRegistryFoldersFolderSummaryCollectionItemDataAssetResult']:
         """
-        List of data assets which belongs to this folder
+        The list of data assets that belong to the folder.
         """
         return pulumi.get(self, "data_assets")
 
@@ -13146,7 +13146,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        User-defined description for the folder.
+        User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -13154,7 +13154,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemResult(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -13162,7 +13162,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemResult(dict):
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -13210,7 +13210,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemResult(dict):
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> 'outputs.GetRegistryFoldersFolderSummaryCollectionItemParentRefResult':
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -13218,7 +13218,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemResult(dict):
     @pulumi.getter(name="registryId")
     def registry_id(self) -> str:
         """
-        The registry Ocid.
+        The registry OCID.
         """
         return pulumi.get(self, "registry_id")
 
@@ -13245,11 +13245,11 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetResult(dict):
         """
         :param Mapping[str, Any] asset_properties: Additional properties for the data asset.
         :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionArgs' default_connection: The default connection key.
-        :param str description: User-defined description for the folder.
-        :param str external_key: The external key for the object.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataArgs' metadata: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param str description: User-defined description of the folder.
+        :param str external_key: The external key of the object.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataArgs' metadata: A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         :param str model_type: The type of the folder.
         :param str model_version: The model version of an object.
         :param str name: Used to filter by the name of the object.
@@ -13297,7 +13297,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetResult(dict):
     @pulumi.getter
     def description(self) -> str:
         """
-        User-defined description for the folder.
+        User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -13305,7 +13305,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetResult(dict):
     @pulumi.getter(name="externalKey")
     def external_key(self) -> str:
         """
-        The external key for the object.
+        The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -13313,7 +13313,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetResult(dict):
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -13321,7 +13321,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetResult(dict):
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -13329,7 +13329,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetResult(dict):
     @pulumi.getter
     def metadata(self) -> 'outputs.GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataResult':
         """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -13425,12 +13425,12 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRes
                  registry_metadata: 'outputs.GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRegistryMetadataResult',
                  type: str):
         """
-        :param Sequence['GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyArgs'] connection_properties: The properties for the connection.
-        :param str description: User-defined description for the folder.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param bool is_default: The default property for the connection.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataArgs' metadata: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param Sequence['GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyArgs'] connection_properties: The properties of the connection.
+        :param str description: User-defined description of the folder.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param bool is_default: The default property of the connection.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataArgs' metadata: A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         :param str model_type: The type of the folder.
         :param str model_version: The model version of an object.
         :param str name: Used to filter by the name of the object.
@@ -13461,7 +13461,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRes
     @pulumi.getter(name="connectionProperties")
     def connection_properties(self) -> Sequence['outputs.GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionPropertyResult']:
         """
-        The properties for the connection.
+        The properties of the connection.
         """
         return pulumi.get(self, "connection_properties")
 
@@ -13469,7 +13469,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRes
     @pulumi.getter
     def description(self) -> str:
         """
-        User-defined description for the folder.
+        User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -13477,7 +13477,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRes
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -13485,7 +13485,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRes
     @pulumi.getter(name="isDefault")
     def is_default(self) -> bool:
         """
-        The default property for the connection.
+        The default property of the connection.
         """
         return pulumi.get(self, "is_default")
 
@@ -13493,7 +13493,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRes
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -13501,7 +13501,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionRes
     @pulumi.getter
     def metadata(self) -> 'outputs.GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataResult':
         """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -13624,14 +13624,14 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMet
                  updated_by: str,
                  updated_by_name: str):
         """
-        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregatorArgs' aggregator: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregatorArgs' aggregator: A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str aggregator_key: The owning object's key for this object.
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
+        :param str identifier_path: The full path to identify the object.
         :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
@@ -13656,7 +13656,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMet
     @pulumi.getter
     def aggregator(self) -> 'outputs.GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregatorResult':
         """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
+        A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -13688,7 +13688,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMet
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> str:
         """
-        The full path to identify this object.
+        The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -13704,7 +13704,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMet
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -13712,7 +13712,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMet
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -13766,9 +13766,9 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMet
                  name: str,
                  type: str):
         """
-        :param str description: User-defined description for the folder.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param str description: User-defined description of the folder.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param str name: Used to filter by the name of the object.
         :param str type: Type of the object to filter the results with.
         """
@@ -13782,7 +13782,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMet
     @pulumi.getter
     def description(self) -> str:
         """
-        User-defined description for the folder.
+        User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -13790,7 +13790,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMet
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -13798,7 +13798,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMet
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -13838,18 +13838,18 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPri
                  resource_name: str):
         """
         :param str default_connection: The default connection key.
-        :param str description: User-defined description for the folder.
-        :param str external_key: The external key for the object.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str description: User-defined description of the folder.
+        :param str external_key: The external key of the object.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param bool is_has_containers: Specifies whether the schema has containers.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataArgs' metadata: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataArgs' metadata: A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         :param str model_type: The type of the folder.
         :param str model_version: The model version of an object.
         :param str name: Used to filter by the name of the object.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: The version of the object that is used to track changes in the object instance.
-        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaParentRefArgs' parent_ref: A reference to the object's parent.
+        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaParentRefArgs' parent_ref: A reference to the parent object.
         :param str resource_name: A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
         """
         pulumi.set(__self__, "default_connection", default_connection)
@@ -13879,7 +13879,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPri
     @pulumi.getter
     def description(self) -> str:
         """
-        User-defined description for the folder.
+        User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -13887,7 +13887,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPri
     @pulumi.getter(name="externalKey")
     def external_key(self) -> str:
         """
-        The external key for the object.
+        The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -13895,7 +13895,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPri
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -13911,7 +13911,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPri
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -13919,7 +13919,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPri
     @pulumi.getter
     def metadata(self) -> 'outputs.GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataResult':
         """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -13967,7 +13967,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPri
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> 'outputs.GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaParentRefResult':
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -13997,14 +13997,14 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPri
                  updated_by: str,
                  updated_by_name: str):
         """
-        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs' aggregator: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs' aggregator: A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str aggregator_key: The owning object's key for this object.
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
+        :param str identifier_path: The full path to identify the object.
         :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
@@ -14029,7 +14029,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPri
     @pulumi.getter
     def aggregator(self) -> 'outputs.GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorResult':
         """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
+        A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -14061,7 +14061,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPri
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> str:
         """
-        The full path to identify this object.
+        The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -14077,7 +14077,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPri
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -14085,7 +14085,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPri
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -14139,9 +14139,9 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPri
                  name: str,
                  type: str):
         """
-        :param str description: User-defined description for the folder.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param str description: User-defined description of the folder.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param str name: Used to filter by the name of the object.
         :param str type: Type of the object to filter the results with.
         """
@@ -14155,7 +14155,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPri
     @pulumi.getter
     def description(self) -> str:
         """
-        User-defined description for the folder.
+        User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -14163,7 +14163,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPri
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -14171,7 +14171,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPri
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -14226,15 +14226,15 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionReg
                  updated_by_user_name: str):
         """
         :param str aggregator_key: The owning object's key for this object.
-        :param str created_by_user_id: The id of the user who created the object.
+        :param str created_by_user_id: The ID of the user who created the object.
         :param str created_by_user_name: The name of the user who created the object.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
-        :param str updated_by_user_id: The id of the user who updated the object.
+        :param str updated_by_user_id: The ID of the user who updated the object.
         :param str updated_by_user_name: The name of the user who updated the object.
         """
         pulumi.set(__self__, "aggregator_key", aggregator_key)
@@ -14261,7 +14261,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionReg
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> str:
         """
-        The id of the user who created the object.
+        The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -14277,7 +14277,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionReg
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -14285,7 +14285,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionReg
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -14293,7 +14293,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionReg
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -14325,7 +14325,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionReg
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> str:
         """
-        The id of the user who updated the object.
+        The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -14355,14 +14355,14 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataResult(dict)
                  updated_by: str,
                  updated_by_name: str):
         """
-        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorArgs' aggregator: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorArgs' aggregator: A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param str aggregator_key: The owning object's key for this object.
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
-        :param str identifier_path: The full path to identify this object.
+        :param str identifier_path: The full path to identify the object.
         :param Mapping[str, Any] info_fields: Information property fields.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
@@ -14387,7 +14387,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataResult(dict)
     @pulumi.getter
     def aggregator(self) -> 'outputs.GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorResult':
         """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
+        A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -14419,7 +14419,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataResult(dict)
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> str:
         """
-        The full path to identify this object.
+        The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -14435,7 +14435,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataResult(dict)
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -14443,7 +14443,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataResult(dict)
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -14497,9 +14497,9 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorRe
                  name: str,
                  type: str):
         """
-        :param str description: User-defined description for the folder.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param str description: User-defined description of the folder.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param str name: Used to filter by the name of the object.
         :param str type: Type of the object to filter the results with.
         """
@@ -14513,7 +14513,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorRe
     @pulumi.getter
     def description(self) -> str:
         """
-        User-defined description for the folder.
+        User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -14521,7 +14521,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorRe
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -14529,7 +14529,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregatorRe
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -14566,15 +14566,15 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemResu
                  type_mapping_to: Mapping[str, Any],
                  types: Sequence['outputs.GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeResult']):
         """
-        :param str description: User-defined description for the folder.
-        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param str description: User-defined description of the folder.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param str model_type: The type of the folder.
         :param str model_version: The model version of an object.
         :param str name: Used to filter by the name of the object.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param int object_version: The version of the object that is used to track changes in the object instance.
-        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemParentRefArgs' parent_ref: A reference to the object's parent.
+        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemParentRefArgs' parent_ref: A reference to the parent object.
         :param Mapping[str, Any] type_mapping_from: The type system to map from.
         :param Mapping[str, Any] type_mapping_to: The type system to map to.
         :param Sequence['GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeArgs'] types: An array of types.
@@ -14596,7 +14596,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemResu
     @pulumi.getter
     def description(self) -> str:
         """
-        User-defined description for the folder.
+        User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -14604,7 +14604,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemResu
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -14612,7 +14612,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemResu
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -14660,7 +14660,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemResu
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> 'outputs.GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemParentRefResult':
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -14722,14 +14722,14 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemType
                  type_system_name: str):
         """
         :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionArgs' config_definition: The configuration details of a configurable object. This contains one or more config param definitions.
-        :param str description: User-defined description for the folder.
+        :param str description: User-defined description of the folder.
         :param str dt_type: The data type.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param str model_type: The type of the folder.
         :param str model_version: The model version of an object.
         :param str name: Used to filter by the name of the object.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRefArgs' parent_ref: A reference to the object's parent.
+        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRefArgs' parent_ref: A reference to the parent object.
         :param str type_system_name: The data type system name.
         """
         pulumi.set(__self__, "config_definition", config_definition)
@@ -14755,7 +14755,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemType
     @pulumi.getter
     def description(self) -> str:
         """
-        User-defined description for the folder.
+        User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -14771,7 +14771,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemType
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -14811,7 +14811,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemType
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> 'outputs.GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRefResult':
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -14837,13 +14837,13 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemType
                  parent_ref: 'outputs.GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRefResult'):
         """
         :param Mapping[str, Any] config_parameter_definitions: The parameter configuration details.
-        :param bool is_contained: Specifies whether the configuration is contained or not.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param bool is_contained: Specifies whether the configuration is contained.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param str model_type: The type of the folder.
         :param str model_version: The model version of an object.
         :param str name: Used to filter by the name of the object.
         :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs' parent_ref: A reference to the object's parent.
+        :param 'GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs' parent_ref: A reference to the parent object.
         """
         pulumi.set(__self__, "config_parameter_definitions", config_parameter_definitions)
         pulumi.set(__self__, "is_contained", is_contained)
@@ -14866,7 +14866,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemType
     @pulumi.getter(name="isContained")
     def is_contained(self) -> bool:
         """
-        Specifies whether the configuration is contained or not.
+        Specifies whether the configuration is contained.
         """
         return pulumi.get(self, "is_contained")
 
@@ -14874,7 +14874,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemType
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -14914,7 +14914,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemType
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> 'outputs.GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRefResult':
         """
-        A reference to the object's parent.
+        A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -14971,15 +14971,15 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataResu
                  updated_by_user_name: str):
         """
         :param str aggregator_key: The owning object's key for this object.
-        :param str created_by_user_id: The id of the user who created the object.
+        :param str created_by_user_id: The ID of the user who created the object.
         :param str created_by_user_name: The name of the user who created the object.
-        :param bool is_favorite: Specifies whether this object is a favorite or not.
-        :param str key: Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param bool is_favorite: Specifies whether the object is a favorite.
+        :param str key: Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         :param str time_created: The date and time that the object was created.
         :param str time_updated: The date and time that the object was updated.
-        :param str updated_by_user_id: The id of the user who updated the object.
+        :param str updated_by_user_id: The ID of the user who updated the object.
         :param str updated_by_user_name: The name of the user who updated the object.
         """
         pulumi.set(__self__, "aggregator_key", aggregator_key)
@@ -15006,7 +15006,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataResu
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> str:
         """
-        The id of the user who created the object.
+        The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -15022,7 +15022,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataResu
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> bool:
         """
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -15030,7 +15030,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataResu
     @pulumi.getter
     def key(self) -> str:
         """
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -15038,7 +15038,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataResu
     @pulumi.getter
     def labels(self) -> Sequence[str]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -15070,7 +15070,7 @@ class GetRegistryFoldersFolderSummaryCollectionItemDataAssetRegistryMetadataResu
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> str:
         """
-        The id of the user who updated the object.
+        The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -15112,13 +15112,13 @@ class GetRegistryTypeDataAssetAttributeResult(dict):
                  name: str,
                  valid_key_lists: Sequence[str]):
         """
-        :param str attribute_type: Attribute type details
-        :param bool is_base64encoded: True if Attribute is encoded.
-        :param bool is_generated: True if Attribute is generated.
-        :param bool is_mandatory: True if Attribute is mandatory.
-        :param bool is_sensitive: True if Attribute is sensitive.
-        :param str name: The name of of the Attribute.
-        :param Sequence[str] valid_key_lists: List of valid key list
+        :param str attribute_type: The attribute type details.
+        :param bool is_base64encoded: True if attribute is encoded.
+        :param bool is_generated: True if attribute is generated.
+        :param bool is_mandatory: True if attribute is mandatory.
+        :param bool is_sensitive: True if attribute is sensitive.
+        :param str name: The name of of the attribute.
+        :param Sequence[str] valid_key_lists: The list of valid keys.
         """
         pulumi.set(__self__, "attribute_type", attribute_type)
         pulumi.set(__self__, "is_base64encoded", is_base64encoded)
@@ -15132,7 +15132,7 @@ class GetRegistryTypeDataAssetAttributeResult(dict):
     @pulumi.getter(name="attributeType")
     def attribute_type(self) -> str:
         """
-        Attribute type details
+        The attribute type details.
         """
         return pulumi.get(self, "attribute_type")
 
@@ -15140,7 +15140,7 @@ class GetRegistryTypeDataAssetAttributeResult(dict):
     @pulumi.getter(name="isBase64encoded")
     def is_base64encoded(self) -> bool:
         """
-        True if Attribute is encoded.
+        True if attribute is encoded.
         """
         return pulumi.get(self, "is_base64encoded")
 
@@ -15148,7 +15148,7 @@ class GetRegistryTypeDataAssetAttributeResult(dict):
     @pulumi.getter(name="isGenerated")
     def is_generated(self) -> bool:
         """
-        True if Attribute is generated.
+        True if attribute is generated.
         """
         return pulumi.get(self, "is_generated")
 
@@ -15156,7 +15156,7 @@ class GetRegistryTypeDataAssetAttributeResult(dict):
     @pulumi.getter(name="isMandatory")
     def is_mandatory(self) -> bool:
         """
-        True if Attribute is mandatory.
+        True if attribute is mandatory.
         """
         return pulumi.get(self, "is_mandatory")
 
@@ -15164,7 +15164,7 @@ class GetRegistryTypeDataAssetAttributeResult(dict):
     @pulumi.getter(name="isSensitive")
     def is_sensitive(self) -> bool:
         """
-        True if Attribute is sensitive.
+        True if attribute is sensitive.
         """
         return pulumi.get(self, "is_sensitive")
 
@@ -15172,7 +15172,7 @@ class GetRegistryTypeDataAssetAttributeResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The name of of the Attribute.
+        The name of of the attribute.
         """
         return pulumi.get(self, "name")
 
@@ -15180,7 +15180,7 @@ class GetRegistryTypeDataAssetAttributeResult(dict):
     @pulumi.getter(name="validKeyLists")
     def valid_key_lists(self) -> Sequence[str]:
         """
-        List of valid key list
+        The list of valid keys.
         """
         return pulumi.get(self, "valid_key_lists")
 
@@ -15239,8 +15239,8 @@ class GetRegistryTypesTypesSummaryCollectionItemResult(dict):
                  name: str,
                  description: Optional[str] = None):
         """
-        :param Mapping[str, Any] connection_attributes: Map of connectionType as key and List of attributes as value
-        :param Sequence['GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeArgs'] data_asset_attributes: list of attributes for the dataAsset
+        :param Mapping[str, Any] connection_attributes: Mapping the connectionType as the key to the list of attributes as the value.
+        :param Sequence['GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeArgs'] data_asset_attributes: The list of attributes of the data asset.
         :param str name: Used to filter by the name of the object.
         """
         pulumi.set(__self__, "connection_attributes", connection_attributes)
@@ -15254,7 +15254,7 @@ class GetRegistryTypesTypesSummaryCollectionItemResult(dict):
     @pulumi.getter(name="connectionAttributes")
     def connection_attributes(self) -> Mapping[str, Any]:
         """
-        Map of connectionType as key and List of attributes as value
+        Mapping the connectionType as the key to the list of attributes as the value.
         """
         return pulumi.get(self, "connection_attributes")
 
@@ -15262,7 +15262,7 @@ class GetRegistryTypesTypesSummaryCollectionItemResult(dict):
     @pulumi.getter(name="dataAssetAttributes")
     def data_asset_attributes(self) -> Sequence['outputs.GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeResult']:
         """
-        list of attributes for the dataAsset
+        The list of attributes of the data asset.
         """
         return pulumi.get(self, "data_asset_attributes")
 
@@ -15296,13 +15296,13 @@ class GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeResult(dict):
                  name: str,
                  valid_key_lists: Sequence[str]):
         """
-        :param str attribute_type: Attribute type details
-        :param bool is_base64encoded: True if Attribute is encoded.
-        :param bool is_generated: True if Attribute is generated.
-        :param bool is_mandatory: True if Attribute is mandatory.
-        :param bool is_sensitive: True if Attribute is sensitive.
+        :param str attribute_type: The attribute type details.
+        :param bool is_base64encoded: True if attribute is encoded.
+        :param bool is_generated: True if attribute is generated.
+        :param bool is_mandatory: True if attribute is mandatory.
+        :param bool is_sensitive: True if attribute is sensitive.
         :param str name: Used to filter by the name of the object.
-        :param Sequence[str] valid_key_lists: List of valid key list
+        :param Sequence[str] valid_key_lists: The list of valid keys.
         """
         pulumi.set(__self__, "attribute_type", attribute_type)
         pulumi.set(__self__, "is_base64encoded", is_base64encoded)
@@ -15316,7 +15316,7 @@ class GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeResult(dict):
     @pulumi.getter(name="attributeType")
     def attribute_type(self) -> str:
         """
-        Attribute type details
+        The attribute type details.
         """
         return pulumi.get(self, "attribute_type")
 
@@ -15324,7 +15324,7 @@ class GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeResult(dict):
     @pulumi.getter(name="isBase64encoded")
     def is_base64encoded(self) -> bool:
         """
-        True if Attribute is encoded.
+        True if attribute is encoded.
         """
         return pulumi.get(self, "is_base64encoded")
 
@@ -15332,7 +15332,7 @@ class GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeResult(dict):
     @pulumi.getter(name="isGenerated")
     def is_generated(self) -> bool:
         """
-        True if Attribute is generated.
+        True if attribute is generated.
         """
         return pulumi.get(self, "is_generated")
 
@@ -15340,7 +15340,7 @@ class GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeResult(dict):
     @pulumi.getter(name="isMandatory")
     def is_mandatory(self) -> bool:
         """
-        True if Attribute is mandatory.
+        True if attribute is mandatory.
         """
         return pulumi.get(self, "is_mandatory")
 
@@ -15348,7 +15348,7 @@ class GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeResult(dict):
     @pulumi.getter(name="isSensitive")
     def is_sensitive(self) -> bool:
         """
-        True if Attribute is sensitive.
+        True if attribute is sensitive.
         """
         return pulumi.get(self, "is_sensitive")
 
@@ -15364,7 +15364,7 @@ class GetRegistryTypesTypesSummaryCollectionItemDataAssetAttributeResult(dict):
     @pulumi.getter(name="validKeyLists")
     def valid_key_lists(self) -> Sequence[str]:
         """
-        List of valid key list
+        The list of valid keys.
         """
         return pulumi.get(self, "valid_key_lists")
 

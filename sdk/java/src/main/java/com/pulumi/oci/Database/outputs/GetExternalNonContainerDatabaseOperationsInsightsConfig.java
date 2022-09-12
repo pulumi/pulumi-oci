@@ -13,21 +13,14 @@ public final class GetExternalNonContainerDatabaseOperationsInsightsConfig {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
      */
-    private final String operationsInsightsConnectorId;
+    private String operationsInsightsConnectorId;
     /**
      * @return The status of Operations Insights
      * 
      */
-    private final String operationsInsightsStatus;
+    private String operationsInsightsStatus;
 
-    @CustomType.Constructor
-    private GetExternalNonContainerDatabaseOperationsInsightsConfig(
-        @CustomType.Parameter("operationsInsightsConnectorId") String operationsInsightsConnectorId,
-        @CustomType.Parameter("operationsInsightsStatus") String operationsInsightsStatus) {
-        this.operationsInsightsConnectorId = operationsInsightsConnectorId;
-        this.operationsInsightsStatus = operationsInsightsStatus;
-    }
-
+    private GetExternalNonContainerDatabaseOperationsInsightsConfig() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
@@ -50,30 +43,32 @@ public final class GetExternalNonContainerDatabaseOperationsInsightsConfig {
     public static Builder builder(GetExternalNonContainerDatabaseOperationsInsightsConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String operationsInsightsConnectorId;
         private String operationsInsightsStatus;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetExternalNonContainerDatabaseOperationsInsightsConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.operationsInsightsConnectorId = defaults.operationsInsightsConnectorId;
     	      this.operationsInsightsStatus = defaults.operationsInsightsStatus;
         }
 
+        @CustomType.Setter
         public Builder operationsInsightsConnectorId(String operationsInsightsConnectorId) {
             this.operationsInsightsConnectorId = Objects.requireNonNull(operationsInsightsConnectorId);
             return this;
         }
+        @CustomType.Setter
         public Builder operationsInsightsStatus(String operationsInsightsStatus) {
             this.operationsInsightsStatus = Objects.requireNonNull(operationsInsightsStatus);
             return this;
-        }        public GetExternalNonContainerDatabaseOperationsInsightsConfig build() {
-            return new GetExternalNonContainerDatabaseOperationsInsightsConfig(operationsInsightsConnectorId, operationsInsightsStatus);
+        }
+        public GetExternalNonContainerDatabaseOperationsInsightsConfig build() {
+            final var o = new GetExternalNonContainerDatabaseOperationsInsightsConfig();
+            o.operationsInsightsConnectorId = operationsInsightsConnectorId;
+            o.operationsInsightsStatus = operationsInsightsStatus;
+            return o;
         }
     }
 }

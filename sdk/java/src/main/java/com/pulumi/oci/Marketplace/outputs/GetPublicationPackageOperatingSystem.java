@@ -13,13 +13,9 @@ public final class GetPublicationPackageOperatingSystem {
      * @return The name of the variable.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetPublicationPackageOperatingSystem(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private GetPublicationPackageOperatingSystem() {}
     /**
      * @return The name of the variable.
      * 
@@ -35,24 +31,24 @@ public final class GetPublicationPackageOperatingSystem {
     public static Builder builder(GetPublicationPackageOperatingSystem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPublicationPackageOperatingSystem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetPublicationPackageOperatingSystem build() {
-            return new GetPublicationPackageOperatingSystem(name);
+        }
+        public GetPublicationPackageOperatingSystem build() {
+            final var o = new GetPublicationPackageOperatingSystem();
+            o.name = name;
+            return o;
         }
     }
 }

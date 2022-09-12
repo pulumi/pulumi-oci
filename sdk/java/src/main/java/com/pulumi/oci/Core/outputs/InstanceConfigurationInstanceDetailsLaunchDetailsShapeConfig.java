@@ -17,35 +17,24 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
      * @return The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
      * 
      */
-    private final @Nullable String baselineOcpuUtilization;
+    private @Nullable String baselineOcpuUtilization;
     /**
      * @return The total amount of memory available to the instance, in gigabytes.
      * 
      */
-    private final @Nullable Double memoryInGbs;
+    private @Nullable Double memoryInGbs;
     /**
      * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
      * 
      */
-    private final @Nullable Integer nvmes;
+    private @Nullable Integer nvmes;
     /**
      * @return The total number of OCPUs available to the instance.
      * 
      */
-    private final @Nullable Double ocpus;
+    private @Nullable Double ocpus;
 
-    @CustomType.Constructor
-    private InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(
-        @CustomType.Parameter("baselineOcpuUtilization") @Nullable String baselineOcpuUtilization,
-        @CustomType.Parameter("memoryInGbs") @Nullable Double memoryInGbs,
-        @CustomType.Parameter("nvmes") @Nullable Integer nvmes,
-        @CustomType.Parameter("ocpus") @Nullable Double ocpus) {
-        this.baselineOcpuUtilization = baselineOcpuUtilization;
-        this.memoryInGbs = memoryInGbs;
-        this.nvmes = nvmes;
-        this.ocpus = ocpus;
-    }
-
+    private InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig() {}
     /**
      * @return The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
      * 
@@ -82,17 +71,13 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
     public static Builder builder(InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String baselineOcpuUtilization;
         private @Nullable Double memoryInGbs;
         private @Nullable Integer nvmes;
         private @Nullable Double ocpus;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baselineOcpuUtilization = defaults.baselineOcpuUtilization;
@@ -101,23 +86,33 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
     	      this.ocpus = defaults.ocpus;
         }
 
+        @CustomType.Setter
         public Builder baselineOcpuUtilization(@Nullable String baselineOcpuUtilization) {
             this.baselineOcpuUtilization = baselineOcpuUtilization;
             return this;
         }
+        @CustomType.Setter
         public Builder memoryInGbs(@Nullable Double memoryInGbs) {
             this.memoryInGbs = memoryInGbs;
             return this;
         }
+        @CustomType.Setter
         public Builder nvmes(@Nullable Integer nvmes) {
             this.nvmes = nvmes;
             return this;
         }
+        @CustomType.Setter
         public Builder ocpus(@Nullable Double ocpus) {
             this.ocpus = ocpus;
             return this;
-        }        public InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig build() {
-            return new InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(baselineOcpuUtilization, memoryInGbs, nvmes, ocpus);
+        }
+        public InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig build() {
+            final var o = new InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig();
+            o.baselineOcpuUtilization = baselineOcpuUtilization;
+            o.memoryInGbs = memoryInGbs;
+            o.nvmes = nvmes;
+            o.ocpus = ocpus;
+            return o;
         }
     }
 }

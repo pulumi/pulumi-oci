@@ -14,38 +14,25 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFlexComponentsResult {
-    private final String compartmentId;
-    private final @Nullable List<GetFlexComponentsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetFlexComponentsFilter> filters;
     /**
      * @return The list of flex_component_collection.
      * 
      */
-    private final List<GetFlexComponentsFlexComponentCollection> flexComponentCollections;
+    private List<GetFlexComponentsFlexComponentCollection> flexComponentCollections;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the Flex Component used for the DB system.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private GetFlexComponentsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetFlexComponentsFilter> filters,
-        @CustomType.Parameter("flexComponentCollections") List<GetFlexComponentsFlexComponentCollection> flexComponentCollections,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.flexComponentCollections = flexComponentCollections;
-        this.id = id;
-        this.name = name;
-    }
-
+    private GetFlexComponentsResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -81,18 +68,14 @@ public final class GetFlexComponentsResult {
     public static Builder builder(GetFlexComponentsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetFlexComponentsFilter> filters;
         private List<GetFlexComponentsFlexComponentCollection> flexComponentCollections;
         private String id;
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFlexComponentsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -102,10 +85,12 @@ public final class GetFlexComponentsResult {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetFlexComponentsFilter> filters) {
             this.filters = filters;
             return this;
@@ -113,6 +98,7 @@ public final class GetFlexComponentsResult {
         public Builder filters(GetFlexComponentsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder flexComponentCollections(List<GetFlexComponentsFlexComponentCollection> flexComponentCollections) {
             this.flexComponentCollections = Objects.requireNonNull(flexComponentCollections);
             return this;
@@ -120,15 +106,24 @@ public final class GetFlexComponentsResult {
         public Builder flexComponentCollections(GetFlexComponentsFlexComponentCollection... flexComponentCollections) {
             return flexComponentCollections(List.of(flexComponentCollections));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public GetFlexComponentsResult build() {
-            return new GetFlexComponentsResult(compartmentId, filters, flexComponentCollections, id, name);
+        }
+        public GetFlexComponentsResult build() {
+            final var o = new GetFlexComponentsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.flexComponentCollections = flexComponentCollections;
+            o.id = id;
+            o.name = name;
+            return o;
         }
     }
 }

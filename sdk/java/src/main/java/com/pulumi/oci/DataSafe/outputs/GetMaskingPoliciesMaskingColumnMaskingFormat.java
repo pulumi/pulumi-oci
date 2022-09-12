@@ -15,28 +15,19 @@ public final class GetMaskingPoliciesMaskingColumnMaskingFormat {
      * @return A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  &lt;a href=&#34;https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html&#34;&gt;conditional masking&lt;/a&gt;  so that you can mask the column data values differently using different masking  formats and the associated conditions.
      * 
      */
-    private final String condition;
+    private String condition;
     /**
      * @return The description of the format entry.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return An array of format entries. The combined output of all the format entries is  used for masking the column data values.
      * 
      */
-    private final List<GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry> formatEntries;
+    private List<GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry> formatEntries;
 
-    @CustomType.Constructor
-    private GetMaskingPoliciesMaskingColumnMaskingFormat(
-        @CustomType.Parameter("condition") String condition,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("formatEntries") List<GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry> formatEntries) {
-        this.condition = condition;
-        this.description = description;
-        this.formatEntries = formatEntries;
-    }
-
+    private GetMaskingPoliciesMaskingColumnMaskingFormat() {}
     /**
      * @return A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  &lt;a href=&#34;https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html&#34;&gt;conditional masking&lt;/a&gt;  so that you can mask the column data values differently using different masking  formats and the associated conditions.
      * 
@@ -66,16 +57,12 @@ public final class GetMaskingPoliciesMaskingColumnMaskingFormat {
     public static Builder builder(GetMaskingPoliciesMaskingColumnMaskingFormat defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String condition;
         private String description;
         private List<GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry> formatEntries;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMaskingPoliciesMaskingColumnMaskingFormat defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.condition = defaults.condition;
@@ -83,22 +70,30 @@ public final class GetMaskingPoliciesMaskingColumnMaskingFormat {
     	      this.formatEntries = defaults.formatEntries;
         }
 
+        @CustomType.Setter
         public Builder condition(String condition) {
             this.condition = Objects.requireNonNull(condition);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder formatEntries(List<GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry> formatEntries) {
             this.formatEntries = Objects.requireNonNull(formatEntries);
             return this;
         }
         public Builder formatEntries(GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry... formatEntries) {
             return formatEntries(List.of(formatEntries));
-        }        public GetMaskingPoliciesMaskingColumnMaskingFormat build() {
-            return new GetMaskingPoliciesMaskingColumnMaskingFormat(condition, description, formatEntries);
+        }
+        public GetMaskingPoliciesMaskingColumnMaskingFormat build() {
+            final var o = new GetMaskingPoliciesMaskingColumnMaskingFormat();
+            o.condition = condition;
+            o.description = description;
+            o.formatEntries = formatEntries;
+            return o;
         }
     }
 }

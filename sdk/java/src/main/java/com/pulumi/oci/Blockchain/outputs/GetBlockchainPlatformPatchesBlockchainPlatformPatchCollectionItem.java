@@ -14,13 +14,9 @@ public final class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection
      * @return Collection of PatchSummary
      * 
      */
-    private final List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem> items;
+    private List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem> items;
 
-    @CustomType.Constructor
-    private GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem(@CustomType.Parameter("items") List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem> items) {
-        this.items = items;
-    }
-
+    private GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem() {}
     /**
      * @return Collection of PatchSummary
      * 
@@ -36,27 +32,27 @@ public final class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection
     public static Builder builder(GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem... items) {
             return items(List.of(items));
-        }        public GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem build() {
-            return new GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem(items);
+        }
+        public GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem build() {
+            final var o = new GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem();
+            o.items = items;
+            return o;
         }
     }
 }

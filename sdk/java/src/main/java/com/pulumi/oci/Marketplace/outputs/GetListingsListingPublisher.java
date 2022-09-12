@@ -13,28 +13,19 @@ public final class GetListingsListingPublisher {
      * @return A description of the screenshot.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The unique identifier for the publisher.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the listing.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetListingsListingPublisher(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name) {
-        this.description = description;
-        this.id = id;
-        this.name = name;
-    }
-
+    private GetListingsListingPublisher() {}
     /**
      * @return A description of the screenshot.
      * 
@@ -64,16 +55,12 @@ public final class GetListingsListingPublisher {
     public static Builder builder(GetListingsListingPublisher defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String id;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingsListingPublisher defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -81,19 +68,27 @@ public final class GetListingsListingPublisher {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetListingsListingPublisher build() {
-            return new GetListingsListingPublisher(description, id, name);
+        }
+        public GetListingsListingPublisher build() {
+            final var o = new GetListingsListingPublisher();
+            o.description = description;
+            o.id = id;
+            o.name = name;
+            return o;
         }
     }
 }

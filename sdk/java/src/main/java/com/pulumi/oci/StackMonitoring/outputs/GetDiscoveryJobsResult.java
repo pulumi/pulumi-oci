@@ -18,34 +18,21 @@ public final class GetDiscoveryJobsResult {
      * @return The OCID of the Compartment
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of discovery_job_collection.
      * 
      */
-    private final List<GetDiscoveryJobsDiscoveryJobCollection> discoveryJobCollections;
-    private final @Nullable List<GetDiscoveryJobsFilter> filters;
+    private List<GetDiscoveryJobsDiscoveryJobCollection> discoveryJobCollections;
+    private @Nullable List<GetDiscoveryJobsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String name;
+    private String id;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private GetDiscoveryJobsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("discoveryJobCollections") List<GetDiscoveryJobsDiscoveryJobCollection> discoveryJobCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetDiscoveryJobsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name) {
-        this.compartmentId = compartmentId;
-        this.discoveryJobCollections = discoveryJobCollections;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-    }
-
+    private GetDiscoveryJobsResult() {}
     /**
      * @return The OCID of the Compartment
      * 
@@ -81,18 +68,14 @@ public final class GetDiscoveryJobsResult {
     public static Builder builder(GetDiscoveryJobsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetDiscoveryJobsDiscoveryJobCollection> discoveryJobCollections;
         private @Nullable List<GetDiscoveryJobsFilter> filters;
         private String id;
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDiscoveryJobsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -102,10 +85,12 @@ public final class GetDiscoveryJobsResult {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder discoveryJobCollections(List<GetDiscoveryJobsDiscoveryJobCollection> discoveryJobCollections) {
             this.discoveryJobCollections = Objects.requireNonNull(discoveryJobCollections);
             return this;
@@ -113,6 +98,7 @@ public final class GetDiscoveryJobsResult {
         public Builder discoveryJobCollections(GetDiscoveryJobsDiscoveryJobCollection... discoveryJobCollections) {
             return discoveryJobCollections(List.of(discoveryJobCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDiscoveryJobsFilter> filters) {
             this.filters = filters;
             return this;
@@ -120,15 +106,24 @@ public final class GetDiscoveryJobsResult {
         public Builder filters(GetDiscoveryJobsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public GetDiscoveryJobsResult build() {
-            return new GetDiscoveryJobsResult(compartmentId, discoveryJobCollections, filters, id, name);
+        }
+        public GetDiscoveryJobsResult build() {
+            final var o = new GetDiscoveryJobsResult();
+            o.compartmentId = compartmentId;
+            o.discoveryJobCollections = discoveryJobCollections;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            return o;
         }
     }
 }

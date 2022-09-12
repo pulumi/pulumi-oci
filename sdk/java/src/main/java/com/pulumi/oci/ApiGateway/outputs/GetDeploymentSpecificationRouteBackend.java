@@ -18,69 +18,46 @@ public final class GetDeploymentSpecificationRouteBackend {
      * @return The body of the stock response from the mock backend.
      * 
      */
-    private final String body;
+    private String body;
     /**
      * @return Defines a timeout for establishing a connection with a proxied server.
      * 
      */
-    private final Double connectTimeoutInSeconds;
+    private Double connectTimeoutInSeconds;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
      * 
      */
-    private final String functionId;
-    private final List<GetDeploymentSpecificationRouteBackendHeader> headers;
+    private String functionId;
+    private List<GetDeploymentSpecificationRouteBackendHeader> headers;
     /**
      * @return Defines whether or not to uphold SSL verification.
      * 
      */
-    private final Boolean isSslVerifyDisabled;
+    private Boolean isSslVerifyDisabled;
     /**
      * @return Defines a timeout for reading a response from the proxied server.
      * 
      */
-    private final Double readTimeoutInSeconds;
+    private Double readTimeoutInSeconds;
     /**
      * @return Defines a timeout for transmitting a request to the proxied server.
      * 
      */
-    private final Double sendTimeoutInSeconds;
+    private Double sendTimeoutInSeconds;
     /**
      * @return The status code of the stock response from the mock backend.
      * 
      */
-    private final Integer status;
+    private Integer status;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private final String type;
-    private final String url;
+    private String type;
+    private String url;
 
-    @CustomType.Constructor
-    private GetDeploymentSpecificationRouteBackend(
-        @CustomType.Parameter("body") String body,
-        @CustomType.Parameter("connectTimeoutInSeconds") Double connectTimeoutInSeconds,
-        @CustomType.Parameter("functionId") String functionId,
-        @CustomType.Parameter("headers") List<GetDeploymentSpecificationRouteBackendHeader> headers,
-        @CustomType.Parameter("isSslVerifyDisabled") Boolean isSslVerifyDisabled,
-        @CustomType.Parameter("readTimeoutInSeconds") Double readTimeoutInSeconds,
-        @CustomType.Parameter("sendTimeoutInSeconds") Double sendTimeoutInSeconds,
-        @CustomType.Parameter("status") Integer status,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("url") String url) {
-        this.body = body;
-        this.connectTimeoutInSeconds = connectTimeoutInSeconds;
-        this.functionId = functionId;
-        this.headers = headers;
-        this.isSslVerifyDisabled = isSslVerifyDisabled;
-        this.readTimeoutInSeconds = readTimeoutInSeconds;
-        this.sendTimeoutInSeconds = sendTimeoutInSeconds;
-        this.status = status;
-        this.type = type;
-        this.url = url;
-    }
-
+    private GetDeploymentSpecificationRouteBackend() {}
     /**
      * @return The body of the stock response from the mock backend.
      * 
@@ -151,7 +128,7 @@ public final class GetDeploymentSpecificationRouteBackend {
     public static Builder builder(GetDeploymentSpecificationRouteBackend defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String body;
         private Double connectTimeoutInSeconds;
@@ -163,11 +140,7 @@ public final class GetDeploymentSpecificationRouteBackend {
         private Integer status;
         private String type;
         private String url;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentSpecificationRouteBackend defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.body = defaults.body;
@@ -182,18 +155,22 @@ public final class GetDeploymentSpecificationRouteBackend {
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
         public Builder body(String body) {
             this.body = Objects.requireNonNull(body);
             return this;
         }
+        @CustomType.Setter
         public Builder connectTimeoutInSeconds(Double connectTimeoutInSeconds) {
             this.connectTimeoutInSeconds = Objects.requireNonNull(connectTimeoutInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder functionId(String functionId) {
             this.functionId = Objects.requireNonNull(functionId);
             return this;
         }
+        @CustomType.Setter
         public Builder headers(List<GetDeploymentSpecificationRouteBackendHeader> headers) {
             this.headers = Objects.requireNonNull(headers);
             return this;
@@ -201,31 +178,49 @@ public final class GetDeploymentSpecificationRouteBackend {
         public Builder headers(GetDeploymentSpecificationRouteBackendHeader... headers) {
             return headers(List.of(headers));
         }
+        @CustomType.Setter
         public Builder isSslVerifyDisabled(Boolean isSslVerifyDisabled) {
             this.isSslVerifyDisabled = Objects.requireNonNull(isSslVerifyDisabled);
             return this;
         }
+        @CustomType.Setter
         public Builder readTimeoutInSeconds(Double readTimeoutInSeconds) {
             this.readTimeoutInSeconds = Objects.requireNonNull(readTimeoutInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder sendTimeoutInSeconds(Double sendTimeoutInSeconds) {
             this.sendTimeoutInSeconds = Objects.requireNonNull(sendTimeoutInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder status(Integer status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder url(String url) {
             this.url = Objects.requireNonNull(url);
             return this;
-        }        public GetDeploymentSpecificationRouteBackend build() {
-            return new GetDeploymentSpecificationRouteBackend(body, connectTimeoutInSeconds, functionId, headers, isSslVerifyDisabled, readTimeoutInSeconds, sendTimeoutInSeconds, status, type, url);
+        }
+        public GetDeploymentSpecificationRouteBackend build() {
+            final var o = new GetDeploymentSpecificationRouteBackend();
+            o.body = body;
+            o.connectTimeoutInSeconds = connectTimeoutInSeconds;
+            o.functionId = functionId;
+            o.headers = headers;
+            o.isSslVerifyDisabled = isSslVerifyDisabled;
+            o.readTimeoutInSeconds = readTimeoutInSeconds;
+            o.sendTimeoutInSeconds = sendTimeoutInSeconds;
+            o.status = status;
+            o.type = type;
+            o.url = url;
+            return o;
         }
     }
 }

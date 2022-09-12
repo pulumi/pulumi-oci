@@ -14,13 +14,9 @@ public final class DeploymentSpecificationRouteResponsePoliciesHeaderTransformat
      * @return (Updatable) The list of headers.
      * 
      */
-    private final List<DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItem> items;
+    private List<DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItem> items;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeaders(@CustomType.Parameter("items") List<DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItem> items) {
-        this.items = items;
-    }
-
+    private DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeaders() {}
     /**
      * @return (Updatable) The list of headers.
      * 
@@ -36,27 +32,27 @@ public final class DeploymentSpecificationRouteResponsePoliciesHeaderTransformat
     public static Builder builder(DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeaders defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeaders defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItem... items) {
             return items(List.of(items));
-        }        public DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeaders build() {
-            return new DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeaders(items);
+        }
+        public DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeaders build() {
+            final var o = new DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeaders();
+            o.items = items;
+            return o;
         }
     }
 }

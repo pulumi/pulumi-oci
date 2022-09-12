@@ -13,63 +13,44 @@ public final class GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Descriptive text providing additional details about the lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time when the maintenance update action completed.
      * 
      */
-    private final String timeCompleted;
+    private String timeCompleted;
     /**
      * @return The date and time when the maintenance update action started.
      * 
      */
-    private final String timeStarted;
+    private String timeStarted;
     /**
      * @return The update action performed using this maintenance update.
      * 
      */
-    private final String updateAction;
+    private String updateAction;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
      * 
      */
-    private final String updateId;
+    private String updateId;
     /**
      * @return A filter to return only resources that match the given update type exactly.
      * 
      */
-    private final String updateType;
+    private String updateType;
 
-    @CustomType.Constructor
-    private GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCompleted") String timeCompleted,
-        @CustomType.Parameter("timeStarted") String timeStarted,
-        @CustomType.Parameter("updateAction") String updateAction,
-        @CustomType.Parameter("updateId") String updateId,
-        @CustomType.Parameter("updateType") String updateType) {
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.state = state;
-        this.timeCompleted = timeCompleted;
-        this.timeStarted = timeStarted;
-        this.updateAction = updateAction;
-        this.updateId = updateId;
-        this.updateType = updateType;
-    }
-
+    private GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
      * 
@@ -134,7 +115,7 @@ public final class GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry {
     public static Builder builder(GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String lifecycleDetails;
@@ -144,11 +125,7 @@ public final class GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry {
         private String updateAction;
         private String updateId;
         private String updateType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -161,39 +138,57 @@ public final class GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry {
     	      this.updateType = defaults.updateType;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCompleted(String timeCompleted) {
             this.timeCompleted = Objects.requireNonNull(timeCompleted);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
         }
+        @CustomType.Setter
         public Builder updateAction(String updateAction) {
             this.updateAction = Objects.requireNonNull(updateAction);
             return this;
         }
+        @CustomType.Setter
         public Builder updateId(String updateId) {
             this.updateId = Objects.requireNonNull(updateId);
             return this;
         }
+        @CustomType.Setter
         public Builder updateType(String updateType) {
             this.updateType = Objects.requireNonNull(updateType);
             return this;
-        }        public GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry build() {
-            return new GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry(id, lifecycleDetails, state, timeCompleted, timeStarted, updateAction, updateId, updateType);
+        }
+        public GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry build() {
+            final var o = new GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry();
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.state = state;
+            o.timeCompleted = timeCompleted;
+            o.timeStarted = timeStarted;
+            o.updateAction = updateAction;
+            o.updateId = updateId;
+            o.updateType = updateType;
+            return o;
         }
     }
 }

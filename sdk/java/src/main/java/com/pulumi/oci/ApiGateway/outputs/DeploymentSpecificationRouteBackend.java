@@ -20,77 +20,54 @@ public final class DeploymentSpecificationRouteBackend {
      * @return (Updatable) The body of the stock response from the mock backend.
      * 
      */
-    private final @Nullable String body;
+    private @Nullable String body;
     /**
      * @return (Updatable) Defines a timeout for establishing a connection with a proxied server.
      * 
      */
-    private final @Nullable Double connectTimeoutInSeconds;
+    private @Nullable Double connectTimeoutInSeconds;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
      * 
      */
-    private final @Nullable String functionId;
+    private @Nullable String functionId;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable List<DeploymentSpecificationRouteBackendHeader> headers;
+    private @Nullable List<DeploymentSpecificationRouteBackendHeader> headers;
     /**
      * @return (Updatable) Defines whether or not to uphold SSL verification.
      * 
      */
-    private final @Nullable Boolean isSslVerifyDisabled;
+    private @Nullable Boolean isSslVerifyDisabled;
     /**
      * @return (Updatable) Defines a timeout for reading a response from the proxied server.
      * 
      */
-    private final @Nullable Double readTimeoutInSeconds;
+    private @Nullable Double readTimeoutInSeconds;
     /**
      * @return (Updatable) Defines a timeout for transmitting a request to the proxied server.
      * 
      */
-    private final @Nullable Double sendTimeoutInSeconds;
+    private @Nullable Double sendTimeoutInSeconds;
     /**
      * @return (Updatable) The status code of the stock response from the mock backend.
      * 
      */
-    private final @Nullable Integer status;
+    private @Nullable Integer status;
     /**
      * @return (Updatable) Type of the Response Cache Store Policy.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable String url;
+    private @Nullable String url;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationRouteBackend(
-        @CustomType.Parameter("body") @Nullable String body,
-        @CustomType.Parameter("connectTimeoutInSeconds") @Nullable Double connectTimeoutInSeconds,
-        @CustomType.Parameter("functionId") @Nullable String functionId,
-        @CustomType.Parameter("headers") @Nullable List<DeploymentSpecificationRouteBackendHeader> headers,
-        @CustomType.Parameter("isSslVerifyDisabled") @Nullable Boolean isSslVerifyDisabled,
-        @CustomType.Parameter("readTimeoutInSeconds") @Nullable Double readTimeoutInSeconds,
-        @CustomType.Parameter("sendTimeoutInSeconds") @Nullable Double sendTimeoutInSeconds,
-        @CustomType.Parameter("status") @Nullable Integer status,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("url") @Nullable String url) {
-        this.body = body;
-        this.connectTimeoutInSeconds = connectTimeoutInSeconds;
-        this.functionId = functionId;
-        this.headers = headers;
-        this.isSslVerifyDisabled = isSslVerifyDisabled;
-        this.readTimeoutInSeconds = readTimeoutInSeconds;
-        this.sendTimeoutInSeconds = sendTimeoutInSeconds;
-        this.status = status;
-        this.type = type;
-        this.url = url;
-    }
-
+    private DeploymentSpecificationRouteBackend() {}
     /**
      * @return (Updatable) The body of the stock response from the mock backend.
      * 
@@ -169,7 +146,7 @@ public final class DeploymentSpecificationRouteBackend {
     public static Builder builder(DeploymentSpecificationRouteBackend defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String body;
         private @Nullable Double connectTimeoutInSeconds;
@@ -181,11 +158,7 @@ public final class DeploymentSpecificationRouteBackend {
         private @Nullable Integer status;
         private String type;
         private @Nullable String url;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationRouteBackend defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.body = defaults.body;
@@ -200,18 +173,22 @@ public final class DeploymentSpecificationRouteBackend {
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
         public Builder body(@Nullable String body) {
             this.body = body;
             return this;
         }
+        @CustomType.Setter
         public Builder connectTimeoutInSeconds(@Nullable Double connectTimeoutInSeconds) {
             this.connectTimeoutInSeconds = connectTimeoutInSeconds;
             return this;
         }
+        @CustomType.Setter
         public Builder functionId(@Nullable String functionId) {
             this.functionId = functionId;
             return this;
         }
+        @CustomType.Setter
         public Builder headers(@Nullable List<DeploymentSpecificationRouteBackendHeader> headers) {
             this.headers = headers;
             return this;
@@ -219,31 +196,49 @@ public final class DeploymentSpecificationRouteBackend {
         public Builder headers(DeploymentSpecificationRouteBackendHeader... headers) {
             return headers(List.of(headers));
         }
+        @CustomType.Setter
         public Builder isSslVerifyDisabled(@Nullable Boolean isSslVerifyDisabled) {
             this.isSslVerifyDisabled = isSslVerifyDisabled;
             return this;
         }
+        @CustomType.Setter
         public Builder readTimeoutInSeconds(@Nullable Double readTimeoutInSeconds) {
             this.readTimeoutInSeconds = readTimeoutInSeconds;
             return this;
         }
+        @CustomType.Setter
         public Builder sendTimeoutInSeconds(@Nullable Double sendTimeoutInSeconds) {
             this.sendTimeoutInSeconds = sendTimeoutInSeconds;
             return this;
         }
+        @CustomType.Setter
         public Builder status(@Nullable Integer status) {
             this.status = status;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder url(@Nullable String url) {
             this.url = url;
             return this;
-        }        public DeploymentSpecificationRouteBackend build() {
-            return new DeploymentSpecificationRouteBackend(body, connectTimeoutInSeconds, functionId, headers, isSslVerifyDisabled, readTimeoutInSeconds, sendTimeoutInSeconds, status, type, url);
+        }
+        public DeploymentSpecificationRouteBackend build() {
+            final var o = new DeploymentSpecificationRouteBackend();
+            o.body = body;
+            o.connectTimeoutInSeconds = connectTimeoutInSeconds;
+            o.functionId = functionId;
+            o.headers = headers;
+            o.isSslVerifyDisabled = isSslVerifyDisabled;
+            o.readTimeoutInSeconds = readTimeoutInSeconds;
+            o.sendTimeoutInSeconds = sendTimeoutInSeconds;
+            o.status = status;
+            o.type = type;
+            o.url = url;
+            return o;
         }
     }
 }

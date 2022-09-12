@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Core.BootVolumeArgs;
 import com.pulumi.oci.Core.inputs.BootVolumeState;
+import com.pulumi.oci.Core.outputs.BootVolumeAutotunePolicy;
 import com.pulumi.oci.Core.outputs.BootVolumeBootVolumeReplica;
 import com.pulumi.oci.Core.outputs.BootVolumeSourceDetails;
 import com.pulumi.oci.Utilities;
@@ -50,6 +51,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Core.BootVolume;
  * import com.pulumi.oci.Core.BootVolumeArgs;
  * import com.pulumi.oci.Core.inputs.BootVolumeSourceDetailsArgs;
+ * import com.pulumi.oci.Core.inputs.BootVolumeAutotunePolicyArgs;
  * import com.pulumi.oci.Core.inputs.BootVolumeBootVolumeReplicaArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -69,6 +71,10 @@ import javax.annotation.Nullable;
  *             .sourceDetails(BootVolumeSourceDetailsArgs.builder()
  *                 .id(var_.boot_volume_source_details_id())
  *                 .type(var_.boot_volume_source_details_type())
+ *                 .build())
+ *             .autotunePolicies(BootVolumeAutotunePolicyArgs.builder()
+ *                 .autotuneType(var_.boot_volume_autotune_policies_autotune_type())
+ *                 .maxVpusPerGb(var_.boot_volume_autotune_policies_max_vpus_per_gb())
  *                 .build())
  *             .availabilityDomain(var_.boot_volume_availability_domain())
  *             .backupPolicyId(data.oci_core_volume_backup_policies().test_volume_backup_policies().volume_backup_policies()[0].id())
@@ -102,18 +108,32 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Core/bootVolume:BootVolume")
 public class BootVolume extends com.pulumi.resources.CustomResource {
     /**
-     * The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it&#39;s idle.
+     * The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
      * 
      */
     @Export(name="autoTunedVpusPerGb", type=String.class, parameters={})
     private Output<String> autoTunedVpusPerGb;
 
     /**
-     * @return The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it&#39;s idle.
+     * @return The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
      * 
      */
     public Output<String> autoTunedVpusPerGb() {
         return this.autoTunedVpusPerGb;
+    }
+    /**
+     * (Updatable) The list of autotune policies to be enabled for this volume.
+     * 
+     */
+    @Export(name="autotunePolicies", type=List.class, parameters={BootVolumeAutotunePolicy.class})
+    private Output<List<BootVolumeAutotunePolicy>> autotunePolicies;
+
+    /**
+     * @return (Updatable) The list of autotune policies to be enabled for this volume.
+     * 
+     */
+    public Output<List<BootVolumeAutotunePolicy>> autotunePolicies() {
+        return this.autotunePolicies;
     }
     /**
      * (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
@@ -238,14 +258,14 @@ public class BootVolume extends com.pulumi.resources.CustomResource {
         return this.imageId;
     }
     /**
-     * (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+     * (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      * 
      */
     @Export(name="isAutoTuneEnabled", type=Boolean.class, parameters={})
     private Output<Boolean> isAutoTuneEnabled;
 
     /**
-     * @return (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+     * @return (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      * 
      */
     public Output<Boolean> isAutoTuneEnabled() {

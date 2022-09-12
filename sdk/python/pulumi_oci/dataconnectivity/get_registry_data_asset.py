@@ -109,7 +109,7 @@ class GetRegistryDataAssetResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        A user defined description for the object.
+        A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -125,7 +125,7 @@ class GetRegistryDataAssetResult:
     @pulumi.getter(name="externalKey")
     def external_key(self) -> str:
         """
-        The external key for the object.
+        The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -138,7 +138,7 @@ class GetRegistryDataAssetResult:
     @pulumi.getter
     def identifier(self) -> str:
         """
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -154,7 +154,7 @@ class GetRegistryDataAssetResult:
     @pulumi.getter
     def metadatas(self) -> Sequence['outputs.GetRegistryDataAssetMetadataResult']:
         """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadatas")
 
@@ -162,7 +162,7 @@ class GetRegistryDataAssetResult:
     @pulumi.getter(name="modelType")
     def model_type(self) -> str:
         """
-        The property which disciminates the subtypes.
+        The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -178,7 +178,7 @@ class GetRegistryDataAssetResult:
     @pulumi.getter
     def name(self) -> str:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -284,7 +284,7 @@ def get_registry_data_asset(data_asset_key: Optional[str] = None,
 
 
     :param str data_asset_key: The data asset key.
-    :param str registry_id: The registry Ocid.
+    :param str registry_id: The registry OCID.
     """
     __args__ = dict()
     __args__['dataAssetKey'] = data_asset_key
@@ -336,6 +336,6 @@ def get_registry_data_asset_output(data_asset_key: Optional[pulumi.Input[str]] =
 
 
     :param str data_asset_key: The data asset key.
-    :param str registry_id: The registry Ocid.
+    :param str registry_id: The registry OCID.
     """
     ...

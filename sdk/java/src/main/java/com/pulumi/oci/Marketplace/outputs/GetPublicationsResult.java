@@ -18,51 +18,32 @@ public final class GetPublicationsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the publication exists.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetPublicationsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetPublicationsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
      * 
      */
-    private final String listingType;
+    private String listingType;
     /**
      * @return The name of the operating system.
      * 
      */
-    private final @Nullable List<String> names;
-    private final @Nullable List<String> operatingSystems;
-    private final @Nullable String publicationId;
+    private @Nullable List<String> names;
+    private @Nullable List<String> operatingSystems;
+    private @Nullable String publicationId;
     /**
      * @return The list of publications.
      * 
      */
-    private final List<GetPublicationsPublication> publications;
+    private List<GetPublicationsPublication> publications;
 
-    @CustomType.Constructor
-    private GetPublicationsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetPublicationsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("listingType") String listingType,
-        @CustomType.Parameter("names") @Nullable List<String> names,
-        @CustomType.Parameter("operatingSystems") @Nullable List<String> operatingSystems,
-        @CustomType.Parameter("publicationId") @Nullable String publicationId,
-        @CustomType.Parameter("publications") List<GetPublicationsPublication> publications) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.listingType = listingType;
-        this.names = names;
-        this.operatingSystems = operatingSystems;
-        this.publicationId = publicationId;
-        this.publications = publications;
-    }
-
+    private GetPublicationsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the publication exists.
      * 
@@ -115,7 +96,7 @@ public final class GetPublicationsResult {
     public static Builder builder(GetPublicationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetPublicationsFilter> filters;
@@ -125,11 +106,7 @@ public final class GetPublicationsResult {
         private @Nullable List<String> operatingSystems;
         private @Nullable String publicationId;
         private List<GetPublicationsPublication> publications;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPublicationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,10 +119,12 @@ public final class GetPublicationsResult {
     	      this.publications = defaults.publications;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetPublicationsFilter> filters) {
             this.filters = filters;
             return this;
@@ -153,14 +132,17 @@ public final class GetPublicationsResult {
         public Builder filters(GetPublicationsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder listingType(String listingType) {
             this.listingType = Objects.requireNonNull(listingType);
             return this;
         }
+        @CustomType.Setter
         public Builder names(@Nullable List<String> names) {
             this.names = names;
             return this;
@@ -168,6 +150,7 @@ public final class GetPublicationsResult {
         public Builder names(String... names) {
             return names(List.of(names));
         }
+        @CustomType.Setter
         public Builder operatingSystems(@Nullable List<String> operatingSystems) {
             this.operatingSystems = operatingSystems;
             return this;
@@ -175,18 +158,30 @@ public final class GetPublicationsResult {
         public Builder operatingSystems(String... operatingSystems) {
             return operatingSystems(List.of(operatingSystems));
         }
+        @CustomType.Setter
         public Builder publicationId(@Nullable String publicationId) {
             this.publicationId = publicationId;
             return this;
         }
+        @CustomType.Setter
         public Builder publications(List<GetPublicationsPublication> publications) {
             this.publications = Objects.requireNonNull(publications);
             return this;
         }
         public Builder publications(GetPublicationsPublication... publications) {
             return publications(List.of(publications));
-        }        public GetPublicationsResult build() {
-            return new GetPublicationsResult(compartmentId, filters, id, listingType, names, operatingSystems, publicationId, publications);
+        }
+        public GetPublicationsResult build() {
+            final var o = new GetPublicationsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.listingType = listingType;
+            o.names = names;
+            o.operatingSystems = operatingSystems;
+            o.publicationId = publicationId;
+            o.publications = publications;
+            return o;
         }
     }
 }

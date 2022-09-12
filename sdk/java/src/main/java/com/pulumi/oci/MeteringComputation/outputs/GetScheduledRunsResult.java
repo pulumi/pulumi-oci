@@ -13,35 +13,24 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetScheduledRunsResult {
-    private final @Nullable List<GetScheduledRunsFilter> filters;
+    private @Nullable List<GetScheduledRunsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The ocid representing unique shedule
      * 
      */
-    private final String scheduleId;
+    private String scheduleId;
     /**
      * @return The list of scheduled_run_collection.
      * 
      */
-    private final List<GetScheduledRunsScheduledRunCollection> scheduledRunCollections;
+    private List<GetScheduledRunsScheduledRunCollection> scheduledRunCollections;
 
-    @CustomType.Constructor
-    private GetScheduledRunsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetScheduledRunsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("scheduleId") String scheduleId,
-        @CustomType.Parameter("scheduledRunCollections") List<GetScheduledRunsScheduledRunCollection> scheduledRunCollections) {
-        this.filters = filters;
-        this.id = id;
-        this.scheduleId = scheduleId;
-        this.scheduledRunCollections = scheduledRunCollections;
-    }
-
+    private GetScheduledRunsResult() {}
     public List<GetScheduledRunsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -74,17 +63,13 @@ public final class GetScheduledRunsResult {
     public static Builder builder(GetScheduledRunsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetScheduledRunsFilter> filters;
         private String id;
         private String scheduleId;
         private List<GetScheduledRunsScheduledRunCollection> scheduledRunCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetScheduledRunsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -93,6 +78,7 @@ public final class GetScheduledRunsResult {
     	      this.scheduledRunCollections = defaults.scheduledRunCollections;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetScheduledRunsFilter> filters) {
             this.filters = filters;
             return this;
@@ -100,22 +86,31 @@ public final class GetScheduledRunsResult {
         public Builder filters(GetScheduledRunsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder scheduleId(String scheduleId) {
             this.scheduleId = Objects.requireNonNull(scheduleId);
             return this;
         }
+        @CustomType.Setter
         public Builder scheduledRunCollections(List<GetScheduledRunsScheduledRunCollection> scheduledRunCollections) {
             this.scheduledRunCollections = Objects.requireNonNull(scheduledRunCollections);
             return this;
         }
         public Builder scheduledRunCollections(GetScheduledRunsScheduledRunCollection... scheduledRunCollections) {
             return scheduledRunCollections(List.of(scheduledRunCollections));
-        }        public GetScheduledRunsResult build() {
-            return new GetScheduledRunsResult(filters, id, scheduleId, scheduledRunCollections);
+        }
+        public GetScheduledRunsResult build() {
+            final var o = new GetScheduledRunsResult();
+            o.filters = filters;
+            o.id = id;
+            o.scheduleId = scheduleId;
+            o.scheduledRunCollections = scheduledRunCollections;
+            return o;
         }
     }
 }

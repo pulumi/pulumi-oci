@@ -55,13 +55,13 @@ export class DetectorRecipe extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) Detector recipe description.
+     * (Updatable) Description for DetectorRecipeDetectorRule.
      */
     public readonly description!: pulumi.Output<string>;
     /**
      * detector for the rule
      */
-    public /*out*/ readonly detector!: pulumi.Output<string>;
+    public readonly detector!: pulumi.Output<string>;
     /**
      * (Updatable) Detector Rules to override from source detector recipe
      */
@@ -94,6 +94,10 @@ export class DetectorRecipe extends pulumi.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    /**
+     * The recipe attached to targets
+     */
+    public /*out*/ readonly targetIds!: pulumi.Output<string[]>;
     /**
      * The date and time the detector recipe was created. Format defined by RFC3339.
      */
@@ -128,6 +132,7 @@ export class DetectorRecipe extends pulumi.CustomResource {
             resourceInputs["sourceDetectorRecipeId"] = state ? state.sourceDetectorRecipeId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
+            resourceInputs["targetIds"] = state ? state.targetIds : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
         } else {
@@ -138,21 +143,19 @@ export class DetectorRecipe extends pulumi.CustomResource {
             if ((!args || args.displayName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.sourceDetectorRecipeId === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'sourceDetectorRecipeId'");
-            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["detector"] = args ? args.detector : undefined;
             resourceInputs["detectorRules"] = args ? args.detectorRules : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["sourceDetectorRecipeId"] = args ? args.sourceDetectorRecipeId : undefined;
-            resourceInputs["detector"] = undefined /*out*/;
             resourceInputs["effectiveDetectorRules"] = undefined /*out*/;
             resourceInputs["owner"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
+            resourceInputs["targetIds"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -174,7 +177,7 @@ export interface DetectorRecipeState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Detector recipe description.
+     * (Updatable) Description for DetectorRecipeDetectorRule.
      */
     description?: pulumi.Input<string>;
     /**
@@ -214,6 +217,10 @@ export interface DetectorRecipeState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
+     * The recipe attached to targets
+     */
+    targetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * The date and time the detector recipe was created. Format defined by RFC3339.
      */
     timeCreated?: pulumi.Input<string>;
@@ -236,9 +243,13 @@ export interface DetectorRecipeArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Detector recipe description.
+     * (Updatable) Description for DetectorRecipeDetectorRule.
      */
     description?: pulumi.Input<string>;
+    /**
+     * detector for the rule
+     */
+    detector?: pulumi.Input<string>;
     /**
      * (Updatable) Detector Rules to override from source detector recipe
      */
@@ -254,5 +265,5 @@ export interface DetectorRecipeArgs {
     /**
      * The id of the source detector recipe.
      */
-    sourceDetectorRecipeId: pulumi.Input<string>;
+    sourceDetectorRecipeId?: pulumi.Input<string>;
 }

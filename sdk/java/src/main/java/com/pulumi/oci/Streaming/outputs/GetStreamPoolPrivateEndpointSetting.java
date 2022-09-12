@@ -14,28 +14,19 @@ public final class GetStreamPoolPrivateEndpointSetting {
      * @return The optional list of network security groups that are associated with the private endpoint of the stream pool.
      * 
      */
-    private final List<String> nsgIds;
+    private List<String> nsgIds;
     /**
      * @return The private IP associated with the stream pool in the associated subnetId. The stream pool&#39;s FQDN resolves to that IP and should be used - instead of the private IP - in order to not trigger any TLS issues.
      * 
      */
-    private final String privateEndpointIp;
+    private String privateEndpointIp;
     /**
      * @return The subnet id from which the private stream pool can be accessed. Trying to access the streams from another network location will result in an error.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
 
-    @CustomType.Constructor
-    private GetStreamPoolPrivateEndpointSetting(
-        @CustomType.Parameter("nsgIds") List<String> nsgIds,
-        @CustomType.Parameter("privateEndpointIp") String privateEndpointIp,
-        @CustomType.Parameter("subnetId") String subnetId) {
-        this.nsgIds = nsgIds;
-        this.privateEndpointIp = privateEndpointIp;
-        this.subnetId = subnetId;
-    }
-
+    private GetStreamPoolPrivateEndpointSetting() {}
     /**
      * @return The optional list of network security groups that are associated with the private endpoint of the stream pool.
      * 
@@ -65,16 +56,12 @@ public final class GetStreamPoolPrivateEndpointSetting {
     public static Builder builder(GetStreamPoolPrivateEndpointSetting defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> nsgIds;
         private String privateEndpointIp;
         private String subnetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetStreamPoolPrivateEndpointSetting defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.nsgIds = defaults.nsgIds;
@@ -82,6 +69,7 @@ public final class GetStreamPoolPrivateEndpointSetting {
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             this.nsgIds = Objects.requireNonNull(nsgIds);
             return this;
@@ -89,15 +77,22 @@ public final class GetStreamPoolPrivateEndpointSetting {
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
+        @CustomType.Setter
         public Builder privateEndpointIp(String privateEndpointIp) {
             this.privateEndpointIp = Objects.requireNonNull(privateEndpointIp);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
-        }        public GetStreamPoolPrivateEndpointSetting build() {
-            return new GetStreamPoolPrivateEndpointSetting(nsgIds, privateEndpointIp, subnetId);
+        }
+        public GetStreamPoolPrivateEndpointSetting build() {
+            final var o = new GetStreamPoolPrivateEndpointSetting();
+            o.nsgIds = nsgIds;
+            o.privateEndpointIp = privateEndpointIp;
+            o.subnetId = subnetId;
+            return o;
         }
     }
 }

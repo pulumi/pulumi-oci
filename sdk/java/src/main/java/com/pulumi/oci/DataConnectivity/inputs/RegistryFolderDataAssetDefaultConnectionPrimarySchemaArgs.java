@@ -35,14 +35,14 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
     }
 
     /**
-     * (Updatable) User-defined description for the folder.
+     * (Updatable) User-defined description of the folder.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) User-defined description for the folder.
+     * @return (Updatable) User-defined description of the folder.
      * 
      */
     public Optional<Output<String>> description() {
@@ -50,14 +50,14 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
     }
 
     /**
-     * (Updatable) The external key for the object.
+     * (Updatable) The external key of the object.
      * 
      */
     @Import(name="externalKey")
     private @Nullable Output<String> externalKey;
 
     /**
-     * @return (Updatable) The external key for the object.
+     * @return (Updatable) The external key of the object.
      * 
      */
     public Optional<Output<String>> externalKey() {
@@ -65,14 +65,14 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
     }
 
     /**
-     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     @Import(name="identifier", required=true)
     private Output<String> identifier;
 
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public Output<String> identifier() {
@@ -95,14 +95,14 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
     }
 
     /**
-     * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     @Import(name="key", required=true)
     private Output<String> key;
 
     /**
-     * @return (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     public Output<String> key() {
@@ -110,14 +110,14 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
     }
 
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     @Import(name="metadata")
     private @Nullable Output<RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs> metadata;
 
     /**
-     * @return (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     public Optional<Output<RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs>> metadata() {
@@ -155,14 +155,14 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
     }
 
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Output<String> name() {
@@ -200,14 +200,14 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
     }
 
     /**
-     * (Updatable) A reference to the object&#39;s parent.
+     * (Updatable) A reference to the parent object.
      * 
      */
     @Import(name="parentRef")
     private @Nullable Output<RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs> parentRef;
 
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
     public Optional<Output<RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs>> parentRef() {
@@ -288,7 +288,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
         }
 
         /**
-         * @param description (Updatable) User-defined description for the folder.
+         * @param description (Updatable) User-defined description of the folder.
          * 
          * @return builder
          * 
@@ -299,7 +299,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
         }
 
         /**
-         * @param description (Updatable) User-defined description for the folder.
+         * @param description (Updatable) User-defined description of the folder.
          * 
          * @return builder
          * 
@@ -309,7 +309,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
         }
 
         /**
-         * @param externalKey (Updatable) The external key for the object.
+         * @param externalKey (Updatable) The external key of the object.
          * 
          * @return builder
          * 
@@ -320,7 +320,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
         }
 
         /**
-         * @param externalKey (Updatable) The external key for the object.
+         * @param externalKey (Updatable) The external key of the object.
          * 
          * @return builder
          * 
@@ -330,7 +330,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
         }
 
         /**
-         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -341,7 +341,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
         }
 
         /**
-         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -372,7 +372,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
         }
 
         /**
-         * @param key (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * @param key (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -383,7 +383,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
         }
 
         /**
-         * @param key (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * @param key (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -393,7 +393,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
         }
 
         /**
-         * @param metadata (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * @param metadata (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          * 
          * @return builder
          * 
@@ -404,7 +404,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
         }
 
         /**
-         * @param metadata (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * @param metadata (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          * 
          * @return builder
          * 
@@ -456,7 +456,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -467,7 +467,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -519,7 +519,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
         }
 
         /**
-         * @param parentRef (Updatable) A reference to the object&#39;s parent.
+         * @param parentRef (Updatable) A reference to the parent object.
          * 
          * @return builder
          * 
@@ -530,7 +530,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs ext
         }
 
         /**
-         * @param parentRef (Updatable) A reference to the object&#39;s parent.
+         * @param parentRef (Updatable) A reference to the parent object.
          * 
          * @return builder
          * 

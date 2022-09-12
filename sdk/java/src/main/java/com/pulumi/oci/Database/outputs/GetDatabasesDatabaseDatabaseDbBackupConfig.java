@@ -17,35 +17,24 @@ public final class GetDatabasesDatabaseDatabaseDbBackupConfig {
      * @return If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
      * 
      */
-    private final Boolean autoBackupEnabled;
+    private Boolean autoBackupEnabled;
     /**
      * @return Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
      * 
      */
-    private final String autoBackupWindow;
+    private String autoBackupWindow;
     /**
      * @return Backup destination details.
      * 
      */
-    private final List<GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
+    private List<GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
     /**
      * @return Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
      * 
      */
-    private final Integer recoveryWindowInDays;
+    private Integer recoveryWindowInDays;
 
-    @CustomType.Constructor
-    private GetDatabasesDatabaseDatabaseDbBackupConfig(
-        @CustomType.Parameter("autoBackupEnabled") Boolean autoBackupEnabled,
-        @CustomType.Parameter("autoBackupWindow") String autoBackupWindow,
-        @CustomType.Parameter("backupDestinationDetails") List<GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails,
-        @CustomType.Parameter("recoveryWindowInDays") Integer recoveryWindowInDays) {
-        this.autoBackupEnabled = autoBackupEnabled;
-        this.autoBackupWindow = autoBackupWindow;
-        this.backupDestinationDetails = backupDestinationDetails;
-        this.recoveryWindowInDays = recoveryWindowInDays;
-    }
-
+    private GetDatabasesDatabaseDatabaseDbBackupConfig() {}
     /**
      * @return If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
      * 
@@ -82,17 +71,13 @@ public final class GetDatabasesDatabaseDatabaseDbBackupConfig {
     public static Builder builder(GetDatabasesDatabaseDatabaseDbBackupConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean autoBackupEnabled;
         private String autoBackupWindow;
         private List<GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
         private Integer recoveryWindowInDays;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabasesDatabaseDatabaseDbBackupConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autoBackupEnabled = defaults.autoBackupEnabled;
@@ -101,14 +86,17 @@ public final class GetDatabasesDatabaseDatabaseDbBackupConfig {
     	      this.recoveryWindowInDays = defaults.recoveryWindowInDays;
         }
 
+        @CustomType.Setter
         public Builder autoBackupEnabled(Boolean autoBackupEnabled) {
             this.autoBackupEnabled = Objects.requireNonNull(autoBackupEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder autoBackupWindow(String autoBackupWindow) {
             this.autoBackupWindow = Objects.requireNonNull(autoBackupWindow);
             return this;
         }
+        @CustomType.Setter
         public Builder backupDestinationDetails(List<GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails) {
             this.backupDestinationDetails = Objects.requireNonNull(backupDestinationDetails);
             return this;
@@ -116,11 +104,18 @@ public final class GetDatabasesDatabaseDatabaseDbBackupConfig {
         public Builder backupDestinationDetails(GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail... backupDestinationDetails) {
             return backupDestinationDetails(List.of(backupDestinationDetails));
         }
+        @CustomType.Setter
         public Builder recoveryWindowInDays(Integer recoveryWindowInDays) {
             this.recoveryWindowInDays = Objects.requireNonNull(recoveryWindowInDays);
             return this;
-        }        public GetDatabasesDatabaseDatabaseDbBackupConfig build() {
-            return new GetDatabasesDatabaseDatabaseDbBackupConfig(autoBackupEnabled, autoBackupWindow, backupDestinationDetails, recoveryWindowInDays);
+        }
+        public GetDatabasesDatabaseDatabaseDbBackupConfig build() {
+            final var o = new GetDatabasesDatabaseDatabaseDbBackupConfig();
+            o.autoBackupEnabled = autoBackupEnabled;
+            o.autoBackupWindow = autoBackupWindow;
+            o.backupDestinationDetails = backupDestinationDetails;
+            o.recoveryWindowInDays = recoveryWindowInDays;
+            return o;
         }
     }
 }

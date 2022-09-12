@@ -18,115 +18,85 @@ public final class GetDetectorRecipeResult {
      * @return compartmentId of detector recipe
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Description for DetectorRecipeDetectorRule.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return detector for the rule
      * 
      */
-    private final String detector;
-    private final String detectorRecipeId;
+    private String detector;
+    private String detectorRecipeId;
     /**
      * @return List of detector rules for the detector type for recipe - user input
      * 
      */
-    private final List<GetDetectorRecipeDetectorRule> detectorRules;
+    private List<GetDetectorRecipeDetectorRule> detectorRules;
     /**
-     * @return Display name for DetectorRecipeDetectorRule.
+     * @return The display name of entity
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return List of effective detector rules for the detector type for recipe after applying defaults
      * 
      */
-    private final List<GetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules;
+    private List<GetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Ocid for detector recipe
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Owner of detector recipe
      * 
      */
-    private final String owner;
+    private String owner;
     /**
      * @return Recipe Ocid of the Source Recipe to be cloned
      * 
      */
-    private final String sourceDetectorRecipeId;
+    private String sourceDetectorRecipeId;
     /**
      * @return The current state of the resource.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
+    /**
+     * @return The recipe attached to targets
+     * 
+     */
+    private List<String> targetIds;
     /**
      * @return The date and time the detector recipe was created. Format defined by RFC3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the detector recipe was updated. Format defined by RFC3339.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetDetectorRecipeResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("detector") String detector,
-        @CustomType.Parameter("detectorRecipeId") String detectorRecipeId,
-        @CustomType.Parameter("detectorRules") List<GetDetectorRecipeDetectorRule> detectorRules,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("effectiveDetectorRules") List<GetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("owner") String owner,
-        @CustomType.Parameter("sourceDetectorRecipeId") String sourceDetectorRecipeId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.detector = detector;
-        this.detectorRecipeId = detectorRecipeId;
-        this.detectorRules = detectorRules;
-        this.displayName = displayName;
-        this.effectiveDetectorRules = effectiveDetectorRules;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.owner = owner;
-        this.sourceDetectorRecipeId = sourceDetectorRecipeId;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetDetectorRecipeResult() {}
     /**
      * @return compartmentId of detector recipe
      * 
@@ -166,7 +136,7 @@ public final class GetDetectorRecipeResult {
         return this.detectorRules;
     }
     /**
-     * @return Display name for DetectorRecipeDetectorRule.
+     * @return The display name of entity
      * 
      */
     public String displayName() {
@@ -222,6 +192,13 @@ public final class GetDetectorRecipeResult {
         return this.systemTags;
     }
     /**
+     * @return The recipe attached to targets
+     * 
+     */
+    public List<String> targetIds() {
+        return this.targetIds;
+    }
+    /**
      * @return The date and time the detector recipe was created. Format defined by RFC3339.
      * 
      */
@@ -243,7 +220,7 @@ public final class GetDetectorRecipeResult {
     public static Builder builder(GetDetectorRecipeResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -259,13 +236,10 @@ public final class GetDetectorRecipeResult {
         private String sourceDetectorRecipeId;
         private String state;
         private Map<String,Object> systemTags;
+        private List<String> targetIds;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDetectorRecipeResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -282,30 +256,37 @@ public final class GetDetectorRecipeResult {
     	      this.sourceDetectorRecipeId = defaults.sourceDetectorRecipeId;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
+    	      this.targetIds = defaults.targetIds;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder detector(String detector) {
             this.detector = Objects.requireNonNull(detector);
             return this;
         }
+        @CustomType.Setter
         public Builder detectorRecipeId(String detectorRecipeId) {
             this.detectorRecipeId = Objects.requireNonNull(detectorRecipeId);
             return this;
         }
+        @CustomType.Setter
         public Builder detectorRules(List<GetDetectorRecipeDetectorRule> detectorRules) {
             this.detectorRules = Objects.requireNonNull(detectorRules);
             return this;
@@ -313,10 +294,12 @@ public final class GetDetectorRecipeResult {
         public Builder detectorRules(GetDetectorRecipeDetectorRule... detectorRules) {
             return detectorRules(List.of(detectorRules));
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder effectiveDetectorRules(List<GetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules) {
             this.effectiveDetectorRules = Objects.requireNonNull(effectiveDetectorRules);
             return this;
@@ -324,39 +307,74 @@ public final class GetDetectorRecipeResult {
         public Builder effectiveDetectorRules(GetDetectorRecipeEffectiveDetectorRule... effectiveDetectorRules) {
             return effectiveDetectorRules(List.of(effectiveDetectorRules));
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder owner(String owner) {
             this.owner = Objects.requireNonNull(owner);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceDetectorRecipeId(String sourceDetectorRecipeId) {
             this.sourceDetectorRecipeId = Objects.requireNonNull(sourceDetectorRecipeId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
+        public Builder targetIds(List<String> targetIds) {
+            this.targetIds = Objects.requireNonNull(targetIds);
+            return this;
+        }
+        public Builder targetIds(String... targetIds) {
+            return targetIds(List.of(targetIds));
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetDetectorRecipeResult build() {
-            return new GetDetectorRecipeResult(compartmentId, definedTags, description, detector, detectorRecipeId, detectorRules, displayName, effectiveDetectorRules, freeformTags, id, owner, sourceDetectorRecipeId, state, systemTags, timeCreated, timeUpdated);
+        }
+        public GetDetectorRecipeResult build() {
+            final var o = new GetDetectorRecipeResult();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.detector = detector;
+            o.detectorRecipeId = detectorRecipeId;
+            o.detectorRules = detectorRules;
+            o.displayName = displayName;
+            o.effectiveDetectorRules = effectiveDetectorRules;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.owner = owner;
+            o.sourceDetectorRecipeId = sourceDetectorRecipeId;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.targetIds = targetIds;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

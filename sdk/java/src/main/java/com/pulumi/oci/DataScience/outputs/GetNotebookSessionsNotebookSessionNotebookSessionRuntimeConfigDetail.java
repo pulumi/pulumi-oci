@@ -17,21 +17,14 @@ public final class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfi
      * @return Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
      * 
      */
-    private final Map<String,Object> customEnvironmentVariables;
+    private Map<String,Object> customEnvironmentVariables;
     /**
      * @return Git configuration Details.
      * 
      */
-    private final List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail> notebookSessionGitConfigDetails;
+    private List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail> notebookSessionGitConfigDetails;
 
-    @CustomType.Constructor
-    private GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail(
-        @CustomType.Parameter("customEnvironmentVariables") Map<String,Object> customEnvironmentVariables,
-        @CustomType.Parameter("notebookSessionGitConfigDetails") List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail> notebookSessionGitConfigDetails) {
-        this.customEnvironmentVariables = customEnvironmentVariables;
-        this.notebookSessionGitConfigDetails = notebookSessionGitConfigDetails;
-    }
-
+    private GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail() {}
     /**
      * @return Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
      * 
@@ -54,33 +47,35 @@ public final class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfi
     public static Builder builder(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> customEnvironmentVariables;
         private List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail> notebookSessionGitConfigDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.customEnvironmentVariables = defaults.customEnvironmentVariables;
     	      this.notebookSessionGitConfigDetails = defaults.notebookSessionGitConfigDetails;
         }
 
+        @CustomType.Setter
         public Builder customEnvironmentVariables(Map<String,Object> customEnvironmentVariables) {
             this.customEnvironmentVariables = Objects.requireNonNull(customEnvironmentVariables);
             return this;
         }
+        @CustomType.Setter
         public Builder notebookSessionGitConfigDetails(List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail> notebookSessionGitConfigDetails) {
             this.notebookSessionGitConfigDetails = Objects.requireNonNull(notebookSessionGitConfigDetails);
             return this;
         }
         public Builder notebookSessionGitConfigDetails(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail... notebookSessionGitConfigDetails) {
             return notebookSessionGitConfigDetails(List.of(notebookSessionGitConfigDetails));
-        }        public GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail build() {
-            return new GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail(customEnvironmentVariables, notebookSessionGitConfigDetails);
+        }
+        public GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail build() {
+            final var o = new GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail();
+            o.customEnvironmentVariables = customEnvironmentVariables;
+            o.notebookSessionGitConfigDetails = notebookSessionGitConfigDetails;
+            return o;
         }
     }
 }

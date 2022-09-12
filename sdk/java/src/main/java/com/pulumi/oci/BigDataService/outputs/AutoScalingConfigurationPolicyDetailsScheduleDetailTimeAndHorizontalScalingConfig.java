@@ -16,21 +16,14 @@ public final class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHor
      * @return (Updatable) This value is the desired number of nodes in the cluster.
      * 
      */
-    private final @Nullable Integer targetNodeCount;
+    private @Nullable Integer targetNodeCount;
     /**
      * @return (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
      * 
      */
-    private final @Nullable String timeRecurrence;
+    private @Nullable String timeRecurrence;
 
-    @CustomType.Constructor
-    private AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig(
-        @CustomType.Parameter("targetNodeCount") @Nullable Integer targetNodeCount,
-        @CustomType.Parameter("timeRecurrence") @Nullable String timeRecurrence) {
-        this.targetNodeCount = targetNodeCount;
-        this.timeRecurrence = timeRecurrence;
-    }
-
+    private AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig() {}
     /**
      * @return (Updatable) This value is the desired number of nodes in the cluster.
      * 
@@ -53,30 +46,32 @@ public final class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHor
     public static Builder builder(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer targetNodeCount;
         private @Nullable String timeRecurrence;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.targetNodeCount = defaults.targetNodeCount;
     	      this.timeRecurrence = defaults.timeRecurrence;
         }
 
+        @CustomType.Setter
         public Builder targetNodeCount(@Nullable Integer targetNodeCount) {
             this.targetNodeCount = targetNodeCount;
             return this;
         }
+        @CustomType.Setter
         public Builder timeRecurrence(@Nullable String timeRecurrence) {
             this.timeRecurrence = timeRecurrence;
             return this;
-        }        public AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig build() {
-            return new AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig(targetNodeCount, timeRecurrence);
+        }
+        public AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig build() {
+            final var o = new AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig();
+            o.targetNodeCount = targetNodeCount;
+            o.timeRecurrence = timeRecurrence;
+            return o;
         }
     }
 }

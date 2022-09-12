@@ -25,7 +25,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? SecurityZoneId { get; set; }
 
         /// <summary>
-        /// possible type of targets(compartment/HCMCloud/ERPCloud)
+        /// possible type of targets(COMPARTMENT/FACLOUD)
         /// </summary>
         [Input("targetResourceType")]
         public Input<string>? TargetResourceType { get; set; }

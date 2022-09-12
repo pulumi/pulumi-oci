@@ -13,24 +13,15 @@ public final class GetBootVolumeBackupSourceDetail {
      * @return The OCID of the boot volume backup.
      * 
      */
-    private final String bootVolumeBackupId;
+    private String bootVolumeBackupId;
     /**
      * @return The OCID of the Key Management master encryption assigned to the boot volume backup. For more information about the Key Management service and encryption keys, see [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      * 
      */
-    private final String kmsKeyId;
-    private final String region;
+    private String kmsKeyId;
+    private String region;
 
-    @CustomType.Constructor
-    private GetBootVolumeBackupSourceDetail(
-        @CustomType.Parameter("bootVolumeBackupId") String bootVolumeBackupId,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("region") String region) {
-        this.bootVolumeBackupId = bootVolumeBackupId;
-        this.kmsKeyId = kmsKeyId;
-        this.region = region;
-    }
-
+    private GetBootVolumeBackupSourceDetail() {}
     /**
      * @return The OCID of the boot volume backup.
      * 
@@ -56,16 +47,12 @@ public final class GetBootVolumeBackupSourceDetail {
     public static Builder builder(GetBootVolumeBackupSourceDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bootVolumeBackupId;
         private String kmsKeyId;
         private String region;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBootVolumeBackupSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bootVolumeBackupId = defaults.bootVolumeBackupId;
@@ -73,19 +60,27 @@ public final class GetBootVolumeBackupSourceDetail {
     	      this.region = defaults.region;
         }
 
+        @CustomType.Setter
         public Builder bootVolumeBackupId(String bootVolumeBackupId) {
             this.bootVolumeBackupId = Objects.requireNonNull(bootVolumeBackupId);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder region(String region) {
             this.region = Objects.requireNonNull(region);
             return this;
-        }        public GetBootVolumeBackupSourceDetail build() {
-            return new GetBootVolumeBackupSourceDetail(bootVolumeBackupId, kmsKeyId, region);
+        }
+        public GetBootVolumeBackupSourceDetail build() {
+            final var o = new GetBootVolumeBackupSourceDetail();
+            o.bootVolumeBackupId = bootVolumeBackupId;
+            o.kmsKeyId = kmsKeyId;
+            o.region = region;
+            return o;
         }
     }
 }

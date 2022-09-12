@@ -19,114 +19,77 @@ public final class GetVolumeGroupsVolumeGroup {
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
-    private final String backupPolicyId;
+    private String availabilityDomain;
+    private String backupPolicyId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID for the volume group.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Specifies whether the newly created cloned volume group&#39;s data has finished copying from the source volume group or backup.
      * 
      */
-    private final Boolean isHydrated;
-    private final Boolean preserveVolumeReplica;
+    private Boolean isHydrated;
+    private Boolean preserveVolumeReplica;
     /**
      * @return The aggregate size of the volume group in GBs.
      * 
      */
-    private final String sizeInGbs;
+    private String sizeInGbs;
     /**
      * @return The aggregate size of the volume group in MBs.
      * 
      */
-    private final String sizeInMbs;
+    private String sizeInMbs;
     /**
      * @return Specifies the source for a volume group.
      * 
      */
-    private final List<GetVolumeGroupsVolumeGroupSourceDetail> sourceDetails;
+    private List<GetVolumeGroupsVolumeGroupSourceDetail> sourceDetails;
     /**
      * @return A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the volume group was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The list of volume group replicas of this volume group.
      * 
      */
-    private final List<GetVolumeGroupsVolumeGroupVolumeGroupReplica> volumeGroupReplicas;
-    private final Boolean volumeGroupReplicasDeletion;
+    private List<GetVolumeGroupsVolumeGroupVolumeGroupReplica> volumeGroupReplicas;
+    private Boolean volumeGroupReplicasDeletion;
     /**
      * @return OCIDs for the volumes in this volume group.
      * 
      */
-    private final List<String> volumeIds;
+    private List<String> volumeIds;
 
-    @CustomType.Constructor
-    private GetVolumeGroupsVolumeGroup(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("backupPolicyId") String backupPolicyId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isHydrated") Boolean isHydrated,
-        @CustomType.Parameter("preserveVolumeReplica") Boolean preserveVolumeReplica,
-        @CustomType.Parameter("sizeInGbs") String sizeInGbs,
-        @CustomType.Parameter("sizeInMbs") String sizeInMbs,
-        @CustomType.Parameter("sourceDetails") List<GetVolumeGroupsVolumeGroupSourceDetail> sourceDetails,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("volumeGroupReplicas") List<GetVolumeGroupsVolumeGroupVolumeGroupReplica> volumeGroupReplicas,
-        @CustomType.Parameter("volumeGroupReplicasDeletion") Boolean volumeGroupReplicasDeletion,
-        @CustomType.Parameter("volumeIds") List<String> volumeIds) {
-        this.availabilityDomain = availabilityDomain;
-        this.backupPolicyId = backupPolicyId;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isHydrated = isHydrated;
-        this.preserveVolumeReplica = preserveVolumeReplica;
-        this.sizeInGbs = sizeInGbs;
-        this.sizeInMbs = sizeInMbs;
-        this.sourceDetails = sourceDetails;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.volumeGroupReplicas = volumeGroupReplicas;
-        this.volumeGroupReplicasDeletion = volumeGroupReplicasDeletion;
-        this.volumeIds = volumeIds;
-    }
-
+    private GetVolumeGroupsVolumeGroup() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
@@ -242,7 +205,7 @@ public final class GetVolumeGroupsVolumeGroup {
     public static Builder builder(GetVolumeGroupsVolumeGroup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String backupPolicyId;
@@ -261,11 +224,7 @@ public final class GetVolumeGroupsVolumeGroup {
         private List<GetVolumeGroupsVolumeGroupVolumeGroupReplica> volumeGroupReplicas;
         private Boolean volumeGroupReplicasDeletion;
         private List<String> volumeIds;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumeGroupsVolumeGroup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -287,50 +246,62 @@ public final class GetVolumeGroupsVolumeGroup {
     	      this.volumeIds = defaults.volumeIds;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder backupPolicyId(String backupPolicyId) {
             this.backupPolicyId = Objects.requireNonNull(backupPolicyId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isHydrated(Boolean isHydrated) {
             this.isHydrated = Objects.requireNonNull(isHydrated);
             return this;
         }
+        @CustomType.Setter
         public Builder preserveVolumeReplica(Boolean preserveVolumeReplica) {
             this.preserveVolumeReplica = Objects.requireNonNull(preserveVolumeReplica);
             return this;
         }
+        @CustomType.Setter
         public Builder sizeInGbs(String sizeInGbs) {
             this.sizeInGbs = Objects.requireNonNull(sizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder sizeInMbs(String sizeInMbs) {
             this.sizeInMbs = Objects.requireNonNull(sizeInMbs);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceDetails(List<GetVolumeGroupsVolumeGroupSourceDetail> sourceDetails) {
             this.sourceDetails = Objects.requireNonNull(sourceDetails);
             return this;
@@ -338,14 +309,17 @@ public final class GetVolumeGroupsVolumeGroup {
         public Builder sourceDetails(GetVolumeGroupsVolumeGroupSourceDetail... sourceDetails) {
             return sourceDetails(List.of(sourceDetails));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeGroupReplicas(List<GetVolumeGroupsVolumeGroupVolumeGroupReplica> volumeGroupReplicas) {
             this.volumeGroupReplicas = Objects.requireNonNull(volumeGroupReplicas);
             return this;
@@ -353,18 +327,39 @@ public final class GetVolumeGroupsVolumeGroup {
         public Builder volumeGroupReplicas(GetVolumeGroupsVolumeGroupVolumeGroupReplica... volumeGroupReplicas) {
             return volumeGroupReplicas(List.of(volumeGroupReplicas));
         }
+        @CustomType.Setter
         public Builder volumeGroupReplicasDeletion(Boolean volumeGroupReplicasDeletion) {
             this.volumeGroupReplicasDeletion = Objects.requireNonNull(volumeGroupReplicasDeletion);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeIds(List<String> volumeIds) {
             this.volumeIds = Objects.requireNonNull(volumeIds);
             return this;
         }
         public Builder volumeIds(String... volumeIds) {
             return volumeIds(List.of(volumeIds));
-        }        public GetVolumeGroupsVolumeGroup build() {
-            return new GetVolumeGroupsVolumeGroup(availabilityDomain, backupPolicyId, compartmentId, definedTags, displayName, freeformTags, id, isHydrated, preserveVolumeReplica, sizeInGbs, sizeInMbs, sourceDetails, state, timeCreated, volumeGroupReplicas, volumeGroupReplicasDeletion, volumeIds);
+        }
+        public GetVolumeGroupsVolumeGroup build() {
+            final var o = new GetVolumeGroupsVolumeGroup();
+            o.availabilityDomain = availabilityDomain;
+            o.backupPolicyId = backupPolicyId;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isHydrated = isHydrated;
+            o.preserveVolumeReplica = preserveVolumeReplica;
+            o.sizeInGbs = sizeInGbs;
+            o.sizeInMbs = sizeInMbs;
+            o.sourceDetails = sourceDetails;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.volumeGroupReplicas = volumeGroupReplicas;
+            o.volumeGroupReplicasDeletion = volumeGroupReplicasDeletion;
+            o.volumeIds = volumeIds;
+            return o;
         }
     }
 }

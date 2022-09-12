@@ -13,21 +13,14 @@ public final class GetAutonomousDatabaseApexDetail {
      * @return The Oracle APEX Application Development version.
      * 
      */
-    private final String apexVersion;
+    private String apexVersion;
     /**
      * @return The Oracle REST Data Services (ORDS) version.
      * 
      */
-    private final String ordsVersion;
+    private String ordsVersion;
 
-    @CustomType.Constructor
-    private GetAutonomousDatabaseApexDetail(
-        @CustomType.Parameter("apexVersion") String apexVersion,
-        @CustomType.Parameter("ordsVersion") String ordsVersion) {
-        this.apexVersion = apexVersion;
-        this.ordsVersion = ordsVersion;
-    }
-
+    private GetAutonomousDatabaseApexDetail() {}
     /**
      * @return The Oracle APEX Application Development version.
      * 
@@ -50,30 +43,32 @@ public final class GetAutonomousDatabaseApexDetail {
     public static Builder builder(GetAutonomousDatabaseApexDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apexVersion;
         private String ordsVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDatabaseApexDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apexVersion = defaults.apexVersion;
     	      this.ordsVersion = defaults.ordsVersion;
         }
 
+        @CustomType.Setter
         public Builder apexVersion(String apexVersion) {
             this.apexVersion = Objects.requireNonNull(apexVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder ordsVersion(String ordsVersion) {
             this.ordsVersion = Objects.requireNonNull(ordsVersion);
             return this;
-        }        public GetAutonomousDatabaseApexDetail build() {
-            return new GetAutonomousDatabaseApexDetail(apexVersion, ordsVersion);
+        }
+        public GetAutonomousDatabaseApexDetail build() {
+            final var o = new GetAutonomousDatabaseApexDetail();
+            o.apexVersion = apexVersion;
+            o.ordsVersion = ordsVersion;
+            return o;
         }
     }
 }

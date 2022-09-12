@@ -12,17 +12,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class NetworkSecurityGroupSecurityRuleUdpOptions {
-    private final @Nullable NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRange destinationPortRange;
-    private final @Nullable NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRange sourcePortRange;
+    private @Nullable NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRange destinationPortRange;
+    private @Nullable NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRange sourcePortRange;
 
-    @CustomType.Constructor
-    private NetworkSecurityGroupSecurityRuleUdpOptions(
-        @CustomType.Parameter("destinationPortRange") @Nullable NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRange destinationPortRange,
-        @CustomType.Parameter("sourcePortRange") @Nullable NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRange sourcePortRange) {
-        this.destinationPortRange = destinationPortRange;
-        this.sourcePortRange = sourcePortRange;
-    }
-
+    private NetworkSecurityGroupSecurityRuleUdpOptions() {}
     public Optional<NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRange> destinationPortRange() {
         return Optional.ofNullable(this.destinationPortRange);
     }
@@ -37,30 +30,32 @@ public final class NetworkSecurityGroupSecurityRuleUdpOptions {
     public static Builder builder(NetworkSecurityGroupSecurityRuleUdpOptions defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRange destinationPortRange;
         private @Nullable NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRange sourcePortRange;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NetworkSecurityGroupSecurityRuleUdpOptions defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.destinationPortRange = defaults.destinationPortRange;
     	      this.sourcePortRange = defaults.sourcePortRange;
         }
 
+        @CustomType.Setter
         public Builder destinationPortRange(@Nullable NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRange destinationPortRange) {
             this.destinationPortRange = destinationPortRange;
             return this;
         }
+        @CustomType.Setter
         public Builder sourcePortRange(@Nullable NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRange sourcePortRange) {
             this.sourcePortRange = sourcePortRange;
             return this;
-        }        public NetworkSecurityGroupSecurityRuleUdpOptions build() {
-            return new NetworkSecurityGroupSecurityRuleUdpOptions(destinationPortRange, sourcePortRange);
+        }
+        public NetworkSecurityGroupSecurityRuleUdpOptions build() {
+            final var o = new NetworkSecurityGroupSecurityRuleUdpOptions();
+            o.destinationPortRange = destinationPortRange;
+            o.sourcePortRange = sourcePortRange;
+            return o;
         }
     }
 }

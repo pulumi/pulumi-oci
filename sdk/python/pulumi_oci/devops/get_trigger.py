@@ -22,13 +22,16 @@ class GetTriggerResult:
     """
     A collection of values returned by getTrigger.
     """
-    def __init__(__self__, actions=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, project_id=None, repository_id=None, state=None, system_tags=None, time_created=None, time_updated=None, trigger_id=None, trigger_source=None, trigger_url=None):
+    def __init__(__self__, actions=None, compartment_id=None, connection_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, project_id=None, repository_id=None, state=None, system_tags=None, time_created=None, time_updated=None, trigger_id=None, trigger_source=None, trigger_url=None):
         if actions and not isinstance(actions, list):
             raise TypeError("Expected argument 'actions' to be a list")
         pulumi.set(__self__, "actions", actions)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if connection_id and not isinstance(connection_id, str):
+            raise TypeError("Expected argument 'connection_id' to be a str")
+        pulumi.set(__self__, "connection_id", connection_id)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -90,6 +93,11 @@ class GetTriggerResult:
         The OCID of the compartment that contains the trigger.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> str:
+        return pulumi.get(self, "connection_id")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -217,6 +225,7 @@ class AwaitableGetTriggerResult(GetTriggerResult):
         return GetTriggerResult(
             actions=self.actions,
             compartment_id=self.compartment_id,
+            connection_id=self.connection_id,
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
@@ -261,6 +270,7 @@ def get_trigger(trigger_id: Optional[str] = None,
     return AwaitableGetTriggerResult(
         actions=__ret__.actions,
         compartment_id=__ret__.compartment_id,
+        connection_id=__ret__.connection_id,
         defined_tags=__ret__.defined_tags,
         description=__ret__.description,
         display_name=__ret__.display_name,

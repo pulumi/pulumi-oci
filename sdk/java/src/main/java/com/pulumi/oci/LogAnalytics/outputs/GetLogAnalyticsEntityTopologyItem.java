@@ -15,21 +15,14 @@ public final class GetLogAnalyticsEntityTopologyItem {
      * @return Collection of log analytics entity relationship links.
      * 
      */
-    private final List<GetLogAnalyticsEntityTopologyItemLink> links;
+    private List<GetLogAnalyticsEntityTopologyItemLink> links;
     /**
      * @return Collection of log analytics entities.
      * 
      */
-    private final List<GetLogAnalyticsEntityTopologyItemNode> nodes;
+    private List<GetLogAnalyticsEntityTopologyItemNode> nodes;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsEntityTopologyItem(
-        @CustomType.Parameter("links") List<GetLogAnalyticsEntityTopologyItemLink> links,
-        @CustomType.Parameter("nodes") List<GetLogAnalyticsEntityTopologyItemNode> nodes) {
-        this.links = links;
-        this.nodes = nodes;
-    }
-
+    private GetLogAnalyticsEntityTopologyItem() {}
     /**
      * @return Collection of log analytics entity relationship links.
      * 
@@ -52,21 +45,18 @@ public final class GetLogAnalyticsEntityTopologyItem {
     public static Builder builder(GetLogAnalyticsEntityTopologyItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetLogAnalyticsEntityTopologyItemLink> links;
         private List<GetLogAnalyticsEntityTopologyItemNode> nodes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsEntityTopologyItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.links = defaults.links;
     	      this.nodes = defaults.nodes;
         }
 
+        @CustomType.Setter
         public Builder links(List<GetLogAnalyticsEntityTopologyItemLink> links) {
             this.links = Objects.requireNonNull(links);
             return this;
@@ -74,14 +64,19 @@ public final class GetLogAnalyticsEntityTopologyItem {
         public Builder links(GetLogAnalyticsEntityTopologyItemLink... links) {
             return links(List.of(links));
         }
+        @CustomType.Setter
         public Builder nodes(List<GetLogAnalyticsEntityTopologyItemNode> nodes) {
             this.nodes = Objects.requireNonNull(nodes);
             return this;
         }
         public Builder nodes(GetLogAnalyticsEntityTopologyItemNode... nodes) {
             return nodes(List.of(nodes));
-        }        public GetLogAnalyticsEntityTopologyItem build() {
-            return new GetLogAnalyticsEntityTopologyItem(links, nodes);
+        }
+        public GetLogAnalyticsEntityTopologyItem build() {
+            final var o = new GetLogAnalyticsEntityTopologyItem();
+            o.links = links;
+            o.nodes = nodes;
+            return o;
         }
     }
 }

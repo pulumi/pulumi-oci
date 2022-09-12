@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.BootVolumeAutotunePolicyArgs;
 import com.pulumi.oci.Core.inputs.BootVolumeBootVolumeReplicaArgs;
 import com.pulumi.oci.Core.inputs.BootVolumeSourceDetailsArgs;
 import java.lang.Boolean;
@@ -20,6 +21,21 @@ import javax.annotation.Nullable;
 public final class BootVolumeArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final BootVolumeArgs Empty = new BootVolumeArgs();
+
+    /**
+     * (Updatable) The list of autotune policies to be enabled for this volume.
+     * 
+     */
+    @Import(name="autotunePolicies")
+    private @Nullable Output<List<BootVolumeAutotunePolicyArgs>> autotunePolicies;
+
+    /**
+     * @return (Updatable) The list of autotune policies to be enabled for this volume.
+     * 
+     */
+    public Optional<Output<List<BootVolumeAutotunePolicyArgs>>> autotunePolicies() {
+        return Optional.ofNullable(this.autotunePolicies);
+    }
 
     /**
      * (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
@@ -142,14 +158,14 @@ public final class BootVolumeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+     * (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      * 
      */
     @Import(name="isAutoTuneEnabled")
     private @Nullable Output<Boolean> isAutoTuneEnabled;
 
     /**
-     * @return (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+     * @return (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      * 
      */
     public Optional<Output<Boolean>> isAutoTuneEnabled() {
@@ -211,6 +227,7 @@ public final class BootVolumeArgs extends com.pulumi.resources.ResourceArgs {
     private BootVolumeArgs() {}
 
     private BootVolumeArgs(BootVolumeArgs $) {
+        this.autotunePolicies = $.autotunePolicies;
         this.availabilityDomain = $.availabilityDomain;
         this.backupPolicyId = $.backupPolicyId;
         this.bootVolumeReplicas = $.bootVolumeReplicas;
@@ -242,6 +259,37 @@ public final class BootVolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(BootVolumeArgs defaults) {
             $ = new BootVolumeArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param autotunePolicies (Updatable) The list of autotune policies to be enabled for this volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autotunePolicies(@Nullable Output<List<BootVolumeAutotunePolicyArgs>> autotunePolicies) {
+            $.autotunePolicies = autotunePolicies;
+            return this;
+        }
+
+        /**
+         * @param autotunePolicies (Updatable) The list of autotune policies to be enabled for this volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autotunePolicies(List<BootVolumeAutotunePolicyArgs> autotunePolicies) {
+            return autotunePolicies(Output.of(autotunePolicies));
+        }
+
+        /**
+         * @param autotunePolicies (Updatable) The list of autotune policies to be enabled for this volume.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autotunePolicies(BootVolumeAutotunePolicyArgs... autotunePolicies) {
+            return autotunePolicies(List.of(autotunePolicies));
         }
 
         /**
@@ -419,7 +467,7 @@ public final class BootVolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isAutoTuneEnabled (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+         * @param isAutoTuneEnabled (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
          * 
          * @return builder
          * 
@@ -430,7 +478,7 @@ public final class BootVolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isAutoTuneEnabled (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+         * @param isAutoTuneEnabled (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
          * 
          * @return builder
          * 

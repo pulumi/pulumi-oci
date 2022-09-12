@@ -16,28 +16,19 @@ public final class DataSafeConfigurationGlobalSetting {
      * @return The paid usage option chosen by the customer admin.
      * 
      */
-    private final @Nullable Boolean isPaidUsage;
+    private @Nullable Boolean isPaidUsage;
     /**
      * @return The offline retention period in months.
      * 
      */
-    private final @Nullable Integer offlineRetentionPeriod;
+    private @Nullable Integer offlineRetentionPeriod;
     /**
      * @return The online retention period in months.
      * 
      */
-    private final @Nullable Integer onlineRetentionPeriod;
+    private @Nullable Integer onlineRetentionPeriod;
 
-    @CustomType.Constructor
-    private DataSafeConfigurationGlobalSetting(
-        @CustomType.Parameter("isPaidUsage") @Nullable Boolean isPaidUsage,
-        @CustomType.Parameter("offlineRetentionPeriod") @Nullable Integer offlineRetentionPeriod,
-        @CustomType.Parameter("onlineRetentionPeriod") @Nullable Integer onlineRetentionPeriod) {
-        this.isPaidUsage = isPaidUsage;
-        this.offlineRetentionPeriod = offlineRetentionPeriod;
-        this.onlineRetentionPeriod = onlineRetentionPeriod;
-    }
-
+    private DataSafeConfigurationGlobalSetting() {}
     /**
      * @return The paid usage option chosen by the customer admin.
      * 
@@ -67,16 +58,12 @@ public final class DataSafeConfigurationGlobalSetting {
     public static Builder builder(DataSafeConfigurationGlobalSetting defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isPaidUsage;
         private @Nullable Integer offlineRetentionPeriod;
         private @Nullable Integer onlineRetentionPeriod;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DataSafeConfigurationGlobalSetting defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isPaidUsage = defaults.isPaidUsage;
@@ -84,19 +71,27 @@ public final class DataSafeConfigurationGlobalSetting {
     	      this.onlineRetentionPeriod = defaults.onlineRetentionPeriod;
         }
 
+        @CustomType.Setter
         public Builder isPaidUsage(@Nullable Boolean isPaidUsage) {
             this.isPaidUsage = isPaidUsage;
             return this;
         }
+        @CustomType.Setter
         public Builder offlineRetentionPeriod(@Nullable Integer offlineRetentionPeriod) {
             this.offlineRetentionPeriod = offlineRetentionPeriod;
             return this;
         }
+        @CustomType.Setter
         public Builder onlineRetentionPeriod(@Nullable Integer onlineRetentionPeriod) {
             this.onlineRetentionPeriod = onlineRetentionPeriod;
             return this;
-        }        public DataSafeConfigurationGlobalSetting build() {
-            return new DataSafeConfigurationGlobalSetting(isPaidUsage, offlineRetentionPeriod, onlineRetentionPeriod);
+        }
+        public DataSafeConfigurationGlobalSetting build() {
+            final var o = new DataSafeConfigurationGlobalSetting();
+            o.isPaidUsage = isPaidUsage;
+            o.offlineRetentionPeriod = offlineRetentionPeriod;
+            o.onlineRetentionPeriod = onlineRetentionPeriod;
+            return o;
         }
     }
 }

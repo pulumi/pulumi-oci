@@ -170,7 +170,7 @@ class GetResolverResult:
 
     @property
     @pulumi.getter
-    def scope(self) -> str:
+    def scope(self) -> Optional[str]:
         return pulumi.get(self, "scope")
 
     @property
@@ -283,7 +283,7 @@ def get_resolver(resolver_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_resolver)
 def get_resolver_output(resolver_id: Optional[pulumi.Input[str]] = None,
-                        scope: Optional[pulumi.Input[str]] = None,
+                        scope: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResolverResult]:
     """
     This data source provides details about a specific Resolver resource in Oracle Cloud Infrastructure DNS service.

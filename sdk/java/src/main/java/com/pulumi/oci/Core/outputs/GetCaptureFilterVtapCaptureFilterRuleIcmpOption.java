@@ -13,21 +13,14 @@ public final class GetCaptureFilterVtapCaptureFilterRuleIcmpOption {
      * @return The ICMP code (optional).
      * 
      */
-    private final Integer code;
+    private Integer code;
     /**
      * @return The ICMP type.
      * 
      */
-    private final Integer type;
+    private Integer type;
 
-    @CustomType.Constructor
-    private GetCaptureFilterVtapCaptureFilterRuleIcmpOption(
-        @CustomType.Parameter("code") Integer code,
-        @CustomType.Parameter("type") Integer type) {
-        this.code = code;
-        this.type = type;
-    }
-
+    private GetCaptureFilterVtapCaptureFilterRuleIcmpOption() {}
     /**
      * @return The ICMP code (optional).
      * 
@@ -50,30 +43,32 @@ public final class GetCaptureFilterVtapCaptureFilterRuleIcmpOption {
     public static Builder builder(GetCaptureFilterVtapCaptureFilterRuleIcmpOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer code;
         private Integer type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCaptureFilterVtapCaptureFilterRuleIcmpOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.code = defaults.code;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder code(Integer code) {
             this.code = Objects.requireNonNull(code);
             return this;
         }
+        @CustomType.Setter
         public Builder type(Integer type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetCaptureFilterVtapCaptureFilterRuleIcmpOption build() {
-            return new GetCaptureFilterVtapCaptureFilterRuleIcmpOption(code, type);
+        }
+        public GetCaptureFilterVtapCaptureFilterRuleIcmpOption build() {
+            final var o = new GetCaptureFilterVtapCaptureFilterRuleIcmpOption();
+            o.code = code;
+            o.type = type;
+            return o;
         }
     }
 }

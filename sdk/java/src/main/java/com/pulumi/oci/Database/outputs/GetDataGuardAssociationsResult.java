@@ -17,31 +17,20 @@ public final class GetDataGuardAssociationsResult {
      * @return The list of data_guard_associations.
      * 
      */
-    private final List<GetDataGuardAssociationsDataGuardAssociation> dataGuardAssociations;
+    private List<GetDataGuardAssociationsDataGuardAssociation> dataGuardAssociations;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
      * 
      */
-    private final String databaseId;
-    private final @Nullable List<GetDataGuardAssociationsFilter> filters;
+    private String databaseId;
+    private @Nullable List<GetDataGuardAssociationsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetDataGuardAssociationsResult(
-        @CustomType.Parameter("dataGuardAssociations") List<GetDataGuardAssociationsDataGuardAssociation> dataGuardAssociations,
-        @CustomType.Parameter("databaseId") String databaseId,
-        @CustomType.Parameter("filters") @Nullable List<GetDataGuardAssociationsFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.dataGuardAssociations = dataGuardAssociations;
-        this.databaseId = databaseId;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetDataGuardAssociationsResult() {}
     /**
      * @return The list of data_guard_associations.
      * 
@@ -74,17 +63,13 @@ public final class GetDataGuardAssociationsResult {
     public static Builder builder(GetDataGuardAssociationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDataGuardAssociationsDataGuardAssociation> dataGuardAssociations;
         private String databaseId;
         private @Nullable List<GetDataGuardAssociationsFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDataGuardAssociationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dataGuardAssociations = defaults.dataGuardAssociations;
@@ -93,6 +78,7 @@ public final class GetDataGuardAssociationsResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder dataGuardAssociations(List<GetDataGuardAssociationsDataGuardAssociation> dataGuardAssociations) {
             this.dataGuardAssociations = Objects.requireNonNull(dataGuardAssociations);
             return this;
@@ -100,10 +86,12 @@ public final class GetDataGuardAssociationsResult {
         public Builder dataGuardAssociations(GetDataGuardAssociationsDataGuardAssociation... dataGuardAssociations) {
             return dataGuardAssociations(List.of(dataGuardAssociations));
         }
+        @CustomType.Setter
         public Builder databaseId(String databaseId) {
             this.databaseId = Objects.requireNonNull(databaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDataGuardAssociationsFilter> filters) {
             this.filters = filters;
             return this;
@@ -111,11 +99,18 @@ public final class GetDataGuardAssociationsResult {
         public Builder filters(GetDataGuardAssociationsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetDataGuardAssociationsResult build() {
-            return new GetDataGuardAssociationsResult(dataGuardAssociations, databaseId, filters, id);
+        }
+        public GetDataGuardAssociationsResult build() {
+            final var o = new GetDataGuardAssociationsResult();
+            o.dataGuardAssociations = dataGuardAssociations;
+            o.databaseId = databaseId;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

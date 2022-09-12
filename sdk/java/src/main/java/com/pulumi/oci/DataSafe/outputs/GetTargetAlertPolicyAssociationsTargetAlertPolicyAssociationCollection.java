@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection {
-    private final List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem> items;
+    private List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection(@CustomType.Parameter("items") List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection() {}
     public List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationC
     public static Builder builder(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem... items) {
             return items(List.of(items));
-        }        public GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection build() {
-            return new GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection(items);
+        }
+        public GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection build() {
+            final var o = new GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection();
+            o.items = items;
+            return o;
         }
     }
 }

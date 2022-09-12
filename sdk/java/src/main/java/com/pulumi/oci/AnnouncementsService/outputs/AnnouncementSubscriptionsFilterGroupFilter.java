@@ -13,21 +13,14 @@ public final class AnnouncementSubscriptionsFilterGroupFilter {
      * @return (Updatable) The type of filter.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return (Updatable) The value of the filter.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private AnnouncementSubscriptionsFilterGroupFilter(
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("value") String value) {
-        this.type = type;
-        this.value = value;
-    }
-
+    private AnnouncementSubscriptionsFilterGroupFilter() {}
     /**
      * @return (Updatable) The type of filter.
      * 
@@ -50,30 +43,32 @@ public final class AnnouncementSubscriptionsFilterGroupFilter {
     public static Builder builder(AnnouncementSubscriptionsFilterGroupFilter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String type;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AnnouncementSubscriptionsFilterGroupFilter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.type = defaults.type;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public AnnouncementSubscriptionsFilterGroupFilter build() {
-            return new AnnouncementSubscriptionsFilterGroupFilter(type, value);
+        }
+        public AnnouncementSubscriptionsFilterGroupFilter build() {
+            final var o = new AnnouncementSubscriptionsFilterGroupFilter();
+            o.type = type;
+            o.value = value;
+            return o;
         }
     }
 }

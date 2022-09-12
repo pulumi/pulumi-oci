@@ -14,35 +14,24 @@ public final class GetNotebookSessionShapesNotebookSessionShape {
      * @return The number of cores associated with this notebook session shape.
      * 
      */
-    private final Integer coreCount;
+    private Integer coreCount;
     /**
      * @return The amount of memory in GBs associated with this notebook session shape.
      * 
      */
-    private final Integer memoryInGbs;
+    private Integer memoryInGbs;
     /**
      * @return The name of the notebook session shape.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The family that the compute shape belongs to.
      * 
      */
-    private final String shapeSeries;
+    private String shapeSeries;
 
-    @CustomType.Constructor
-    private GetNotebookSessionShapesNotebookSessionShape(
-        @CustomType.Parameter("coreCount") Integer coreCount,
-        @CustomType.Parameter("memoryInGbs") Integer memoryInGbs,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("shapeSeries") String shapeSeries) {
-        this.coreCount = coreCount;
-        this.memoryInGbs = memoryInGbs;
-        this.name = name;
-        this.shapeSeries = shapeSeries;
-    }
-
+    private GetNotebookSessionShapesNotebookSessionShape() {}
     /**
      * @return The number of cores associated with this notebook session shape.
      * 
@@ -79,17 +68,13 @@ public final class GetNotebookSessionShapesNotebookSessionShape {
     public static Builder builder(GetNotebookSessionShapesNotebookSessionShape defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer coreCount;
         private Integer memoryInGbs;
         private String name;
         private String shapeSeries;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNotebookSessionShapesNotebookSessionShape defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.coreCount = defaults.coreCount;
@@ -98,23 +83,33 @@ public final class GetNotebookSessionShapesNotebookSessionShape {
     	      this.shapeSeries = defaults.shapeSeries;
         }
 
+        @CustomType.Setter
         public Builder coreCount(Integer coreCount) {
             this.coreCount = Objects.requireNonNull(coreCount);
             return this;
         }
+        @CustomType.Setter
         public Builder memoryInGbs(Integer memoryInGbs) {
             this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder shapeSeries(String shapeSeries) {
             this.shapeSeries = Objects.requireNonNull(shapeSeries);
             return this;
-        }        public GetNotebookSessionShapesNotebookSessionShape build() {
-            return new GetNotebookSessionShapesNotebookSessionShape(coreCount, memoryInGbs, name, shapeSeries);
+        }
+        public GetNotebookSessionShapesNotebookSessionShape build() {
+            final var o = new GetNotebookSessionShapesNotebookSessionShape();
+            o.coreCount = coreCount;
+            o.memoryInGbs = memoryInGbs;
+            o.name = name;
+            o.shapeSeries = shapeSeries;
+            return o;
         }
     }
 }

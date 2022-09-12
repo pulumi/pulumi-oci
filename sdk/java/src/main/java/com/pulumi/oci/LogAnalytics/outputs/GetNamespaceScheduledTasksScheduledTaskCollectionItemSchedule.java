@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule {
-    private final List<GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule> schedules;
+    private List<GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule> schedules;
 
-    @CustomType.Constructor
-    private GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule(@CustomType.Parameter("schedules") List<GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule> schedules) {
-        this.schedules = schedules;
-    }
-
+    private GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule() {}
     public List<GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule> schedules() {
         return this.schedules;
     }
@@ -28,27 +24,27 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule
     public static Builder builder(GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule> schedules;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.schedules = defaults.schedules;
         }
 
+        @CustomType.Setter
         public Builder schedules(List<GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule> schedules) {
             this.schedules = Objects.requireNonNull(schedules);
             return this;
         }
         public Builder schedules(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule... schedules) {
             return schedules(List.of(schedules));
-        }        public GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule build() {
-            return new GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule(schedules);
+        }
+        public GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule build() {
+            final var o = new GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule();
+            o.schedules = schedules;
+            return o;
         }
     }
 }

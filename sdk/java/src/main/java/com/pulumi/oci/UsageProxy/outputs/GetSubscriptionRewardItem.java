@@ -15,91 +15,64 @@ public final class GetSubscriptionRewardItem {
      * @return The number of rewards available for a specific usage period.
      * 
      */
-    private final Double availableRewards;
+    private Double availableRewards;
     /**
      * @return The number of rewards earned for the specific usage period.
      * 
      */
-    private final Double earnedRewards;
+    private Double earnedRewards;
     /**
      * @return The eligible usage amount for the usage period.
      * 
      */
-    private final Double eligibleUsageAmount;
+    private Double eligibleUsageAmount;
     /**
      * @return The ineligible usage amount for the usage period.
      * 
      */
-    private final Double ineligibleUsageAmount;
+    private Double ineligibleUsageAmount;
     /**
      * @return The boolean parameter to indicate whether or not the available rewards are manually posted.
      * 
      */
-    private final Boolean isManual;
+    private Boolean isManual;
     /**
      * @return The number of rewards redeemed for a specific month.
      * 
      */
-    private final Double redeemedRewards;
+    private Double redeemedRewards;
     /**
      * @return The date and time when rewards accrue.
      * 
      */
-    private final String timeRewardsEarned;
+    private String timeRewardsEarned;
     /**
      * @return The date and time when rewards expire.
      * 
      */
-    private final String timeRewardsExpired;
+    private String timeRewardsExpired;
     /**
      * @return The end date and time for the usage period.
      * 
      */
-    private final String timeUsageEnded;
+    private String timeUsageEnded;
     /**
      * @return The start date and time for the usage period.
      * 
      */
-    private final String timeUsageStarted;
+    private String timeUsageStarted;
     /**
      * @return The usage amount for the usage period.
      * 
      */
-    private final Double usageAmount;
+    private Double usageAmount;
     /**
      * @return The usage period ID.
      * 
      */
-    private final String usagePeriodKey;
+    private String usagePeriodKey;
 
-    @CustomType.Constructor
-    private GetSubscriptionRewardItem(
-        @CustomType.Parameter("availableRewards") Double availableRewards,
-        @CustomType.Parameter("earnedRewards") Double earnedRewards,
-        @CustomType.Parameter("eligibleUsageAmount") Double eligibleUsageAmount,
-        @CustomType.Parameter("ineligibleUsageAmount") Double ineligibleUsageAmount,
-        @CustomType.Parameter("isManual") Boolean isManual,
-        @CustomType.Parameter("redeemedRewards") Double redeemedRewards,
-        @CustomType.Parameter("timeRewardsEarned") String timeRewardsEarned,
-        @CustomType.Parameter("timeRewardsExpired") String timeRewardsExpired,
-        @CustomType.Parameter("timeUsageEnded") String timeUsageEnded,
-        @CustomType.Parameter("timeUsageStarted") String timeUsageStarted,
-        @CustomType.Parameter("usageAmount") Double usageAmount,
-        @CustomType.Parameter("usagePeriodKey") String usagePeriodKey) {
-        this.availableRewards = availableRewards;
-        this.earnedRewards = earnedRewards;
-        this.eligibleUsageAmount = eligibleUsageAmount;
-        this.ineligibleUsageAmount = ineligibleUsageAmount;
-        this.isManual = isManual;
-        this.redeemedRewards = redeemedRewards;
-        this.timeRewardsEarned = timeRewardsEarned;
-        this.timeRewardsExpired = timeRewardsExpired;
-        this.timeUsageEnded = timeUsageEnded;
-        this.timeUsageStarted = timeUsageStarted;
-        this.usageAmount = usageAmount;
-        this.usagePeriodKey = usagePeriodKey;
-    }
-
+    private GetSubscriptionRewardItem() {}
     /**
      * @return The number of rewards available for a specific usage period.
      * 
@@ -192,7 +165,7 @@ public final class GetSubscriptionRewardItem {
     public static Builder builder(GetSubscriptionRewardItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double availableRewards;
         private Double earnedRewards;
@@ -206,11 +179,7 @@ public final class GetSubscriptionRewardItem {
         private String timeUsageStarted;
         private Double usageAmount;
         private String usagePeriodKey;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionRewardItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availableRewards = defaults.availableRewards;
@@ -227,55 +196,81 @@ public final class GetSubscriptionRewardItem {
     	      this.usagePeriodKey = defaults.usagePeriodKey;
         }
 
+        @CustomType.Setter
         public Builder availableRewards(Double availableRewards) {
             this.availableRewards = Objects.requireNonNull(availableRewards);
             return this;
         }
+        @CustomType.Setter
         public Builder earnedRewards(Double earnedRewards) {
             this.earnedRewards = Objects.requireNonNull(earnedRewards);
             return this;
         }
+        @CustomType.Setter
         public Builder eligibleUsageAmount(Double eligibleUsageAmount) {
             this.eligibleUsageAmount = Objects.requireNonNull(eligibleUsageAmount);
             return this;
         }
+        @CustomType.Setter
         public Builder ineligibleUsageAmount(Double ineligibleUsageAmount) {
             this.ineligibleUsageAmount = Objects.requireNonNull(ineligibleUsageAmount);
             return this;
         }
+        @CustomType.Setter
         public Builder isManual(Boolean isManual) {
             this.isManual = Objects.requireNonNull(isManual);
             return this;
         }
+        @CustomType.Setter
         public Builder redeemedRewards(Double redeemedRewards) {
             this.redeemedRewards = Objects.requireNonNull(redeemedRewards);
             return this;
         }
+        @CustomType.Setter
         public Builder timeRewardsEarned(String timeRewardsEarned) {
             this.timeRewardsEarned = Objects.requireNonNull(timeRewardsEarned);
             return this;
         }
+        @CustomType.Setter
         public Builder timeRewardsExpired(String timeRewardsExpired) {
             this.timeRewardsExpired = Objects.requireNonNull(timeRewardsExpired);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUsageEnded(String timeUsageEnded) {
             this.timeUsageEnded = Objects.requireNonNull(timeUsageEnded);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUsageStarted(String timeUsageStarted) {
             this.timeUsageStarted = Objects.requireNonNull(timeUsageStarted);
             return this;
         }
+        @CustomType.Setter
         public Builder usageAmount(Double usageAmount) {
             this.usageAmount = Objects.requireNonNull(usageAmount);
             return this;
         }
+        @CustomType.Setter
         public Builder usagePeriodKey(String usagePeriodKey) {
             this.usagePeriodKey = Objects.requireNonNull(usagePeriodKey);
             return this;
-        }        public GetSubscriptionRewardItem build() {
-            return new GetSubscriptionRewardItem(availableRewards, earnedRewards, eligibleUsageAmount, ineligibleUsageAmount, isManual, redeemedRewards, timeRewardsEarned, timeRewardsExpired, timeUsageEnded, timeUsageStarted, usageAmount, usagePeriodKey);
+        }
+        public GetSubscriptionRewardItem build() {
+            final var o = new GetSubscriptionRewardItem();
+            o.availableRewards = availableRewards;
+            o.earnedRewards = earnedRewards;
+            o.eligibleUsageAmount = eligibleUsageAmount;
+            o.ineligibleUsageAmount = ineligibleUsageAmount;
+            o.isManual = isManual;
+            o.redeemedRewards = redeemedRewards;
+            o.timeRewardsEarned = timeRewardsEarned;
+            o.timeRewardsExpired = timeRewardsExpired;
+            o.timeUsageEnded = timeUsageEnded;
+            o.timeUsageStarted = timeUsageStarted;
+            o.usageAmount = usageAmount;
+            o.usagePeriodKey = usagePeriodKey;
+            return o;
         }
     }
 }

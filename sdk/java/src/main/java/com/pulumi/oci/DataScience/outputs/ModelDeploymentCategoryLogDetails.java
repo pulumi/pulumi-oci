@@ -16,21 +16,14 @@ public final class ModelDeploymentCategoryLogDetails {
      * @return (Updatable) The log details.
      * 
      */
-    private final @Nullable ModelDeploymentCategoryLogDetailsAccess access;
+    private @Nullable ModelDeploymentCategoryLogDetailsAccess access;
     /**
      * @return (Updatable) The log details.
      * 
      */
-    private final @Nullable ModelDeploymentCategoryLogDetailsPredict predict;
+    private @Nullable ModelDeploymentCategoryLogDetailsPredict predict;
 
-    @CustomType.Constructor
-    private ModelDeploymentCategoryLogDetails(
-        @CustomType.Parameter("access") @Nullable ModelDeploymentCategoryLogDetailsAccess access,
-        @CustomType.Parameter("predict") @Nullable ModelDeploymentCategoryLogDetailsPredict predict) {
-        this.access = access;
-        this.predict = predict;
-    }
-
+    private ModelDeploymentCategoryLogDetails() {}
     /**
      * @return (Updatable) The log details.
      * 
@@ -53,30 +46,32 @@ public final class ModelDeploymentCategoryLogDetails {
     public static Builder builder(ModelDeploymentCategoryLogDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable ModelDeploymentCategoryLogDetailsAccess access;
         private @Nullable ModelDeploymentCategoryLogDetailsPredict predict;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ModelDeploymentCategoryLogDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.access = defaults.access;
     	      this.predict = defaults.predict;
         }
 
+        @CustomType.Setter
         public Builder access(@Nullable ModelDeploymentCategoryLogDetailsAccess access) {
             this.access = access;
             return this;
         }
+        @CustomType.Setter
         public Builder predict(@Nullable ModelDeploymentCategoryLogDetailsPredict predict) {
             this.predict = predict;
             return this;
-        }        public ModelDeploymentCategoryLogDetails build() {
-            return new ModelDeploymentCategoryLogDetails(access, predict);
+        }
+        public ModelDeploymentCategoryLogDetails build() {
+            final var o = new ModelDeploymentCategoryLogDetails();
+            o.access = access;
+            o.predict = predict;
+            return o;
         }
     }
 }

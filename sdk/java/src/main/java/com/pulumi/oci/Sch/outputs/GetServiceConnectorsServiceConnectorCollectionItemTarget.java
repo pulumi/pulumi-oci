@@ -17,119 +17,84 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
      * @return The batch rollover size in megabytes.
      * 
      */
-    private final Integer batchRolloverSizeInMbs;
+    private Integer batchRolloverSizeInMbs;
     /**
      * @return The batch rollover time in milliseconds.
      * 
      */
-    private final Integer batchRolloverTimeInMs;
+    private Integer batchRolloverTimeInMs;
     /**
      * @return The name of the bucket. Avoid entering confidential information.
      * 
      */
-    private final String bucket;
+    private String bucket;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return List of dimension names and values.
      * 
      */
-    private final List<GetServiceConnectorsServiceConnectorCollectionItemTargetDimension> dimensions;
+    private List<GetServiceConnectorsServiceConnectorCollectionItemTargetDimension> dimensions;
     /**
      * @return Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
      * 
      */
-    private final Boolean enableFormattedMessaging;
+    private Boolean enableFormattedMessaging;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
      * 
      */
-    private final String functionId;
+    private String functionId;
     /**
      * @return The type descriminator.
      * 
      */
-    private final String kind;
+    private String kind;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
      * 
      */
-    private final String logGroupId;
+    private String logGroupId;
     /**
      * @return Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
      * 
      */
-    private final String logSourceIdentifier;
+    private String logSourceIdentifier;
     /**
      * @return The name of the metric.  Example: `CpuUtilization`
      * 
      */
-    private final String metric;
+    private String metric;
     /**
      * @return The namespace of the metric.  Example: `oci_computeagent`
      * 
      */
-    private final String metricNamespace;
+    private String metricNamespace;
     /**
      * @return The namespace.
      * 
      */
-    private final String namespace;
+    private String namespace;
     /**
      * @return The prefix of the objects. Avoid entering confidential information.
      * 
      */
-    private final String objectNamePrefix;
+    private String objectNamePrefix;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
-    private final String streamId;
+    private String streamId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
      * 
      */
-    private final String topicId;
+    private String topicId;
 
-    @CustomType.Constructor
-    private GetServiceConnectorsServiceConnectorCollectionItemTarget(
-        @CustomType.Parameter("batchRolloverSizeInMbs") Integer batchRolloverSizeInMbs,
-        @CustomType.Parameter("batchRolloverTimeInMs") Integer batchRolloverTimeInMs,
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dimensions") List<GetServiceConnectorsServiceConnectorCollectionItemTargetDimension> dimensions,
-        @CustomType.Parameter("enableFormattedMessaging") Boolean enableFormattedMessaging,
-        @CustomType.Parameter("functionId") String functionId,
-        @CustomType.Parameter("kind") String kind,
-        @CustomType.Parameter("logGroupId") String logGroupId,
-        @CustomType.Parameter("logSourceIdentifier") String logSourceIdentifier,
-        @CustomType.Parameter("metric") String metric,
-        @CustomType.Parameter("metricNamespace") String metricNamespace,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("objectNamePrefix") String objectNamePrefix,
-        @CustomType.Parameter("streamId") String streamId,
-        @CustomType.Parameter("topicId") String topicId) {
-        this.batchRolloverSizeInMbs = batchRolloverSizeInMbs;
-        this.batchRolloverTimeInMs = batchRolloverTimeInMs;
-        this.bucket = bucket;
-        this.compartmentId = compartmentId;
-        this.dimensions = dimensions;
-        this.enableFormattedMessaging = enableFormattedMessaging;
-        this.functionId = functionId;
-        this.kind = kind;
-        this.logGroupId = logGroupId;
-        this.logSourceIdentifier = logSourceIdentifier;
-        this.metric = metric;
-        this.metricNamespace = metricNamespace;
-        this.namespace = namespace;
-        this.objectNamePrefix = objectNamePrefix;
-        this.streamId = streamId;
-        this.topicId = topicId;
-    }
-
+    private GetServiceConnectorsServiceConnectorCollectionItemTarget() {}
     /**
      * @return The batch rollover size in megabytes.
      * 
@@ -250,7 +215,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
     public static Builder builder(GetServiceConnectorsServiceConnectorCollectionItemTarget defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer batchRolloverSizeInMbs;
         private Integer batchRolloverTimeInMs;
@@ -268,11 +233,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
         private String objectNamePrefix;
         private String streamId;
         private String topicId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceConnectorsServiceConnectorCollectionItemTarget defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.batchRolloverSizeInMbs = defaults.batchRolloverSizeInMbs;
@@ -293,22 +254,27 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
     	      this.topicId = defaults.topicId;
         }
 
+        @CustomType.Setter
         public Builder batchRolloverSizeInMbs(Integer batchRolloverSizeInMbs) {
             this.batchRolloverSizeInMbs = Objects.requireNonNull(batchRolloverSizeInMbs);
             return this;
         }
+        @CustomType.Setter
         public Builder batchRolloverTimeInMs(Integer batchRolloverTimeInMs) {
             this.batchRolloverTimeInMs = Objects.requireNonNull(batchRolloverTimeInMs);
             return this;
         }
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dimensions(List<GetServiceConnectorsServiceConnectorCollectionItemTargetDimension> dimensions) {
             this.dimensions = Objects.requireNonNull(dimensions);
             return this;
@@ -316,51 +282,80 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
         public Builder dimensions(GetServiceConnectorsServiceConnectorCollectionItemTargetDimension... dimensions) {
             return dimensions(List.of(dimensions));
         }
+        @CustomType.Setter
         public Builder enableFormattedMessaging(Boolean enableFormattedMessaging) {
             this.enableFormattedMessaging = Objects.requireNonNull(enableFormattedMessaging);
             return this;
         }
+        @CustomType.Setter
         public Builder functionId(String functionId) {
             this.functionId = Objects.requireNonNull(functionId);
             return this;
         }
+        @CustomType.Setter
         public Builder kind(String kind) {
             this.kind = Objects.requireNonNull(kind);
             return this;
         }
+        @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = Objects.requireNonNull(logGroupId);
             return this;
         }
+        @CustomType.Setter
         public Builder logSourceIdentifier(String logSourceIdentifier) {
             this.logSourceIdentifier = Objects.requireNonNull(logSourceIdentifier);
             return this;
         }
+        @CustomType.Setter
         public Builder metric(String metric) {
             this.metric = Objects.requireNonNull(metric);
             return this;
         }
+        @CustomType.Setter
         public Builder metricNamespace(String metricNamespace) {
             this.metricNamespace = Objects.requireNonNull(metricNamespace);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder objectNamePrefix(String objectNamePrefix) {
             this.objectNamePrefix = Objects.requireNonNull(objectNamePrefix);
             return this;
         }
+        @CustomType.Setter
         public Builder streamId(String streamId) {
             this.streamId = Objects.requireNonNull(streamId);
             return this;
         }
+        @CustomType.Setter
         public Builder topicId(String topicId) {
             this.topicId = Objects.requireNonNull(topicId);
             return this;
-        }        public GetServiceConnectorsServiceConnectorCollectionItemTarget build() {
-            return new GetServiceConnectorsServiceConnectorCollectionItemTarget(batchRolloverSizeInMbs, batchRolloverTimeInMs, bucket, compartmentId, dimensions, enableFormattedMessaging, functionId, kind, logGroupId, logSourceIdentifier, metric, metricNamespace, namespace, objectNamePrefix, streamId, topicId);
+        }
+        public GetServiceConnectorsServiceConnectorCollectionItemTarget build() {
+            final var o = new GetServiceConnectorsServiceConnectorCollectionItemTarget();
+            o.batchRolloverSizeInMbs = batchRolloverSizeInMbs;
+            o.batchRolloverTimeInMs = batchRolloverTimeInMs;
+            o.bucket = bucket;
+            o.compartmentId = compartmentId;
+            o.dimensions = dimensions;
+            o.enableFormattedMessaging = enableFormattedMessaging;
+            o.functionId = functionId;
+            o.kind = kind;
+            o.logGroupId = logGroupId;
+            o.logSourceIdentifier = logSourceIdentifier;
+            o.metric = metric;
+            o.metricNamespace = metricNamespace;
+            o.namespace = namespace;
+            o.objectNamePrefix = objectNamePrefix;
+            o.streamId = streamId;
+            o.topicId = topicId;
+            return o;
         }
     }
 }

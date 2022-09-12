@@ -16,35 +16,24 @@ public final class AutonomousDatabaseStandbyDb {
      * @return The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
      * 
      */
-    private final @Nullable Integer lagTimeInSeconds;
+    private @Nullable Integer lagTimeInSeconds;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final @Nullable String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      * 
      */
-    private final @Nullable String timeDataGuardRoleChanged;
+    private @Nullable String timeDataGuardRoleChanged;
 
-    @CustomType.Constructor
-    private AutonomousDatabaseStandbyDb(
-        @CustomType.Parameter("lagTimeInSeconds") @Nullable Integer lagTimeInSeconds,
-        @CustomType.Parameter("lifecycleDetails") @Nullable String lifecycleDetails,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("timeDataGuardRoleChanged") @Nullable String timeDataGuardRoleChanged) {
-        this.lagTimeInSeconds = lagTimeInSeconds;
-        this.lifecycleDetails = lifecycleDetails;
-        this.state = state;
-        this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
-    }
-
+    private AutonomousDatabaseStandbyDb() {}
     /**
      * @return The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
      * 
@@ -81,17 +70,13 @@ public final class AutonomousDatabaseStandbyDb {
     public static Builder builder(AutonomousDatabaseStandbyDb defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer lagTimeInSeconds;
         private @Nullable String lifecycleDetails;
         private @Nullable String state;
         private @Nullable String timeDataGuardRoleChanged;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutonomousDatabaseStandbyDb defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.lagTimeInSeconds = defaults.lagTimeInSeconds;
@@ -100,23 +85,33 @@ public final class AutonomousDatabaseStandbyDb {
     	      this.timeDataGuardRoleChanged = defaults.timeDataGuardRoleChanged;
         }
 
+        @CustomType.Setter
         public Builder lagTimeInSeconds(@Nullable Integer lagTimeInSeconds) {
             this.lagTimeInSeconds = lagTimeInSeconds;
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder timeDataGuardRoleChanged(@Nullable String timeDataGuardRoleChanged) {
             this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
             return this;
-        }        public AutonomousDatabaseStandbyDb build() {
-            return new AutonomousDatabaseStandbyDb(lagTimeInSeconds, lifecycleDetails, state, timeDataGuardRoleChanged);
+        }
+        public AutonomousDatabaseStandbyDb build() {
+            final var o = new AutonomousDatabaseStandbyDb();
+            o.lagTimeInSeconds = lagTimeInSeconds;
+            o.lifecycleDetails = lifecycleDetails;
+            o.state = state;
+            o.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
+            return o;
         }
     }
 }

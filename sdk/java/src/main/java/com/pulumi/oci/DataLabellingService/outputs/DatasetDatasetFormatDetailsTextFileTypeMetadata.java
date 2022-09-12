@@ -16,49 +16,34 @@ public final class DatasetDatasetFormatDetailsTextFileTypeMetadata {
      * @return A column delimiter
      * 
      */
-    private final @Nullable String columnDelimiter;
+    private @Nullable String columnDelimiter;
     /**
      * @return The index of a selected column. This is a zero-based index.
      * 
      */
-    private final Integer columnIndex;
+    private Integer columnIndex;
     /**
      * @return The name of a selected column.
      * 
      */
-    private final @Nullable String columnName;
+    private @Nullable String columnName;
     /**
      * @return An escape character.
      * 
      */
-    private final @Nullable String escapeCharacter;
+    private @Nullable String escapeCharacter;
     /**
      * @return It defines the format type of text files.
      * 
      */
-    private final String formatType;
+    private String formatType;
     /**
      * @return A line delimiter.
      * 
      */
-    private final @Nullable String lineDelimiter;
+    private @Nullable String lineDelimiter;
 
-    @CustomType.Constructor
-    private DatasetDatasetFormatDetailsTextFileTypeMetadata(
-        @CustomType.Parameter("columnDelimiter") @Nullable String columnDelimiter,
-        @CustomType.Parameter("columnIndex") Integer columnIndex,
-        @CustomType.Parameter("columnName") @Nullable String columnName,
-        @CustomType.Parameter("escapeCharacter") @Nullable String escapeCharacter,
-        @CustomType.Parameter("formatType") String formatType,
-        @CustomType.Parameter("lineDelimiter") @Nullable String lineDelimiter) {
-        this.columnDelimiter = columnDelimiter;
-        this.columnIndex = columnIndex;
-        this.columnName = columnName;
-        this.escapeCharacter = escapeCharacter;
-        this.formatType = formatType;
-        this.lineDelimiter = lineDelimiter;
-    }
-
+    private DatasetDatasetFormatDetailsTextFileTypeMetadata() {}
     /**
      * @return A column delimiter
      * 
@@ -109,7 +94,7 @@ public final class DatasetDatasetFormatDetailsTextFileTypeMetadata {
     public static Builder builder(DatasetDatasetFormatDetailsTextFileTypeMetadata defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String columnDelimiter;
         private Integer columnIndex;
@@ -117,11 +102,7 @@ public final class DatasetDatasetFormatDetailsTextFileTypeMetadata {
         private @Nullable String escapeCharacter;
         private String formatType;
         private @Nullable String lineDelimiter;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DatasetDatasetFormatDetailsTextFileTypeMetadata defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.columnDelimiter = defaults.columnDelimiter;
@@ -132,31 +113,45 @@ public final class DatasetDatasetFormatDetailsTextFileTypeMetadata {
     	      this.lineDelimiter = defaults.lineDelimiter;
         }
 
+        @CustomType.Setter
         public Builder columnDelimiter(@Nullable String columnDelimiter) {
             this.columnDelimiter = columnDelimiter;
             return this;
         }
+        @CustomType.Setter
         public Builder columnIndex(Integer columnIndex) {
             this.columnIndex = Objects.requireNonNull(columnIndex);
             return this;
         }
+        @CustomType.Setter
         public Builder columnName(@Nullable String columnName) {
             this.columnName = columnName;
             return this;
         }
+        @CustomType.Setter
         public Builder escapeCharacter(@Nullable String escapeCharacter) {
             this.escapeCharacter = escapeCharacter;
             return this;
         }
+        @CustomType.Setter
         public Builder formatType(String formatType) {
             this.formatType = Objects.requireNonNull(formatType);
             return this;
         }
+        @CustomType.Setter
         public Builder lineDelimiter(@Nullable String lineDelimiter) {
             this.lineDelimiter = lineDelimiter;
             return this;
-        }        public DatasetDatasetFormatDetailsTextFileTypeMetadata build() {
-            return new DatasetDatasetFormatDetailsTextFileTypeMetadata(columnDelimiter, columnIndex, columnName, escapeCharacter, formatType, lineDelimiter);
+        }
+        public DatasetDatasetFormatDetailsTextFileTypeMetadata build() {
+            final var o = new DatasetDatasetFormatDetailsTextFileTypeMetadata();
+            o.columnDelimiter = columnDelimiter;
+            o.columnIndex = columnIndex;
+            o.columnName = columnName;
+            o.escapeCharacter = escapeCharacter;
+            o.formatType = formatType;
+            o.lineDelimiter = lineDelimiter;
+            return o;
         }
     }
 }

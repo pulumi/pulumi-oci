@@ -14,80 +14,55 @@ public final class GetRepositoryCommitResult {
      * @return Email of the author of the repository.
      * 
      */
-    private final String authorEmail;
+    private String authorEmail;
     /**
      * @return Name of the author of the repository.
      * 
      */
-    private final String authorName;
+    private String authorName;
     /**
      * @return Commit hash pointed to by reference name.
      * 
      */
-    private final String commitId;
+    private String commitId;
     /**
      * @return The commit message.
      * 
      */
-    private final String commitMessage;
+    private String commitMessage;
     /**
      * @return Email of who creates the commit.
      * 
      */
-    private final String committerEmail;
+    private String committerEmail;
     /**
      * @return Name of who creates the commit.
      * 
      */
-    private final String committerName;
+    private String committerName;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return An array of parent commit IDs of created commit.
      * 
      */
-    private final List<String> parentCommitIds;
-    private final String repositoryId;
+    private List<String> parentCommitIds;
+    private String repositoryId;
     /**
      * @return The time at which commit was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Tree information for the specified commit.
      * 
      */
-    private final String treeId;
+    private String treeId;
 
-    @CustomType.Constructor
-    private GetRepositoryCommitResult(
-        @CustomType.Parameter("authorEmail") String authorEmail,
-        @CustomType.Parameter("authorName") String authorName,
-        @CustomType.Parameter("commitId") String commitId,
-        @CustomType.Parameter("commitMessage") String commitMessage,
-        @CustomType.Parameter("committerEmail") String committerEmail,
-        @CustomType.Parameter("committerName") String committerName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("parentCommitIds") List<String> parentCommitIds,
-        @CustomType.Parameter("repositoryId") String repositoryId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("treeId") String treeId) {
-        this.authorEmail = authorEmail;
-        this.authorName = authorName;
-        this.commitId = commitId;
-        this.commitMessage = commitMessage;
-        this.committerEmail = committerEmail;
-        this.committerName = committerName;
-        this.id = id;
-        this.parentCommitIds = parentCommitIds;
-        this.repositoryId = repositoryId;
-        this.timeCreated = timeCreated;
-        this.treeId = treeId;
-    }
-
+    private GetRepositoryCommitResult() {}
     /**
      * @return Email of the author of the repository.
      * 
@@ -169,7 +144,7 @@ public final class GetRepositoryCommitResult {
     public static Builder builder(GetRepositoryCommitResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String authorEmail;
         private String authorName;
@@ -182,11 +157,7 @@ public final class GetRepositoryCommitResult {
         private String repositoryId;
         private String timeCreated;
         private String treeId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryCommitResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authorEmail = defaults.authorEmail;
@@ -202,34 +173,42 @@ public final class GetRepositoryCommitResult {
     	      this.treeId = defaults.treeId;
         }
 
+        @CustomType.Setter
         public Builder authorEmail(String authorEmail) {
             this.authorEmail = Objects.requireNonNull(authorEmail);
             return this;
         }
+        @CustomType.Setter
         public Builder authorName(String authorName) {
             this.authorName = Objects.requireNonNull(authorName);
             return this;
         }
+        @CustomType.Setter
         public Builder commitId(String commitId) {
             this.commitId = Objects.requireNonNull(commitId);
             return this;
         }
+        @CustomType.Setter
         public Builder commitMessage(String commitMessage) {
             this.commitMessage = Objects.requireNonNull(commitMessage);
             return this;
         }
+        @CustomType.Setter
         public Builder committerEmail(String committerEmail) {
             this.committerEmail = Objects.requireNonNull(committerEmail);
             return this;
         }
+        @CustomType.Setter
         public Builder committerName(String committerName) {
             this.committerName = Objects.requireNonNull(committerName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder parentCommitIds(List<String> parentCommitIds) {
             this.parentCommitIds = Objects.requireNonNull(parentCommitIds);
             return this;
@@ -237,19 +216,35 @@ public final class GetRepositoryCommitResult {
         public Builder parentCommitIds(String... parentCommitIds) {
             return parentCommitIds(List.of(parentCommitIds));
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder treeId(String treeId) {
             this.treeId = Objects.requireNonNull(treeId);
             return this;
-        }        public GetRepositoryCommitResult build() {
-            return new GetRepositoryCommitResult(authorEmail, authorName, commitId, commitMessage, committerEmail, committerName, id, parentCommitIds, repositoryId, timeCreated, treeId);
+        }
+        public GetRepositoryCommitResult build() {
+            final var o = new GetRepositoryCommitResult();
+            o.authorEmail = authorEmail;
+            o.authorName = authorName;
+            o.commitId = commitId;
+            o.commitMessage = commitMessage;
+            o.committerEmail = committerEmail;
+            o.committerName = committerName;
+            o.id = id;
+            o.parentCommitIds = parentCommitIds;
+            o.repositoryId = repositoryId;
+            o.timeCreated = timeCreated;
+            o.treeId = treeId;
+            return o;
         }
     }
 }

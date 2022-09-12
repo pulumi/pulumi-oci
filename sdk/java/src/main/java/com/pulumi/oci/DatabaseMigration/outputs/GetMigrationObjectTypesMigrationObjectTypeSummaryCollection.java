@@ -14,13 +14,9 @@ public final class GetMigrationObjectTypesMigrationObjectTypeSummaryCollection {
      * @return Items in collection.
      * 
      */
-    private final List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem> items;
+    private List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetMigrationObjectTypesMigrationObjectTypeSummaryCollection(@CustomType.Parameter("items") List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetMigrationObjectTypesMigrationObjectTypeSummaryCollection() {}
     /**
      * @return Items in collection.
      * 
@@ -36,27 +32,27 @@ public final class GetMigrationObjectTypesMigrationObjectTypeSummaryCollection {
     public static Builder builder(GetMigrationObjectTypesMigrationObjectTypeSummaryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationObjectTypesMigrationObjectTypeSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem... items) {
             return items(List.of(items));
-        }        public GetMigrationObjectTypesMigrationObjectTypeSummaryCollection build() {
-            return new GetMigrationObjectTypesMigrationObjectTypeSummaryCollection(items);
+        }
+        public GetMigrationObjectTypesMigrationObjectTypeSummaryCollection build() {
+            final var o = new GetMigrationObjectTypesMigrationObjectTypeSummaryCollection();
+            o.items = items;
+            return o;
         }
     }
 }

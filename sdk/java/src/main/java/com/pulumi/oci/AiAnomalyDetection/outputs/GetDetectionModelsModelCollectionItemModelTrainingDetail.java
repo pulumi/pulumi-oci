@@ -15,28 +15,19 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingDetail {
      * @return The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
      * 
      */
-    private final List<String> dataAssetIds;
+    private List<String> dataAssetIds;
     /**
      * @return A target model accuracy metric user provides as their requirement
      * 
      */
-    private final Double targetFap;
+    private Double targetFap;
     /**
      * @return Fraction of total data that is used for training the model. The remaining is used for validation of the model.
      * 
      */
-    private final Double trainingFraction;
+    private Double trainingFraction;
 
-    @CustomType.Constructor
-    private GetDetectionModelsModelCollectionItemModelTrainingDetail(
-        @CustomType.Parameter("dataAssetIds") List<String> dataAssetIds,
-        @CustomType.Parameter("targetFap") Double targetFap,
-        @CustomType.Parameter("trainingFraction") Double trainingFraction) {
-        this.dataAssetIds = dataAssetIds;
-        this.targetFap = targetFap;
-        this.trainingFraction = trainingFraction;
-    }
-
+    private GetDetectionModelsModelCollectionItemModelTrainingDetail() {}
     /**
      * @return The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
      * 
@@ -66,16 +57,12 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingDetail {
     public static Builder builder(GetDetectionModelsModelCollectionItemModelTrainingDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> dataAssetIds;
         private Double targetFap;
         private Double trainingFraction;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDetectionModelsModelCollectionItemModelTrainingDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dataAssetIds = defaults.dataAssetIds;
@@ -83,6 +70,7 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingDetail {
     	      this.trainingFraction = defaults.trainingFraction;
         }
 
+        @CustomType.Setter
         public Builder dataAssetIds(List<String> dataAssetIds) {
             this.dataAssetIds = Objects.requireNonNull(dataAssetIds);
             return this;
@@ -90,15 +78,22 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingDetail {
         public Builder dataAssetIds(String... dataAssetIds) {
             return dataAssetIds(List.of(dataAssetIds));
         }
+        @CustomType.Setter
         public Builder targetFap(Double targetFap) {
             this.targetFap = Objects.requireNonNull(targetFap);
             return this;
         }
+        @CustomType.Setter
         public Builder trainingFraction(Double trainingFraction) {
             this.trainingFraction = Objects.requireNonNull(trainingFraction);
             return this;
-        }        public GetDetectionModelsModelCollectionItemModelTrainingDetail build() {
-            return new GetDetectionModelsModelCollectionItemModelTrainingDetail(dataAssetIds, targetFap, trainingFraction);
+        }
+        public GetDetectionModelsModelCollectionItemModelTrainingDetail build() {
+            final var o = new GetDetectionModelsModelCollectionItemModelTrainingDetail();
+            o.dataAssetIds = dataAssetIds;
+            o.targetFap = targetFap;
+            o.trainingFraction = trainingFraction;
+            return o;
         }
     }
 }

@@ -13,21 +13,14 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
      * @return The target branch for pull requests; not applicable for push requests.
      * 
      */
-    private final String baseRef;
+    private String baseRef;
     /**
      * @return Branch for push event; source branch for pull requests.
      * 
      */
-    private final String headRef;
+    private String headRef;
 
-    @CustomType.Constructor
-    private GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude(
-        @CustomType.Parameter("baseRef") String baseRef,
-        @CustomType.Parameter("headRef") String headRef) {
-        this.baseRef = baseRef;
-        this.headRef = headRef;
-    }
-
+    private GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude() {}
     /**
      * @return The target branch for pull requests; not applicable for push requests.
      * 
@@ -50,30 +43,32 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
     public static Builder builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String baseRef;
         private String headRef;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baseRef = defaults.baseRef;
     	      this.headRef = defaults.headRef;
         }
 
+        @CustomType.Setter
         public Builder baseRef(String baseRef) {
             this.baseRef = Objects.requireNonNull(baseRef);
             return this;
         }
+        @CustomType.Setter
         public Builder headRef(String headRef) {
             this.headRef = Objects.requireNonNull(headRef);
             return this;
-        }        public GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude build() {
-            return new GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude(baseRef, headRef);
+        }
+        public GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude build() {
+            final var o = new GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude();
+            o.baseRef = baseRef;
+            o.headRef = headRef;
+            return o;
         }
     }
 }

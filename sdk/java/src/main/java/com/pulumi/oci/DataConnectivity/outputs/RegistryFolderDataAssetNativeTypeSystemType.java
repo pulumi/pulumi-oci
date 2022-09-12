@@ -18,77 +18,54 @@ public final class RegistryFolderDataAssetNativeTypeSystemType {
      * @return (Updatable) The configuration details of a configurable object. This contains one or more config param definitions.
      * 
      */
-    private final @Nullable RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition configDefinition;
+    private @Nullable RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition configDefinition;
     /**
-     * @return (Updatable) User-defined description for the folder.
+     * @return (Updatable) User-defined description of the folder.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
      * @return (Updatable) The data type.
      * 
      */
-    private final @Nullable String dtType;
+    private @Nullable String dtType;
     /**
-     * @return (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
-    private final @Nullable String key;
+    private @Nullable String key;
     /**
      * @return (Updatable) The type of the folder.
      * 
      */
-    private final String modelType;
+    private String modelType;
     /**
      * @return (Updatable) The model version of an object.
      * 
      */
-    private final @Nullable String modelVersion;
+    private @Nullable String modelVersion;
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private final @Nullable Integer objectStatus;
+    private @Nullable Integer objectStatus;
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
-    private final @Nullable RegistryFolderDataAssetNativeTypeSystemTypeParentRef parentRef;
+    private @Nullable RegistryFolderDataAssetNativeTypeSystemTypeParentRef parentRef;
     /**
      * @return (Updatable) The data type system name.
      * 
      */
-    private final @Nullable String typeSystemName;
+    private @Nullable String typeSystemName;
 
-    @CustomType.Constructor
-    private RegistryFolderDataAssetNativeTypeSystemType(
-        @CustomType.Parameter("configDefinition") @Nullable RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition configDefinition,
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("dtType") @Nullable String dtType,
-        @CustomType.Parameter("key") @Nullable String key,
-        @CustomType.Parameter("modelType") String modelType,
-        @CustomType.Parameter("modelVersion") @Nullable String modelVersion,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("objectStatus") @Nullable Integer objectStatus,
-        @CustomType.Parameter("parentRef") @Nullable RegistryFolderDataAssetNativeTypeSystemTypeParentRef parentRef,
-        @CustomType.Parameter("typeSystemName") @Nullable String typeSystemName) {
-        this.configDefinition = configDefinition;
-        this.description = description;
-        this.dtType = dtType;
-        this.key = key;
-        this.modelType = modelType;
-        this.modelVersion = modelVersion;
-        this.name = name;
-        this.objectStatus = objectStatus;
-        this.parentRef = parentRef;
-        this.typeSystemName = typeSystemName;
-    }
-
+    private RegistryFolderDataAssetNativeTypeSystemType() {}
     /**
      * @return (Updatable) The configuration details of a configurable object. This contains one or more config param definitions.
      * 
@@ -97,7 +74,7 @@ public final class RegistryFolderDataAssetNativeTypeSystemType {
         return Optional.ofNullable(this.configDefinition);
     }
     /**
-     * @return (Updatable) User-defined description for the folder.
+     * @return (Updatable) User-defined description of the folder.
      * 
      */
     public Optional<String> description() {
@@ -111,7 +88,7 @@ public final class RegistryFolderDataAssetNativeTypeSystemType {
         return Optional.ofNullable(this.dtType);
     }
     /**
-     * @return (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     public Optional<String> key() {
@@ -132,7 +109,7 @@ public final class RegistryFolderDataAssetNativeTypeSystemType {
         return Optional.ofNullable(this.modelVersion);
     }
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Optional<String> name() {
@@ -146,7 +123,7 @@ public final class RegistryFolderDataAssetNativeTypeSystemType {
         return Optional.ofNullable(this.objectStatus);
     }
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
     public Optional<RegistryFolderDataAssetNativeTypeSystemTypeParentRef> parentRef() {
@@ -167,7 +144,7 @@ public final class RegistryFolderDataAssetNativeTypeSystemType {
     public static Builder builder(RegistryFolderDataAssetNativeTypeSystemType defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition configDefinition;
         private @Nullable String description;
@@ -179,11 +156,7 @@ public final class RegistryFolderDataAssetNativeTypeSystemType {
         private @Nullable Integer objectStatus;
         private @Nullable RegistryFolderDataAssetNativeTypeSystemTypeParentRef parentRef;
         private @Nullable String typeSystemName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RegistryFolderDataAssetNativeTypeSystemType defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configDefinition = defaults.configDefinition;
@@ -198,47 +171,69 @@ public final class RegistryFolderDataAssetNativeTypeSystemType {
     	      this.typeSystemName = defaults.typeSystemName;
         }
 
+        @CustomType.Setter
         public Builder configDefinition(@Nullable RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition configDefinition) {
             this.configDefinition = configDefinition;
             return this;
         }
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder dtType(@Nullable String dtType) {
             this.dtType = dtType;
             return this;
         }
+        @CustomType.Setter
         public Builder key(@Nullable String key) {
             this.key = key;
             return this;
         }
+        @CustomType.Setter
         public Builder modelType(String modelType) {
             this.modelType = Objects.requireNonNull(modelType);
             return this;
         }
+        @CustomType.Setter
         public Builder modelVersion(@Nullable String modelVersion) {
             this.modelVersion = modelVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder objectStatus(@Nullable Integer objectStatus) {
             this.objectStatus = objectStatus;
             return this;
         }
+        @CustomType.Setter
         public Builder parentRef(@Nullable RegistryFolderDataAssetNativeTypeSystemTypeParentRef parentRef) {
             this.parentRef = parentRef;
             return this;
         }
+        @CustomType.Setter
         public Builder typeSystemName(@Nullable String typeSystemName) {
             this.typeSystemName = typeSystemName;
             return this;
-        }        public RegistryFolderDataAssetNativeTypeSystemType build() {
-            return new RegistryFolderDataAssetNativeTypeSystemType(configDefinition, description, dtType, key, modelType, modelVersion, name, objectStatus, parentRef, typeSystemName);
+        }
+        public RegistryFolderDataAssetNativeTypeSystemType build() {
+            final var o = new RegistryFolderDataAssetNativeTypeSystemType();
+            o.configDefinition = configDefinition;
+            o.description = description;
+            o.dtType = dtType;
+            o.key = key;
+            o.modelType = modelType;
+            o.modelVersion = modelVersion;
+            o.name = name;
+            o.objectStatus = objectStatus;
+            o.parentRef = parentRef;
+            o.typeSystemName = typeSystemName;
+            return o;
         }
     }
 }

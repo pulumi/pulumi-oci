@@ -11,17 +11,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DefaultSecurityListIngressSecurityRuleIcmpOptions {
-    private final @Nullable Integer code;
-    private final Integer type;
+    private @Nullable Integer code;
+    private Integer type;
 
-    @CustomType.Constructor
-    private DefaultSecurityListIngressSecurityRuleIcmpOptions(
-        @CustomType.Parameter("code") @Nullable Integer code,
-        @CustomType.Parameter("type") Integer type) {
-        this.code = code;
-        this.type = type;
-    }
-
+    private DefaultSecurityListIngressSecurityRuleIcmpOptions() {}
     public Optional<Integer> code() {
         return Optional.ofNullable(this.code);
     }
@@ -36,30 +29,32 @@ public final class DefaultSecurityListIngressSecurityRuleIcmpOptions {
     public static Builder builder(DefaultSecurityListIngressSecurityRuleIcmpOptions defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer code;
         private Integer type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DefaultSecurityListIngressSecurityRuleIcmpOptions defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.code = defaults.code;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder code(@Nullable Integer code) {
             this.code = code;
             return this;
         }
+        @CustomType.Setter
         public Builder type(Integer type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public DefaultSecurityListIngressSecurityRuleIcmpOptions build() {
-            return new DefaultSecurityListIngressSecurityRuleIcmpOptions(code, type);
+        }
+        public DefaultSecurityListIngressSecurityRuleIcmpOptions build() {
+            final var o = new DefaultSecurityListIngressSecurityRuleIcmpOptions();
+            o.code = code;
+            o.type = type;
+            return o;
         }
     }
 }

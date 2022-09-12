@@ -170,7 +170,7 @@ namespace Pulumi.Oci.Database
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// The target software version for the database server patching operation.
+        /// (Updatable) The target database server system software version for the patching operation.
         /// </summary>
         [Output("targetDbServerVersion")]
         public Output<string> TargetDbServerVersion { get; private set; } = null!;
@@ -188,7 +188,7 @@ namespace Pulumi.Oci.Database
         public Output<string> TargetResourceType { get; private set; } = null!;
 
         /// <summary>
-        /// The target Cell version that is to be patched to.
+        /// (Updatable) The target storage cell system software version for the patching operation.
         /// </summary>
         [Output("targetStorageServerVersion")]
         public Output<string> TargetStorageServerVersion { get; private set; } = null!;
@@ -310,6 +310,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("patchingMode")]
         public Input<string>? PatchingMode { get; set; }
+
+        /// <summary>
+        /// (Updatable) The target database server system software version for the patching operation.
+        /// </summary>
+        [Input("targetDbServerVersion")]
+        public Input<string>? TargetDbServerVersion { get; set; }
+
+        /// <summary>
+        /// (Updatable) The target storage cell system software version for the patching operation.
+        /// </summary>
+        [Input("targetStorageServerVersion")]
+        public Input<string>? TargetStorageServerVersion { get; set; }
 
         /// <summary>
         /// (Updatable) The scheduled date and time of the maintenance run to update.
@@ -476,7 +488,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The target software version for the database server patching operation.
+        /// (Updatable) The target database server system software version for the patching operation.
         /// </summary>
         [Input("targetDbServerVersion")]
         public Input<string>? TargetDbServerVersion { get; set; }
@@ -494,7 +506,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? TargetResourceType { get; set; }
 
         /// <summary>
-        /// The target Cell version that is to be patched to.
+        /// (Updatable) The target storage cell system software version for the patching operation.
         /// </summary>
         [Input("targetStorageServerVersion")]
         public Input<string>? TargetStorageServerVersion { get; set; }

@@ -15,21 +15,14 @@ public final class GetMigrationDataTransferMediumDetailDatabaseLinkDetail {
      * @return Name of directory object in database
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
      * 
      */
-    private final List<GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket> walletBuckets;
+    private List<GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket> walletBuckets;
 
-    @CustomType.Constructor
-    private GetMigrationDataTransferMediumDetailDatabaseLinkDetail(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("walletBuckets") List<GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket> walletBuckets) {
-        this.name = name;
-        this.walletBuckets = walletBuckets;
-    }
-
+    private GetMigrationDataTransferMediumDetailDatabaseLinkDetail() {}
     /**
      * @return Name of directory object in database
      * 
@@ -52,33 +45,35 @@ public final class GetMigrationDataTransferMediumDetailDatabaseLinkDetail {
     public static Builder builder(GetMigrationDataTransferMediumDetailDatabaseLinkDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private List<GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket> walletBuckets;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationDataTransferMediumDetailDatabaseLinkDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.walletBuckets = defaults.walletBuckets;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder walletBuckets(List<GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket> walletBuckets) {
             this.walletBuckets = Objects.requireNonNull(walletBuckets);
             return this;
         }
         public Builder walletBuckets(GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket... walletBuckets) {
             return walletBuckets(List.of(walletBuckets));
-        }        public GetMigrationDataTransferMediumDetailDatabaseLinkDetail build() {
-            return new GetMigrationDataTransferMediumDetailDatabaseLinkDetail(name, walletBuckets);
+        }
+        public GetMigrationDataTransferMediumDetailDatabaseLinkDetail build() {
+            final var o = new GetMigrationDataTransferMediumDetailDatabaseLinkDetail();
+            o.name = name;
+            o.walletBuckets = walletBuckets;
+            return o;
         }
     }
 }

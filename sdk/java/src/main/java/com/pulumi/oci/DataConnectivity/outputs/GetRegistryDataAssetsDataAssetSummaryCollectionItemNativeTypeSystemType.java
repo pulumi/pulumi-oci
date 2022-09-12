@@ -16,77 +16,54 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeType
      * @return The configuration details of a configurable object. This contains one or more config param definitions.
      * 
      */
-    private final GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinition configDefinition;
+    private GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinition configDefinition;
     /**
-     * @return A user defined description for the object.
+     * @return A user-defined description for the object.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The data type.
      * 
      */
-    private final String dtType;
+    private String dtType;
     /**
      * @return The identifying key for the object.
      * 
      */
-    private final String key;
+    private String key;
     /**
-     * @return The property which disciminates the subtypes.
+     * @return The property which differentiates the subtypes.
      * 
      */
-    private final String modelType;
+    private String modelType;
     /**
      * @return The model version of an object.
      * 
      */
-    private final String modelVersion;
+    private String modelVersion;
     /**
      * @return Used to filter by the name of the object.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private final Integer objectStatus;
+    private Integer objectStatus;
     /**
-     * @return A reference to the object&#39;s parent.
+     * @return A reference to the parent object.
      * 
      */
-    private final GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRef parentRef;
+    private GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRef parentRef;
     /**
      * @return The data type system name.
      * 
      */
-    private final String typeSystemName;
+    private String typeSystemName;
 
-    @CustomType.Constructor
-    private GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType(
-        @CustomType.Parameter("configDefinition") GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinition configDefinition,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("dtType") String dtType,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("modelType") String modelType,
-        @CustomType.Parameter("modelVersion") String modelVersion,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("objectStatus") Integer objectStatus,
-        @CustomType.Parameter("parentRef") GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRef parentRef,
-        @CustomType.Parameter("typeSystemName") String typeSystemName) {
-        this.configDefinition = configDefinition;
-        this.description = description;
-        this.dtType = dtType;
-        this.key = key;
-        this.modelType = modelType;
-        this.modelVersion = modelVersion;
-        this.name = name;
-        this.objectStatus = objectStatus;
-        this.parentRef = parentRef;
-        this.typeSystemName = typeSystemName;
-    }
-
+    private GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType() {}
     /**
      * @return The configuration details of a configurable object. This contains one or more config param definitions.
      * 
@@ -95,7 +72,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeType
         return this.configDefinition;
     }
     /**
-     * @return A user defined description for the object.
+     * @return A user-defined description for the object.
      * 
      */
     public String description() {
@@ -116,7 +93,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeType
         return this.key;
     }
     /**
-     * @return The property which disciminates the subtypes.
+     * @return The property which differentiates the subtypes.
      * 
      */
     public String modelType() {
@@ -144,7 +121,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeType
         return this.objectStatus;
     }
     /**
-     * @return A reference to the object&#39;s parent.
+     * @return A reference to the parent object.
      * 
      */
     public GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRef parentRef() {
@@ -165,7 +142,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeType
     public static Builder builder(GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinition configDefinition;
         private String description;
@@ -177,11 +154,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeType
         private Integer objectStatus;
         private GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRef parentRef;
         private String typeSystemName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configDefinition = defaults.configDefinition;
@@ -196,47 +169,69 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeType
     	      this.typeSystemName = defaults.typeSystemName;
         }
 
+        @CustomType.Setter
         public Builder configDefinition(GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinition configDefinition) {
             this.configDefinition = Objects.requireNonNull(configDefinition);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder dtType(String dtType) {
             this.dtType = Objects.requireNonNull(dtType);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder modelType(String modelType) {
             this.modelType = Objects.requireNonNull(modelType);
             return this;
         }
+        @CustomType.Setter
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = Objects.requireNonNull(modelVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = Objects.requireNonNull(objectStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder parentRef(GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRef parentRef) {
             this.parentRef = Objects.requireNonNull(parentRef);
             return this;
         }
+        @CustomType.Setter
         public Builder typeSystemName(String typeSystemName) {
             this.typeSystemName = Objects.requireNonNull(typeSystemName);
             return this;
-        }        public GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType build() {
-            return new GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType(configDefinition, description, dtType, key, modelType, modelVersion, name, objectStatus, parentRef, typeSystemName);
+        }
+        public GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType build() {
+            final var o = new GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemType();
+            o.configDefinition = configDefinition;
+            o.description = description;
+            o.dtType = dtType;
+            o.key = key;
+            o.modelType = modelType;
+            o.modelVersion = modelVersion;
+            o.name = name;
+            o.objectStatus = objectStatus;
+            o.parentRef = parentRef;
+            o.typeSystemName = typeSystemName;
+            return o;
         }
     }
 }

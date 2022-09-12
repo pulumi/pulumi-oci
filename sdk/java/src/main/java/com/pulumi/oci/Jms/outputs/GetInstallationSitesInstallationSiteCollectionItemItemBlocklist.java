@@ -13,21 +13,14 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemBlockli
      * @return The operation type.
      * 
      */
-    private final String operation;
+    private String operation;
     /**
      * @return The reason why the operation is blocklisted.
      * 
      */
-    private final String reason;
+    private String reason;
 
-    @CustomType.Constructor
-    private GetInstallationSitesInstallationSiteCollectionItemItemBlocklist(
-        @CustomType.Parameter("operation") String operation,
-        @CustomType.Parameter("reason") String reason) {
-        this.operation = operation;
-        this.reason = reason;
-    }
-
+    private GetInstallationSitesInstallationSiteCollectionItemItemBlocklist() {}
     /**
      * @return The operation type.
      * 
@@ -50,30 +43,32 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemBlockli
     public static Builder builder(GetInstallationSitesInstallationSiteCollectionItemItemBlocklist defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String operation;
         private String reason;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstallationSitesInstallationSiteCollectionItemItemBlocklist defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.operation = defaults.operation;
     	      this.reason = defaults.reason;
         }
 
+        @CustomType.Setter
         public Builder operation(String operation) {
             this.operation = Objects.requireNonNull(operation);
             return this;
         }
+        @CustomType.Setter
         public Builder reason(String reason) {
             this.reason = Objects.requireNonNull(reason);
             return this;
-        }        public GetInstallationSitesInstallationSiteCollectionItemItemBlocklist build() {
-            return new GetInstallationSitesInstallationSiteCollectionItemItemBlocklist(operation, reason);
+        }
+        public GetInstallationSitesInstallationSiteCollectionItemItemBlocklist build() {
+            final var o = new GetInstallationSitesInstallationSiteCollectionItemItemBlocklist();
+            o.operation = operation;
+            o.reason = reason;
+            return o;
         }
     }
 }

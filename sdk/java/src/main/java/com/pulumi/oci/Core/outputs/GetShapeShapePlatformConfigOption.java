@@ -19,41 +19,18 @@ import java.util.Objects;
 
 @CustomType
 public final class GetShapeShapePlatformConfigOption {
-    private final List<GetShapeShapePlatformConfigOptionAccessControlServiceOption> accessControlServiceOptions;
-    private final List<GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption> inputOutputMemoryManagementUnitOptions;
-    private final List<GetShapeShapePlatformConfigOptionMeasuredBootOption> measuredBootOptions;
-    private final List<GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption> numaNodesPerSocketPlatformOptions;
-    private final List<GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption> percentageOfCoresEnabledOptions;
-    private final List<GetShapeShapePlatformConfigOptionSecureBootOption> secureBootOptions;
-    private final List<GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption> symmetricMultiThreadingOptions;
-    private final List<GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption> trustedPlatformModuleOptions;
-    private final String type;
-    private final List<GetShapeShapePlatformConfigOptionVirtualInstructionsOption> virtualInstructionsOptions;
+    private List<GetShapeShapePlatformConfigOptionAccessControlServiceOption> accessControlServiceOptions;
+    private List<GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption> inputOutputMemoryManagementUnitOptions;
+    private List<GetShapeShapePlatformConfigOptionMeasuredBootOption> measuredBootOptions;
+    private List<GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption> numaNodesPerSocketPlatformOptions;
+    private List<GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption> percentageOfCoresEnabledOptions;
+    private List<GetShapeShapePlatformConfigOptionSecureBootOption> secureBootOptions;
+    private List<GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption> symmetricMultiThreadingOptions;
+    private List<GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption> trustedPlatformModuleOptions;
+    private String type;
+    private List<GetShapeShapePlatformConfigOptionVirtualInstructionsOption> virtualInstructionsOptions;
 
-    @CustomType.Constructor
-    private GetShapeShapePlatformConfigOption(
-        @CustomType.Parameter("accessControlServiceOptions") List<GetShapeShapePlatformConfigOptionAccessControlServiceOption> accessControlServiceOptions,
-        @CustomType.Parameter("inputOutputMemoryManagementUnitOptions") List<GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption> inputOutputMemoryManagementUnitOptions,
-        @CustomType.Parameter("measuredBootOptions") List<GetShapeShapePlatformConfigOptionMeasuredBootOption> measuredBootOptions,
-        @CustomType.Parameter("numaNodesPerSocketPlatformOptions") List<GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption> numaNodesPerSocketPlatformOptions,
-        @CustomType.Parameter("percentageOfCoresEnabledOptions") List<GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption> percentageOfCoresEnabledOptions,
-        @CustomType.Parameter("secureBootOptions") List<GetShapeShapePlatformConfigOptionSecureBootOption> secureBootOptions,
-        @CustomType.Parameter("symmetricMultiThreadingOptions") List<GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption> symmetricMultiThreadingOptions,
-        @CustomType.Parameter("trustedPlatformModuleOptions") List<GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption> trustedPlatformModuleOptions,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("virtualInstructionsOptions") List<GetShapeShapePlatformConfigOptionVirtualInstructionsOption> virtualInstructionsOptions) {
-        this.accessControlServiceOptions = accessControlServiceOptions;
-        this.inputOutputMemoryManagementUnitOptions = inputOutputMemoryManagementUnitOptions;
-        this.measuredBootOptions = measuredBootOptions;
-        this.numaNodesPerSocketPlatformOptions = numaNodesPerSocketPlatformOptions;
-        this.percentageOfCoresEnabledOptions = percentageOfCoresEnabledOptions;
-        this.secureBootOptions = secureBootOptions;
-        this.symmetricMultiThreadingOptions = symmetricMultiThreadingOptions;
-        this.trustedPlatformModuleOptions = trustedPlatformModuleOptions;
-        this.type = type;
-        this.virtualInstructionsOptions = virtualInstructionsOptions;
-    }
-
+    private GetShapeShapePlatformConfigOption() {}
     public List<GetShapeShapePlatformConfigOptionAccessControlServiceOption> accessControlServiceOptions() {
         return this.accessControlServiceOptions;
     }
@@ -92,7 +69,7 @@ public final class GetShapeShapePlatformConfigOption {
     public static Builder builder(GetShapeShapePlatformConfigOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetShapeShapePlatformConfigOptionAccessControlServiceOption> accessControlServiceOptions;
         private List<GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption> inputOutputMemoryManagementUnitOptions;
@@ -104,11 +81,7 @@ public final class GetShapeShapePlatformConfigOption {
         private List<GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption> trustedPlatformModuleOptions;
         private String type;
         private List<GetShapeShapePlatformConfigOptionVirtualInstructionsOption> virtualInstructionsOptions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapeShapePlatformConfigOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessControlServiceOptions = defaults.accessControlServiceOptions;
@@ -123,6 +96,7 @@ public final class GetShapeShapePlatformConfigOption {
     	      this.virtualInstructionsOptions = defaults.virtualInstructionsOptions;
         }
 
+        @CustomType.Setter
         public Builder accessControlServiceOptions(List<GetShapeShapePlatformConfigOptionAccessControlServiceOption> accessControlServiceOptions) {
             this.accessControlServiceOptions = Objects.requireNonNull(accessControlServiceOptions);
             return this;
@@ -130,6 +104,7 @@ public final class GetShapeShapePlatformConfigOption {
         public Builder accessControlServiceOptions(GetShapeShapePlatformConfigOptionAccessControlServiceOption... accessControlServiceOptions) {
             return accessControlServiceOptions(List.of(accessControlServiceOptions));
         }
+        @CustomType.Setter
         public Builder inputOutputMemoryManagementUnitOptions(List<GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption> inputOutputMemoryManagementUnitOptions) {
             this.inputOutputMemoryManagementUnitOptions = Objects.requireNonNull(inputOutputMemoryManagementUnitOptions);
             return this;
@@ -137,6 +112,7 @@ public final class GetShapeShapePlatformConfigOption {
         public Builder inputOutputMemoryManagementUnitOptions(GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption... inputOutputMemoryManagementUnitOptions) {
             return inputOutputMemoryManagementUnitOptions(List.of(inputOutputMemoryManagementUnitOptions));
         }
+        @CustomType.Setter
         public Builder measuredBootOptions(List<GetShapeShapePlatformConfigOptionMeasuredBootOption> measuredBootOptions) {
             this.measuredBootOptions = Objects.requireNonNull(measuredBootOptions);
             return this;
@@ -144,6 +120,7 @@ public final class GetShapeShapePlatformConfigOption {
         public Builder measuredBootOptions(GetShapeShapePlatformConfigOptionMeasuredBootOption... measuredBootOptions) {
             return measuredBootOptions(List.of(measuredBootOptions));
         }
+        @CustomType.Setter
         public Builder numaNodesPerSocketPlatformOptions(List<GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption> numaNodesPerSocketPlatformOptions) {
             this.numaNodesPerSocketPlatformOptions = Objects.requireNonNull(numaNodesPerSocketPlatformOptions);
             return this;
@@ -151,6 +128,7 @@ public final class GetShapeShapePlatformConfigOption {
         public Builder numaNodesPerSocketPlatformOptions(GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption... numaNodesPerSocketPlatformOptions) {
             return numaNodesPerSocketPlatformOptions(List.of(numaNodesPerSocketPlatformOptions));
         }
+        @CustomType.Setter
         public Builder percentageOfCoresEnabledOptions(List<GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption> percentageOfCoresEnabledOptions) {
             this.percentageOfCoresEnabledOptions = Objects.requireNonNull(percentageOfCoresEnabledOptions);
             return this;
@@ -158,6 +136,7 @@ public final class GetShapeShapePlatformConfigOption {
         public Builder percentageOfCoresEnabledOptions(GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption... percentageOfCoresEnabledOptions) {
             return percentageOfCoresEnabledOptions(List.of(percentageOfCoresEnabledOptions));
         }
+        @CustomType.Setter
         public Builder secureBootOptions(List<GetShapeShapePlatformConfigOptionSecureBootOption> secureBootOptions) {
             this.secureBootOptions = Objects.requireNonNull(secureBootOptions);
             return this;
@@ -165,6 +144,7 @@ public final class GetShapeShapePlatformConfigOption {
         public Builder secureBootOptions(GetShapeShapePlatformConfigOptionSecureBootOption... secureBootOptions) {
             return secureBootOptions(List.of(secureBootOptions));
         }
+        @CustomType.Setter
         public Builder symmetricMultiThreadingOptions(List<GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption> symmetricMultiThreadingOptions) {
             this.symmetricMultiThreadingOptions = Objects.requireNonNull(symmetricMultiThreadingOptions);
             return this;
@@ -172,6 +152,7 @@ public final class GetShapeShapePlatformConfigOption {
         public Builder symmetricMultiThreadingOptions(GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption... symmetricMultiThreadingOptions) {
             return symmetricMultiThreadingOptions(List.of(symmetricMultiThreadingOptions));
         }
+        @CustomType.Setter
         public Builder trustedPlatformModuleOptions(List<GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption> trustedPlatformModuleOptions) {
             this.trustedPlatformModuleOptions = Objects.requireNonNull(trustedPlatformModuleOptions);
             return this;
@@ -179,18 +160,32 @@ public final class GetShapeShapePlatformConfigOption {
         public Builder trustedPlatformModuleOptions(GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption... trustedPlatformModuleOptions) {
             return trustedPlatformModuleOptions(List.of(trustedPlatformModuleOptions));
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder virtualInstructionsOptions(List<GetShapeShapePlatformConfigOptionVirtualInstructionsOption> virtualInstructionsOptions) {
             this.virtualInstructionsOptions = Objects.requireNonNull(virtualInstructionsOptions);
             return this;
         }
         public Builder virtualInstructionsOptions(GetShapeShapePlatformConfigOptionVirtualInstructionsOption... virtualInstructionsOptions) {
             return virtualInstructionsOptions(List.of(virtualInstructionsOptions));
-        }        public GetShapeShapePlatformConfigOption build() {
-            return new GetShapeShapePlatformConfigOption(accessControlServiceOptions, inputOutputMemoryManagementUnitOptions, measuredBootOptions, numaNodesPerSocketPlatformOptions, percentageOfCoresEnabledOptions, secureBootOptions, symmetricMultiThreadingOptions, trustedPlatformModuleOptions, type, virtualInstructionsOptions);
+        }
+        public GetShapeShapePlatformConfigOption build() {
+            final var o = new GetShapeShapePlatformConfigOption();
+            o.accessControlServiceOptions = accessControlServiceOptions;
+            o.inputOutputMemoryManagementUnitOptions = inputOutputMemoryManagementUnitOptions;
+            o.measuredBootOptions = measuredBootOptions;
+            o.numaNodesPerSocketPlatformOptions = numaNodesPerSocketPlatformOptions;
+            o.percentageOfCoresEnabledOptions = percentageOfCoresEnabledOptions;
+            o.secureBootOptions = secureBootOptions;
+            o.symmetricMultiThreadingOptions = symmetricMultiThreadingOptions;
+            o.trustedPlatformModuleOptions = trustedPlatformModuleOptions;
+            o.type = type;
+            o.virtualInstructionsOptions = virtualInstructionsOptions;
+            return o;
         }
     }
 }

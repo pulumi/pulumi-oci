@@ -14,13 +14,9 @@ public final class GetAppAccelerationPolicyResponseCompressionPolicy {
      * @return An object that specifies the gzip compression policy.
      * 
      */
-    private final List<GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression> gzipCompressions;
+    private List<GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression> gzipCompressions;
 
-    @CustomType.Constructor
-    private GetAppAccelerationPolicyResponseCompressionPolicy(@CustomType.Parameter("gzipCompressions") List<GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression> gzipCompressions) {
-        this.gzipCompressions = gzipCompressions;
-    }
-
+    private GetAppAccelerationPolicyResponseCompressionPolicy() {}
     /**
      * @return An object that specifies the gzip compression policy.
      * 
@@ -36,27 +32,27 @@ public final class GetAppAccelerationPolicyResponseCompressionPolicy {
     public static Builder builder(GetAppAccelerationPolicyResponseCompressionPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression> gzipCompressions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAppAccelerationPolicyResponseCompressionPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.gzipCompressions = defaults.gzipCompressions;
         }
 
+        @CustomType.Setter
         public Builder gzipCompressions(List<GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression> gzipCompressions) {
             this.gzipCompressions = Objects.requireNonNull(gzipCompressions);
             return this;
         }
         public Builder gzipCompressions(GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression... gzipCompressions) {
             return gzipCompressions(List.of(gzipCompressions));
-        }        public GetAppAccelerationPolicyResponseCompressionPolicy build() {
-            return new GetAppAccelerationPolicyResponseCompressionPolicy(gzipCompressions);
+        }
+        public GetAppAccelerationPolicyResponseCompressionPolicy build() {
+            final var o = new GetAppAccelerationPolicyResponseCompressionPolicy();
+            o.gzipCompressions = gzipCompressions;
+            return o;
         }
     }
 }

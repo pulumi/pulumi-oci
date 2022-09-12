@@ -15,48 +15,31 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProfileLevelsResult {
-    private final String compartmentId;
-    private final Boolean compartmentIdInSubtree;
-    private final @Nullable List<GetProfileLevelsFilter> filters;
+    private String compartmentId;
+    private Boolean compartmentIdInSubtree;
+    private @Nullable List<GetProfileLevelsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A unique name for the profile level.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The list of profile_level_collection.
      * 
      */
-    private final List<GetProfileLevelsProfileLevelCollection> profileLevelCollections;
+    private List<GetProfileLevelsProfileLevelCollection> profileLevelCollections;
     /**
      * @return The name of the recommendation this profile level applies to.
      * 
      */
-    private final @Nullable String recommendationName;
+    private @Nullable String recommendationName;
 
-    @CustomType.Constructor
-    private GetProfileLevelsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("filters") @Nullable List<GetProfileLevelsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("profileLevelCollections") List<GetProfileLevelsProfileLevelCollection> profileLevelCollections,
-        @CustomType.Parameter("recommendationName") @Nullable String recommendationName) {
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.profileLevelCollections = profileLevelCollections;
-        this.recommendationName = recommendationName;
-    }
-
+    private GetProfileLevelsResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -102,7 +85,7 @@ public final class GetProfileLevelsResult {
     public static Builder builder(GetProfileLevelsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Boolean compartmentIdInSubtree;
@@ -111,11 +94,7 @@ public final class GetProfileLevelsResult {
         private @Nullable String name;
         private List<GetProfileLevelsProfileLevelCollection> profileLevelCollections;
         private @Nullable String recommendationName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProfileLevelsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -127,14 +106,17 @@ public final class GetProfileLevelsResult {
     	      this.recommendationName = defaults.recommendationName;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetProfileLevelsFilter> filters) {
             this.filters = filters;
             return this;
@@ -142,14 +124,17 @@ public final class GetProfileLevelsResult {
         public Builder filters(GetProfileLevelsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder profileLevelCollections(List<GetProfileLevelsProfileLevelCollection> profileLevelCollections) {
             this.profileLevelCollections = Objects.requireNonNull(profileLevelCollections);
             return this;
@@ -157,11 +142,21 @@ public final class GetProfileLevelsResult {
         public Builder profileLevelCollections(GetProfileLevelsProfileLevelCollection... profileLevelCollections) {
             return profileLevelCollections(List.of(profileLevelCollections));
         }
+        @CustomType.Setter
         public Builder recommendationName(@Nullable String recommendationName) {
             this.recommendationName = recommendationName;
             return this;
-        }        public GetProfileLevelsResult build() {
-            return new GetProfileLevelsResult(compartmentId, compartmentIdInSubtree, filters, id, name, profileLevelCollections, recommendationName);
+        }
+        public GetProfileLevelsResult build() {
+            final var o = new GetProfileLevelsResult();
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.profileLevelCollections = profileLevelCollections;
+            o.recommendationName = recommendationName;
+            return o;
         }
     }
 }

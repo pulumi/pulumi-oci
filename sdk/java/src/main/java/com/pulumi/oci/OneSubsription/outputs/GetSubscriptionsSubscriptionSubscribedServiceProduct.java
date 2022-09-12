@@ -13,35 +13,24 @@ public final class GetSubscriptionsSubscriptionSubscribedServiceProduct {
      * @return Product name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Product part numner
      * 
      */
-    private final String partNumber;
+    private String partNumber;
     /**
      * @return Product provisioning group
      * 
      */
-    private final String provisioningGroup;
+    private String provisioningGroup;
     /**
      * @return Unit of measure
      * 
      */
-    private final String unitOfMeasure;
+    private String unitOfMeasure;
 
-    @CustomType.Constructor
-    private GetSubscriptionsSubscriptionSubscribedServiceProduct(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("partNumber") String partNumber,
-        @CustomType.Parameter("provisioningGroup") String provisioningGroup,
-        @CustomType.Parameter("unitOfMeasure") String unitOfMeasure) {
-        this.name = name;
-        this.partNumber = partNumber;
-        this.provisioningGroup = provisioningGroup;
-        this.unitOfMeasure = unitOfMeasure;
-    }
-
+    private GetSubscriptionsSubscriptionSubscribedServiceProduct() {}
     /**
      * @return Product name
      * 
@@ -78,17 +67,13 @@ public final class GetSubscriptionsSubscriptionSubscribedServiceProduct {
     public static Builder builder(GetSubscriptionsSubscriptionSubscribedServiceProduct defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private String partNumber;
         private String provisioningGroup;
         private String unitOfMeasure;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionsSubscriptionSubscribedServiceProduct defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
@@ -97,23 +82,33 @@ public final class GetSubscriptionsSubscriptionSubscribedServiceProduct {
     	      this.unitOfMeasure = defaults.unitOfMeasure;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder partNumber(String partNumber) {
             this.partNumber = Objects.requireNonNull(partNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder provisioningGroup(String provisioningGroup) {
             this.provisioningGroup = Objects.requireNonNull(provisioningGroup);
             return this;
         }
+        @CustomType.Setter
         public Builder unitOfMeasure(String unitOfMeasure) {
             this.unitOfMeasure = Objects.requireNonNull(unitOfMeasure);
             return this;
-        }        public GetSubscriptionsSubscriptionSubscribedServiceProduct build() {
-            return new GetSubscriptionsSubscriptionSubscribedServiceProduct(name, partNumber, provisioningGroup, unitOfMeasure);
+        }
+        public GetSubscriptionsSubscriptionSubscribedServiceProduct build() {
+            final var o = new GetSubscriptionsSubscriptionSubscribedServiceProduct();
+            o.name = name;
+            o.partNumber = partNumber;
+            o.provisioningGroup = provisioningGroup;
+            o.unitOfMeasure = unitOfMeasure;
+            return o;
         }
     }
 }

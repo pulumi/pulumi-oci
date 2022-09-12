@@ -15,28 +15,19 @@ public final class GetTriggerAction {
      * @return The OCID of the build pipeline to be triggered.
      * 
      */
-    private final String buildPipelineId;
+    private String buildPipelineId;
     /**
      * @return The filters for the trigger.
      * 
      */
-    private final List<GetTriggerActionFilter> filters;
+    private List<GetTriggerActionFilter> filters;
     /**
      * @return The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetTriggerAction(
-        @CustomType.Parameter("buildPipelineId") String buildPipelineId,
-        @CustomType.Parameter("filters") List<GetTriggerActionFilter> filters,
-        @CustomType.Parameter("type") String type) {
-        this.buildPipelineId = buildPipelineId;
-        this.filters = filters;
-        this.type = type;
-    }
-
+    private GetTriggerAction() {}
     /**
      * @return The OCID of the build pipeline to be triggered.
      * 
@@ -66,16 +57,12 @@ public final class GetTriggerAction {
     public static Builder builder(GetTriggerAction defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String buildPipelineId;
         private List<GetTriggerActionFilter> filters;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTriggerAction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.buildPipelineId = defaults.buildPipelineId;
@@ -83,10 +70,12 @@ public final class GetTriggerAction {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder buildPipelineId(String buildPipelineId) {
             this.buildPipelineId = Objects.requireNonNull(buildPipelineId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(List<GetTriggerActionFilter> filters) {
             this.filters = Objects.requireNonNull(filters);
             return this;
@@ -94,11 +83,17 @@ public final class GetTriggerAction {
         public Builder filters(GetTriggerActionFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetTriggerAction build() {
-            return new GetTriggerAction(buildPipelineId, filters, type);
+        }
+        public GetTriggerAction build() {
+            final var o = new GetTriggerAction();
+            o.buildPipelineId = buildPipelineId;
+            o.filters = filters;
+            o.type = type;
+            return o;
         }
     }
 }

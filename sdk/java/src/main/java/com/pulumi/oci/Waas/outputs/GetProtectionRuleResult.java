@@ -15,69 +15,46 @@ public final class GetProtectionRuleResult {
      * @return The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return The description of the protection rule.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
      * 
      */
-    private final List<GetProtectionRuleExclusion> exclusions;
+    private List<GetProtectionRuleExclusion> exclusions;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The unique key of the protection rule.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return The list of labels for the protection rule.
      * 
      */
-    private final List<String> labels;
+    private List<String> labels;
     /**
      * @return The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity&#39;s open source WAF rules, see [Mod Security&#39;s documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
      * 
      */
-    private final List<String> modSecurityRuleIds;
+    private List<String> modSecurityRuleIds;
     /**
      * @return The name of the protection rule.
      * 
      */
-    private final String name;
-    private final String protectionRuleKey;
-    private final String waasPolicyId;
+    private String name;
+    private String protectionRuleKey;
+    private String waasPolicyId;
 
-    @CustomType.Constructor
-    private GetProtectionRuleResult(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("exclusions") List<GetProtectionRuleExclusion> exclusions,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("labels") List<String> labels,
-        @CustomType.Parameter("modSecurityRuleIds") List<String> modSecurityRuleIds,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("protectionRuleKey") String protectionRuleKey,
-        @CustomType.Parameter("waasPolicyId") String waasPolicyId) {
-        this.action = action;
-        this.description = description;
-        this.exclusions = exclusions;
-        this.id = id;
-        this.key = key;
-        this.labels = labels;
-        this.modSecurityRuleIds = modSecurityRuleIds;
-        this.name = name;
-        this.protectionRuleKey = protectionRuleKey;
-        this.waasPolicyId = waasPolicyId;
-    }
-
+    private GetProtectionRuleResult() {}
     /**
      * @return The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
      * 
@@ -148,7 +125,7 @@ public final class GetProtectionRuleResult {
     public static Builder builder(GetProtectionRuleResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private String description;
@@ -160,11 +137,7 @@ public final class GetProtectionRuleResult {
         private String name;
         private String protectionRuleKey;
         private String waasPolicyId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProtectionRuleResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -179,14 +152,17 @@ public final class GetProtectionRuleResult {
     	      this.waasPolicyId = defaults.waasPolicyId;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder exclusions(List<GetProtectionRuleExclusion> exclusions) {
             this.exclusions = Objects.requireNonNull(exclusions);
             return this;
@@ -194,14 +170,17 @@ public final class GetProtectionRuleResult {
         public Builder exclusions(GetProtectionRuleExclusion... exclusions) {
             return exclusions(List.of(exclusions));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder labels(List<String> labels) {
             this.labels = Objects.requireNonNull(labels);
             return this;
@@ -209,6 +188,7 @@ public final class GetProtectionRuleResult {
         public Builder labels(String... labels) {
             return labels(List.of(labels));
         }
+        @CustomType.Setter
         public Builder modSecurityRuleIds(List<String> modSecurityRuleIds) {
             this.modSecurityRuleIds = Objects.requireNonNull(modSecurityRuleIds);
             return this;
@@ -216,19 +196,34 @@ public final class GetProtectionRuleResult {
         public Builder modSecurityRuleIds(String... modSecurityRuleIds) {
             return modSecurityRuleIds(List.of(modSecurityRuleIds));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder protectionRuleKey(String protectionRuleKey) {
             this.protectionRuleKey = Objects.requireNonNull(protectionRuleKey);
             return this;
         }
+        @CustomType.Setter
         public Builder waasPolicyId(String waasPolicyId) {
             this.waasPolicyId = Objects.requireNonNull(waasPolicyId);
             return this;
-        }        public GetProtectionRuleResult build() {
-            return new GetProtectionRuleResult(action, description, exclusions, id, key, labels, modSecurityRuleIds, name, protectionRuleKey, waasPolicyId);
+        }
+        public GetProtectionRuleResult build() {
+            final var o = new GetProtectionRuleResult();
+            o.action = action;
+            o.description = description;
+            o.exclusions = exclusions;
+            o.id = id;
+            o.key = key;
+            o.labels = labels;
+            o.modSecurityRuleIds = modSecurityRuleIds;
+            o.name = name;
+            o.protectionRuleKey = protectionRuleKey;
+            o.waasPolicyId = waasPolicyId;
+            return o;
         }
     }
 }

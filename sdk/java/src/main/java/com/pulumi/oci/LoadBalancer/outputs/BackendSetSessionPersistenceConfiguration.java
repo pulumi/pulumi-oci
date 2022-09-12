@@ -16,21 +16,14 @@ public final class BackendSetSessionPersistenceConfiguration {
      * @return (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
      * 
      */
-    private final String cookieName;
+    private String cookieName;
     /**
      * @return (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
      * 
      */
-    private final @Nullable Boolean disableFallback;
+    private @Nullable Boolean disableFallback;
 
-    @CustomType.Constructor
-    private BackendSetSessionPersistenceConfiguration(
-        @CustomType.Parameter("cookieName") String cookieName,
-        @CustomType.Parameter("disableFallback") @Nullable Boolean disableFallback) {
-        this.cookieName = cookieName;
-        this.disableFallback = disableFallback;
-    }
-
+    private BackendSetSessionPersistenceConfiguration() {}
     /**
      * @return (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
      * 
@@ -53,30 +46,32 @@ public final class BackendSetSessionPersistenceConfiguration {
     public static Builder builder(BackendSetSessionPersistenceConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String cookieName;
         private @Nullable Boolean disableFallback;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BackendSetSessionPersistenceConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cookieName = defaults.cookieName;
     	      this.disableFallback = defaults.disableFallback;
         }
 
+        @CustomType.Setter
         public Builder cookieName(String cookieName) {
             this.cookieName = Objects.requireNonNull(cookieName);
             return this;
         }
+        @CustomType.Setter
         public Builder disableFallback(@Nullable Boolean disableFallback) {
             this.disableFallback = disableFallback;
             return this;
-        }        public BackendSetSessionPersistenceConfiguration build() {
-            return new BackendSetSessionPersistenceConfiguration(cookieName, disableFallback);
+        }
+        public BackendSetSessionPersistenceConfiguration build() {
+            final var o = new BackendSetSessionPersistenceConfiguration();
+            o.cookieName = cookieName;
+            o.disableFallback = disableFallback;
+            return o;
         }
     }
 }

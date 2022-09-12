@@ -15,13 +15,9 @@ public final class MysqlDbSystemBackupPolicyPitrPolicy {
      * @return (Updatable) Specifies if PITR is enabled or disabled.
      * 
      */
-    private final @Nullable Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
 
-    @CustomType.Constructor
-    private MysqlDbSystemBackupPolicyPitrPolicy(@CustomType.Parameter("isEnabled") @Nullable Boolean isEnabled) {
-        this.isEnabled = isEnabled;
-    }
-
+    private MysqlDbSystemBackupPolicyPitrPolicy() {}
     /**
      * @return (Updatable) Specifies if PITR is enabled or disabled.
      * 
@@ -37,24 +33,24 @@ public final class MysqlDbSystemBackupPolicyPitrPolicy {
     public static Builder builder(MysqlDbSystemBackupPolicyPitrPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MysqlDbSystemBackupPolicyPitrPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isEnabled = defaults.isEnabled;
         }
 
+        @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
             this.isEnabled = isEnabled;
             return this;
-        }        public MysqlDbSystemBackupPolicyPitrPolicy build() {
-            return new MysqlDbSystemBackupPolicyPitrPolicy(isEnabled);
+        }
+        public MysqlDbSystemBackupPolicyPitrPolicy build() {
+            final var o = new MysqlDbSystemBackupPolicyPitrPolicy();
+            o.isEnabled = isEnabled;
+            return o;
         }
     }
 }

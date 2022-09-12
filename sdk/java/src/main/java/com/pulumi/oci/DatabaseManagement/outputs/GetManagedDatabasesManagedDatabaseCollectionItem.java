@@ -18,105 +18,74 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
      * @return The additional details specific to a type of database defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> additionalDetails;
+    private Map<String,Object> additionalDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
      * 
      */
-    private final String databaseStatus;
+    private String databaseStatus;
     /**
      * @return The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
      * 
      */
-    private final String databaseSubType;
+    private String databaseSubType;
     /**
      * @return The type of Oracle Database installation.
      * 
      */
-    private final String databaseType;
+    private String databaseType;
     /**
      * @return A filter to return Managed Databases of the specified deployment type.
      * 
      */
-    private final String deploymentType;
+    private String deploymentType;
     /**
      * @return The identifier of the resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates whether the Oracle Database is part of a cluster.
      * 
      */
-    private final Boolean isCluster;
+    private Boolean isCluster;
     /**
      * @return A list of Managed Database Groups that the Managed Database belongs to.
      * 
      */
-    private final List<GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup> managedDatabaseGroups;
+    private List<GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup> managedDatabaseGroups;
     /**
      * @return A filter to return Managed Databases with the specified management option.
      * 
      */
-    private final String managementOption;
+    private String managementOption;
     /**
      * @return A filter to return only resources that match the entire name.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database if Managed Database is a Pluggable Database.
      * 
      */
-    private final String parentContainerId;
+    private String parentContainerId;
     /**
      * @return The date and time the Managed Database was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The workload type of the Autonomous Database.
      * 
      */
-    private final String workloadType;
+    private String workloadType;
 
-    @CustomType.Constructor
-    private GetManagedDatabasesManagedDatabaseCollectionItem(
-        @CustomType.Parameter("additionalDetails") Map<String,Object> additionalDetails,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("databaseStatus") String databaseStatus,
-        @CustomType.Parameter("databaseSubType") String databaseSubType,
-        @CustomType.Parameter("databaseType") String databaseType,
-        @CustomType.Parameter("deploymentType") String deploymentType,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isCluster") Boolean isCluster,
-        @CustomType.Parameter("managedDatabaseGroups") List<GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup> managedDatabaseGroups,
-        @CustomType.Parameter("managementOption") String managementOption,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("parentContainerId") String parentContainerId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("workloadType") String workloadType) {
-        this.additionalDetails = additionalDetails;
-        this.compartmentId = compartmentId;
-        this.databaseStatus = databaseStatus;
-        this.databaseSubType = databaseSubType;
-        this.databaseType = databaseType;
-        this.deploymentType = deploymentType;
-        this.id = id;
-        this.isCluster = isCluster;
-        this.managedDatabaseGroups = managedDatabaseGroups;
-        this.managementOption = managementOption;
-        this.name = name;
-        this.parentContainerId = parentContainerId;
-        this.timeCreated = timeCreated;
-        this.workloadType = workloadType;
-    }
-
+    private GetManagedDatabasesManagedDatabaseCollectionItem() {}
     /**
      * @return The additional details specific to a type of database defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -223,7 +192,7 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
     public static Builder builder(GetManagedDatabasesManagedDatabaseCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> additionalDetails;
         private String compartmentId;
@@ -239,11 +208,7 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
         private String parentContainerId;
         private String timeCreated;
         private String workloadType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabasesManagedDatabaseCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.additionalDetails = defaults.additionalDetails;
@@ -262,38 +227,47 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
     	      this.workloadType = defaults.workloadType;
         }
 
+        @CustomType.Setter
         public Builder additionalDetails(Map<String,Object> additionalDetails) {
             this.additionalDetails = Objects.requireNonNull(additionalDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseStatus(String databaseStatus) {
             this.databaseStatus = Objects.requireNonNull(databaseStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseSubType(String databaseSubType) {
             this.databaseSubType = Objects.requireNonNull(databaseSubType);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseType(String databaseType) {
             this.databaseType = Objects.requireNonNull(databaseType);
             return this;
         }
+        @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
             this.deploymentType = Objects.requireNonNull(deploymentType);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isCluster(Boolean isCluster) {
             this.isCluster = Objects.requireNonNull(isCluster);
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseGroups(List<GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup> managedDatabaseGroups) {
             this.managedDatabaseGroups = Objects.requireNonNull(managedDatabaseGroups);
             return this;
@@ -301,27 +275,48 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
         public Builder managedDatabaseGroups(GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup... managedDatabaseGroups) {
             return managedDatabaseGroups(List.of(managedDatabaseGroups));
         }
+        @CustomType.Setter
         public Builder managementOption(String managementOption) {
             this.managementOption = Objects.requireNonNull(managementOption);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder parentContainerId(String parentContainerId) {
             this.parentContainerId = Objects.requireNonNull(parentContainerId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder workloadType(String workloadType) {
             this.workloadType = Objects.requireNonNull(workloadType);
             return this;
-        }        public GetManagedDatabasesManagedDatabaseCollectionItem build() {
-            return new GetManagedDatabasesManagedDatabaseCollectionItem(additionalDetails, compartmentId, databaseStatus, databaseSubType, databaseType, deploymentType, id, isCluster, managedDatabaseGroups, managementOption, name, parentContainerId, timeCreated, workloadType);
+        }
+        public GetManagedDatabasesManagedDatabaseCollectionItem build() {
+            final var o = new GetManagedDatabasesManagedDatabaseCollectionItem();
+            o.additionalDetails = additionalDetails;
+            o.compartmentId = compartmentId;
+            o.databaseStatus = databaseStatus;
+            o.databaseSubType = databaseSubType;
+            o.databaseType = databaseType;
+            o.deploymentType = deploymentType;
+            o.id = id;
+            o.isCluster = isCluster;
+            o.managedDatabaseGroups = managedDatabaseGroups;
+            o.managementOption = managementOption;
+            o.name = name;
+            o.parentContainerId = parentContainerId;
+            o.timeCreated = timeCreated;
+            o.workloadType = workloadType;
+            return o;
         }
     }
 }

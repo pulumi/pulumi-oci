@@ -83,7 +83,7 @@ export class EsxiHost extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
      */
     public readonly failedEsxiHostId!: pulumi.Output<string>;
     /**
@@ -107,6 +107,10 @@ export class EsxiHost extends pulumi.CustomResource {
      */
     public readonly nextSku!: pulumi.Output<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+     */
+    public readonly nonUpgradedEsxiHostId!: pulumi.Output<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
      */
     public /*out*/ readonly replacementEsxiHostId!: pulumi.Output<string>;
@@ -126,6 +130,14 @@ export class EsxiHost extends pulumi.CustomResource {
      * The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+     */
+    public /*out*/ readonly upgradedReplacementEsxiHostId!: pulumi.Output<string>;
+    /**
+     * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+     */
+    public /*out*/ readonly vmwareSoftwareVersion!: pulumi.Output<string>;
 
     /**
      * Create a EsxiHost resource with the given unique name, arguments, and options.
@@ -154,11 +166,14 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["hostOcpuCount"] = state ? state.hostOcpuCount : undefined;
             resourceInputs["hostShapeName"] = state ? state.hostShapeName : undefined;
             resourceInputs["nextSku"] = state ? state.nextSku : undefined;
+            resourceInputs["nonUpgradedEsxiHostId"] = state ? state.nonUpgradedEsxiHostId : undefined;
             resourceInputs["replacementEsxiHostId"] = state ? state.replacementEsxiHostId : undefined;
             resourceInputs["sddcId"] = state ? state.sddcId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
+            resourceInputs["upgradedReplacementEsxiHostId"] = state ? state.upgradedReplacementEsxiHostId : undefined;
+            resourceInputs["vmwareSoftwareVersion"] = state ? state.vmwareSoftwareVersion : undefined;
         } else {
             const args = argsOrState as EsxiHostArgs | undefined;
             if ((!args || args.sddcId === undefined) && !opts.urn) {
@@ -174,6 +189,7 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["hostOcpuCount"] = args ? args.hostOcpuCount : undefined;
             resourceInputs["hostShapeName"] = args ? args.hostShapeName : undefined;
             resourceInputs["nextSku"] = args ? args.nextSku : undefined;
+            resourceInputs["nonUpgradedEsxiHostId"] = args ? args.nonUpgradedEsxiHostId : undefined;
             resourceInputs["sddcId"] = args ? args.sddcId : undefined;
             resourceInputs["billingContractEndDate"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
@@ -183,6 +199,8 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
+            resourceInputs["upgradedReplacementEsxiHostId"] = undefined /*out*/;
+            resourceInputs["vmwareSoftwareVersion"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(EsxiHost.__pulumiType, name, resourceInputs, opts);
@@ -226,7 +244,7 @@ export interface EsxiHostState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
      */
     failedEsxiHostId?: pulumi.Input<string>;
     /**
@@ -250,6 +268,10 @@ export interface EsxiHostState {
      */
     nextSku?: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+     */
+    nonUpgradedEsxiHostId?: pulumi.Input<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
      */
     replacementEsxiHostId?: pulumi.Input<string>;
@@ -269,6 +291,14 @@ export interface EsxiHostState {
      * The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     timeUpdated?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+     */
+    upgradedReplacementEsxiHostId?: pulumi.Input<string>;
+    /**
+     * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+     */
+    vmwareSoftwareVersion?: pulumi.Input<string>;
 }
 
 /**
@@ -296,7 +326,7 @@ export interface EsxiHostArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
      */
     failedEsxiHostId?: pulumi.Input<string>;
     /**
@@ -315,6 +345,10 @@ export interface EsxiHostArgs {
      * (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      */
     nextSku?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+     */
+    nonUpgradedEsxiHostId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to.
      */

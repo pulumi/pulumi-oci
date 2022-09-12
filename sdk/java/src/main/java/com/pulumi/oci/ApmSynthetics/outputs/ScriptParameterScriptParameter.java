@@ -16,28 +16,19 @@ public final class ScriptParameterScriptParameter {
      * @return (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
      * 
      */
-    private final @Nullable Boolean isSecret;
+    private @Nullable Boolean isSecret;
     /**
      * @return (Updatable) Name of the parameter.
      * 
      */
-    private final @Nullable String paramName;
+    private @Nullable String paramName;
     /**
      * @return (Updatable) Value of the parameter.
      * 
      */
-    private final @Nullable String paramValue;
+    private @Nullable String paramValue;
 
-    @CustomType.Constructor
-    private ScriptParameterScriptParameter(
-        @CustomType.Parameter("isSecret") @Nullable Boolean isSecret,
-        @CustomType.Parameter("paramName") @Nullable String paramName,
-        @CustomType.Parameter("paramValue") @Nullable String paramValue) {
-        this.isSecret = isSecret;
-        this.paramName = paramName;
-        this.paramValue = paramValue;
-    }
-
+    private ScriptParameterScriptParameter() {}
     /**
      * @return (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
      * 
@@ -67,16 +58,12 @@ public final class ScriptParameterScriptParameter {
     public static Builder builder(ScriptParameterScriptParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isSecret;
         private @Nullable String paramName;
         private @Nullable String paramValue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ScriptParameterScriptParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isSecret = defaults.isSecret;
@@ -84,19 +71,27 @@ public final class ScriptParameterScriptParameter {
     	      this.paramValue = defaults.paramValue;
         }
 
+        @CustomType.Setter
         public Builder isSecret(@Nullable Boolean isSecret) {
             this.isSecret = isSecret;
             return this;
         }
+        @CustomType.Setter
         public Builder paramName(@Nullable String paramName) {
             this.paramName = paramName;
             return this;
         }
+        @CustomType.Setter
         public Builder paramValue(@Nullable String paramValue) {
             this.paramValue = paramValue;
             return this;
-        }        public ScriptParameterScriptParameter build() {
-            return new ScriptParameterScriptParameter(isSecret, paramName, paramValue);
+        }
+        public ScriptParameterScriptParameter build() {
+            final var o = new ScriptParameterScriptParameter();
+            o.isSecret = isSecret;
+            o.paramName = paramName;
+            o.paramValue = paramValue;
+            return o;
         }
     }
 }

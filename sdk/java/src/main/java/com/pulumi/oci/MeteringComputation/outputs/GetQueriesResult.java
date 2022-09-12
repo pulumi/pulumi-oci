@@ -17,35 +17,24 @@ public final class GetQueriesResult {
      * @return The compartment OCID.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The filter object for query usage.
      * 
      */
-    private final @Nullable List<GetQueriesFilter> filters;
+    private @Nullable List<GetQueriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of query_collection.
      * 
      */
-    private final List<GetQueriesQueryCollection> queryCollections;
+    private List<GetQueriesQueryCollection> queryCollections;
 
-    @CustomType.Constructor
-    private GetQueriesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetQueriesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("queryCollections") List<GetQueriesQueryCollection> queryCollections) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.queryCollections = queryCollections;
-    }
-
+    private GetQueriesResult() {}
     /**
      * @return The compartment OCID.
      * 
@@ -82,17 +71,13 @@ public final class GetQueriesResult {
     public static Builder builder(GetQueriesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetQueriesFilter> filters;
         private String id;
         private List<GetQueriesQueryCollection> queryCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetQueriesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -101,10 +86,12 @@ public final class GetQueriesResult {
     	      this.queryCollections = defaults.queryCollections;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetQueriesFilter> filters) {
             this.filters = filters;
             return this;
@@ -112,18 +99,26 @@ public final class GetQueriesResult {
         public Builder filters(GetQueriesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder queryCollections(List<GetQueriesQueryCollection> queryCollections) {
             this.queryCollections = Objects.requireNonNull(queryCollections);
             return this;
         }
         public Builder queryCollections(GetQueriesQueryCollection... queryCollections) {
             return queryCollections(List.of(queryCollections));
-        }        public GetQueriesResult build() {
-            return new GetQueriesResult(compartmentId, filters, id, queryCollections);
+        }
+        public GetQueriesResult build() {
+            final var o = new GetQueriesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.queryCollections = queryCollections;
+            return o;
         }
     }
 }

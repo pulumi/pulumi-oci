@@ -13,28 +13,19 @@ public final class GetSubscribedServiceRateCardRateCardTier {
      * @return Rate card tier net unit price
      * 
      */
-    private final String netUnitPrice;
+    private String netUnitPrice;
     /**
      * @return Rate card tier overage price
      * 
      */
-    private final String overagePrice;
+    private String overagePrice;
     /**
      * @return Rate card tier quantity range
      * 
      */
-    private final String upToQuantity;
+    private String upToQuantity;
 
-    @CustomType.Constructor
-    private GetSubscribedServiceRateCardRateCardTier(
-        @CustomType.Parameter("netUnitPrice") String netUnitPrice,
-        @CustomType.Parameter("overagePrice") String overagePrice,
-        @CustomType.Parameter("upToQuantity") String upToQuantity) {
-        this.netUnitPrice = netUnitPrice;
-        this.overagePrice = overagePrice;
-        this.upToQuantity = upToQuantity;
-    }
-
+    private GetSubscribedServiceRateCardRateCardTier() {}
     /**
      * @return Rate card tier net unit price
      * 
@@ -64,16 +55,12 @@ public final class GetSubscribedServiceRateCardRateCardTier {
     public static Builder builder(GetSubscribedServiceRateCardRateCardTier defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String netUnitPrice;
         private String overagePrice;
         private String upToQuantity;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscribedServiceRateCardRateCardTier defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.netUnitPrice = defaults.netUnitPrice;
@@ -81,19 +68,27 @@ public final class GetSubscribedServiceRateCardRateCardTier {
     	      this.upToQuantity = defaults.upToQuantity;
         }
 
+        @CustomType.Setter
         public Builder netUnitPrice(String netUnitPrice) {
             this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
             return this;
         }
+        @CustomType.Setter
         public Builder overagePrice(String overagePrice) {
             this.overagePrice = Objects.requireNonNull(overagePrice);
             return this;
         }
+        @CustomType.Setter
         public Builder upToQuantity(String upToQuantity) {
             this.upToQuantity = Objects.requireNonNull(upToQuantity);
             return this;
-        }        public GetSubscribedServiceRateCardRateCardTier build() {
-            return new GetSubscribedServiceRateCardRateCardTier(netUnitPrice, overagePrice, upToQuantity);
+        }
+        public GetSubscribedServiceRateCardRateCardTier build() {
+            final var o = new GetSubscribedServiceRateCardRateCardTier();
+            o.netUnitPrice = netUnitPrice;
+            o.overagePrice = overagePrice;
+            o.upToQuantity = upToQuantity;
+            return o;
         }
     }
 }

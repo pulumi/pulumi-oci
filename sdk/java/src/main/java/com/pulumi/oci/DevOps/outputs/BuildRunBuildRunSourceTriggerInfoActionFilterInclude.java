@@ -4,7 +4,9 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DevOps.outputs.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -15,27 +17,24 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterInclude {
      * @return The target branch for pull requests; not applicable for push requests.
      * 
      */
-    private final @Nullable String baseRef;
+    private @Nullable String baseRef;
+    private @Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter> fileFilters;
     /**
      * @return Branch for push event; source branch for pull requests.
      * 
      */
-    private final @Nullable String headRef;
+    private @Nullable String headRef;
 
-    @CustomType.Constructor
-    private BuildRunBuildRunSourceTriggerInfoActionFilterInclude(
-        @CustomType.Parameter("baseRef") @Nullable String baseRef,
-        @CustomType.Parameter("headRef") @Nullable String headRef) {
-        this.baseRef = baseRef;
-        this.headRef = headRef;
-    }
-
+    private BuildRunBuildRunSourceTriggerInfoActionFilterInclude() {}
     /**
      * @return The target branch for pull requests; not applicable for push requests.
      * 
      */
     public Optional<String> baseRef() {
         return Optional.ofNullable(this.baseRef);
+    }
+    public List<BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter> fileFilters() {
+        return this.fileFilters == null ? List.of() : this.fileFilters;
     }
     /**
      * @return Branch for push event; source branch for pull requests.
@@ -52,30 +51,43 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterInclude {
     public static Builder builder(BuildRunBuildRunSourceTriggerInfoActionFilterInclude defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String baseRef;
+        private @Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter> fileFilters;
         private @Nullable String headRef;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BuildRunBuildRunSourceTriggerInfoActionFilterInclude defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baseRef = defaults.baseRef;
+    	      this.fileFilters = defaults.fileFilters;
     	      this.headRef = defaults.headRef;
         }
 
+        @CustomType.Setter
         public Builder baseRef(@Nullable String baseRef) {
             this.baseRef = baseRef;
             return this;
         }
+        @CustomType.Setter
+        public Builder fileFilters(@Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter> fileFilters) {
+            this.fileFilters = fileFilters;
+            return this;
+        }
+        public Builder fileFilters(BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter... fileFilters) {
+            return fileFilters(List.of(fileFilters));
+        }
+        @CustomType.Setter
         public Builder headRef(@Nullable String headRef) {
             this.headRef = headRef;
             return this;
-        }        public BuildRunBuildRunSourceTriggerInfoActionFilterInclude build() {
-            return new BuildRunBuildRunSourceTriggerInfoActionFilterInclude(baseRef, headRef);
+        }
+        public BuildRunBuildRunSourceTriggerInfoActionFilterInclude build() {
+            final var o = new BuildRunBuildRunSourceTriggerInfoActionFilterInclude();
+            o.baseRef = baseRef;
+            o.fileFilters = fileFilters;
+            o.headRef = headRef;
+            return o;
         }
     }
 }

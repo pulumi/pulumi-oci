@@ -18,52 +18,35 @@ public final class GetFirewallsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return WebAppFirewall display name, can be renamed.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetFirewallsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetFirewallsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppFirewall.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The current state of the WebAppFirewall.
      * 
      */
-    private final @Nullable List<String> states;
+    private @Nullable List<String> states;
     /**
      * @return The list of web_app_firewall_collection.
      * 
      */
-    private final List<GetFirewallsWebAppFirewallCollection> webAppFirewallCollections;
+    private List<GetFirewallsWebAppFirewallCollection> webAppFirewallCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
      * 
      */
-    private final @Nullable String webAppFirewallPolicyId;
+    private @Nullable String webAppFirewallPolicyId;
 
-    @CustomType.Constructor
-    private GetFirewallsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetFirewallsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("states") @Nullable List<String> states,
-        @CustomType.Parameter("webAppFirewallCollections") List<GetFirewallsWebAppFirewallCollection> webAppFirewallCollections,
-        @CustomType.Parameter("webAppFirewallPolicyId") @Nullable String webAppFirewallPolicyId) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.states = states;
-        this.webAppFirewallCollections = webAppFirewallCollections;
-        this.webAppFirewallPolicyId = webAppFirewallPolicyId;
-    }
-
+    private GetFirewallsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -117,7 +100,7 @@ public final class GetFirewallsResult {
     public static Builder builder(GetFirewallsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -126,11 +109,7 @@ public final class GetFirewallsResult {
         private @Nullable List<String> states;
         private List<GetFirewallsWebAppFirewallCollection> webAppFirewallCollections;
         private @Nullable String webAppFirewallPolicyId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFirewallsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,14 +121,17 @@ public final class GetFirewallsResult {
     	      this.webAppFirewallPolicyId = defaults.webAppFirewallPolicyId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetFirewallsFilter> filters) {
             this.filters = filters;
             return this;
@@ -157,10 +139,12 @@ public final class GetFirewallsResult {
         public Builder filters(GetFirewallsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
             this.states = states;
             return this;
@@ -168,6 +152,7 @@ public final class GetFirewallsResult {
         public Builder states(String... states) {
             return states(List.of(states));
         }
+        @CustomType.Setter
         public Builder webAppFirewallCollections(List<GetFirewallsWebAppFirewallCollection> webAppFirewallCollections) {
             this.webAppFirewallCollections = Objects.requireNonNull(webAppFirewallCollections);
             return this;
@@ -175,11 +160,21 @@ public final class GetFirewallsResult {
         public Builder webAppFirewallCollections(GetFirewallsWebAppFirewallCollection... webAppFirewallCollections) {
             return webAppFirewallCollections(List.of(webAppFirewallCollections));
         }
+        @CustomType.Setter
         public Builder webAppFirewallPolicyId(@Nullable String webAppFirewallPolicyId) {
             this.webAppFirewallPolicyId = webAppFirewallPolicyId;
             return this;
-        }        public GetFirewallsResult build() {
-            return new GetFirewallsResult(compartmentId, displayName, filters, id, states, webAppFirewallCollections, webAppFirewallPolicyId);
+        }
+        public GetFirewallsResult build() {
+            final var o = new GetFirewallsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.states = states;
+            o.webAppFirewallCollections = webAppFirewallCollections;
+            o.webAppFirewallPolicyId = webAppFirewallPolicyId;
+            return o;
         }
     }
 }

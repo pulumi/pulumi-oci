@@ -13,35 +13,24 @@ public final class GetResultResultDataSet {
      * @return Data content in byte format. Example: Zip or Screenshot.
      * 
      */
-    private final String byteContent;
+    private String byteContent;
     /**
      * @return Name of the data.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Data content in string format. Example: HAR.
      * 
      */
-    private final String stringContent;
+    private String stringContent;
     /**
      * @return The time when the data was generated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    private final String timestamp;
+    private String timestamp;
 
-    @CustomType.Constructor
-    private GetResultResultDataSet(
-        @CustomType.Parameter("byteContent") String byteContent,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("stringContent") String stringContent,
-        @CustomType.Parameter("timestamp") String timestamp) {
-        this.byteContent = byteContent;
-        this.name = name;
-        this.stringContent = stringContent;
-        this.timestamp = timestamp;
-    }
-
+    private GetResultResultDataSet() {}
     /**
      * @return Data content in byte format. Example: Zip or Screenshot.
      * 
@@ -78,17 +67,13 @@ public final class GetResultResultDataSet {
     public static Builder builder(GetResultResultDataSet defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String byteContent;
         private String name;
         private String stringContent;
         private String timestamp;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetResultResultDataSet defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.byteContent = defaults.byteContent;
@@ -97,23 +82,33 @@ public final class GetResultResultDataSet {
     	      this.timestamp = defaults.timestamp;
         }
 
+        @CustomType.Setter
         public Builder byteContent(String byteContent) {
             this.byteContent = Objects.requireNonNull(byteContent);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder stringContent(String stringContent) {
             this.stringContent = Objects.requireNonNull(stringContent);
             return this;
         }
+        @CustomType.Setter
         public Builder timestamp(String timestamp) {
             this.timestamp = Objects.requireNonNull(timestamp);
             return this;
-        }        public GetResultResultDataSet build() {
-            return new GetResultResultDataSet(byteContent, name, stringContent, timestamp);
+        }
+        public GetResultResultDataSet build() {
+            final var o = new GetResultResultDataSet();
+            o.byteContent = byteContent;
+            o.name = name;
+            o.stringContent = stringContent;
+            o.timestamp = timestamp;
+            return o;
         }
     }
 }

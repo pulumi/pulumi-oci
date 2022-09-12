@@ -19,6 +19,7 @@ class BootVolumeArgs:
                  availability_domain: pulumi.Input[str],
                  compartment_id: pulumi.Input[str],
                  source_details: pulumi.Input['BootVolumeSourceDetailsArgs'],
+                 autotune_policies: Optional[pulumi.Input[Sequence[pulumi.Input['BootVolumeAutotunePolicyArgs']]]] = None,
                  backup_policy_id: Optional[pulumi.Input[str]] = None,
                  boot_volume_replicas: Optional[pulumi.Input[Sequence[pulumi.Input['BootVolumeBootVolumeReplicaArgs']]]] = None,
                  boot_volume_replicas_deletion: Optional[pulumi.Input[bool]] = None,
@@ -33,12 +34,13 @@ class BootVolumeArgs:
         The set of arguments for constructing a BootVolume resource.
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the boot volume.
+        :param pulumi.Input[Sequence[pulumi.Input['BootVolumeAutotunePolicyArgs']]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
         :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
         :param pulumi.Input[Sequence[pulumi.Input['BootVolumeBootVolumeReplicaArgs']]] boot_volume_replicas: (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -46,6 +48,8 @@ class BootVolumeArgs:
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "source_details", source_details)
+        if autotune_policies is not None:
+            pulumi.set(__self__, "autotune_policies", autotune_policies)
         if backup_policy_id is not None:
             warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
             pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
@@ -102,6 +106,18 @@ class BootVolumeArgs:
     @source_details.setter
     def source_details(self, value: pulumi.Input['BootVolumeSourceDetailsArgs']):
         pulumi.set(self, "source_details", value)
+
+    @property
+    @pulumi.getter(name="autotunePolicies")
+    def autotune_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BootVolumeAutotunePolicyArgs']]]]:
+        """
+        (Updatable) The list of autotune policies to be enabled for this volume.
+        """
+        return pulumi.get(self, "autotune_policies")
+
+    @autotune_policies.setter
+    def autotune_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BootVolumeAutotunePolicyArgs']]]]):
+        pulumi.set(self, "autotune_policies", value)
 
     @property
     @pulumi.getter(name="backupPolicyId")
@@ -176,7 +192,7 @@ class BootVolumeArgs:
     @pulumi.getter(name="isAutoTuneEnabled")
     def is_auto_tune_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         """
         return pulumi.get(self, "is_auto_tune_enabled")
 
@@ -225,6 +241,7 @@ class BootVolumeArgs:
 class _BootVolumeState:
     def __init__(__self__, *,
                  auto_tuned_vpus_per_gb: Optional[pulumi.Input[str]] = None,
+                 autotune_policies: Optional[pulumi.Input[Sequence[pulumi.Input['BootVolumeAutotunePolicyArgs']]]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  backup_policy_id: Optional[pulumi.Input[str]] = None,
                  boot_volume_replicas: Optional[pulumi.Input[Sequence[pulumi.Input['BootVolumeBootVolumeReplicaArgs']]]] = None,
@@ -247,7 +264,8 @@ class _BootVolumeState:
                  vpus_per_gb: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering BootVolume resources.
-        :param pulumi.Input[str] auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+        :param pulumi.Input[str] auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
+        :param pulumi.Input[Sequence[pulumi.Input['BootVolumeAutotunePolicyArgs']]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
         :param pulumi.Input[Sequence[pulumi.Input['BootVolumeBootVolumeReplicaArgs']]] boot_volume_replicas: (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
@@ -256,7 +274,7 @@ class _BootVolumeState:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] image_id: The image OCID used to create the boot volume.
-        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param pulumi.Input[bool] is_hydrated: Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
@@ -269,6 +287,8 @@ class _BootVolumeState:
         """
         if auto_tuned_vpus_per_gb is not None:
             pulumi.set(__self__, "auto_tuned_vpus_per_gb", auto_tuned_vpus_per_gb)
+        if autotune_policies is not None:
+            pulumi.set(__self__, "autotune_policies", autotune_policies)
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_policy_id is not None:
@@ -317,13 +337,25 @@ class _BootVolumeState:
     @pulumi.getter(name="autoTunedVpusPerGb")
     def auto_tuned_vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
         """
-        The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+        The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
         """
         return pulumi.get(self, "auto_tuned_vpus_per_gb")
 
     @auto_tuned_vpus_per_gb.setter
     def auto_tuned_vpus_per_gb(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "auto_tuned_vpus_per_gb", value)
+
+    @property
+    @pulumi.getter(name="autotunePolicies")
+    def autotune_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BootVolumeAutotunePolicyArgs']]]]:
+        """
+        (Updatable) The list of autotune policies to be enabled for this volume.
+        """
+        return pulumi.get(self, "autotune_policies")
+
+    @autotune_policies.setter
+    def autotune_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BootVolumeAutotunePolicyArgs']]]]):
+        pulumi.set(self, "autotune_policies", value)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -434,7 +466,7 @@ class _BootVolumeState:
     @pulumi.getter(name="isAutoTuneEnabled")
     def is_auto_tune_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         """
         return pulumi.get(self, "is_auto_tune_enabled")
 
@@ -565,6 +597,7 @@ class BootVolume(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 autotune_policies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BootVolumeAutotunePolicyArgs']]]]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  backup_policy_id: Optional[pulumi.Input[str]] = None,
                  boot_volume_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BootVolumeBootVolumeReplicaArgs']]]]] = None,
@@ -611,6 +644,10 @@ class BootVolume(pulumi.CustomResource):
                 id=var["boot_volume_source_details_id"],
                 type=var["boot_volume_source_details_type"],
             ),
+            autotune_policies=[oci.core.BootVolumeAutotunePolicyArgs(
+                autotune_type=var["boot_volume_autotune_policies_autotune_type"],
+                max_vpus_per_gb=var["boot_volume_autotune_policies_max_vpus_per_gb"],
+            )],
             availability_domain=var["boot_volume_availability_domain"],
             backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
             boot_volume_replicas=[oci.core.BootVolumeBootVolumeReplicaArgs(
@@ -641,6 +678,7 @@ class BootVolume(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BootVolumeAutotunePolicyArgs']]]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BootVolumeBootVolumeReplicaArgs']]]] boot_volume_replicas: (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
@@ -648,7 +686,7 @@ class BootVolume(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
         :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -691,6 +729,10 @@ class BootVolume(pulumi.CustomResource):
                 id=var["boot_volume_source_details_id"],
                 type=var["boot_volume_source_details_type"],
             ),
+            autotune_policies=[oci.core.BootVolumeAutotunePolicyArgs(
+                autotune_type=var["boot_volume_autotune_policies_autotune_type"],
+                max_vpus_per_gb=var["boot_volume_autotune_policies_max_vpus_per_gb"],
+            )],
             availability_domain=var["boot_volume_availability_domain"],
             backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
             boot_volume_replicas=[oci.core.BootVolumeBootVolumeReplicaArgs(
@@ -734,6 +776,7 @@ class BootVolume(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 autotune_policies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BootVolumeAutotunePolicyArgs']]]]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  backup_policy_id: Optional[pulumi.Input[str]] = None,
                  boot_volume_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BootVolumeBootVolumeReplicaArgs']]]]] = None,
@@ -756,6 +799,7 @@ class BootVolume(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = BootVolumeArgs.__new__(BootVolumeArgs)
 
+            __props__.__dict__["autotune_policies"] = autotune_policies
             if availability_domain is None and not opts.urn:
                 raise TypeError("Missing required property 'availability_domain'")
             __props__.__dict__["availability_domain"] = availability_domain
@@ -797,6 +841,7 @@ class BootVolume(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             auto_tuned_vpus_per_gb: Optional[pulumi.Input[str]] = None,
+            autotune_policies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BootVolumeAutotunePolicyArgs']]]]] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
             backup_policy_id: Optional[pulumi.Input[str]] = None,
             boot_volume_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BootVolumeBootVolumeReplicaArgs']]]]] = None,
@@ -824,7 +869,8 @@ class BootVolume(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+        :param pulumi.Input[str] auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BootVolumeAutotunePolicyArgs']]]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BootVolumeBootVolumeReplicaArgs']]]] boot_volume_replicas: (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
@@ -833,7 +879,7 @@ class BootVolume(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] image_id: The image OCID used to create the boot volume.
-        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param pulumi.Input[bool] is_hydrated: Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
         :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
@@ -849,6 +895,7 @@ class BootVolume(pulumi.CustomResource):
         __props__ = _BootVolumeState.__new__(_BootVolumeState)
 
         __props__.__dict__["auto_tuned_vpus_per_gb"] = auto_tuned_vpus_per_gb
+        __props__.__dict__["autotune_policies"] = autotune_policies
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["backup_policy_id"] = backup_policy_id
         __props__.__dict__["boot_volume_replicas"] = boot_volume_replicas
@@ -875,9 +922,17 @@ class BootVolume(pulumi.CustomResource):
     @pulumi.getter(name="autoTunedVpusPerGb")
     def auto_tuned_vpus_per_gb(self) -> pulumi.Output[str]:
         """
-        The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+        The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
         """
         return pulumi.get(self, "auto_tuned_vpus_per_gb")
+
+    @property
+    @pulumi.getter(name="autotunePolicies")
+    def autotune_policies(self) -> pulumi.Output[Sequence['outputs.BootVolumeAutotunePolicy']]:
+        """
+        (Updatable) The list of autotune policies to be enabled for this volume.
+        """
+        return pulumi.get(self, "autotune_policies")
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -952,7 +1007,7 @@ class BootVolume(pulumi.CustomResource):
     @pulumi.getter(name="isAutoTuneEnabled")
     def is_auto_tune_enabled(self) -> pulumi.Output[bool]:
         """
-        (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume.
+        (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         """
         return pulumi.get(self, "is_auto_tune_enabled")
 

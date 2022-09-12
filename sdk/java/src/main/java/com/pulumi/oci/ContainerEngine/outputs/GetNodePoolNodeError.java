@@ -13,28 +13,19 @@ public final class GetNodePoolNodeError {
      * @return A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
      * 
      */
-    private final String code;
+    private String code;
     /**
      * @return A human-readable error string of the upstream error.
      * 
      */
-    private final String message;
+    private String message;
     /**
      * @return The status of the HTTP response encountered in the upstream error.
      * 
      */
-    private final String status;
+    private String status;
 
-    @CustomType.Constructor
-    private GetNodePoolNodeError(
-        @CustomType.Parameter("code") String code,
-        @CustomType.Parameter("message") String message,
-        @CustomType.Parameter("status") String status) {
-        this.code = code;
-        this.message = message;
-        this.status = status;
-    }
-
+    private GetNodePoolNodeError() {}
     /**
      * @return A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
      * 
@@ -64,16 +55,12 @@ public final class GetNodePoolNodeError {
     public static Builder builder(GetNodePoolNodeError defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String code;
         private String message;
         private String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNodePoolNodeError defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.code = defaults.code;
@@ -81,19 +68,27 @@ public final class GetNodePoolNodeError {
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder code(String code) {
             this.code = Objects.requireNonNull(code);
             return this;
         }
+        @CustomType.Setter
         public Builder message(String message) {
             this.message = Objects.requireNonNull(message);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
-        }        public GetNodePoolNodeError build() {
-            return new GetNodePoolNodeError(code, message, status);
+        }
+        public GetNodePoolNodeError build() {
+            final var o = new GetNodePoolNodeError();
+            o.code = code;
+            o.message = message;
+            o.status = status;
+            return o;
         }
     }
 }

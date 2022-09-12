@@ -15,21 +15,14 @@ public final class AppFirewallPolicyActionHeader {
      * @return (Updatable) Rule name. Must be unique within the module.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) The value of the header field.
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
 
-    @CustomType.Constructor
-    private AppFirewallPolicyActionHeader(
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("value") @Nullable String value) {
-        this.name = name;
-        this.value = value;
-    }
-
+    private AppFirewallPolicyActionHeader() {}
     /**
      * @return (Updatable) Rule name. Must be unique within the module.
      * 
@@ -52,30 +45,32 @@ public final class AppFirewallPolicyActionHeader {
     public static Builder builder(AppFirewallPolicyActionHeader defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String name;
         private @Nullable String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AppFirewallPolicyActionHeader defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
-        }        public AppFirewallPolicyActionHeader build() {
-            return new AppFirewallPolicyActionHeader(name, value);
+        }
+        public AppFirewallPolicyActionHeader build() {
+            final var o = new AppFirewallPolicyActionHeader();
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

@@ -9,17 +9,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCertificateAuthorityVersionSubjectAlternativeName {
-    private final String type;
-    private final String value;
+    private String type;
+    private String value;
 
-    @CustomType.Constructor
-    private GetCertificateAuthorityVersionSubjectAlternativeName(
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("value") String value) {
-        this.type = type;
-        this.value = value;
-    }
-
+    private GetCertificateAuthorityVersionSubjectAlternativeName() {}
     public String type() {
         return this.type;
     }
@@ -34,30 +27,32 @@ public final class GetCertificateAuthorityVersionSubjectAlternativeName {
     public static Builder builder(GetCertificateAuthorityVersionSubjectAlternativeName defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String type;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificateAuthorityVersionSubjectAlternativeName defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.type = defaults.type;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetCertificateAuthorityVersionSubjectAlternativeName build() {
-            return new GetCertificateAuthorityVersionSubjectAlternativeName(type, value);
+        }
+        public GetCertificateAuthorityVersionSubjectAlternativeName build() {
+            final var o = new GetCertificateAuthorityVersionSubjectAlternativeName();
+            o.type = type;
+            o.value = value;
+            return o;
         }
     }
 }

@@ -12,17 +12,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class IpsecConnectionTunnelManagementDpdConfig {
-    private final @Nullable String dpdMode;
-    private final @Nullable Integer dpdTimeoutInSec;
+    private @Nullable String dpdMode;
+    private @Nullable Integer dpdTimeoutInSec;
 
-    @CustomType.Constructor
-    private IpsecConnectionTunnelManagementDpdConfig(
-        @CustomType.Parameter("dpdMode") @Nullable String dpdMode,
-        @CustomType.Parameter("dpdTimeoutInSec") @Nullable Integer dpdTimeoutInSec) {
-        this.dpdMode = dpdMode;
-        this.dpdTimeoutInSec = dpdTimeoutInSec;
-    }
-
+    private IpsecConnectionTunnelManagementDpdConfig() {}
     public Optional<String> dpdMode() {
         return Optional.ofNullable(this.dpdMode);
     }
@@ -37,30 +30,32 @@ public final class IpsecConnectionTunnelManagementDpdConfig {
     public static Builder builder(IpsecConnectionTunnelManagementDpdConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String dpdMode;
         private @Nullable Integer dpdTimeoutInSec;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(IpsecConnectionTunnelManagementDpdConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dpdMode = defaults.dpdMode;
     	      this.dpdTimeoutInSec = defaults.dpdTimeoutInSec;
         }
 
+        @CustomType.Setter
         public Builder dpdMode(@Nullable String dpdMode) {
             this.dpdMode = dpdMode;
             return this;
         }
+        @CustomType.Setter
         public Builder dpdTimeoutInSec(@Nullable Integer dpdTimeoutInSec) {
             this.dpdTimeoutInSec = dpdTimeoutInSec;
             return this;
-        }        public IpsecConnectionTunnelManagementDpdConfig build() {
-            return new IpsecConnectionTunnelManagementDpdConfig(dpdMode, dpdTimeoutInSec);
+        }
+        public IpsecConnectionTunnelManagementDpdConfig build() {
+            final var o = new IpsecConnectionTunnelManagementDpdConfig();
+            o.dpdMode = dpdMode;
+            o.dpdTimeoutInSec = dpdTimeoutInSec;
+            return o;
         }
     }
 }

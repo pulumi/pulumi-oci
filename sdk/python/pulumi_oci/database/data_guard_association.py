@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['DataGuardAssociationArgs', 'DataGuardAssociation']
 
@@ -24,6 +26,7 @@ class DataGuardAssociationArgs:
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  create_async: Optional[pulumi.Input[bool]] = None,
+                 data_collection_options: Optional[pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs']] = None,
                  database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
@@ -59,6 +62,7 @@ class DataGuardAssociationArgs:
         :param pulumi.Input[str] availability_domain: The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param pulumi.Input[int] cpu_core_count: The number of OCPU cores available for AMD-based virtual machine DB systems.
+        :param pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[Mapping[str, Any]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, Any]] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
@@ -98,6 +102,8 @@ class DataGuardAssociationArgs:
             pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if create_async is not None:
             pulumi.set(__self__, "create_async", create_async)
+        if data_collection_options is not None:
+            pulumi.set(__self__, "data_collection_options", data_collection_options)
         if database_defined_tags is not None:
             pulumi.set(__self__, "database_defined_tags", database_defined_tags)
         if database_freeform_tags is not None:
@@ -259,6 +265,18 @@ class DataGuardAssociationArgs:
     @create_async.setter
     def create_async(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "create_async", value)
+
+    @property
+    @pulumi.getter(name="dataCollectionOptions")
+    def data_collection_options(self) -> Optional[pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs']]:
+        """
+        Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        """
+        return pulumi.get(self, "data_collection_options")
+
+    @data_collection_options.setter
+    def data_collection_options(self, value: Optional[pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs']]):
+        pulumi.set(self, "data_collection_options", value)
 
     @property
     @pulumi.getter(name="databaseDefinedTags")
@@ -537,6 +555,7 @@ class _DataGuardAssociationState:
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  create_async: Optional[pulumi.Input[bool]] = None,
                  creation_type: Optional[pulumi.Input[str]] = None,
+                 data_collection_options: Optional[pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs']] = None,
                  database_admin_password: Optional[pulumi.Input[str]] = None,
                  database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -579,6 +598,7 @@ class _DataGuardAssociationState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param pulumi.Input[int] cpu_core_count: The number of OCPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input[str] creation_type: Specifies whether to create the peer database in an existing DB system or in a new DB system.
+        :param pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[str] database_admin_password: (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
         :param pulumi.Input[Mapping[str, Any]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, Any]] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -632,6 +652,8 @@ class _DataGuardAssociationState:
             pulumi.set(__self__, "create_async", create_async)
         if creation_type is not None:
             pulumi.set(__self__, "creation_type", creation_type)
+        if data_collection_options is not None:
+            pulumi.set(__self__, "data_collection_options", data_collection_options)
         if database_admin_password is not None:
             pulumi.set(__self__, "database_admin_password", database_admin_password)
         if database_defined_tags is not None:
@@ -781,6 +803,18 @@ class _DataGuardAssociationState:
     @creation_type.setter
     def creation_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "creation_type", value)
+
+    @property
+    @pulumi.getter(name="dataCollectionOptions")
+    def data_collection_options(self) -> Optional[pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs']]:
+        """
+        Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        """
+        return pulumi.get(self, "data_collection_options")
+
+    @data_collection_options.setter
+    def data_collection_options(self, value: Optional[pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs']]):
+        pulumi.set(self, "data_collection_options", value)
 
     @property
     @pulumi.getter(name="databaseAdminPassword")
@@ -1203,6 +1237,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  create_async: Optional[pulumi.Input[bool]] = None,
                  creation_type: Optional[pulumi.Input[str]] = None,
+                 data_collection_options: Optional[pulumi.Input[pulumi.InputType['DataGuardAssociationDataCollectionOptionsArgs']]] = None,
                  database_admin_password: Optional[pulumi.Input[str]] = None,
                  database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1261,6 +1296,11 @@ class DataGuardAssociation(pulumi.CustomResource):
             cpu_core_count=var["data_guard_association_cpu_core_count"],
             database_defined_tags=var["data_guard_association_database_defined_tags"],
             database_freeform_tags=var["data_guard_association_database_freeform_tags"],
+            data_collection_options=oci.database.DataGuardAssociationDataCollectionOptionsArgs(
+                is_diagnostics_events_enabled=var["data_guard_association_data_collection_options_is_diagnostics_events_enabled"],
+                is_health_monitoring_enabled=var["data_guard_association_data_collection_options_is_health_monitoring_enabled"],
+                is_incident_logs_enabled=var["data_guard_association_data_collection_options_is_incident_logs_enabled"],
+            ),
             database_software_image_id=oci_database_database_software_image["test_database_software_image"]["id"],
             db_system_defined_tags=var["data_guard_association_db_system_defined_tags"],
             db_system_freeform_tags=var["data_guard_association_db_system_freeform_tags"],
@@ -1293,6 +1333,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param pulumi.Input[int] cpu_core_count: The number of OCPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input[str] creation_type: Specifies whether to create the peer database in an existing DB system or in a new DB system.
+        :param pulumi.Input[pulumi.InputType['DataGuardAssociationDataCollectionOptionsArgs']] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[str] database_admin_password: (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
         :param pulumi.Input[Mapping[str, Any]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, Any]] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -1361,6 +1402,11 @@ class DataGuardAssociation(pulumi.CustomResource):
             cpu_core_count=var["data_guard_association_cpu_core_count"],
             database_defined_tags=var["data_guard_association_database_defined_tags"],
             database_freeform_tags=var["data_guard_association_database_freeform_tags"],
+            data_collection_options=oci.database.DataGuardAssociationDataCollectionOptionsArgs(
+                is_diagnostics_events_enabled=var["data_guard_association_data_collection_options_is_diagnostics_events_enabled"],
+                is_health_monitoring_enabled=var["data_guard_association_data_collection_options_is_health_monitoring_enabled"],
+                is_incident_logs_enabled=var["data_guard_association_data_collection_options_is_incident_logs_enabled"],
+            ),
             database_software_image_id=oci_database_database_software_image["test_database_software_image"]["id"],
             db_system_defined_tags=var["data_guard_association_db_system_defined_tags"],
             db_system_freeform_tags=var["data_guard_association_db_system_freeform_tags"],
@@ -1407,6 +1453,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  create_async: Optional[pulumi.Input[bool]] = None,
                  creation_type: Optional[pulumi.Input[str]] = None,
+                 data_collection_options: Optional[pulumi.Input[pulumi.InputType['DataGuardAssociationDataCollectionOptionsArgs']]] = None,
                  database_admin_password: Optional[pulumi.Input[str]] = None,
                  database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1450,6 +1497,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             if creation_type is None and not opts.urn:
                 raise TypeError("Missing required property 'creation_type'")
             __props__.__dict__["creation_type"] = creation_type
+            __props__.__dict__["data_collection_options"] = data_collection_options
             if database_admin_password is None and not opts.urn:
                 raise TypeError("Missing required property 'database_admin_password'")
             __props__.__dict__["database_admin_password"] = database_admin_password
@@ -1513,6 +1561,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             cpu_core_count: Optional[pulumi.Input[int]] = None,
             create_async: Optional[pulumi.Input[bool]] = None,
             creation_type: Optional[pulumi.Input[str]] = None,
+            data_collection_options: Optional[pulumi.Input[pulumi.InputType['DataGuardAssociationDataCollectionOptionsArgs']]] = None,
             database_admin_password: Optional[pulumi.Input[str]] = None,
             database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1560,6 +1609,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param pulumi.Input[int] cpu_core_count: The number of OCPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input[str] creation_type: Specifies whether to create the peer database in an existing DB system or in a new DB system.
+        :param pulumi.Input[pulumi.InputType['DataGuardAssociationDataCollectionOptionsArgs']] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[str] database_admin_password: (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
         :param pulumi.Input[Mapping[str, Any]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, Any]] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -1610,6 +1660,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         __props__.__dict__["cpu_core_count"] = cpu_core_count
         __props__.__dict__["create_async"] = create_async
         __props__.__dict__["creation_type"] = creation_type
+        __props__.__dict__["data_collection_options"] = data_collection_options
         __props__.__dict__["database_admin_password"] = database_admin_password
         __props__.__dict__["database_defined_tags"] = database_defined_tags
         __props__.__dict__["database_freeform_tags"] = database_freeform_tags
@@ -1698,6 +1749,14 @@ class DataGuardAssociation(pulumi.CustomResource):
         Specifies whether to create the peer database in an existing DB system or in a new DB system.
         """
         return pulumi.get(self, "creation_type")
+
+    @property
+    @pulumi.getter(name="dataCollectionOptions")
+    def data_collection_options(self) -> pulumi.Output['outputs.DataGuardAssociationDataCollectionOptions']:
+        """
+        Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        """
+        return pulumi.get(self, "data_collection_options")
 
     @property
     @pulumi.getter(name="databaseAdminPassword")

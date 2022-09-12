@@ -17,38 +17,25 @@ public final class GetCustomTablesResult {
      * @return The custom table compartment OCID.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of custom_table_collection.
      * 
      */
-    private final List<GetCustomTablesCustomTableCollection> customTableCollections;
-    private final @Nullable List<GetCustomTablesFilter> filters;
+    private List<GetCustomTablesCustomTableCollection> customTableCollections;
+    private @Nullable List<GetCustomTablesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The custom table associated saved report OCID.
      * 
      */
-    private final String savedReportId;
+    private String savedReportId;
 
-    @CustomType.Constructor
-    private GetCustomTablesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("customTableCollections") List<GetCustomTablesCustomTableCollection> customTableCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetCustomTablesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("savedReportId") String savedReportId) {
-        this.compartmentId = compartmentId;
-        this.customTableCollections = customTableCollections;
-        this.filters = filters;
-        this.id = id;
-        this.savedReportId = savedReportId;
-    }
-
+    private GetCustomTablesResult() {}
     /**
      * @return The custom table compartment OCID.
      * 
@@ -88,18 +75,14 @@ public final class GetCustomTablesResult {
     public static Builder builder(GetCustomTablesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetCustomTablesCustomTableCollection> customTableCollections;
         private @Nullable List<GetCustomTablesFilter> filters;
         private String id;
         private String savedReportId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCustomTablesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -109,10 +92,12 @@ public final class GetCustomTablesResult {
     	      this.savedReportId = defaults.savedReportId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder customTableCollections(List<GetCustomTablesCustomTableCollection> customTableCollections) {
             this.customTableCollections = Objects.requireNonNull(customTableCollections);
             return this;
@@ -120,6 +105,7 @@ public final class GetCustomTablesResult {
         public Builder customTableCollections(GetCustomTablesCustomTableCollection... customTableCollections) {
             return customTableCollections(List.of(customTableCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetCustomTablesFilter> filters) {
             this.filters = filters;
             return this;
@@ -127,15 +113,24 @@ public final class GetCustomTablesResult {
         public Builder filters(GetCustomTablesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder savedReportId(String savedReportId) {
             this.savedReportId = Objects.requireNonNull(savedReportId);
             return this;
-        }        public GetCustomTablesResult build() {
-            return new GetCustomTablesResult(compartmentId, customTableCollections, filters, id, savedReportId);
+        }
+        public GetCustomTablesResult build() {
+            final var o = new GetCustomTablesResult();
+            o.compartmentId = compartmentId;
+            o.customTableCollections = customTableCollections;
+            o.filters = filters;
+            o.id = id;
+            o.savedReportId = savedReportId;
+            return o;
         }
     }
 }

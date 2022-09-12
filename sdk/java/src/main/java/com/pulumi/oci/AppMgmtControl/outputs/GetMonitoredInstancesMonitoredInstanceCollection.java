@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMonitoredInstancesMonitoredInstanceCollection {
-    private final List<GetMonitoredInstancesMonitoredInstanceCollectionItem> items;
+    private List<GetMonitoredInstancesMonitoredInstanceCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetMonitoredInstancesMonitoredInstanceCollection(@CustomType.Parameter("items") List<GetMonitoredInstancesMonitoredInstanceCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetMonitoredInstancesMonitoredInstanceCollection() {}
     public List<GetMonitoredInstancesMonitoredInstanceCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetMonitoredInstancesMonitoredInstanceCollection {
     public static Builder builder(GetMonitoredInstancesMonitoredInstanceCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetMonitoredInstancesMonitoredInstanceCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitoredInstancesMonitoredInstanceCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetMonitoredInstancesMonitoredInstanceCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetMonitoredInstancesMonitoredInstanceCollectionItem... items) {
             return items(List.of(items));
-        }        public GetMonitoredInstancesMonitoredInstanceCollection build() {
-            return new GetMonitoredInstancesMonitoredInstanceCollection(items);
+        }
+        public GetMonitoredInstancesMonitoredInstanceCollection build() {
+            final var o = new GetMonitoredInstancesMonitoredInstanceCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -16,84 +16,59 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultCon
      * @return The owning object&#39;s key for this object.
      * 
      */
-    private final String aggregatorKey;
+    private String aggregatorKey;
     /**
-     * @return The id of the user who created the object.
+     * @return The ID of the user who created the object.
      * 
      */
-    private final String createdByUserId;
+    private String createdByUserId;
     /**
      * @return The name of the user who created the object.
      * 
      */
-    private final String createdByUserName;
+    private String createdByUserName;
     /**
-     * @return Specifies whether this object is a favorite or not.
+     * @return Specifies whether the object is a favorite.
      * 
      */
-    private final Boolean isFavorite;
+    private Boolean isFavorite;
     /**
      * @return The identifying key for the object.
      * 
      */
-    private final String key;
+    private String key;
     /**
-     * @return Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      * 
      */
-    private final List<String> labels;
+    private List<String> labels;
     /**
      * @return The registry version.
      * 
      */
-    private final Integer registryVersion;
+    private Integer registryVersion;
     /**
      * @return The date and time that the object was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time that the object was updated.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
-     * @return The id of the user who updated the object.
+     * @return The ID of the user who updated the object.
      * 
      */
-    private final String updatedByUserId;
+    private String updatedByUserId;
     /**
      * @return The name of the user who updated the object.
      * 
      */
-    private final String updatedByUserName;
+    private String updatedByUserName;
 
-    @CustomType.Constructor
-    private GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadata(
-        @CustomType.Parameter("aggregatorKey") String aggregatorKey,
-        @CustomType.Parameter("createdByUserId") String createdByUserId,
-        @CustomType.Parameter("createdByUserName") String createdByUserName,
-        @CustomType.Parameter("isFavorite") Boolean isFavorite,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("labels") List<String> labels,
-        @CustomType.Parameter("registryVersion") Integer registryVersion,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("updatedByUserId") String updatedByUserId,
-        @CustomType.Parameter("updatedByUserName") String updatedByUserName) {
-        this.aggregatorKey = aggregatorKey;
-        this.createdByUserId = createdByUserId;
-        this.createdByUserName = createdByUserName;
-        this.isFavorite = isFavorite;
-        this.key = key;
-        this.labels = labels;
-        this.registryVersion = registryVersion;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.updatedByUserId = updatedByUserId;
-        this.updatedByUserName = updatedByUserName;
-    }
-
+    private GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadata() {}
     /**
      * @return The owning object&#39;s key for this object.
      * 
@@ -102,7 +77,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultCon
         return this.aggregatorKey;
     }
     /**
-     * @return The id of the user who created the object.
+     * @return The ID of the user who created the object.
      * 
      */
     public String createdByUserId() {
@@ -116,7 +91,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultCon
         return this.createdByUserName;
     }
     /**
-     * @return Specifies whether this object is a favorite or not.
+     * @return Specifies whether the object is a favorite.
      * 
      */
     public Boolean isFavorite() {
@@ -130,7 +105,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultCon
         return this.key;
     }
     /**
-     * @return Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      * 
      */
     public List<String> labels() {
@@ -158,7 +133,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultCon
         return this.timeUpdated;
     }
     /**
-     * @return The id of the user who updated the object.
+     * @return The ID of the user who updated the object.
      * 
      */
     public String updatedByUserId() {
@@ -179,7 +154,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultCon
     public static Builder builder(GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadata defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String aggregatorKey;
         private String createdByUserId;
@@ -192,11 +167,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultCon
         private String timeUpdated;
         private String updatedByUserId;
         private String updatedByUserName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadata defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.aggregatorKey = defaults.aggregatorKey;
@@ -212,26 +183,32 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultCon
     	      this.updatedByUserName = defaults.updatedByUserName;
         }
 
+        @CustomType.Setter
         public Builder aggregatorKey(String aggregatorKey) {
             this.aggregatorKey = Objects.requireNonNull(aggregatorKey);
             return this;
         }
+        @CustomType.Setter
         public Builder createdByUserId(String createdByUserId) {
             this.createdByUserId = Objects.requireNonNull(createdByUserId);
             return this;
         }
+        @CustomType.Setter
         public Builder createdByUserName(String createdByUserName) {
             this.createdByUserName = Objects.requireNonNull(createdByUserName);
             return this;
         }
+        @CustomType.Setter
         public Builder isFavorite(Boolean isFavorite) {
             this.isFavorite = Objects.requireNonNull(isFavorite);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder labels(List<String> labels) {
             this.labels = Objects.requireNonNull(labels);
             return this;
@@ -239,27 +216,45 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultCon
         public Builder labels(String... labels) {
             return labels(List.of(labels));
         }
+        @CustomType.Setter
         public Builder registryVersion(Integer registryVersion) {
             this.registryVersion = Objects.requireNonNull(registryVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder updatedByUserId(String updatedByUserId) {
             this.updatedByUserId = Objects.requireNonNull(updatedByUserId);
             return this;
         }
+        @CustomType.Setter
         public Builder updatedByUserName(String updatedByUserName) {
             this.updatedByUserName = Objects.requireNonNull(updatedByUserName);
             return this;
-        }        public GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadata build() {
-            return new GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadata(aggregatorKey, createdByUserId, createdByUserName, isFavorite, key, labels, registryVersion, timeCreated, timeUpdated, updatedByUserId, updatedByUserName);
+        }
+        public GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadata build() {
+            final var o = new GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionRegistryMetadata();
+            o.aggregatorKey = aggregatorKey;
+            o.createdByUserId = createdByUserId;
+            o.createdByUserName = createdByUserName;
+            o.isFavorite = isFavorite;
+            o.key = key;
+            o.labels = labels;
+            o.registryVersion = registryVersion;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.updatedByUserId = updatedByUserId;
+            o.updatedByUserName = updatedByUserName;
+            return o;
         }
     }
 }

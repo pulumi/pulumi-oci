@@ -16,63 +16,44 @@ public final class GetSubscriptionsSubscription {
      * @return Currency details
      * 
      */
-    private final List<GetSubscriptionsSubscriptionCurrency> currencies;
+    private List<GetSubscriptionsSubscriptionCurrency> currencies;
     /**
      * @return Hold reason of the plan
      * 
      */
-    private final String holdReason;
+    private String holdReason;
     /**
      * @return Customer friendly service name provided by PRG
      * 
      */
-    private final String serviceName;
+    private String serviceName;
     /**
      * @return Subscribed service status
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return List of Subscribed Services of the plan
      * 
      */
-    private final List<GetSubscriptionsSubscriptionSubscribedService> subscribedServices;
+    private List<GetSubscriptionsSubscriptionSubscribedService> subscribedServices;
     /**
      * @return Represents the date when the last service of the subscription ends
      * 
      */
-    private final String timeEnd;
+    private String timeEnd;
     /**
      * @return Represents the date of the hold release
      * 
      */
-    private final String timeHoldReleaseEta;
+    private String timeHoldReleaseEta;
     /**
      * @return Represents the date when the first service of the subscription was activated
      * 
      */
-    private final String timeStart;
+    private String timeStart;
 
-    @CustomType.Constructor
-    private GetSubscriptionsSubscription(
-        @CustomType.Parameter("currencies") List<GetSubscriptionsSubscriptionCurrency> currencies,
-        @CustomType.Parameter("holdReason") String holdReason,
-        @CustomType.Parameter("serviceName") String serviceName,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("subscribedServices") List<GetSubscriptionsSubscriptionSubscribedService> subscribedServices,
-        @CustomType.Parameter("timeEnd") String timeEnd,
-        @CustomType.Parameter("timeHoldReleaseEta") String timeHoldReleaseEta,
-        @CustomType.Parameter("timeStart") String timeStart) {
-        this.currencies = currencies;
-        this.holdReason = holdReason;
-        this.serviceName = serviceName;
-        this.status = status;
-        this.subscribedServices = subscribedServices;
-        this.timeEnd = timeEnd;
-        this.timeHoldReleaseEta = timeHoldReleaseEta;
-        this.timeStart = timeStart;
-    }
-
+    private GetSubscriptionsSubscription() {}
     /**
      * @return Currency details
      * 
@@ -137,7 +118,7 @@ public final class GetSubscriptionsSubscription {
     public static Builder builder(GetSubscriptionsSubscription defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSubscriptionsSubscriptionCurrency> currencies;
         private String holdReason;
@@ -147,11 +128,7 @@ public final class GetSubscriptionsSubscription {
         private String timeEnd;
         private String timeHoldReleaseEta;
         private String timeStart;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionsSubscription defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.currencies = defaults.currencies;
@@ -164,6 +141,7 @@ public final class GetSubscriptionsSubscription {
     	      this.timeStart = defaults.timeStart;
         }
 
+        @CustomType.Setter
         public Builder currencies(List<GetSubscriptionsSubscriptionCurrency> currencies) {
             this.currencies = Objects.requireNonNull(currencies);
             return this;
@@ -171,18 +149,22 @@ public final class GetSubscriptionsSubscription {
         public Builder currencies(GetSubscriptionsSubscriptionCurrency... currencies) {
             return currencies(List.of(currencies));
         }
+        @CustomType.Setter
         public Builder holdReason(String holdReason) {
             this.holdReason = Objects.requireNonNull(holdReason);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceName(String serviceName) {
             this.serviceName = Objects.requireNonNull(serviceName);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder subscribedServices(List<GetSubscriptionsSubscriptionSubscribedService> subscribedServices) {
             this.subscribedServices = Objects.requireNonNull(subscribedServices);
             return this;
@@ -190,19 +172,32 @@ public final class GetSubscriptionsSubscription {
         public Builder subscribedServices(GetSubscriptionsSubscriptionSubscribedService... subscribedServices) {
             return subscribedServices(List.of(subscribedServices));
         }
+        @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
             this.timeEnd = Objects.requireNonNull(timeEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeHoldReleaseEta(String timeHoldReleaseEta) {
             this.timeHoldReleaseEta = Objects.requireNonNull(timeHoldReleaseEta);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(String timeStart) {
             this.timeStart = Objects.requireNonNull(timeStart);
             return this;
-        }        public GetSubscriptionsSubscription build() {
-            return new GetSubscriptionsSubscription(currencies, holdReason, serviceName, status, subscribedServices, timeEnd, timeHoldReleaseEta, timeStart);
+        }
+        public GetSubscriptionsSubscription build() {
+            final var o = new GetSubscriptionsSubscription();
+            o.currencies = currencies;
+            o.holdReason = holdReason;
+            o.serviceName = serviceName;
+            o.status = status;
+            o.subscribedServices = subscribedServices;
+            o.timeEnd = timeEnd;
+            o.timeHoldReleaseEta = timeHoldReleaseEta;
+            o.timeStart = timeStart;
+            return o;
         }
     }
 }

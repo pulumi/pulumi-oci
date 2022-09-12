@@ -13,13 +13,13 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
     public sealed class RegistryDataAssetNativeTypeSystemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A user defined description for the object.
+        /// (Updatable) A user-defined description for the object.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         /// </summary>
         [Input("identifier")]
         public Input<string>? Identifier { get; set; }
@@ -31,7 +31,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// (Updatable) The property which disciminates the subtypes.
+        /// (Updatable) The property which differentiates the subtypes.
         /// </summary>
         [Input("modelType")]
         public Input<string>? ModelType { get; set; }
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<string>? ModelVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<int>? ObjectVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) A reference to the object's parent.
+        /// (Updatable) A reference to the parent object.
         /// </summary>
         [Input("parentRef")]
         public Input<Inputs.RegistryDataAssetNativeTypeSystemParentRefArgs>? ParentRef { get; set; }

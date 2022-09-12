@@ -15,35 +15,24 @@ public final class GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionD
      * @return The CNI plugin used by this node pool
      * 
      */
-    private final String cniType;
+    private String cniType;
     /**
      * @return The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
      * 
      */
-    private final Integer maxPodsPerNode;
+    private Integer maxPodsPerNode;
     /**
      * @return The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
-    private final List<String> podNsgIds;
+    private List<String> podNsgIds;
     /**
      * @return The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
      * 
      */
-    private final List<String> podSubnetIds;
+    private List<String> podSubnetIds;
 
-    @CustomType.Constructor
-    private GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail(
-        @CustomType.Parameter("cniType") String cniType,
-        @CustomType.Parameter("maxPodsPerNode") Integer maxPodsPerNode,
-        @CustomType.Parameter("podNsgIds") List<String> podNsgIds,
-        @CustomType.Parameter("podSubnetIds") List<String> podSubnetIds) {
-        this.cniType = cniType;
-        this.maxPodsPerNode = maxPodsPerNode;
-        this.podNsgIds = podNsgIds;
-        this.podSubnetIds = podSubnetIds;
-    }
-
+    private GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail() {}
     /**
      * @return The CNI plugin used by this node pool
      * 
@@ -80,17 +69,13 @@ public final class GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionD
     public static Builder builder(GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String cniType;
         private Integer maxPodsPerNode;
         private List<String> podNsgIds;
         private List<String> podSubnetIds;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cniType = defaults.cniType;
@@ -99,14 +84,17 @@ public final class GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionD
     	      this.podSubnetIds = defaults.podSubnetIds;
         }
 
+        @CustomType.Setter
         public Builder cniType(String cniType) {
             this.cniType = Objects.requireNonNull(cniType);
             return this;
         }
+        @CustomType.Setter
         public Builder maxPodsPerNode(Integer maxPodsPerNode) {
             this.maxPodsPerNode = Objects.requireNonNull(maxPodsPerNode);
             return this;
         }
+        @CustomType.Setter
         public Builder podNsgIds(List<String> podNsgIds) {
             this.podNsgIds = Objects.requireNonNull(podNsgIds);
             return this;
@@ -114,14 +102,21 @@ public final class GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionD
         public Builder podNsgIds(String... podNsgIds) {
             return podNsgIds(List.of(podNsgIds));
         }
+        @CustomType.Setter
         public Builder podSubnetIds(List<String> podSubnetIds) {
             this.podSubnetIds = Objects.requireNonNull(podSubnetIds);
             return this;
         }
         public Builder podSubnetIds(String... podSubnetIds) {
             return podSubnetIds(List.of(podSubnetIds));
-        }        public GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail build() {
-            return new GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail(cniType, maxPodsPerNode, podNsgIds, podSubnetIds);
+        }
+        public GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail build() {
+            final var o = new GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail();
+            o.cniType = cniType;
+            o.maxPodsPerNode = maxPodsPerNode;
+            o.podNsgIds = podNsgIds;
+            o.podSubnetIds = podSubnetIds;
+            return o;
         }
     }
 }

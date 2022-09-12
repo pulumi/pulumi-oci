@@ -9,20 +9,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption {
-    private final Integer defaultValue;
-    private final Integer max;
-    private final Integer min;
+    private Integer defaultValue;
+    private Integer max;
+    private Integer min;
 
-    @CustomType.Constructor
-    private GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption(
-        @CustomType.Parameter("defaultValue") Integer defaultValue,
-        @CustomType.Parameter("max") Integer max,
-        @CustomType.Parameter("min") Integer min) {
-        this.defaultValue = defaultValue;
-        this.max = max;
-        this.min = min;
-    }
-
+    private GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption() {}
     public Integer defaultValue() {
         return this.defaultValue;
     }
@@ -40,16 +31,12 @@ public final class GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOpti
     public static Builder builder(GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer defaultValue;
         private Integer max;
         private Integer min;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultValue = defaults.defaultValue;
@@ -57,19 +44,27 @@ public final class GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOpti
     	      this.min = defaults.min;
         }
 
+        @CustomType.Setter
         public Builder defaultValue(Integer defaultValue) {
             this.defaultValue = Objects.requireNonNull(defaultValue);
             return this;
         }
+        @CustomType.Setter
         public Builder max(Integer max) {
             this.max = Objects.requireNonNull(max);
             return this;
         }
+        @CustomType.Setter
         public Builder min(Integer min) {
             this.min = Objects.requireNonNull(min);
             return this;
-        }        public GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption build() {
-            return new GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption(defaultValue, max, min);
+        }
+        public GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption build() {
+            final var o = new GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption();
+            o.defaultValue = defaultValue;
+            o.max = max;
+            o.min = min;
+            return o;
         }
     }
 }

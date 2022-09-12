@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBlockchainPlatformPatchesResult {
-    private final String blockchainPlatformId;
+    private String blockchainPlatformId;
     /**
      * @return The list of blockchain_platform_patch_collection.
      * 
      */
-    private final List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection> blockchainPlatformPatchCollections;
-    private final @Nullable List<GetBlockchainPlatformPatchesFilter> filters;
+    private List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection> blockchainPlatformPatchCollections;
+    private @Nullable List<GetBlockchainPlatformPatchesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetBlockchainPlatformPatchesResult(
-        @CustomType.Parameter("blockchainPlatformId") String blockchainPlatformId,
-        @CustomType.Parameter("blockchainPlatformPatchCollections") List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection> blockchainPlatformPatchCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetBlockchainPlatformPatchesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.blockchainPlatformId = blockchainPlatformId;
-        this.blockchainPlatformPatchCollections = blockchainPlatformPatchCollections;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetBlockchainPlatformPatchesResult() {}
     public String blockchainPlatformId() {
         return this.blockchainPlatformId;
     }
@@ -66,17 +55,13 @@ public final class GetBlockchainPlatformPatchesResult {
     public static Builder builder(GetBlockchainPlatformPatchesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String blockchainPlatformId;
         private List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection> blockchainPlatformPatchCollections;
         private @Nullable List<GetBlockchainPlatformPatchesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBlockchainPlatformPatchesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockchainPlatformId = defaults.blockchainPlatformId;
@@ -85,10 +70,12 @@ public final class GetBlockchainPlatformPatchesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder blockchainPlatformId(String blockchainPlatformId) {
             this.blockchainPlatformId = Objects.requireNonNull(blockchainPlatformId);
             return this;
         }
+        @CustomType.Setter
         public Builder blockchainPlatformPatchCollections(List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection> blockchainPlatformPatchCollections) {
             this.blockchainPlatformPatchCollections = Objects.requireNonNull(blockchainPlatformPatchCollections);
             return this;
@@ -96,6 +83,7 @@ public final class GetBlockchainPlatformPatchesResult {
         public Builder blockchainPlatformPatchCollections(GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection... blockchainPlatformPatchCollections) {
             return blockchainPlatformPatchCollections(List.of(blockchainPlatformPatchCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBlockchainPlatformPatchesFilter> filters) {
             this.filters = filters;
             return this;
@@ -103,11 +91,18 @@ public final class GetBlockchainPlatformPatchesResult {
         public Builder filters(GetBlockchainPlatformPatchesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetBlockchainPlatformPatchesResult build() {
-            return new GetBlockchainPlatformPatchesResult(blockchainPlatformId, blockchainPlatformPatchCollections, filters, id);
+        }
+        public GetBlockchainPlatformPatchesResult build() {
+            final var o = new GetBlockchainPlatformPatchesResult();
+            o.blockchainPlatformId = blockchainPlatformId;
+            o.blockchainPlatformPatchCollections = blockchainPlatformPatchCollections;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

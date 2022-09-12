@@ -13,28 +13,19 @@ public final class GetBuildPipelineBuildPipelineParameterItem {
      * @return Default value of the parameter.
      * 
      */
-    private final String defaultValue;
+    private String defaultValue;
     /**
      * @return Optional description about the build pipeline.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: &#39;Build_Pipeline_param&#39; is not same as &#39;build_pipeline_Param&#39;
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetBuildPipelineBuildPipelineParameterItem(
-        @CustomType.Parameter("defaultValue") String defaultValue,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("name") String name) {
-        this.defaultValue = defaultValue;
-        this.description = description;
-        this.name = name;
-    }
-
+    private GetBuildPipelineBuildPipelineParameterItem() {}
     /**
      * @return Default value of the parameter.
      * 
@@ -64,16 +55,12 @@ public final class GetBuildPipelineBuildPipelineParameterItem {
     public static Builder builder(GetBuildPipelineBuildPipelineParameterItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String defaultValue;
         private String description;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildPipelineBuildPipelineParameterItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultValue = defaults.defaultValue;
@@ -81,19 +68,27 @@ public final class GetBuildPipelineBuildPipelineParameterItem {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = Objects.requireNonNull(defaultValue);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetBuildPipelineBuildPipelineParameterItem build() {
-            return new GetBuildPipelineBuildPipelineParameterItem(defaultValue, description, name);
+        }
+        public GetBuildPipelineBuildPipelineParameterItem build() {
+            final var o = new GetBuildPipelineBuildPipelineParameterItem();
+            o.defaultValue = defaultValue;
+            o.description = description;
+            o.name = name;
+            return o;
         }
     }
 }

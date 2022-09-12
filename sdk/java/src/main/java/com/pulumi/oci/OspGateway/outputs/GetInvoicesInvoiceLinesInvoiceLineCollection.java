@@ -14,13 +14,9 @@ public final class GetInvoicesInvoiceLinesInvoiceLineCollection {
      * @return Invoice line list elements
      * 
      */
-    private final List<GetInvoicesInvoiceLinesInvoiceLineCollectionItem> items;
+    private List<GetInvoicesInvoiceLinesInvoiceLineCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetInvoicesInvoiceLinesInvoiceLineCollection(@CustomType.Parameter("items") List<GetInvoicesInvoiceLinesInvoiceLineCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetInvoicesInvoiceLinesInvoiceLineCollection() {}
     /**
      * @return Invoice line list elements
      * 
@@ -36,27 +32,27 @@ public final class GetInvoicesInvoiceLinesInvoiceLineCollection {
     public static Builder builder(GetInvoicesInvoiceLinesInvoiceLineCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetInvoicesInvoiceLinesInvoiceLineCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvoicesInvoiceLinesInvoiceLineCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetInvoicesInvoiceLinesInvoiceLineCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetInvoicesInvoiceLinesInvoiceLineCollectionItem... items) {
             return items(List.of(items));
-        }        public GetInvoicesInvoiceLinesInvoiceLineCollection build() {
-            return new GetInvoicesInvoiceLinesInvoiceLineCollection(items);
+        }
+        public GetInvoicesInvoiceLinesInvoiceLineCollection build() {
+            final var o = new GetInvoicesInvoiceLinesInvoiceLineCollection();
+            o.items = items;
+            return o;
         }
     }
 }

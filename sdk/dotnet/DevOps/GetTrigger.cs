@@ -111,6 +111,7 @@ namespace Pulumi.Oci.DevOps
         /// The OCID of the compartment that contains the trigger.
         /// </summary>
         public readonly string CompartmentId;
+        public readonly string ConnectionId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
@@ -175,6 +176,8 @@ namespace Pulumi.Oci.DevOps
 
             string compartmentId,
 
+            string connectionId,
+
             ImmutableDictionary<string, object> definedTags,
 
             string description,
@@ -207,6 +210,7 @@ namespace Pulumi.Oci.DevOps
         {
             Actions = actions;
             CompartmentId = compartmentId;
+            ConnectionId = connectionId;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;

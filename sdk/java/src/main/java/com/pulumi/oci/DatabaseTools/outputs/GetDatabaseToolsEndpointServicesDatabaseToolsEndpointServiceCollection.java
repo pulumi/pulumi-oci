@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection {
-    private final List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem> items;
+    private List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection(@CustomType.Parameter("items") List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection() {}
     public List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceC
     public static Builder builder(GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection build() {
-            return new GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection(items);
+        }
+        public GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection build() {
+            final var o = new GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection();
+            o.items = items;
+            return o;
         }
     }
 }

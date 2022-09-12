@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Registry resource in Oracle Cloud Infrastructure Data Connectivity service.
 //
-// # Gets a Data Connectivity Management Registry by identifier
+// Retrieves a Data Connectivity Management registry using the specified identifier.
 //
 // ## Example Usage
 //
@@ -50,7 +50,7 @@ func LookupRegistry(ctx *pulumi.Context, args *LookupRegistryArgs, opts ...pulum
 
 // A collection of arguments for invoking getRegistry.
 type LookupRegistryArgs struct {
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId string `pulumi:"registryId"`
 }
 
@@ -62,22 +62,22 @@ type LookupRegistryResult struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Registry description
 	Description string `pulumi:"description"`
-	// Data Connectivity Management Registry display name, registries can be renamed
+	// Data Connectivity Management registry display name; registries can be renamed.
 	DisplayName string `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Unique identifier that is immutable on creation
+	// A unique identifier that is immutable on creation.
 	Id         string `pulumi:"id"`
 	RegistryId string `pulumi:"registryId"`
-	// Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors
+	// Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn't available. FAILED   - The resource is in a failed state due to validation or other errors.
 	State string `pulumi:"state"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage string `pulumi:"stateMessage"`
-	// The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+	// Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+	// Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Name of the user who updated the DCMS Registry.
+	// Name of the user who updated the DCMS registry.
 	UpdatedBy string `pulumi:"updatedBy"`
 }
 
@@ -96,7 +96,7 @@ func LookupRegistryOutput(ctx *pulumi.Context, args LookupRegistryOutputArgs, op
 
 // A collection of arguments for invoking getRegistry.
 type LookupRegistryOutputArgs struct {
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringInput `pulumi:"registryId"`
 }
 
@@ -134,17 +134,17 @@ func (o LookupRegistryResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Data Connectivity Management Registry display name, registries can be renamed
+// Data Connectivity Management registry display name; registries can be renamed.
 func (o LookupRegistryResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
 func (o LookupRegistryResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupRegistryResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Unique identifier that is immutable on creation
+// A unique identifier that is immutable on creation.
 func (o LookupRegistryResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -153,7 +153,7 @@ func (o LookupRegistryResultOutput) RegistryId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryResult) string { return v.RegistryId }).(pulumi.StringOutput)
 }
 
-// Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors
+// Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn't available. FAILED   - The resource is in a failed state due to validation or other errors.
 func (o LookupRegistryResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -163,17 +163,17 @@ func (o LookupRegistryResultOutput) StateMessage() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryResult) string { return v.StateMessage }).(pulumi.StringOutput)
 }
 
-// The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+// Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
 func (o LookupRegistryResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+// Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
 func (o LookupRegistryResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Name of the user who updated the DCMS Registry.
+// Name of the user who updated the DCMS registry.
 func (o LookupRegistryResultOutput) UpdatedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryResult) string { return v.UpdatedBy }).(pulumi.StringOutput)
 }

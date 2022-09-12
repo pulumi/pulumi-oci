@@ -19,105 +19,66 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
      * @return The name of the substitution column.
      * 
      */
-    private final @Nullable List<String> columnNames;
+    private @Nullable List<String> columnNames;
     /**
      * @return The data type of the masking column.
      * 
      */
-    private final @Nullable List<String> dataTypes;
-    private final @Nullable List<GetMaskingPoliciesMaskingColumnsFilter> filters;
+    private @Nullable List<String> dataTypes;
+    private @Nullable List<GetMaskingPoliciesMaskingColumnsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates if data masking is enabled for the masking column.
      * 
      */
-    private final @Nullable Boolean isMaskingEnabled;
-    private final @Nullable Boolean isSeedRequired;
+    private @Nullable Boolean isMaskingEnabled;
+    private @Nullable Boolean isSeedRequired;
     /**
      * @return The list of masking_column_collection.
      * 
      */
-    private final List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollection> maskingColumnCollections;
+    private List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollection> maskingColumnCollections;
     /**
      * @return The group of the masking column. All the columns in a group are masked together to ensure  that the masked data across these columns continue to retain the same logical relationship.  For more details, check &lt;a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037&gt;Group Masking in the Data Safe documentation.&lt;/a&gt;
      * 
      */
-    private final @Nullable List<String> maskingColumnGroups;
-    private final @Nullable String maskingColumnLifecycleState;
+    private @Nullable List<String> maskingColumnGroups;
+    private @Nullable String maskingColumnLifecycleState;
     /**
      * @return The OCID of the masking policy that contains the masking column.
      * 
      */
-    private final String maskingPolicyId;
+    private String maskingPolicyId;
     /**
      * @return The type of the object that contains the database column.
      * 
      */
-    private final @Nullable List<String> objectTypes;
+    private @Nullable List<String> objectTypes;
     /**
      * @return The name of the object (table or editioning view) that contains the database column.
      * 
      */
-    private final @Nullable List<String> objects;
+    private @Nullable List<String> objects;
     /**
      * @return The name of the schema that contains the database column.
      * 
      */
-    private final @Nullable List<String> schemaNames;
+    private @Nullable List<String> schemaNames;
     /**
      * @return The OCID of the sensitive type associated with the masking column.
      * 
      */
-    private final @Nullable String sensitiveTypeId;
-    private final @Nullable String timeCreatedGreaterThanOrEqualTo;
-    private final @Nullable String timeCreatedLessThan;
-    private final @Nullable String timeUpdatedGreaterThanOrEqualTo;
-    private final @Nullable String timeUpdatedLessThan;
+    private @Nullable String sensitiveTypeId;
+    private @Nullable String timeCreatedGreaterThanOrEqualTo;
+    private @Nullable String timeCreatedLessThan;
+    private @Nullable String timeUpdatedGreaterThanOrEqualTo;
+    private @Nullable String timeUpdatedLessThan;
 
-    @CustomType.Constructor
-    private GetMaskingPoliciesMaskingColumnsResult(
-        @CustomType.Parameter("columnNames") @Nullable List<String> columnNames,
-        @CustomType.Parameter("dataTypes") @Nullable List<String> dataTypes,
-        @CustomType.Parameter("filters") @Nullable List<GetMaskingPoliciesMaskingColumnsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isMaskingEnabled") @Nullable Boolean isMaskingEnabled,
-        @CustomType.Parameter("isSeedRequired") @Nullable Boolean isSeedRequired,
-        @CustomType.Parameter("maskingColumnCollections") List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollection> maskingColumnCollections,
-        @CustomType.Parameter("maskingColumnGroups") @Nullable List<String> maskingColumnGroups,
-        @CustomType.Parameter("maskingColumnLifecycleState") @Nullable String maskingColumnLifecycleState,
-        @CustomType.Parameter("maskingPolicyId") String maskingPolicyId,
-        @CustomType.Parameter("objectTypes") @Nullable List<String> objectTypes,
-        @CustomType.Parameter("objects") @Nullable List<String> objects,
-        @CustomType.Parameter("schemaNames") @Nullable List<String> schemaNames,
-        @CustomType.Parameter("sensitiveTypeId") @Nullable String sensitiveTypeId,
-        @CustomType.Parameter("timeCreatedGreaterThanOrEqualTo") @Nullable String timeCreatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeCreatedLessThan") @Nullable String timeCreatedLessThan,
-        @CustomType.Parameter("timeUpdatedGreaterThanOrEqualTo") @Nullable String timeUpdatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeUpdatedLessThan") @Nullable String timeUpdatedLessThan) {
-        this.columnNames = columnNames;
-        this.dataTypes = dataTypes;
-        this.filters = filters;
-        this.id = id;
-        this.isMaskingEnabled = isMaskingEnabled;
-        this.isSeedRequired = isSeedRequired;
-        this.maskingColumnCollections = maskingColumnCollections;
-        this.maskingColumnGroups = maskingColumnGroups;
-        this.maskingColumnLifecycleState = maskingColumnLifecycleState;
-        this.maskingPolicyId = maskingPolicyId;
-        this.objectTypes = objectTypes;
-        this.objects = objects;
-        this.schemaNames = schemaNames;
-        this.sensitiveTypeId = sensitiveTypeId;
-        this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-        this.timeCreatedLessThan = timeCreatedLessThan;
-        this.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
-        this.timeUpdatedLessThan = timeUpdatedLessThan;
-    }
-
+    private GetMaskingPoliciesMaskingColumnsResult() {}
     /**
      * @return The name of the substitution column.
      * 
@@ -224,7 +185,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
     public static Builder builder(GetMaskingPoliciesMaskingColumnsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> columnNames;
         private @Nullable List<String> dataTypes;
@@ -244,11 +205,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         private @Nullable String timeCreatedLessThan;
         private @Nullable String timeUpdatedGreaterThanOrEqualTo;
         private @Nullable String timeUpdatedLessThan;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMaskingPoliciesMaskingColumnsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.columnNames = defaults.columnNames;
@@ -271,6 +228,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
     	      this.timeUpdatedLessThan = defaults.timeUpdatedLessThan;
         }
 
+        @CustomType.Setter
         public Builder columnNames(@Nullable List<String> columnNames) {
             this.columnNames = columnNames;
             return this;
@@ -278,6 +236,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         public Builder columnNames(String... columnNames) {
             return columnNames(List.of(columnNames));
         }
+        @CustomType.Setter
         public Builder dataTypes(@Nullable List<String> dataTypes) {
             this.dataTypes = dataTypes;
             return this;
@@ -285,6 +244,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         public Builder dataTypes(String... dataTypes) {
             return dataTypes(List.of(dataTypes));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetMaskingPoliciesMaskingColumnsFilter> filters) {
             this.filters = filters;
             return this;
@@ -292,18 +252,22 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         public Builder filters(GetMaskingPoliciesMaskingColumnsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isMaskingEnabled(@Nullable Boolean isMaskingEnabled) {
             this.isMaskingEnabled = isMaskingEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder isSeedRequired(@Nullable Boolean isSeedRequired) {
             this.isSeedRequired = isSeedRequired;
             return this;
         }
+        @CustomType.Setter
         public Builder maskingColumnCollections(List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollection> maskingColumnCollections) {
             this.maskingColumnCollections = Objects.requireNonNull(maskingColumnCollections);
             return this;
@@ -311,6 +275,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         public Builder maskingColumnCollections(GetMaskingPoliciesMaskingColumnsMaskingColumnCollection... maskingColumnCollections) {
             return maskingColumnCollections(List.of(maskingColumnCollections));
         }
+        @CustomType.Setter
         public Builder maskingColumnGroups(@Nullable List<String> maskingColumnGroups) {
             this.maskingColumnGroups = maskingColumnGroups;
             return this;
@@ -318,14 +283,17 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         public Builder maskingColumnGroups(String... maskingColumnGroups) {
             return maskingColumnGroups(List.of(maskingColumnGroups));
         }
+        @CustomType.Setter
         public Builder maskingColumnLifecycleState(@Nullable String maskingColumnLifecycleState) {
             this.maskingColumnLifecycleState = maskingColumnLifecycleState;
             return this;
         }
+        @CustomType.Setter
         public Builder maskingPolicyId(String maskingPolicyId) {
             this.maskingPolicyId = Objects.requireNonNull(maskingPolicyId);
             return this;
         }
+        @CustomType.Setter
         public Builder objectTypes(@Nullable List<String> objectTypes) {
             this.objectTypes = objectTypes;
             return this;
@@ -333,6 +301,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         public Builder objectTypes(String... objectTypes) {
             return objectTypes(List.of(objectTypes));
         }
+        @CustomType.Setter
         public Builder objects(@Nullable List<String> objects) {
             this.objects = objects;
             return this;
@@ -340,6 +309,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         public Builder objects(String... objects) {
             return objects(List.of(objects));
         }
+        @CustomType.Setter
         public Builder schemaNames(@Nullable List<String> schemaNames) {
             this.schemaNames = schemaNames;
             return this;
@@ -347,27 +317,52 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         public Builder schemaNames(String... schemaNames) {
             return schemaNames(List.of(schemaNames));
         }
+        @CustomType.Setter
         public Builder sensitiveTypeId(@Nullable String sensitiveTypeId) {
             this.sensitiveTypeId = sensitiveTypeId;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdatedGreaterThanOrEqualTo(@Nullable String timeUpdatedGreaterThanOrEqualTo) {
             this.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdatedLessThan(@Nullable String timeUpdatedLessThan) {
             this.timeUpdatedLessThan = timeUpdatedLessThan;
             return this;
-        }        public GetMaskingPoliciesMaskingColumnsResult build() {
-            return new GetMaskingPoliciesMaskingColumnsResult(columnNames, dataTypes, filters, id, isMaskingEnabled, isSeedRequired, maskingColumnCollections, maskingColumnGroups, maskingColumnLifecycleState, maskingPolicyId, objectTypes, objects, schemaNames, sensitiveTypeId, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, timeUpdatedGreaterThanOrEqualTo, timeUpdatedLessThan);
+        }
+        public GetMaskingPoliciesMaskingColumnsResult build() {
+            final var o = new GetMaskingPoliciesMaskingColumnsResult();
+            o.columnNames = columnNames;
+            o.dataTypes = dataTypes;
+            o.filters = filters;
+            o.id = id;
+            o.isMaskingEnabled = isMaskingEnabled;
+            o.isSeedRequired = isSeedRequired;
+            o.maskingColumnCollections = maskingColumnCollections;
+            o.maskingColumnGroups = maskingColumnGroups;
+            o.maskingColumnLifecycleState = maskingColumnLifecycleState;
+            o.maskingPolicyId = maskingPolicyId;
+            o.objectTypes = objectTypes;
+            o.objects = objects;
+            o.schemaNames = schemaNames;
+            o.sensitiveTypeId = sensitiveTypeId;
+            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            o.timeCreatedLessThan = timeCreatedLessThan;
+            o.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
+            o.timeUpdatedLessThan = timeUpdatedLessThan;
+            return o;
         }
     }
 }

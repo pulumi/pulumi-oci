@@ -15,13 +15,9 @@ public final class DeployEnvironmentComputeInstanceGroupSelectors {
      * @return (Updatable) A list of selectors for the instance group. UNION operator is used for combining the instances selected by each selector.
      * 
      */
-    private final @Nullable List<DeployEnvironmentComputeInstanceGroupSelectorsItem> items;
+    private @Nullable List<DeployEnvironmentComputeInstanceGroupSelectorsItem> items;
 
-    @CustomType.Constructor
-    private DeployEnvironmentComputeInstanceGroupSelectors(@CustomType.Parameter("items") @Nullable List<DeployEnvironmentComputeInstanceGroupSelectorsItem> items) {
-        this.items = items;
-    }
-
+    private DeployEnvironmentComputeInstanceGroupSelectors() {}
     /**
      * @return (Updatable) A list of selectors for the instance group. UNION operator is used for combining the instances selected by each selector.
      * 
@@ -37,27 +33,27 @@ public final class DeployEnvironmentComputeInstanceGroupSelectors {
     public static Builder builder(DeployEnvironmentComputeInstanceGroupSelectors defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<DeployEnvironmentComputeInstanceGroupSelectorsItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeployEnvironmentComputeInstanceGroupSelectors defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(@Nullable List<DeployEnvironmentComputeInstanceGroupSelectorsItem> items) {
             this.items = items;
             return this;
         }
         public Builder items(DeployEnvironmentComputeInstanceGroupSelectorsItem... items) {
             return items(List.of(items));
-        }        public DeployEnvironmentComputeInstanceGroupSelectors build() {
-            return new DeployEnvironmentComputeInstanceGroupSelectors(items);
+        }
+        public DeployEnvironmentComputeInstanceGroupSelectors build() {
+            final var o = new DeployEnvironmentComputeInstanceGroupSelectors();
+            o.items = items;
+            return o;
         }
     }
 }

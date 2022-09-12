@@ -14,7 +14,7 @@ namespace Pulumi.Oci.UsageProxy.Outputs
     public sealed class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult
     {
         /// <summary>
-        /// The list of user email IDs that can redeem rewards.
+        /// The list of user summary that can redeem rewards.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemResult> Items;
         /// <summary>

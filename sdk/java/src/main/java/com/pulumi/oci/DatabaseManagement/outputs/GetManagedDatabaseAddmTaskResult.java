@@ -15,34 +15,21 @@ public final class GetManagedDatabaseAddmTaskResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of ADDM task metadata.
      * 
      */
-    private final List<GetManagedDatabaseAddmTaskItem> items;
+    private List<GetManagedDatabaseAddmTaskItem> items;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * 
      */
-    private final String managedDatabaseId;
-    private final String timeEnd;
-    private final String timeStart;
+    private String managedDatabaseId;
+    private String timeEnd;
+    private String timeStart;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseAddmTaskResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetManagedDatabaseAddmTaskItem> items,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("timeEnd") String timeEnd,
-        @CustomType.Parameter("timeStart") String timeStart) {
-        this.id = id;
-        this.items = items;
-        this.managedDatabaseId = managedDatabaseId;
-        this.timeEnd = timeEnd;
-        this.timeStart = timeStart;
-    }
-
+    private GetManagedDatabaseAddmTaskResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -78,18 +65,14 @@ public final class GetManagedDatabaseAddmTaskResult {
     public static Builder builder(GetManagedDatabaseAddmTaskResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private List<GetManagedDatabaseAddmTaskItem> items;
         private String managedDatabaseId;
         private String timeEnd;
         private String timeStart;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseAddmTaskResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -99,10 +82,12 @@ public final class GetManagedDatabaseAddmTaskResult {
     	      this.timeStart = defaults.timeStart;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabaseAddmTaskItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -110,19 +95,29 @@ public final class GetManagedDatabaseAddmTaskResult {
         public Builder items(GetManagedDatabaseAddmTaskItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
             this.timeEnd = Objects.requireNonNull(timeEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(String timeStart) {
             this.timeStart = Objects.requireNonNull(timeStart);
             return this;
-        }        public GetManagedDatabaseAddmTaskResult build() {
-            return new GetManagedDatabaseAddmTaskResult(id, items, managedDatabaseId, timeEnd, timeStart);
+        }
+        public GetManagedDatabaseAddmTaskResult build() {
+            final var o = new GetManagedDatabaseAddmTaskResult();
+            o.id = id;
+            o.items = items;
+            o.managedDatabaseId = managedDatabaseId;
+            o.timeEnd = timeEnd;
+            o.timeStart = timeStart;
+            return o;
         }
     }
 }

@@ -13,21 +13,14 @@ public final class GetMonitorsMonitorCollectionItemConfigurationRequestQueryPara
      * @return Name of the parameter.
      * 
      */
-    private final String paramName;
+    private String paramName;
     /**
      * @return Value of the parameter.
      * 
      */
-    private final String paramValue;
+    private String paramValue;
 
-    @CustomType.Constructor
-    private GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam(
-        @CustomType.Parameter("paramName") String paramName,
-        @CustomType.Parameter("paramValue") String paramValue) {
-        this.paramName = paramName;
-        this.paramValue = paramValue;
-    }
-
+    private GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam() {}
     /**
      * @return Name of the parameter.
      * 
@@ -50,30 +43,32 @@ public final class GetMonitorsMonitorCollectionItemConfigurationRequestQueryPara
     public static Builder builder(GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String paramName;
         private String paramValue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.paramName = defaults.paramName;
     	      this.paramValue = defaults.paramValue;
         }
 
+        @CustomType.Setter
         public Builder paramName(String paramName) {
             this.paramName = Objects.requireNonNull(paramName);
             return this;
         }
+        @CustomType.Setter
         public Builder paramValue(String paramValue) {
             this.paramValue = Objects.requireNonNull(paramValue);
             return this;
-        }        public GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam build() {
-            return new GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam(paramName, paramValue);
+        }
+        public GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam build() {
+            final var o = new GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam();
+            o.paramName = paramName;
+            o.paramValue = paramValue;
+            return o;
         }
     }
 }

@@ -12,7 +12,7 @@ import (
 
 // This data source provides details about a specific Registry Type resource in Oracle Cloud Infrastructure Data Connectivity service.
 //
-// # This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry
+// This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry.
 //
 // ## Example Usage
 //
@@ -54,17 +54,17 @@ func GetRegistryType(ctx *pulumi.Context, args *GetRegistryTypeArgs, opts ...pul
 type GetRegistryTypeArgs struct {
 	// Specifies the fields to get for an object.
 	Fields []string `pulumi:"fields"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId string `pulumi:"registryId"`
-	// key of the a specefic Type.
+	// Key of the a specific type.
 	TypeKey string `pulumi:"typeKey"`
 }
 
 // A collection of values returned by getRegistryType.
 type GetRegistryTypeResult struct {
-	// Map of connectionType as key and List of attributes as value
+	// Mapping the connectionType as the key to the list of attributes as the value.
 	ConnectionAttributes map[string]interface{} `pulumi:"connectionAttributes"`
-	// list of attributes for the dataAsset
+	// The list of attributes of the data asset.
 	DataAssetAttributes []GetRegistryTypeDataAssetAttribute `pulumi:"dataAssetAttributes"`
 	Fields              []string                            `pulumi:"fields"`
 	// The provider-assigned unique ID for this managed resource.
@@ -90,9 +90,9 @@ func GetRegistryTypeOutput(ctx *pulumi.Context, args GetRegistryTypeOutputArgs, 
 type GetRegistryTypeOutputArgs struct {
 	// Specifies the fields to get for an object.
 	Fields pulumi.StringArrayInput `pulumi:"fields"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringInput `pulumi:"registryId"`
-	// key of the a specefic Type.
+	// Key of the a specific type.
 	TypeKey pulumi.StringInput `pulumi:"typeKey"`
 }
 
@@ -115,12 +115,12 @@ func (o GetRegistryTypeResultOutput) ToGetRegistryTypeResultOutputWithContext(ct
 	return o
 }
 
-// Map of connectionType as key and List of attributes as value
+// Mapping the connectionType as the key to the list of attributes as the value.
 func (o GetRegistryTypeResultOutput) ConnectionAttributes() pulumi.MapOutput {
 	return o.ApplyT(func(v GetRegistryTypeResult) map[string]interface{} { return v.ConnectionAttributes }).(pulumi.MapOutput)
 }
 
-// list of attributes for the dataAsset
+// The list of attributes of the data asset.
 func (o GetRegistryTypeResultOutput) DataAssetAttributes() GetRegistryTypeDataAssetAttributeArrayOutput {
 	return o.ApplyT(func(v GetRegistryTypeResult) []GetRegistryTypeDataAssetAttribute { return v.DataAssetAttributes }).(GetRegistryTypeDataAssetAttributeArrayOutput)
 }

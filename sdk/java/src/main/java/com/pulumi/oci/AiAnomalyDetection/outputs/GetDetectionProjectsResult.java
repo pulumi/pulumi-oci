@@ -18,45 +18,30 @@ public final class GetDetectionProjectsResult {
      * @return The OCID for the project&#39;s compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetDetectionProjectsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetDetectionProjectsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of project_collection.
      * 
      */
-    private final List<GetDetectionProjectsProjectCollection> projectCollections;
+    private List<GetDetectionProjectsProjectCollection> projectCollections;
     /**
      * @return The lifecycle state of the Project.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetDetectionProjectsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetDetectionProjectsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("projectCollections") List<GetDetectionProjectsProjectCollection> projectCollections,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.projectCollections = projectCollections;
-        this.state = state;
-    }
-
+    private GetDetectionProjectsResult() {}
     /**
      * @return The OCID for the project&#39;s compartment.
      * 
@@ -103,7 +88,7 @@ public final class GetDetectionProjectsResult {
     public static Builder builder(GetDetectionProjectsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetDetectionProjectsResult {
         private String id;
         private List<GetDetectionProjectsProjectCollection> projectCollections;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDetectionProjectsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetDetectionProjectsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDetectionProjectsFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +125,12 @@ public final class GetDetectionProjectsResult {
         public Builder filters(GetDetectionProjectsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder projectCollections(List<GetDetectionProjectsProjectCollection> projectCollections) {
             this.projectCollections = Objects.requireNonNull(projectCollections);
             return this;
@@ -152,11 +138,20 @@ public final class GetDetectionProjectsResult {
         public Builder projectCollections(GetDetectionProjectsProjectCollection... projectCollections) {
             return projectCollections(List.of(projectCollections));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetDetectionProjectsResult build() {
-            return new GetDetectionProjectsResult(compartmentId, displayName, filters, id, projectCollections, state);
+        }
+        public GetDetectionProjectsResult build() {
+            final var o = new GetDetectionProjectsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.projectCollections = projectCollections;
+            o.state = state;
+            return o;
         }
     }
 }

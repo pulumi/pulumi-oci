@@ -15,35 +15,24 @@ public final class ManagedDatabasesChangeDatabaseParameterCredentials {
      * @return The password for the database user name.
      * 
      */
-    private final @Nullable String password;
+    private @Nullable String password;
     /**
      * @return The role of the database user. Indicates whether the database user is a normal user or sysdba.
      * 
      */
-    private final @Nullable String role;
+    private @Nullable String role;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
      * 
      */
-    private final @Nullable String secretId;
+    private @Nullable String secretId;
     /**
      * @return The database user name used to perform management activity.
      * 
      */
-    private final @Nullable String userName;
+    private @Nullable String userName;
 
-    @CustomType.Constructor
-    private ManagedDatabasesChangeDatabaseParameterCredentials(
-        @CustomType.Parameter("password") @Nullable String password,
-        @CustomType.Parameter("role") @Nullable String role,
-        @CustomType.Parameter("secretId") @Nullable String secretId,
-        @CustomType.Parameter("userName") @Nullable String userName) {
-        this.password = password;
-        this.role = role;
-        this.secretId = secretId;
-        this.userName = userName;
-    }
-
+    private ManagedDatabasesChangeDatabaseParameterCredentials() {}
     /**
      * @return The password for the database user name.
      * 
@@ -80,17 +69,13 @@ public final class ManagedDatabasesChangeDatabaseParameterCredentials {
     public static Builder builder(ManagedDatabasesChangeDatabaseParameterCredentials defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String password;
         private @Nullable String role;
         private @Nullable String secretId;
         private @Nullable String userName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ManagedDatabasesChangeDatabaseParameterCredentials defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.password = defaults.password;
@@ -99,23 +84,33 @@ public final class ManagedDatabasesChangeDatabaseParameterCredentials {
     	      this.userName = defaults.userName;
         }
 
+        @CustomType.Setter
         public Builder password(@Nullable String password) {
             this.password = password;
             return this;
         }
+        @CustomType.Setter
         public Builder role(@Nullable String role) {
             this.role = role;
             return this;
         }
+        @CustomType.Setter
         public Builder secretId(@Nullable String secretId) {
             this.secretId = secretId;
             return this;
         }
+        @CustomType.Setter
         public Builder userName(@Nullable String userName) {
             this.userName = userName;
             return this;
-        }        public ManagedDatabasesChangeDatabaseParameterCredentials build() {
-            return new ManagedDatabasesChangeDatabaseParameterCredentials(password, role, secretId, userName);
+        }
+        public ManagedDatabasesChangeDatabaseParameterCredentials build() {
+            final var o = new ManagedDatabasesChangeDatabaseParameterCredentials();
+            o.password = password;
+            o.role = role;
+            o.secretId = secretId;
+            o.userName = userName;
+            return o;
         }
     }
 }

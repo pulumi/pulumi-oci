@@ -13,13 +13,9 @@ public final class GetManagedDatabaseUserDataAccessContainerItem {
      * @return A filter to return only resources that match the entire name.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseUserDataAccessContainerItem(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private GetManagedDatabaseUserDataAccessContainerItem() {}
     /**
      * @return A filter to return only resources that match the entire name.
      * 
@@ -35,24 +31,24 @@ public final class GetManagedDatabaseUserDataAccessContainerItem {
     public static Builder builder(GetManagedDatabaseUserDataAccessContainerItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseUserDataAccessContainerItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetManagedDatabaseUserDataAccessContainerItem build() {
-            return new GetManagedDatabaseUserDataAccessContainerItem(name);
+        }
+        public GetManagedDatabaseUserDataAccessContainerItem build() {
+            final var o = new GetManagedDatabaseUserDataAccessContainerItem();
+            o.name = name;
+            return o;
         }
     }
 }

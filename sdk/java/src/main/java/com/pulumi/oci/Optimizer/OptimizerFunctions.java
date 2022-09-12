@@ -86,6 +86,8 @@ public final class OptimizerFunctions {
      *         final var testCategories = OptimizerFunctions.getCategories(GetCategoriesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.category_compartment_id_in_subtree())
+     *             .childTenancyIds(var_.category_child_tenancy_ids())
+     *             .includeOrganization(var_.category_include_organization())
      *             .name(var_.category_name())
      *             .state(var_.category_state())
      *             .build());
@@ -128,6 +130,8 @@ public final class OptimizerFunctions {
      *         final var testCategories = OptimizerFunctions.getCategories(GetCategoriesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.category_compartment_id_in_subtree())
+     *             .childTenancyIds(var_.category_child_tenancy_ids())
+     *             .includeOrganization(var_.category_include_organization())
      *             .name(var_.category_name())
      *             .state(var_.category_state())
      *             .build());
@@ -170,6 +174,8 @@ public final class OptimizerFunctions {
      *         final var testCategories = OptimizerFunctions.getCategories(GetCategoriesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.category_compartment_id_in_subtree())
+     *             .childTenancyIds(var_.category_child_tenancy_ids())
+     *             .includeOrganization(var_.category_include_organization())
      *             .name(var_.category_name())
      *             .state(var_.category_state())
      *             .build());
@@ -212,6 +218,8 @@ public final class OptimizerFunctions {
      *         final var testCategories = OptimizerFunctions.getCategories(GetCategoriesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.category_compartment_id_in_subtree())
+     *             .childTenancyIds(var_.category_child_tenancy_ids())
+     *             .includeOrganization(var_.category_include_organization())
      *             .name(var_.category_name())
      *             .state(var_.category_state())
      *             .build());
@@ -2039,7 +2047,7 @@ public final class OptimizerFunctions {
     /**
      * This data source provides the list of Recommendations in Oracle Cloud Infrastructure Optimizer service.
      * 
-     * Lists the Cloud Advisor recommendations that are currently supported in the specified category.
+     * Lists the Cloud Advisor recommendations that are currently supported.
      * 
      * ## Example Usage
      * ```java
@@ -2064,9 +2072,12 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecommendations = OptimizerFunctions.getRecommendations(GetRecommendationsArgs.builder()
-     *             .categoryId(oci_optimizer_category.test_category().id())
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.recommendation_compartment_id_in_subtree())
+     *             .categoryId(oci_optimizer_category.test_category().id())
+     *             .categoryName(oci_optimizer_category.test_category().name())
+     *             .childTenancyIds(var_.recommendation_child_tenancy_ids())
+     *             .includeOrganization(var_.recommendation_include_organization())
      *             .name(var_.recommendation_name())
      *             .state(var_.recommendation_state())
      *             .status(var_.recommendation_status())
@@ -2083,7 +2094,7 @@ public final class OptimizerFunctions {
     /**
      * This data source provides the list of Recommendations in Oracle Cloud Infrastructure Optimizer service.
      * 
-     * Lists the Cloud Advisor recommendations that are currently supported in the specified category.
+     * Lists the Cloud Advisor recommendations that are currently supported.
      * 
      * ## Example Usage
      * ```java
@@ -2108,9 +2119,12 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecommendations = OptimizerFunctions.getRecommendations(GetRecommendationsArgs.builder()
-     *             .categoryId(oci_optimizer_category.test_category().id())
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.recommendation_compartment_id_in_subtree())
+     *             .categoryId(oci_optimizer_category.test_category().id())
+     *             .categoryName(oci_optimizer_category.test_category().name())
+     *             .childTenancyIds(var_.recommendation_child_tenancy_ids())
+     *             .includeOrganization(var_.recommendation_include_organization())
      *             .name(var_.recommendation_name())
      *             .state(var_.recommendation_state())
      *             .status(var_.recommendation_status())
@@ -2127,7 +2141,7 @@ public final class OptimizerFunctions {
     /**
      * This data source provides the list of Recommendations in Oracle Cloud Infrastructure Optimizer service.
      * 
-     * Lists the Cloud Advisor recommendations that are currently supported in the specified category.
+     * Lists the Cloud Advisor recommendations that are currently supported.
      * 
      * ## Example Usage
      * ```java
@@ -2152,9 +2166,12 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecommendations = OptimizerFunctions.getRecommendations(GetRecommendationsArgs.builder()
-     *             .categoryId(oci_optimizer_category.test_category().id())
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.recommendation_compartment_id_in_subtree())
+     *             .categoryId(oci_optimizer_category.test_category().id())
+     *             .categoryName(oci_optimizer_category.test_category().name())
+     *             .childTenancyIds(var_.recommendation_child_tenancy_ids())
+     *             .includeOrganization(var_.recommendation_include_organization())
      *             .name(var_.recommendation_name())
      *             .state(var_.recommendation_state())
      *             .status(var_.recommendation_status())
@@ -2171,7 +2188,7 @@ public final class OptimizerFunctions {
     /**
      * This data source provides the list of Recommendations in Oracle Cloud Infrastructure Optimizer service.
      * 
-     * Lists the Cloud Advisor recommendations that are currently supported in the specified category.
+     * Lists the Cloud Advisor recommendations that are currently supported.
      * 
      * ## Example Usage
      * ```java
@@ -2196,9 +2213,12 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecommendations = OptimizerFunctions.getRecommendations(GetRecommendationsArgs.builder()
-     *             .categoryId(oci_optimizer_category.test_category().id())
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.recommendation_compartment_id_in_subtree())
+     *             .categoryId(oci_optimizer_category.test_category().id())
+     *             .categoryName(oci_optimizer_category.test_category().name())
+     *             .childTenancyIds(var_.recommendation_child_tenancy_ids())
+     *             .includeOrganization(var_.recommendation_include_organization())
      *             .name(var_.recommendation_name())
      *             .state(var_.recommendation_state())
      *             .status(var_.recommendation_status())
@@ -2371,7 +2391,7 @@ public final class OptimizerFunctions {
     /**
      * This data source provides the list of Resource Actions in Oracle Cloud Infrastructure Optimizer service.
      * 
-     * Lists the Cloud Advisor resource actions that are supported by the specified recommendation.
+     * Lists the Cloud Advisor resource actions that are supported.
      * 
      * ## Example Usage
      * ```java
@@ -2398,8 +2418,11 @@ public final class OptimizerFunctions {
      *         final var testResourceActions = OptimizerFunctions.getResourceActions(GetResourceActionsArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.resource_action_compartment_id_in_subtree())
-     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .childTenancyIds(var_.resource_action_child_tenancy_ids())
+     *             .includeOrganization(var_.resource_action_include_organization())
      *             .name(var_.resource_action_name())
+     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
      *             .resourceType(var_.resource_action_resource_type())
      *             .state(var_.resource_action_state())
      *             .status(var_.resource_action_status())
@@ -2416,7 +2439,7 @@ public final class OptimizerFunctions {
     /**
      * This data source provides the list of Resource Actions in Oracle Cloud Infrastructure Optimizer service.
      * 
-     * Lists the Cloud Advisor resource actions that are supported by the specified recommendation.
+     * Lists the Cloud Advisor resource actions that are supported.
      * 
      * ## Example Usage
      * ```java
@@ -2443,8 +2466,11 @@ public final class OptimizerFunctions {
      *         final var testResourceActions = OptimizerFunctions.getResourceActions(GetResourceActionsArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.resource_action_compartment_id_in_subtree())
-     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .childTenancyIds(var_.resource_action_child_tenancy_ids())
+     *             .includeOrganization(var_.resource_action_include_organization())
      *             .name(var_.resource_action_name())
+     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
      *             .resourceType(var_.resource_action_resource_type())
      *             .state(var_.resource_action_state())
      *             .status(var_.resource_action_status())
@@ -2461,7 +2487,7 @@ public final class OptimizerFunctions {
     /**
      * This data source provides the list of Resource Actions in Oracle Cloud Infrastructure Optimizer service.
      * 
-     * Lists the Cloud Advisor resource actions that are supported by the specified recommendation.
+     * Lists the Cloud Advisor resource actions that are supported.
      * 
      * ## Example Usage
      * ```java
@@ -2488,8 +2514,11 @@ public final class OptimizerFunctions {
      *         final var testResourceActions = OptimizerFunctions.getResourceActions(GetResourceActionsArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.resource_action_compartment_id_in_subtree())
-     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .childTenancyIds(var_.resource_action_child_tenancy_ids())
+     *             .includeOrganization(var_.resource_action_include_organization())
      *             .name(var_.resource_action_name())
+     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
      *             .resourceType(var_.resource_action_resource_type())
      *             .state(var_.resource_action_state())
      *             .status(var_.resource_action_status())
@@ -2506,7 +2535,7 @@ public final class OptimizerFunctions {
     /**
      * This data source provides the list of Resource Actions in Oracle Cloud Infrastructure Optimizer service.
      * 
-     * Lists the Cloud Advisor resource actions that are supported by the specified recommendation.
+     * Lists the Cloud Advisor resource actions that are supported.
      * 
      * ## Example Usage
      * ```java
@@ -2533,8 +2562,11 @@ public final class OptimizerFunctions {
      *         final var testResourceActions = OptimizerFunctions.getResourceActions(GetResourceActionsArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.resource_action_compartment_id_in_subtree())
-     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .childTenancyIds(var_.resource_action_child_tenancy_ids())
+     *             .includeOrganization(var_.resource_action_include_organization())
      *             .name(var_.resource_action_name())
+     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
      *             .resourceType(var_.resource_action_resource_type())
      *             .state(var_.resource_action_state())
      *             .status(var_.resource_action_status())

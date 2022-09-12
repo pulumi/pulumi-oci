@@ -14,45 +14,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClusterNetworkInstancesResult {
-    private final String clusterNetworkId;
+    private String clusterNetworkId;
     /**
      * @return The OCID of the compartment that contains the instance.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetClusterNetworkInstancesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetClusterNetworkInstancesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of instances.
      * 
      */
-    private final List<GetClusterNetworkInstancesInstance> instances;
+    private List<GetClusterNetworkInstancesInstance> instances;
 
-    @CustomType.Constructor
-    private GetClusterNetworkInstancesResult(
-        @CustomType.Parameter("clusterNetworkId") String clusterNetworkId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetClusterNetworkInstancesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instances") List<GetClusterNetworkInstancesInstance> instances) {
-        this.clusterNetworkId = clusterNetworkId;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.instances = instances;
-    }
-
+    private GetClusterNetworkInstancesResult() {}
     public String clusterNetworkId() {
         return this.clusterNetworkId;
     }
@@ -95,7 +80,7 @@ public final class GetClusterNetworkInstancesResult {
     public static Builder builder(GetClusterNetworkInstancesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String clusterNetworkId;
         private String compartmentId;
@@ -103,11 +88,7 @@ public final class GetClusterNetworkInstancesResult {
         private @Nullable List<GetClusterNetworkInstancesFilter> filters;
         private String id;
         private List<GetClusterNetworkInstancesInstance> instances;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetClusterNetworkInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.clusterNetworkId = defaults.clusterNetworkId;
@@ -118,18 +99,22 @@ public final class GetClusterNetworkInstancesResult {
     	      this.instances = defaults.instances;
         }
 
+        @CustomType.Setter
         public Builder clusterNetworkId(String clusterNetworkId) {
             this.clusterNetworkId = Objects.requireNonNull(clusterNetworkId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetClusterNetworkInstancesFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,18 +122,28 @@ public final class GetClusterNetworkInstancesResult {
         public Builder filters(GetClusterNetworkInstancesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instances(List<GetClusterNetworkInstancesInstance> instances) {
             this.instances = Objects.requireNonNull(instances);
             return this;
         }
         public Builder instances(GetClusterNetworkInstancesInstance... instances) {
             return instances(List.of(instances));
-        }        public GetClusterNetworkInstancesResult build() {
-            return new GetClusterNetworkInstancesResult(clusterNetworkId, compartmentId, displayName, filters, id, instances);
+        }
+        public GetClusterNetworkInstancesResult build() {
+            final var o = new GetClusterNetworkInstancesResult();
+            o.clusterNetworkId = clusterNetworkId;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.instances = instances;
+            return o;
         }
     }
 }

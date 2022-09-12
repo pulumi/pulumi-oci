@@ -14,34 +14,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPublishersResult {
-    private final @Nullable String compartmentId;
-    private final @Nullable List<GetPublishersFilter> filters;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetPublishersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String publisherId;
+    private String id;
+    private @Nullable String publisherId;
     /**
      * @return The list of publishers.
      * 
      */
-    private final List<GetPublishersPublisher> publishers;
+    private List<GetPublishersPublisher> publishers;
 
-    @CustomType.Constructor
-    private GetPublishersResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetPublishersFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("publisherId") @Nullable String publisherId,
-        @CustomType.Parameter("publishers") List<GetPublishersPublisher> publishers) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.publisherId = publisherId;
-        this.publishers = publishers;
-    }
-
+    private GetPublishersResult() {}
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
@@ -73,18 +60,14 @@ public final class GetPublishersResult {
     public static Builder builder(GetPublishersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetPublishersFilter> filters;
         private String id;
         private @Nullable String publisherId;
         private List<GetPublishersPublisher> publishers;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPublishersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -94,10 +77,12 @@ public final class GetPublishersResult {
     	      this.publishers = defaults.publishers;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetPublishersFilter> filters) {
             this.filters = filters;
             return this;
@@ -105,22 +90,32 @@ public final class GetPublishersResult {
         public Builder filters(GetPublishersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder publisherId(@Nullable String publisherId) {
             this.publisherId = publisherId;
             return this;
         }
+        @CustomType.Setter
         public Builder publishers(List<GetPublishersPublisher> publishers) {
             this.publishers = Objects.requireNonNull(publishers);
             return this;
         }
         public Builder publishers(GetPublishersPublisher... publishers) {
             return publishers(List.of(publishers));
-        }        public GetPublishersResult build() {
-            return new GetPublishersResult(compartmentId, filters, id, publisherId, publishers);
+        }
+        public GetPublishersResult build() {
+            final var o = new GetPublishersResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.publisherId = publisherId;
+            o.publishers = publishers;
+            return o;
         }
     }
 }

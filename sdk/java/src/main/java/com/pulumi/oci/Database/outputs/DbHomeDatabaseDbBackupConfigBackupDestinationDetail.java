@@ -15,21 +15,14 @@ public final class DbHomeDatabaseDbBackupConfigBackupDestinationDetail {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return Type of the database backup destination. Supported values: `NFS`.
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private DbHomeDatabaseDbBackupConfigBackupDestinationDetail(
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.id = id;
-        this.type = type;
-    }
-
+    private DbHomeDatabaseDbBackupConfigBackupDestinationDetail() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
@@ -52,30 +45,32 @@ public final class DbHomeDatabaseDbBackupConfigBackupDestinationDetail {
     public static Builder builder(DbHomeDatabaseDbBackupConfigBackupDestinationDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String id;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DbHomeDatabaseDbBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public DbHomeDatabaseDbBackupConfigBackupDestinationDetail build() {
-            return new DbHomeDatabaseDbBackupConfigBackupDestinationDetail(id, type);
+        }
+        public DbHomeDatabaseDbBackupConfigBackupDestinationDetail build() {
+            final var o = new DbHomeDatabaseDbBackupConfigBackupDestinationDetail();
+            o.id = id;
+            o.type = type;
+            return o;
         }
     }
 }

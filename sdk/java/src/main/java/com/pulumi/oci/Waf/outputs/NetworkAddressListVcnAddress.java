@@ -15,21 +15,14 @@ public final class NetworkAddressListVcnAddress {
      * @return (Updatable) A private IP address or CIDR IP address range.
      * 
      */
-    private final @Nullable String addresses;
+    private @Nullable String addresses;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
-    private final @Nullable String vcnId;
+    private @Nullable String vcnId;
 
-    @CustomType.Constructor
-    private NetworkAddressListVcnAddress(
-        @CustomType.Parameter("addresses") @Nullable String addresses,
-        @CustomType.Parameter("vcnId") @Nullable String vcnId) {
-        this.addresses = addresses;
-        this.vcnId = vcnId;
-    }
-
+    private NetworkAddressListVcnAddress() {}
     /**
      * @return (Updatable) A private IP address or CIDR IP address range.
      * 
@@ -52,30 +45,32 @@ public final class NetworkAddressListVcnAddress {
     public static Builder builder(NetworkAddressListVcnAddress defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String addresses;
         private @Nullable String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NetworkAddressListVcnAddress defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.addresses = defaults.addresses;
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder addresses(@Nullable String addresses) {
             this.addresses = addresses;
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
             this.vcnId = vcnId;
             return this;
-        }        public NetworkAddressListVcnAddress build() {
-            return new NetworkAddressListVcnAddress(addresses, vcnId);
+        }
+        public NetworkAddressListVcnAddress build() {
+            final var o = new NetworkAddressListVcnAddress();
+            o.addresses = addresses;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

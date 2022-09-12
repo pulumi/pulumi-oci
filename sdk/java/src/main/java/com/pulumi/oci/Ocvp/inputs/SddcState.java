@@ -6,6 +6,8 @@ package com.pulumi.oci.Ocvp.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Ocvp.inputs.SddcHcxOnPremLicenseArgs;
+import com.pulumi.oci.Ocvp.inputs.SddcUpgradeLicenseArgs;
+import com.pulumi.oci.Ocvp.inputs.SddcVsphereUpgradeObjectArgs;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -698,6 +700,21 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The vSphere licenses to be used when upgrade SDDC.
+     * 
+     */
+    @Import(name="upgradeLicenses")
+    private @Nullable Output<List<SddcUpgradeLicenseArgs>> upgradeLicenses;
+
+    /**
+     * @return The vSphere licenses to be used when upgrade SDDC.
+     * 
+     */
+    public Optional<Output<List<SddcUpgradeLicenseArgs>>> upgradeLicenses() {
+        return Optional.ofNullable(this.upgradeLicenses);
+    }
+
+    /**
      * The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      * 
      */
@@ -803,6 +820,36 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The link of guidance to upgrade vSphere.
+     * 
+     */
+    @Import(name="vsphereUpgradeGuide")
+    private @Nullable Output<String> vsphereUpgradeGuide;
+
+    /**
+     * @return The link of guidance to upgrade vSphere.
+     * 
+     */
+    public Optional<Output<String>> vsphereUpgradeGuide() {
+        return Optional.ofNullable(this.vsphereUpgradeGuide);
+    }
+
+    /**
+     * The links of binary objects needed for upgrade vSphere.
+     * 
+     */
+    @Import(name="vsphereUpgradeObjects")
+    private @Nullable Output<List<SddcVsphereUpgradeObjectArgs>> vsphereUpgradeObjects;
+
+    /**
+     * @return The links of binary objects needed for upgrade vSphere.
+     * 
+     */
+    public Optional<Output<List<SddcVsphereUpgradeObjectArgs>>> vsphereUpgradeObjects() {
+        return Optional.ofNullable(this.vsphereUpgradeObjects);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
      * 
      */
@@ -880,6 +927,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         this.timeHcxBillingCycleEnd = $.timeHcxBillingCycleEnd;
         this.timeHcxLicenseStatusUpdated = $.timeHcxLicenseStatusUpdated;
         this.timeUpdated = $.timeUpdated;
+        this.upgradeLicenses = $.upgradeLicenses;
         this.vcenterFqdn = $.vcenterFqdn;
         this.vcenterInitialPassword = $.vcenterInitialPassword;
         this.vcenterPrivateIpId = $.vcenterPrivateIpId;
@@ -887,6 +935,8 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         this.vmotionVlanId = $.vmotionVlanId;
         this.vmwareSoftwareVersion = $.vmwareSoftwareVersion;
         this.vsanVlanId = $.vsanVlanId;
+        this.vsphereUpgradeGuide = $.vsphereUpgradeGuide;
+        this.vsphereUpgradeObjects = $.vsphereUpgradeObjects;
         this.vsphereVlanId = $.vsphereVlanId;
         this.workloadNetworkCidr = $.workloadNetworkCidr;
     }
@@ -1875,6 +1925,37 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param upgradeLicenses The vSphere licenses to be used when upgrade SDDC.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upgradeLicenses(@Nullable Output<List<SddcUpgradeLicenseArgs>> upgradeLicenses) {
+            $.upgradeLicenses = upgradeLicenses;
+            return this;
+        }
+
+        /**
+         * @param upgradeLicenses The vSphere licenses to be used when upgrade SDDC.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upgradeLicenses(List<SddcUpgradeLicenseArgs> upgradeLicenses) {
+            return upgradeLicenses(Output.of(upgradeLicenses));
+        }
+
+        /**
+         * @param upgradeLicenses The vSphere licenses to be used when upgrade SDDC.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upgradeLicenses(SddcUpgradeLicenseArgs... upgradeLicenses) {
+            return upgradeLicenses(List.of(upgradeLicenses));
+        }
+
+        /**
          * @param vcenterFqdn The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
          * 
          * @return builder
@@ -2019,6 +2100,58 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder vsanVlanId(String vsanVlanId) {
             return vsanVlanId(Output.of(vsanVlanId));
+        }
+
+        /**
+         * @param vsphereUpgradeGuide The link of guidance to upgrade vSphere.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vsphereUpgradeGuide(@Nullable Output<String> vsphereUpgradeGuide) {
+            $.vsphereUpgradeGuide = vsphereUpgradeGuide;
+            return this;
+        }
+
+        /**
+         * @param vsphereUpgradeGuide The link of guidance to upgrade vSphere.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vsphereUpgradeGuide(String vsphereUpgradeGuide) {
+            return vsphereUpgradeGuide(Output.of(vsphereUpgradeGuide));
+        }
+
+        /**
+         * @param vsphereUpgradeObjects The links of binary objects needed for upgrade vSphere.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vsphereUpgradeObjects(@Nullable Output<List<SddcVsphereUpgradeObjectArgs>> vsphereUpgradeObjects) {
+            $.vsphereUpgradeObjects = vsphereUpgradeObjects;
+            return this;
+        }
+
+        /**
+         * @param vsphereUpgradeObjects The links of binary objects needed for upgrade vSphere.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vsphereUpgradeObjects(List<SddcVsphereUpgradeObjectArgs> vsphereUpgradeObjects) {
+            return vsphereUpgradeObjects(Output.of(vsphereUpgradeObjects));
+        }
+
+        /**
+         * @param vsphereUpgradeObjects The links of binary objects needed for upgrade vSphere.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vsphereUpgradeObjects(SddcVsphereUpgradeObjectArgs... vsphereUpgradeObjects) {
+            return vsphereUpgradeObjects(List.of(vsphereUpgradeObjects));
         }
 
         /**

@@ -15,13 +15,9 @@ public final class DeploymentSpecificationLoggingPoliciesAccessLog {
      * @return (Updatable) Whether this policy is currently enabled.
      * 
      */
-    private final @Nullable Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationLoggingPoliciesAccessLog(@CustomType.Parameter("isEnabled") @Nullable Boolean isEnabled) {
-        this.isEnabled = isEnabled;
-    }
-
+    private DeploymentSpecificationLoggingPoliciesAccessLog() {}
     /**
      * @return (Updatable) Whether this policy is currently enabled.
      * 
@@ -37,24 +33,24 @@ public final class DeploymentSpecificationLoggingPoliciesAccessLog {
     public static Builder builder(DeploymentSpecificationLoggingPoliciesAccessLog defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationLoggingPoliciesAccessLog defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isEnabled = defaults.isEnabled;
         }
 
+        @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
             this.isEnabled = isEnabled;
             return this;
-        }        public DeploymentSpecificationLoggingPoliciesAccessLog build() {
-            return new DeploymentSpecificationLoggingPoliciesAccessLog(isEnabled);
+        }
+        public DeploymentSpecificationLoggingPoliciesAccessLog build() {
+            final var o = new DeploymentSpecificationLoggingPoliciesAccessLog();
+            o.isEnabled = isEnabled;
+            return o;
         }
     }
 }

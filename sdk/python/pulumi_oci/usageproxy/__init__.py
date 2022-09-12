@@ -9,6 +9,8 @@ from .get_subscription_product import *
 from .get_subscription_products import *
 from .get_subscription_redeemable_user import *
 from .get_subscription_redeemable_users import *
+from .get_subscription_redemption import *
+from .get_subscription_redemptions import *
 from .get_subscription_reward import *
 from .get_subscription_rewards import *
 from .subscription_redeemable_user import *

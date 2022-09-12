@@ -13,47 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class IpsecConnectionTunnelManagementPhaseTwoDetail {
-    private final @Nullable String customAuthenticationAlgorithm;
-    private final @Nullable String customEncryptionAlgorithm;
-    private final @Nullable String dhGroup;
-    private final @Nullable Boolean isCustomPhaseTwoConfig;
-    private final @Nullable Boolean isEspEstablished;
-    private final @Nullable Boolean isPfsEnabled;
-    private final @Nullable Integer lifetime;
-    private final @Nullable String negotiatedAuthenticationAlgorithm;
-    private final @Nullable String negotiatedDhGroup;
-    private final @Nullable String negotiatedEncryptionAlgorithm;
-    private final @Nullable String remainingLifetime;
-    private final @Nullable String remainingLifetimeLastRetrieved;
+    private @Nullable String customAuthenticationAlgorithm;
+    private @Nullable String customEncryptionAlgorithm;
+    private @Nullable String dhGroup;
+    private @Nullable Boolean isCustomPhaseTwoConfig;
+    private @Nullable Boolean isEspEstablished;
+    private @Nullable Boolean isPfsEnabled;
+    private @Nullable Integer lifetime;
+    private @Nullable String negotiatedAuthenticationAlgorithm;
+    private @Nullable String negotiatedDhGroup;
+    private @Nullable String negotiatedEncryptionAlgorithm;
+    private @Nullable String remainingLifetime;
+    private @Nullable String remainingLifetimeLastRetrieved;
 
-    @CustomType.Constructor
-    private IpsecConnectionTunnelManagementPhaseTwoDetail(
-        @CustomType.Parameter("customAuthenticationAlgorithm") @Nullable String customAuthenticationAlgorithm,
-        @CustomType.Parameter("customEncryptionAlgorithm") @Nullable String customEncryptionAlgorithm,
-        @CustomType.Parameter("dhGroup") @Nullable String dhGroup,
-        @CustomType.Parameter("isCustomPhaseTwoConfig") @Nullable Boolean isCustomPhaseTwoConfig,
-        @CustomType.Parameter("isEspEstablished") @Nullable Boolean isEspEstablished,
-        @CustomType.Parameter("isPfsEnabled") @Nullable Boolean isPfsEnabled,
-        @CustomType.Parameter("lifetime") @Nullable Integer lifetime,
-        @CustomType.Parameter("negotiatedAuthenticationAlgorithm") @Nullable String negotiatedAuthenticationAlgorithm,
-        @CustomType.Parameter("negotiatedDhGroup") @Nullable String negotiatedDhGroup,
-        @CustomType.Parameter("negotiatedEncryptionAlgorithm") @Nullable String negotiatedEncryptionAlgorithm,
-        @CustomType.Parameter("remainingLifetime") @Nullable String remainingLifetime,
-        @CustomType.Parameter("remainingLifetimeLastRetrieved") @Nullable String remainingLifetimeLastRetrieved) {
-        this.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
-        this.customEncryptionAlgorithm = customEncryptionAlgorithm;
-        this.dhGroup = dhGroup;
-        this.isCustomPhaseTwoConfig = isCustomPhaseTwoConfig;
-        this.isEspEstablished = isEspEstablished;
-        this.isPfsEnabled = isPfsEnabled;
-        this.lifetime = lifetime;
-        this.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
-        this.negotiatedDhGroup = negotiatedDhGroup;
-        this.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
-        this.remainingLifetime = remainingLifetime;
-        this.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
-    }
-
+    private IpsecConnectionTunnelManagementPhaseTwoDetail() {}
     public Optional<String> customAuthenticationAlgorithm() {
         return Optional.ofNullable(this.customAuthenticationAlgorithm);
     }
@@ -98,7 +71,7 @@ public final class IpsecConnectionTunnelManagementPhaseTwoDetail {
     public static Builder builder(IpsecConnectionTunnelManagementPhaseTwoDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String customAuthenticationAlgorithm;
         private @Nullable String customEncryptionAlgorithm;
@@ -112,11 +85,7 @@ public final class IpsecConnectionTunnelManagementPhaseTwoDetail {
         private @Nullable String negotiatedEncryptionAlgorithm;
         private @Nullable String remainingLifetime;
         private @Nullable String remainingLifetimeLastRetrieved;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(IpsecConnectionTunnelManagementPhaseTwoDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.customAuthenticationAlgorithm = defaults.customAuthenticationAlgorithm;
@@ -133,55 +102,81 @@ public final class IpsecConnectionTunnelManagementPhaseTwoDetail {
     	      this.remainingLifetimeLastRetrieved = defaults.remainingLifetimeLastRetrieved;
         }
 
+        @CustomType.Setter
         public Builder customAuthenticationAlgorithm(@Nullable String customAuthenticationAlgorithm) {
             this.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
             return this;
         }
+        @CustomType.Setter
         public Builder customEncryptionAlgorithm(@Nullable String customEncryptionAlgorithm) {
             this.customEncryptionAlgorithm = customEncryptionAlgorithm;
             return this;
         }
+        @CustomType.Setter
         public Builder dhGroup(@Nullable String dhGroup) {
             this.dhGroup = dhGroup;
             return this;
         }
+        @CustomType.Setter
         public Builder isCustomPhaseTwoConfig(@Nullable Boolean isCustomPhaseTwoConfig) {
             this.isCustomPhaseTwoConfig = isCustomPhaseTwoConfig;
             return this;
         }
+        @CustomType.Setter
         public Builder isEspEstablished(@Nullable Boolean isEspEstablished) {
             this.isEspEstablished = isEspEstablished;
             return this;
         }
+        @CustomType.Setter
         public Builder isPfsEnabled(@Nullable Boolean isPfsEnabled) {
             this.isPfsEnabled = isPfsEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder lifetime(@Nullable Integer lifetime) {
             this.lifetime = lifetime;
             return this;
         }
+        @CustomType.Setter
         public Builder negotiatedAuthenticationAlgorithm(@Nullable String negotiatedAuthenticationAlgorithm) {
             this.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
             return this;
         }
+        @CustomType.Setter
         public Builder negotiatedDhGroup(@Nullable String negotiatedDhGroup) {
             this.negotiatedDhGroup = negotiatedDhGroup;
             return this;
         }
+        @CustomType.Setter
         public Builder negotiatedEncryptionAlgorithm(@Nullable String negotiatedEncryptionAlgorithm) {
             this.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
             return this;
         }
+        @CustomType.Setter
         public Builder remainingLifetime(@Nullable String remainingLifetime) {
             this.remainingLifetime = remainingLifetime;
             return this;
         }
+        @CustomType.Setter
         public Builder remainingLifetimeLastRetrieved(@Nullable String remainingLifetimeLastRetrieved) {
             this.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
             return this;
-        }        public IpsecConnectionTunnelManagementPhaseTwoDetail build() {
-            return new IpsecConnectionTunnelManagementPhaseTwoDetail(customAuthenticationAlgorithm, customEncryptionAlgorithm, dhGroup, isCustomPhaseTwoConfig, isEspEstablished, isPfsEnabled, lifetime, negotiatedAuthenticationAlgorithm, negotiatedDhGroup, negotiatedEncryptionAlgorithm, remainingLifetime, remainingLifetimeLastRetrieved);
+        }
+        public IpsecConnectionTunnelManagementPhaseTwoDetail build() {
+            final var o = new IpsecConnectionTunnelManagementPhaseTwoDetail();
+            o.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
+            o.customEncryptionAlgorithm = customEncryptionAlgorithm;
+            o.dhGroup = dhGroup;
+            o.isCustomPhaseTwoConfig = isCustomPhaseTwoConfig;
+            o.isEspEstablished = isEspEstablished;
+            o.isPfsEnabled = isPfsEnabled;
+            o.lifetime = lifetime;
+            o.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
+            o.negotiatedDhGroup = negotiatedDhGroup;
+            o.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
+            o.remainingLifetime = remainingLifetime;
+            o.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
+            return o;
         }
     }
 }

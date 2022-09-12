@@ -17,48 +17,52 @@ public final class AnalyticsInstanceNetworkEndpointDetails {
      * @return The type of network endpoint.
      * 
      */
-    private final String networkEndpointType;
+    private String networkEndpointType;
+    /**
+     * @return Network Security Group OCIDs for an Analytics instance.
+     * 
+     */
+    private @Nullable List<String> networkSecurityGroupIds;
     /**
      * @return The subnet OCID for the private endpoint.
      * 
      */
-    private final @Nullable String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The VCN OCID for the private endpoint.
      * 
      */
-    private final @Nullable String vcnId;
+    private @Nullable String vcnId;
     /**
-     * @return Source IP addresses or IP address ranges igress rules.
+     * @return Source IP addresses or IP address ranges in ingress rules.
      * 
      */
-    private final @Nullable List<String> whitelistedIps;
+    private @Nullable List<String> whitelistedIps;
+    /**
+     * @return Oracle Cloud Services that are allowed to access this Analytics instance.
+     * 
+     */
+    private @Nullable List<String> whitelistedServices;
     /**
      * @return Virtual Cloud Networks allowed to access this network endpoint.
      * 
      */
-    private final @Nullable List<AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn> whitelistedVcns;
+    private @Nullable List<AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn> whitelistedVcns;
 
-    @CustomType.Constructor
-    private AnalyticsInstanceNetworkEndpointDetails(
-        @CustomType.Parameter("networkEndpointType") String networkEndpointType,
-        @CustomType.Parameter("subnetId") @Nullable String subnetId,
-        @CustomType.Parameter("vcnId") @Nullable String vcnId,
-        @CustomType.Parameter("whitelistedIps") @Nullable List<String> whitelistedIps,
-        @CustomType.Parameter("whitelistedVcns") @Nullable List<AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn> whitelistedVcns) {
-        this.networkEndpointType = networkEndpointType;
-        this.subnetId = subnetId;
-        this.vcnId = vcnId;
-        this.whitelistedIps = whitelistedIps;
-        this.whitelistedVcns = whitelistedVcns;
-    }
-
+    private AnalyticsInstanceNetworkEndpointDetails() {}
     /**
      * @return The type of network endpoint.
      * 
      */
     public String networkEndpointType() {
         return this.networkEndpointType;
+    }
+    /**
+     * @return Network Security Group OCIDs for an Analytics instance.
+     * 
+     */
+    public List<String> networkSecurityGroupIds() {
+        return this.networkSecurityGroupIds == null ? List.of() : this.networkSecurityGroupIds;
     }
     /**
      * @return The subnet OCID for the private endpoint.
@@ -75,11 +79,18 @@ public final class AnalyticsInstanceNetworkEndpointDetails {
         return Optional.ofNullable(this.vcnId);
     }
     /**
-     * @return Source IP addresses or IP address ranges igress rules.
+     * @return Source IP addresses or IP address ranges in ingress rules.
      * 
      */
     public List<String> whitelistedIps() {
         return this.whitelistedIps == null ? List.of() : this.whitelistedIps;
+    }
+    /**
+     * @return Oracle Cloud Services that are allowed to access this Analytics instance.
+     * 
+     */
+    public List<String> whitelistedServices() {
+        return this.whitelistedServices == null ? List.of() : this.whitelistedServices;
     }
     /**
      * @return Virtual Cloud Networks allowed to access this network endpoint.
@@ -96,39 +107,51 @@ public final class AnalyticsInstanceNetworkEndpointDetails {
     public static Builder builder(AnalyticsInstanceNetworkEndpointDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String networkEndpointType;
+        private @Nullable List<String> networkSecurityGroupIds;
         private @Nullable String subnetId;
         private @Nullable String vcnId;
         private @Nullable List<String> whitelistedIps;
+        private @Nullable List<String> whitelistedServices;
         private @Nullable List<AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn> whitelistedVcns;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AnalyticsInstanceNetworkEndpointDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.networkEndpointType = defaults.networkEndpointType;
+    	      this.networkSecurityGroupIds = defaults.networkSecurityGroupIds;
     	      this.subnetId = defaults.subnetId;
     	      this.vcnId = defaults.vcnId;
     	      this.whitelistedIps = defaults.whitelistedIps;
+    	      this.whitelistedServices = defaults.whitelistedServices;
     	      this.whitelistedVcns = defaults.whitelistedVcns;
         }
 
+        @CustomType.Setter
         public Builder networkEndpointType(String networkEndpointType) {
             this.networkEndpointType = Objects.requireNonNull(networkEndpointType);
             return this;
         }
+        @CustomType.Setter
+        public Builder networkSecurityGroupIds(@Nullable List<String> networkSecurityGroupIds) {
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
+            return this;
+        }
+        public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
+            return networkSecurityGroupIds(List.of(networkSecurityGroupIds));
+        }
+        @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
             this.subnetId = subnetId;
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
             this.vcnId = vcnId;
             return this;
         }
+        @CustomType.Setter
         public Builder whitelistedIps(@Nullable List<String> whitelistedIps) {
             this.whitelistedIps = whitelistedIps;
             return this;
@@ -136,14 +159,32 @@ public final class AnalyticsInstanceNetworkEndpointDetails {
         public Builder whitelistedIps(String... whitelistedIps) {
             return whitelistedIps(List.of(whitelistedIps));
         }
+        @CustomType.Setter
+        public Builder whitelistedServices(@Nullable List<String> whitelistedServices) {
+            this.whitelistedServices = whitelistedServices;
+            return this;
+        }
+        public Builder whitelistedServices(String... whitelistedServices) {
+            return whitelistedServices(List.of(whitelistedServices));
+        }
+        @CustomType.Setter
         public Builder whitelistedVcns(@Nullable List<AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn> whitelistedVcns) {
             this.whitelistedVcns = whitelistedVcns;
             return this;
         }
         public Builder whitelistedVcns(AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn... whitelistedVcns) {
             return whitelistedVcns(List.of(whitelistedVcns));
-        }        public AnalyticsInstanceNetworkEndpointDetails build() {
-            return new AnalyticsInstanceNetworkEndpointDetails(networkEndpointType, subnetId, vcnId, whitelistedIps, whitelistedVcns);
+        }
+        public AnalyticsInstanceNetworkEndpointDetails build() {
+            final var o = new AnalyticsInstanceNetworkEndpointDetails();
+            o.networkEndpointType = networkEndpointType;
+            o.networkSecurityGroupIds = networkSecurityGroupIds;
+            o.subnetId = subnetId;
+            o.vcnId = vcnId;
+            o.whitelistedIps = whitelistedIps;
+            o.whitelistedServices = whitelistedServices;
+            o.whitelistedVcns = whitelistedVcns;
+            return o;
         }
     }
 }

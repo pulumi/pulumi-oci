@@ -14,21 +14,14 @@ public final class GetDeploymentSpecificationRouteResponsePolicyResponseCacheSto
      * @return Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
      * 
      */
-    private final Integer timeToLiveInSeconds;
+    private Integer timeToLiveInSeconds;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetDeploymentSpecificationRouteResponsePolicyResponseCacheStore(
-        @CustomType.Parameter("timeToLiveInSeconds") Integer timeToLiveInSeconds,
-        @CustomType.Parameter("type") String type) {
-        this.timeToLiveInSeconds = timeToLiveInSeconds;
-        this.type = type;
-    }
-
+    private GetDeploymentSpecificationRouteResponsePolicyResponseCacheStore() {}
     /**
      * @return Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
      * 
@@ -51,30 +44,32 @@ public final class GetDeploymentSpecificationRouteResponsePolicyResponseCacheSto
     public static Builder builder(GetDeploymentSpecificationRouteResponsePolicyResponseCacheStore defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer timeToLiveInSeconds;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentSpecificationRouteResponsePolicyResponseCacheStore defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.timeToLiveInSeconds = defaults.timeToLiveInSeconds;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder timeToLiveInSeconds(Integer timeToLiveInSeconds) {
             this.timeToLiveInSeconds = Objects.requireNonNull(timeToLiveInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetDeploymentSpecificationRouteResponsePolicyResponseCacheStore build() {
-            return new GetDeploymentSpecificationRouteResponsePolicyResponseCacheStore(timeToLiveInSeconds, type);
+        }
+        public GetDeploymentSpecificationRouteResponsePolicyResponseCacheStore build() {
+            final var o = new GetDeploymentSpecificationRouteResponsePolicyResponseCacheStore();
+            o.timeToLiveInSeconds = timeToLiveInSeconds;
+            o.type = type;
+            return o;
         }
     }
 }

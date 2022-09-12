@@ -17,63 +17,44 @@ public final class ConfigConfigurationReqAuthenticationDetails {
      * @return (Updatable) List of authentication headers. Example: `[{&#34;headerName&#34;: &#34;content-type&#34;, &#34;headerValue&#34;:&#34;json&#34;}]`
      * 
      */
-    private final @Nullable List<ConfigConfigurationReqAuthenticationDetailsAuthHeader> authHeaders;
+    private @Nullable List<ConfigConfigurationReqAuthenticationDetailsAuthHeader> authHeaders;
     /**
      * @return (Updatable) Request method.
      * 
      */
-    private final @Nullable String authRequestMethod;
+    private @Nullable String authRequestMethod;
     /**
      * @return (Updatable) Request post body.
      * 
      */
-    private final @Nullable String authRequestPostBody;
+    private @Nullable String authRequestPostBody;
     /**
      * @return (Updatable) Authentication token.
      * 
      */
-    private final @Nullable String authToken;
+    private @Nullable String authToken;
     /**
      * @return (Updatable) URL to get authetication token.
      * 
      */
-    private final @Nullable String authUrl;
+    private @Nullable String authUrl;
     /**
      * @return (Updatable) Username for authentication.
      * 
      */
-    private final @Nullable String authUserName;
+    private @Nullable String authUserName;
     /**
      * @return (Updatable) User password for authentication.
      * 
      */
-    private final @Nullable String authUserPassword;
+    private @Nullable String authUserPassword;
     /**
      * @return (Updatable) Request http oauth scheme.
      * 
      */
-    private final @Nullable String oauthScheme;
+    private @Nullable String oauthScheme;
 
-    @CustomType.Constructor
-    private ConfigConfigurationReqAuthenticationDetails(
-        @CustomType.Parameter("authHeaders") @Nullable List<ConfigConfigurationReqAuthenticationDetailsAuthHeader> authHeaders,
-        @CustomType.Parameter("authRequestMethod") @Nullable String authRequestMethod,
-        @CustomType.Parameter("authRequestPostBody") @Nullable String authRequestPostBody,
-        @CustomType.Parameter("authToken") @Nullable String authToken,
-        @CustomType.Parameter("authUrl") @Nullable String authUrl,
-        @CustomType.Parameter("authUserName") @Nullable String authUserName,
-        @CustomType.Parameter("authUserPassword") @Nullable String authUserPassword,
-        @CustomType.Parameter("oauthScheme") @Nullable String oauthScheme) {
-        this.authHeaders = authHeaders;
-        this.authRequestMethod = authRequestMethod;
-        this.authRequestPostBody = authRequestPostBody;
-        this.authToken = authToken;
-        this.authUrl = authUrl;
-        this.authUserName = authUserName;
-        this.authUserPassword = authUserPassword;
-        this.oauthScheme = oauthScheme;
-    }
-
+    private ConfigConfigurationReqAuthenticationDetails() {}
     /**
      * @return (Updatable) List of authentication headers. Example: `[{&#34;headerName&#34;: &#34;content-type&#34;, &#34;headerValue&#34;:&#34;json&#34;}]`
      * 
@@ -138,7 +119,7 @@ public final class ConfigConfigurationReqAuthenticationDetails {
     public static Builder builder(ConfigConfigurationReqAuthenticationDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<ConfigConfigurationReqAuthenticationDetailsAuthHeader> authHeaders;
         private @Nullable String authRequestMethod;
@@ -148,11 +129,7 @@ public final class ConfigConfigurationReqAuthenticationDetails {
         private @Nullable String authUserName;
         private @Nullable String authUserPassword;
         private @Nullable String oauthScheme;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConfigConfigurationReqAuthenticationDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authHeaders = defaults.authHeaders;
@@ -165,6 +142,7 @@ public final class ConfigConfigurationReqAuthenticationDetails {
     	      this.oauthScheme = defaults.oauthScheme;
         }
 
+        @CustomType.Setter
         public Builder authHeaders(@Nullable List<ConfigConfigurationReqAuthenticationDetailsAuthHeader> authHeaders) {
             this.authHeaders = authHeaders;
             return this;
@@ -172,35 +150,52 @@ public final class ConfigConfigurationReqAuthenticationDetails {
         public Builder authHeaders(ConfigConfigurationReqAuthenticationDetailsAuthHeader... authHeaders) {
             return authHeaders(List.of(authHeaders));
         }
+        @CustomType.Setter
         public Builder authRequestMethod(@Nullable String authRequestMethod) {
             this.authRequestMethod = authRequestMethod;
             return this;
         }
+        @CustomType.Setter
         public Builder authRequestPostBody(@Nullable String authRequestPostBody) {
             this.authRequestPostBody = authRequestPostBody;
             return this;
         }
+        @CustomType.Setter
         public Builder authToken(@Nullable String authToken) {
             this.authToken = authToken;
             return this;
         }
+        @CustomType.Setter
         public Builder authUrl(@Nullable String authUrl) {
             this.authUrl = authUrl;
             return this;
         }
+        @CustomType.Setter
         public Builder authUserName(@Nullable String authUserName) {
             this.authUserName = authUserName;
             return this;
         }
+        @CustomType.Setter
         public Builder authUserPassword(@Nullable String authUserPassword) {
             this.authUserPassword = authUserPassword;
             return this;
         }
+        @CustomType.Setter
         public Builder oauthScheme(@Nullable String oauthScheme) {
             this.oauthScheme = oauthScheme;
             return this;
-        }        public ConfigConfigurationReqAuthenticationDetails build() {
-            return new ConfigConfigurationReqAuthenticationDetails(authHeaders, authRequestMethod, authRequestPostBody, authToken, authUrl, authUserName, authUserPassword, oauthScheme);
+        }
+        public ConfigConfigurationReqAuthenticationDetails build() {
+            final var o = new ConfigConfigurationReqAuthenticationDetails();
+            o.authHeaders = authHeaders;
+            o.authRequestMethod = authRequestMethod;
+            o.authRequestPostBody = authRequestPostBody;
+            o.authToken = authToken;
+            o.authUrl = authUrl;
+            o.authUserName = authUserName;
+            o.authUserPassword = authUserPassword;
+            o.oauthScheme = oauthScheme;
+            return o;
         }
     }
 }

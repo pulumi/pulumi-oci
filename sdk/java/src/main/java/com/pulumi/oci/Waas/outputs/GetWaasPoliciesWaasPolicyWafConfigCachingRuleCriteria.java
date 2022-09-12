@@ -29,21 +29,14 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria {
      * * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
      * 
      */
-    private final String condition;
+    private String condition;
     /**
      * @return The value of the header.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria(
-        @CustomType.Parameter("condition") String condition,
-        @CustomType.Parameter("value") String value) {
-        this.condition = condition;
-        this.value = value;
-    }
-
+    private GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria() {}
     /**
      * @return The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
      * * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.
@@ -82,30 +75,32 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria {
     public static Builder builder(GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String condition;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.condition = defaults.condition;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder condition(String condition) {
             this.condition = Objects.requireNonNull(condition);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria build() {
-            return new GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria(condition, value);
+        }
+        public GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria build() {
+            final var o = new GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria();
+            o.condition = condition;
+            o.value = value;
+            return o;
         }
     }
 }

@@ -14,21 +14,14 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
      * @return Unique key of referenced protection capability.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return The value of weight to set.
      * 
      */
-    private final Integer weight;
+    private Integer weight;
 
-    @CustomType.Constructor
-    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight(
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("weight") Integer weight) {
-        this.key = key;
-        this.weight = weight;
-    }
-
+    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight() {}
     /**
      * @return Unique key of referenced protection capability.
      * 
@@ -51,30 +44,32 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
     public static Builder builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String key;
         private Integer weight;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.key = defaults.key;
     	      this.weight = defaults.weight;
         }
 
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder weight(Integer weight) {
             this.weight = Objects.requireNonNull(weight);
             return this;
-        }        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight build() {
-            return new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight(key, weight);
+        }
+        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight build() {
+            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight();
+            o.key = key;
+            o.weight = weight;
+            return o;
         }
     }
 }

@@ -18,42 +18,29 @@ public final class ConfigScriptParameter {
      * @return If parameter value is default or overwritten.
      * 
      */
-    private final @Nullable Boolean isOverwritten;
+    private @Nullable Boolean isOverwritten;
     /**
      * @return Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
      * 
      */
-    private final @Nullable Boolean isSecret;
+    private @Nullable Boolean isSecret;
     /**
      * @return Details of the script parameter that can be used to overwrite the parameter present in the script.
      * 
      */
-    private final @Nullable List<ConfigScriptParameterMonitorScriptParameter> monitorScriptParameters;
+    private @Nullable List<ConfigScriptParameterMonitorScriptParameter> monitorScriptParameters;
     /**
      * @return (Updatable) Name of the parameter.
      * 
      */
-    private final String paramName;
+    private String paramName;
     /**
      * @return (Updatable) Value of the parameter.
      * 
      */
-    private final String paramValue;
+    private String paramValue;
 
-    @CustomType.Constructor
-    private ConfigScriptParameter(
-        @CustomType.Parameter("isOverwritten") @Nullable Boolean isOverwritten,
-        @CustomType.Parameter("isSecret") @Nullable Boolean isSecret,
-        @CustomType.Parameter("monitorScriptParameters") @Nullable List<ConfigScriptParameterMonitorScriptParameter> monitorScriptParameters,
-        @CustomType.Parameter("paramName") String paramName,
-        @CustomType.Parameter("paramValue") String paramValue) {
-        this.isOverwritten = isOverwritten;
-        this.isSecret = isSecret;
-        this.monitorScriptParameters = monitorScriptParameters;
-        this.paramName = paramName;
-        this.paramValue = paramValue;
-    }
-
+    private ConfigScriptParameter() {}
     /**
      * @return If parameter value is default or overwritten.
      * 
@@ -97,18 +84,14 @@ public final class ConfigScriptParameter {
     public static Builder builder(ConfigScriptParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isOverwritten;
         private @Nullable Boolean isSecret;
         private @Nullable List<ConfigScriptParameterMonitorScriptParameter> monitorScriptParameters;
         private String paramName;
         private String paramValue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConfigScriptParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isOverwritten = defaults.isOverwritten;
@@ -118,14 +101,17 @@ public final class ConfigScriptParameter {
     	      this.paramValue = defaults.paramValue;
         }
 
+        @CustomType.Setter
         public Builder isOverwritten(@Nullable Boolean isOverwritten) {
             this.isOverwritten = isOverwritten;
             return this;
         }
+        @CustomType.Setter
         public Builder isSecret(@Nullable Boolean isSecret) {
             this.isSecret = isSecret;
             return this;
         }
+        @CustomType.Setter
         public Builder monitorScriptParameters(@Nullable List<ConfigScriptParameterMonitorScriptParameter> monitorScriptParameters) {
             this.monitorScriptParameters = monitorScriptParameters;
             return this;
@@ -133,15 +119,24 @@ public final class ConfigScriptParameter {
         public Builder monitorScriptParameters(ConfigScriptParameterMonitorScriptParameter... monitorScriptParameters) {
             return monitorScriptParameters(List.of(monitorScriptParameters));
         }
+        @CustomType.Setter
         public Builder paramName(String paramName) {
             this.paramName = Objects.requireNonNull(paramName);
             return this;
         }
+        @CustomType.Setter
         public Builder paramValue(String paramValue) {
             this.paramValue = Objects.requireNonNull(paramValue);
             return this;
-        }        public ConfigScriptParameter build() {
-            return new ConfigScriptParameter(isOverwritten, isSecret, monitorScriptParameters, paramName, paramValue);
+        }
+        public ConfigScriptParameter build() {
+            final var o = new ConfigScriptParameter();
+            o.isOverwritten = isOverwritten;
+            o.isSecret = isSecret;
+            o.monitorScriptParameters = monitorScriptParameters;
+            o.paramName = paramName;
+            o.paramValue = paramValue;
+            return o;
         }
     }
 }

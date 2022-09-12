@@ -13,13 +13,9 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeType
      * @return Key of the parent object.
      * 
      */
-    private final String parent;
+    private String parent;
 
-    @CustomType.Constructor
-    private GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRef(@CustomType.Parameter("parent") String parent) {
-        this.parent = parent;
-    }
-
+    private GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRef() {}
     /**
      * @return Key of the parent object.
      * 
@@ -35,24 +31,24 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeType
     public static Builder builder(GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRef defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String parent;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRef defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.parent = defaults.parent;
         }
 
+        @CustomType.Setter
         public Builder parent(String parent) {
             this.parent = Objects.requireNonNull(parent);
             return this;
-        }        public GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRef build() {
-            return new GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRef(parent);
+        }
+        public GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRef build() {
+            final var o = new GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRef();
+            o.parent = parent;
+            return o;
         }
     }
 }

@@ -13,28 +13,19 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource {
      * @return The source of masking columns.
      * 
      */
-    private final String columnSource;
+    private String columnSource;
     /**
      * @return A filter to return only the resources that match the specified sensitive data model OCID.
      * 
      */
-    private final String sensitiveDataModelId;
+    private String sensitiveDataModelId;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private final String targetId;
+    private String targetId;
 
-    @CustomType.Constructor
-    private GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource(
-        @CustomType.Parameter("columnSource") String columnSource,
-        @CustomType.Parameter("sensitiveDataModelId") String sensitiveDataModelId,
-        @CustomType.Parameter("targetId") String targetId) {
-        this.columnSource = columnSource;
-        this.sensitiveDataModelId = sensitiveDataModelId;
-        this.targetId = targetId;
-    }
-
+    private GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource() {}
     /**
      * @return The source of masking columns.
      * 
@@ -64,16 +55,12 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource {
     public static Builder builder(GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String columnSource;
         private String sensitiveDataModelId;
         private String targetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.columnSource = defaults.columnSource;
@@ -81,19 +68,27 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource {
     	      this.targetId = defaults.targetId;
         }
 
+        @CustomType.Setter
         public Builder columnSource(String columnSource) {
             this.columnSource = Objects.requireNonNull(columnSource);
             return this;
         }
+        @CustomType.Setter
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
             this.sensitiveDataModelId = Objects.requireNonNull(sensitiveDataModelId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
-        }        public GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource build() {
-            return new GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource(columnSource, sensitiveDataModelId, targetId);
+        }
+        public GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource build() {
+            final var o = new GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource();
+            o.columnSource = columnSource;
+            o.sensitiveDataModelId = sensitiveDataModelId;
+            o.targetId = targetId;
+            return o;
         }
     }
 }

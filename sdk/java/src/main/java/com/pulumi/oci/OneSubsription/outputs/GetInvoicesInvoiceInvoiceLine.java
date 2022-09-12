@@ -15,49 +15,34 @@ public final class GetInvoicesInvoiceInvoiceLine {
      * @return AR Invoice Number for Invoice Line
      * 
      */
-    private final String arInvoiceNumber;
+    private String arInvoiceNumber;
     /**
      * @return Data Center Attribute.
      * 
      */
-    private final String dataCenter;
+    private String dataCenter;
     /**
      * @return SPM Invoice Line internal identifier
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Product description
      * 
      */
-    private final List<GetInvoicesInvoiceInvoiceLineProduct> products;
+    private List<GetInvoicesInvoiceInvoiceLineProduct> products;
     /**
      * @return Usage end time
      * 
      */
-    private final String timeEnd;
+    private String timeEnd;
     /**
      * @return Usage start time
      * 
      */
-    private final String timeStart;
+    private String timeStart;
 
-    @CustomType.Constructor
-    private GetInvoicesInvoiceInvoiceLine(
-        @CustomType.Parameter("arInvoiceNumber") String arInvoiceNumber,
-        @CustomType.Parameter("dataCenter") String dataCenter,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("products") List<GetInvoicesInvoiceInvoiceLineProduct> products,
-        @CustomType.Parameter("timeEnd") String timeEnd,
-        @CustomType.Parameter("timeStart") String timeStart) {
-        this.arInvoiceNumber = arInvoiceNumber;
-        this.dataCenter = dataCenter;
-        this.id = id;
-        this.products = products;
-        this.timeEnd = timeEnd;
-        this.timeStart = timeStart;
-    }
-
+    private GetInvoicesInvoiceInvoiceLine() {}
     /**
      * @return AR Invoice Number for Invoice Line
      * 
@@ -108,7 +93,7 @@ public final class GetInvoicesInvoiceInvoiceLine {
     public static Builder builder(GetInvoicesInvoiceInvoiceLine defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String arInvoiceNumber;
         private String dataCenter;
@@ -116,11 +101,7 @@ public final class GetInvoicesInvoiceInvoiceLine {
         private List<GetInvoicesInvoiceInvoiceLineProduct> products;
         private String timeEnd;
         private String timeStart;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvoicesInvoiceInvoiceLine defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.arInvoiceNumber = defaults.arInvoiceNumber;
@@ -131,18 +112,22 @@ public final class GetInvoicesInvoiceInvoiceLine {
     	      this.timeStart = defaults.timeStart;
         }
 
+        @CustomType.Setter
         public Builder arInvoiceNumber(String arInvoiceNumber) {
             this.arInvoiceNumber = Objects.requireNonNull(arInvoiceNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder dataCenter(String dataCenter) {
             this.dataCenter = Objects.requireNonNull(dataCenter);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder products(List<GetInvoicesInvoiceInvoiceLineProduct> products) {
             this.products = Objects.requireNonNull(products);
             return this;
@@ -150,15 +135,25 @@ public final class GetInvoicesInvoiceInvoiceLine {
         public Builder products(GetInvoicesInvoiceInvoiceLineProduct... products) {
             return products(List.of(products));
         }
+        @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
             this.timeEnd = Objects.requireNonNull(timeEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(String timeStart) {
             this.timeStart = Objects.requireNonNull(timeStart);
             return this;
-        }        public GetInvoicesInvoiceInvoiceLine build() {
-            return new GetInvoicesInvoiceInvoiceLine(arInvoiceNumber, dataCenter, id, products, timeEnd, timeStart);
+        }
+        public GetInvoicesInvoiceInvoiceLine build() {
+            final var o = new GetInvoicesInvoiceInvoiceLine();
+            o.arInvoiceNumber = arInvoiceNumber;
+            o.dataCenter = dataCenter;
+            o.id = id;
+            o.products = products;
+            o.timeEnd = timeEnd;
+            o.timeStart = timeStart;
+            return o;
         }
     }
 }

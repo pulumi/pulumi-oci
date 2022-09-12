@@ -19,105 +19,74 @@ public final class NodePoolNode {
      * @return (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return An error that may be associated with the node.
      * 
      */
-    private final @Nullable List<NodePoolNodeError> errors;
+    private @Nullable List<NodePoolNodeError> errors;
     /**
      * @return The fault domain of this node.
      * 
      */
-    private final @Nullable String faultDomain;
+    private @Nullable String faultDomain;
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the compute instance backing this node.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return (Updatable) The version of Kubernetes to install on the nodes in the node pool.
      * 
      */
-    private final @Nullable String kubernetesVersion;
+    private @Nullable String kubernetesVersion;
     /**
      * @return Details about the state of the node.
      * 
      */
-    private final @Nullable String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return (Updatable) The name of the node pool. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The OCID of the node pool to which this node belongs.
      * 
      */
-    private final @Nullable String nodePoolId;
+    private @Nullable String nodePoolId;
     /**
      * @return The private IP address of this node.
      * 
      */
-    private final @Nullable String privateIp;
+    private @Nullable String privateIp;
     /**
      * @return The public IP address of this node.
      * 
      */
-    private final @Nullable String publicIp;
+    private @Nullable String publicIp;
     /**
      * @return The state of the nodepool.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return (Updatable) The OCID of the subnet in which to place nodes.
      * 
      */
-    private final @Nullable String subnetId;
+    private @Nullable String subnetId;
 
-    @CustomType.Constructor
-    private NodePoolNode(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("definedTags") @Nullable Map<String,Object> definedTags,
-        @CustomType.Parameter("errors") @Nullable List<NodePoolNodeError> errors,
-        @CustomType.Parameter("faultDomain") @Nullable String faultDomain,
-        @CustomType.Parameter("freeformTags") @Nullable Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("kubernetesVersion") @Nullable String kubernetesVersion,
-        @CustomType.Parameter("lifecycleDetails") @Nullable String lifecycleDetails,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("nodePoolId") @Nullable String nodePoolId,
-        @CustomType.Parameter("privateIp") @Nullable String privateIp,
-        @CustomType.Parameter("publicIp") @Nullable String publicIp,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("subnetId") @Nullable String subnetId) {
-        this.availabilityDomain = availabilityDomain;
-        this.definedTags = definedTags;
-        this.errors = errors;
-        this.faultDomain = faultDomain;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.kubernetesVersion = kubernetesVersion;
-        this.lifecycleDetails = lifecycleDetails;
-        this.name = name;
-        this.nodePoolId = nodePoolId;
-        this.privateIp = privateIp;
-        this.publicIp = publicIp;
-        this.state = state;
-        this.subnetId = subnetId;
-    }
-
+    private NodePoolNode() {}
     /**
      * @return (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
      * 
@@ -224,7 +193,7 @@ public final class NodePoolNode {
     public static Builder builder(NodePoolNode defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private @Nullable Map<String,Object> definedTags;
@@ -240,11 +209,7 @@ public final class NodePoolNode {
         private @Nullable String publicIp;
         private @Nullable String state;
         private @Nullable String subnetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NodePoolNode defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -263,14 +228,17 @@ public final class NodePoolNode {
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
             this.definedTags = definedTags;
             return this;
         }
+        @CustomType.Setter
         public Builder errors(@Nullable List<NodePoolNodeError> errors) {
             this.errors = errors;
             return this;
@@ -278,51 +246,78 @@ public final class NodePoolNode {
         public Builder errors(NodePoolNodeError... errors) {
             return errors(List.of(errors));
         }
+        @CustomType.Setter
         public Builder faultDomain(@Nullable String faultDomain) {
             this.faultDomain = faultDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
             this.freeformTags = freeformTags;
             return this;
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder kubernetesVersion(@Nullable String kubernetesVersion) {
             this.kubernetesVersion = kubernetesVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder nodePoolId(@Nullable String nodePoolId) {
             this.nodePoolId = nodePoolId;
             return this;
         }
+        @CustomType.Setter
         public Builder privateIp(@Nullable String privateIp) {
             this.privateIp = privateIp;
             return this;
         }
+        @CustomType.Setter
         public Builder publicIp(@Nullable String publicIp) {
             this.publicIp = publicIp;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
             this.subnetId = subnetId;
             return this;
-        }        public NodePoolNode build() {
-            return new NodePoolNode(availabilityDomain, definedTags, errors, faultDomain, freeformTags, id, kubernetesVersion, lifecycleDetails, name, nodePoolId, privateIp, publicIp, state, subnetId);
+        }
+        public NodePoolNode build() {
+            final var o = new NodePoolNode();
+            o.availabilityDomain = availabilityDomain;
+            o.definedTags = definedTags;
+            o.errors = errors;
+            o.faultDomain = faultDomain;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.kubernetesVersion = kubernetesVersion;
+            o.lifecycleDetails = lifecycleDetails;
+            o.name = name;
+            o.nodePoolId = nodePoolId;
+            o.privateIp = privateIp;
+            o.publicIp = publicIp;
+            o.state = state;
+            o.subnetId = subnetId;
+            return o;
         }
     }
 }

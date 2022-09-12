@@ -22,7 +22,7 @@ class GetAlarmResult:
     """
     A collection of values returned by getAlarm.
     """
-    def __init__(__self__, alarm_id=None, body=None, compartment_id=None, defined_tags=None, destinations=None, display_name=None, freeform_tags=None, id=None, is_enabled=None, message_format=None, metric_compartment_id=None, metric_compartment_id_in_subtree=None, namespace=None, pending_duration=None, query=None, repeat_notification_duration=None, resolution=None, resource_group=None, severity=None, state=None, suppressions=None, time_created=None, time_updated=None):
+    def __init__(__self__, alarm_id=None, body=None, compartment_id=None, defined_tags=None, destinations=None, display_name=None, freeform_tags=None, id=None, is_enabled=None, is_notifications_per_metric_dimension_enabled=None, message_format=None, metric_compartment_id=None, metric_compartment_id_in_subtree=None, namespace=None, pending_duration=None, query=None, repeat_notification_duration=None, resolution=None, resource_group=None, severity=None, state=None, suppressions=None, time_created=None, time_updated=None):
         if alarm_id and not isinstance(alarm_id, str):
             raise TypeError("Expected argument 'alarm_id' to be a str")
         pulumi.set(__self__, "alarm_id", alarm_id)
@@ -50,6 +50,9 @@ class GetAlarmResult:
         if is_enabled and not isinstance(is_enabled, bool):
             raise TypeError("Expected argument 'is_enabled' to be a bool")
         pulumi.set(__self__, "is_enabled", is_enabled)
+        if is_notifications_per_metric_dimension_enabled and not isinstance(is_notifications_per_metric_dimension_enabled, bool):
+            raise TypeError("Expected argument 'is_notifications_per_metric_dimension_enabled' to be a bool")
+        pulumi.set(__self__, "is_notifications_per_metric_dimension_enabled", is_notifications_per_metric_dimension_enabled)
         if message_format and not isinstance(message_format, str):
             raise TypeError("Expected argument 'message_format' to be a str")
         pulumi.set(__self__, "message_format", message_format)
@@ -161,6 +164,14 @@ class GetAlarmResult:
         Whether the alarm is enabled.  Example: `true`
         """
         return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="isNotificationsPerMetricDimensionEnabled")
+    def is_notifications_per_metric_dimension_enabled(self) -> bool:
+        """
+        When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+        """
+        return pulumi.get(self, "is_notifications_per_metric_dimension_enabled")
 
     @property
     @pulumi.getter(name="messageFormat")
@@ -290,6 +301,7 @@ class AwaitableGetAlarmResult(GetAlarmResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_enabled=self.is_enabled,
+            is_notifications_per_metric_dimension_enabled=self.is_notifications_per_metric_dimension_enabled,
             message_format=self.message_format,
             metric_compartment_id=self.metric_compartment_id,
             metric_compartment_id_in_subtree=self.metric_compartment_id_in_subtree,
@@ -345,6 +357,7 @@ def get_alarm(alarm_id: Optional[str] = None,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         is_enabled=__ret__.is_enabled,
+        is_notifications_per_metric_dimension_enabled=__ret__.is_notifications_per_metric_dimension_enabled,
         message_format=__ret__.message_format,
         metric_compartment_id=__ret__.metric_compartment_id,
         metric_compartment_id_in_subtree=__ret__.metric_compartment_id_in_subtree,

@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAgentsAgentCollection {
-    private final List<GetAgentsAgentCollectionItem> items;
+    private List<GetAgentsAgentCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetAgentsAgentCollection(@CustomType.Parameter("items") List<GetAgentsAgentCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetAgentsAgentCollection() {}
     public List<GetAgentsAgentCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetAgentsAgentCollection {
     public static Builder builder(GetAgentsAgentCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAgentsAgentCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAgentsAgentCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetAgentsAgentCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAgentsAgentCollectionItem... items) {
             return items(List.of(items));
-        }        public GetAgentsAgentCollection build() {
-            return new GetAgentsAgentCollection(items);
+        }
+        public GetAgentsAgentCollection build() {
+            final var o = new GetAgentsAgentCollection();
+            o.items = items;
+            return o;
         }
     }
 }

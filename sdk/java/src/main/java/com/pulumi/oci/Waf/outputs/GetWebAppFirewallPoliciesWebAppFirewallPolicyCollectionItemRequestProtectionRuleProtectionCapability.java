@@ -17,49 +17,34 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
      * @return Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
      * 
      */
-    private final String actionName;
+    private String actionName;
     /**
      * @return The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
      * 
      */
-    private final Integer collaborativeActionThreshold;
+    private Integer collaborativeActionThreshold;
     /**
      * @return Explicit weight values to use for associated collaborative protection capabilities.
      * 
      */
-    private final List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeight> collaborativeWeights;
+    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeight> collaborativeWeights;
     /**
      * @return Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
      * 
      */
-    private final List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion> exclusions;
+    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion> exclusions;
     /**
      * @return Unique key of referenced protection capability.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return Version of referenced protection capability.
      * 
      */
-    private final Integer version;
+    private Integer version;
 
-    @CustomType.Constructor
-    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability(
-        @CustomType.Parameter("actionName") String actionName,
-        @CustomType.Parameter("collaborativeActionThreshold") Integer collaborativeActionThreshold,
-        @CustomType.Parameter("collaborativeWeights") List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeight> collaborativeWeights,
-        @CustomType.Parameter("exclusions") List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion> exclusions,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("version") Integer version) {
-        this.actionName = actionName;
-        this.collaborativeActionThreshold = collaborativeActionThreshold;
-        this.collaborativeWeights = collaborativeWeights;
-        this.exclusions = exclusions;
-        this.key = key;
-        this.version = version;
-    }
-
+    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability() {}
     /**
      * @return Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
      * 
@@ -110,7 +95,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
     public static Builder builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String actionName;
         private Integer collaborativeActionThreshold;
@@ -118,11 +103,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
         private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion> exclusions;
         private String key;
         private Integer version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actionName = defaults.actionName;
@@ -133,14 +114,17 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder actionName(String actionName) {
             this.actionName = Objects.requireNonNull(actionName);
             return this;
         }
+        @CustomType.Setter
         public Builder collaborativeActionThreshold(Integer collaborativeActionThreshold) {
             this.collaborativeActionThreshold = Objects.requireNonNull(collaborativeActionThreshold);
             return this;
         }
+        @CustomType.Setter
         public Builder collaborativeWeights(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeight> collaborativeWeights) {
             this.collaborativeWeights = Objects.requireNonNull(collaborativeWeights);
             return this;
@@ -148,6 +132,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
         public Builder collaborativeWeights(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeight... collaborativeWeights) {
             return collaborativeWeights(List.of(collaborativeWeights));
         }
+        @CustomType.Setter
         public Builder exclusions(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion> exclusions) {
             this.exclusions = Objects.requireNonNull(exclusions);
             return this;
@@ -155,15 +140,25 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
         public Builder exclusions(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion... exclusions) {
             return exclusions(List.of(exclusions));
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder version(Integer version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability build() {
-            return new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability(actionName, collaborativeActionThreshold, collaborativeWeights, exclusions, key, version);
+        }
+        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability build() {
+            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapability();
+            o.actionName = actionName;
+            o.collaborativeActionThreshold = collaborativeActionThreshold;
+            o.collaborativeWeights = collaborativeWeights;
+            o.exclusions = exclusions;
+            o.key = key;
+            o.version = version;
+            return o;
         }
     }
 }

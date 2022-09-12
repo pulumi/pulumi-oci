@@ -13,42 +13,29 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationTask 
      * @return The status of the Optimizer Statistics Collection task.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The name of the target object for which statistics are gathered.
      * 
      */
-    private final String target;
+    private String target;
     /**
      * @return The type of target object.
      * 
      */
-    private final String targetType;
+    private String targetType;
     /**
      * @return The end time of the Optimizer Statistics Collection task.
      * 
      */
-    private final String timeEnd;
+    private String timeEnd;
     /**
      * @return The start time of the Optimizer Statistics Collection task.
      * 
      */
-    private final String timeStart;
+    private String timeStart;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseOptimizerStatisticsCollectionOperationTask(
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("target") String target,
-        @CustomType.Parameter("targetType") String targetType,
-        @CustomType.Parameter("timeEnd") String timeEnd,
-        @CustomType.Parameter("timeStart") String timeStart) {
-        this.status = status;
-        this.target = target;
-        this.targetType = targetType;
-        this.timeEnd = timeEnd;
-        this.timeStart = timeStart;
-    }
-
+    private GetManagedDatabaseOptimizerStatisticsCollectionOperationTask() {}
     /**
      * @return The status of the Optimizer Statistics Collection task.
      * 
@@ -92,18 +79,14 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationTask 
     public static Builder builder(GetManagedDatabaseOptimizerStatisticsCollectionOperationTask defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String status;
         private String target;
         private String targetType;
         private String timeEnd;
         private String timeStart;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsCollectionOperationTask defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.status = defaults.status;
@@ -113,27 +96,39 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationTask 
     	      this.timeStart = defaults.timeStart;
         }
 
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder target(String target) {
             this.target = Objects.requireNonNull(target);
             return this;
         }
+        @CustomType.Setter
         public Builder targetType(String targetType) {
             this.targetType = Objects.requireNonNull(targetType);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
             this.timeEnd = Objects.requireNonNull(timeEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(String timeStart) {
             this.timeStart = Objects.requireNonNull(timeStart);
             return this;
-        }        public GetManagedDatabaseOptimizerStatisticsCollectionOperationTask build() {
-            return new GetManagedDatabaseOptimizerStatisticsCollectionOperationTask(status, target, targetType, timeEnd, timeStart);
+        }
+        public GetManagedDatabaseOptimizerStatisticsCollectionOperationTask build() {
+            final var o = new GetManagedDatabaseOptimizerStatisticsCollectionOperationTask();
+            o.status = status;
+            o.target = target;
+            o.targetType = targetType;
+            o.timeEnd = timeEnd;
+            o.timeStart = timeStart;
+            return o;
         }
     }
 }

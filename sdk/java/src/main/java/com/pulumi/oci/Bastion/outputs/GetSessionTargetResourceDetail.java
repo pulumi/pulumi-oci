@@ -14,49 +14,34 @@ public final class GetSessionTargetResourceDetail {
      * @return The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
      * 
      */
-    private final String sessionType;
+    private String sessionType;
     /**
      * @return The display name of the target Compute instance that the session connects to.
      * 
      */
-    private final String targetResourceDisplayName;
+    private String targetResourceDisplayName;
     /**
      * @return The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
      * 
      */
-    private final String targetResourceId;
+    private String targetResourceId;
     /**
      * @return The name of the user on the target resource operating system that the session uses for the connection.
      * 
      */
-    private final String targetResourceOperatingSystemUserName;
+    private String targetResourceOperatingSystemUserName;
     /**
      * @return The port number to connect to on the target resource.
      * 
      */
-    private final Integer targetResourcePort;
+    private Integer targetResourcePort;
     /**
      * @return The private IP address of the target resource that the session connects to.
      * 
      */
-    private final String targetResourcePrivateIpAddress;
+    private String targetResourcePrivateIpAddress;
 
-    @CustomType.Constructor
-    private GetSessionTargetResourceDetail(
-        @CustomType.Parameter("sessionType") String sessionType,
-        @CustomType.Parameter("targetResourceDisplayName") String targetResourceDisplayName,
-        @CustomType.Parameter("targetResourceId") String targetResourceId,
-        @CustomType.Parameter("targetResourceOperatingSystemUserName") String targetResourceOperatingSystemUserName,
-        @CustomType.Parameter("targetResourcePort") Integer targetResourcePort,
-        @CustomType.Parameter("targetResourcePrivateIpAddress") String targetResourcePrivateIpAddress) {
-        this.sessionType = sessionType;
-        this.targetResourceDisplayName = targetResourceDisplayName;
-        this.targetResourceId = targetResourceId;
-        this.targetResourceOperatingSystemUserName = targetResourceOperatingSystemUserName;
-        this.targetResourcePort = targetResourcePort;
-        this.targetResourcePrivateIpAddress = targetResourcePrivateIpAddress;
-    }
-
+    private GetSessionTargetResourceDetail() {}
     /**
      * @return The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
      * 
@@ -107,7 +92,7 @@ public final class GetSessionTargetResourceDetail {
     public static Builder builder(GetSessionTargetResourceDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String sessionType;
         private String targetResourceDisplayName;
@@ -115,11 +100,7 @@ public final class GetSessionTargetResourceDetail {
         private String targetResourceOperatingSystemUserName;
         private Integer targetResourcePort;
         private String targetResourcePrivateIpAddress;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSessionTargetResourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.sessionType = defaults.sessionType;
@@ -130,31 +111,45 @@ public final class GetSessionTargetResourceDetail {
     	      this.targetResourcePrivateIpAddress = defaults.targetResourcePrivateIpAddress;
         }
 
+        @CustomType.Setter
         public Builder sessionType(String sessionType) {
             this.sessionType = Objects.requireNonNull(sessionType);
             return this;
         }
+        @CustomType.Setter
         public Builder targetResourceDisplayName(String targetResourceDisplayName) {
             this.targetResourceDisplayName = Objects.requireNonNull(targetResourceDisplayName);
             return this;
         }
+        @CustomType.Setter
         public Builder targetResourceId(String targetResourceId) {
             this.targetResourceId = Objects.requireNonNull(targetResourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetResourceOperatingSystemUserName(String targetResourceOperatingSystemUserName) {
             this.targetResourceOperatingSystemUserName = Objects.requireNonNull(targetResourceOperatingSystemUserName);
             return this;
         }
+        @CustomType.Setter
         public Builder targetResourcePort(Integer targetResourcePort) {
             this.targetResourcePort = Objects.requireNonNull(targetResourcePort);
             return this;
         }
+        @CustomType.Setter
         public Builder targetResourcePrivateIpAddress(String targetResourcePrivateIpAddress) {
             this.targetResourcePrivateIpAddress = Objects.requireNonNull(targetResourcePrivateIpAddress);
             return this;
-        }        public GetSessionTargetResourceDetail build() {
-            return new GetSessionTargetResourceDetail(sessionType, targetResourceDisplayName, targetResourceId, targetResourceOperatingSystemUserName, targetResourcePort, targetResourcePrivateIpAddress);
+        }
+        public GetSessionTargetResourceDetail build() {
+            final var o = new GetSessionTargetResourceDetail();
+            o.sessionType = sessionType;
+            o.targetResourceDisplayName = targetResourceDisplayName;
+            o.targetResourceId = targetResourceId;
+            o.targetResourceOperatingSystemUserName = targetResourceOperatingSystemUserName;
+            o.targetResourcePort = targetResourcePort;
+            o.targetResourcePrivateIpAddress = targetResourcePrivateIpAddress;
+            return o;
         }
     }
 }

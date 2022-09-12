@@ -13,49 +13,34 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
      * @return The number of distinct SQL statements with alternative plan recommendations.
      * 
      */
-    private final Integer alternatePlan;
+    private Integer alternatePlan;
     /**
      * @return The number of distinct SQL statements with implemented SQL profiles.
      * 
      */
-    private final Integer implementedSqlProfile;
+    private Integer implementedSqlProfile;
     /**
      * @return The number of distinct SQL statements with index recommendations.
      * 
      */
-    private final Integer index;
+    private Integer index;
     /**
      * @return The number of distinct SQL statements with recommended SQL profiles.
      * 
      */
-    private final Integer recommendedSqlProfile;
+    private Integer recommendedSqlProfile;
     /**
      * @return The number of distinct SQL statements with restructured SQL recommendations.
      * 
      */
-    private final Integer restructure;
+    private Integer restructure;
     /**
      * @return The number of distinct SQL statements with stale or missing optimizer statistics recommendations.
      * 
      */
-    private final Integer statistics;
+    private Integer statistics;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount(
-        @CustomType.Parameter("alternatePlan") Integer alternatePlan,
-        @CustomType.Parameter("implementedSqlProfile") Integer implementedSqlProfile,
-        @CustomType.Parameter("index") Integer index,
-        @CustomType.Parameter("recommendedSqlProfile") Integer recommendedSqlProfile,
-        @CustomType.Parameter("restructure") Integer restructure,
-        @CustomType.Parameter("statistics") Integer statistics) {
-        this.alternatePlan = alternatePlan;
-        this.implementedSqlProfile = implementedSqlProfile;
-        this.index = index;
-        this.recommendedSqlProfile = recommendedSqlProfile;
-        this.restructure = restructure;
-        this.statistics = statistics;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount() {}
     /**
      * @return The number of distinct SQL statements with alternative plan recommendations.
      * 
@@ -106,7 +91,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer alternatePlan;
         private Integer implementedSqlProfile;
@@ -114,11 +99,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
         private Integer recommendedSqlProfile;
         private Integer restructure;
         private Integer statistics;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alternatePlan = defaults.alternatePlan;
@@ -129,31 +110,45 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
     	      this.statistics = defaults.statistics;
         }
 
+        @CustomType.Setter
         public Builder alternatePlan(Integer alternatePlan) {
             this.alternatePlan = Objects.requireNonNull(alternatePlan);
             return this;
         }
+        @CustomType.Setter
         public Builder implementedSqlProfile(Integer implementedSqlProfile) {
             this.implementedSqlProfile = Objects.requireNonNull(implementedSqlProfile);
             return this;
         }
+        @CustomType.Setter
         public Builder index(Integer index) {
             this.index = Objects.requireNonNull(index);
             return this;
         }
+        @CustomType.Setter
         public Builder recommendedSqlProfile(Integer recommendedSqlProfile) {
             this.recommendedSqlProfile = Objects.requireNonNull(recommendedSqlProfile);
             return this;
         }
+        @CustomType.Setter
         public Builder restructure(Integer restructure) {
             this.restructure = Objects.requireNonNull(restructure);
             return this;
         }
+        @CustomType.Setter
         public Builder statistics(Integer statistics) {
             this.statistics = Objects.requireNonNull(statistics);
             return this;
-        }        public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount(alternatePlan, implementedSqlProfile, index, recommendedSqlProfile, restructure, statistics);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount();
+            o.alternatePlan = alternatePlan;
+            o.implementedSqlProfile = implementedSqlProfile;
+            o.index = index;
+            o.recommendedSqlProfile = recommendedSqlProfile;
+            o.restructure = restructure;
+            o.statistics = statistics;
+            return o;
         }
     }
 }

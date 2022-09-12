@@ -15,28 +15,19 @@ public final class GetApiValidationValidationDetail {
      * @return Description of the warning/error.
      * 
      */
-    private final String msg;
+    private String msg;
     /**
      * @return Severity of the issue.
      * 
      */
-    private final String severity;
+    private String severity;
     /**
      * @return Position of the issue in the specification file (line, column).
      * 
      */
-    private final List<GetApiValidationValidationDetailSrc> srcs;
+    private List<GetApiValidationValidationDetailSrc> srcs;
 
-    @CustomType.Constructor
-    private GetApiValidationValidationDetail(
-        @CustomType.Parameter("msg") String msg,
-        @CustomType.Parameter("severity") String severity,
-        @CustomType.Parameter("srcs") List<GetApiValidationValidationDetailSrc> srcs) {
-        this.msg = msg;
-        this.severity = severity;
-        this.srcs = srcs;
-    }
-
+    private GetApiValidationValidationDetail() {}
     /**
      * @return Description of the warning/error.
      * 
@@ -66,16 +57,12 @@ public final class GetApiValidationValidationDetail {
     public static Builder builder(GetApiValidationValidationDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String msg;
         private String severity;
         private List<GetApiValidationValidationDetailSrc> srcs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiValidationValidationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.msg = defaults.msg;
@@ -83,22 +70,30 @@ public final class GetApiValidationValidationDetail {
     	      this.srcs = defaults.srcs;
         }
 
+        @CustomType.Setter
         public Builder msg(String msg) {
             this.msg = Objects.requireNonNull(msg);
             return this;
         }
+        @CustomType.Setter
         public Builder severity(String severity) {
             this.severity = Objects.requireNonNull(severity);
             return this;
         }
+        @CustomType.Setter
         public Builder srcs(List<GetApiValidationValidationDetailSrc> srcs) {
             this.srcs = Objects.requireNonNull(srcs);
             return this;
         }
         public Builder srcs(GetApiValidationValidationDetailSrc... srcs) {
             return srcs(List.of(srcs));
-        }        public GetApiValidationValidationDetail build() {
-            return new GetApiValidationValidationDetail(msg, severity, srcs);
+        }
+        public GetApiValidationValidationDetail build() {
+            final var o = new GetApiValidationValidationDetail();
+            o.msg = msg;
+            o.severity = severity;
+            o.srcs = srcs;
+            return o;
         }
     }
 }

@@ -19,83 +19,56 @@ public final class GetSecretbundleResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Customer-provided contextual metadata for the secret.
      * 
      */
-    private final Map<String,Object> metadata;
+    private Map<String,Object> metadata;
     /**
      * @return The contents of the secret.
      * 
      */
-    private final List<GetSecretbundleSecretBundleContent> secretBundleContents;
+    private List<GetSecretbundleSecretBundleContent> secretBundleContents;
     /**
      * @return The OCID of the secret.
      * 
      */
-    private final String secretId;
-    private final @Nullable String secretVersionName;
-    private final @Nullable String stage;
+    private String secretId;
+    private @Nullable String secretVersionName;
+    private @Nullable String stage;
     /**
      * @return A list of possible rotation states for the secret version.
      * 
      */
-    private final List<String> stages;
+    private List<String> stages;
     /**
      * @return The time when the secret bundle was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeOfDeletion;
+    private String timeOfDeletion;
     /**
      * @return An optional property indicating when the secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private final String timeOfExpiry;
+    private String timeOfExpiry;
     /**
      * @return The name of the secret version. Labels are unique across the different versions of a particular secret.
      * 
      */
-    private final String versionName;
+    private String versionName;
     /**
      * @return The version number of the secret.
      * 
      */
-    private final String versionNumber;
+    private String versionNumber;
 
-    @CustomType.Constructor
-    private GetSecretbundleResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("metadata") Map<String,Object> metadata,
-        @CustomType.Parameter("secretBundleContents") List<GetSecretbundleSecretBundleContent> secretBundleContents,
-        @CustomType.Parameter("secretId") String secretId,
-        @CustomType.Parameter("secretVersionName") @Nullable String secretVersionName,
-        @CustomType.Parameter("stage") @Nullable String stage,
-        @CustomType.Parameter("stages") List<String> stages,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeOfDeletion") String timeOfDeletion,
-        @CustomType.Parameter("timeOfExpiry") String timeOfExpiry,
-        @CustomType.Parameter("versionName") String versionName,
-        @CustomType.Parameter("versionNumber") String versionNumber) {
-        this.id = id;
-        this.metadata = metadata;
-        this.secretBundleContents = secretBundleContents;
-        this.secretId = secretId;
-        this.secretVersionName = secretVersionName;
-        this.stage = stage;
-        this.stages = stages;
-        this.timeCreated = timeCreated;
-        this.timeOfDeletion = timeOfDeletion;
-        this.timeOfExpiry = timeOfExpiry;
-        this.versionName = versionName;
-        this.versionNumber = versionNumber;
-    }
-
+    private GetSecretbundleResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -180,7 +153,7 @@ public final class GetSecretbundleResult {
     public static Builder builder(GetSecretbundleResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private Map<String,Object> metadata;
@@ -194,11 +167,7 @@ public final class GetSecretbundleResult {
         private String timeOfExpiry;
         private String versionName;
         private String versionNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecretbundleResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -215,14 +184,17 @@ public final class GetSecretbundleResult {
     	      this.versionNumber = defaults.versionNumber;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder metadata(Map<String,Object> metadata) {
             this.metadata = Objects.requireNonNull(metadata);
             return this;
         }
+        @CustomType.Setter
         public Builder secretBundleContents(List<GetSecretbundleSecretBundleContent> secretBundleContents) {
             this.secretBundleContents = Objects.requireNonNull(secretBundleContents);
             return this;
@@ -230,18 +202,22 @@ public final class GetSecretbundleResult {
         public Builder secretBundleContents(GetSecretbundleSecretBundleContent... secretBundleContents) {
             return secretBundleContents(List.of(secretBundleContents));
         }
+        @CustomType.Setter
         public Builder secretId(String secretId) {
             this.secretId = Objects.requireNonNull(secretId);
             return this;
         }
+        @CustomType.Setter
         public Builder secretVersionName(@Nullable String secretVersionName) {
             this.secretVersionName = secretVersionName;
             return this;
         }
+        @CustomType.Setter
         public Builder stage(@Nullable String stage) {
             this.stage = stage;
             return this;
         }
+        @CustomType.Setter
         public Builder stages(List<String> stages) {
             this.stages = Objects.requireNonNull(stages);
             return this;
@@ -249,27 +225,46 @@ public final class GetSecretbundleResult {
         public Builder stages(String... stages) {
             return stages(List.of(stages));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
             this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfExpiry(String timeOfExpiry) {
             this.timeOfExpiry = Objects.requireNonNull(timeOfExpiry);
             return this;
         }
+        @CustomType.Setter
         public Builder versionName(String versionName) {
             this.versionName = Objects.requireNonNull(versionName);
             return this;
         }
+        @CustomType.Setter
         public Builder versionNumber(String versionNumber) {
             this.versionNumber = Objects.requireNonNull(versionNumber);
             return this;
-        }        public GetSecretbundleResult build() {
-            return new GetSecretbundleResult(id, metadata, secretBundleContents, secretId, secretVersionName, stage, stages, timeCreated, timeOfDeletion, timeOfExpiry, versionName, versionNumber);
+        }
+        public GetSecretbundleResult build() {
+            final var o = new GetSecretbundleResult();
+            o.id = id;
+            o.metadata = metadata;
+            o.secretBundleContents = secretBundleContents;
+            o.secretId = secretId;
+            o.secretVersionName = secretVersionName;
+            o.stage = stage;
+            o.stages = stages;
+            o.timeCreated = timeCreated;
+            o.timeOfDeletion = timeOfDeletion;
+            o.timeOfExpiry = timeOfExpiry;
+            o.versionName = versionName;
+            o.versionNumber = versionNumber;
+            return o;
         }
     }
 }

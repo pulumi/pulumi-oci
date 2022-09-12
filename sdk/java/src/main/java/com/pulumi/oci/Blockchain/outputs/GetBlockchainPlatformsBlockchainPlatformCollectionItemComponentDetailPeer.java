@@ -15,56 +15,39 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
      * @return Availability Domain of peer
      * 
      */
-    private final String ad;
+    private String ad;
     /**
      * @return peer alias
      * 
      */
-    private final String alias;
+    private String alias;
     /**
      * @return Host name of VM
      * 
      */
-    private final String host;
+    private String host;
     /**
      * @return OCPU allocation parameter
      * 
      */
-    private final List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam> ocpuAllocationParams;
+    private List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam> ocpuAllocationParams;
     /**
      * @return peer identifier
      * 
      */
-    private final String peerKey;
+    private String peerKey;
     /**
      * @return Peer role
      * 
      */
-    private final String role;
+    private String role;
     /**
      * @return A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer(
-        @CustomType.Parameter("ad") String ad,
-        @CustomType.Parameter("alias") String alias,
-        @CustomType.Parameter("host") String host,
-        @CustomType.Parameter("ocpuAllocationParams") List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam> ocpuAllocationParams,
-        @CustomType.Parameter("peerKey") String peerKey,
-        @CustomType.Parameter("role") String role,
-        @CustomType.Parameter("state") String state) {
-        this.ad = ad;
-        this.alias = alias;
-        this.host = host;
-        this.ocpuAllocationParams = ocpuAllocationParams;
-        this.peerKey = peerKey;
-        this.role = role;
-        this.state = state;
-    }
-
+    private GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer() {}
     /**
      * @return Availability Domain of peer
      * 
@@ -122,7 +105,7 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
     public static Builder builder(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String ad;
         private String alias;
@@ -131,11 +114,7 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
         private String peerKey;
         private String role;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ad = defaults.ad;
@@ -147,18 +126,22 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder ad(String ad) {
             this.ad = Objects.requireNonNull(ad);
             return this;
         }
+        @CustomType.Setter
         public Builder alias(String alias) {
             this.alias = Objects.requireNonNull(alias);
             return this;
         }
+        @CustomType.Setter
         public Builder host(String host) {
             this.host = Objects.requireNonNull(host);
             return this;
         }
+        @CustomType.Setter
         public Builder ocpuAllocationParams(List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam> ocpuAllocationParams) {
             this.ocpuAllocationParams = Objects.requireNonNull(ocpuAllocationParams);
             return this;
@@ -166,19 +149,31 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
         public Builder ocpuAllocationParams(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam... ocpuAllocationParams) {
             return ocpuAllocationParams(List.of(ocpuAllocationParams));
         }
+        @CustomType.Setter
         public Builder peerKey(String peerKey) {
             this.peerKey = Objects.requireNonNull(peerKey);
             return this;
         }
+        @CustomType.Setter
         public Builder role(String role) {
             this.role = Objects.requireNonNull(role);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer build() {
-            return new GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer(ad, alias, host, ocpuAllocationParams, peerKey, role, state);
+        }
+        public GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer build() {
+            final var o = new GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer();
+            o.ad = ad;
+            o.alias = alias;
+            o.host = host;
+            o.ocpuAllocationParams = ocpuAllocationParams;
+            o.peerKey = peerKey;
+            o.role = role;
+            o.state = state;
+            return o;
         }
     }
 }

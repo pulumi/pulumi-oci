@@ -16,35 +16,24 @@ public final class GetNetworkLoadBalancerIpAddress {
      * @return An IP address.  Example: `192.168.0.3`
      * 
      */
-    private final String ipAddress;
+    private String ipAddress;
     /**
      * @return IP version associated with this IP address.
      * 
      */
-    private final String ipVersion;
+    private String ipVersion;
     /**
      * @return Whether the IP address is public or private.
      * 
      */
-    private final Boolean isPublic;
+    private Boolean isPublic;
     /**
      * @return An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
      * 
      */
-    private final List<GetNetworkLoadBalancerIpAddressReservedIp> reservedIps;
+    private List<GetNetworkLoadBalancerIpAddressReservedIp> reservedIps;
 
-    @CustomType.Constructor
-    private GetNetworkLoadBalancerIpAddress(
-        @CustomType.Parameter("ipAddress") String ipAddress,
-        @CustomType.Parameter("ipVersion") String ipVersion,
-        @CustomType.Parameter("isPublic") Boolean isPublic,
-        @CustomType.Parameter("reservedIps") List<GetNetworkLoadBalancerIpAddressReservedIp> reservedIps) {
-        this.ipAddress = ipAddress;
-        this.ipVersion = ipVersion;
-        this.isPublic = isPublic;
-        this.reservedIps = reservedIps;
-    }
-
+    private GetNetworkLoadBalancerIpAddress() {}
     /**
      * @return An IP address.  Example: `192.168.0.3`
      * 
@@ -81,17 +70,13 @@ public final class GetNetworkLoadBalancerIpAddress {
     public static Builder builder(GetNetworkLoadBalancerIpAddress defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String ipAddress;
         private String ipVersion;
         private Boolean isPublic;
         private List<GetNetworkLoadBalancerIpAddressReservedIp> reservedIps;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkLoadBalancerIpAddress defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ipAddress = defaults.ipAddress;
@@ -100,26 +85,36 @@ public final class GetNetworkLoadBalancerIpAddress {
     	      this.reservedIps = defaults.reservedIps;
         }
 
+        @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = Objects.requireNonNull(ipAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder ipVersion(String ipVersion) {
             this.ipVersion = Objects.requireNonNull(ipVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder isPublic(Boolean isPublic) {
             this.isPublic = Objects.requireNonNull(isPublic);
             return this;
         }
+        @CustomType.Setter
         public Builder reservedIps(List<GetNetworkLoadBalancerIpAddressReservedIp> reservedIps) {
             this.reservedIps = Objects.requireNonNull(reservedIps);
             return this;
         }
         public Builder reservedIps(GetNetworkLoadBalancerIpAddressReservedIp... reservedIps) {
             return reservedIps(List.of(reservedIps));
-        }        public GetNetworkLoadBalancerIpAddress build() {
-            return new GetNetworkLoadBalancerIpAddress(ipAddress, ipVersion, isPublic, reservedIps);
+        }
+        public GetNetworkLoadBalancerIpAddress build() {
+            final var o = new GetNetworkLoadBalancerIpAddress();
+            o.ipAddress = ipAddress;
+            o.ipVersion = ipVersion;
+            o.isPublic = isPublic;
+            o.reservedIps = reservedIps;
+            return o;
         }
     }
 }

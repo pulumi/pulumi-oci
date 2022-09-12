@@ -19,75 +19,48 @@ public final class GetContainerImagesResult {
      * @return The compartment OCID to which the container image belongs. Inferred from the container repository.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The list of container_image_collection.
      * 
      */
-    private final List<GetContainerImagesContainerImageCollection> containerImageCollections;
+    private List<GetContainerImagesContainerImageCollection> containerImageCollections;
     /**
      * @return The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then &#39;unknown&#39; is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetContainerImagesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetContainerImagesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String imageId;
-    private final @Nullable Boolean isVersioned;
+    private String id;
+    private @Nullable String imageId;
+    private @Nullable Boolean isVersioned;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
      * 
      */
-    private final @Nullable String repositoryId;
+    private @Nullable String repositoryId;
     /**
      * @return The container repository name.
      * 
      */
-    private final @Nullable String repositoryName;
+    private @Nullable String repositoryName;
     /**
      * @return The current state of the container image.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The version name.
      * 
      */
-    private final @Nullable String version;
+    private @Nullable String version;
 
-    @CustomType.Constructor
-    private GetContainerImagesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("containerImageCollections") List<GetContainerImagesContainerImageCollection> containerImageCollections,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetContainerImagesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("imageId") @Nullable String imageId,
-        @CustomType.Parameter("isVersioned") @Nullable Boolean isVersioned,
-        @CustomType.Parameter("repositoryId") @Nullable String repositoryId,
-        @CustomType.Parameter("repositoryName") @Nullable String repositoryName,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("version") @Nullable String version) {
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.containerImageCollections = containerImageCollections;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.imageId = imageId;
-        this.isVersioned = isVersioned;
-        this.repositoryId = repositoryId;
-        this.repositoryName = repositoryName;
-        this.state = state;
-        this.version = version;
-    }
-
+    private GetContainerImagesResult() {}
     /**
      * @return The compartment OCID to which the container image belongs. Inferred from the container repository.
      * 
@@ -164,7 +137,7 @@ public final class GetContainerImagesResult {
     public static Builder builder(GetContainerImagesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
@@ -178,11 +151,7 @@ public final class GetContainerImagesResult {
         private @Nullable String repositoryName;
         private @Nullable String state;
         private @Nullable String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetContainerImagesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -199,14 +168,17 @@ public final class GetContainerImagesResult {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder containerImageCollections(List<GetContainerImagesContainerImageCollection> containerImageCollections) {
             this.containerImageCollections = Objects.requireNonNull(containerImageCollections);
             return this;
@@ -214,10 +186,12 @@ public final class GetContainerImagesResult {
         public Builder containerImageCollections(GetContainerImagesContainerImageCollection... containerImageCollections) {
             return containerImageCollections(List.of(containerImageCollections));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetContainerImagesFilter> filters) {
             this.filters = filters;
             return this;
@@ -225,35 +199,56 @@ public final class GetContainerImagesResult {
         public Builder filters(GetContainerImagesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder imageId(@Nullable String imageId) {
             this.imageId = imageId;
             return this;
         }
+        @CustomType.Setter
         public Builder isVersioned(@Nullable Boolean isVersioned) {
             this.isVersioned = isVersioned;
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(@Nullable String repositoryId) {
             this.repositoryId = repositoryId;
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryName(@Nullable String repositoryName) {
             this.repositoryName = repositoryName;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder version(@Nullable String version) {
             this.version = version;
             return this;
-        }        public GetContainerImagesResult build() {
-            return new GetContainerImagesResult(compartmentId, compartmentIdInSubtree, containerImageCollections, displayName, filters, id, imageId, isVersioned, repositoryId, repositoryName, state, version);
+        }
+        public GetContainerImagesResult build() {
+            final var o = new GetContainerImagesResult();
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.containerImageCollections = containerImageCollections;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.imageId = imageId;
+            o.isVersioned = isVersioned;
+            o.repositoryId = repositoryId;
+            o.repositoryName = repositoryName;
+            o.state = state;
+            o.version = version;
+            return o;
         }
     }
 }

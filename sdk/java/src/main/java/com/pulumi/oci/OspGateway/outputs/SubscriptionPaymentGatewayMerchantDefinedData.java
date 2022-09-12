@@ -15,21 +15,14 @@ public final class SubscriptionPaymentGatewayMerchantDefinedData {
      * @return (Updatable) Cloud account name.
      * 
      */
-    private final @Nullable String cloudAccountName;
+    private @Nullable String cloudAccountName;
     /**
      * @return (Updatable) Promotion type code.
      * 
      */
-    private final @Nullable String promoType;
+    private @Nullable String promoType;
 
-    @CustomType.Constructor
-    private SubscriptionPaymentGatewayMerchantDefinedData(
-        @CustomType.Parameter("cloudAccountName") @Nullable String cloudAccountName,
-        @CustomType.Parameter("promoType") @Nullable String promoType) {
-        this.cloudAccountName = cloudAccountName;
-        this.promoType = promoType;
-    }
-
+    private SubscriptionPaymentGatewayMerchantDefinedData() {}
     /**
      * @return (Updatable) Cloud account name.
      * 
@@ -52,30 +45,32 @@ public final class SubscriptionPaymentGatewayMerchantDefinedData {
     public static Builder builder(SubscriptionPaymentGatewayMerchantDefinedData defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String cloudAccountName;
         private @Nullable String promoType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(SubscriptionPaymentGatewayMerchantDefinedData defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cloudAccountName = defaults.cloudAccountName;
     	      this.promoType = defaults.promoType;
         }
 
+        @CustomType.Setter
         public Builder cloudAccountName(@Nullable String cloudAccountName) {
             this.cloudAccountName = cloudAccountName;
             return this;
         }
+        @CustomType.Setter
         public Builder promoType(@Nullable String promoType) {
             this.promoType = promoType;
             return this;
-        }        public SubscriptionPaymentGatewayMerchantDefinedData build() {
-            return new SubscriptionPaymentGatewayMerchantDefinedData(cloudAccountName, promoType);
+        }
+        public SubscriptionPaymentGatewayMerchantDefinedData build() {
+            final var o = new SubscriptionPaymentGatewayMerchantDefinedData();
+            o.cloudAccountName = cloudAccountName;
+            o.promoType = promoType;
+            return o;
         }
     }
 }

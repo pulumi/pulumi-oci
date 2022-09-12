@@ -64,7 +64,7 @@ type GetRegistryConnectionsArgs struct {
 	Filters []GetRegistryConnectionsFilter `pulumi:"filters"`
 	// Used to filter by the name of the object.
 	Name *string `pulumi:"name"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId string `pulumi:"registryId"`
 	// Type of the object to filter the results with.
 	Type *string `pulumi:"type"`
@@ -80,7 +80,7 @@ type GetRegistryConnectionsResult struct {
 	Filters                      []GetRegistryConnectionsFilter                      `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name       *string `pulumi:"name"`
 	RegistryId string  `pulumi:"registryId"`
 	// Specific Connection Type
@@ -111,7 +111,7 @@ type GetRegistryConnectionsOutputArgs struct {
 	Filters GetRegistryConnectionsFilterArrayInput `pulumi:"filters"`
 	// Used to filter by the name of the object.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringInput `pulumi:"registryId"`
 	// Type of the object to filter the results with.
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -164,7 +164,7 @@ func (o GetRegistryConnectionsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o GetRegistryConnectionsResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRegistryConnectionsResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }

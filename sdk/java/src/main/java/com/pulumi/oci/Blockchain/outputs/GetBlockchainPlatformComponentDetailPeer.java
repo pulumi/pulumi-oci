@@ -15,56 +15,39 @@ public final class GetBlockchainPlatformComponentDetailPeer {
      * @return Availability Domain of peer
      * 
      */
-    private final String ad;
+    private String ad;
     /**
      * @return peer alias
      * 
      */
-    private final String alias;
+    private String alias;
     /**
      * @return Host name of VM
      * 
      */
-    private final String host;
+    private String host;
     /**
      * @return OCPU allocation parameter
      * 
      */
-    private final List<GetBlockchainPlatformComponentDetailPeerOcpuAllocationParam> ocpuAllocationParams;
+    private List<GetBlockchainPlatformComponentDetailPeerOcpuAllocationParam> ocpuAllocationParams;
     /**
      * @return peer identifier
      * 
      */
-    private final String peerKey;
+    private String peerKey;
     /**
      * @return Peer role
      * 
      */
-    private final String role;
+    private String role;
     /**
      * @return The current state of the Platform Instance.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private GetBlockchainPlatformComponentDetailPeer(
-        @CustomType.Parameter("ad") String ad,
-        @CustomType.Parameter("alias") String alias,
-        @CustomType.Parameter("host") String host,
-        @CustomType.Parameter("ocpuAllocationParams") List<GetBlockchainPlatformComponentDetailPeerOcpuAllocationParam> ocpuAllocationParams,
-        @CustomType.Parameter("peerKey") String peerKey,
-        @CustomType.Parameter("role") String role,
-        @CustomType.Parameter("state") String state) {
-        this.ad = ad;
-        this.alias = alias;
-        this.host = host;
-        this.ocpuAllocationParams = ocpuAllocationParams;
-        this.peerKey = peerKey;
-        this.role = role;
-        this.state = state;
-    }
-
+    private GetBlockchainPlatformComponentDetailPeer() {}
     /**
      * @return Availability Domain of peer
      * 
@@ -122,7 +105,7 @@ public final class GetBlockchainPlatformComponentDetailPeer {
     public static Builder builder(GetBlockchainPlatformComponentDetailPeer defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String ad;
         private String alias;
@@ -131,11 +114,7 @@ public final class GetBlockchainPlatformComponentDetailPeer {
         private String peerKey;
         private String role;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBlockchainPlatformComponentDetailPeer defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ad = defaults.ad;
@@ -147,18 +126,22 @@ public final class GetBlockchainPlatformComponentDetailPeer {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder ad(String ad) {
             this.ad = Objects.requireNonNull(ad);
             return this;
         }
+        @CustomType.Setter
         public Builder alias(String alias) {
             this.alias = Objects.requireNonNull(alias);
             return this;
         }
+        @CustomType.Setter
         public Builder host(String host) {
             this.host = Objects.requireNonNull(host);
             return this;
         }
+        @CustomType.Setter
         public Builder ocpuAllocationParams(List<GetBlockchainPlatformComponentDetailPeerOcpuAllocationParam> ocpuAllocationParams) {
             this.ocpuAllocationParams = Objects.requireNonNull(ocpuAllocationParams);
             return this;
@@ -166,19 +149,31 @@ public final class GetBlockchainPlatformComponentDetailPeer {
         public Builder ocpuAllocationParams(GetBlockchainPlatformComponentDetailPeerOcpuAllocationParam... ocpuAllocationParams) {
             return ocpuAllocationParams(List.of(ocpuAllocationParams));
         }
+        @CustomType.Setter
         public Builder peerKey(String peerKey) {
             this.peerKey = Objects.requireNonNull(peerKey);
             return this;
         }
+        @CustomType.Setter
         public Builder role(String role) {
             this.role = Objects.requireNonNull(role);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetBlockchainPlatformComponentDetailPeer build() {
-            return new GetBlockchainPlatformComponentDetailPeer(ad, alias, host, ocpuAllocationParams, peerKey, role, state);
+        }
+        public GetBlockchainPlatformComponentDetailPeer build() {
+            final var o = new GetBlockchainPlatformComponentDetailPeer();
+            o.ad = ad;
+            o.alias = alias;
+            o.host = host;
+            o.ocpuAllocationParams = ocpuAllocationParams;
+            o.peerKey = peerKey;
+            o.role = role;
+            o.state = state;
+            return o;
         }
     }
 }

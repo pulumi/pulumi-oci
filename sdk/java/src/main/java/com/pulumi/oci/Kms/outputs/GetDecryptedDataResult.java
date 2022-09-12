@@ -12,44 +12,27 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDecryptedDataResult {
-    private final @Nullable Map<String,Object> associatedData;
-    private final String ciphertext;
-    private final String cryptoEndpoint;
+    private @Nullable Map<String,Object> associatedData;
+    private String ciphertext;
+    private String cryptoEndpoint;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String keyId;
+    private String id;
+    private String keyId;
     /**
      * @return The decrypted data, in the form of a base64-encoded value.
      * 
      */
-    private final String plaintext;
+    private String plaintext;
     /**
      * @return Checksum of the decrypted data.
      * 
      */
-    private final String plaintextChecksum;
+    private String plaintextChecksum;
 
-    @CustomType.Constructor
-    private GetDecryptedDataResult(
-        @CustomType.Parameter("associatedData") @Nullable Map<String,Object> associatedData,
-        @CustomType.Parameter("ciphertext") String ciphertext,
-        @CustomType.Parameter("cryptoEndpoint") String cryptoEndpoint,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("keyId") String keyId,
-        @CustomType.Parameter("plaintext") String plaintext,
-        @CustomType.Parameter("plaintextChecksum") String plaintextChecksum) {
-        this.associatedData = associatedData;
-        this.ciphertext = ciphertext;
-        this.cryptoEndpoint = cryptoEndpoint;
-        this.id = id;
-        this.keyId = keyId;
-        this.plaintext = plaintext;
-        this.plaintextChecksum = plaintextChecksum;
-    }
-
+    private GetDecryptedDataResult() {}
     public Map<String,Object> associatedData() {
         return this.associatedData == null ? Map.of() : this.associatedData;
     }
@@ -91,7 +74,7 @@ public final class GetDecryptedDataResult {
     public static Builder builder(GetDecryptedDataResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Map<String,Object> associatedData;
         private String ciphertext;
@@ -100,11 +83,7 @@ public final class GetDecryptedDataResult {
         private String keyId;
         private String plaintext;
         private String plaintextChecksum;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDecryptedDataResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.associatedData = defaults.associatedData;
@@ -116,35 +95,51 @@ public final class GetDecryptedDataResult {
     	      this.plaintextChecksum = defaults.plaintextChecksum;
         }
 
+        @CustomType.Setter
         public Builder associatedData(@Nullable Map<String,Object> associatedData) {
             this.associatedData = associatedData;
             return this;
         }
+        @CustomType.Setter
         public Builder ciphertext(String ciphertext) {
             this.ciphertext = Objects.requireNonNull(ciphertext);
             return this;
         }
+        @CustomType.Setter
         public Builder cryptoEndpoint(String cryptoEndpoint) {
             this.cryptoEndpoint = Objects.requireNonNull(cryptoEndpoint);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder keyId(String keyId) {
             this.keyId = Objects.requireNonNull(keyId);
             return this;
         }
+        @CustomType.Setter
         public Builder plaintext(String plaintext) {
             this.plaintext = Objects.requireNonNull(plaintext);
             return this;
         }
+        @CustomType.Setter
         public Builder plaintextChecksum(String plaintextChecksum) {
             this.plaintextChecksum = Objects.requireNonNull(plaintextChecksum);
             return this;
-        }        public GetDecryptedDataResult build() {
-            return new GetDecryptedDataResult(associatedData, ciphertext, cryptoEndpoint, id, keyId, plaintext, plaintextChecksum);
+        }
+        public GetDecryptedDataResult build() {
+            final var o = new GetDecryptedDataResult();
+            o.associatedData = associatedData;
+            o.ciphertext = ciphertext;
+            o.cryptoEndpoint = cryptoEndpoint;
+            o.id = id;
+            o.keyId = keyId;
+            o.plaintext = plaintext;
+            o.plaintextChecksum = plaintextChecksum;
+            return o;
         }
     }
 }

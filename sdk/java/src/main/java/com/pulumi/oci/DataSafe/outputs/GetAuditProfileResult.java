@@ -19,143 +19,100 @@ public final class GetAuditProfileResult {
      * @return Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
      * 
      */
-    private final String auditCollectedVolume;
+    private String auditCollectedVolume;
     /**
      * @return The OCID of the  parent audit.
      * 
      */
-    private final String auditProfileId;
+    private String auditProfileId;
     /**
      * @return Indicates the list of available audit trails on the target.
      * 
      */
-    private final List<GetAuditProfileAuditTrail> auditTrails;
-    private final Integer changeRetentionTrigger;
+    private List<GetAuditProfileAuditTrail> auditTrails;
+    private Integer changeRetentionTrigger;
     /**
      * @return The OCID of the compartment that contains the audit.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The description of the audit profile.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The display name of the audit profile.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the audit profile.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
      * 
      */
-    private final Boolean isOverrideGlobalRetentionSetting;
+    private Boolean isOverrideGlobalRetentionSetting;
     /**
      * @return Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
      * 
      */
-    private final Boolean isPaidUsageEnabled;
+    private Boolean isPaidUsageEnabled;
     /**
      * @return Details about the current state of the audit profile in Data Safe.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
      * 
      */
-    private final Integer offlineMonths;
+    private Integer offlineMonths;
     /**
      * @return Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
      * 
      */
-    private final Integer onlineMonths;
+    private Integer onlineMonths;
     /**
      * @return The current state of the audit profile.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The OCID of the Data Safe target for which the audit profile is created.
      * 
      */
-    private final String targetId;
+    private String targetId;
     /**
      * @return The date and time the audit profile was created, in the format defined by RFC3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the audit profile was updated, in the format defined by RFC3339.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetAuditProfileResult(
-        @CustomType.Parameter("auditCollectedVolume") String auditCollectedVolume,
-        @CustomType.Parameter("auditProfileId") String auditProfileId,
-        @CustomType.Parameter("auditTrails") List<GetAuditProfileAuditTrail> auditTrails,
-        @CustomType.Parameter("changeRetentionTrigger") Integer changeRetentionTrigger,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isOverrideGlobalRetentionSetting") Boolean isOverrideGlobalRetentionSetting,
-        @CustomType.Parameter("isPaidUsageEnabled") Boolean isPaidUsageEnabled,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("offlineMonths") Integer offlineMonths,
-        @CustomType.Parameter("onlineMonths") Integer onlineMonths,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("targetId") String targetId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.auditCollectedVolume = auditCollectedVolume;
-        this.auditProfileId = auditProfileId;
-        this.auditTrails = auditTrails;
-        this.changeRetentionTrigger = changeRetentionTrigger;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
-        this.isPaidUsageEnabled = isPaidUsageEnabled;
-        this.lifecycleDetails = lifecycleDetails;
-        this.offlineMonths = offlineMonths;
-        this.onlineMonths = onlineMonths;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.targetId = targetId;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetAuditProfileResult() {}
     /**
      * @return Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
      * 
@@ -300,7 +257,7 @@ public final class GetAuditProfileResult {
     public static Builder builder(GetAuditProfileResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String auditCollectedVolume;
         private String auditProfileId;
@@ -322,11 +279,7 @@ public final class GetAuditProfileResult {
         private String targetId;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditProfileResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.auditCollectedVolume = defaults.auditCollectedVolume;
@@ -351,14 +304,17 @@ public final class GetAuditProfileResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder auditCollectedVolume(String auditCollectedVolume) {
             this.auditCollectedVolume = Objects.requireNonNull(auditCollectedVolume);
             return this;
         }
+        @CustomType.Setter
         public Builder auditProfileId(String auditProfileId) {
             this.auditProfileId = Objects.requireNonNull(auditProfileId);
             return this;
         }
+        @CustomType.Setter
         public Builder auditTrails(List<GetAuditProfileAuditTrail> auditTrails) {
             this.auditTrails = Objects.requireNonNull(auditTrails);
             return this;
@@ -366,75 +322,114 @@ public final class GetAuditProfileResult {
         public Builder auditTrails(GetAuditProfileAuditTrail... auditTrails) {
             return auditTrails(List.of(auditTrails));
         }
+        @CustomType.Setter
         public Builder changeRetentionTrigger(Integer changeRetentionTrigger) {
             this.changeRetentionTrigger = Objects.requireNonNull(changeRetentionTrigger);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isOverrideGlobalRetentionSetting(Boolean isOverrideGlobalRetentionSetting) {
             this.isOverrideGlobalRetentionSetting = Objects.requireNonNull(isOverrideGlobalRetentionSetting);
             return this;
         }
+        @CustomType.Setter
         public Builder isPaidUsageEnabled(Boolean isPaidUsageEnabled) {
             this.isPaidUsageEnabled = Objects.requireNonNull(isPaidUsageEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder offlineMonths(Integer offlineMonths) {
             this.offlineMonths = Objects.requireNonNull(offlineMonths);
             return this;
         }
+        @CustomType.Setter
         public Builder onlineMonths(Integer onlineMonths) {
             this.onlineMonths = Objects.requireNonNull(onlineMonths);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetAuditProfileResult build() {
-            return new GetAuditProfileResult(auditCollectedVolume, auditProfileId, auditTrails, changeRetentionTrigger, compartmentId, definedTags, description, displayName, freeformTags, id, isOverrideGlobalRetentionSetting, isPaidUsageEnabled, lifecycleDetails, offlineMonths, onlineMonths, state, systemTags, targetId, timeCreated, timeUpdated);
+        }
+        public GetAuditProfileResult build() {
+            final var o = new GetAuditProfileResult();
+            o.auditCollectedVolume = auditCollectedVolume;
+            o.auditProfileId = auditProfileId;
+            o.auditTrails = auditTrails;
+            o.changeRetentionTrigger = changeRetentionTrigger;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
+            o.isPaidUsageEnabled = isPaidUsageEnabled;
+            o.lifecycleDetails = lifecycleDetails;
+            o.offlineMonths = offlineMonths;
+            o.onlineMonths = onlineMonths;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.targetId = targetId;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

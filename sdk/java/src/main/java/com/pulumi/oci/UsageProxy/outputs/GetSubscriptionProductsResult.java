@@ -14,40 +14,23 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionProductsResult {
-    private final @Nullable List<GetSubscriptionProductsFilter> filters;
+    private @Nullable List<GetSubscriptionProductsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of product_collection.
      * 
      */
-    private final List<GetSubscriptionProductsProductCollection> productCollections;
-    private final @Nullable String producttype;
-    private final String subscriptionId;
-    private final String tenancyId;
-    private final String usagePeriodKey;
+    private List<GetSubscriptionProductsProductCollection> productCollections;
+    private @Nullable String producttype;
+    private String subscriptionId;
+    private String tenancyId;
+    private String usagePeriodKey;
 
-    @CustomType.Constructor
-    private GetSubscriptionProductsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetSubscriptionProductsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("productCollections") List<GetSubscriptionProductsProductCollection> productCollections,
-        @CustomType.Parameter("producttype") @Nullable String producttype,
-        @CustomType.Parameter("subscriptionId") String subscriptionId,
-        @CustomType.Parameter("tenancyId") String tenancyId,
-        @CustomType.Parameter("usagePeriodKey") String usagePeriodKey) {
-        this.filters = filters;
-        this.id = id;
-        this.productCollections = productCollections;
-        this.producttype = producttype;
-        this.subscriptionId = subscriptionId;
-        this.tenancyId = tenancyId;
-        this.usagePeriodKey = usagePeriodKey;
-    }
-
+    private GetSubscriptionProductsResult() {}
     public List<GetSubscriptionProductsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -85,7 +68,7 @@ public final class GetSubscriptionProductsResult {
     public static Builder builder(GetSubscriptionProductsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetSubscriptionProductsFilter> filters;
         private String id;
@@ -94,11 +77,7 @@ public final class GetSubscriptionProductsResult {
         private String subscriptionId;
         private String tenancyId;
         private String usagePeriodKey;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionProductsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -110,6 +89,7 @@ public final class GetSubscriptionProductsResult {
     	      this.usagePeriodKey = defaults.usagePeriodKey;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSubscriptionProductsFilter> filters) {
             this.filters = filters;
             return this;
@@ -117,10 +97,12 @@ public final class GetSubscriptionProductsResult {
         public Builder filters(GetSubscriptionProductsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder productCollections(List<GetSubscriptionProductsProductCollection> productCollections) {
             this.productCollections = Objects.requireNonNull(productCollections);
             return this;
@@ -128,23 +110,36 @@ public final class GetSubscriptionProductsResult {
         public Builder productCollections(GetSubscriptionProductsProductCollection... productCollections) {
             return productCollections(List.of(productCollections));
         }
+        @CustomType.Setter
         public Builder producttype(@Nullable String producttype) {
             this.producttype = producttype;
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = Objects.requireNonNull(subscriptionId);
             return this;
         }
+        @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = Objects.requireNonNull(tenancyId);
             return this;
         }
+        @CustomType.Setter
         public Builder usagePeriodKey(String usagePeriodKey) {
             this.usagePeriodKey = Objects.requireNonNull(usagePeriodKey);
             return this;
-        }        public GetSubscriptionProductsResult build() {
-            return new GetSubscriptionProductsResult(filters, id, productCollections, producttype, subscriptionId, tenancyId, usagePeriodKey);
+        }
+        public GetSubscriptionProductsResult build() {
+            final var o = new GetSubscriptionProductsResult();
+            o.filters = filters;
+            o.id = id;
+            o.productCollections = productCollections;
+            o.producttype = producttype;
+            o.subscriptionId = subscriptionId;
+            o.tenancyId = tenancyId;
+            o.usagePeriodKey = usagePeriodKey;
+            return o;
         }
     }
 }

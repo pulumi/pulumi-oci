@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListenersResult {
-    private final @Nullable List<GetListenersFilter> filters;
+    private @Nullable List<GetListenersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of listener_collection.
      * 
      */
-    private final List<GetListenersListenerCollection> listenerCollections;
-    private final String networkLoadBalancerId;
+    private List<GetListenersListenerCollection> listenerCollections;
+    private String networkLoadBalancerId;
 
-    @CustomType.Constructor
-    private GetListenersResult(
-        @CustomType.Parameter("filters") @Nullable List<GetListenersFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("listenerCollections") List<GetListenersListenerCollection> listenerCollections,
-        @CustomType.Parameter("networkLoadBalancerId") String networkLoadBalancerId) {
-        this.filters = filters;
-        this.id = id;
-        this.listenerCollections = listenerCollections;
-        this.networkLoadBalancerId = networkLoadBalancerId;
-    }
-
+    private GetListenersResult() {}
     public List<GetListenersFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -66,17 +55,13 @@ public final class GetListenersResult {
     public static Builder builder(GetListenersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetListenersFilter> filters;
         private String id;
         private List<GetListenersListenerCollection> listenerCollections;
         private String networkLoadBalancerId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListenersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -85,6 +70,7 @@ public final class GetListenersResult {
     	      this.networkLoadBalancerId = defaults.networkLoadBalancerId;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetListenersFilter> filters) {
             this.filters = filters;
             return this;
@@ -92,10 +78,12 @@ public final class GetListenersResult {
         public Builder filters(GetListenersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder listenerCollections(List<GetListenersListenerCollection> listenerCollections) {
             this.listenerCollections = Objects.requireNonNull(listenerCollections);
             return this;
@@ -103,11 +91,18 @@ public final class GetListenersResult {
         public Builder listenerCollections(GetListenersListenerCollection... listenerCollections) {
             return listenerCollections(List.of(listenerCollections));
         }
+        @CustomType.Setter
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
             this.networkLoadBalancerId = Objects.requireNonNull(networkLoadBalancerId);
             return this;
-        }        public GetListenersResult build() {
-            return new GetListenersResult(filters, id, listenerCollections, networkLoadBalancerId);
+        }
+        public GetListenersResult build() {
+            final var o = new GetListenersResult();
+            o.filters = filters;
+            o.id = id;
+            o.listenerCollections = listenerCollections;
+            o.networkLoadBalancerId = networkLoadBalancerId;
+            return o;
         }
     }
 }

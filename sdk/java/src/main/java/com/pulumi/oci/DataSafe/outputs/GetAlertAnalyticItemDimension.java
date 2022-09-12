@@ -15,13 +15,9 @@ public final class GetAlertAnalyticItemDimension {
      * @return A groupBy can only be used in combination with summaryField parameter. A groupBy value has to be a subset of the values mentioned in summaryField parameter.
      * 
      */
-    private final Map<String,Object> groupBy;
+    private Map<String,Object> groupBy;
 
-    @CustomType.Constructor
-    private GetAlertAnalyticItemDimension(@CustomType.Parameter("groupBy") Map<String,Object> groupBy) {
-        this.groupBy = groupBy;
-    }
-
+    private GetAlertAnalyticItemDimension() {}
     /**
      * @return A groupBy can only be used in combination with summaryField parameter. A groupBy value has to be a subset of the values mentioned in summaryField parameter.
      * 
@@ -37,24 +33,24 @@ public final class GetAlertAnalyticItemDimension {
     public static Builder builder(GetAlertAnalyticItemDimension defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> groupBy;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAlertAnalyticItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.groupBy = defaults.groupBy;
         }
 
+        @CustomType.Setter
         public Builder groupBy(Map<String,Object> groupBy) {
             this.groupBy = Objects.requireNonNull(groupBy);
             return this;
-        }        public GetAlertAnalyticItemDimension build() {
-            return new GetAlertAnalyticItemDimension(groupBy);
+        }
+        public GetAlertAnalyticItemDimension build() {
+            final var o = new GetAlertAnalyticItemDimension();
+            o.groupBy = groupBy;
+            return o;
         }
     }
 }

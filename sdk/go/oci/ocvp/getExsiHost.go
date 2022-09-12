@@ -87,6 +87,8 @@ type GetExsiHostResult struct {
 	Id string `pulumi:"id"`
 	// The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	NextSku string `pulumi:"nextSku"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
+	NonUpgradedEsxiHostId string `pulumi:"nonUpgradedEsxiHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
 	ReplacementEsxiHostId string `pulumi:"replacementEsxiHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
@@ -97,6 +99,10 @@ type GetExsiHostResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+	UpgradedReplacementEsxiHostId string `pulumi:"upgradedReplacementEsxiHostId"`
+	// The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+	VmwareSoftwareVersion string `pulumi:"vmwareSoftwareVersion"`
 }
 
 func GetExsiHostOutput(ctx *pulumi.Context, args GetExsiHostOutputArgs, opts ...pulumi.InvokeOption) GetExsiHostResultOutput {
@@ -216,6 +222,11 @@ func (o GetExsiHostResultOutput) NextSku() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.NextSku }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
+func (o GetExsiHostResultOutput) NonUpgradedEsxiHostId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostResult) string { return v.NonUpgradedEsxiHostId }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
 func (o GetExsiHostResultOutput) ReplacementEsxiHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.ReplacementEsxiHostId }).(pulumi.StringOutput)
@@ -239,6 +250,16 @@ func (o GetExsiHostResultOutput) TimeCreated() pulumi.StringOutput {
 // The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o GetExsiHostResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+func (o GetExsiHostResultOutput) UpgradedReplacementEsxiHostId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostResult) string { return v.UpgradedReplacementEsxiHostId }).(pulumi.StringOutput)
+}
+
+// The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+func (o GetExsiHostResultOutput) VmwareSoftwareVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostResult) string { return v.VmwareSoftwareVersion }).(pulumi.StringOutput)
 }
 
 func init() {

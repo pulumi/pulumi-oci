@@ -18,69 +18,50 @@ public final class GetSecurityListsSecurityListIngressSecurityRule {
      * @return An optional description of your choice for the rule.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
      * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
      * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
      * 
      */
-    private final List<GetSecurityListsSecurityListIngressSecurityRuleIcmpOption> icmpOptions;
+    private List<GetSecurityListsSecurityListIngressSecurityRuleIcmpOption> icmpOptions;
     /**
      * @return The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP (&#34;1&#34;), TCP (&#34;6&#34;), UDP (&#34;17&#34;), and ICMPv6 (&#34;58&#34;).
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
      * 
      */
-    private final String source;
+    private String source;
     /**
      * @return Type of source for the rule. The default is `CIDR_BLOCK`.
      * * `CIDR_BLOCK`: If the rule&#39;s `source` is an IP address range in CIDR notation.
      * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
      * 
      */
-    private final String sourceType;
+    private String sourceType;
     /**
      * @return A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
      * 
      */
-    private final Boolean stateless;
+    private Boolean stateless;
     /**
      * @return Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
      * * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
      * 
      */
-    private final List<GetSecurityListsSecurityListIngressSecurityRuleTcpOption> tcpOptions;
+    private List<GetSecurityListsSecurityListIngressSecurityRuleTcpOption> tcpOptions;
     /**
      * @return Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
      * * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
      * 
      */
-    private final List<GetSecurityListsSecurityListIngressSecurityRuleUdpOption> udpOptions;
+    private List<GetSecurityListsSecurityListIngressSecurityRuleUdpOption> udpOptions;
 
-    @CustomType.Constructor
-    private GetSecurityListsSecurityListIngressSecurityRule(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("icmpOptions") List<GetSecurityListsSecurityListIngressSecurityRuleIcmpOption> icmpOptions,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("source") String source,
-        @CustomType.Parameter("sourceType") String sourceType,
-        @CustomType.Parameter("stateless") Boolean stateless,
-        @CustomType.Parameter("tcpOptions") List<GetSecurityListsSecurityListIngressSecurityRuleTcpOption> tcpOptions,
-        @CustomType.Parameter("udpOptions") List<GetSecurityListsSecurityListIngressSecurityRuleUdpOption> udpOptions) {
-        this.description = description;
-        this.icmpOptions = icmpOptions;
-        this.protocol = protocol;
-        this.source = source;
-        this.sourceType = sourceType;
-        this.stateless = stateless;
-        this.tcpOptions = tcpOptions;
-        this.udpOptions = udpOptions;
-    }
-
+    private GetSecurityListsSecurityListIngressSecurityRule() {}
     /**
      * @return An optional description of your choice for the rule.
      * 
@@ -151,7 +132,7 @@ public final class GetSecurityListsSecurityListIngressSecurityRule {
     public static Builder builder(GetSecurityListsSecurityListIngressSecurityRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private List<GetSecurityListsSecurityListIngressSecurityRuleIcmpOption> icmpOptions;
@@ -161,11 +142,7 @@ public final class GetSecurityListsSecurityListIngressSecurityRule {
         private Boolean stateless;
         private List<GetSecurityListsSecurityListIngressSecurityRuleTcpOption> tcpOptions;
         private List<GetSecurityListsSecurityListIngressSecurityRuleUdpOption> udpOptions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityListsSecurityListIngressSecurityRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -178,10 +155,12 @@ public final class GetSecurityListsSecurityListIngressSecurityRule {
     	      this.udpOptions = defaults.udpOptions;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder icmpOptions(List<GetSecurityListsSecurityListIngressSecurityRuleIcmpOption> icmpOptions) {
             this.icmpOptions = Objects.requireNonNull(icmpOptions);
             return this;
@@ -189,22 +168,27 @@ public final class GetSecurityListsSecurityListIngressSecurityRule {
         public Builder icmpOptions(GetSecurityListsSecurityListIngressSecurityRuleIcmpOption... icmpOptions) {
             return icmpOptions(List.of(icmpOptions));
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder source(String source) {
             this.source = Objects.requireNonNull(source);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder stateless(Boolean stateless) {
             this.stateless = Objects.requireNonNull(stateless);
             return this;
         }
+        @CustomType.Setter
         public Builder tcpOptions(List<GetSecurityListsSecurityListIngressSecurityRuleTcpOption> tcpOptions) {
             this.tcpOptions = Objects.requireNonNull(tcpOptions);
             return this;
@@ -212,14 +196,25 @@ public final class GetSecurityListsSecurityListIngressSecurityRule {
         public Builder tcpOptions(GetSecurityListsSecurityListIngressSecurityRuleTcpOption... tcpOptions) {
             return tcpOptions(List.of(tcpOptions));
         }
+        @CustomType.Setter
         public Builder udpOptions(List<GetSecurityListsSecurityListIngressSecurityRuleUdpOption> udpOptions) {
             this.udpOptions = Objects.requireNonNull(udpOptions);
             return this;
         }
         public Builder udpOptions(GetSecurityListsSecurityListIngressSecurityRuleUdpOption... udpOptions) {
             return udpOptions(List.of(udpOptions));
-        }        public GetSecurityListsSecurityListIngressSecurityRule build() {
-            return new GetSecurityListsSecurityListIngressSecurityRule(description, icmpOptions, protocol, source, sourceType, stateless, tcpOptions, udpOptions);
+        }
+        public GetSecurityListsSecurityListIngressSecurityRule build() {
+            final var o = new GetSecurityListsSecurityListIngressSecurityRule();
+            o.description = description;
+            o.icmpOptions = icmpOptions;
+            o.protocol = protocol;
+            o.source = source;
+            o.sourceType = sourceType;
+            o.stateless = stateless;
+            o.tcpOptions = tcpOptions;
+            o.udpOptions = udpOptions;
+            return o;
         }
     }
 }

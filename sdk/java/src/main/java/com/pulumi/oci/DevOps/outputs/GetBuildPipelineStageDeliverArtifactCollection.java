@@ -14,13 +14,9 @@ public final class GetBuildPipelineStageDeliverArtifactCollection {
      * @return Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
      * 
      */
-    private final List<GetBuildPipelineStageDeliverArtifactCollectionItem> items;
+    private List<GetBuildPipelineStageDeliverArtifactCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetBuildPipelineStageDeliverArtifactCollection(@CustomType.Parameter("items") List<GetBuildPipelineStageDeliverArtifactCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetBuildPipelineStageDeliverArtifactCollection() {}
     /**
      * @return Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
      * 
@@ -36,27 +32,27 @@ public final class GetBuildPipelineStageDeliverArtifactCollection {
     public static Builder builder(GetBuildPipelineStageDeliverArtifactCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBuildPipelineStageDeliverArtifactCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildPipelineStageDeliverArtifactCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetBuildPipelineStageDeliverArtifactCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetBuildPipelineStageDeliverArtifactCollectionItem... items) {
             return items(List.of(items));
-        }        public GetBuildPipelineStageDeliverArtifactCollection build() {
-            return new GetBuildPipelineStageDeliverArtifactCollection(items);
+        }
+        public GetBuildPipelineStageDeliverArtifactCollection build() {
+            final var o = new GetBuildPipelineStageDeliverArtifactCollection();
+            o.items = items;
+            return o;
         }
     }
 }

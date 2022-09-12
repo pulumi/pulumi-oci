@@ -56,8 +56,10 @@ type LookupBootVolumeArgs struct {
 
 // A collection of values returned by getBootVolume.
 type LookupBootVolumeResult struct {
-	// The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+	// The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
 	AutoTunedVpusPerGb string `pulumi:"autoTunedVpusPerGb"`
+	// The list of autotune policies enabled for this volume.
+	AutotunePolicies []GetBootVolumeAutotunePolicy `pulumi:"autotunePolicies"`
 	// The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
@@ -78,7 +80,7 @@ type LookupBootVolumeResult struct {
 	Id string `pulumi:"id"`
 	// The image OCID used to create the boot volume.
 	ImageId string `pulumi:"imageId"`
-	// Specifies whether the auto-tune performance is enabled for this boot volume.
+	// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled bool `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
 	IsHydrated bool `pulumi:"isHydrated"`
@@ -139,9 +141,14 @@ func (o LookupBootVolumeResultOutput) ToLookupBootVolumeResultOutputWithContext(
 	return o
 }
 
-// The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+// The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
 func (o LookupBootVolumeResultOutput) AutoTunedVpusPerGb() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBootVolumeResult) string { return v.AutoTunedVpusPerGb }).(pulumi.StringOutput)
+}
+
+// The list of autotune policies enabled for this volume.
+func (o LookupBootVolumeResultOutput) AutotunePolicies() GetBootVolumeAutotunePolicyArrayOutput {
+	return o.ApplyT(func(v LookupBootVolumeResult) []GetBootVolumeAutotunePolicy { return v.AutotunePolicies }).(GetBootVolumeAutotunePolicyArrayOutput)
 }
 
 // The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
@@ -197,7 +204,7 @@ func (o LookupBootVolumeResultOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBootVolumeResult) string { return v.ImageId }).(pulumi.StringOutput)
 }
 
-// Specifies whether the auto-tune performance is enabled for this boot volume.
+// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 func (o LookupBootVolumeResultOutput) IsAutoTuneEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupBootVolumeResult) bool { return v.IsAutoTuneEnabled }).(pulumi.BoolOutput)
 }

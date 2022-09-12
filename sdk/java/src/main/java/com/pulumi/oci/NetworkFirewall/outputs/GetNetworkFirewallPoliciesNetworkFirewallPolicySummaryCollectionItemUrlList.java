@@ -9,26 +9,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList {
-    private final String key;
-    private final String pattern;
+    private String key;
+    private String pattern;
     /**
      * @return Type of the secrets mapped based on the policy.
      * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
      * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList(
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("pattern") String pattern,
-        @CustomType.Parameter("type") String type) {
-        this.key = key;
-        this.pattern = pattern;
-        this.type = type;
-    }
-
+    private GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList() {}
     public String key() {
         return this.key;
     }
@@ -52,16 +43,12 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
     public static Builder builder(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String key;
         private String pattern;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.key = defaults.key;
@@ -69,19 +56,27 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder pattern(String pattern) {
             this.pattern = Objects.requireNonNull(pattern);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList build() {
-            return new GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList(key, pattern, type);
+        }
+        public GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList build() {
+            final var o = new GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList();
+            o.key = key;
+            o.pattern = pattern;
+            o.type = type;
+            return o;
         }
     }
 }

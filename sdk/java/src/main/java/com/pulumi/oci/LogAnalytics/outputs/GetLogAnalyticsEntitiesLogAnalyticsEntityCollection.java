@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetLogAnalyticsEntitiesLogAnalyticsEntityCollection {
-    private final List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem> items;
+    private List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsEntitiesLogAnalyticsEntityCollection(@CustomType.Parameter("items") List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetLogAnalyticsEntitiesLogAnalyticsEntityCollection() {}
     public List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetLogAnalyticsEntitiesLogAnalyticsEntityCollection {
     public static Builder builder(GetLogAnalyticsEntitiesLogAnalyticsEntityCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsEntitiesLogAnalyticsEntityCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem... items) {
             return items(List.of(items));
-        }        public GetLogAnalyticsEntitiesLogAnalyticsEntityCollection build() {
-            return new GetLogAnalyticsEntitiesLogAnalyticsEntityCollection(items);
+        }
+        public GetLogAnalyticsEntitiesLogAnalyticsEntityCollection build() {
+            final var o = new GetLogAnalyticsEntitiesLogAnalyticsEntityCollection();
+            o.items = items;
+            return o;
         }
     }
 }

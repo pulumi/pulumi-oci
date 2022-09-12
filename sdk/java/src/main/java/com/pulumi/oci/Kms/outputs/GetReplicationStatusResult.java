@@ -15,23 +15,12 @@ public final class GetReplicationStatusResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String managementEndpoint;
-    private final List<GetReplicationStatusReplicaDetail> replicaDetails;
-    private final String replicationId;
+    private String id;
+    private String managementEndpoint;
+    private List<GetReplicationStatusReplicaDetail> replicaDetails;
+    private String replicationId;
 
-    @CustomType.Constructor
-    private GetReplicationStatusResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managementEndpoint") String managementEndpoint,
-        @CustomType.Parameter("replicaDetails") List<GetReplicationStatusReplicaDetail> replicaDetails,
-        @CustomType.Parameter("replicationId") String replicationId) {
-        this.id = id;
-        this.managementEndpoint = managementEndpoint;
-        this.replicaDetails = replicaDetails;
-        this.replicationId = replicationId;
-    }
-
+    private GetReplicationStatusResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -56,17 +45,13 @@ public final class GetReplicationStatusResult {
     public static Builder builder(GetReplicationStatusResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String managementEndpoint;
         private List<GetReplicationStatusReplicaDetail> replicaDetails;
         private String replicationId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetReplicationStatusResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -75,14 +60,17 @@ public final class GetReplicationStatusResult {
     	      this.replicationId = defaults.replicationId;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managementEndpoint(String managementEndpoint) {
             this.managementEndpoint = Objects.requireNonNull(managementEndpoint);
             return this;
         }
+        @CustomType.Setter
         public Builder replicaDetails(List<GetReplicationStatusReplicaDetail> replicaDetails) {
             this.replicaDetails = Objects.requireNonNull(replicaDetails);
             return this;
@@ -90,11 +78,18 @@ public final class GetReplicationStatusResult {
         public Builder replicaDetails(GetReplicationStatusReplicaDetail... replicaDetails) {
             return replicaDetails(List.of(replicaDetails));
         }
+        @CustomType.Setter
         public Builder replicationId(String replicationId) {
             this.replicationId = Objects.requireNonNull(replicationId);
             return this;
-        }        public GetReplicationStatusResult build() {
-            return new GetReplicationStatusResult(id, managementEndpoint, replicaDetails, replicationId);
+        }
+        public GetReplicationStatusResult build() {
+            final var o = new GetReplicationStatusResult();
+            o.id = id;
+            o.managementEndpoint = managementEndpoint;
+            o.replicaDetails = replicaDetails;
+            o.replicationId = replicationId;
+            return o;
         }
     }
 }

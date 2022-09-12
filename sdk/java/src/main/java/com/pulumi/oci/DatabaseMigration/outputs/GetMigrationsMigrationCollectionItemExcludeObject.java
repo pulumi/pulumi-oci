@@ -13,28 +13,19 @@ public final class GetMigrationsMigrationCollectionItemExcludeObject {
      * @return Name of the object (regular expression is allowed)
      * 
      */
-    private final String object;
+    private String object;
     /**
      * @return Owner of the object (regular expression is allowed)
      * 
      */
-    private final String owner;
+    private String owner;
     /**
      * @return Migration type.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetMigrationsMigrationCollectionItemExcludeObject(
-        @CustomType.Parameter("object") String object,
-        @CustomType.Parameter("owner") String owner,
-        @CustomType.Parameter("type") String type) {
-        this.object = object;
-        this.owner = owner;
-        this.type = type;
-    }
-
+    private GetMigrationsMigrationCollectionItemExcludeObject() {}
     /**
      * @return Name of the object (regular expression is allowed)
      * 
@@ -64,16 +55,12 @@ public final class GetMigrationsMigrationCollectionItemExcludeObject {
     public static Builder builder(GetMigrationsMigrationCollectionItemExcludeObject defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String object;
         private String owner;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemExcludeObject defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.object = defaults.object;
@@ -81,19 +68,27 @@ public final class GetMigrationsMigrationCollectionItemExcludeObject {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder object(String object) {
             this.object = Objects.requireNonNull(object);
             return this;
         }
+        @CustomType.Setter
         public Builder owner(String owner) {
             this.owner = Objects.requireNonNull(owner);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetMigrationsMigrationCollectionItemExcludeObject build() {
-            return new GetMigrationsMigrationCollectionItemExcludeObject(object, owner, type);
+        }
+        public GetMigrationsMigrationCollectionItemExcludeObject build() {
+            final var o = new GetMigrationsMigrationCollectionItemExcludeObject();
+            o.object = object;
+            o.owner = owner;
+            o.type = type;
+            return o;
         }
     }
 }

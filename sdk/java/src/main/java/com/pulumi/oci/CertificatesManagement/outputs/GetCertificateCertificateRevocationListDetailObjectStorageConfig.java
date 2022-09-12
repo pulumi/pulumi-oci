@@ -13,28 +13,19 @@ public final class GetCertificateCertificateRevocationListDetailObjectStorageCon
      * @return The name of the bucket where the CRL is stored.
      * 
      */
-    private final String objectStorageBucketName;
+    private String objectStorageBucketName;
     /**
      * @return The tenancy of the bucket where the CRL is stored.
      * 
      */
-    private final String objectStorageNamespace;
+    private String objectStorageNamespace;
     /**
      * @return The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
      * 
      */
-    private final String objectStorageObjectNameFormat;
+    private String objectStorageObjectNameFormat;
 
-    @CustomType.Constructor
-    private GetCertificateCertificateRevocationListDetailObjectStorageConfig(
-        @CustomType.Parameter("objectStorageBucketName") String objectStorageBucketName,
-        @CustomType.Parameter("objectStorageNamespace") String objectStorageNamespace,
-        @CustomType.Parameter("objectStorageObjectNameFormat") String objectStorageObjectNameFormat) {
-        this.objectStorageBucketName = objectStorageBucketName;
-        this.objectStorageNamespace = objectStorageNamespace;
-        this.objectStorageObjectNameFormat = objectStorageObjectNameFormat;
-    }
-
+    private GetCertificateCertificateRevocationListDetailObjectStorageConfig() {}
     /**
      * @return The name of the bucket where the CRL is stored.
      * 
@@ -64,16 +55,12 @@ public final class GetCertificateCertificateRevocationListDetailObjectStorageCon
     public static Builder builder(GetCertificateCertificateRevocationListDetailObjectStorageConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String objectStorageBucketName;
         private String objectStorageNamespace;
         private String objectStorageObjectNameFormat;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificateCertificateRevocationListDetailObjectStorageConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.objectStorageBucketName = defaults.objectStorageBucketName;
@@ -81,19 +68,27 @@ public final class GetCertificateCertificateRevocationListDetailObjectStorageCon
     	      this.objectStorageObjectNameFormat = defaults.objectStorageObjectNameFormat;
         }
 
+        @CustomType.Setter
         public Builder objectStorageBucketName(String objectStorageBucketName) {
             this.objectStorageBucketName = Objects.requireNonNull(objectStorageBucketName);
             return this;
         }
+        @CustomType.Setter
         public Builder objectStorageNamespace(String objectStorageNamespace) {
             this.objectStorageNamespace = Objects.requireNonNull(objectStorageNamespace);
             return this;
         }
+        @CustomType.Setter
         public Builder objectStorageObjectNameFormat(String objectStorageObjectNameFormat) {
             this.objectStorageObjectNameFormat = Objects.requireNonNull(objectStorageObjectNameFormat);
             return this;
-        }        public GetCertificateCertificateRevocationListDetailObjectStorageConfig build() {
-            return new GetCertificateCertificateRevocationListDetailObjectStorageConfig(objectStorageBucketName, objectStorageNamespace, objectStorageObjectNameFormat);
+        }
+        public GetCertificateCertificateRevocationListDetailObjectStorageConfig build() {
+            final var o = new GetCertificateCertificateRevocationListDetailObjectStorageConfig();
+            o.objectStorageBucketName = objectStorageBucketName;
+            o.objectStorageNamespace = objectStorageNamespace;
+            o.objectStorageObjectNameFormat = objectStorageObjectNameFormat;
+            return o;
         }
     }
 }

@@ -15,43 +15,24 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionsResult {
-    private final @Nullable String buyerEmail;
-    private final String compartmentId;
-    private final @Nullable List<GetSubscriptionsFilter> filters;
+    private @Nullable String buyerEmail;
+    private String compartmentId;
+    private @Nullable List<GetSubscriptionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Boolean isCommitInfoRequired;
-    private final @Nullable String planNumber;
-    private final @Nullable String subscriptionId;
+    private String id;
+    private @Nullable Boolean isCommitInfoRequired;
+    private @Nullable String planNumber;
+    private @Nullable String subscriptionId;
     /**
      * @return The list of subscriptions.
      * 
      */
-    private final List<GetSubscriptionsSubscription> subscriptions;
+    private List<GetSubscriptionsSubscription> subscriptions;
 
-    @CustomType.Constructor
-    private GetSubscriptionsResult(
-        @CustomType.Parameter("buyerEmail") @Nullable String buyerEmail,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetSubscriptionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isCommitInfoRequired") @Nullable Boolean isCommitInfoRequired,
-        @CustomType.Parameter("planNumber") @Nullable String planNumber,
-        @CustomType.Parameter("subscriptionId") @Nullable String subscriptionId,
-        @CustomType.Parameter("subscriptions") List<GetSubscriptionsSubscription> subscriptions) {
-        this.buyerEmail = buyerEmail;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.isCommitInfoRequired = isCommitInfoRequired;
-        this.planNumber = planNumber;
-        this.subscriptionId = subscriptionId;
-        this.subscriptions = subscriptions;
-    }
-
+    private GetSubscriptionsResult() {}
     public Optional<String> buyerEmail() {
         return Optional.ofNullable(this.buyerEmail);
     }
@@ -92,7 +73,7 @@ public final class GetSubscriptionsResult {
     public static Builder builder(GetSubscriptionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String buyerEmail;
         private String compartmentId;
@@ -102,11 +83,7 @@ public final class GetSubscriptionsResult {
         private @Nullable String planNumber;
         private @Nullable String subscriptionId;
         private List<GetSubscriptionsSubscription> subscriptions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.buyerEmail = defaults.buyerEmail;
@@ -119,14 +96,17 @@ public final class GetSubscriptionsResult {
     	      this.subscriptions = defaults.subscriptions;
         }
 
+        @CustomType.Setter
         public Builder buyerEmail(@Nullable String buyerEmail) {
             this.buyerEmail = buyerEmail;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSubscriptionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -134,30 +114,45 @@ public final class GetSubscriptionsResult {
         public Builder filters(GetSubscriptionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isCommitInfoRequired(@Nullable Boolean isCommitInfoRequired) {
             this.isCommitInfoRequired = isCommitInfoRequired;
             return this;
         }
+        @CustomType.Setter
         public Builder planNumber(@Nullable String planNumber) {
             this.planNumber = planNumber;
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionId(@Nullable String subscriptionId) {
             this.subscriptionId = subscriptionId;
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptions(List<GetSubscriptionsSubscription> subscriptions) {
             this.subscriptions = Objects.requireNonNull(subscriptions);
             return this;
         }
         public Builder subscriptions(GetSubscriptionsSubscription... subscriptions) {
             return subscriptions(List.of(subscriptions));
-        }        public GetSubscriptionsResult build() {
-            return new GetSubscriptionsResult(buyerEmail, compartmentId, filters, id, isCommitInfoRequired, planNumber, subscriptionId, subscriptions);
+        }
+        public GetSubscriptionsResult build() {
+            final var o = new GetSubscriptionsResult();
+            o.buyerEmail = buyerEmail;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.isCommitInfoRequired = isCommitInfoRequired;
+            o.planNumber = planNumber;
+            o.subscriptionId = subscriptionId;
+            o.subscriptions = subscriptions;
+            return o;
         }
     }
 }

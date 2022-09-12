@@ -13,21 +13,14 @@ public final class GetListingLink {
      * @return The anchor tag.
      * 
      */
-    private final String href;
+    private String href;
     /**
      * @return Reference links to the previous page, next page, and other pages.
      * 
      */
-    private final String rel;
+    private String rel;
 
-    @CustomType.Constructor
-    private GetListingLink(
-        @CustomType.Parameter("href") String href,
-        @CustomType.Parameter("rel") String rel) {
-        this.href = href;
-        this.rel = rel;
-    }
-
+    private GetListingLink() {}
     /**
      * @return The anchor tag.
      * 
@@ -50,30 +43,32 @@ public final class GetListingLink {
     public static Builder builder(GetListingLink defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String href;
         private String rel;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingLink defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.href = defaults.href;
     	      this.rel = defaults.rel;
         }
 
+        @CustomType.Setter
         public Builder href(String href) {
             this.href = Objects.requireNonNull(href);
             return this;
         }
+        @CustomType.Setter
         public Builder rel(String rel) {
             this.rel = Objects.requireNonNull(rel);
             return this;
-        }        public GetListingLink build() {
-            return new GetListingLink(href, rel);
+        }
+        public GetListingLink build() {
+            final var o = new GetListingLink();
+            o.href = href;
+            o.rel = rel;
+            return o;
         }
     }
 }

@@ -15,35 +15,24 @@ public final class QuotaLock {
      * @return A message added by the lock creator. The message typically gives an indication of why the resource is locked.
      * 
      */
-    private final @Nullable String message;
+    private @Nullable String message;
     /**
      * @return The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
      * 
      */
-    private final @Nullable String relatedResourceId;
+    private @Nullable String relatedResourceId;
     /**
      * @return Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Lock type.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private QuotaLock(
-        @CustomType.Parameter("message") @Nullable String message,
-        @CustomType.Parameter("relatedResourceId") @Nullable String relatedResourceId,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated,
-        @CustomType.Parameter("type") String type) {
-        this.message = message;
-        this.relatedResourceId = relatedResourceId;
-        this.timeCreated = timeCreated;
-        this.type = type;
-    }
-
+    private QuotaLock() {}
     /**
      * @return A message added by the lock creator. The message typically gives an indication of why the resource is locked.
      * 
@@ -80,17 +69,13 @@ public final class QuotaLock {
     public static Builder builder(QuotaLock defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String message;
         private @Nullable String relatedResourceId;
         private @Nullable String timeCreated;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(QuotaLock defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.message = defaults.message;
@@ -99,23 +84,33 @@ public final class QuotaLock {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder message(@Nullable String message) {
             this.message = message;
             return this;
         }
+        @CustomType.Setter
         public Builder relatedResourceId(@Nullable String relatedResourceId) {
             this.relatedResourceId = relatedResourceId;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public QuotaLock build() {
-            return new QuotaLock(message, relatedResourceId, timeCreated, type);
+        }
+        public QuotaLock build() {
+            final var o = new QuotaLock();
+            o.message = message;
+            o.relatedResourceId = relatedResourceId;
+            o.timeCreated = timeCreated;
+            o.type = type;
+            return o;
         }
     }
 }

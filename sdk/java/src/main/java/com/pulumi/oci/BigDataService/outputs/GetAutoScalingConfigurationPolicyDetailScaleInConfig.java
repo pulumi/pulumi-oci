@@ -15,28 +15,19 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfig {
      * @return Metric and threshold details for triggering an autoscale action.
      * 
      */
-    private final List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics;
+    private List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics;
     /**
      * @return This value is the minimum number of nodes the cluster can be scaled-in to.
      * 
      */
-    private final Integer minNodeCount;
+    private Integer minNodeCount;
     /**
      * @return This value is the number of nodes to add during a scale-out event.
      * 
      */
-    private final Integer stepSize;
+    private Integer stepSize;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationPolicyDetailScaleInConfig(
-        @CustomType.Parameter("metrics") List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics,
-        @CustomType.Parameter("minNodeCount") Integer minNodeCount,
-        @CustomType.Parameter("stepSize") Integer stepSize) {
-        this.metrics = metrics;
-        this.minNodeCount = minNodeCount;
-        this.stepSize = stepSize;
-    }
-
+    private GetAutoScalingConfigurationPolicyDetailScaleInConfig() {}
     /**
      * @return Metric and threshold details for triggering an autoscale action.
      * 
@@ -66,16 +57,12 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfig {
     public static Builder builder(GetAutoScalingConfigurationPolicyDetailScaleInConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics;
         private Integer minNodeCount;
         private Integer stepSize;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicyDetailScaleInConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.metrics = defaults.metrics;
@@ -83,6 +70,7 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfig {
     	      this.stepSize = defaults.stepSize;
         }
 
+        @CustomType.Setter
         public Builder metrics(List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics) {
             this.metrics = Objects.requireNonNull(metrics);
             return this;
@@ -90,15 +78,22 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfig {
         public Builder metrics(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric... metrics) {
             return metrics(List.of(metrics));
         }
+        @CustomType.Setter
         public Builder minNodeCount(Integer minNodeCount) {
             this.minNodeCount = Objects.requireNonNull(minNodeCount);
             return this;
         }
+        @CustomType.Setter
         public Builder stepSize(Integer stepSize) {
             this.stepSize = Objects.requireNonNull(stepSize);
             return this;
-        }        public GetAutoScalingConfigurationPolicyDetailScaleInConfig build() {
-            return new GetAutoScalingConfigurationPolicyDetailScaleInConfig(metrics, minNodeCount, stepSize);
+        }
+        public GetAutoScalingConfigurationPolicyDetailScaleInConfig build() {
+            final var o = new GetAutoScalingConfigurationPolicyDetailScaleInConfig();
+            o.metrics = metrics;
+            o.minNodeCount = minNodeCount;
+            o.stepSize = stepSize;
+            return o;
         }
     }
 }

@@ -14,55 +14,36 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSoftwareSourceStreamProfileResult {
-    private final @Nullable String compartmentId;
-    private final @Nullable List<GetSoftwareSourceStreamProfileFilter> filters;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetSoftwareSourceStreamProfileFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the module that contains the stream profile
      * 
      */
-    private final @Nullable String moduleName;
+    private @Nullable String moduleName;
     /**
      * @return The list of module_stream_profiles.
      * 
      */
-    private final List<GetSoftwareSourceStreamProfileModuleStreamProfile> moduleStreamProfiles;
+    private List<GetSoftwareSourceStreamProfileModuleStreamProfile> moduleStreamProfiles;
     /**
      * @return The name of the profile
      * 
      */
-    private final @Nullable String profileName;
-    private final String softwareSourceId;
+    private @Nullable String profileName;
+    private String softwareSourceId;
     /**
      * @return The name of the stream that contains the profile
      * 
      */
-    private final @Nullable String streamName;
+    private @Nullable String streamName;
 
-    @CustomType.Constructor
-    private GetSoftwareSourceStreamProfileResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetSoftwareSourceStreamProfileFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("moduleName") @Nullable String moduleName,
-        @CustomType.Parameter("moduleStreamProfiles") List<GetSoftwareSourceStreamProfileModuleStreamProfile> moduleStreamProfiles,
-        @CustomType.Parameter("profileName") @Nullable String profileName,
-        @CustomType.Parameter("softwareSourceId") String softwareSourceId,
-        @CustomType.Parameter("streamName") @Nullable String streamName) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.moduleName = moduleName;
-        this.moduleStreamProfiles = moduleStreamProfiles;
-        this.profileName = profileName;
-        this.softwareSourceId = softwareSourceId;
-        this.streamName = streamName;
-    }
-
+    private GetSoftwareSourceStreamProfileResult() {}
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
@@ -115,7 +96,7 @@ public final class GetSoftwareSourceStreamProfileResult {
     public static Builder builder(GetSoftwareSourceStreamProfileResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetSoftwareSourceStreamProfileFilter> filters;
@@ -125,11 +106,7 @@ public final class GetSoftwareSourceStreamProfileResult {
         private @Nullable String profileName;
         private String softwareSourceId;
         private @Nullable String streamName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSoftwareSourceStreamProfileResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,10 +119,12 @@ public final class GetSoftwareSourceStreamProfileResult {
     	      this.streamName = defaults.streamName;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSoftwareSourceStreamProfileFilter> filters) {
             this.filters = filters;
             return this;
@@ -153,14 +132,17 @@ public final class GetSoftwareSourceStreamProfileResult {
         public Builder filters(GetSoftwareSourceStreamProfileFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder moduleName(@Nullable String moduleName) {
             this.moduleName = moduleName;
             return this;
         }
+        @CustomType.Setter
         public Builder moduleStreamProfiles(List<GetSoftwareSourceStreamProfileModuleStreamProfile> moduleStreamProfiles) {
             this.moduleStreamProfiles = Objects.requireNonNull(moduleStreamProfiles);
             return this;
@@ -168,19 +150,32 @@ public final class GetSoftwareSourceStreamProfileResult {
         public Builder moduleStreamProfiles(GetSoftwareSourceStreamProfileModuleStreamProfile... moduleStreamProfiles) {
             return moduleStreamProfiles(List.of(moduleStreamProfiles));
         }
+        @CustomType.Setter
         public Builder profileName(@Nullable String profileName) {
             this.profileName = profileName;
             return this;
         }
+        @CustomType.Setter
         public Builder softwareSourceId(String softwareSourceId) {
             this.softwareSourceId = Objects.requireNonNull(softwareSourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder streamName(@Nullable String streamName) {
             this.streamName = streamName;
             return this;
-        }        public GetSoftwareSourceStreamProfileResult build() {
-            return new GetSoftwareSourceStreamProfileResult(compartmentId, filters, id, moduleName, moduleStreamProfiles, profileName, softwareSourceId, streamName);
+        }
+        public GetSoftwareSourceStreamProfileResult build() {
+            final var o = new GetSoftwareSourceStreamProfileResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.moduleName = moduleName;
+            o.moduleStreamProfiles = moduleStreamProfiles;
+            o.profileName = profileName;
+            o.softwareSourceId = softwareSourceId;
+            o.streamName = streamName;
+            return o;
         }
     }
 }

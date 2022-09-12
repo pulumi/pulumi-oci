@@ -32,7 +32,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Dns.GetResolver(ctx, &dns.GetResolverArgs{
 //				ResolverId: oci_dns_resolver.Test_resolver.Id,
-//				Scope:      "PRIVATE",
+//				Scope:      pulumi.StringRef("PRIVATE"),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -56,7 +56,7 @@ type LookupResolverArgs struct {
 	// The OCID of the target resolver.
 	ResolverId string `pulumi:"resolverId"`
 	// Value must be `PRIVATE` when listing private name resolvers.
-	Scope string `pulumi:"scope"`
+	Scope *string `pulumi:"scope"`
 }
 
 // A collection of values returned by getResolver.
@@ -84,7 +84,7 @@ type LookupResolverResult struct {
 	ResolverId  string `pulumi:"resolverId"`
 	// Rules for the resolver. Rules are evaluated in order.
 	Rules []GetResolverRule `pulumi:"rules"`
-	Scope string            `pulumi:"scope"`
+	Scope *string           `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self string `pulumi:"self"`
 	// The current state of the resource.
@@ -113,7 +113,7 @@ type LookupResolverOutputArgs struct {
 	// The OCID of the target resolver.
 	ResolverId pulumi.StringInput `pulumi:"resolverId"`
 	// Value must be `PRIVATE` when listing private name resolvers.
-	Scope pulumi.StringInput `pulumi:"scope"`
+	Scope pulumi.StringPtrInput `pulumi:"scope"`
 }
 
 func (LookupResolverOutputArgs) ElementType() reflect.Type {
@@ -194,8 +194,8 @@ func (o LookupResolverResultOutput) Rules() GetResolverRuleArrayOutput {
 	return o.ApplyT(func(v LookupResolverResult) []GetResolverRule { return v.Rules }).(GetResolverRuleArrayOutput)
 }
 
-func (o LookupResolverResultOutput) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverResult) string { return v.Scope }).(pulumi.StringOutput)
+func (o LookupResolverResultOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverResult) *string { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
 // The canonical absolute URL of the resource.

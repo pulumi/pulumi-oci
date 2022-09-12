@@ -15,28 +15,19 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemColumnSorti
      * @return Name of the column that must be sorted.
      * 
      */
-    private final String fieldName;
+    private String fieldName;
     /**
      * @return Indicates if the column must be sorted in ascending order. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    private final Boolean isAscending;
+    private Boolean isAscending;
     /**
      * @return Indicates the order at which column must be sorted.
      * 
      */
-    private final Integer sortingOrder;
+    private Integer sortingOrder;
 
-    @CustomType.Constructor
-    private GetReportDefinitionsReportDefinitionCollectionItemColumnSorting(
-        @CustomType.Parameter("fieldName") String fieldName,
-        @CustomType.Parameter("isAscending") Boolean isAscending,
-        @CustomType.Parameter("sortingOrder") Integer sortingOrder) {
-        this.fieldName = fieldName;
-        this.isAscending = isAscending;
-        this.sortingOrder = sortingOrder;
-    }
-
+    private GetReportDefinitionsReportDefinitionCollectionItemColumnSorting() {}
     /**
      * @return Name of the column that must be sorted.
      * 
@@ -66,16 +57,12 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemColumnSorti
     public static Builder builder(GetReportDefinitionsReportDefinitionCollectionItemColumnSorting defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String fieldName;
         private Boolean isAscending;
         private Integer sortingOrder;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetReportDefinitionsReportDefinitionCollectionItemColumnSorting defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.fieldName = defaults.fieldName;
@@ -83,19 +70,27 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemColumnSorti
     	      this.sortingOrder = defaults.sortingOrder;
         }
 
+        @CustomType.Setter
         public Builder fieldName(String fieldName) {
             this.fieldName = Objects.requireNonNull(fieldName);
             return this;
         }
+        @CustomType.Setter
         public Builder isAscending(Boolean isAscending) {
             this.isAscending = Objects.requireNonNull(isAscending);
             return this;
         }
+        @CustomType.Setter
         public Builder sortingOrder(Integer sortingOrder) {
             this.sortingOrder = Objects.requireNonNull(sortingOrder);
             return this;
-        }        public GetReportDefinitionsReportDefinitionCollectionItemColumnSorting build() {
-            return new GetReportDefinitionsReportDefinitionCollectionItemColumnSorting(fieldName, isAscending, sortingOrder);
+        }
+        public GetReportDefinitionsReportDefinitionCollectionItemColumnSorting build() {
+            final var o = new GetReportDefinitionsReportDefinitionCollectionItemColumnSorting();
+            o.fieldName = fieldName;
+            o.isAscending = isAscending;
+            o.sortingOrder = sortingOrder;
+            return o;
         }
     }
 }

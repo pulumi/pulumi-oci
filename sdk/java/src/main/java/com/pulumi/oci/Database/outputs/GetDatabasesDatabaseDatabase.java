@@ -13,121 +13,82 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDatabasesDatabaseDatabase {
-    private final String adminPassword;
-    private final String backupId;
-    private final String backupTdePassword;
+    private String adminPassword;
+    private String backupId;
+    private String backupTdePassword;
     /**
      * @return The character set for the database.
      * 
      */
-    private final String characterSet;
+    private String characterSet;
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    private final String databaseSoftwareImageId;
+    private String databaseSoftwareImageId;
     /**
      * @return Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you&#39;re not authorized, talk to an administrator. If you&#39;re an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      * 
      */
-    private final List<GetDatabasesDatabaseDatabaseDbBackupConfig> dbBackupConfigs;
+    private List<GetDatabasesDatabaseDatabaseDbBackupConfig> dbBackupConfigs;
     /**
      * @return A filter to return only resources that match the entire database name given. The match is not case sensitive.
      * 
      */
-    private final String dbName;
+    private String dbName;
     /**
      * @return A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
      * 
      */
-    private final String dbUniqueName;
+    private String dbUniqueName;
     /**
      * @return The database workload type.
      * 
      */
-    private final String dbWorkload;
+    private String dbWorkload;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    private final String kmsKeyId;
+    private String kmsKeyId;
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    private final String kmsKeyVersionId;
+    private String kmsKeyVersionId;
     /**
      * @return The national character set for the database.
      * 
      */
-    private final String ncharacterSet;
+    private String ncharacterSet;
     /**
      * @return The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      * 
      */
-    private final String pdbName;
+    private String pdbName;
     /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
-    private final String sidPrefix;
-    private final String tdeWalletPassword;
+    private String sidPrefix;
+    private String tdeWalletPassword;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    private final String vaultId;
+    private String vaultId;
 
-    @CustomType.Constructor
-    private GetDatabasesDatabaseDatabase(
-        @CustomType.Parameter("adminPassword") String adminPassword,
-        @CustomType.Parameter("backupId") String backupId,
-        @CustomType.Parameter("backupTdePassword") String backupTdePassword,
-        @CustomType.Parameter("characterSet") String characterSet,
-        @CustomType.Parameter("databaseSoftwareImageId") String databaseSoftwareImageId,
-        @CustomType.Parameter("dbBackupConfigs") List<GetDatabasesDatabaseDatabaseDbBackupConfig> dbBackupConfigs,
-        @CustomType.Parameter("dbName") String dbName,
-        @CustomType.Parameter("dbUniqueName") String dbUniqueName,
-        @CustomType.Parameter("dbWorkload") String dbWorkload,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("kmsKeyVersionId") String kmsKeyVersionId,
-        @CustomType.Parameter("ncharacterSet") String ncharacterSet,
-        @CustomType.Parameter("pdbName") String pdbName,
-        @CustomType.Parameter("sidPrefix") String sidPrefix,
-        @CustomType.Parameter("tdeWalletPassword") String tdeWalletPassword,
-        @CustomType.Parameter("vaultId") String vaultId) {
-        this.adminPassword = adminPassword;
-        this.backupId = backupId;
-        this.backupTdePassword = backupTdePassword;
-        this.characterSet = characterSet;
-        this.databaseSoftwareImageId = databaseSoftwareImageId;
-        this.dbBackupConfigs = dbBackupConfigs;
-        this.dbName = dbName;
-        this.dbUniqueName = dbUniqueName;
-        this.dbWorkload = dbWorkload;
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-        this.kmsKeyId = kmsKeyId;
-        this.kmsKeyVersionId = kmsKeyVersionId;
-        this.ncharacterSet = ncharacterSet;
-        this.pdbName = pdbName;
-        this.sidPrefix = sidPrefix;
-        this.tdeWalletPassword = tdeWalletPassword;
-        this.vaultId = vaultId;
-    }
-
+    private GetDatabasesDatabaseDatabase() {}
     public String adminPassword() {
         return this.adminPassword;
     }
@@ -246,7 +207,7 @@ public final class GetDatabasesDatabaseDatabase {
     public static Builder builder(GetDatabasesDatabaseDatabase defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String adminPassword;
         private String backupId;
@@ -266,11 +227,7 @@ public final class GetDatabasesDatabaseDatabase {
         private String sidPrefix;
         private String tdeWalletPassword;
         private String vaultId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabasesDatabaseDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminPassword = defaults.adminPassword;
@@ -293,26 +250,32 @@ public final class GetDatabasesDatabaseDatabase {
     	      this.vaultId = defaults.vaultId;
         }
 
+        @CustomType.Setter
         public Builder adminPassword(String adminPassword) {
             this.adminPassword = Objects.requireNonNull(adminPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder backupId(String backupId) {
             this.backupId = Objects.requireNonNull(backupId);
             return this;
         }
+        @CustomType.Setter
         public Builder backupTdePassword(String backupTdePassword) {
             this.backupTdePassword = Objects.requireNonNull(backupTdePassword);
             return this;
         }
+        @CustomType.Setter
         public Builder characterSet(String characterSet) {
             this.characterSet = Objects.requireNonNull(characterSet);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
             this.databaseSoftwareImageId = Objects.requireNonNull(databaseSoftwareImageId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbBackupConfigs(List<GetDatabasesDatabaseDatabaseDbBackupConfig> dbBackupConfigs) {
             this.dbBackupConfigs = Objects.requireNonNull(dbBackupConfigs);
             return this;
@@ -320,55 +283,87 @@ public final class GetDatabasesDatabaseDatabase {
         public Builder dbBackupConfigs(GetDatabasesDatabaseDatabaseDbBackupConfig... dbBackupConfigs) {
             return dbBackupConfigs(List.of(dbBackupConfigs));
         }
+        @CustomType.Setter
         public Builder dbName(String dbName) {
             this.dbName = Objects.requireNonNull(dbName);
             return this;
         }
+        @CustomType.Setter
         public Builder dbUniqueName(String dbUniqueName) {
             this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
             return this;
         }
+        @CustomType.Setter
         public Builder dbWorkload(String dbWorkload) {
             this.dbWorkload = Objects.requireNonNull(dbWorkload);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
             this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
             return this;
         }
+        @CustomType.Setter
         public Builder ncharacterSet(String ncharacterSet) {
             this.ncharacterSet = Objects.requireNonNull(ncharacterSet);
             return this;
         }
+        @CustomType.Setter
         public Builder pdbName(String pdbName) {
             this.pdbName = Objects.requireNonNull(pdbName);
             return this;
         }
+        @CustomType.Setter
         public Builder sidPrefix(String sidPrefix) {
             this.sidPrefix = Objects.requireNonNull(sidPrefix);
             return this;
         }
+        @CustomType.Setter
         public Builder tdeWalletPassword(String tdeWalletPassword) {
             this.tdeWalletPassword = Objects.requireNonNull(tdeWalletPassword);
             return this;
         }
+        @CustomType.Setter
         public Builder vaultId(String vaultId) {
             this.vaultId = Objects.requireNonNull(vaultId);
             return this;
-        }        public GetDatabasesDatabaseDatabase build() {
-            return new GetDatabasesDatabaseDatabase(adminPassword, backupId, backupTdePassword, characterSet, databaseSoftwareImageId, dbBackupConfigs, dbName, dbUniqueName, dbWorkload, definedTags, freeformTags, kmsKeyId, kmsKeyVersionId, ncharacterSet, pdbName, sidPrefix, tdeWalletPassword, vaultId);
+        }
+        public GetDatabasesDatabaseDatabase build() {
+            final var o = new GetDatabasesDatabaseDatabase();
+            o.adminPassword = adminPassword;
+            o.backupId = backupId;
+            o.backupTdePassword = backupTdePassword;
+            o.characterSet = characterSet;
+            o.databaseSoftwareImageId = databaseSoftwareImageId;
+            o.dbBackupConfigs = dbBackupConfigs;
+            o.dbName = dbName;
+            o.dbUniqueName = dbUniqueName;
+            o.dbWorkload = dbWorkload;
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            o.kmsKeyId = kmsKeyId;
+            o.kmsKeyVersionId = kmsKeyVersionId;
+            o.ncharacterSet = ncharacterSet;
+            o.pdbName = pdbName;
+            o.sidPrefix = sidPrefix;
+            o.tdeWalletPassword = tdeWalletPassword;
+            o.vaultId = vaultId;
+            return o;
         }
     }
 }

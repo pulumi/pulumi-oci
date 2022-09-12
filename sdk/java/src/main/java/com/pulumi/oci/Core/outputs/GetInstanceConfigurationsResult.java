@@ -17,31 +17,20 @@ public final class GetInstanceConfigurationsResult {
      * @return The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment  as the instance that was used to create the instance configuration.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetInstanceConfigurationsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetInstanceConfigurationsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of instance_configurations.
      * 
      */
-    private final List<GetInstanceConfigurationsInstanceConfiguration> instanceConfigurations;
+    private List<GetInstanceConfigurationsInstanceConfiguration> instanceConfigurations;
 
-    @CustomType.Constructor
-    private GetInstanceConfigurationsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetInstanceConfigurationsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instanceConfigurations") List<GetInstanceConfigurationsInstanceConfiguration> instanceConfigurations) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.instanceConfigurations = instanceConfigurations;
-    }
-
+    private GetInstanceConfigurationsResult() {}
     /**
      * @return The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment  as the instance that was used to create the instance configuration.
      * 
@@ -74,17 +63,13 @@ public final class GetInstanceConfigurationsResult {
     public static Builder builder(GetInstanceConfigurationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetInstanceConfigurationsFilter> filters;
         private String id;
         private List<GetInstanceConfigurationsInstanceConfiguration> instanceConfigurations;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceConfigurationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -93,10 +78,12 @@ public final class GetInstanceConfigurationsResult {
     	      this.instanceConfigurations = defaults.instanceConfigurations;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetInstanceConfigurationsFilter> filters) {
             this.filters = filters;
             return this;
@@ -104,18 +91,26 @@ public final class GetInstanceConfigurationsResult {
         public Builder filters(GetInstanceConfigurationsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceConfigurations(List<GetInstanceConfigurationsInstanceConfiguration> instanceConfigurations) {
             this.instanceConfigurations = Objects.requireNonNull(instanceConfigurations);
             return this;
         }
         public Builder instanceConfigurations(GetInstanceConfigurationsInstanceConfiguration... instanceConfigurations) {
             return instanceConfigurations(List.of(instanceConfigurations));
-        }        public GetInstanceConfigurationsResult build() {
-            return new GetInstanceConfigurationsResult(compartmentId, filters, id, instanceConfigurations);
+        }
+        public GetInstanceConfigurationsResult build() {
+            final var o = new GetInstanceConfigurationsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.instanceConfigurations = instanceConfigurations;
+            return o;
         }
     }
 }

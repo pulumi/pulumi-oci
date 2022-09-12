@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetManagedDatabasesManagedDatabaseCollection {
-    private final List<GetManagedDatabasesManagedDatabaseCollectionItem> items;
+    private List<GetManagedDatabasesManagedDatabaseCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetManagedDatabasesManagedDatabaseCollection(@CustomType.Parameter("items") List<GetManagedDatabasesManagedDatabaseCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetManagedDatabasesManagedDatabaseCollection() {}
     public List<GetManagedDatabasesManagedDatabaseCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetManagedDatabasesManagedDatabaseCollection {
     public static Builder builder(GetManagedDatabasesManagedDatabaseCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabasesManagedDatabaseCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabasesManagedDatabaseCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabasesManagedDatabaseCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetManagedDatabasesManagedDatabaseCollectionItem... items) {
             return items(List.of(items));
-        }        public GetManagedDatabasesManagedDatabaseCollection build() {
-            return new GetManagedDatabasesManagedDatabaseCollection(items);
+        }
+        public GetManagedDatabasesManagedDatabaseCollection build() {
+            final var o = new GetManagedDatabasesManagedDatabaseCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBackendSetsBackendSetCollection {
-    private final List<GetBackendSetsBackendSetCollectionItem> items;
+    private List<GetBackendSetsBackendSetCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetBackendSetsBackendSetCollection(@CustomType.Parameter("items") List<GetBackendSetsBackendSetCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetBackendSetsBackendSetCollection() {}
     public List<GetBackendSetsBackendSetCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetBackendSetsBackendSetCollection {
     public static Builder builder(GetBackendSetsBackendSetCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBackendSetsBackendSetCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBackendSetsBackendSetCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetBackendSetsBackendSetCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetBackendSetsBackendSetCollectionItem... items) {
             return items(List.of(items));
-        }        public GetBackendSetsBackendSetCollection build() {
-            return new GetBackendSetsBackendSetCollection(items);
+        }
+        public GetBackendSetsBackendSetCollection build() {
+            final var o = new GetBackendSetsBackendSetCollection();
+            o.items = items;
+            return o;
         }
     }
 }

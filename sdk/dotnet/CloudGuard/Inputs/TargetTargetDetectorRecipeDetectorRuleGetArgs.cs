@@ -13,6 +13,12 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class TargetTargetDetectorRecipeDetectorRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The id of the attached DataSource.
+        /// </summary>
+        [Input("dataSourceId")]
+        public Input<string>? DataSourceId { get; set; }
+
+        /// <summary>
         /// The target description.
         /// </summary>
         [Input("description")]
@@ -41,6 +47,18 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        [Input("entitiesMappings")]
+        private InputList<Inputs.TargetTargetDetectorRecipeDetectorRuleEntitiesMappingGetArgs>? _entitiesMappings;
+
+        /// <summary>
+        /// Data Source entities mapping for a Detector Rule
+        /// </summary>
+        public InputList<Inputs.TargetTargetDetectorRecipeDetectorRuleEntitiesMappingGetArgs> EntitiesMappings
+        {
+            get => _entitiesMappings ?? (_entitiesMappings = new InputList<Inputs.TargetTargetDetectorRecipeDetectorRuleEntitiesMappingGetArgs>());
+            set => _entitiesMappings = value;
+        }
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

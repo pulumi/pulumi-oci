@@ -13,13 +13,9 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
      * @return The message of the rationale.
      * 
      */
-    private final String message;
+    private String message;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale(@CustomType.Parameter("message") String message) {
-        this.message = message;
-    }
-
+    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale() {}
     /**
      * @return The message of the rationale.
      * 
@@ -35,24 +31,24 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
     public static Builder builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String message;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.message = defaults.message;
         }
 
+        @CustomType.Setter
         public Builder message(String message) {
             this.message = Objects.requireNonNull(message);
             return this;
-        }        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale build() {
-            return new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale(message);
+        }
+        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale build() {
+            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale();
+            o.message = message;
+            return o;
         }
     }
 }

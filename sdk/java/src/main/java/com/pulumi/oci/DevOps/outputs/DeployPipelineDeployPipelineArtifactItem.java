@@ -17,28 +17,19 @@ public final class DeployPipelineDeployPipelineArtifactItem {
      * @return The OCID of an artifact
      * 
      */
-    private final @Nullable String deployArtifactId;
+    private @Nullable String deployArtifactId;
     /**
      * @return List of stages.
      * 
      */
-    private final @Nullable List<DeployPipelineDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages;
+    private @Nullable List<DeployPipelineDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages;
     /**
      * @return (Updatable) Deployment pipeline display name. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
 
-    @CustomType.Constructor
-    private DeployPipelineDeployPipelineArtifactItem(
-        @CustomType.Parameter("deployArtifactId") @Nullable String deployArtifactId,
-        @CustomType.Parameter("deployPipelineStages") @Nullable List<DeployPipelineDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages,
-        @CustomType.Parameter("displayName") @Nullable String displayName) {
-        this.deployArtifactId = deployArtifactId;
-        this.deployPipelineStages = deployPipelineStages;
-        this.displayName = displayName;
-    }
-
+    private DeployPipelineDeployPipelineArtifactItem() {}
     /**
      * @return The OCID of an artifact
      * 
@@ -68,16 +59,12 @@ public final class DeployPipelineDeployPipelineArtifactItem {
     public static Builder builder(DeployPipelineDeployPipelineArtifactItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String deployArtifactId;
         private @Nullable List<DeployPipelineDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages;
         private @Nullable String displayName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeployPipelineDeployPipelineArtifactItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.deployArtifactId = defaults.deployArtifactId;
@@ -85,10 +72,12 @@ public final class DeployPipelineDeployPipelineArtifactItem {
     	      this.displayName = defaults.displayName;
         }
 
+        @CustomType.Setter
         public Builder deployArtifactId(@Nullable String deployArtifactId) {
             this.deployArtifactId = deployArtifactId;
             return this;
         }
+        @CustomType.Setter
         public Builder deployPipelineStages(@Nullable List<DeployPipelineDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages) {
             this.deployPipelineStages = deployPipelineStages;
             return this;
@@ -96,11 +85,17 @@ public final class DeployPipelineDeployPipelineArtifactItem {
         public Builder deployPipelineStages(DeployPipelineDeployPipelineArtifactItemDeployPipelineStage... deployPipelineStages) {
             return deployPipelineStages(List.of(deployPipelineStages));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
-        }        public DeployPipelineDeployPipelineArtifactItem build() {
-            return new DeployPipelineDeployPipelineArtifactItem(deployArtifactId, deployPipelineStages, displayName);
+        }
+        public DeployPipelineDeployPipelineArtifactItem build() {
+            final var o = new DeployPipelineDeployPipelineArtifactItem();
+            o.deployArtifactId = deployArtifactId;
+            o.deployPipelineStages = deployPipelineStages;
+            o.displayName = displayName;
+            return o;
         }
     }
 }

@@ -18,48 +18,31 @@ public final class GetViewsResult {
      * @return The OCID of the owning compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The display name of the view.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetViewsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetViewsFilter> filters;
     /**
      * @return The OCID of the view.
      * 
      */
-    private final @Nullable String id;
-    private final String scope;
+    private @Nullable String id;
+    private @Nullable String scope;
     /**
      * @return The current state of the resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of views.
      * 
      */
-    private final List<GetViewsView> views;
+    private List<GetViewsView> views;
 
-    @CustomType.Constructor
-    private GetViewsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetViewsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("scope") String scope,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("views") List<GetViewsView> views) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.scope = scope;
-        this.state = state;
-        this.views = views;
-    }
-
+    private GetViewsResult() {}
     /**
      * @return The OCID of the owning compartment.
      * 
@@ -84,8 +67,8 @@ public final class GetViewsResult {
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }
-    public String scope() {
-        return this.scope;
+    public Optional<String> scope() {
+        return Optional.ofNullable(this.scope);
     }
     /**
      * @return The current state of the resource.
@@ -109,20 +92,16 @@ public final class GetViewsResult {
     public static Builder builder(GetViewsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetViewsFilter> filters;
         private @Nullable String id;
-        private String scope;
+        private @Nullable String scope;
         private @Nullable String state;
         private List<GetViewsView> views;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetViewsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,14 +113,17 @@ public final class GetViewsResult {
     	      this.views = defaults.views;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetViewsFilter> filters) {
             this.filters = filters;
             return this;
@@ -149,26 +131,39 @@ public final class GetViewsResult {
         public Builder filters(GetViewsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
-        public Builder scope(String scope) {
-            this.scope = Objects.requireNonNull(scope);
+        @CustomType.Setter
+        public Builder scope(@Nullable String scope) {
+            this.scope = scope;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder views(List<GetViewsView> views) {
             this.views = Objects.requireNonNull(views);
             return this;
         }
         public Builder views(GetViewsView... views) {
             return views(List.of(views));
-        }        public GetViewsResult build() {
-            return new GetViewsResult(compartmentId, displayName, filters, id, scope, state, views);
+        }
+        public GetViewsResult build() {
+            final var o = new GetViewsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.scope = scope;
+            o.state = state;
+            o.views = views;
+            return o;
         }
     }
 }

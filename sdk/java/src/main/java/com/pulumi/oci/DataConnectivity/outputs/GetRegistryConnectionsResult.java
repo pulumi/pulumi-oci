@@ -18,50 +18,29 @@ public final class GetRegistryConnectionsResult {
      * @return The list of connection_summary_collection.
      * 
      */
-    private final List<GetRegistryConnectionsConnectionSummaryCollection> connectionSummaryCollections;
-    private final String dataAssetKey;
-    private final @Nullable String favoritesQueryParam;
-    private final @Nullable List<String> fields;
-    private final @Nullable List<GetRegistryConnectionsFilter> filters;
+    private List<GetRegistryConnectionsConnectionSummaryCollection> connectionSummaryCollections;
+    private String dataAssetKey;
+    private @Nullable String favoritesQueryParam;
+    private @Nullable List<String> fields;
+    private @Nullable List<GetRegistryConnectionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
-     * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private final @Nullable String name;
-    private final String registryId;
+    private @Nullable String name;
+    private String registryId;
     /**
      * @return Specific Connection Type
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private GetRegistryConnectionsResult(
-        @CustomType.Parameter("connectionSummaryCollections") List<GetRegistryConnectionsConnectionSummaryCollection> connectionSummaryCollections,
-        @CustomType.Parameter("dataAssetKey") String dataAssetKey,
-        @CustomType.Parameter("favoritesQueryParam") @Nullable String favoritesQueryParam,
-        @CustomType.Parameter("fields") @Nullable List<String> fields,
-        @CustomType.Parameter("filters") @Nullable List<GetRegistryConnectionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("registryId") String registryId,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.connectionSummaryCollections = connectionSummaryCollections;
-        this.dataAssetKey = dataAssetKey;
-        this.favoritesQueryParam = favoritesQueryParam;
-        this.fields = fields;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.registryId = registryId;
-        this.type = type;
-    }
-
+    private GetRegistryConnectionsResult() {}
     /**
      * @return The list of connection_summary_collection.
      * 
@@ -89,7 +68,7 @@ public final class GetRegistryConnectionsResult {
         return this.id;
     }
     /**
-     * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Optional<String> name() {
@@ -113,7 +92,7 @@ public final class GetRegistryConnectionsResult {
     public static Builder builder(GetRegistryConnectionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRegistryConnectionsConnectionSummaryCollection> connectionSummaryCollections;
         private String dataAssetKey;
@@ -124,11 +103,7 @@ public final class GetRegistryConnectionsResult {
         private @Nullable String name;
         private String registryId;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryConnectionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.connectionSummaryCollections = defaults.connectionSummaryCollections;
@@ -142,6 +117,7 @@ public final class GetRegistryConnectionsResult {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder connectionSummaryCollections(List<GetRegistryConnectionsConnectionSummaryCollection> connectionSummaryCollections) {
             this.connectionSummaryCollections = Objects.requireNonNull(connectionSummaryCollections);
             return this;
@@ -149,14 +125,17 @@ public final class GetRegistryConnectionsResult {
         public Builder connectionSummaryCollections(GetRegistryConnectionsConnectionSummaryCollection... connectionSummaryCollections) {
             return connectionSummaryCollections(List.of(connectionSummaryCollections));
         }
+        @CustomType.Setter
         public Builder dataAssetKey(String dataAssetKey) {
             this.dataAssetKey = Objects.requireNonNull(dataAssetKey);
             return this;
         }
+        @CustomType.Setter
         public Builder favoritesQueryParam(@Nullable String favoritesQueryParam) {
             this.favoritesQueryParam = favoritesQueryParam;
             return this;
         }
+        @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
             this.fields = fields;
             return this;
@@ -164,6 +143,7 @@ public final class GetRegistryConnectionsResult {
         public Builder fields(String... fields) {
             return fields(List.of(fields));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRegistryConnectionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -171,23 +151,38 @@ public final class GetRegistryConnectionsResult {
         public Builder filters(GetRegistryConnectionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder registryId(String registryId) {
             this.registryId = Objects.requireNonNull(registryId);
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public GetRegistryConnectionsResult build() {
-            return new GetRegistryConnectionsResult(connectionSummaryCollections, dataAssetKey, favoritesQueryParam, fields, filters, id, name, registryId, type);
+        }
+        public GetRegistryConnectionsResult build() {
+            final var o = new GetRegistryConnectionsResult();
+            o.connectionSummaryCollections = connectionSummaryCollections;
+            o.dataAssetKey = dataAssetKey;
+            o.favoritesQueryParam = favoritesQueryParam;
+            o.fields = fields;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.registryId = registryId;
+            o.type = type;
+            return o;
         }
     }
 }

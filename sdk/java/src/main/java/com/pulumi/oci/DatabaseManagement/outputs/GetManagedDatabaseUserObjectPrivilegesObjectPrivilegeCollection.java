@@ -14,13 +14,9 @@ public final class GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollecti
      * @return An array of object privileges.
      * 
      */
-    private final List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem> items;
+    private List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection(@CustomType.Parameter("items") List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection() {}
     /**
      * @return An array of object privileges.
      * 
@@ -36,27 +32,27 @@ public final class GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollecti
     public static Builder builder(GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem... items) {
             return items(List.of(items));
-        }        public GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection build() {
-            return new GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection(items);
+        }
+        public GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection build() {
+            final var o = new GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMaskingPoliciesMaskingPolicyCollection {
-    private final List<GetMaskingPoliciesMaskingPolicyCollectionItem> items;
+    private List<GetMaskingPoliciesMaskingPolicyCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetMaskingPoliciesMaskingPolicyCollection(@CustomType.Parameter("items") List<GetMaskingPoliciesMaskingPolicyCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetMaskingPoliciesMaskingPolicyCollection() {}
     public List<GetMaskingPoliciesMaskingPolicyCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetMaskingPoliciesMaskingPolicyCollection {
     public static Builder builder(GetMaskingPoliciesMaskingPolicyCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetMaskingPoliciesMaskingPolicyCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMaskingPoliciesMaskingPolicyCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetMaskingPoliciesMaskingPolicyCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetMaskingPoliciesMaskingPolicyCollectionItem... items) {
             return items(List.of(items));
-        }        public GetMaskingPoliciesMaskingPolicyCollection build() {
-            return new GetMaskingPoliciesMaskingPolicyCollection(items);
+        }
+        public GetMaskingPoliciesMaskingPolicyCollection build() {
+            final var o = new GetMaskingPoliciesMaskingPolicyCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -14,62 +14,41 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitorsResult {
-    private final String apmDomainId;
+    private String apmDomainId;
     /**
      * @return Unique name that can be edited. The name should not contain any confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetMonitorsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetMonitorsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of monitor_collection.
      * 
      */
-    private final List<GetMonitorsMonitorCollection> monitorCollections;
+    private List<GetMonitorsMonitorCollection> monitorCollections;
     /**
      * @return Type of the monitor.
      * 
      */
-    private final @Nullable String monitorType;
+    private @Nullable String monitorType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
      * 
      */
-    private final @Nullable String scriptId;
+    private @Nullable String scriptId;
     /**
      * @return Enables or disables the monitor.
      * 
      */
-    private final @Nullable String status;
-    private final @Nullable String vantagePoint;
+    private @Nullable String status;
+    private @Nullable String vantagePoint;
 
-    @CustomType.Constructor
-    private GetMonitorsResult(
-        @CustomType.Parameter("apmDomainId") String apmDomainId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetMonitorsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("monitorCollections") List<GetMonitorsMonitorCollection> monitorCollections,
-        @CustomType.Parameter("monitorType") @Nullable String monitorType,
-        @CustomType.Parameter("scriptId") @Nullable String scriptId,
-        @CustomType.Parameter("status") @Nullable String status,
-        @CustomType.Parameter("vantagePoint") @Nullable String vantagePoint) {
-        this.apmDomainId = apmDomainId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.monitorCollections = monitorCollections;
-        this.monitorType = monitorType;
-        this.scriptId = scriptId;
-        this.status = status;
-        this.vantagePoint = vantagePoint;
-    }
-
+    private GetMonitorsResult() {}
     public String apmDomainId() {
         return this.apmDomainId;
     }
@@ -129,7 +108,7 @@ public final class GetMonitorsResult {
     public static Builder builder(GetMonitorsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apmDomainId;
         private @Nullable String displayName;
@@ -140,11 +119,7 @@ public final class GetMonitorsResult {
         private @Nullable String scriptId;
         private @Nullable String status;
         private @Nullable String vantagePoint;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitorsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apmDomainId = defaults.apmDomainId;
@@ -158,14 +133,17 @@ public final class GetMonitorsResult {
     	      this.vantagePoint = defaults.vantagePoint;
         }
 
+        @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
             this.apmDomainId = Objects.requireNonNull(apmDomainId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetMonitorsFilter> filters) {
             this.filters = filters;
             return this;
@@ -173,10 +151,12 @@ public final class GetMonitorsResult {
         public Builder filters(GetMonitorsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder monitorCollections(List<GetMonitorsMonitorCollection> monitorCollections) {
             this.monitorCollections = Objects.requireNonNull(monitorCollections);
             return this;
@@ -184,23 +164,38 @@ public final class GetMonitorsResult {
         public Builder monitorCollections(GetMonitorsMonitorCollection... monitorCollections) {
             return monitorCollections(List.of(monitorCollections));
         }
+        @CustomType.Setter
         public Builder monitorType(@Nullable String monitorType) {
             this.monitorType = monitorType;
             return this;
         }
+        @CustomType.Setter
         public Builder scriptId(@Nullable String scriptId) {
             this.scriptId = scriptId;
             return this;
         }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
         }
+        @CustomType.Setter
         public Builder vantagePoint(@Nullable String vantagePoint) {
             this.vantagePoint = vantagePoint;
             return this;
-        }        public GetMonitorsResult build() {
-            return new GetMonitorsResult(apmDomainId, displayName, filters, id, monitorCollections, monitorType, scriptId, status, vantagePoint);
+        }
+        public GetMonitorsResult build() {
+            final var o = new GetMonitorsResult();
+            o.apmDomainId = apmDomainId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.monitorCollections = monitorCollections;
+            o.monitorType = monitorType;
+            o.scriptId = scriptId;
+            o.status = status;
+            o.vantagePoint = vantagePoint;
+            return o;
         }
     }
 }

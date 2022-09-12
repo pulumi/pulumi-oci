@@ -37,7 +37,10 @@ __all__ = [
     'BuildRunBuildRunSourceTriggerInfo',
     'BuildRunBuildRunSourceTriggerInfoAction',
     'BuildRunBuildRunSourceTriggerInfoActionFilter',
+    'BuildRunBuildRunSourceTriggerInfoActionFilterExclude',
+    'BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter',
     'BuildRunBuildRunSourceTriggerInfoActionFilterInclude',
+    'BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter',
     'BuildRunCommitInfo',
     'ConnectionTlsVerifyConfig',
     'DeployArtifactDeployArtifactSource',
@@ -86,7 +89,10 @@ __all__ = [
     'RepositoryMirrorRepositoryConfigTriggerSchedule',
     'TriggerAction',
     'TriggerActionFilter',
+    'TriggerActionFilterExclude',
+    'TriggerActionFilterExcludeFileFilter',
     'TriggerActionFilterInclude',
+    'TriggerActionFilterIncludeFileFilter',
     'GetBuildPipelineBuildPipelineParameterResult',
     'GetBuildPipelineBuildPipelineParameterItemResult',
     'GetBuildPipelineStageBuildPipelineStagePredecessorCollectionResult',
@@ -129,7 +135,10 @@ __all__ = [
     'GetBuildRunBuildRunSourceTriggerInfoResult',
     'GetBuildRunBuildRunSourceTriggerInfoActionResult',
     'GetBuildRunBuildRunSourceTriggerInfoActionFilterResult',
+    'GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeResult',
+    'GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterResult',
     'GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeResult',
+    'GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterResult',
     'GetBuildRunCommitInfoResult',
     'GetBuildRunsBuildRunSummaryCollectionResult',
     'GetBuildRunsBuildRunSummaryCollectionItemResult',
@@ -290,13 +299,19 @@ __all__ = [
     'GetRepositoryRefsRepositoryRefCollectionItemResult',
     'GetTriggerActionResult',
     'GetTriggerActionFilterResult',
+    'GetTriggerActionFilterExcludeResult',
+    'GetTriggerActionFilterExcludeFileFilterResult',
     'GetTriggerActionFilterIncludeResult',
+    'GetTriggerActionFilterIncludeFileFilterResult',
     'GetTriggersFilterResult',
     'GetTriggersTriggerCollectionResult',
     'GetTriggersTriggerCollectionItemResult',
     'GetTriggersTriggerCollectionItemActionResult',
     'GetTriggersTriggerCollectionItemActionFilterResult',
+    'GetTriggersTriggerCollectionItemActionFilterExcludeResult',
+    'GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterResult',
     'GetTriggersTriggerCollectionItemActionFilterIncludeResult',
+    'GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterResult',
 ]
 
 @pulumi.output_type
@@ -1482,6 +1497,7 @@ class BuildRunBuildRunSourceTriggerInfoActionFilter(dict):
 
     def __init__(__self__, *,
                  events: Optional[Sequence[str]] = None,
+                 excludes: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilterExclude']] = None,
                  includes: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilterInclude']] = None,
                  trigger_source: Optional[str] = None):
         """
@@ -1491,6 +1507,8 @@ class BuildRunBuildRunSourceTriggerInfoActionFilter(dict):
         """
         if events is not None:
             pulumi.set(__self__, "events", events)
+        if excludes is not None:
+            pulumi.set(__self__, "excludes", excludes)
         if includes is not None:
             pulumi.set(__self__, "includes", includes)
         if trigger_source is not None:
@@ -1503,6 +1521,11 @@ class BuildRunBuildRunSourceTriggerInfoActionFilter(dict):
         The events, for example, PUSH, PULL_REQUEST_MERGE.
         """
         return pulumi.get(self, "events")
+
+    @property
+    @pulumi.getter
+    def excludes(self) -> Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilterExclude']]:
+        return pulumi.get(self, "excludes")
 
     @property
     @pulumi.getter
@@ -1522,12 +1545,74 @@ class BuildRunBuildRunSourceTriggerInfoActionFilter(dict):
 
 
 @pulumi.output_type
+class BuildRunBuildRunSourceTriggerInfoActionFilterExclude(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fileFilters":
+            suggest = "file_filters"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BuildRunBuildRunSourceTriggerInfoActionFilterExclude. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BuildRunBuildRunSourceTriggerInfoActionFilterExclude.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BuildRunBuildRunSourceTriggerInfoActionFilterExclude.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 file_filters: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter']] = None):
+        if file_filters is not None:
+            pulumi.set(__self__, "file_filters", file_filters)
+
+    @property
+    @pulumi.getter(name="fileFilters")
+    def file_filters(self) -> Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter']]:
+        return pulumi.get(self, "file_filters")
+
+
+@pulumi.output_type
+class BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "filePaths":
+            suggest = "file_paths"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 file_paths: Optional[Sequence[str]] = None):
+        if file_paths is not None:
+            pulumi.set(__self__, "file_paths", file_paths)
+
+    @property
+    @pulumi.getter(name="filePaths")
+    def file_paths(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "file_paths")
+
+
+@pulumi.output_type
 class BuildRunBuildRunSourceTriggerInfoActionFilterInclude(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
         if key == "baseRef":
             suggest = "base_ref"
+        elif key == "fileFilters":
+            suggest = "file_filters"
         elif key == "headRef":
             suggest = "head_ref"
 
@@ -1544,6 +1629,7 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterInclude(dict):
 
     def __init__(__self__, *,
                  base_ref: Optional[str] = None,
+                 file_filters: Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter']] = None,
                  head_ref: Optional[str] = None):
         """
         :param str base_ref: The target branch for pull requests; not applicable for push requests.
@@ -1551,6 +1637,8 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterInclude(dict):
         """
         if base_ref is not None:
             pulumi.set(__self__, "base_ref", base_ref)
+        if file_filters is not None:
+            pulumi.set(__self__, "file_filters", file_filters)
         if head_ref is not None:
             pulumi.set(__self__, "head_ref", head_ref)
 
@@ -1563,12 +1651,47 @@ class BuildRunBuildRunSourceTriggerInfoActionFilterInclude(dict):
         return pulumi.get(self, "base_ref")
 
     @property
+    @pulumi.getter(name="fileFilters")
+    def file_filters(self) -> Optional[Sequence['outputs.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter']]:
+        return pulumi.get(self, "file_filters")
+
+    @property
     @pulumi.getter(name="headRef")
     def head_ref(self) -> Optional[str]:
         """
         Branch for push event; source branch for pull requests.
         """
         return pulumi.get(self, "head_ref")
+
+
+@pulumi.output_type
+class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "filePaths":
+            suggest = "file_paths"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 file_paths: Optional[Sequence[str]] = None):
+        if file_paths is not None:
+            pulumi.set(__self__, "file_paths", file_paths)
+
+    @property
+    @pulumi.getter(name="filePaths")
+    def file_paths(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "file_paths")
 
 
 @pulumi.output_type
@@ -3795,6 +3918,7 @@ class TriggerActionFilter(dict):
     def __init__(__self__, *,
                  trigger_source: str,
                  events: Optional[Sequence[str]] = None,
+                 exclude: Optional['outputs.TriggerActionFilterExclude'] = None,
                  include: Optional['outputs.TriggerActionFilterInclude'] = None):
         """
         :param str trigger_source: (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
@@ -3804,6 +3928,8 @@ class TriggerActionFilter(dict):
         pulumi.set(__self__, "trigger_source", trigger_source)
         if events is not None:
             pulumi.set(__self__, "events", events)
+        if exclude is not None:
+            pulumi.set(__self__, "exclude", exclude)
         if include is not None:
             pulumi.set(__self__, "include", include)
 
@@ -3825,11 +3951,76 @@ class TriggerActionFilter(dict):
 
     @property
     @pulumi.getter
+    def exclude(self) -> Optional['outputs.TriggerActionFilterExclude']:
+        return pulumi.get(self, "exclude")
+
+    @property
+    @pulumi.getter
     def include(self) -> Optional['outputs.TriggerActionFilterInclude']:
         """
         (Updatable) Attributes to filter GitLab self-hosted server events.
         """
         return pulumi.get(self, "include")
+
+
+@pulumi.output_type
+class TriggerActionFilterExclude(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fileFilter":
+            suggest = "file_filter"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TriggerActionFilterExclude. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TriggerActionFilterExclude.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TriggerActionFilterExclude.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 file_filter: Optional['outputs.TriggerActionFilterExcludeFileFilter'] = None):
+        if file_filter is not None:
+            pulumi.set(__self__, "file_filter", file_filter)
+
+    @property
+    @pulumi.getter(name="fileFilter")
+    def file_filter(self) -> Optional['outputs.TriggerActionFilterExcludeFileFilter']:
+        return pulumi.get(self, "file_filter")
+
+
+@pulumi.output_type
+class TriggerActionFilterExcludeFileFilter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "filePaths":
+            suggest = "file_paths"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TriggerActionFilterExcludeFileFilter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TriggerActionFilterExcludeFileFilter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TriggerActionFilterExcludeFileFilter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 file_paths: Optional[Sequence[str]] = None):
+        if file_paths is not None:
+            pulumi.set(__self__, "file_paths", file_paths)
+
+    @property
+    @pulumi.getter(name="filePaths")
+    def file_paths(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "file_paths")
 
 
 @pulumi.output_type
@@ -3839,6 +4030,8 @@ class TriggerActionFilterInclude(dict):
         suggest = None
         if key == "baseRef":
             suggest = "base_ref"
+        elif key == "fileFilter":
+            suggest = "file_filter"
         elif key == "headRef":
             suggest = "head_ref"
 
@@ -3855,6 +4048,7 @@ class TriggerActionFilterInclude(dict):
 
     def __init__(__self__, *,
                  base_ref: Optional[str] = None,
+                 file_filter: Optional['outputs.TriggerActionFilterIncludeFileFilter'] = None,
                  head_ref: Optional[str] = None):
         """
         :param str base_ref: (Updatable) The target branch for pull requests; not applicable for push requests.
@@ -3862,6 +4056,8 @@ class TriggerActionFilterInclude(dict):
         """
         if base_ref is not None:
             pulumi.set(__self__, "base_ref", base_ref)
+        if file_filter is not None:
+            pulumi.set(__self__, "file_filter", file_filter)
         if head_ref is not None:
             pulumi.set(__self__, "head_ref", head_ref)
 
@@ -3874,12 +4070,47 @@ class TriggerActionFilterInclude(dict):
         return pulumi.get(self, "base_ref")
 
     @property
+    @pulumi.getter(name="fileFilter")
+    def file_filter(self) -> Optional['outputs.TriggerActionFilterIncludeFileFilter']:
+        return pulumi.get(self, "file_filter")
+
+    @property
     @pulumi.getter(name="headRef")
     def head_ref(self) -> Optional[str]:
         """
         (Updatable) Branch for push event; source branch for pull requests.
         """
         return pulumi.get(self, "head_ref")
+
+
+@pulumi.output_type
+class TriggerActionFilterIncludeFileFilter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "filePaths":
+            suggest = "file_paths"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TriggerActionFilterIncludeFileFilter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TriggerActionFilterIncludeFileFilter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TriggerActionFilterIncludeFileFilter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 file_paths: Optional[Sequence[str]] = None):
+        if file_paths is not None:
+            pulumi.set(__self__, "file_paths", file_paths)
+
+    @property
+    @pulumi.getter(name="filePaths")
+    def file_paths(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "file_paths")
 
 
 @pulumi.output_type
@@ -5578,6 +5809,7 @@ class GetBuildRunBuildRunSourceTriggerInfoActionResult(dict):
 class GetBuildRunBuildRunSourceTriggerInfoActionFilterResult(dict):
     def __init__(__self__, *,
                  events: Sequence[str],
+                 excludes: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeResult'],
                  includes: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeResult'],
                  trigger_source: str):
         """
@@ -5586,6 +5818,7 @@ class GetBuildRunBuildRunSourceTriggerInfoActionFilterResult(dict):
         :param str trigger_source: Source of the trigger. Allowed values are, GITHUB and GITLAB.
         """
         pulumi.set(__self__, "events", events)
+        pulumi.set(__self__, "excludes", excludes)
         pulumi.set(__self__, "includes", includes)
         pulumi.set(__self__, "trigger_source", trigger_source)
 
@@ -5596,6 +5829,11 @@ class GetBuildRunBuildRunSourceTriggerInfoActionFilterResult(dict):
         The events, for example, PUSH, PULL_REQUEST_MERGE.
         """
         return pulumi.get(self, "events")
+
+    @property
+    @pulumi.getter
+    def excludes(self) -> Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeResult']:
+        return pulumi.get(self, "excludes")
 
     @property
     @pulumi.getter
@@ -5615,15 +5853,41 @@ class GetBuildRunBuildRunSourceTriggerInfoActionFilterResult(dict):
 
 
 @pulumi.output_type
+class GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeResult(dict):
+    def __init__(__self__, *,
+                 file_filters: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterResult']):
+        pulumi.set(__self__, "file_filters", file_filters)
+
+    @property
+    @pulumi.getter(name="fileFilters")
+    def file_filters(self) -> Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterResult']:
+        return pulumi.get(self, "file_filters")
+
+
+@pulumi.output_type
+class GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilterResult(dict):
+    def __init__(__self__, *,
+                 file_paths: Sequence[str]):
+        pulumi.set(__self__, "file_paths", file_paths)
+
+    @property
+    @pulumi.getter(name="filePaths")
+    def file_paths(self) -> Sequence[str]:
+        return pulumi.get(self, "file_paths")
+
+
+@pulumi.output_type
 class GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeResult(dict):
     def __init__(__self__, *,
                  base_ref: str,
+                 file_filters: Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterResult'],
                  head_ref: str):
         """
         :param str base_ref: The target branch for pull requests; not applicable for push requests.
         :param str head_ref: Branch for push event; source branch for pull requests.
         """
         pulumi.set(__self__, "base_ref", base_ref)
+        pulumi.set(__self__, "file_filters", file_filters)
         pulumi.set(__self__, "head_ref", head_ref)
 
     @property
@@ -5635,12 +5899,29 @@ class GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeResult(dict):
         return pulumi.get(self, "base_ref")
 
     @property
+    @pulumi.getter(name="fileFilters")
+    def file_filters(self) -> Sequence['outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterResult']:
+        return pulumi.get(self, "file_filters")
+
+    @property
     @pulumi.getter(name="headRef")
     def head_ref(self) -> str:
         """
         Branch for push event; source branch for pull requests.
         """
         return pulumi.get(self, "head_ref")
+
+
+@pulumi.output_type
+class GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterResult(dict):
+    def __init__(__self__, *,
+                 file_paths: Sequence[str]):
+        pulumi.set(__self__, "file_paths", file_paths)
+
+    @property
+    @pulumi.getter(name="filePaths")
+    def file_paths(self) -> Sequence[str]:
+        return pulumi.get(self, "file_paths")
 
 
 @pulumi.output_type
@@ -12861,6 +13142,7 @@ class GetTriggerActionResult(dict):
 class GetTriggerActionFilterResult(dict):
     def __init__(__self__, *,
                  events: Sequence[str],
+                 excludes: Sequence['outputs.GetTriggerActionFilterExcludeResult'],
                  includes: Sequence['outputs.GetTriggerActionFilterIncludeResult'],
                  trigger_source: str):
         """
@@ -12869,6 +13151,7 @@ class GetTriggerActionFilterResult(dict):
         :param str trigger_source: Source of the trigger. Allowed values are, GITHUB and GITLAB.
         """
         pulumi.set(__self__, "events", events)
+        pulumi.set(__self__, "excludes", excludes)
         pulumi.set(__self__, "includes", includes)
         pulumi.set(__self__, "trigger_source", trigger_source)
 
@@ -12879,6 +13162,11 @@ class GetTriggerActionFilterResult(dict):
         The events, for example, PUSH, PULL_REQUEST_MERGE.
         """
         return pulumi.get(self, "events")
+
+    @property
+    @pulumi.getter
+    def excludes(self) -> Sequence['outputs.GetTriggerActionFilterExcludeResult']:
+        return pulumi.get(self, "excludes")
 
     @property
     @pulumi.getter
@@ -12898,15 +13186,41 @@ class GetTriggerActionFilterResult(dict):
 
 
 @pulumi.output_type
+class GetTriggerActionFilterExcludeResult(dict):
+    def __init__(__self__, *,
+                 file_filters: Sequence['outputs.GetTriggerActionFilterExcludeFileFilterResult']):
+        pulumi.set(__self__, "file_filters", file_filters)
+
+    @property
+    @pulumi.getter(name="fileFilters")
+    def file_filters(self) -> Sequence['outputs.GetTriggerActionFilterExcludeFileFilterResult']:
+        return pulumi.get(self, "file_filters")
+
+
+@pulumi.output_type
+class GetTriggerActionFilterExcludeFileFilterResult(dict):
+    def __init__(__self__, *,
+                 file_paths: Sequence[str]):
+        pulumi.set(__self__, "file_paths", file_paths)
+
+    @property
+    @pulumi.getter(name="filePaths")
+    def file_paths(self) -> Sequence[str]:
+        return pulumi.get(self, "file_paths")
+
+
+@pulumi.output_type
 class GetTriggerActionFilterIncludeResult(dict):
     def __init__(__self__, *,
                  base_ref: str,
+                 file_filters: Sequence['outputs.GetTriggerActionFilterIncludeFileFilterResult'],
                  head_ref: str):
         """
         :param str base_ref: The target branch for pull requests; not applicable for push requests.
         :param str head_ref: Branch for push event; source branch for pull requests.
         """
         pulumi.set(__self__, "base_ref", base_ref)
+        pulumi.set(__self__, "file_filters", file_filters)
         pulumi.set(__self__, "head_ref", head_ref)
 
     @property
@@ -12918,12 +13232,29 @@ class GetTriggerActionFilterIncludeResult(dict):
         return pulumi.get(self, "base_ref")
 
     @property
+    @pulumi.getter(name="fileFilters")
+    def file_filters(self) -> Sequence['outputs.GetTriggerActionFilterIncludeFileFilterResult']:
+        return pulumi.get(self, "file_filters")
+
+    @property
     @pulumi.getter(name="headRef")
     def head_ref(self) -> str:
         """
         Branch for push event; source branch for pull requests.
         """
         return pulumi.get(self, "head_ref")
+
+
+@pulumi.output_type
+class GetTriggerActionFilterIncludeFileFilterResult(dict):
+    def __init__(__self__, *,
+                 file_paths: Sequence[str]):
+        pulumi.set(__self__, "file_paths", file_paths)
+
+    @property
+    @pulumi.getter(name="filePaths")
+    def file_paths(self) -> Sequence[str]:
+        return pulumi.get(self, "file_paths")
 
 
 @pulumi.output_type
@@ -12970,6 +13301,7 @@ class GetTriggersTriggerCollectionItemResult(dict):
     def __init__(__self__, *,
                  actions: Sequence['outputs.GetTriggersTriggerCollectionItemActionResult'],
                  compartment_id: str,
+                 connection_id: str,
                  defined_tags: Mapping[str, Any],
                  description: str,
                  display_name: str,
@@ -13004,6 +13336,7 @@ class GetTriggersTriggerCollectionItemResult(dict):
         """
         pulumi.set(__self__, "actions", actions)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "connection_id", connection_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
@@ -13034,6 +13367,11 @@ class GetTriggersTriggerCollectionItemResult(dict):
         The OCID of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> str:
+        return pulumi.get(self, "connection_id")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -13192,6 +13530,7 @@ class GetTriggersTriggerCollectionItemActionResult(dict):
 class GetTriggersTriggerCollectionItemActionFilterResult(dict):
     def __init__(__self__, *,
                  events: Sequence[str],
+                 excludes: Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterExcludeResult'],
                  includes: Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterIncludeResult'],
                  trigger_source: str):
         """
@@ -13200,6 +13539,7 @@ class GetTriggersTriggerCollectionItemActionFilterResult(dict):
         :param str trigger_source: Source of the trigger. Allowed values are, GITHUB and GITLAB.
         """
         pulumi.set(__self__, "events", events)
+        pulumi.set(__self__, "excludes", excludes)
         pulumi.set(__self__, "includes", includes)
         pulumi.set(__self__, "trigger_source", trigger_source)
 
@@ -13210,6 +13550,11 @@ class GetTriggersTriggerCollectionItemActionFilterResult(dict):
         The events, for example, PUSH, PULL_REQUEST_MERGE.
         """
         return pulumi.get(self, "events")
+
+    @property
+    @pulumi.getter
+    def excludes(self) -> Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterExcludeResult']:
+        return pulumi.get(self, "excludes")
 
     @property
     @pulumi.getter
@@ -13229,15 +13574,41 @@ class GetTriggersTriggerCollectionItemActionFilterResult(dict):
 
 
 @pulumi.output_type
+class GetTriggersTriggerCollectionItemActionFilterExcludeResult(dict):
+    def __init__(__self__, *,
+                 file_filters: Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterResult']):
+        pulumi.set(__self__, "file_filters", file_filters)
+
+    @property
+    @pulumi.getter(name="fileFilters")
+    def file_filters(self) -> Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterResult']:
+        return pulumi.get(self, "file_filters")
+
+
+@pulumi.output_type
+class GetTriggersTriggerCollectionItemActionFilterExcludeFileFilterResult(dict):
+    def __init__(__self__, *,
+                 file_paths: Sequence[str]):
+        pulumi.set(__self__, "file_paths", file_paths)
+
+    @property
+    @pulumi.getter(name="filePaths")
+    def file_paths(self) -> Sequence[str]:
+        return pulumi.get(self, "file_paths")
+
+
+@pulumi.output_type
 class GetTriggersTriggerCollectionItemActionFilterIncludeResult(dict):
     def __init__(__self__, *,
                  base_ref: str,
+                 file_filters: Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterResult'],
                  head_ref: str):
         """
         :param str base_ref: The target branch for pull requests; not applicable for push requests.
         :param str head_ref: Branch for push event; source branch for pull requests.
         """
         pulumi.set(__self__, "base_ref", base_ref)
+        pulumi.set(__self__, "file_filters", file_filters)
         pulumi.set(__self__, "head_ref", head_ref)
 
     @property
@@ -13249,11 +13620,28 @@ class GetTriggersTriggerCollectionItemActionFilterIncludeResult(dict):
         return pulumi.get(self, "base_ref")
 
     @property
+    @pulumi.getter(name="fileFilters")
+    def file_filters(self) -> Sequence['outputs.GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterResult']:
+        return pulumi.get(self, "file_filters")
+
+    @property
     @pulumi.getter(name="headRef")
     def head_ref(self) -> str:
         """
         Branch for push event; source branch for pull requests.
         """
         return pulumi.get(self, "head_ref")
+
+
+@pulumi.output_type
+class GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterResult(dict):
+    def __init__(__self__, *,
+                 file_paths: Sequence[str]):
+        pulumi.set(__self__, "file_paths", file_paths)
+
+    @property
+    @pulumi.getter(name="filePaths")
+    def file_paths(self) -> Sequence[str]:
+        return pulumi.get(self, "file_paths")
 
 

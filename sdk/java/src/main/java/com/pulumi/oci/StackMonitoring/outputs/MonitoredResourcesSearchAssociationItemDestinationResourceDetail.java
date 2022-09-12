@@ -15,21 +15,14 @@ public final class MonitoredResourcesSearchAssociationItemDestinationResourceDet
      * @return Monitored Resource Name
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return Monitored Resource Type
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private MonitoredResourcesSearchAssociationItemDestinationResourceDetail(
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.name = name;
-        this.type = type;
-    }
-
+    private MonitoredResourcesSearchAssociationItemDestinationResourceDetail() {}
     /**
      * @return Monitored Resource Name
      * 
@@ -52,30 +45,32 @@ public final class MonitoredResourcesSearchAssociationItemDestinationResourceDet
     public static Builder builder(MonitoredResourcesSearchAssociationItemDestinationResourceDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String name;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MonitoredResourcesSearchAssociationItemDestinationResourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public MonitoredResourcesSearchAssociationItemDestinationResourceDetail build() {
-            return new MonitoredResourcesSearchAssociationItemDestinationResourceDetail(name, type);
+        }
+        public MonitoredResourcesSearchAssociationItemDestinationResourceDetail build() {
+            final var o = new MonitoredResourcesSearchAssociationItemDestinationResourceDetail();
+            o.name = name;
+            o.type = type;
+            return o;
         }
     }
 }

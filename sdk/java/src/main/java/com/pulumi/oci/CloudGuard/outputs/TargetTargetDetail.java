@@ -17,35 +17,24 @@ public final class TargetTargetDetail {
      * @return The name of the security zone to associate this compartment with.
      * 
      */
-    private final @Nullable String securityZoneDisplayName;
+    private @Nullable String securityZoneDisplayName;
     /**
      * @return The OCID of the security zone to associate this compartment with.
      * 
      */
-    private final @Nullable String securityZoneId;
+    private @Nullable String securityZoneId;
     /**
-     * @return possible type of targets(compartment/HCMCloud/ERPCloud)
+     * @return possible type of targets(COMPARTMENT/FACLOUD)
      * 
      */
-    private final @Nullable String targetResourceType;
+    private @Nullable String targetResourceType;
     /**
      * @return The list of security zone recipes to associate this compartment with.
      * 
      */
-    private final @Nullable List<TargetTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes;
+    private @Nullable List<TargetTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes;
 
-    @CustomType.Constructor
-    private TargetTargetDetail(
-        @CustomType.Parameter("securityZoneDisplayName") @Nullable String securityZoneDisplayName,
-        @CustomType.Parameter("securityZoneId") @Nullable String securityZoneId,
-        @CustomType.Parameter("targetResourceType") @Nullable String targetResourceType,
-        @CustomType.Parameter("targetSecurityZoneRecipes") @Nullable List<TargetTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes) {
-        this.securityZoneDisplayName = securityZoneDisplayName;
-        this.securityZoneId = securityZoneId;
-        this.targetResourceType = targetResourceType;
-        this.targetSecurityZoneRecipes = targetSecurityZoneRecipes;
-    }
-
+    private TargetTargetDetail() {}
     /**
      * @return The name of the security zone to associate this compartment with.
      * 
@@ -61,7 +50,7 @@ public final class TargetTargetDetail {
         return Optional.ofNullable(this.securityZoneId);
     }
     /**
-     * @return possible type of targets(compartment/HCMCloud/ERPCloud)
+     * @return possible type of targets(COMPARTMENT/FACLOUD)
      * 
      */
     public Optional<String> targetResourceType() {
@@ -82,17 +71,13 @@ public final class TargetTargetDetail {
     public static Builder builder(TargetTargetDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String securityZoneDisplayName;
         private @Nullable String securityZoneId;
         private @Nullable String targetResourceType;
         private @Nullable List<TargetTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(TargetTargetDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.securityZoneDisplayName = defaults.securityZoneDisplayName;
@@ -101,26 +86,36 @@ public final class TargetTargetDetail {
     	      this.targetSecurityZoneRecipes = defaults.targetSecurityZoneRecipes;
         }
 
+        @CustomType.Setter
         public Builder securityZoneDisplayName(@Nullable String securityZoneDisplayName) {
             this.securityZoneDisplayName = securityZoneDisplayName;
             return this;
         }
+        @CustomType.Setter
         public Builder securityZoneId(@Nullable String securityZoneId) {
             this.securityZoneId = securityZoneId;
             return this;
         }
+        @CustomType.Setter
         public Builder targetResourceType(@Nullable String targetResourceType) {
             this.targetResourceType = targetResourceType;
             return this;
         }
+        @CustomType.Setter
         public Builder targetSecurityZoneRecipes(@Nullable List<TargetTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes) {
             this.targetSecurityZoneRecipes = targetSecurityZoneRecipes;
             return this;
         }
         public Builder targetSecurityZoneRecipes(TargetTargetDetailTargetSecurityZoneRecipe... targetSecurityZoneRecipes) {
             return targetSecurityZoneRecipes(List.of(targetSecurityZoneRecipes));
-        }        public TargetTargetDetail build() {
-            return new TargetTargetDetail(securityZoneDisplayName, securityZoneId, targetResourceType, targetSecurityZoneRecipes);
+        }
+        public TargetTargetDetail build() {
+            final var o = new TargetTargetDetail();
+            o.securityZoneDisplayName = securityZoneDisplayName;
+            o.securityZoneId = securityZoneId;
+            o.targetResourceType = targetResourceType;
+            o.targetSecurityZoneRecipes = targetSecurityZoneRecipes;
+            return o;
         }
     }
 }

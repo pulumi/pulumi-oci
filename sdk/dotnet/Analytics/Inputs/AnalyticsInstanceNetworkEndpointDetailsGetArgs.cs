@@ -18,6 +18,18 @@ namespace Pulumi.Oci.Analytics.Inputs
         [Input("networkEndpointType", required: true)]
         public Input<string> NetworkEndpointType { get; set; } = null!;
 
+        [Input("networkSecurityGroupIds")]
+        private InputList<string>? _networkSecurityGroupIds;
+
+        /// <summary>
+        /// Network Security Group OCIDs for an Analytics instance.
+        /// </summary>
+        public InputList<string> NetworkSecurityGroupIds
+        {
+            get => _networkSecurityGroupIds ?? (_networkSecurityGroupIds = new InputList<string>());
+            set => _networkSecurityGroupIds = value;
+        }
+
         /// <summary>
         /// The subnet OCID for the private endpoint.
         /// </summary>
@@ -34,12 +46,24 @@ namespace Pulumi.Oci.Analytics.Inputs
         private InputList<string>? _whitelistedIps;
 
         /// <summary>
-        /// Source IP addresses or IP address ranges igress rules.
+        /// Source IP addresses or IP address ranges in ingress rules.
         /// </summary>
         public InputList<string> WhitelistedIps
         {
             get => _whitelistedIps ?? (_whitelistedIps = new InputList<string>());
             set => _whitelistedIps = value;
+        }
+
+        [Input("whitelistedServices")]
+        private InputList<string>? _whitelistedServices;
+
+        /// <summary>
+        /// Oracle Cloud Services that are allowed to access this Analytics instance.
+        /// </summary>
+        public InputList<string> WhitelistedServices
+        {
+            get => _whitelistedServices ?? (_whitelistedServices = new InputList<string>());
+            set => _whitelistedServices = value;
         }
 
         [Input("whitelistedVcns")]

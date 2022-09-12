@@ -15,13 +15,9 @@ public final class DbSystemsUpgradeMaintenanceWindowDaysOfWeek {
      * @return Name of the month of the year.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private DbSystemsUpgradeMaintenanceWindowDaysOfWeek(@CustomType.Parameter("name") @Nullable String name) {
-        this.name = name;
-    }
-
+    private DbSystemsUpgradeMaintenanceWindowDaysOfWeek() {}
     /**
      * @return Name of the month of the year.
      * 
@@ -37,24 +33,24 @@ public final class DbSystemsUpgradeMaintenanceWindowDaysOfWeek {
     public static Builder builder(DbSystemsUpgradeMaintenanceWindowDaysOfWeek defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DbSystemsUpgradeMaintenanceWindowDaysOfWeek defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public DbSystemsUpgradeMaintenanceWindowDaysOfWeek build() {
-            return new DbSystemsUpgradeMaintenanceWindowDaysOfWeek(name);
+        }
+        public DbSystemsUpgradeMaintenanceWindowDaysOfWeek build() {
+            final var o = new DbSystemsUpgradeMaintenanceWindowDaysOfWeek();
+            o.name = name;
+            return o;
         }
     }
 }

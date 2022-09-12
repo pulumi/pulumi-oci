@@ -14,13 +14,9 @@ public final class GetDeploymentDeploymentArgument {
      * @return A list of stage predecessors for a stage.
      * 
      */
-    private final List<GetDeploymentDeploymentArgumentItem> items;
+    private List<GetDeploymentDeploymentArgumentItem> items;
 
-    @CustomType.Constructor
-    private GetDeploymentDeploymentArgument(@CustomType.Parameter("items") List<GetDeploymentDeploymentArgumentItem> items) {
-        this.items = items;
-    }
-
+    private GetDeploymentDeploymentArgument() {}
     /**
      * @return A list of stage predecessors for a stage.
      * 
@@ -36,27 +32,27 @@ public final class GetDeploymentDeploymentArgument {
     public static Builder builder(GetDeploymentDeploymentArgument defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentDeploymentArgumentItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentDeploymentArgument defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDeploymentDeploymentArgumentItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDeploymentDeploymentArgumentItem... items) {
             return items(List.of(items));
-        }        public GetDeploymentDeploymentArgument build() {
-            return new GetDeploymentDeploymentArgument(items);
+        }
+        public GetDeploymentDeploymentArgument build() {
+            final var o = new GetDeploymentDeploymentArgument();
+            o.items = items;
+            return o;
         }
     }
 }

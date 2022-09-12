@@ -18,49 +18,34 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResult {
      * @return Accuracy metric for a signal.
      * 
      */
-    private final Double fap;
+    private Double fap;
     /**
      * @return A boolean value to indicate if train goal/targetFap is achieved for trained model
      * 
      */
-    private final Boolean isTrainingGoalAchieved;
+    private Boolean isTrainingGoalAchieved;
     /**
      * @return The model accuracy metric on timestamp level.
      * 
      */
-    private final Double multivariateFap;
+    private Double multivariateFap;
     /**
      * @return Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
      * 
      */
-    private final List<GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail> rowReductionDetails;
+    private List<GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail> rowReductionDetails;
     /**
      * @return The list of signal details.
      * 
      */
-    private final List<GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail> signalDetails;
+    private List<GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail> signalDetails;
     /**
      * @return A warning message to explain the reason when targetFap cannot be achieved for trained model
      * 
      */
-    private final String warning;
+    private String warning;
 
-    @CustomType.Constructor
-    private GetDetectionModelsModelCollectionItemModelTrainingResult(
-        @CustomType.Parameter("fap") Double fap,
-        @CustomType.Parameter("isTrainingGoalAchieved") Boolean isTrainingGoalAchieved,
-        @CustomType.Parameter("multivariateFap") Double multivariateFap,
-        @CustomType.Parameter("rowReductionDetails") List<GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail> rowReductionDetails,
-        @CustomType.Parameter("signalDetails") List<GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail> signalDetails,
-        @CustomType.Parameter("warning") String warning) {
-        this.fap = fap;
-        this.isTrainingGoalAchieved = isTrainingGoalAchieved;
-        this.multivariateFap = multivariateFap;
-        this.rowReductionDetails = rowReductionDetails;
-        this.signalDetails = signalDetails;
-        this.warning = warning;
-    }
-
+    private GetDetectionModelsModelCollectionItemModelTrainingResult() {}
     /**
      * @return Accuracy metric for a signal.
      * 
@@ -111,7 +96,7 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResult {
     public static Builder builder(GetDetectionModelsModelCollectionItemModelTrainingResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double fap;
         private Boolean isTrainingGoalAchieved;
@@ -119,11 +104,7 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResult {
         private List<GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail> rowReductionDetails;
         private List<GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail> signalDetails;
         private String warning;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDetectionModelsModelCollectionItemModelTrainingResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.fap = defaults.fap;
@@ -134,18 +115,22 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResult {
     	      this.warning = defaults.warning;
         }
 
+        @CustomType.Setter
         public Builder fap(Double fap) {
             this.fap = Objects.requireNonNull(fap);
             return this;
         }
+        @CustomType.Setter
         public Builder isTrainingGoalAchieved(Boolean isTrainingGoalAchieved) {
             this.isTrainingGoalAchieved = Objects.requireNonNull(isTrainingGoalAchieved);
             return this;
         }
+        @CustomType.Setter
         public Builder multivariateFap(Double multivariateFap) {
             this.multivariateFap = Objects.requireNonNull(multivariateFap);
             return this;
         }
+        @CustomType.Setter
         public Builder rowReductionDetails(List<GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail> rowReductionDetails) {
             this.rowReductionDetails = Objects.requireNonNull(rowReductionDetails);
             return this;
@@ -153,6 +138,7 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResult {
         public Builder rowReductionDetails(GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail... rowReductionDetails) {
             return rowReductionDetails(List.of(rowReductionDetails));
         }
+        @CustomType.Setter
         public Builder signalDetails(List<GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail> signalDetails) {
             this.signalDetails = Objects.requireNonNull(signalDetails);
             return this;
@@ -160,11 +146,20 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResult {
         public Builder signalDetails(GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail... signalDetails) {
             return signalDetails(List.of(signalDetails));
         }
+        @CustomType.Setter
         public Builder warning(String warning) {
             this.warning = Objects.requireNonNull(warning);
             return this;
-        }        public GetDetectionModelsModelCollectionItemModelTrainingResult build() {
-            return new GetDetectionModelsModelCollectionItemModelTrainingResult(fap, isTrainingGoalAchieved, multivariateFap, rowReductionDetails, signalDetails, warning);
+        }
+        public GetDetectionModelsModelCollectionItemModelTrainingResult build() {
+            final var o = new GetDetectionModelsModelCollectionItemModelTrainingResult();
+            o.fap = fap;
+            o.isTrainingGoalAchieved = isTrainingGoalAchieved;
+            o.multivariateFap = multivariateFap;
+            o.rowReductionDetails = rowReductionDetails;
+            o.signalDetails = signalDetails;
+            o.warning = warning;
+            return o;
         }
     }
 }

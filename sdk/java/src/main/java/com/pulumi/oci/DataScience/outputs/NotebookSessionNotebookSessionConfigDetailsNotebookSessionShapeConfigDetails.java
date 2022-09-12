@@ -15,21 +15,14 @@ public final class NotebookSessionNotebookSessionConfigDetailsNotebookSessionSha
      * @return (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
      * 
      */
-    private final @Nullable Double memoryInGbs;
+    private @Nullable Double memoryInGbs;
     /**
      * @return (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
      * 
      */
-    private final @Nullable Double ocpus;
+    private @Nullable Double ocpus;
 
-    @CustomType.Constructor
-    private NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails(
-        @CustomType.Parameter("memoryInGbs") @Nullable Double memoryInGbs,
-        @CustomType.Parameter("ocpus") @Nullable Double ocpus) {
-        this.memoryInGbs = memoryInGbs;
-        this.ocpus = ocpus;
-    }
-
+    private NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails() {}
     /**
      * @return (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
      * 
@@ -52,30 +45,32 @@ public final class NotebookSessionNotebookSessionConfigDetailsNotebookSessionSha
     public static Builder builder(NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Double memoryInGbs;
         private @Nullable Double ocpus;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.ocpus = defaults.ocpus;
         }
 
+        @CustomType.Setter
         public Builder memoryInGbs(@Nullable Double memoryInGbs) {
             this.memoryInGbs = memoryInGbs;
             return this;
         }
+        @CustomType.Setter
         public Builder ocpus(@Nullable Double ocpus) {
             this.ocpus = ocpus;
             return this;
-        }        public NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails build() {
-            return new NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails(memoryInGbs, ocpus);
+        }
+        public NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails build() {
+            final var o = new NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails();
+            o.memoryInGbs = memoryInGbs;
+            o.ocpus = ocpus;
+            return o;
         }
     }
 }

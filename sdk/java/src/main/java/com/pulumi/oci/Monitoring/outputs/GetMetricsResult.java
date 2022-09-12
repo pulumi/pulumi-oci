@@ -21,61 +21,38 @@ public final class GetMetricsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
-    private final @Nullable Map<String,Object> dimensionFilters;
-    private final @Nullable List<GetMetricsFilter> filters;
-    private final @Nullable List<String> groupBies;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable Map<String,Object> dimensionFilters;
+    private @Nullable List<GetMetricsFilter> filters;
+    private @Nullable List<String> groupBies;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of metrics.
      * 
      */
-    private final List<GetMetricsMetric> metrics;
+    private List<GetMetricsMetric> metrics;
     /**
      * @return The name of the metric.  Example: `CpuUtilization`
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The source service or application emitting the metric.  Example: `oci_computeagent`
      * 
      */
-    private final @Nullable String namespace;
+    private @Nullable String namespace;
     /**
      * @return Resource group provided with the posted metric. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
      * 
      */
-    private final @Nullable String resourceGroup;
+    private @Nullable String resourceGroup;
 
-    @CustomType.Constructor
-    private GetMetricsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("dimensionFilters") @Nullable Map<String,Object> dimensionFilters,
-        @CustomType.Parameter("filters") @Nullable List<GetMetricsFilter> filters,
-        @CustomType.Parameter("groupBies") @Nullable List<String> groupBies,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("metrics") List<GetMetricsMetric> metrics,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("namespace") @Nullable String namespace,
-        @CustomType.Parameter("resourceGroup") @Nullable String resourceGroup) {
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.dimensionFilters = dimensionFilters;
-        this.filters = filters;
-        this.groupBies = groupBies;
-        this.id = id;
-        this.metrics = metrics;
-        this.name = name;
-        this.namespace = namespace;
-        this.resourceGroup = resourceGroup;
-    }
-
+    private GetMetricsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric.
      * 
@@ -138,7 +115,7 @@ public final class GetMetricsResult {
     public static Builder builder(GetMetricsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
@@ -150,11 +127,7 @@ public final class GetMetricsResult {
         private @Nullable String name;
         private @Nullable String namespace;
         private @Nullable String resourceGroup;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMetricsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -169,18 +142,22 @@ public final class GetMetricsResult {
     	      this.resourceGroup = defaults.resourceGroup;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder dimensionFilters(@Nullable Map<String,Object> dimensionFilters) {
             this.dimensionFilters = dimensionFilters;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetMetricsFilter> filters) {
             this.filters = filters;
             return this;
@@ -188,6 +165,7 @@ public final class GetMetricsResult {
         public Builder filters(GetMetricsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder groupBies(@Nullable List<String> groupBies) {
             this.groupBies = groupBies;
             return this;
@@ -195,10 +173,12 @@ public final class GetMetricsResult {
         public Builder groupBies(String... groupBies) {
             return groupBies(List.of(groupBies));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder metrics(List<GetMetricsMetric> metrics) {
             this.metrics = Objects.requireNonNull(metrics);
             return this;
@@ -206,19 +186,34 @@ public final class GetMetricsResult {
         public Builder metrics(GetMetricsMetric... metrics) {
             return metrics(List.of(metrics));
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(@Nullable String namespace) {
             this.namespace = namespace;
             return this;
         }
+        @CustomType.Setter
         public Builder resourceGroup(@Nullable String resourceGroup) {
             this.resourceGroup = resourceGroup;
             return this;
-        }        public GetMetricsResult build() {
-            return new GetMetricsResult(compartmentId, compartmentIdInSubtree, dimensionFilters, filters, groupBies, id, metrics, name, namespace, resourceGroup);
+        }
+        public GetMetricsResult build() {
+            final var o = new GetMetricsResult();
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.dimensionFilters = dimensionFilters;
+            o.filters = filters;
+            o.groupBies = groupBies;
+            o.id = id;
+            o.metrics = metrics;
+            o.name = name;
+            o.namespace = namespace;
+            o.resourceGroup = resourceGroup;
+            return o;
         }
     }
 }

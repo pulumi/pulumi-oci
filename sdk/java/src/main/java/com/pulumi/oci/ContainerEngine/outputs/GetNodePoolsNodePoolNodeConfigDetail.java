@@ -20,63 +20,44 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
      * 
      */
-    private final Boolean isPvEncryptionInTransitEnabled;
+    private Boolean isPvEncryptionInTransitEnabled;
     /**
      * @return The OCID of the Key Management Service key assigned to the boot volume.
      * 
      */
-    private final String kmsKeyId;
+    private String kmsKeyId;
     /**
      * @return The CNI related configuration of pods in the node pool.
      * 
      */
-    private final List<GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail> nodePoolPodNetworkOptionDetails;
+    private List<GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail> nodePoolPodNetworkOptionDetails;
     /**
      * @return The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
-    private final List<String> nsgIds;
+    private List<String> nsgIds;
     /**
      * @return The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
      * 
      */
-    private final List<GetNodePoolsNodePoolNodeConfigDetailPlacementConfig> placementConfigs;
+    private List<GetNodePoolsNodePoolNodeConfigDetailPlacementConfig> placementConfigs;
     /**
      * @return The number of nodes in the node pool.
      * 
      */
-    private final Integer size;
+    private Integer size;
 
-    @CustomType.Constructor
-    private GetNodePoolsNodePoolNodeConfigDetail(
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("isPvEncryptionInTransitEnabled") Boolean isPvEncryptionInTransitEnabled,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("nodePoolPodNetworkOptionDetails") List<GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail> nodePoolPodNetworkOptionDetails,
-        @CustomType.Parameter("nsgIds") List<String> nsgIds,
-        @CustomType.Parameter("placementConfigs") List<GetNodePoolsNodePoolNodeConfigDetailPlacementConfig> placementConfigs,
-        @CustomType.Parameter("size") Integer size) {
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-        this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
-        this.kmsKeyId = kmsKeyId;
-        this.nodePoolPodNetworkOptionDetails = nodePoolPodNetworkOptionDetails;
-        this.nsgIds = nsgIds;
-        this.placementConfigs = placementConfigs;
-        this.size = size;
-    }
-
+    private GetNodePoolsNodePoolNodeConfigDetail() {}
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -141,7 +122,7 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
     public static Builder builder(GetNodePoolsNodePoolNodeConfigDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> definedTags;
         private Map<String,Object> freeformTags;
@@ -151,11 +132,7 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
         private List<String> nsgIds;
         private List<GetNodePoolsNodePoolNodeConfigDetailPlacementConfig> placementConfigs;
         private Integer size;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNodePoolsNodePoolNodeConfigDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.definedTags = defaults.definedTags;
@@ -168,22 +145,27 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
     	      this.size = defaults.size;
         }
 
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
             this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder nodePoolPodNetworkOptionDetails(List<GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail> nodePoolPodNetworkOptionDetails) {
             this.nodePoolPodNetworkOptionDetails = Objects.requireNonNull(nodePoolPodNetworkOptionDetails);
             return this;
@@ -191,6 +173,7 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
         public Builder nodePoolPodNetworkOptionDetails(GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail... nodePoolPodNetworkOptionDetails) {
             return nodePoolPodNetworkOptionDetails(List.of(nodePoolPodNetworkOptionDetails));
         }
+        @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             this.nsgIds = Objects.requireNonNull(nsgIds);
             return this;
@@ -198,6 +181,7 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
+        @CustomType.Setter
         public Builder placementConfigs(List<GetNodePoolsNodePoolNodeConfigDetailPlacementConfig> placementConfigs) {
             this.placementConfigs = Objects.requireNonNull(placementConfigs);
             return this;
@@ -205,11 +189,22 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
         public Builder placementConfigs(GetNodePoolsNodePoolNodeConfigDetailPlacementConfig... placementConfigs) {
             return placementConfigs(List.of(placementConfigs));
         }
+        @CustomType.Setter
         public Builder size(Integer size) {
             this.size = Objects.requireNonNull(size);
             return this;
-        }        public GetNodePoolsNodePoolNodeConfigDetail build() {
-            return new GetNodePoolsNodePoolNodeConfigDetail(definedTags, freeformTags, isPvEncryptionInTransitEnabled, kmsKeyId, nodePoolPodNetworkOptionDetails, nsgIds, placementConfigs, size);
+        }
+        public GetNodePoolsNodePoolNodeConfigDetail build() {
+            final var o = new GetNodePoolsNodePoolNodeConfigDetail();
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            o.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            o.kmsKeyId = kmsKeyId;
+            o.nodePoolPodNetworkOptionDetails = nodePoolPodNetworkOptionDetails;
+            o.nsgIds = nsgIds;
+            o.placementConfigs = placementConfigs;
+            o.size = size;
+            return o;
         }
     }
 }

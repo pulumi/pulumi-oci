@@ -14,21 +14,14 @@ public final class GetManagedDatabaseAlertLogCountItem {
      * @return The category of different alert logs.
      * 
      */
-    private final String category;
+    private String category;
     /**
      * @return The count of alert logs with specific category.
      * 
      */
-    private final Integer count;
+    private Integer count;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseAlertLogCountItem(
-        @CustomType.Parameter("category") String category,
-        @CustomType.Parameter("count") Integer count) {
-        this.category = category;
-        this.count = count;
-    }
-
+    private GetManagedDatabaseAlertLogCountItem() {}
     /**
      * @return The category of different alert logs.
      * 
@@ -51,30 +44,32 @@ public final class GetManagedDatabaseAlertLogCountItem {
     public static Builder builder(GetManagedDatabaseAlertLogCountItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String category;
         private Integer count;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseAlertLogCountItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.category = defaults.category;
     	      this.count = defaults.count;
         }
 
+        @CustomType.Setter
         public Builder category(String category) {
             this.category = Objects.requireNonNull(category);
             return this;
         }
+        @CustomType.Setter
         public Builder count(Integer count) {
             this.count = Objects.requireNonNull(count);
             return this;
-        }        public GetManagedDatabaseAlertLogCountItem build() {
-            return new GetManagedDatabaseAlertLogCountItem(category, count);
+        }
+        public GetManagedDatabaseAlertLogCountItem build() {
+            final var o = new GetManagedDatabaseAlertLogCountItem();
+            o.category = category;
+            o.count = count;
+            return o;
         }
     }
 }

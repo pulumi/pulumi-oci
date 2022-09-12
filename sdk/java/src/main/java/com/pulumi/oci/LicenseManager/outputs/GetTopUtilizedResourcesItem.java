@@ -14,49 +14,34 @@ public final class GetTopUtilizedResourcesItem {
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that contains the resource.
      * 
      */
-    private final String resourceCompartmentId;
+    private String resourceCompartmentId;
     /**
      * @return The display name of the compartment that contains the resource.
      * 
      */
-    private final String resourceCompartmentName;
+    private String resourceCompartmentName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    private final String resourceId;
+    private String resourceId;
     /**
      * @return Resource canonical name.
      * 
      */
-    private final String resourceName;
+    private String resourceName;
     /**
      * @return Number of license units consumed by the resource.
      * 
      */
-    private final Double totalUnits;
+    private Double totalUnits;
     /**
      * @return The resource unit.
      * 
      */
-    private final String unitType;
+    private String unitType;
 
-    @CustomType.Constructor
-    private GetTopUtilizedResourcesItem(
-        @CustomType.Parameter("resourceCompartmentId") String resourceCompartmentId,
-        @CustomType.Parameter("resourceCompartmentName") String resourceCompartmentName,
-        @CustomType.Parameter("resourceId") String resourceId,
-        @CustomType.Parameter("resourceName") String resourceName,
-        @CustomType.Parameter("totalUnits") Double totalUnits,
-        @CustomType.Parameter("unitType") String unitType) {
-        this.resourceCompartmentId = resourceCompartmentId;
-        this.resourceCompartmentName = resourceCompartmentName;
-        this.resourceId = resourceId;
-        this.resourceName = resourceName;
-        this.totalUnits = totalUnits;
-        this.unitType = unitType;
-    }
-
+    private GetTopUtilizedResourcesItem() {}
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that contains the resource.
      * 
@@ -107,7 +92,7 @@ public final class GetTopUtilizedResourcesItem {
     public static Builder builder(GetTopUtilizedResourcesItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String resourceCompartmentId;
         private String resourceCompartmentName;
@@ -115,11 +100,7 @@ public final class GetTopUtilizedResourcesItem {
         private String resourceName;
         private Double totalUnits;
         private String unitType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTopUtilizedResourcesItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.resourceCompartmentId = defaults.resourceCompartmentId;
@@ -130,31 +111,45 @@ public final class GetTopUtilizedResourcesItem {
     	      this.unitType = defaults.unitType;
         }
 
+        @CustomType.Setter
         public Builder resourceCompartmentId(String resourceCompartmentId) {
             this.resourceCompartmentId = Objects.requireNonNull(resourceCompartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceCompartmentName(String resourceCompartmentName) {
             this.resourceCompartmentName = Objects.requireNonNull(resourceCompartmentName);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceId(String resourceId) {
             this.resourceId = Objects.requireNonNull(resourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceName(String resourceName) {
             this.resourceName = Objects.requireNonNull(resourceName);
             return this;
         }
+        @CustomType.Setter
         public Builder totalUnits(Double totalUnits) {
             this.totalUnits = Objects.requireNonNull(totalUnits);
             return this;
         }
+        @CustomType.Setter
         public Builder unitType(String unitType) {
             this.unitType = Objects.requireNonNull(unitType);
             return this;
-        }        public GetTopUtilizedResourcesItem build() {
-            return new GetTopUtilizedResourcesItem(resourceCompartmentId, resourceCompartmentName, resourceId, resourceName, totalUnits, unitType);
+        }
+        public GetTopUtilizedResourcesItem build() {
+            final var o = new GetTopUtilizedResourcesItem();
+            o.resourceCompartmentId = resourceCompartmentId;
+            o.resourceCompartmentName = resourceCompartmentName;
+            o.resourceId = resourceId;
+            o.resourceName = resourceName;
+            o.totalUnits = totalUnits;
+            o.unitType = unitType;
+            return o;
         }
     }
 }

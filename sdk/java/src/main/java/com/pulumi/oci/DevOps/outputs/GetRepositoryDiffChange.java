@@ -15,42 +15,29 @@ public final class GetRepositoryDiffChange {
      * @return The number of a line in the base version.
      * 
      */
-    private final Integer baseLine;
+    private Integer baseLine;
     /**
      * @return Number of lines chunk spans in base version.
      * 
      */
-    private final Integer baseSpan;
+    private Integer baseSpan;
     /**
      * @return List of difference section.
      * 
      */
-    private final List<GetRepositoryDiffChangeDiffSection> diffSections;
+    private List<GetRepositoryDiffChangeDiffSection> diffSections;
     /**
      * @return Line number in target version where changes begin.
      * 
      */
-    private final Integer targetLine;
+    private Integer targetLine;
     /**
      * @return Number of lines chunk spans in target version.
      * 
      */
-    private final Integer targetSpan;
+    private Integer targetSpan;
 
-    @CustomType.Constructor
-    private GetRepositoryDiffChange(
-        @CustomType.Parameter("baseLine") Integer baseLine,
-        @CustomType.Parameter("baseSpan") Integer baseSpan,
-        @CustomType.Parameter("diffSections") List<GetRepositoryDiffChangeDiffSection> diffSections,
-        @CustomType.Parameter("targetLine") Integer targetLine,
-        @CustomType.Parameter("targetSpan") Integer targetSpan) {
-        this.baseLine = baseLine;
-        this.baseSpan = baseSpan;
-        this.diffSections = diffSections;
-        this.targetLine = targetLine;
-        this.targetSpan = targetSpan;
-    }
-
+    private GetRepositoryDiffChange() {}
     /**
      * @return The number of a line in the base version.
      * 
@@ -94,18 +81,14 @@ public final class GetRepositoryDiffChange {
     public static Builder builder(GetRepositoryDiffChange defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer baseLine;
         private Integer baseSpan;
         private List<GetRepositoryDiffChangeDiffSection> diffSections;
         private Integer targetLine;
         private Integer targetSpan;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryDiffChange defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baseLine = defaults.baseLine;
@@ -115,14 +98,17 @@ public final class GetRepositoryDiffChange {
     	      this.targetSpan = defaults.targetSpan;
         }
 
+        @CustomType.Setter
         public Builder baseLine(Integer baseLine) {
             this.baseLine = Objects.requireNonNull(baseLine);
             return this;
         }
+        @CustomType.Setter
         public Builder baseSpan(Integer baseSpan) {
             this.baseSpan = Objects.requireNonNull(baseSpan);
             return this;
         }
+        @CustomType.Setter
         public Builder diffSections(List<GetRepositoryDiffChangeDiffSection> diffSections) {
             this.diffSections = Objects.requireNonNull(diffSections);
             return this;
@@ -130,15 +116,24 @@ public final class GetRepositoryDiffChange {
         public Builder diffSections(GetRepositoryDiffChangeDiffSection... diffSections) {
             return diffSections(List.of(diffSections));
         }
+        @CustomType.Setter
         public Builder targetLine(Integer targetLine) {
             this.targetLine = Objects.requireNonNull(targetLine);
             return this;
         }
+        @CustomType.Setter
         public Builder targetSpan(Integer targetSpan) {
             this.targetSpan = Objects.requireNonNull(targetSpan);
             return this;
-        }        public GetRepositoryDiffChange build() {
-            return new GetRepositoryDiffChange(baseLine, baseSpan, diffSections, targetLine, targetSpan);
+        }
+        public GetRepositoryDiffChange build() {
+            final var o = new GetRepositoryDiffChange();
+            o.baseLine = baseLine;
+            o.baseSpan = baseSpan;
+            o.diffSections = diffSections;
+            o.targetLine = targetLine;
+            o.targetSpan = targetSpan;
+            return o;
         }
     }
 }

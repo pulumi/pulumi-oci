@@ -14,45 +14,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVantagePointsResult {
-    private final String apmDomainId;
+    private String apmDomainId;
     /**
      * @return Unique name that can be edited. The name should not contain any confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetVantagePointsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetVantagePointsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Unique permanent name of the vantage point.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The list of public_vantage_point_collection.
      * 
      */
-    private final List<GetVantagePointsPublicVantagePointCollection> publicVantagePointCollections;
+    private List<GetVantagePointsPublicVantagePointCollection> publicVantagePointCollections;
 
-    @CustomType.Constructor
-    private GetVantagePointsResult(
-        @CustomType.Parameter("apmDomainId") String apmDomainId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetVantagePointsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("publicVantagePointCollections") List<GetVantagePointsPublicVantagePointCollection> publicVantagePointCollections) {
-        this.apmDomainId = apmDomainId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.publicVantagePointCollections = publicVantagePointCollections;
-    }
-
+    private GetVantagePointsResult() {}
     public String apmDomainId() {
         return this.apmDomainId;
     }
@@ -95,7 +80,7 @@ public final class GetVantagePointsResult {
     public static Builder builder(GetVantagePointsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apmDomainId;
         private @Nullable String displayName;
@@ -103,11 +88,7 @@ public final class GetVantagePointsResult {
         private String id;
         private @Nullable String name;
         private List<GetVantagePointsPublicVantagePointCollection> publicVantagePointCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVantagePointsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apmDomainId = defaults.apmDomainId;
@@ -118,14 +99,17 @@ public final class GetVantagePointsResult {
     	      this.publicVantagePointCollections = defaults.publicVantagePointCollections;
         }
 
+        @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
             this.apmDomainId = Objects.requireNonNull(apmDomainId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVantagePointsFilter> filters) {
             this.filters = filters;
             return this;
@@ -133,22 +117,33 @@ public final class GetVantagePointsResult {
         public Builder filters(GetVantagePointsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder publicVantagePointCollections(List<GetVantagePointsPublicVantagePointCollection> publicVantagePointCollections) {
             this.publicVantagePointCollections = Objects.requireNonNull(publicVantagePointCollections);
             return this;
         }
         public Builder publicVantagePointCollections(GetVantagePointsPublicVantagePointCollection... publicVantagePointCollections) {
             return publicVantagePointCollections(List.of(publicVantagePointCollections));
-        }        public GetVantagePointsResult build() {
-            return new GetVantagePointsResult(apmDomainId, displayName, filters, id, name, publicVantagePointCollections);
+        }
+        public GetVantagePointsResult build() {
+            final var o = new GetVantagePointsResult();
+            o.apmDomainId = apmDomainId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.publicVantagePointCollections = publicVantagePointCollections;
+            return o;
         }
     }
 }

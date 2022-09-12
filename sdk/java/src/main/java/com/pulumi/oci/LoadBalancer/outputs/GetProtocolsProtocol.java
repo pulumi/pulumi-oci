@@ -13,13 +13,9 @@ public final class GetProtocolsProtocol {
      * @return The name of a protocol.  Example: &#39;HTTP&#39;
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetProtocolsProtocol(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private GetProtocolsProtocol() {}
     /**
      * @return The name of a protocol.  Example: &#39;HTTP&#39;
      * 
@@ -35,24 +31,24 @@ public final class GetProtocolsProtocol {
     public static Builder builder(GetProtocolsProtocol defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProtocolsProtocol defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetProtocolsProtocol build() {
-            return new GetProtocolsProtocol(name);
+        }
+        public GetProtocolsProtocol build() {
+            final var o = new GetProtocolsProtocol();
+            o.name = name;
+            return o;
         }
     }
 }

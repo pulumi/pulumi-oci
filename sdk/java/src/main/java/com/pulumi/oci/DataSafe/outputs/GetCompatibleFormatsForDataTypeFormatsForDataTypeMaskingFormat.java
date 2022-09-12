@@ -13,28 +13,19 @@ public final class GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingForma
      * @return The description of the masking format.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The OCID of the masking format.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the masking format.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name) {
-        this.description = description;
-        this.id = id;
-        this.name = name;
-    }
-
+    private GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat() {}
     /**
      * @return The description of the masking format.
      * 
@@ -64,16 +55,12 @@ public final class GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingForma
     public static Builder builder(GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String id;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -81,19 +68,27 @@ public final class GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingForma
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat build() {
-            return new GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat(description, id, name);
+        }
+        public GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat build() {
+            final var o = new GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat();
+            o.description = description;
+            o.id = id;
+            o.name = name;
+            return o;
         }
     }
 }

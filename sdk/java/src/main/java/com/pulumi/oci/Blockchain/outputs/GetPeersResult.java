@@ -14,34 +14,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPeersResult {
-    private final String blockchainPlatformId;
-    private final @Nullable String displayName;
-    private final @Nullable List<GetPeersFilter> filters;
+    private String blockchainPlatformId;
+    private @Nullable String displayName;
+    private @Nullable List<GetPeersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of peer_collection.
      * 
      */
-    private final List<GetPeersPeerCollection> peerCollections;
+    private List<GetPeersPeerCollection> peerCollections;
 
-    @CustomType.Constructor
-    private GetPeersResult(
-        @CustomType.Parameter("blockchainPlatformId") String blockchainPlatformId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetPeersFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("peerCollections") List<GetPeersPeerCollection> peerCollections) {
-        this.blockchainPlatformId = blockchainPlatformId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.peerCollections = peerCollections;
-    }
-
+    private GetPeersResult() {}
     public String blockchainPlatformId() {
         return this.blockchainPlatformId;
     }
@@ -73,18 +60,14 @@ public final class GetPeersResult {
     public static Builder builder(GetPeersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String blockchainPlatformId;
         private @Nullable String displayName;
         private @Nullable List<GetPeersFilter> filters;
         private String id;
         private List<GetPeersPeerCollection> peerCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPeersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockchainPlatformId = defaults.blockchainPlatformId;
@@ -94,14 +77,17 @@ public final class GetPeersResult {
     	      this.peerCollections = defaults.peerCollections;
         }
 
+        @CustomType.Setter
         public Builder blockchainPlatformId(String blockchainPlatformId) {
             this.blockchainPlatformId = Objects.requireNonNull(blockchainPlatformId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetPeersFilter> filters) {
             this.filters = filters;
             return this;
@@ -109,18 +95,27 @@ public final class GetPeersResult {
         public Builder filters(GetPeersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder peerCollections(List<GetPeersPeerCollection> peerCollections) {
             this.peerCollections = Objects.requireNonNull(peerCollections);
             return this;
         }
         public Builder peerCollections(GetPeersPeerCollection... peerCollections) {
             return peerCollections(List.of(peerCollections));
-        }        public GetPeersResult build() {
-            return new GetPeersResult(blockchainPlatformId, displayName, filters, id, peerCollections);
+        }
+        public GetPeersResult build() {
+            final var o = new GetPeersResult();
+            o.blockchainPlatformId = blockchainPlatformId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.peerCollections = peerCollections;
+            return o;
         }
     }
 }

@@ -10,17 +10,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption {
-    private final List<String> allowedValues;
-    private final String defaultValue;
+    private List<String> allowedValues;
+    private String defaultValue;
 
-    @CustomType.Constructor
-    private GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption(
-        @CustomType.Parameter("allowedValues") List<String> allowedValues,
-        @CustomType.Parameter("defaultValue") String defaultValue) {
-        this.allowedValues = allowedValues;
-        this.defaultValue = defaultValue;
-    }
-
+    private GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption() {}
     public List<String> allowedValues() {
         return this.allowedValues;
     }
@@ -35,21 +28,18 @@ public final class GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOp
     public static Builder builder(GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> allowedValues;
         private String defaultValue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowedValues = defaults.allowedValues;
     	      this.defaultValue = defaults.defaultValue;
         }
 
+        @CustomType.Setter
         public Builder allowedValues(List<String> allowedValues) {
             this.allowedValues = Objects.requireNonNull(allowedValues);
             return this;
@@ -57,11 +47,16 @@ public final class GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOp
         public Builder allowedValues(String... allowedValues) {
             return allowedValues(List.of(allowedValues));
         }
+        @CustomType.Setter
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = Objects.requireNonNull(defaultValue);
             return this;
-        }        public GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption build() {
-            return new GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption(allowedValues, defaultValue);
+        }
+        public GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption build() {
+            final var o = new GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption();
+            o.allowedValues = allowedValues;
+            o.defaultValue = defaultValue;
+            return o;
         }
     }
 }

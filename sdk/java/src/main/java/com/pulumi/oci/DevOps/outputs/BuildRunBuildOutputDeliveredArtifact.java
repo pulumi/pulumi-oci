@@ -15,13 +15,9 @@ public final class BuildRunBuildOutputDeliveredArtifact {
      * @return List of arguments provided at the time of running the build.
      * 
      */
-    private final @Nullable List<BuildRunBuildOutputDeliveredArtifactItem> items;
+    private @Nullable List<BuildRunBuildOutputDeliveredArtifactItem> items;
 
-    @CustomType.Constructor
-    private BuildRunBuildOutputDeliveredArtifact(@CustomType.Parameter("items") @Nullable List<BuildRunBuildOutputDeliveredArtifactItem> items) {
-        this.items = items;
-    }
-
+    private BuildRunBuildOutputDeliveredArtifact() {}
     /**
      * @return List of arguments provided at the time of running the build.
      * 
@@ -37,27 +33,27 @@ public final class BuildRunBuildOutputDeliveredArtifact {
     public static Builder builder(BuildRunBuildOutputDeliveredArtifact defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<BuildRunBuildOutputDeliveredArtifactItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BuildRunBuildOutputDeliveredArtifact defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(@Nullable List<BuildRunBuildOutputDeliveredArtifactItem> items) {
             this.items = items;
             return this;
         }
         public Builder items(BuildRunBuildOutputDeliveredArtifactItem... items) {
             return items(List.of(items));
-        }        public BuildRunBuildOutputDeliveredArtifact build() {
-            return new BuildRunBuildOutputDeliveredArtifact(items);
+        }
+        public BuildRunBuildOutputDeliveredArtifact build() {
+            final var o = new BuildRunBuildOutputDeliveredArtifact();
+            o.items = items;
+            return o;
         }
     }
 }

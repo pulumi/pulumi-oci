@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
     public sealed class RegistryFolderDataAssetDefaultConnectionMetadataGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        /// (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         /// </summary>
         [Input("aggregator")]
         public Input<Inputs.RegistryFolderDataAssetDefaultConnectionMetadataAggregatorGetArgs>? Aggregator { get; set; }
@@ -37,7 +37,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<string>? CreatedByName { get; set; }
 
         /// <summary>
-        /// (Updatable) The full path to identify this object.
+        /// (Updatable) The full path to identify the object.
         /// </summary>
         [Input("identifierPath")]
         public Input<string>? IdentifierPath { get; set; }
@@ -55,7 +55,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Specifies whether this object is a favorite or not.
+        /// (Updatable) Specifies whether the object is a favorite.
         /// </summary>
         [Input("isFavorite")]
         public Input<bool>? IsFavorite { get; set; }
@@ -64,7 +64,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         private InputList<string>? _labels;
 
         /// <summary>
-        /// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        /// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         /// </summary>
         public InputList<string> Labels
         {

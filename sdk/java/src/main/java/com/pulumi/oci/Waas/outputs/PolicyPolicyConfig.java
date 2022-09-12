@@ -19,63 +19,63 @@ public final class PolicyPolicyConfig {
      * @return (Updatable) The OCID of the SSL certificate to use if HTTPS is supported.
      * 
      */
-    private final @Nullable String certificateId;
+    private @Nullable String certificateId;
     /**
      * @return (Updatable) The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
      * * **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
      * 
      */
-    private final @Nullable String cipherGroup;
+    private @Nullable String cipherGroup;
     /**
      * @return (Updatable) Specifies an HTTP header name which is treated as the connecting client&#39;s IP address. Applicable only if `isBehindCdn` is enabled.
      * 
      */
-    private final @Nullable String clientAddressHeader;
+    private @Nullable String clientAddressHeader;
     /**
      * @return (Updatable) Health checks monitor the status of your origin servers and only route traffic to the origins that pass the health check. If the health check fails, origin is automatically removed from the load balancing. There is roughly one health check per EDGE POP per period. Any checks that pass will be reported as &#34;healthy&#34;.
      * 
      */
-    private final @Nullable PolicyPolicyConfigHealthChecks healthChecks;
+    private @Nullable PolicyPolicyConfigHealthChecks healthChecks;
     /**
      * @return (Updatable) Enabling `isBehindCdn` allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
      * 
      */
-    private final @Nullable Boolean isBehindCdn;
+    private @Nullable Boolean isBehindCdn;
     /**
      * @return (Updatable) Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching is usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
      * 
      */
-    private final @Nullable Boolean isCacheControlRespected;
+    private @Nullable Boolean isCacheControlRespected;
     /**
      * @return (Updatable) Enable or disable HTTPS support. If true, a `certificateId` is required. If unspecified, defaults to `false`.
      * 
      */
-    private final @Nullable Boolean isHttpsEnabled;
+    private @Nullable Boolean isHttpsEnabled;
     /**
      * @return (Updatable) Force HTTP to HTTPS redirection. If unspecified, defaults to `false`.
      * 
      */
-    private final @Nullable Boolean isHttpsForced;
+    private @Nullable Boolean isHttpsForced;
     /**
      * @return (Updatable) Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise, the empty `Accept-Encoding:` header is used.
      * 
      */
-    private final @Nullable Boolean isOriginCompressionEnabled;
+    private @Nullable Boolean isOriginCompressionEnabled;
     /**
      * @return (Updatable) Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
      * 
      */
-    private final @Nullable Boolean isResponseBufferingEnabled;
+    private @Nullable Boolean isResponseBufferingEnabled;
     /**
      * @return (Updatable) SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the &#39;handshake&#39;-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
      * 
      */
-    private final @Nullable Boolean isSniEnabled;
+    private @Nullable Boolean isSniEnabled;
     /**
      * @return (Updatable) An object that represents a load balancing method and its properties.
      * 
      */
-    private final @Nullable PolicyPolicyConfigLoadBalancingMethod loadBalancingMethod;
+    private @Nullable PolicyPolicyConfigLoadBalancingMethod loadBalancingMethod;
     /**
      * @return (Updatable) A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
      * * **TLS_V1:** corresponds to TLS 1.0 specification.
@@ -84,45 +84,14 @@ public final class PolicyPolicyConfig {
      * * **TLS_V1_3:** corresponds to TLS 1.3 specification.
      * 
      */
-    private final @Nullable List<String> tlsProtocols;
+    private @Nullable List<String> tlsProtocols;
     /**
      * @return (Updatable) ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF disabled if Connection request header from the client has the value Upgrade (case insensitive matching) and Upgrade request header has the value websocket (case insensitive matching). Paths matches if the concatenation of request URL path and query starts with the contents of the one of `websocketPathPrefixes` array value. In All other cases challenges, like JSC, HIC and etc., remain active.
      * 
      */
-    private final @Nullable List<String> websocketPathPrefixes;
+    private @Nullable List<String> websocketPathPrefixes;
 
-    @CustomType.Constructor
-    private PolicyPolicyConfig(
-        @CustomType.Parameter("certificateId") @Nullable String certificateId,
-        @CustomType.Parameter("cipherGroup") @Nullable String cipherGroup,
-        @CustomType.Parameter("clientAddressHeader") @Nullable String clientAddressHeader,
-        @CustomType.Parameter("healthChecks") @Nullable PolicyPolicyConfigHealthChecks healthChecks,
-        @CustomType.Parameter("isBehindCdn") @Nullable Boolean isBehindCdn,
-        @CustomType.Parameter("isCacheControlRespected") @Nullable Boolean isCacheControlRespected,
-        @CustomType.Parameter("isHttpsEnabled") @Nullable Boolean isHttpsEnabled,
-        @CustomType.Parameter("isHttpsForced") @Nullable Boolean isHttpsForced,
-        @CustomType.Parameter("isOriginCompressionEnabled") @Nullable Boolean isOriginCompressionEnabled,
-        @CustomType.Parameter("isResponseBufferingEnabled") @Nullable Boolean isResponseBufferingEnabled,
-        @CustomType.Parameter("isSniEnabled") @Nullable Boolean isSniEnabled,
-        @CustomType.Parameter("loadBalancingMethod") @Nullable PolicyPolicyConfigLoadBalancingMethod loadBalancingMethod,
-        @CustomType.Parameter("tlsProtocols") @Nullable List<String> tlsProtocols,
-        @CustomType.Parameter("websocketPathPrefixes") @Nullable List<String> websocketPathPrefixes) {
-        this.certificateId = certificateId;
-        this.cipherGroup = cipherGroup;
-        this.clientAddressHeader = clientAddressHeader;
-        this.healthChecks = healthChecks;
-        this.isBehindCdn = isBehindCdn;
-        this.isCacheControlRespected = isCacheControlRespected;
-        this.isHttpsEnabled = isHttpsEnabled;
-        this.isHttpsForced = isHttpsForced;
-        this.isOriginCompressionEnabled = isOriginCompressionEnabled;
-        this.isResponseBufferingEnabled = isResponseBufferingEnabled;
-        this.isSniEnabled = isSniEnabled;
-        this.loadBalancingMethod = loadBalancingMethod;
-        this.tlsProtocols = tlsProtocols;
-        this.websocketPathPrefixes = websocketPathPrefixes;
-    }
-
+    private PolicyPolicyConfig() {}
     /**
      * @return (Updatable) The OCID of the SSL certificate to use if HTTPS is supported.
      * 
@@ -234,7 +203,7 @@ public final class PolicyPolicyConfig {
     public static Builder builder(PolicyPolicyConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String certificateId;
         private @Nullable String cipherGroup;
@@ -250,11 +219,7 @@ public final class PolicyPolicyConfig {
         private @Nullable PolicyPolicyConfigLoadBalancingMethod loadBalancingMethod;
         private @Nullable List<String> tlsProtocols;
         private @Nullable List<String> websocketPathPrefixes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PolicyPolicyConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateId = defaults.certificateId;
@@ -273,54 +238,67 @@ public final class PolicyPolicyConfig {
     	      this.websocketPathPrefixes = defaults.websocketPathPrefixes;
         }
 
+        @CustomType.Setter
         public Builder certificateId(@Nullable String certificateId) {
             this.certificateId = certificateId;
             return this;
         }
+        @CustomType.Setter
         public Builder cipherGroup(@Nullable String cipherGroup) {
             this.cipherGroup = cipherGroup;
             return this;
         }
+        @CustomType.Setter
         public Builder clientAddressHeader(@Nullable String clientAddressHeader) {
             this.clientAddressHeader = clientAddressHeader;
             return this;
         }
+        @CustomType.Setter
         public Builder healthChecks(@Nullable PolicyPolicyConfigHealthChecks healthChecks) {
             this.healthChecks = healthChecks;
             return this;
         }
+        @CustomType.Setter
         public Builder isBehindCdn(@Nullable Boolean isBehindCdn) {
             this.isBehindCdn = isBehindCdn;
             return this;
         }
+        @CustomType.Setter
         public Builder isCacheControlRespected(@Nullable Boolean isCacheControlRespected) {
             this.isCacheControlRespected = isCacheControlRespected;
             return this;
         }
+        @CustomType.Setter
         public Builder isHttpsEnabled(@Nullable Boolean isHttpsEnabled) {
             this.isHttpsEnabled = isHttpsEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder isHttpsForced(@Nullable Boolean isHttpsForced) {
             this.isHttpsForced = isHttpsForced;
             return this;
         }
+        @CustomType.Setter
         public Builder isOriginCompressionEnabled(@Nullable Boolean isOriginCompressionEnabled) {
             this.isOriginCompressionEnabled = isOriginCompressionEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder isResponseBufferingEnabled(@Nullable Boolean isResponseBufferingEnabled) {
             this.isResponseBufferingEnabled = isResponseBufferingEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder isSniEnabled(@Nullable Boolean isSniEnabled) {
             this.isSniEnabled = isSniEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancingMethod(@Nullable PolicyPolicyConfigLoadBalancingMethod loadBalancingMethod) {
             this.loadBalancingMethod = loadBalancingMethod;
             return this;
         }
+        @CustomType.Setter
         public Builder tlsProtocols(@Nullable List<String> tlsProtocols) {
             this.tlsProtocols = tlsProtocols;
             return this;
@@ -328,14 +306,31 @@ public final class PolicyPolicyConfig {
         public Builder tlsProtocols(String... tlsProtocols) {
             return tlsProtocols(List.of(tlsProtocols));
         }
+        @CustomType.Setter
         public Builder websocketPathPrefixes(@Nullable List<String> websocketPathPrefixes) {
             this.websocketPathPrefixes = websocketPathPrefixes;
             return this;
         }
         public Builder websocketPathPrefixes(String... websocketPathPrefixes) {
             return websocketPathPrefixes(List.of(websocketPathPrefixes));
-        }        public PolicyPolicyConfig build() {
-            return new PolicyPolicyConfig(certificateId, cipherGroup, clientAddressHeader, healthChecks, isBehindCdn, isCacheControlRespected, isHttpsEnabled, isHttpsForced, isOriginCompressionEnabled, isResponseBufferingEnabled, isSniEnabled, loadBalancingMethod, tlsProtocols, websocketPathPrefixes);
+        }
+        public PolicyPolicyConfig build() {
+            final var o = new PolicyPolicyConfig();
+            o.certificateId = certificateId;
+            o.cipherGroup = cipherGroup;
+            o.clientAddressHeader = clientAddressHeader;
+            o.healthChecks = healthChecks;
+            o.isBehindCdn = isBehindCdn;
+            o.isCacheControlRespected = isCacheControlRespected;
+            o.isHttpsEnabled = isHttpsEnabled;
+            o.isHttpsForced = isHttpsForced;
+            o.isOriginCompressionEnabled = isOriginCompressionEnabled;
+            o.isResponseBufferingEnabled = isResponseBufferingEnabled;
+            o.isSniEnabled = isSniEnabled;
+            o.loadBalancingMethod = loadBalancingMethod;
+            o.tlsProtocols = tlsProtocols;
+            o.websocketPathPrefixes = websocketPathPrefixes;
+            return o;
         }
     }
 }

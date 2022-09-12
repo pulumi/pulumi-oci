@@ -13,63 +13,44 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo 
      * @return The state of the BGP IPv6 session.
      * 
      */
-    private final String bgpIpv6state;
+    private String bgpIpv6state;
     /**
      * @return The state of the BGP session.
      * 
      */
-    private final String bgpState;
+    private String bgpState;
     /**
      * @return If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this ASN is required and used for the tunnel&#39;s BGP session. This is the ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses &#34;asplain&#34; format.
      * 
      */
-    private final String customerBgpAsn;
+    private String customerBgpAsn;
     /**
      * @return The IP address for the CPE end of the inside tunnel interface.
      * 
      */
-    private final String customerInterfaceIp;
+    private String customerInterfaceIp;
     /**
      * @return The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
      * 
      */
-    private final String customerInterfaceIpv6;
+    private String customerInterfaceIpv6;
     /**
      * @return The Oracle BGP ASN.
      * 
      */
-    private final String oracleBgpAsn;
+    private String oracleBgpAsn;
     /**
      * @return The IP address for the Oracle end of the inside tunnel interface.
      * 
      */
-    private final String oracleInterfaceIp;
+    private String oracleInterfaceIp;
     /**
      * @return The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
      * 
      */
-    private final String oracleInterfaceIpv6;
+    private String oracleInterfaceIpv6;
 
-    @CustomType.Constructor
-    private GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo(
-        @CustomType.Parameter("bgpIpv6state") String bgpIpv6state,
-        @CustomType.Parameter("bgpState") String bgpState,
-        @CustomType.Parameter("customerBgpAsn") String customerBgpAsn,
-        @CustomType.Parameter("customerInterfaceIp") String customerInterfaceIp,
-        @CustomType.Parameter("customerInterfaceIpv6") String customerInterfaceIpv6,
-        @CustomType.Parameter("oracleBgpAsn") String oracleBgpAsn,
-        @CustomType.Parameter("oracleInterfaceIp") String oracleInterfaceIp,
-        @CustomType.Parameter("oracleInterfaceIpv6") String oracleInterfaceIpv6) {
-        this.bgpIpv6state = bgpIpv6state;
-        this.bgpState = bgpState;
-        this.customerBgpAsn = customerBgpAsn;
-        this.customerInterfaceIp = customerInterfaceIp;
-        this.customerInterfaceIpv6 = customerInterfaceIpv6;
-        this.oracleBgpAsn = oracleBgpAsn;
-        this.oracleInterfaceIp = oracleInterfaceIp;
-        this.oracleInterfaceIpv6 = oracleInterfaceIpv6;
-    }
-
+    private GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo() {}
     /**
      * @return The state of the BGP IPv6 session.
      * 
@@ -134,7 +115,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo 
     public static Builder builder(GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bgpIpv6state;
         private String bgpState;
@@ -144,11 +125,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo 
         private String oracleBgpAsn;
         private String oracleInterfaceIp;
         private String oracleInterfaceIpv6;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bgpIpv6state = defaults.bgpIpv6state;
@@ -161,39 +138,57 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo 
     	      this.oracleInterfaceIpv6 = defaults.oracleInterfaceIpv6;
         }
 
+        @CustomType.Setter
         public Builder bgpIpv6state(String bgpIpv6state) {
             this.bgpIpv6state = Objects.requireNonNull(bgpIpv6state);
             return this;
         }
+        @CustomType.Setter
         public Builder bgpState(String bgpState) {
             this.bgpState = Objects.requireNonNull(bgpState);
             return this;
         }
+        @CustomType.Setter
         public Builder customerBgpAsn(String customerBgpAsn) {
             this.customerBgpAsn = Objects.requireNonNull(customerBgpAsn);
             return this;
         }
+        @CustomType.Setter
         public Builder customerInterfaceIp(String customerInterfaceIp) {
             this.customerInterfaceIp = Objects.requireNonNull(customerInterfaceIp);
             return this;
         }
+        @CustomType.Setter
         public Builder customerInterfaceIpv6(String customerInterfaceIpv6) {
             this.customerInterfaceIpv6 = Objects.requireNonNull(customerInterfaceIpv6);
             return this;
         }
+        @CustomType.Setter
         public Builder oracleBgpAsn(String oracleBgpAsn) {
             this.oracleBgpAsn = Objects.requireNonNull(oracleBgpAsn);
             return this;
         }
+        @CustomType.Setter
         public Builder oracleInterfaceIp(String oracleInterfaceIp) {
             this.oracleInterfaceIp = Objects.requireNonNull(oracleInterfaceIp);
             return this;
         }
+        @CustomType.Setter
         public Builder oracleInterfaceIpv6(String oracleInterfaceIpv6) {
             this.oracleInterfaceIpv6 = Objects.requireNonNull(oracleInterfaceIpv6);
             return this;
-        }        public GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo build() {
-            return new GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo(bgpIpv6state, bgpState, customerBgpAsn, customerInterfaceIp, customerInterfaceIpv6, oracleBgpAsn, oracleInterfaceIp, oracleInterfaceIpv6);
+        }
+        public GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo build() {
+            final var o = new GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo();
+            o.bgpIpv6state = bgpIpv6state;
+            o.bgpState = bgpState;
+            o.customerBgpAsn = customerBgpAsn;
+            o.customerInterfaceIp = customerInterfaceIp;
+            o.customerInterfaceIpv6 = customerInterfaceIpv6;
+            o.oracleBgpAsn = oracleBgpAsn;
+            o.oracleInterfaceIp = oracleInterfaceIp;
+            o.oracleInterfaceIpv6 = oracleInterfaceIpv6;
+            return o;
         }
     }
 }

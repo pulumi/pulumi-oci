@@ -18,63 +18,44 @@ public final class GetPublicIpsResult {
      * @return The public IP&#39;s availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is the compartment of its assigned entity (which can be a private IP or a regional entity such as a NAT gateway). For a reserved public IP that is currently assigned, its compartment can be different from the assigned private IP&#39;s.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetPublicIpsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetPublicIpsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Defines when the public IP is deleted and released back to Oracle&#39;s public IP pool.
      * * `EPHEMERAL`: The lifetime is tied to the lifetime of its assigned entity. An ephemeral public IP must always be assigned to an entity. If the assigned entity is a private IP, the ephemeral public IP is automatically deleted when the private IP is deleted, when the VNIC is terminated, or when the instance is terminated. If the assigned entity is a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/), the ephemeral public IP is automatically deleted when the NAT gateway is terminated.
      * * `RESERVED`: You control the public IP&#39;s lifetime. You can delete a reserved public IP whenever you like. It does not need to be assigned to a private IP at all times.
      * 
      */
-    private final @Nullable String lifetime;
+    private @Nullable String lifetime;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
      * 
      */
-    private final @Nullable String publicIpPoolId;
+    private @Nullable String publicIpPoolId;
     /**
      * @return The list of public_ips.
      * 
      */
-    private final List<GetPublicIpsPublicIp> publicIps;
+    private List<GetPublicIpsPublicIp> publicIps;
     /**
      * @return Whether the public IP is regional or specific to a particular availability domain.
      * * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs assigned to a regional entity have `scope` = `REGION`.
      * * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it&#39;s assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
      * 
      */
-    private final String scope;
+    private String scope;
 
-    @CustomType.Constructor
-    private GetPublicIpsResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetPublicIpsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifetime") @Nullable String lifetime,
-        @CustomType.Parameter("publicIpPoolId") @Nullable String publicIpPoolId,
-        @CustomType.Parameter("publicIps") List<GetPublicIpsPublicIp> publicIps,
-        @CustomType.Parameter("scope") String scope) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.lifetime = lifetime;
-        this.publicIpPoolId = publicIpPoolId;
-        this.publicIps = publicIps;
-        this.scope = scope;
-    }
-
+    private GetPublicIpsResult() {}
     /**
      * @return The public IP&#39;s availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
      * 
@@ -139,7 +120,7 @@ public final class GetPublicIpsResult {
     public static Builder builder(GetPublicIpsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
@@ -149,11 +130,7 @@ public final class GetPublicIpsResult {
         private @Nullable String publicIpPoolId;
         private List<GetPublicIpsPublicIp> publicIps;
         private String scope;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPublicIpsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -166,14 +143,17 @@ public final class GetPublicIpsResult {
     	      this.scope = defaults.scope;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetPublicIpsFilter> filters) {
             this.filters = filters;
             return this;
@@ -181,18 +161,22 @@ public final class GetPublicIpsResult {
         public Builder filters(GetPublicIpsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifetime(@Nullable String lifetime) {
             this.lifetime = lifetime;
             return this;
         }
+        @CustomType.Setter
         public Builder publicIpPoolId(@Nullable String publicIpPoolId) {
             this.publicIpPoolId = publicIpPoolId;
             return this;
         }
+        @CustomType.Setter
         public Builder publicIps(List<GetPublicIpsPublicIp> publicIps) {
             this.publicIps = Objects.requireNonNull(publicIps);
             return this;
@@ -200,11 +184,22 @@ public final class GetPublicIpsResult {
         public Builder publicIps(GetPublicIpsPublicIp... publicIps) {
             return publicIps(List.of(publicIps));
         }
+        @CustomType.Setter
         public Builder scope(String scope) {
             this.scope = Objects.requireNonNull(scope);
             return this;
-        }        public GetPublicIpsResult build() {
-            return new GetPublicIpsResult(availabilityDomain, compartmentId, filters, id, lifetime, publicIpPoolId, publicIps, scope);
+        }
+        public GetPublicIpsResult build() {
+            final var o = new GetPublicIpsResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.lifetime = lifetime;
+            o.publicIpPoolId = publicIpPoolId;
+            o.publicIps = publicIps;
+            o.scope = scope;
+            return o;
         }
     }
 }

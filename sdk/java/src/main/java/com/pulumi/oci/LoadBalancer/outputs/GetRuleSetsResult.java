@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRuleSetsResult {
-    private final @Nullable List<GetRuleSetsFilter> filters;
+    private @Nullable List<GetRuleSetsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String loadBalancerId;
+    private String id;
+    private String loadBalancerId;
     /**
      * @return The list of rule_sets.
      * 
      */
-    private final List<GetRuleSetsRuleSet> ruleSets;
+    private List<GetRuleSetsRuleSet> ruleSets;
 
-    @CustomType.Constructor
-    private GetRuleSetsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetRuleSetsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId,
-        @CustomType.Parameter("ruleSets") List<GetRuleSetsRuleSet> ruleSets) {
-        this.filters = filters;
-        this.id = id;
-        this.loadBalancerId = loadBalancerId;
-        this.ruleSets = ruleSets;
-    }
-
+    private GetRuleSetsResult() {}
     public List<GetRuleSetsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -66,17 +55,13 @@ public final class GetRuleSetsResult {
     public static Builder builder(GetRuleSetsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetRuleSetsFilter> filters;
         private String id;
         private String loadBalancerId;
         private List<GetRuleSetsRuleSet> ruleSets;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRuleSetsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -85,6 +70,7 @@ public final class GetRuleSetsResult {
     	      this.ruleSets = defaults.ruleSets;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetRuleSetsFilter> filters) {
             this.filters = filters;
             return this;
@@ -92,22 +78,31 @@ public final class GetRuleSetsResult {
         public Builder filters(GetRuleSetsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder ruleSets(List<GetRuleSetsRuleSet> ruleSets) {
             this.ruleSets = Objects.requireNonNull(ruleSets);
             return this;
         }
         public Builder ruleSets(GetRuleSetsRuleSet... ruleSets) {
             return ruleSets(List.of(ruleSets));
-        }        public GetRuleSetsResult build() {
-            return new GetRuleSetsResult(filters, id, loadBalancerId, ruleSets);
+        }
+        public GetRuleSetsResult build() {
+            final var o = new GetRuleSetsResult();
+            o.filters = filters;
+            o.id = id;
+            o.loadBalancerId = loadBalancerId;
+            o.ruleSets = ruleSets;
+            return o;
         }
     }
 }

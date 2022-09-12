@@ -14,59 +14,40 @@ public final class GetInstancePoolLoadBalancerAttachmentResult {
      * @return The name of the backend set on the load balancer.
      * 
      */
-    private final String backendSetName;
+    private String backendSetName;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
      * 
      */
-    private final String instancePoolId;
-    private final String instancePoolLoadBalancerAttachmentId;
+    private String instancePoolId;
+    private String instancePoolLoadBalancerAttachmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
      * 
      */
-    private final String loadBalancerId;
+    private String loadBalancerId;
     /**
      * @return The port value used for the backends.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return The status of the interaction between the instance pool and the load balancer.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are &#34;PrimaryVnic&#34; or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
      * 
      */
-    private final String vnicSelection;
+    private String vnicSelection;
 
-    @CustomType.Constructor
-    private GetInstancePoolLoadBalancerAttachmentResult(
-        @CustomType.Parameter("backendSetName") String backendSetName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instancePoolId") String instancePoolId,
-        @CustomType.Parameter("instancePoolLoadBalancerAttachmentId") String instancePoolLoadBalancerAttachmentId,
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("vnicSelection") String vnicSelection) {
-        this.backendSetName = backendSetName;
-        this.id = id;
-        this.instancePoolId = instancePoolId;
-        this.instancePoolLoadBalancerAttachmentId = instancePoolLoadBalancerAttachmentId;
-        this.loadBalancerId = loadBalancerId;
-        this.port = port;
-        this.state = state;
-        this.vnicSelection = vnicSelection;
-    }
-
+    private GetInstancePoolLoadBalancerAttachmentResult() {}
     /**
      * @return The name of the backend set on the load balancer.
      * 
@@ -127,7 +108,7 @@ public final class GetInstancePoolLoadBalancerAttachmentResult {
     public static Builder builder(GetInstancePoolLoadBalancerAttachmentResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String backendSetName;
         private String id;
@@ -137,11 +118,7 @@ public final class GetInstancePoolLoadBalancerAttachmentResult {
         private Integer port;
         private String state;
         private String vnicSelection;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstancePoolLoadBalancerAttachmentResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backendSetName = defaults.backendSetName;
@@ -154,39 +131,57 @@ public final class GetInstancePoolLoadBalancerAttachmentResult {
     	      this.vnicSelection = defaults.vnicSelection;
         }
 
+        @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
             this.backendSetName = Objects.requireNonNull(backendSetName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instancePoolId(String instancePoolId) {
             this.instancePoolId = Objects.requireNonNull(instancePoolId);
             return this;
         }
+        @CustomType.Setter
         public Builder instancePoolLoadBalancerAttachmentId(String instancePoolLoadBalancerAttachmentId) {
             this.instancePoolLoadBalancerAttachmentId = Objects.requireNonNull(instancePoolLoadBalancerAttachmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder vnicSelection(String vnicSelection) {
             this.vnicSelection = Objects.requireNonNull(vnicSelection);
             return this;
-        }        public GetInstancePoolLoadBalancerAttachmentResult build() {
-            return new GetInstancePoolLoadBalancerAttachmentResult(backendSetName, id, instancePoolId, instancePoolLoadBalancerAttachmentId, loadBalancerId, port, state, vnicSelection);
+        }
+        public GetInstancePoolLoadBalancerAttachmentResult build() {
+            final var o = new GetInstancePoolLoadBalancerAttachmentResult();
+            o.backendSetName = backendSetName;
+            o.id = id;
+            o.instancePoolId = instancePoolId;
+            o.instancePoolLoadBalancerAttachmentId = instancePoolLoadBalancerAttachmentId;
+            o.loadBalancerId = loadBalancerId;
+            o.port = port;
+            o.state = state;
+            o.vnicSelection = vnicSelection;
+            return o;
         }
     }
 }

@@ -14,21 +14,14 @@ public final class GetMetricDataMetricDataAggregatedDatapoint {
      * @return The date and time associated with the value of this data point. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    private final String timestamp;
+    private String timestamp;
     /**
      * @return Numeric value of the metric.  Example: `10.4`
      * 
      */
-    private final Double value;
+    private Double value;
 
-    @CustomType.Constructor
-    private GetMetricDataMetricDataAggregatedDatapoint(
-        @CustomType.Parameter("timestamp") String timestamp,
-        @CustomType.Parameter("value") Double value) {
-        this.timestamp = timestamp;
-        this.value = value;
-    }
-
+    private GetMetricDataMetricDataAggregatedDatapoint() {}
     /**
      * @return The date and time associated with the value of this data point. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
      * 
@@ -51,30 +44,32 @@ public final class GetMetricDataMetricDataAggregatedDatapoint {
     public static Builder builder(GetMetricDataMetricDataAggregatedDatapoint defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String timestamp;
         private Double value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMetricDataMetricDataAggregatedDatapoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.timestamp = defaults.timestamp;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder timestamp(String timestamp) {
             this.timestamp = Objects.requireNonNull(timestamp);
             return this;
         }
+        @CustomType.Setter
         public Builder value(Double value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetMetricDataMetricDataAggregatedDatapoint build() {
-            return new GetMetricDataMetricDataAggregatedDatapoint(timestamp, value);
+        }
+        public GetMetricDataMetricDataAggregatedDatapoint build() {
+            final var o = new GetMetricDataMetricDataAggregatedDatapoint();
+            o.timestamp = timestamp;
+            o.value = value;
+            return o;
         }
     }
 }

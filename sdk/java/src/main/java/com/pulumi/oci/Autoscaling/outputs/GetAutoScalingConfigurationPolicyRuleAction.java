@@ -14,17 +14,10 @@ public final class GetAutoScalingConfigurationPolicyRuleAction {
      * @return The type of action to take.
      * 
      */
-    private final String type;
-    private final Integer value;
+    private String type;
+    private Integer value;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationPolicyRuleAction(
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("value") Integer value) {
-        this.type = type;
-        this.value = value;
-    }
-
+    private GetAutoScalingConfigurationPolicyRuleAction() {}
     /**
      * @return The type of action to take.
      * 
@@ -43,30 +36,32 @@ public final class GetAutoScalingConfigurationPolicyRuleAction {
     public static Builder builder(GetAutoScalingConfigurationPolicyRuleAction defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String type;
         private Integer value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicyRuleAction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.type = defaults.type;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder value(Integer value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetAutoScalingConfigurationPolicyRuleAction build() {
-            return new GetAutoScalingConfigurationPolicyRuleAction(type, value);
+        }
+        public GetAutoScalingConfigurationPolicyRuleAction build() {
+            final var o = new GetAutoScalingConfigurationPolicyRuleAction();
+            o.type = type;
+            o.value = value;
+            return o;
         }
     }
 }

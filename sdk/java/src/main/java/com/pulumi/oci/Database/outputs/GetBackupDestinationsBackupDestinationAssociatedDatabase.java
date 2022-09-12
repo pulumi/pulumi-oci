@@ -13,21 +13,14 @@ public final class GetBackupDestinationsBackupDestinationAssociatedDatabase {
      * @return The display name of the database that is associated with the backup destination.
      * 
      */
-    private final String dbName;
+    private String dbName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetBackupDestinationsBackupDestinationAssociatedDatabase(
-        @CustomType.Parameter("dbName") String dbName,
-        @CustomType.Parameter("id") String id) {
-        this.dbName = dbName;
-        this.id = id;
-    }
-
+    private GetBackupDestinationsBackupDestinationAssociatedDatabase() {}
     /**
      * @return The display name of the database that is associated with the backup destination.
      * 
@@ -50,30 +43,32 @@ public final class GetBackupDestinationsBackupDestinationAssociatedDatabase {
     public static Builder builder(GetBackupDestinationsBackupDestinationAssociatedDatabase defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dbName;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBackupDestinationsBackupDestinationAssociatedDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbName = defaults.dbName;
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder dbName(String dbName) {
             this.dbName = Objects.requireNonNull(dbName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetBackupDestinationsBackupDestinationAssociatedDatabase build() {
-            return new GetBackupDestinationsBackupDestinationAssociatedDatabase(dbName, id);
+        }
+        public GetBackupDestinationsBackupDestinationAssociatedDatabase build() {
+            final var o = new GetBackupDestinationsBackupDestinationAssociatedDatabase();
+            o.dbName = dbName;
+            o.id = id;
+            return o;
         }
     }
 }

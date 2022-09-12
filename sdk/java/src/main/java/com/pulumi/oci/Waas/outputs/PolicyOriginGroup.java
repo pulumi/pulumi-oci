@@ -11,17 +11,10 @@ import java.util.Objects;
 
 @CustomType
 public final class PolicyOriginGroup {
-    private final String label;
-    private final List<PolicyOriginGroupOriginGroup> originGroups;
+    private String label;
+    private List<PolicyOriginGroupOriginGroup> originGroups;
 
-    @CustomType.Constructor
-    private PolicyOriginGroup(
-        @CustomType.Parameter("label") String label,
-        @CustomType.Parameter("originGroups") List<PolicyOriginGroupOriginGroup> originGroups) {
-        this.label = label;
-        this.originGroups = originGroups;
-    }
-
+    private PolicyOriginGroup() {}
     public String label() {
         return this.label;
     }
@@ -36,33 +29,35 @@ public final class PolicyOriginGroup {
     public static Builder builder(PolicyOriginGroup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String label;
         private List<PolicyOriginGroupOriginGroup> originGroups;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PolicyOriginGroup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.label = defaults.label;
     	      this.originGroups = defaults.originGroups;
         }
 
+        @CustomType.Setter
         public Builder label(String label) {
             this.label = Objects.requireNonNull(label);
             return this;
         }
+        @CustomType.Setter
         public Builder originGroups(List<PolicyOriginGroupOriginGroup> originGroups) {
             this.originGroups = Objects.requireNonNull(originGroups);
             return this;
         }
         public Builder originGroups(PolicyOriginGroupOriginGroup... originGroups) {
             return originGroups(List.of(originGroups));
-        }        public PolicyOriginGroup build() {
-            return new PolicyOriginGroup(label, originGroups);
+        }
+        public PolicyOriginGroup build() {
+            final var o = new PolicyOriginGroup();
+            o.label = label;
+            o.originGroups = originGroups;
+            return o;
         }
     }
 }

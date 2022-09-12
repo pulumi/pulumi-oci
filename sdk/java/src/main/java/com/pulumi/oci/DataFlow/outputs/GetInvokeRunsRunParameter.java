@@ -13,21 +13,14 @@ public final class GetInvokeRunsRunParameter {
      * @return The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;input_file&#34;
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: &#34;&#34; (empty string), &#34;10&#34;, &#34;mydata.xml&#34;, &#34;${x}&#34;
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetInvokeRunsRunParameter(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("value") String value) {
-        this.name = name;
-        this.value = value;
-    }
-
+    private GetInvokeRunsRunParameter() {}
     /**
      * @return The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;input_file&#34;
      * 
@@ -50,30 +43,32 @@ public final class GetInvokeRunsRunParameter {
     public static Builder builder(GetInvokeRunsRunParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvokeRunsRunParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetInvokeRunsRunParameter build() {
-            return new GetInvokeRunsRunParameter(name, value);
+        }
+        public GetInvokeRunsRunParameter build() {
+            final var o = new GetInvokeRunsRunParameter();
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

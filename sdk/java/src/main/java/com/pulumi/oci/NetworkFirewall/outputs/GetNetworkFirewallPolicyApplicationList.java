@@ -10,35 +10,20 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNetworkFirewallPolicyApplicationList {
-    private final Integer icmpCode;
-    private final Integer icmpType;
-    private final String key;
-    private final Integer maximumPort;
-    private final Integer minimumPort;
+    private Integer icmpCode;
+    private Integer icmpType;
+    private String key;
+    private Integer maximumPort;
+    private Integer minimumPort;
     /**
      * @return Type of the secrets mapped based on the policy.
      * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
      * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetNetworkFirewallPolicyApplicationList(
-        @CustomType.Parameter("icmpCode") Integer icmpCode,
-        @CustomType.Parameter("icmpType") Integer icmpType,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("maximumPort") Integer maximumPort,
-        @CustomType.Parameter("minimumPort") Integer minimumPort,
-        @CustomType.Parameter("type") String type) {
-        this.icmpCode = icmpCode;
-        this.icmpType = icmpType;
-        this.key = key;
-        this.maximumPort = maximumPort;
-        this.minimumPort = minimumPort;
-        this.type = type;
-    }
-
+    private GetNetworkFirewallPolicyApplicationList() {}
     public Integer icmpCode() {
         return this.icmpCode;
     }
@@ -71,7 +56,7 @@ public final class GetNetworkFirewallPolicyApplicationList {
     public static Builder builder(GetNetworkFirewallPolicyApplicationList defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer icmpCode;
         private Integer icmpType;
@@ -79,11 +64,7 @@ public final class GetNetworkFirewallPolicyApplicationList {
         private Integer maximumPort;
         private Integer minimumPort;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkFirewallPolicyApplicationList defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.icmpCode = defaults.icmpCode;
@@ -94,31 +75,45 @@ public final class GetNetworkFirewallPolicyApplicationList {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder icmpCode(Integer icmpCode) {
             this.icmpCode = Objects.requireNonNull(icmpCode);
             return this;
         }
+        @CustomType.Setter
         public Builder icmpType(Integer icmpType) {
             this.icmpType = Objects.requireNonNull(icmpType);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder maximumPort(Integer maximumPort) {
             this.maximumPort = Objects.requireNonNull(maximumPort);
             return this;
         }
+        @CustomType.Setter
         public Builder minimumPort(Integer minimumPort) {
             this.minimumPort = Objects.requireNonNull(minimumPort);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetNetworkFirewallPolicyApplicationList build() {
-            return new GetNetworkFirewallPolicyApplicationList(icmpCode, icmpType, key, maximumPort, minimumPort, type);
+        }
+        public GetNetworkFirewallPolicyApplicationList build() {
+            final var o = new GetNetworkFirewallPolicyApplicationList();
+            o.icmpCode = icmpCode;
+            o.icmpType = icmpType;
+            o.key = key;
+            o.maximumPort = maximumPort;
+            o.minimumPort = minimumPort;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -15,49 +15,34 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The fault domain the instance is running in.
      * 
      */
-    private final String faultDomain;
+    private String faultDomain;
     /**
      * @return The OCID of the instance.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The shape of the instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
-    private final String shape;
+    private String shape;
     /**
      * @return The shape configuration requested when launching instances in a compute capacity reservation.
      * 
      */
-    private final List<GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig> shapeConfigs;
+    private List<GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig> shapeConfigs;
 
-    @CustomType.Constructor
-    private GetComputeCapacityReservationInstancesCapacityReservationInstance(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("faultDomain") String faultDomain,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("shape") String shape,
-        @CustomType.Parameter("shapeConfigs") List<GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig> shapeConfigs) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.faultDomain = faultDomain;
-        this.id = id;
-        this.shape = shape;
-        this.shapeConfigs = shapeConfigs;
-    }
-
+    private GetComputeCapacityReservationInstancesCapacityReservationInstance() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
@@ -108,7 +93,7 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
     public static Builder builder(GetComputeCapacityReservationInstancesCapacityReservationInstance defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String compartmentId;
@@ -116,11 +101,7 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
         private String id;
         private String shape;
         private List<GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig> shapeConfigs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetComputeCapacityReservationInstancesCapacityReservationInstance defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -131,34 +112,48 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
     	      this.shapeConfigs = defaults.shapeConfigs;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = Objects.requireNonNull(faultDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
         }
+        @CustomType.Setter
         public Builder shapeConfigs(List<GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig> shapeConfigs) {
             this.shapeConfigs = Objects.requireNonNull(shapeConfigs);
             return this;
         }
         public Builder shapeConfigs(GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig... shapeConfigs) {
             return shapeConfigs(List.of(shapeConfigs));
-        }        public GetComputeCapacityReservationInstancesCapacityReservationInstance build() {
-            return new GetComputeCapacityReservationInstancesCapacityReservationInstance(availabilityDomain, compartmentId, faultDomain, id, shape, shapeConfigs);
+        }
+        public GetComputeCapacityReservationInstancesCapacityReservationInstance build() {
+            final var o = new GetComputeCapacityReservationInstancesCapacityReservationInstance();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.faultDomain = faultDomain;
+            o.id = id;
+            o.shape = shape;
+            o.shapeConfigs = shapeConfigs;
+            return o;
         }
     }
 }

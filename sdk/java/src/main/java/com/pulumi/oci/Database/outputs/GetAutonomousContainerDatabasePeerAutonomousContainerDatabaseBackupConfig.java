@@ -15,21 +15,14 @@ public final class GetAutonomousContainerDatabasePeerAutonomousContainerDatabase
      * @return Backup destination details.
      * 
      */
-    private final List<GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails;
+    private List<GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails;
     /**
      * @return Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
      * 
      */
-    private final Integer recoveryWindowInDays;
+    private Integer recoveryWindowInDays;
 
-    @CustomType.Constructor
-    private GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig(
-        @CustomType.Parameter("backupDestinationDetails") List<GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails,
-        @CustomType.Parameter("recoveryWindowInDays") Integer recoveryWindowInDays) {
-        this.backupDestinationDetails = backupDestinationDetails;
-        this.recoveryWindowInDays = recoveryWindowInDays;
-    }
-
+    private GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig() {}
     /**
      * @return Backup destination details.
      * 
@@ -52,21 +45,18 @@ public final class GetAutonomousContainerDatabasePeerAutonomousContainerDatabase
     public static Builder builder(GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails;
         private Integer recoveryWindowInDays;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupDestinationDetails = defaults.backupDestinationDetails;
     	      this.recoveryWindowInDays = defaults.recoveryWindowInDays;
         }
 
+        @CustomType.Setter
         public Builder backupDestinationDetails(List<GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails) {
             this.backupDestinationDetails = Objects.requireNonNull(backupDestinationDetails);
             return this;
@@ -74,11 +64,16 @@ public final class GetAutonomousContainerDatabasePeerAutonomousContainerDatabase
         public Builder backupDestinationDetails(GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail... backupDestinationDetails) {
             return backupDestinationDetails(List.of(backupDestinationDetails));
         }
+        @CustomType.Setter
         public Builder recoveryWindowInDays(Integer recoveryWindowInDays) {
             this.recoveryWindowInDays = Objects.requireNonNull(recoveryWindowInDays);
             return this;
-        }        public GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig build() {
-            return new GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig(backupDestinationDetails, recoveryWindowInDays);
+        }
+        public GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig build() {
+            final var o = new GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig();
+            o.backupDestinationDetails = backupDestinationDetails;
+            o.recoveryWindowInDays = recoveryWindowInDays;
+            return o;
         }
     }
 }

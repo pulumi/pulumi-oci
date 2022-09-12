@@ -43,6 +43,12 @@ namespace Pulumi.Oci.Database
     ///         CpuCoreCount = @var.Data_guard_association_cpu_core_count,
     ///         DatabaseDefinedTags = @var.Data_guard_association_database_defined_tags,
     ///         DatabaseFreeformTags = @var.Data_guard_association_database_freeform_tags,
+    ///         DataCollectionOptions = new Oci.Database.Inputs.DataGuardAssociationDataCollectionOptionsArgs
+    ///         {
+    ///             IsDiagnosticsEventsEnabled = @var.Data_guard_association_data_collection_options_is_diagnostics_events_enabled,
+    ///             IsHealthMonitoringEnabled = @var.Data_guard_association_data_collection_options_is_health_monitoring_enabled,
+    ///             IsIncidentLogsEnabled = @var.Data_guard_association_data_collection_options_is_incident_logs_enabled,
+    ///         },
     ///         DatabaseSoftwareImageId = oci_database_database_software_image.Test_database_software_image.Id,
     ///         DbSystemDefinedTags = @var.Data_guard_association_db_system_defined_tags,
     ///         DbSystemFreeformTags = @var.Data_guard_association_db_system_freeform_tags,
@@ -113,6 +119,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("creationType")]
         public Output<string> CreationType { get; private set; } = null!;
+
+        /// <summary>
+        /// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        /// </summary>
+        [Output("dataCollectionOptions")]
+        public Output<Outputs.DataGuardAssociationDataCollectionOptions> DataCollectionOptions { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
@@ -400,6 +412,12 @@ namespace Pulumi.Oci.Database
         public Input<string> CreationType { get; set; } = null!;
 
         /// <summary>
+        /// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        /// </summary>
+        [Input("dataCollectionOptions")]
+        public Input<Inputs.DataGuardAssociationDataCollectionOptionsArgs>? DataCollectionOptions { get; set; }
+
+        /// <summary>
         /// (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
         /// </summary>
         [Input("databaseAdminPassword", required: true)]
@@ -651,6 +669,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("creationType")]
         public Input<string>? CreationType { get; set; }
+
+        /// <summary>
+        /// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        /// </summary>
+        [Input("dataCollectionOptions")]
+        public Input<Inputs.DataGuardAssociationDataCollectionOptionsGetArgs>? DataCollectionOptions { get; set; }
 
         /// <summary>
         /// (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.

@@ -11,20 +11,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig {
-    private final Integer maxNodeCount;
-    private final List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric> metrics;
-    private final Integer stepSize;
+    private Integer maxNodeCount;
+    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric> metrics;
+    private Integer stepSize;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig(
-        @CustomType.Parameter("maxNodeCount") Integer maxNodeCount,
-        @CustomType.Parameter("metrics") List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric> metrics,
-        @CustomType.Parameter("stepSize") Integer stepSize) {
-        this.maxNodeCount = maxNodeCount;
-        this.metrics = metrics;
-        this.stepSize = stepSize;
-    }
-
+    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig() {}
     public Integer maxNodeCount() {
         return this.maxNodeCount;
     }
@@ -42,16 +33,12 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     public static Builder builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer maxNodeCount;
         private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric> metrics;
         private Integer stepSize;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.maxNodeCount = defaults.maxNodeCount;
@@ -59,10 +46,12 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     	      this.stepSize = defaults.stepSize;
         }
 
+        @CustomType.Setter
         public Builder maxNodeCount(Integer maxNodeCount) {
             this.maxNodeCount = Objects.requireNonNull(maxNodeCount);
             return this;
         }
+        @CustomType.Setter
         public Builder metrics(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric> metrics) {
             this.metrics = Objects.requireNonNull(metrics);
             return this;
@@ -70,11 +59,17 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
         public Builder metrics(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetric... metrics) {
             return metrics(List.of(metrics));
         }
+        @CustomType.Setter
         public Builder stepSize(Integer stepSize) {
             this.stepSize = Objects.requireNonNull(stepSize);
             return this;
-        }        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig build() {
-            return new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig(maxNodeCount, metrics, stepSize);
+        }
+        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig build() {
+            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfig();
+            o.maxNodeCount = maxNodeCount;
+            o.metrics = metrics;
+            o.stepSize = stepSize;
+            return o;
         }
     }
 }

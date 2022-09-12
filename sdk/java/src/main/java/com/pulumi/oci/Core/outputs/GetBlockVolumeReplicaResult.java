@@ -15,90 +15,61 @@ public final class GetBlockVolumeReplicaResult {
      * @return The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The OCID of the source block volume.
      * 
      */
-    private final String blockVolumeId;
-    private final String blockVolumeReplicaId;
+    private String blockVolumeId;
+    private String blockVolumeReplicaId;
     /**
      * @return The OCID of the compartment that contains the block volume replica.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The size of the source block volume, in GBs.
      * 
      */
-    private final String sizeInGbs;
+    private String sizeInGbs;
     /**
      * @return The current state of a block volume replica.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the block volume replica was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the block volume replica was last synced from the source block volume. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeLastSynced;
-    private final String volumeGroupReplicaId;
+    private String timeLastSynced;
+    private String volumeGroupReplicaId;
 
-    @CustomType.Constructor
-    private GetBlockVolumeReplicaResult(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("blockVolumeId") String blockVolumeId,
-        @CustomType.Parameter("blockVolumeReplicaId") String blockVolumeReplicaId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("sizeInGbs") String sizeInGbs,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeLastSynced") String timeLastSynced,
-        @CustomType.Parameter("volumeGroupReplicaId") String volumeGroupReplicaId) {
-        this.availabilityDomain = availabilityDomain;
-        this.blockVolumeId = blockVolumeId;
-        this.blockVolumeReplicaId = blockVolumeReplicaId;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.sizeInGbs = sizeInGbs;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeLastSynced = timeLastSynced;
-        this.volumeGroupReplicaId = volumeGroupReplicaId;
-    }
-
+    private GetBlockVolumeReplicaResult() {}
     /**
      * @return The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      * 
@@ -190,7 +161,7 @@ public final class GetBlockVolumeReplicaResult {
     public static Builder builder(GetBlockVolumeReplicaResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String blockVolumeId;
@@ -205,11 +176,7 @@ public final class GetBlockVolumeReplicaResult {
         private String timeCreated;
         private String timeLastSynced;
         private String volumeGroupReplicaId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBlockVolumeReplicaResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -227,59 +194,87 @@ public final class GetBlockVolumeReplicaResult {
     	      this.volumeGroupReplicaId = defaults.volumeGroupReplicaId;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder blockVolumeId(String blockVolumeId) {
             this.blockVolumeId = Objects.requireNonNull(blockVolumeId);
             return this;
         }
+        @CustomType.Setter
         public Builder blockVolumeReplicaId(String blockVolumeReplicaId) {
             this.blockVolumeReplicaId = Objects.requireNonNull(blockVolumeReplicaId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder sizeInGbs(String sizeInGbs) {
             this.sizeInGbs = Objects.requireNonNull(sizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastSynced(String timeLastSynced) {
             this.timeLastSynced = Objects.requireNonNull(timeLastSynced);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeGroupReplicaId(String volumeGroupReplicaId) {
             this.volumeGroupReplicaId = Objects.requireNonNull(volumeGroupReplicaId);
             return this;
-        }        public GetBlockVolumeReplicaResult build() {
-            return new GetBlockVolumeReplicaResult(availabilityDomain, blockVolumeId, blockVolumeReplicaId, compartmentId, definedTags, displayName, freeformTags, id, sizeInGbs, state, timeCreated, timeLastSynced, volumeGroupReplicaId);
+        }
+        public GetBlockVolumeReplicaResult build() {
+            final var o = new GetBlockVolumeReplicaResult();
+            o.availabilityDomain = availabilityDomain;
+            o.blockVolumeId = blockVolumeId;
+            o.blockVolumeReplicaId = blockVolumeReplicaId;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.sizeInGbs = sizeInGbs;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeLastSynced = timeLastSynced;
+            o.volumeGroupReplicaId = volumeGroupReplicaId;
+            return o;
         }
     }
 }

@@ -64,6 +64,8 @@ import javax.annotation.Nullable;
  *             .clusterName(var_.cloud_vm_cluster_cluster_name())
  *             .dataCollectionOptions(CloudVmClusterDataCollectionOptionsArgs.builder()
  *                 .isDiagnosticsEventsEnabled(var_.cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled())
+ *                 .isHealthMonitoringEnabled(var_.cloud_vm_cluster_data_collection_options_is_health_monitoring_enabled())
+ *                 .isIncidentLogsEnabled(var_.cloud_vm_cluster_data_collection_options_is_incident_logs_enabled())
  *                 .build())
  *             .dataStoragePercentage(var_.cloud_vm_cluster_data_storage_percentage())
  *             .definedTags(var_.cloud_vm_cluster_defined_tags())

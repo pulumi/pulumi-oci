@@ -15,48 +15,31 @@ public final class GetSecurityAssessmentComparisonResult {
      * @return The OCID of the security assessment that is set as a baseline.
      * 
      */
-    private final String baselineId;
-    private final String comparisonSecurityAssessmentId;
+    private String baselineId;
+    private String comparisonSecurityAssessmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String securityAssessmentId;
+    private String id;
+    private String securityAssessmentId;
     /**
      * @return The current state of the security assessment comparison.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return A target-based comparison between two security assessments.
      * 
      */
-    private final List<GetSecurityAssessmentComparisonTarget> targets;
+    private List<GetSecurityAssessmentComparisonTarget> targets;
     /**
      * @return The date and time when the security assessment comparison was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetSecurityAssessmentComparisonResult(
-        @CustomType.Parameter("baselineId") String baselineId,
-        @CustomType.Parameter("comparisonSecurityAssessmentId") String comparisonSecurityAssessmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("securityAssessmentId") String securityAssessmentId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("targets") List<GetSecurityAssessmentComparisonTarget> targets,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.baselineId = baselineId;
-        this.comparisonSecurityAssessmentId = comparisonSecurityAssessmentId;
-        this.id = id;
-        this.securityAssessmentId = securityAssessmentId;
-        this.state = state;
-        this.targets = targets;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetSecurityAssessmentComparisonResult() {}
     /**
      * @return The OCID of the security assessment that is set as a baseline.
      * 
@@ -106,7 +89,7 @@ public final class GetSecurityAssessmentComparisonResult {
     public static Builder builder(GetSecurityAssessmentComparisonResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String baselineId;
         private String comparisonSecurityAssessmentId;
@@ -115,11 +98,7 @@ public final class GetSecurityAssessmentComparisonResult {
         private String state;
         private List<GetSecurityAssessmentComparisonTarget> targets;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityAssessmentComparisonResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baselineId = defaults.baselineId;
@@ -131,26 +110,32 @@ public final class GetSecurityAssessmentComparisonResult {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder baselineId(String baselineId) {
             this.baselineId = Objects.requireNonNull(baselineId);
             return this;
         }
+        @CustomType.Setter
         public Builder comparisonSecurityAssessmentId(String comparisonSecurityAssessmentId) {
             this.comparisonSecurityAssessmentId = Objects.requireNonNull(comparisonSecurityAssessmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder securityAssessmentId(String securityAssessmentId) {
             this.securityAssessmentId = Objects.requireNonNull(securityAssessmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder targets(List<GetSecurityAssessmentComparisonTarget> targets) {
             this.targets = Objects.requireNonNull(targets);
             return this;
@@ -158,11 +143,21 @@ public final class GetSecurityAssessmentComparisonResult {
         public Builder targets(GetSecurityAssessmentComparisonTarget... targets) {
             return targets(List.of(targets));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetSecurityAssessmentComparisonResult build() {
-            return new GetSecurityAssessmentComparisonResult(baselineId, comparisonSecurityAssessmentId, id, securityAssessmentId, state, targets, timeCreated);
+        }
+        public GetSecurityAssessmentComparisonResult build() {
+            final var o = new GetSecurityAssessmentComparisonResult();
+            o.baselineId = baselineId;
+            o.comparisonSecurityAssessmentId = comparisonSecurityAssessmentId;
+            o.id = id;
+            o.securityAssessmentId = securityAssessmentId;
+            o.state = state;
+            o.targets = targets;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

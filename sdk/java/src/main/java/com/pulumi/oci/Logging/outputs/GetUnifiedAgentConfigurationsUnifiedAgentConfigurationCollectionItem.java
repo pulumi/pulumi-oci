@@ -16,91 +16,64 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
      * @return Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return State of unified agent service configuration.
      * 
      */
-    private final String configurationState;
+    private String configurationState;
     /**
      * @return Type of Unified Agent service configuration.
      * 
      */
-    private final String configurationType;
+    private String configurationType;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Description for this resource.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Resource name
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Whether or not this resource is currently enabled.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return Lifecycle state of the log object
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Time the resource was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Time the resource was last modified.
      * 
      */
-    private final String timeLastModified;
+    private String timeLastModified;
 
-    @CustomType.Constructor
-    private GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("configurationState") String configurationState,
-        @CustomType.Parameter("configurationType") String configurationType,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeLastModified") String timeLastModified) {
-        this.compartmentId = compartmentId;
-        this.configurationState = configurationState;
-        this.configurationType = configurationType;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isEnabled = isEnabled;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeLastModified = timeLastModified;
-    }
-
+    private GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem() {}
     /**
      * @return Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
      * 
@@ -193,7 +166,7 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
     public static Builder builder(GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String configurationState;
@@ -207,11 +180,7 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
         private String state;
         private String timeCreated;
         private String timeLastModified;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -228,55 +197,81 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
     	      this.timeLastModified = defaults.timeLastModified;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder configurationState(String configurationState) {
             this.configurationState = Objects.requireNonNull(configurationState);
             return this;
         }
+        @CustomType.Setter
         public Builder configurationType(String configurationType) {
             this.configurationType = Objects.requireNonNull(configurationType);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastModified(String timeLastModified) {
             this.timeLastModified = Objects.requireNonNull(timeLastModified);
             return this;
-        }        public GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem build() {
-            return new GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem(compartmentId, configurationState, configurationType, definedTags, description, displayName, freeformTags, id, isEnabled, state, timeCreated, timeLastModified);
+        }
+        public GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem build() {
+            final var o = new GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem();
+            o.compartmentId = compartmentId;
+            o.configurationState = configurationState;
+            o.configurationType = configurationType;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isEnabled = isEnabled;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeLastModified = timeLastModified;
+            return o;
         }
     }
 }

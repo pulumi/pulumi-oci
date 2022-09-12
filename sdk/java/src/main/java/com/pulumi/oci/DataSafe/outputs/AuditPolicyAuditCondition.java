@@ -18,35 +18,24 @@ public final class AuditPolicyAuditCondition {
      * @return Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
      * 
      */
-    private final @Nullable String auditPolicyName;
+    private @Nullable String auditPolicyName;
     /**
      * @return Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
      * 
      */
-    private final @Nullable List<AuditPolicyAuditConditionEnableCondition> enableConditions;
+    private @Nullable List<AuditPolicyAuditConditionEnableCondition> enableConditions;
     /**
      * @return Indicates whether the Data Safe user activity on the target database will be audited by the policy.
      * 
      */
-    private final @Nullable Boolean isDataSafeServiceAccountAudited;
+    private @Nullable Boolean isDataSafeServiceAccountAudited;
     /**
      * @return Indicates whether the privileged user list is managed by Data Safe.
      * 
      */
-    private final @Nullable Boolean isPrivUsersManagedByDataSafe;
+    private @Nullable Boolean isPrivUsersManagedByDataSafe;
 
-    @CustomType.Constructor
-    private AuditPolicyAuditCondition(
-        @CustomType.Parameter("auditPolicyName") @Nullable String auditPolicyName,
-        @CustomType.Parameter("enableConditions") @Nullable List<AuditPolicyAuditConditionEnableCondition> enableConditions,
-        @CustomType.Parameter("isDataSafeServiceAccountAudited") @Nullable Boolean isDataSafeServiceAccountAudited,
-        @CustomType.Parameter("isPrivUsersManagedByDataSafe") @Nullable Boolean isPrivUsersManagedByDataSafe) {
-        this.auditPolicyName = auditPolicyName;
-        this.enableConditions = enableConditions;
-        this.isDataSafeServiceAccountAudited = isDataSafeServiceAccountAudited;
-        this.isPrivUsersManagedByDataSafe = isPrivUsersManagedByDataSafe;
-    }
-
+    private AuditPolicyAuditCondition() {}
     /**
      * @return Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
      * 
@@ -83,17 +72,13 @@ public final class AuditPolicyAuditCondition {
     public static Builder builder(AuditPolicyAuditCondition defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String auditPolicyName;
         private @Nullable List<AuditPolicyAuditConditionEnableCondition> enableConditions;
         private @Nullable Boolean isDataSafeServiceAccountAudited;
         private @Nullable Boolean isPrivUsersManagedByDataSafe;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AuditPolicyAuditCondition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.auditPolicyName = defaults.auditPolicyName;
@@ -102,10 +87,12 @@ public final class AuditPolicyAuditCondition {
     	      this.isPrivUsersManagedByDataSafe = defaults.isPrivUsersManagedByDataSafe;
         }
 
+        @CustomType.Setter
         public Builder auditPolicyName(@Nullable String auditPolicyName) {
             this.auditPolicyName = auditPolicyName;
             return this;
         }
+        @CustomType.Setter
         public Builder enableConditions(@Nullable List<AuditPolicyAuditConditionEnableCondition> enableConditions) {
             this.enableConditions = enableConditions;
             return this;
@@ -113,15 +100,23 @@ public final class AuditPolicyAuditCondition {
         public Builder enableConditions(AuditPolicyAuditConditionEnableCondition... enableConditions) {
             return enableConditions(List.of(enableConditions));
         }
+        @CustomType.Setter
         public Builder isDataSafeServiceAccountAudited(@Nullable Boolean isDataSafeServiceAccountAudited) {
             this.isDataSafeServiceAccountAudited = isDataSafeServiceAccountAudited;
             return this;
         }
+        @CustomType.Setter
         public Builder isPrivUsersManagedByDataSafe(@Nullable Boolean isPrivUsersManagedByDataSafe) {
             this.isPrivUsersManagedByDataSafe = isPrivUsersManagedByDataSafe;
             return this;
-        }        public AuditPolicyAuditCondition build() {
-            return new AuditPolicyAuditCondition(auditPolicyName, enableConditions, isDataSafeServiceAccountAudited, isPrivUsersManagedByDataSafe);
+        }
+        public AuditPolicyAuditCondition build() {
+            final var o = new AuditPolicyAuditCondition();
+            o.auditPolicyName = auditPolicyName;
+            o.enableConditions = enableConditions;
+            o.isDataSafeServiceAccountAudited = isDataSafeServiceAccountAudited;
+            o.isPrivUsersManagedByDataSafe = isPrivUsersManagedByDataSafe;
+            return o;
         }
     }
 }

@@ -14,63 +14,44 @@ public final class GetInvoicesInvoicePaymentTerm {
      * @return User that created the Payment term
      * 
      */
-    private final String createdBy;
+    private String createdBy;
     /**
      * @return Payment term Description
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Payment term active flag
      * 
      */
-    private final Boolean isActive;
+    private Boolean isActive;
     /**
      * @return Payment Term name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return SPM Invocie creation date
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return SPM Invoice updated date
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return User that updated SPM Invoice
      * 
      */
-    private final String updatedBy;
+    private String updatedBy;
     /**
      * @return Payment Term value
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetInvoicesInvoicePaymentTerm(
-        @CustomType.Parameter("createdBy") String createdBy,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("isActive") Boolean isActive,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("updatedBy") String updatedBy,
-        @CustomType.Parameter("value") String value) {
-        this.createdBy = createdBy;
-        this.description = description;
-        this.isActive = isActive;
-        this.name = name;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.updatedBy = updatedBy;
-        this.value = value;
-    }
-
+    private GetInvoicesInvoicePaymentTerm() {}
     /**
      * @return User that created the Payment term
      * 
@@ -135,7 +116,7 @@ public final class GetInvoicesInvoicePaymentTerm {
     public static Builder builder(GetInvoicesInvoicePaymentTerm defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String createdBy;
         private String description;
@@ -145,11 +126,7 @@ public final class GetInvoicesInvoicePaymentTerm {
         private String timeUpdated;
         private String updatedBy;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvoicesInvoicePaymentTerm defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.createdBy = defaults.createdBy;
@@ -162,39 +139,57 @@ public final class GetInvoicesInvoicePaymentTerm {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder createdBy(String createdBy) {
             this.createdBy = Objects.requireNonNull(createdBy);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder isActive(Boolean isActive) {
             this.isActive = Objects.requireNonNull(isActive);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder updatedBy(String updatedBy) {
             this.updatedBy = Objects.requireNonNull(updatedBy);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetInvoicesInvoicePaymentTerm build() {
-            return new GetInvoicesInvoicePaymentTerm(createdBy, description, isActive, name, timeCreated, timeUpdated, updatedBy, value);
+        }
+        public GetInvoicesInvoicePaymentTerm build() {
+            final var o = new GetInvoicesInvoicePaymentTerm();
+            o.createdBy = createdBy;
+            o.description = description;
+            o.isActive = isActive;
+            o.name = name;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.updatedBy = updatedBy;
+            o.value = value;
+            return o;
         }
     }
 }

@@ -14,13 +14,9 @@ public final class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeColle
      * @return Array of collected audit volume summary.
      * 
      */
-    private final List<GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem> items;
+    private List<GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem> items;
 
-    @CustomType.Constructor
-    private GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem(@CustomType.Parameter("items") List<GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem> items) {
-        this.items = items;
-    }
-
+    private GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem() {}
     /**
      * @return Array of collected audit volume summary.
      * 
@@ -36,27 +32,27 @@ public final class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeColle
     public static Builder builder(GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem... items) {
             return items(List.of(items));
-        }        public GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem build() {
-            return new GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem(items);
+        }
+        public GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem build() {
+            final var o = new GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem();
+            o.items = items;
+            return o;
         }
     }
 }

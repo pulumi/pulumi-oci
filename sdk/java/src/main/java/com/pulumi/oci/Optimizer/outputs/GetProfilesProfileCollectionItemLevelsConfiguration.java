@@ -14,13 +14,9 @@ public final class GetProfilesProfileCollectionItemLevelsConfiguration {
      * @return The list of tags specified in the current profile override.
      * 
      */
-    private final List<GetProfilesProfileCollectionItemLevelsConfigurationItem> items;
+    private List<GetProfilesProfileCollectionItemLevelsConfigurationItem> items;
 
-    @CustomType.Constructor
-    private GetProfilesProfileCollectionItemLevelsConfiguration(@CustomType.Parameter("items") List<GetProfilesProfileCollectionItemLevelsConfigurationItem> items) {
-        this.items = items;
-    }
-
+    private GetProfilesProfileCollectionItemLevelsConfiguration() {}
     /**
      * @return The list of tags specified in the current profile override.
      * 
@@ -36,27 +32,27 @@ public final class GetProfilesProfileCollectionItemLevelsConfiguration {
     public static Builder builder(GetProfilesProfileCollectionItemLevelsConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetProfilesProfileCollectionItemLevelsConfigurationItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProfilesProfileCollectionItemLevelsConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetProfilesProfileCollectionItemLevelsConfigurationItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetProfilesProfileCollectionItemLevelsConfigurationItem... items) {
             return items(List.of(items));
-        }        public GetProfilesProfileCollectionItemLevelsConfiguration build() {
-            return new GetProfilesProfileCollectionItemLevelsConfiguration(items);
+        }
+        public GetProfilesProfileCollectionItemLevelsConfiguration build() {
+            final var o = new GetProfilesProfileCollectionItemLevelsConfiguration();
+            o.items = items;
+            return o;
         }
     }
 }

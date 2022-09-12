@@ -15,42 +15,29 @@ public final class GetManagedDatabasesDatabaseParametersDatabaseParametersCollec
      * @return The name of the Managed Database.
      * 
      */
-    private final String databaseName;
+    private String databaseName;
     /**
      * @return The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
      * 
      */
-    private final String databaseSubType;
+    private String databaseSubType;
     /**
      * @return The type of Oracle Database installation.
      * 
      */
-    private final String databaseType;
+    private String databaseType;
     /**
      * @return The Oracle Database version.
      * 
      */
-    private final String databaseVersion;
+    private String databaseVersion;
     /**
      * @return An array of DatabaseParameterSummary objects.
      * 
      */
-    private final List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem> items;
+    private List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetManagedDatabasesDatabaseParametersDatabaseParametersCollection(
-        @CustomType.Parameter("databaseName") String databaseName,
-        @CustomType.Parameter("databaseSubType") String databaseSubType,
-        @CustomType.Parameter("databaseType") String databaseType,
-        @CustomType.Parameter("databaseVersion") String databaseVersion,
-        @CustomType.Parameter("items") List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem> items) {
-        this.databaseName = databaseName;
-        this.databaseSubType = databaseSubType;
-        this.databaseType = databaseType;
-        this.databaseVersion = databaseVersion;
-        this.items = items;
-    }
-
+    private GetManagedDatabasesDatabaseParametersDatabaseParametersCollection() {}
     /**
      * @return The name of the Managed Database.
      * 
@@ -94,18 +81,14 @@ public final class GetManagedDatabasesDatabaseParametersDatabaseParametersCollec
     public static Builder builder(GetManagedDatabasesDatabaseParametersDatabaseParametersCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String databaseName;
         private String databaseSubType;
         private String databaseType;
         private String databaseVersion;
         private List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabasesDatabaseParametersDatabaseParametersCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.databaseName = defaults.databaseName;
@@ -115,30 +98,42 @@ public final class GetManagedDatabasesDatabaseParametersDatabaseParametersCollec
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder databaseName(String databaseName) {
             this.databaseName = Objects.requireNonNull(databaseName);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseSubType(String databaseSubType) {
             this.databaseSubType = Objects.requireNonNull(databaseSubType);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseType(String databaseType) {
             this.databaseType = Objects.requireNonNull(databaseType);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseVersion(String databaseVersion) {
             this.databaseVersion = Objects.requireNonNull(databaseVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem... items) {
             return items(List.of(items));
-        }        public GetManagedDatabasesDatabaseParametersDatabaseParametersCollection build() {
-            return new GetManagedDatabasesDatabaseParametersDatabaseParametersCollection(databaseName, databaseSubType, databaseType, databaseVersion, items);
+        }
+        public GetManagedDatabasesDatabaseParametersDatabaseParametersCollection build() {
+            final var o = new GetManagedDatabasesDatabaseParametersDatabaseParametersCollection();
+            o.databaseName = databaseName;
+            o.databaseSubType = databaseSubType;
+            o.databaseType = databaseType;
+            o.databaseVersion = databaseVersion;
+            o.items = items;
+            return o;
         }
     }
 }

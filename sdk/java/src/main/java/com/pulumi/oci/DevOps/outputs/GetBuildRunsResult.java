@@ -18,63 +18,44 @@ public final class GetBuildRunsResult {
      * @return The OCID of the build pipeline to be triggered.
      * 
      */
-    private final @Nullable String buildPipelineId;
+    private @Nullable String buildPipelineId;
     /**
      * @return The list of build_run_summary_collection.
      * 
      */
-    private final List<GetBuildRunsBuildRunSummaryCollection> buildRunSummaryCollections;
+    private List<GetBuildRunsBuildRunSummaryCollection> buildRunSummaryCollections;
     /**
      * @return The OCID of the compartment where the build is running.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The filters for the trigger.
      * 
      */
-    private final @Nullable List<GetBuildRunsFilter> filters;
+    private @Nullable List<GetBuildRunsFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the DevOps project.
      * 
      */
-    private final @Nullable String projectId;
+    private @Nullable String projectId;
     /**
      * @return The current state of the build run.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetBuildRunsResult(
-        @CustomType.Parameter("buildPipelineId") @Nullable String buildPipelineId,
-        @CustomType.Parameter("buildRunSummaryCollections") List<GetBuildRunsBuildRunSummaryCollection> buildRunSummaryCollections,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetBuildRunsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("projectId") @Nullable String projectId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.buildPipelineId = buildPipelineId;
-        this.buildRunSummaryCollections = buildRunSummaryCollections;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.projectId = projectId;
-        this.state = state;
-    }
-
+    private GetBuildRunsResult() {}
     /**
      * @return The OCID of the build pipeline to be triggered.
      * 
@@ -139,7 +120,7 @@ public final class GetBuildRunsResult {
     public static Builder builder(GetBuildRunsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String buildPipelineId;
         private List<GetBuildRunsBuildRunSummaryCollection> buildRunSummaryCollections;
@@ -149,11 +130,7 @@ public final class GetBuildRunsResult {
         private @Nullable String id;
         private @Nullable String projectId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.buildPipelineId = defaults.buildPipelineId;
@@ -166,10 +143,12 @@ public final class GetBuildRunsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder buildPipelineId(@Nullable String buildPipelineId) {
             this.buildPipelineId = buildPipelineId;
             return this;
         }
+        @CustomType.Setter
         public Builder buildRunSummaryCollections(List<GetBuildRunsBuildRunSummaryCollection> buildRunSummaryCollections) {
             this.buildRunSummaryCollections = Objects.requireNonNull(buildRunSummaryCollections);
             return this;
@@ -177,14 +156,17 @@ public final class GetBuildRunsResult {
         public Builder buildRunSummaryCollections(GetBuildRunsBuildRunSummaryCollection... buildRunSummaryCollections) {
             return buildRunSummaryCollections(List.of(buildRunSummaryCollections));
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBuildRunsFilter> filters) {
             this.filters = filters;
             return this;
@@ -192,19 +174,32 @@ public final class GetBuildRunsResult {
         public Builder filters(GetBuildRunsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
             this.projectId = projectId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetBuildRunsResult build() {
-            return new GetBuildRunsResult(buildPipelineId, buildRunSummaryCollections, compartmentId, displayName, filters, id, projectId, state);
+        }
+        public GetBuildRunsResult build() {
+            final var o = new GetBuildRunsResult();
+            o.buildPipelineId = buildPipelineId;
+            o.buildRunSummaryCollections = buildRunSummaryCollections;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.projectId = projectId;
+            o.state = state;
+            return o;
         }
     }
 }

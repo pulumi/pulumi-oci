@@ -13,35 +13,24 @@ public final class GetAnalyticsClusterClusterNode {
      * @return The ID of the node within MySQL Analytics Cluster.
      * 
      */
-    private final String nodeId;
+    private String nodeId;
     /**
      * @return The current state of the Analytics Cluster.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the Analytics Cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the Analytics Cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetAnalyticsClusterClusterNode(
-        @CustomType.Parameter("nodeId") String nodeId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.nodeId = nodeId;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetAnalyticsClusterClusterNode() {}
     /**
      * @return The ID of the node within MySQL Analytics Cluster.
      * 
@@ -78,17 +67,13 @@ public final class GetAnalyticsClusterClusterNode {
     public static Builder builder(GetAnalyticsClusterClusterNode defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String nodeId;
         private String state;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAnalyticsClusterClusterNode defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.nodeId = defaults.nodeId;
@@ -97,23 +82,33 @@ public final class GetAnalyticsClusterClusterNode {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder nodeId(String nodeId) {
             this.nodeId = Objects.requireNonNull(nodeId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetAnalyticsClusterClusterNode build() {
-            return new GetAnalyticsClusterClusterNode(nodeId, state, timeCreated, timeUpdated);
+        }
+        public GetAnalyticsClusterClusterNode build() {
+            final var o = new GetAnalyticsClusterClusterNode();
+            o.nodeId = nodeId;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

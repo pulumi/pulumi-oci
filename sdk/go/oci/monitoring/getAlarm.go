@@ -78,6 +78,8 @@ type LookupAlarmResult struct {
 	Id string `pulumi:"id"`
 	// Whether the alarm is enabled.  Example: `true`
 	IsEnabled bool `pulumi:"isEnabled"`
+	// When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+	IsNotificationsPerMetricDimensionEnabled bool `pulumi:"isNotificationsPerMetricDimensionEnabled"`
 	// The format to use for notification messages sent from this alarm. The formats are:
 	MessageFormat string `pulumi:"messageFormat"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
@@ -188,6 +190,11 @@ func (o LookupAlarmResultOutput) Id() pulumi.StringOutput {
 // Whether the alarm is enabled.  Example: `true`
 func (o LookupAlarmResultOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAlarmResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+func (o LookupAlarmResultOutput) IsNotificationsPerMetricDimensionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAlarmResult) bool { return v.IsNotificationsPerMetricDimensionEnabled }).(pulumi.BoolOutput)
 }
 
 // The format to use for notification messages sent from this alarm. The formats are:

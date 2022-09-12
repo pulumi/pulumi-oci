@@ -17,35 +17,24 @@ public final class DbSystemsUpgradeIormConfigCach {
      * @return An array of IORM settings for all the database in the Exadata DB system.
      * 
      */
-    private final @Nullable List<DbSystemsUpgradeIormConfigCachDbPlan> dbPlans;
+    private @Nullable List<DbSystemsUpgradeIormConfigCachDbPlan> dbPlans;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final @Nullable String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The current value for the IORM objective. The default is `AUTO`.
      * 
      */
-    private final @Nullable String objective;
+    private @Nullable String objective;
     /**
      * @return The current state of the DB system.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private DbSystemsUpgradeIormConfigCach(
-        @CustomType.Parameter("dbPlans") @Nullable List<DbSystemsUpgradeIormConfigCachDbPlan> dbPlans,
-        @CustomType.Parameter("lifecycleDetails") @Nullable String lifecycleDetails,
-        @CustomType.Parameter("objective") @Nullable String objective,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.dbPlans = dbPlans;
-        this.lifecycleDetails = lifecycleDetails;
-        this.objective = objective;
-        this.state = state;
-    }
-
+    private DbSystemsUpgradeIormConfigCach() {}
     /**
      * @return An array of IORM settings for all the database in the Exadata DB system.
      * 
@@ -82,17 +71,13 @@ public final class DbSystemsUpgradeIormConfigCach {
     public static Builder builder(DbSystemsUpgradeIormConfigCach defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<DbSystemsUpgradeIormConfigCachDbPlan> dbPlans;
         private @Nullable String lifecycleDetails;
         private @Nullable String objective;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DbSystemsUpgradeIormConfigCach defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbPlans = defaults.dbPlans;
@@ -101,6 +86,7 @@ public final class DbSystemsUpgradeIormConfigCach {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder dbPlans(@Nullable List<DbSystemsUpgradeIormConfigCachDbPlan> dbPlans) {
             this.dbPlans = dbPlans;
             return this;
@@ -108,19 +94,28 @@ public final class DbSystemsUpgradeIormConfigCach {
         public Builder dbPlans(DbSystemsUpgradeIormConfigCachDbPlan... dbPlans) {
             return dbPlans(List.of(dbPlans));
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
+        @CustomType.Setter
         public Builder objective(@Nullable String objective) {
             this.objective = objective;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public DbSystemsUpgradeIormConfigCach build() {
-            return new DbSystemsUpgradeIormConfigCach(dbPlans, lifecycleDetails, objective, state);
+        }
+        public DbSystemsUpgradeIormConfigCach build() {
+            final var o = new DbSystemsUpgradeIormConfigCach();
+            o.dbPlans = dbPlans;
+            o.lifecycleDetails = lifecycleDetails;
+            o.objective = objective;
+            o.state = state;
+            return o;
         }
     }
 }

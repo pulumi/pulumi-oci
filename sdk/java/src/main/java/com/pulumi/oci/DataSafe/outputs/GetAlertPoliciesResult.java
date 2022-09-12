@@ -15,74 +15,45 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAlertPoliciesResult {
-    private final @Nullable String accessLevel;
+    private @Nullable String accessLevel;
     /**
      * @return The list of alert_policy_collection.
      * 
      */
-    private final List<GetAlertPoliciesAlertPolicyCollection> alertPolicyCollections;
-    private final @Nullable String alertPolicyId;
+    private List<GetAlertPoliciesAlertPolicyCollection> alertPolicyCollections;
+    private @Nullable String alertPolicyId;
     /**
      * @return The OCID of the compartment that contains the alert policy.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The display name of the alert policy.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetAlertPoliciesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetAlertPoliciesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates if the alert policy is user-defined (true) or pre-defined (false).
      * 
      */
-    private final @Nullable Boolean isUserDefined;
+    private @Nullable Boolean isUserDefined;
     /**
      * @return The current state of the alert.
      * 
      */
-    private final @Nullable String state;
-    private final @Nullable String timeCreatedGreaterThanOrEqualTo;
-    private final @Nullable String timeCreatedLessThan;
-    private final @Nullable String type;
+    private @Nullable String state;
+    private @Nullable String timeCreatedGreaterThanOrEqualTo;
+    private @Nullable String timeCreatedLessThan;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private GetAlertPoliciesResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("alertPolicyCollections") List<GetAlertPoliciesAlertPolicyCollection> alertPolicyCollections,
-        @CustomType.Parameter("alertPolicyId") @Nullable String alertPolicyId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetAlertPoliciesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isUserDefined") @Nullable Boolean isUserDefined,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("timeCreatedGreaterThanOrEqualTo") @Nullable String timeCreatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeCreatedLessThan") @Nullable String timeCreatedLessThan,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.accessLevel = accessLevel;
-        this.alertPolicyCollections = alertPolicyCollections;
-        this.alertPolicyId = alertPolicyId;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.isUserDefined = isUserDefined;
-        this.state = state;
-        this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-        this.timeCreatedLessThan = timeCreatedLessThan;
-        this.type = type;
-    }
-
+    private GetAlertPoliciesResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -154,7 +125,7 @@ public final class GetAlertPoliciesResult {
     public static Builder builder(GetAlertPoliciesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private List<GetAlertPoliciesAlertPolicyCollection> alertPolicyCollections;
@@ -169,11 +140,7 @@ public final class GetAlertPoliciesResult {
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAlertPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -191,10 +158,12 @@ public final class GetAlertPoliciesResult {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder alertPolicyCollections(List<GetAlertPoliciesAlertPolicyCollection> alertPolicyCollections) {
             this.alertPolicyCollections = Objects.requireNonNull(alertPolicyCollections);
             return this;
@@ -202,22 +171,27 @@ public final class GetAlertPoliciesResult {
         public Builder alertPolicyCollections(GetAlertPoliciesAlertPolicyCollection... alertPolicyCollections) {
             return alertPolicyCollections(List.of(alertPolicyCollections));
         }
+        @CustomType.Setter
         public Builder alertPolicyId(@Nullable String alertPolicyId) {
             this.alertPolicyId = alertPolicyId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAlertPoliciesFilter> filters) {
             this.filters = filters;
             return this;
@@ -225,31 +199,52 @@ public final class GetAlertPoliciesResult {
         public Builder filters(GetAlertPoliciesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isUserDefined(@Nullable Boolean isUserDefined) {
             this.isUserDefined = isUserDefined;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public GetAlertPoliciesResult build() {
-            return new GetAlertPoliciesResult(accessLevel, alertPolicyCollections, alertPolicyId, compartmentId, compartmentIdInSubtree, displayName, filters, id, isUserDefined, state, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, type);
+        }
+        public GetAlertPoliciesResult build() {
+            final var o = new GetAlertPoliciesResult();
+            o.accessLevel = accessLevel;
+            o.alertPolicyCollections = alertPolicyCollections;
+            o.alertPolicyId = alertPolicyId;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.isUserDefined = isUserDefined;
+            o.state = state;
+            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            o.timeCreatedLessThan = timeCreatedLessThan;
+            o.type = type;
+            return o;
         }
     }
 }

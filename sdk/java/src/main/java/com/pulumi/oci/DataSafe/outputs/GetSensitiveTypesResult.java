@@ -15,88 +15,55 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSensitiveTypesResult {
-    private final @Nullable String accessLevel;
+    private @Nullable String accessLevel;
     /**
      * @return The OCID of the compartment that contains the sensitive type.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
      * 
      */
-    private final @Nullable String defaultMaskingFormatId;
+    private @Nullable String defaultMaskingFormatId;
     /**
      * @return The display name of the sensitive type.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
      * 
      */
-    private final @Nullable String entityType;
-    private final @Nullable List<GetSensitiveTypesFilter> filters;
+    private @Nullable String entityType;
+    private @Nullable List<GetSensitiveTypesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the parent sensitive category.
      * 
      */
-    private final @Nullable String parentCategoryId;
+    private @Nullable String parentCategoryId;
     /**
      * @return The list of sensitive_type_collection.
      * 
      */
-    private final List<GetSensitiveTypesSensitiveTypeCollection> sensitiveTypeCollections;
-    private final @Nullable String sensitiveTypeId;
-    private final @Nullable String sensitiveTypeSource;
+    private List<GetSensitiveTypesSensitiveTypeCollection> sensitiveTypeCollections;
+    private @Nullable String sensitiveTypeId;
+    private @Nullable String sensitiveTypeSource;
     /**
      * @return The current state of the sensitive type.
      * 
      */
-    private final @Nullable String state;
-    private final @Nullable String timeCreatedGreaterThanOrEqualTo;
-    private final @Nullable String timeCreatedLessThan;
+    private @Nullable String state;
+    private @Nullable String timeCreatedGreaterThanOrEqualTo;
+    private @Nullable String timeCreatedLessThan;
 
-    @CustomType.Constructor
-    private GetSensitiveTypesResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("defaultMaskingFormatId") @Nullable String defaultMaskingFormatId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("entityType") @Nullable String entityType,
-        @CustomType.Parameter("filters") @Nullable List<GetSensitiveTypesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("parentCategoryId") @Nullable String parentCategoryId,
-        @CustomType.Parameter("sensitiveTypeCollections") List<GetSensitiveTypesSensitiveTypeCollection> sensitiveTypeCollections,
-        @CustomType.Parameter("sensitiveTypeId") @Nullable String sensitiveTypeId,
-        @CustomType.Parameter("sensitiveTypeSource") @Nullable String sensitiveTypeSource,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("timeCreatedGreaterThanOrEqualTo") @Nullable String timeCreatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeCreatedLessThan") @Nullable String timeCreatedLessThan) {
-        this.accessLevel = accessLevel;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.defaultMaskingFormatId = defaultMaskingFormatId;
-        this.displayName = displayName;
-        this.entityType = entityType;
-        this.filters = filters;
-        this.id = id;
-        this.parentCategoryId = parentCategoryId;
-        this.sensitiveTypeCollections = sensitiveTypeCollections;
-        this.sensitiveTypeId = sensitiveTypeId;
-        this.sensitiveTypeSource = sensitiveTypeSource;
-        this.state = state;
-        this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-        this.timeCreatedLessThan = timeCreatedLessThan;
-    }
-
+    private GetSensitiveTypesResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -182,7 +149,7 @@ public final class GetSensitiveTypesResult {
     public static Builder builder(GetSensitiveTypesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private String compartmentId;
@@ -199,11 +166,7 @@ public final class GetSensitiveTypesResult {
         private @Nullable String state;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSensitiveTypesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -223,30 +186,37 @@ public final class GetSensitiveTypesResult {
     	      this.timeCreatedLessThan = defaults.timeCreatedLessThan;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder defaultMaskingFormatId(@Nullable String defaultMaskingFormatId) {
             this.defaultMaskingFormatId = defaultMaskingFormatId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder entityType(@Nullable String entityType) {
             this.entityType = entityType;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSensitiveTypesFilter> filters) {
             this.filters = filters;
             return this;
@@ -254,14 +224,17 @@ public final class GetSensitiveTypesResult {
         public Builder filters(GetSensitiveTypesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder parentCategoryId(@Nullable String parentCategoryId) {
             this.parentCategoryId = parentCategoryId;
             return this;
         }
+        @CustomType.Setter
         public Builder sensitiveTypeCollections(List<GetSensitiveTypesSensitiveTypeCollection> sensitiveTypeCollections) {
             this.sensitiveTypeCollections = Objects.requireNonNull(sensitiveTypeCollections);
             return this;
@@ -269,27 +242,49 @@ public final class GetSensitiveTypesResult {
         public Builder sensitiveTypeCollections(GetSensitiveTypesSensitiveTypeCollection... sensitiveTypeCollections) {
             return sensitiveTypeCollections(List.of(sensitiveTypeCollections));
         }
+        @CustomType.Setter
         public Builder sensitiveTypeId(@Nullable String sensitiveTypeId) {
             this.sensitiveTypeId = sensitiveTypeId;
             return this;
         }
+        @CustomType.Setter
         public Builder sensitiveTypeSource(@Nullable String sensitiveTypeSource) {
             this.sensitiveTypeSource = sensitiveTypeSource;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
-        }        public GetSensitiveTypesResult build() {
-            return new GetSensitiveTypesResult(accessLevel, compartmentId, compartmentIdInSubtree, defaultMaskingFormatId, displayName, entityType, filters, id, parentCategoryId, sensitiveTypeCollections, sensitiveTypeId, sensitiveTypeSource, state, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan);
+        }
+        public GetSensitiveTypesResult build() {
+            final var o = new GetSensitiveTypesResult();
+            o.accessLevel = accessLevel;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.defaultMaskingFormatId = defaultMaskingFormatId;
+            o.displayName = displayName;
+            o.entityType = entityType;
+            o.filters = filters;
+            o.id = id;
+            o.parentCategoryId = parentCategoryId;
+            o.sensitiveTypeCollections = sensitiveTypeCollections;
+            o.sensitiveTypeId = sensitiveTypeId;
+            o.sensitiveTypeSource = sensitiveTypeSource;
+            o.state = state;
+            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            o.timeCreatedLessThan = timeCreatedLessThan;
+            return o;
         }
     }
 }

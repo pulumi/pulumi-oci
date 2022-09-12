@@ -13,28 +13,19 @@ public final class GetDeploymentDeployArtifactOverrideArgumentItem {
      * @return The OCID of an artifact
      * 
      */
-    private final String deployArtifactId;
+    private String deployArtifactId;
     /**
      * @return Name of the step.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return value of the argument.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetDeploymentDeployArtifactOverrideArgumentItem(
-        @CustomType.Parameter("deployArtifactId") String deployArtifactId,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("value") String value) {
-        this.deployArtifactId = deployArtifactId;
-        this.name = name;
-        this.value = value;
-    }
-
+    private GetDeploymentDeployArtifactOverrideArgumentItem() {}
     /**
      * @return The OCID of an artifact
      * 
@@ -64,16 +55,12 @@ public final class GetDeploymentDeployArtifactOverrideArgumentItem {
     public static Builder builder(GetDeploymentDeployArtifactOverrideArgumentItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String deployArtifactId;
         private String name;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentDeployArtifactOverrideArgumentItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.deployArtifactId = defaults.deployArtifactId;
@@ -81,19 +68,27 @@ public final class GetDeploymentDeployArtifactOverrideArgumentItem {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder deployArtifactId(String deployArtifactId) {
             this.deployArtifactId = Objects.requireNonNull(deployArtifactId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetDeploymentDeployArtifactOverrideArgumentItem build() {
-            return new GetDeploymentDeployArtifactOverrideArgumentItem(deployArtifactId, name, value);
+        }
+        public GetDeploymentDeployArtifactOverrideArgumentItem build() {
+            final var o = new GetDeploymentDeployArtifactOverrideArgumentItem();
+            o.deployArtifactId = deployArtifactId;
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

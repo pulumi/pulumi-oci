@@ -15,21 +15,14 @@ public final class GetDbSystemComputePerformancesDbSystemComputePerformance {
      * @return List of Compute performance details for the specified DB system shape.
      * 
      */
-    private final List<GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList> computePerformanceLists;
+    private List<GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList> computePerformanceLists;
     /**
      * @return The shape of the DB system.
      * 
      */
-    private final String shape;
+    private String shape;
 
-    @CustomType.Constructor
-    private GetDbSystemComputePerformancesDbSystemComputePerformance(
-        @CustomType.Parameter("computePerformanceLists") List<GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList> computePerformanceLists,
-        @CustomType.Parameter("shape") String shape) {
-        this.computePerformanceLists = computePerformanceLists;
-        this.shape = shape;
-    }
-
+    private GetDbSystemComputePerformancesDbSystemComputePerformance() {}
     /**
      * @return List of Compute performance details for the specified DB system shape.
      * 
@@ -52,21 +45,18 @@ public final class GetDbSystemComputePerformancesDbSystemComputePerformance {
     public static Builder builder(GetDbSystemComputePerformancesDbSystemComputePerformance defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList> computePerformanceLists;
         private String shape;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbSystemComputePerformancesDbSystemComputePerformance defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.computePerformanceLists = defaults.computePerformanceLists;
     	      this.shape = defaults.shape;
         }
 
+        @CustomType.Setter
         public Builder computePerformanceLists(List<GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList> computePerformanceLists) {
             this.computePerformanceLists = Objects.requireNonNull(computePerformanceLists);
             return this;
@@ -74,11 +64,16 @@ public final class GetDbSystemComputePerformancesDbSystemComputePerformance {
         public Builder computePerformanceLists(GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList... computePerformanceLists) {
             return computePerformanceLists(List.of(computePerformanceLists));
         }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
-        }        public GetDbSystemComputePerformancesDbSystemComputePerformance build() {
-            return new GetDbSystemComputePerformancesDbSystemComputePerformance(computePerformanceLists, shape);
+        }
+        public GetDbSystemComputePerformancesDbSystemComputePerformance build() {
+            final var o = new GetDbSystemComputePerformancesDbSystemComputePerformance();
+            o.computePerformanceLists = computePerformanceLists;
+            o.shape = shape;
+            return o;
         }
     }
 }

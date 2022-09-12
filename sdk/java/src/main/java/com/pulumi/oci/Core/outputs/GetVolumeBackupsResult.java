@@ -18,59 +18,40 @@ public final class GetVolumeBackupsResult {
      * @return The OCID of the compartment that contains the volume backup.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetVolumeBackupsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetVolumeBackupsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the source volume backup.
      * 
      */
-    private final @Nullable String sourceVolumeBackupId;
+    private @Nullable String sourceVolumeBackupId;
     /**
      * @return The current state of a volume backup.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of volume_backups.
      * 
      */
-    private final List<GetVolumeBackupsVolumeBackup> volumeBackups;
+    private List<GetVolumeBackupsVolumeBackup> volumeBackups;
     /**
      * @return The OCID of the volume.
      * 
      */
-    private final @Nullable String volumeId;
+    private @Nullable String volumeId;
 
-    @CustomType.Constructor
-    private GetVolumeBackupsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetVolumeBackupsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("sourceVolumeBackupId") @Nullable String sourceVolumeBackupId,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("volumeBackups") List<GetVolumeBackupsVolumeBackup> volumeBackups,
-        @CustomType.Parameter("volumeId") @Nullable String volumeId) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.sourceVolumeBackupId = sourceVolumeBackupId;
-        this.state = state;
-        this.volumeBackups = volumeBackups;
-        this.volumeId = volumeId;
-    }
-
+    private GetVolumeBackupsResult() {}
     /**
      * @return The OCID of the compartment that contains the volume backup.
      * 
@@ -131,7 +112,7 @@ public final class GetVolumeBackupsResult {
     public static Builder builder(GetVolumeBackupsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -141,11 +122,7 @@ public final class GetVolumeBackupsResult {
         private @Nullable String state;
         private List<GetVolumeBackupsVolumeBackup> volumeBackups;
         private @Nullable String volumeId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumeBackupsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -158,14 +135,17 @@ public final class GetVolumeBackupsResult {
     	      this.volumeId = defaults.volumeId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVolumeBackupsFilter> filters) {
             this.filters = filters;
             return this;
@@ -173,18 +153,22 @@ public final class GetVolumeBackupsResult {
         public Builder filters(GetVolumeBackupsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceVolumeBackupId(@Nullable String sourceVolumeBackupId) {
             this.sourceVolumeBackupId = sourceVolumeBackupId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder volumeBackups(List<GetVolumeBackupsVolumeBackup> volumeBackups) {
             this.volumeBackups = Objects.requireNonNull(volumeBackups);
             return this;
@@ -192,11 +176,22 @@ public final class GetVolumeBackupsResult {
         public Builder volumeBackups(GetVolumeBackupsVolumeBackup... volumeBackups) {
             return volumeBackups(List.of(volumeBackups));
         }
+        @CustomType.Setter
         public Builder volumeId(@Nullable String volumeId) {
             this.volumeId = volumeId;
             return this;
-        }        public GetVolumeBackupsResult build() {
-            return new GetVolumeBackupsResult(compartmentId, displayName, filters, id, sourceVolumeBackupId, state, volumeBackups, volumeId);
+        }
+        public GetVolumeBackupsResult build() {
+            final var o = new GetVolumeBackupsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.sourceVolumeBackupId = sourceVolumeBackupId;
+            o.state = state;
+            o.volumeBackups = volumeBackups;
+            o.volumeId = volumeId;
+            return o;
         }
     }
 }

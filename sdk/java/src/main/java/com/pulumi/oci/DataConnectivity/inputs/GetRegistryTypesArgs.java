@@ -40,14 +40,14 @@ public final class GetRegistryTypesArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      * 
      */
     @Import(name="registryId", required=true)
     private Output<String> registryId;
 
     /**
-     * @return The registry Ocid.
+     * @return The registry OCID.
      * 
      */
     public Output<String> registryId() {
@@ -131,7 +131,7 @@ public final class GetRegistryTypesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param registryId The registry Ocid.
+         * @param registryId The registry OCID.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class GetRegistryTypesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param registryId The registry Ocid.
+         * @param registryId The registry OCID.
          * 
          * @return builder
          * 

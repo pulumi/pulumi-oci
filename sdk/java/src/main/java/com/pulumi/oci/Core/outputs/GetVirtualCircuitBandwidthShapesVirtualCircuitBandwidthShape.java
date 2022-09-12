@@ -14,21 +14,14 @@ public final class GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape 
      * @return The bandwidth in Mbps.  Example: `10000`
      * 
      */
-    private final Integer bandwidthInMbps;
+    private Integer bandwidthInMbps;
     /**
      * @return The name of the bandwidth shape.  Example: `10 Gbps`
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape(
-        @CustomType.Parameter("bandwidthInMbps") Integer bandwidthInMbps,
-        @CustomType.Parameter("name") String name) {
-        this.bandwidthInMbps = bandwidthInMbps;
-        this.name = name;
-    }
-
+    private GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape() {}
     /**
      * @return The bandwidth in Mbps.  Example: `10000`
      * 
@@ -51,30 +44,32 @@ public final class GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape 
     public static Builder builder(GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer bandwidthInMbps;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bandwidthInMbps = defaults.bandwidthInMbps;
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder bandwidthInMbps(Integer bandwidthInMbps) {
             this.bandwidthInMbps = Objects.requireNonNull(bandwidthInMbps);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape build() {
-            return new GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape(bandwidthInMbps, name);
+        }
+        public GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape build() {
+            final var o = new GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape();
+            o.bandwidthInMbps = bandwidthInMbps;
+            o.name = name;
+            return o;
         }
     }
 }

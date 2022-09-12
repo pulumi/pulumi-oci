@@ -22,119 +22,84 @@ public final class RegistryFolderDataAsset {
      * @return (Updatable) Additional properties for the data asset.
      * 
      */
-    private final @Nullable Map<String,Object> assetProperties;
+    private @Nullable Map<String,Object> assetProperties;
     /**
      * @return (Updatable) The default connection key.
      * 
      */
-    private final @Nullable RegistryFolderDataAssetDefaultConnection defaultConnection;
+    private @Nullable RegistryFolderDataAssetDefaultConnection defaultConnection;
     /**
-     * @return (Updatable) User-defined description for the folder.
+     * @return (Updatable) User-defined description of the folder.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
-     * @return (Updatable) The external key for the object.
+     * @return (Updatable) The external key of the object.
      * 
      */
-    private final @Nullable String externalKey;
+    private @Nullable String externalKey;
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
-    private final String identifier;
+    private String identifier;
     /**
-     * @return (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
-    private final String key;
+    private String key;
     /**
-     * @return (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
-    private final @Nullable RegistryFolderDataAssetMetadata metadata;
+    private @Nullable RegistryFolderDataAssetMetadata metadata;
     /**
      * @return (Updatable) The type of the folder.
      * 
      */
-    private final @Nullable String modelType;
+    private @Nullable String modelType;
     /**
      * @return (Updatable) The model version of an object.
      * 
      */
-    private final @Nullable String modelVersion;
+    private @Nullable String modelVersion;
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return (Updatable) The type system maps from and to a type.
      * 
      */
-    private final @Nullable RegistryFolderDataAssetNativeTypeSystem nativeTypeSystem;
+    private @Nullable RegistryFolderDataAssetNativeTypeSystem nativeTypeSystem;
     /**
      * @return (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private final @Nullable Integer objectStatus;
+    private @Nullable Integer objectStatus;
     /**
      * @return (Updatable) The version of the object that is used to track changes in the object instance.
      * 
      */
-    private final @Nullable Integer objectVersion;
+    private @Nullable Integer objectVersion;
     /**
      * @return (Updatable) All the properties for the data asset in a key-value map format.
      * 
      */
-    private final @Nullable Map<String,Object> properties;
+    private @Nullable Map<String,Object> properties;
     /**
      * @return (Updatable) Information about the object and its parent.
      * 
      */
-    private final @Nullable RegistryFolderDataAssetRegistryMetadata registryMetadata;
+    private @Nullable RegistryFolderDataAssetRegistryMetadata registryMetadata;
     /**
      * @return (Updatable) Specific DataAsset Type
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private RegistryFolderDataAsset(
-        @CustomType.Parameter("assetProperties") @Nullable Map<String,Object> assetProperties,
-        @CustomType.Parameter("defaultConnection") @Nullable RegistryFolderDataAssetDefaultConnection defaultConnection,
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("externalKey") @Nullable String externalKey,
-        @CustomType.Parameter("identifier") String identifier,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("metadata") @Nullable RegistryFolderDataAssetMetadata metadata,
-        @CustomType.Parameter("modelType") @Nullable String modelType,
-        @CustomType.Parameter("modelVersion") @Nullable String modelVersion,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("nativeTypeSystem") @Nullable RegistryFolderDataAssetNativeTypeSystem nativeTypeSystem,
-        @CustomType.Parameter("objectStatus") @Nullable Integer objectStatus,
-        @CustomType.Parameter("objectVersion") @Nullable Integer objectVersion,
-        @CustomType.Parameter("properties") @Nullable Map<String,Object> properties,
-        @CustomType.Parameter("registryMetadata") @Nullable RegistryFolderDataAssetRegistryMetadata registryMetadata,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.assetProperties = assetProperties;
-        this.defaultConnection = defaultConnection;
-        this.description = description;
-        this.externalKey = externalKey;
-        this.identifier = identifier;
-        this.key = key;
-        this.metadata = metadata;
-        this.modelType = modelType;
-        this.modelVersion = modelVersion;
-        this.name = name;
-        this.nativeTypeSystem = nativeTypeSystem;
-        this.objectStatus = objectStatus;
-        this.objectVersion = objectVersion;
-        this.properties = properties;
-        this.registryMetadata = registryMetadata;
-        this.type = type;
-    }
-
+    private RegistryFolderDataAsset() {}
     /**
      * @return (Updatable) Additional properties for the data asset.
      * 
@@ -150,35 +115,35 @@ public final class RegistryFolderDataAsset {
         return Optional.ofNullable(this.defaultConnection);
     }
     /**
-     * @return (Updatable) User-defined description for the folder.
+     * @return (Updatable) User-defined description of the folder.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) The external key for the object.
+     * @return (Updatable) The external key of the object.
      * 
      */
     public Optional<String> externalKey() {
         return Optional.ofNullable(this.externalKey);
     }
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public String identifier() {
         return this.identifier;
     }
     /**
-     * @return (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     public Optional<RegistryFolderDataAssetMetadata> metadata() {
@@ -199,7 +164,7 @@ public final class RegistryFolderDataAsset {
         return Optional.ofNullable(this.modelVersion);
     }
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public String name() {
@@ -255,7 +220,7 @@ public final class RegistryFolderDataAsset {
     public static Builder builder(RegistryFolderDataAsset defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Map<String,Object> assetProperties;
         private @Nullable RegistryFolderDataAssetDefaultConnection defaultConnection;
@@ -273,11 +238,7 @@ public final class RegistryFolderDataAsset {
         private @Nullable Map<String,Object> properties;
         private @Nullable RegistryFolderDataAssetRegistryMetadata registryMetadata;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RegistryFolderDataAsset defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.assetProperties = defaults.assetProperties;
@@ -298,71 +259,105 @@ public final class RegistryFolderDataAsset {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder assetProperties(@Nullable Map<String,Object> assetProperties) {
             this.assetProperties = assetProperties;
             return this;
         }
+        @CustomType.Setter
         public Builder defaultConnection(@Nullable RegistryFolderDataAssetDefaultConnection defaultConnection) {
             this.defaultConnection = defaultConnection;
             return this;
         }
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder externalKey(@Nullable String externalKey) {
             this.externalKey = externalKey;
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(String identifier) {
             this.identifier = Objects.requireNonNull(identifier);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder metadata(@Nullable RegistryFolderDataAssetMetadata metadata) {
             this.metadata = metadata;
             return this;
         }
+        @CustomType.Setter
         public Builder modelType(@Nullable String modelType) {
             this.modelType = modelType;
             return this;
         }
+        @CustomType.Setter
         public Builder modelVersion(@Nullable String modelVersion) {
             this.modelVersion = modelVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder nativeTypeSystem(@Nullable RegistryFolderDataAssetNativeTypeSystem nativeTypeSystem) {
             this.nativeTypeSystem = nativeTypeSystem;
             return this;
         }
+        @CustomType.Setter
         public Builder objectStatus(@Nullable Integer objectStatus) {
             this.objectStatus = objectStatus;
             return this;
         }
+        @CustomType.Setter
         public Builder objectVersion(@Nullable Integer objectVersion) {
             this.objectVersion = objectVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder properties(@Nullable Map<String,Object> properties) {
             this.properties = properties;
             return this;
         }
+        @CustomType.Setter
         public Builder registryMetadata(@Nullable RegistryFolderDataAssetRegistryMetadata registryMetadata) {
             this.registryMetadata = registryMetadata;
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public RegistryFolderDataAsset build() {
-            return new RegistryFolderDataAsset(assetProperties, defaultConnection, description, externalKey, identifier, key, metadata, modelType, modelVersion, name, nativeTypeSystem, objectStatus, objectVersion, properties, registryMetadata, type);
+        }
+        public RegistryFolderDataAsset build() {
+            final var o = new RegistryFolderDataAsset();
+            o.assetProperties = assetProperties;
+            o.defaultConnection = defaultConnection;
+            o.description = description;
+            o.externalKey = externalKey;
+            o.identifier = identifier;
+            o.key = key;
+            o.metadata = metadata;
+            o.modelType = modelType;
+            o.modelVersion = modelVersion;
+            o.name = name;
+            o.nativeTypeSystem = nativeTypeSystem;
+            o.objectStatus = objectStatus;
+            o.objectVersion = objectVersion;
+            o.properties = properties;
+            o.registryMetadata = registryMetadata;
+            o.type = type;
+            return o;
         }
     }
 }

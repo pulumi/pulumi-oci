@@ -13,28 +13,19 @@ public final class GetSecurityAssessmentComparisonTargetDataEncryptionCurrentRef
      * @return Relevant section from CIS.
      * 
      */
-    private final String cis;
+    private String cis;
     /**
      * @return Relevant section from GDPR.
      * 
      */
-    private final String gdpr;
+    private String gdpr;
     /**
      * @return Relevant section from STIG.
      * 
      */
-    private final String stig;
+    private String stig;
 
-    @CustomType.Constructor
-    private GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference(
-        @CustomType.Parameter("cis") String cis,
-        @CustomType.Parameter("gdpr") String gdpr,
-        @CustomType.Parameter("stig") String stig) {
-        this.cis = cis;
-        this.gdpr = gdpr;
-        this.stig = stig;
-    }
-
+    private GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference() {}
     /**
      * @return Relevant section from CIS.
      * 
@@ -64,16 +55,12 @@ public final class GetSecurityAssessmentComparisonTargetDataEncryptionCurrentRef
     public static Builder builder(GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String cis;
         private String gdpr;
         private String stig;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cis = defaults.cis;
@@ -81,19 +68,27 @@ public final class GetSecurityAssessmentComparisonTargetDataEncryptionCurrentRef
     	      this.stig = defaults.stig;
         }
 
+        @CustomType.Setter
         public Builder cis(String cis) {
             this.cis = Objects.requireNonNull(cis);
             return this;
         }
+        @CustomType.Setter
         public Builder gdpr(String gdpr) {
             this.gdpr = Objects.requireNonNull(gdpr);
             return this;
         }
+        @CustomType.Setter
         public Builder stig(String stig) {
             this.stig = Objects.requireNonNull(stig);
             return this;
-        }        public GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference build() {
-            return new GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference(cis, gdpr, stig);
+        }
+        public GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference build() {
+            final var o = new GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference();
+            o.cis = cis;
+            o.gdpr = gdpr;
+            o.stig = stig;
+            return o;
         }
     }
 }

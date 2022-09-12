@@ -13,13 +13,9 @@ public final class UsagePlanEntitlementTarget {
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
      * 
      */
-    private final String deploymentId;
+    private String deploymentId;
 
-    @CustomType.Constructor
-    private UsagePlanEntitlementTarget(@CustomType.Parameter("deploymentId") String deploymentId) {
-        this.deploymentId = deploymentId;
-    }
-
+    private UsagePlanEntitlementTarget() {}
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
      * 
@@ -35,24 +31,24 @@ public final class UsagePlanEntitlementTarget {
     public static Builder builder(UsagePlanEntitlementTarget defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String deploymentId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(UsagePlanEntitlementTarget defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.deploymentId = defaults.deploymentId;
         }
 
+        @CustomType.Setter
         public Builder deploymentId(String deploymentId) {
             this.deploymentId = Objects.requireNonNull(deploymentId);
             return this;
-        }        public UsagePlanEntitlementTarget build() {
-            return new UsagePlanEntitlementTarget(deploymentId);
+        }
+        public UsagePlanEntitlementTarget build() {
+            final var o = new UsagePlanEntitlementTarget();
+            o.deploymentId = deploymentId;
+            return o;
         }
     }
 }

@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTagStandardTagNamespaceTemplatesResult {
-    private final String compartmentId;
-    private final @Nullable List<GetTagStandardTagNamespaceTemplatesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetTagStandardTagNamespaceTemplatesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of standard_tag_namespace_templates.
      * 
      */
-    private final List<GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate> standardTagNamespaceTemplates;
+    private List<GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate> standardTagNamespaceTemplates;
 
-    @CustomType.Constructor
-    private GetTagStandardTagNamespaceTemplatesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetTagStandardTagNamespaceTemplatesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("standardTagNamespaceTemplates") List<GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate> standardTagNamespaceTemplates) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.standardTagNamespaceTemplates = standardTagNamespaceTemplates;
-    }
-
+    private GetTagStandardTagNamespaceTemplatesResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -66,17 +55,13 @@ public final class GetTagStandardTagNamespaceTemplatesResult {
     public static Builder builder(GetTagStandardTagNamespaceTemplatesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetTagStandardTagNamespaceTemplatesFilter> filters;
         private String id;
         private List<GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate> standardTagNamespaceTemplates;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTagStandardTagNamespaceTemplatesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -85,10 +70,12 @@ public final class GetTagStandardTagNamespaceTemplatesResult {
     	      this.standardTagNamespaceTemplates = defaults.standardTagNamespaceTemplates;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetTagStandardTagNamespaceTemplatesFilter> filters) {
             this.filters = filters;
             return this;
@@ -96,18 +83,26 @@ public final class GetTagStandardTagNamespaceTemplatesResult {
         public Builder filters(GetTagStandardTagNamespaceTemplatesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder standardTagNamespaceTemplates(List<GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate> standardTagNamespaceTemplates) {
             this.standardTagNamespaceTemplates = Objects.requireNonNull(standardTagNamespaceTemplates);
             return this;
         }
         public Builder standardTagNamespaceTemplates(GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate... standardTagNamespaceTemplates) {
             return standardTagNamespaceTemplates(List.of(standardTagNamespaceTemplates));
-        }        public GetTagStandardTagNamespaceTemplatesResult build() {
-            return new GetTagStandardTagNamespaceTemplatesResult(compartmentId, filters, id, standardTagNamespaceTemplates);
+        }
+        public GetTagStandardTagNamespaceTemplatesResult build() {
+            final var o = new GetTagStandardTagNamespaceTemplatesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.standardTagNamespaceTemplates = standardTagNamespaceTemplates;
+            return o;
         }
     }
 }

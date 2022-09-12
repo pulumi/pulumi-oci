@@ -13,37 +13,22 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInvoiceLineComputedUsagesResult {
-    private final String compartmentId;
-    private final @Nullable List<String> fields;
-    private final @Nullable List<GetInvoiceLineComputedUsagesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<String> fields;
+    private @Nullable List<GetInvoiceLineComputedUsagesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String invoiceLineId;
+    private String id;
+    private String invoiceLineId;
     /**
      * @return The list of invoiceline_computed_usages.
      * 
      */
-    private final List<GetInvoiceLineComputedUsagesInvoicelineComputedUsage> invoicelineComputedUsages;
+    private List<GetInvoiceLineComputedUsagesInvoicelineComputedUsage> invoicelineComputedUsages;
 
-    @CustomType.Constructor
-    private GetInvoiceLineComputedUsagesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("fields") @Nullable List<String> fields,
-        @CustomType.Parameter("filters") @Nullable List<GetInvoiceLineComputedUsagesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("invoiceLineId") String invoiceLineId,
-        @CustomType.Parameter("invoicelineComputedUsages") List<GetInvoiceLineComputedUsagesInvoicelineComputedUsage> invoicelineComputedUsages) {
-        this.compartmentId = compartmentId;
-        this.fields = fields;
-        this.filters = filters;
-        this.id = id;
-        this.invoiceLineId = invoiceLineId;
-        this.invoicelineComputedUsages = invoicelineComputedUsages;
-    }
-
+    private GetInvoiceLineComputedUsagesResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -78,7 +63,7 @@ public final class GetInvoiceLineComputedUsagesResult {
     public static Builder builder(GetInvoiceLineComputedUsagesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<String> fields;
@@ -86,11 +71,7 @@ public final class GetInvoiceLineComputedUsagesResult {
         private String id;
         private String invoiceLineId;
         private List<GetInvoiceLineComputedUsagesInvoicelineComputedUsage> invoicelineComputedUsages;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvoiceLineComputedUsagesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -101,10 +82,12 @@ public final class GetInvoiceLineComputedUsagesResult {
     	      this.invoicelineComputedUsages = defaults.invoicelineComputedUsages;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
             this.fields = fields;
             return this;
@@ -112,6 +95,7 @@ public final class GetInvoiceLineComputedUsagesResult {
         public Builder fields(String... fields) {
             return fields(List.of(fields));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetInvoiceLineComputedUsagesFilter> filters) {
             this.filters = filters;
             return this;
@@ -119,22 +103,33 @@ public final class GetInvoiceLineComputedUsagesResult {
         public Builder filters(GetInvoiceLineComputedUsagesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder invoiceLineId(String invoiceLineId) {
             this.invoiceLineId = Objects.requireNonNull(invoiceLineId);
             return this;
         }
+        @CustomType.Setter
         public Builder invoicelineComputedUsages(List<GetInvoiceLineComputedUsagesInvoicelineComputedUsage> invoicelineComputedUsages) {
             this.invoicelineComputedUsages = Objects.requireNonNull(invoicelineComputedUsages);
             return this;
         }
         public Builder invoicelineComputedUsages(GetInvoiceLineComputedUsagesInvoicelineComputedUsage... invoicelineComputedUsages) {
             return invoicelineComputedUsages(List.of(invoicelineComputedUsages));
-        }        public GetInvoiceLineComputedUsagesResult build() {
-            return new GetInvoiceLineComputedUsagesResult(compartmentId, fields, filters, id, invoiceLineId, invoicelineComputedUsages);
+        }
+        public GetInvoiceLineComputedUsagesResult build() {
+            final var o = new GetInvoiceLineComputedUsagesResult();
+            o.compartmentId = compartmentId;
+            o.fields = fields;
+            o.filters = filters;
+            o.id = id;
+            o.invoiceLineId = invoiceLineId;
+            o.invoicelineComputedUsages = invoicelineComputedUsages;
+            return o;
         }
     }
 }

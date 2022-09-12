@@ -15,28 +15,19 @@ public final class GetVantagePointItem {
      * @return A filter to return only the resources that match the entire display name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Geographic summary of a vantage point.
      * 
      */
-    private final List<GetVantagePointItemGeo> geos;
+    private List<GetVantagePointItemGeo> geos;
     /**
      * @return A filter to return only the resources that match the entire name.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetVantagePointItem(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("geos") List<GetVantagePointItemGeo> geos,
-        @CustomType.Parameter("name") String name) {
-        this.displayName = displayName;
-        this.geos = geos;
-        this.name = name;
-    }
-
+    private GetVantagePointItem() {}
     /**
      * @return A filter to return only the resources that match the entire display name.
      * 
@@ -66,16 +57,12 @@ public final class GetVantagePointItem {
     public static Builder builder(GetVantagePointItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private List<GetVantagePointItemGeo> geos;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVantagePointItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -83,10 +70,12 @@ public final class GetVantagePointItem {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder geos(List<GetVantagePointItemGeo> geos) {
             this.geos = Objects.requireNonNull(geos);
             return this;
@@ -94,11 +83,17 @@ public final class GetVantagePointItem {
         public Builder geos(GetVantagePointItemGeo... geos) {
             return geos(List.of(geos));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetVantagePointItem build() {
-            return new GetVantagePointItem(displayName, geos, name);
+        }
+        public GetVantagePointItem build() {
+            final var o = new GetVantagePointItem();
+            o.displayName = displayName;
+            o.geos = geos;
+            o.name = name;
+            return o;
         }
     }
 }

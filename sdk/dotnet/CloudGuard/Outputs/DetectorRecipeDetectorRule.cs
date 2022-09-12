@@ -18,7 +18,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.DetectorRecipeDetectorRuleCandidateResponderRule> CandidateResponderRules;
         /// <summary>
-        /// (Updatable) Detector recipe description.
+        /// (Updatable) The id of the attached DataSource.
+        /// </summary>
+        public readonly string? DataSourceId;
+        /// <summary>
+        /// (Updatable) Description for DetectorRecipeDetectorRule.
         /// </summary>
         public readonly string? Description;
         /// <summary>
@@ -38,6 +42,10 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
+        /// (Updatable) Data Source entities mapping for a Detector Rule
+        /// </summary>
+        public readonly ImmutableArray<Outputs.DetectorRecipeDetectorRuleEntitiesMapping> EntitiesMappings;
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string? LifecycleDetails;
@@ -46,7 +54,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<string> ManagedListTypes;
         /// <summary>
-        /// Recommendation for DetectorRecipeDetectorRule
+        /// (Updatable) Recommendation for DetectorRecipeDetectorRule
         /// </summary>
         public readonly string? Recommendation;
         /// <summary>
@@ -74,6 +82,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         private DetectorRecipeDetectorRule(
             ImmutableArray<Outputs.DetectorRecipeDetectorRuleCandidateResponderRule> candidateResponderRules,
 
+            string? dataSourceId,
+
             string? description,
 
             Outputs.DetectorRecipeDetectorRuleDetails details,
@@ -83,6 +93,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
             string detectorRuleId,
 
             string? displayName,
+
+            ImmutableArray<Outputs.DetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings,
 
             string? lifecycleDetails,
 
@@ -101,11 +113,13 @@ namespace Pulumi.Oci.CloudGuard.Outputs
             string? timeUpdated)
         {
             CandidateResponderRules = candidateResponderRules;
+            DataSourceId = dataSourceId;
             Description = description;
             Details = details;
             Detector = detector;
             DetectorRuleId = detectorRuleId;
             DisplayName = displayName;
+            EntitiesMappings = entitiesMappings;
             LifecycleDetails = lifecycleDetails;
             ManagedListTypes = managedListTypes;
             Recommendation = recommendation;

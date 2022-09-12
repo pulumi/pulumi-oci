@@ -14,13 +14,9 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
      * @return Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
      */
-    private final List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule> rules;
+    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule> rules;
 
-    @CustomType.Constructor
-    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl(@CustomType.Parameter("rules") List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule> rules) {
-        this.rules = rules;
-    }
-
+    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl() {}
     /**
      * @return Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
@@ -36,27 +32,27 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
     public static Builder builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule> rules;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.rules = defaults.rules;
         }
 
+        @CustomType.Setter
         public Builder rules(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule> rules) {
             this.rules = Objects.requireNonNull(rules);
             return this;
         }
         public Builder rules(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule... rules) {
             return rules(List.of(rules));
-        }        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl build() {
-            return new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl(rules);
+        }
+        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl build() {
+            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl();
+            o.rules = rules;
+            return o;
         }
     }
 }

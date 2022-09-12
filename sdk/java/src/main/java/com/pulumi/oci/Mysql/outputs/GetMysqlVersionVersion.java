@@ -15,21 +15,14 @@ public final class GetMysqlVersionVersion {
      * @return A descriptive summary of a group of versions.
      * 
      */
-    private final String versionFamily;
+    private String versionFamily;
     /**
      * @return The list of supported MySQL Versions.
      * 
      */
-    private final List<GetMysqlVersionVersionVersion> versions;
+    private List<GetMysqlVersionVersionVersion> versions;
 
-    @CustomType.Constructor
-    private GetMysqlVersionVersion(
-        @CustomType.Parameter("versionFamily") String versionFamily,
-        @CustomType.Parameter("versions") List<GetMysqlVersionVersionVersion> versions) {
-        this.versionFamily = versionFamily;
-        this.versions = versions;
-    }
-
+    private GetMysqlVersionVersion() {}
     /**
      * @return A descriptive summary of a group of versions.
      * 
@@ -52,33 +45,35 @@ public final class GetMysqlVersionVersion {
     public static Builder builder(GetMysqlVersionVersion defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String versionFamily;
         private List<GetMysqlVersionVersionVersion> versions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMysqlVersionVersion defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.versionFamily = defaults.versionFamily;
     	      this.versions = defaults.versions;
         }
 
+        @CustomType.Setter
         public Builder versionFamily(String versionFamily) {
             this.versionFamily = Objects.requireNonNull(versionFamily);
             return this;
         }
+        @CustomType.Setter
         public Builder versions(List<GetMysqlVersionVersionVersion> versions) {
             this.versions = Objects.requireNonNull(versions);
             return this;
         }
         public Builder versions(GetMysqlVersionVersionVersion... versions) {
             return versions(List.of(versions));
-        }        public GetMysqlVersionVersion build() {
-            return new GetMysqlVersionVersion(versionFamily, versions);
+        }
+        public GetMysqlVersionVersion build() {
+            final var o = new GetMysqlVersionVersion();
+            o.versionFamily = versionFamily;
+            o.versions = versions;
+            return o;
         }
     }
 }

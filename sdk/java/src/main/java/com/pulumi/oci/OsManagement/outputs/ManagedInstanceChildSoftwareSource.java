@@ -15,21 +15,14 @@ public final class ManagedInstanceChildSoftwareSource {
      * @return software source identifier
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return software source name
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private ManagedInstanceChildSoftwareSource(
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("name") @Nullable String name) {
-        this.id = id;
-        this.name = name;
-    }
-
+    private ManagedInstanceChildSoftwareSource() {}
     /**
      * @return software source identifier
      * 
@@ -52,30 +45,32 @@ public final class ManagedInstanceChildSoftwareSource {
     public static Builder builder(ManagedInstanceChildSoftwareSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String id;
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ManagedInstanceChildSoftwareSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public ManagedInstanceChildSoftwareSource build() {
-            return new ManagedInstanceChildSoftwareSource(id, name);
+        }
+        public ManagedInstanceChildSoftwareSource build() {
+            final var o = new ManagedInstanceChildSoftwareSource();
+            o.id = id;
+            o.name = name;
+            return o;
         }
     }
 }

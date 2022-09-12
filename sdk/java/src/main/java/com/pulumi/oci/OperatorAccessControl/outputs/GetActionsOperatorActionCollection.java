@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetActionsOperatorActionCollection {
-    private final List<GetActionsOperatorActionCollectionItem> items;
+    private List<GetActionsOperatorActionCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetActionsOperatorActionCollection(@CustomType.Parameter("items") List<GetActionsOperatorActionCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetActionsOperatorActionCollection() {}
     public List<GetActionsOperatorActionCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetActionsOperatorActionCollection {
     public static Builder builder(GetActionsOperatorActionCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetActionsOperatorActionCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetActionsOperatorActionCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetActionsOperatorActionCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetActionsOperatorActionCollectionItem... items) {
             return items(List.of(items));
-        }        public GetActionsOperatorActionCollection build() {
-            return new GetActionsOperatorActionCollection(items);
+        }
+        public GetActionsOperatorActionCollection build() {
+            final var o = new GetActionsOperatorActionCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -16,188 +16,131 @@ public final class GetOceInstanceResult {
      * @return a list of add-on features for the ocm instance
      * 
      */
-    private final List<String> addOnFeatures;
+    private List<String> addOnFeatures;
     /**
      * @return Admin Email for Notification
      * 
      */
-    private final String adminEmail;
+    private String adminEmail;
     /**
      * @return Compartment Identifier
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return OceInstance description, can be updated
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Unique GUID identifier that is immutable on creation
      * 
      */
-    private final String guid;
+    private String guid;
     /**
      * @return Unique identifier that is immutable on creation
      * 
      */
-    private final String id;
-    private final String idcsAccessToken;
+    private String id;
+    private String idcsAccessToken;
     /**
      * @return IDCS Tenancy Identifier
      * 
      */
-    private final String idcsTenancy;
+    private String idcsTenancy;
     /**
      * @return Flag indicating whether the instance access is private or public
      * 
      */
-    private final String instanceAccessType;
+    private String instanceAccessType;
     /**
      * @return Flag indicating whether the instance license is new cloud or bring your own license
      * 
      */
-    private final String instanceLicenseType;
+    private String instanceLicenseType;
     /**
      * @return Instance type based on its usage
      * 
      */
-    private final String instanceUsageType;
+    private String instanceUsageType;
     /**
      * @return Details of the current state of the instance lifecycle
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return OceInstance Name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Object Storage Namespace of tenancy
      * 
      */
-    private final String objectStorageNamespace;
-    private final String oceInstanceId;
+    private String objectStorageNamespace;
+    private String oceInstanceId;
     /**
      * @return SERVICE data. Example: `{&#34;service&#34;: {&#34;IDCS&#34;: &#34;value&#34;}}`
      * 
      */
-    private final Map<String,Object> service;
+    private Map<String,Object> service;
     /**
      * @return The current state of the instance lifecycle.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String stateMessage;
+    private String stateMessage;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return Tenancy Identifier
      * 
      */
-    private final String tenancyId;
+    private String tenancyId;
     /**
      * @return Tenancy Name
      * 
      */
-    private final String tenancyName;
+    private String tenancyName;
     /**
      * @return The time the the OceInstance was created. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the OceInstance was updated. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
      * 
      */
-    private final String upgradeSchedule;
+    private String upgradeSchedule;
     /**
      * @return Web Application Firewall(WAF) primary domain
      * 
      */
-    private final String wafPrimaryDomain;
+    private String wafPrimaryDomain;
 
-    @CustomType.Constructor
-    private GetOceInstanceResult(
-        @CustomType.Parameter("addOnFeatures") List<String> addOnFeatures,
-        @CustomType.Parameter("adminEmail") String adminEmail,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("guid") String guid,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("idcsAccessToken") String idcsAccessToken,
-        @CustomType.Parameter("idcsTenancy") String idcsTenancy,
-        @CustomType.Parameter("instanceAccessType") String instanceAccessType,
-        @CustomType.Parameter("instanceLicenseType") String instanceLicenseType,
-        @CustomType.Parameter("instanceUsageType") String instanceUsageType,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("objectStorageNamespace") String objectStorageNamespace,
-        @CustomType.Parameter("oceInstanceId") String oceInstanceId,
-        @CustomType.Parameter("service") Map<String,Object> service,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("stateMessage") String stateMessage,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("tenancyId") String tenancyId,
-        @CustomType.Parameter("tenancyName") String tenancyName,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("upgradeSchedule") String upgradeSchedule,
-        @CustomType.Parameter("wafPrimaryDomain") String wafPrimaryDomain) {
-        this.addOnFeatures = addOnFeatures;
-        this.adminEmail = adminEmail;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.freeformTags = freeformTags;
-        this.guid = guid;
-        this.id = id;
-        this.idcsAccessToken = idcsAccessToken;
-        this.idcsTenancy = idcsTenancy;
-        this.instanceAccessType = instanceAccessType;
-        this.instanceLicenseType = instanceLicenseType;
-        this.instanceUsageType = instanceUsageType;
-        this.lifecycleDetails = lifecycleDetails;
-        this.name = name;
-        this.objectStorageNamespace = objectStorageNamespace;
-        this.oceInstanceId = oceInstanceId;
-        this.service = service;
-        this.state = state;
-        this.stateMessage = stateMessage;
-        this.systemTags = systemTags;
-        this.tenancyId = tenancyId;
-        this.tenancyName = tenancyName;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.upgradeSchedule = upgradeSchedule;
-        this.wafPrimaryDomain = wafPrimaryDomain;
-    }
-
+    private GetOceInstanceResult() {}
     /**
      * @return a list of add-on features for the ocm instance
      * 
@@ -387,7 +330,7 @@ public final class GetOceInstanceResult {
     public static Builder builder(GetOceInstanceResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> addOnFeatures;
         private String adminEmail;
@@ -416,11 +359,7 @@ public final class GetOceInstanceResult {
         private String timeUpdated;
         private String upgradeSchedule;
         private String wafPrimaryDomain;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOceInstanceResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.addOnFeatures = defaults.addOnFeatures;
@@ -452,6 +391,7 @@ public final class GetOceInstanceResult {
     	      this.wafPrimaryDomain = defaults.wafPrimaryDomain;
         }
 
+        @CustomType.Setter
         public Builder addOnFeatures(List<String> addOnFeatures) {
             this.addOnFeatures = Objects.requireNonNull(addOnFeatures);
             return this;
@@ -459,111 +399,166 @@ public final class GetOceInstanceResult {
         public Builder addOnFeatures(String... addOnFeatures) {
             return addOnFeatures(List.of(addOnFeatures));
         }
+        @CustomType.Setter
         public Builder adminEmail(String adminEmail) {
             this.adminEmail = Objects.requireNonNull(adminEmail);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder guid(String guid) {
             this.guid = Objects.requireNonNull(guid);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder idcsAccessToken(String idcsAccessToken) {
             this.idcsAccessToken = Objects.requireNonNull(idcsAccessToken);
             return this;
         }
+        @CustomType.Setter
         public Builder idcsTenancy(String idcsTenancy) {
             this.idcsTenancy = Objects.requireNonNull(idcsTenancy);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceAccessType(String instanceAccessType) {
             this.instanceAccessType = Objects.requireNonNull(instanceAccessType);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceLicenseType(String instanceLicenseType) {
             this.instanceLicenseType = Objects.requireNonNull(instanceLicenseType);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceUsageType(String instanceUsageType) {
             this.instanceUsageType = Objects.requireNonNull(instanceUsageType);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder objectStorageNamespace(String objectStorageNamespace) {
             this.objectStorageNamespace = Objects.requireNonNull(objectStorageNamespace);
             return this;
         }
+        @CustomType.Setter
         public Builder oceInstanceId(String oceInstanceId) {
             this.oceInstanceId = Objects.requireNonNull(oceInstanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder service(Map<String,Object> service) {
             this.service = Objects.requireNonNull(service);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder stateMessage(String stateMessage) {
             this.stateMessage = Objects.requireNonNull(stateMessage);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = Objects.requireNonNull(tenancyId);
             return this;
         }
+        @CustomType.Setter
         public Builder tenancyName(String tenancyName) {
             this.tenancyName = Objects.requireNonNull(tenancyName);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder upgradeSchedule(String upgradeSchedule) {
             this.upgradeSchedule = Objects.requireNonNull(upgradeSchedule);
             return this;
         }
+        @CustomType.Setter
         public Builder wafPrimaryDomain(String wafPrimaryDomain) {
             this.wafPrimaryDomain = Objects.requireNonNull(wafPrimaryDomain);
             return this;
-        }        public GetOceInstanceResult build() {
-            return new GetOceInstanceResult(addOnFeatures, adminEmail, compartmentId, definedTags, description, freeformTags, guid, id, idcsAccessToken, idcsTenancy, instanceAccessType, instanceLicenseType, instanceUsageType, lifecycleDetails, name, objectStorageNamespace, oceInstanceId, service, state, stateMessage, systemTags, tenancyId, tenancyName, timeCreated, timeUpdated, upgradeSchedule, wafPrimaryDomain);
+        }
+        public GetOceInstanceResult build() {
+            final var o = new GetOceInstanceResult();
+            o.addOnFeatures = addOnFeatures;
+            o.adminEmail = adminEmail;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.freeformTags = freeformTags;
+            o.guid = guid;
+            o.id = id;
+            o.idcsAccessToken = idcsAccessToken;
+            o.idcsTenancy = idcsTenancy;
+            o.instanceAccessType = instanceAccessType;
+            o.instanceLicenseType = instanceLicenseType;
+            o.instanceUsageType = instanceUsageType;
+            o.lifecycleDetails = lifecycleDetails;
+            o.name = name;
+            o.objectStorageNamespace = objectStorageNamespace;
+            o.oceInstanceId = oceInstanceId;
+            o.service = service;
+            o.state = state;
+            o.stateMessage = stateMessage;
+            o.systemTags = systemTags;
+            o.tenancyId = tenancyId;
+            o.tenancyName = tenancyName;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.upgradeSchedule = upgradeSchedule;
+            o.wafPrimaryDomain = wafPrimaryDomain;
+            return o;
         }
     }
 }

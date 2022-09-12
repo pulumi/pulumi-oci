@@ -16,105 +16,74 @@ public final class GetPrivateIpsPrivateIp {
      * @return The private IP&#39;s availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN) (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
      * 
      */
-    private final String hostnameLabel;
+    private String hostnameLabel;
     /**
      * @return The private IP&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
      * 
      */
-    private final String ipAddress;
+    private String ipAddress;
     /**
      * @return Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
      * 
      */
-    private final Boolean isPrimary;
+    private Boolean isPrimary;
     /**
      * @return true if the IP is reserved and can exist detached from vnic
      * 
      */
-    private final Boolean isReserved;
+    private Boolean isReserved;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
      * 
      */
-    private final String vlanId;
+    private String vlanId;
     /**
      * @return The OCID of the VNIC.
      * 
      */
-    private final String vnicId;
+    private String vnicId;
 
-    @CustomType.Constructor
-    private GetPrivateIpsPrivateIp(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("hostnameLabel") String hostnameLabel,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipAddress") String ipAddress,
-        @CustomType.Parameter("isPrimary") Boolean isPrimary,
-        @CustomType.Parameter("isReserved") Boolean isReserved,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("vlanId") String vlanId,
-        @CustomType.Parameter("vnicId") String vnicId) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.hostnameLabel = hostnameLabel;
-        this.id = id;
-        this.ipAddress = ipAddress;
-        this.isPrimary = isPrimary;
-        this.isReserved = isReserved;
-        this.subnetId = subnetId;
-        this.timeCreated = timeCreated;
-        this.vlanId = vlanId;
-        this.vnicId = vnicId;
-    }
-
+    private GetPrivateIpsPrivateIp() {}
     /**
      * @return The private IP&#39;s availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
      * 
@@ -221,7 +190,7 @@ public final class GetPrivateIpsPrivateIp {
     public static Builder builder(GetPrivateIpsPrivateIp defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String compartmentId;
@@ -237,11 +206,7 @@ public final class GetPrivateIpsPrivateIp {
         private String timeCreated;
         private String vlanId;
         private String vnicId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPrivateIpsPrivateIp defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -260,63 +225,93 @@ public final class GetPrivateIpsPrivateIp {
     	      this.vnicId = defaults.vnicId;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder hostnameLabel(String hostnameLabel) {
             this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = Objects.requireNonNull(ipAddress);
             return this;
         }
+        @CustomType.Setter
         public Builder isPrimary(Boolean isPrimary) {
             this.isPrimary = Objects.requireNonNull(isPrimary);
             return this;
         }
+        @CustomType.Setter
         public Builder isReserved(Boolean isReserved) {
             this.isReserved = Objects.requireNonNull(isReserved);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder vlanId(String vlanId) {
             this.vlanId = Objects.requireNonNull(vlanId);
             return this;
         }
+        @CustomType.Setter
         public Builder vnicId(String vnicId) {
             this.vnicId = Objects.requireNonNull(vnicId);
             return this;
-        }        public GetPrivateIpsPrivateIp build() {
-            return new GetPrivateIpsPrivateIp(availabilityDomain, compartmentId, definedTags, displayName, freeformTags, hostnameLabel, id, ipAddress, isPrimary, isReserved, subnetId, timeCreated, vlanId, vnicId);
+        }
+        public GetPrivateIpsPrivateIp build() {
+            final var o = new GetPrivateIpsPrivateIp();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.hostnameLabel = hostnameLabel;
+            o.id = id;
+            o.ipAddress = ipAddress;
+            o.isPrimary = isPrimary;
+            o.isReserved = isReserved;
+            o.subnetId = subnetId;
+            o.timeCreated = timeCreated;
+            o.vlanId = vlanId;
+            o.vnicId = vnicId;
+            return o;
         }
     }
 }

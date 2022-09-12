@@ -14,45 +14,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLimitDefinitionsResult {
-    private final String compartmentId;
-    private final @Nullable List<GetLimitDefinitionsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetLimitDefinitionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of limit_definitions.
      * 
      */
-    private final List<GetLimitDefinitionsLimitDefinition> limitDefinitions;
+    private List<GetLimitDefinitionsLimitDefinition> limitDefinitions;
     /**
      * @return The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The service name of the limit.
      * 
      */
-    private final @Nullable String serviceName;
+    private @Nullable String serviceName;
 
-    @CustomType.Constructor
-    private GetLimitDefinitionsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetLimitDefinitionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("limitDefinitions") List<GetLimitDefinitionsLimitDefinition> limitDefinitions,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("serviceName") @Nullable String serviceName) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.limitDefinitions = limitDefinitions;
-        this.name = name;
-        this.serviceName = serviceName;
-    }
-
+    private GetLimitDefinitionsResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -95,7 +80,7 @@ public final class GetLimitDefinitionsResult {
     public static Builder builder(GetLimitDefinitionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetLimitDefinitionsFilter> filters;
@@ -103,11 +88,7 @@ public final class GetLimitDefinitionsResult {
         private List<GetLimitDefinitionsLimitDefinition> limitDefinitions;
         private @Nullable String name;
         private @Nullable String serviceName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLimitDefinitionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -118,10 +99,12 @@ public final class GetLimitDefinitionsResult {
     	      this.serviceName = defaults.serviceName;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetLimitDefinitionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -129,10 +112,12 @@ public final class GetLimitDefinitionsResult {
         public Builder filters(GetLimitDefinitionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder limitDefinitions(List<GetLimitDefinitionsLimitDefinition> limitDefinitions) {
             this.limitDefinitions = Objects.requireNonNull(limitDefinitions);
             return this;
@@ -140,15 +125,25 @@ public final class GetLimitDefinitionsResult {
         public Builder limitDefinitions(GetLimitDefinitionsLimitDefinition... limitDefinitions) {
             return limitDefinitions(List.of(limitDefinitions));
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder serviceName(@Nullable String serviceName) {
             this.serviceName = serviceName;
             return this;
-        }        public GetLimitDefinitionsResult build() {
-            return new GetLimitDefinitionsResult(compartmentId, filters, id, limitDefinitions, name, serviceName);
+        }
+        public GetLimitDefinitionsResult build() {
+            final var o = new GetLimitDefinitionsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.limitDefinitions = limitDefinitions;
+            o.name = name;
+            o.serviceName = serviceName;
+            return o;
         }
     }
 }

@@ -13,21 +13,14 @@ public final class InvokeRunApplicationLogConfig {
      * @return The log group id for where log objects will be for Data Flow Runs.
      * 
      */
-    private final String logGroupId;
+    private String logGroupId;
     /**
      * @return The log id of the log object the Application Logs of Data Flow Run will be shipped to.
      * 
      */
-    private final String logId;
+    private String logId;
 
-    @CustomType.Constructor
-    private InvokeRunApplicationLogConfig(
-        @CustomType.Parameter("logGroupId") String logGroupId,
-        @CustomType.Parameter("logId") String logId) {
-        this.logGroupId = logGroupId;
-        this.logId = logId;
-    }
-
+    private InvokeRunApplicationLogConfig() {}
     /**
      * @return The log group id for where log objects will be for Data Flow Runs.
      * 
@@ -50,30 +43,32 @@ public final class InvokeRunApplicationLogConfig {
     public static Builder builder(InvokeRunApplicationLogConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String logGroupId;
         private String logId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(InvokeRunApplicationLogConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.logGroupId = defaults.logGroupId;
     	      this.logId = defaults.logId;
         }
 
+        @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = Objects.requireNonNull(logGroupId);
             return this;
         }
+        @CustomType.Setter
         public Builder logId(String logId) {
             this.logId = Objects.requireNonNull(logId);
             return this;
-        }        public InvokeRunApplicationLogConfig build() {
-            return new InvokeRunApplicationLogConfig(logGroupId, logId);
+        }
+        public InvokeRunApplicationLogConfig build() {
+            final var o = new InvokeRunApplicationLogConfig();
+            o.logGroupId = logGroupId;
+            o.logId = logId;
+            return o;
         }
     }
 }

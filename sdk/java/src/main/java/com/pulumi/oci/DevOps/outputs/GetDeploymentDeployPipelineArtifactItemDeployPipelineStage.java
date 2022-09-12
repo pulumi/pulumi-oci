@@ -14,13 +14,9 @@ public final class GetDeploymentDeployPipelineArtifactItemDeployPipelineStage {
      * @return A list of stage predecessors for a stage.
      * 
      */
-    private final List<GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItem> items;
+    private List<GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItem> items;
 
-    @CustomType.Constructor
-    private GetDeploymentDeployPipelineArtifactItemDeployPipelineStage(@CustomType.Parameter("items") List<GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItem> items) {
-        this.items = items;
-    }
-
+    private GetDeploymentDeployPipelineArtifactItemDeployPipelineStage() {}
     /**
      * @return A list of stage predecessors for a stage.
      * 
@@ -36,27 +32,27 @@ public final class GetDeploymentDeployPipelineArtifactItemDeployPipelineStage {
     public static Builder builder(GetDeploymentDeployPipelineArtifactItemDeployPipelineStage defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentDeployPipelineArtifactItemDeployPipelineStage defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDeploymentDeployPipelineArtifactItemDeployPipelineStageItem... items) {
             return items(List.of(items));
-        }        public GetDeploymentDeployPipelineArtifactItemDeployPipelineStage build() {
-            return new GetDeploymentDeployPipelineArtifactItemDeployPipelineStage(items);
+        }
+        public GetDeploymentDeployPipelineArtifactItemDeployPipelineStage build() {
+            final var o = new GetDeploymentDeployPipelineArtifactItemDeployPipelineStage();
+            o.items = items;
+            return o;
         }
     }
 }

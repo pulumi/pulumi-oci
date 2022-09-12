@@ -17,28 +17,19 @@ public final class MaskingPoliciesMaskingColumnMaskingFormat {
      * @return (Updatable) A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  &lt;a href=&#34;https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html&#34;&gt;conditional masking&lt;/a&gt;  so that you can mask the column data values differently using different masking  formats and the associated conditions.
      * 
      */
-    private final @Nullable String condition;
+    private @Nullable String condition;
     /**
      * @return (Updatable) The description of the format entry.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
      * @return (Updatable) An array of format entries. The combined output of all the format entries is  used for masking the column data values.
      * 
      */
-    private final List<MaskingPoliciesMaskingColumnMaskingFormatFormatEntry> formatEntries;
+    private List<MaskingPoliciesMaskingColumnMaskingFormatFormatEntry> formatEntries;
 
-    @CustomType.Constructor
-    private MaskingPoliciesMaskingColumnMaskingFormat(
-        @CustomType.Parameter("condition") @Nullable String condition,
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("formatEntries") List<MaskingPoliciesMaskingColumnMaskingFormatFormatEntry> formatEntries) {
-        this.condition = condition;
-        this.description = description;
-        this.formatEntries = formatEntries;
-    }
-
+    private MaskingPoliciesMaskingColumnMaskingFormat() {}
     /**
      * @return (Updatable) A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  &lt;a href=&#34;https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html&#34;&gt;conditional masking&lt;/a&gt;  so that you can mask the column data values differently using different masking  formats and the associated conditions.
      * 
@@ -68,16 +59,12 @@ public final class MaskingPoliciesMaskingColumnMaskingFormat {
     public static Builder builder(MaskingPoliciesMaskingColumnMaskingFormat defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String condition;
         private @Nullable String description;
         private List<MaskingPoliciesMaskingColumnMaskingFormatFormatEntry> formatEntries;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MaskingPoliciesMaskingColumnMaskingFormat defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.condition = defaults.condition;
@@ -85,22 +72,30 @@ public final class MaskingPoliciesMaskingColumnMaskingFormat {
     	      this.formatEntries = defaults.formatEntries;
         }
 
+        @CustomType.Setter
         public Builder condition(@Nullable String condition) {
             this.condition = condition;
             return this;
         }
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder formatEntries(List<MaskingPoliciesMaskingColumnMaskingFormatFormatEntry> formatEntries) {
             this.formatEntries = Objects.requireNonNull(formatEntries);
             return this;
         }
         public Builder formatEntries(MaskingPoliciesMaskingColumnMaskingFormatFormatEntry... formatEntries) {
             return formatEntries(List.of(formatEntries));
-        }        public MaskingPoliciesMaskingColumnMaskingFormat build() {
-            return new MaskingPoliciesMaskingColumnMaskingFormat(condition, description, formatEntries);
+        }
+        public MaskingPoliciesMaskingColumnMaskingFormat build() {
+            final var o = new MaskingPoliciesMaskingColumnMaskingFormat();
+            o.condition = condition;
+            o.description = description;
+            o.formatEntries = formatEntries;
+            return o;
         }
     }
 }

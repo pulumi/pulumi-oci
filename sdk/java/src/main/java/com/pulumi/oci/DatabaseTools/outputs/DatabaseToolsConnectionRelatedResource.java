@@ -13,21 +13,14 @@ public final class DatabaseToolsConnectionRelatedResource {
      * @return (Updatable) The resource entity type.
      * 
      */
-    private final String entityType;
+    private String entityType;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
      * 
      */
-    private final String identifier;
+    private String identifier;
 
-    @CustomType.Constructor
-    private DatabaseToolsConnectionRelatedResource(
-        @CustomType.Parameter("entityType") String entityType,
-        @CustomType.Parameter("identifier") String identifier) {
-        this.entityType = entityType;
-        this.identifier = identifier;
-    }
-
+    private DatabaseToolsConnectionRelatedResource() {}
     /**
      * @return (Updatable) The resource entity type.
      * 
@@ -50,30 +43,32 @@ public final class DatabaseToolsConnectionRelatedResource {
     public static Builder builder(DatabaseToolsConnectionRelatedResource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String entityType;
         private String identifier;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DatabaseToolsConnectionRelatedResource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.entityType = defaults.entityType;
     	      this.identifier = defaults.identifier;
         }
 
+        @CustomType.Setter
         public Builder entityType(String entityType) {
             this.entityType = Objects.requireNonNull(entityType);
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(String identifier) {
             this.identifier = Objects.requireNonNull(identifier);
             return this;
-        }        public DatabaseToolsConnectionRelatedResource build() {
-            return new DatabaseToolsConnectionRelatedResource(entityType, identifier);
+        }
+        public DatabaseToolsConnectionRelatedResource build() {
+            final var o = new DatabaseToolsConnectionRelatedResource();
+            o.entityType = entityType;
+            o.identifier = identifier;
+            return o;
         }
     }
 }

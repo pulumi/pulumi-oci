@@ -18,52 +18,35 @@ public final class GetAwrHubsResult {
      * @return The list of awr_hub_summary_collection.
      * 
      */
-    private final List<GetAwrHubsAwrHubSummaryCollection> awrHubSummaryCollections;
+    private List<GetAwrHubsAwrHubSummaryCollection> awrHubSummaryCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return User-friedly name of AWR Hub that does not have to be unique.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetAwrHubsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetAwrHubsFilter> filters;
     /**
      * @return AWR Hub OCID
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return OPSI Warehouse OCID
      * 
      */
-    private final String operationsInsightsWarehouseId;
+    private String operationsInsightsWarehouseId;
     /**
      * @return Possible lifecycle states
      * 
      */
-    private final @Nullable List<String> states;
+    private @Nullable List<String> states;
 
-    @CustomType.Constructor
-    private GetAwrHubsResult(
-        @CustomType.Parameter("awrHubSummaryCollections") List<GetAwrHubsAwrHubSummaryCollection> awrHubSummaryCollections,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetAwrHubsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("operationsInsightsWarehouseId") String operationsInsightsWarehouseId,
-        @CustomType.Parameter("states") @Nullable List<String> states) {
-        this.awrHubSummaryCollections = awrHubSummaryCollections;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
-        this.states = states;
-    }
-
+    private GetAwrHubsResult() {}
     /**
      * @return The list of awr_hub_summary_collection.
      * 
@@ -117,7 +100,7 @@ public final class GetAwrHubsResult {
     public static Builder builder(GetAwrHubsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAwrHubsAwrHubSummaryCollection> awrHubSummaryCollections;
         private @Nullable String compartmentId;
@@ -126,11 +109,7 @@ public final class GetAwrHubsResult {
         private @Nullable String id;
         private String operationsInsightsWarehouseId;
         private @Nullable List<String> states;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAwrHubsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.awrHubSummaryCollections = defaults.awrHubSummaryCollections;
@@ -142,6 +121,7 @@ public final class GetAwrHubsResult {
     	      this.states = defaults.states;
         }
 
+        @CustomType.Setter
         public Builder awrHubSummaryCollections(List<GetAwrHubsAwrHubSummaryCollection> awrHubSummaryCollections) {
             this.awrHubSummaryCollections = Objects.requireNonNull(awrHubSummaryCollections);
             return this;
@@ -149,14 +129,17 @@ public final class GetAwrHubsResult {
         public Builder awrHubSummaryCollections(GetAwrHubsAwrHubSummaryCollection... awrHubSummaryCollections) {
             return awrHubSummaryCollections(List.of(awrHubSummaryCollections));
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAwrHubsFilter> filters) {
             this.filters = filters;
             return this;
@@ -164,22 +147,34 @@ public final class GetAwrHubsResult {
         public Builder filters(GetAwrHubsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder operationsInsightsWarehouseId(String operationsInsightsWarehouseId) {
             this.operationsInsightsWarehouseId = Objects.requireNonNull(operationsInsightsWarehouseId);
             return this;
         }
+        @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
             this.states = states;
             return this;
         }
         public Builder states(String... states) {
             return states(List.of(states));
-        }        public GetAwrHubsResult build() {
-            return new GetAwrHubsResult(awrHubSummaryCollections, compartmentId, displayName, filters, id, operationsInsightsWarehouseId, states);
+        }
+        public GetAwrHubsResult build() {
+            final var o = new GetAwrHubsResult();
+            o.awrHubSummaryCollections = awrHubSummaryCollections;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
+            o.states = states;
+            return o;
         }
     }
 }

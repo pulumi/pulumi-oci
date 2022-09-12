@@ -15,59 +15,40 @@ public final class GetTenancyResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The description of the tenancy.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The region key for the tenancy&#39;s home region. For the full list of supported regions, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).  Example: `PHX`
      * 
      */
-    private final String homeRegionKey;
+    private String homeRegionKey;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the tenancy.
      * 
      */
-    private final String name;
-    private final String tenancyId;
+    private String name;
+    private String tenancyId;
     /**
      * @return Url which refers to the UPI IDCS compatibility layer endpoint configured for this Tenant&#39;s home region.
      * 
      */
-    private final String upiIdcsCompatibilityLayerEndpoint;
+    private String upiIdcsCompatibilityLayerEndpoint;
 
-    @CustomType.Constructor
-    private GetTenancyResult(
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("homeRegionKey") String homeRegionKey,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("tenancyId") String tenancyId,
-        @CustomType.Parameter("upiIdcsCompatibilityLayerEndpoint") String upiIdcsCompatibilityLayerEndpoint) {
-        this.definedTags = definedTags;
-        this.description = description;
-        this.freeformTags = freeformTags;
-        this.homeRegionKey = homeRegionKey;
-        this.id = id;
-        this.name = name;
-        this.tenancyId = tenancyId;
-        this.upiIdcsCompatibilityLayerEndpoint = upiIdcsCompatibilityLayerEndpoint;
-    }
-
+    private GetTenancyResult() {}
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -128,7 +109,7 @@ public final class GetTenancyResult {
     public static Builder builder(GetTenancyResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> definedTags;
         private String description;
@@ -138,11 +119,7 @@ public final class GetTenancyResult {
         private String name;
         private String tenancyId;
         private String upiIdcsCompatibilityLayerEndpoint;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTenancyResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.definedTags = defaults.definedTags;
@@ -155,39 +132,57 @@ public final class GetTenancyResult {
     	      this.upiIdcsCompatibilityLayerEndpoint = defaults.upiIdcsCompatibilityLayerEndpoint;
         }
 
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder homeRegionKey(String homeRegionKey) {
             this.homeRegionKey = Objects.requireNonNull(homeRegionKey);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = Objects.requireNonNull(tenancyId);
             return this;
         }
+        @CustomType.Setter
         public Builder upiIdcsCompatibilityLayerEndpoint(String upiIdcsCompatibilityLayerEndpoint) {
             this.upiIdcsCompatibilityLayerEndpoint = Objects.requireNonNull(upiIdcsCompatibilityLayerEndpoint);
             return this;
-        }        public GetTenancyResult build() {
-            return new GetTenancyResult(definedTags, description, freeformTags, homeRegionKey, id, name, tenancyId, upiIdcsCompatibilityLayerEndpoint);
+        }
+        public GetTenancyResult build() {
+            final var o = new GetTenancyResult();
+            o.definedTags = definedTags;
+            o.description = description;
+            o.freeformTags = freeformTags;
+            o.homeRegionKey = homeRegionKey;
+            o.id = id;
+            o.name = name;
+            o.tenancyId = tenancyId;
+            o.upiIdcsCompatibilityLayerEndpoint = upiIdcsCompatibilityLayerEndpoint;
+            return o;
         }
     }
 }

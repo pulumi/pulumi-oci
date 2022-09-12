@@ -14,70 +14,49 @@ public final class GetSubscribedServiceBillToCustomer {
      * @return Customer chain type.
      * 
      */
-    private final String customerChainType;
+    private String customerChainType;
     /**
      * @return The business partner is chain customer or not.
      * 
      */
-    private final Boolean isChainCustomer;
+    private Boolean isChainCustomer;
     /**
      * @return The business partner is part of the public sector or not.
      * 
      */
-    private final Boolean isPublicSector;
+    private Boolean isPublicSector;
     /**
      * @return Commercial name also called customer name.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Phonetic name.
      * 
      */
-    private final String namePhonetic;
+    private String namePhonetic;
     /**
      * @return TCA customer account number.
      * 
      */
-    private final String tcaCustAccountNumber;
+    private String tcaCustAccountNumber;
     /**
      * @return TCA customer account ID.
      * 
      */
-    private final String tcaCustomerAccountId;
+    private String tcaCustomerAccountId;
     /**
      * @return TCA party ID.
      * 
      */
-    private final String tcaPartyId;
+    private String tcaPartyId;
     /**
      * @return TCA party number.
      * 
      */
-    private final String tcaPartyNumber;
+    private String tcaPartyNumber;
 
-    @CustomType.Constructor
-    private GetSubscribedServiceBillToCustomer(
-        @CustomType.Parameter("customerChainType") String customerChainType,
-        @CustomType.Parameter("isChainCustomer") Boolean isChainCustomer,
-        @CustomType.Parameter("isPublicSector") Boolean isPublicSector,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("namePhonetic") String namePhonetic,
-        @CustomType.Parameter("tcaCustAccountNumber") String tcaCustAccountNumber,
-        @CustomType.Parameter("tcaCustomerAccountId") String tcaCustomerAccountId,
-        @CustomType.Parameter("tcaPartyId") String tcaPartyId,
-        @CustomType.Parameter("tcaPartyNumber") String tcaPartyNumber) {
-        this.customerChainType = customerChainType;
-        this.isChainCustomer = isChainCustomer;
-        this.isPublicSector = isPublicSector;
-        this.name = name;
-        this.namePhonetic = namePhonetic;
-        this.tcaCustAccountNumber = tcaCustAccountNumber;
-        this.tcaCustomerAccountId = tcaCustomerAccountId;
-        this.tcaPartyId = tcaPartyId;
-        this.tcaPartyNumber = tcaPartyNumber;
-    }
-
+    private GetSubscribedServiceBillToCustomer() {}
     /**
      * @return Customer chain type.
      * 
@@ -149,7 +128,7 @@ public final class GetSubscribedServiceBillToCustomer {
     public static Builder builder(GetSubscribedServiceBillToCustomer defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String customerChainType;
         private Boolean isChainCustomer;
@@ -160,11 +139,7 @@ public final class GetSubscribedServiceBillToCustomer {
         private String tcaCustomerAccountId;
         private String tcaPartyId;
         private String tcaPartyNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscribedServiceBillToCustomer defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.customerChainType = defaults.customerChainType;
@@ -178,43 +153,63 @@ public final class GetSubscribedServiceBillToCustomer {
     	      this.tcaPartyNumber = defaults.tcaPartyNumber;
         }
 
+        @CustomType.Setter
         public Builder customerChainType(String customerChainType) {
             this.customerChainType = Objects.requireNonNull(customerChainType);
             return this;
         }
+        @CustomType.Setter
         public Builder isChainCustomer(Boolean isChainCustomer) {
             this.isChainCustomer = Objects.requireNonNull(isChainCustomer);
             return this;
         }
+        @CustomType.Setter
         public Builder isPublicSector(Boolean isPublicSector) {
             this.isPublicSector = Objects.requireNonNull(isPublicSector);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder namePhonetic(String namePhonetic) {
             this.namePhonetic = Objects.requireNonNull(namePhonetic);
             return this;
         }
+        @CustomType.Setter
         public Builder tcaCustAccountNumber(String tcaCustAccountNumber) {
             this.tcaCustAccountNumber = Objects.requireNonNull(tcaCustAccountNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder tcaCustomerAccountId(String tcaCustomerAccountId) {
             this.tcaCustomerAccountId = Objects.requireNonNull(tcaCustomerAccountId);
             return this;
         }
+        @CustomType.Setter
         public Builder tcaPartyId(String tcaPartyId) {
             this.tcaPartyId = Objects.requireNonNull(tcaPartyId);
             return this;
         }
+        @CustomType.Setter
         public Builder tcaPartyNumber(String tcaPartyNumber) {
             this.tcaPartyNumber = Objects.requireNonNull(tcaPartyNumber);
             return this;
-        }        public GetSubscribedServiceBillToCustomer build() {
-            return new GetSubscribedServiceBillToCustomer(customerChainType, isChainCustomer, isPublicSector, name, namePhonetic, tcaCustAccountNumber, tcaCustomerAccountId, tcaPartyId, tcaPartyNumber);
+        }
+        public GetSubscribedServiceBillToCustomer build() {
+            final var o = new GetSubscribedServiceBillToCustomer();
+            o.customerChainType = customerChainType;
+            o.isChainCustomer = isChainCustomer;
+            o.isPublicSector = isPublicSector;
+            o.name = name;
+            o.namePhonetic = namePhonetic;
+            o.tcaCustAccountNumber = tcaCustAccountNumber;
+            o.tcaCustomerAccountId = tcaCustomerAccountId;
+            o.tcaPartyId = tcaPartyId;
+            o.tcaPartyNumber = tcaPartyNumber;
+            return o;
         }
     }
 }

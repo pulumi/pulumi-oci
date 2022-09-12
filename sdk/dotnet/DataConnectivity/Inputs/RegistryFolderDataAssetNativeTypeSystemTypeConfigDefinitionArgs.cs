@@ -25,13 +25,13 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Specifies whether the configuration is contained or not.
+        /// (Updatable) Specifies whether the configuration is contained.
         /// </summary>
         [Input("isContained")]
         public Input<bool>? IsContained { get; set; }
 
         /// <summary>
-        /// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        /// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<string>? ModelVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public Input<int>? ObjectStatus { get; set; }
 
         /// <summary>
-        /// (Updatable) A reference to the object's parent.
+        /// (Updatable) A reference to the parent object.
         /// </summary>
         [Input("parentRef")]
         public Input<Inputs.RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs>? ParentRef { get; set; }

@@ -34,14 +34,14 @@ public final class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs 
     }
 
     /**
-     * (Updatable) The id of the user who created the object.
+     * (Updatable) The ID of the user who created the object.
      * 
      */
     @Import(name="createdByUserId")
     private @Nullable Output<String> createdByUserId;
 
     /**
-     * @return (Updatable) The id of the user who created the object.
+     * @return (Updatable) The ID of the user who created the object.
      * 
      */
     public Optional<Output<String>> createdByUserId() {
@@ -64,14 +64,14 @@ public final class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs 
     }
 
     /**
-     * (Updatable) Specifies whether this object is a favorite or not.
+     * (Updatable) Specifies whether the object is a favorite.
      * 
      */
     @Import(name="isFavorite")
     private @Nullable Output<Boolean> isFavorite;
 
     /**
-     * @return (Updatable) Specifies whether this object is a favorite or not.
+     * @return (Updatable) Specifies whether the object is a favorite.
      * 
      */
     public Optional<Output<Boolean>> isFavorite() {
@@ -79,14 +79,14 @@ public final class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs 
     }
 
     /**
-     * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     public Optional<Output<String>> key() {
@@ -94,14 +94,14 @@ public final class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs 
     }
 
     /**
-     * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      * 
      */
     @Import(name="labels")
     private @Nullable Output<List<String>> labels;
 
     /**
-     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      * 
      */
     public Optional<Output<List<String>>> labels() {
@@ -154,14 +154,14 @@ public final class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs 
     }
 
     /**
-     * (Updatable) The id of the user who updated the object.
+     * (Updatable) The ID of the user who updated the object.
      * 
      */
     @Import(name="updatedByUserId")
     private @Nullable Output<String> updatedByUserId;
 
     /**
-     * @return (Updatable) The id of the user who updated the object.
+     * @return (Updatable) The ID of the user who updated the object.
      * 
      */
     public Optional<Output<String>> updatedByUserId() {
@@ -239,7 +239,7 @@ public final class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs 
         }
 
         /**
-         * @param createdByUserId (Updatable) The id of the user who created the object.
+         * @param createdByUserId (Updatable) The ID of the user who created the object.
          * 
          * @return builder
          * 
@@ -250,7 +250,7 @@ public final class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs 
         }
 
         /**
-         * @param createdByUserId (Updatable) The id of the user who created the object.
+         * @param createdByUserId (Updatable) The ID of the user who created the object.
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs 
         }
 
         /**
-         * @param isFavorite (Updatable) Specifies whether this object is a favorite or not.
+         * @param isFavorite (Updatable) Specifies whether the object is a favorite.
          * 
          * @return builder
          * 
@@ -292,7 +292,7 @@ public final class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs 
         }
 
         /**
-         * @param isFavorite (Updatable) Specifies whether this object is a favorite or not.
+         * @param isFavorite (Updatable) Specifies whether the object is a favorite.
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs 
         }
 
         /**
-         * @param key (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * @param key (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -313,7 +313,7 @@ public final class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs 
         }
 
         /**
-         * @param key (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * @param key (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -323,7 +323,7 @@ public final class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs 
         }
 
         /**
-         * @param labels (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * @param labels (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          * 
          * @return builder
          * 
@@ -334,7 +334,7 @@ public final class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs 
         }
 
         /**
-         * @param labels (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * @param labels (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          * 
          * @return builder
          * 
@@ -344,7 +344,7 @@ public final class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs 
         }
 
         /**
-         * @param labels (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * @param labels (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          * 
          * @return builder
          * 
@@ -417,7 +417,7 @@ public final class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs 
         }
 
         /**
-         * @param updatedByUserId (Updatable) The id of the user who updated the object.
+         * @param updatedByUserId (Updatable) The ID of the user who updated the object.
          * 
          * @return builder
          * 
@@ -428,7 +428,7 @@ public final class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs 
         }
 
         /**
-         * @param updatedByUserId (Updatable) The id of the user who updated the object.
+         * @param updatedByUserId (Updatable) The ID of the user who updated the object.
          * 
          * @return builder
          * 

@@ -14,13 +14,9 @@ public final class GetDiscoveryAnalyticsDiscoveryAnalyticsCollection {
      * @return An array of discovery analytics summary objects.
      * 
      */
-    private final List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem> items;
+    private List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDiscoveryAnalyticsDiscoveryAnalyticsCollection(@CustomType.Parameter("items") List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDiscoveryAnalyticsDiscoveryAnalyticsCollection() {}
     /**
      * @return An array of discovery analytics summary objects.
      * 
@@ -36,27 +32,27 @@ public final class GetDiscoveryAnalyticsDiscoveryAnalyticsCollection {
     public static Builder builder(GetDiscoveryAnalyticsDiscoveryAnalyticsCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDiscoveryAnalyticsDiscoveryAnalyticsCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDiscoveryAnalyticsDiscoveryAnalyticsCollection build() {
-            return new GetDiscoveryAnalyticsDiscoveryAnalyticsCollection(items);
+        }
+        public GetDiscoveryAnalyticsDiscoveryAnalyticsCollection build() {
+            final var o = new GetDiscoveryAnalyticsDiscoveryAnalyticsCollection();
+            o.items = items;
+            return o;
         }
     }
 }

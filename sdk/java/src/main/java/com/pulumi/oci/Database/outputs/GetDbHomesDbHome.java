@@ -18,127 +18,84 @@ public final class GetDbHomesDbHome {
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    private final String databaseSoftwareImageId;
-    private final List<GetDbHomesDbHomeDatabase> databases;
-    private final String dbHomeId;
+    private String databaseSoftwareImageId;
+    private List<GetDbHomesDbHomeDatabase> databases;
+    private String dbHomeId;
     /**
      * @return The location of the Oracle Database Home.
      * 
      */
-    private final String dbHomeLocation;
+    private String dbHomeLocation;
     /**
      * @return The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
      * 
      */
-    private final String dbSystemId;
+    private String dbSystemId;
     /**
      * @return A filter to return only DB Homes that match the specified dbVersion.
      * 
      */
-    private final String dbVersion;
+    private String dbVersion;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
-    private final String id;
-    private final Boolean isDesupportedVersion;
+    private String id;
+    private Boolean isDesupportedVersion;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    private final String kmsKeyId;
-    private final String kmsKeyVersionId;
+    private String kmsKeyId;
+    private String kmsKeyVersionId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
      * 
      */
-    private final String lastPatchHistoryEntryId;
+    private String lastPatchHistoryEntryId;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
-    private final String source;
+    private String lifecycleDetails;
+    private String source;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the Database Home was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      * 
      */
-    private final String vmClusterId;
+    private String vmClusterId;
 
-    @CustomType.Constructor
-    private GetDbHomesDbHome(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("databaseSoftwareImageId") String databaseSoftwareImageId,
-        @CustomType.Parameter("databases") List<GetDbHomesDbHomeDatabase> databases,
-        @CustomType.Parameter("dbHomeId") String dbHomeId,
-        @CustomType.Parameter("dbHomeLocation") String dbHomeLocation,
-        @CustomType.Parameter("dbSystemId") String dbSystemId,
-        @CustomType.Parameter("dbVersion") String dbVersion,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isDesupportedVersion") Boolean isDesupportedVersion,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("kmsKeyVersionId") String kmsKeyVersionId,
-        @CustomType.Parameter("lastPatchHistoryEntryId") String lastPatchHistoryEntryId,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("source") String source,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("vmClusterId") String vmClusterId) {
-        this.compartmentId = compartmentId;
-        this.databaseSoftwareImageId = databaseSoftwareImageId;
-        this.databases = databases;
-        this.dbHomeId = dbHomeId;
-        this.dbHomeLocation = dbHomeLocation;
-        this.dbSystemId = dbSystemId;
-        this.dbVersion = dbVersion;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isDesupportedVersion = isDesupportedVersion;
-        this.kmsKeyId = kmsKeyId;
-        this.kmsKeyVersionId = kmsKeyVersionId;
-        this.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
-        this.lifecycleDetails = lifecycleDetails;
-        this.source = source;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.vmClusterId = vmClusterId;
-    }
-
+    private GetDbHomesDbHome() {}
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -267,7 +224,7 @@ public final class GetDbHomesDbHome {
     public static Builder builder(GetDbHomesDbHome defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String databaseSoftwareImageId;
@@ -289,11 +246,7 @@ public final class GetDbHomesDbHome {
         private String state;
         private String timeCreated;
         private String vmClusterId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbHomesDbHome defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -318,14 +271,17 @@ public final class GetDbHomesDbHome {
     	      this.vmClusterId = defaults.vmClusterId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
             this.databaseSoftwareImageId = Objects.requireNonNull(databaseSoftwareImageId);
             return this;
         }
+        @CustomType.Setter
         public Builder databases(List<GetDbHomesDbHomeDatabase> databases) {
             this.databases = Objects.requireNonNull(databases);
             return this;
@@ -333,75 +289,114 @@ public final class GetDbHomesDbHome {
         public Builder databases(GetDbHomesDbHomeDatabase... databases) {
             return databases(List.of(databases));
         }
+        @CustomType.Setter
         public Builder dbHomeId(String dbHomeId) {
             this.dbHomeId = Objects.requireNonNull(dbHomeId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbHomeLocation(String dbHomeLocation) {
             this.dbHomeLocation = Objects.requireNonNull(dbHomeLocation);
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = Objects.requireNonNull(dbSystemId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
             this.dbVersion = Objects.requireNonNull(dbVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isDesupportedVersion(Boolean isDesupportedVersion) {
             this.isDesupportedVersion = Objects.requireNonNull(isDesupportedVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
             this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
             return this;
         }
+        @CustomType.Setter
         public Builder lastPatchHistoryEntryId(String lastPatchHistoryEntryId) {
             this.lastPatchHistoryEntryId = Objects.requireNonNull(lastPatchHistoryEntryId);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder source(String source) {
             this.source = Objects.requireNonNull(source);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
             this.vmClusterId = Objects.requireNonNull(vmClusterId);
             return this;
-        }        public GetDbHomesDbHome build() {
-            return new GetDbHomesDbHome(compartmentId, databaseSoftwareImageId, databases, dbHomeId, dbHomeLocation, dbSystemId, dbVersion, definedTags, displayName, freeformTags, id, isDesupportedVersion, kmsKeyId, kmsKeyVersionId, lastPatchHistoryEntryId, lifecycleDetails, source, state, timeCreated, vmClusterId);
+        }
+        public GetDbHomesDbHome build() {
+            final var o = new GetDbHomesDbHome();
+            o.compartmentId = compartmentId;
+            o.databaseSoftwareImageId = databaseSoftwareImageId;
+            o.databases = databases;
+            o.dbHomeId = dbHomeId;
+            o.dbHomeLocation = dbHomeLocation;
+            o.dbSystemId = dbSystemId;
+            o.dbVersion = dbVersion;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isDesupportedVersion = isDesupportedVersion;
+            o.kmsKeyId = kmsKeyId;
+            o.kmsKeyVersionId = kmsKeyVersionId;
+            o.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
+            o.lifecycleDetails = lifecycleDetails;
+            o.source = source;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.vmClusterId = vmClusterId;
+            return o;
         }
     }
 }

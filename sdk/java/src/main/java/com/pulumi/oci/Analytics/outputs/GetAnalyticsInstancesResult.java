@@ -18,59 +18,40 @@ public final class GetAnalyticsInstancesResult {
      * @return The list of analytics_instances.
      * 
      */
-    private final List<GetAnalyticsInstancesAnalyticsInstance> analyticsInstances;
+    private List<GetAnalyticsInstancesAnalyticsInstance> analyticsInstances;
     /**
      * @return The capacity model to use.
      * 
      */
-    private final @Nullable String capacityType;
+    private @Nullable String capacityType;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Analytics feature set.
      * 
      */
-    private final @Nullable String featureSet;
-    private final @Nullable List<GetAnalyticsInstancesFilter> filters;
+    private @Nullable String featureSet;
+    private @Nullable List<GetAnalyticsInstancesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The current state of an instance.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetAnalyticsInstancesResult(
-        @CustomType.Parameter("analyticsInstances") List<GetAnalyticsInstancesAnalyticsInstance> analyticsInstances,
-        @CustomType.Parameter("capacityType") @Nullable String capacityType,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("featureSet") @Nullable String featureSet,
-        @CustomType.Parameter("filters") @Nullable List<GetAnalyticsInstancesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.analyticsInstances = analyticsInstances;
-        this.capacityType = capacityType;
-        this.compartmentId = compartmentId;
-        this.featureSet = featureSet;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.state = state;
-    }
-
+    private GetAnalyticsInstancesResult() {}
     /**
      * @return The list of analytics_instances.
      * 
@@ -131,7 +112,7 @@ public final class GetAnalyticsInstancesResult {
     public static Builder builder(GetAnalyticsInstancesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAnalyticsInstancesAnalyticsInstance> analyticsInstances;
         private @Nullable String capacityType;
@@ -141,11 +122,7 @@ public final class GetAnalyticsInstancesResult {
         private String id;
         private @Nullable String name;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAnalyticsInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.analyticsInstances = defaults.analyticsInstances;
@@ -158,6 +135,7 @@ public final class GetAnalyticsInstancesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder analyticsInstances(List<GetAnalyticsInstancesAnalyticsInstance> analyticsInstances) {
             this.analyticsInstances = Objects.requireNonNull(analyticsInstances);
             return this;
@@ -165,18 +143,22 @@ public final class GetAnalyticsInstancesResult {
         public Builder analyticsInstances(GetAnalyticsInstancesAnalyticsInstance... analyticsInstances) {
             return analyticsInstances(List.of(analyticsInstances));
         }
+        @CustomType.Setter
         public Builder capacityType(@Nullable String capacityType) {
             this.capacityType = capacityType;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder featureSet(@Nullable String featureSet) {
             this.featureSet = featureSet;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAnalyticsInstancesFilter> filters) {
             this.filters = filters;
             return this;
@@ -184,19 +166,32 @@ public final class GetAnalyticsInstancesResult {
         public Builder filters(GetAnalyticsInstancesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetAnalyticsInstancesResult build() {
-            return new GetAnalyticsInstancesResult(analyticsInstances, capacityType, compartmentId, featureSet, filters, id, name, state);
+        }
+        public GetAnalyticsInstancesResult build() {
+            final var o = new GetAnalyticsInstancesResult();
+            o.analyticsInstances = analyticsInstances;
+            o.capacityType = capacityType;
+            o.compartmentId = compartmentId;
+            o.featureSet = featureSet;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.state = state;
+            return o;
         }
     }
 }

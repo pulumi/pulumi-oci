@@ -15,21 +15,14 @@ public final class BuildRunBuildOutputExportedVariableItem {
      * @return Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: &#39;Build_Pipeline_param&#39; is not same as &#39;build_pipeline_Param&#39;
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return Value of the argument.
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
 
-    @CustomType.Constructor
-    private BuildRunBuildOutputExportedVariableItem(
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("value") @Nullable String value) {
-        this.name = name;
-        this.value = value;
-    }
-
+    private BuildRunBuildOutputExportedVariableItem() {}
     /**
      * @return Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: &#39;Build_Pipeline_param&#39; is not same as &#39;build_pipeline_Param&#39;
      * 
@@ -52,30 +45,32 @@ public final class BuildRunBuildOutputExportedVariableItem {
     public static Builder builder(BuildRunBuildOutputExportedVariableItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String name;
         private @Nullable String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BuildRunBuildOutputExportedVariableItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
-        }        public BuildRunBuildOutputExportedVariableItem build() {
-            return new BuildRunBuildOutputExportedVariableItem(name, value);
+        }
+        public BuildRunBuildOutputExportedVariableItem build() {
+            final var o = new BuildRunBuildOutputExportedVariableItem();
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

@@ -12,6 +12,18 @@ namespace Pulumi.Oci.Core.Inputs
 
     public sealed class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs : global::Pulumi.ResourceArgs
     {
+        [Input("autotunePolicies")]
+        private InputList<Inputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs>? _autotunePolicies;
+
+        /// <summary>
+        /// The list of autotune policies enabled for this volume.
+        /// </summary>
+        public InputList<Inputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs> AutotunePolicies
+        {
+            get => _autotunePolicies ?? (_autotunePolicies = new InputList<Inputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs>());
+            set => _autotunePolicies = value;
+        }
+
         /// <summary>
         /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         /// </summary>

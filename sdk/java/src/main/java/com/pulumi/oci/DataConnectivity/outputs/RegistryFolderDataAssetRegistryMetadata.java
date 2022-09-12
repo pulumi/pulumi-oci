@@ -18,84 +18,59 @@ public final class RegistryFolderDataAssetRegistryMetadata {
      * @return (Updatable) The owning object&#39;s key for this object.
      * 
      */
-    private final @Nullable String aggregatorKey;
+    private @Nullable String aggregatorKey;
     /**
-     * @return (Updatable) The id of the user who created the object.
+     * @return (Updatable) The ID of the user who created the object.
      * 
      */
-    private final @Nullable String createdByUserId;
+    private @Nullable String createdByUserId;
     /**
      * @return (Updatable) The name of the user who created the object.
      * 
      */
-    private final @Nullable String createdByUserName;
+    private @Nullable String createdByUserName;
     /**
-     * @return (Updatable) Specifies whether this object is a favorite or not.
+     * @return (Updatable) Specifies whether the object is a favorite.
      * 
      */
-    private final @Nullable Boolean isFavorite;
+    private @Nullable Boolean isFavorite;
     /**
-     * @return (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
-    private final @Nullable String key;
+    private @Nullable String key;
     /**
-     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      * 
      */
-    private final @Nullable List<String> labels;
+    private @Nullable List<String> labels;
     /**
      * @return (Updatable) The registry version.
      * 
      */
-    private final @Nullable Integer registryVersion;
+    private @Nullable Integer registryVersion;
     /**
      * @return (Updatable) The date and time that the object was created.
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return (Updatable) The date and time that the object was updated.
      * 
      */
-    private final @Nullable String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
-     * @return (Updatable) The id of the user who updated the object.
+     * @return (Updatable) The ID of the user who updated the object.
      * 
      */
-    private final @Nullable String updatedByUserId;
+    private @Nullable String updatedByUserId;
     /**
      * @return (Updatable) The name of the user who updated the object.
      * 
      */
-    private final @Nullable String updatedByUserName;
+    private @Nullable String updatedByUserName;
 
-    @CustomType.Constructor
-    private RegistryFolderDataAssetRegistryMetadata(
-        @CustomType.Parameter("aggregatorKey") @Nullable String aggregatorKey,
-        @CustomType.Parameter("createdByUserId") @Nullable String createdByUserId,
-        @CustomType.Parameter("createdByUserName") @Nullable String createdByUserName,
-        @CustomType.Parameter("isFavorite") @Nullable Boolean isFavorite,
-        @CustomType.Parameter("key") @Nullable String key,
-        @CustomType.Parameter("labels") @Nullable List<String> labels,
-        @CustomType.Parameter("registryVersion") @Nullable Integer registryVersion,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated,
-        @CustomType.Parameter("timeUpdated") @Nullable String timeUpdated,
-        @CustomType.Parameter("updatedByUserId") @Nullable String updatedByUserId,
-        @CustomType.Parameter("updatedByUserName") @Nullable String updatedByUserName) {
-        this.aggregatorKey = aggregatorKey;
-        this.createdByUserId = createdByUserId;
-        this.createdByUserName = createdByUserName;
-        this.isFavorite = isFavorite;
-        this.key = key;
-        this.labels = labels;
-        this.registryVersion = registryVersion;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.updatedByUserId = updatedByUserId;
-        this.updatedByUserName = updatedByUserName;
-    }
-
+    private RegistryFolderDataAssetRegistryMetadata() {}
     /**
      * @return (Updatable) The owning object&#39;s key for this object.
      * 
@@ -104,7 +79,7 @@ public final class RegistryFolderDataAssetRegistryMetadata {
         return Optional.ofNullable(this.aggregatorKey);
     }
     /**
-     * @return (Updatable) The id of the user who created the object.
+     * @return (Updatable) The ID of the user who created the object.
      * 
      */
     public Optional<String> createdByUserId() {
@@ -118,21 +93,21 @@ public final class RegistryFolderDataAssetRegistryMetadata {
         return Optional.ofNullable(this.createdByUserName);
     }
     /**
-     * @return (Updatable) Specifies whether this object is a favorite or not.
+     * @return (Updatable) Specifies whether the object is a favorite.
      * 
      */
     public Optional<Boolean> isFavorite() {
         return Optional.ofNullable(this.isFavorite);
     }
     /**
-     * @return (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      * 
      */
     public List<String> labels() {
@@ -160,7 +135,7 @@ public final class RegistryFolderDataAssetRegistryMetadata {
         return Optional.ofNullable(this.timeUpdated);
     }
     /**
-     * @return (Updatable) The id of the user who updated the object.
+     * @return (Updatable) The ID of the user who updated the object.
      * 
      */
     public Optional<String> updatedByUserId() {
@@ -181,7 +156,7 @@ public final class RegistryFolderDataAssetRegistryMetadata {
     public static Builder builder(RegistryFolderDataAssetRegistryMetadata defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String aggregatorKey;
         private @Nullable String createdByUserId;
@@ -194,11 +169,7 @@ public final class RegistryFolderDataAssetRegistryMetadata {
         private @Nullable String timeUpdated;
         private @Nullable String updatedByUserId;
         private @Nullable String updatedByUserName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RegistryFolderDataAssetRegistryMetadata defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.aggregatorKey = defaults.aggregatorKey;
@@ -214,26 +185,32 @@ public final class RegistryFolderDataAssetRegistryMetadata {
     	      this.updatedByUserName = defaults.updatedByUserName;
         }
 
+        @CustomType.Setter
         public Builder aggregatorKey(@Nullable String aggregatorKey) {
             this.aggregatorKey = aggregatorKey;
             return this;
         }
+        @CustomType.Setter
         public Builder createdByUserId(@Nullable String createdByUserId) {
             this.createdByUserId = createdByUserId;
             return this;
         }
+        @CustomType.Setter
         public Builder createdByUserName(@Nullable String createdByUserName) {
             this.createdByUserName = createdByUserName;
             return this;
         }
+        @CustomType.Setter
         public Builder isFavorite(@Nullable Boolean isFavorite) {
             this.isFavorite = isFavorite;
             return this;
         }
+        @CustomType.Setter
         public Builder key(@Nullable String key) {
             this.key = key;
             return this;
         }
+        @CustomType.Setter
         public Builder labels(@Nullable List<String> labels) {
             this.labels = labels;
             return this;
@@ -241,27 +218,45 @@ public final class RegistryFolderDataAssetRegistryMetadata {
         public Builder labels(String... labels) {
             return labels(List.of(labels));
         }
+        @CustomType.Setter
         public Builder registryVersion(@Nullable Integer registryVersion) {
             this.registryVersion = registryVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
             this.timeUpdated = timeUpdated;
             return this;
         }
+        @CustomType.Setter
         public Builder updatedByUserId(@Nullable String updatedByUserId) {
             this.updatedByUserId = updatedByUserId;
             return this;
         }
+        @CustomType.Setter
         public Builder updatedByUserName(@Nullable String updatedByUserName) {
             this.updatedByUserName = updatedByUserName;
             return this;
-        }        public RegistryFolderDataAssetRegistryMetadata build() {
-            return new RegistryFolderDataAssetRegistryMetadata(aggregatorKey, createdByUserId, createdByUserName, isFavorite, key, labels, registryVersion, timeCreated, timeUpdated, updatedByUserId, updatedByUserName);
+        }
+        public RegistryFolderDataAssetRegistryMetadata build() {
+            final var o = new RegistryFolderDataAssetRegistryMetadata();
+            o.aggregatorKey = aggregatorKey;
+            o.createdByUserId = createdByUserId;
+            o.createdByUserName = createdByUserName;
+            o.isFavorite = isFavorite;
+            o.key = key;
+            o.labels = labels;
+            o.registryVersion = registryVersion;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.updatedByUserId = updatedByUserId;
+            o.updatedByUserName = updatedByUserName;
+            return o;
         }
     }
 }

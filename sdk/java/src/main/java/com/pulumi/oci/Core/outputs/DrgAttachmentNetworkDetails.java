@@ -15,42 +15,29 @@ public final class DrgAttachmentNetworkDetails {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The IPSec connection that contains the attached IPSec tunnel.
      * 
      */
-    private final @Nullable String ipsecConnectionId;
+    private @Nullable String ipsecConnectionId;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
      * 
      */
-    private final @Nullable String routeTableId;
+    private @Nullable String routeTableId;
     /**
      * @return (Updatable) The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`, `VIRTUAL_CIRCUIT`
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return (Updatable) Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
      * 
      */
-    private final @Nullable String vcnRouteType;
+    private @Nullable String vcnRouteType;
 
-    @CustomType.Constructor
-    private DrgAttachmentNetworkDetails(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipsecConnectionId") @Nullable String ipsecConnectionId,
-        @CustomType.Parameter("routeTableId") @Nullable String routeTableId,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("vcnRouteType") @Nullable String vcnRouteType) {
-        this.id = id;
-        this.ipsecConnectionId = ipsecConnectionId;
-        this.routeTableId = routeTableId;
-        this.type = type;
-        this.vcnRouteType = vcnRouteType;
-    }
-
+    private DrgAttachmentNetworkDetails() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
      * 
@@ -94,18 +81,14 @@ public final class DrgAttachmentNetworkDetails {
     public static Builder builder(DrgAttachmentNetworkDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private @Nullable String ipsecConnectionId;
         private @Nullable String routeTableId;
         private String type;
         private @Nullable String vcnRouteType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DrgAttachmentNetworkDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -115,27 +98,39 @@ public final class DrgAttachmentNetworkDetails {
     	      this.vcnRouteType = defaults.vcnRouteType;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipsecConnectionId(@Nullable String ipsecConnectionId) {
             this.ipsecConnectionId = ipsecConnectionId;
             return this;
         }
+        @CustomType.Setter
         public Builder routeTableId(@Nullable String routeTableId) {
             this.routeTableId = routeTableId;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnRouteType(@Nullable String vcnRouteType) {
             this.vcnRouteType = vcnRouteType;
             return this;
-        }        public DrgAttachmentNetworkDetails build() {
-            return new DrgAttachmentNetworkDetails(id, ipsecConnectionId, routeTableId, type, vcnRouteType);
+        }
+        public DrgAttachmentNetworkDetails build() {
+            final var o = new DrgAttachmentNetworkDetails();
+            o.id = id;
+            o.ipsecConnectionId = ipsecConnectionId;
+            o.routeTableId = routeTableId;
+            o.type = type;
+            o.vcnRouteType = vcnRouteType;
+            return o;
         }
     }
 }

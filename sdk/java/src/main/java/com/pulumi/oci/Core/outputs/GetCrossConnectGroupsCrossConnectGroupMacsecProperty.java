@@ -15,28 +15,19 @@ public final class GetCrossConnectGroupsCrossConnectGroupMacsecProperty {
      * @return Type of encryption cipher suite to use for the MACsec connection.
      * 
      */
-    private final String encryptionCipher;
+    private String encryptionCipher;
     /**
      * @return An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
      * 
      */
-    private final List<GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey> primaryKeys;
+    private List<GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey> primaryKeys;
     /**
      * @return A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private GetCrossConnectGroupsCrossConnectGroupMacsecProperty(
-        @CustomType.Parameter("encryptionCipher") String encryptionCipher,
-        @CustomType.Parameter("primaryKeys") List<GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey> primaryKeys,
-        @CustomType.Parameter("state") String state) {
-        this.encryptionCipher = encryptionCipher;
-        this.primaryKeys = primaryKeys;
-        this.state = state;
-    }
-
+    private GetCrossConnectGroupsCrossConnectGroupMacsecProperty() {}
     /**
      * @return Type of encryption cipher suite to use for the MACsec connection.
      * 
@@ -66,16 +57,12 @@ public final class GetCrossConnectGroupsCrossConnectGroupMacsecProperty {
     public static Builder builder(GetCrossConnectGroupsCrossConnectGroupMacsecProperty defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String encryptionCipher;
         private List<GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey> primaryKeys;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCrossConnectGroupsCrossConnectGroupMacsecProperty defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.encryptionCipher = defaults.encryptionCipher;
@@ -83,10 +70,12 @@ public final class GetCrossConnectGroupsCrossConnectGroupMacsecProperty {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder encryptionCipher(String encryptionCipher) {
             this.encryptionCipher = Objects.requireNonNull(encryptionCipher);
             return this;
         }
+        @CustomType.Setter
         public Builder primaryKeys(List<GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey> primaryKeys) {
             this.primaryKeys = Objects.requireNonNull(primaryKeys);
             return this;
@@ -94,11 +83,17 @@ public final class GetCrossConnectGroupsCrossConnectGroupMacsecProperty {
         public Builder primaryKeys(GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey... primaryKeys) {
             return primaryKeys(List.of(primaryKeys));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetCrossConnectGroupsCrossConnectGroupMacsecProperty build() {
-            return new GetCrossConnectGroupsCrossConnectGroupMacsecProperty(encryptionCipher, primaryKeys, state);
+        }
+        public GetCrossConnectGroupsCrossConnectGroupMacsecProperty build() {
+            final var o = new GetCrossConnectGroupsCrossConnectGroupMacsecProperty();
+            o.encryptionCipher = encryptionCipher;
+            o.primaryKeys = primaryKeys;
+            o.state = state;
+            return o;
         }
     }
 }

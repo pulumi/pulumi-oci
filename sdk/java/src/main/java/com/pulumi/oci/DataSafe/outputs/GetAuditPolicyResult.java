@@ -20,135 +20,92 @@ public final class GetAuditPolicyResult {
      * @return Lists the audit policy provisioning conditions for the target database.
      * 
      */
-    private final List<GetAuditPolicyAuditCondition> auditConditions;
-    private final String auditPolicyId;
+    private List<GetAuditPolicyAuditCondition> auditConditions;
+    private String auditPolicyId;
     /**
      * @return Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
      * 
      */
-    private final List<GetAuditPolicyAuditSpecification> auditSpecifications;
+    private List<GetAuditPolicyAuditSpecification> auditSpecifications;
     /**
      * @return The OCID of the compartment containing the audit policy.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Description of the audit policy.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The display name of the audit policy.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the audit policy.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
      * 
      */
-    private final Boolean isDataSafeServiceAccountExcluded;
+    private Boolean isDataSafeServiceAccountExcluded;
     /**
      * @return Details about the current state of the audit policy in Data Safe.
      * 
      */
-    private final String lifecycleDetails;
-    private final Integer provisionTrigger;
-    private final Integer retrieveFromTargetTrigger;
+    private String lifecycleDetails;
+    private Integer provisionTrigger;
+    private Integer retrieveFromTargetTrigger;
     /**
      * @return The current state of the audit policy.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The OCID of the target for which the audit policy is created.
      * 
      */
-    private final String targetId;
+    private String targetId;
     /**
      * @return The time the the audit policy was created, in the format defined by RFC3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
      * 
      */
-    private final String timeLastProvisioned;
+    private String timeLastProvisioned;
     /**
      * @return The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
      * 
      */
-    private final String timeLastRetrieved;
+    private String timeLastRetrieved;
     /**
      * @return The last date and time the audit policy was updated, in the format defined by RFC3339.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetAuditPolicyResult(
-        @CustomType.Parameter("auditConditions") List<GetAuditPolicyAuditCondition> auditConditions,
-        @CustomType.Parameter("auditPolicyId") String auditPolicyId,
-        @CustomType.Parameter("auditSpecifications") List<GetAuditPolicyAuditSpecification> auditSpecifications,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isDataSafeServiceAccountExcluded") Boolean isDataSafeServiceAccountExcluded,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("provisionTrigger") Integer provisionTrigger,
-        @CustomType.Parameter("retrieveFromTargetTrigger") Integer retrieveFromTargetTrigger,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("targetId") String targetId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeLastProvisioned") String timeLastProvisioned,
-        @CustomType.Parameter("timeLastRetrieved") String timeLastRetrieved,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.auditConditions = auditConditions;
-        this.auditPolicyId = auditPolicyId;
-        this.auditSpecifications = auditSpecifications;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isDataSafeServiceAccountExcluded = isDataSafeServiceAccountExcluded;
-        this.lifecycleDetails = lifecycleDetails;
-        this.provisionTrigger = provisionTrigger;
-        this.retrieveFromTargetTrigger = retrieveFromTargetTrigger;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.targetId = targetId;
-        this.timeCreated = timeCreated;
-        this.timeLastProvisioned = timeLastProvisioned;
-        this.timeLastRetrieved = timeLastRetrieved;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetAuditPolicyResult() {}
     /**
      * @return Lists the audit policy provisioning conditions for the target database.
      * 
@@ -285,7 +242,7 @@ public final class GetAuditPolicyResult {
     public static Builder builder(GetAuditPolicyResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAuditPolicyAuditCondition> auditConditions;
         private String auditPolicyId;
@@ -307,11 +264,7 @@ public final class GetAuditPolicyResult {
         private String timeLastProvisioned;
         private String timeLastRetrieved;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditPolicyResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.auditConditions = defaults.auditConditions;
@@ -336,6 +289,7 @@ public final class GetAuditPolicyResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder auditConditions(List<GetAuditPolicyAuditCondition> auditConditions) {
             this.auditConditions = Objects.requireNonNull(auditConditions);
             return this;
@@ -343,10 +297,12 @@ public final class GetAuditPolicyResult {
         public Builder auditConditions(GetAuditPolicyAuditCondition... auditConditions) {
             return auditConditions(List.of(auditConditions));
         }
+        @CustomType.Setter
         public Builder auditPolicyId(String auditPolicyId) {
             this.auditPolicyId = Objects.requireNonNull(auditPolicyId);
             return this;
         }
+        @CustomType.Setter
         public Builder auditSpecifications(List<GetAuditPolicyAuditSpecification> auditSpecifications) {
             this.auditSpecifications = Objects.requireNonNull(auditSpecifications);
             return this;
@@ -354,75 +310,114 @@ public final class GetAuditPolicyResult {
         public Builder auditSpecifications(GetAuditPolicyAuditSpecification... auditSpecifications) {
             return auditSpecifications(List.of(auditSpecifications));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isDataSafeServiceAccountExcluded(Boolean isDataSafeServiceAccountExcluded) {
             this.isDataSafeServiceAccountExcluded = Objects.requireNonNull(isDataSafeServiceAccountExcluded);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder provisionTrigger(Integer provisionTrigger) {
             this.provisionTrigger = Objects.requireNonNull(provisionTrigger);
             return this;
         }
+        @CustomType.Setter
         public Builder retrieveFromTargetTrigger(Integer retrieveFromTargetTrigger) {
             this.retrieveFromTargetTrigger = Objects.requireNonNull(retrieveFromTargetTrigger);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastProvisioned(String timeLastProvisioned) {
             this.timeLastProvisioned = Objects.requireNonNull(timeLastProvisioned);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastRetrieved(String timeLastRetrieved) {
             this.timeLastRetrieved = Objects.requireNonNull(timeLastRetrieved);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetAuditPolicyResult build() {
-            return new GetAuditPolicyResult(auditConditions, auditPolicyId, auditSpecifications, compartmentId, definedTags, description, displayName, freeformTags, id, isDataSafeServiceAccountExcluded, lifecycleDetails, provisionTrigger, retrieveFromTargetTrigger, state, systemTags, targetId, timeCreated, timeLastProvisioned, timeLastRetrieved, timeUpdated);
+        }
+        public GetAuditPolicyResult build() {
+            final var o = new GetAuditPolicyResult();
+            o.auditConditions = auditConditions;
+            o.auditPolicyId = auditPolicyId;
+            o.auditSpecifications = auditSpecifications;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isDataSafeServiceAccountExcluded = isDataSafeServiceAccountExcluded;
+            o.lifecycleDetails = lifecycleDetails;
+            o.provisionTrigger = provisionTrigger;
+            o.retrieveFromTargetTrigger = retrieveFromTargetTrigger;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.targetId = targetId;
+            o.timeCreated = timeCreated;
+            o.timeLastProvisioned = timeLastProvisioned;
+            o.timeLastRetrieved = timeLastRetrieved;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

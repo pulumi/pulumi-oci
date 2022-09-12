@@ -18,133 +18,94 @@ public final class GetHttpMonitorsHttpMonitor {
      * @return Filters results by compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Filters results that exactly match the `displayName` field.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return A dictionary of HTTP request headers.
      * 
      */
-    private final Map<String,Object> headers;
+    private Map<String,Object> headers;
     /**
      * @return Filters results that match the `homeRegion`.
      * 
      */
-    private final String homeRegion;
+    private String homeRegion;
     /**
      * @return The OCID of the resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The monitor interval in seconds. Valid values: 10, 30, and 60.
      * 
      */
-    private final Integer intervalInSeconds;
+    private Integer intervalInSeconds;
     /**
      * @return Enables or disables the monitor. Set to &#39;true&#39; to launch monitoring.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return The supported HTTP methods available for probes.
      * 
      */
-    private final String method;
+    private String method;
     /**
      * @return The optional URL path to probe, including query parameters.
      * 
      */
-    private final String path;
+    private String path;
     /**
      * @return The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return The supported protocols available for HTTP probes.
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return A URL for fetching the probe results.
      * 
      */
-    private final String resultsUrl;
+    private String resultsUrl;
     /**
      * @return A list of targets (hostnames or IP addresses) of the probe.
      * 
      */
-    private final List<String> targets;
+    private List<String> targets;
     /**
      * @return The RFC 3339-formatted creation date and time of the probe.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      * 
      */
-    private final Integer timeoutInSeconds;
+    private Integer timeoutInSeconds;
     /**
      * @return A list of names of vantage points from which to execute the probe.
      * 
      */
-    private final List<String> vantagePointNames;
+    private List<String> vantagePointNames;
 
-    @CustomType.Constructor
-    private GetHttpMonitorsHttpMonitor(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("headers") Map<String,Object> headers,
-        @CustomType.Parameter("homeRegion") String homeRegion,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("intervalInSeconds") Integer intervalInSeconds,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("method") String method,
-        @CustomType.Parameter("path") String path,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("resultsUrl") String resultsUrl,
-        @CustomType.Parameter("targets") List<String> targets,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeoutInSeconds") Integer timeoutInSeconds,
-        @CustomType.Parameter("vantagePointNames") List<String> vantagePointNames) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.headers = headers;
-        this.homeRegion = homeRegion;
-        this.id = id;
-        this.intervalInSeconds = intervalInSeconds;
-        this.isEnabled = isEnabled;
-        this.method = method;
-        this.path = path;
-        this.port = port;
-        this.protocol = protocol;
-        this.resultsUrl = resultsUrl;
-        this.targets = targets;
-        this.timeCreated = timeCreated;
-        this.timeoutInSeconds = timeoutInSeconds;
-        this.vantagePointNames = vantagePointNames;
-    }
-
+    private GetHttpMonitorsHttpMonitor() {}
     /**
      * @return Filters results by compartment.
      * 
@@ -279,7 +240,7 @@ public final class GetHttpMonitorsHttpMonitor {
     public static Builder builder(GetHttpMonitorsHttpMonitor defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -299,11 +260,7 @@ public final class GetHttpMonitorsHttpMonitor {
         private String timeCreated;
         private Integer timeoutInSeconds;
         private List<String> vantagePointNames;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetHttpMonitorsHttpMonitor defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -326,62 +283,77 @@ public final class GetHttpMonitorsHttpMonitor {
     	      this.vantagePointNames = defaults.vantagePointNames;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder headers(Map<String,Object> headers) {
             this.headers = Objects.requireNonNull(headers);
             return this;
         }
+        @CustomType.Setter
         public Builder homeRegion(String homeRegion) {
             this.homeRegion = Objects.requireNonNull(homeRegion);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder intervalInSeconds(Integer intervalInSeconds) {
             this.intervalInSeconds = Objects.requireNonNull(intervalInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder method(String method) {
             this.method = Objects.requireNonNull(method);
             return this;
         }
+        @CustomType.Setter
         public Builder path(String path) {
             this.path = Objects.requireNonNull(path);
             return this;
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder resultsUrl(String resultsUrl) {
             this.resultsUrl = Objects.requireNonNull(resultsUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder targets(List<String> targets) {
             this.targets = Objects.requireNonNull(targets);
             return this;
@@ -389,22 +361,45 @@ public final class GetHttpMonitorsHttpMonitor {
         public Builder targets(String... targets) {
             return targets(List.of(targets));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeoutInSeconds(Integer timeoutInSeconds) {
             this.timeoutInSeconds = Objects.requireNonNull(timeoutInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder vantagePointNames(List<String> vantagePointNames) {
             this.vantagePointNames = Objects.requireNonNull(vantagePointNames);
             return this;
         }
         public Builder vantagePointNames(String... vantagePointNames) {
             return vantagePointNames(List.of(vantagePointNames));
-        }        public GetHttpMonitorsHttpMonitor build() {
-            return new GetHttpMonitorsHttpMonitor(compartmentId, definedTags, displayName, freeformTags, headers, homeRegion, id, intervalInSeconds, isEnabled, method, path, port, protocol, resultsUrl, targets, timeCreated, timeoutInSeconds, vantagePointNames);
+        }
+        public GetHttpMonitorsHttpMonitor build() {
+            final var o = new GetHttpMonitorsHttpMonitor();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.headers = headers;
+            o.homeRegion = homeRegion;
+            o.id = id;
+            o.intervalInSeconds = intervalInSeconds;
+            o.isEnabled = isEnabled;
+            o.method = method;
+            o.path = path;
+            o.port = port;
+            o.protocol = protocol;
+            o.resultsUrl = resultsUrl;
+            o.targets = targets;
+            o.timeCreated = timeCreated;
+            o.timeoutInSeconds = timeoutInSeconds;
+            o.vantagePointNames = vantagePointNames;
+            return o;
         }
     }
 }

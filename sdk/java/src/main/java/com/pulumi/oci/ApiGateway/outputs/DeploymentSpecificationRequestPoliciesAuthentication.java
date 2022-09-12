@@ -20,84 +20,59 @@ public final class DeploymentSpecificationRequestPoliciesAuthentication {
      * @return (Updatable) The list of intended recipients for the token.
      * 
      */
-    private final @Nullable List<String> audiences;
+    private @Nullable List<String> audiences;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
      * 
      */
-    private final @Nullable String functionId;
+    private @Nullable String functionId;
     /**
      * @return (Updatable) Whether an unauthenticated user may access the API. Must be &#34;true&#34; to enable ANONYMOUS route authorization.
      * 
      */
-    private final @Nullable Boolean isAnonymousAccessAllowed;
+    private @Nullable Boolean isAnonymousAccessAllowed;
     /**
      * @return (Updatable) A list of parties that could have issued the token.
      * 
      */
-    private final @Nullable List<String> issuers;
+    private @Nullable List<String> issuers;
     /**
      * @return (Updatable) The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
      * 
      */
-    private final @Nullable Double maxClockSkewInSeconds;
+    private @Nullable Double maxClockSkewInSeconds;
     /**
      * @return (Updatable) A set of Public Keys that will be used to verify the JWT signature.
      * 
      */
-    private final @Nullable DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys publicKeys;
+    private @Nullable DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys publicKeys;
     /**
      * @return (Updatable) The authentication scheme that is to be used when authenticating the token. This must to be provided if &#34;tokenHeader&#34; is specified.
      * 
      */
-    private final @Nullable String tokenAuthScheme;
+    private @Nullable String tokenAuthScheme;
     /**
      * @return (Updatable) The name of the header containing the authentication token.
      * 
      */
-    private final @Nullable String tokenHeader;
+    private @Nullable String tokenHeader;
     /**
      * @return (Updatable) The name of the query parameter containing the authentication token.
      * 
      */
-    private final @Nullable String tokenQueryParam;
+    private @Nullable String tokenQueryParam;
     /**
      * @return (Updatable) Type of the Response Cache Store Policy.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return (Updatable) A list of claims which should be validated to consider the token valid.
      * 
      */
-    private final @Nullable List<DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim> verifyClaims;
+    private @Nullable List<DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim> verifyClaims;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationRequestPoliciesAuthentication(
-        @CustomType.Parameter("audiences") @Nullable List<String> audiences,
-        @CustomType.Parameter("functionId") @Nullable String functionId,
-        @CustomType.Parameter("isAnonymousAccessAllowed") @Nullable Boolean isAnonymousAccessAllowed,
-        @CustomType.Parameter("issuers") @Nullable List<String> issuers,
-        @CustomType.Parameter("maxClockSkewInSeconds") @Nullable Double maxClockSkewInSeconds,
-        @CustomType.Parameter("publicKeys") @Nullable DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys publicKeys,
-        @CustomType.Parameter("tokenAuthScheme") @Nullable String tokenAuthScheme,
-        @CustomType.Parameter("tokenHeader") @Nullable String tokenHeader,
-        @CustomType.Parameter("tokenQueryParam") @Nullable String tokenQueryParam,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("verifyClaims") @Nullable List<DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim> verifyClaims) {
-        this.audiences = audiences;
-        this.functionId = functionId;
-        this.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
-        this.issuers = issuers;
-        this.maxClockSkewInSeconds = maxClockSkewInSeconds;
-        this.publicKeys = publicKeys;
-        this.tokenAuthScheme = tokenAuthScheme;
-        this.tokenHeader = tokenHeader;
-        this.tokenQueryParam = tokenQueryParam;
-        this.type = type;
-        this.verifyClaims = verifyClaims;
-    }
-
+    private DeploymentSpecificationRequestPoliciesAuthentication() {}
     /**
      * @return (Updatable) The list of intended recipients for the token.
      * 
@@ -183,7 +158,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthentication {
     public static Builder builder(DeploymentSpecificationRequestPoliciesAuthentication defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> audiences;
         private @Nullable String functionId;
@@ -196,11 +171,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthentication {
         private @Nullable String tokenQueryParam;
         private String type;
         private @Nullable List<DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim> verifyClaims;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationRequestPoliciesAuthentication defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.audiences = defaults.audiences;
@@ -216,6 +187,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthentication {
     	      this.verifyClaims = defaults.verifyClaims;
         }
 
+        @CustomType.Setter
         public Builder audiences(@Nullable List<String> audiences) {
             this.audiences = audiences;
             return this;
@@ -223,14 +195,17 @@ public final class DeploymentSpecificationRequestPoliciesAuthentication {
         public Builder audiences(String... audiences) {
             return audiences(List.of(audiences));
         }
+        @CustomType.Setter
         public Builder functionId(@Nullable String functionId) {
             this.functionId = functionId;
             return this;
         }
+        @CustomType.Setter
         public Builder isAnonymousAccessAllowed(@Nullable Boolean isAnonymousAccessAllowed) {
             this.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
             return this;
         }
+        @CustomType.Setter
         public Builder issuers(@Nullable List<String> issuers) {
             this.issuers = issuers;
             return this;
@@ -238,38 +213,58 @@ public final class DeploymentSpecificationRequestPoliciesAuthentication {
         public Builder issuers(String... issuers) {
             return issuers(List.of(issuers));
         }
+        @CustomType.Setter
         public Builder maxClockSkewInSeconds(@Nullable Double maxClockSkewInSeconds) {
             this.maxClockSkewInSeconds = maxClockSkewInSeconds;
             return this;
         }
+        @CustomType.Setter
         public Builder publicKeys(@Nullable DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys publicKeys) {
             this.publicKeys = publicKeys;
             return this;
         }
+        @CustomType.Setter
         public Builder tokenAuthScheme(@Nullable String tokenAuthScheme) {
             this.tokenAuthScheme = tokenAuthScheme;
             return this;
         }
+        @CustomType.Setter
         public Builder tokenHeader(@Nullable String tokenHeader) {
             this.tokenHeader = tokenHeader;
             return this;
         }
+        @CustomType.Setter
         public Builder tokenQueryParam(@Nullable String tokenQueryParam) {
             this.tokenQueryParam = tokenQueryParam;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder verifyClaims(@Nullable List<DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim> verifyClaims) {
             this.verifyClaims = verifyClaims;
             return this;
         }
         public Builder verifyClaims(DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim... verifyClaims) {
             return verifyClaims(List.of(verifyClaims));
-        }        public DeploymentSpecificationRequestPoliciesAuthentication build() {
-            return new DeploymentSpecificationRequestPoliciesAuthentication(audiences, functionId, isAnonymousAccessAllowed, issuers, maxClockSkewInSeconds, publicKeys, tokenAuthScheme, tokenHeader, tokenQueryParam, type, verifyClaims);
+        }
+        public DeploymentSpecificationRequestPoliciesAuthentication build() {
+            final var o = new DeploymentSpecificationRequestPoliciesAuthentication();
+            o.audiences = audiences;
+            o.functionId = functionId;
+            o.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
+            o.issuers = issuers;
+            o.maxClockSkewInSeconds = maxClockSkewInSeconds;
+            o.publicKeys = publicKeys;
+            o.tokenAuthScheme = tokenAuthScheme;
+            o.tokenHeader = tokenHeader;
+            o.tokenQueryParam = tokenQueryParam;
+            o.type = type;
+            o.verifyClaims = verifyClaims;
+            return o;
         }
     }
 }

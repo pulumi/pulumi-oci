@@ -15,24 +15,15 @@ public final class GetSecurityListsSecurityListEgressSecurityRuleUdpOption {
      * @return The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
      * 
      */
-    private final Integer max;
+    private Integer max;
     /**
      * @return The minimum port number. Must not be greater than the maximum port number.
      * 
      */
-    private final Integer min;
-    private final List<GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange> sourcePortRanges;
+    private Integer min;
+    private List<GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange> sourcePortRanges;
 
-    @CustomType.Constructor
-    private GetSecurityListsSecurityListEgressSecurityRuleUdpOption(
-        @CustomType.Parameter("max") Integer max,
-        @CustomType.Parameter("min") Integer min,
-        @CustomType.Parameter("sourcePortRanges") List<GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange> sourcePortRanges) {
-        this.max = max;
-        this.min = min;
-        this.sourcePortRanges = sourcePortRanges;
-    }
-
+    private GetSecurityListsSecurityListEgressSecurityRuleUdpOption() {}
     /**
      * @return The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
      * 
@@ -58,16 +49,12 @@ public final class GetSecurityListsSecurityListEgressSecurityRuleUdpOption {
     public static Builder builder(GetSecurityListsSecurityListEgressSecurityRuleUdpOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer max;
         private Integer min;
         private List<GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange> sourcePortRanges;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityListsSecurityListEgressSecurityRuleUdpOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.max = defaults.max;
@@ -75,22 +62,30 @@ public final class GetSecurityListsSecurityListEgressSecurityRuleUdpOption {
     	      this.sourcePortRanges = defaults.sourcePortRanges;
         }
 
+        @CustomType.Setter
         public Builder max(Integer max) {
             this.max = Objects.requireNonNull(max);
             return this;
         }
+        @CustomType.Setter
         public Builder min(Integer min) {
             this.min = Objects.requireNonNull(min);
             return this;
         }
+        @CustomType.Setter
         public Builder sourcePortRanges(List<GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange> sourcePortRanges) {
             this.sourcePortRanges = Objects.requireNonNull(sourcePortRanges);
             return this;
         }
         public Builder sourcePortRanges(GetSecurityListsSecurityListEgressSecurityRuleUdpOptionSourcePortRange... sourcePortRanges) {
             return sourcePortRanges(List.of(sourcePortRanges));
-        }        public GetSecurityListsSecurityListEgressSecurityRuleUdpOption build() {
-            return new GetSecurityListsSecurityListEgressSecurityRuleUdpOption(max, min, sourcePortRanges);
+        }
+        public GetSecurityListsSecurityListEgressSecurityRuleUdpOption build() {
+            final var o = new GetSecurityListsSecurityListEgressSecurityRuleUdpOption();
+            o.max = max;
+            o.min = min;
+            o.sourcePortRanges = sourcePortRanges;
+            return o;
         }
     }
 }

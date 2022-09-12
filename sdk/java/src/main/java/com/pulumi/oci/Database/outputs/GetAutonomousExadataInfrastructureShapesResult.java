@@ -17,30 +17,17 @@ public final class GetAutonomousExadataInfrastructureShapesResult {
      * @return The list of autonomous_exadata_infrastructure_shapes.
      * 
      */
-    private final List<GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape> autonomousExadataInfrastructureShapes;
-    private final String availabilityDomain;
-    private final String compartmentId;
-    private final @Nullable List<GetAutonomousExadataInfrastructureShapesFilter> filters;
+    private List<GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape> autonomousExadataInfrastructureShapes;
+    private String availabilityDomain;
+    private String compartmentId;
+    private @Nullable List<GetAutonomousExadataInfrastructureShapesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetAutonomousExadataInfrastructureShapesResult(
-        @CustomType.Parameter("autonomousExadataInfrastructureShapes") List<GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape> autonomousExadataInfrastructureShapes,
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetAutonomousExadataInfrastructureShapesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.autonomousExadataInfrastructureShapes = autonomousExadataInfrastructureShapes;
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetAutonomousExadataInfrastructureShapesResult() {}
     /**
      * @return The list of autonomous_exadata_infrastructure_shapes.
      * 
@@ -72,18 +59,14 @@ public final class GetAutonomousExadataInfrastructureShapesResult {
     public static Builder builder(GetAutonomousExadataInfrastructureShapesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape> autonomousExadataInfrastructureShapes;
         private String availabilityDomain;
         private String compartmentId;
         private @Nullable List<GetAutonomousExadataInfrastructureShapesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousExadataInfrastructureShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousExadataInfrastructureShapes = defaults.autonomousExadataInfrastructureShapes;
@@ -93,6 +76,7 @@ public final class GetAutonomousExadataInfrastructureShapesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder autonomousExadataInfrastructureShapes(List<GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape> autonomousExadataInfrastructureShapes) {
             this.autonomousExadataInfrastructureShapes = Objects.requireNonNull(autonomousExadataInfrastructureShapes);
             return this;
@@ -100,14 +84,17 @@ public final class GetAutonomousExadataInfrastructureShapesResult {
         public Builder autonomousExadataInfrastructureShapes(GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape... autonomousExadataInfrastructureShapes) {
             return autonomousExadataInfrastructureShapes(List.of(autonomousExadataInfrastructureShapes));
         }
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousExadataInfrastructureShapesFilter> filters) {
             this.filters = filters;
             return this;
@@ -115,11 +102,19 @@ public final class GetAutonomousExadataInfrastructureShapesResult {
         public Builder filters(GetAutonomousExadataInfrastructureShapesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetAutonomousExadataInfrastructureShapesResult build() {
-            return new GetAutonomousExadataInfrastructureShapesResult(autonomousExadataInfrastructureShapes, availabilityDomain, compartmentId, filters, id);
+        }
+        public GetAutonomousExadataInfrastructureShapesResult build() {
+            final var o = new GetAutonomousExadataInfrastructureShapesResult();
+            o.autonomousExadataInfrastructureShapes = autonomousExadataInfrastructureShapes;
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

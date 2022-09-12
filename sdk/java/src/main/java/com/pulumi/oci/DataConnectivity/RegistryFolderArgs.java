@@ -20,14 +20,14 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
     public static final RegistryFolderArgs Empty = new RegistryFolderArgs();
 
     /**
-     * (Updatable) List of data assets which belongs to this folder
+     * (Updatable) The list of data assets that belong to the folder.
      * 
      */
     @Import(name="dataAssets")
     private @Nullable Output<List<RegistryFolderDataAssetArgs>> dataAssets;
 
     /**
-     * @return (Updatable) List of data assets which belongs to this folder
+     * @return (Updatable) The list of data assets that belong to the folder.
      * 
      */
     public Optional<Output<List<RegistryFolderDataAssetArgs>>> dataAssets() {
@@ -35,14 +35,14 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) User-defined description for the folder.
+     * (Updatable) User-defined description of the folder.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) User-defined description for the folder.
+     * @return (Updatable) User-defined description of the folder.
      * 
      */
     public Optional<Output<String>> description() {
@@ -50,14 +50,14 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     @Import(name="identifier", required=true)
     private Output<String> identifier;
 
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public Output<String> identifier() {
@@ -65,14 +65,14 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     public Optional<Output<String>> key() {
@@ -110,14 +110,14 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Optional<Output<String>> name() {
@@ -155,14 +155,14 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) A reference to the object&#39;s parent.
+     * (Updatable) A reference to the parent object.
      * 
      */
     @Import(name="parentRef")
     private @Nullable Output<RegistryFolderParentRefArgs> parentRef;
 
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
     public Optional<Output<RegistryFolderParentRefArgs>> parentRef() {
@@ -170,14 +170,14 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      * 
      */
     @Import(name="registryId", required=true)
     private Output<String> registryId;
 
     /**
-     * @return The registry Ocid.
+     * @return The registry OCID.
      * 
      */
     public Output<String> registryId() {
@@ -219,7 +219,7 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param dataAssets (Updatable) List of data assets which belongs to this folder
+         * @param dataAssets (Updatable) The list of data assets that belong to the folder.
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param dataAssets (Updatable) List of data assets which belongs to this folder
+         * @param dataAssets (Updatable) The list of data assets that belong to the folder.
          * 
          * @return builder
          * 
@@ -240,7 +240,7 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param dataAssets (Updatable) List of data assets which belongs to this folder
+         * @param dataAssets (Updatable) The list of data assets that belong to the folder.
          * 
          * @return builder
          * 
@@ -250,7 +250,7 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description (Updatable) User-defined description for the folder.
+         * @param description (Updatable) User-defined description of the folder.
          * 
          * @return builder
          * 
@@ -261,7 +261,7 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description (Updatable) User-defined description for the folder.
+         * @param description (Updatable) User-defined description of the folder.
          * 
          * @return builder
          * 
@@ -271,7 +271,7 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -282,7 +282,7 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -292,7 +292,7 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param key (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * @param key (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -303,7 +303,7 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param key (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * @param key (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -355,7 +355,7 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -366,7 +366,7 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -418,7 +418,7 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param parentRef (Updatable) A reference to the object&#39;s parent.
+         * @param parentRef (Updatable) A reference to the parent object.
          * 
          * @return builder
          * 
@@ -429,7 +429,7 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param parentRef (Updatable) A reference to the object&#39;s parent.
+         * @param parentRef (Updatable) A reference to the parent object.
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param registryId The registry Ocid.
+         * @param registryId The registry OCID.
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class RegistryFolderArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param registryId The registry Ocid.
+         * @param registryId The registry OCID.
          * 
          * @return builder
          * 

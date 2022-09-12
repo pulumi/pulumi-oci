@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string AggregatorKey;
         /// <summary>
-        /// The id of the user who created the object.
+        /// The ID of the user who created the object.
         /// </summary>
         public readonly string CreatedByUserId;
         /// <summary>
@@ -26,15 +26,15 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string CreatedByUserName;
         /// <summary>
-        /// Specifies whether this object is a favorite or not.
+        /// Specifies whether the object is a favorite.
         /// </summary>
         public readonly bool IsFavorite;
         /// <summary>
-        /// Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        /// Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        /// Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         /// </summary>
         public readonly ImmutableArray<string> Labels;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// The id of the user who updated the object.
+        /// The ID of the user who updated the object.
         /// </summary>
         public readonly string UpdatedByUserId;
         /// <summary>

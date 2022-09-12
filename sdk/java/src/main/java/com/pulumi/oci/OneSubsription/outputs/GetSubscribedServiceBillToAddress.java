@@ -16,70 +16,49 @@ public final class GetSubscribedServiceBillToAddress {
      * @return Bill to site use Id.
      * 
      */
-    private final String billSiteUseId;
+    private String billSiteUseId;
     /**
      * @return Identify as the customer shipping address.
      * 
      */
-    private final Boolean isBillTo;
+    private Boolean isBillTo;
     /**
      * @return Identify as the customer invoicing address.
      * 
      */
-    private final Boolean isShipTo;
+    private Boolean isShipTo;
     /**
      * @return Address location.
      * 
      */
-    private final List<GetSubscribedServiceBillToAddressLocation> locations;
+    private List<GetSubscribedServiceBillToAddressLocation> locations;
     /**
      * @return Commercial name also called customer name.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Phone.
      * 
      */
-    private final String phone;
+    private String phone;
     /**
      * @return Service to site use Id.
      * 
      */
-    private final String service2siteUseId;
+    private String service2siteUseId;
     /**
      * @return TCA customer account site Id.
      * 
      */
-    private final String tcaCustAcctSiteId;
+    private String tcaCustAcctSiteId;
     /**
      * @return Party site number.
      * 
      */
-    private final String tcaPartySiteNumber;
+    private String tcaPartySiteNumber;
 
-    @CustomType.Constructor
-    private GetSubscribedServiceBillToAddress(
-        @CustomType.Parameter("billSiteUseId") String billSiteUseId,
-        @CustomType.Parameter("isBillTo") Boolean isBillTo,
-        @CustomType.Parameter("isShipTo") Boolean isShipTo,
-        @CustomType.Parameter("locations") List<GetSubscribedServiceBillToAddressLocation> locations,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("phone") String phone,
-        @CustomType.Parameter("service2siteUseId") String service2siteUseId,
-        @CustomType.Parameter("tcaCustAcctSiteId") String tcaCustAcctSiteId,
-        @CustomType.Parameter("tcaPartySiteNumber") String tcaPartySiteNumber) {
-        this.billSiteUseId = billSiteUseId;
-        this.isBillTo = isBillTo;
-        this.isShipTo = isShipTo;
-        this.locations = locations;
-        this.name = name;
-        this.phone = phone;
-        this.service2siteUseId = service2siteUseId;
-        this.tcaCustAcctSiteId = tcaCustAcctSiteId;
-        this.tcaPartySiteNumber = tcaPartySiteNumber;
-    }
-
+    private GetSubscribedServiceBillToAddress() {}
     /**
      * @return Bill to site use Id.
      * 
@@ -151,7 +130,7 @@ public final class GetSubscribedServiceBillToAddress {
     public static Builder builder(GetSubscribedServiceBillToAddress defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String billSiteUseId;
         private Boolean isBillTo;
@@ -162,11 +141,7 @@ public final class GetSubscribedServiceBillToAddress {
         private String service2siteUseId;
         private String tcaCustAcctSiteId;
         private String tcaPartySiteNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscribedServiceBillToAddress defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.billSiteUseId = defaults.billSiteUseId;
@@ -180,18 +155,22 @@ public final class GetSubscribedServiceBillToAddress {
     	      this.tcaPartySiteNumber = defaults.tcaPartySiteNumber;
         }
 
+        @CustomType.Setter
         public Builder billSiteUseId(String billSiteUseId) {
             this.billSiteUseId = Objects.requireNonNull(billSiteUseId);
             return this;
         }
+        @CustomType.Setter
         public Builder isBillTo(Boolean isBillTo) {
             this.isBillTo = Objects.requireNonNull(isBillTo);
             return this;
         }
+        @CustomType.Setter
         public Builder isShipTo(Boolean isShipTo) {
             this.isShipTo = Objects.requireNonNull(isShipTo);
             return this;
         }
+        @CustomType.Setter
         public Builder locations(List<GetSubscribedServiceBillToAddressLocation> locations) {
             this.locations = Objects.requireNonNull(locations);
             return this;
@@ -199,27 +178,43 @@ public final class GetSubscribedServiceBillToAddress {
         public Builder locations(GetSubscribedServiceBillToAddressLocation... locations) {
             return locations(List.of(locations));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder phone(String phone) {
             this.phone = Objects.requireNonNull(phone);
             return this;
         }
+        @CustomType.Setter
         public Builder service2siteUseId(String service2siteUseId) {
             this.service2siteUseId = Objects.requireNonNull(service2siteUseId);
             return this;
         }
+        @CustomType.Setter
         public Builder tcaCustAcctSiteId(String tcaCustAcctSiteId) {
             this.tcaCustAcctSiteId = Objects.requireNonNull(tcaCustAcctSiteId);
             return this;
         }
+        @CustomType.Setter
         public Builder tcaPartySiteNumber(String tcaPartySiteNumber) {
             this.tcaPartySiteNumber = Objects.requireNonNull(tcaPartySiteNumber);
             return this;
-        }        public GetSubscribedServiceBillToAddress build() {
-            return new GetSubscribedServiceBillToAddress(billSiteUseId, isBillTo, isShipTo, locations, name, phone, service2siteUseId, tcaCustAcctSiteId, tcaPartySiteNumber);
+        }
+        public GetSubscribedServiceBillToAddress build() {
+            final var o = new GetSubscribedServiceBillToAddress();
+            o.billSiteUseId = billSiteUseId;
+            o.isBillTo = isBillTo;
+            o.isShipTo = isShipTo;
+            o.locations = locations;
+            o.name = name;
+            o.phone = phone;
+            o.service2siteUseId = service2siteUseId;
+            o.tcaCustAcctSiteId = tcaCustAcctSiteId;
+            o.tcaPartySiteNumber = tcaPartySiteNumber;
+            return o;
         }
     }
 }

@@ -18,6 +18,21 @@ public final class GetCategoriesPlainArgs extends com.pulumi.resources.InvokeArg
     public static final GetCategoriesPlainArgs Empty = new GetCategoriesPlainArgs();
 
     /**
+     * A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+     * 
+     */
+    @Import(name="childTenancyIds")
+    private @Nullable List<String> childTenancyIds;
+
+    /**
+     * @return A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+     * 
+     */
+    public Optional<List<String>> childTenancyIds() {
+        return Optional.ofNullable(this.childTenancyIds);
+    }
+
+    /**
      * The OCID of the compartment.
      * 
      */
@@ -55,6 +70,21 @@ public final class GetCategoriesPlainArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
+     * When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+     * 
+     */
+    @Import(name="includeOrganization")
+    private @Nullable Boolean includeOrganization;
+
+    /**
+     * @return When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+     * 
+     */
+    public Optional<Boolean> includeOrganization() {
+        return Optional.ofNullable(this.includeOrganization);
+    }
+
+    /**
      * Optional. A filter that returns results that match the name specified.
      * 
      */
@@ -87,9 +117,11 @@ public final class GetCategoriesPlainArgs extends com.pulumi.resources.InvokeArg
     private GetCategoriesPlainArgs() {}
 
     private GetCategoriesPlainArgs(GetCategoriesPlainArgs $) {
+        this.childTenancyIds = $.childTenancyIds;
         this.compartmentId = $.compartmentId;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
+        this.includeOrganization = $.includeOrganization;
         this.name = $.name;
         this.state = $.state;
     }
@@ -110,6 +142,27 @@ public final class GetCategoriesPlainArgs extends com.pulumi.resources.InvokeArg
 
         public Builder(GetCategoriesPlainArgs defaults) {
             $ = new GetCategoriesPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param childTenancyIds A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder childTenancyIds(@Nullable List<String> childTenancyIds) {
+            $.childTenancyIds = childTenancyIds;
+            return this;
+        }
+
+        /**
+         * @param childTenancyIds A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder childTenancyIds(String... childTenancyIds) {
+            return childTenancyIds(List.of(childTenancyIds));
         }
 
         /**
@@ -141,6 +194,17 @@ public final class GetCategoriesPlainArgs extends com.pulumi.resources.InvokeArg
 
         public Builder filters(GetCategoriesFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param includeOrganization When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder includeOrganization(@Nullable Boolean includeOrganization) {
+            $.includeOrganization = includeOrganization;
+            return this;
         }
 
         /**

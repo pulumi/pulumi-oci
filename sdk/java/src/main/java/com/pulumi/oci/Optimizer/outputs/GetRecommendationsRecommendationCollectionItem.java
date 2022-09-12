@@ -19,122 +19,85 @@ public final class GetRecommendationsRecommendationCollectionItem {
      * @return The unique OCID associated with the category.
      * 
      */
-    private final String categoryId;
+    private String categoryId;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Text describing the recommendation.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The estimated cost savings, in dollars, for the recommendation.
      * 
      */
-    private final Double estimatedCostSaving;
+    private Double estimatedCostSaving;
     /**
      * @return Additional metadata key/value pairs for the recommendation.
      * 
      */
-    private final Map<String,Object> extendedMetadata;
+    private Map<String,Object> extendedMetadata;
     /**
      * @return The unique OCID associated with the recommendation.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The level of importance assigned to the recommendation.
      * 
      */
-    private final String importance;
+    private String importance;
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    private final String name;
-    private final String recommendationId;
+    private String name;
+    private String recommendationId;
     /**
      * @return An array of `ResourceCount` objects grouped by the status of the resource actions.
      * 
      */
-    private final List<GetRecommendationsRecommendationCollectionItemResourceCount> resourceCounts;
+    private List<GetRecommendationsRecommendationCollectionItemResourceCount> resourceCounts;
     /**
      * @return A filter that returns results that match the lifecycle state specified.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return A filter that returns recommendations that match the status specified.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
      * 
      */
-    private final List<GetRecommendationsRecommendationCollectionItemSupportedLevel> supportedLevels;
+    private List<GetRecommendationsRecommendationCollectionItemSupportedLevel> supportedLevels;
     /**
      * @return The date and time the recommendation details were created, in the format defined by RFC3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time that the recommendation entered its current status. The format is defined by RFC3339.
      * 
      */
-    private final String timeStatusBegin;
+    private String timeStatusBegin;
     /**
      * @return The date and time the current status will change. The format is defined by RFC3339.
      * 
      */
-    private final String timeStatusEnd;
+    private String timeStatusEnd;
     /**
      * @return The date and time the recommendation details were last updated, in the format defined by RFC3339.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetRecommendationsRecommendationCollectionItem(
-        @CustomType.Parameter("categoryId") String categoryId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("estimatedCostSaving") Double estimatedCostSaving,
-        @CustomType.Parameter("extendedMetadata") Map<String,Object> extendedMetadata,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("importance") String importance,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("recommendationId") String recommendationId,
-        @CustomType.Parameter("resourceCounts") List<GetRecommendationsRecommendationCollectionItemResourceCount> resourceCounts,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("supportedLevels") List<GetRecommendationsRecommendationCollectionItemSupportedLevel> supportedLevels,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeStatusBegin") String timeStatusBegin,
-        @CustomType.Parameter("timeStatusEnd") String timeStatusEnd,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.categoryId = categoryId;
-        this.compartmentId = compartmentId;
-        this.description = description;
-        this.estimatedCostSaving = estimatedCostSaving;
-        this.extendedMetadata = extendedMetadata;
-        this.id = id;
-        this.importance = importance;
-        this.name = name;
-        this.recommendationId = recommendationId;
-        this.resourceCounts = resourceCounts;
-        this.state = state;
-        this.status = status;
-        this.supportedLevels = supportedLevels;
-        this.timeCreated = timeCreated;
-        this.timeStatusBegin = timeStatusBegin;
-        this.timeStatusEnd = timeStatusEnd;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetRecommendationsRecommendationCollectionItem() {}
     /**
      * @return The unique OCID associated with the category.
      * 
@@ -258,7 +221,7 @@ public final class GetRecommendationsRecommendationCollectionItem {
     public static Builder builder(GetRecommendationsRecommendationCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String categoryId;
         private String compartmentId;
@@ -277,11 +240,7 @@ public final class GetRecommendationsRecommendationCollectionItem {
         private String timeStatusBegin;
         private String timeStatusEnd;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRecommendationsRecommendationCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.categoryId = defaults.categoryId;
@@ -303,42 +262,52 @@ public final class GetRecommendationsRecommendationCollectionItem {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder categoryId(String categoryId) {
             this.categoryId = Objects.requireNonNull(categoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder estimatedCostSaving(Double estimatedCostSaving) {
             this.estimatedCostSaving = Objects.requireNonNull(estimatedCostSaving);
             return this;
         }
+        @CustomType.Setter
         public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
             this.extendedMetadata = Objects.requireNonNull(extendedMetadata);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder importance(String importance) {
             this.importance = Objects.requireNonNull(importance);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder recommendationId(String recommendationId) {
             this.recommendationId = Objects.requireNonNull(recommendationId);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceCounts(List<GetRecommendationsRecommendationCollectionItemResourceCount> resourceCounts) {
             this.resourceCounts = Objects.requireNonNull(resourceCounts);
             return this;
@@ -346,14 +315,17 @@ public final class GetRecommendationsRecommendationCollectionItem {
         public Builder resourceCounts(GetRecommendationsRecommendationCollectionItemResourceCount... resourceCounts) {
             return resourceCounts(List.of(resourceCounts));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder supportedLevels(List<GetRecommendationsRecommendationCollectionItemSupportedLevel> supportedLevels) {
             this.supportedLevels = Objects.requireNonNull(supportedLevels);
             return this;
@@ -361,23 +333,46 @@ public final class GetRecommendationsRecommendationCollectionItem {
         public Builder supportedLevels(GetRecommendationsRecommendationCollectionItemSupportedLevel... supportedLevels) {
             return supportedLevels(List.of(supportedLevels));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStatusBegin(String timeStatusBegin) {
             this.timeStatusBegin = Objects.requireNonNull(timeStatusBegin);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStatusEnd(String timeStatusEnd) {
             this.timeStatusEnd = Objects.requireNonNull(timeStatusEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetRecommendationsRecommendationCollectionItem build() {
-            return new GetRecommendationsRecommendationCollectionItem(categoryId, compartmentId, description, estimatedCostSaving, extendedMetadata, id, importance, name, recommendationId, resourceCounts, state, status, supportedLevels, timeCreated, timeStatusBegin, timeStatusEnd, timeUpdated);
+        }
+        public GetRecommendationsRecommendationCollectionItem build() {
+            final var o = new GetRecommendationsRecommendationCollectionItem();
+            o.categoryId = categoryId;
+            o.compartmentId = compartmentId;
+            o.description = description;
+            o.estimatedCostSaving = estimatedCostSaving;
+            o.extendedMetadata = extendedMetadata;
+            o.id = id;
+            o.importance = importance;
+            o.name = name;
+            o.recommendationId = recommendationId;
+            o.resourceCounts = resourceCounts;
+            o.state = state;
+            o.status = status;
+            o.supportedLevels = supportedLevels;
+            o.timeCreated = timeCreated;
+            o.timeStatusBegin = timeStatusBegin;
+            o.timeStatusEnd = timeStatusEnd;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

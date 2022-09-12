@@ -18,45 +18,30 @@ public final class GetTablesResult {
      * @return Compartment Identifier.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetTablesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetTablesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The column name.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The state of a table.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of table_collection.
      * 
      */
-    private final List<GetTablesTableCollection> tableCollections;
+    private List<GetTablesTableCollection> tableCollections;
 
-    @CustomType.Constructor
-    private GetTablesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetTablesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("tableCollections") List<GetTablesTableCollection> tableCollections) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.state = state;
-        this.tableCollections = tableCollections;
-    }
-
+    private GetTablesResult() {}
     /**
      * @return Compartment Identifier.
      * 
@@ -103,7 +88,7 @@ public final class GetTablesResult {
     public static Builder builder(GetTablesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetTablesFilter> filters;
@@ -111,11 +96,7 @@ public final class GetTablesResult {
         private @Nullable String name;
         private @Nullable String state;
         private List<GetTablesTableCollection> tableCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTablesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +107,12 @@ public final class GetTablesResult {
     	      this.tableCollections = defaults.tableCollections;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetTablesFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,26 +120,38 @@ public final class GetTablesResult {
         public Builder filters(GetTablesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder tableCollections(List<GetTablesTableCollection> tableCollections) {
             this.tableCollections = Objects.requireNonNull(tableCollections);
             return this;
         }
         public Builder tableCollections(GetTablesTableCollection... tableCollections) {
             return tableCollections(List.of(tableCollections));
-        }        public GetTablesResult build() {
-            return new GetTablesResult(compartmentId, filters, id, name, state, tableCollections);
+        }
+        public GetTablesResult build() {
+            final var o = new GetTablesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.state = state;
+            o.tableCollections = tableCollections;
+            return o;
         }
     }
 }

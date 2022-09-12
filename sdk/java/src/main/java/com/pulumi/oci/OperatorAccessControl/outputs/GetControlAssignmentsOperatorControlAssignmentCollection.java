@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetControlAssignmentsOperatorControlAssignmentCollection {
-    private final List<GetControlAssignmentsOperatorControlAssignmentCollectionItem> items;
+    private List<GetControlAssignmentsOperatorControlAssignmentCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetControlAssignmentsOperatorControlAssignmentCollection(@CustomType.Parameter("items") List<GetControlAssignmentsOperatorControlAssignmentCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetControlAssignmentsOperatorControlAssignmentCollection() {}
     public List<GetControlAssignmentsOperatorControlAssignmentCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollection {
     public static Builder builder(GetControlAssignmentsOperatorControlAssignmentCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetControlAssignmentsOperatorControlAssignmentCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetControlAssignmentsOperatorControlAssignmentCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetControlAssignmentsOperatorControlAssignmentCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetControlAssignmentsOperatorControlAssignmentCollectionItem... items) {
             return items(List.of(items));
-        }        public GetControlAssignmentsOperatorControlAssignmentCollection build() {
-            return new GetControlAssignmentsOperatorControlAssignmentCollection(items);
+        }
+        public GetControlAssignmentsOperatorControlAssignmentCollection build() {
+            final var o = new GetControlAssignmentsOperatorControlAssignmentCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -18,35 +18,24 @@ public final class TargetTargetResponderRecipeResponderRuleDetails {
      * @return (Updatable) Base condition object
      * 
      */
-    private final @Nullable String condition;
+    private @Nullable String condition;
     /**
      * @return (Updatable) Configurations associated with the ResponderRule
      * 
      */
-    private final @Nullable List<TargetTargetResponderRecipeResponderRuleDetailsConfiguration> configurations;
+    private @Nullable List<TargetTargetResponderRecipeResponderRuleDetailsConfiguration> configurations;
     /**
      * @return Identifies state for ResponderRule
      * 
      */
-    private final @Nullable Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return (Updatable) Execution Mode for ResponderRule
      * 
      */
-    private final @Nullable String mode;
+    private @Nullable String mode;
 
-    @CustomType.Constructor
-    private TargetTargetResponderRecipeResponderRuleDetails(
-        @CustomType.Parameter("condition") @Nullable String condition,
-        @CustomType.Parameter("configurations") @Nullable List<TargetTargetResponderRecipeResponderRuleDetailsConfiguration> configurations,
-        @CustomType.Parameter("isEnabled") @Nullable Boolean isEnabled,
-        @CustomType.Parameter("mode") @Nullable String mode) {
-        this.condition = condition;
-        this.configurations = configurations;
-        this.isEnabled = isEnabled;
-        this.mode = mode;
-    }
-
+    private TargetTargetResponderRecipeResponderRuleDetails() {}
     /**
      * @return (Updatable) Base condition object
      * 
@@ -83,17 +72,13 @@ public final class TargetTargetResponderRecipeResponderRuleDetails {
     public static Builder builder(TargetTargetResponderRecipeResponderRuleDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String condition;
         private @Nullable List<TargetTargetResponderRecipeResponderRuleDetailsConfiguration> configurations;
         private @Nullable Boolean isEnabled;
         private @Nullable String mode;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(TargetTargetResponderRecipeResponderRuleDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.condition = defaults.condition;
@@ -102,10 +87,12 @@ public final class TargetTargetResponderRecipeResponderRuleDetails {
     	      this.mode = defaults.mode;
         }
 
+        @CustomType.Setter
         public Builder condition(@Nullable String condition) {
             this.condition = condition;
             return this;
         }
+        @CustomType.Setter
         public Builder configurations(@Nullable List<TargetTargetResponderRecipeResponderRuleDetailsConfiguration> configurations) {
             this.configurations = configurations;
             return this;
@@ -113,15 +100,23 @@ public final class TargetTargetResponderRecipeResponderRuleDetails {
         public Builder configurations(TargetTargetResponderRecipeResponderRuleDetailsConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
+        @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
             this.isEnabled = isEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder mode(@Nullable String mode) {
             this.mode = mode;
             return this;
-        }        public TargetTargetResponderRecipeResponderRuleDetails build() {
-            return new TargetTargetResponderRecipeResponderRuleDetails(condition, configurations, isEnabled, mode);
+        }
+        public TargetTargetResponderRecipeResponderRuleDetails build() {
+            final var o = new TargetTargetResponderRecipeResponderRuleDetails();
+            o.condition = condition;
+            o.configurations = configurations;
+            o.isEnabled = isEnabled;
+            o.mode = mode;
+            return o;
         }
     }
 }

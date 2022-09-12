@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFastLaunchJobConfigsResult {
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of fast_launch_job_configs.
      * 
      */
-    private final List<GetFastLaunchJobConfigsFastLaunchJobConfig> fastLaunchJobConfigs;
-    private final @Nullable List<GetFastLaunchJobConfigsFilter> filters;
+    private List<GetFastLaunchJobConfigsFastLaunchJobConfig> fastLaunchJobConfigs;
+    private @Nullable List<GetFastLaunchJobConfigsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetFastLaunchJobConfigsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("fastLaunchJobConfigs") List<GetFastLaunchJobConfigsFastLaunchJobConfig> fastLaunchJobConfigs,
-        @CustomType.Parameter("filters") @Nullable List<GetFastLaunchJobConfigsFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.compartmentId = compartmentId;
-        this.fastLaunchJobConfigs = fastLaunchJobConfigs;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetFastLaunchJobConfigsResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -66,17 +55,13 @@ public final class GetFastLaunchJobConfigsResult {
     public static Builder builder(GetFastLaunchJobConfigsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetFastLaunchJobConfigsFastLaunchJobConfig> fastLaunchJobConfigs;
         private @Nullable List<GetFastLaunchJobConfigsFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFastLaunchJobConfigsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -85,10 +70,12 @@ public final class GetFastLaunchJobConfigsResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder fastLaunchJobConfigs(List<GetFastLaunchJobConfigsFastLaunchJobConfig> fastLaunchJobConfigs) {
             this.fastLaunchJobConfigs = Objects.requireNonNull(fastLaunchJobConfigs);
             return this;
@@ -96,6 +83,7 @@ public final class GetFastLaunchJobConfigsResult {
         public Builder fastLaunchJobConfigs(GetFastLaunchJobConfigsFastLaunchJobConfig... fastLaunchJobConfigs) {
             return fastLaunchJobConfigs(List.of(fastLaunchJobConfigs));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetFastLaunchJobConfigsFilter> filters) {
             this.filters = filters;
             return this;
@@ -103,11 +91,18 @@ public final class GetFastLaunchJobConfigsResult {
         public Builder filters(GetFastLaunchJobConfigsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetFastLaunchJobConfigsResult build() {
-            return new GetFastLaunchJobConfigsResult(compartmentId, fastLaunchJobConfigs, filters, id);
+        }
+        public GetFastLaunchJobConfigsResult build() {
+            final var o = new GetFastLaunchJobConfigsResult();
+            o.compartmentId = compartmentId;
+            o.fastLaunchJobConfigs = fastLaunchJobConfigs;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

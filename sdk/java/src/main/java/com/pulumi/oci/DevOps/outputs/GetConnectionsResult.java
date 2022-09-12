@@ -18,59 +18,40 @@ public final class GetConnectionsResult {
      * @return The OCID of the compartment containing the connection.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The list of connection_collection.
      * 
      */
-    private final List<GetConnectionsConnectionCollection> connectionCollections;
+    private List<GetConnectionsConnectionCollection> connectionCollections;
     /**
      * @return The type of connection.
      * 
      */
-    private final @Nullable String connectionType;
+    private @Nullable String connectionType;
     /**
      * @return Connection display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetConnectionsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetConnectionsFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the DevOps project.
      * 
      */
-    private final @Nullable String projectId;
+    private @Nullable String projectId;
     /**
      * @return The current state of the connection.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetConnectionsResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("connectionCollections") List<GetConnectionsConnectionCollection> connectionCollections,
-        @CustomType.Parameter("connectionType") @Nullable String connectionType,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetConnectionsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("projectId") @Nullable String projectId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.connectionCollections = connectionCollections;
-        this.connectionType = connectionType;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.projectId = projectId;
-        this.state = state;
-    }
-
+    private GetConnectionsResult() {}
     /**
      * @return The OCID of the compartment containing the connection.
      * 
@@ -131,7 +112,7 @@ public final class GetConnectionsResult {
     public static Builder builder(GetConnectionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private List<GetConnectionsConnectionCollection> connectionCollections;
@@ -141,11 +122,7 @@ public final class GetConnectionsResult {
         private @Nullable String id;
         private @Nullable String projectId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConnectionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -158,10 +135,12 @@ public final class GetConnectionsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder connectionCollections(List<GetConnectionsConnectionCollection> connectionCollections) {
             this.connectionCollections = Objects.requireNonNull(connectionCollections);
             return this;
@@ -169,14 +148,17 @@ public final class GetConnectionsResult {
         public Builder connectionCollections(GetConnectionsConnectionCollection... connectionCollections) {
             return connectionCollections(List.of(connectionCollections));
         }
+        @CustomType.Setter
         public Builder connectionType(@Nullable String connectionType) {
             this.connectionType = connectionType;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetConnectionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -184,19 +166,32 @@ public final class GetConnectionsResult {
         public Builder filters(GetConnectionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
             this.projectId = projectId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetConnectionsResult build() {
-            return new GetConnectionsResult(compartmentId, connectionCollections, connectionType, displayName, filters, id, projectId, state);
+        }
+        public GetConnectionsResult build() {
+            final var o = new GetConnectionsResult();
+            o.compartmentId = compartmentId;
+            o.connectionCollections = connectionCollections;
+            o.connectionType = connectionType;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.projectId = projectId;
+            o.state = state;
+            return o;
         }
     }
 }

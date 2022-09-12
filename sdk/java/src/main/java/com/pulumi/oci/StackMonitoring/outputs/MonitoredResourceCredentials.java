@@ -17,56 +17,39 @@ public final class MonitoredResourceCredentials {
      * @return (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
      * 
      */
-    private final @Nullable String credentialType;
+    private @Nullable String credentialType;
     /**
      * @return (Updatable) The user-specified textual description of the credential.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
      * @return (Updatable) The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
      * 
      */
-    private final @Nullable String keyId;
+    private @Nullable String keyId;
     /**
      * @return (Updatable) property name
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) List of monitored resource properties
      * 
      */
-    private final @Nullable List<MonitoredResourceCredentialsProperty> properties;
+    private @Nullable List<MonitoredResourceCredentialsProperty> properties;
     /**
      * @return (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
-    private final @Nullable String source;
+    private @Nullable String source;
     /**
      * @return Monitored resource type
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private MonitoredResourceCredentials(
-        @CustomType.Parameter("credentialType") @Nullable String credentialType,
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("keyId") @Nullable String keyId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("properties") @Nullable List<MonitoredResourceCredentialsProperty> properties,
-        @CustomType.Parameter("source") @Nullable String source,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.credentialType = credentialType;
-        this.description = description;
-        this.keyId = keyId;
-        this.name = name;
-        this.properties = properties;
-        this.source = source;
-        this.type = type;
-    }
-
+    private MonitoredResourceCredentials() {}
     /**
      * @return (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED. * EXISTING  - Credential is already stored in agent and only credential name need to be passed for existing credential. * PLAINTEXT - The credential properties will have credentials in plain text format. * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
      * 
@@ -124,7 +107,7 @@ public final class MonitoredResourceCredentials {
     public static Builder builder(MonitoredResourceCredentials defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String credentialType;
         private @Nullable String description;
@@ -133,11 +116,7 @@ public final class MonitoredResourceCredentials {
         private @Nullable List<MonitoredResourceCredentialsProperty> properties;
         private @Nullable String source;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MonitoredResourceCredentials defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.credentialType = defaults.credentialType;
@@ -149,22 +128,27 @@ public final class MonitoredResourceCredentials {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder credentialType(@Nullable String credentialType) {
             this.credentialType = credentialType;
             return this;
         }
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder keyId(@Nullable String keyId) {
             this.keyId = keyId;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder properties(@Nullable List<MonitoredResourceCredentialsProperty> properties) {
             this.properties = properties;
             return this;
@@ -172,15 +156,26 @@ public final class MonitoredResourceCredentials {
         public Builder properties(MonitoredResourceCredentialsProperty... properties) {
             return properties(List.of(properties));
         }
+        @CustomType.Setter
         public Builder source(@Nullable String source) {
             this.source = source;
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public MonitoredResourceCredentials build() {
-            return new MonitoredResourceCredentials(credentialType, description, keyId, name, properties, source, type);
+        }
+        public MonitoredResourceCredentials build() {
+            final var o = new MonitoredResourceCredentials();
+            o.credentialType = credentialType;
+            o.description = description;
+            o.keyId = keyId;
+            o.name = name;
+            o.properties = properties;
+            o.source = source;
+            o.type = type;
+            return o;
         }
     }
 }

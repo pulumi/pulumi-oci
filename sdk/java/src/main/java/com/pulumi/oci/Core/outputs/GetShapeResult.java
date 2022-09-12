@@ -14,33 +14,18 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetShapeResult {
-    private final @Nullable String availabilityDomain;
-    private final String compartmentId;
-    private final @Nullable List<GetShapeFilter> filters;
+    private @Nullable String availabilityDomain;
+    private String compartmentId;
+    private @Nullable List<GetShapeFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String imageId;
-    private final List<GetShapeShape> shapes;
+    private String id;
+    private @Nullable String imageId;
+    private List<GetShapeShape> shapes;
 
-    @CustomType.Constructor
-    private GetShapeResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetShapeFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("imageId") @Nullable String imageId,
-        @CustomType.Parameter("shapes") List<GetShapeShape> shapes) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.imageId = imageId;
-        this.shapes = shapes;
-    }
-
+    private GetShapeResult() {}
     public Optional<String> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
     }
@@ -71,7 +56,7 @@ public final class GetShapeResult {
     public static Builder builder(GetShapeResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
@@ -79,11 +64,7 @@ public final class GetShapeResult {
         private String id;
         private @Nullable String imageId;
         private List<GetShapeShape> shapes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapeResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -94,14 +75,17 @@ public final class GetShapeResult {
     	      this.shapes = defaults.shapes;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetShapeFilter> filters) {
             this.filters = filters;
             return this;
@@ -109,22 +93,33 @@ public final class GetShapeResult {
         public Builder filters(GetShapeFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder imageId(@Nullable String imageId) {
             this.imageId = imageId;
             return this;
         }
+        @CustomType.Setter
         public Builder shapes(List<GetShapeShape> shapes) {
             this.shapes = Objects.requireNonNull(shapes);
             return this;
         }
         public Builder shapes(GetShapeShape... shapes) {
             return shapes(List.of(shapes));
-        }        public GetShapeResult build() {
-            return new GetShapeResult(availabilityDomain, compartmentId, filters, id, imageId, shapes);
+        }
+        public GetShapeResult build() {
+            final var o = new GetShapeResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.imageId = imageId;
+            o.shapes = shapes;
+            return o;
         }
     }
 }

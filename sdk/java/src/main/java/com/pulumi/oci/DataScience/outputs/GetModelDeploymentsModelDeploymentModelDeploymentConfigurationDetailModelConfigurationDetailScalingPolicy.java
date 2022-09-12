@@ -14,21 +14,14 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
      * @return The number of instances for the model deployment.
      * 
      */
-    private final Integer instanceCount;
+    private Integer instanceCount;
     /**
      * @return The type of scaling policy.
      * 
      */
-    private final String policyType;
+    private String policyType;
 
-    @CustomType.Constructor
-    private GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy(
-        @CustomType.Parameter("instanceCount") Integer instanceCount,
-        @CustomType.Parameter("policyType") String policyType) {
-        this.instanceCount = instanceCount;
-        this.policyType = policyType;
-    }
-
+    private GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy() {}
     /**
      * @return The number of instances for the model deployment.
      * 
@@ -51,30 +44,32 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     public static Builder builder(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer instanceCount;
         private String policyType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.instanceCount = defaults.instanceCount;
     	      this.policyType = defaults.policyType;
         }
 
+        @CustomType.Setter
         public Builder instanceCount(Integer instanceCount) {
             this.instanceCount = Objects.requireNonNull(instanceCount);
             return this;
         }
+        @CustomType.Setter
         public Builder policyType(String policyType) {
             this.policyType = Objects.requireNonNull(policyType);
             return this;
-        }        public GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy build() {
-            return new GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy(instanceCount, policyType);
+        }
+        public GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy build() {
+            final var o = new GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy();
+            o.instanceCount = instanceCount;
+            o.policyType = policyType;
+            return o;
         }
     }
 }

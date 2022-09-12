@@ -13,49 +13,34 @@ public final class GetManagedDatabaseUserRolesRoleCollectionItem {
      * @return Indicates whether the role is granted with the ADMIN OPTION (YES) or not (NO).
      * 
      */
-    private final String adminOption;
+    private String adminOption;
     /**
      * @return Indicates how the role was granted. Possible values: YES if the role is granted commonly (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL is not used)
      * 
      */
-    private final String common;
+    private String common;
     /**
      * @return Indicates whether the role is designated as a DEFAULT ROLE for the user (YES) or not (NO).
      * 
      */
-    private final String defaultRole;
+    private String defaultRole;
     /**
      * @return Indicates whether the role is granted with the DELEGATE OPTION (YES) or not (NO).
      * 
      */
-    private final String delegateOption;
+    private String delegateOption;
     /**
      * @return Indicates whether the granted role is inherited from another container (YES) or not (NO).
      * 
      */
-    private final String inherited;
+    private String inherited;
     /**
      * @return A filter to return only resources that match the entire name.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseUserRolesRoleCollectionItem(
-        @CustomType.Parameter("adminOption") String adminOption,
-        @CustomType.Parameter("common") String common,
-        @CustomType.Parameter("defaultRole") String defaultRole,
-        @CustomType.Parameter("delegateOption") String delegateOption,
-        @CustomType.Parameter("inherited") String inherited,
-        @CustomType.Parameter("name") String name) {
-        this.adminOption = adminOption;
-        this.common = common;
-        this.defaultRole = defaultRole;
-        this.delegateOption = delegateOption;
-        this.inherited = inherited;
-        this.name = name;
-    }
-
+    private GetManagedDatabaseUserRolesRoleCollectionItem() {}
     /**
      * @return Indicates whether the role is granted with the ADMIN OPTION (YES) or not (NO).
      * 
@@ -106,7 +91,7 @@ public final class GetManagedDatabaseUserRolesRoleCollectionItem {
     public static Builder builder(GetManagedDatabaseUserRolesRoleCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String adminOption;
         private String common;
@@ -114,11 +99,7 @@ public final class GetManagedDatabaseUserRolesRoleCollectionItem {
         private String delegateOption;
         private String inherited;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseUserRolesRoleCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminOption = defaults.adminOption;
@@ -129,31 +110,45 @@ public final class GetManagedDatabaseUserRolesRoleCollectionItem {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder adminOption(String adminOption) {
             this.adminOption = Objects.requireNonNull(adminOption);
             return this;
         }
+        @CustomType.Setter
         public Builder common(String common) {
             this.common = Objects.requireNonNull(common);
             return this;
         }
+        @CustomType.Setter
         public Builder defaultRole(String defaultRole) {
             this.defaultRole = Objects.requireNonNull(defaultRole);
             return this;
         }
+        @CustomType.Setter
         public Builder delegateOption(String delegateOption) {
             this.delegateOption = Objects.requireNonNull(delegateOption);
             return this;
         }
+        @CustomType.Setter
         public Builder inherited(String inherited) {
             this.inherited = Objects.requireNonNull(inherited);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetManagedDatabaseUserRolesRoleCollectionItem build() {
-            return new GetManagedDatabaseUserRolesRoleCollectionItem(adminOption, common, defaultRole, delegateOption, inherited, name);
+        }
+        public GetManagedDatabaseUserRolesRoleCollectionItem build() {
+            final var o = new GetManagedDatabaseUserRolesRoleCollectionItem();
+            o.adminOption = adminOption;
+            o.common = common;
+            o.defaultRole = defaultRole;
+            o.delegateOption = delegateOption;
+            o.inherited = inherited;
+            o.name = name;
+            return o;
         }
     }
 }

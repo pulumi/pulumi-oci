@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetGenericArtifactsGenericArtifactCollection {
-    private final List<GetGenericArtifactsGenericArtifactCollectionItem> items;
+    private List<GetGenericArtifactsGenericArtifactCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetGenericArtifactsGenericArtifactCollection(@CustomType.Parameter("items") List<GetGenericArtifactsGenericArtifactCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetGenericArtifactsGenericArtifactCollection() {}
     public List<GetGenericArtifactsGenericArtifactCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetGenericArtifactsGenericArtifactCollection {
     public static Builder builder(GetGenericArtifactsGenericArtifactCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetGenericArtifactsGenericArtifactCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGenericArtifactsGenericArtifactCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetGenericArtifactsGenericArtifactCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetGenericArtifactsGenericArtifactCollectionItem... items) {
             return items(List.of(items));
-        }        public GetGenericArtifactsGenericArtifactCollection build() {
-            return new GetGenericArtifactsGenericArtifactCollection(items);
+        }
+        public GetGenericArtifactsGenericArtifactCollection build() {
+            final var o = new GetGenericArtifactsGenericArtifactCollection();
+            o.items = items;
+            return o;
         }
     }
 }

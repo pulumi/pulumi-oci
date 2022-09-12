@@ -16,21 +16,14 @@ public final class ConnectorTargetDimension {
      * @return (Updatable) Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
      * 
      */
-    private final @Nullable ConnectorTargetDimensionDimensionValue dimensionValue;
+    private @Nullable ConnectorTargetDimensionDimensionValue dimensionValue;
     /**
      * @return (Updatable) Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private ConnectorTargetDimension(
-        @CustomType.Parameter("dimensionValue") @Nullable ConnectorTargetDimensionDimensionValue dimensionValue,
-        @CustomType.Parameter("name") @Nullable String name) {
-        this.dimensionValue = dimensionValue;
-        this.name = name;
-    }
-
+    private ConnectorTargetDimension() {}
     /**
      * @return (Updatable) Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
      * 
@@ -53,30 +46,32 @@ public final class ConnectorTargetDimension {
     public static Builder builder(ConnectorTargetDimension defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable ConnectorTargetDimensionDimensionValue dimensionValue;
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConnectorTargetDimension defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dimensionValue = defaults.dimensionValue;
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder dimensionValue(@Nullable ConnectorTargetDimensionDimensionValue dimensionValue) {
             this.dimensionValue = dimensionValue;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public ConnectorTargetDimension build() {
-            return new ConnectorTargetDimension(dimensionValue, name);
+        }
+        public ConnectorTargetDimension build() {
+            final var o = new ConnectorTargetDimension();
+            o.dimensionValue = dimensionValue;
+            o.name = name;
+            return o;
         }
     }
 }

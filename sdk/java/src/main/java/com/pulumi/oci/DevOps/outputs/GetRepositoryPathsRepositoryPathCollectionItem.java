@@ -15,63 +15,44 @@ public final class GetRepositoryPathsRepositoryPathCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Name of file or directory.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Path to file or directory in a repository.
      * 
      */
-    private final String path;
+    private String path;
     /**
      * @return SHA-1 checksum of blob or tree.
      * 
      */
-    private final String sha;
+    private String sha;
     /**
      * @return Size of file or directory.
      * 
      */
-    private final String sizeInBytes;
+    private String sizeInBytes;
     /**
      * @return The git URL of the submodule.
      * 
      */
-    private final String submoduleGitUrl;
+    private String submoduleGitUrl;
     /**
      * @return File or directory.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetRepositoryPathsRepositoryPathCollectionItem(
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("path") String path,
-        @CustomType.Parameter("sha") String sha,
-        @CustomType.Parameter("sizeInBytes") String sizeInBytes,
-        @CustomType.Parameter("submoduleGitUrl") String submoduleGitUrl,
-        @CustomType.Parameter("type") String type) {
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-        this.name = name;
-        this.path = path;
-        this.sha = sha;
-        this.sizeInBytes = sizeInBytes;
-        this.submoduleGitUrl = submoduleGitUrl;
-        this.type = type;
-    }
-
+    private GetRepositoryPathsRepositoryPathCollectionItem() {}
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -136,7 +117,7 @@ public final class GetRepositoryPathsRepositoryPathCollectionItem {
     public static Builder builder(GetRepositoryPathsRepositoryPathCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> definedTags;
         private Map<String,Object> freeformTags;
@@ -146,11 +127,7 @@ public final class GetRepositoryPathsRepositoryPathCollectionItem {
         private String sizeInBytes;
         private String submoduleGitUrl;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryPathsRepositoryPathCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.definedTags = defaults.definedTags;
@@ -163,39 +140,57 @@ public final class GetRepositoryPathsRepositoryPathCollectionItem {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder path(String path) {
             this.path = Objects.requireNonNull(path);
             return this;
         }
+        @CustomType.Setter
         public Builder sha(String sha) {
             this.sha = Objects.requireNonNull(sha);
             return this;
         }
+        @CustomType.Setter
         public Builder sizeInBytes(String sizeInBytes) {
             this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
             return this;
         }
+        @CustomType.Setter
         public Builder submoduleGitUrl(String submoduleGitUrl) {
             this.submoduleGitUrl = Objects.requireNonNull(submoduleGitUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetRepositoryPathsRepositoryPathCollectionItem build() {
-            return new GetRepositoryPathsRepositoryPathCollectionItem(definedTags, freeformTags, name, path, sha, sizeInBytes, submoduleGitUrl, type);
+        }
+        public GetRepositoryPathsRepositoryPathCollectionItem build() {
+            final var o = new GetRepositoryPathsRepositoryPathCollectionItem();
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            o.name = name;
+            o.path = path;
+            o.sha = sha;
+            o.sizeInBytes = sizeInBytes;
+            o.submoduleGitUrl = submoduleGitUrl;
+            o.type = type;
+            return o;
         }
     }
 }

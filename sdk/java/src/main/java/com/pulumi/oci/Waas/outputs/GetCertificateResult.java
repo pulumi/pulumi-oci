@@ -22,142 +22,97 @@ public final class GetCertificateResult {
      * @return The data of the SSL certificate.
      * 
      */
-    private final String certificateData;
-    private final String certificateId;
+    private String certificateData;
+    private String certificateId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate&#39;s compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The user-friendly name of the SSL certificate.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
      * 
      */
-    private final List<GetCertificateExtension> extensions;
+    private List<GetCertificateExtension> extensions;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return This indicates whether trust verification was disabled during the creation of SSL certificate. If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
      * 
      */
-    private final Boolean isTrustVerificationDisabled;
-    private final String issuedBy;
+    private Boolean isTrustVerificationDisabled;
+    private String issuedBy;
     /**
      * @return The issuer of the certificate.
      * 
      */
-    private final List<GetCertificateIssuerName> issuerNames;
-    private final String privateKeyData;
+    private List<GetCertificateIssuerName> issuerNames;
+    private String privateKeyData;
     /**
      * @return Information about the public key and the algorithm used by the public key.
      * 
      */
-    private final List<GetCertificatePublicKeyInfo> publicKeyInfos;
+    private List<GetCertificatePublicKeyInfo> publicKeyInfos;
     /**
      * @return A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
      * 
      */
-    private final String serialNumber;
+    private String serialNumber;
     /**
      * @return The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
      * 
      */
-    private final String signatureAlgorithm;
+    private String signatureAlgorithm;
     /**
      * @return The current lifecycle state of the SSL certificate.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The entity to be secured by the certificate.
      * 
      */
-    private final List<GetCertificateSubjectName> subjectNames;
+    private List<GetCertificateSubjectName> subjectNames;
     /**
      * @return The date and time the certificate was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
      * 
      */
-    private final String timeNotValidAfter;
+    private String timeNotValidAfter;
     /**
      * @return The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
      * 
      */
-    private final String timeNotValidBefore;
+    private String timeNotValidBefore;
     /**
      * @return The version of the encoded certificate.
      * 
      */
-    private final Integer version;
+    private Integer version;
 
-    @CustomType.Constructor
-    private GetCertificateResult(
-        @CustomType.Parameter("certificateData") String certificateData,
-        @CustomType.Parameter("certificateId") String certificateId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("extensions") List<GetCertificateExtension> extensions,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isTrustVerificationDisabled") Boolean isTrustVerificationDisabled,
-        @CustomType.Parameter("issuedBy") String issuedBy,
-        @CustomType.Parameter("issuerNames") List<GetCertificateIssuerName> issuerNames,
-        @CustomType.Parameter("privateKeyData") String privateKeyData,
-        @CustomType.Parameter("publicKeyInfos") List<GetCertificatePublicKeyInfo> publicKeyInfos,
-        @CustomType.Parameter("serialNumber") String serialNumber,
-        @CustomType.Parameter("signatureAlgorithm") String signatureAlgorithm,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subjectNames") List<GetCertificateSubjectName> subjectNames,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeNotValidAfter") String timeNotValidAfter,
-        @CustomType.Parameter("timeNotValidBefore") String timeNotValidBefore,
-        @CustomType.Parameter("version") Integer version) {
-        this.certificateData = certificateData;
-        this.certificateId = certificateId;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.extensions = extensions;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isTrustVerificationDisabled = isTrustVerificationDisabled;
-        this.issuedBy = issuedBy;
-        this.issuerNames = issuerNames;
-        this.privateKeyData = privateKeyData;
-        this.publicKeyInfos = publicKeyInfos;
-        this.serialNumber = serialNumber;
-        this.signatureAlgorithm = signatureAlgorithm;
-        this.state = state;
-        this.subjectNames = subjectNames;
-        this.timeCreated = timeCreated;
-        this.timeNotValidAfter = timeNotValidAfter;
-        this.timeNotValidBefore = timeNotValidBefore;
-        this.version = version;
-    }
-
+    private GetCertificateResult() {}
     /**
      * @return The data of the SSL certificate.
      * 
@@ -301,7 +256,7 @@ public final class GetCertificateResult {
     public static Builder builder(GetCertificateResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String certificateData;
         private String certificateId;
@@ -324,11 +279,7 @@ public final class GetCertificateResult {
         private String timeNotValidAfter;
         private String timeNotValidBefore;
         private Integer version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificateResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateData = defaults.certificateData;
@@ -354,26 +305,32 @@ public final class GetCertificateResult {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder certificateData(String certificateData) {
             this.certificateData = Objects.requireNonNull(certificateData);
             return this;
         }
+        @CustomType.Setter
         public Builder certificateId(String certificateId) {
             this.certificateId = Objects.requireNonNull(certificateId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder extensions(List<GetCertificateExtension> extensions) {
             this.extensions = Objects.requireNonNull(extensions);
             return this;
@@ -381,22 +338,27 @@ public final class GetCertificateResult {
         public Builder extensions(GetCertificateExtension... extensions) {
             return extensions(List.of(extensions));
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isTrustVerificationDisabled(Boolean isTrustVerificationDisabled) {
             this.isTrustVerificationDisabled = Objects.requireNonNull(isTrustVerificationDisabled);
             return this;
         }
+        @CustomType.Setter
         public Builder issuedBy(String issuedBy) {
             this.issuedBy = Objects.requireNonNull(issuedBy);
             return this;
         }
+        @CustomType.Setter
         public Builder issuerNames(List<GetCertificateIssuerName> issuerNames) {
             this.issuerNames = Objects.requireNonNull(issuerNames);
             return this;
@@ -404,10 +366,12 @@ public final class GetCertificateResult {
         public Builder issuerNames(GetCertificateIssuerName... issuerNames) {
             return issuerNames(List.of(issuerNames));
         }
+        @CustomType.Setter
         public Builder privateKeyData(String privateKeyData) {
             this.privateKeyData = Objects.requireNonNull(privateKeyData);
             return this;
         }
+        @CustomType.Setter
         public Builder publicKeyInfos(List<GetCertificatePublicKeyInfo> publicKeyInfos) {
             this.publicKeyInfos = Objects.requireNonNull(publicKeyInfos);
             return this;
@@ -415,18 +379,22 @@ public final class GetCertificateResult {
         public Builder publicKeyInfos(GetCertificatePublicKeyInfo... publicKeyInfos) {
             return publicKeyInfos(List.of(publicKeyInfos));
         }
+        @CustomType.Setter
         public Builder serialNumber(String serialNumber) {
             this.serialNumber = Objects.requireNonNull(serialNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder signatureAlgorithm(String signatureAlgorithm) {
             this.signatureAlgorithm = Objects.requireNonNull(signatureAlgorithm);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subjectNames(List<GetCertificateSubjectName> subjectNames) {
             this.subjectNames = Objects.requireNonNull(subjectNames);
             return this;
@@ -434,23 +402,50 @@ public final class GetCertificateResult {
         public Builder subjectNames(GetCertificateSubjectName... subjectNames) {
             return subjectNames(List.of(subjectNames));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeNotValidAfter(String timeNotValidAfter) {
             this.timeNotValidAfter = Objects.requireNonNull(timeNotValidAfter);
             return this;
         }
+        @CustomType.Setter
         public Builder timeNotValidBefore(String timeNotValidBefore) {
             this.timeNotValidBefore = Objects.requireNonNull(timeNotValidBefore);
             return this;
         }
+        @CustomType.Setter
         public Builder version(Integer version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetCertificateResult build() {
-            return new GetCertificateResult(certificateData, certificateId, compartmentId, definedTags, displayName, extensions, freeformTags, id, isTrustVerificationDisabled, issuedBy, issuerNames, privateKeyData, publicKeyInfos, serialNumber, signatureAlgorithm, state, subjectNames, timeCreated, timeNotValidAfter, timeNotValidBefore, version);
+        }
+        public GetCertificateResult build() {
+            final var o = new GetCertificateResult();
+            o.certificateData = certificateData;
+            o.certificateId = certificateId;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.extensions = extensions;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isTrustVerificationDisabled = isTrustVerificationDisabled;
+            o.issuedBy = issuedBy;
+            o.issuerNames = issuerNames;
+            o.privateKeyData = privateKeyData;
+            o.publicKeyInfos = publicKeyInfos;
+            o.serialNumber = serialNumber;
+            o.signatureAlgorithm = signatureAlgorithm;
+            o.state = state;
+            o.subjectNames = subjectNames;
+            o.timeCreated = timeCreated;
+            o.timeNotValidAfter = timeNotValidAfter;
+            o.timeNotValidBefore = timeNotValidBefore;
+            o.version = version;
+            return o;
         }
     }
 }

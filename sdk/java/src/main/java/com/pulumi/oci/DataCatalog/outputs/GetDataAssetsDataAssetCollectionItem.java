@@ -15,105 +15,74 @@ public final class GetDataAssetsDataAssetCollectionItem {
      * @return Unique catalog identifier.
      * 
      */
-    private final String catalogId;
+    private String catalogId;
     /**
      * @return OCID of the user who created the resource.
      * 
      */
-    private final String createdById;
+    private String createdById;
     /**
      * @return Detailed description of the data asset.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Unique external identifier of this resource in the external source system.
      * 
      */
-    private final String externalKey;
+    private String externalKey;
     /**
      * @return Unique data asset key that is immutable.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the &#34;default&#34; category. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;host&#34;: &#34;host1&#34;, &#34;port&#34;: &#34;1521&#34;, &#34;database&#34;: &#34;orcl&#34;}}}`
      * 
      */
-    private final Map<String,Object> properties;
+    private Map<String,Object> properties;
     /**
      * @return A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    private final String timeHarvested;
+    private String timeHarvested;
     /**
      * @return Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return The key of the object type.
      * 
      */
-    private final String typeKey;
+    private String typeKey;
     /**
      * @return OCID of the user who updated the resource.
      * 
      */
-    private final String updatedById;
+    private String updatedById;
     /**
      * @return URI to the data asset instance in the API.
      * 
      */
-    private final String uri;
+    private String uri;
 
-    @CustomType.Constructor
-    private GetDataAssetsDataAssetCollectionItem(
-        @CustomType.Parameter("catalogId") String catalogId,
-        @CustomType.Parameter("createdById") String createdById,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("externalKey") String externalKey,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("properties") Map<String,Object> properties,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeHarvested") String timeHarvested,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("typeKey") String typeKey,
-        @CustomType.Parameter("updatedById") String updatedById,
-        @CustomType.Parameter("uri") String uri) {
-        this.catalogId = catalogId;
-        this.createdById = createdById;
-        this.description = description;
-        this.displayName = displayName;
-        this.externalKey = externalKey;
-        this.key = key;
-        this.properties = properties;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeHarvested = timeHarvested;
-        this.timeUpdated = timeUpdated;
-        this.typeKey = typeKey;
-        this.updatedById = updatedById;
-        this.uri = uri;
-    }
-
+    private GetDataAssetsDataAssetCollectionItem() {}
     /**
      * @return Unique catalog identifier.
      * 
@@ -220,7 +189,7 @@ public final class GetDataAssetsDataAssetCollectionItem {
     public static Builder builder(GetDataAssetsDataAssetCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String catalogId;
         private String createdById;
@@ -236,11 +205,7 @@ public final class GetDataAssetsDataAssetCollectionItem {
         private String typeKey;
         private String updatedById;
         private String uri;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDataAssetsDataAssetCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.catalogId = defaults.catalogId;
@@ -259,63 +224,93 @@ public final class GetDataAssetsDataAssetCollectionItem {
     	      this.uri = defaults.uri;
         }
 
+        @CustomType.Setter
         public Builder catalogId(String catalogId) {
             this.catalogId = Objects.requireNonNull(catalogId);
             return this;
         }
+        @CustomType.Setter
         public Builder createdById(String createdById) {
             this.createdById = Objects.requireNonNull(createdById);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder externalKey(String externalKey) {
             this.externalKey = Objects.requireNonNull(externalKey);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder properties(Map<String,Object> properties) {
             this.properties = Objects.requireNonNull(properties);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeHarvested(String timeHarvested) {
             this.timeHarvested = Objects.requireNonNull(timeHarvested);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder typeKey(String typeKey) {
             this.typeKey = Objects.requireNonNull(typeKey);
             return this;
         }
+        @CustomType.Setter
         public Builder updatedById(String updatedById) {
             this.updatedById = Objects.requireNonNull(updatedById);
             return this;
         }
+        @CustomType.Setter
         public Builder uri(String uri) {
             this.uri = Objects.requireNonNull(uri);
             return this;
-        }        public GetDataAssetsDataAssetCollectionItem build() {
-            return new GetDataAssetsDataAssetCollectionItem(catalogId, createdById, description, displayName, externalKey, key, properties, state, timeCreated, timeHarvested, timeUpdated, typeKey, updatedById, uri);
+        }
+        public GetDataAssetsDataAssetCollectionItem build() {
+            final var o = new GetDataAssetsDataAssetCollectionItem();
+            o.catalogId = catalogId;
+            o.createdById = createdById;
+            o.description = description;
+            o.displayName = displayName;
+            o.externalKey = externalKey;
+            o.key = key;
+            o.properties = properties;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeHarvested = timeHarvested;
+            o.timeUpdated = timeUpdated;
+            o.typeKey = typeKey;
+            o.updatedById = updatedById;
+            o.uri = uri;
+            return o;
         }
     }
 }

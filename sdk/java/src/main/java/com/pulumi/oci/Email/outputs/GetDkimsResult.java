@@ -18,45 +18,30 @@ public final class GetDkimsResult {
      * @return The list of dkim_collection.
      * 
      */
-    private final List<GetDkimsDkimCollection> dkimCollections;
+    private List<GetDkimsDkimCollection> dkimCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain that this DKIM belongs to.
      * 
      */
-    private final String emailDomainId;
-    private final @Nullable List<GetDkimsFilter> filters;
+    private String emailDomainId;
+    private @Nullable List<GetDkimsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The DKIM selector. If the same domain is managed in more than one region, each region must use different selectors.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The current state of the DKIM.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetDkimsResult(
-        @CustomType.Parameter("dkimCollections") List<GetDkimsDkimCollection> dkimCollections,
-        @CustomType.Parameter("emailDomainId") String emailDomainId,
-        @CustomType.Parameter("filters") @Nullable List<GetDkimsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.dkimCollections = dkimCollections;
-        this.emailDomainId = emailDomainId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.state = state;
-    }
-
+    private GetDkimsResult() {}
     /**
      * @return The list of dkim_collection.
      * 
@@ -103,7 +88,7 @@ public final class GetDkimsResult {
     public static Builder builder(GetDkimsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDkimsDkimCollection> dkimCollections;
         private String emailDomainId;
@@ -111,11 +96,7 @@ public final class GetDkimsResult {
         private @Nullable String id;
         private @Nullable String name;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDkimsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dkimCollections = defaults.dkimCollections;
@@ -126,6 +107,7 @@ public final class GetDkimsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder dkimCollections(List<GetDkimsDkimCollection> dkimCollections) {
             this.dkimCollections = Objects.requireNonNull(dkimCollections);
             return this;
@@ -133,10 +115,12 @@ public final class GetDkimsResult {
         public Builder dkimCollections(GetDkimsDkimCollection... dkimCollections) {
             return dkimCollections(List.of(dkimCollections));
         }
+        @CustomType.Setter
         public Builder emailDomainId(String emailDomainId) {
             this.emailDomainId = Objects.requireNonNull(emailDomainId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDkimsFilter> filters) {
             this.filters = filters;
             return this;
@@ -144,19 +128,30 @@ public final class GetDkimsResult {
         public Builder filters(GetDkimsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetDkimsResult build() {
-            return new GetDkimsResult(dkimCollections, emailDomainId, filters, id, name, state);
+        }
+        public GetDkimsResult build() {
+            final var o = new GetDkimsResult();
+            o.dkimCollections = dkimCollections;
+            o.emailDomainId = emailDomainId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.state = state;
+            return o;
         }
     }
 }

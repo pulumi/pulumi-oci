@@ -14,53 +14,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseAlertLogCountResult {
-    private final @Nullable String groupBy;
+    private @Nullable String groupBy;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Boolean isRegularExpression;
+    private String id;
+    private @Nullable Boolean isRegularExpression;
     /**
      * @return An array of the counts of different urgency or type of alert logs.
      * 
      */
-    private final List<GetManagedDatabaseAlertLogCountItem> items;
-    private final @Nullable String levelFilter;
-    private final @Nullable String logSearchText;
+    private List<GetManagedDatabaseAlertLogCountItem> items;
+    private @Nullable String levelFilter;
+    private @Nullable String logSearchText;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * 
      */
-    private final String managedDatabaseId;
-    private final @Nullable String timeGreaterThanOrEqualTo;
-    private final @Nullable String timeLessThanOrEqualTo;
-    private final @Nullable String typeFilter;
+    private String managedDatabaseId;
+    private @Nullable String timeGreaterThanOrEqualTo;
+    private @Nullable String timeLessThanOrEqualTo;
+    private @Nullable String typeFilter;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseAlertLogCountResult(
-        @CustomType.Parameter("groupBy") @Nullable String groupBy,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isRegularExpression") @Nullable Boolean isRegularExpression,
-        @CustomType.Parameter("items") List<GetManagedDatabaseAlertLogCountItem> items,
-        @CustomType.Parameter("levelFilter") @Nullable String levelFilter,
-        @CustomType.Parameter("logSearchText") @Nullable String logSearchText,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("timeGreaterThanOrEqualTo") @Nullable String timeGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeLessThanOrEqualTo") @Nullable String timeLessThanOrEqualTo,
-        @CustomType.Parameter("typeFilter") @Nullable String typeFilter) {
-        this.groupBy = groupBy;
-        this.id = id;
-        this.isRegularExpression = isRegularExpression;
-        this.items = items;
-        this.levelFilter = levelFilter;
-        this.logSearchText = logSearchText;
-        this.managedDatabaseId = managedDatabaseId;
-        this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
-        this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
-        this.typeFilter = typeFilter;
-    }
-
+    private GetManagedDatabaseAlertLogCountResult() {}
     public Optional<String> groupBy() {
         return Optional.ofNullable(this.groupBy);
     }
@@ -111,7 +88,7 @@ public final class GetManagedDatabaseAlertLogCountResult {
     public static Builder builder(GetManagedDatabaseAlertLogCountResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String groupBy;
         private String id;
@@ -123,11 +100,7 @@ public final class GetManagedDatabaseAlertLogCountResult {
         private @Nullable String timeGreaterThanOrEqualTo;
         private @Nullable String timeLessThanOrEqualTo;
         private @Nullable String typeFilter;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseAlertLogCountResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.groupBy = defaults.groupBy;
@@ -142,18 +115,22 @@ public final class GetManagedDatabaseAlertLogCountResult {
     	      this.typeFilter = defaults.typeFilter;
         }
 
+        @CustomType.Setter
         public Builder groupBy(@Nullable String groupBy) {
             this.groupBy = groupBy;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isRegularExpression(@Nullable Boolean isRegularExpression) {
             this.isRegularExpression = isRegularExpression;
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabaseAlertLogCountItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -161,31 +138,49 @@ public final class GetManagedDatabaseAlertLogCountResult {
         public Builder items(GetManagedDatabaseAlertLogCountItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder levelFilter(@Nullable String levelFilter) {
             this.levelFilter = levelFilter;
             return this;
         }
+        @CustomType.Setter
         public Builder logSearchText(@Nullable String logSearchText) {
             this.logSearchText = logSearchText;
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeGreaterThanOrEqualTo(@Nullable String timeGreaterThanOrEqualTo) {
             this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeLessThanOrEqualTo(@Nullable String timeLessThanOrEqualTo) {
             this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder typeFilter(@Nullable String typeFilter) {
             this.typeFilter = typeFilter;
             return this;
-        }        public GetManagedDatabaseAlertLogCountResult build() {
-            return new GetManagedDatabaseAlertLogCountResult(groupBy, id, isRegularExpression, items, levelFilter, logSearchText, managedDatabaseId, timeGreaterThanOrEqualTo, timeLessThanOrEqualTo, typeFilter);
+        }
+        public GetManagedDatabaseAlertLogCountResult build() {
+            final var o = new GetManagedDatabaseAlertLogCountResult();
+            o.groupBy = groupBy;
+            o.id = id;
+            o.isRegularExpression = isRegularExpression;
+            o.items = items;
+            o.levelFilter = levelFilter;
+            o.logSearchText = logSearchText;
+            o.managedDatabaseId = managedDatabaseId;
+            o.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
+            o.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
+            o.typeFilter = typeFilter;
+            return o;
         }
     }
 }

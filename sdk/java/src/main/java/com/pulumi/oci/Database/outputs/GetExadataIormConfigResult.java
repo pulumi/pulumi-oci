@@ -15,41 +15,26 @@ public final class GetExadataIormConfigResult {
      * @return An array of IORM settings for all the database in the Exadata DB system.
      * 
      */
-    private final List<GetExadataIormConfigDbPlan> dbPlans;
-    private final String dbSystemId;
-    private final String id;
+    private List<GetExadataIormConfigDbPlan> dbPlans;
+    private String dbSystemId;
+    private String id;
     /**
      * @return Additional information about the current `lifecycleState`.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The current value for the IORM objective. The default is `AUTO`.
      * 
      */
-    private final String objective;
+    private String objective;
     /**
      * @return The current state of IORM configuration for the Exadata DB system.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private GetExadataIormConfigResult(
-        @CustomType.Parameter("dbPlans") List<GetExadataIormConfigDbPlan> dbPlans,
-        @CustomType.Parameter("dbSystemId") String dbSystemId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("objective") String objective,
-        @CustomType.Parameter("state") String state) {
-        this.dbPlans = dbPlans;
-        this.dbSystemId = dbSystemId;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.objective = objective;
-        this.state = state;
-    }
-
+    private GetExadataIormConfigResult() {}
     /**
      * @return An array of IORM settings for all the database in the Exadata DB system.
      * 
@@ -92,7 +77,7 @@ public final class GetExadataIormConfigResult {
     public static Builder builder(GetExadataIormConfigResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetExadataIormConfigDbPlan> dbPlans;
         private String dbSystemId;
@@ -100,11 +85,7 @@ public final class GetExadataIormConfigResult {
         private String lifecycleDetails;
         private String objective;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetExadataIormConfigResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbPlans = defaults.dbPlans;
@@ -115,6 +96,7 @@ public final class GetExadataIormConfigResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder dbPlans(List<GetExadataIormConfigDbPlan> dbPlans) {
             this.dbPlans = Objects.requireNonNull(dbPlans);
             return this;
@@ -122,27 +104,40 @@ public final class GetExadataIormConfigResult {
         public Builder dbPlans(GetExadataIormConfigDbPlan... dbPlans) {
             return dbPlans(List.of(dbPlans));
         }
+        @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = Objects.requireNonNull(dbSystemId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder objective(String objective) {
             this.objective = Objects.requireNonNull(objective);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetExadataIormConfigResult build() {
-            return new GetExadataIormConfigResult(dbPlans, dbSystemId, id, lifecycleDetails, objective, state);
+        }
+        public GetExadataIormConfigResult build() {
+            final var o = new GetExadataIormConfigResult();
+            o.dbPlans = dbPlans;
+            o.dbSystemId = dbSystemId;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.objective = objective;
+            o.state = state;
+            return o;
         }
     }
 }

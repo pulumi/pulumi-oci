@@ -15,101 +15,70 @@ import java.util.Objects;
 
 @CustomType
 public final class GetChannelResult {
-    private final String channelId;
+    private String channelId;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return User provided description of the Channel.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The user-friendly name for the Channel. It does not have to be unique.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
-    private final String id;
+    private Map<String,Object> freeformTags;
+    private String id;
     /**
      * @return Whether the Channel has been enabled by the user.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return A message describing the state of the Channel.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Parameters detailing how to provision the source for the given Channel.
      * 
      */
-    private final List<GetChannelSource> sources;
+    private List<GetChannelSource> sources;
     /**
      * @return The state of the Channel.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Details about the Channel target.
      * 
      */
-    private final List<GetChannelTarget> targets;
+    private List<GetChannelTarget> targets;
     /**
      * @return The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetChannelResult(
-        @CustomType.Parameter("channelId") String channelId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("sources") List<GetChannelSource> sources,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("targets") List<GetChannelTarget> targets,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.channelId = channelId;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isEnabled = isEnabled;
-        this.lifecycleDetails = lifecycleDetails;
-        this.sources = sources;
-        this.state = state;
-        this.targets = targets;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetChannelResult() {}
     public String channelId() {
         return this.channelId;
     }
@@ -208,7 +177,7 @@ public final class GetChannelResult {
     public static Builder builder(GetChannelResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String channelId;
         private String compartmentId;
@@ -224,11 +193,7 @@ public final class GetChannelResult {
         private List<GetChannelTarget> targets;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetChannelResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.channelId = defaults.channelId;
@@ -247,42 +212,52 @@ public final class GetChannelResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder channelId(String channelId) {
             this.channelId = Objects.requireNonNull(channelId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder sources(List<GetChannelSource> sources) {
             this.sources = Objects.requireNonNull(sources);
             return this;
@@ -290,10 +265,12 @@ public final class GetChannelResult {
         public Builder sources(GetChannelSource... sources) {
             return sources(List.of(sources));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder targets(List<GetChannelTarget> targets) {
             this.targets = Objects.requireNonNull(targets);
             return this;
@@ -301,15 +278,33 @@ public final class GetChannelResult {
         public Builder targets(GetChannelTarget... targets) {
             return targets(List.of(targets));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetChannelResult build() {
-            return new GetChannelResult(channelId, compartmentId, definedTags, description, displayName, freeformTags, id, isEnabled, lifecycleDetails, sources, state, targets, timeCreated, timeUpdated);
+        }
+        public GetChannelResult build() {
+            final var o = new GetChannelResult();
+            o.channelId = channelId;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isEnabled = isEnabled;
+            o.lifecycleDetails = lifecycleDetails;
+            o.sources = sources;
+            o.state = state;
+            o.targets = targets;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

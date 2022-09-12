@@ -14,13 +14,9 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliver
      * @return Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
      * 
      */
-    private final List<GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem> items;
+    private List<GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection(@CustomType.Parameter("items") List<GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection() {}
     /**
      * @return Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
      * 
@@ -36,27 +32,27 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliver
     public static Builder builder(GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem... items) {
             return items(List.of(items));
-        }        public GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection build() {
-            return new GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection(items);
+        }
+        public GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection build() {
+            final var o = new GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection();
+            o.items = items;
+            return o;
         }
     }
 }

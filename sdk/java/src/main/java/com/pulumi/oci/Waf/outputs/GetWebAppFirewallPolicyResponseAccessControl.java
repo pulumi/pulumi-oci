@@ -14,13 +14,9 @@ public final class GetWebAppFirewallPolicyResponseAccessControl {
      * @return Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
      */
-    private final List<GetWebAppFirewallPolicyResponseAccessControlRule> rules;
+    private List<GetWebAppFirewallPolicyResponseAccessControlRule> rules;
 
-    @CustomType.Constructor
-    private GetWebAppFirewallPolicyResponseAccessControl(@CustomType.Parameter("rules") List<GetWebAppFirewallPolicyResponseAccessControlRule> rules) {
-        this.rules = rules;
-    }
-
+    private GetWebAppFirewallPolicyResponseAccessControl() {}
     /**
      * @return Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
@@ -36,27 +32,27 @@ public final class GetWebAppFirewallPolicyResponseAccessControl {
     public static Builder builder(GetWebAppFirewallPolicyResponseAccessControl defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetWebAppFirewallPolicyResponseAccessControlRule> rules;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWebAppFirewallPolicyResponseAccessControl defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.rules = defaults.rules;
         }
 
+        @CustomType.Setter
         public Builder rules(List<GetWebAppFirewallPolicyResponseAccessControlRule> rules) {
             this.rules = Objects.requireNonNull(rules);
             return this;
         }
         public Builder rules(GetWebAppFirewallPolicyResponseAccessControlRule... rules) {
             return rules(List.of(rules));
-        }        public GetWebAppFirewallPolicyResponseAccessControl build() {
-            return new GetWebAppFirewallPolicyResponseAccessControl(rules);
+        }
+        public GetWebAppFirewallPolicyResponseAccessControl build() {
+            final var o = new GetWebAppFirewallPolicyResponseAccessControl();
+            o.rules = rules;
+            return o;
         }
     }
 }

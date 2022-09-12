@@ -15,35 +15,24 @@ public final class DatasetDatasetSourceDetails {
      * @return The object storage bucket that contains the dataset data source.
      * 
      */
-    private final String bucket;
+    private String bucket;
     /**
      * @return The namespace of the bucket that contains the dataset data source.
      * 
      */
-    private final String namespace;
+    private String namespace;
     /**
      * @return A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
      * 
      */
-    private final @Nullable String prefix;
+    private @Nullable String prefix;
     /**
      * @return The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
      * 
      */
-    private final String sourceType;
+    private String sourceType;
 
-    @CustomType.Constructor
-    private DatasetDatasetSourceDetails(
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("prefix") @Nullable String prefix,
-        @CustomType.Parameter("sourceType") String sourceType) {
-        this.bucket = bucket;
-        this.namespace = namespace;
-        this.prefix = prefix;
-        this.sourceType = sourceType;
-    }
-
+    private DatasetDatasetSourceDetails() {}
     /**
      * @return The object storage bucket that contains the dataset data source.
      * 
@@ -80,17 +69,13 @@ public final class DatasetDatasetSourceDetails {
     public static Builder builder(DatasetDatasetSourceDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucket;
         private String namespace;
         private @Nullable String prefix;
         private String sourceType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DatasetDatasetSourceDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -99,23 +84,33 @@ public final class DatasetDatasetSourceDetails {
     	      this.sourceType = defaults.sourceType;
         }
 
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder prefix(@Nullable String prefix) {
             this.prefix = prefix;
             return this;
         }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
-        }        public DatasetDatasetSourceDetails build() {
-            return new DatasetDatasetSourceDetails(bucket, namespace, prefix, sourceType);
+        }
+        public DatasetDatasetSourceDetails build() {
+            final var o = new DatasetDatasetSourceDetails();
+            o.bucket = bucket;
+            o.namespace = namespace;
+            o.prefix = prefix;
+            o.sourceType = sourceType;
+            return o;
         }
     }
 }

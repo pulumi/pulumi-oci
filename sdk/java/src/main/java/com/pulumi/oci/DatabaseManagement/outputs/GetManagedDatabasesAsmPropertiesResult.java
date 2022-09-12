@@ -18,30 +18,17 @@ public final class GetManagedDatabasesAsmPropertiesResult {
      * @return The list of asm_property_collection.
      * 
      */
-    private final List<GetManagedDatabasesAsmPropertiesAsmPropertyCollection> asmPropertyCollections;
-    private final @Nullable List<GetManagedDatabasesAsmPropertiesFilter> filters;
+    private List<GetManagedDatabasesAsmPropertiesAsmPropertyCollection> asmPropertyCollections;
+    private @Nullable List<GetManagedDatabasesAsmPropertiesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String managedDatabaseId;
-    private final @Nullable String name;
+    private String id;
+    private String managedDatabaseId;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private GetManagedDatabasesAsmPropertiesResult(
-        @CustomType.Parameter("asmPropertyCollections") List<GetManagedDatabasesAsmPropertiesAsmPropertyCollection> asmPropertyCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetManagedDatabasesAsmPropertiesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("name") @Nullable String name) {
-        this.asmPropertyCollections = asmPropertyCollections;
-        this.filters = filters;
-        this.id = id;
-        this.managedDatabaseId = managedDatabaseId;
-        this.name = name;
-    }
-
+    private GetManagedDatabasesAsmPropertiesResult() {}
     /**
      * @return The list of asm_property_collection.
      * 
@@ -73,18 +60,14 @@ public final class GetManagedDatabasesAsmPropertiesResult {
     public static Builder builder(GetManagedDatabasesAsmPropertiesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabasesAsmPropertiesAsmPropertyCollection> asmPropertyCollections;
         private @Nullable List<GetManagedDatabasesAsmPropertiesFilter> filters;
         private String id;
         private String managedDatabaseId;
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabasesAsmPropertiesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.asmPropertyCollections = defaults.asmPropertyCollections;
@@ -94,6 +77,7 @@ public final class GetManagedDatabasesAsmPropertiesResult {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder asmPropertyCollections(List<GetManagedDatabasesAsmPropertiesAsmPropertyCollection> asmPropertyCollections) {
             this.asmPropertyCollections = Objects.requireNonNull(asmPropertyCollections);
             return this;
@@ -101,6 +85,7 @@ public final class GetManagedDatabasesAsmPropertiesResult {
         public Builder asmPropertyCollections(GetManagedDatabasesAsmPropertiesAsmPropertyCollection... asmPropertyCollections) {
             return asmPropertyCollections(List.of(asmPropertyCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabasesAsmPropertiesFilter> filters) {
             this.filters = filters;
             return this;
@@ -108,19 +93,29 @@ public final class GetManagedDatabasesAsmPropertiesResult {
         public Builder filters(GetManagedDatabasesAsmPropertiesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public GetManagedDatabasesAsmPropertiesResult build() {
-            return new GetManagedDatabasesAsmPropertiesResult(asmPropertyCollections, filters, id, managedDatabaseId, name);
+        }
+        public GetManagedDatabasesAsmPropertiesResult build() {
+            final var o = new GetManagedDatabasesAsmPropertiesResult();
+            o.asmPropertyCollections = asmPropertyCollections;
+            o.filters = filters;
+            o.id = id;
+            o.managedDatabaseId = managedDatabaseId;
+            o.name = name;
+            return o;
         }
     }
 }

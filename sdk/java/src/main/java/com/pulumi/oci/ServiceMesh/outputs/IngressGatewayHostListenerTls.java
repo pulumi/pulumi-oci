@@ -17,28 +17,19 @@ public final class IngressGatewayHostListenerTls {
      * @return (Updatable) Resource representing the TLS configuration used for validating client certificates.
      * 
      */
-    private final @Nullable IngressGatewayHostListenerTlsClientValidation clientValidation;
+    private @Nullable IngressGatewayHostListenerTlsClientValidation clientValidation;
     /**
      * @return (Updatable) DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client&#39;s certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
      * 
      */
-    private final String mode;
+    private String mode;
     /**
      * @return (Updatable) Resource representing the location of the TLS certificate.
      * 
      */
-    private final @Nullable IngressGatewayHostListenerTlsServerCertificate serverCertificate;
+    private @Nullable IngressGatewayHostListenerTlsServerCertificate serverCertificate;
 
-    @CustomType.Constructor
-    private IngressGatewayHostListenerTls(
-        @CustomType.Parameter("clientValidation") @Nullable IngressGatewayHostListenerTlsClientValidation clientValidation,
-        @CustomType.Parameter("mode") String mode,
-        @CustomType.Parameter("serverCertificate") @Nullable IngressGatewayHostListenerTlsServerCertificate serverCertificate) {
-        this.clientValidation = clientValidation;
-        this.mode = mode;
-        this.serverCertificate = serverCertificate;
-    }
-
+    private IngressGatewayHostListenerTls() {}
     /**
      * @return (Updatable) Resource representing the TLS configuration used for validating client certificates.
      * 
@@ -68,16 +59,12 @@ public final class IngressGatewayHostListenerTls {
     public static Builder builder(IngressGatewayHostListenerTls defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable IngressGatewayHostListenerTlsClientValidation clientValidation;
         private String mode;
         private @Nullable IngressGatewayHostListenerTlsServerCertificate serverCertificate;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(IngressGatewayHostListenerTls defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.clientValidation = defaults.clientValidation;
@@ -85,19 +72,27 @@ public final class IngressGatewayHostListenerTls {
     	      this.serverCertificate = defaults.serverCertificate;
         }
 
+        @CustomType.Setter
         public Builder clientValidation(@Nullable IngressGatewayHostListenerTlsClientValidation clientValidation) {
             this.clientValidation = clientValidation;
             return this;
         }
+        @CustomType.Setter
         public Builder mode(String mode) {
             this.mode = Objects.requireNonNull(mode);
             return this;
         }
+        @CustomType.Setter
         public Builder serverCertificate(@Nullable IngressGatewayHostListenerTlsServerCertificate serverCertificate) {
             this.serverCertificate = serverCertificate;
             return this;
-        }        public IngressGatewayHostListenerTls build() {
-            return new IngressGatewayHostListenerTls(clientValidation, mode, serverCertificate);
+        }
+        public IngressGatewayHostListenerTls build() {
+            final var o = new IngressGatewayHostListenerTls();
+            o.clientValidation = clientValidation;
+            o.mode = mode;
+            o.serverCertificate = serverCertificate;
+            return o;
         }
     }
 }

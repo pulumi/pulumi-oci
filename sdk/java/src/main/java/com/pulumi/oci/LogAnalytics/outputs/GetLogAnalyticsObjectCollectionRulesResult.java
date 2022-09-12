@@ -18,48 +18,31 @@ public final class GetLogAnalyticsObjectCollectionRulesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetLogAnalyticsObjectCollectionRulesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetLogAnalyticsObjectCollectionRulesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of log_analytics_object_collection_rule_collection.
      * 
      */
-    private final List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection> logAnalyticsObjectCollectionRuleCollections;
+    private List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection> logAnalyticsObjectCollectionRuleCollections;
     /**
      * @return A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.
      * 
      */
-    private final @Nullable String name;
-    private final String namespace;
+    private @Nullable String name;
+    private String namespace;
     /**
      * @return The current state of the rule.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsObjectCollectionRulesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetLogAnalyticsObjectCollectionRulesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("logAnalyticsObjectCollectionRuleCollections") List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection> logAnalyticsObjectCollectionRuleCollections,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.logAnalyticsObjectCollectionRuleCollections = logAnalyticsObjectCollectionRuleCollections;
-        this.name = name;
-        this.namespace = namespace;
-        this.state = state;
-    }
-
+    private GetLogAnalyticsObjectCollectionRulesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
      * 
@@ -109,7 +92,7 @@ public final class GetLogAnalyticsObjectCollectionRulesResult {
     public static Builder builder(GetLogAnalyticsObjectCollectionRulesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetLogAnalyticsObjectCollectionRulesFilter> filters;
@@ -118,11 +101,7 @@ public final class GetLogAnalyticsObjectCollectionRulesResult {
         private @Nullable String name;
         private String namespace;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsObjectCollectionRulesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,10 +113,12 @@ public final class GetLogAnalyticsObjectCollectionRulesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetLogAnalyticsObjectCollectionRulesFilter> filters) {
             this.filters = filters;
             return this;
@@ -145,10 +126,12 @@ public final class GetLogAnalyticsObjectCollectionRulesResult {
         public Builder filters(GetLogAnalyticsObjectCollectionRulesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder logAnalyticsObjectCollectionRuleCollections(List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection> logAnalyticsObjectCollectionRuleCollections) {
             this.logAnalyticsObjectCollectionRuleCollections = Objects.requireNonNull(logAnalyticsObjectCollectionRuleCollections);
             return this;
@@ -156,19 +139,31 @@ public final class GetLogAnalyticsObjectCollectionRulesResult {
         public Builder logAnalyticsObjectCollectionRuleCollections(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection... logAnalyticsObjectCollectionRuleCollections) {
             return logAnalyticsObjectCollectionRuleCollections(List.of(logAnalyticsObjectCollectionRuleCollections));
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetLogAnalyticsObjectCollectionRulesResult build() {
-            return new GetLogAnalyticsObjectCollectionRulesResult(compartmentId, filters, id, logAnalyticsObjectCollectionRuleCollections, name, namespace, state);
+        }
+        public GetLogAnalyticsObjectCollectionRulesResult build() {
+            final var o = new GetLogAnalyticsObjectCollectionRulesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.logAnalyticsObjectCollectionRuleCollections = logAnalyticsObjectCollectionRuleCollections;
+            o.name = name;
+            o.namespace = namespace;
+            o.state = state;
+            return o;
         }
     }
 }

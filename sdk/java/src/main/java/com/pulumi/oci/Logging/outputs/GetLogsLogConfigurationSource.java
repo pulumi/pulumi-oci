@@ -13,36 +13,25 @@ public final class GetLogsLogConfigurationSource {
      * @return Log object category.
      * 
      */
-    private final String category;
+    private String category;
     /**
      * @return The unique identifier of the resource emitting the log.
      * 
      */
-    private final String resource;
+    private String resource;
     /**
      * @return Service generating log.
      * 
      */
-    private final String service;
+    private String service;
     /**
      * @return The log source.
      * * **OCISERVICE:** Oracle Service.
      * 
      */
-    private final String sourceType;
+    private String sourceType;
 
-    @CustomType.Constructor
-    private GetLogsLogConfigurationSource(
-        @CustomType.Parameter("category") String category,
-        @CustomType.Parameter("resource") String resource,
-        @CustomType.Parameter("service") String service,
-        @CustomType.Parameter("sourceType") String sourceType) {
-        this.category = category;
-        this.resource = resource;
-        this.service = service;
-        this.sourceType = sourceType;
-    }
-
+    private GetLogsLogConfigurationSource() {}
     /**
      * @return Log object category.
      * 
@@ -80,17 +69,13 @@ public final class GetLogsLogConfigurationSource {
     public static Builder builder(GetLogsLogConfigurationSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String category;
         private String resource;
         private String service;
         private String sourceType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogsLogConfigurationSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.category = defaults.category;
@@ -99,23 +84,33 @@ public final class GetLogsLogConfigurationSource {
     	      this.sourceType = defaults.sourceType;
         }
 
+        @CustomType.Setter
         public Builder category(String category) {
             this.category = Objects.requireNonNull(category);
             return this;
         }
+        @CustomType.Setter
         public Builder resource(String resource) {
             this.resource = Objects.requireNonNull(resource);
             return this;
         }
+        @CustomType.Setter
         public Builder service(String service) {
             this.service = Objects.requireNonNull(service);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
-        }        public GetLogsLogConfigurationSource build() {
-            return new GetLogsLogConfigurationSource(category, resource, service, sourceType);
+        }
+        public GetLogsLogConfigurationSource build() {
+            final var o = new GetLogsLogConfigurationSource();
+            o.category = category;
+            o.resource = resource;
+            o.service = service;
+            o.sourceType = sourceType;
+            return o;
         }
     }
 }

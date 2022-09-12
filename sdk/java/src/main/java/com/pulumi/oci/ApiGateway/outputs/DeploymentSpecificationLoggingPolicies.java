@@ -16,21 +16,14 @@ public final class DeploymentSpecificationLoggingPolicies {
      * @return (Updatable) Configures the logging policies for the access logs of an API Deployment.
      * 
      */
-    private final @Nullable DeploymentSpecificationLoggingPoliciesAccessLog accessLog;
+    private @Nullable DeploymentSpecificationLoggingPoliciesAccessLog accessLog;
     /**
      * @return (Updatable) Configures the logging policies for the execution logs of an API Deployment.
      * 
      */
-    private final @Nullable DeploymentSpecificationLoggingPoliciesExecutionLog executionLog;
+    private @Nullable DeploymentSpecificationLoggingPoliciesExecutionLog executionLog;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationLoggingPolicies(
-        @CustomType.Parameter("accessLog") @Nullable DeploymentSpecificationLoggingPoliciesAccessLog accessLog,
-        @CustomType.Parameter("executionLog") @Nullable DeploymentSpecificationLoggingPoliciesExecutionLog executionLog) {
-        this.accessLog = accessLog;
-        this.executionLog = executionLog;
-    }
-
+    private DeploymentSpecificationLoggingPolicies() {}
     /**
      * @return (Updatable) Configures the logging policies for the access logs of an API Deployment.
      * 
@@ -53,30 +46,32 @@ public final class DeploymentSpecificationLoggingPolicies {
     public static Builder builder(DeploymentSpecificationLoggingPolicies defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable DeploymentSpecificationLoggingPoliciesAccessLog accessLog;
         private @Nullable DeploymentSpecificationLoggingPoliciesExecutionLog executionLog;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationLoggingPolicies defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLog = defaults.accessLog;
     	      this.executionLog = defaults.executionLog;
         }
 
+        @CustomType.Setter
         public Builder accessLog(@Nullable DeploymentSpecificationLoggingPoliciesAccessLog accessLog) {
             this.accessLog = accessLog;
             return this;
         }
+        @CustomType.Setter
         public Builder executionLog(@Nullable DeploymentSpecificationLoggingPoliciesExecutionLog executionLog) {
             this.executionLog = executionLog;
             return this;
-        }        public DeploymentSpecificationLoggingPolicies build() {
-            return new DeploymentSpecificationLoggingPolicies(accessLog, executionLog);
+        }
+        public DeploymentSpecificationLoggingPolicies build() {
+            final var o = new DeploymentSpecificationLoggingPolicies();
+            o.accessLog = accessLog;
+            o.executionLog = executionLog;
+            return o;
         }
     }
 }

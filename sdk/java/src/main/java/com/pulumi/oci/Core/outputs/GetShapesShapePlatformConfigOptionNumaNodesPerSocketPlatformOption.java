@@ -14,21 +14,14 @@ public final class GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformO
      * @return Whether virtualization instructions can be enabled.
      * 
      */
-    private final List<String> allowedValues;
+    private List<String> allowedValues;
     /**
      * @return The default percentage of cores enabled.
      * 
      */
-    private final String defaultValue;
+    private String defaultValue;
 
-    @CustomType.Constructor
-    private GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption(
-        @CustomType.Parameter("allowedValues") List<String> allowedValues,
-        @CustomType.Parameter("defaultValue") String defaultValue) {
-        this.allowedValues = allowedValues;
-        this.defaultValue = defaultValue;
-    }
-
+    private GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption() {}
     /**
      * @return Whether virtualization instructions can be enabled.
      * 
@@ -51,21 +44,18 @@ public final class GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformO
     public static Builder builder(GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> allowedValues;
         private String defaultValue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowedValues = defaults.allowedValues;
     	      this.defaultValue = defaults.defaultValue;
         }
 
+        @CustomType.Setter
         public Builder allowedValues(List<String> allowedValues) {
             this.allowedValues = Objects.requireNonNull(allowedValues);
             return this;
@@ -73,11 +63,16 @@ public final class GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformO
         public Builder allowedValues(String... allowedValues) {
             return allowedValues(List.of(allowedValues));
         }
+        @CustomType.Setter
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = Objects.requireNonNull(defaultValue);
             return this;
-        }        public GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption build() {
-            return new GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption(allowedValues, defaultValue);
+        }
+        public GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption build() {
+            final var o = new GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption();
+            o.allowedValues = allowedValues;
+            o.defaultValue = defaultValue;
+            return o;
         }
     }
 }

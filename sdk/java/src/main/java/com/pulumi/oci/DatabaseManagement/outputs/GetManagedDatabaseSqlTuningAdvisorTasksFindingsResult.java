@@ -14,56 +14,31 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
-    private final @Nullable String beginExecId;
-    private final @Nullable String endExecId;
-    private final @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilter> filters;
-    private final @Nullable String findingFilter;
+    private @Nullable String beginExecId;
+    private @Nullable String endExecId;
+    private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilter> filters;
+    private @Nullable String findingFilter;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String indexHashFilter;
-    private final String managedDatabaseId;
-    private final @Nullable String searchPeriod;
+    private String id;
+    private @Nullable String indexHashFilter;
+    private String managedDatabaseId;
+    private @Nullable String searchPeriod;
     /**
      * @return The list of sql_tuning_advisor_task_finding_collection.
      * 
      */
-    private final List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection> sqlTuningAdvisorTaskFindingCollections;
+    private List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection> sqlTuningAdvisorTaskFindingCollections;
     /**
      * @return The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String sqlTuningAdvisorTaskId;
-    private final @Nullable String statsHashFilter;
+    private String sqlTuningAdvisorTaskId;
+    private @Nullable String statsHashFilter;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult(
-        @CustomType.Parameter("beginExecId") @Nullable String beginExecId,
-        @CustomType.Parameter("endExecId") @Nullable String endExecId,
-        @CustomType.Parameter("filters") @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilter> filters,
-        @CustomType.Parameter("findingFilter") @Nullable String findingFilter,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("indexHashFilter") @Nullable String indexHashFilter,
-        @CustomType.Parameter("managedDatabaseId") String managedDatabaseId,
-        @CustomType.Parameter("searchPeriod") @Nullable String searchPeriod,
-        @CustomType.Parameter("sqlTuningAdvisorTaskFindingCollections") List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection> sqlTuningAdvisorTaskFindingCollections,
-        @CustomType.Parameter("sqlTuningAdvisorTaskId") String sqlTuningAdvisorTaskId,
-        @CustomType.Parameter("statsHashFilter") @Nullable String statsHashFilter) {
-        this.beginExecId = beginExecId;
-        this.endExecId = endExecId;
-        this.filters = filters;
-        this.findingFilter = findingFilter;
-        this.id = id;
-        this.indexHashFilter = indexHashFilter;
-        this.managedDatabaseId = managedDatabaseId;
-        this.searchPeriod = searchPeriod;
-        this.sqlTuningAdvisorTaskFindingCollections = sqlTuningAdvisorTaskFindingCollections;
-        this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
-        this.statsHashFilter = statsHashFilter;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult() {}
     public Optional<String> beginExecId() {
         return Optional.ofNullable(this.beginExecId);
     }
@@ -117,7 +92,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String beginExecId;
         private @Nullable String endExecId;
@@ -130,11 +105,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
         private List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection> sqlTuningAdvisorTaskFindingCollections;
         private String sqlTuningAdvisorTaskId;
         private @Nullable String statsHashFilter;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.beginExecId = defaults.beginExecId;
@@ -150,14 +121,17 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
     	      this.statsHashFilter = defaults.statsHashFilter;
         }
 
+        @CustomType.Setter
         public Builder beginExecId(@Nullable String beginExecId) {
             this.beginExecId = beginExecId;
             return this;
         }
+        @CustomType.Setter
         public Builder endExecId(@Nullable String endExecId) {
             this.endExecId = endExecId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilter> filters) {
             this.filters = filters;
             return this;
@@ -165,26 +139,32 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
         public Builder filters(GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder findingFilter(@Nullable String findingFilter) {
             this.findingFilter = findingFilter;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder indexHashFilter(@Nullable String indexHashFilter) {
             this.indexHashFilter = indexHashFilter;
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder searchPeriod(@Nullable String searchPeriod) {
             this.searchPeriod = searchPeriod;
             return this;
         }
+        @CustomType.Setter
         public Builder sqlTuningAdvisorTaskFindingCollections(List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection> sqlTuningAdvisorTaskFindingCollections) {
             this.sqlTuningAdvisorTaskFindingCollections = Objects.requireNonNull(sqlTuningAdvisorTaskFindingCollections);
             return this;
@@ -192,15 +172,30 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
         public Builder sqlTuningAdvisorTaskFindingCollections(GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection... sqlTuningAdvisorTaskFindingCollections) {
             return sqlTuningAdvisorTaskFindingCollections(List.of(sqlTuningAdvisorTaskFindingCollections));
         }
+        @CustomType.Setter
         public Builder sqlTuningAdvisorTaskId(String sqlTuningAdvisorTaskId) {
             this.sqlTuningAdvisorTaskId = Objects.requireNonNull(sqlTuningAdvisorTaskId);
             return this;
         }
+        @CustomType.Setter
         public Builder statsHashFilter(@Nullable String statsHashFilter) {
             this.statsHashFilter = statsHashFilter;
             return this;
-        }        public GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult(beginExecId, endExecId, filters, findingFilter, id, indexHashFilter, managedDatabaseId, searchPeriod, sqlTuningAdvisorTaskFindingCollections, sqlTuningAdvisorTaskId, statsHashFilter);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult();
+            o.beginExecId = beginExecId;
+            o.endExecId = endExecId;
+            o.filters = filters;
+            o.findingFilter = findingFilter;
+            o.id = id;
+            o.indexHashFilter = indexHashFilter;
+            o.managedDatabaseId = managedDatabaseId;
+            o.searchPeriod = searchPeriod;
+            o.sqlTuningAdvisorTaskFindingCollections = sqlTuningAdvisorTaskFindingCollections;
+            o.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
+            o.statsHashFilter = statsHashFilter;
+            return o;
         }
     }
 }

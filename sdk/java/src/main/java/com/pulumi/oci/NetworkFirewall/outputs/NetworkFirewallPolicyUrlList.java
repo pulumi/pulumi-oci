@@ -11,26 +11,17 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class NetworkFirewallPolicyUrlList {
-    private final String key;
-    private final @Nullable String pattern;
+    private String key;
+    private @Nullable String pattern;
     /**
      * @return (Updatable) Type of the secrets mapped based on the policy.
      * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
      * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private NetworkFirewallPolicyUrlList(
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("pattern") @Nullable String pattern,
-        @CustomType.Parameter("type") String type) {
-        this.key = key;
-        this.pattern = pattern;
-        this.type = type;
-    }
-
+    private NetworkFirewallPolicyUrlList() {}
     public String key() {
         return this.key;
     }
@@ -54,16 +45,12 @@ public final class NetworkFirewallPolicyUrlList {
     public static Builder builder(NetworkFirewallPolicyUrlList defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String key;
         private @Nullable String pattern;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NetworkFirewallPolicyUrlList defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.key = defaults.key;
@@ -71,19 +58,27 @@ public final class NetworkFirewallPolicyUrlList {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder pattern(@Nullable String pattern) {
             this.pattern = pattern;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public NetworkFirewallPolicyUrlList build() {
-            return new NetworkFirewallPolicyUrlList(key, pattern, type);
+        }
+        public NetworkFirewallPolicyUrlList build() {
+            final var o = new NetworkFirewallPolicyUrlList();
+            o.key = key;
+            o.pattern = pattern;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -18,48 +18,31 @@ public final class GetControlsResult {
      * @return The OCID of the compartment that contains the operator control.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable String displayName;
-    private final @Nullable List<GetControlsFilter> filters;
+    private String compartmentId;
+    private @Nullable String displayName;
+    private @Nullable List<GetControlsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of operator_control_collection.
      * 
      */
-    private final List<GetControlsOperatorControlCollection> operatorControlCollections;
+    private List<GetControlsOperatorControlCollection> operatorControlCollections;
     /**
      * @return resourceType for which the OperatorControl is applicable
      * 
      */
-    private final @Nullable String resourceType;
+    private @Nullable String resourceType;
     /**
      * @return The current lifecycle state of the operator control.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetControlsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetControlsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("operatorControlCollections") List<GetControlsOperatorControlCollection> operatorControlCollections,
-        @CustomType.Parameter("resourceType") @Nullable String resourceType,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.operatorControlCollections = operatorControlCollections;
-        this.resourceType = resourceType;
-        this.state = state;
-    }
-
+    private GetControlsResult() {}
     /**
      * @return The OCID of the compartment that contains the operator control.
      * 
@@ -109,7 +92,7 @@ public final class GetControlsResult {
     public static Builder builder(GetControlsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -118,11 +101,7 @@ public final class GetControlsResult {
         private List<GetControlsOperatorControlCollection> operatorControlCollections;
         private @Nullable String resourceType;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetControlsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,14 +113,17 @@ public final class GetControlsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetControlsFilter> filters) {
             this.filters = filters;
             return this;
@@ -149,10 +131,12 @@ public final class GetControlsResult {
         public Builder filters(GetControlsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder operatorControlCollections(List<GetControlsOperatorControlCollection> operatorControlCollections) {
             this.operatorControlCollections = Objects.requireNonNull(operatorControlCollections);
             return this;
@@ -160,15 +144,26 @@ public final class GetControlsResult {
         public Builder operatorControlCollections(GetControlsOperatorControlCollection... operatorControlCollections) {
             return operatorControlCollections(List.of(operatorControlCollections));
         }
+        @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
             this.resourceType = resourceType;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetControlsResult build() {
-            return new GetControlsResult(compartmentId, displayName, filters, id, operatorControlCollections, resourceType, state);
+        }
+        public GetControlsResult build() {
+            final var o = new GetControlsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.operatorControlCollections = operatorControlCollections;
+            o.resourceType = resourceType;
+            o.state = state;
+            return o;
         }
     }
 }

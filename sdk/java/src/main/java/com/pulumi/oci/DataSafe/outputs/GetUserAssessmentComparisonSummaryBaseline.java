@@ -9,21 +9,14 @@ import java.util.Objects;
 
 @CustomType
 public final class GetUserAssessmentComparisonSummaryBaseline {
-    private final String targetId;
+    private String targetId;
     /**
      * @return The OCID of the user assessment.
      * 
      */
-    private final String userAssessmentId;
+    private String userAssessmentId;
 
-    @CustomType.Constructor
-    private GetUserAssessmentComparisonSummaryBaseline(
-        @CustomType.Parameter("targetId") String targetId,
-        @CustomType.Parameter("userAssessmentId") String userAssessmentId) {
-        this.targetId = targetId;
-        this.userAssessmentId = userAssessmentId;
-    }
-
+    private GetUserAssessmentComparisonSummaryBaseline() {}
     public String targetId() {
         return this.targetId;
     }
@@ -42,30 +35,32 @@ public final class GetUserAssessmentComparisonSummaryBaseline {
     public static Builder builder(GetUserAssessmentComparisonSummaryBaseline defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String targetId;
         private String userAssessmentId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUserAssessmentComparisonSummaryBaseline defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.targetId = defaults.targetId;
     	      this.userAssessmentId = defaults.userAssessmentId;
         }
 
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
         }
+        @CustomType.Setter
         public Builder userAssessmentId(String userAssessmentId) {
             this.userAssessmentId = Objects.requireNonNull(userAssessmentId);
             return this;
-        }        public GetUserAssessmentComparisonSummaryBaseline build() {
-            return new GetUserAssessmentComparisonSummaryBaseline(targetId, userAssessmentId);
+        }
+        public GetUserAssessmentComparisonSummaryBaseline build() {
+            final var o = new GetUserAssessmentComparisonSummaryBaseline();
+            o.targetId = targetId;
+            o.userAssessmentId = userAssessmentId;
+            return o;
         }
     }
 }

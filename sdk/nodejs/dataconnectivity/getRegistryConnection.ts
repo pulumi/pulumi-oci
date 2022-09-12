@@ -43,7 +43,7 @@ export interface GetRegistryConnectionArgs {
      */
     connectionKey: string;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: string;
 }
@@ -54,7 +54,7 @@ export interface GetRegistryConnectionArgs {
 export interface GetRegistryConnectionResult {
     readonly connectionKey: string;
     /**
-     * The properties for the connection.
+     * The properties of the connection.
      */
     readonly connectionProperties: outputs.DataConnectivity.GetRegistryConnectionConnectionProperty[];
     /**
@@ -67,7 +67,7 @@ export interface GetRegistryConnectionResult {
      */
     readonly identifier: string;
     /**
-     * The default property for the connection.
+     * The default property of the connection.
      */
     readonly isDefault: boolean;
     /**
@@ -75,19 +75,19 @@ export interface GetRegistryConnectionResult {
      */
     readonly key: string;
     /**
-     * A summary type containing information about the object including its key, name and when/who created/updated it.
+     * A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      */
     readonly metadatas: outputs.DataConnectivity.GetRegistryConnectionMetadata[];
     /**
-     * The object's type.
+     * The object type.
      */
     readonly modelType: string;
     /**
-     * The object's model version.
+     * The model version of the object.
      */
     readonly modelVersion: string;
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
     readonly name: string;
     /**
@@ -103,7 +103,7 @@ export interface GetRegistryConnectionResult {
      */
     readonly primarySchemas: outputs.DataConnectivity.GetRegistryConnectionPrimarySchema[];
     /**
-     * All the properties for the connection in a key-value map format.
+     * All the properties of the connection in a key-value map format.
      */
     readonly properties: {[key: string]: any};
     readonly registryId: string;
@@ -130,7 +130,7 @@ export interface GetRegistryConnectionOutputArgs {
      */
     connectionKey: pulumi.Input<string>;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: pulumi.Input<string>;
 }

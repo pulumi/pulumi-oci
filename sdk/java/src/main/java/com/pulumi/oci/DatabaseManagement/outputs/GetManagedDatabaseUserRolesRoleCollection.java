@@ -14,13 +14,9 @@ public final class GetManagedDatabaseUserRolesRoleCollection {
      * @return An array of roles.
      * 
      */
-    private final List<GetManagedDatabaseUserRolesRoleCollectionItem> items;
+    private List<GetManagedDatabaseUserRolesRoleCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseUserRolesRoleCollection(@CustomType.Parameter("items") List<GetManagedDatabaseUserRolesRoleCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetManagedDatabaseUserRolesRoleCollection() {}
     /**
      * @return An array of roles.
      * 
@@ -36,27 +32,27 @@ public final class GetManagedDatabaseUserRolesRoleCollection {
     public static Builder builder(GetManagedDatabaseUserRolesRoleCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseUserRolesRoleCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseUserRolesRoleCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabaseUserRolesRoleCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetManagedDatabaseUserRolesRoleCollectionItem... items) {
             return items(List.of(items));
-        }        public GetManagedDatabaseUserRolesRoleCollection build() {
-            return new GetManagedDatabaseUserRolesRoleCollection(items);
+        }
+        public GetManagedDatabaseUserRolesRoleCollection build() {
+            final var o = new GetManagedDatabaseUserRolesRoleCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -13,21 +13,14 @@ public final class GetStreamPoolCustomEncryptionKey {
      * @return Life cycle State of the custom key
      * 
      */
-    private final String keyState;
+    private String keyState;
     /**
      * @return Custom Encryption Key (Master Key) ocid.
      * 
      */
-    private final String kmsKeyId;
+    private String kmsKeyId;
 
-    @CustomType.Constructor
-    private GetStreamPoolCustomEncryptionKey(
-        @CustomType.Parameter("keyState") String keyState,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId) {
-        this.keyState = keyState;
-        this.kmsKeyId = kmsKeyId;
-    }
-
+    private GetStreamPoolCustomEncryptionKey() {}
     /**
      * @return Life cycle State of the custom key
      * 
@@ -50,30 +43,32 @@ public final class GetStreamPoolCustomEncryptionKey {
     public static Builder builder(GetStreamPoolCustomEncryptionKey defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String keyState;
         private String kmsKeyId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetStreamPoolCustomEncryptionKey defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.keyState = defaults.keyState;
     	      this.kmsKeyId = defaults.kmsKeyId;
         }
 
+        @CustomType.Setter
         public Builder keyState(String keyState) {
             this.keyState = Objects.requireNonNull(keyState);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
-        }        public GetStreamPoolCustomEncryptionKey build() {
-            return new GetStreamPoolCustomEncryptionKey(keyState, kmsKeyId);
+        }
+        public GetStreamPoolCustomEncryptionKey build() {
+            final var o = new GetStreamPoolCustomEncryptionKey();
+            o.keyState = keyState;
+            o.kmsKeyId = kmsKeyId;
+            return o;
         }
     }
 }

@@ -11,45 +11,30 @@ import java.util.Objects;
 
 @CustomType
 public final class GetUserAssessmentComparisonResult {
-    private final String comparisonUserAssessmentId;
+    private String comparisonUserAssessmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the user assessment comparison.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
-    private final List<GetUserAssessmentComparisonSummary> summaries;
+    private List<GetUserAssessmentComparisonSummary> summaries;
     /**
      * @return The date and time the user assessment comparison was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeCreated;
-    private final String userAssessmentId;
+    private String timeCreated;
+    private String userAssessmentId;
 
-    @CustomType.Constructor
-    private GetUserAssessmentComparisonResult(
-        @CustomType.Parameter("comparisonUserAssessmentId") String comparisonUserAssessmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("summaries") List<GetUserAssessmentComparisonSummary> summaries,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("userAssessmentId") String userAssessmentId) {
-        this.comparisonUserAssessmentId = comparisonUserAssessmentId;
-        this.id = id;
-        this.state = state;
-        this.summaries = summaries;
-        this.timeCreated = timeCreated;
-        this.userAssessmentId = userAssessmentId;
-    }
-
+    private GetUserAssessmentComparisonResult() {}
     public String comparisonUserAssessmentId() {
         return this.comparisonUserAssessmentId;
     }
@@ -92,7 +77,7 @@ public final class GetUserAssessmentComparisonResult {
     public static Builder builder(GetUserAssessmentComparisonResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String comparisonUserAssessmentId;
         private String id;
@@ -100,11 +85,7 @@ public final class GetUserAssessmentComparisonResult {
         private List<GetUserAssessmentComparisonSummary> summaries;
         private String timeCreated;
         private String userAssessmentId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUserAssessmentComparisonResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.comparisonUserAssessmentId = defaults.comparisonUserAssessmentId;
@@ -115,18 +96,22 @@ public final class GetUserAssessmentComparisonResult {
     	      this.userAssessmentId = defaults.userAssessmentId;
         }
 
+        @CustomType.Setter
         public Builder comparisonUserAssessmentId(String comparisonUserAssessmentId) {
             this.comparisonUserAssessmentId = Objects.requireNonNull(comparisonUserAssessmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder summaries(List<GetUserAssessmentComparisonSummary> summaries) {
             this.summaries = Objects.requireNonNull(summaries);
             return this;
@@ -134,15 +119,25 @@ public final class GetUserAssessmentComparisonResult {
         public Builder summaries(GetUserAssessmentComparisonSummary... summaries) {
             return summaries(List.of(summaries));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder userAssessmentId(String userAssessmentId) {
             this.userAssessmentId = Objects.requireNonNull(userAssessmentId);
             return this;
-        }        public GetUserAssessmentComparisonResult build() {
-            return new GetUserAssessmentComparisonResult(comparisonUserAssessmentId, id, state, summaries, timeCreated, userAssessmentId);
+        }
+        public GetUserAssessmentComparisonResult build() {
+            final var o = new GetUserAssessmentComparisonResult();
+            o.comparisonUserAssessmentId = comparisonUserAssessmentId;
+            o.id = id;
+            o.state = state;
+            o.summaries = summaries;
+            o.timeCreated = timeCreated;
+            o.userAssessmentId = userAssessmentId;
+            return o;
         }
     }
 }

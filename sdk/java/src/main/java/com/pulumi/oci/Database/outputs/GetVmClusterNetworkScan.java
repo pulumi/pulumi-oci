@@ -15,42 +15,29 @@ public final class GetVmClusterNetworkScan {
      * @return The node host name.
      * 
      */
-    private final String hostname;
+    private String hostname;
     /**
      * @return The list of SCAN IP addresses. Three addresses should be provided.
      * 
      */
-    private final List<String> ips;
+    private List<String> ips;
     /**
      * @return The SCAN TCPIP port. Default is 1521.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return The SCAN TCPIP port. Default is 1521.
      * 
      */
-    private final Integer scanListenerPortTcp;
+    private Integer scanListenerPortTcp;
     /**
      * @return The SCAN TCPIP SSL port. Default is 2484.
      * 
      */
-    private final Integer scanListenerPortTcpSsl;
+    private Integer scanListenerPortTcpSsl;
 
-    @CustomType.Constructor
-    private GetVmClusterNetworkScan(
-        @CustomType.Parameter("hostname") String hostname,
-        @CustomType.Parameter("ips") List<String> ips,
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("scanListenerPortTcp") Integer scanListenerPortTcp,
-        @CustomType.Parameter("scanListenerPortTcpSsl") Integer scanListenerPortTcpSsl) {
-        this.hostname = hostname;
-        this.ips = ips;
-        this.port = port;
-        this.scanListenerPortTcp = scanListenerPortTcp;
-        this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
-    }
-
+    private GetVmClusterNetworkScan() {}
     /**
      * @return The node host name.
      * 
@@ -94,18 +81,14 @@ public final class GetVmClusterNetworkScan {
     public static Builder builder(GetVmClusterNetworkScan defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String hostname;
         private List<String> ips;
         private Integer port;
         private Integer scanListenerPortTcp;
         private Integer scanListenerPortTcpSsl;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVmClusterNetworkScan defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostname = defaults.hostname;
@@ -115,10 +98,12 @@ public final class GetVmClusterNetworkScan {
     	      this.scanListenerPortTcpSsl = defaults.scanListenerPortTcpSsl;
         }
 
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
         }
+        @CustomType.Setter
         public Builder ips(List<String> ips) {
             this.ips = Objects.requireNonNull(ips);
             return this;
@@ -126,19 +111,29 @@ public final class GetVmClusterNetworkScan {
         public Builder ips(String... ips) {
             return ips(List.of(ips));
         }
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder scanListenerPortTcp(Integer scanListenerPortTcp) {
             this.scanListenerPortTcp = Objects.requireNonNull(scanListenerPortTcp);
             return this;
         }
+        @CustomType.Setter
         public Builder scanListenerPortTcpSsl(Integer scanListenerPortTcpSsl) {
             this.scanListenerPortTcpSsl = Objects.requireNonNull(scanListenerPortTcpSsl);
             return this;
-        }        public GetVmClusterNetworkScan build() {
-            return new GetVmClusterNetworkScan(hostname, ips, port, scanListenerPortTcp, scanListenerPortTcpSsl);
+        }
+        public GetVmClusterNetworkScan build() {
+            final var o = new GetVmClusterNetworkScan();
+            o.hostname = hostname;
+            o.ips = ips;
+            o.port = port;
+            o.scanListenerPortTcp = scanListenerPortTcp;
+            o.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
+            return o;
         }
     }
 }

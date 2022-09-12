@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection {
-    private final List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem> items;
+    private List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection(@CustomType.Parameter("items") List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection() {}
     public List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection {
     public static Builder builder(GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem... items) {
             return items(List.of(items));
-        }        public GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection build() {
-            return new GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection(items);
+        }
+        public GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection build() {
+            final var o = new GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection();
+            o.items = items;
+            return o;
         }
     }
 }

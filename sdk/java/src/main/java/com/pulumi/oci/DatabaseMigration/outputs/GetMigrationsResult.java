@@ -18,52 +18,35 @@ public final class GetMigrationsResult {
      * @return OCID of the compartment where the secret containing the credentials will be created.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Migration Display Name
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetMigrationsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetMigrationsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Additional status related to the execution and current state of the Migration.
      * 
      */
-    private final @Nullable String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The list of migration_collection.
      * 
      */
-    private final List<GetMigrationsMigrationCollection> migrationCollections;
+    private List<GetMigrationsMigrationCollection> migrationCollections;
     /**
      * @return The current state of the Migration resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetMigrationsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetMigrationsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") @Nullable String lifecycleDetails,
-        @CustomType.Parameter("migrationCollections") List<GetMigrationsMigrationCollection> migrationCollections,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.migrationCollections = migrationCollections;
-        this.state = state;
-    }
-
+    private GetMigrationsResult() {}
     /**
      * @return OCID of the compartment where the secret containing the credentials will be created.
      * 
@@ -117,7 +100,7 @@ public final class GetMigrationsResult {
     public static Builder builder(GetMigrationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -126,11 +109,7 @@ public final class GetMigrationsResult {
         private @Nullable String lifecycleDetails;
         private List<GetMigrationsMigrationCollection> migrationCollections;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,14 +121,17 @@ public final class GetMigrationsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetMigrationsFilter> filters) {
             this.filters = filters;
             return this;
@@ -157,14 +139,17 @@ public final class GetMigrationsResult {
         public Builder filters(GetMigrationsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
+        @CustomType.Setter
         public Builder migrationCollections(List<GetMigrationsMigrationCollection> migrationCollections) {
             this.migrationCollections = Objects.requireNonNull(migrationCollections);
             return this;
@@ -172,11 +157,21 @@ public final class GetMigrationsResult {
         public Builder migrationCollections(GetMigrationsMigrationCollection... migrationCollections) {
             return migrationCollections(List.of(migrationCollections));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetMigrationsResult build() {
-            return new GetMigrationsResult(compartmentId, displayName, filters, id, lifecycleDetails, migrationCollections, state);
+        }
+        public GetMigrationsResult build() {
+            final var o = new GetMigrationsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.migrationCollections = migrationCollections;
+            o.state = state;
+            return o;
         }
     }
 }

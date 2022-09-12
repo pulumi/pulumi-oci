@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetConfigsConfigCollection {
-    private final List<GetConfigsConfigCollectionItem> items;
+    private List<GetConfigsConfigCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetConfigsConfigCollection(@CustomType.Parameter("items") List<GetConfigsConfigCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetConfigsConfigCollection() {}
     public List<GetConfigsConfigCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetConfigsConfigCollection {
     public static Builder builder(GetConfigsConfigCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetConfigsConfigCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConfigsConfigCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetConfigsConfigCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetConfigsConfigCollectionItem... items) {
             return items(List.of(items));
-        }        public GetConfigsConfigCollection build() {
-            return new GetConfigsConfigCollection(items);
+        }
+        public GetConfigsConfigCollection build() {
+            final var o = new GetConfigsConfigCollection();
+            o.items = items;
+            return o;
         }
     }
 }

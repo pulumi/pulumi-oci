@@ -18,52 +18,35 @@ public final class GetSubnetsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the subnet.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetSubnetsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetSubnetsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The subnet&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of subnets.
      * 
      */
-    private final List<GetSubnetsSubnet> subnets;
+    private List<GetSubnetsSubnet> subnets;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the subnet is in.
      * 
      */
-    private final @Nullable String vcnId;
+    private @Nullable String vcnId;
 
-    @CustomType.Constructor
-    private GetSubnetsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetSubnetsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("subnets") List<GetSubnetsSubnet> subnets,
-        @CustomType.Parameter("vcnId") @Nullable String vcnId) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.subnets = subnets;
-        this.vcnId = vcnId;
-    }
-
+    private GetSubnetsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the subnet.
      * 
@@ -117,7 +100,7 @@ public final class GetSubnetsResult {
     public static Builder builder(GetSubnetsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -126,11 +109,7 @@ public final class GetSubnetsResult {
         private @Nullable String state;
         private List<GetSubnetsSubnet> subnets;
         private @Nullable String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubnetsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,14 +121,17 @@ public final class GetSubnetsResult {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSubnetsFilter> filters) {
             this.filters = filters;
             return this;
@@ -157,14 +139,17 @@ public final class GetSubnetsResult {
         public Builder filters(GetSubnetsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder subnets(List<GetSubnetsSubnet> subnets) {
             this.subnets = Objects.requireNonNull(subnets);
             return this;
@@ -172,11 +157,21 @@ public final class GetSubnetsResult {
         public Builder subnets(GetSubnetsSubnet... subnets) {
             return subnets(List.of(subnets));
         }
+        @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
             this.vcnId = vcnId;
             return this;
-        }        public GetSubnetsResult build() {
-            return new GetSubnetsResult(compartmentId, displayName, filters, id, state, subnets, vcnId);
+        }
+        public GetSubnetsResult build() {
+            final var o = new GetSubnetsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.subnets = subnets;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

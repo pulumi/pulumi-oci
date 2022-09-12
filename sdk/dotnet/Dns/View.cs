@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Dns
     /// <summary>
     /// This resource provides the View resource in Oracle Cloud Infrastructure DNS service.
     /// 
-    /// Creates a new view in the specified compartment. Requires a `PRIVATE` scope query parameter.
+    /// Creates a new view in the specified compartment.
     /// 
     /// ## Example Usage
     /// 
@@ -37,16 +37,10 @@ namespace Pulumi.Oci.Dns
     /// 
     /// ## Import
     /// 
-    /// For legacy Views that were created without using `scope`, these Views can be imported using the `id`, e.g.
+    /// Views can be imported using their OCID, e.g.
     /// 
     /// ```sh
     ///  $ pulumi import oci:Dns/view:View test_view "id"
-    /// ```
-    /// 
-    ///  For Views created using `scope`, these Views can be imported using the `id`, e.g.
-    /// 
-    /// ```sh
-    ///  $ pulumi import oci:Dns/view:View test_view "viewId/{viewId}/scope/{scope}"
     /// ```
     /// </summary>
     [OciResourceType("oci:Dns/view:View")]
@@ -83,10 +77,10 @@ namespace Pulumi.Oci.Dns
         public Output<bool> IsProtected { get; private set; } = null!;
 
         /// <summary>
-        /// Value must be `PRIVATE` when creating a view for private zones.
+        /// If specified, must be `PRIVATE` when creating a view for private zones.
         /// </summary>
         [Output("scope")]
-        public Output<string> Scope { get; private set; } = null!;
+        public Output<string?> Scope { get; private set; } = null!;
 
         /// <summary>
         /// The canonical absolute URL of the resource.
@@ -195,10 +189,10 @@ namespace Pulumi.Oci.Dns
         }
 
         /// <summary>
-        /// Value must be `PRIVATE` when creating a view for private zones.
+        /// If specified, must be `PRIVATE` when creating a view for private zones.
         /// </summary>
-        [Input("scope", required: true)]
-        public Input<string> Scope { get; set; } = null!;
+        [Input("scope")]
+        public Input<string>? Scope { get; set; }
 
         public ViewArgs()
         {
@@ -251,7 +245,7 @@ namespace Pulumi.Oci.Dns
         public Input<bool>? IsProtected { get; set; }
 
         /// <summary>
-        /// Value must be `PRIVATE` when creating a view for private zones.
+        /// If specified, must be `PRIVATE` when creating a view for private zones.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }

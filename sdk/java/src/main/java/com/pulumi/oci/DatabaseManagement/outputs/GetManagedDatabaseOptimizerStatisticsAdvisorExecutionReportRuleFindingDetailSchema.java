@@ -14,21 +14,14 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
      * @return The name of the rule.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The names of schema objects.
      * 
      */
-    private final List<String> objects;
+    private List<String> objects;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("objects") List<String> objects) {
-        this.name = name;
-        this.objects = objects;
-    }
-
+    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema() {}
     /**
      * @return The name of the rule.
      * 
@@ -51,33 +44,35 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
     public static Builder builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private List<String> objects;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.objects = defaults.objects;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder objects(List<String> objects) {
             this.objects = Objects.requireNonNull(objects);
             return this;
         }
         public Builder objects(String... objects) {
             return objects(List.of(objects));
-        }        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema build() {
-            return new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema(name, objects);
+        }
+        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema build() {
+            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema();
+            o.name = name;
+            o.objects = objects;
+            return o;
         }
     }
 }

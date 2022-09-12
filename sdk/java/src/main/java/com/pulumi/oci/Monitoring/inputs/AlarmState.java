@@ -126,6 +126,21 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+     * 
+     */
+    @Import(name="isNotificationsPerMetricDimensionEnabled")
+    private @Nullable Output<Boolean> isNotificationsPerMetricDimensionEnabled;
+
+    /**
+     * @return (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+     * 
+     */
+    public Optional<Output<Boolean>> isNotificationsPerMetricDimensionEnabled() {
+        return Optional.ofNullable(this.isNotificationsPerMetricDimensionEnabled);
+    }
+
+    /**
      * (Updatable) The format to use for notification messages sent from this alarm. The formats are:
      * 
      */
@@ -345,6 +360,7 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.isEnabled = $.isEnabled;
+        this.isNotificationsPerMetricDimensionEnabled = $.isNotificationsPerMetricDimensionEnabled;
         this.messageFormat = $.messageFormat;
         this.metricCompartmentId = $.metricCompartmentId;
         this.metricCompartmentIdInSubtree = $.metricCompartmentIdInSubtree;
@@ -534,6 +550,27 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isEnabled(Boolean isEnabled) {
             return isEnabled(Output.of(isEnabled));
+        }
+
+        /**
+         * @param isNotificationsPerMetricDimensionEnabled (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isNotificationsPerMetricDimensionEnabled(@Nullable Output<Boolean> isNotificationsPerMetricDimensionEnabled) {
+            $.isNotificationsPerMetricDimensionEnabled = isNotificationsPerMetricDimensionEnabled;
+            return this;
+        }
+
+        /**
+         * @param isNotificationsPerMetricDimensionEnabled (Updatable) When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isNotificationsPerMetricDimensionEnabled(Boolean isNotificationsPerMetricDimensionEnabled) {
+            return isNotificationsPerMetricDimensionEnabled(Output.of(isNotificationsPerMetricDimensionEnabled));
         }
 
         /**

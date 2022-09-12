@@ -15,21 +15,14 @@ public final class GetManagementAgentPluginCountItem {
      * @return The number of Management Agent Plugins in this group
      * 
      */
-    private final Integer count;
+    private Integer count;
     /**
      * @return The Aggregation of Management Agent Plugin Dimensions
      * 
      */
-    private final List<GetManagementAgentPluginCountItemDimension> dimensions;
+    private List<GetManagementAgentPluginCountItemDimension> dimensions;
 
-    @CustomType.Constructor
-    private GetManagementAgentPluginCountItem(
-        @CustomType.Parameter("count") Integer count,
-        @CustomType.Parameter("dimensions") List<GetManagementAgentPluginCountItemDimension> dimensions) {
-        this.count = count;
-        this.dimensions = dimensions;
-    }
-
+    private GetManagementAgentPluginCountItem() {}
     /**
      * @return The number of Management Agent Plugins in this group
      * 
@@ -52,33 +45,35 @@ public final class GetManagementAgentPluginCountItem {
     public static Builder builder(GetManagementAgentPluginCountItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer count;
         private List<GetManagementAgentPluginCountItemDimension> dimensions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagementAgentPluginCountItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
     	      this.dimensions = defaults.dimensions;
         }
 
+        @CustomType.Setter
         public Builder count(Integer count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder dimensions(List<GetManagementAgentPluginCountItemDimension> dimensions) {
             this.dimensions = Objects.requireNonNull(dimensions);
             return this;
         }
         public Builder dimensions(GetManagementAgentPluginCountItemDimension... dimensions) {
             return dimensions(List.of(dimensions));
-        }        public GetManagementAgentPluginCountItem build() {
-            return new GetManagementAgentPluginCountItem(count, dimensions);
+        }
+        public GetManagementAgentPluginCountItem build() {
+            final var o = new GetManagementAgentPluginCountItem();
+            o.count = count;
+            o.dimensions = dimensions;
+            return o;
         }
     }
 }

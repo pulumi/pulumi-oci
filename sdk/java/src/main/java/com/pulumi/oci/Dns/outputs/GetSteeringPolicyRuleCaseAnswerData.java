@@ -15,28 +15,19 @@ public final class GetSteeringPolicyRuleCaseAnswerData {
      * @return An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
      * 
      */
-    private final String answerCondition;
+    private String answerCondition;
     /**
      * @return Keeps the answer only if the value is `true`.
      * 
      */
-    private final Boolean shouldKeep;
+    private Boolean shouldKeep;
     /**
      * @return The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
      * 
      */
-    private final Integer value;
+    private Integer value;
 
-    @CustomType.Constructor
-    private GetSteeringPolicyRuleCaseAnswerData(
-        @CustomType.Parameter("answerCondition") String answerCondition,
-        @CustomType.Parameter("shouldKeep") Boolean shouldKeep,
-        @CustomType.Parameter("value") Integer value) {
-        this.answerCondition = answerCondition;
-        this.shouldKeep = shouldKeep;
-        this.value = value;
-    }
-
+    private GetSteeringPolicyRuleCaseAnswerData() {}
     /**
      * @return An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
      * 
@@ -66,16 +57,12 @@ public final class GetSteeringPolicyRuleCaseAnswerData {
     public static Builder builder(GetSteeringPolicyRuleCaseAnswerData defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String answerCondition;
         private Boolean shouldKeep;
         private Integer value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSteeringPolicyRuleCaseAnswerData defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.answerCondition = defaults.answerCondition;
@@ -83,19 +70,27 @@ public final class GetSteeringPolicyRuleCaseAnswerData {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder answerCondition(String answerCondition) {
             this.answerCondition = Objects.requireNonNull(answerCondition);
             return this;
         }
+        @CustomType.Setter
         public Builder shouldKeep(Boolean shouldKeep) {
             this.shouldKeep = Objects.requireNonNull(shouldKeep);
             return this;
         }
+        @CustomType.Setter
         public Builder value(Integer value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetSteeringPolicyRuleCaseAnswerData build() {
-            return new GetSteeringPolicyRuleCaseAnswerData(answerCondition, shouldKeep, value);
+        }
+        public GetSteeringPolicyRuleCaseAnswerData build() {
+            final var o = new GetSteeringPolicyRuleCaseAnswerData();
+            o.answerCondition = answerCondition;
+            o.shouldKeep = shouldKeep;
+            o.value = value;
+            return o;
         }
     }
 }

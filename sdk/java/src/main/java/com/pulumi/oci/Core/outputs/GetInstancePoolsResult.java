@@ -18,45 +18,30 @@ public final class GetInstancePoolsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetInstancePoolsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetInstancePoolsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of instance_pools.
      * 
      */
-    private final List<GetInstancePoolsInstancePool> instancePools;
+    private List<GetInstancePoolsInstancePool> instancePools;
     /**
      * @return The current state of the instance pool.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetInstancePoolsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetInstancePoolsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instancePools") List<GetInstancePoolsInstancePool> instancePools,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.instancePools = instancePools;
-        this.state = state;
-    }
-
+    private GetInstancePoolsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      * 
@@ -103,7 +88,7 @@ public final class GetInstancePoolsResult {
     public static Builder builder(GetInstancePoolsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetInstancePoolsResult {
         private String id;
         private List<GetInstancePoolsInstancePool> instancePools;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstancePoolsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetInstancePoolsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetInstancePoolsFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +125,12 @@ public final class GetInstancePoolsResult {
         public Builder filters(GetInstancePoolsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instancePools(List<GetInstancePoolsInstancePool> instancePools) {
             this.instancePools = Objects.requireNonNull(instancePools);
             return this;
@@ -152,11 +138,20 @@ public final class GetInstancePoolsResult {
         public Builder instancePools(GetInstancePoolsInstancePool... instancePools) {
             return instancePools(List.of(instancePools));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetInstancePoolsResult build() {
-            return new GetInstancePoolsResult(compartmentId, displayName, filters, id, instancePools, state);
+        }
+        public GetInstancePoolsResult build() {
+            final var o = new GetInstancePoolsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.instancePools = instancePools;
+            o.state = state;
+            return o;
         }
     }
 }

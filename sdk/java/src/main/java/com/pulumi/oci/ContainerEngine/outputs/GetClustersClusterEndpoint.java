@@ -13,35 +13,24 @@ public final class GetClustersClusterEndpoint {
      * @return The non-native networking Kubernetes API server endpoint.
      * 
      */
-    private final String kubernetes;
+    private String kubernetes;
     /**
      * @return The private native networking Kubernetes API server endpoint.
      * 
      */
-    private final String privateEndpoint;
+    private String privateEndpoint;
     /**
      * @return The public native networking Kubernetes API server endpoint, if one was requested.
      * 
      */
-    private final String publicEndpoint;
+    private String publicEndpoint;
     /**
      * @return The FQDN assigned to the Kubernetes API private endpoint. Example: &#39;https://yourVcnHostnameEndpoint&#39;
      * 
      */
-    private final String vcnHostnameEndpoint;
+    private String vcnHostnameEndpoint;
 
-    @CustomType.Constructor
-    private GetClustersClusterEndpoint(
-        @CustomType.Parameter("kubernetes") String kubernetes,
-        @CustomType.Parameter("privateEndpoint") String privateEndpoint,
-        @CustomType.Parameter("publicEndpoint") String publicEndpoint,
-        @CustomType.Parameter("vcnHostnameEndpoint") String vcnHostnameEndpoint) {
-        this.kubernetes = kubernetes;
-        this.privateEndpoint = privateEndpoint;
-        this.publicEndpoint = publicEndpoint;
-        this.vcnHostnameEndpoint = vcnHostnameEndpoint;
-    }
-
+    private GetClustersClusterEndpoint() {}
     /**
      * @return The non-native networking Kubernetes API server endpoint.
      * 
@@ -78,17 +67,13 @@ public final class GetClustersClusterEndpoint {
     public static Builder builder(GetClustersClusterEndpoint defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String kubernetes;
         private String privateEndpoint;
         private String publicEndpoint;
         private String vcnHostnameEndpoint;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetClustersClusterEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kubernetes = defaults.kubernetes;
@@ -97,23 +82,33 @@ public final class GetClustersClusterEndpoint {
     	      this.vcnHostnameEndpoint = defaults.vcnHostnameEndpoint;
         }
 
+        @CustomType.Setter
         public Builder kubernetes(String kubernetes) {
             this.kubernetes = Objects.requireNonNull(kubernetes);
             return this;
         }
+        @CustomType.Setter
         public Builder privateEndpoint(String privateEndpoint) {
             this.privateEndpoint = Objects.requireNonNull(privateEndpoint);
             return this;
         }
+        @CustomType.Setter
         public Builder publicEndpoint(String publicEndpoint) {
             this.publicEndpoint = Objects.requireNonNull(publicEndpoint);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnHostnameEndpoint(String vcnHostnameEndpoint) {
             this.vcnHostnameEndpoint = Objects.requireNonNull(vcnHostnameEndpoint);
             return this;
-        }        public GetClustersClusterEndpoint build() {
-            return new GetClustersClusterEndpoint(kubernetes, privateEndpoint, publicEndpoint, vcnHostnameEndpoint);
+        }
+        public GetClustersClusterEndpoint build() {
+            final var o = new GetClustersClusterEndpoint();
+            o.kubernetes = kubernetes;
+            o.privateEndpoint = privateEndpoint;
+            o.publicEndpoint = publicEndpoint;
+            o.vcnHostnameEndpoint = vcnHostnameEndpoint;
+            return o;
         }
     }
 }

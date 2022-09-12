@@ -18,46 +18,25 @@ public final class GetCustomProtectionRulesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule&#39;s compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of custom_protection_rules.
      * 
      */
-    private final List<GetCustomProtectionRulesCustomProtectionRule> customProtectionRules;
-    private final @Nullable List<String> displayNames;
-    private final @Nullable List<GetCustomProtectionRulesFilter> filters;
+    private List<GetCustomProtectionRulesCustomProtectionRule> customProtectionRules;
+    private @Nullable List<String> displayNames;
+    private @Nullable List<GetCustomProtectionRulesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable List<String> ids;
-    private final @Nullable List<String> states;
-    private final @Nullable String timeCreatedGreaterThanOrEqualTo;
-    private final @Nullable String timeCreatedLessThan;
+    private String id;
+    private @Nullable List<String> ids;
+    private @Nullable List<String> states;
+    private @Nullable String timeCreatedGreaterThanOrEqualTo;
+    private @Nullable String timeCreatedLessThan;
 
-    @CustomType.Constructor
-    private GetCustomProtectionRulesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("customProtectionRules") List<GetCustomProtectionRulesCustomProtectionRule> customProtectionRules,
-        @CustomType.Parameter("displayNames") @Nullable List<String> displayNames,
-        @CustomType.Parameter("filters") @Nullable List<GetCustomProtectionRulesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ids") @Nullable List<String> ids,
-        @CustomType.Parameter("states") @Nullable List<String> states,
-        @CustomType.Parameter("timeCreatedGreaterThanOrEqualTo") @Nullable String timeCreatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeCreatedLessThan") @Nullable String timeCreatedLessThan) {
-        this.compartmentId = compartmentId;
-        this.customProtectionRules = customProtectionRules;
-        this.displayNames = displayNames;
-        this.filters = filters;
-        this.id = id;
-        this.ids = ids;
-        this.states = states;
-        this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-        this.timeCreatedLessThan = timeCreatedLessThan;
-    }
-
+    private GetCustomProtectionRulesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule&#39;s compartment.
      * 
@@ -105,7 +84,7 @@ public final class GetCustomProtectionRulesResult {
     public static Builder builder(GetCustomProtectionRulesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetCustomProtectionRulesCustomProtectionRule> customProtectionRules;
@@ -116,11 +95,7 @@ public final class GetCustomProtectionRulesResult {
         private @Nullable List<String> states;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCustomProtectionRulesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,10 +109,12 @@ public final class GetCustomProtectionRulesResult {
     	      this.timeCreatedLessThan = defaults.timeCreatedLessThan;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder customProtectionRules(List<GetCustomProtectionRulesCustomProtectionRule> customProtectionRules) {
             this.customProtectionRules = Objects.requireNonNull(customProtectionRules);
             return this;
@@ -145,6 +122,7 @@ public final class GetCustomProtectionRulesResult {
         public Builder customProtectionRules(GetCustomProtectionRulesCustomProtectionRule... customProtectionRules) {
             return customProtectionRules(List.of(customProtectionRules));
         }
+        @CustomType.Setter
         public Builder displayNames(@Nullable List<String> displayNames) {
             this.displayNames = displayNames;
             return this;
@@ -152,6 +130,7 @@ public final class GetCustomProtectionRulesResult {
         public Builder displayNames(String... displayNames) {
             return displayNames(List.of(displayNames));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetCustomProtectionRulesFilter> filters) {
             this.filters = filters;
             return this;
@@ -159,10 +138,12 @@ public final class GetCustomProtectionRulesResult {
         public Builder filters(GetCustomProtectionRulesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ids(@Nullable List<String> ids) {
             this.ids = ids;
             return this;
@@ -170,6 +151,7 @@ public final class GetCustomProtectionRulesResult {
         public Builder ids(String... ids) {
             return ids(List.of(ids));
         }
+        @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
             this.states = states;
             return this;
@@ -177,15 +159,28 @@ public final class GetCustomProtectionRulesResult {
         public Builder states(String... states) {
             return states(List.of(states));
         }
+        @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
-        }        public GetCustomProtectionRulesResult build() {
-            return new GetCustomProtectionRulesResult(compartmentId, customProtectionRules, displayNames, filters, id, ids, states, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan);
+        }
+        public GetCustomProtectionRulesResult build() {
+            final var o = new GetCustomProtectionRulesResult();
+            o.compartmentId = compartmentId;
+            o.customProtectionRules = customProtectionRules;
+            o.displayNames = displayNames;
+            o.filters = filters;
+            o.id = id;
+            o.ids = ids;
+            o.states = states;
+            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            o.timeCreatedLessThan = timeCreatedLessThan;
+            return o;
         }
     }
 }

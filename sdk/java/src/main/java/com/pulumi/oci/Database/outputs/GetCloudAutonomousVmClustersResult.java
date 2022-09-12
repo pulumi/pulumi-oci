@@ -18,59 +18,40 @@ public final class GetCloudAutonomousVmClustersResult {
      * @return The name of the availability domain that the cloud Autonomous VM cluster is located in.
      * 
      */
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The list of cloud_autonomous_vm_clusters.
      * 
      */
-    private final List<GetCloudAutonomousVmClustersCloudAutonomousVmCluster> cloudAutonomousVmClusters;
+    private List<GetCloudAutonomousVmClustersCloudAutonomousVmCluster> cloudAutonomousVmClusters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
      * 
      */
-    private final @Nullable String cloudExadataInfrastructureId;
+    private @Nullable String cloudExadataInfrastructureId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetCloudAutonomousVmClustersFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetCloudAutonomousVmClustersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the cloud Autonomous VM cluster.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetCloudAutonomousVmClustersResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("cloudAutonomousVmClusters") List<GetCloudAutonomousVmClustersCloudAutonomousVmCluster> cloudAutonomousVmClusters,
-        @CustomType.Parameter("cloudExadataInfrastructureId") @Nullable String cloudExadataInfrastructureId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetCloudAutonomousVmClustersFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.availabilityDomain = availabilityDomain;
-        this.cloudAutonomousVmClusters = cloudAutonomousVmClusters;
-        this.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetCloudAutonomousVmClustersResult() {}
     /**
      * @return The name of the availability domain that the cloud Autonomous VM cluster is located in.
      * 
@@ -131,7 +112,7 @@ public final class GetCloudAutonomousVmClustersResult {
     public static Builder builder(GetCloudAutonomousVmClustersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private List<GetCloudAutonomousVmClustersCloudAutonomousVmCluster> cloudAutonomousVmClusters;
@@ -141,11 +122,7 @@ public final class GetCloudAutonomousVmClustersResult {
         private @Nullable List<GetCloudAutonomousVmClustersFilter> filters;
         private String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCloudAutonomousVmClustersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -158,10 +135,12 @@ public final class GetCloudAutonomousVmClustersResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder cloudAutonomousVmClusters(List<GetCloudAutonomousVmClustersCloudAutonomousVmCluster> cloudAutonomousVmClusters) {
             this.cloudAutonomousVmClusters = Objects.requireNonNull(cloudAutonomousVmClusters);
             return this;
@@ -169,18 +148,22 @@ public final class GetCloudAutonomousVmClustersResult {
         public Builder cloudAutonomousVmClusters(GetCloudAutonomousVmClustersCloudAutonomousVmCluster... cloudAutonomousVmClusters) {
             return cloudAutonomousVmClusters(List.of(cloudAutonomousVmClusters));
         }
+        @CustomType.Setter
         public Builder cloudExadataInfrastructureId(@Nullable String cloudExadataInfrastructureId) {
             this.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetCloudAutonomousVmClustersFilter> filters) {
             this.filters = filters;
             return this;
@@ -188,15 +171,27 @@ public final class GetCloudAutonomousVmClustersResult {
         public Builder filters(GetCloudAutonomousVmClustersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetCloudAutonomousVmClustersResult build() {
-            return new GetCloudAutonomousVmClustersResult(availabilityDomain, cloudAutonomousVmClusters, cloudExadataInfrastructureId, compartmentId, displayName, filters, id, state);
+        }
+        public GetCloudAutonomousVmClustersResult build() {
+            final var o = new GetCloudAutonomousVmClustersResult();
+            o.availabilityDomain = availabilityDomain;
+            o.cloudAutonomousVmClusters = cloudAutonomousVmClusters;
+            o.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

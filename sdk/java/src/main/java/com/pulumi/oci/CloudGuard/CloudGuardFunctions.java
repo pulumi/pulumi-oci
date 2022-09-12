@@ -13,6 +13,14 @@ import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRuleArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRulePlainArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRulesArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRulesPlainArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetDataSourceArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventPlainArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventsArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventsPlainArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetDataSourcePlainArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetDataSourcesArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetDataSourcesPlainArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipeArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipePlainArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipesArgs;
@@ -25,6 +33,10 @@ import com.pulumi.oci.CloudGuard.inputs.GetManagedListArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetManagedListPlainArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetManagedListsArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetManagedListsPlainArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetProblemEntitiesArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetProblemEntitiesPlainArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetProblemEntityArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetProblemEntityPlainArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipeArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipePlainArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipesArgs;
@@ -44,12 +56,18 @@ import com.pulumi.oci.CloudGuard.inputs.GetSecurityZonesPlainArgs;
 import com.pulumi.oci.CloudGuard.outputs.GetCloudGuardConfigurationResult;
 import com.pulumi.oci.CloudGuard.outputs.GetDataMaskRuleResult;
 import com.pulumi.oci.CloudGuard.outputs.GetDataMaskRulesResult;
+import com.pulumi.oci.CloudGuard.outputs.GetDataSourceEventResult;
+import com.pulumi.oci.CloudGuard.outputs.GetDataSourceEventsResult;
+import com.pulumi.oci.CloudGuard.outputs.GetDataSourceResult;
+import com.pulumi.oci.CloudGuard.outputs.GetDataSourcesResult;
 import com.pulumi.oci.CloudGuard.outputs.GetDetectorRecipeResult;
 import com.pulumi.oci.CloudGuard.outputs.GetDetectorRecipesResult;
 import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetResult;
 import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetsResult;
 import com.pulumi.oci.CloudGuard.outputs.GetManagedListResult;
 import com.pulumi.oci.CloudGuard.outputs.GetManagedListsResult;
+import com.pulumi.oci.CloudGuard.outputs.GetProblemEntitiesResult;
+import com.pulumi.oci.CloudGuard.outputs.GetProblemEntityResult;
 import com.pulumi.oci.CloudGuard.outputs.GetResponderRecipeResult;
 import com.pulumi.oci.CloudGuard.outputs.GetResponderRecipesResult;
 import com.pulumi.oci.CloudGuard.outputs.GetSecurityPoliciesResult;
@@ -557,6 +575,718 @@ public final class CloudGuardFunctions {
      */
     public static CompletableFuture<GetDataMaskRulesResult> getDataMaskRulesPlain(GetDataMaskRulesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudGuard/getDataMaskRules:getDataMaskRules", TypeShape.of(GetDataMaskRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a DataSource identified by dataSourceId
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSource = CloudGuardFunctions.getDataSource(GetDataSourceArgs.builder()
+     *             .dataSourceId(oci_cloud_guard_data_source.test_data_source().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDataSourceResult> getDataSource(GetDataSourceArgs args) {
+        return getDataSource(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a DataSource identified by dataSourceId
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSource = CloudGuardFunctions.getDataSource(GetDataSourceArgs.builder()
+     *             .dataSourceId(oci_cloud_guard_data_source.test_data_source().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDataSourceResult> getDataSourcePlain(GetDataSourcePlainArgs args) {
+        return getDataSourcePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a DataSource identified by dataSourceId
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSource = CloudGuardFunctions.getDataSource(GetDataSourceArgs.builder()
+     *             .dataSourceId(oci_cloud_guard_data_source.test_data_source().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDataSourceResult> getDataSource(GetDataSourceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudGuard/getDataSource:getDataSource", TypeShape.of(GetDataSourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a DataSource identified by dataSourceId
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSource = CloudGuardFunctions.getDataSource(GetDataSourceArgs.builder()
+     *             .dataSourceId(oci_cloud_guard_data_source.test_data_source().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDataSourceResult> getDataSourcePlain(GetDataSourcePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudGuard/getDataSource:getDataSource", TypeShape.of(GetDataSourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Data Source Event resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of events from CloudGuard DataSource
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSourceEvent = CloudGuardFunctions.getDataSourceEvent(GetDataSourceEventArgs.builder()
+     *             .dataSourceId(oci_cloud_guard_data_source.test_data_source().id())
+     *             .region(var_.data_source_event_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDataSourceEventResult> getDataSourceEvent(GetDataSourceEventArgs args) {
+        return getDataSourceEvent(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Data Source Event resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of events from CloudGuard DataSource
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSourceEvent = CloudGuardFunctions.getDataSourceEvent(GetDataSourceEventArgs.builder()
+     *             .dataSourceId(oci_cloud_guard_data_source.test_data_source().id())
+     *             .region(var_.data_source_event_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDataSourceEventResult> getDataSourceEventPlain(GetDataSourceEventPlainArgs args) {
+        return getDataSourceEventPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Data Source Event resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of events from CloudGuard DataSource
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSourceEvent = CloudGuardFunctions.getDataSourceEvent(GetDataSourceEventArgs.builder()
+     *             .dataSourceId(oci_cloud_guard_data_source.test_data_source().id())
+     *             .region(var_.data_source_event_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDataSourceEventResult> getDataSourceEvent(GetDataSourceEventArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudGuard/getDataSourceEvent:getDataSourceEvent", TypeShape.of(GetDataSourceEventResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Data Source Event resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of events from CloudGuard DataSource
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSourceEvent = CloudGuardFunctions.getDataSourceEvent(GetDataSourceEventArgs.builder()
+     *             .dataSourceId(oci_cloud_guard_data_source.test_data_source().id())
+     *             .region(var_.data_source_event_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDataSourceEventResult> getDataSourceEventPlain(GetDataSourceEventPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudGuard/getDataSourceEvent:getDataSourceEvent", TypeShape.of(GetDataSourceEventResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Data Source Events in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of events from CloudGuard DataSource
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSourceEvents = CloudGuardFunctions.getDataSourceEvents(GetDataSourceEventsArgs.builder()
+     *             .dataSourceId(oci_cloud_guard_data_source.test_data_source().id())
+     *             .region(var_.data_source_event_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDataSourceEventsResult> getDataSourceEvents(GetDataSourceEventsArgs args) {
+        return getDataSourceEvents(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Data Source Events in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of events from CloudGuard DataSource
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSourceEvents = CloudGuardFunctions.getDataSourceEvents(GetDataSourceEventsArgs.builder()
+     *             .dataSourceId(oci_cloud_guard_data_source.test_data_source().id())
+     *             .region(var_.data_source_event_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDataSourceEventsResult> getDataSourceEventsPlain(GetDataSourceEventsPlainArgs args) {
+        return getDataSourceEventsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Data Source Events in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of events from CloudGuard DataSource
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSourceEvents = CloudGuardFunctions.getDataSourceEvents(GetDataSourceEventsArgs.builder()
+     *             .dataSourceId(oci_cloud_guard_data_source.test_data_source().id())
+     *             .region(var_.data_source_event_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDataSourceEventsResult> getDataSourceEvents(GetDataSourceEventsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudGuard/getDataSourceEvents:getDataSourceEvents", TypeShape.of(GetDataSourceEventsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Data Source Events in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of events from CloudGuard DataSource
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataSourceEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSourceEvents = CloudGuardFunctions.getDataSourceEvents(GetDataSourceEventsArgs.builder()
+     *             .dataSourceId(oci_cloud_guard_data_source.test_data_source().id())
+     *             .region(var_.data_source_event_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDataSourceEventsResult> getDataSourceEventsPlain(GetDataSourceEventsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudGuard/getDataSourceEvents:getDataSourceEvents", TypeShape.of(GetDataSourceEventsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of all Data Sources in a compartment
+     * 
+     * The ListDataSources operation returns only the data Sources in `compartmentId` passed.
+     * The list does not include any subcompartments of the compartmentId passed.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSources = CloudGuardFunctions.getDataSources(GetDataSourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.data_source_access_level())
+     *             .compartmentIdInSubtree(var_.data_source_compartment_id_in_subtree())
+     *             .dataSourceFeedProvider(var_.data_source_data_source_feed_provider())
+     *             .displayName(var_.data_source_display_name())
+     *             .loggingQueryType(var_.data_source_logging_query_type())
+     *             .state(var_.data_source_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDataSourcesResult> getDataSources(GetDataSourcesArgs args) {
+        return getDataSources(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of all Data Sources in a compartment
+     * 
+     * The ListDataSources operation returns only the data Sources in `compartmentId` passed.
+     * The list does not include any subcompartments of the compartmentId passed.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSources = CloudGuardFunctions.getDataSources(GetDataSourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.data_source_access_level())
+     *             .compartmentIdInSubtree(var_.data_source_compartment_id_in_subtree())
+     *             .dataSourceFeedProvider(var_.data_source_data_source_feed_provider())
+     *             .displayName(var_.data_source_display_name())
+     *             .loggingQueryType(var_.data_source_logging_query_type())
+     *             .state(var_.data_source_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDataSourcesResult> getDataSourcesPlain(GetDataSourcesPlainArgs args) {
+        return getDataSourcesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of all Data Sources in a compartment
+     * 
+     * The ListDataSources operation returns only the data Sources in `compartmentId` passed.
+     * The list does not include any subcompartments of the compartmentId passed.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSources = CloudGuardFunctions.getDataSources(GetDataSourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.data_source_access_level())
+     *             .compartmentIdInSubtree(var_.data_source_compartment_id_in_subtree())
+     *             .dataSourceFeedProvider(var_.data_source_data_source_feed_provider())
+     *             .displayName(var_.data_source_display_name())
+     *             .loggingQueryType(var_.data_source_logging_query_type())
+     *             .state(var_.data_source_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDataSourcesResult> getDataSources(GetDataSourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudGuard/getDataSources:getDataSources", TypeShape.of(GetDataSourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of all Data Sources in a compartment
+     * 
+     * The ListDataSources operation returns only the data Sources in `compartmentId` passed.
+     * The list does not include any subcompartments of the compartmentId passed.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSources = CloudGuardFunctions.getDataSources(GetDataSourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.data_source_access_level())
+     *             .compartmentIdInSubtree(var_.data_source_compartment_id_in_subtree())
+     *             .dataSourceFeedProvider(var_.data_source_data_source_feed_provider())
+     *             .displayName(var_.data_source_display_name())
+     *             .loggingQueryType(var_.data_source_logging_query_type())
+     *             .state(var_.data_source_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDataSourcesResult> getDataSourcesPlain(GetDataSourcesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudGuard/getDataSources:getDataSources", TypeShape.of(GetDataSourcesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -1717,6 +2447,318 @@ public final class CloudGuardFunctions {
      */
     public static CompletableFuture<GetManagedListsResult> getManagedListsPlain(GetManagedListsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudGuard/getManagedLists:getManagedLists", TypeShape.of(GetManagedListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of entities for a CloudGuard Problem
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetProblemEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProblemEntities = CloudGuardFunctions.getProblemEntities(GetProblemEntitiesArgs.builder()
+     *             .problemId(oci_cloud_guard_problem.test_problem().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetProblemEntitiesResult> getProblemEntities(GetProblemEntitiesArgs args) {
+        return getProblemEntities(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of entities for a CloudGuard Problem
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetProblemEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProblemEntities = CloudGuardFunctions.getProblemEntities(GetProblemEntitiesArgs.builder()
+     *             .problemId(oci_cloud_guard_problem.test_problem().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetProblemEntitiesResult> getProblemEntitiesPlain(GetProblemEntitiesPlainArgs args) {
+        return getProblemEntitiesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of entities for a CloudGuard Problem
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetProblemEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProblemEntities = CloudGuardFunctions.getProblemEntities(GetProblemEntitiesArgs.builder()
+     *             .problemId(oci_cloud_guard_problem.test_problem().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetProblemEntitiesResult> getProblemEntities(GetProblemEntitiesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudGuard/getProblemEntities:getProblemEntities", TypeShape.of(GetProblemEntitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of entities for a CloudGuard Problem
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetProblemEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProblemEntities = CloudGuardFunctions.getProblemEntities(GetProblemEntitiesArgs.builder()
+     *             .problemId(oci_cloud_guard_problem.test_problem().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetProblemEntitiesResult> getProblemEntitiesPlain(GetProblemEntitiesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudGuard/getProblemEntities:getProblemEntities", TypeShape.of(GetProblemEntitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Problem Entity resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of entities for a CloudGuard Problem
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetProblemEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProblemEntity = CloudGuardFunctions.getProblemEntity(GetProblemEntityArgs.builder()
+     *             .problemId(oci_cloud_guard_problem.test_problem().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetProblemEntityResult> getProblemEntity(GetProblemEntityArgs args) {
+        return getProblemEntity(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Problem Entity resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of entities for a CloudGuard Problem
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetProblemEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProblemEntity = CloudGuardFunctions.getProblemEntity(GetProblemEntityArgs.builder()
+     *             .problemId(oci_cloud_guard_problem.test_problem().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetProblemEntityResult> getProblemEntityPlain(GetProblemEntityPlainArgs args) {
+        return getProblemEntityPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Problem Entity resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of entities for a CloudGuard Problem
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetProblemEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProblemEntity = CloudGuardFunctions.getProblemEntity(GetProblemEntityArgs.builder()
+     *             .problemId(oci_cloud_guard_problem.test_problem().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetProblemEntityResult> getProblemEntity(GetProblemEntityArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudGuard/getProblemEntity:getProblemEntity", TypeShape.of(GetProblemEntityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Problem Entity resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of entities for a CloudGuard Problem
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetProblemEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProblemEntity = CloudGuardFunctions.getProblemEntity(GetProblemEntityArgs.builder()
+     *             .problemId(oci_cloud_guard_problem.test_problem().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetProblemEntityResult> getProblemEntityPlain(GetProblemEntityPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudGuard/getProblemEntity:getProblemEntity", TypeShape.of(GetProblemEntityResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.

@@ -18,14 +18,14 @@ public final class SubscriptionRedeemableUserState extends com.pulumi.resources.
     public static final SubscriptionRedeemableUserState Empty = new SubscriptionRedeemableUserState();
 
     /**
-     * The list of email IDs to be added to the list of users that can redeem rewards.
+     * The list of new user to be added to the list of user that can redeem rewards.
      * 
      */
     @Import(name="items")
     private @Nullable Output<List<SubscriptionRedeemableUserItemArgs>> items;
 
     /**
-     * @return The list of email IDs to be added to the list of users that can redeem rewards.
+     * @return The list of new user to be added to the list of user that can redeem rewards.
      * 
      */
     public Optional<Output<List<SubscriptionRedeemableUserItemArgs>>> items() {
@@ -105,7 +105,7 @@ public final class SubscriptionRedeemableUserState extends com.pulumi.resources.
         }
 
         /**
-         * @param items The list of email IDs to be added to the list of users that can redeem rewards.
+         * @param items The list of new user to be added to the list of user that can redeem rewards.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class SubscriptionRedeemableUserState extends com.pulumi.resources.
         }
 
         /**
-         * @param items The list of email IDs to be added to the list of users that can redeem rewards.
+         * @param items The list of new user to be added to the list of user that can redeem rewards.
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class SubscriptionRedeemableUserState extends com.pulumi.resources.
         }
 
         /**
-         * @param items The list of email IDs to be added to the list of users that can redeem rewards.
+         * @param items The list of new user to be added to the list of user that can redeem rewards.
          * 
          * @return builder
          * 

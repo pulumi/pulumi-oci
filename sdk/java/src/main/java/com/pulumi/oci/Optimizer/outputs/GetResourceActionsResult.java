@@ -15,73 +15,56 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResourceActionsResult {
+    private @Nullable List<String> childTenancyIds;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final Boolean compartmentIdInSubtree;
-    private final @Nullable List<GetResourceActionsFilter> filters;
+    private String compartmentId;
+    private Boolean compartmentIdInSubtree;
+    private @Nullable List<GetResourceActionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
+    private @Nullable Boolean includeOrganization;
     /**
      * @return The name assigned to the resource.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The unique OCID associated with the recommendation.
      * 
      */
-    private final String recommendationId;
+    private @Nullable String recommendationId;
+    private @Nullable String recommendationName;
     /**
      * @return The list of resource_action_collection.
      * 
      */
-    private final List<GetResourceActionsResourceActionCollection> resourceActionCollections;
+    private List<GetResourceActionsResourceActionCollection> resourceActionCollections;
     /**
      * @return The kind of resource.
      * 
      */
-    private final @Nullable String resourceType;
+    private @Nullable String resourceType;
     /**
      * @return The resource action&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The current status of the resource action.
      * 
      */
-    private final @Nullable String status;
+    private @Nullable String status;
 
-    @CustomType.Constructor
-    private GetResourceActionsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("filters") @Nullable List<GetResourceActionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("recommendationId") String recommendationId,
-        @CustomType.Parameter("resourceActionCollections") List<GetResourceActionsResourceActionCollection> resourceActionCollections,
-        @CustomType.Parameter("resourceType") @Nullable String resourceType,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("status") @Nullable String status) {
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.recommendationId = recommendationId;
-        this.resourceActionCollections = resourceActionCollections;
-        this.resourceType = resourceType;
-        this.state = state;
-        this.status = status;
+    private GetResourceActionsResult() {}
+    public List<String> childTenancyIds() {
+        return this.childTenancyIds == null ? List.of() : this.childTenancyIds;
     }
-
     /**
      * @return The OCID of the compartment.
      * 
@@ -102,6 +85,9 @@ public final class GetResourceActionsResult {
     public String id() {
         return this.id;
     }
+    public Optional<Boolean> includeOrganization() {
+        return Optional.ofNullable(this.includeOrganization);
+    }
     /**
      * @return The name assigned to the resource.
      * 
@@ -113,8 +99,11 @@ public final class GetResourceActionsResult {
      * @return The unique OCID associated with the recommendation.
      * 
      */
-    public String recommendationId() {
-        return this.recommendationId;
+    public Optional<String> recommendationId() {
+        return Optional.ofNullable(this.recommendationId);
+    }
+    public Optional<String> recommendationName() {
+        return Optional.ofNullable(this.recommendationName);
     }
     /**
      * @return The list of resource_action_collection.
@@ -152,45 +141,58 @@ public final class GetResourceActionsResult {
     public static Builder builder(GetResourceActionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<String> childTenancyIds;
         private String compartmentId;
         private Boolean compartmentIdInSubtree;
         private @Nullable List<GetResourceActionsFilter> filters;
         private String id;
+        private @Nullable Boolean includeOrganization;
         private @Nullable String name;
-        private String recommendationId;
+        private @Nullable String recommendationId;
+        private @Nullable String recommendationName;
         private List<GetResourceActionsResourceActionCollection> resourceActionCollections;
         private @Nullable String resourceType;
         private @Nullable String state;
         private @Nullable String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetResourceActionsResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.childTenancyIds = defaults.childTenancyIds;
     	      this.compartmentId = defaults.compartmentId;
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.includeOrganization = defaults.includeOrganization;
     	      this.name = defaults.name;
     	      this.recommendationId = defaults.recommendationId;
+    	      this.recommendationName = defaults.recommendationName;
     	      this.resourceActionCollections = defaults.resourceActionCollections;
     	      this.resourceType = defaults.resourceType;
     	      this.state = defaults.state;
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
+        public Builder childTenancyIds(@Nullable List<String> childTenancyIds) {
+            this.childTenancyIds = childTenancyIds;
+            return this;
+        }
+        public Builder childTenancyIds(String... childTenancyIds) {
+            return childTenancyIds(List.of(childTenancyIds));
+        }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetResourceActionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -198,18 +200,32 @@ public final class GetResourceActionsResult {
         public Builder filters(GetResourceActionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
+        public Builder includeOrganization(@Nullable Boolean includeOrganization) {
+            this.includeOrganization = includeOrganization;
+            return this;
+        }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
-        public Builder recommendationId(String recommendationId) {
-            this.recommendationId = Objects.requireNonNull(recommendationId);
+        @CustomType.Setter
+        public Builder recommendationId(@Nullable String recommendationId) {
+            this.recommendationId = recommendationId;
             return this;
         }
+        @CustomType.Setter
+        public Builder recommendationName(@Nullable String recommendationName) {
+            this.recommendationName = recommendationName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder resourceActionCollections(List<GetResourceActionsResourceActionCollection> resourceActionCollections) {
             this.resourceActionCollections = Objects.requireNonNull(resourceActionCollections);
             return this;
@@ -217,19 +233,37 @@ public final class GetResourceActionsResult {
         public Builder resourceActionCollections(GetResourceActionsResourceActionCollection... resourceActionCollections) {
             return resourceActionCollections(List.of(resourceActionCollections));
         }
+        @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
             this.resourceType = resourceType;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
-        }        public GetResourceActionsResult build() {
-            return new GetResourceActionsResult(compartmentId, compartmentIdInSubtree, filters, id, name, recommendationId, resourceActionCollections, resourceType, state, status);
+        }
+        public GetResourceActionsResult build() {
+            final var o = new GetResourceActionsResult();
+            o.childTenancyIds = childTenancyIds;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.filters = filters;
+            o.id = id;
+            o.includeOrganization = includeOrganization;
+            o.name = name;
+            o.recommendationId = recommendationId;
+            o.recommendationName = recommendationName;
+            o.resourceActionCollections = resourceActionCollections;
+            o.resourceType = resourceType;
+            o.state = state;
+            o.status = status;
+            return o;
         }
     }
 }

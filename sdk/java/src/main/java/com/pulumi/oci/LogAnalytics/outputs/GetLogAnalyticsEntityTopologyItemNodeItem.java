@@ -16,119 +16,84 @@ public final class GetLogAnalyticsEntityTopologyItemNodeItem {
      * @return The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
      * 
      */
-    private final Boolean areLogsCollected;
+    private Boolean areLogsCollected;
     /**
      * @return The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      * 
      */
-    private final String cloudResourceId;
+    private String cloudResourceId;
     /**
      * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Internal name for the log analytics entity type.
      * 
      */
-    private final String entityTypeInternalName;
+    private String entityTypeInternalName;
     /**
      * @return Log analytics entity type name.
      * 
      */
-    private final String entityTypeName;
+    private String entityTypeName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The OCID of the Management Agent.
      * 
      */
-    private final String managementAgentId;
+    private String managementAgentId;
     /**
      * @return Log analytics entity name.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
      * 
      */
-    private final String sourceId;
+    private String sourceId;
     /**
      * @return A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the resource was created, in the format defined by RFC3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the resource was last updated, in the format defined by RFC3339.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return The timezone region of the log analytics entity.
      * 
      */
-    private final String timezoneRegion;
+    private String timezoneRegion;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsEntityTopologyItemNodeItem(
-        @CustomType.Parameter("areLogsCollected") Boolean areLogsCollected,
-        @CustomType.Parameter("cloudResourceId") String cloudResourceId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("entityTypeInternalName") String entityTypeInternalName,
-        @CustomType.Parameter("entityTypeName") String entityTypeName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("managementAgentId") String managementAgentId,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("sourceId") String sourceId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("timezoneRegion") String timezoneRegion) {
-        this.areLogsCollected = areLogsCollected;
-        this.cloudResourceId = cloudResourceId;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.entityTypeInternalName = entityTypeInternalName;
-        this.entityTypeName = entityTypeName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.managementAgentId = managementAgentId;
-        this.name = name;
-        this.sourceId = sourceId;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.timezoneRegion = timezoneRegion;
-    }
-
+    private GetLogAnalyticsEntityTopologyItemNodeItem() {}
     /**
      * @return The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
      * 
@@ -249,7 +214,7 @@ public final class GetLogAnalyticsEntityTopologyItemNodeItem {
     public static Builder builder(GetLogAnalyticsEntityTopologyItemNodeItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean areLogsCollected;
         private String cloudResourceId;
@@ -267,11 +232,7 @@ public final class GetLogAnalyticsEntityTopologyItemNodeItem {
         private String timeCreated;
         private String timeUpdated;
         private String timezoneRegion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsEntityTopologyItemNodeItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.areLogsCollected = defaults.areLogsCollected;
@@ -292,71 +253,105 @@ public final class GetLogAnalyticsEntityTopologyItemNodeItem {
     	      this.timezoneRegion = defaults.timezoneRegion;
         }
 
+        @CustomType.Setter
         public Builder areLogsCollected(Boolean areLogsCollected) {
             this.areLogsCollected = Objects.requireNonNull(areLogsCollected);
             return this;
         }
+        @CustomType.Setter
         public Builder cloudResourceId(String cloudResourceId) {
             this.cloudResourceId = Objects.requireNonNull(cloudResourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder entityTypeInternalName(String entityTypeInternalName) {
             this.entityTypeInternalName = Objects.requireNonNull(entityTypeInternalName);
             return this;
         }
+        @CustomType.Setter
         public Builder entityTypeName(String entityTypeName) {
             this.entityTypeName = Objects.requireNonNull(entityTypeName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = Objects.requireNonNull(managementAgentId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceId(String sourceId) {
             this.sourceId = Objects.requireNonNull(sourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder timezoneRegion(String timezoneRegion) {
             this.timezoneRegion = Objects.requireNonNull(timezoneRegion);
             return this;
-        }        public GetLogAnalyticsEntityTopologyItemNodeItem build() {
-            return new GetLogAnalyticsEntityTopologyItemNodeItem(areLogsCollected, cloudResourceId, compartmentId, definedTags, entityTypeInternalName, entityTypeName, freeformTags, id, lifecycleDetails, managementAgentId, name, sourceId, state, timeCreated, timeUpdated, timezoneRegion);
+        }
+        public GetLogAnalyticsEntityTopologyItemNodeItem build() {
+            final var o = new GetLogAnalyticsEntityTopologyItemNodeItem();
+            o.areLogsCollected = areLogsCollected;
+            o.cloudResourceId = cloudResourceId;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.entityTypeInternalName = entityTypeInternalName;
+            o.entityTypeName = entityTypeName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.managementAgentId = managementAgentId;
+            o.name = name;
+            o.sourceId = sourceId;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.timezoneRegion = timezoneRegion;
+            return o;
         }
     }
 }

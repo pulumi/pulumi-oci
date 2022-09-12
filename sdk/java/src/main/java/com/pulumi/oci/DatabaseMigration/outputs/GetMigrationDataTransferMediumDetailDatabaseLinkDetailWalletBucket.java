@@ -13,21 +13,14 @@ public final class GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletB
      * @return Bucket name.
      * 
      */
-    private final String bucket;
+    private String bucket;
     /**
      * @return Namespace name of the object store bucket.
      * 
      */
-    private final String namespace;
+    private String namespace;
 
-    @CustomType.Constructor
-    private GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket(
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("namespace") String namespace) {
-        this.bucket = bucket;
-        this.namespace = namespace;
-    }
-
+    private GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket() {}
     /**
      * @return Bucket name.
      * 
@@ -50,30 +43,32 @@ public final class GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletB
     public static Builder builder(GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucket;
         private String namespace;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
     	      this.namespace = defaults.namespace;
         }
 
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
-        }        public GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket build() {
-            return new GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket(bucket, namespace);
+        }
+        public GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket build() {
+            final var o = new GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucket();
+            o.bucket = bucket;
+            o.namespace = namespace;
+            return o;
         }
     }
 }

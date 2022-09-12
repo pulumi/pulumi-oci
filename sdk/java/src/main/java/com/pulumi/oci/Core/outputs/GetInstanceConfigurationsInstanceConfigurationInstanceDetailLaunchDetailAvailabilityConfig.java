@@ -13,13 +13,9 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      * @return The lifecycle state for an instance when it is recovered after infrastructure maintenance.
      * 
      */
-    private final String recoveryAction;
+    private String recoveryAction;
 
-    @CustomType.Constructor
-    private GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig(@CustomType.Parameter("recoveryAction") String recoveryAction) {
-        this.recoveryAction = recoveryAction;
-    }
-
+    private GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig() {}
     /**
      * @return The lifecycle state for an instance when it is recovered after infrastructure maintenance.
      * 
@@ -35,24 +31,24 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     public static Builder builder(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String recoveryAction;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.recoveryAction = defaults.recoveryAction;
         }
 
+        @CustomType.Setter
         public Builder recoveryAction(String recoveryAction) {
             this.recoveryAction = Objects.requireNonNull(recoveryAction);
             return this;
-        }        public GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig build() {
-            return new GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig(recoveryAction);
+        }
+        public GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig build() {
+            final var o = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig();
+            o.recoveryAction = recoveryAction;
+            return o;
         }
     }
 }

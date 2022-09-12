@@ -17,42 +17,29 @@ public final class GetWebAppFirewallPolicyAction {
      * @return Type of returned HTTP response body.
      * 
      */
-    private final List<GetWebAppFirewallPolicyActionBody> bodies;
+    private List<GetWebAppFirewallPolicyActionBody> bodies;
     /**
      * @return Response code.
      * 
      */
-    private final Integer code;
+    private Integer code;
     /**
      * @return Adds headers defined in this array for HTTP response.
      * 
      */
-    private final List<GetWebAppFirewallPolicyActionHeader> headers;
+    private List<GetWebAppFirewallPolicyActionHeader> headers;
     /**
      * @return Rule name. Must be unique within the module.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Type of WebAppFirewallPolicyRule.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetWebAppFirewallPolicyAction(
-        @CustomType.Parameter("bodies") List<GetWebAppFirewallPolicyActionBody> bodies,
-        @CustomType.Parameter("code") Integer code,
-        @CustomType.Parameter("headers") List<GetWebAppFirewallPolicyActionHeader> headers,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("type") String type) {
-        this.bodies = bodies;
-        this.code = code;
-        this.headers = headers;
-        this.name = name;
-        this.type = type;
-    }
-
+    private GetWebAppFirewallPolicyAction() {}
     /**
      * @return Type of returned HTTP response body.
      * 
@@ -96,18 +83,14 @@ public final class GetWebAppFirewallPolicyAction {
     public static Builder builder(GetWebAppFirewallPolicyAction defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetWebAppFirewallPolicyActionBody> bodies;
         private Integer code;
         private List<GetWebAppFirewallPolicyActionHeader> headers;
         private String name;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWebAppFirewallPolicyAction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bodies = defaults.bodies;
@@ -117,6 +100,7 @@ public final class GetWebAppFirewallPolicyAction {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder bodies(List<GetWebAppFirewallPolicyActionBody> bodies) {
             this.bodies = Objects.requireNonNull(bodies);
             return this;
@@ -124,10 +108,12 @@ public final class GetWebAppFirewallPolicyAction {
         public Builder bodies(GetWebAppFirewallPolicyActionBody... bodies) {
             return bodies(List.of(bodies));
         }
+        @CustomType.Setter
         public Builder code(Integer code) {
             this.code = Objects.requireNonNull(code);
             return this;
         }
+        @CustomType.Setter
         public Builder headers(List<GetWebAppFirewallPolicyActionHeader> headers) {
             this.headers = Objects.requireNonNull(headers);
             return this;
@@ -135,15 +121,24 @@ public final class GetWebAppFirewallPolicyAction {
         public Builder headers(GetWebAppFirewallPolicyActionHeader... headers) {
             return headers(List.of(headers));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetWebAppFirewallPolicyAction build() {
-            return new GetWebAppFirewallPolicyAction(bodies, code, headers, name, type);
+        }
+        public GetWebAppFirewallPolicyAction build() {
+            final var o = new GetWebAppFirewallPolicyAction();
+            o.bodies = bodies;
+            o.code = code;
+            o.headers = headers;
+            o.name = name;
+            o.type = type;
+            return o;
         }
     }
 }

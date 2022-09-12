@@ -2,6 +2,7 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
@@ -34,6 +35,11 @@ import * as utilities from "../utilities";
  *     cpuCoreCount: _var.data_guard_association_cpu_core_count,
  *     databaseDefinedTags: _var.data_guard_association_database_defined_tags,
  *     databaseFreeformTags: _var.data_guard_association_database_freeform_tags,
+ *     dataCollectionOptions: {
+ *         isDiagnosticsEventsEnabled: _var.data_guard_association_data_collection_options_is_diagnostics_events_enabled,
+ *         isHealthMonitoringEnabled: _var.data_guard_association_data_collection_options_is_health_monitoring_enabled,
+ *         isIncidentLogsEnabled: _var.data_guard_association_data_collection_options_is_incident_logs_enabled,
+ *     },
  *     databaseSoftwareImageId: oci_database_database_software_image.test_database_software_image.id,
  *     dbSystemDefinedTags: _var.data_guard_association_db_system_defined_tags,
  *     dbSystemFreeformTags: _var.data_guard_association_db_system_freeform_tags,
@@ -114,6 +120,10 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      * Specifies whether to create the peer database in an existing DB system or in a new DB system.
      */
     public readonly creationType!: pulumi.Output<string>;
+    /**
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     */
+    public readonly dataCollectionOptions!: pulumi.Output<outputs.Database.DataGuardAssociationDataCollectionOptions>;
     /**
      * (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
      */
@@ -273,6 +283,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
             resourceInputs["createAsync"] = state ? state.createAsync : undefined;
             resourceInputs["creationType"] = state ? state.creationType : undefined;
+            resourceInputs["dataCollectionOptions"] = state ? state.dataCollectionOptions : undefined;
             resourceInputs["databaseAdminPassword"] = state ? state.databaseAdminPassword : undefined;
             resourceInputs["databaseDefinedTags"] = state ? state.databaseDefinedTags : undefined;
             resourceInputs["databaseFreeformTags"] = state ? state.databaseFreeformTags : undefined;
@@ -332,6 +343,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["cpuCoreCount"] = args ? args.cpuCoreCount : undefined;
             resourceInputs["createAsync"] = args ? args.createAsync : undefined;
             resourceInputs["creationType"] = args ? args.creationType : undefined;
+            resourceInputs["dataCollectionOptions"] = args ? args.dataCollectionOptions : undefined;
             resourceInputs["databaseAdminPassword"] = args ? args.databaseAdminPassword : undefined;
             resourceInputs["databaseDefinedTags"] = args ? args.databaseDefinedTags : undefined;
             resourceInputs["databaseFreeformTags"] = args ? args.databaseFreeformTags : undefined;
@@ -403,6 +415,10 @@ export interface DataGuardAssociationState {
      * Specifies whether to create the peer database in an existing DB system or in a new DB system.
      */
     creationType?: pulumi.Input<string>;
+    /**
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     */
+    dataCollectionOptions?: pulumi.Input<inputs.Database.DataGuardAssociationDataCollectionOptions>;
     /**
      * (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
      */
@@ -564,6 +580,10 @@ export interface DataGuardAssociationArgs {
      * Specifies whether to create the peer database in an existing DB system or in a new DB system.
      */
     creationType: pulumi.Input<string>;
+    /**
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     */
+    dataCollectionOptions?: pulumi.Input<inputs.Database.DataGuardAssociationDataCollectionOptions>;
     /**
      * (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
      */

@@ -21,66 +21,45 @@ public final class AutoScalingConfigurationPolicy {
      * @return The capacity requirements of the autoscaling policy.
      * 
      */
-    private final @Nullable AutoScalingConfigurationPolicyCapacity capacity;
+    private @Nullable AutoScalingConfigurationPolicyCapacity capacity;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return An execution schedule for an autoscaling policy.
      * 
      */
-    private final @Nullable AutoScalingConfigurationPolicyExecutionSchedule executionSchedule;
+    private @Nullable AutoScalingConfigurationPolicyExecutionSchedule executionSchedule;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return Whether the autoscaling policy is enabled.
      * 
      */
-    private final @Nullable Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return The type of autoscaling policy.
      * 
      */
-    private final String policyType;
+    private String policyType;
     /**
      * @return An action that can be executed against a resource.
      * 
      */
-    private final @Nullable AutoScalingConfigurationPolicyResourceAction resourceAction;
-    private final @Nullable List<AutoScalingConfigurationPolicyRule> rules;
+    private @Nullable AutoScalingConfigurationPolicyResourceAction resourceAction;
+    private @Nullable List<AutoScalingConfigurationPolicyRule> rules;
     /**
      * @return The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
 
-    @CustomType.Constructor
-    private AutoScalingConfigurationPolicy(
-        @CustomType.Parameter("capacity") @Nullable AutoScalingConfigurationPolicyCapacity capacity,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("executionSchedule") @Nullable AutoScalingConfigurationPolicyExecutionSchedule executionSchedule,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("isEnabled") @Nullable Boolean isEnabled,
-        @CustomType.Parameter("policyType") String policyType,
-        @CustomType.Parameter("resourceAction") @Nullable AutoScalingConfigurationPolicyResourceAction resourceAction,
-        @CustomType.Parameter("rules") @Nullable List<AutoScalingConfigurationPolicyRule> rules,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated) {
-        this.capacity = capacity;
-        this.displayName = displayName;
-        this.executionSchedule = executionSchedule;
-        this.id = id;
-        this.isEnabled = isEnabled;
-        this.policyType = policyType;
-        this.resourceAction = resourceAction;
-        this.rules = rules;
-        this.timeCreated = timeCreated;
-    }
-
+    private AutoScalingConfigurationPolicy() {}
     /**
      * @return The capacity requirements of the autoscaling policy.
      * 
@@ -148,7 +127,7 @@ public final class AutoScalingConfigurationPolicy {
     public static Builder builder(AutoScalingConfigurationPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable AutoScalingConfigurationPolicyCapacity capacity;
         private @Nullable String displayName;
@@ -159,11 +138,7 @@ public final class AutoScalingConfigurationPolicy {
         private @Nullable AutoScalingConfigurationPolicyResourceAction resourceAction;
         private @Nullable List<AutoScalingConfigurationPolicyRule> rules;
         private @Nullable String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutoScalingConfigurationPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.capacity = defaults.capacity;
@@ -177,34 +152,42 @@ public final class AutoScalingConfigurationPolicy {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder capacity(@Nullable AutoScalingConfigurationPolicyCapacity capacity) {
             this.capacity = capacity;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder executionSchedule(@Nullable AutoScalingConfigurationPolicyExecutionSchedule executionSchedule) {
             this.executionSchedule = executionSchedule;
             return this;
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
             this.isEnabled = isEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder policyType(String policyType) {
             this.policyType = Objects.requireNonNull(policyType);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceAction(@Nullable AutoScalingConfigurationPolicyResourceAction resourceAction) {
             this.resourceAction = resourceAction;
             return this;
         }
+        @CustomType.Setter
         public Builder rules(@Nullable List<AutoScalingConfigurationPolicyRule> rules) {
             this.rules = rules;
             return this;
@@ -212,11 +195,23 @@ public final class AutoScalingConfigurationPolicy {
         public Builder rules(AutoScalingConfigurationPolicyRule... rules) {
             return rules(List.of(rules));
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
-        }        public AutoScalingConfigurationPolicy build() {
-            return new AutoScalingConfigurationPolicy(capacity, displayName, executionSchedule, id, isEnabled, policyType, resourceAction, rules, timeCreated);
+        }
+        public AutoScalingConfigurationPolicy build() {
+            final var o = new AutoScalingConfigurationPolicy();
+            o.capacity = capacity;
+            o.displayName = displayName;
+            o.executionSchedule = executionSchedule;
+            o.id = id;
+            o.isEnabled = isEnabled;
+            o.policyType = policyType;
+            o.resourceAction = resourceAction;
+            o.rules = rules;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

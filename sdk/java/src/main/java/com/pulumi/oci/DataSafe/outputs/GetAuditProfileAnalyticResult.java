@@ -14,37 +14,22 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditProfileAnalyticResult {
-    private final @Nullable String accessLevel;
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
-    private final @Nullable List<String> groupBies;
+    private @Nullable String accessLevel;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable List<String> groupBies;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Array of audit profile aggregration data.
      * 
      */
-    private final List<GetAuditProfileAnalyticItem> items;
+    private List<GetAuditProfileAnalyticItem> items;
 
-    @CustomType.Constructor
-    private GetAuditProfileAnalyticResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("groupBies") @Nullable List<String> groupBies,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetAuditProfileAnalyticItem> items) {
-        this.accessLevel = accessLevel;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.groupBies = groupBies;
-        this.id = id;
-        this.items = items;
-    }
-
+    private GetAuditProfileAnalyticResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -79,7 +64,7 @@ public final class GetAuditProfileAnalyticResult {
     public static Builder builder(GetAuditProfileAnalyticResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private String compartmentId;
@@ -87,11 +72,7 @@ public final class GetAuditProfileAnalyticResult {
         private @Nullable List<String> groupBies;
         private String id;
         private List<GetAuditProfileAnalyticItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditProfileAnalyticResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -102,18 +83,22 @@ public final class GetAuditProfileAnalyticResult {
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder groupBies(@Nullable List<String> groupBies) {
             this.groupBies = groupBies;
             return this;
@@ -121,18 +106,28 @@ public final class GetAuditProfileAnalyticResult {
         public Builder groupBies(String... groupBies) {
             return groupBies(List.of(groupBies));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetAuditProfileAnalyticItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAuditProfileAnalyticItem... items) {
             return items(List.of(items));
-        }        public GetAuditProfileAnalyticResult build() {
-            return new GetAuditProfileAnalyticResult(accessLevel, compartmentId, compartmentIdInSubtree, groupBies, id, items);
+        }
+        public GetAuditProfileAnalyticResult build() {
+            final var o = new GetAuditProfileAnalyticResult();
+            o.accessLevel = accessLevel;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.groupBies = groupBies;
+            o.id = id;
+            o.items = items;
+            return o;
         }
     }
 }

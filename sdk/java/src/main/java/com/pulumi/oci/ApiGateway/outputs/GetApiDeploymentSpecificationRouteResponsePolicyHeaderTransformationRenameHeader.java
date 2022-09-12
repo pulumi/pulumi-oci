@@ -14,13 +14,9 @@ public final class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransfo
      * @return The list of headers.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItem> items;
+    private List<GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItem> items;
 
-    @CustomType.Constructor
-    private GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeader(@CustomType.Parameter("items") List<GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItem> items) {
-        this.items = items;
-    }
-
+    private GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeader() {}
     /**
      * @return The list of headers.
      * 
@@ -36,27 +32,27 @@ public final class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransfo
     public static Builder builder(GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeader defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeader defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItem... items) {
             return items(List.of(items));
-        }        public GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeader build() {
-            return new GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeader(items);
+        }
+        public GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeader build() {
+            final var o = new GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeader();
+            o.items = items;
+            return o;
         }
     }
 }

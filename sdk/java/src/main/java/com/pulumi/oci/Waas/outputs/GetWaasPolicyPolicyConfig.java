@@ -17,63 +17,63 @@ public final class GetWaasPolicyPolicyConfig {
      * @return The OCID of the SSL certificate to use if HTTPS is supported.
      * 
      */
-    private final String certificateId;
+    private String certificateId;
     /**
      * @return The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
      * * **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
      * 
      */
-    private final String cipherGroup;
+    private String cipherGroup;
     /**
      * @return Specifies an HTTP header name which is treated as the connecting client&#39;s IP address. Applicable only if `isBehindCdn` is enabled.
      * 
      */
-    private final String clientAddressHeader;
+    private String clientAddressHeader;
     /**
      * @return Health checks monitor the status of your origin servers and only route traffic to the origins that pass the health check. If the health check fails, origin is automatically removed from the load balancing. There is roughly one health check per EDGE POP per period. Any checks that pass will be reported as &#34;healthy&#34;.
      * 
      */
-    private final GetWaasPolicyPolicyConfigHealthChecks healthChecks;
+    private GetWaasPolicyPolicyConfigHealthChecks healthChecks;
     /**
      * @return Enabling `isBehindCdn` allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
      * 
      */
-    private final Boolean isBehindCdn;
+    private Boolean isBehindCdn;
     /**
      * @return Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching is usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
      * 
      */
-    private final Boolean isCacheControlRespected;
+    private Boolean isCacheControlRespected;
     /**
      * @return Enable or disable HTTPS support. If true, a `certificateId` is required. If unspecified, defaults to `false`.
      * 
      */
-    private final Boolean isHttpsEnabled;
+    private Boolean isHttpsEnabled;
     /**
      * @return Force HTTP to HTTPS redirection. If unspecified, defaults to `false`.
      * 
      */
-    private final Boolean isHttpsForced;
+    private Boolean isHttpsForced;
     /**
      * @return Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise, the empty `Accept-Encoding:` header is used.
      * 
      */
-    private final Boolean isOriginCompressionEnabled;
+    private Boolean isOriginCompressionEnabled;
     /**
      * @return Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
      * 
      */
-    private final Boolean isResponseBufferingEnabled;
+    private Boolean isResponseBufferingEnabled;
     /**
      * @return SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the &#39;handshake&#39;-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
      * 
      */
-    private final Boolean isSniEnabled;
+    private Boolean isSniEnabled;
     /**
      * @return An object that represents a load balancing method and its properties.
      * 
      */
-    private final GetWaasPolicyPolicyConfigLoadBalancingMethod loadBalancingMethod;
+    private GetWaasPolicyPolicyConfigLoadBalancingMethod loadBalancingMethod;
     /**
      * @return A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
      * * **TLS_V1:** corresponds to TLS 1.0 specification.
@@ -82,45 +82,14 @@ public final class GetWaasPolicyPolicyConfig {
      * * **TLS_V1_3:** corresponds to TLS 1.3 specification.
      * 
      */
-    private final List<String> tlsProtocols;
+    private List<String> tlsProtocols;
     /**
      * @return ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF disabled if Connection request header from the client has the value Upgrade (case insensitive matching) and Upgrade request header has the value websocket (case insensitive matching). Paths matches if the concatenation of request URL path and query starts with the contents of the one of `websocketPathPrefixes` array value. In All other cases challenges, like JSC, HIC and etc., remain active.
      * 
      */
-    private final List<String> websocketPathPrefixes;
+    private List<String> websocketPathPrefixes;
 
-    @CustomType.Constructor
-    private GetWaasPolicyPolicyConfig(
-        @CustomType.Parameter("certificateId") String certificateId,
-        @CustomType.Parameter("cipherGroup") String cipherGroup,
-        @CustomType.Parameter("clientAddressHeader") String clientAddressHeader,
-        @CustomType.Parameter("healthChecks") GetWaasPolicyPolicyConfigHealthChecks healthChecks,
-        @CustomType.Parameter("isBehindCdn") Boolean isBehindCdn,
-        @CustomType.Parameter("isCacheControlRespected") Boolean isCacheControlRespected,
-        @CustomType.Parameter("isHttpsEnabled") Boolean isHttpsEnabled,
-        @CustomType.Parameter("isHttpsForced") Boolean isHttpsForced,
-        @CustomType.Parameter("isOriginCompressionEnabled") Boolean isOriginCompressionEnabled,
-        @CustomType.Parameter("isResponseBufferingEnabled") Boolean isResponseBufferingEnabled,
-        @CustomType.Parameter("isSniEnabled") Boolean isSniEnabled,
-        @CustomType.Parameter("loadBalancingMethod") GetWaasPolicyPolicyConfigLoadBalancingMethod loadBalancingMethod,
-        @CustomType.Parameter("tlsProtocols") List<String> tlsProtocols,
-        @CustomType.Parameter("websocketPathPrefixes") List<String> websocketPathPrefixes) {
-        this.certificateId = certificateId;
-        this.cipherGroup = cipherGroup;
-        this.clientAddressHeader = clientAddressHeader;
-        this.healthChecks = healthChecks;
-        this.isBehindCdn = isBehindCdn;
-        this.isCacheControlRespected = isCacheControlRespected;
-        this.isHttpsEnabled = isHttpsEnabled;
-        this.isHttpsForced = isHttpsForced;
-        this.isOriginCompressionEnabled = isOriginCompressionEnabled;
-        this.isResponseBufferingEnabled = isResponseBufferingEnabled;
-        this.isSniEnabled = isSniEnabled;
-        this.loadBalancingMethod = loadBalancingMethod;
-        this.tlsProtocols = tlsProtocols;
-        this.websocketPathPrefixes = websocketPathPrefixes;
-    }
-
+    private GetWaasPolicyPolicyConfig() {}
     /**
      * @return The OCID of the SSL certificate to use if HTTPS is supported.
      * 
@@ -232,7 +201,7 @@ public final class GetWaasPolicyPolicyConfig {
     public static Builder builder(GetWaasPolicyPolicyConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String certificateId;
         private String cipherGroup;
@@ -248,11 +217,7 @@ public final class GetWaasPolicyPolicyConfig {
         private GetWaasPolicyPolicyConfigLoadBalancingMethod loadBalancingMethod;
         private List<String> tlsProtocols;
         private List<String> websocketPathPrefixes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWaasPolicyPolicyConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateId = defaults.certificateId;
@@ -271,54 +236,67 @@ public final class GetWaasPolicyPolicyConfig {
     	      this.websocketPathPrefixes = defaults.websocketPathPrefixes;
         }
 
+        @CustomType.Setter
         public Builder certificateId(String certificateId) {
             this.certificateId = Objects.requireNonNull(certificateId);
             return this;
         }
+        @CustomType.Setter
         public Builder cipherGroup(String cipherGroup) {
             this.cipherGroup = Objects.requireNonNull(cipherGroup);
             return this;
         }
+        @CustomType.Setter
         public Builder clientAddressHeader(String clientAddressHeader) {
             this.clientAddressHeader = Objects.requireNonNull(clientAddressHeader);
             return this;
         }
+        @CustomType.Setter
         public Builder healthChecks(GetWaasPolicyPolicyConfigHealthChecks healthChecks) {
             this.healthChecks = Objects.requireNonNull(healthChecks);
             return this;
         }
+        @CustomType.Setter
         public Builder isBehindCdn(Boolean isBehindCdn) {
             this.isBehindCdn = Objects.requireNonNull(isBehindCdn);
             return this;
         }
+        @CustomType.Setter
         public Builder isCacheControlRespected(Boolean isCacheControlRespected) {
             this.isCacheControlRespected = Objects.requireNonNull(isCacheControlRespected);
             return this;
         }
+        @CustomType.Setter
         public Builder isHttpsEnabled(Boolean isHttpsEnabled) {
             this.isHttpsEnabled = Objects.requireNonNull(isHttpsEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isHttpsForced(Boolean isHttpsForced) {
             this.isHttpsForced = Objects.requireNonNull(isHttpsForced);
             return this;
         }
+        @CustomType.Setter
         public Builder isOriginCompressionEnabled(Boolean isOriginCompressionEnabled) {
             this.isOriginCompressionEnabled = Objects.requireNonNull(isOriginCompressionEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isResponseBufferingEnabled(Boolean isResponseBufferingEnabled) {
             this.isResponseBufferingEnabled = Objects.requireNonNull(isResponseBufferingEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isSniEnabled(Boolean isSniEnabled) {
             this.isSniEnabled = Objects.requireNonNull(isSniEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancingMethod(GetWaasPolicyPolicyConfigLoadBalancingMethod loadBalancingMethod) {
             this.loadBalancingMethod = Objects.requireNonNull(loadBalancingMethod);
             return this;
         }
+        @CustomType.Setter
         public Builder tlsProtocols(List<String> tlsProtocols) {
             this.tlsProtocols = Objects.requireNonNull(tlsProtocols);
             return this;
@@ -326,14 +304,31 @@ public final class GetWaasPolicyPolicyConfig {
         public Builder tlsProtocols(String... tlsProtocols) {
             return tlsProtocols(List.of(tlsProtocols));
         }
+        @CustomType.Setter
         public Builder websocketPathPrefixes(List<String> websocketPathPrefixes) {
             this.websocketPathPrefixes = Objects.requireNonNull(websocketPathPrefixes);
             return this;
         }
         public Builder websocketPathPrefixes(String... websocketPathPrefixes) {
             return websocketPathPrefixes(List.of(websocketPathPrefixes));
-        }        public GetWaasPolicyPolicyConfig build() {
-            return new GetWaasPolicyPolicyConfig(certificateId, cipherGroup, clientAddressHeader, healthChecks, isBehindCdn, isCacheControlRespected, isHttpsEnabled, isHttpsForced, isOriginCompressionEnabled, isResponseBufferingEnabled, isSniEnabled, loadBalancingMethod, tlsProtocols, websocketPathPrefixes);
+        }
+        public GetWaasPolicyPolicyConfig build() {
+            final var o = new GetWaasPolicyPolicyConfig();
+            o.certificateId = certificateId;
+            o.cipherGroup = cipherGroup;
+            o.clientAddressHeader = clientAddressHeader;
+            o.healthChecks = healthChecks;
+            o.isBehindCdn = isBehindCdn;
+            o.isCacheControlRespected = isCacheControlRespected;
+            o.isHttpsEnabled = isHttpsEnabled;
+            o.isHttpsForced = isHttpsForced;
+            o.isOriginCompressionEnabled = isOriginCompressionEnabled;
+            o.isResponseBufferingEnabled = isResponseBufferingEnabled;
+            o.isSniEnabled = isSniEnabled;
+            o.loadBalancingMethod = loadBalancingMethod;
+            o.tlsProtocols = tlsProtocols;
+            o.websocketPathPrefixes = websocketPathPrefixes;
+            return o;
         }
     }
 }

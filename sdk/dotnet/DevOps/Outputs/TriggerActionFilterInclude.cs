@@ -17,6 +17,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// (Updatable) The target branch for pull requests; not applicable for push requests.
         /// </summary>
         public readonly string? BaseRef;
+        public readonly Outputs.TriggerActionFilterIncludeFileFilter? FileFilter;
         /// <summary>
         /// (Updatable) Branch for push event; source branch for pull requests.
         /// </summary>
@@ -26,9 +27,12 @@ namespace Pulumi.Oci.DevOps.Outputs
         private TriggerActionFilterInclude(
             string? baseRef,
 
+            Outputs.TriggerActionFilterIncludeFileFilter? fileFilter,
+
             string? headRef)
         {
             BaseRef = baseRef;
+            FileFilter = fileFilter;
             HeadRef = headRef;
         }
     }

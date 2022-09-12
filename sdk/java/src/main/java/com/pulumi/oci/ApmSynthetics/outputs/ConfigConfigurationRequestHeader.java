@@ -15,21 +15,14 @@ public final class ConfigConfigurationRequestHeader {
      * @return (Updatable) Name of the header.
      * 
      */
-    private final @Nullable String headerName;
+    private @Nullable String headerName;
     /**
      * @return (Updatable) Value of the header.
      * 
      */
-    private final @Nullable String headerValue;
+    private @Nullable String headerValue;
 
-    @CustomType.Constructor
-    private ConfigConfigurationRequestHeader(
-        @CustomType.Parameter("headerName") @Nullable String headerName,
-        @CustomType.Parameter("headerValue") @Nullable String headerValue) {
-        this.headerName = headerName;
-        this.headerValue = headerValue;
-    }
-
+    private ConfigConfigurationRequestHeader() {}
     /**
      * @return (Updatable) Name of the header.
      * 
@@ -52,30 +45,32 @@ public final class ConfigConfigurationRequestHeader {
     public static Builder builder(ConfigConfigurationRequestHeader defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String headerName;
         private @Nullable String headerValue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConfigConfigurationRequestHeader defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.headerName = defaults.headerName;
     	      this.headerValue = defaults.headerValue;
         }
 
+        @CustomType.Setter
         public Builder headerName(@Nullable String headerName) {
             this.headerName = headerName;
             return this;
         }
+        @CustomType.Setter
         public Builder headerValue(@Nullable String headerValue) {
             this.headerValue = headerValue;
             return this;
-        }        public ConfigConfigurationRequestHeader build() {
-            return new ConfigConfigurationRequestHeader(headerName, headerValue);
+        }
+        public ConfigConfigurationRequestHeader build() {
+            final var o = new ConfigConfigurationRequestHeader();
+            o.headerName = headerName;
+            o.headerValue = headerValue;
+            return o;
         }
     }
 }

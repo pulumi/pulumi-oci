@@ -15,28 +15,19 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
      * @return Unique build pipeline identifier.
      * 
      */
-    private final String buildPipelineId;
+    private String buildPipelineId;
     /**
      * @return The filters for the trigger.
      * 
      */
-    private final List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter> filters;
+    private List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter> filters;
     /**
      * @return The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction(
-        @CustomType.Parameter("buildPipelineId") String buildPipelineId,
-        @CustomType.Parameter("filters") List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter> filters,
-        @CustomType.Parameter("type") String type) {
-        this.buildPipelineId = buildPipelineId;
-        this.filters = filters;
-        this.type = type;
-    }
-
+    private GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction() {}
     /**
      * @return Unique build pipeline identifier.
      * 
@@ -66,16 +57,12 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
     public static Builder builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String buildPipelineId;
         private List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter> filters;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.buildPipelineId = defaults.buildPipelineId;
@@ -83,10 +70,12 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder buildPipelineId(String buildPipelineId) {
             this.buildPipelineId = Objects.requireNonNull(buildPipelineId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter> filters) {
             this.filters = Objects.requireNonNull(filters);
             return this;
@@ -94,11 +83,17 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
         public Builder filters(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction build() {
-            return new GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction(buildPipelineId, filters, type);
+        }
+        public GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction build() {
+            final var o = new GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction();
+            o.buildPipelineId = buildPipelineId;
+            o.filters = filters;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -18,108 +18,75 @@ public final class GetModelDeploymentResult {
      * @return The log details for each category.
      * 
      */
-    private final List<GetModelDeploymentCategoryLogDetail> categoryLogDetails;
+    private List<GetModelDeploymentCategoryLogDetail> categoryLogDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment&#39;s compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model deployment.
      * 
      */
-    private final String createdBy;
+    private String createdBy;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A short description of the model deployment.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Details about the state of the model deployment.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The model deployment configuration details.
      * 
      */
-    private final List<GetModelDeploymentModelDeploymentConfigurationDetail> modelDeploymentConfigurationDetails;
-    private final String modelDeploymentId;
+    private List<GetModelDeploymentModelDeploymentConfigurationDetail> modelDeploymentConfigurationDetails;
+    private String modelDeploymentId;
     /**
      * @return The URL to interact with the model deployment.
      * 
      */
-    private final String modelDeploymentUrl;
+    private String modelDeploymentUrl;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model deployment.
      * 
      */
-    private final String projectId;
+    private String projectId;
     /**
      * @return The state of the model deployment.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetModelDeploymentResult(
-        @CustomType.Parameter("categoryLogDetails") List<GetModelDeploymentCategoryLogDetail> categoryLogDetails,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("createdBy") String createdBy,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("modelDeploymentConfigurationDetails") List<GetModelDeploymentModelDeploymentConfigurationDetail> modelDeploymentConfigurationDetails,
-        @CustomType.Parameter("modelDeploymentId") String modelDeploymentId,
-        @CustomType.Parameter("modelDeploymentUrl") String modelDeploymentUrl,
-        @CustomType.Parameter("projectId") String projectId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.categoryLogDetails = categoryLogDetails;
-        this.compartmentId = compartmentId;
-        this.createdBy = createdBy;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.modelDeploymentConfigurationDetails = modelDeploymentConfigurationDetails;
-        this.modelDeploymentId = modelDeploymentId;
-        this.modelDeploymentUrl = modelDeploymentUrl;
-        this.projectId = projectId;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetModelDeploymentResult() {}
     /**
      * @return The log details for each category.
      * 
@@ -229,7 +196,7 @@ public final class GetModelDeploymentResult {
     public static Builder builder(GetModelDeploymentResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetModelDeploymentCategoryLogDetail> categoryLogDetails;
         private String compartmentId;
@@ -246,11 +213,7 @@ public final class GetModelDeploymentResult {
         private String projectId;
         private String state;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetModelDeploymentResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.categoryLogDetails = defaults.categoryLogDetails;
@@ -270,6 +233,7 @@ public final class GetModelDeploymentResult {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder categoryLogDetails(List<GetModelDeploymentCategoryLogDetail> categoryLogDetails) {
             this.categoryLogDetails = Objects.requireNonNull(categoryLogDetails);
             return this;
@@ -277,38 +241,47 @@ public final class GetModelDeploymentResult {
         public Builder categoryLogDetails(GetModelDeploymentCategoryLogDetail... categoryLogDetails) {
             return categoryLogDetails(List.of(categoryLogDetails));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder createdBy(String createdBy) {
             this.createdBy = Objects.requireNonNull(createdBy);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder modelDeploymentConfigurationDetails(List<GetModelDeploymentModelDeploymentConfigurationDetail> modelDeploymentConfigurationDetails) {
             this.modelDeploymentConfigurationDetails = Objects.requireNonNull(modelDeploymentConfigurationDetails);
             return this;
@@ -316,27 +289,49 @@ public final class GetModelDeploymentResult {
         public Builder modelDeploymentConfigurationDetails(GetModelDeploymentModelDeploymentConfigurationDetail... modelDeploymentConfigurationDetails) {
             return modelDeploymentConfigurationDetails(List.of(modelDeploymentConfigurationDetails));
         }
+        @CustomType.Setter
         public Builder modelDeploymentId(String modelDeploymentId) {
             this.modelDeploymentId = Objects.requireNonNull(modelDeploymentId);
             return this;
         }
+        @CustomType.Setter
         public Builder modelDeploymentUrl(String modelDeploymentUrl) {
             this.modelDeploymentUrl = Objects.requireNonNull(modelDeploymentUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             this.projectId = Objects.requireNonNull(projectId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetModelDeploymentResult build() {
-            return new GetModelDeploymentResult(categoryLogDetails, compartmentId, createdBy, definedTags, description, displayName, freeformTags, id, lifecycleDetails, modelDeploymentConfigurationDetails, modelDeploymentId, modelDeploymentUrl, projectId, state, timeCreated);
+        }
+        public GetModelDeploymentResult build() {
+            final var o = new GetModelDeploymentResult();
+            o.categoryLogDetails = categoryLogDetails;
+            o.compartmentId = compartmentId;
+            o.createdBy = createdBy;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.modelDeploymentConfigurationDetails = modelDeploymentConfigurationDetails;
+            o.modelDeploymentId = modelDeploymentId;
+            o.modelDeploymentUrl = modelDeploymentUrl;
+            o.projectId = projectId;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

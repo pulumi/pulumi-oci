@@ -15,13 +15,9 @@ public final class AppFirewallPolicyResponseAccessControl {
      * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
      */
-    private final @Nullable List<AppFirewallPolicyResponseAccessControlRule> rules;
+    private @Nullable List<AppFirewallPolicyResponseAccessControlRule> rules;
 
-    @CustomType.Constructor
-    private AppFirewallPolicyResponseAccessControl(@CustomType.Parameter("rules") @Nullable List<AppFirewallPolicyResponseAccessControlRule> rules) {
-        this.rules = rules;
-    }
-
+    private AppFirewallPolicyResponseAccessControl() {}
     /**
      * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
@@ -37,27 +33,27 @@ public final class AppFirewallPolicyResponseAccessControl {
     public static Builder builder(AppFirewallPolicyResponseAccessControl defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<AppFirewallPolicyResponseAccessControlRule> rules;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AppFirewallPolicyResponseAccessControl defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.rules = defaults.rules;
         }
 
+        @CustomType.Setter
         public Builder rules(@Nullable List<AppFirewallPolicyResponseAccessControlRule> rules) {
             this.rules = rules;
             return this;
         }
         public Builder rules(AppFirewallPolicyResponseAccessControlRule... rules) {
             return rules(List.of(rules));
-        }        public AppFirewallPolicyResponseAccessControl build() {
-            return new AppFirewallPolicyResponseAccessControl(rules);
+        }
+        public AppFirewallPolicyResponseAccessControl build() {
+            final var o = new AppFirewallPolicyResponseAccessControl();
+            o.rules = rules;
+            return o;
         }
     }
 }

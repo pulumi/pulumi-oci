@@ -13,13 +13,9 @@ public final class GetCategoriesCategory {
      * @return Name of the product category.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetCategoriesCategory(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private GetCategoriesCategory() {}
     /**
      * @return Name of the product category.
      * 
@@ -35,24 +31,24 @@ public final class GetCategoriesCategory {
     public static Builder builder(GetCategoriesCategory defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCategoriesCategory defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetCategoriesCategory build() {
-            return new GetCategoriesCategory(name);
+        }
+        public GetCategoriesCategory build() {
+            final var o = new GetCategoriesCategory();
+            o.name = name;
+            return o;
         }
     }
 }

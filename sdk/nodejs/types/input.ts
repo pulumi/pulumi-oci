@@ -462,6 +462,10 @@ export namespace Analytics {
          */
         networkEndpointType: pulumi.Input<string>;
         /**
+         * Network Security Group OCIDs for an Analytics instance.
+         */
+        networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
          * The subnet OCID for the private endpoint.
          */
         subnetId?: pulumi.Input<string>;
@@ -470,9 +474,13 @@ export namespace Analytics {
          */
         vcnId?: pulumi.Input<string>;
         /**
-         * Source IP addresses or IP address ranges igress rules.
+         * Source IP addresses or IP address ranges in ingress rules.
          */
         whitelistedIps?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Oracle Cloud Services that are allowed to access this Analytics instance.
+         */
+        whitelistedServices?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * Virtual Cloud Networks allowed to access this network endpoint.
          */
@@ -485,20 +493,35 @@ export namespace Analytics {
          */
         id?: pulumi.Input<string>;
         /**
-         * Source IP addresses or IP address ranges igress rules.
+         * Source IP addresses or IP address ranges in ingress rules.
          */
         whitelistedIps?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
         /**
-         * (Updatable) Description of private source dns zone.
+         * (Updatable) Description of private source scan host zone.
          */
         description?: pulumi.Input<string>;
         /**
          * (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
          */
         dnsZone: pulumi.Input<string>;
+    }
+
+    export interface AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost {
+        /**
+         * (Updatable) Description of private source scan host zone.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+         */
+        scanHostname: pulumi.Input<string>;
+        /**
+         * (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+         */
+        scanPort: pulumi.Input<number>;
     }
 
     export interface GetAnalyticsInstancesFilter {
@@ -4022,6 +4045,93 @@ export namespace CertificatesManagement {
 }
 
 export namespace CloudGuard {
+    export interface CloudGuardDataSourceDataSourceDetails {
+        /**
+         * (Updatable) The additional entities count used for data source query.
+         */
+        additionalEntitiesCount?: pulumi.Input<number>;
+        /**
+         * Possible type of dataSourceFeed Provider(LoggingQuery)
+         */
+        dataSourceFeedProvider: pulumi.Input<string>;
+        /**
+         * (Updatable) Interval in minutes that query is run periodically.
+         */
+        intervalInMinutes?: pulumi.Input<number>;
+        /**
+         * (Updatable) Additional details specific to the data source type (Sighting/Insight).
+         */
+        loggingQueryDetails?: pulumi.Input<inputs.CloudGuard.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails>;
+        /**
+         * (Updatable) Logging query type for data source (Sighting/Insight)
+         */
+        loggingQueryType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Operator used in Data Soruce
+         */
+        operator?: pulumi.Input<string>;
+        /**
+         * (Updatable) The continuous query expression that is run periodically.
+         */
+        query?: pulumi.Input<string>;
+        /**
+         * (Updatable) Time when the query can start, if not specified it can start immediately.
+         */
+        queryStartTime?: pulumi.Input<inputs.CloudGuard.CloudGuardDataSourceDataSourceDetailsQueryStartTime>;
+        /**
+         * (Updatable) Logging Query regions
+         */
+        regions?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+         */
+        threshold?: pulumi.Input<number>;
+    }
+
+    export interface CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails {
+        /**
+         * (Updatable) The key entities count used for data source query
+         */
+        keyEntitiesCount?: pulumi.Input<number>;
+        /**
+         * (Updatable) Logging query type for data source (Sighting/Insight)
+         */
+        loggingQueryType: pulumi.Input<string>;
+    }
+
+    export interface CloudGuardDataSourceDataSourceDetailsQueryStartTime {
+        /**
+         * (Updatable) Time when the query can start, if not specified it can start immediately.
+         */
+        queryStartTime?: pulumi.Input<string>;
+        /**
+         * (Updatable) policy used for deciding the query start time
+         */
+        startPolicyType: pulumi.Input<string>;
+    }
+
+    export interface CloudGuardDataSourceDataSourceDetectorMappingInfo {
+        /**
+         * Id of the attached detectorRecipeId to the Data Source.
+         */
+        detectorRecipeId?: pulumi.Input<string>;
+        /**
+         * Id of the attached detectorRuleId to the Data Source.
+         */
+        detectorRuleId?: pulumi.Input<string>;
+    }
+
+    export interface CloudGuardDataSourceRegionStatusDetail {
+        /**
+         * Data Source replication region.
+         */
+        region?: pulumi.Input<string>;
+        /**
+         * Status of data Source
+         */
+        status?: pulumi.Input<string>;
+    }
+
     export interface DataMaskRuleTargetSelected {
         /**
          * (Updatable) Target selection.
@@ -4039,7 +4149,11 @@ export namespace CloudGuard {
          */
         candidateResponderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRuleCandidateResponderRule>[]>;
         /**
-         * (Updatable) Detector recipe description.
+         * (Updatable) The id of the attached DataSource.
+         */
+        dataSourceId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Description for DetectorRecipeDetectorRule.
          */
         description?: pulumi.Input<string>;
         /**
@@ -4059,6 +4173,10 @@ export namespace CloudGuard {
          */
         displayName?: pulumi.Input<string>;
         /**
+         * (Updatable) Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRuleEntitiesMapping>[]>;
+        /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
         lifecycleDetails?: pulumi.Input<string>;
@@ -4067,7 +4185,7 @@ export namespace CloudGuard {
          */
         managedListTypes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * Recommendation for DetectorRecipeDetectorRule
+         * (Updatable) Recommendation for DetectorRecipeDetectorRule
          */
         recommendation?: pulumi.Input<string>;
         /**
@@ -4117,6 +4235,18 @@ export namespace CloudGuard {
          */
         configurations?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRuleDetailsConfiguration>[]>;
         /**
+         * (Updatable) The id of the attached DataSource.
+         */
+        dataSourceId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Description for DetectorRecipeDetectorRule.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRuleDetailsEntitiesMapping>[]>;
+        /**
          * configuration allowed or not
          */
         isConfigurationAllowed?: pulumi.Input<boolean>;
@@ -4128,6 +4258,10 @@ export namespace CloudGuard {
          * (Updatable) user defined labels for a detector rule
          */
         labels?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Recommendation for DetectorRecipeDetectorRule
+         */
+        recommendation?: pulumi.Input<string>;
         /**
          * (Updatable) The Risk Level
          */
@@ -4172,13 +4306,47 @@ export namespace CloudGuard {
         value: pulumi.Input<string>;
     }
 
+    export interface DetectorRecipeDetectorRuleDetailsEntitiesMapping {
+        /**
+         * (Updatable) Detector recipe display name.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Possible type of entity
+         */
+        entityType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The entity value mapped to a data source query
+         */
+        queryField: pulumi.Input<string>;
+    }
+
+    export interface DetectorRecipeDetectorRuleEntitiesMapping {
+        /**
+         * (Updatable) Detector recipe display name.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Possible type of entity
+         */
+        entityType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The entity value mapped to a data source query
+         */
+        queryField?: pulumi.Input<string>;
+    }
+
     export interface DetectorRecipeEffectiveDetectorRule {
         /**
          * List of CandidateResponderRule related to this rule
          */
         candidateResponderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeEffectiveDetectorRuleCandidateResponderRule>[]>;
         /**
-         * (Updatable) Detector recipe description.
+         * (Updatable) The id of the attached DataSource.
+         */
+        dataSourceId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Description for DetectorRecipeDetectorRule.
          */
         description?: pulumi.Input<string>;
         /**
@@ -4198,6 +4366,10 @@ export namespace CloudGuard {
          */
         displayName?: pulumi.Input<string>;
         /**
+         * (Updatable) Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeEffectiveDetectorRuleEntitiesMapping>[]>;
+        /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
         lifecycleDetails?: pulumi.Input<string>;
@@ -4206,7 +4378,7 @@ export namespace CloudGuard {
          */
         managedListTypes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * Recommendation for DetectorRecipeDetectorRule
+         * (Updatable) Recommendation for DetectorRecipeDetectorRule
          */
         recommendation?: pulumi.Input<string>;
         /**
@@ -4311,6 +4483,30 @@ export namespace CloudGuard {
         value?: pulumi.Input<string>;
     }
 
+    export interface DetectorRecipeEffectiveDetectorRuleEntitiesMapping {
+        /**
+         * (Updatable) Detector recipe display name.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Possible type of entity
+         */
+        entityType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The entity value mapped to a data source query
+         */
+        queryField?: pulumi.Input<string>;
+    }
+
+    export interface GetDataMaskRulesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        /**
+         * Types of Targets
+         */
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetDataMaskRulesFilter {
         name: string;
         regex?: boolean;
@@ -4320,12 +4516,27 @@ export namespace CloudGuard {
         values: string[];
     }
 
-    export interface GetDataMaskRulesFilterArgs {
+    export interface GetDataSourceEventsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDataSourceEventsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
-        /**
-         * Types of Targets
-         */
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDataSourcesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDataSourcesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
@@ -4353,18 +4564,6 @@ export namespace CloudGuard {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetGuardTargetsFilterArgs {
-        /**
-         * configuration name
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        /**
-         * List of configuration values
-         */
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetGuardTargetsFilter {
         /**
          * configuration name
@@ -4377,13 +4576,46 @@ export namespace CloudGuard {
         values: string[];
     }
 
+    export interface GetGuardTargetsFilterArgs {
+        /**
+         * configuration name
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        /**
+         * List of configuration values
+         */
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedListsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetManagedListsFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetManagedListsFilterArgs {
+    export interface GetProblemEntitiesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetProblemEntitiesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetResponderRecipesFilterArgs {
+        /**
+         * configuration name
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -4396,15 +4628,6 @@ export namespace CloudGuard {
         name: string;
         regex?: boolean;
         values: string[];
-    }
-
-    export interface GetResponderRecipesFilterArgs {
-        /**
-         * configuration name
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetSecurityPoliciesFilter {
@@ -4623,7 +4846,7 @@ export namespace CloudGuard {
          */
         securityZoneId?: pulumi.Input<string>;
         /**
-         * possible type of targets(compartment/HCMCloud/ERPCloud)
+         * possible type of targets(COMPARTMENT/FACLOUD)
          */
         targetResourceType?: pulumi.Input<string>;
         /**
@@ -4740,6 +4963,10 @@ export namespace CloudGuard {
 
     export interface TargetTargetDetectorRecipeDetectorRule {
         /**
+         * The id of the attached DataSource.
+         */
+        dataSourceId?: pulumi.Input<string>;
+        /**
          * The target description.
          */
         description?: pulumi.Input<string>;
@@ -4759,6 +4986,10 @@ export namespace CloudGuard {
          * (Updatable) DetectorTemplate identifier.
          */
         displayName?: pulumi.Input<string>;
+        /**
+         * Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeDetectorRuleEntitiesMapping>[]>;
         /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
@@ -4869,7 +5100,26 @@ export namespace CloudGuard {
         value?: pulumi.Input<string>;
     }
 
+    export interface TargetTargetDetectorRecipeDetectorRuleEntitiesMapping {
+        /**
+         * (Updatable) DetectorTemplate identifier.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * Possible type of entity
+         */
+        entityType?: pulumi.Input<string>;
+        /**
+         * The entity value mapped to a data source query
+         */
+        queryField?: pulumi.Input<string>;
+    }
+
     export interface TargetTargetDetectorRecipeEffectiveDetectorRule {
+        /**
+         * The id of the attached DataSource.
+         */
+        dataSourceId?: pulumi.Input<string>;
         /**
          * The target description.
          */
@@ -4890,6 +5140,10 @@ export namespace CloudGuard {
          * (Updatable) DetectorTemplate identifier.
          */
         displayName?: pulumi.Input<string>;
+        /**
+         * Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping>[]>;
         /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
@@ -4998,6 +5252,21 @@ export namespace CloudGuard {
          * (Updatable) configuration value
          */
         value?: pulumi.Input<string>;
+    }
+
+    export interface TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
+        /**
+         * (Updatable) DetectorTemplate identifier.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * Possible type of entity
+         */
+        entityType?: pulumi.Input<string>;
+        /**
+         * The entity value mapped to a data source query
+         */
+        queryField?: pulumi.Input<string>;
     }
 
     export interface TargetTargetResponderRecipe {
@@ -5715,6 +5984,17 @@ export namespace ContainerEngine {
 }
 
 export namespace Core {
+    export interface BootVolumeAutotunePolicy {
+        /**
+         * (Updatable) This specifies the type of autotunes supported by OCI.
+         */
+        autotuneType: pulumi.Input<string>;
+        /**
+         * (Updatable) This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+         */
+        maxVpusPerGb?: pulumi.Input<string>;
+    }
+
     export interface BootVolumeBackupSourceDetails {
         bootVolumeBackupId: pulumi.Input<string>;
         /**
@@ -6343,16 +6623,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetBlockVolumeReplicasFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetBlockVolumeReplicasFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetBlockVolumeReplicasFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetBootVolumeAttachmentsFilter {
@@ -6379,16 +6659,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetBootVolumeReplicasFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetBootVolumeReplicasFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetBootVolumeReplicasFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetBootVolumesFilter {
@@ -6403,16 +6683,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetByoipAllocatedRangesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetByoipAllocatedRangesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetByoipAllocatedRangesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetByoipRangesFilter {
@@ -6463,16 +6743,16 @@ export namespace Core {
         values: string[];
     }
 
-    export interface GetComputeCapacityReservationInstanceShapesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetComputeCapacityReservationInstanceShapesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetComputeCapacityReservationInstanceShapesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetComputeCapacityReservationInstancesFilterArgs {
@@ -6511,18 +6791,6 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetComputeGlobalImageCapabilitySchemasVersionsFilter {
-        /**
-         * The name of the compute global image capability schema version
-         */
-        name: string;
-        regex?: boolean;
-        /**
-         * the list of values for the enum
-         */
-        values: string[];
-    }
-
     export interface GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs {
         /**
          * The name of the compute global image capability schema version
@@ -6533,6 +6801,18 @@ export namespace Core {
          * the list of values for the enum
          */
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetComputeGlobalImageCapabilitySchemasVersionsFilter {
+        /**
+         * The name of the compute global image capability schema version
+         */
+        name: string;
+        regex?: boolean;
+        /**
+         * the list of values for the enum
+         */
+        values: string[];
     }
 
     export interface GetComputeImageCapabilitySchemasFilter {
@@ -6565,16 +6845,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetCpeDeviceShapesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetCpeDeviceShapesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCpeDeviceShapesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetCpesFilter {
@@ -6589,16 +6869,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetCrossConnectGroupsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetCrossConnectGroupsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCrossConnectGroupsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetCrossConnectLocationsFilter {
@@ -6661,16 +6941,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDedicatedVmHostInstancesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetDedicatedVmHostInstancesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDedicatedVmHostInstancesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetDedicatedVmHostShapesFilter {
@@ -6685,16 +6965,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDedicatedVmHostsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetDedicatedVmHostsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDedicatedVmHostsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetDhcpOptionsFilter {
@@ -6757,16 +7037,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDrgRouteTablesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetDrgRouteTablesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDrgRouteTablesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetDrgsFilter {
@@ -6781,19 +7061,13 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetFastConnectProviderServicesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetFastConnectProviderServicesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetImageShapesFilter {
+    export interface GetFastConnectProviderServicesFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -6803,6 +7077,12 @@ export namespace Core {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetImageShapesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetImagesFilter {
@@ -6967,16 +7247,16 @@ export namespace Core {
         values: string[];
     }
 
-    export interface GetIpsecStatusFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetIpsecStatusFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetIpsecStatusFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetIpv6sFilterArgs {
@@ -7081,16 +7361,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetPrivateIpsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetPrivateIpsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetPrivateIpsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetPublicIpPoolsFilter {
@@ -7105,16 +7385,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetPublicIpsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetPublicIpsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPublicIpsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetRemotePeeringConnectionsFilter {
@@ -7315,16 +7595,16 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetVnicAttachmentsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetVnicAttachmentsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetVnicAttachmentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetVolumeAttachmentsFilterArgs {
@@ -7399,19 +7679,13 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetVolumeGroupsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetVolumeGroupsFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetVolumesFilterArgs {
+    export interface GetVolumeGroupsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -7423,7 +7697,7 @@ export namespace Core {
         values: string[];
     }
 
-    export interface GetVtapsFilterArgs {
+    export interface GetVolumesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -7433,6 +7707,12 @@ export namespace Core {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetVtapsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface ImageAgentFeature {
@@ -7612,6 +7892,10 @@ export namespace Core {
 
     export interface InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails {
         /**
+         * The list of autotune policies enabled for this volume.
+         */
+        autotunePolicies?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy>[]>;
+        /**
          * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
          */
         availabilityDomain?: pulumi.Input<string>;
@@ -7648,6 +7932,17 @@ export namespace Core {
          * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
          */
         vpusPerGb?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy {
+        /**
+         * This specifies the type of autotunes supported by OCI.
+         */
+        autotuneType: pulumi.Input<string>;
+        /**
+         * This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+         */
+        maxVpusPerGb?: pulumi.Input<string>;
     }
 
     export interface InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails {
@@ -8823,6 +9118,17 @@ export namespace Core {
         port?: pulumi.Input<number>;
     }
 
+    export interface VolumeAutotunePolicy {
+        /**
+         * (Updatable) This specifies the type of autotunes supported by OCI.
+         */
+        autotuneType: pulumi.Input<string>;
+        /**
+         * (Updatable) This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+         */
+        maxVpusPerGb?: pulumi.Input<string>;
+    }
+
     export interface VolumeBackupPolicySchedule {
         /**
          * (Updatable) The type of volume backup to create.
@@ -9138,7 +9444,7 @@ export namespace DataConnectivity {
 
     export interface RegistryConnectionConnectionProperty {
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name?: pulumi.Input<string>;
         /**
@@ -9149,7 +9455,7 @@ export namespace DataConnectivity {
 
     export interface RegistryConnectionMetadata {
         /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator?: pulumi.Input<inputs.DataConnectivity.RegistryConnectionMetadataAggregator>;
         /**
@@ -9165,7 +9471,7 @@ export namespace DataConnectivity {
          */
         createdByName?: pulumi.Input<string>;
         /**
-         * (Updatable) The full path to identify this object.
+         * (Updatable) The full path to identify the object.
          */
         identifierPath?: pulumi.Input<string>;
         /**
@@ -9173,11 +9479,11 @@ export namespace DataConnectivity {
          */
         infoFields?: pulumi.Input<{[key: string]: any}>;
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -9216,7 +9522,7 @@ export namespace DataConnectivity {
          */
         key?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name?: pulumi.Input<string>;
         /**
@@ -9235,7 +9541,7 @@ export namespace DataConnectivity {
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) The external key for the object.
+         * (Updatable) The external key of the object.
          */
         externalKey?: pulumi.Input<string>;
         /**
@@ -9251,19 +9557,19 @@ export namespace DataConnectivity {
          */
         key: pulumi.Input<string>;
         /**
-         * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata?: pulumi.Input<inputs.DataConnectivity.RegistryConnectionPrimarySchemaMetadata>;
         /**
-         * (Updatable) The object's type.
+         * (Updatable) The object type.
          */
         modelType: pulumi.Input<string>;
         /**
-         * (Updatable) The object's model version.
+         * (Updatable) The model version of the object.
          */
         modelVersion?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: pulumi.Input<string>;
         /**
@@ -9275,7 +9581,7 @@ export namespace DataConnectivity {
          */
         objectVersion?: pulumi.Input<number>;
         /**
-         * (Updatable) A reference to the object's parent.
+         * (Updatable) A reference to the parent object.
          */
         parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryConnectionPrimarySchemaParentRef>;
         /**
@@ -9286,7 +9592,7 @@ export namespace DataConnectivity {
 
     export interface RegistryConnectionPrimarySchemaMetadata {
         /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator?: pulumi.Input<inputs.DataConnectivity.RegistryConnectionPrimarySchemaMetadataAggregator>;
         /**
@@ -9302,7 +9608,7 @@ export namespace DataConnectivity {
          */
         createdByName?: pulumi.Input<string>;
         /**
-         * (Updatable) The full path to identify this object.
+         * (Updatable) The full path to identify the object.
          */
         identifierPath?: pulumi.Input<string>;
         /**
@@ -9310,11 +9616,11 @@ export namespace DataConnectivity {
          */
         infoFields?: pulumi.Input<{[key: string]: any}>;
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -9353,7 +9659,7 @@ export namespace DataConnectivity {
          */
         key?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name?: pulumi.Input<string>;
         /**
@@ -9375,7 +9681,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey?: pulumi.Input<string>;
         /**
-         * (Updatable) The id of the user who created the object.
+         * (Updatable) The ID of the user who created the object.
          */
         createdByUserId?: pulumi.Input<string>;
         /**
@@ -9383,7 +9689,7 @@ export namespace DataConnectivity {
          */
         createdByUserName?: pulumi.Input<string>;
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite?: pulumi.Input<boolean>;
         /**
@@ -9391,7 +9697,7 @@ export namespace DataConnectivity {
          */
         key?: pulumi.Input<string>;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -9407,7 +9713,7 @@ export namespace DataConnectivity {
          */
         timeUpdated?: pulumi.Input<string>;
         /**
-         * (Updatable) The id of the user who updated the object.
+         * (Updatable) The ID of the user who updated the object.
          */
         updatedByUserId?: pulumi.Input<string>;
         /**
@@ -9418,19 +9724,19 @@ export namespace DataConnectivity {
 
     export interface RegistryDataAssetDefaultConnection {
         /**
-         * (Updatable) The properties for the connection.
+         * (Updatable) The properties of the connection.
          */
         connectionProperties?: pulumi.Input<pulumi.Input<inputs.DataConnectivity.RegistryDataAssetDefaultConnectionConnectionProperty>[]>;
         /**
-         * (Updatable) A user defined description for the object.
+         * (Updatable) A user-defined description for the object.
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: pulumi.Input<string>;
         /**
-         * (Updatable) The default property for the connection.
+         * (Updatable) The default property of the connection.
          */
         isDefault?: pulumi.Input<boolean>;
         /**
@@ -9438,11 +9744,11 @@ export namespace DataConnectivity {
          */
         key?: pulumi.Input<string>;
         /**
-         * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetDefaultConnectionMetadata>;
         /**
-         * (Updatable) The property which disciminates the subtypes.
+         * (Updatable) The property which differentiates the subtypes.
          */
         modelType: pulumi.Input<string>;
         /**
@@ -9450,7 +9756,7 @@ export namespace DataConnectivity {
          */
         modelVersion?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: pulumi.Input<string>;
         /**
@@ -9481,7 +9787,7 @@ export namespace DataConnectivity {
 
     export interface RegistryDataAssetDefaultConnectionConnectionProperty {
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name?: pulumi.Input<string>;
         /**
@@ -9492,7 +9798,7 @@ export namespace DataConnectivity {
 
     export interface RegistryDataAssetDefaultConnectionMetadata {
         /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetDefaultConnectionMetadataAggregator>;
         /**
@@ -9508,7 +9814,7 @@ export namespace DataConnectivity {
          */
         createdByName?: pulumi.Input<string>;
         /**
-         * (Updatable) The full path to identify this object.
+         * (Updatable) The full path to identify the object.
          */
         identifierPath?: pulumi.Input<string>;
         /**
@@ -9516,11 +9822,11 @@ export namespace DataConnectivity {
          */
         infoFields?: pulumi.Input<{[key: string]: any}>;
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -9547,11 +9853,11 @@ export namespace DataConnectivity {
 
     export interface RegistryDataAssetDefaultConnectionMetadataAggregator {
         /**
-         * (Updatable) A user defined description for the object.
+         * (Updatable) A user-defined description for the object.
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier?: pulumi.Input<string>;
         /**
@@ -9559,7 +9865,7 @@ export namespace DataConnectivity {
          */
         key?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name?: pulumi.Input<string>;
         /**
@@ -9574,15 +9880,15 @@ export namespace DataConnectivity {
          */
         defaultConnection?: pulumi.Input<string>;
         /**
-         * (Updatable) A user defined description for the object.
+         * (Updatable) A user-defined description for the object.
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) The external key for the object.
+         * (Updatable) The external key of the object.
          */
         externalKey?: pulumi.Input<string>;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: pulumi.Input<string>;
         /**
@@ -9594,11 +9900,11 @@ export namespace DataConnectivity {
          */
         key: pulumi.Input<string>;
         /**
-         * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetDefaultConnectionPrimarySchemaMetadata>;
         /**
-         * (Updatable) The property which disciminates the subtypes.
+         * (Updatable) The property which differentiates the subtypes.
          */
         modelType: pulumi.Input<string>;
         /**
@@ -9606,7 +9912,7 @@ export namespace DataConnectivity {
          */
         modelVersion?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: pulumi.Input<string>;
         /**
@@ -9618,7 +9924,7 @@ export namespace DataConnectivity {
          */
         objectVersion?: pulumi.Input<number>;
         /**
-         * (Updatable) A reference to the object's parent.
+         * (Updatable) A reference to the parent object.
          */
         parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetDefaultConnectionPrimarySchemaParentRef>;
         /**
@@ -9629,7 +9935,7 @@ export namespace DataConnectivity {
 
     export interface RegistryDataAssetDefaultConnectionPrimarySchemaMetadata {
         /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator>;
         /**
@@ -9645,7 +9951,7 @@ export namespace DataConnectivity {
          */
         createdByName?: pulumi.Input<string>;
         /**
-         * (Updatable) The full path to identify this object.
+         * (Updatable) The full path to identify the object.
          */
         identifierPath?: pulumi.Input<string>;
         /**
@@ -9653,11 +9959,11 @@ export namespace DataConnectivity {
          */
         infoFields?: pulumi.Input<{[key: string]: any}>;
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -9684,11 +9990,11 @@ export namespace DataConnectivity {
 
     export interface RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator {
         /**
-         * (Updatable) A user defined description for the object.
+         * (Updatable) A user-defined description for the object.
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier?: pulumi.Input<string>;
         /**
@@ -9696,7 +10002,7 @@ export namespace DataConnectivity {
          */
         key?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name?: pulumi.Input<string>;
         /**
@@ -9718,7 +10024,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey?: pulumi.Input<string>;
         /**
-         * (Updatable) The id of the user who created the object.
+         * (Updatable) The ID of the user who created the object.
          */
         createdByUserId?: pulumi.Input<string>;
         /**
@@ -9726,7 +10032,7 @@ export namespace DataConnectivity {
          */
         createdByUserName?: pulumi.Input<string>;
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite?: pulumi.Input<boolean>;
         /**
@@ -9734,7 +10040,7 @@ export namespace DataConnectivity {
          */
         key?: pulumi.Input<string>;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -9750,7 +10056,7 @@ export namespace DataConnectivity {
          */
         timeUpdated?: pulumi.Input<string>;
         /**
-         * (Updatable) The id of the user who updated the object.
+         * (Updatable) The ID of the user who updated the object.
          */
         updatedByUserId?: pulumi.Input<string>;
         /**
@@ -9761,7 +10067,7 @@ export namespace DataConnectivity {
 
     export interface RegistryDataAssetMetadata {
         /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetMetadataAggregator>;
         /**
@@ -9777,7 +10083,7 @@ export namespace DataConnectivity {
          */
         createdByName?: pulumi.Input<string>;
         /**
-         * (Updatable) The full path to identify this object.
+         * (Updatable) The full path to identify the object.
          */
         identifierPath?: pulumi.Input<string>;
         /**
@@ -9785,11 +10091,11 @@ export namespace DataConnectivity {
          */
         infoFields?: pulumi.Input<{[key: string]: any}>;
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -9816,11 +10122,11 @@ export namespace DataConnectivity {
 
     export interface RegistryDataAssetMetadataAggregator {
         /**
-         * (Updatable) A user defined description for the object.
+         * (Updatable) A user-defined description for the object.
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier?: pulumi.Input<string>;
         /**
@@ -9828,7 +10134,7 @@ export namespace DataConnectivity {
          */
         key?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name?: pulumi.Input<string>;
         /**
@@ -9839,11 +10145,11 @@ export namespace DataConnectivity {
 
     export interface RegistryDataAssetNativeTypeSystem {
         /**
-         * (Updatable) A user defined description for the object.
+         * (Updatable) A user-defined description for the object.
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier?: pulumi.Input<string>;
         /**
@@ -9851,7 +10157,7 @@ export namespace DataConnectivity {
          */
         key?: pulumi.Input<string>;
         /**
-         * (Updatable) The property which disciminates the subtypes.
+         * (Updatable) The property which differentiates the subtypes.
          */
         modelType?: pulumi.Input<string>;
         /**
@@ -9859,7 +10165,7 @@ export namespace DataConnectivity {
          */
         modelVersion?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name?: pulumi.Input<string>;
         /**
@@ -9871,7 +10177,7 @@ export namespace DataConnectivity {
          */
         objectVersion?: pulumi.Input<number>;
         /**
-         * (Updatable) A reference to the object's parent.
+         * (Updatable) A reference to the parent object.
          */
         parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetNativeTypeSystemParentRef>;
         /**
@@ -9901,7 +10207,7 @@ export namespace DataConnectivity {
          */
         configDefinition?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetNativeTypeSystemTypeConfigDefinition>;
         /**
-         * (Updatable) A user defined description for the object.
+         * (Updatable) A user-defined description for the object.
          */
         description?: pulumi.Input<string>;
         /**
@@ -9913,7 +10219,7 @@ export namespace DataConnectivity {
          */
         key?: pulumi.Input<string>;
         /**
-         * (Updatable) The property which disciminates the subtypes.
+         * (Updatable) The property which differentiates the subtypes.
          */
         modelType: pulumi.Input<string>;
         /**
@@ -9921,7 +10227,7 @@ export namespace DataConnectivity {
          */
         modelVersion?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name?: pulumi.Input<string>;
         /**
@@ -9929,7 +10235,7 @@ export namespace DataConnectivity {
          */
         objectStatus?: pulumi.Input<number>;
         /**
-         * (Updatable) A reference to the object's parent.
+         * (Updatable) A reference to the parent object.
          */
         parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetNativeTypeSystemTypeParentRef>;
         /**
@@ -9944,7 +10250,7 @@ export namespace DataConnectivity {
          */
         configParameterDefinitions?: pulumi.Input<{[key: string]: any}>;
         /**
-         * (Updatable) Specifies whether the configuration is contained or not.
+         * (Updatable) Specifies whether the configuration is contained.
          */
         isContained?: pulumi.Input<boolean>;
         /**
@@ -9952,7 +10258,7 @@ export namespace DataConnectivity {
          */
         key?: pulumi.Input<string>;
         /**
-         * (Updatable) The property which disciminates the subtypes.
+         * (Updatable) The property which differentiates the subtypes.
          */
         modelType?: pulumi.Input<string>;
         /**
@@ -9960,7 +10266,7 @@ export namespace DataConnectivity {
          */
         modelVersion?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name?: pulumi.Input<string>;
         /**
@@ -9968,7 +10274,7 @@ export namespace DataConnectivity {
          */
         objectStatus?: pulumi.Input<number>;
         /**
-         * (Updatable) A reference to the object's parent.
+         * (Updatable) A reference to the parent object.
          */
         parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRef>;
     }
@@ -9993,7 +10299,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey?: pulumi.Input<string>;
         /**
-         * (Updatable) The id of the user who created the object.
+         * (Updatable) The ID of the user who created the object.
          */
         createdByUserId?: pulumi.Input<string>;
         /**
@@ -10001,7 +10307,7 @@ export namespace DataConnectivity {
          */
         createdByUserName?: pulumi.Input<string>;
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite?: pulumi.Input<boolean>;
         /**
@@ -10009,7 +10315,7 @@ export namespace DataConnectivity {
          */
         key?: pulumi.Input<string>;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -10025,7 +10331,7 @@ export namespace DataConnectivity {
          */
         timeUpdated?: pulumi.Input<string>;
         /**
-         * (Updatable) The id of the user who updated the object.
+         * (Updatable) The ID of the user who updated the object.
          */
         updatedByUserId?: pulumi.Input<string>;
         /**
@@ -10044,23 +10350,23 @@ export namespace DataConnectivity {
          */
         defaultConnection?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetDefaultConnection>;
         /**
-         * (Updatable) User-defined description for the folder.
+         * (Updatable) User-defined description of the folder.
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) The external key for the object.
+         * (Updatable) The external key of the object.
          */
         externalKey?: pulumi.Input<string>;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: pulumi.Input<string>;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: pulumi.Input<string>;
         /**
-         * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetMetadata>;
         /**
@@ -10072,7 +10378,7 @@ export namespace DataConnectivity {
          */
         modelVersion?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: pulumi.Input<string>;
         /**
@@ -10103,27 +10409,27 @@ export namespace DataConnectivity {
 
     export interface RegistryFolderDataAssetDefaultConnection {
         /**
-         * (Updatable) The properties for the connection.
+         * (Updatable) The properties of the connection.
          */
         connectionProperties?: pulumi.Input<pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionConnectionProperty>[]>;
         /**
-         * (Updatable) User-defined description for the folder.
+         * (Updatable) User-defined description of the folder.
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: pulumi.Input<string>;
         /**
-         * (Updatable) The default property for the connection.
+         * (Updatable) The default property of the connection.
          */
         isDefault?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: pulumi.Input<string>;
         /**
-         * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionMetadata>;
         /**
@@ -10135,7 +10441,7 @@ export namespace DataConnectivity {
          */
         modelVersion?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: pulumi.Input<string>;
         /**
@@ -10166,7 +10472,7 @@ export namespace DataConnectivity {
 
     export interface RegistryFolderDataAssetDefaultConnectionConnectionProperty {
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name?: pulumi.Input<string>;
         /**
@@ -10177,7 +10483,7 @@ export namespace DataConnectivity {
 
     export interface RegistryFolderDataAssetDefaultConnectionMetadata {
         /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionMetadataAggregator>;
         /**
@@ -10193,7 +10499,7 @@ export namespace DataConnectivity {
          */
         createdByName?: pulumi.Input<string>;
         /**
-         * (Updatable) The full path to identify this object.
+         * (Updatable) The full path to identify the object.
          */
         identifierPath?: pulumi.Input<string>;
         /**
@@ -10201,11 +10507,11 @@ export namespace DataConnectivity {
          */
         infoFields?: pulumi.Input<{[key: string]: any}>;
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -10232,19 +10538,19 @@ export namespace DataConnectivity {
 
     export interface RegistryFolderDataAssetDefaultConnectionMetadataAggregator {
         /**
-         * (Updatable) User-defined description for the folder.
+         * (Updatable) User-defined description of the folder.
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier?: pulumi.Input<string>;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name?: pulumi.Input<string>;
         /**
@@ -10259,15 +10565,15 @@ export namespace DataConnectivity {
          */
         defaultConnection?: pulumi.Input<string>;
         /**
-         * (Updatable) User-defined description for the folder.
+         * (Updatable) User-defined description of the folder.
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) The external key for the object.
+         * (Updatable) The external key of the object.
          */
         externalKey?: pulumi.Input<string>;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: pulumi.Input<string>;
         /**
@@ -10275,11 +10581,11 @@ export namespace DataConnectivity {
          */
         isHasContainers?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: pulumi.Input<string>;
         /**
-         * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata>;
         /**
@@ -10291,7 +10597,7 @@ export namespace DataConnectivity {
          */
         modelVersion?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: pulumi.Input<string>;
         /**
@@ -10303,7 +10609,7 @@ export namespace DataConnectivity {
          */
         objectVersion?: pulumi.Input<number>;
         /**
-         * (Updatable) A reference to the object's parent.
+         * (Updatable) A reference to the parent object.
          */
         parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef>;
         /**
@@ -10314,7 +10620,7 @@ export namespace DataConnectivity {
 
     export interface RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata {
         /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator>;
         /**
@@ -10330,7 +10636,7 @@ export namespace DataConnectivity {
          */
         createdByName?: pulumi.Input<string>;
         /**
-         * (Updatable) The full path to identify this object.
+         * (Updatable) The full path to identify the object.
          */
         identifierPath?: pulumi.Input<string>;
         /**
@@ -10338,11 +10644,11 @@ export namespace DataConnectivity {
          */
         infoFields?: pulumi.Input<{[key: string]: any}>;
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -10369,19 +10675,19 @@ export namespace DataConnectivity {
 
     export interface RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator {
         /**
-         * (Updatable) User-defined description for the folder.
+         * (Updatable) User-defined description of the folder.
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier?: pulumi.Input<string>;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name?: pulumi.Input<string>;
         /**
@@ -10403,7 +10709,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey?: pulumi.Input<string>;
         /**
-         * (Updatable) The id of the user who created the object.
+         * (Updatable) The ID of the user who created the object.
          */
         createdByUserId?: pulumi.Input<string>;
         /**
@@ -10411,15 +10717,15 @@ export namespace DataConnectivity {
          */
         createdByUserName?: pulumi.Input<string>;
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key?: pulumi.Input<string>;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -10435,7 +10741,7 @@ export namespace DataConnectivity {
          */
         timeUpdated?: pulumi.Input<string>;
         /**
-         * (Updatable) The id of the user who updated the object.
+         * (Updatable) The ID of the user who updated the object.
          */
         updatedByUserId?: pulumi.Input<string>;
         /**
@@ -10446,7 +10752,7 @@ export namespace DataConnectivity {
 
     export interface RegistryFolderDataAssetMetadata {
         /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetMetadataAggregator>;
         /**
@@ -10462,7 +10768,7 @@ export namespace DataConnectivity {
          */
         createdByName?: pulumi.Input<string>;
         /**
-         * (Updatable) The full path to identify this object.
+         * (Updatable) The full path to identify the object.
          */
         identifierPath?: pulumi.Input<string>;
         /**
@@ -10470,11 +10776,11 @@ export namespace DataConnectivity {
          */
         infoFields?: pulumi.Input<{[key: string]: any}>;
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -10501,19 +10807,19 @@ export namespace DataConnectivity {
 
     export interface RegistryFolderDataAssetMetadataAggregator {
         /**
-         * (Updatable) User-defined description for the folder.
+         * (Updatable) User-defined description of the folder.
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier?: pulumi.Input<string>;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name?: pulumi.Input<string>;
         /**
@@ -10524,15 +10830,15 @@ export namespace DataConnectivity {
 
     export interface RegistryFolderDataAssetNativeTypeSystem {
         /**
-         * (Updatable) User-defined description for the folder.
+         * (Updatable) User-defined description of the folder.
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier?: pulumi.Input<string>;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key?: pulumi.Input<string>;
         /**
@@ -10544,7 +10850,7 @@ export namespace DataConnectivity {
          */
         modelVersion?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name?: pulumi.Input<string>;
         /**
@@ -10556,7 +10862,7 @@ export namespace DataConnectivity {
          */
         objectVersion?: pulumi.Input<number>;
         /**
-         * (Updatable) A reference to the object's parent.
+         * (Updatable) A reference to the parent object.
          */
         parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetNativeTypeSystemParentRef>;
         /**
@@ -10586,7 +10892,7 @@ export namespace DataConnectivity {
          */
         configDefinition?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition>;
         /**
-         * (Updatable) User-defined description for the folder.
+         * (Updatable) User-defined description of the folder.
          */
         description?: pulumi.Input<string>;
         /**
@@ -10594,7 +10900,7 @@ export namespace DataConnectivity {
          */
         dtType?: pulumi.Input<string>;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key?: pulumi.Input<string>;
         /**
@@ -10606,7 +10912,7 @@ export namespace DataConnectivity {
          */
         modelVersion?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name?: pulumi.Input<string>;
         /**
@@ -10614,7 +10920,7 @@ export namespace DataConnectivity {
          */
         objectStatus?: pulumi.Input<number>;
         /**
-         * (Updatable) A reference to the object's parent.
+         * (Updatable) A reference to the parent object.
          */
         parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetNativeTypeSystemTypeParentRef>;
         /**
@@ -10629,11 +10935,11 @@ export namespace DataConnectivity {
          */
         configParameterDefinitions?: pulumi.Input<{[key: string]: any}>;
         /**
-         * (Updatable) Specifies whether the configuration is contained or not.
+         * (Updatable) Specifies whether the configuration is contained.
          */
         isContained?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key?: pulumi.Input<string>;
         /**
@@ -10645,7 +10951,7 @@ export namespace DataConnectivity {
          */
         modelVersion?: pulumi.Input<string>;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name?: pulumi.Input<string>;
         /**
@@ -10653,7 +10959,7 @@ export namespace DataConnectivity {
          */
         objectStatus?: pulumi.Input<number>;
         /**
-         * (Updatable) A reference to the object's parent.
+         * (Updatable) A reference to the parent object.
          */
         parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef>;
     }
@@ -10678,7 +10984,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey?: pulumi.Input<string>;
         /**
-         * (Updatable) The id of the user who created the object.
+         * (Updatable) The ID of the user who created the object.
          */
         createdByUserId?: pulumi.Input<string>;
         /**
@@ -10686,15 +10992,15 @@ export namespace DataConnectivity {
          */
         createdByUserName?: pulumi.Input<string>;
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key?: pulumi.Input<string>;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -10710,7 +11016,7 @@ export namespace DataConnectivity {
          */
         timeUpdated?: pulumi.Input<string>;
         /**
-         * (Updatable) The id of the user who updated the object.
+         * (Updatable) The ID of the user who updated the object.
          */
         updatedByUserId?: pulumi.Input<string>;
         /**
@@ -12927,6 +13233,10 @@ export namespace Database {
          */
         isCustomActionTimeoutEnabled?: pulumi.Input<boolean>;
         /**
+         * (Updatable) If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled?: pulumi.Input<boolean>;
+        /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
         leadTimeInWeeks?: pulumi.Input<number>;
@@ -12973,6 +13283,10 @@ export namespace Database {
          * (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
          */
         isCustomActionTimeoutEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -13258,6 +13572,10 @@ export namespace Database {
          */
         isCustomActionTimeoutEnabled?: pulumi.Input<boolean>;
         /**
+         * (Updatable) If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled?: pulumi.Input<boolean>;
+        /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
         leadTimeInWeeks?: pulumi.Input<number>;
@@ -13304,6 +13622,10 @@ export namespace Database {
          * (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
          */
         isCustomActionTimeoutEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -13359,6 +13681,7 @@ export namespace Database {
          */
         hoursOfDays?: pulumi.Input<pulumi.Input<number>[]>;
         isCustomActionTimeoutEnabled?: pulumi.Input<boolean>;
+        isMonthlyPatchingEnabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -13397,6 +13720,7 @@ export namespace Database {
          */
         hoursOfDays?: pulumi.Input<pulumi.Input<number>[]>;
         isCustomActionTimeoutEnabled?: pulumi.Input<boolean>;
+        isMonthlyPatchingEnabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -13504,6 +13828,10 @@ export namespace Database {
          */
         isCustomActionTimeoutEnabled?: pulumi.Input<boolean>;
         /**
+         * (Updatable) If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled?: pulumi.Input<boolean>;
+        /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
         leadTimeInWeeks?: pulumi.Input<number>;
@@ -13544,6 +13872,14 @@ export namespace Database {
          * (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
          */
         isDiagnosticsEventsEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean>;
     }
 
     export interface CloudVmClusterIormConfigCach {
@@ -13593,6 +13929,21 @@ export namespace Database {
          * (Updatable) The relative priority of this database.
          */
         share: pulumi.Input<number>;
+    }
+
+    export interface DataGuardAssociationDataCollectionOptions {
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean>;
     }
 
     export interface DatabaseConnectionString {
@@ -13973,6 +14324,21 @@ export namespace Database {
         type?: pulumi.Input<string>;
     }
 
+    export interface DbSystemDataCollectionOptions {
+        /**
+         * (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean>;
+    }
+
     export interface DbSystemDbHome {
         createAsync?: pulumi.Input<boolean>;
         /**
@@ -14216,6 +14582,10 @@ export namespace Database {
          */
         isCustomActionTimeoutEnabled?: pulumi.Input<boolean>;
         /**
+         * (Updatable) If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled?: pulumi.Input<boolean>;
+        /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
         leadTimeInWeeks?: pulumi.Input<number>;
@@ -14262,6 +14632,10 @@ export namespace Database {
          * (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
          */
         isCustomActionTimeoutEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -14429,6 +14803,10 @@ export namespace Database {
          * (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
          */
         isCustomActionTimeoutEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -14699,19 +15077,13 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetAutonomousContainerPatchesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetAutonomousContainerPatchesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetAutonomousDatabaseBackupsFilter {
+    export interface GetAutonomousContainerPatchesFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -14721,6 +15093,12 @@ export namespace Database {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAutonomousDatabaseBackupsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetAutonomousDatabaseDataguardAssociationsFilter {
@@ -14753,15 +15131,6 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetAutonomousDatabasesFilter {
-        /**
-         * Name of the day of the week.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetAutonomousDatabasesFilterArgs {
         /**
          * Name of the day of the week.
@@ -14769,6 +15138,15 @@ export namespace Database {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAutonomousDatabasesFilter {
+        /**
+         * Name of the day of the week.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetAutonomousDbPreviewVersionsFilter {
@@ -14861,16 +15239,16 @@ export namespace Database {
         values: string[];
     }
 
-    export interface GetBackupsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetBackupsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetBackupsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetCloudAutonomousVmClustersFilter {
@@ -14927,16 +15305,16 @@ export namespace Database {
         values: string[];
     }
 
-    export interface GetDatabaseMaintenanceRunHistoriesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDatabaseMaintenanceRunHistoriesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetDatabaseMaintenanceRunHistoriesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetDatabasePdbConversionHistoryEntriesFilter {
@@ -14951,19 +15329,13 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDatabaseSoftwareImagesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDatabaseSoftwareImagesFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetDatabaseUpgradeHistoryEntriesFilterArgs {
+    export interface GetDatabaseSoftwareImagesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -14975,16 +15347,22 @@ export namespace Database {
         values: string[];
     }
 
-    export interface GetDatabasesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
+    export interface GetDatabaseUpgradeHistoryEntriesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetDatabasesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDatabasesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetDbHomePatchHistoryEntriesFilter {
@@ -15035,16 +15413,16 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDbNodesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDbNodesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetDbNodesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetDbServersFilter {
@@ -15095,15 +15473,6 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDbSystemShapesFilterArgs {
-        /**
-         * The name of the shape used for the DB system.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDbSystemShapesFilter {
         /**
          * The name of the shape used for the DB system.
@@ -15111,6 +15480,15 @@ export namespace Database {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetDbSystemShapesFilterArgs {
+        /**
+         * The name of the shape used for the DB system.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetDbSystemStoragePerformancesFilter {
@@ -15125,15 +15503,6 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDbSystemsFilterArgs {
-        /**
-         * Name of the month of the year.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDbSystemsFilter {
         /**
          * Name of the month of the year.
@@ -15143,16 +15512,25 @@ export namespace Database {
         values: string[];
     }
 
-    export interface GetDbSystemsUpgradeHistoryEntriesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
+    export interface GetDbSystemsFilterArgs {
+        /**
+         * Name of the month of the year.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetDbSystemsUpgradeHistoryEntriesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDbSystemsUpgradeHistoryEntriesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetDbVersionsFilter {
@@ -15209,16 +15587,16 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetExternalNonContainerDatabasesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetExternalNonContainerDatabasesFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetExternalNonContainerDatabasesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetExternalPluggableDatabasesFilter {
@@ -15233,15 +15611,6 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetFlexComponentsFilter {
-        /**
-         * A filter to return only resources that match the entire name given. The match is not case sensitive.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetFlexComponentsFilterArgs {
         /**
          * A filter to return only resources that match the entire name given. The match is not case sensitive.
@@ -15251,7 +15620,10 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetGiVersionsFilter {
+    export interface GetFlexComponentsFilter {
+        /**
+         * A filter to return only resources that match the entire name given. The match is not case sensitive.
+         */
         name: string;
         regex?: boolean;
         values: string[];
@@ -15261,6 +15633,12 @@ export namespace Database {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetGiVersionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetKeyStoresFilter {
@@ -15275,13 +15653,25 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetMaintenanceRunsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
     export interface GetMaintenanceRunsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetMaintenanceRunsFilter {
+    export interface GetManagedPreferredCredentialsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedPreferredCredentialsFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -15533,9 +15923,17 @@ export namespace Database {
 
     export interface VmClusterAddVirtualNetworkDataCollectionOption {
         /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
          */
         isDiagnosticsEventsEnabled?: pulumi.Input<boolean>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean>;
     }
 
     export interface VmClusterAddVirtualNetworkDbServer {
@@ -15547,9 +15945,17 @@ export namespace Database {
 
     export interface VmClusterDataCollectionOptions {
         /**
-         * (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         * (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
          */
         isDiagnosticsEventsEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean>;
     }
 
     export interface VmClusterNetworkScan {
@@ -15623,9 +16029,17 @@ export namespace Database {
 
     export interface VmClusterRemoveVirtualMachineDataCollectionOption {
         /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
          */
         isDiagnosticsEventsEnabled?: pulumi.Input<boolean>;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean>;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean>;
     }
 
     export interface VmClusterRemoveVirtualMachineDbServer {
@@ -17191,6 +17605,7 @@ export namespace DevOps {
          * The events, for example, PUSH, PULL_REQUEST_MERGE.
          */
         events?: pulumi.Input<pulumi.Input<string>[]>;
+        excludes?: pulumi.Input<pulumi.Input<inputs.DevOps.BuildRunBuildRunSourceTriggerInfoActionFilterExclude>[]>;
         /**
          * Attributes to filter GitLab self-hosted server events.
          */
@@ -17201,15 +17616,28 @@ export namespace DevOps {
         triggerSource?: pulumi.Input<string>;
     }
 
+    export interface BuildRunBuildRunSourceTriggerInfoActionFilterExclude {
+        fileFilters?: pulumi.Input<pulumi.Input<inputs.DevOps.BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter>[]>;
+    }
+
+    export interface BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter {
+        filePaths?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface BuildRunBuildRunSourceTriggerInfoActionFilterInclude {
         /**
          * The target branch for pull requests; not applicable for push requests.
          */
         baseRef?: pulumi.Input<string>;
+        fileFilters?: pulumi.Input<pulumi.Input<inputs.DevOps.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter>[]>;
         /**
          * Branch for push event; source branch for pull requests.
          */
         headRef?: pulumi.Input<string>;
+    }
+
+    export interface BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter {
+        filePaths?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface BuildRunCommitInfo {
@@ -17737,15 +18165,6 @@ export namespace DevOps {
         timeStarted?: pulumi.Input<string>;
     }
 
-    export interface GetBuildPipelineStagesFilterArgs {
-        /**
-         * Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetBuildPipelineStagesFilter {
         /**
          * Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
@@ -17755,13 +18174,13 @@ export namespace DevOps {
         values: string[];
     }
 
-    export interface GetBuildPipelinesFilter {
+    export interface GetBuildPipelineStagesFilterArgs {
         /**
-         * Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+         * Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
          */
-        name: string;
-        regex?: boolean;
-        values: string[];
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetBuildPipelinesFilterArgs {
@@ -17771,6 +18190,15 @@ export namespace DevOps {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetBuildPipelinesFilter {
+        /**
+         * Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetBuildRunsFilter {
@@ -17815,25 +18243,16 @@ export namespace DevOps {
         values: string[];
     }
 
-    export interface GetDeployEnvironmentsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetDeployEnvironmentsFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetDeployPipelinesFilter {
-        /**
-         * Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
+    export interface GetDeployEnvironmentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetDeployPipelinesFilterArgs {
@@ -17845,7 +18264,10 @@ export namespace DevOps {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetDeployStagesFilter {
+    export interface GetDeployPipelinesFilter {
+        /**
+         * Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
+         */
         name: string;
         regex?: boolean;
         values: string[];
@@ -17855,6 +18277,12 @@ export namespace DevOps {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDeployStagesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetDeploymentsFilter {
@@ -17911,28 +18339,28 @@ export namespace DevOps {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetRepositoryAuthorsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetRepositoryAuthorsFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetRepositoryCommitsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
+    export interface GetRepositoryAuthorsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetRepositoryCommitsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetRepositoryCommitsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface GetRepositoryDiffsFilter {
@@ -17947,22 +18375,13 @@ export namespace DevOps {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetRepositoryMirrorRecordsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetRepositoryMirrorRecordsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetRepositoryPathsFilter {
-        /**
-         * Name of file or directory.
-         */
+    export interface GetRepositoryMirrorRecordsFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -17977,7 +18396,10 @@ export namespace DevOps {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetRepositoryRefsFilter {
+    export interface GetRepositoryPathsFilter {
+        /**
+         * Name of file or directory.
+         */
         name: string;
         regex?: boolean;
         values: string[];
@@ -17989,7 +18411,7 @@ export namespace DevOps {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetTriggersFilter {
+    export interface GetRepositoryRefsFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -17999,6 +18421,12 @@ export namespace DevOps {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetTriggersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface ProjectNotificationConfig {
@@ -18054,6 +18482,7 @@ export namespace DevOps {
          * (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
          */
         events?: pulumi.Input<pulumi.Input<string>[]>;
+        exclude?: pulumi.Input<inputs.DevOps.TriggerActionFilterExclude>;
         /**
          * (Updatable) Attributes to filter GitLab self-hosted server events.
          */
@@ -18064,15 +18493,28 @@ export namespace DevOps {
         triggerSource: pulumi.Input<string>;
     }
 
+    export interface TriggerActionFilterExclude {
+        fileFilter?: pulumi.Input<inputs.DevOps.TriggerActionFilterExcludeFileFilter>;
+    }
+
+    export interface TriggerActionFilterExcludeFileFilter {
+        filePaths?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface TriggerActionFilterInclude {
         /**
          * (Updatable) The target branch for pull requests; not applicable for push requests.
          */
         baseRef?: pulumi.Input<string>;
+        fileFilter?: pulumi.Input<inputs.DevOps.TriggerActionFilterIncludeFileFilter>;
         /**
          * (Updatable) Branch for push event; source branch for pull requests.
          */
         headRef?: pulumi.Input<string>;
+    }
+
+    export interface TriggerActionFilterIncludeFileFilter {
+        filePaths?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
 }
@@ -18757,6 +19199,228 @@ export namespace Functions {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetFusionEnvironmentAdminUsersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFusionEnvironmentAdminUsersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFusionEnvironmentDataMaskingActivitiesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFusionEnvironmentDataMaskingActivitiesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFusionEnvironmentFamiliesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFusionEnvironmentFamiliesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFusionEnvironmentRefreshActivitiesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFusionEnvironmentRefreshActivitiesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFusionEnvironmentScheduledActivitiesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFusionEnvironmentScheduledActivitiesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFusionEnvironmentServiceAttachmentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFusionEnvironmentServiceAttachmentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFusionEnvironmentTimeAvailableForRefreshsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFusionEnvironmentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFusionEnvironmentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+}
+
+export namespace FusionApps {
+    export interface FusionEnvironmentAdminUserItem {
+        /**
+         * The email address for the administrator.
+         */
+        emailAddress?: pulumi.Input<string>;
+        /**
+         * The administrator's first name.
+         */
+        firstName?: pulumi.Input<string>;
+        /**
+         * The administrator's last name.
+         */
+        lastName?: pulumi.Input<string>;
+        /**
+         * The username for the administrator.
+         */
+        username?: pulumi.Input<string>;
+    }
+
+    export interface FusionEnvironmentCreateFusionEnvironmentAdminUserDetails {
+        /**
+         * The email address for the administrator.
+         */
+        emailAddress: pulumi.Input<string>;
+        /**
+         * The administrator's first name.
+         */
+        firstName: pulumi.Input<string>;
+        /**
+         * The administrator's last name.
+         */
+        lastName: pulumi.Input<string>;
+        /**
+         * The password for the administrator.
+         */
+        password: pulumi.Input<string>;
+        /**
+         * The username for the administrator.
+         */
+        username: pulumi.Input<string>;
+    }
+
+    export interface FusionEnvironmentFamilyFamilyMaintenancePolicy {
+        /**
+         * (Updatable) Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
+         */
+        concurrentMaintenance?: pulumi.Input<string>;
+        /**
+         * (Updatable) When True, monthly patching is enabled for the environment family.
+         */
+        isMonthlyPatchingEnabled?: pulumi.Input<boolean>;
+        /**
+         * The quarterly maintenance month group schedule of the Fusion environment family.
+         */
+        quarterlyUpgradeBeginTimes?: pulumi.Input<string>;
+    }
+
+    export interface FusionEnvironmentMaintenancePolicy {
+        /**
+         * (Updatable) User choice to upgrade both test and prod pods at the same time. Overrides fusion environment families'.
+         */
+        environmentMaintenanceOverride?: pulumi.Input<string>;
+        /**
+         * (Updatable) When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion environment is not patched monthly. This setting overrides the environment family setting. When not set, the environment follows the environment family policy.
+         */
+        monthlyPatchingOverride?: pulumi.Input<string>;
+        /**
+         * Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
+         */
+        quarterlyUpgradeBeginTimes?: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime>[]>;
+    }
+
+    export interface FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime {
+        /**
+         * The frequency and month when maintenance occurs for the Fusion environment.
+         */
+        beginTimesValue?: pulumi.Input<string>;
+        /**
+         * Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
+         */
+        overrideType?: pulumi.Input<string>;
+    }
+
+    export interface FusionEnvironmentRefresh {
+        /**
+         * The source environment id for the last refresh
+         */
+        sourceFusionEnvironmentId?: pulumi.Input<string>;
+        /**
+         * The time of when the last refresh finish
+         */
+        timeFinished?: pulumi.Input<string>;
+        /**
+         * The point of time of the latest DB backup for the last refresh
+         */
+        timeOfRestorationPoint?: pulumi.Input<string>;
+    }
+
+    export interface FusionEnvironmentRule {
+        /**
+         * (Updatable) Rule type
+         */
+        action: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        conditions: pulumi.Input<pulumi.Input<inputs.FusionApps.FusionEnvironmentRuleCondition>[]>;
+        /**
+         * (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+         */
+        description?: pulumi.Input<string>;
+    }
+
+    export interface FusionEnvironmentRuleCondition {
+        /**
+         * (Updatable) RuleCondition type
+         */
+        attributeName: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
+         */
+        attributeValue: pulumi.Input<string>;
+    }
 }
 
 export namespace GoldenGate {
@@ -22108,19 +22772,13 @@ export namespace Mysql {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetMysqlDbSystemsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetMysqlDbSystemsFilter {
         name: string;
         regex?: boolean;
         values: string[];
     }
 
-    export interface GetMysqlVersionFilterArgs {
+    export interface GetMysqlDbSystemsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -22130,6 +22788,12 @@ export namespace Mysql {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetMysqlVersionFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetShapesFilter {
@@ -22353,6 +23017,350 @@ export namespace Mysql {
          * The start time of the maintenance window.
          */
         windowStartTime?: pulumi.Input<string>;
+    }
+
+    export interface MysqlConfigurationInitVariables {
+        /**
+         * Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+         */
+        lowerCaseTableNames?: pulumi.Input<string>;
+    }
+
+    export interface MysqlConfigurationVariables {
+        /**
+         * ("autocommit")
+         */
+        autocommit?: pulumi.Input<boolean>;
+        /**
+         * If enabled, the server stores all temporary tables on disk rather than in memory.
+         */
+        bigTables?: pulumi.Input<boolean>;
+        /**
+         * Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+         */
+        binlogExpireLogsSeconds?: pulumi.Input<number>;
+        /**
+         * Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+         */
+        binlogRowMetadata?: pulumi.Input<string>;
+        /**
+         * When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+         */
+        binlogRowValueOptions?: pulumi.Input<string>;
+        /**
+         * Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+         */
+        binlogTransactionCompression?: pulumi.Input<boolean>;
+        /**
+         * ("completionType")
+         */
+        completionType?: pulumi.Input<string>;
+        /**
+         * The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
+         */
+        connectTimeout?: pulumi.Input<number>;
+        /**
+         * Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+         */
+        connectionMemoryChunkSize?: pulumi.Input<number>;
+        /**
+         * Set the maximum amount of memory that can be used by a single user connection.
+         */
+        connectionMemoryLimit?: pulumi.Input<string>;
+        /**
+         * ("cteMaxRecursionDepth")
+         */
+        cteMaxRecursionDepth?: pulumi.Input<string>;
+        /**
+         * ("defaultAuthenticationPlugin")
+         */
+        defaultAuthenticationPlugin?: pulumi.Input<string>;
+        /**
+         * ("foreignKeyChecks")
+         */
+        foreignKeyChecks?: pulumi.Input<boolean>;
+        /**
+         * ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
+         */
+        generatedRandomPasswordLength?: pulumi.Input<number>;
+        /**
+         * Set the total amount of memory that can be used by all user connections.
+         */
+        globalConnectionMemoryLimit?: pulumi.Input<string>;
+        /**
+         * Determines whether the MySQL server calculates Global_connection_memory.
+         */
+        globalConnectionMemoryTracking?: pulumi.Input<boolean>;
+        /**
+         * * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
+         * * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
+         * * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+         * * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+         * * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+         */
+        groupReplicationConsistency?: pulumi.Input<string>;
+        /**
+         * ("informationSchemaStatsExpiry")
+         */
+        informationSchemaStatsExpiry?: pulumi.Input<number>;
+        /**
+         * Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+         */
+        innodbBufferPoolDumpPct?: pulumi.Input<number>;
+        /**
+         * ("innodbBufferPoolInstances")
+         */
+        innodbBufferPoolInstances?: pulumi.Input<number>;
+        /**
+         * The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+         */
+        innodbBufferPoolSize?: pulumi.Input<string>;
+        /**
+         * innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+         */
+        innodbDdlBufferSize?: pulumi.Input<string>;
+        /**
+         * innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+         */
+        innodbDdlThreads?: pulumi.Input<number>;
+        /**
+         * ("innodbFtEnableStopword")
+         */
+        innodbFtEnableStopword?: pulumi.Input<boolean>;
+        /**
+         * ("innodbFtMaxTokenSize")
+         */
+        innodbFtMaxTokenSize?: pulumi.Input<number>;
+        /**
+         * ("innodbFtMinTokenSize")
+         */
+        innodbFtMinTokenSize?: pulumi.Input<number>;
+        /**
+         * ("innodbFtNumWordOptimize")
+         */
+        innodbFtNumWordOptimize?: pulumi.Input<number>;
+        /**
+         * ("innodbFtResultCacheLimit")
+         */
+        innodbFtResultCacheLimit?: pulumi.Input<string>;
+        /**
+         * ("innodbFtServerStopwordTable")
+         */
+        innodbFtServerStopwordTable?: pulumi.Input<string>;
+        /**
+         * ("innodbLockWaitTimeout")
+         */
+        innodbLockWaitTimeout?: pulumi.Input<number>;
+        /**
+         * Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+         */
+        innodbLogWriterThreads?: pulumi.Input<boolean>;
+        /**
+         * The desired maximum purge lag in terms of transactions.
+         */
+        innodbMaxPurgeLag?: pulumi.Input<string>;
+        /**
+         * The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
+         */
+        innodbMaxPurgeLagDelay?: pulumi.Input<number>;
+        /**
+         * The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+         */
+        innodbStatsPersistentSamplePages?: pulumi.Input<string>;
+        /**
+         * The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+         */
+        innodbStatsTransientSamplePages?: pulumi.Input<string>;
+        /**
+         * The number of seconds the server waits for activity on an interactive connection before closing it.
+         */
+        interactiveTimeout?: pulumi.Input<number>;
+        /**
+         * ("localInfile")
+         */
+        localInfile?: pulumi.Input<boolean>;
+        /**
+         * ("mandatoryRoles")
+         */
+        mandatoryRoles?: pulumi.Input<string>;
+        /**
+         * The maximum size of one packet or any generated/intermediate string.
+         */
+        maxAllowedPacket?: pulumi.Input<number>;
+        /**
+         * Sets the size of the transaction cache.
+         */
+        maxBinlogCacheSize?: pulumi.Input<string>;
+        /**
+         * ("maxConnectErrors")
+         */
+        maxConnectErrors?: pulumi.Input<string>;
+        /**
+         * ("maxConnections")
+         */
+        maxConnections?: pulumi.Input<number>;
+        /**
+         * ("maxExecutionTime")
+         */
+        maxExecutionTime?: pulumi.Input<string>;
+        /**
+         * This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+         */
+        maxHeapTableSize?: pulumi.Input<string>;
+        /**
+         * ("maxPreparedStmtCount")
+         */
+        maxPreparedStmtCount?: pulumi.Input<number>;
+        /**
+         * ("mysqlFirewallMode")
+         */
+        mysqlFirewallMode?: pulumi.Input<boolean>;
+        /**
+         * DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+         *
+         * @deprecated The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
+         */
+        mysqlZstdDefaultCompressionLevel?: pulumi.Input<number>;
+        /**
+         * The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+         */
+        mysqlxConnectTimeout?: pulumi.Input<number>;
+        /**
+         * Set the default compression level for the deflate algorithm. ("mysqlxDeflateDefaultCompressionLevel")
+         */
+        mysqlxDeflateDefaultCompressionLevel?: pulumi.Input<number>;
+        /**
+         * Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlxDeflateMaxClientCompressionLevel")
+         */
+        mysqlxDeflateMaxClientCompressionLevel?: pulumi.Input<number>;
+        /**
+         * ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
+         */
+        mysqlxDocumentIdUniquePrefix?: pulumi.Input<number>;
+        /**
+         * ("mysqlxEnableHelloNotice") DEPRECATED -- variable should not be settable and will be ignored
+         */
+        mysqlxEnableHelloNotice?: pulumi.Input<boolean>;
+        /**
+         * ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
+         */
+        mysqlxIdleWorkerThreadTimeout?: pulumi.Input<number>;
+        /**
+         * The number of seconds to wait for interactive clients to timeout.
+         */
+        mysqlxInteractiveTimeout?: pulumi.Input<number>;
+        /**
+         * Set the default compression level for the lz4 algorithm. ("mysqlxLz4DefaultCompressionLevel")
+         */
+        mysqlxLz4defaultCompressionLevel?: pulumi.Input<number>;
+        /**
+         * Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlxLz4MaxClientCompressionLevel")
+         */
+        mysqlxLz4maxClientCompressionLevel?: pulumi.Input<number>;
+        /**
+         * The maximum size of network packets that can be received by X Plugin.
+         */
+        mysqlxMaxAllowedPacket?: pulumi.Input<number>;
+        /**
+         * ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
+         */
+        mysqlxMinWorkerThreads?: pulumi.Input<number>;
+        /**
+         * The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+         */
+        mysqlxReadTimeout?: pulumi.Input<number>;
+        /**
+         * The number of seconds that X Plugin waits for activity on a connection.
+         */
+        mysqlxWaitTimeout?: pulumi.Input<number>;
+        /**
+         * The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+         */
+        mysqlxWriteTimeout?: pulumi.Input<number>;
+        /**
+         * Set the default compression level for the zstd algorithm. ("mysqlxZstdDefaultCompressionLevel")
+         */
+        mysqlxZstdDefaultCompressionLevel?: pulumi.Input<number>;
+        /**
+         * Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlxZstdMaxClientCompressionLevel")
+         */
+        mysqlxZstdMaxClientCompressionLevel?: pulumi.Input<number>;
+        /**
+         * The number of seconds to wait for more data from a connection before aborting the read.
+         */
+        netReadTimeout?: pulumi.Input<number>;
+        /**
+         * The number of seconds to wait for a block to be written to a connection before aborting the write.
+         */
+        netWriteTimeout?: pulumi.Input<number>;
+        /**
+         * ("parserMaxMemSize")
+         */
+        parserMaxMemSize?: pulumi.Input<string>;
+        /**
+         * ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
+         */
+        queryAllocBlockSize?: pulumi.Input<string>;
+        /**
+         * ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+         */
+        queryPreallocSize?: pulumi.Input<string>;
+        /**
+         * regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+         */
+        regexpTimeLimit?: pulumi.Input<number>;
+        /**
+         * Each session that must perform a sort allocates a buffer of this size.
+         */
+        sortBufferSize?: pulumi.Input<string>;
+        /**
+         * ("sqlMode")
+         */
+        sqlMode?: pulumi.Input<string>;
+        /**
+         * ("sqlRequirePrimaryKey")
+         */
+        sqlRequirePrimaryKey?: pulumi.Input<boolean>;
+        /**
+         * ("sqlWarnings")
+         */
+        sqlWarnings?: pulumi.Input<boolean>;
+        /**
+         * Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+         */
+        threadPoolDedicatedListeners?: pulumi.Input<boolean>;
+        /**
+         * Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+         */
+        threadPoolMaxTransactionsLimit?: pulumi.Input<number>;
+        /**
+         * Initializes the time zone for each client that connects.
+         */
+        timeZone?: pulumi.Input<string>;
+        /**
+         * The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+         */
+        tmpTableSize?: pulumi.Input<string>;
+        /**
+         * ("transactionIsolation")
+         */
+        transactionIsolation?: pulumi.Input<string>;
+        /**
+         * The number of seconds the server waits for activity on a noninteractive connection before closing it.
+         */
+        waitTimeout?: pulumi.Input<number>;
     }
 
     export interface MysqlDbSystemAnalyticsCluster {
@@ -22638,6 +23646,7 @@ export namespace Mysql {
          */
         sourceType: pulumi.Input<string>;
     }
+
 }
 
 export namespace NetworkFirewall {
@@ -23499,22 +24508,13 @@ export namespace Ocvp {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetSddcsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
     export interface GetSddcsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetSupportedHostShapesFilter {
-        /**
-         * A filter to return only resources that match the given name exactly.
-         */
+    export interface GetSddcsFilter {
         name: string;
         regex?: boolean;
         values: string[];
@@ -23529,9 +24529,9 @@ export namespace Ocvp {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetSupportedSkusFilter {
+    export interface GetSupportedHostShapesFilter {
         /**
-         * name of SKU
+         * A filter to return only resources that match the given name exactly.
          */
         name: string;
         regex?: boolean;
@@ -23547,7 +24547,10 @@ export namespace Ocvp {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetSupportedVmwareSoftwareVersionsFilter {
+    export interface GetSupportedSkusFilter {
+        /**
+         * name of SKU
+         */
         name: string;
         regex?: boolean;
         values: string[];
@@ -23557,6 +24560,12 @@ export namespace Ocvp {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSupportedVmwareSoftwareVersionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
     }
 
     export interface SddcHcxOnPremLicense {
@@ -23573,6 +24582,29 @@ export namespace Ocvp {
          */
         systemName?: pulumi.Input<string>;
     }
+
+    export interface SddcUpgradeLicense {
+        /**
+         * vSphere license key value.
+         */
+        licenseKey?: pulumi.Input<string>;
+        /**
+         * vSphere license type.
+         */
+        licenseType?: pulumi.Input<string>;
+    }
+
+    export interface SddcVsphereUpgradeObject {
+        /**
+         * Binary object download link.
+         */
+        downloadLink?: pulumi.Input<string>;
+        /**
+         * Binary object description.
+         */
+        linkDescription?: pulumi.Input<string>;
+    }
+
 }
 
 export namespace Oda {
@@ -26355,10 +27387,16 @@ export namespace UsageProxy {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface GetSubscriptionRewardsFilter {
+    export interface GetSubscriptionRedemptionsFilter {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetSubscriptionRedemptionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetSubscriptionRewardsFilterArgs {
@@ -26367,11 +27405,25 @@ export namespace UsageProxy {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetSubscriptionRewardsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
     export interface SubscriptionRedeemableUserItem {
         /**
          * The email ID for a user that can redeem rewards.
          */
         emailId: pulumi.Input<string>;
+        /**
+         * The first name of the user that can redeem rewards.
+         */
+        firstName?: pulumi.Input<string>;
+        /**
+         * The last name of the user that can redeem rewards.
+         */
+        lastName?: pulumi.Input<string>;
     }
 
 }

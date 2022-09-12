@@ -18,42 +18,29 @@ public final class GetSchedulesResult {
      * @return The tenancy of the customer
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The filter object for query usage.
      * 
      */
-    private final @Nullable List<GetSchedulesFilter> filters;
+    private @Nullable List<GetSchedulesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The unique name of the schedule created by the user
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The list of schedule_collection.
      * 
      */
-    private final List<GetSchedulesScheduleCollection> scheduleCollections;
+    private List<GetSchedulesScheduleCollection> scheduleCollections;
 
-    @CustomType.Constructor
-    private GetSchedulesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetSchedulesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("scheduleCollections") List<GetSchedulesScheduleCollection> scheduleCollections) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.scheduleCollections = scheduleCollections;
-    }
-
+    private GetSchedulesResult() {}
     /**
      * @return The tenancy of the customer
      * 
@@ -97,18 +84,14 @@ public final class GetSchedulesResult {
     public static Builder builder(GetSchedulesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetSchedulesFilter> filters;
         private String id;
         private @Nullable String name;
         private List<GetSchedulesScheduleCollection> scheduleCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSchedulesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -118,10 +101,12 @@ public final class GetSchedulesResult {
     	      this.scheduleCollections = defaults.scheduleCollections;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSchedulesFilter> filters) {
             this.filters = filters;
             return this;
@@ -129,22 +114,32 @@ public final class GetSchedulesResult {
         public Builder filters(GetSchedulesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder scheduleCollections(List<GetSchedulesScheduleCollection> scheduleCollections) {
             this.scheduleCollections = Objects.requireNonNull(scheduleCollections);
             return this;
         }
         public Builder scheduleCollections(GetSchedulesScheduleCollection... scheduleCollections) {
             return scheduleCollections(List.of(scheduleCollections));
-        }        public GetSchedulesResult build() {
-            return new GetSchedulesResult(compartmentId, filters, id, name, scheduleCollections);
+        }
+        public GetSchedulesResult build() {
+            final var o = new GetSchedulesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.scheduleCollections = scheduleCollections;
+            return o;
         }
     }
 }

@@ -165,6 +165,10 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string NextSku;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
+        /// </summary>
+        public readonly string NonUpgradedEsxiHostId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
         /// </summary>
         public readonly string ReplacementEsxiHostId;
@@ -184,6 +188,14 @@ namespace Pulumi.Oci.Ocvp
         /// The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+        /// </summary>
+        public readonly string UpgradedReplacementEsxiHostId;
+        /// <summary>
+        /// The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+        /// </summary>
+        public readonly string VmwareSoftwareVersion;
 
         [OutputConstructor]
         private GetExsiHostResult(
@@ -219,6 +231,8 @@ namespace Pulumi.Oci.Ocvp
 
             string nextSku,
 
+            string nonUpgradedEsxiHostId,
+
             string replacementEsxiHostId,
 
             string sddcId,
@@ -227,7 +241,11 @@ namespace Pulumi.Oci.Ocvp
 
             string timeCreated,
 
-            string timeUpdated)
+            string timeUpdated,
+
+            string upgradedReplacementEsxiHostId,
+
+            string vmwareSoftwareVersion)
         {
             BillingContractEndDate = billingContractEndDate;
             CapacityReservationId = capacityReservationId;
@@ -245,11 +263,14 @@ namespace Pulumi.Oci.Ocvp
             HostShapeName = hostShapeName;
             Id = id;
             NextSku = nextSku;
+            NonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
             ReplacementEsxiHostId = replacementEsxiHostId;
             SddcId = sddcId;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            UpgradedReplacementEsxiHostId = upgradedReplacementEsxiHostId;
+            VmwareSoftwareVersion = vmwareSoftwareVersion;
         }
     }
 }

@@ -15,35 +15,24 @@ public final class VmClusterNetworkVmNetworkNode {
      * @return (Updatable) The node host name.
      * 
      */
-    private final String hostname;
+    private String hostname;
     /**
      * @return (Updatable) The node IP address.
      * 
      */
-    private final String ip;
+    private String ip;
     /**
      * @return (Updatable) The node virtual IP (VIP) address.
      * 
      */
-    private final @Nullable String vip;
+    private @Nullable String vip;
     /**
      * @return (Updatable) The node virtual IP (VIP) host name.
      * 
      */
-    private final @Nullable String vipHostname;
+    private @Nullable String vipHostname;
 
-    @CustomType.Constructor
-    private VmClusterNetworkVmNetworkNode(
-        @CustomType.Parameter("hostname") String hostname,
-        @CustomType.Parameter("ip") String ip,
-        @CustomType.Parameter("vip") @Nullable String vip,
-        @CustomType.Parameter("vipHostname") @Nullable String vipHostname) {
-        this.hostname = hostname;
-        this.ip = ip;
-        this.vip = vip;
-        this.vipHostname = vipHostname;
-    }
-
+    private VmClusterNetworkVmNetworkNode() {}
     /**
      * @return (Updatable) The node host name.
      * 
@@ -80,17 +69,13 @@ public final class VmClusterNetworkVmNetworkNode {
     public static Builder builder(VmClusterNetworkVmNetworkNode defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String hostname;
         private String ip;
         private @Nullable String vip;
         private @Nullable String vipHostname;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(VmClusterNetworkVmNetworkNode defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostname = defaults.hostname;
@@ -99,23 +84,33 @@ public final class VmClusterNetworkVmNetworkNode {
     	      this.vipHostname = defaults.vipHostname;
         }
 
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
         }
+        @CustomType.Setter
         public Builder ip(String ip) {
             this.ip = Objects.requireNonNull(ip);
             return this;
         }
+        @CustomType.Setter
         public Builder vip(@Nullable String vip) {
             this.vip = vip;
             return this;
         }
+        @CustomType.Setter
         public Builder vipHostname(@Nullable String vipHostname) {
             this.vipHostname = vipHostname;
             return this;
-        }        public VmClusterNetworkVmNetworkNode build() {
-            return new VmClusterNetworkVmNetworkNode(hostname, ip, vip, vipHostname);
+        }
+        public VmClusterNetworkVmNetworkNode build() {
+            final var o = new VmClusterNetworkVmNetworkNode();
+            o.hostname = hostname;
+            o.ip = ip;
+            o.vip = vip;
+            o.vipHostname = vipHostname;
+            return o;
         }
     }
 }

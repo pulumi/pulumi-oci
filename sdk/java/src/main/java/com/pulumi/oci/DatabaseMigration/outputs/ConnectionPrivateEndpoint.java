@@ -15,35 +15,24 @@ public final class ConnectionPrivateEndpoint {
      * @return (Updatable) OCID of the compartment where the secret containing the credentials will be created.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer&#39;s subnet where the private endpoint VNIC will reside.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN where the Private Endpoint will be bound to.
      * 
      */
-    private final String vcnId;
+    private String vcnId;
 
-    @CustomType.Constructor
-    private ConnectionPrivateEndpoint(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("vcnId") String vcnId) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.subnetId = subnetId;
-        this.vcnId = vcnId;
-    }
-
+    private ConnectionPrivateEndpoint() {}
     /**
      * @return (Updatable) OCID of the compartment where the secret containing the credentials will be created.
      * 
@@ -80,17 +69,13 @@ public final class ConnectionPrivateEndpoint {
     public static Builder builder(ConnectionPrivateEndpoint defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String id;
         private String subnetId;
         private String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConnectionPrivateEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -99,23 +84,33 @@ public final class ConnectionPrivateEndpoint {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(String vcnId) {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
-        }        public ConnectionPrivateEndpoint build() {
-            return new ConnectionPrivateEndpoint(compartmentId, id, subnetId, vcnId);
+        }
+        public ConnectionPrivateEndpoint build() {
+            final var o = new ConnectionPrivateEndpoint();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.subnetId = subnetId;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

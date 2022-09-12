@@ -4,9 +4,11 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.oci.Mysql.outputs.GetMysqlConfigurationsConfigurationVariables;
+import com.pulumi.oci.Mysql.outputs.GetMysqlConfigurationsConfigurationInitVariable;
+import com.pulumi.oci.Mysql.outputs.GetMysqlConfigurationsConfigurationVariable;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -16,98 +18,74 @@ public final class GetMysqlConfigurationsConfiguration {
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return User-provided data about the Configuration.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A filter to return only the resource matching the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the Configuration.
      * 
      */
-    private final String id;
+    private String id;
+    /**
+     * @return User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+     * 
+     */
+    private List<GetMysqlConfigurationsConfigurationInitVariable> initVariables;
     /**
      * @return The OCID of the Configuration from which this Configuration is &#34;derived&#34;. This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
      * 
      */
-    private final String parentConfigurationId;
+    private String parentConfigurationId;
     /**
      * @return The requested Shape name.
      * 
      */
-    private final String shapeName;
+    private String shapeName;
     /**
      * @return Configuration Lifecycle State
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return The requested Configuration types.
      * 
      */
-    private final String type;
+    private String type;
     /**
-     * @return User controllable service variables.
+     * @return User-defined service variables.
      * 
      */
-    private final GetMysqlConfigurationsConfigurationVariables variables;
+    private List<GetMysqlConfigurationsConfigurationVariable> variables;
 
-    @CustomType.Constructor
-    private GetMysqlConfigurationsConfiguration(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("parentConfigurationId") String parentConfigurationId,
-        @CustomType.Parameter("shapeName") String shapeName,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("variables") GetMysqlConfigurationsConfigurationVariables variables) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.parentConfigurationId = parentConfigurationId;
-        this.shapeName = shapeName;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.type = type;
-        this.variables = variables;
-    }
-
+    private GetMysqlConfigurationsConfiguration() {}
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -149,6 +127,13 @@ public final class GetMysqlConfigurationsConfiguration {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+     * 
+     */
+    public List<GetMysqlConfigurationsConfigurationInitVariable> initVariables() {
+        return this.initVariables;
     }
     /**
      * @return The OCID of the Configuration from which this Configuration is &#34;derived&#34;. This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
@@ -193,10 +178,10 @@ public final class GetMysqlConfigurationsConfiguration {
         return this.type;
     }
     /**
-     * @return User controllable service variables.
+     * @return User-defined service variables.
      * 
      */
-    public GetMysqlConfigurationsConfigurationVariables variables() {
+    public List<GetMysqlConfigurationsConfigurationVariable> variables() {
         return this.variables;
     }
 
@@ -207,7 +192,7 @@ public final class GetMysqlConfigurationsConfiguration {
     public static Builder builder(GetMysqlConfigurationsConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -215,18 +200,15 @@ public final class GetMysqlConfigurationsConfiguration {
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private List<GetMysqlConfigurationsConfigurationInitVariable> initVariables;
         private String parentConfigurationId;
         private String shapeName;
         private String state;
         private String timeCreated;
         private String timeUpdated;
         private String type;
-        private GetMysqlConfigurationsConfigurationVariables variables;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        private List<GetMysqlConfigurationsConfigurationVariable> variables;
+        public Builder() {}
         public Builder(GetMysqlConfigurationsConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -235,6 +217,7 @@ public final class GetMysqlConfigurationsConfiguration {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.initVariables = defaults.initVariables;
     	      this.parentConfigurationId = defaults.parentConfigurationId;
     	      this.shapeName = defaults.shapeName;
     	      this.state = defaults.state;
@@ -244,59 +227,99 @@ public final class GetMysqlConfigurationsConfiguration {
     	      this.variables = defaults.variables;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
+        public Builder initVariables(List<GetMysqlConfigurationsConfigurationInitVariable> initVariables) {
+            this.initVariables = Objects.requireNonNull(initVariables);
+            return this;
+        }
+        public Builder initVariables(GetMysqlConfigurationsConfigurationInitVariable... initVariables) {
+            return initVariables(List.of(initVariables));
+        }
+        @CustomType.Setter
         public Builder parentConfigurationId(String parentConfigurationId) {
             this.parentConfigurationId = Objects.requireNonNull(parentConfigurationId);
             return this;
         }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             this.shapeName = Objects.requireNonNull(shapeName);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
-        public Builder variables(GetMysqlConfigurationsConfigurationVariables variables) {
+        @CustomType.Setter
+        public Builder variables(List<GetMysqlConfigurationsConfigurationVariable> variables) {
             this.variables = Objects.requireNonNull(variables);
             return this;
-        }        public GetMysqlConfigurationsConfiguration build() {
-            return new GetMysqlConfigurationsConfiguration(compartmentId, definedTags, description, displayName, freeformTags, id, parentConfigurationId, shapeName, state, timeCreated, timeUpdated, type, variables);
+        }
+        public Builder variables(GetMysqlConfigurationsConfigurationVariable... variables) {
+            return variables(List.of(variables));
+        }
+        public GetMysqlConfigurationsConfiguration build() {
+            final var o = new GetMysqlConfigurationsConfiguration();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.initVariables = initVariables;
+            o.parentConfigurationId = parentConfigurationId;
+            o.shapeName = shapeName;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.type = type;
+            o.variables = variables;
+            return o;
         }
     }
 }

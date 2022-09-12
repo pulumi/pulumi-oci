@@ -18,94 +18,65 @@ public final class GetAppAccelerationPolicyResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return WebAppAccelerationPolicy display name, can be renamed.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppAccelerationPolicy.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return An object that specifies an HTTP response caching policy.
      * 
      */
-    private final List<GetAppAccelerationPolicyResponseCachingPolicy> responseCachingPolicies;
+    private List<GetAppAccelerationPolicyResponseCachingPolicy> responseCachingPolicies;
     /**
      * @return An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
      * 
      */
-    private final List<GetAppAccelerationPolicyResponseCompressionPolicy> responseCompressionPolicies;
+    private List<GetAppAccelerationPolicyResponseCompressionPolicy> responseCompressionPolicies;
     /**
      * @return The current state of the WebAppAccelerationPolicy.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the WebAppAccelerationPolicy was updated. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeUpdated;
-    private final String webAppAccelerationPolicyId;
+    private String timeUpdated;
+    private String webAppAccelerationPolicyId;
 
-    @CustomType.Constructor
-    private GetAppAccelerationPolicyResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("responseCachingPolicies") List<GetAppAccelerationPolicyResponseCachingPolicy> responseCachingPolicies,
-        @CustomType.Parameter("responseCompressionPolicies") List<GetAppAccelerationPolicyResponseCompressionPolicy> responseCompressionPolicies,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("webAppAccelerationPolicyId") String webAppAccelerationPolicyId) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.responseCachingPolicies = responseCachingPolicies;
-        this.responseCompressionPolicies = responseCompressionPolicies;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.webAppAccelerationPolicyId = webAppAccelerationPolicyId;
-    }
-
+    private GetAppAccelerationPolicyResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -201,7 +172,7 @@ public final class GetAppAccelerationPolicyResult {
     public static Builder builder(GetAppAccelerationPolicyResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -216,11 +187,7 @@ public final class GetAppAccelerationPolicyResult {
         private String timeCreated;
         private String timeUpdated;
         private String webAppAccelerationPolicyId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAppAccelerationPolicyResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -238,30 +205,37 @@ public final class GetAppAccelerationPolicyResult {
     	      this.webAppAccelerationPolicyId = defaults.webAppAccelerationPolicyId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder responseCachingPolicies(List<GetAppAccelerationPolicyResponseCachingPolicy> responseCachingPolicies) {
             this.responseCachingPolicies = Objects.requireNonNull(responseCachingPolicies);
             return this;
@@ -269,6 +243,7 @@ public final class GetAppAccelerationPolicyResult {
         public Builder responseCachingPolicies(GetAppAccelerationPolicyResponseCachingPolicy... responseCachingPolicies) {
             return responseCachingPolicies(List.of(responseCachingPolicies));
         }
+        @CustomType.Setter
         public Builder responseCompressionPolicies(List<GetAppAccelerationPolicyResponseCompressionPolicy> responseCompressionPolicies) {
             this.responseCompressionPolicies = Objects.requireNonNull(responseCompressionPolicies);
             return this;
@@ -276,27 +251,47 @@ public final class GetAppAccelerationPolicyResult {
         public Builder responseCompressionPolicies(GetAppAccelerationPolicyResponseCompressionPolicy... responseCompressionPolicies) {
             return responseCompressionPolicies(List.of(responseCompressionPolicies));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder webAppAccelerationPolicyId(String webAppAccelerationPolicyId) {
             this.webAppAccelerationPolicyId = Objects.requireNonNull(webAppAccelerationPolicyId);
             return this;
-        }        public GetAppAccelerationPolicyResult build() {
-            return new GetAppAccelerationPolicyResult(compartmentId, definedTags, displayName, freeformTags, id, lifecycleDetails, responseCachingPolicies, responseCompressionPolicies, state, systemTags, timeCreated, timeUpdated, webAppAccelerationPolicyId);
+        }
+        public GetAppAccelerationPolicyResult build() {
+            final var o = new GetAppAccelerationPolicyResult();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.responseCachingPolicies = responseCachingPolicies;
+            o.responseCompressionPolicies = responseCompressionPolicies;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.webAppAccelerationPolicyId = webAppAccelerationPolicyId;
+            return o;
         }
     }
 }

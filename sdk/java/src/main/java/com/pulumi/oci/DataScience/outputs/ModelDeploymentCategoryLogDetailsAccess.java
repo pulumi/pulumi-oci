@@ -13,21 +13,14 @@ public final class ModelDeploymentCategoryLogDetailsAccess {
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
      * 
      */
-    private final String logGroupId;
+    private String logGroupId;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
      * 
      */
-    private final String logId;
+    private String logId;
 
-    @CustomType.Constructor
-    private ModelDeploymentCategoryLogDetailsAccess(
-        @CustomType.Parameter("logGroupId") String logGroupId,
-        @CustomType.Parameter("logId") String logId) {
-        this.logGroupId = logGroupId;
-        this.logId = logId;
-    }
-
+    private ModelDeploymentCategoryLogDetailsAccess() {}
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
      * 
@@ -50,30 +43,32 @@ public final class ModelDeploymentCategoryLogDetailsAccess {
     public static Builder builder(ModelDeploymentCategoryLogDetailsAccess defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String logGroupId;
         private String logId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ModelDeploymentCategoryLogDetailsAccess defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.logGroupId = defaults.logGroupId;
     	      this.logId = defaults.logId;
         }
 
+        @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = Objects.requireNonNull(logGroupId);
             return this;
         }
+        @CustomType.Setter
         public Builder logId(String logId) {
             this.logId = Objects.requireNonNull(logId);
             return this;
-        }        public ModelDeploymentCategoryLogDetailsAccess build() {
-            return new ModelDeploymentCategoryLogDetailsAccess(logGroupId, logId);
+        }
+        public ModelDeploymentCategoryLogDetailsAccess build() {
+            final var o = new ModelDeploymentCategoryLogDetailsAccess();
+            o.logGroupId = logGroupId;
+            o.logId = logId;
+            return o;
         }
     }
 }

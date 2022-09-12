@@ -14,13 +14,9 @@ public final class GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection 
      * @return A list of JobExecutionsSummary objects.
      * 
      */
-    private final List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem> items;
+    private List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection(@CustomType.Parameter("items") List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection() {}
     /**
      * @return A list of JobExecutionsSummary objects.
      * 
@@ -36,27 +32,27 @@ public final class GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection 
     public static Builder builder(GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetJobExecutionsStatusesJobExecutionsStatusSummaryCollectionItem... items) {
             return items(List.of(items));
-        }        public GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection build() {
-            return new GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection(items);
+        }
+        public GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection build() {
+            final var o = new GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPrivateApplicationPackagesPrivateApplicationPackageCollection {
-    private final List<GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem> items;
+    private List<GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetPrivateApplicationPackagesPrivateApplicationPackageCollection(@CustomType.Parameter("items") List<GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetPrivateApplicationPackagesPrivateApplicationPackageCollection() {}
     public List<GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetPrivateApplicationPackagesPrivateApplicationPackageCollect
     public static Builder builder(GetPrivateApplicationPackagesPrivateApplicationPackageCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPrivateApplicationPackagesPrivateApplicationPackageCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem... items) {
             return items(List.of(items));
-        }        public GetPrivateApplicationPackagesPrivateApplicationPackageCollection build() {
-            return new GetPrivateApplicationPackagesPrivateApplicationPackageCollection(items);
+        }
+        public GetPrivateApplicationPackagesPrivateApplicationPackageCollection build() {
+            final var o = new GetPrivateApplicationPackagesPrivateApplicationPackageCollection();
+            o.items = items;
+            return o;
         }
     }
 }

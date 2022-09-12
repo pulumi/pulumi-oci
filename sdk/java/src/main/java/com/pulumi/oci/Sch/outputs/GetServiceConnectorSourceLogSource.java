@@ -13,28 +13,19 @@ public final class GetServiceConnectorSourceLogSource {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
      * 
      */
-    private final String logGroupId;
+    private String logGroupId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
      * 
      */
-    private final String logId;
+    private String logId;
 
-    @CustomType.Constructor
-    private GetServiceConnectorSourceLogSource(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("logGroupId") String logGroupId,
-        @CustomType.Parameter("logId") String logId) {
-        this.compartmentId = compartmentId;
-        this.logGroupId = logGroupId;
-        this.logId = logId;
-    }
-
+    private GetServiceConnectorSourceLogSource() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
      * 
@@ -64,16 +55,12 @@ public final class GetServiceConnectorSourceLogSource {
     public static Builder builder(GetServiceConnectorSourceLogSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String logGroupId;
         private String logId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceConnectorSourceLogSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -81,19 +68,27 @@ public final class GetServiceConnectorSourceLogSource {
     	      this.logId = defaults.logId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = Objects.requireNonNull(logGroupId);
             return this;
         }
+        @CustomType.Setter
         public Builder logId(String logId) {
             this.logId = Objects.requireNonNull(logId);
             return this;
-        }        public GetServiceConnectorSourceLogSource build() {
-            return new GetServiceConnectorSourceLogSource(compartmentId, logGroupId, logId);
+        }
+        public GetServiceConnectorSourceLogSource build() {
+            final var o = new GetServiceConnectorSourceLogSource();
+            o.compartmentId = compartmentId;
+            o.logGroupId = logGroupId;
+            o.logId = logId;
+            return o;
         }
     }
 }

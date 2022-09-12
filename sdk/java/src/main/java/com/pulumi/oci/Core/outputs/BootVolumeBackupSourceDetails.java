@@ -11,28 +11,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class BootVolumeBackupSourceDetails {
-    private final String bootVolumeBackupId;
+    private String bootVolumeBackupId;
     /**
      * @return The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
      * 
      */
-    private final @Nullable String kmsKeyId;
+    private @Nullable String kmsKeyId;
     /**
      * @return The region of the volume backup source.
      * 
      */
-    private final String region;
+    private String region;
 
-    @CustomType.Constructor
-    private BootVolumeBackupSourceDetails(
-        @CustomType.Parameter("bootVolumeBackupId") String bootVolumeBackupId,
-        @CustomType.Parameter("kmsKeyId") @Nullable String kmsKeyId,
-        @CustomType.Parameter("region") String region) {
-        this.bootVolumeBackupId = bootVolumeBackupId;
-        this.kmsKeyId = kmsKeyId;
-        this.region = region;
-    }
-
+    private BootVolumeBackupSourceDetails() {}
     public String bootVolumeBackupId() {
         return this.bootVolumeBackupId;
     }
@@ -58,16 +49,12 @@ public final class BootVolumeBackupSourceDetails {
     public static Builder builder(BootVolumeBackupSourceDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bootVolumeBackupId;
         private @Nullable String kmsKeyId;
         private String region;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BootVolumeBackupSourceDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bootVolumeBackupId = defaults.bootVolumeBackupId;
@@ -75,19 +62,27 @@ public final class BootVolumeBackupSourceDetails {
     	      this.region = defaults.region;
         }
 
+        @CustomType.Setter
         public Builder bootVolumeBackupId(String bootVolumeBackupId) {
             this.bootVolumeBackupId = Objects.requireNonNull(bootVolumeBackupId);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             return this;
         }
+        @CustomType.Setter
         public Builder region(String region) {
             this.region = Objects.requireNonNull(region);
             return this;
-        }        public BootVolumeBackupSourceDetails build() {
-            return new BootVolumeBackupSourceDetails(bootVolumeBackupId, kmsKeyId, region);
+        }
+        public BootVolumeBackupSourceDetails build() {
+            final var o = new BootVolumeBackupSourceDetails();
+            o.bootVolumeBackupId = bootVolumeBackupId;
+            o.kmsKeyId = kmsKeyId;
+            o.region = region;
+            return o;
         }
     }
 }

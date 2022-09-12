@@ -15,48 +15,31 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPingProbeResultsResult {
-    private final @Nullable List<GetPingProbeResultsFilter> filters;
+    private @Nullable List<GetPingProbeResultsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of ping_probe_results.
      * 
      */
-    private final List<GetPingProbeResultsPingProbeResult> pingProbeResults;
+    private List<GetPingProbeResultsPingProbeResult> pingProbeResults;
     /**
      * @return The OCID of the monitor or on-demand probe responsible for creating this result.
      * 
      */
-    private final String probeConfigurationId;
-    private final @Nullable Double startTimeGreaterThanOrEqualTo;
-    private final @Nullable Double startTimeLessThanOrEqualTo;
+    private String probeConfigurationId;
+    private @Nullable Double startTimeGreaterThanOrEqualTo;
+    private @Nullable Double startTimeLessThanOrEqualTo;
     /**
      * @return The target hostname or IP address of the probe.
      * 
      */
-    private final @Nullable String target;
+    private @Nullable String target;
 
-    @CustomType.Constructor
-    private GetPingProbeResultsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetPingProbeResultsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("pingProbeResults") List<GetPingProbeResultsPingProbeResult> pingProbeResults,
-        @CustomType.Parameter("probeConfigurationId") String probeConfigurationId,
-        @CustomType.Parameter("startTimeGreaterThanOrEqualTo") @Nullable Double startTimeGreaterThanOrEqualTo,
-        @CustomType.Parameter("startTimeLessThanOrEqualTo") @Nullable Double startTimeLessThanOrEqualTo,
-        @CustomType.Parameter("target") @Nullable String target) {
-        this.filters = filters;
-        this.id = id;
-        this.pingProbeResults = pingProbeResults;
-        this.probeConfigurationId = probeConfigurationId;
-        this.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
-        this.startTimeLessThanOrEqualTo = startTimeLessThanOrEqualTo;
-        this.target = target;
-    }
-
+    private GetPingProbeResultsResult() {}
     public List<GetPingProbeResultsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -102,7 +85,7 @@ public final class GetPingProbeResultsResult {
     public static Builder builder(GetPingProbeResultsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetPingProbeResultsFilter> filters;
         private String id;
@@ -111,11 +94,7 @@ public final class GetPingProbeResultsResult {
         private @Nullable Double startTimeGreaterThanOrEqualTo;
         private @Nullable Double startTimeLessThanOrEqualTo;
         private @Nullable String target;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPingProbeResultsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -127,6 +106,7 @@ public final class GetPingProbeResultsResult {
     	      this.target = defaults.target;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetPingProbeResultsFilter> filters) {
             this.filters = filters;
             return this;
@@ -134,10 +114,12 @@ public final class GetPingProbeResultsResult {
         public Builder filters(GetPingProbeResultsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder pingProbeResults(List<GetPingProbeResultsPingProbeResult> pingProbeResults) {
             this.pingProbeResults = Objects.requireNonNull(pingProbeResults);
             return this;
@@ -145,23 +127,36 @@ public final class GetPingProbeResultsResult {
         public Builder pingProbeResults(GetPingProbeResultsPingProbeResult... pingProbeResults) {
             return pingProbeResults(List.of(pingProbeResults));
         }
+        @CustomType.Setter
         public Builder probeConfigurationId(String probeConfigurationId) {
             this.probeConfigurationId = Objects.requireNonNull(probeConfigurationId);
             return this;
         }
+        @CustomType.Setter
         public Builder startTimeGreaterThanOrEqualTo(@Nullable Double startTimeGreaterThanOrEqualTo) {
             this.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder startTimeLessThanOrEqualTo(@Nullable Double startTimeLessThanOrEqualTo) {
             this.startTimeLessThanOrEqualTo = startTimeLessThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder target(@Nullable String target) {
             this.target = target;
             return this;
-        }        public GetPingProbeResultsResult build() {
-            return new GetPingProbeResultsResult(filters, id, pingProbeResults, probeConfigurationId, startTimeGreaterThanOrEqualTo, startTimeLessThanOrEqualTo, target);
+        }
+        public GetPingProbeResultsResult build() {
+            final var o = new GetPingProbeResultsResult();
+            o.filters = filters;
+            o.id = id;
+            o.pingProbeResults = pingProbeResults;
+            o.probeConfigurationId = probeConfigurationId;
+            o.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
+            o.startTimeLessThanOrEqualTo = startTimeLessThanOrEqualTo;
+            o.target = target;
+            return o;
         }
     }
 }

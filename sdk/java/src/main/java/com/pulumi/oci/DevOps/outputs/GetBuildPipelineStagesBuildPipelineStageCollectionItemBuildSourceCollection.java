@@ -14,13 +14,9 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSo
      * @return Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
      * 
      */
-    private final List<GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem> items;
+    private List<GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection(@CustomType.Parameter("items") List<GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection() {}
     /**
      * @return Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
      * 
@@ -36,27 +32,27 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSo
     public static Builder builder(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem... items) {
             return items(List.of(items));
-        }        public GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection build() {
-            return new GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection(items);
+        }
+        public GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection build() {
+            final var o = new GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollection();
+            o.items = items;
+            return o;
         }
     }
 }

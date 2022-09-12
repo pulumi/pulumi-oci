@@ -13,13 +13,9 @@ public final class GetMeshesMeshCollectionItemMtl {
      * @return DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
      * 
      */
-    private final String minimum;
+    private String minimum;
 
-    @CustomType.Constructor
-    private GetMeshesMeshCollectionItemMtl(@CustomType.Parameter("minimum") String minimum) {
-        this.minimum = minimum;
-    }
-
+    private GetMeshesMeshCollectionItemMtl() {}
     /**
      * @return DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
      * 
@@ -35,24 +31,24 @@ public final class GetMeshesMeshCollectionItemMtl {
     public static Builder builder(GetMeshesMeshCollectionItemMtl defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String minimum;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMeshesMeshCollectionItemMtl defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.minimum = defaults.minimum;
         }
 
+        @CustomType.Setter
         public Builder minimum(String minimum) {
             this.minimum = Objects.requireNonNull(minimum);
             return this;
-        }        public GetMeshesMeshCollectionItemMtl build() {
-            return new GetMeshesMeshCollectionItemMtl(minimum);
+        }
+        public GetMeshesMeshCollectionItemMtl build() {
+            final var o = new GetMeshesMeshCollectionItemMtl();
+            o.minimum = minimum;
+            return o;
         }
     }
 }

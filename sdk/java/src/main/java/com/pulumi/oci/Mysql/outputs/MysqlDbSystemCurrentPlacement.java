@@ -15,21 +15,14 @@ public final class MysqlDbSystemCurrentPlacement {
      * @return The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      * 
      */
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      * 
      */
-    private final @Nullable String faultDomain;
+    private @Nullable String faultDomain;
 
-    @CustomType.Constructor
-    private MysqlDbSystemCurrentPlacement(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("faultDomain") @Nullable String faultDomain) {
-        this.availabilityDomain = availabilityDomain;
-        this.faultDomain = faultDomain;
-    }
-
+    private MysqlDbSystemCurrentPlacement() {}
     /**
      * @return The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      * 
@@ -52,30 +45,32 @@ public final class MysqlDbSystemCurrentPlacement {
     public static Builder builder(MysqlDbSystemCurrentPlacement defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private @Nullable String faultDomain;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MysqlDbSystemCurrentPlacement defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.faultDomain = defaults.faultDomain;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder faultDomain(@Nullable String faultDomain) {
             this.faultDomain = faultDomain;
             return this;
-        }        public MysqlDbSystemCurrentPlacement build() {
-            return new MysqlDbSystemCurrentPlacement(availabilityDomain, faultDomain);
+        }
+        public MysqlDbSystemCurrentPlacement build() {
+            final var o = new MysqlDbSystemCurrentPlacement();
+            o.availabilityDomain = availabilityDomain;
+            o.faultDomain = faultDomain;
+            return o;
         }
     }
 }

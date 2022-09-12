@@ -12,31 +12,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExadataInfrastructureDownloadConfigFileResult {
-    private final @Nullable Boolean base64EncodeContent;
+    private @Nullable Boolean base64EncodeContent;
     /**
      * @return content of the downloaded config file for exadata infrastructure. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
      * 
      */
-    private final String content;
-    private final String exadataInfrastructureId;
+    private String content;
+    private String exadataInfrastructureId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetExadataInfrastructureDownloadConfigFileResult(
-        @CustomType.Parameter("base64EncodeContent") @Nullable Boolean base64EncodeContent,
-        @CustomType.Parameter("content") String content,
-        @CustomType.Parameter("exadataInfrastructureId") String exadataInfrastructureId,
-        @CustomType.Parameter("id") String id) {
-        this.base64EncodeContent = base64EncodeContent;
-        this.content = content;
-        this.exadataInfrastructureId = exadataInfrastructureId;
-        this.id = id;
-    }
-
+    private GetExadataInfrastructureDownloadConfigFileResult() {}
     public Optional<Boolean> base64EncodeContent() {
         return Optional.ofNullable(this.base64EncodeContent);
     }
@@ -65,17 +54,13 @@ public final class GetExadataInfrastructureDownloadConfigFileResult {
     public static Builder builder(GetExadataInfrastructureDownloadConfigFileResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean base64EncodeContent;
         private String content;
         private String exadataInfrastructureId;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetExadataInfrastructureDownloadConfigFileResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.base64EncodeContent = defaults.base64EncodeContent;
@@ -84,23 +69,33 @@ public final class GetExadataInfrastructureDownloadConfigFileResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder base64EncodeContent(@Nullable Boolean base64EncodeContent) {
             this.base64EncodeContent = base64EncodeContent;
             return this;
         }
+        @CustomType.Setter
         public Builder content(String content) {
             this.content = Objects.requireNonNull(content);
             return this;
         }
+        @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
             this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetExadataInfrastructureDownloadConfigFileResult build() {
-            return new GetExadataInfrastructureDownloadConfigFileResult(base64EncodeContent, content, exadataInfrastructureId, id);
+        }
+        public GetExadataInfrastructureDownloadConfigFileResult build() {
+            final var o = new GetExadataInfrastructureDownloadConfigFileResult();
+            o.base64EncodeContent = base64EncodeContent;
+            o.content = content;
+            o.exadataInfrastructureId = exadataInfrastructureId;
+            o.id = id;
+            return o;
         }
     }
 }

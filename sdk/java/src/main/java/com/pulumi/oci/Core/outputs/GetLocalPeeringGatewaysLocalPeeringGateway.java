@@ -17,112 +17,79 @@ public final class GetLocalPeeringGatewaysLocalPeeringGateway {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The LPG&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
      * 
      */
-    private final Boolean isCrossTenancyPeering;
+    private Boolean isCrossTenancyPeering;
     /**
      * @return The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
      * 
      */
-    private final String peerAdvertisedCidr;
+    private String peerAdvertisedCidr;
     /**
      * @return The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet&#39;s traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
      * 
      */
-    private final List<String> peerAdvertisedCidrDetails;
+    private List<String> peerAdvertisedCidrDetails;
     /**
      * @return The OCID of the peered LPG
      * 
      */
-    private final String peerId;
+    private String peerId;
     /**
      * @return Whether the LPG is peered with another LPG. `NEW` means the LPG has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the LPG at the other end of the peering has been deleted.
      * 
      */
-    private final String peeringStatus;
+    private String peeringStatus;
     /**
      * @return Additional information regarding the peering status, if applicable.
      * 
      */
-    private final String peeringStatusDetails;
+    private String peeringStatusDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG is using.
      * 
      */
-    private final String routeTableId;
+    private String routeTableId;
     /**
      * @return The LPG&#39;s current lifecycle state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
-    private final String vcnId;
+    private String vcnId;
 
-    @CustomType.Constructor
-    private GetLocalPeeringGatewaysLocalPeeringGateway(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isCrossTenancyPeering") Boolean isCrossTenancyPeering,
-        @CustomType.Parameter("peerAdvertisedCidr") String peerAdvertisedCidr,
-        @CustomType.Parameter("peerAdvertisedCidrDetails") List<String> peerAdvertisedCidrDetails,
-        @CustomType.Parameter("peerId") String peerId,
-        @CustomType.Parameter("peeringStatus") String peeringStatus,
-        @CustomType.Parameter("peeringStatusDetails") String peeringStatusDetails,
-        @CustomType.Parameter("routeTableId") String routeTableId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("vcnId") String vcnId) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isCrossTenancyPeering = isCrossTenancyPeering;
-        this.peerAdvertisedCidr = peerAdvertisedCidr;
-        this.peerAdvertisedCidrDetails = peerAdvertisedCidrDetails;
-        this.peerId = peerId;
-        this.peeringStatus = peeringStatus;
-        this.peeringStatusDetails = peeringStatusDetails;
-        this.routeTableId = routeTableId;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.vcnId = vcnId;
-    }
-
+    private GetLocalPeeringGatewaysLocalPeeringGateway() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -236,7 +203,7 @@ public final class GetLocalPeeringGatewaysLocalPeeringGateway {
     public static Builder builder(GetLocalPeeringGatewaysLocalPeeringGateway defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -253,11 +220,7 @@ public final class GetLocalPeeringGatewaysLocalPeeringGateway {
         private String state;
         private String timeCreated;
         private String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLocalPeeringGatewaysLocalPeeringGateway defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -277,34 +240,42 @@ public final class GetLocalPeeringGatewaysLocalPeeringGateway {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isCrossTenancyPeering(Boolean isCrossTenancyPeering) {
             this.isCrossTenancyPeering = Objects.requireNonNull(isCrossTenancyPeering);
             return this;
         }
+        @CustomType.Setter
         public Builder peerAdvertisedCidr(String peerAdvertisedCidr) {
             this.peerAdvertisedCidr = Objects.requireNonNull(peerAdvertisedCidr);
             return this;
         }
+        @CustomType.Setter
         public Builder peerAdvertisedCidrDetails(List<String> peerAdvertisedCidrDetails) {
             this.peerAdvertisedCidrDetails = Objects.requireNonNull(peerAdvertisedCidrDetails);
             return this;
@@ -312,35 +283,59 @@ public final class GetLocalPeeringGatewaysLocalPeeringGateway {
         public Builder peerAdvertisedCidrDetails(String... peerAdvertisedCidrDetails) {
             return peerAdvertisedCidrDetails(List.of(peerAdvertisedCidrDetails));
         }
+        @CustomType.Setter
         public Builder peerId(String peerId) {
             this.peerId = Objects.requireNonNull(peerId);
             return this;
         }
+        @CustomType.Setter
         public Builder peeringStatus(String peeringStatus) {
             this.peeringStatus = Objects.requireNonNull(peeringStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder peeringStatusDetails(String peeringStatusDetails) {
             this.peeringStatusDetails = Objects.requireNonNull(peeringStatusDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder routeTableId(String routeTableId) {
             this.routeTableId = Objects.requireNonNull(routeTableId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(String vcnId) {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
-        }        public GetLocalPeeringGatewaysLocalPeeringGateway build() {
-            return new GetLocalPeeringGatewaysLocalPeeringGateway(compartmentId, definedTags, displayName, freeformTags, id, isCrossTenancyPeering, peerAdvertisedCidr, peerAdvertisedCidrDetails, peerId, peeringStatus, peeringStatusDetails, routeTableId, state, timeCreated, vcnId);
+        }
+        public GetLocalPeeringGatewaysLocalPeeringGateway build() {
+            final var o = new GetLocalPeeringGatewaysLocalPeeringGateway();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isCrossTenancyPeering = isCrossTenancyPeering;
+            o.peerAdvertisedCidr = peerAdvertisedCidr;
+            o.peerAdvertisedCidrDetails = peerAdvertisedCidrDetails;
+            o.peerId = peerId;
+            o.peeringStatus = peeringStatus;
+            o.peeringStatusDetails = peeringStatusDetails;
+            o.routeTableId = routeTableId;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

@@ -18,59 +18,40 @@ public final class GetNetworkFirewallsResult {
      * @return Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
      * 
      */
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Network Firewall.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name for the Network Firewall. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetNetworkFirewallsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetNetworkFirewallsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall resource.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of network_firewall_collection.
      * 
      */
-    private final List<GetNetworkFirewallsNetworkFirewallCollection> networkFirewallCollections;
+    private List<GetNetworkFirewallsNetworkFirewallCollection> networkFirewallCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall Policy.
      * 
      */
-    private final @Nullable String networkFirewallPolicyId;
+    private @Nullable String networkFirewallPolicyId;
     /**
      * @return The current state of the Network Firewall.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetNetworkFirewallsResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetNetworkFirewallsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("networkFirewallCollections") List<GetNetworkFirewallsNetworkFirewallCollection> networkFirewallCollections,
-        @CustomType.Parameter("networkFirewallPolicyId") @Nullable String networkFirewallPolicyId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.networkFirewallCollections = networkFirewallCollections;
-        this.networkFirewallPolicyId = networkFirewallPolicyId;
-        this.state = state;
-    }
-
+    private GetNetworkFirewallsResult() {}
     /**
      * @return Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
      * 
@@ -131,7 +112,7 @@ public final class GetNetworkFirewallsResult {
     public static Builder builder(GetNetworkFirewallsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
@@ -141,11 +122,7 @@ public final class GetNetworkFirewallsResult {
         private List<GetNetworkFirewallsNetworkFirewallCollection> networkFirewallCollections;
         private @Nullable String networkFirewallPolicyId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkFirewallsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -158,18 +135,22 @@ public final class GetNetworkFirewallsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkFirewallsFilter> filters) {
             this.filters = filters;
             return this;
@@ -177,10 +158,12 @@ public final class GetNetworkFirewallsResult {
         public Builder filters(GetNetworkFirewallsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder networkFirewallCollections(List<GetNetworkFirewallsNetworkFirewallCollection> networkFirewallCollections) {
             this.networkFirewallCollections = Objects.requireNonNull(networkFirewallCollections);
             return this;
@@ -188,15 +171,27 @@ public final class GetNetworkFirewallsResult {
         public Builder networkFirewallCollections(GetNetworkFirewallsNetworkFirewallCollection... networkFirewallCollections) {
             return networkFirewallCollections(List.of(networkFirewallCollections));
         }
+        @CustomType.Setter
         public Builder networkFirewallPolicyId(@Nullable String networkFirewallPolicyId) {
             this.networkFirewallPolicyId = networkFirewallPolicyId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetNetworkFirewallsResult build() {
-            return new GetNetworkFirewallsResult(availabilityDomain, compartmentId, displayName, filters, id, networkFirewallCollections, networkFirewallPolicyId, state);
+        }
+        public GetNetworkFirewallsResult build() {
+            final var o = new GetNetworkFirewallsResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.networkFirewallCollections = networkFirewallCollections;
+            o.networkFirewallPolicyId = networkFirewallPolicyId;
+            o.state = state;
+            return o;
         }
     }
 }

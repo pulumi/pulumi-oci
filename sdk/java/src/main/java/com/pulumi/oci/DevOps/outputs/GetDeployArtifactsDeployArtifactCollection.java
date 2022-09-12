@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDeployArtifactsDeployArtifactCollection {
-    private final List<GetDeployArtifactsDeployArtifactCollectionItem> items;
+    private List<GetDeployArtifactsDeployArtifactCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetDeployArtifactsDeployArtifactCollection(@CustomType.Parameter("items") List<GetDeployArtifactsDeployArtifactCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetDeployArtifactsDeployArtifactCollection() {}
     public List<GetDeployArtifactsDeployArtifactCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetDeployArtifactsDeployArtifactCollection {
     public static Builder builder(GetDeployArtifactsDeployArtifactCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeployArtifactsDeployArtifactCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployArtifactsDeployArtifactCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDeployArtifactsDeployArtifactCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDeployArtifactsDeployArtifactCollectionItem... items) {
             return items(List.of(items));
-        }        public GetDeployArtifactsDeployArtifactCollection build() {
-            return new GetDeployArtifactsDeployArtifactCollection(items);
+        }
+        public GetDeployArtifactsDeployArtifactCollection build() {
+            final var o = new GetDeployArtifactsDeployArtifactCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -16,28 +16,19 @@ public final class CrossConnectMacsecProperties {
      * @return Type of encryption cipher suite to use for the MACsec connection.
      * 
      */
-    private final @Nullable String encryptionCipher;
+    private @Nullable String encryptionCipher;
     /**
      * @return An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
      * 
      */
-    private final @Nullable CrossConnectMacsecPropertiesPrimaryKey primaryKey;
+    private @Nullable CrossConnectMacsecPropertiesPrimaryKey primaryKey;
     /**
      * @return The cross-connect&#39;s current state.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private CrossConnectMacsecProperties(
-        @CustomType.Parameter("encryptionCipher") @Nullable String encryptionCipher,
-        @CustomType.Parameter("primaryKey") @Nullable CrossConnectMacsecPropertiesPrimaryKey primaryKey,
-        @CustomType.Parameter("state") String state) {
-        this.encryptionCipher = encryptionCipher;
-        this.primaryKey = primaryKey;
-        this.state = state;
-    }
-
+    private CrossConnectMacsecProperties() {}
     /**
      * @return Type of encryption cipher suite to use for the MACsec connection.
      * 
@@ -67,16 +58,12 @@ public final class CrossConnectMacsecProperties {
     public static Builder builder(CrossConnectMacsecProperties defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String encryptionCipher;
         private @Nullable CrossConnectMacsecPropertiesPrimaryKey primaryKey;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CrossConnectMacsecProperties defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.encryptionCipher = defaults.encryptionCipher;
@@ -84,19 +71,27 @@ public final class CrossConnectMacsecProperties {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder encryptionCipher(@Nullable String encryptionCipher) {
             this.encryptionCipher = encryptionCipher;
             return this;
         }
+        @CustomType.Setter
         public Builder primaryKey(@Nullable CrossConnectMacsecPropertiesPrimaryKey primaryKey) {
             this.primaryKey = primaryKey;
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public CrossConnectMacsecProperties build() {
-            return new CrossConnectMacsecProperties(encryptionCipher, primaryKey, state);
+        }
+        public CrossConnectMacsecProperties build() {
+            final var o = new CrossConnectMacsecProperties();
+            o.encryptionCipher = encryptionCipher;
+            o.primaryKey = primaryKey;
+            o.state = state;
+            return o;
         }
     }
 }

@@ -15,21 +15,14 @@ public final class GetAutoScalingConfigurationPolicyRule {
      * @return The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return Metric and threshold details for triggering an autoscale action.
      * 
      */
-    private final List<GetAutoScalingConfigurationPolicyRuleMetric> metrics;
+    private List<GetAutoScalingConfigurationPolicyRuleMetric> metrics;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationPolicyRule(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("metrics") List<GetAutoScalingConfigurationPolicyRuleMetric> metrics) {
-        this.action = action;
-        this.metrics = metrics;
-    }
-
+    private GetAutoScalingConfigurationPolicyRule() {}
     /**
      * @return The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
      * 
@@ -52,33 +45,35 @@ public final class GetAutoScalingConfigurationPolicyRule {
     public static Builder builder(GetAutoScalingConfigurationPolicyRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private List<GetAutoScalingConfigurationPolicyRuleMetric> metrics;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicyRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
     	      this.metrics = defaults.metrics;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder metrics(List<GetAutoScalingConfigurationPolicyRuleMetric> metrics) {
             this.metrics = Objects.requireNonNull(metrics);
             return this;
         }
         public Builder metrics(GetAutoScalingConfigurationPolicyRuleMetric... metrics) {
             return metrics(List.of(metrics));
-        }        public GetAutoScalingConfigurationPolicyRule build() {
-            return new GetAutoScalingConfigurationPolicyRule(action, metrics);
+        }
+        public GetAutoScalingConfigurationPolicyRule build() {
+            final var o = new GetAutoScalingConfigurationPolicyRule();
+            o.action = action;
+            o.metrics = metrics;
+            return o;
         }
     }
 }

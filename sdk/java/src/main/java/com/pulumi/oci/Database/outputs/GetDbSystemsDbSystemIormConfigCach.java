@@ -11,34 +11,21 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDbSystemsDbSystemIormConfigCach {
-    private final List<GetDbSystemsDbSystemIormConfigCachDbPlan> dbPlans;
-    private final String dbSystemId;
+    private List<GetDbSystemsDbSystemIormConfigCachDbPlan> dbPlans;
+    private String dbSystemId;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
-    private final String objective;
+    private String lifecycleDetails;
+    private String objective;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private GetDbSystemsDbSystemIormConfigCach(
-        @CustomType.Parameter("dbPlans") List<GetDbSystemsDbSystemIormConfigCachDbPlan> dbPlans,
-        @CustomType.Parameter("dbSystemId") String dbSystemId,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("objective") String objective,
-        @CustomType.Parameter("state") String state) {
-        this.dbPlans = dbPlans;
-        this.dbSystemId = dbSystemId;
-        this.lifecycleDetails = lifecycleDetails;
-        this.objective = objective;
-        this.state = state;
-    }
-
+    private GetDbSystemsDbSystemIormConfigCach() {}
     public List<GetDbSystemsDbSystemIormConfigCachDbPlan> dbPlans() {
         return this.dbPlans;
     }
@@ -70,18 +57,14 @@ public final class GetDbSystemsDbSystemIormConfigCach {
     public static Builder builder(GetDbSystemsDbSystemIormConfigCach defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDbSystemsDbSystemIormConfigCachDbPlan> dbPlans;
         private String dbSystemId;
         private String lifecycleDetails;
         private String objective;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbSystemsDbSystemIormConfigCach defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbPlans = defaults.dbPlans;
@@ -91,6 +74,7 @@ public final class GetDbSystemsDbSystemIormConfigCach {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder dbPlans(List<GetDbSystemsDbSystemIormConfigCachDbPlan> dbPlans) {
             this.dbPlans = Objects.requireNonNull(dbPlans);
             return this;
@@ -98,23 +82,34 @@ public final class GetDbSystemsDbSystemIormConfigCach {
         public Builder dbPlans(GetDbSystemsDbSystemIormConfigCachDbPlan... dbPlans) {
             return dbPlans(List.of(dbPlans));
         }
+        @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = Objects.requireNonNull(dbSystemId);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder objective(String objective) {
             this.objective = Objects.requireNonNull(objective);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetDbSystemsDbSystemIormConfigCach build() {
-            return new GetDbSystemsDbSystemIormConfigCach(dbPlans, dbSystemId, lifecycleDetails, objective, state);
+        }
+        public GetDbSystemsDbSystemIormConfigCach build() {
+            final var o = new GetDbSystemsDbSystemIormConfigCach();
+            o.dbPlans = dbPlans;
+            o.dbSystemId = dbSystemId;
+            o.lifecycleDetails = lifecycleDetails;
+            o.objective = objective;
+            o.state = state;
+            return o;
         }
     }
 }

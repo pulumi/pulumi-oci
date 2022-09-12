@@ -15,21 +15,14 @@ public final class GetHttpProbeResultsHttpProbeResultDn {
      * @return The addresses returned by DNS resolution.
      * 
      */
-    private final List<String> addresses;
+    private List<String> addresses;
     /**
      * @return Total DNS resolution duration, in milliseconds. Calculated using `domainLookupEnd` minus `domainLookupStart`.
      * 
      */
-    private final Double domainLookupDuration;
+    private Double domainLookupDuration;
 
-    @CustomType.Constructor
-    private GetHttpProbeResultsHttpProbeResultDn(
-        @CustomType.Parameter("addresses") List<String> addresses,
-        @CustomType.Parameter("domainLookupDuration") Double domainLookupDuration) {
-        this.addresses = addresses;
-        this.domainLookupDuration = domainLookupDuration;
-    }
-
+    private GetHttpProbeResultsHttpProbeResultDn() {}
     /**
      * @return The addresses returned by DNS resolution.
      * 
@@ -52,21 +45,18 @@ public final class GetHttpProbeResultsHttpProbeResultDn {
     public static Builder builder(GetHttpProbeResultsHttpProbeResultDn defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> addresses;
         private Double domainLookupDuration;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetHttpProbeResultsHttpProbeResultDn defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.addresses = defaults.addresses;
     	      this.domainLookupDuration = defaults.domainLookupDuration;
         }
 
+        @CustomType.Setter
         public Builder addresses(List<String> addresses) {
             this.addresses = Objects.requireNonNull(addresses);
             return this;
@@ -74,11 +64,16 @@ public final class GetHttpProbeResultsHttpProbeResultDn {
         public Builder addresses(String... addresses) {
             return addresses(List.of(addresses));
         }
+        @CustomType.Setter
         public Builder domainLookupDuration(Double domainLookupDuration) {
             this.domainLookupDuration = Objects.requireNonNull(domainLookupDuration);
             return this;
-        }        public GetHttpProbeResultsHttpProbeResultDn build() {
-            return new GetHttpProbeResultsHttpProbeResultDn(addresses, domainLookupDuration);
+        }
+        public GetHttpProbeResultsHttpProbeResultDn build() {
+            final var o = new GetHttpProbeResultsHttpProbeResultDn();
+            o.addresses = addresses;
+            o.domainLookupDuration = domainLookupDuration;
+            return o;
         }
     }
 }

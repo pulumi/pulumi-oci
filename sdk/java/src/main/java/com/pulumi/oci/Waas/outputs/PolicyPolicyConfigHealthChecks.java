@@ -24,37 +24,37 @@ public final class PolicyPolicyConfigHealthChecks {
      * * **5XX:** Server errors response code group.
      * 
      */
-    private final @Nullable List<String> expectedResponseCodeGroups;
+    private @Nullable List<String> expectedResponseCodeGroups;
     /**
      * @return (Updatable) Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
      * 
      */
-    private final @Nullable String expectedResponseText;
+    private @Nullable String expectedResponseText;
     /**
      * @return (Updatable) HTTP header fields to include in health check requests, expressed as `&#34;name&#34;: &#34;value&#34;` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy&#39;s protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value &#34;waf health checks&#34;.
      * 
      */
-    private final @Nullable Map<String,Object> headers;
+    private @Nullable Map<String,Object> headers;
     /**
      * @return (Updatable) Number of successful health checks after which the server is marked up.
      * 
      */
-    private final @Nullable Integer healthyThreshold;
+    private @Nullable Integer healthyThreshold;
     /**
      * @return (Updatable) Time between health checks of an individual origin server, in seconds.
      * 
      */
-    private final @Nullable Integer intervalInSeconds;
+    private @Nullable Integer intervalInSeconds;
     /**
      * @return (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
      * 
      */
-    private final @Nullable Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return (Updatable) Enables or disables additional check for predefined text in addition to response code.
      * 
      */
-    private final @Nullable Boolean isResponseTextCheckEnabled;
+    private @Nullable Boolean isResponseTextCheckEnabled;
     /**
      * @return (Updatable) Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
      * * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
@@ -62,49 +62,24 @@ public final class PolicyPolicyConfigHealthChecks {
      * * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client&#39;s next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
      * 
      */
-    private final @Nullable String method;
+    private @Nullable String method;
     /**
      * @return (Updatable) Path to visit on your origins when performing the health check.
      * 
      */
-    private final @Nullable String path;
+    private @Nullable String path;
     /**
      * @return (Updatable) Response timeout represents wait time until request is considered failed, in seconds.
      * 
      */
-    private final @Nullable Integer timeoutInSeconds;
+    private @Nullable Integer timeoutInSeconds;
     /**
      * @return (Updatable) Number of failed health checks after which the server is marked down.
      * 
      */
-    private final @Nullable Integer unhealthyThreshold;
+    private @Nullable Integer unhealthyThreshold;
 
-    @CustomType.Constructor
-    private PolicyPolicyConfigHealthChecks(
-        @CustomType.Parameter("expectedResponseCodeGroups") @Nullable List<String> expectedResponseCodeGroups,
-        @CustomType.Parameter("expectedResponseText") @Nullable String expectedResponseText,
-        @CustomType.Parameter("headers") @Nullable Map<String,Object> headers,
-        @CustomType.Parameter("healthyThreshold") @Nullable Integer healthyThreshold,
-        @CustomType.Parameter("intervalInSeconds") @Nullable Integer intervalInSeconds,
-        @CustomType.Parameter("isEnabled") @Nullable Boolean isEnabled,
-        @CustomType.Parameter("isResponseTextCheckEnabled") @Nullable Boolean isResponseTextCheckEnabled,
-        @CustomType.Parameter("method") @Nullable String method,
-        @CustomType.Parameter("path") @Nullable String path,
-        @CustomType.Parameter("timeoutInSeconds") @Nullable Integer timeoutInSeconds,
-        @CustomType.Parameter("unhealthyThreshold") @Nullable Integer unhealthyThreshold) {
-        this.expectedResponseCodeGroups = expectedResponseCodeGroups;
-        this.expectedResponseText = expectedResponseText;
-        this.headers = headers;
-        this.healthyThreshold = healthyThreshold;
-        this.intervalInSeconds = intervalInSeconds;
-        this.isEnabled = isEnabled;
-        this.isResponseTextCheckEnabled = isResponseTextCheckEnabled;
-        this.method = method;
-        this.path = path;
-        this.timeoutInSeconds = timeoutInSeconds;
-        this.unhealthyThreshold = unhealthyThreshold;
-    }
-
+    private PolicyPolicyConfigHealthChecks() {}
     /**
      * @return (Updatable) The HTTP response codes that signify a healthy state.
      * * **2XX:** Success response code group.
@@ -197,7 +172,7 @@ public final class PolicyPolicyConfigHealthChecks {
     public static Builder builder(PolicyPolicyConfigHealthChecks defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> expectedResponseCodeGroups;
         private @Nullable String expectedResponseText;
@@ -210,11 +185,7 @@ public final class PolicyPolicyConfigHealthChecks {
         private @Nullable String path;
         private @Nullable Integer timeoutInSeconds;
         private @Nullable Integer unhealthyThreshold;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PolicyPolicyConfigHealthChecks defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.expectedResponseCodeGroups = defaults.expectedResponseCodeGroups;
@@ -230,6 +201,7 @@ public final class PolicyPolicyConfigHealthChecks {
     	      this.unhealthyThreshold = defaults.unhealthyThreshold;
         }
 
+        @CustomType.Setter
         public Builder expectedResponseCodeGroups(@Nullable List<String> expectedResponseCodeGroups) {
             this.expectedResponseCodeGroups = expectedResponseCodeGroups;
             return this;
@@ -237,47 +209,70 @@ public final class PolicyPolicyConfigHealthChecks {
         public Builder expectedResponseCodeGroups(String... expectedResponseCodeGroups) {
             return expectedResponseCodeGroups(List.of(expectedResponseCodeGroups));
         }
+        @CustomType.Setter
         public Builder expectedResponseText(@Nullable String expectedResponseText) {
             this.expectedResponseText = expectedResponseText;
             return this;
         }
+        @CustomType.Setter
         public Builder headers(@Nullable Map<String,Object> headers) {
             this.headers = headers;
             return this;
         }
+        @CustomType.Setter
         public Builder healthyThreshold(@Nullable Integer healthyThreshold) {
             this.healthyThreshold = healthyThreshold;
             return this;
         }
+        @CustomType.Setter
         public Builder intervalInSeconds(@Nullable Integer intervalInSeconds) {
             this.intervalInSeconds = intervalInSeconds;
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
             this.isEnabled = isEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder isResponseTextCheckEnabled(@Nullable Boolean isResponseTextCheckEnabled) {
             this.isResponseTextCheckEnabled = isResponseTextCheckEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder method(@Nullable String method) {
             this.method = method;
             return this;
         }
+        @CustomType.Setter
         public Builder path(@Nullable String path) {
             this.path = path;
             return this;
         }
+        @CustomType.Setter
         public Builder timeoutInSeconds(@Nullable Integer timeoutInSeconds) {
             this.timeoutInSeconds = timeoutInSeconds;
             return this;
         }
+        @CustomType.Setter
         public Builder unhealthyThreshold(@Nullable Integer unhealthyThreshold) {
             this.unhealthyThreshold = unhealthyThreshold;
             return this;
-        }        public PolicyPolicyConfigHealthChecks build() {
-            return new PolicyPolicyConfigHealthChecks(expectedResponseCodeGroups, expectedResponseText, headers, healthyThreshold, intervalInSeconds, isEnabled, isResponseTextCheckEnabled, method, path, timeoutInSeconds, unhealthyThreshold);
+        }
+        public PolicyPolicyConfigHealthChecks build() {
+            final var o = new PolicyPolicyConfigHealthChecks();
+            o.expectedResponseCodeGroups = expectedResponseCodeGroups;
+            o.expectedResponseText = expectedResponseText;
+            o.headers = headers;
+            o.healthyThreshold = healthyThreshold;
+            o.intervalInSeconds = intervalInSeconds;
+            o.isEnabled = isEnabled;
+            o.isResponseTextCheckEnabled = isResponseTextCheckEnabled;
+            o.method = method;
+            o.path = path;
+            o.timeoutInSeconds = timeoutInSeconds;
+            o.unhealthyThreshold = unhealthyThreshold;
+            return o;
         }
     }
 }

@@ -15,42 +15,29 @@ public final class GetDetectorRecipeDetectorRuleDetailConfiguration {
      * @return Unique name of the configuration
      * 
      */
-    private final String configKey;
+    private String configKey;
     /**
      * @return configuration data type
      * 
      */
-    private final String dataType;
+    private String dataType;
     /**
      * @return configuration name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return configuration value
      * 
      */
-    private final String value;
+    private String value;
     /**
      * @return List of configuration values
      * 
      */
-    private final List<GetDetectorRecipeDetectorRuleDetailConfigurationValue> values;
+    private List<GetDetectorRecipeDetectorRuleDetailConfigurationValue> values;
 
-    @CustomType.Constructor
-    private GetDetectorRecipeDetectorRuleDetailConfiguration(
-        @CustomType.Parameter("configKey") String configKey,
-        @CustomType.Parameter("dataType") String dataType,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("value") String value,
-        @CustomType.Parameter("values") List<GetDetectorRecipeDetectorRuleDetailConfigurationValue> values) {
-        this.configKey = configKey;
-        this.dataType = dataType;
-        this.name = name;
-        this.value = value;
-        this.values = values;
-    }
-
+    private GetDetectorRecipeDetectorRuleDetailConfiguration() {}
     /**
      * @return Unique name of the configuration
      * 
@@ -94,18 +81,14 @@ public final class GetDetectorRecipeDetectorRuleDetailConfiguration {
     public static Builder builder(GetDetectorRecipeDetectorRuleDetailConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String configKey;
         private String dataType;
         private String name;
         private String value;
         private List<GetDetectorRecipeDetectorRuleDetailConfigurationValue> values;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDetectorRecipeDetectorRuleDetailConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.configKey = defaults.configKey;
@@ -115,30 +98,42 @@ public final class GetDetectorRecipeDetectorRuleDetailConfiguration {
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
         public Builder configKey(String configKey) {
             this.configKey = Objects.requireNonNull(configKey);
             return this;
         }
+        @CustomType.Setter
         public Builder dataType(String dataType) {
             this.dataType = Objects.requireNonNull(dataType);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
         }
+        @CustomType.Setter
         public Builder values(List<GetDetectorRecipeDetectorRuleDetailConfigurationValue> values) {
             this.values = Objects.requireNonNull(values);
             return this;
         }
         public Builder values(GetDetectorRecipeDetectorRuleDetailConfigurationValue... values) {
             return values(List.of(values));
-        }        public GetDetectorRecipeDetectorRuleDetailConfiguration build() {
-            return new GetDetectorRecipeDetectorRuleDetailConfiguration(configKey, dataType, name, value, values);
+        }
+        public GetDetectorRecipeDetectorRuleDetailConfiguration build() {
+            final var o = new GetDetectorRecipeDetectorRuleDetailConfiguration();
+            o.configKey = configKey;
+            o.dataType = dataType;
+            o.name = name;
+            o.value = value;
+            o.values = values;
+            return o;
         }
     }
 }

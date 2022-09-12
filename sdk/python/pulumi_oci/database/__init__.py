@@ -125,10 +125,13 @@ from .get_external_pluggable_database import *
 from .get_external_pluggable_databases import *
 from .get_flex_components import *
 from .get_gi_versions import *
+from .get_infrastructure_target_version import *
 from .get_key_store import *
 from .get_key_stores import *
 from .get_maintenance_run import *
 from .get_maintenance_runs import *
+from .get_managed_preferred_credential import *
+from .get_managed_preferred_credentials import *
 from .get_pluggable_database import *
 from .get_pluggable_databases import *
 from .get_vm_cluster import *

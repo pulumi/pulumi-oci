@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetJavaFamiliesJavaFamilyCollection {
-    private final List<GetJavaFamiliesJavaFamilyCollectionItem> items;
+    private List<GetJavaFamiliesJavaFamilyCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetJavaFamiliesJavaFamilyCollection(@CustomType.Parameter("items") List<GetJavaFamiliesJavaFamilyCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetJavaFamiliesJavaFamilyCollection() {}
     public List<GetJavaFamiliesJavaFamilyCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetJavaFamiliesJavaFamilyCollection {
     public static Builder builder(GetJavaFamiliesJavaFamilyCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetJavaFamiliesJavaFamilyCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJavaFamiliesJavaFamilyCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetJavaFamiliesJavaFamilyCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetJavaFamiliesJavaFamilyCollectionItem... items) {
             return items(List.of(items));
-        }        public GetJavaFamiliesJavaFamilyCollection build() {
-            return new GetJavaFamiliesJavaFamilyCollection(items);
+        }
+        public GetJavaFamiliesJavaFamilyCollection build() {
+            final var o = new GetJavaFamiliesJavaFamilyCollection();
+            o.items = items;
+            return o;
         }
     }
 }

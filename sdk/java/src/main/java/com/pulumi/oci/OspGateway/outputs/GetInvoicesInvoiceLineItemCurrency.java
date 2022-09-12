@@ -14,42 +14,29 @@ public final class GetInvoicesInvoiceLineItemCurrency {
      * @return Currency code
      * 
      */
-    private final String currencyCode;
+    private String currencyCode;
     /**
      * @return Currency symbol
      * 
      */
-    private final String currencySymbol;
+    private String currencySymbol;
     /**
      * @return Name of the currency
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Round decimal point
      * 
      */
-    private final Double roundDecimalPoint;
+    private Double roundDecimalPoint;
     /**
      * @return USD conversion rate of the currency
      * 
      */
-    private final Double usdConversion;
+    private Double usdConversion;
 
-    @CustomType.Constructor
-    private GetInvoicesInvoiceLineItemCurrency(
-        @CustomType.Parameter("currencyCode") String currencyCode,
-        @CustomType.Parameter("currencySymbol") String currencySymbol,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("roundDecimalPoint") Double roundDecimalPoint,
-        @CustomType.Parameter("usdConversion") Double usdConversion) {
-        this.currencyCode = currencyCode;
-        this.currencySymbol = currencySymbol;
-        this.name = name;
-        this.roundDecimalPoint = roundDecimalPoint;
-        this.usdConversion = usdConversion;
-    }
-
+    private GetInvoicesInvoiceLineItemCurrency() {}
     /**
      * @return Currency code
      * 
@@ -93,18 +80,14 @@ public final class GetInvoicesInvoiceLineItemCurrency {
     public static Builder builder(GetInvoicesInvoiceLineItemCurrency defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String currencyCode;
         private String currencySymbol;
         private String name;
         private Double roundDecimalPoint;
         private Double usdConversion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvoicesInvoiceLineItemCurrency defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.currencyCode = defaults.currencyCode;
@@ -114,27 +97,39 @@ public final class GetInvoicesInvoiceLineItemCurrency {
     	      this.usdConversion = defaults.usdConversion;
         }
 
+        @CustomType.Setter
         public Builder currencyCode(String currencyCode) {
             this.currencyCode = Objects.requireNonNull(currencyCode);
             return this;
         }
+        @CustomType.Setter
         public Builder currencySymbol(String currencySymbol) {
             this.currencySymbol = Objects.requireNonNull(currencySymbol);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder roundDecimalPoint(Double roundDecimalPoint) {
             this.roundDecimalPoint = Objects.requireNonNull(roundDecimalPoint);
             return this;
         }
+        @CustomType.Setter
         public Builder usdConversion(Double usdConversion) {
             this.usdConversion = Objects.requireNonNull(usdConversion);
             return this;
-        }        public GetInvoicesInvoiceLineItemCurrency build() {
-            return new GetInvoicesInvoiceLineItemCurrency(currencyCode, currencySymbol, name, roundDecimalPoint, usdConversion);
+        }
+        public GetInvoicesInvoiceLineItemCurrency build() {
+            final var o = new GetInvoicesInvoiceLineItemCurrency();
+            o.currencyCode = currencyCode;
+            o.currencySymbol = currencySymbol;
+            o.name = name;
+            o.roundDecimalPoint = roundDecimalPoint;
+            o.usdConversion = usdConversion;
+            return o;
         }
     }
 }

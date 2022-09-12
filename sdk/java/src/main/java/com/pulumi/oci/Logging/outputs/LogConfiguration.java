@@ -16,21 +16,14 @@ public final class LogConfiguration {
      * @return The OCID of the compartment that the resource belongs to.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The source the log object comes from.
      * 
      */
-    private final LogConfigurationSource source;
+    private LogConfigurationSource source;
 
-    @CustomType.Constructor
-    private LogConfiguration(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("source") LogConfigurationSource source) {
-        this.compartmentId = compartmentId;
-        this.source = source;
-    }
-
+    private LogConfiguration() {}
     /**
      * @return The OCID of the compartment that the resource belongs to.
      * 
@@ -53,30 +46,32 @@ public final class LogConfiguration {
     public static Builder builder(LogConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private LogConfigurationSource source;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(LogConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.source = defaults.source;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder source(LogConfigurationSource source) {
             this.source = Objects.requireNonNull(source);
             return this;
-        }        public LogConfiguration build() {
-            return new LogConfiguration(compartmentId, source);
+        }
+        public LogConfiguration build() {
+            final var o = new LogConfiguration();
+            o.compartmentId = compartmentId;
+            o.source = source;
+            return o;
         }
     }
 }

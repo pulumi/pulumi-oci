@@ -19,49 +19,34 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapability {
      * @return (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
      * 
      */
-    private final @Nullable String actionName;
+    private @Nullable String actionName;
     /**
      * @return (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
      * 
      */
-    private final @Nullable Integer collaborativeActionThreshold;
+    private @Nullable Integer collaborativeActionThreshold;
     /**
      * @return (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
      * 
      */
-    private final @Nullable List<AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight> collaborativeWeights;
+    private @Nullable List<AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight> collaborativeWeights;
     /**
      * @return (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
      * 
      */
-    private final @Nullable AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions exclusions;
+    private @Nullable AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions exclusions;
     /**
      * @return (Updatable) Unique key of referenced protection capability.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return (Updatable) Version of referenced protection capability.
      * 
      */
-    private final Integer version;
+    private Integer version;
 
-    @CustomType.Constructor
-    private AppFirewallPolicyResponseProtectionRuleProtectionCapability(
-        @CustomType.Parameter("actionName") @Nullable String actionName,
-        @CustomType.Parameter("collaborativeActionThreshold") @Nullable Integer collaborativeActionThreshold,
-        @CustomType.Parameter("collaborativeWeights") @Nullable List<AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight> collaborativeWeights,
-        @CustomType.Parameter("exclusions") @Nullable AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions exclusions,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("version") Integer version) {
-        this.actionName = actionName;
-        this.collaborativeActionThreshold = collaborativeActionThreshold;
-        this.collaborativeWeights = collaborativeWeights;
-        this.exclusions = exclusions;
-        this.key = key;
-        this.version = version;
-    }
-
+    private AppFirewallPolicyResponseProtectionRuleProtectionCapability() {}
     /**
      * @return (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
      * 
@@ -112,7 +97,7 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapability {
     public static Builder builder(AppFirewallPolicyResponseProtectionRuleProtectionCapability defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String actionName;
         private @Nullable Integer collaborativeActionThreshold;
@@ -120,11 +105,7 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapability {
         private @Nullable AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions exclusions;
         private String key;
         private Integer version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AppFirewallPolicyResponseProtectionRuleProtectionCapability defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actionName = defaults.actionName;
@@ -135,14 +116,17 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapability {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder actionName(@Nullable String actionName) {
             this.actionName = actionName;
             return this;
         }
+        @CustomType.Setter
         public Builder collaborativeActionThreshold(@Nullable Integer collaborativeActionThreshold) {
             this.collaborativeActionThreshold = collaborativeActionThreshold;
             return this;
         }
+        @CustomType.Setter
         public Builder collaborativeWeights(@Nullable List<AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight> collaborativeWeights) {
             this.collaborativeWeights = collaborativeWeights;
             return this;
@@ -150,19 +134,30 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapability {
         public Builder collaborativeWeights(AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight... collaborativeWeights) {
             return collaborativeWeights(List.of(collaborativeWeights));
         }
+        @CustomType.Setter
         public Builder exclusions(@Nullable AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions exclusions) {
             this.exclusions = exclusions;
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder version(Integer version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public AppFirewallPolicyResponseProtectionRuleProtectionCapability build() {
-            return new AppFirewallPolicyResponseProtectionRuleProtectionCapability(actionName, collaborativeActionThreshold, collaborativeWeights, exclusions, key, version);
+        }
+        public AppFirewallPolicyResponseProtectionRuleProtectionCapability build() {
+            final var o = new AppFirewallPolicyResponseProtectionRuleProtectionCapability();
+            o.actionName = actionName;
+            o.collaborativeActionThreshold = collaborativeActionThreshold;
+            o.collaborativeWeights = collaborativeWeights;
+            o.exclusions = exclusions;
+            o.key = key;
+            o.version = version;
+            return o;
         }
     }
 }

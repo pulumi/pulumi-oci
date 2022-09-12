@@ -8,7 +8,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Registry Folder resource in Oracle Cloud Infrastructure Data Connectivity service.
  *
- * Creates a folder under a specefied registry.
+ * Creates a folder under a specified registry.
  *
  * ## Import
  *
@@ -47,19 +47,19 @@ export class RegistryFolder extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) List of data assets which belongs to this folder
+     * (Updatable) The list of data assets that belong to the folder.
      */
     public readonly dataAssets!: pulumi.Output<outputs.DataConnectivity.RegistryFolderDataAsset[]>;
     /**
-     * (Updatable) User-defined description for the folder.
+     * (Updatable) User-defined description of the folder.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      */
     public readonly identifier!: pulumi.Output<string>;
     /**
-     * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      */
     public readonly key!: pulumi.Output<string>;
     /**
@@ -71,7 +71,7 @@ export class RegistryFolder extends pulumi.CustomResource {
      */
     public readonly modelVersion!: pulumi.Output<string>;
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -83,11 +83,11 @@ export class RegistryFolder extends pulumi.CustomResource {
      */
     public readonly objectVersion!: pulumi.Output<number>;
     /**
-     * (Updatable) A reference to the object's parent.
+     * (Updatable) A reference to the parent object.
      */
     public readonly parentRef!: pulumi.Output<outputs.DataConnectivity.RegistryFolderParentRef>;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     public readonly registryId!: pulumi.Output<string>;
 
@@ -145,19 +145,19 @@ export class RegistryFolder extends pulumi.CustomResource {
  */
 export interface RegistryFolderState {
     /**
-     * (Updatable) List of data assets which belongs to this folder
+     * (Updatable) The list of data assets that belong to the folder.
      */
     dataAssets?: pulumi.Input<pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAsset>[]>;
     /**
-     * (Updatable) User-defined description for the folder.
+     * (Updatable) User-defined description of the folder.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      */
     identifier?: pulumi.Input<string>;
     /**
-     * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      */
     key?: pulumi.Input<string>;
     /**
@@ -169,7 +169,7 @@ export interface RegistryFolderState {
      */
     modelVersion?: pulumi.Input<string>;
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
     name?: pulumi.Input<string>;
     /**
@@ -181,11 +181,11 @@ export interface RegistryFolderState {
      */
     objectVersion?: pulumi.Input<number>;
     /**
-     * (Updatable) A reference to the object's parent.
+     * (Updatable) A reference to the parent object.
      */
     parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryFolderParentRef>;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId?: pulumi.Input<string>;
 }
@@ -195,19 +195,19 @@ export interface RegistryFolderState {
  */
 export interface RegistryFolderArgs {
     /**
-     * (Updatable) List of data assets which belongs to this folder
+     * (Updatable) The list of data assets that belong to the folder.
      */
     dataAssets?: pulumi.Input<pulumi.Input<inputs.DataConnectivity.RegistryFolderDataAsset>[]>;
     /**
-     * (Updatable) User-defined description for the folder.
+     * (Updatable) User-defined description of the folder.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      */
     identifier: pulumi.Input<string>;
     /**
-     * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      */
     key?: pulumi.Input<string>;
     /**
@@ -219,7 +219,7 @@ export interface RegistryFolderArgs {
      */
     modelVersion?: pulumi.Input<string>;
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
     name?: pulumi.Input<string>;
     /**
@@ -231,11 +231,11 @@ export interface RegistryFolderArgs {
      */
     objectVersion?: pulumi.Input<number>;
     /**
-     * (Updatable) A reference to the object's parent.
+     * (Updatable) A reference to the parent object.
      */
     parentRef?: pulumi.Input<inputs.DataConnectivity.RegistryFolderParentRef>;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: pulumi.Input<string>;
 }

@@ -16,80 +16,55 @@ public final class GetRepositoryResult {
      * @return The OCID of the repository&#39;s compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The repository description.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The repository name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.  Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Whether the repository is immutable. The artifacts of an immutable repository cannot be overwritten.
      * 
      */
-    private final Boolean isImmutable;
-    private final String repositoryId;
+    private Boolean isImmutable;
+    private String repositoryId;
     /**
      * @return The repository&#39;s supported artifact type.
      * 
      */
-    private final String repositoryType;
+    private String repositoryType;
     /**
      * @return The current state of the repository.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return An RFC 3339 timestamp indicating when the repository was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetRepositoryResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isImmutable") Boolean isImmutable,
-        @CustomType.Parameter("repositoryId") String repositoryId,
-        @CustomType.Parameter("repositoryType") String repositoryType,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isImmutable = isImmutable;
-        this.repositoryId = repositoryId;
-        this.repositoryType = repositoryType;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetRepositoryResult() {}
     /**
      * @return The OCID of the repository&#39;s compartment.
      * 
@@ -171,7 +146,7 @@ public final class GetRepositoryResult {
     public static Builder builder(GetRepositoryResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -184,11 +159,7 @@ public final class GetRepositoryResult {
         private String repositoryType;
         private String state;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -204,51 +175,75 @@ public final class GetRepositoryResult {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isImmutable(Boolean isImmutable) {
             this.isImmutable = Objects.requireNonNull(isImmutable);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryType(String repositoryType) {
             this.repositoryType = Objects.requireNonNull(repositoryType);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetRepositoryResult build() {
-            return new GetRepositoryResult(compartmentId, definedTags, description, displayName, freeformTags, id, isImmutable, repositoryId, repositoryType, state, timeCreated);
+        }
+        public GetRepositoryResult build() {
+            final var o = new GetRepositoryResult();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isImmutable = isImmutable;
+            o.repositoryId = repositoryId;
+            o.repositoryType = repositoryType;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

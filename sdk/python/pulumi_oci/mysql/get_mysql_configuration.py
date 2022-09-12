@@ -22,7 +22,7 @@ class GetMysqlConfigurationResult:
     """
     A collection of values returned by getMysqlConfiguration.
     """
-    def __init__(__self__, compartment_id=None, configuration_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, parent_configuration_id=None, shape_name=None, state=None, time_created=None, time_updated=None, type=None, variables=None):
+    def __init__(__self__, compartment_id=None, configuration_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, init_variables=None, parent_configuration_id=None, shape_name=None, state=None, time_created=None, time_updated=None, type=None, variables=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -44,6 +44,9 @@ class GetMysqlConfigurationResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if init_variables and not isinstance(init_variables, list):
+            raise TypeError("Expected argument 'init_variables' to be a list")
+        pulumi.set(__self__, "init_variables", init_variables)
         if parent_configuration_id and not isinstance(parent_configuration_id, str):
             raise TypeError("Expected argument 'parent_configuration_id' to be a str")
         pulumi.set(__self__, "parent_configuration_id", parent_configuration_id)
@@ -115,9 +118,17 @@ class GetMysqlConfigurationResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The provider-assigned unique ID for this managed resource.
+        The OCID of the Configuration.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="initVariables")
+    def init_variables(self) -> Sequence['outputs.GetMysqlConfigurationInitVariableResult']:
+        """
+        User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+        """
+        return pulumi.get(self, "init_variables")
 
     @property
     @pulumi.getter(name="parentConfigurationId")
@@ -171,7 +182,7 @@ class GetMysqlConfigurationResult:
     @pulumi.getter
     def variables(self) -> Sequence['outputs.GetMysqlConfigurationVariableResult']:
         """
-        User controllable service variables.
+        User-defined service variables.
         """
         return pulumi.get(self, "variables")
 
@@ -189,6 +200,7 @@ class AwaitableGetMysqlConfigurationResult(GetMysqlConfigurationResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            init_variables=self.init_variables,
             parent_configuration_id=self.parent_configuration_id,
             shape_name=self.shape_name,
             state=self.state,
@@ -230,6 +242,7 @@ def get_mysql_configuration(configuration_id: Optional[str] = None,
         display_name=__ret__.display_name,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
+        init_variables=__ret__.init_variables,
         parent_configuration_id=__ret__.parent_configuration_id,
         shape_name=__ret__.shape_name,
         state=__ret__.state,

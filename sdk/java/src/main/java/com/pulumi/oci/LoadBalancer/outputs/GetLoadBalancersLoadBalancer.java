@@ -20,32 +20,32 @@ public final class GetLoadBalancersLoadBalancer {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancers to list.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.  Example: `example_load_balancer`
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Ocid of the pre-created public IP. That should be attahed to this load balancer.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return An array of IP addresses.
      * 
      */
-    private final List<GetLoadBalancersLoadBalancerIpAddressDetail> ipAddressDetails;
+    private List<GetLoadBalancersLoadBalancerIpAddressDetail> ipAddressDetails;
     /**
      * @return An array of IP addresses. Deprecated: use ip_address_details instead.
      * 
@@ -54,88 +54,51 @@ public final class GetLoadBalancersLoadBalancer {
      * 
      */
     @Deprecated /* The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead. */
-    private final List<String> ipAddresses;
-    private final String ipMode;
+    private List<String> ipAddresses;
+    private String ipMode;
     /**
      * @return Whether the load balancer has a VCN-local (private) IP address.
      * 
      */
-    private final Boolean isPrivate;
+    private Boolean isPrivate;
     /**
      * @return An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load balancer.
      * 
      */
-    private final List<String> networkSecurityGroupIds;
-    private final List<GetLoadBalancersLoadBalancerReservedIp> reservedIps;
+    private List<String> networkSecurityGroupIds;
+    private List<GetLoadBalancersLoadBalancerReservedIp> reservedIps;
     /**
      * @return A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`
      * 
      */
-    private final String shape;
+    private String shape;
     /**
      * @return The configuration details to update load balancer to a different shape.
      * 
      */
-    private final List<GetLoadBalancersLoadBalancerShapeDetail> shapeDetails;
+    private List<GetLoadBalancersLoadBalancerShapeDetail> shapeDetails;
     /**
      * @return A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final List<String> subnetIds;
+    private List<String> subnetIds;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetLoadBalancersLoadBalancer(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipAddressDetails") List<GetLoadBalancersLoadBalancerIpAddressDetail> ipAddressDetails,
-        @CustomType.Parameter("ipAddresses") List<String> ipAddresses,
-        @CustomType.Parameter("ipMode") String ipMode,
-        @CustomType.Parameter("isPrivate") Boolean isPrivate,
-        @CustomType.Parameter("networkSecurityGroupIds") List<String> networkSecurityGroupIds,
-        @CustomType.Parameter("reservedIps") List<GetLoadBalancersLoadBalancerReservedIp> reservedIps,
-        @CustomType.Parameter("shape") String shape,
-        @CustomType.Parameter("shapeDetails") List<GetLoadBalancersLoadBalancerShapeDetail> shapeDetails,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subnetIds") List<String> subnetIds,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.ipAddressDetails = ipAddressDetails;
-        this.ipAddresses = ipAddresses;
-        this.ipMode = ipMode;
-        this.isPrivate = isPrivate;
-        this.networkSecurityGroupIds = networkSecurityGroupIds;
-        this.reservedIps = reservedIps;
-        this.shape = shape;
-        this.shapeDetails = shapeDetails;
-        this.state = state;
-        this.subnetIds = subnetIds;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetLoadBalancersLoadBalancer() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancers to list.
      * 
@@ -259,7 +222,7 @@ public final class GetLoadBalancersLoadBalancer {
     public static Builder builder(GetLoadBalancersLoadBalancer defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -278,11 +241,7 @@ public final class GetLoadBalancersLoadBalancer {
         private List<String> subnetIds;
         private Map<String,Object> systemTags;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLoadBalancersLoadBalancer defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -304,26 +263,32 @@ public final class GetLoadBalancersLoadBalancer {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddressDetails(List<GetLoadBalancersLoadBalancerIpAddressDetail> ipAddressDetails) {
             this.ipAddressDetails = Objects.requireNonNull(ipAddressDetails);
             return this;
@@ -331,6 +296,7 @@ public final class GetLoadBalancersLoadBalancer {
         public Builder ipAddressDetails(GetLoadBalancersLoadBalancerIpAddressDetail... ipAddressDetails) {
             return ipAddressDetails(List.of(ipAddressDetails));
         }
+        @CustomType.Setter
         public Builder ipAddresses(List<String> ipAddresses) {
             this.ipAddresses = Objects.requireNonNull(ipAddresses);
             return this;
@@ -338,14 +304,17 @@ public final class GetLoadBalancersLoadBalancer {
         public Builder ipAddresses(String... ipAddresses) {
             return ipAddresses(List.of(ipAddresses));
         }
+        @CustomType.Setter
         public Builder ipMode(String ipMode) {
             this.ipMode = Objects.requireNonNull(ipMode);
             return this;
         }
+        @CustomType.Setter
         public Builder isPrivate(Boolean isPrivate) {
             this.isPrivate = Objects.requireNonNull(isPrivate);
             return this;
         }
+        @CustomType.Setter
         public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
             this.networkSecurityGroupIds = Objects.requireNonNull(networkSecurityGroupIds);
             return this;
@@ -353,6 +322,7 @@ public final class GetLoadBalancersLoadBalancer {
         public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
             return networkSecurityGroupIds(List.of(networkSecurityGroupIds));
         }
+        @CustomType.Setter
         public Builder reservedIps(List<GetLoadBalancersLoadBalancerReservedIp> reservedIps) {
             this.reservedIps = Objects.requireNonNull(reservedIps);
             return this;
@@ -360,10 +330,12 @@ public final class GetLoadBalancersLoadBalancer {
         public Builder reservedIps(GetLoadBalancersLoadBalancerReservedIp... reservedIps) {
             return reservedIps(List.of(reservedIps));
         }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
         }
+        @CustomType.Setter
         public Builder shapeDetails(List<GetLoadBalancersLoadBalancerShapeDetail> shapeDetails) {
             this.shapeDetails = Objects.requireNonNull(shapeDetails);
             return this;
@@ -371,10 +343,12 @@ public final class GetLoadBalancersLoadBalancer {
         public Builder shapeDetails(GetLoadBalancersLoadBalancerShapeDetail... shapeDetails) {
             return shapeDetails(List.of(shapeDetails));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetIds(List<String> subnetIds) {
             this.subnetIds = Objects.requireNonNull(subnetIds);
             return this;
@@ -382,15 +356,36 @@ public final class GetLoadBalancersLoadBalancer {
         public Builder subnetIds(String... subnetIds) {
             return subnetIds(List.of(subnetIds));
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetLoadBalancersLoadBalancer build() {
-            return new GetLoadBalancersLoadBalancer(compartmentId, definedTags, displayName, freeformTags, id, ipAddressDetails, ipAddresses, ipMode, isPrivate, networkSecurityGroupIds, reservedIps, shape, shapeDetails, state, subnetIds, systemTags, timeCreated);
+        }
+        public GetLoadBalancersLoadBalancer build() {
+            final var o = new GetLoadBalancersLoadBalancer();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.ipAddressDetails = ipAddressDetails;
+            o.ipAddresses = ipAddresses;
+            o.ipMode = ipMode;
+            o.isPrivate = isPrivate;
+            o.networkSecurityGroupIds = networkSecurityGroupIds;
+            o.reservedIps = reservedIps;
+            o.shape = shape;
+            o.shapeDetails = shapeDetails;
+            o.state = state;
+            o.subnetIds = subnetIds;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

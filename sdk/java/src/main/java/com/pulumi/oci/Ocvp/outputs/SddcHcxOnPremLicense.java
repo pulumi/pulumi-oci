@@ -15,28 +15,19 @@ public final class SddcHcxOnPremLicense {
      * @return HCX on-premise license key value.
      * 
      */
-    private final @Nullable String activationKey;
+    private @Nullable String activationKey;
     /**
      * @return status of HCX on-premise license.
      * 
      */
-    private final @Nullable String status;
+    private @Nullable String status;
     /**
      * @return Name of the system that consumed the HCX on-premise license
      * 
      */
-    private final @Nullable String systemName;
+    private @Nullable String systemName;
 
-    @CustomType.Constructor
-    private SddcHcxOnPremLicense(
-        @CustomType.Parameter("activationKey") @Nullable String activationKey,
-        @CustomType.Parameter("status") @Nullable String status,
-        @CustomType.Parameter("systemName") @Nullable String systemName) {
-        this.activationKey = activationKey;
-        this.status = status;
-        this.systemName = systemName;
-    }
-
+    private SddcHcxOnPremLicense() {}
     /**
      * @return HCX on-premise license key value.
      * 
@@ -66,16 +57,12 @@ public final class SddcHcxOnPremLicense {
     public static Builder builder(SddcHcxOnPremLicense defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String activationKey;
         private @Nullable String status;
         private @Nullable String systemName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(SddcHcxOnPremLicense defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.activationKey = defaults.activationKey;
@@ -83,19 +70,27 @@ public final class SddcHcxOnPremLicense {
     	      this.systemName = defaults.systemName;
         }
 
+        @CustomType.Setter
         public Builder activationKey(@Nullable String activationKey) {
             this.activationKey = activationKey;
             return this;
         }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
         }
+        @CustomType.Setter
         public Builder systemName(@Nullable String systemName) {
             this.systemName = systemName;
             return this;
-        }        public SddcHcxOnPremLicense build() {
-            return new SddcHcxOnPremLicense(activationKey, status, systemName);
+        }
+        public SddcHcxOnPremLicense build() {
+            final var o = new SddcHcxOnPremLicense();
+            o.activationKey = activationKey;
+            o.status = status;
+            o.systemName = systemName;
+            return o;
         }
     }
 }

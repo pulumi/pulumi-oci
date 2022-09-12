@@ -15,21 +15,14 @@ public final class GetLogConfiguration {
      * @return The OCID of the compartment that the resource belongs to.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The source the log object comes from.
      * 
      */
-    private final List<GetLogConfigurationSource> sources;
+    private List<GetLogConfigurationSource> sources;
 
-    @CustomType.Constructor
-    private GetLogConfiguration(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("sources") List<GetLogConfigurationSource> sources) {
-        this.compartmentId = compartmentId;
-        this.sources = sources;
-    }
-
+    private GetLogConfiguration() {}
     /**
      * @return The OCID of the compartment that the resource belongs to.
      * 
@@ -52,33 +45,35 @@ public final class GetLogConfiguration {
     public static Builder builder(GetLogConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetLogConfigurationSource> sources;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.sources = defaults.sources;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder sources(List<GetLogConfigurationSource> sources) {
             this.sources = Objects.requireNonNull(sources);
             return this;
         }
         public Builder sources(GetLogConfigurationSource... sources) {
             return sources(List.of(sources));
-        }        public GetLogConfiguration build() {
-            return new GetLogConfiguration(compartmentId, sources);
+        }
+        public GetLogConfiguration build() {
+            final var o = new GetLogConfiguration();
+            o.compartmentId = compartmentId;
+            o.sources = sources;
+            return o;
         }
     }
 }

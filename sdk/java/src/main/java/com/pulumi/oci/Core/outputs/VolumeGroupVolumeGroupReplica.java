@@ -15,28 +15,19 @@ public final class VolumeGroupVolumeGroupReplica {
      * @return (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The OCID of the volume group replica.
      * 
      */
-    private final @Nullable String volumeGroupReplicaId;
+    private @Nullable String volumeGroupReplicaId;
 
-    @CustomType.Constructor
-    private VolumeGroupVolumeGroupReplica(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("volumeGroupReplicaId") @Nullable String volumeGroupReplicaId) {
-        this.availabilityDomain = availabilityDomain;
-        this.displayName = displayName;
-        this.volumeGroupReplicaId = volumeGroupReplicaId;
-    }
-
+    private VolumeGroupVolumeGroupReplica() {}
     /**
      * @return (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
      * 
@@ -66,16 +57,12 @@ public final class VolumeGroupVolumeGroupReplica {
     public static Builder builder(VolumeGroupVolumeGroupReplica defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private @Nullable String displayName;
         private @Nullable String volumeGroupReplicaId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(VolumeGroupVolumeGroupReplica defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -83,19 +70,27 @@ public final class VolumeGroupVolumeGroupReplica {
     	      this.volumeGroupReplicaId = defaults.volumeGroupReplicaId;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder volumeGroupReplicaId(@Nullable String volumeGroupReplicaId) {
             this.volumeGroupReplicaId = volumeGroupReplicaId;
             return this;
-        }        public VolumeGroupVolumeGroupReplica build() {
-            return new VolumeGroupVolumeGroupReplica(availabilityDomain, displayName, volumeGroupReplicaId);
+        }
+        public VolumeGroupVolumeGroupReplica build() {
+            final var o = new VolumeGroupVolumeGroupReplica();
+            o.availabilityDomain = availabilityDomain;
+            o.displayName = displayName;
+            o.volumeGroupReplicaId = volumeGroupReplicaId;
+            return o;
         }
     }
 }

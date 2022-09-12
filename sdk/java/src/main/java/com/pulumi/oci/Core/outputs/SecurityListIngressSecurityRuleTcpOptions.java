@@ -16,28 +16,19 @@ public final class SecurityListIngressSecurityRuleTcpOptions {
      * @return (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
      * 
      */
-    private final @Nullable Integer max;
+    private @Nullable Integer max;
     /**
      * @return (Updatable) The minimum port number, which must not be greater than the maximum port number.
      * 
      */
-    private final @Nullable Integer min;
+    private @Nullable Integer min;
     /**
      * @return (Updatable)
      * 
      */
-    private final @Nullable SecurityListIngressSecurityRuleTcpOptionsSourcePortRange sourcePortRange;
+    private @Nullable SecurityListIngressSecurityRuleTcpOptionsSourcePortRange sourcePortRange;
 
-    @CustomType.Constructor
-    private SecurityListIngressSecurityRuleTcpOptions(
-        @CustomType.Parameter("max") @Nullable Integer max,
-        @CustomType.Parameter("min") @Nullable Integer min,
-        @CustomType.Parameter("sourcePortRange") @Nullable SecurityListIngressSecurityRuleTcpOptionsSourcePortRange sourcePortRange) {
-        this.max = max;
-        this.min = min;
-        this.sourcePortRange = sourcePortRange;
-    }
-
+    private SecurityListIngressSecurityRuleTcpOptions() {}
     /**
      * @return (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
      * 
@@ -67,16 +58,12 @@ public final class SecurityListIngressSecurityRuleTcpOptions {
     public static Builder builder(SecurityListIngressSecurityRuleTcpOptions defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer max;
         private @Nullable Integer min;
         private @Nullable SecurityListIngressSecurityRuleTcpOptionsSourcePortRange sourcePortRange;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(SecurityListIngressSecurityRuleTcpOptions defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.max = defaults.max;
@@ -84,19 +71,27 @@ public final class SecurityListIngressSecurityRuleTcpOptions {
     	      this.sourcePortRange = defaults.sourcePortRange;
         }
 
+        @CustomType.Setter
         public Builder max(@Nullable Integer max) {
             this.max = max;
             return this;
         }
+        @CustomType.Setter
         public Builder min(@Nullable Integer min) {
             this.min = min;
             return this;
         }
+        @CustomType.Setter
         public Builder sourcePortRange(@Nullable SecurityListIngressSecurityRuleTcpOptionsSourcePortRange sourcePortRange) {
             this.sourcePortRange = sourcePortRange;
             return this;
-        }        public SecurityListIngressSecurityRuleTcpOptions build() {
-            return new SecurityListIngressSecurityRuleTcpOptions(max, min, sourcePortRange);
+        }
+        public SecurityListIngressSecurityRuleTcpOptions build() {
+            final var o = new SecurityListIngressSecurityRuleTcpOptions();
+            o.max = max;
+            o.min = min;
+            o.sourcePortRange = sourcePortRange;
+            return o;
         }
     }
 }

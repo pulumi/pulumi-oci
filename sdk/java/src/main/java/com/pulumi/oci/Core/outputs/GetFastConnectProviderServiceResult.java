@@ -15,94 +15,65 @@ public final class GetFastConnectProviderServiceResult {
      * @return Who is responsible for managing the virtual circuit bandwidth.
      * 
      */
-    private final String bandwithShapeManagement;
+    private String bandwithShapeManagement;
     /**
      * @return Who is responsible for managing the ASN information for the network at the other end of the connection from Oracle.
      * 
      */
-    private final String customerAsnManagement;
+    private String customerAsnManagement;
     /**
      * @return The location of the provider&#39;s website or portal. This portal is where you can get information about the provider service, create a virtual circuit connection from the provider to Oracle Cloud Infrastructure, and retrieve your provider service key for that virtual circuit connection.  Example: `https://example.com`
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Who is responsible for managing the private peering BGP information.
      * 
      */
-    private final String privatePeeringBgpManagement;
+    private String privatePeeringBgpManagement;
     /**
      * @return The name of the provider.
      * 
      */
-    private final String providerName;
-    private final String providerServiceId;
+    private String providerName;
+    private String providerServiceId;
     /**
      * @return Who is responsible for managing the provider service key.
      * 
      */
-    private final String providerServiceKeyManagement;
+    private String providerServiceKeyManagement;
     /**
      * @return The name of the service offered by the provider.
      * 
      */
-    private final String providerServiceName;
+    private String providerServiceName;
     /**
      * @return Who is responsible for managing the public peering BGP information.
      * 
      */
-    private final String publicPeeringBgpManagement;
+    private String publicPeeringBgpManagement;
     /**
      * @return Total number of cross-connect or cross-connect groups required for the virtual circuit.
      * 
      */
-    private final Integer requiredTotalCrossConnects;
+    private Integer requiredTotalCrossConnects;
     /**
      * @return An array of virtual circuit types supported by this service.
      * 
      */
-    private final List<String> supportedVirtualCircuitTypes;
+    private List<String> supportedVirtualCircuitTypes;
     /**
      * @return Provider service type.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetFastConnectProviderServiceResult(
-        @CustomType.Parameter("bandwithShapeManagement") String bandwithShapeManagement,
-        @CustomType.Parameter("customerAsnManagement") String customerAsnManagement,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("privatePeeringBgpManagement") String privatePeeringBgpManagement,
-        @CustomType.Parameter("providerName") String providerName,
-        @CustomType.Parameter("providerServiceId") String providerServiceId,
-        @CustomType.Parameter("providerServiceKeyManagement") String providerServiceKeyManagement,
-        @CustomType.Parameter("providerServiceName") String providerServiceName,
-        @CustomType.Parameter("publicPeeringBgpManagement") String publicPeeringBgpManagement,
-        @CustomType.Parameter("requiredTotalCrossConnects") Integer requiredTotalCrossConnects,
-        @CustomType.Parameter("supportedVirtualCircuitTypes") List<String> supportedVirtualCircuitTypes,
-        @CustomType.Parameter("type") String type) {
-        this.bandwithShapeManagement = bandwithShapeManagement;
-        this.customerAsnManagement = customerAsnManagement;
-        this.description = description;
-        this.id = id;
-        this.privatePeeringBgpManagement = privatePeeringBgpManagement;
-        this.providerName = providerName;
-        this.providerServiceId = providerServiceId;
-        this.providerServiceKeyManagement = providerServiceKeyManagement;
-        this.providerServiceName = providerServiceName;
-        this.publicPeeringBgpManagement = publicPeeringBgpManagement;
-        this.requiredTotalCrossConnects = requiredTotalCrossConnects;
-        this.supportedVirtualCircuitTypes = supportedVirtualCircuitTypes;
-        this.type = type;
-    }
-
+    private GetFastConnectProviderServiceResult() {}
     /**
      * @return Who is responsible for managing the virtual circuit bandwidth.
      * 
@@ -198,7 +169,7 @@ public final class GetFastConnectProviderServiceResult {
     public static Builder builder(GetFastConnectProviderServiceResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bandwithShapeManagement;
         private String customerAsnManagement;
@@ -213,11 +184,7 @@ public final class GetFastConnectProviderServiceResult {
         private Integer requiredTotalCrossConnects;
         private List<String> supportedVirtualCircuitTypes;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFastConnectProviderServiceResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bandwithShapeManagement = defaults.bandwithShapeManagement;
@@ -235,50 +202,62 @@ public final class GetFastConnectProviderServiceResult {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder bandwithShapeManagement(String bandwithShapeManagement) {
             this.bandwithShapeManagement = Objects.requireNonNull(bandwithShapeManagement);
             return this;
         }
+        @CustomType.Setter
         public Builder customerAsnManagement(String customerAsnManagement) {
             this.customerAsnManagement = Objects.requireNonNull(customerAsnManagement);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder privatePeeringBgpManagement(String privatePeeringBgpManagement) {
             this.privatePeeringBgpManagement = Objects.requireNonNull(privatePeeringBgpManagement);
             return this;
         }
+        @CustomType.Setter
         public Builder providerName(String providerName) {
             this.providerName = Objects.requireNonNull(providerName);
             return this;
         }
+        @CustomType.Setter
         public Builder providerServiceId(String providerServiceId) {
             this.providerServiceId = Objects.requireNonNull(providerServiceId);
             return this;
         }
+        @CustomType.Setter
         public Builder providerServiceKeyManagement(String providerServiceKeyManagement) {
             this.providerServiceKeyManagement = Objects.requireNonNull(providerServiceKeyManagement);
             return this;
         }
+        @CustomType.Setter
         public Builder providerServiceName(String providerServiceName) {
             this.providerServiceName = Objects.requireNonNull(providerServiceName);
             return this;
         }
+        @CustomType.Setter
         public Builder publicPeeringBgpManagement(String publicPeeringBgpManagement) {
             this.publicPeeringBgpManagement = Objects.requireNonNull(publicPeeringBgpManagement);
             return this;
         }
+        @CustomType.Setter
         public Builder requiredTotalCrossConnects(Integer requiredTotalCrossConnects) {
             this.requiredTotalCrossConnects = Objects.requireNonNull(requiredTotalCrossConnects);
             return this;
         }
+        @CustomType.Setter
         public Builder supportedVirtualCircuitTypes(List<String> supportedVirtualCircuitTypes) {
             this.supportedVirtualCircuitTypes = Objects.requireNonNull(supportedVirtualCircuitTypes);
             return this;
@@ -286,11 +265,27 @@ public final class GetFastConnectProviderServiceResult {
         public Builder supportedVirtualCircuitTypes(String... supportedVirtualCircuitTypes) {
             return supportedVirtualCircuitTypes(List.of(supportedVirtualCircuitTypes));
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetFastConnectProviderServiceResult build() {
-            return new GetFastConnectProviderServiceResult(bandwithShapeManagement, customerAsnManagement, description, id, privatePeeringBgpManagement, providerName, providerServiceId, providerServiceKeyManagement, providerServiceName, publicPeeringBgpManagement, requiredTotalCrossConnects, supportedVirtualCircuitTypes, type);
+        }
+        public GetFastConnectProviderServiceResult build() {
+            final var o = new GetFastConnectProviderServiceResult();
+            o.bandwithShapeManagement = bandwithShapeManagement;
+            o.customerAsnManagement = customerAsnManagement;
+            o.description = description;
+            o.id = id;
+            o.privatePeeringBgpManagement = privatePeeringBgpManagement;
+            o.providerName = providerName;
+            o.providerServiceId = providerServiceId;
+            o.providerServiceKeyManagement = providerServiceKeyManagement;
+            o.providerServiceName = providerServiceName;
+            o.publicPeeringBgpManagement = publicPeeringBgpManagement;
+            o.requiredTotalCrossConnects = requiredTotalCrossConnects;
+            o.supportedVirtualCircuitTypes = supportedVirtualCircuitTypes;
+            o.type = type;
+            return o;
         }
     }
 }

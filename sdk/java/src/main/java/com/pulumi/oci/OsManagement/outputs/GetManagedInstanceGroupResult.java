@@ -18,76 +18,51 @@ public final class GetManagedInstanceGroupResult {
      * @return OCID for the Compartment
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Information specified by the user about the managed instance group
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return User friendly name
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return unique identifier that is immutable on creation
      * 
      */
-    private final String id;
-    private final Integer managedInstanceCount;
-    private final String managedInstanceGroupId;
+    private String id;
+    private Integer managedInstanceCount;
+    private String managedInstanceGroupId;
     /**
      * @return list of Managed Instances in the group
      * 
      */
-    private final List<GetManagedInstanceGroupManagedInstance> managedInstances;
+    private List<GetManagedInstanceGroupManagedInstance> managedInstances;
     /**
      * @return The Operating System type of the managed instance.
      * 
      */
-    private final String osFamily;
+    private String osFamily;
     /**
      * @return The current state of the Software Source.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private GetManagedInstanceGroupResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("managedInstanceCount") Integer managedInstanceCount,
-        @CustomType.Parameter("managedInstanceGroupId") String managedInstanceGroupId,
-        @CustomType.Parameter("managedInstances") List<GetManagedInstanceGroupManagedInstance> managedInstances,
-        @CustomType.Parameter("osFamily") String osFamily,
-        @CustomType.Parameter("state") String state) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.managedInstanceCount = managedInstanceCount;
-        this.managedInstanceGroupId = managedInstanceGroupId;
-        this.managedInstances = managedInstances;
-        this.osFamily = osFamily;
-        this.state = state;
-    }
-
+    private GetManagedInstanceGroupResult() {}
     /**
      * @return OCID for the Compartment
      * 
@@ -165,7 +140,7 @@ public final class GetManagedInstanceGroupResult {
     public static Builder builder(GetManagedInstanceGroupResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -178,11 +153,7 @@ public final class GetManagedInstanceGroupResult {
         private List<GetManagedInstanceGroupManagedInstance> managedInstances;
         private String osFamily;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedInstanceGroupResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -198,38 +169,47 @@ public final class GetManagedInstanceGroupResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder managedInstanceCount(Integer managedInstanceCount) {
             this.managedInstanceCount = Objects.requireNonNull(managedInstanceCount);
             return this;
         }
+        @CustomType.Setter
         public Builder managedInstanceGroupId(String managedInstanceGroupId) {
             this.managedInstanceGroupId = Objects.requireNonNull(managedInstanceGroupId);
             return this;
         }
+        @CustomType.Setter
         public Builder managedInstances(List<GetManagedInstanceGroupManagedInstance> managedInstances) {
             this.managedInstances = Objects.requireNonNull(managedInstances);
             return this;
@@ -237,15 +217,30 @@ public final class GetManagedInstanceGroupResult {
         public Builder managedInstances(GetManagedInstanceGroupManagedInstance... managedInstances) {
             return managedInstances(List.of(managedInstances));
         }
+        @CustomType.Setter
         public Builder osFamily(String osFamily) {
             this.osFamily = Objects.requireNonNull(osFamily);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetManagedInstanceGroupResult build() {
-            return new GetManagedInstanceGroupResult(compartmentId, definedTags, description, displayName, freeformTags, id, managedInstanceCount, managedInstanceGroupId, managedInstances, osFamily, state);
+        }
+        public GetManagedInstanceGroupResult build() {
+            final var o = new GetManagedInstanceGroupResult();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.managedInstanceCount = managedInstanceCount;
+            o.managedInstanceGroupId = managedInstanceGroupId;
+            o.managedInstances = managedInstances;
+            o.osFamily = osFamily;
+            o.state = state;
+            return o;
         }
     }
 }

@@ -11,21 +11,14 @@ import java.util.Objects;
 
 @CustomType
 public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation {
-    private final List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameter> parameters;
+    private List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameter> parameters;
     /**
      * @return Validation behavior mode.
      * 
      */
-    private final String validationMode;
+    private String validationMode;
 
-    @CustomType.Constructor
-    private GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation(
-        @CustomType.Parameter("parameters") List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameter> parameters,
-        @CustomType.Parameter("validationMode") String validationMode) {
-        this.parameters = parameters;
-        this.validationMode = validationMode;
-    }
-
+    private GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation() {}
     public List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameter> parameters() {
         return this.parameters;
     }
@@ -44,21 +37,18 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameter
     public static Builder builder(GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameter> parameters;
         private String validationMode;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.parameters = defaults.parameters;
     	      this.validationMode = defaults.validationMode;
         }
 
+        @CustomType.Setter
         public Builder parameters(List<GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameter> parameters) {
             this.parameters = Objects.requireNonNull(parameters);
             return this;
@@ -66,11 +56,16 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameter
         public Builder parameters(GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameter... parameters) {
             return parameters(List.of(parameters));
         }
+        @CustomType.Setter
         public Builder validationMode(String validationMode) {
             this.validationMode = Objects.requireNonNull(validationMode);
             return this;
-        }        public GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation build() {
-            return new GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation(parameters, validationMode);
+        }
+        public GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation build() {
+            final var o = new GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation();
+            o.parameters = parameters;
+            o.validationMode = validationMode;
+            return o;
         }
     }
 }

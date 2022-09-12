@@ -13,13 +13,9 @@ public final class GetRecommendationsRecommendationCollectionItemSupportedLevelI
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetRecommendationsRecommendationCollectionItemSupportedLevelItem(@CustomType.Parameter("name") String name) {
-        this.name = name;
-    }
-
+    private GetRecommendationsRecommendationCollectionItemSupportedLevelItem() {}
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
@@ -35,24 +31,24 @@ public final class GetRecommendationsRecommendationCollectionItemSupportedLevelI
     public static Builder builder(GetRecommendationsRecommendationCollectionItemSupportedLevelItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRecommendationsRecommendationCollectionItemSupportedLevelItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetRecommendationsRecommendationCollectionItemSupportedLevelItem build() {
-            return new GetRecommendationsRecommendationCollectionItemSupportedLevelItem(name);
+        }
+        public GetRecommendationsRecommendationCollectionItemSupportedLevelItem build() {
+            final var o = new GetRecommendationsRecommendationCollectionItemSupportedLevelItem();
+            o.name = name;
+            return o;
         }
     }
 }

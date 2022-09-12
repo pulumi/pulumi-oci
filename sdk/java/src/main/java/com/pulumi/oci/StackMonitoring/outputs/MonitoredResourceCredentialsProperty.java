@@ -15,21 +15,14 @@ public final class MonitoredResourceCredentialsProperty {
      * @return (Updatable) property name
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) property value
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
 
-    @CustomType.Constructor
-    private MonitoredResourceCredentialsProperty(
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("value") @Nullable String value) {
-        this.name = name;
-        this.value = value;
-    }
-
+    private MonitoredResourceCredentialsProperty() {}
     /**
      * @return (Updatable) property name
      * 
@@ -52,30 +45,32 @@ public final class MonitoredResourceCredentialsProperty {
     public static Builder builder(MonitoredResourceCredentialsProperty defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String name;
         private @Nullable String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MonitoredResourceCredentialsProperty defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
-        }        public MonitoredResourceCredentialsProperty build() {
-            return new MonitoredResourceCredentialsProperty(name, value);
+        }
+        public MonitoredResourceCredentialsProperty build() {
+            final var o = new MonitoredResourceCredentialsProperty();
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

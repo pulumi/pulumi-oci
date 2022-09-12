@@ -14,60 +14,35 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConfigsResult {
-    private final String apmDomainId;
+    private String apmDomainId;
     /**
      * @return The list of config_collection.
      * 
      */
-    private final List<GetConfigsConfigCollection> configCollections;
+    private List<GetConfigsConfigCollection> configCollections;
     /**
      * @return The type of configuration item.
      * 
      */
-    private final @Nullable String configType;
-    private final @Nullable List<String> definedTagEquals;
-    private final @Nullable List<String> definedTagExists;
+    private @Nullable String configType;
+    private @Nullable List<String> definedTagEquals;
+    private @Nullable List<String> definedTagExists;
     /**
      * @return The name by which a configuration entity is displayed to the end user.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetConfigsFilter> filters;
-    private final @Nullable List<String> freeformTagEquals;
-    private final @Nullable List<String> freeformTagExists;
+    private @Nullable String displayName;
+    private @Nullable List<GetConfigsFilter> filters;
+    private @Nullable List<String> freeformTagEquals;
+    private @Nullable List<String> freeformTagExists;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String optionsGroup;
+    private String id;
+    private @Nullable String optionsGroup;
 
-    @CustomType.Constructor
-    private GetConfigsResult(
-        @CustomType.Parameter("apmDomainId") String apmDomainId,
-        @CustomType.Parameter("configCollections") List<GetConfigsConfigCollection> configCollections,
-        @CustomType.Parameter("configType") @Nullable String configType,
-        @CustomType.Parameter("definedTagEquals") @Nullable List<String> definedTagEquals,
-        @CustomType.Parameter("definedTagExists") @Nullable List<String> definedTagExists,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetConfigsFilter> filters,
-        @CustomType.Parameter("freeformTagEquals") @Nullable List<String> freeformTagEquals,
-        @CustomType.Parameter("freeformTagExists") @Nullable List<String> freeformTagExists,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("optionsGroup") @Nullable String optionsGroup) {
-        this.apmDomainId = apmDomainId;
-        this.configCollections = configCollections;
-        this.configType = configType;
-        this.definedTagEquals = definedTagEquals;
-        this.definedTagExists = definedTagExists;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.freeformTagEquals = freeformTagEquals;
-        this.freeformTagExists = freeformTagExists;
-        this.id = id;
-        this.optionsGroup = optionsGroup;
-    }
-
+    private GetConfigsResult() {}
     public String apmDomainId() {
         return this.apmDomainId;
     }
@@ -125,7 +100,7 @@ public final class GetConfigsResult {
     public static Builder builder(GetConfigsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apmDomainId;
         private List<GetConfigsConfigCollection> configCollections;
@@ -138,11 +113,7 @@ public final class GetConfigsResult {
         private @Nullable List<String> freeformTagExists;
         private String id;
         private @Nullable String optionsGroup;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConfigsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apmDomainId = defaults.apmDomainId;
@@ -158,10 +129,12 @@ public final class GetConfigsResult {
     	      this.optionsGroup = defaults.optionsGroup;
         }
 
+        @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
             this.apmDomainId = Objects.requireNonNull(apmDomainId);
             return this;
         }
+        @CustomType.Setter
         public Builder configCollections(List<GetConfigsConfigCollection> configCollections) {
             this.configCollections = Objects.requireNonNull(configCollections);
             return this;
@@ -169,10 +142,12 @@ public final class GetConfigsResult {
         public Builder configCollections(GetConfigsConfigCollection... configCollections) {
             return configCollections(List.of(configCollections));
         }
+        @CustomType.Setter
         public Builder configType(@Nullable String configType) {
             this.configType = configType;
             return this;
         }
+        @CustomType.Setter
         public Builder definedTagEquals(@Nullable List<String> definedTagEquals) {
             this.definedTagEquals = definedTagEquals;
             return this;
@@ -180,6 +155,7 @@ public final class GetConfigsResult {
         public Builder definedTagEquals(String... definedTagEquals) {
             return definedTagEquals(List.of(definedTagEquals));
         }
+        @CustomType.Setter
         public Builder definedTagExists(@Nullable List<String> definedTagExists) {
             this.definedTagExists = definedTagExists;
             return this;
@@ -187,10 +163,12 @@ public final class GetConfigsResult {
         public Builder definedTagExists(String... definedTagExists) {
             return definedTagExists(List.of(definedTagExists));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetConfigsFilter> filters) {
             this.filters = filters;
             return this;
@@ -198,6 +176,7 @@ public final class GetConfigsResult {
         public Builder filters(GetConfigsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder freeformTagEquals(@Nullable List<String> freeformTagEquals) {
             this.freeformTagEquals = freeformTagEquals;
             return this;
@@ -205,6 +184,7 @@ public final class GetConfigsResult {
         public Builder freeformTagEquals(String... freeformTagEquals) {
             return freeformTagEquals(List.of(freeformTagEquals));
         }
+        @CustomType.Setter
         public Builder freeformTagExists(@Nullable List<String> freeformTagExists) {
             this.freeformTagExists = freeformTagExists;
             return this;
@@ -212,15 +192,30 @@ public final class GetConfigsResult {
         public Builder freeformTagExists(String... freeformTagExists) {
             return freeformTagExists(List.of(freeformTagExists));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder optionsGroup(@Nullable String optionsGroup) {
             this.optionsGroup = optionsGroup;
             return this;
-        }        public GetConfigsResult build() {
-            return new GetConfigsResult(apmDomainId, configCollections, configType, definedTagEquals, definedTagExists, displayName, filters, freeformTagEquals, freeformTagExists, id, optionsGroup);
+        }
+        public GetConfigsResult build() {
+            final var o = new GetConfigsResult();
+            o.apmDomainId = apmDomainId;
+            o.configCollections = configCollections;
+            o.configType = configType;
+            o.definedTagEquals = definedTagEquals;
+            o.definedTagExists = definedTagExists;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.freeformTagEquals = freeformTagEquals;
+            o.freeformTagExists = freeformTagExists;
+            o.id = id;
+            o.optionsGroup = optionsGroup;
+            return o;
         }
     }
 }

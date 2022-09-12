@@ -21,84 +21,59 @@ public final class ClusterNetworkInstancePool {
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
      * 
      */
-    private final String instanceConfigurationId;
+    private String instanceConfigurationId;
     /**
      * @return The load balancers attached to the instance pool.
      * 
      */
-    private final @Nullable List<ClusterNetworkInstancePoolLoadBalancer> loadBalancers;
+    private @Nullable List<ClusterNetworkInstancePoolLoadBalancer> loadBalancers;
     /**
      * @return The placement configurations for the instance pool.
      * 
      */
-    private final @Nullable List<ClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations;
+    private @Nullable List<ClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations;
     /**
      * @return (Updatable) The number of instances that should be in the instance pool.
      * 
      */
-    private final Integer size;
+    private Integer size;
     /**
      * @return The current state of the cluster network.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
 
-    @CustomType.Constructor
-    private ClusterNetworkInstancePool(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("definedTags") @Nullable Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("freeformTags") @Nullable Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("instanceConfigurationId") String instanceConfigurationId,
-        @CustomType.Parameter("loadBalancers") @Nullable List<ClusterNetworkInstancePoolLoadBalancer> loadBalancers,
-        @CustomType.Parameter("placementConfigurations") @Nullable List<ClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations,
-        @CustomType.Parameter("size") Integer size,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.instanceConfigurationId = instanceConfigurationId;
-        this.loadBalancers = loadBalancers;
-        this.placementConfigurations = placementConfigurations;
-        this.size = size;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private ClusterNetworkInstancePool() {}
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      * 
@@ -184,7 +159,7 @@ public final class ClusterNetworkInstancePool {
     public static Builder builder(ClusterNetworkInstancePool defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable Map<String,Object> definedTags;
@@ -197,11 +172,7 @@ public final class ClusterNetworkInstancePool {
         private Integer size;
         private @Nullable String state;
         private @Nullable String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ClusterNetworkInstancePool defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -217,30 +188,37 @@ public final class ClusterNetworkInstancePool {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
             this.definedTags = definedTags;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
             this.freeformTags = freeformTags;
             return this;
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder instanceConfigurationId(String instanceConfigurationId) {
             this.instanceConfigurationId = Objects.requireNonNull(instanceConfigurationId);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancers(@Nullable List<ClusterNetworkInstancePoolLoadBalancer> loadBalancers) {
             this.loadBalancers = loadBalancers;
             return this;
@@ -248,6 +226,7 @@ public final class ClusterNetworkInstancePool {
         public Builder loadBalancers(ClusterNetworkInstancePoolLoadBalancer... loadBalancers) {
             return loadBalancers(List.of(loadBalancers));
         }
+        @CustomType.Setter
         public Builder placementConfigurations(@Nullable List<ClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations) {
             this.placementConfigurations = placementConfigurations;
             return this;
@@ -255,19 +234,35 @@ public final class ClusterNetworkInstancePool {
         public Builder placementConfigurations(ClusterNetworkInstancePoolPlacementConfiguration... placementConfigurations) {
             return placementConfigurations(List.of(placementConfigurations));
         }
+        @CustomType.Setter
         public Builder size(Integer size) {
             this.size = Objects.requireNonNull(size);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
-        }        public ClusterNetworkInstancePool build() {
-            return new ClusterNetworkInstancePool(compartmentId, definedTags, displayName, freeformTags, id, instanceConfigurationId, loadBalancers, placementConfigurations, size, state, timeCreated);
+        }
+        public ClusterNetworkInstancePool build() {
+            final var o = new ClusterNetworkInstancePool();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.instanceConfigurationId = instanceConfigurationId;
+            o.loadBalancers = loadBalancers;
+            o.placementConfigurations = placementConfigurations;
+            o.size = size;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

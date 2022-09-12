@@ -18,52 +18,35 @@ public final class GetVmClustersResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * 
      */
-    private final @Nullable String exadataInfrastructureId;
-    private final @Nullable List<GetVmClustersFilter> filters;
+    private @Nullable String exadataInfrastructureId;
+    private @Nullable List<GetVmClustersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the VM cluster.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of vm_clusters.
      * 
      */
-    private final List<GetVmClustersVmCluster> vmClusters;
+    private List<GetVmClustersVmCluster> vmClusters;
 
-    @CustomType.Constructor
-    private GetVmClustersResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("exadataInfrastructureId") @Nullable String exadataInfrastructureId,
-        @CustomType.Parameter("filters") @Nullable List<GetVmClustersFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("vmClusters") List<GetVmClustersVmCluster> vmClusters) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.exadataInfrastructureId = exadataInfrastructureId;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.vmClusters = vmClusters;
-    }
-
+    private GetVmClustersResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -117,7 +100,7 @@ public final class GetVmClustersResult {
     public static Builder builder(GetVmClustersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -126,11 +109,7 @@ public final class GetVmClustersResult {
         private String id;
         private @Nullable String state;
         private List<GetVmClustersVmCluster> vmClusters;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVmClustersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,18 +121,22 @@ public final class GetVmClustersResult {
     	      this.vmClusters = defaults.vmClusters;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder exadataInfrastructureId(@Nullable String exadataInfrastructureId) {
             this.exadataInfrastructureId = exadataInfrastructureId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVmClustersFilter> filters) {
             this.filters = filters;
             return this;
@@ -161,22 +144,34 @@ public final class GetVmClustersResult {
         public Builder filters(GetVmClustersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder vmClusters(List<GetVmClustersVmCluster> vmClusters) {
             this.vmClusters = Objects.requireNonNull(vmClusters);
             return this;
         }
         public Builder vmClusters(GetVmClustersVmCluster... vmClusters) {
             return vmClusters(List.of(vmClusters));
-        }        public GetVmClustersResult build() {
-            return new GetVmClustersResult(compartmentId, displayName, exadataInfrastructureId, filters, id, state, vmClusters);
+        }
+        public GetVmClustersResult build() {
+            final var o = new GetVmClustersResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.exadataInfrastructureId = exadataInfrastructureId;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.vmClusters = vmClusters;
+            return o;
         }
     }
 }

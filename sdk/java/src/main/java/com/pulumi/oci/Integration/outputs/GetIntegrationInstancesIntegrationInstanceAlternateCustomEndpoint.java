@@ -14,35 +14,24 @@ public final class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndp
      * @return When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
      * 
      */
-    private final String alias;
+    private String alias;
     /**
      * @return Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
      * 
      */
-    private final String certificateSecretId;
+    private String certificateSecretId;
     /**
      * @return The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
      * 
      */
-    private final Integer certificateSecretVersion;
+    private Integer certificateSecretVersion;
     /**
      * @return A custom hostname to be used for the integration instance URL, in FQDN format.
      * 
      */
-    private final String hostname;
+    private String hostname;
 
-    @CustomType.Constructor
-    private GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint(
-        @CustomType.Parameter("alias") String alias,
-        @CustomType.Parameter("certificateSecretId") String certificateSecretId,
-        @CustomType.Parameter("certificateSecretVersion") Integer certificateSecretVersion,
-        @CustomType.Parameter("hostname") String hostname) {
-        this.alias = alias;
-        this.certificateSecretId = certificateSecretId;
-        this.certificateSecretVersion = certificateSecretVersion;
-        this.hostname = hostname;
-    }
-
+    private GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint() {}
     /**
      * @return When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
      * 
@@ -79,17 +68,13 @@ public final class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndp
     public static Builder builder(GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String alias;
         private String certificateSecretId;
         private Integer certificateSecretVersion;
         private String hostname;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alias = defaults.alias;
@@ -98,23 +83,33 @@ public final class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndp
     	      this.hostname = defaults.hostname;
         }
 
+        @CustomType.Setter
         public Builder alias(String alias) {
             this.alias = Objects.requireNonNull(alias);
             return this;
         }
+        @CustomType.Setter
         public Builder certificateSecretId(String certificateSecretId) {
             this.certificateSecretId = Objects.requireNonNull(certificateSecretId);
             return this;
         }
+        @CustomType.Setter
         public Builder certificateSecretVersion(Integer certificateSecretVersion) {
             this.certificateSecretVersion = Objects.requireNonNull(certificateSecretVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
-        }        public GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint build() {
-            return new GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint(alias, certificateSecretId, certificateSecretVersion, hostname);
+        }
+        public GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint build() {
+            final var o = new GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint();
+            o.alias = alias;
+            o.certificateSecretId = certificateSecretId;
+            o.certificateSecretVersion = certificateSecretVersion;
+            o.hostname = hostname;
+            return o;
         }
     }
 }

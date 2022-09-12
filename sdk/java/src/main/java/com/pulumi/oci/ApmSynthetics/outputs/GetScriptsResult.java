@@ -14,45 +14,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetScriptsResult {
-    private final String apmDomainId;
+    private String apmDomainId;
     /**
      * @return Content type of the script.
      * 
      */
-    private final @Nullable String contentType;
+    private @Nullable String contentType;
     /**
      * @return Unique name that can be edited. The name should not contain any confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetScriptsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetScriptsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of script_collection.
      * 
      */
-    private final List<GetScriptsScriptCollection> scriptCollections;
+    private List<GetScriptsScriptCollection> scriptCollections;
 
-    @CustomType.Constructor
-    private GetScriptsResult(
-        @CustomType.Parameter("apmDomainId") String apmDomainId,
-        @CustomType.Parameter("contentType") @Nullable String contentType,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetScriptsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("scriptCollections") List<GetScriptsScriptCollection> scriptCollections) {
-        this.apmDomainId = apmDomainId;
-        this.contentType = contentType;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.scriptCollections = scriptCollections;
-    }
-
+    private GetScriptsResult() {}
     public String apmDomainId() {
         return this.apmDomainId;
     }
@@ -95,7 +80,7 @@ public final class GetScriptsResult {
     public static Builder builder(GetScriptsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apmDomainId;
         private @Nullable String contentType;
@@ -103,11 +88,7 @@ public final class GetScriptsResult {
         private @Nullable List<GetScriptsFilter> filters;
         private String id;
         private List<GetScriptsScriptCollection> scriptCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetScriptsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apmDomainId = defaults.apmDomainId;
@@ -118,18 +99,22 @@ public final class GetScriptsResult {
     	      this.scriptCollections = defaults.scriptCollections;
         }
 
+        @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
             this.apmDomainId = Objects.requireNonNull(apmDomainId);
             return this;
         }
+        @CustomType.Setter
         public Builder contentType(@Nullable String contentType) {
             this.contentType = contentType;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetScriptsFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,18 +122,28 @@ public final class GetScriptsResult {
         public Builder filters(GetScriptsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder scriptCollections(List<GetScriptsScriptCollection> scriptCollections) {
             this.scriptCollections = Objects.requireNonNull(scriptCollections);
             return this;
         }
         public Builder scriptCollections(GetScriptsScriptCollection... scriptCollections) {
             return scriptCollections(List.of(scriptCollections));
-        }        public GetScriptsResult build() {
-            return new GetScriptsResult(apmDomainId, contentType, displayName, filters, id, scriptCollections);
+        }
+        public GetScriptsResult build() {
+            final var o = new GetScriptsResult();
+            o.apmDomainId = apmDomainId;
+            o.contentType = contentType;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.scriptCollections = scriptCollections;
+            return o;
         }
     }
 }

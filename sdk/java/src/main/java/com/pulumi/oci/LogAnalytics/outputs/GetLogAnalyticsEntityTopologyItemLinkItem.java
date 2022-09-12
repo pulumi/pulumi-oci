@@ -13,21 +13,14 @@ public final class GetLogAnalyticsEntityTopologyItemLinkItem {
      * @return The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
      * 
      */
-    private final String destinationEntityId;
+    private String destinationEntityId;
     /**
      * @return The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
      * 
      */
-    private final String sourceEntityId;
+    private String sourceEntityId;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsEntityTopologyItemLinkItem(
-        @CustomType.Parameter("destinationEntityId") String destinationEntityId,
-        @CustomType.Parameter("sourceEntityId") String sourceEntityId) {
-        this.destinationEntityId = destinationEntityId;
-        this.sourceEntityId = sourceEntityId;
-    }
-
+    private GetLogAnalyticsEntityTopologyItemLinkItem() {}
     /**
      * @return The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
      * 
@@ -50,30 +43,32 @@ public final class GetLogAnalyticsEntityTopologyItemLinkItem {
     public static Builder builder(GetLogAnalyticsEntityTopologyItemLinkItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String destinationEntityId;
         private String sourceEntityId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsEntityTopologyItemLinkItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.destinationEntityId = defaults.destinationEntityId;
     	      this.sourceEntityId = defaults.sourceEntityId;
         }
 
+        @CustomType.Setter
         public Builder destinationEntityId(String destinationEntityId) {
             this.destinationEntityId = Objects.requireNonNull(destinationEntityId);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceEntityId(String sourceEntityId) {
             this.sourceEntityId = Objects.requireNonNull(sourceEntityId);
             return this;
-        }        public GetLogAnalyticsEntityTopologyItemLinkItem build() {
-            return new GetLogAnalyticsEntityTopologyItemLinkItem(destinationEntityId, sourceEntityId);
+        }
+        public GetLogAnalyticsEntityTopologyItemLinkItem build() {
+            final var o = new GetLogAnalyticsEntityTopologyItemLinkItem();
+            o.destinationEntityId = destinationEntityId;
+            o.sourceEntityId = sourceEntityId;
+            return o;
         }
     }
 }

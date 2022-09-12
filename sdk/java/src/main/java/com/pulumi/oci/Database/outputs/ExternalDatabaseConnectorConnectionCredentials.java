@@ -15,49 +15,34 @@ public final class ExternalDatabaseConnectorConnectionCredentials {
      * @return (Updatable) The name of the credential information that used to connect to the database. The name should be in &#34;x.y&#34; format, where the length of &#34;x&#34; has a maximum of 64 characters, and length of &#34;y&#34; has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the &#34;.&#34; character that separates the &#34;x&#34; and &#34;y&#34; portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
      * 
      */
-    private final @Nullable String credentialName;
+    private @Nullable String credentialName;
     /**
      * @return (Updatable) The type of credential used to connect to the database.
      * 
      */
-    private final @Nullable String credentialType;
+    private @Nullable String credentialType;
     /**
      * @return (Updatable) The password that will be used to connect to the database.
      * 
      */
-    private final @Nullable String password;
+    private @Nullable String password;
     /**
      * @return (Updatable) The role of the user that will be connecting to the database.
      * 
      */
-    private final @Nullable String role;
+    private @Nullable String role;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    private final @Nullable String sslSecretId;
+    private @Nullable String sslSecretId;
     /**
      * @return (Updatable) The username that will be used to connect to the database.
      * 
      */
-    private final @Nullable String username;
+    private @Nullable String username;
 
-    @CustomType.Constructor
-    private ExternalDatabaseConnectorConnectionCredentials(
-        @CustomType.Parameter("credentialName") @Nullable String credentialName,
-        @CustomType.Parameter("credentialType") @Nullable String credentialType,
-        @CustomType.Parameter("password") @Nullable String password,
-        @CustomType.Parameter("role") @Nullable String role,
-        @CustomType.Parameter("sslSecretId") @Nullable String sslSecretId,
-        @CustomType.Parameter("username") @Nullable String username) {
-        this.credentialName = credentialName;
-        this.credentialType = credentialType;
-        this.password = password;
-        this.role = role;
-        this.sslSecretId = sslSecretId;
-        this.username = username;
-    }
-
+    private ExternalDatabaseConnectorConnectionCredentials() {}
     /**
      * @return (Updatable) The name of the credential information that used to connect to the database. The name should be in &#34;x.y&#34; format, where the length of &#34;x&#34; has a maximum of 64 characters, and length of &#34;y&#34; has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the &#34;.&#34; character that separates the &#34;x&#34; and &#34;y&#34; portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
      * 
@@ -108,7 +93,7 @@ public final class ExternalDatabaseConnectorConnectionCredentials {
     public static Builder builder(ExternalDatabaseConnectorConnectionCredentials defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String credentialName;
         private @Nullable String credentialType;
@@ -116,11 +101,7 @@ public final class ExternalDatabaseConnectorConnectionCredentials {
         private @Nullable String role;
         private @Nullable String sslSecretId;
         private @Nullable String username;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ExternalDatabaseConnectorConnectionCredentials defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.credentialName = defaults.credentialName;
@@ -131,31 +112,45 @@ public final class ExternalDatabaseConnectorConnectionCredentials {
     	      this.username = defaults.username;
         }
 
+        @CustomType.Setter
         public Builder credentialName(@Nullable String credentialName) {
             this.credentialName = credentialName;
             return this;
         }
+        @CustomType.Setter
         public Builder credentialType(@Nullable String credentialType) {
             this.credentialType = credentialType;
             return this;
         }
+        @CustomType.Setter
         public Builder password(@Nullable String password) {
             this.password = password;
             return this;
         }
+        @CustomType.Setter
         public Builder role(@Nullable String role) {
             this.role = role;
             return this;
         }
+        @CustomType.Setter
         public Builder sslSecretId(@Nullable String sslSecretId) {
             this.sslSecretId = sslSecretId;
             return this;
         }
+        @CustomType.Setter
         public Builder username(@Nullable String username) {
             this.username = username;
             return this;
-        }        public ExternalDatabaseConnectorConnectionCredentials build() {
-            return new ExternalDatabaseConnectorConnectionCredentials(credentialName, credentialType, password, role, sslSecretId, username);
+        }
+        public ExternalDatabaseConnectorConnectionCredentials build() {
+            final var o = new ExternalDatabaseConnectorConnectionCredentials();
+            o.credentialName = credentialName;
+            o.credentialType = credentialType;
+            o.password = password;
+            o.role = role;
+            o.sslSecretId = sslSecretId;
+            o.username = username;
+            return o;
         }
     }
 }

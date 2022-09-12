@@ -16,49 +16,34 @@ public final class ExportExportOption {
      * @return (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
      * 
      */
-    private final @Nullable String access;
+    private @Nullable String access;
     /**
      * @return (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
      * 
      */
-    private final @Nullable String anonymousGid;
+    private @Nullable String anonymousGid;
     /**
      * @return (Updatable) UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
      * 
      */
-    private final @Nullable String anonymousUid;
+    private @Nullable String anonymousUid;
     /**
      * @return (Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to &#39;anonymousUid&#39; and &#39;anonymousGid&#39;. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
      * 
      */
-    private final @Nullable String identitySquash;
+    private @Nullable String identitySquash;
     /**
      * @return (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
      * 
      */
-    private final @Nullable Boolean requirePrivilegedSourcePort;
+    private @Nullable Boolean requirePrivilegedSourcePort;
     /**
      * @return (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
      * 
      */
-    private final String source;
+    private String source;
 
-    @CustomType.Constructor
-    private ExportExportOption(
-        @CustomType.Parameter("access") @Nullable String access,
-        @CustomType.Parameter("anonymousGid") @Nullable String anonymousGid,
-        @CustomType.Parameter("anonymousUid") @Nullable String anonymousUid,
-        @CustomType.Parameter("identitySquash") @Nullable String identitySquash,
-        @CustomType.Parameter("requirePrivilegedSourcePort") @Nullable Boolean requirePrivilegedSourcePort,
-        @CustomType.Parameter("source") String source) {
-        this.access = access;
-        this.anonymousGid = anonymousGid;
-        this.anonymousUid = anonymousUid;
-        this.identitySquash = identitySquash;
-        this.requirePrivilegedSourcePort = requirePrivilegedSourcePort;
-        this.source = source;
-    }
-
+    private ExportExportOption() {}
     /**
      * @return (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
      * 
@@ -109,7 +94,7 @@ public final class ExportExportOption {
     public static Builder builder(ExportExportOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String access;
         private @Nullable String anonymousGid;
@@ -117,11 +102,7 @@ public final class ExportExportOption {
         private @Nullable String identitySquash;
         private @Nullable Boolean requirePrivilegedSourcePort;
         private String source;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ExportExportOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.access = defaults.access;
@@ -132,31 +113,45 @@ public final class ExportExportOption {
     	      this.source = defaults.source;
         }
 
+        @CustomType.Setter
         public Builder access(@Nullable String access) {
             this.access = access;
             return this;
         }
+        @CustomType.Setter
         public Builder anonymousGid(@Nullable String anonymousGid) {
             this.anonymousGid = anonymousGid;
             return this;
         }
+        @CustomType.Setter
         public Builder anonymousUid(@Nullable String anonymousUid) {
             this.anonymousUid = anonymousUid;
             return this;
         }
+        @CustomType.Setter
         public Builder identitySquash(@Nullable String identitySquash) {
             this.identitySquash = identitySquash;
             return this;
         }
+        @CustomType.Setter
         public Builder requirePrivilegedSourcePort(@Nullable Boolean requirePrivilegedSourcePort) {
             this.requirePrivilegedSourcePort = requirePrivilegedSourcePort;
             return this;
         }
+        @CustomType.Setter
         public Builder source(String source) {
             this.source = Objects.requireNonNull(source);
             return this;
-        }        public ExportExportOption build() {
-            return new ExportExportOption(access, anonymousGid, anonymousUid, identitySquash, requirePrivilegedSourcePort, source);
+        }
+        public ExportExportOption build() {
+            final var o = new ExportExportOption();
+            o.access = access;
+            o.anonymousGid = anonymousGid;
+            o.anonymousUid = anonymousUid;
+            o.identitySquash = identitySquash;
+            o.requirePrivilegedSourcePort = requirePrivilegedSourcePort;
+            o.source = source;
+            return o;
         }
     }
 }

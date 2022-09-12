@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetRegistryTypesTypesSummaryCollection {
-    private final List<GetRegistryTypesTypesSummaryCollectionItem> items;
+    private List<GetRegistryTypesTypesSummaryCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetRegistryTypesTypesSummaryCollection(@CustomType.Parameter("items") List<GetRegistryTypesTypesSummaryCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetRegistryTypesTypesSummaryCollection() {}
     public List<GetRegistryTypesTypesSummaryCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetRegistryTypesTypesSummaryCollection {
     public static Builder builder(GetRegistryTypesTypesSummaryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRegistryTypesTypesSummaryCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryTypesTypesSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetRegistryTypesTypesSummaryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetRegistryTypesTypesSummaryCollectionItem... items) {
             return items(List.of(items));
-        }        public GetRegistryTypesTypesSummaryCollection build() {
-            return new GetRegistryTypesTypesSummaryCollection(items);
+        }
+        public GetRegistryTypesTypesSummaryCollection build() {
+            final var o = new GetRegistryTypesTypesSummaryCollection();
+            o.items = items;
+            return o;
         }
     }
 }

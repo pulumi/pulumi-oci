@@ -100,14 +100,14 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
         return this.cpusEnabled;
     }
     /**
-     * Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
     @Export(name="dataCollectionOptions", type=List.class, parameters={VmClusterRemoveVirtualMachineDataCollectionOption.class})
     private Output<List<VmClusterRemoveVirtualMachineDataCollectionOption>> dataCollectionOptions;
 
     /**
-     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
     public Output<List<VmClusterRemoveVirtualMachineDataCollectionOption>> dataCollectionOptions() {

@@ -17,143 +17,100 @@ public final class GetAuditTrailsAuditTrailCollectionItem {
      * @return The date from which the audit trail must start collecting data, in the format defined by RFC3339.
      * 
      */
-    private final String auditCollectionStartTime;
+    private String auditCollectionStartTime;
     /**
      * @return The OCID of the  parent audit.
      * 
      */
-    private final String auditProfileId;
+    private String auditProfileId;
     /**
      * @return A optional filter to return only resources that match the specified id.
      * 
      */
-    private final String auditTrailId;
+    private String auditTrailId;
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The description of the audit trail.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A filter to return only resources that match the specified display name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the audit trail.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database&#39;s audit trail does not become too large.
      * 
      */
-    private final Boolean isAutoPurgeEnabled;
+    private Boolean isAutoPurgeEnabled;
     /**
      * @return Details about the current state of the audit trail in Data Safe.
      * 
      */
-    private final String lifecycleDetails;
-    private final Integer resumeTrigger;
+    private String lifecycleDetails;
+    private Integer resumeTrigger;
     /**
      * @return A optional filter to return only resources that match the specified lifecycle state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return A optional filter to return only resources that match the specified sub-state of audit trail.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private final String targetId;
+    private String targetId;
     /**
      * @return The date and time the audit trail was created, in the format defined by RFC3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the audit trail was updated, in the format defined by RFC3339.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
      * 
      */
-    private final String trailLocation;
+    private String trailLocation;
     /**
      * @return The OCID of the workrequest for audit trail which collects audit records.
      * 
      */
-    private final String workRequestId;
+    private String workRequestId;
 
-    @CustomType.Constructor
-    private GetAuditTrailsAuditTrailCollectionItem(
-        @CustomType.Parameter("auditCollectionStartTime") String auditCollectionStartTime,
-        @CustomType.Parameter("auditProfileId") String auditProfileId,
-        @CustomType.Parameter("auditTrailId") String auditTrailId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isAutoPurgeEnabled") Boolean isAutoPurgeEnabled,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("resumeTrigger") Integer resumeTrigger,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("targetId") String targetId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("trailLocation") String trailLocation,
-        @CustomType.Parameter("workRequestId") String workRequestId) {
-        this.auditCollectionStartTime = auditCollectionStartTime;
-        this.auditProfileId = auditProfileId;
-        this.auditTrailId = auditTrailId;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isAutoPurgeEnabled = isAutoPurgeEnabled;
-        this.lifecycleDetails = lifecycleDetails;
-        this.resumeTrigger = resumeTrigger;
-        this.state = state;
-        this.status = status;
-        this.systemTags = systemTags;
-        this.targetId = targetId;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.trailLocation = trailLocation;
-        this.workRequestId = workRequestId;
-    }
-
+    private GetAuditTrailsAuditTrailCollectionItem() {}
     /**
      * @return The date from which the audit trail must start collecting data, in the format defined by RFC3339.
      * 
@@ -298,7 +255,7 @@ public final class GetAuditTrailsAuditTrailCollectionItem {
     public static Builder builder(GetAuditTrailsAuditTrailCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String auditCollectionStartTime;
         private String auditProfileId;
@@ -320,11 +277,7 @@ public final class GetAuditTrailsAuditTrailCollectionItem {
         private String timeUpdated;
         private String trailLocation;
         private String workRequestId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditTrailsAuditTrailCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.auditCollectionStartTime = defaults.auditCollectionStartTime;
@@ -349,87 +302,129 @@ public final class GetAuditTrailsAuditTrailCollectionItem {
     	      this.workRequestId = defaults.workRequestId;
         }
 
+        @CustomType.Setter
         public Builder auditCollectionStartTime(String auditCollectionStartTime) {
             this.auditCollectionStartTime = Objects.requireNonNull(auditCollectionStartTime);
             return this;
         }
+        @CustomType.Setter
         public Builder auditProfileId(String auditProfileId) {
             this.auditProfileId = Objects.requireNonNull(auditProfileId);
             return this;
         }
+        @CustomType.Setter
         public Builder auditTrailId(String auditTrailId) {
             this.auditTrailId = Objects.requireNonNull(auditTrailId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isAutoPurgeEnabled(Boolean isAutoPurgeEnabled) {
             this.isAutoPurgeEnabled = Objects.requireNonNull(isAutoPurgeEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder resumeTrigger(Integer resumeTrigger) {
             this.resumeTrigger = Objects.requireNonNull(resumeTrigger);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder trailLocation(String trailLocation) {
             this.trailLocation = Objects.requireNonNull(trailLocation);
             return this;
         }
+        @CustomType.Setter
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = Objects.requireNonNull(workRequestId);
             return this;
-        }        public GetAuditTrailsAuditTrailCollectionItem build() {
-            return new GetAuditTrailsAuditTrailCollectionItem(auditCollectionStartTime, auditProfileId, auditTrailId, compartmentId, definedTags, description, displayName, freeformTags, id, isAutoPurgeEnabled, lifecycleDetails, resumeTrigger, state, status, systemTags, targetId, timeCreated, timeUpdated, trailLocation, workRequestId);
+        }
+        public GetAuditTrailsAuditTrailCollectionItem build() {
+            final var o = new GetAuditTrailsAuditTrailCollectionItem();
+            o.auditCollectionStartTime = auditCollectionStartTime;
+            o.auditProfileId = auditProfileId;
+            o.auditTrailId = auditTrailId;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isAutoPurgeEnabled = isAutoPurgeEnabled;
+            o.lifecycleDetails = lifecycleDetails;
+            o.resumeTrigger = resumeTrigger;
+            o.state = state;
+            o.status = status;
+            o.systemTags = systemTags;
+            o.targetId = targetId;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.trailLocation = trailLocation;
+            o.workRequestId = workRequestId;
+            return o;
         }
     }
 }

@@ -15,28 +15,19 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
      * @return The events, for example, PUSH, PULL_REQUEST_MERGE.
      * 
      */
-    private final List<String> events;
+    private List<String> events;
     /**
      * @return Attributes to filter GitLab self-hosted server events.
      * 
      */
-    private final List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude> includes;
+    private List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude> includes;
     /**
      * @return Source of the trigger. Allowed values are, GITHUB and GITLAB.
      * 
      */
-    private final String triggerSource;
+    private String triggerSource;
 
-    @CustomType.Constructor
-    private GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter(
-        @CustomType.Parameter("events") List<String> events,
-        @CustomType.Parameter("includes") List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude> includes,
-        @CustomType.Parameter("triggerSource") String triggerSource) {
-        this.events = events;
-        this.includes = includes;
-        this.triggerSource = triggerSource;
-    }
-
+    private GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter() {}
     /**
      * @return The events, for example, PUSH, PULL_REQUEST_MERGE.
      * 
@@ -66,16 +57,12 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
     public static Builder builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> events;
         private List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude> includes;
         private String triggerSource;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.events = defaults.events;
@@ -83,6 +70,7 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
     	      this.triggerSource = defaults.triggerSource;
         }
 
+        @CustomType.Setter
         public Builder events(List<String> events) {
             this.events = Objects.requireNonNull(events);
             return this;
@@ -90,6 +78,7 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
         public Builder events(String... events) {
             return events(List.of(events));
         }
+        @CustomType.Setter
         public Builder includes(List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude> includes) {
             this.includes = Objects.requireNonNull(includes);
             return this;
@@ -97,11 +86,17 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
         public Builder includes(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude... includes) {
             return includes(List.of(includes));
         }
+        @CustomType.Setter
         public Builder triggerSource(String triggerSource) {
             this.triggerSource = Objects.requireNonNull(triggerSource);
             return this;
-        }        public GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter build() {
-            return new GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter(events, includes, triggerSource);
+        }
+        public GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter build() {
+            final var o = new GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter();
+            o.events = events;
+            o.includes = includes;
+            o.triggerSource = triggerSource;
+            return o;
         }
     }
 }

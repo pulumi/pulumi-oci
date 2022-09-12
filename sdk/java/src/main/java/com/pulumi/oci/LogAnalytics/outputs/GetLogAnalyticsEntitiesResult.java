@@ -18,88 +18,55 @@ public final class GetLogAnalyticsEntitiesResult {
      * @return The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      * 
      */
-    private final @Nullable String cloudResourceId;
+    private @Nullable String cloudResourceId;
     /**
      * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Log analytics entity type name.
      * 
      */
-    private final @Nullable List<String> entityTypeNames;
-    private final @Nullable List<GetLogAnalyticsEntitiesFilter> filters;
+    private @Nullable List<String> entityTypeNames;
+    private @Nullable List<GetLogAnalyticsEntitiesFilter> filters;
     /**
      * @return The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
      * 
      */
-    private final @Nullable String hostname;
-    private final @Nullable String hostnameContains;
+    private @Nullable String hostname;
+    private @Nullable String hostnameContains;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String isManagementAgentIdNull;
-    private final @Nullable String lifecycleDetailsContains;
+    private String id;
+    private @Nullable String isManagementAgentIdNull;
+    private @Nullable String lifecycleDetailsContains;
     /**
      * @return The list of log_analytics_entity_collection.
      * 
      */
-    private final List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollection> logAnalyticsEntityCollections;
+    private List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollection> logAnalyticsEntityCollections;
     /**
      * @return Log analytics entity name.
      * 
      */
-    private final @Nullable String name;
-    private final @Nullable String nameContains;
-    private final String namespace;
+    private @Nullable String name;
+    private @Nullable String nameContains;
+    private String namespace;
     /**
      * @return This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
      * 
      */
-    private final @Nullable String sourceId;
+    private @Nullable String sourceId;
     /**
      * @return The current state of the log analytics entity.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsEntitiesResult(
-        @CustomType.Parameter("cloudResourceId") @Nullable String cloudResourceId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("entityTypeNames") @Nullable List<String> entityTypeNames,
-        @CustomType.Parameter("filters") @Nullable List<GetLogAnalyticsEntitiesFilter> filters,
-        @CustomType.Parameter("hostname") @Nullable String hostname,
-        @CustomType.Parameter("hostnameContains") @Nullable String hostnameContains,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isManagementAgentIdNull") @Nullable String isManagementAgentIdNull,
-        @CustomType.Parameter("lifecycleDetailsContains") @Nullable String lifecycleDetailsContains,
-        @CustomType.Parameter("logAnalyticsEntityCollections") List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollection> logAnalyticsEntityCollections,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("nameContains") @Nullable String nameContains,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("sourceId") @Nullable String sourceId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.cloudResourceId = cloudResourceId;
-        this.compartmentId = compartmentId;
-        this.entityTypeNames = entityTypeNames;
-        this.filters = filters;
-        this.hostname = hostname;
-        this.hostnameContains = hostnameContains;
-        this.id = id;
-        this.isManagementAgentIdNull = isManagementAgentIdNull;
-        this.lifecycleDetailsContains = lifecycleDetailsContains;
-        this.logAnalyticsEntityCollections = logAnalyticsEntityCollections;
-        this.name = name;
-        this.nameContains = nameContains;
-        this.namespace = namespace;
-        this.sourceId = sourceId;
-        this.state = state;
-    }
-
+    private GetLogAnalyticsEntitiesResult() {}
     /**
      * @return The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      * 
@@ -189,7 +156,7 @@ public final class GetLogAnalyticsEntitiesResult {
     public static Builder builder(GetLogAnalyticsEntitiesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String cloudResourceId;
         private String compartmentId;
@@ -206,11 +173,7 @@ public final class GetLogAnalyticsEntitiesResult {
         private String namespace;
         private @Nullable String sourceId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsEntitiesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cloudResourceId = defaults.cloudResourceId;
@@ -230,14 +193,17 @@ public final class GetLogAnalyticsEntitiesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder cloudResourceId(@Nullable String cloudResourceId) {
             this.cloudResourceId = cloudResourceId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder entityTypeNames(@Nullable List<String> entityTypeNames) {
             this.entityTypeNames = entityTypeNames;
             return this;
@@ -245,6 +211,7 @@ public final class GetLogAnalyticsEntitiesResult {
         public Builder entityTypeNames(String... entityTypeNames) {
             return entityTypeNames(List.of(entityTypeNames));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetLogAnalyticsEntitiesFilter> filters) {
             this.filters = filters;
             return this;
@@ -252,26 +219,32 @@ public final class GetLogAnalyticsEntitiesResult {
         public Builder filters(GetLogAnalyticsEntitiesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder hostname(@Nullable String hostname) {
             this.hostname = hostname;
             return this;
         }
+        @CustomType.Setter
         public Builder hostnameContains(@Nullable String hostnameContains) {
             this.hostnameContains = hostnameContains;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isManagementAgentIdNull(@Nullable String isManagementAgentIdNull) {
             this.isManagementAgentIdNull = isManagementAgentIdNull;
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetailsContains(@Nullable String lifecycleDetailsContains) {
             this.lifecycleDetailsContains = lifecycleDetailsContains;
             return this;
         }
+        @CustomType.Setter
         public Builder logAnalyticsEntityCollections(List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollection> logAnalyticsEntityCollections) {
             this.logAnalyticsEntityCollections = Objects.requireNonNull(logAnalyticsEntityCollections);
             return this;
@@ -279,27 +252,49 @@ public final class GetLogAnalyticsEntitiesResult {
         public Builder logAnalyticsEntityCollections(GetLogAnalyticsEntitiesLogAnalyticsEntityCollection... logAnalyticsEntityCollections) {
             return logAnalyticsEntityCollections(List.of(logAnalyticsEntityCollections));
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder nameContains(@Nullable String nameContains) {
             this.nameContains = nameContains;
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceId(@Nullable String sourceId) {
             this.sourceId = sourceId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetLogAnalyticsEntitiesResult build() {
-            return new GetLogAnalyticsEntitiesResult(cloudResourceId, compartmentId, entityTypeNames, filters, hostname, hostnameContains, id, isManagementAgentIdNull, lifecycleDetailsContains, logAnalyticsEntityCollections, name, nameContains, namespace, sourceId, state);
+        }
+        public GetLogAnalyticsEntitiesResult build() {
+            final var o = new GetLogAnalyticsEntitiesResult();
+            o.cloudResourceId = cloudResourceId;
+            o.compartmentId = compartmentId;
+            o.entityTypeNames = entityTypeNames;
+            o.filters = filters;
+            o.hostname = hostname;
+            o.hostnameContains = hostnameContains;
+            o.id = id;
+            o.isManagementAgentIdNull = isManagementAgentIdNull;
+            o.lifecycleDetailsContains = lifecycleDetailsContains;
+            o.logAnalyticsEntityCollections = logAnalyticsEntityCollections;
+            o.name = name;
+            o.nameContains = nameContains;
+            o.namespace = namespace;
+            o.sourceId = sourceId;
+            o.state = state;
+            return o;
         }
     }
 }

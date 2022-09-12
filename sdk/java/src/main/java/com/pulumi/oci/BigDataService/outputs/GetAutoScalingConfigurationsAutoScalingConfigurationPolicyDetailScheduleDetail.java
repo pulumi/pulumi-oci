@@ -12,20 +12,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail {
-    private final String scheduleType;
-    private final List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig> timeAndHorizontalScalingConfigs;
-    private final List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig> timeAndVerticalScalingConfigs;
+    private String scheduleType;
+    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig> timeAndHorizontalScalingConfigs;
+    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig> timeAndVerticalScalingConfigs;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail(
-        @CustomType.Parameter("scheduleType") String scheduleType,
-        @CustomType.Parameter("timeAndHorizontalScalingConfigs") List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig> timeAndHorizontalScalingConfigs,
-        @CustomType.Parameter("timeAndVerticalScalingConfigs") List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig> timeAndVerticalScalingConfigs) {
-        this.scheduleType = scheduleType;
-        this.timeAndHorizontalScalingConfigs = timeAndHorizontalScalingConfigs;
-        this.timeAndVerticalScalingConfigs = timeAndVerticalScalingConfigs;
-    }
-
+    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail() {}
     public String scheduleType() {
         return this.scheduleType;
     }
@@ -43,16 +34,12 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     public static Builder builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String scheduleType;
         private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig> timeAndHorizontalScalingConfigs;
         private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig> timeAndVerticalScalingConfigs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.scheduleType = defaults.scheduleType;
@@ -60,10 +47,12 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     	      this.timeAndVerticalScalingConfigs = defaults.timeAndVerticalScalingConfigs;
         }
 
+        @CustomType.Setter
         public Builder scheduleType(String scheduleType) {
             this.scheduleType = Objects.requireNonNull(scheduleType);
             return this;
         }
+        @CustomType.Setter
         public Builder timeAndHorizontalScalingConfigs(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig> timeAndHorizontalScalingConfigs) {
             this.timeAndHorizontalScalingConfigs = Objects.requireNonNull(timeAndHorizontalScalingConfigs);
             return this;
@@ -71,14 +60,20 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
         public Builder timeAndHorizontalScalingConfigs(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig... timeAndHorizontalScalingConfigs) {
             return timeAndHorizontalScalingConfigs(List.of(timeAndHorizontalScalingConfigs));
         }
+        @CustomType.Setter
         public Builder timeAndVerticalScalingConfigs(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig> timeAndVerticalScalingConfigs) {
             this.timeAndVerticalScalingConfigs = Objects.requireNonNull(timeAndVerticalScalingConfigs);
             return this;
         }
         public Builder timeAndVerticalScalingConfigs(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig... timeAndVerticalScalingConfigs) {
             return timeAndVerticalScalingConfigs(List.of(timeAndVerticalScalingConfigs));
-        }        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail build() {
-            return new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail(scheduleType, timeAndHorizontalScalingConfigs, timeAndVerticalScalingConfigs);
+        }
+        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail build() {
+            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetail();
+            o.scheduleType = scheduleType;
+            o.timeAndHorizontalScalingConfigs = timeAndHorizontalScalingConfigs;
+            o.timeAndVerticalScalingConfigs = timeAndVerticalScalingConfigs;
+            return o;
         }
     }
 }

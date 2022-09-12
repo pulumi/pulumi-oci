@@ -13,35 +13,24 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImageShapesResult {
-    private final @Nullable List<GetImageShapesFilter> filters;
+    private @Nullable List<GetImageShapesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String imageId;
+    private String imageId;
     /**
      * @return The list of image_shape_compatibilities.
      * 
      */
-    private final List<GetImageShapesImageShapeCompatibility> imageShapeCompatibilities;
+    private List<GetImageShapesImageShapeCompatibility> imageShapeCompatibilities;
 
-    @CustomType.Constructor
-    private GetImageShapesResult(
-        @CustomType.Parameter("filters") @Nullable List<GetImageShapesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("imageId") String imageId,
-        @CustomType.Parameter("imageShapeCompatibilities") List<GetImageShapesImageShapeCompatibility> imageShapeCompatibilities) {
-        this.filters = filters;
-        this.id = id;
-        this.imageId = imageId;
-        this.imageShapeCompatibilities = imageShapeCompatibilities;
-    }
-
+    private GetImageShapesResult() {}
     public List<GetImageShapesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -74,17 +63,13 @@ public final class GetImageShapesResult {
     public static Builder builder(GetImageShapesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetImageShapesFilter> filters;
         private String id;
         private String imageId;
         private List<GetImageShapesImageShapeCompatibility> imageShapeCompatibilities;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetImageShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -93,6 +78,7 @@ public final class GetImageShapesResult {
     	      this.imageShapeCompatibilities = defaults.imageShapeCompatibilities;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetImageShapesFilter> filters) {
             this.filters = filters;
             return this;
@@ -100,22 +86,31 @@ public final class GetImageShapesResult {
         public Builder filters(GetImageShapesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder imageId(String imageId) {
             this.imageId = Objects.requireNonNull(imageId);
             return this;
         }
+        @CustomType.Setter
         public Builder imageShapeCompatibilities(List<GetImageShapesImageShapeCompatibility> imageShapeCompatibilities) {
             this.imageShapeCompatibilities = Objects.requireNonNull(imageShapeCompatibilities);
             return this;
         }
         public Builder imageShapeCompatibilities(GetImageShapesImageShapeCompatibility... imageShapeCompatibilities) {
             return imageShapeCompatibilities(List.of(imageShapeCompatibilities));
-        }        public GetImageShapesResult build() {
-            return new GetImageShapesResult(filters, id, imageId, imageShapeCompatibilities);
+        }
+        public GetImageShapesResult build() {
+            final var o = new GetImageShapesResult();
+            o.filters = filters;
+            o.id = id;
+            o.imageId = imageId;
+            o.imageShapeCompatibilities = imageShapeCompatibilities;
+            return o;
         }
     }
 }

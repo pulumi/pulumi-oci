@@ -9,17 +9,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPublicationsPublicationPackageDetailEula {
-    private final String eulaType;
-    private final String licenseText;
+    private String eulaType;
+    private String licenseText;
 
-    @CustomType.Constructor
-    private GetPublicationsPublicationPackageDetailEula(
-        @CustomType.Parameter("eulaType") String eulaType,
-        @CustomType.Parameter("licenseText") String licenseText) {
-        this.eulaType = eulaType;
-        this.licenseText = licenseText;
-    }
-
+    private GetPublicationsPublicationPackageDetailEula() {}
     public String eulaType() {
         return this.eulaType;
     }
@@ -34,30 +27,32 @@ public final class GetPublicationsPublicationPackageDetailEula {
     public static Builder builder(GetPublicationsPublicationPackageDetailEula defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String eulaType;
         private String licenseText;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPublicationsPublicationPackageDetailEula defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.eulaType = defaults.eulaType;
     	      this.licenseText = defaults.licenseText;
         }
 
+        @CustomType.Setter
         public Builder eulaType(String eulaType) {
             this.eulaType = Objects.requireNonNull(eulaType);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseText(String licenseText) {
             this.licenseText = Objects.requireNonNull(licenseText);
             return this;
-        }        public GetPublicationsPublicationPackageDetailEula build() {
-            return new GetPublicationsPublicationPackageDetailEula(eulaType, licenseText);
+        }
+        public GetPublicationsPublicationPackageDetailEula build() {
+            final var o = new GetPublicationsPublicationPackageDetailEula();
+            o.eulaType = eulaType;
+            o.licenseText = licenseText;
+            return o;
         }
     }
 }

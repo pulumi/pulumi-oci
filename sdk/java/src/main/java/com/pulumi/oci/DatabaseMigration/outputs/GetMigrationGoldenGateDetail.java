@@ -15,21 +15,14 @@ public final class GetMigrationGoldenGateDetail {
      * @return Details about Oracle GoldenGate Microservices.
      * 
      */
-    private final List<GetMigrationGoldenGateDetailHub> hubs;
+    private List<GetMigrationGoldenGateDetailHub> hubs;
     /**
      * @return Optional settings for Oracle GoldenGate processes
      * 
      */
-    private final List<GetMigrationGoldenGateDetailSetting> settings;
+    private List<GetMigrationGoldenGateDetailSetting> settings;
 
-    @CustomType.Constructor
-    private GetMigrationGoldenGateDetail(
-        @CustomType.Parameter("hubs") List<GetMigrationGoldenGateDetailHub> hubs,
-        @CustomType.Parameter("settings") List<GetMigrationGoldenGateDetailSetting> settings) {
-        this.hubs = hubs;
-        this.settings = settings;
-    }
-
+    private GetMigrationGoldenGateDetail() {}
     /**
      * @return Details about Oracle GoldenGate Microservices.
      * 
@@ -52,21 +45,18 @@ public final class GetMigrationGoldenGateDetail {
     public static Builder builder(GetMigrationGoldenGateDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetMigrationGoldenGateDetailHub> hubs;
         private List<GetMigrationGoldenGateDetailSetting> settings;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationGoldenGateDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hubs = defaults.hubs;
     	      this.settings = defaults.settings;
         }
 
+        @CustomType.Setter
         public Builder hubs(List<GetMigrationGoldenGateDetailHub> hubs) {
             this.hubs = Objects.requireNonNull(hubs);
             return this;
@@ -74,14 +64,19 @@ public final class GetMigrationGoldenGateDetail {
         public Builder hubs(GetMigrationGoldenGateDetailHub... hubs) {
             return hubs(List.of(hubs));
         }
+        @CustomType.Setter
         public Builder settings(List<GetMigrationGoldenGateDetailSetting> settings) {
             this.settings = Objects.requireNonNull(settings);
             return this;
         }
         public Builder settings(GetMigrationGoldenGateDetailSetting... settings) {
             return settings(List.of(settings));
-        }        public GetMigrationGoldenGateDetail build() {
-            return new GetMigrationGoldenGateDetail(hubs, settings);
+        }
+        public GetMigrationGoldenGateDetail build() {
+            final var o = new GetMigrationGoldenGateDetail();
+            o.hubs = hubs;
+            o.settings = settings;
+            return o;
         }
     }
 }

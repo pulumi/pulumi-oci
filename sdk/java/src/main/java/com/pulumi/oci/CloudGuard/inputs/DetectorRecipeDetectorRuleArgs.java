@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.CloudGuard.inputs.DetectorRecipeDetectorRuleCandidateResponderRuleArgs;
 import com.pulumi.oci.CloudGuard.inputs.DetectorRecipeDetectorRuleDetailsArgs;
+import com.pulumi.oci.CloudGuard.inputs.DetectorRecipeDetectorRuleEntitiesMappingArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -34,14 +35,29 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Detector recipe description.
+     * (Updatable) The id of the attached DataSource.
+     * 
+     */
+    @Import(name="dataSourceId")
+    private @Nullable Output<String> dataSourceId;
+
+    /**
+     * @return (Updatable) The id of the attached DataSource.
+     * 
+     */
+    public Optional<Output<String>> dataSourceId() {
+        return Optional.ofNullable(this.dataSourceId);
+    }
+
+    /**
+     * (Updatable) Description for DetectorRecipeDetectorRule.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Detector recipe description.
+     * @return (Updatable) Description for DetectorRecipeDetectorRule.
      * 
      */
     public Optional<Output<String>> description() {
@@ -109,6 +125,21 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
     }
 
     /**
+     * (Updatable) Data Source entities mapping for a Detector Rule
+     * 
+     */
+    @Import(name="entitiesMappings")
+    private @Nullable Output<List<DetectorRecipeDetectorRuleEntitiesMappingArgs>> entitiesMappings;
+
+    /**
+     * @return (Updatable) Data Source entities mapping for a Detector Rule
+     * 
+     */
+    public Optional<Output<List<DetectorRecipeDetectorRuleEntitiesMappingArgs>>> entitiesMappings() {
+        return Optional.ofNullable(this.entitiesMappings);
+    }
+
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -139,14 +170,14 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
     }
 
     /**
-     * Recommendation for DetectorRecipeDetectorRule
+     * (Updatable) Recommendation for DetectorRecipeDetectorRule
      * 
      */
     @Import(name="recommendation")
     private @Nullable Output<String> recommendation;
 
     /**
-     * @return Recommendation for DetectorRecipeDetectorRule
+     * @return (Updatable) Recommendation for DetectorRecipeDetectorRule
      * 
      */
     public Optional<Output<String>> recommendation() {
@@ -232,11 +263,13 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
 
     private DetectorRecipeDetectorRuleArgs(DetectorRecipeDetectorRuleArgs $) {
         this.candidateResponderRules = $.candidateResponderRules;
+        this.dataSourceId = $.dataSourceId;
         this.description = $.description;
         this.details = $.details;
         this.detector = $.detector;
         this.detectorRuleId = $.detectorRuleId;
         this.displayName = $.displayName;
+        this.entitiesMappings = $.entitiesMappings;
         this.lifecycleDetails = $.lifecycleDetails;
         this.managedListTypes = $.managedListTypes;
         this.recommendation = $.recommendation;
@@ -297,7 +330,28 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param description (Updatable) Detector recipe description.
+         * @param dataSourceId (Updatable) The id of the attached DataSource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSourceId(@Nullable Output<String> dataSourceId) {
+            $.dataSourceId = dataSourceId;
+            return this;
+        }
+
+        /**
+         * @param dataSourceId (Updatable) The id of the attached DataSource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSourceId(String dataSourceId) {
+            return dataSourceId(Output.of(dataSourceId));
+        }
+
+        /**
+         * @param description (Updatable) Description for DetectorRecipeDetectorRule.
          * 
          * @return builder
          * 
@@ -308,7 +362,7 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param description (Updatable) Detector recipe description.
+         * @param description (Updatable) Description for DetectorRecipeDetectorRule.
          * 
          * @return builder
          * 
@@ -402,6 +456,37 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
         }
 
         /**
+         * @param entitiesMappings (Updatable) Data Source entities mapping for a Detector Rule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder entitiesMappings(@Nullable Output<List<DetectorRecipeDetectorRuleEntitiesMappingArgs>> entitiesMappings) {
+            $.entitiesMappings = entitiesMappings;
+            return this;
+        }
+
+        /**
+         * @param entitiesMappings (Updatable) Data Source entities mapping for a Detector Rule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder entitiesMappings(List<DetectorRecipeDetectorRuleEntitiesMappingArgs> entitiesMappings) {
+            return entitiesMappings(Output.of(entitiesMappings));
+        }
+
+        /**
+         * @param entitiesMappings (Updatable) Data Source entities mapping for a Detector Rule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder entitiesMappings(DetectorRecipeDetectorRuleEntitiesMappingArgs... entitiesMappings) {
+            return entitiesMappings(List.of(entitiesMappings));
+        }
+
+        /**
          * @param lifecycleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * 
          * @return builder
@@ -454,7 +539,7 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param recommendation Recommendation for DetectorRecipeDetectorRule
+         * @param recommendation (Updatable) Recommendation for DetectorRecipeDetectorRule
          * 
          * @return builder
          * 
@@ -465,7 +550,7 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param recommendation Recommendation for DetectorRecipeDetectorRule
+         * @param recommendation (Updatable) Recommendation for DetectorRecipeDetectorRule
          * 
          * @return builder
          * 

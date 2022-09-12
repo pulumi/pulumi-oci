@@ -18,52 +18,35 @@ public final class GetStreamsResult {
      * @return The OCID of the compartment that contains the stream.
      * 
      */
-    private final @Nullable String compartmentId;
-    private final @Nullable List<GetStreamsFilter> filters;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetStreamsFilter> filters;
     /**
      * @return The OCID of the stream.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The current state of the stream.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The OCID of the stream pool that contains the stream.
      * 
      */
-    private final @Nullable String streamPoolId;
+    private @Nullable String streamPoolId;
     /**
      * @return The list of streams.
      * 
      */
-    private final List<GetStreamsStream> streams;
+    private List<GetStreamsStream> streams;
 
-    @CustomType.Constructor
-    private GetStreamsResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetStreamsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("streamPoolId") @Nullable String streamPoolId,
-        @CustomType.Parameter("streams") List<GetStreamsStream> streams) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.state = state;
-        this.streamPoolId = streamPoolId;
-        this.streams = streams;
-    }
-
+    private GetStreamsResult() {}
     /**
      * @return The OCID of the compartment that contains the stream.
      * 
@@ -117,7 +100,7 @@ public final class GetStreamsResult {
     public static Builder builder(GetStreamsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetStreamsFilter> filters;
@@ -126,11 +109,7 @@ public final class GetStreamsResult {
         private @Nullable String state;
         private @Nullable String streamPoolId;
         private List<GetStreamsStream> streams;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetStreamsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,10 +121,12 @@ public final class GetStreamsResult {
     	      this.streams = defaults.streams;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetStreamsFilter> filters) {
             this.filters = filters;
             return this;
@@ -153,30 +134,44 @@ public final class GetStreamsResult {
         public Builder filters(GetStreamsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder streamPoolId(@Nullable String streamPoolId) {
             this.streamPoolId = streamPoolId;
             return this;
         }
+        @CustomType.Setter
         public Builder streams(List<GetStreamsStream> streams) {
             this.streams = Objects.requireNonNull(streams);
             return this;
         }
         public Builder streams(GetStreamsStream... streams) {
             return streams(List.of(streams));
-        }        public GetStreamsResult build() {
-            return new GetStreamsResult(compartmentId, filters, id, name, state, streamPoolId, streams);
+        }
+        public GetStreamsResult build() {
+            final var o = new GetStreamsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.state = state;
+            o.streamPoolId = streamPoolId;
+            o.streams = streams;
+            return o;
         }
     }
 }

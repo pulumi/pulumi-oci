@@ -13,35 +13,24 @@ public final class GetWorkRequestsWorkRequestResource {
      * @return The way in which this resource was affected by the work tracked by the work request.
      * 
      */
-    private final String actionType;
+    private String actionType;
     /**
      * @return The resource type the work request affects.
      * 
      */
-    private final String entityType;
+    private String entityType;
     /**
      * @return The URI path on which the user can issue a GET request to access the resource metadata.
      * 
      */
-    private final String entityUri;
+    private String entityUri;
     /**
      * @return The OCID of the resource the work request affects.
      * 
      */
-    private final String identifier;
+    private String identifier;
 
-    @CustomType.Constructor
-    private GetWorkRequestsWorkRequestResource(
-        @CustomType.Parameter("actionType") String actionType,
-        @CustomType.Parameter("entityType") String entityType,
-        @CustomType.Parameter("entityUri") String entityUri,
-        @CustomType.Parameter("identifier") String identifier) {
-        this.actionType = actionType;
-        this.entityType = entityType;
-        this.entityUri = entityUri;
-        this.identifier = identifier;
-    }
-
+    private GetWorkRequestsWorkRequestResource() {}
     /**
      * @return The way in which this resource was affected by the work tracked by the work request.
      * 
@@ -78,17 +67,13 @@ public final class GetWorkRequestsWorkRequestResource {
     public static Builder builder(GetWorkRequestsWorkRequestResource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String actionType;
         private String entityType;
         private String entityUri;
         private String identifier;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWorkRequestsWorkRequestResource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actionType = defaults.actionType;
@@ -97,23 +82,33 @@ public final class GetWorkRequestsWorkRequestResource {
     	      this.identifier = defaults.identifier;
         }
 
+        @CustomType.Setter
         public Builder actionType(String actionType) {
             this.actionType = Objects.requireNonNull(actionType);
             return this;
         }
+        @CustomType.Setter
         public Builder entityType(String entityType) {
             this.entityType = Objects.requireNonNull(entityType);
             return this;
         }
+        @CustomType.Setter
         public Builder entityUri(String entityUri) {
             this.entityUri = Objects.requireNonNull(entityUri);
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(String identifier) {
             this.identifier = Objects.requireNonNull(identifier);
             return this;
-        }        public GetWorkRequestsWorkRequestResource build() {
-            return new GetWorkRequestsWorkRequestResource(actionType, entityType, entityUri, identifier);
+        }
+        public GetWorkRequestsWorkRequestResource build() {
+            final var o = new GetWorkRequestsWorkRequestResource();
+            o.actionType = actionType;
+            o.entityType = entityType;
+            o.entityUri = entityUri;
+            o.identifier = identifier;
+            return o;
         }
     }
 }

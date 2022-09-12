@@ -14,48 +14,31 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResolverEndpointsResult {
-    private final @Nullable List<GetResolverEndpointsFilter> filters;
+    private @Nullable List<GetResolverEndpointsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The list of resolver_endpoints.
      * 
      */
-    private final List<GetResolverEndpointsResolverEndpoint> resolverEndpoints;
-    private final String resolverId;
-    private final String scope;
+    private List<GetResolverEndpointsResolverEndpoint> resolverEndpoints;
+    private String resolverId;
+    private String scope;
     /**
      * @return The current state of the resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetResolverEndpointsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetResolverEndpointsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("resolverEndpoints") List<GetResolverEndpointsResolverEndpoint> resolverEndpoints,
-        @CustomType.Parameter("resolverId") String resolverId,
-        @CustomType.Parameter("scope") String scope,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.resolverEndpoints = resolverEndpoints;
-        this.resolverId = resolverId;
-        this.scope = scope;
-        this.state = state;
-    }
-
+    private GetResolverEndpointsResult() {}
     public List<GetResolverEndpointsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -101,7 +84,7 @@ public final class GetResolverEndpointsResult {
     public static Builder builder(GetResolverEndpointsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetResolverEndpointsFilter> filters;
         private String id;
@@ -110,11 +93,7 @@ public final class GetResolverEndpointsResult {
         private String resolverId;
         private String scope;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetResolverEndpointsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -126,6 +105,7 @@ public final class GetResolverEndpointsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetResolverEndpointsFilter> filters) {
             this.filters = filters;
             return this;
@@ -133,14 +113,17 @@ public final class GetResolverEndpointsResult {
         public Builder filters(GetResolverEndpointsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder resolverEndpoints(List<GetResolverEndpointsResolverEndpoint> resolverEndpoints) {
             this.resolverEndpoints = Objects.requireNonNull(resolverEndpoints);
             return this;
@@ -148,19 +131,31 @@ public final class GetResolverEndpointsResult {
         public Builder resolverEndpoints(GetResolverEndpointsResolverEndpoint... resolverEndpoints) {
             return resolverEndpoints(List.of(resolverEndpoints));
         }
+        @CustomType.Setter
         public Builder resolverId(String resolverId) {
             this.resolverId = Objects.requireNonNull(resolverId);
             return this;
         }
+        @CustomType.Setter
         public Builder scope(String scope) {
             this.scope = Objects.requireNonNull(scope);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetResolverEndpointsResult build() {
-            return new GetResolverEndpointsResult(filters, id, name, resolverEndpoints, resolverId, scope, state);
+        }
+        public GetResolverEndpointsResult build() {
+            final var o = new GetResolverEndpointsResult();
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.resolverEndpoints = resolverEndpoints;
+            o.resolverId = resolverId;
+            o.scope = scope;
+            o.state = state;
+            return o;
         }
     }
 }

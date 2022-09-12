@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection {
-    private final List<GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem> items;
+    private List<GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection(@CustomType.Parameter("items") List<GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection() {}
     public List<GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection {
     public static Builder builder(GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem... items) {
             return items(List.of(items));
-        }        public GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection build() {
-            return new GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection(items);
+        }
+        public GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection build() {
+            final var o = new GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection();
+            o.items = items;
+            return o;
         }
     }
 }

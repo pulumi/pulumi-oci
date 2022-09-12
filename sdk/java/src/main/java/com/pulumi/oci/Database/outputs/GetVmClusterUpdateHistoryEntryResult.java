@@ -13,69 +13,46 @@ public final class GetVmClusterUpdateHistoryEntryResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Descriptive text providing additional details about the lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The current lifecycle state of the maintenance update operation.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time when the maintenance update action completed.
      * 
      */
-    private final String timeCompleted;
+    private String timeCompleted;
     /**
      * @return The date and time when the maintenance update action started.
      * 
      */
-    private final String timeStarted;
+    private String timeStarted;
     /**
      * @return The update action performed using this maintenance update.
      * 
      */
-    private final String updateAction;
-    private final String updateHistoryEntryId;
+    private String updateAction;
+    private String updateHistoryEntryId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
      * 
      */
-    private final String updateId;
+    private String updateId;
     /**
      * @return The type of VM cluster maintenance update.
      * 
      */
-    private final String updateType;
-    private final String vmClusterId;
+    private String updateType;
+    private String vmClusterId;
 
-    @CustomType.Constructor
-    private GetVmClusterUpdateHistoryEntryResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCompleted") String timeCompleted,
-        @CustomType.Parameter("timeStarted") String timeStarted,
-        @CustomType.Parameter("updateAction") String updateAction,
-        @CustomType.Parameter("updateHistoryEntryId") String updateHistoryEntryId,
-        @CustomType.Parameter("updateId") String updateId,
-        @CustomType.Parameter("updateType") String updateType,
-        @CustomType.Parameter("vmClusterId") String vmClusterId) {
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.state = state;
-        this.timeCompleted = timeCompleted;
-        this.timeStarted = timeStarted;
-        this.updateAction = updateAction;
-        this.updateHistoryEntryId = updateHistoryEntryId;
-        this.updateId = updateId;
-        this.updateType = updateType;
-        this.vmClusterId = vmClusterId;
-    }
-
+    private GetVmClusterUpdateHistoryEntryResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -146,7 +123,7 @@ public final class GetVmClusterUpdateHistoryEntryResult {
     public static Builder builder(GetVmClusterUpdateHistoryEntryResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String lifecycleDetails;
@@ -158,11 +135,7 @@ public final class GetVmClusterUpdateHistoryEntryResult {
         private String updateId;
         private String updateType;
         private String vmClusterId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVmClusterUpdateHistoryEntryResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -177,47 +150,69 @@ public final class GetVmClusterUpdateHistoryEntryResult {
     	      this.vmClusterId = defaults.vmClusterId;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCompleted(String timeCompleted) {
             this.timeCompleted = Objects.requireNonNull(timeCompleted);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
         }
+        @CustomType.Setter
         public Builder updateAction(String updateAction) {
             this.updateAction = Objects.requireNonNull(updateAction);
             return this;
         }
+        @CustomType.Setter
         public Builder updateHistoryEntryId(String updateHistoryEntryId) {
             this.updateHistoryEntryId = Objects.requireNonNull(updateHistoryEntryId);
             return this;
         }
+        @CustomType.Setter
         public Builder updateId(String updateId) {
             this.updateId = Objects.requireNonNull(updateId);
             return this;
         }
+        @CustomType.Setter
         public Builder updateType(String updateType) {
             this.updateType = Objects.requireNonNull(updateType);
             return this;
         }
+        @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
             this.vmClusterId = Objects.requireNonNull(vmClusterId);
             return this;
-        }        public GetVmClusterUpdateHistoryEntryResult build() {
-            return new GetVmClusterUpdateHistoryEntryResult(id, lifecycleDetails, state, timeCompleted, timeStarted, updateAction, updateHistoryEntryId, updateId, updateType, vmClusterId);
+        }
+        public GetVmClusterUpdateHistoryEntryResult build() {
+            final var o = new GetVmClusterUpdateHistoryEntryResult();
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.state = state;
+            o.timeCompleted = timeCompleted;
+            o.timeStarted = timeStarted;
+            o.updateAction = updateAction;
+            o.updateHistoryEntryId = updateHistoryEntryId;
+            o.updateId = updateId;
+            o.updateType = updateType;
+            o.vmClusterId = vmClusterId;
+            return o;
         }
     }
 }

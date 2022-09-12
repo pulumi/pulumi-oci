@@ -14,42 +14,29 @@ public final class GetResolverRule {
      * @return The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
      * 
      */
-    private final List<String> clientAddressConditions;
+    private List<String> clientAddressConditions;
     /**
      * @return IP addresses to which queries should be forwarded. Currently limited to a single address.
      * 
      */
-    private final List<String> destinationAddresses;
+    private List<String> destinationAddresses;
     /**
      * @return A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
      * 
      */
-    private final List<String> qnameCoverConditions;
+    private List<String> qnameCoverConditions;
     /**
      * @return Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
      * 
      */
-    private final String sourceEndpointName;
+    private String sourceEndpointName;
 
-    @CustomType.Constructor
-    private GetResolverRule(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("clientAddressConditions") List<String> clientAddressConditions,
-        @CustomType.Parameter("destinationAddresses") List<String> destinationAddresses,
-        @CustomType.Parameter("qnameCoverConditions") List<String> qnameCoverConditions,
-        @CustomType.Parameter("sourceEndpointName") String sourceEndpointName) {
-        this.action = action;
-        this.clientAddressConditions = clientAddressConditions;
-        this.destinationAddresses = destinationAddresses;
-        this.qnameCoverConditions = qnameCoverConditions;
-        this.sourceEndpointName = sourceEndpointName;
-    }
-
+    private GetResolverRule() {}
     /**
      * @return The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
      * 
@@ -93,18 +80,14 @@ public final class GetResolverRule {
     public static Builder builder(GetResolverRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private List<String> clientAddressConditions;
         private List<String> destinationAddresses;
         private List<String> qnameCoverConditions;
         private String sourceEndpointName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetResolverRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -114,10 +97,12 @@ public final class GetResolverRule {
     	      this.sourceEndpointName = defaults.sourceEndpointName;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder clientAddressConditions(List<String> clientAddressConditions) {
             this.clientAddressConditions = Objects.requireNonNull(clientAddressConditions);
             return this;
@@ -125,6 +110,7 @@ public final class GetResolverRule {
         public Builder clientAddressConditions(String... clientAddressConditions) {
             return clientAddressConditions(List.of(clientAddressConditions));
         }
+        @CustomType.Setter
         public Builder destinationAddresses(List<String> destinationAddresses) {
             this.destinationAddresses = Objects.requireNonNull(destinationAddresses);
             return this;
@@ -132,6 +118,7 @@ public final class GetResolverRule {
         public Builder destinationAddresses(String... destinationAddresses) {
             return destinationAddresses(List.of(destinationAddresses));
         }
+        @CustomType.Setter
         public Builder qnameCoverConditions(List<String> qnameCoverConditions) {
             this.qnameCoverConditions = Objects.requireNonNull(qnameCoverConditions);
             return this;
@@ -139,11 +126,19 @@ public final class GetResolverRule {
         public Builder qnameCoverConditions(String... qnameCoverConditions) {
             return qnameCoverConditions(List.of(qnameCoverConditions));
         }
+        @CustomType.Setter
         public Builder sourceEndpointName(String sourceEndpointName) {
             this.sourceEndpointName = Objects.requireNonNull(sourceEndpointName);
             return this;
-        }        public GetResolverRule build() {
-            return new GetResolverRule(action, clientAddressConditions, destinationAddresses, qnameCoverConditions, sourceEndpointName);
+        }
+        public GetResolverRule build() {
+            final var o = new GetResolverRule();
+            o.action = action;
+            o.clientAddressConditions = clientAddressConditions;
+            o.destinationAddresses = destinationAddresses;
+            o.qnameCoverConditions = qnameCoverConditions;
+            o.sourceEndpointName = sourceEndpointName;
+            return o;
         }
     }
 }

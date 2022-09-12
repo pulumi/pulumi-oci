@@ -15,21 +15,14 @@ public final class ConfigDimension {
      * @return (Updatable) The name of the metric. This must be a known metric name.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) This must not be set.
      * 
      */
-    private final @Nullable String valueSource;
+    private @Nullable String valueSource;
 
-    @CustomType.Constructor
-    private ConfigDimension(
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("valueSource") @Nullable String valueSource) {
-        this.name = name;
-        this.valueSource = valueSource;
-    }
-
+    private ConfigDimension() {}
     /**
      * @return (Updatable) The name of the metric. This must be a known metric name.
      * 
@@ -52,30 +45,32 @@ public final class ConfigDimension {
     public static Builder builder(ConfigDimension defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String name;
         private @Nullable String valueSource;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ConfigDimension defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.valueSource = defaults.valueSource;
         }
 
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder valueSource(@Nullable String valueSource) {
             this.valueSource = valueSource;
             return this;
-        }        public ConfigDimension build() {
-            return new ConfigDimension(name, valueSource);
+        }
+        public ConfigDimension build() {
+            final var o = new ConfigDimension();
+            o.name = name;
+            o.valueSource = valueSource;
+            return o;
         }
     }
 }

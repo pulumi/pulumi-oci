@@ -13,21 +13,14 @@ public final class GetDatabasesDatabaseDatabaseManagementConfig {
      * @return The status of the Database Management service.
      * 
      */
-    private final String managementStatus;
+    private String managementStatus;
     /**
      * @return The Database Management type.
      * 
      */
-    private final String managementType;
+    private String managementType;
 
-    @CustomType.Constructor
-    private GetDatabasesDatabaseDatabaseManagementConfig(
-        @CustomType.Parameter("managementStatus") String managementStatus,
-        @CustomType.Parameter("managementType") String managementType) {
-        this.managementStatus = managementStatus;
-        this.managementType = managementType;
-    }
-
+    private GetDatabasesDatabaseDatabaseManagementConfig() {}
     /**
      * @return The status of the Database Management service.
      * 
@@ -50,30 +43,32 @@ public final class GetDatabasesDatabaseDatabaseManagementConfig {
     public static Builder builder(GetDatabasesDatabaseDatabaseManagementConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String managementStatus;
         private String managementType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabasesDatabaseDatabaseManagementConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.managementStatus = defaults.managementStatus;
     	      this.managementType = defaults.managementType;
         }
 
+        @CustomType.Setter
         public Builder managementStatus(String managementStatus) {
             this.managementStatus = Objects.requireNonNull(managementStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder managementType(String managementType) {
             this.managementType = Objects.requireNonNull(managementType);
             return this;
-        }        public GetDatabasesDatabaseDatabaseManagementConfig build() {
-            return new GetDatabasesDatabaseDatabaseManagementConfig(managementStatus, managementType);
+        }
+        public GetDatabasesDatabaseDatabaseManagementConfig build() {
+            final var o = new GetDatabasesDatabaseDatabaseManagementConfig();
+            o.managementStatus = managementStatus;
+            o.managementType = managementType;
+            return o;
         }
     }
 }

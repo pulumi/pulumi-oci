@@ -53,7 +53,7 @@ func LookupRegistryDataAsset(ctx *pulumi.Context, args *LookupRegistryDataAssetA
 type LookupRegistryDataAssetArgs struct {
 	// The data asset key.
 	DataAssetKey string `pulumi:"dataAssetKey"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId string `pulumi:"registryId"`
 }
 
@@ -64,24 +64,24 @@ type LookupRegistryDataAssetResult struct {
 	DataAssetKey    string                 `pulumi:"dataAssetKey"`
 	// The default connection key.
 	DefaultConnections []GetRegistryDataAssetDefaultConnection `pulumi:"defaultConnections"`
-	// A user defined description for the object.
+	// A user-defined description for the object.
 	Description string `pulumi:"description"`
 	// The list of endpoints with which this data asset is associated.
 	EndPoints []string `pulumi:"endPoints"`
-	// The external key for the object.
+	// The external key of the object.
 	ExternalKey string `pulumi:"externalKey"`
 	Id          string `pulumi:"id"`
-	// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// The identifying key for the object.
 	Key string `pulumi:"key"`
-	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 	Metadatas []GetRegistryDataAssetMetadata `pulumi:"metadatas"`
-	// The property which disciminates the subtypes.
+	// The property which differentiates the subtypes.
 	ModelType string `pulumi:"modelType"`
 	// The model version of an object.
 	ModelVersion string `pulumi:"modelVersion"`
-	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name string `pulumi:"name"`
 	// The type system maps from and to a type.
 	NativeTypeSystems []GetRegistryDataAssetNativeTypeSystem `pulumi:"nativeTypeSystems"`
@@ -115,7 +115,7 @@ func LookupRegistryDataAssetOutput(ctx *pulumi.Context, args LookupRegistryDataA
 type LookupRegistryDataAssetOutputArgs struct {
 	// The data asset key.
 	DataAssetKey pulumi.StringInput `pulumi:"dataAssetKey"`
-	// The registry Ocid.
+	// The registry OCID.
 	RegistryId pulumi.StringInput `pulumi:"registryId"`
 }
 
@@ -154,7 +154,7 @@ func (o LookupRegistryDataAssetResultOutput) DefaultConnections() GetRegistryDat
 	}).(GetRegistryDataAssetDefaultConnectionArrayOutput)
 }
 
-// A user defined description for the object.
+// A user-defined description for the object.
 func (o LookupRegistryDataAssetResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryDataAssetResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -164,7 +164,7 @@ func (o LookupRegistryDataAssetResultOutput) EndPoints() pulumi.StringArrayOutpu
 	return o.ApplyT(func(v LookupRegistryDataAssetResult) []string { return v.EndPoints }).(pulumi.StringArrayOutput)
 }
 
-// The external key for the object.
+// The external key of the object.
 func (o LookupRegistryDataAssetResultOutput) ExternalKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryDataAssetResult) string { return v.ExternalKey }).(pulumi.StringOutput)
 }
@@ -173,7 +173,7 @@ func (o LookupRegistryDataAssetResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryDataAssetResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 func (o LookupRegistryDataAssetResultOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryDataAssetResult) string { return v.Identifier }).(pulumi.StringOutput)
 }
@@ -183,12 +183,12 @@ func (o LookupRegistryDataAssetResultOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryDataAssetResult) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// A summary type containing information about the object including its key, name and when/who created/updated it.
+// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
 func (o LookupRegistryDataAssetResultOutput) Metadatas() GetRegistryDataAssetMetadataArrayOutput {
 	return o.ApplyT(func(v LookupRegistryDataAssetResult) []GetRegistryDataAssetMetadata { return v.Metadatas }).(GetRegistryDataAssetMetadataArrayOutput)
 }
 
-// The property which disciminates the subtypes.
+// The property which differentiates the subtypes.
 func (o LookupRegistryDataAssetResultOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryDataAssetResult) string { return v.ModelType }).(pulumi.StringOutput)
 }
@@ -198,7 +198,7 @@ func (o LookupRegistryDataAssetResultOutput) ModelVersion() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupRegistryDataAssetResult) string { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 func (o LookupRegistryDataAssetResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRegistryDataAssetResult) string { return v.Name }).(pulumi.StringOutput)
 }

@@ -14,21 +14,14 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
      * @return List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter &#39;argumentName=argumentValue&#39; and args=[&#39;argumentName&#39;], both &#39;argumentName&#39; and &#39;argumentValue&#39; will not be inspected.
      * 
      */
-    private final List<String> args;
+    private List<String> args;
     /**
      * @return List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie &#39;cookieName=cookieValue&#39; and requestCookies=[&#39;cookieName&#39;], both &#39;cookieName&#39; and &#39;cookieValue&#39; will not be inspected.
      * 
      */
-    private final List<String> requestCookies;
+    private List<String> requestCookies;
 
-    @CustomType.Constructor
-    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusion(
-        @CustomType.Parameter("args") List<String> args,
-        @CustomType.Parameter("requestCookies") List<String> requestCookies) {
-        this.args = args;
-        this.requestCookies = requestCookies;
-    }
-
+    private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusion() {}
     /**
      * @return List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter &#39;argumentName=argumentValue&#39; and args=[&#39;argumentName&#39;], both &#39;argumentName&#39; and &#39;argumentValue&#39; will not be inspected.
      * 
@@ -51,21 +44,18 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
     public static Builder builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusion defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> args;
         private List<String> requestCookies;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusion defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.args = defaults.args;
     	      this.requestCookies = defaults.requestCookies;
         }
 
+        @CustomType.Setter
         public Builder args(List<String> args) {
             this.args = Objects.requireNonNull(args);
             return this;
@@ -73,14 +63,19 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
         public Builder args(String... args) {
             return args(List.of(args));
         }
+        @CustomType.Setter
         public Builder requestCookies(List<String> requestCookies) {
             this.requestCookies = Objects.requireNonNull(requestCookies);
             return this;
         }
         public Builder requestCookies(String... requestCookies) {
             return requestCookies(List.of(requestCookies));
-        }        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusion build() {
-            return new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusion(args, requestCookies);
+        }
+        public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusion build() {
+            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusion();
+            o.args = args;
+            o.requestCookies = requestCookies;
+            return o;
         }
     }
 }

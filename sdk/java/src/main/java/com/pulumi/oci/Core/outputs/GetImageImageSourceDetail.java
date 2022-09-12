@@ -9,43 +9,24 @@ import java.util.Objects;
 
 @CustomType
 public final class GetImageImageSourceDetail {
-    private final String bucketName;
-    private final String namespaceName;
-    private final String objectName;
+    private String bucketName;
+    private String namespaceName;
+    private String objectName;
     /**
      * @return The image&#39;s operating system.  Example: `Oracle Linux`
      * 
      */
-    private final String operatingSystem;
+    private String operatingSystem;
     /**
      * @return The image&#39;s operating system version.  Example: `7.2`
      * 
      */
-    private final String operatingSystemVersion;
-    private final String sourceImageType;
-    private final String sourceType;
-    private final String sourceUri;
+    private String operatingSystemVersion;
+    private String sourceImageType;
+    private String sourceType;
+    private String sourceUri;
 
-    @CustomType.Constructor
-    private GetImageImageSourceDetail(
-        @CustomType.Parameter("bucketName") String bucketName,
-        @CustomType.Parameter("namespaceName") String namespaceName,
-        @CustomType.Parameter("objectName") String objectName,
-        @CustomType.Parameter("operatingSystem") String operatingSystem,
-        @CustomType.Parameter("operatingSystemVersion") String operatingSystemVersion,
-        @CustomType.Parameter("sourceImageType") String sourceImageType,
-        @CustomType.Parameter("sourceType") String sourceType,
-        @CustomType.Parameter("sourceUri") String sourceUri) {
-        this.bucketName = bucketName;
-        this.namespaceName = namespaceName;
-        this.objectName = objectName;
-        this.operatingSystem = operatingSystem;
-        this.operatingSystemVersion = operatingSystemVersion;
-        this.sourceImageType = sourceImageType;
-        this.sourceType = sourceType;
-        this.sourceUri = sourceUri;
-    }
-
+    private GetImageImageSourceDetail() {}
     public String bucketName() {
         return this.bucketName;
     }
@@ -86,7 +67,7 @@ public final class GetImageImageSourceDetail {
     public static Builder builder(GetImageImageSourceDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucketName;
         private String namespaceName;
@@ -96,11 +77,7 @@ public final class GetImageImageSourceDetail {
         private String sourceImageType;
         private String sourceType;
         private String sourceUri;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetImageImageSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucketName = defaults.bucketName;
@@ -113,39 +90,57 @@ public final class GetImageImageSourceDetail {
     	      this.sourceUri = defaults.sourceUri;
         }
 
+        @CustomType.Setter
         public Builder bucketName(String bucketName) {
             this.bucketName = Objects.requireNonNull(bucketName);
             return this;
         }
+        @CustomType.Setter
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = Objects.requireNonNull(namespaceName);
             return this;
         }
+        @CustomType.Setter
         public Builder objectName(String objectName) {
             this.objectName = Objects.requireNonNull(objectName);
             return this;
         }
+        @CustomType.Setter
         public Builder operatingSystem(String operatingSystem) {
             this.operatingSystem = Objects.requireNonNull(operatingSystem);
             return this;
         }
+        @CustomType.Setter
         public Builder operatingSystemVersion(String operatingSystemVersion) {
             this.operatingSystemVersion = Objects.requireNonNull(operatingSystemVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceImageType(String sourceImageType) {
             this.sourceImageType = Objects.requireNonNull(sourceImageType);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceUri(String sourceUri) {
             this.sourceUri = Objects.requireNonNull(sourceUri);
             return this;
-        }        public GetImageImageSourceDetail build() {
-            return new GetImageImageSourceDetail(bucketName, namespaceName, objectName, operatingSystem, operatingSystemVersion, sourceImageType, sourceType, sourceUri);
+        }
+        public GetImageImageSourceDetail build() {
+            final var o = new GetImageImageSourceDetail();
+            o.bucketName = bucketName;
+            o.namespaceName = namespaceName;
+            o.objectName = objectName;
+            o.operatingSystem = operatingSystem;
+            o.operatingSystemVersion = operatingSystemVersion;
+            o.sourceImageType = sourceImageType;
+            o.sourceType = sourceType;
+            o.sourceUri = sourceUri;
+            return o;
         }
     }
 }

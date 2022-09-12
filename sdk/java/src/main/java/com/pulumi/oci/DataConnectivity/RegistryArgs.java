@@ -63,14 +63,14 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+     * (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+     * @return (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
      * 
      */
     public Output<String> displayName() {
@@ -78,14 +78,14 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -184,7 +184,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+         * @param displayName (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+         * @param displayName (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 

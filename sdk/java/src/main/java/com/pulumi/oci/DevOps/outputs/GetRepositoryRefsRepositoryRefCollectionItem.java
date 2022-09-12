@@ -15,66 +15,45 @@ public final class GetRepositoryRefsRepositoryRefCollectionItem {
      * @return Commit ID in a repository.
      * 
      */
-    private final String commitId;
+    private String commitId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Unique full reference name inside a repository.
      * 
      */
-    private final String fullRefName;
-    private final String id;
+    private String fullRefName;
+    private String id;
     /**
      * @return SHA-1 hash value of the object pointed to by the tag.
      * 
      */
-    private final String objectId;
+    private String objectId;
     /**
      * @return A filter to return only resources that match the given reference name.
      * 
      */
-    private final String refName;
+    private String refName;
     /**
      * @return Reference type to distinguish between branch and tag. If it is not specified, all references are returned.
      * 
      */
-    private final String refType;
+    private String refType;
     /**
      * @return Unique repository identifier.
      * 
      */
-    private final String repositoryId;
+    private String repositoryId;
 
-    @CustomType.Constructor
-    private GetRepositoryRefsRepositoryRefCollectionItem(
-        @CustomType.Parameter("commitId") String commitId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("fullRefName") String fullRefName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("objectId") String objectId,
-        @CustomType.Parameter("refName") String refName,
-        @CustomType.Parameter("refType") String refType,
-        @CustomType.Parameter("repositoryId") String repositoryId) {
-        this.commitId = commitId;
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-        this.fullRefName = fullRefName;
-        this.id = id;
-        this.objectId = objectId;
-        this.refName = refName;
-        this.refType = refType;
-        this.repositoryId = repositoryId;
-    }
-
+    private GetRepositoryRefsRepositoryRefCollectionItem() {}
     /**
      * @return Commit ID in a repository.
      * 
@@ -142,7 +121,7 @@ public final class GetRepositoryRefsRepositoryRefCollectionItem {
     public static Builder builder(GetRepositoryRefsRepositoryRefCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String commitId;
         private Map<String,Object> definedTags;
@@ -153,11 +132,7 @@ public final class GetRepositoryRefsRepositoryRefCollectionItem {
         private String refName;
         private String refType;
         private String repositoryId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoryRefsRepositoryRefCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.commitId = defaults.commitId;
@@ -171,43 +146,63 @@ public final class GetRepositoryRefsRepositoryRefCollectionItem {
     	      this.repositoryId = defaults.repositoryId;
         }
 
+        @CustomType.Setter
         public Builder commitId(String commitId) {
             this.commitId = Objects.requireNonNull(commitId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder fullRefName(String fullRefName) {
             this.fullRefName = Objects.requireNonNull(fullRefName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder objectId(String objectId) {
             this.objectId = Objects.requireNonNull(objectId);
             return this;
         }
+        @CustomType.Setter
         public Builder refName(String refName) {
             this.refName = Objects.requireNonNull(refName);
             return this;
         }
+        @CustomType.Setter
         public Builder refType(String refType) {
             this.refType = Objects.requireNonNull(refType);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
-        }        public GetRepositoryRefsRepositoryRefCollectionItem build() {
-            return new GetRepositoryRefsRepositoryRefCollectionItem(commitId, definedTags, freeformTags, fullRefName, id, objectId, refName, refType, repositoryId);
+        }
+        public GetRepositoryRefsRepositoryRefCollectionItem build() {
+            final var o = new GetRepositoryRefsRepositoryRefCollectionItem();
+            o.commitId = commitId;
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            o.fullRefName = fullRefName;
+            o.id = id;
+            o.objectId = objectId;
+            o.refName = refName;
+            o.refType = refType;
+            o.repositoryId = repositoryId;
+            return o;
         }
     }
 }

@@ -92,7 +92,7 @@ class GetRegistryConnectionsResult:
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -159,7 +159,7 @@ def get_registry_connections(data_asset_key: Optional[str] = None,
     :param str favorites_query_param: If value is FAVORITES_ONLY, then only objects marked as favorite by the requesting user will be included in result. If value is NON_FAVORITES_ONLY, then objects marked as favorites by the requesting user will be skipped. If value is ALL or if not specified, all objects, irrespective of favorites or not will be returned. Default is ALL.
     :param Sequence[str] fields: Specifies the fields to get for an object.
     :param str name: Used to filter by the name of the object.
-    :param str registry_id: The registry Ocid.
+    :param str registry_id: The registry OCID.
     :param str type: Type of the object to filter the results with.
     """
     __args__ = dict()
@@ -218,7 +218,7 @@ def get_registry_connections_output(data_asset_key: Optional[pulumi.Input[str]] 
     :param str favorites_query_param: If value is FAVORITES_ONLY, then only objects marked as favorite by the requesting user will be included in result. If value is NON_FAVORITES_ONLY, then objects marked as favorites by the requesting user will be skipped. If value is ALL or if not specified, all objects, irrespective of favorites or not will be returned. Default is ALL.
     :param Sequence[str] fields: Specifies the fields to get for an object.
     :param str name: Used to filter by the name of the object.
-    :param str registry_id: The registry Ocid.
+    :param str registry_id: The registry OCID.
     :param str type: Type of the object to filter the results with.
     """
     ...

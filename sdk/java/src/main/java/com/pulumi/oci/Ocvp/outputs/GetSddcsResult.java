@@ -18,52 +18,35 @@ public final class GetSddcsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
      * 
      */
-    private final @Nullable String computeAvailabilityDomain;
+    private @Nullable String computeAvailabilityDomain;
     /**
      * @return A descriptive name for the SDDC. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetSddcsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetSddcsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of sddc_collection.
      * 
      */
-    private final List<GetSddcsSddcCollection> sddcCollections;
+    private List<GetSddcsSddcCollection> sddcCollections;
     /**
      * @return The current state of the SDDC.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetSddcsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("computeAvailabilityDomain") @Nullable String computeAvailabilityDomain,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetSddcsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("sddcCollections") List<GetSddcsSddcCollection> sddcCollections,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.computeAvailabilityDomain = computeAvailabilityDomain;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.sddcCollections = sddcCollections;
-        this.state = state;
-    }
-
+    private GetSddcsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
      * 
@@ -117,7 +100,7 @@ public final class GetSddcsResult {
     public static Builder builder(GetSddcsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String computeAvailabilityDomain;
@@ -126,11 +109,7 @@ public final class GetSddcsResult {
         private String id;
         private List<GetSddcsSddcCollection> sddcCollections;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSddcsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,18 +121,22 @@ public final class GetSddcsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder computeAvailabilityDomain(@Nullable String computeAvailabilityDomain) {
             this.computeAvailabilityDomain = computeAvailabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSddcsFilter> filters) {
             this.filters = filters;
             return this;
@@ -161,10 +144,12 @@ public final class GetSddcsResult {
         public Builder filters(GetSddcsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder sddcCollections(List<GetSddcsSddcCollection> sddcCollections) {
             this.sddcCollections = Objects.requireNonNull(sddcCollections);
             return this;
@@ -172,11 +157,21 @@ public final class GetSddcsResult {
         public Builder sddcCollections(GetSddcsSddcCollection... sddcCollections) {
             return sddcCollections(List.of(sddcCollections));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetSddcsResult build() {
-            return new GetSddcsResult(compartmentId, computeAvailabilityDomain, displayName, filters, id, sddcCollections, state);
+        }
+        public GetSddcsResult build() {
+            final var o = new GetSddcsResult();
+            o.compartmentId = compartmentId;
+            o.computeAvailabilityDomain = computeAvailabilityDomain;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.sddcCollections = sddcCollections;
+            o.state = state;
+            return o;
         }
     }
 }

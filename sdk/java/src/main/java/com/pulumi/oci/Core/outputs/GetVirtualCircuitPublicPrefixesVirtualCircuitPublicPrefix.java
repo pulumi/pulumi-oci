@@ -13,21 +13,14 @@ public final class GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix {
      * @return Publix IP prefix (CIDR) that the customer specified.
      * 
      */
-    private final String cidrBlock;
+    private String cidrBlock;
     /**
      * @return A filter to only return resources that match the given verification state.
      * 
      */
-    private final String verificationState;
+    private String verificationState;
 
-    @CustomType.Constructor
-    private GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix(
-        @CustomType.Parameter("cidrBlock") String cidrBlock,
-        @CustomType.Parameter("verificationState") String verificationState) {
-        this.cidrBlock = cidrBlock;
-        this.verificationState = verificationState;
-    }
-
+    private GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix() {}
     /**
      * @return Publix IP prefix (CIDR) that the customer specified.
      * 
@@ -50,30 +43,32 @@ public final class GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix {
     public static Builder builder(GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String cidrBlock;
         private String verificationState;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cidrBlock = defaults.cidrBlock;
     	      this.verificationState = defaults.verificationState;
         }
 
+        @CustomType.Setter
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = Objects.requireNonNull(cidrBlock);
             return this;
         }
+        @CustomType.Setter
         public Builder verificationState(String verificationState) {
             this.verificationState = Objects.requireNonNull(verificationState);
             return this;
-        }        public GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix build() {
-            return new GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix(cidrBlock, verificationState);
+        }
+        public GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix build() {
+            final var o = new GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix();
+            o.cidrBlock = cidrBlock;
+            o.verificationState = verificationState;
+            return o;
         }
     }
 }

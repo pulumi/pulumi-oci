@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetRegistryFoldersFolderSummaryCollection {
-    private final List<GetRegistryFoldersFolderSummaryCollectionItem> items;
+    private List<GetRegistryFoldersFolderSummaryCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetRegistryFoldersFolderSummaryCollection(@CustomType.Parameter("items") List<GetRegistryFoldersFolderSummaryCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetRegistryFoldersFolderSummaryCollection() {}
     public List<GetRegistryFoldersFolderSummaryCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetRegistryFoldersFolderSummaryCollection {
     public static Builder builder(GetRegistryFoldersFolderSummaryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRegistryFoldersFolderSummaryCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryFoldersFolderSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetRegistryFoldersFolderSummaryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetRegistryFoldersFolderSummaryCollectionItem... items) {
             return items(List.of(items));
-        }        public GetRegistryFoldersFolderSummaryCollection build() {
-            return new GetRegistryFoldersFolderSummaryCollection(items);
+        }
+        public GetRegistryFoldersFolderSummaryCollection build() {
+            final var o = new GetRegistryFoldersFolderSummaryCollection();
+            o.items = items;
+            return o;
         }
     }
 }

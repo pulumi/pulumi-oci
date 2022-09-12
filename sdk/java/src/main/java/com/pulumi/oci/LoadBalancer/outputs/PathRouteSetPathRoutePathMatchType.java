@@ -17,13 +17,9 @@ public final class PathRouteSetPathRoutePathMatchType {
      * *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
      * 
      */
-    private final String matchType;
+    private String matchType;
 
-    @CustomType.Constructor
-    private PathRouteSetPathRoutePathMatchType(@CustomType.Parameter("matchType") String matchType) {
-        this.matchType = matchType;
-    }
-
+    private PathRouteSetPathRoutePathMatchType() {}
     /**
      * @return (Updatable) Specifies how the load balancing service compares a [PathRoute](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/requests/PathRoute) object&#39;s `path` string against the incoming URI.
      * *  **EXACT_MATCH** - Looks for a `path` string that exactly matches the incoming URI path.
@@ -43,24 +39,24 @@ public final class PathRouteSetPathRoutePathMatchType {
     public static Builder builder(PathRouteSetPathRoutePathMatchType defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String matchType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PathRouteSetPathRoutePathMatchType defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.matchType = defaults.matchType;
         }
 
+        @CustomType.Setter
         public Builder matchType(String matchType) {
             this.matchType = Objects.requireNonNull(matchType);
             return this;
-        }        public PathRouteSetPathRoutePathMatchType build() {
-            return new PathRouteSetPathRoutePathMatchType(matchType);
+        }
+        public PathRouteSetPathRoutePathMatchType build() {
+            final var o = new PathRouteSetPathRoutePathMatchType();
+            o.matchType = matchType;
+            return o;
         }
     }
 }

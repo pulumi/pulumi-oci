@@ -17,84 +17,59 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
      * @return List of Java artifacts.
      * 
      */
-    private final List<GetJavaReleasesJavaReleaseCollectionItemArtifact> artifacts;
+    private List<GetJavaReleasesJavaReleaseCollectionItemArtifact> artifacts;
     /**
      * @return Complete information of a specific Java release family.
      * 
      */
-    private final List<GetJavaReleasesJavaReleaseCollectionItemFamilyDetail> familyDetails;
+    private List<GetJavaReleasesJavaReleaseCollectionItemFamilyDetail> familyDetails;
     /**
      * @return The version identifier for the Java family.
      * 
      */
-    private final String familyVersion;
+    private String familyVersion;
     /**
      * @return Information about a license type for Java.
      * 
      */
-    private final List<GetJavaReleasesJavaReleaseCollectionItemLicenseDetail> licenseDetails;
+    private List<GetJavaReleasesJavaReleaseCollectionItemLicenseDetail> licenseDetails;
     /**
      * @return Java license type.
      * 
      */
-    private final String licenseType;
+    private String licenseType;
     /**
      * @return Parent Java release version identifier. This is applicable for BPR releases.
      * 
      */
-    private final String parentReleaseVersion;
+    private String parentReleaseVersion;
     /**
      * @return The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private final String releaseDate;
+    private String releaseDate;
     /**
      * @return Release notes associated with the Java version.
      * 
      */
-    private final String releaseNotesUrl;
+    private String releaseNotesUrl;
     /**
      * @return Java release type.
      * 
      */
-    private final String releaseType;
+    private String releaseType;
     /**
      * @return Unique Java release version identifier
      * 
      */
-    private final String releaseVersion;
+    private String releaseVersion;
     /**
      * @return The security status of the Java version.
      * 
      */
-    private final String securityStatus;
+    private String securityStatus;
 
-    @CustomType.Constructor
-    private GetJavaReleasesJavaReleaseCollectionItem(
-        @CustomType.Parameter("artifacts") List<GetJavaReleasesJavaReleaseCollectionItemArtifact> artifacts,
-        @CustomType.Parameter("familyDetails") List<GetJavaReleasesJavaReleaseCollectionItemFamilyDetail> familyDetails,
-        @CustomType.Parameter("familyVersion") String familyVersion,
-        @CustomType.Parameter("licenseDetails") List<GetJavaReleasesJavaReleaseCollectionItemLicenseDetail> licenseDetails,
-        @CustomType.Parameter("licenseType") String licenseType,
-        @CustomType.Parameter("parentReleaseVersion") String parentReleaseVersion,
-        @CustomType.Parameter("releaseDate") String releaseDate,
-        @CustomType.Parameter("releaseNotesUrl") String releaseNotesUrl,
-        @CustomType.Parameter("releaseType") String releaseType,
-        @CustomType.Parameter("releaseVersion") String releaseVersion,
-        @CustomType.Parameter("securityStatus") String securityStatus) {
-        this.artifacts = artifacts;
-        this.familyDetails = familyDetails;
-        this.familyVersion = familyVersion;
-        this.licenseDetails = licenseDetails;
-        this.licenseType = licenseType;
-        this.parentReleaseVersion = parentReleaseVersion;
-        this.releaseDate = releaseDate;
-        this.releaseNotesUrl = releaseNotesUrl;
-        this.releaseType = releaseType;
-        this.releaseVersion = releaseVersion;
-        this.securityStatus = securityStatus;
-    }
-
+    private GetJavaReleasesJavaReleaseCollectionItem() {}
     /**
      * @return List of Java artifacts.
      * 
@@ -180,7 +155,7 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
     public static Builder builder(GetJavaReleasesJavaReleaseCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetJavaReleasesJavaReleaseCollectionItemArtifact> artifacts;
         private List<GetJavaReleasesJavaReleaseCollectionItemFamilyDetail> familyDetails;
@@ -193,11 +168,7 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
         private String releaseType;
         private String releaseVersion;
         private String securityStatus;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJavaReleasesJavaReleaseCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.artifacts = defaults.artifacts;
@@ -213,6 +184,7 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
     	      this.securityStatus = defaults.securityStatus;
         }
 
+        @CustomType.Setter
         public Builder artifacts(List<GetJavaReleasesJavaReleaseCollectionItemArtifact> artifacts) {
             this.artifacts = Objects.requireNonNull(artifacts);
             return this;
@@ -220,6 +192,7 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
         public Builder artifacts(GetJavaReleasesJavaReleaseCollectionItemArtifact... artifacts) {
             return artifacts(List.of(artifacts));
         }
+        @CustomType.Setter
         public Builder familyDetails(List<GetJavaReleasesJavaReleaseCollectionItemFamilyDetail> familyDetails) {
             this.familyDetails = Objects.requireNonNull(familyDetails);
             return this;
@@ -227,10 +200,12 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
         public Builder familyDetails(GetJavaReleasesJavaReleaseCollectionItemFamilyDetail... familyDetails) {
             return familyDetails(List.of(familyDetails));
         }
+        @CustomType.Setter
         public Builder familyVersion(String familyVersion) {
             this.familyVersion = Objects.requireNonNull(familyVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseDetails(List<GetJavaReleasesJavaReleaseCollectionItemLicenseDetail> licenseDetails) {
             this.licenseDetails = Objects.requireNonNull(licenseDetails);
             return this;
@@ -238,35 +213,55 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
         public Builder licenseDetails(GetJavaReleasesJavaReleaseCollectionItemLicenseDetail... licenseDetails) {
             return licenseDetails(List.of(licenseDetails));
         }
+        @CustomType.Setter
         public Builder licenseType(String licenseType) {
             this.licenseType = Objects.requireNonNull(licenseType);
             return this;
         }
+        @CustomType.Setter
         public Builder parentReleaseVersion(String parentReleaseVersion) {
             this.parentReleaseVersion = Objects.requireNonNull(parentReleaseVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder releaseDate(String releaseDate) {
             this.releaseDate = Objects.requireNonNull(releaseDate);
             return this;
         }
+        @CustomType.Setter
         public Builder releaseNotesUrl(String releaseNotesUrl) {
             this.releaseNotesUrl = Objects.requireNonNull(releaseNotesUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder releaseType(String releaseType) {
             this.releaseType = Objects.requireNonNull(releaseType);
             return this;
         }
+        @CustomType.Setter
         public Builder releaseVersion(String releaseVersion) {
             this.releaseVersion = Objects.requireNonNull(releaseVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder securityStatus(String securityStatus) {
             this.securityStatus = Objects.requireNonNull(securityStatus);
             return this;
-        }        public GetJavaReleasesJavaReleaseCollectionItem build() {
-            return new GetJavaReleasesJavaReleaseCollectionItem(artifacts, familyDetails, familyVersion, licenseDetails, licenseType, parentReleaseVersion, releaseDate, releaseNotesUrl, releaseType, releaseVersion, securityStatus);
+        }
+        public GetJavaReleasesJavaReleaseCollectionItem build() {
+            final var o = new GetJavaReleasesJavaReleaseCollectionItem();
+            o.artifacts = artifacts;
+            o.familyDetails = familyDetails;
+            o.familyVersion = familyVersion;
+            o.licenseDetails = licenseDetails;
+            o.licenseType = licenseType;
+            o.parentReleaseVersion = parentReleaseVersion;
+            o.releaseDate = releaseDate;
+            o.releaseNotesUrl = releaseNotesUrl;
+            o.releaseType = releaseType;
+            o.releaseVersion = releaseVersion;
+            o.securityStatus = securityStatus;
+            return o;
         }
     }
 }

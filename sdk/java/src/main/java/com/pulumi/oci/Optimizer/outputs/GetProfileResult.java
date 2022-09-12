@@ -20,101 +20,70 @@ public final class GetProfileResult {
      * @return The time period over which to collect data for the recommendations, measured in number of days.
      * 
      */
-    private final Integer aggregationIntervalInDays;
+    private Integer aggregationIntervalInDays;
     /**
      * @return The OCID of the tenancy. The tenancy is the root compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Text describing the profile. Avoid entering confidential information.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The unique OCID of the profile.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A list of configuration levels for each recommendation.
      * 
      */
-    private final List<GetProfileLevelsConfiguration> levelsConfigurations;
+    private List<GetProfileLevelsConfiguration> levelsConfigurations;
     /**
      * @return The name assigned to the profile. Avoid entering confidential information.
      * 
      */
-    private final String name;
-    private final String profileId;
+    private String name;
+    private String profileId;
     /**
      * @return The profile&#39;s current state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Optional. The compartments specified in the profile override for a recommendation.
      * 
      */
-    private final List<GetProfileTargetCompartment> targetCompartments;
+    private List<GetProfileTargetCompartment> targetCompartments;
     /**
      * @return Optional. The tags specified in the profile override for a recommendation.
      * 
      */
-    private final List<GetProfileTargetTag> targetTags;
+    private List<GetProfileTargetTag> targetTags;
     /**
      * @return The date and time the profile was created, in the format defined by RFC3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the profile was last updated, in the format defined by RFC3339.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetProfileResult(
-        @CustomType.Parameter("aggregationIntervalInDays") Integer aggregationIntervalInDays,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("levelsConfigurations") List<GetProfileLevelsConfiguration> levelsConfigurations,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("profileId") String profileId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("targetCompartments") List<GetProfileTargetCompartment> targetCompartments,
-        @CustomType.Parameter("targetTags") List<GetProfileTargetTag> targetTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.aggregationIntervalInDays = aggregationIntervalInDays;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.levelsConfigurations = levelsConfigurations;
-        this.name = name;
-        this.profileId = profileId;
-        this.state = state;
-        this.targetCompartments = targetCompartments;
-        this.targetTags = targetTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetProfileResult() {}
     /**
      * @return The time period over which to collect data for the recommendations, measured in number of days.
      * 
@@ -217,7 +186,7 @@ public final class GetProfileResult {
     public static Builder builder(GetProfileResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer aggregationIntervalInDays;
         private String compartmentId;
@@ -233,11 +202,7 @@ public final class GetProfileResult {
         private List<GetProfileTargetTag> targetTags;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProfileResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.aggregationIntervalInDays = defaults.aggregationIntervalInDays;
@@ -256,30 +221,37 @@ public final class GetProfileResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder aggregationIntervalInDays(Integer aggregationIntervalInDays) {
             this.aggregationIntervalInDays = Objects.requireNonNull(aggregationIntervalInDays);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder levelsConfigurations(List<GetProfileLevelsConfiguration> levelsConfigurations) {
             this.levelsConfigurations = Objects.requireNonNull(levelsConfigurations);
             return this;
@@ -287,18 +259,22 @@ public final class GetProfileResult {
         public Builder levelsConfigurations(GetProfileLevelsConfiguration... levelsConfigurations) {
             return levelsConfigurations(List.of(levelsConfigurations));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder profileId(String profileId) {
             this.profileId = Objects.requireNonNull(profileId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder targetCompartments(List<GetProfileTargetCompartment> targetCompartments) {
             this.targetCompartments = Objects.requireNonNull(targetCompartments);
             return this;
@@ -306,6 +282,7 @@ public final class GetProfileResult {
         public Builder targetCompartments(GetProfileTargetCompartment... targetCompartments) {
             return targetCompartments(List.of(targetCompartments));
         }
+        @CustomType.Setter
         public Builder targetTags(List<GetProfileTargetTag> targetTags) {
             this.targetTags = Objects.requireNonNull(targetTags);
             return this;
@@ -313,15 +290,33 @@ public final class GetProfileResult {
         public Builder targetTags(GetProfileTargetTag... targetTags) {
             return targetTags(List.of(targetTags));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetProfileResult build() {
-            return new GetProfileResult(aggregationIntervalInDays, compartmentId, definedTags, description, freeformTags, id, levelsConfigurations, name, profileId, state, targetCompartments, targetTags, timeCreated, timeUpdated);
+        }
+        public GetProfileResult build() {
+            final var o = new GetProfileResult();
+            o.aggregationIntervalInDays = aggregationIntervalInDays;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.levelsConfigurations = levelsConfigurations;
+            o.name = name;
+            o.profileId = profileId;
+            o.state = state;
+            o.targetCompartments = targetCompartments;
+            o.targetTags = targetTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

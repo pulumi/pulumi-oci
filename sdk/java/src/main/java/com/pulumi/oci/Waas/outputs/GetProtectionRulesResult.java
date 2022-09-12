@@ -17,37 +17,22 @@ public final class GetProtectionRulesResult {
      * @return The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
      * 
      */
-    private final @Nullable List<String> actions;
-    private final @Nullable List<GetProtectionRulesFilter> filters;
+    private @Nullable List<String> actions;
+    private @Nullable List<GetProtectionRulesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable List<String> modSecurityRuleIds;
+    private String id;
+    private @Nullable List<String> modSecurityRuleIds;
     /**
      * @return The list of protection_rules.
      * 
      */
-    private final List<GetProtectionRulesProtectionRule> protectionRules;
-    private final String waasPolicyId;
+    private List<GetProtectionRulesProtectionRule> protectionRules;
+    private String waasPolicyId;
 
-    @CustomType.Constructor
-    private GetProtectionRulesResult(
-        @CustomType.Parameter("actions") @Nullable List<String> actions,
-        @CustomType.Parameter("filters") @Nullable List<GetProtectionRulesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("modSecurityRuleIds") @Nullable List<String> modSecurityRuleIds,
-        @CustomType.Parameter("protectionRules") List<GetProtectionRulesProtectionRule> protectionRules,
-        @CustomType.Parameter("waasPolicyId") String waasPolicyId) {
-        this.actions = actions;
-        this.filters = filters;
-        this.id = id;
-        this.modSecurityRuleIds = modSecurityRuleIds;
-        this.protectionRules = protectionRules;
-        this.waasPolicyId = waasPolicyId;
-    }
-
+    private GetProtectionRulesResult() {}
     /**
      * @return The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
      * 
@@ -86,7 +71,7 @@ public final class GetProtectionRulesResult {
     public static Builder builder(GetProtectionRulesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> actions;
         private @Nullable List<GetProtectionRulesFilter> filters;
@@ -94,11 +79,7 @@ public final class GetProtectionRulesResult {
         private @Nullable List<String> modSecurityRuleIds;
         private List<GetProtectionRulesProtectionRule> protectionRules;
         private String waasPolicyId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProtectionRulesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actions = defaults.actions;
@@ -109,6 +90,7 @@ public final class GetProtectionRulesResult {
     	      this.waasPolicyId = defaults.waasPolicyId;
         }
 
+        @CustomType.Setter
         public Builder actions(@Nullable List<String> actions) {
             this.actions = actions;
             return this;
@@ -116,6 +98,7 @@ public final class GetProtectionRulesResult {
         public Builder actions(String... actions) {
             return actions(List.of(actions));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetProtectionRulesFilter> filters) {
             this.filters = filters;
             return this;
@@ -123,10 +106,12 @@ public final class GetProtectionRulesResult {
         public Builder filters(GetProtectionRulesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder modSecurityRuleIds(@Nullable List<String> modSecurityRuleIds) {
             this.modSecurityRuleIds = modSecurityRuleIds;
             return this;
@@ -134,6 +119,7 @@ public final class GetProtectionRulesResult {
         public Builder modSecurityRuleIds(String... modSecurityRuleIds) {
             return modSecurityRuleIds(List.of(modSecurityRuleIds));
         }
+        @CustomType.Setter
         public Builder protectionRules(List<GetProtectionRulesProtectionRule> protectionRules) {
             this.protectionRules = Objects.requireNonNull(protectionRules);
             return this;
@@ -141,11 +127,20 @@ public final class GetProtectionRulesResult {
         public Builder protectionRules(GetProtectionRulesProtectionRule... protectionRules) {
             return protectionRules(List.of(protectionRules));
         }
+        @CustomType.Setter
         public Builder waasPolicyId(String waasPolicyId) {
             this.waasPolicyId = Objects.requireNonNull(waasPolicyId);
             return this;
-        }        public GetProtectionRulesResult build() {
-            return new GetProtectionRulesResult(actions, filters, id, modSecurityRuleIds, protectionRules, waasPolicyId);
+        }
+        public GetProtectionRulesResult build() {
+            final var o = new GetProtectionRulesResult();
+            o.actions = actions;
+            o.filters = filters;
+            o.id = id;
+            o.modSecurityRuleIds = modSecurityRuleIds;
+            o.protectionRules = protectionRules;
+            o.waasPolicyId = waasPolicyId;
+            return o;
         }
     }
 }

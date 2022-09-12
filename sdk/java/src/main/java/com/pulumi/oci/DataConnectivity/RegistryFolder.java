@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Registry Folder resource in Oracle Cloud Infrastructure Data Connectivity service.
  * 
- * Creates a folder under a specefied registry.
+ * Creates a folder under a specified registry.
  * 
  * ## Example Usage
  * 
@@ -276,56 +276,56 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DataConnectivity/registryFolder:RegistryFolder")
 public class RegistryFolder extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) List of data assets which belongs to this folder
+     * (Updatable) The list of data assets that belong to the folder.
      * 
      */
     @Export(name="dataAssets", type=List.class, parameters={RegistryFolderDataAsset.class})
     private Output<List<RegistryFolderDataAsset>> dataAssets;
 
     /**
-     * @return (Updatable) List of data assets which belongs to this folder
+     * @return (Updatable) The list of data assets that belong to the folder.
      * 
      */
     public Output<List<RegistryFolderDataAsset>> dataAssets() {
         return this.dataAssets;
     }
     /**
-     * (Updatable) User-defined description for the folder.
+     * (Updatable) User-defined description of the folder.
      * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output<String> description;
 
     /**
-     * @return (Updatable) User-defined description for the folder.
+     * @return (Updatable) User-defined description of the folder.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     @Export(name="identifier", type=String.class, parameters={})
     private Output<String> identifier;
 
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public Output<String> identifier() {
         return this.identifier;
     }
     /**
-     * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     @Export(name="key", type=String.class, parameters={})
     private Output<String> key;
 
     /**
-     * @return (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     public Output<String> key() {
@@ -360,14 +360,14 @@ public class RegistryFolder extends com.pulumi.resources.CustomResource {
         return this.modelVersion;
     }
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Output<String> name() {
@@ -402,28 +402,28 @@ public class RegistryFolder extends com.pulumi.resources.CustomResource {
         return this.objectVersion;
     }
     /**
-     * (Updatable) A reference to the object&#39;s parent.
+     * (Updatable) A reference to the parent object.
      * 
      */
     @Export(name="parentRef", type=RegistryFolderParentRef.class, parameters={})
     private Output<RegistryFolderParentRef> parentRef;
 
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
     public Output<RegistryFolderParentRef> parentRef() {
         return this.parentRef;
     }
     /**
-     * The registry Ocid.
+     * The registry OCID.
      * 
      */
     @Export(name="registryId", type=String.class, parameters={})
     private Output<String> registryId;
 
     /**
-     * @return The registry Ocid.
+     * @return The registry OCID.
      * 
      */
     public Output<String> registryId() {

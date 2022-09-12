@@ -20,91 +20,64 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
      * @return A resource that is managed by an autoscaling configuration. The only supported type is &#34;instancePool.&#34;
      * 
      */
-    private final List<GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResource> autoScalingResources;
+    private List<GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResource> autoScalingResources;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
      * 
      */
-    private final Integer coolDownInSeconds;
+    private Integer coolDownInSeconds;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return ID of the condition that is assigned after creation.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Whether the autoscaling policy is enabled.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return The maximum number of resources to scale out to.
      * 
      */
-    private final Integer maxResourceCount;
+    private Integer maxResourceCount;
     /**
      * @return The minimum number of resources to scale in to.
      * 
      */
-    private final Integer minResourceCount;
+    private Integer minResourceCount;
     /**
      * @return Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
      * 
      */
-    private final List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies;
+    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies;
     /**
      * @return The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationsAutoScalingConfiguration(
-        @CustomType.Parameter("autoScalingResources") List<GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResource> autoScalingResources,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("coolDownInSeconds") Integer coolDownInSeconds,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("maxResourceCount") Integer maxResourceCount,
-        @CustomType.Parameter("minResourceCount") Integer minResourceCount,
-        @CustomType.Parameter("policies") List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.autoScalingResources = autoScalingResources;
-        this.compartmentId = compartmentId;
-        this.coolDownInSeconds = coolDownInSeconds;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isEnabled = isEnabled;
-        this.maxResourceCount = maxResourceCount;
-        this.minResourceCount = minResourceCount;
-        this.policies = policies;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetAutoScalingConfigurationsAutoScalingConfiguration() {}
     /**
      * @return A resource that is managed by an autoscaling configuration. The only supported type is &#34;instancePool.&#34;
      * 
@@ -197,7 +170,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
     public static Builder builder(GetAutoScalingConfigurationsAutoScalingConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResource> autoScalingResources;
         private String compartmentId;
@@ -211,11 +184,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
         private Integer minResourceCount;
         private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autoScalingResources = defaults.autoScalingResources;
@@ -232,6 +201,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder autoScalingResources(List<GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResource> autoScalingResources) {
             this.autoScalingResources = Objects.requireNonNull(autoScalingResources);
             return this;
@@ -239,42 +209,52 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
         public Builder autoScalingResources(GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResource... autoScalingResources) {
             return autoScalingResources(List.of(autoScalingResources));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder coolDownInSeconds(Integer coolDownInSeconds) {
             this.coolDownInSeconds = Objects.requireNonNull(coolDownInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder maxResourceCount(Integer maxResourceCount) {
             this.maxResourceCount = Objects.requireNonNull(maxResourceCount);
             return this;
         }
+        @CustomType.Setter
         public Builder minResourceCount(Integer minResourceCount) {
             this.minResourceCount = Objects.requireNonNull(minResourceCount);
             return this;
         }
+        @CustomType.Setter
         public Builder policies(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicy> policies) {
             this.policies = Objects.requireNonNull(policies);
             return this;
@@ -282,11 +262,26 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
         public Builder policies(GetAutoScalingConfigurationsAutoScalingConfigurationPolicy... policies) {
             return policies(List.of(policies));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetAutoScalingConfigurationsAutoScalingConfiguration build() {
-            return new GetAutoScalingConfigurationsAutoScalingConfiguration(autoScalingResources, compartmentId, coolDownInSeconds, definedTags, displayName, freeformTags, id, isEnabled, maxResourceCount, minResourceCount, policies, timeCreated);
+        }
+        public GetAutoScalingConfigurationsAutoScalingConfiguration build() {
+            final var o = new GetAutoScalingConfigurationsAutoScalingConfiguration();
+            o.autoScalingResources = autoScalingResources;
+            o.compartmentId = compartmentId;
+            o.coolDownInSeconds = coolDownInSeconds;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isEnabled = isEnabled;
+            o.maxResourceCount = maxResourceCount;
+            o.minResourceCount = minResourceCount;
+            o.policies = policies;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

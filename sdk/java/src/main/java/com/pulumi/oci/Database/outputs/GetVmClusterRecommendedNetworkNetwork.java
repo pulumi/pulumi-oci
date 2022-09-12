@@ -13,56 +13,39 @@ public final class GetVmClusterRecommendedNetworkNetwork {
      * @return The cidr for the network.
      * 
      */
-    private final String cidr;
+    private String cidr;
     /**
      * @return The network domain name.
      * 
      */
-    private final String domain;
+    private String domain;
     /**
      * @return The network gateway.
      * 
      */
-    private final String gateway;
+    private String gateway;
     /**
      * @return The network netmask.
      * 
      */
-    private final String netmask;
+    private String netmask;
     /**
      * @return The network type.
      * 
      */
-    private final String networkType;
+    private String networkType;
     /**
      * @return The network domain name.
      * 
      */
-    private final String prefix;
+    private String prefix;
     /**
      * @return The network VLAN ID.
      * 
      */
-    private final String vlanId;
+    private String vlanId;
 
-    @CustomType.Constructor
-    private GetVmClusterRecommendedNetworkNetwork(
-        @CustomType.Parameter("cidr") String cidr,
-        @CustomType.Parameter("domain") String domain,
-        @CustomType.Parameter("gateway") String gateway,
-        @CustomType.Parameter("netmask") String netmask,
-        @CustomType.Parameter("networkType") String networkType,
-        @CustomType.Parameter("prefix") String prefix,
-        @CustomType.Parameter("vlanId") String vlanId) {
-        this.cidr = cidr;
-        this.domain = domain;
-        this.gateway = gateway;
-        this.netmask = netmask;
-        this.networkType = networkType;
-        this.prefix = prefix;
-        this.vlanId = vlanId;
-    }
-
+    private GetVmClusterRecommendedNetworkNetwork() {}
     /**
      * @return The cidr for the network.
      * 
@@ -120,7 +103,7 @@ public final class GetVmClusterRecommendedNetworkNetwork {
     public static Builder builder(GetVmClusterRecommendedNetworkNetwork defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String cidr;
         private String domain;
@@ -129,11 +112,7 @@ public final class GetVmClusterRecommendedNetworkNetwork {
         private String networkType;
         private String prefix;
         private String vlanId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVmClusterRecommendedNetworkNetwork defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cidr = defaults.cidr;
@@ -145,35 +124,51 @@ public final class GetVmClusterRecommendedNetworkNetwork {
     	      this.vlanId = defaults.vlanId;
         }
 
+        @CustomType.Setter
         public Builder cidr(String cidr) {
             this.cidr = Objects.requireNonNull(cidr);
             return this;
         }
+        @CustomType.Setter
         public Builder domain(String domain) {
             this.domain = Objects.requireNonNull(domain);
             return this;
         }
+        @CustomType.Setter
         public Builder gateway(String gateway) {
             this.gateway = Objects.requireNonNull(gateway);
             return this;
         }
+        @CustomType.Setter
         public Builder netmask(String netmask) {
             this.netmask = Objects.requireNonNull(netmask);
             return this;
         }
+        @CustomType.Setter
         public Builder networkType(String networkType) {
             this.networkType = Objects.requireNonNull(networkType);
             return this;
         }
+        @CustomType.Setter
         public Builder prefix(String prefix) {
             this.prefix = Objects.requireNonNull(prefix);
             return this;
         }
+        @CustomType.Setter
         public Builder vlanId(String vlanId) {
             this.vlanId = Objects.requireNonNull(vlanId);
             return this;
-        }        public GetVmClusterRecommendedNetworkNetwork build() {
-            return new GetVmClusterRecommendedNetworkNetwork(cidr, domain, gateway, netmask, networkType, prefix, vlanId);
+        }
+        public GetVmClusterRecommendedNetworkNetwork build() {
+            final var o = new GetVmClusterRecommendedNetworkNetwork();
+            o.cidr = cidr;
+            o.domain = domain;
+            o.gateway = gateway;
+            o.netmask = netmask;
+            o.networkType = networkType;
+            o.prefix = prefix;
+            o.vlanId = vlanId;
+            return o;
         }
     }
 }

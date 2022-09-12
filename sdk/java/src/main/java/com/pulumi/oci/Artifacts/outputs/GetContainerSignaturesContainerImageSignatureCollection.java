@@ -11,17 +11,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetContainerSignaturesContainerImageSignatureCollection {
-    private final List<GetContainerSignaturesContainerImageSignatureCollectionItem> items;
-    private final Integer remainingItemsCount;
+    private List<GetContainerSignaturesContainerImageSignatureCollectionItem> items;
+    private Integer remainingItemsCount;
 
-    @CustomType.Constructor
-    private GetContainerSignaturesContainerImageSignatureCollection(
-        @CustomType.Parameter("items") List<GetContainerSignaturesContainerImageSignatureCollectionItem> items,
-        @CustomType.Parameter("remainingItemsCount") Integer remainingItemsCount) {
-        this.items = items;
-        this.remainingItemsCount = remainingItemsCount;
-    }
-
+    private GetContainerSignaturesContainerImageSignatureCollection() {}
     public List<GetContainerSignaturesContainerImageSignatureCollectionItem> items() {
         return this.items;
     }
@@ -36,21 +29,18 @@ public final class GetContainerSignaturesContainerImageSignatureCollection {
     public static Builder builder(GetContainerSignaturesContainerImageSignatureCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetContainerSignaturesContainerImageSignatureCollectionItem> items;
         private Integer remainingItemsCount;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetContainerSignaturesContainerImageSignatureCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
     	      this.remainingItemsCount = defaults.remainingItemsCount;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetContainerSignaturesContainerImageSignatureCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -58,11 +48,16 @@ public final class GetContainerSignaturesContainerImageSignatureCollection {
         public Builder items(GetContainerSignaturesContainerImageSignatureCollectionItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder remainingItemsCount(Integer remainingItemsCount) {
             this.remainingItemsCount = Objects.requireNonNull(remainingItemsCount);
             return this;
-        }        public GetContainerSignaturesContainerImageSignatureCollection build() {
-            return new GetContainerSignaturesContainerImageSignatureCollection(items, remainingItemsCount);
+        }
+        public GetContainerSignaturesContainerImageSignatureCollection build() {
+            final var o = new GetContainerSignaturesContainerImageSignatureCollection();
+            o.items = items;
+            o.remainingItemsCount = remainingItemsCount;
+            return o;
         }
     }
 }

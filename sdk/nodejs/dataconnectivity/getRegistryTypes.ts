@@ -8,7 +8,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Registry Types in Oracle Cloud Infrastructure Data Connectivity service.
  *
- * This endpoint retrieves list of all the supported connector types
+ * This endpoint retrieves a list of all the supported connector types.
  *
  * ## Example Usage
  *
@@ -47,7 +47,7 @@ export interface GetRegistryTypesArgs {
      */
     name?: string;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: string;
     /**
@@ -66,7 +66,7 @@ export interface GetRegistryTypesResult {
      */
     readonly id: string;
     /**
-     * The name of of the Attribute.
+     * The name of of the attribute.
      */
     readonly name?: string;
     readonly registryId: string;
@@ -91,7 +91,7 @@ export interface GetRegistryTypesOutputArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: pulumi.Input<string>;
     /**

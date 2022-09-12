@@ -19,112 +19,79 @@ public final class GetTablesTableCollection {
      * @return The ID of a table&#39;s compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A DDL statement representing the schema.
      * 
      */
-    private final String ddlStatement;
+    private String ddlStatement;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return True if this table can be reclaimed after an idle period.
      * 
      */
-    private final Boolean isAutoReclaimable;
+    private Boolean isAutoReclaimable;
     /**
      * @return A message describing the current state in more detail.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return A shell-globbing-style (*?[]) filter for names.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The table schema information as a JSON object.
      * 
      */
-    private final List<GetTablesTableCollectionSchema> schemas;
+    private List<GetTablesTableCollectionSchema> schemas;
     /**
      * @return Filter list by the lifecycle state of the item.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `&#34;orcl-cloud&#34;`; and the only key in that namespace is `&#34;free-tier-retained&#34;`. Example: `{&#34;orcl-cloud&#34;&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return Throughput and storage limits configuration of a table.
      * 
      */
-    private final List<GetTablesTableCollectionTableLimit> tableLimits;
+    private List<GetTablesTableCollectionTableLimit> tableLimits;
     /**
      * @return The time the the table was created. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeOfExpiration;
+    private String timeOfExpiration;
     /**
      * @return The time the the table&#39;s metadata was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetTablesTableCollection(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("ddlStatement") String ddlStatement,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isAutoReclaimable") Boolean isAutoReclaimable,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("schemas") List<GetTablesTableCollectionSchema> schemas,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("tableLimits") List<GetTablesTableCollectionTableLimit> tableLimits,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeOfExpiration") String timeOfExpiration,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.ddlStatement = ddlStatement;
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isAutoReclaimable = isAutoReclaimable;
-        this.lifecycleDetails = lifecycleDetails;
-        this.name = name;
-        this.schemas = schemas;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.tableLimits = tableLimits;
-        this.timeCreated = timeCreated;
-        this.timeOfExpiration = timeOfExpiration;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetTablesTableCollection() {}
     /**
      * @return The ID of a table&#39;s compartment.
      * 
@@ -238,7 +205,7 @@ public final class GetTablesTableCollection {
     public static Builder builder(GetTablesTableCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String ddlStatement;
@@ -255,11 +222,7 @@ public final class GetTablesTableCollection {
         private String timeCreated;
         private String timeOfExpiration;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTablesTableCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -279,38 +242,47 @@ public final class GetTablesTableCollection {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder ddlStatement(String ddlStatement) {
             this.ddlStatement = Objects.requireNonNull(ddlStatement);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isAutoReclaimable(Boolean isAutoReclaimable) {
             this.isAutoReclaimable = Objects.requireNonNull(isAutoReclaimable);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder schemas(List<GetTablesTableCollectionSchema> schemas) {
             this.schemas = Objects.requireNonNull(schemas);
             return this;
@@ -318,14 +290,17 @@ public final class GetTablesTableCollection {
         public Builder schemas(GetTablesTableCollectionSchema... schemas) {
             return schemas(List.of(schemas));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder tableLimits(List<GetTablesTableCollectionTableLimit> tableLimits) {
             this.tableLimits = Objects.requireNonNull(tableLimits);
             return this;
@@ -333,19 +308,39 @@ public final class GetTablesTableCollection {
         public Builder tableLimits(GetTablesTableCollectionTableLimit... tableLimits) {
             return tableLimits(List.of(tableLimits));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfExpiration(String timeOfExpiration) {
             this.timeOfExpiration = Objects.requireNonNull(timeOfExpiration);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetTablesTableCollection build() {
-            return new GetTablesTableCollection(compartmentId, ddlStatement, definedTags, freeformTags, id, isAutoReclaimable, lifecycleDetails, name, schemas, state, systemTags, tableLimits, timeCreated, timeOfExpiration, timeUpdated);
+        }
+        public GetTablesTableCollection build() {
+            final var o = new GetTablesTableCollection();
+            o.compartmentId = compartmentId;
+            o.ddlStatement = ddlStatement;
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isAutoReclaimable = isAutoReclaimable;
+            o.lifecycleDetails = lifecycleDetails;
+            o.name = name;
+            o.schemas = schemas;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.tableLimits = tableLimits;
+            o.timeCreated = timeCreated;
+            o.timeOfExpiration = timeOfExpiration;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

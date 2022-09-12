@@ -13,42 +13,29 @@ public final class GetImportableAgentEntityItem {
      * @return Source of the importable agent entity.
      * 
      */
-    private final String entitySource;
+    private String entitySource;
     /**
      * @return The host name. The host name is unique amongst the hosts managed by the same management agent.
      * 
      */
-    private final String hostName;
+    private String hostName;
     /**
      * @return The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
      * 
      */
-    private final String managementAgentDisplayName;
+    private String managementAgentDisplayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
      * 
      */
-    private final String managementAgentId;
+    private String managementAgentId;
     /**
      * @return Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      * 
      */
-    private final String platformType;
+    private String platformType;
 
-    @CustomType.Constructor
-    private GetImportableAgentEntityItem(
-        @CustomType.Parameter("entitySource") String entitySource,
-        @CustomType.Parameter("hostName") String hostName,
-        @CustomType.Parameter("managementAgentDisplayName") String managementAgentDisplayName,
-        @CustomType.Parameter("managementAgentId") String managementAgentId,
-        @CustomType.Parameter("platformType") String platformType) {
-        this.entitySource = entitySource;
-        this.hostName = hostName;
-        this.managementAgentDisplayName = managementAgentDisplayName;
-        this.managementAgentId = managementAgentId;
-        this.platformType = platformType;
-    }
-
+    private GetImportableAgentEntityItem() {}
     /**
      * @return Source of the importable agent entity.
      * 
@@ -92,18 +79,14 @@ public final class GetImportableAgentEntityItem {
     public static Builder builder(GetImportableAgentEntityItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String entitySource;
         private String hostName;
         private String managementAgentDisplayName;
         private String managementAgentId;
         private String platformType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetImportableAgentEntityItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.entitySource = defaults.entitySource;
@@ -113,27 +96,39 @@ public final class GetImportableAgentEntityItem {
     	      this.platformType = defaults.platformType;
         }
 
+        @CustomType.Setter
         public Builder entitySource(String entitySource) {
             this.entitySource = Objects.requireNonNull(entitySource);
             return this;
         }
+        @CustomType.Setter
         public Builder hostName(String hostName) {
             this.hostName = Objects.requireNonNull(hostName);
             return this;
         }
+        @CustomType.Setter
         public Builder managementAgentDisplayName(String managementAgentDisplayName) {
             this.managementAgentDisplayName = Objects.requireNonNull(managementAgentDisplayName);
             return this;
         }
+        @CustomType.Setter
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = Objects.requireNonNull(managementAgentId);
             return this;
         }
+        @CustomType.Setter
         public Builder platformType(String platformType) {
             this.platformType = Objects.requireNonNull(platformType);
             return this;
-        }        public GetImportableAgentEntityItem build() {
-            return new GetImportableAgentEntityItem(entitySource, hostName, managementAgentDisplayName, managementAgentId, platformType);
+        }
+        public GetImportableAgentEntityItem build() {
+            final var o = new GetImportableAgentEntityItem();
+            o.entitySource = entitySource;
+            o.hostName = hostName;
+            o.managementAgentDisplayName = managementAgentDisplayName;
+            o.managementAgentId = managementAgentId;
+            o.platformType = platformType;
+            return o;
         }
     }
 }

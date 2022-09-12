@@ -17,42 +17,29 @@ public final class BdsInstanceWorkerNode {
      * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
-    private final String blockVolumeSizeInGbs;
+    private String blockVolumeSizeInGbs;
     /**
      * @return The amount of worker nodes should be created
      * 
      */
-    private final Integer numberOfNodes;
+    private Integer numberOfNodes;
     /**
      * @return Shape of the node
      * 
      */
-    private final String shape;
+    private String shape;
     /**
      * @return The shape configuration requested for the node.
      * 
      */
-    private final @Nullable BdsInstanceWorkerNodeShapeConfig shapeConfig;
+    private @Nullable BdsInstanceWorkerNodeShapeConfig shapeConfig;
     /**
      * @return The OCID of the subnet in which the node should be created
      * 
      */
-    private final String subnetId;
+    private String subnetId;
 
-    @CustomType.Constructor
-    private BdsInstanceWorkerNode(
-        @CustomType.Parameter("blockVolumeSizeInGbs") String blockVolumeSizeInGbs,
-        @CustomType.Parameter("numberOfNodes") Integer numberOfNodes,
-        @CustomType.Parameter("shape") String shape,
-        @CustomType.Parameter("shapeConfig") @Nullable BdsInstanceWorkerNodeShapeConfig shapeConfig,
-        @CustomType.Parameter("subnetId") String subnetId) {
-        this.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
-        this.numberOfNodes = numberOfNodes;
-        this.shape = shape;
-        this.shapeConfig = shapeConfig;
-        this.subnetId = subnetId;
-    }
-
+    private BdsInstanceWorkerNode() {}
     /**
      * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
@@ -96,18 +83,14 @@ public final class BdsInstanceWorkerNode {
     public static Builder builder(BdsInstanceWorkerNode defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String blockVolumeSizeInGbs;
         private Integer numberOfNodes;
         private String shape;
         private @Nullable BdsInstanceWorkerNodeShapeConfig shapeConfig;
         private String subnetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BdsInstanceWorkerNode defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockVolumeSizeInGbs = defaults.blockVolumeSizeInGbs;
@@ -117,27 +100,39 @@ public final class BdsInstanceWorkerNode {
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
         public Builder blockVolumeSizeInGbs(String blockVolumeSizeInGbs) {
             this.blockVolumeSizeInGbs = Objects.requireNonNull(blockVolumeSizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder numberOfNodes(Integer numberOfNodes) {
             this.numberOfNodes = Objects.requireNonNull(numberOfNodes);
             return this;
         }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
         }
+        @CustomType.Setter
         public Builder shapeConfig(@Nullable BdsInstanceWorkerNodeShapeConfig shapeConfig) {
             this.shapeConfig = shapeConfig;
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
-        }        public BdsInstanceWorkerNode build() {
-            return new BdsInstanceWorkerNode(blockVolumeSizeInGbs, numberOfNodes, shape, shapeConfig, subnetId);
+        }
+        public BdsInstanceWorkerNode build() {
+            final var o = new BdsInstanceWorkerNode();
+            o.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
+            o.numberOfNodes = numberOfNodes;
+            o.shape = shape;
+            o.shapeConfig = shapeConfig;
+            o.subnetId = subnetId;
+            return o;
         }
     }
 }

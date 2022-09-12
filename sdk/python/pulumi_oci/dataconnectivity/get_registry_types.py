@@ -60,7 +60,7 @@ class GetRegistryTypesResult:
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        The name of of the Attribute.
+        The name of of the attribute.
         """
         return pulumi.get(self, "name")
 
@@ -105,7 +105,7 @@ def get_registry_types(filters: Optional[Sequence[pulumi.InputType['GetRegistryT
     """
     This data source provides the list of Registry Types in Oracle Cloud Infrastructure Data Connectivity service.
 
-    This endpoint retrieves list of all the supported connector types
+    This endpoint retrieves a list of all the supported connector types.
 
     ## Example Usage
 
@@ -120,7 +120,7 @@ def get_registry_types(filters: Optional[Sequence[pulumi.InputType['GetRegistryT
 
 
     :param str name: Used to filter by the name of the object.
-    :param str registry_id: The registry Ocid.
+    :param str registry_id: The registry OCID.
     :param str type: Type of the object to filter the results with.
     """
     __args__ = dict()
@@ -149,7 +149,7 @@ def get_registry_types_output(filters: Optional[pulumi.Input[Optional[Sequence[p
     """
     This data source provides the list of Registry Types in Oracle Cloud Infrastructure Data Connectivity service.
 
-    This endpoint retrieves list of all the supported connector types
+    This endpoint retrieves a list of all the supported connector types.
 
     ## Example Usage
 
@@ -164,7 +164,7 @@ def get_registry_types_output(filters: Optional[pulumi.Input[Optional[Sequence[p
 
 
     :param str name: Used to filter by the name of the object.
-    :param str registry_id: The registry Ocid.
+    :param str registry_id: The registry OCID.
     :param str type: Type of the object to filter the results with.
     """
     ...

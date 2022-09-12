@@ -43,7 +43,7 @@ export interface GetRegistryDataAssetArgs {
      */
     dataAssetKey: string;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: string;
 }
@@ -62,7 +62,7 @@ export interface GetRegistryDataAssetResult {
      */
     readonly defaultConnections: outputs.DataConnectivity.GetRegistryDataAssetDefaultConnection[];
     /**
-     * A user defined description for the object.
+     * A user-defined description for the object.
      */
     readonly description: string;
     /**
@@ -70,12 +70,12 @@ export interface GetRegistryDataAssetResult {
      */
     readonly endPoints: string[];
     /**
-     * The external key for the object.
+     * The external key of the object.
      */
     readonly externalKey: string;
     readonly id: string;
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      */
     readonly identifier: string;
     /**
@@ -83,11 +83,11 @@ export interface GetRegistryDataAssetResult {
      */
     readonly key: string;
     /**
-     * A summary type containing information about the object including its key, name and when/who created/updated it.
+     * A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      */
     readonly metadatas: outputs.DataConnectivity.GetRegistryDataAssetMetadata[];
     /**
-     * The property which disciminates the subtypes.
+     * The property which differentiates the subtypes.
      */
     readonly modelType: string;
     /**
@@ -95,7 +95,7 @@ export interface GetRegistryDataAssetResult {
      */
     readonly modelVersion: string;
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
     readonly name: string;
     /**
@@ -138,7 +138,7 @@ export interface GetRegistryDataAssetOutputArgs {
      */
     dataAssetKey: pulumi.Input<string>;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: pulumi.Input<string>;
 }

@@ -16,42 +16,29 @@ public final class GetMonitorScriptParameter {
      * @return If parameter value is default or overwritten.
      * 
      */
-    private final Boolean isOverwritten;
+    private Boolean isOverwritten;
     /**
      * @return Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
      * 
      */
-    private final Boolean isSecret;
+    private Boolean isSecret;
     /**
      * @return Details of the script parameter that can be used to overwrite the parameter present in the script.
      * 
      */
-    private final List<GetMonitorScriptParameterMonitorScriptParameter> monitorScriptParameters;
+    private List<GetMonitorScriptParameterMonitorScriptParameter> monitorScriptParameters;
     /**
      * @return Name of the parameter.
      * 
      */
-    private final String paramName;
+    private String paramName;
     /**
      * @return Value of the parameter.
      * 
      */
-    private final String paramValue;
+    private String paramValue;
 
-    @CustomType.Constructor
-    private GetMonitorScriptParameter(
-        @CustomType.Parameter("isOverwritten") Boolean isOverwritten,
-        @CustomType.Parameter("isSecret") Boolean isSecret,
-        @CustomType.Parameter("monitorScriptParameters") List<GetMonitorScriptParameterMonitorScriptParameter> monitorScriptParameters,
-        @CustomType.Parameter("paramName") String paramName,
-        @CustomType.Parameter("paramValue") String paramValue) {
-        this.isOverwritten = isOverwritten;
-        this.isSecret = isSecret;
-        this.monitorScriptParameters = monitorScriptParameters;
-        this.paramName = paramName;
-        this.paramValue = paramValue;
-    }
-
+    private GetMonitorScriptParameter() {}
     /**
      * @return If parameter value is default or overwritten.
      * 
@@ -95,18 +82,14 @@ public final class GetMonitorScriptParameter {
     public static Builder builder(GetMonitorScriptParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isOverwritten;
         private Boolean isSecret;
         private List<GetMonitorScriptParameterMonitorScriptParameter> monitorScriptParameters;
         private String paramName;
         private String paramValue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitorScriptParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isOverwritten = defaults.isOverwritten;
@@ -116,14 +99,17 @@ public final class GetMonitorScriptParameter {
     	      this.paramValue = defaults.paramValue;
         }
 
+        @CustomType.Setter
         public Builder isOverwritten(Boolean isOverwritten) {
             this.isOverwritten = Objects.requireNonNull(isOverwritten);
             return this;
         }
+        @CustomType.Setter
         public Builder isSecret(Boolean isSecret) {
             this.isSecret = Objects.requireNonNull(isSecret);
             return this;
         }
+        @CustomType.Setter
         public Builder monitorScriptParameters(List<GetMonitorScriptParameterMonitorScriptParameter> monitorScriptParameters) {
             this.monitorScriptParameters = Objects.requireNonNull(monitorScriptParameters);
             return this;
@@ -131,15 +117,24 @@ public final class GetMonitorScriptParameter {
         public Builder monitorScriptParameters(GetMonitorScriptParameterMonitorScriptParameter... monitorScriptParameters) {
             return monitorScriptParameters(List.of(monitorScriptParameters));
         }
+        @CustomType.Setter
         public Builder paramName(String paramName) {
             this.paramName = Objects.requireNonNull(paramName);
             return this;
         }
+        @CustomType.Setter
         public Builder paramValue(String paramValue) {
             this.paramValue = Objects.requireNonNull(paramValue);
             return this;
-        }        public GetMonitorScriptParameter build() {
-            return new GetMonitorScriptParameter(isOverwritten, isSecret, monitorScriptParameters, paramName, paramValue);
+        }
+        public GetMonitorScriptParameter build() {
+            final var o = new GetMonitorScriptParameter();
+            o.isOverwritten = isOverwritten;
+            o.isSecret = isSecret;
+            o.monitorScriptParameters = monitorScriptParameters;
+            o.paramName = paramName;
+            o.paramValue = paramValue;
+            return o;
         }
     }
 }

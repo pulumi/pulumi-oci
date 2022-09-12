@@ -17,6 +17,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// The events, for example, PUSH, PULL_REQUEST_MERGE.
         /// </summary>
         public readonly ImmutableArray<string> Events;
+        public readonly ImmutableArray<Outputs.GetTriggerActionFilterExcludeResult> Excludes;
         /// <summary>
         /// Attributes to filter GitLab self-hosted server events.
         /// </summary>
@@ -30,11 +31,14 @@ namespace Pulumi.Oci.DevOps.Outputs
         private GetTriggerActionFilterResult(
             ImmutableArray<string> events,
 
+            ImmutableArray<Outputs.GetTriggerActionFilterExcludeResult> excludes,
+
             ImmutableArray<Outputs.GetTriggerActionFilterIncludeResult> includes,
 
             string triggerSource)
         {
             Events = events;
+            Excludes = excludes;
             Includes = includes;
             TriggerSource = triggerSource;
         }

@@ -14,21 +14,14 @@ public final class GetApplicationTraceConfig {
      * @return The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
      * 
      */
-    private final String domainId;
+    private String domainId;
     /**
      * @return Define if tracing is enabled for the resource.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
 
-    @CustomType.Constructor
-    private GetApplicationTraceConfig(
-        @CustomType.Parameter("domainId") String domainId,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled) {
-        this.domainId = domainId;
-        this.isEnabled = isEnabled;
-    }
-
+    private GetApplicationTraceConfig() {}
     /**
      * @return The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
      * 
@@ -51,30 +44,32 @@ public final class GetApplicationTraceConfig {
     public static Builder builder(GetApplicationTraceConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String domainId;
         private Boolean isEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApplicationTraceConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.domainId = defaults.domainId;
     	      this.isEnabled = defaults.isEnabled;
         }
 
+        @CustomType.Setter
         public Builder domainId(String domainId) {
             this.domainId = Objects.requireNonNull(domainId);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
-        }        public GetApplicationTraceConfig build() {
-            return new GetApplicationTraceConfig(domainId, isEnabled);
+        }
+        public GetApplicationTraceConfig build() {
+            final var o = new GetApplicationTraceConfig();
+            o.domainId = domainId;
+            o.isEnabled = isEnabled;
+            return o;
         }
     }
 }

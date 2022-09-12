@@ -13,28 +13,19 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCap
      * @return For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
      * 
      */
-    private final Integer initial;
+    private Integer initial;
     /**
      * @return For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
      * 
      */
-    private final Integer max;
+    private Integer max;
     /**
      * @return For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
      * 
      */
-    private final Integer min;
+    private Integer min;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacity(
-        @CustomType.Parameter("initial") Integer initial,
-        @CustomType.Parameter("max") Integer max,
-        @CustomType.Parameter("min") Integer min) {
-        this.initial = initial;
-        this.max = max;
-        this.min = min;
-    }
-
+    private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacity() {}
     /**
      * @return For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
      * 
@@ -64,16 +55,12 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCap
     public static Builder builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacity defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer initial;
         private Integer max;
         private Integer min;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacity defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.initial = defaults.initial;
@@ -81,19 +68,27 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCap
     	      this.min = defaults.min;
         }
 
+        @CustomType.Setter
         public Builder initial(Integer initial) {
             this.initial = Objects.requireNonNull(initial);
             return this;
         }
+        @CustomType.Setter
         public Builder max(Integer max) {
             this.max = Objects.requireNonNull(max);
             return this;
         }
+        @CustomType.Setter
         public Builder min(Integer min) {
             this.min = Objects.requireNonNull(min);
             return this;
-        }        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacity build() {
-            return new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacity(initial, max, min);
+        }
+        public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacity build() {
+            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacity();
+            o.initial = initial;
+            o.max = max;
+            o.min = min;
+            return o;
         }
     }
 }

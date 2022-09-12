@@ -85,6 +85,10 @@ export interface GetAlarmResult {
      */
     readonly isEnabled: boolean;
     /**
+     * When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+     */
+    readonly isNotificationsPerMetricDimensionEnabled: boolean;
+    /**
      * The format to use for notification messages sent from this alarm. The formats are:
      */
     readonly messageFormat: string;

@@ -17,28 +17,19 @@ public final class BuildRunBuildRunProgress {
      * @return Map of stage OCIDs to build pipeline stage run progress model.
      * 
      */
-    private final @Nullable Map<String,Object> buildPipelineStageRunProgress;
+    private @Nullable Map<String,Object> buildPipelineStageRunProgress;
     /**
      * @return The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private final @Nullable String timeFinished;
+    private @Nullable String timeFinished;
     /**
      * @return The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private final @Nullable String timeStarted;
+    private @Nullable String timeStarted;
 
-    @CustomType.Constructor
-    private BuildRunBuildRunProgress(
-        @CustomType.Parameter("buildPipelineStageRunProgress") @Nullable Map<String,Object> buildPipelineStageRunProgress,
-        @CustomType.Parameter("timeFinished") @Nullable String timeFinished,
-        @CustomType.Parameter("timeStarted") @Nullable String timeStarted) {
-        this.buildPipelineStageRunProgress = buildPipelineStageRunProgress;
-        this.timeFinished = timeFinished;
-        this.timeStarted = timeStarted;
-    }
-
+    private BuildRunBuildRunProgress() {}
     /**
      * @return Map of stage OCIDs to build pipeline stage run progress model.
      * 
@@ -68,16 +59,12 @@ public final class BuildRunBuildRunProgress {
     public static Builder builder(BuildRunBuildRunProgress defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Map<String,Object> buildPipelineStageRunProgress;
         private @Nullable String timeFinished;
         private @Nullable String timeStarted;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BuildRunBuildRunProgress defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.buildPipelineStageRunProgress = defaults.buildPipelineStageRunProgress;
@@ -85,19 +72,27 @@ public final class BuildRunBuildRunProgress {
     	      this.timeStarted = defaults.timeStarted;
         }
 
+        @CustomType.Setter
         public Builder buildPipelineStageRunProgress(@Nullable Map<String,Object> buildPipelineStageRunProgress) {
             this.buildPipelineStageRunProgress = buildPipelineStageRunProgress;
             return this;
         }
+        @CustomType.Setter
         public Builder timeFinished(@Nullable String timeFinished) {
             this.timeFinished = timeFinished;
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(@Nullable String timeStarted) {
             this.timeStarted = timeStarted;
             return this;
-        }        public BuildRunBuildRunProgress build() {
-            return new BuildRunBuildRunProgress(buildPipelineStageRunProgress, timeFinished, timeStarted);
+        }
+        public BuildRunBuildRunProgress build() {
+            final var o = new BuildRunBuildRunProgress();
+            o.buildPipelineStageRunProgress = buildPipelineStageRunProgress;
+            o.timeFinished = timeFinished;
+            o.timeStarted = timeStarted;
+            return o;
         }
     }
 }

@@ -14,31 +14,31 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
     public sealed class GetRegistryTypeDataAssetAttributeResult
     {
         /// <summary>
-        /// Attribute type details
+        /// The attribute type details.
         /// </summary>
         public readonly string AttributeType;
         /// <summary>
-        /// True if Attribute is encoded.
+        /// True if attribute is encoded.
         /// </summary>
         public readonly bool IsBase64encoded;
         /// <summary>
-        /// True if Attribute is generated.
+        /// True if attribute is generated.
         /// </summary>
         public readonly bool IsGenerated;
         /// <summary>
-        /// True if Attribute is mandatory.
+        /// True if attribute is mandatory.
         /// </summary>
         public readonly bool IsMandatory;
         /// <summary>
-        /// True if Attribute is sensitive.
+        /// True if attribute is sensitive.
         /// </summary>
         public readonly bool IsSensitive;
         /// <summary>
-        /// The name of of the Attribute.
+        /// The name of of the attribute.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// List of valid key list
+        /// The list of valid keys.
         /// </summary>
         public readonly ImmutableArray<string> ValidKeyLists;
 

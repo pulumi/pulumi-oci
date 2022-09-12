@@ -15,56 +15,39 @@ public final class GetExportsExport {
      * @return Policies that apply to NFS requests made through this export. `exportOptions` contains a sequential list of `ClientOptions`. Each `ClientOptions` item defines the export options that are applied to a specified set of clients.
      * 
      */
-    private final List<GetExportsExportExportOption> exportOptions;
+    private List<GetExportsExportExportOption> exportOptions;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
      * 
      */
-    private final String exportSetId;
+    private String exportSetId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      * 
      */
-    private final String fileSystemId;
+    private String fileSystemId;
     /**
      * @return Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Path used to access the associated file system.
      * 
      */
-    private final String path;
+    private String path;
     /**
      * @return Filter results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetExportsExport(
-        @CustomType.Parameter("exportOptions") List<GetExportsExportExportOption> exportOptions,
-        @CustomType.Parameter("exportSetId") String exportSetId,
-        @CustomType.Parameter("fileSystemId") String fileSystemId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("path") String path,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.exportOptions = exportOptions;
-        this.exportSetId = exportSetId;
-        this.fileSystemId = fileSystemId;
-        this.id = id;
-        this.path = path;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetExportsExport() {}
     /**
      * @return Policies that apply to NFS requests made through this export. `exportOptions` contains a sequential list of `ClientOptions`. Each `ClientOptions` item defines the export options that are applied to a specified set of clients.
      * 
@@ -122,7 +105,7 @@ public final class GetExportsExport {
     public static Builder builder(GetExportsExport defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetExportsExportExportOption> exportOptions;
         private String exportSetId;
@@ -131,11 +114,7 @@ public final class GetExportsExport {
         private String path;
         private String state;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetExportsExport defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.exportOptions = defaults.exportOptions;
@@ -147,6 +126,7 @@ public final class GetExportsExport {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder exportOptions(List<GetExportsExportExportOption> exportOptions) {
             this.exportOptions = Objects.requireNonNull(exportOptions);
             return this;
@@ -154,31 +134,46 @@ public final class GetExportsExport {
         public Builder exportOptions(GetExportsExportExportOption... exportOptions) {
             return exportOptions(List.of(exportOptions));
         }
+        @CustomType.Setter
         public Builder exportSetId(String exportSetId) {
             this.exportSetId = Objects.requireNonNull(exportSetId);
             return this;
         }
+        @CustomType.Setter
         public Builder fileSystemId(String fileSystemId) {
             this.fileSystemId = Objects.requireNonNull(fileSystemId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder path(String path) {
             this.path = Objects.requireNonNull(path);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetExportsExport build() {
-            return new GetExportsExport(exportOptions, exportSetId, fileSystemId, id, path, state, timeCreated);
+        }
+        public GetExportsExport build() {
+            final var o = new GetExportsExport();
+            o.exportOptions = exportOptions;
+            o.exportSetId = exportSetId;
+            o.fileSystemId = fileSystemId;
+            o.id = id;
+            o.path = path;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

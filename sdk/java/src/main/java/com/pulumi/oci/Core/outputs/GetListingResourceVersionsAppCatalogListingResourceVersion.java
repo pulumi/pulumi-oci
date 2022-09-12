@@ -11,35 +11,16 @@ import java.util.Objects;
 
 @CustomType
 public final class GetListingResourceVersionsAppCatalogListingResourceVersion {
-    private final List<Integer> accessiblePorts;
-    private final List<String> allowedActions;
-    private final List<String> availableRegions;
-    private final List<String> compatibleShapes;
-    private final String listingId;
-    private final String listingResourceId;
-    private final String listingResourceVersion;
-    private final String timePublished;
+    private List<Integer> accessiblePorts;
+    private List<String> allowedActions;
+    private List<String> availableRegions;
+    private List<String> compatibleShapes;
+    private String listingId;
+    private String listingResourceId;
+    private String listingResourceVersion;
+    private String timePublished;
 
-    @CustomType.Constructor
-    private GetListingResourceVersionsAppCatalogListingResourceVersion(
-        @CustomType.Parameter("accessiblePorts") List<Integer> accessiblePorts,
-        @CustomType.Parameter("allowedActions") List<String> allowedActions,
-        @CustomType.Parameter("availableRegions") List<String> availableRegions,
-        @CustomType.Parameter("compatibleShapes") List<String> compatibleShapes,
-        @CustomType.Parameter("listingId") String listingId,
-        @CustomType.Parameter("listingResourceId") String listingResourceId,
-        @CustomType.Parameter("listingResourceVersion") String listingResourceVersion,
-        @CustomType.Parameter("timePublished") String timePublished) {
-        this.accessiblePorts = accessiblePorts;
-        this.allowedActions = allowedActions;
-        this.availableRegions = availableRegions;
-        this.compatibleShapes = compatibleShapes;
-        this.listingId = listingId;
-        this.listingResourceId = listingResourceId;
-        this.listingResourceVersion = listingResourceVersion;
-        this.timePublished = timePublished;
-    }
-
+    private GetListingResourceVersionsAppCatalogListingResourceVersion() {}
     public List<Integer> accessiblePorts() {
         return this.accessiblePorts;
     }
@@ -72,7 +53,7 @@ public final class GetListingResourceVersionsAppCatalogListingResourceVersion {
     public static Builder builder(GetListingResourceVersionsAppCatalogListingResourceVersion defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<Integer> accessiblePorts;
         private List<String> allowedActions;
@@ -82,11 +63,7 @@ public final class GetListingResourceVersionsAppCatalogListingResourceVersion {
         private String listingResourceId;
         private String listingResourceVersion;
         private String timePublished;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingResourceVersionsAppCatalogListingResourceVersion defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessiblePorts = defaults.accessiblePorts;
@@ -99,6 +76,7 @@ public final class GetListingResourceVersionsAppCatalogListingResourceVersion {
     	      this.timePublished = defaults.timePublished;
         }
 
+        @CustomType.Setter
         public Builder accessiblePorts(List<Integer> accessiblePorts) {
             this.accessiblePorts = Objects.requireNonNull(accessiblePorts);
             return this;
@@ -106,6 +84,7 @@ public final class GetListingResourceVersionsAppCatalogListingResourceVersion {
         public Builder accessiblePorts(Integer... accessiblePorts) {
             return accessiblePorts(List.of(accessiblePorts));
         }
+        @CustomType.Setter
         public Builder allowedActions(List<String> allowedActions) {
             this.allowedActions = Objects.requireNonNull(allowedActions);
             return this;
@@ -113,6 +92,7 @@ public final class GetListingResourceVersionsAppCatalogListingResourceVersion {
         public Builder allowedActions(String... allowedActions) {
             return allowedActions(List.of(allowedActions));
         }
+        @CustomType.Setter
         public Builder availableRegions(List<String> availableRegions) {
             this.availableRegions = Objects.requireNonNull(availableRegions);
             return this;
@@ -120,6 +100,7 @@ public final class GetListingResourceVersionsAppCatalogListingResourceVersion {
         public Builder availableRegions(String... availableRegions) {
             return availableRegions(List.of(availableRegions));
         }
+        @CustomType.Setter
         public Builder compatibleShapes(List<String> compatibleShapes) {
             this.compatibleShapes = Objects.requireNonNull(compatibleShapes);
             return this;
@@ -127,23 +108,37 @@ public final class GetListingResourceVersionsAppCatalogListingResourceVersion {
         public Builder compatibleShapes(String... compatibleShapes) {
             return compatibleShapes(List.of(compatibleShapes));
         }
+        @CustomType.Setter
         public Builder listingId(String listingId) {
             this.listingId = Objects.requireNonNull(listingId);
             return this;
         }
+        @CustomType.Setter
         public Builder listingResourceId(String listingResourceId) {
             this.listingResourceId = Objects.requireNonNull(listingResourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder listingResourceVersion(String listingResourceVersion) {
             this.listingResourceVersion = Objects.requireNonNull(listingResourceVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder timePublished(String timePublished) {
             this.timePublished = Objects.requireNonNull(timePublished);
             return this;
-        }        public GetListingResourceVersionsAppCatalogListingResourceVersion build() {
-            return new GetListingResourceVersionsAppCatalogListingResourceVersion(accessiblePorts, allowedActions, availableRegions, compatibleShapes, listingId, listingResourceId, listingResourceVersion, timePublished);
+        }
+        public GetListingResourceVersionsAppCatalogListingResourceVersion build() {
+            final var o = new GetListingResourceVersionsAppCatalogListingResourceVersion();
+            o.accessiblePorts = accessiblePorts;
+            o.allowedActions = allowedActions;
+            o.availableRegions = availableRegions;
+            o.compatibleShapes = compatibleShapes;
+            o.listingId = listingId;
+            o.listingResourceId = listingResourceId;
+            o.listingResourceVersion = listingResourceVersion;
+            o.timePublished = timePublished;
+            return o;
         }
     }
 }

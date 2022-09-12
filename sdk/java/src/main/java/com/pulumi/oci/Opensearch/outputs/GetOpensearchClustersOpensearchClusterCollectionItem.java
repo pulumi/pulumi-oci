@@ -17,266 +17,189 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
      * @return The availability domains to distribute the cluser nodes across.
      * 
      */
-    private final List<String> availabilityDomains;
+    private List<String> availabilityDomains;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The number of data nodes configured for the cluster.
      * 
      */
-    private final Integer dataNodeCount;
+    private Integer dataNodeCount;
     /**
      * @return The bare metal shape for the cluster&#39;s data nodes.
      * 
      */
-    private final String dataNodeHostBareMetalShape;
+    private String dataNodeHostBareMetalShape;
     /**
      * @return The amount of memory in GB, for the cluster&#39;s data nodes.
      * 
      */
-    private final Integer dataNodeHostMemoryGb;
+    private Integer dataNodeHostMemoryGb;
     /**
      * @return The number of OCPUs configured for the cluster&#39;s data nodes.
      * 
      */
-    private final Integer dataNodeHostOcpuCount;
+    private Integer dataNodeHostOcpuCount;
     /**
      * @return The instance type for the cluster&#39;s data nodes.
      * 
      */
-    private final String dataNodeHostType;
+    private String dataNodeHostType;
     /**
      * @return The amount of storage in GB, to configure per node for the cluster&#39;s data nodes.
      * 
      */
-    private final Integer dataNodeStorageGb;
+    private Integer dataNodeStorageGb;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The fully qualified domain name (FQDN) for the cluster&#39;s API endpoint.
      * 
      */
-    private final String fqdn;
+    private String fqdn;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return unique OpensearchCluster identifier
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Additional information about the current lifecycle state of the cluster.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The number of master nodes configured for the cluster.
      * 
      */
-    private final Integer masterNodeCount;
+    private Integer masterNodeCount;
     /**
      * @return The bare metal shape for the cluster&#39;s master nodes.
      * 
      */
-    private final String masterNodeHostBareMetalShape;
+    private String masterNodeHostBareMetalShape;
     /**
      * @return The amount of memory in GB, for the cluster&#39;s master nodes.
      * 
      */
-    private final Integer masterNodeHostMemoryGb;
+    private Integer masterNodeHostMemoryGb;
     /**
      * @return The number of OCPUs configured for cluster&#39;s master nodes.
      * 
      */
-    private final Integer masterNodeHostOcpuCount;
+    private Integer masterNodeHostOcpuCount;
     /**
      * @return The instance type for the cluster&#39;s master nodes.
      * 
      */
-    private final String masterNodeHostType;
+    private String masterNodeHostType;
     /**
      * @return The fully qualified domain name (FQDN) for the cluster&#39;s OpenSearch Dashboard API endpoint.
      * 
      */
-    private final String opendashboardFqdn;
+    private String opendashboardFqdn;
     /**
      * @return The number of OpenSearch Dashboard nodes configured for the cluster.
      * 
      */
-    private final Integer opendashboardNodeCount;
+    private Integer opendashboardNodeCount;
     /**
      * @return The amount of memory in GB, for the cluster&#39;s OpenSearch Dashboard nodes.
      * 
      */
-    private final Integer opendashboardNodeHostMemoryGb;
+    private Integer opendashboardNodeHostMemoryGb;
     /**
      * @return The amount of memory in GB, for the cluster&#39;s OpenSearch Dashboard nodes.
      * 
      */
-    private final Integer opendashboardNodeHostOcpuCount;
+    private Integer opendashboardNodeHostOcpuCount;
     /**
      * @return The private IP address for the cluster&#39;s OpenSearch Dashboard.
      * 
      */
-    private final String opendashboardPrivateIp;
+    private String opendashboardPrivateIp;
     /**
      * @return The fully qualified domain name (FQDN) for the cluster&#39;s API endpoint.
      * 
      */
-    private final String opensearchFqdn;
+    private String opensearchFqdn;
     /**
      * @return The cluster&#39;s private IP address.
      * 
      */
-    private final String opensearchPrivateIp;
+    private String opensearchPrivateIp;
     /**
      * @return The software version the cluster is running.
      * 
      */
-    private final String softwareVersion;
+    private String softwareVersion;
     /**
      * @return A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The OCID for the compartment where the cluster&#39;s subnet is located.
      * 
      */
-    private final String subnetCompartmentId;
+    private String subnetCompartmentId;
     /**
      * @return The OCID of the cluster&#39;s subnet.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The amount of time in milliseconds since the cluster was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The amount of time in milliseconds since the cluster was updated.
      * 
      */
-    private final String timeDeleted;
+    private String timeDeleted;
     /**
      * @return The amount of time in milliseconds since the cluster was updated.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return The size in GB of the cluster&#39;s total storage.
      * 
      */
-    private final Integer totalStorageGb;
+    private Integer totalStorageGb;
     /**
      * @return The OCID for the compartment where the cluster&#39;s VCN is located.
      * 
      */
-    private final String vcnCompartmentId;
+    private String vcnCompartmentId;
     /**
      * @return The OCID of the cluster&#39;s VCN.
      * 
      */
-    private final String vcnId;
+    private String vcnId;
 
-    @CustomType.Constructor
-    private GetOpensearchClustersOpensearchClusterCollectionItem(
-        @CustomType.Parameter("availabilityDomains") List<String> availabilityDomains,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dataNodeCount") Integer dataNodeCount,
-        @CustomType.Parameter("dataNodeHostBareMetalShape") String dataNodeHostBareMetalShape,
-        @CustomType.Parameter("dataNodeHostMemoryGb") Integer dataNodeHostMemoryGb,
-        @CustomType.Parameter("dataNodeHostOcpuCount") Integer dataNodeHostOcpuCount,
-        @CustomType.Parameter("dataNodeHostType") String dataNodeHostType,
-        @CustomType.Parameter("dataNodeStorageGb") Integer dataNodeStorageGb,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("fqdn") String fqdn,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("masterNodeCount") Integer masterNodeCount,
-        @CustomType.Parameter("masterNodeHostBareMetalShape") String masterNodeHostBareMetalShape,
-        @CustomType.Parameter("masterNodeHostMemoryGb") Integer masterNodeHostMemoryGb,
-        @CustomType.Parameter("masterNodeHostOcpuCount") Integer masterNodeHostOcpuCount,
-        @CustomType.Parameter("masterNodeHostType") String masterNodeHostType,
-        @CustomType.Parameter("opendashboardFqdn") String opendashboardFqdn,
-        @CustomType.Parameter("opendashboardNodeCount") Integer opendashboardNodeCount,
-        @CustomType.Parameter("opendashboardNodeHostMemoryGb") Integer opendashboardNodeHostMemoryGb,
-        @CustomType.Parameter("opendashboardNodeHostOcpuCount") Integer opendashboardNodeHostOcpuCount,
-        @CustomType.Parameter("opendashboardPrivateIp") String opendashboardPrivateIp,
-        @CustomType.Parameter("opensearchFqdn") String opensearchFqdn,
-        @CustomType.Parameter("opensearchPrivateIp") String opensearchPrivateIp,
-        @CustomType.Parameter("softwareVersion") String softwareVersion,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subnetCompartmentId") String subnetCompartmentId,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeDeleted") String timeDeleted,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("totalStorageGb") Integer totalStorageGb,
-        @CustomType.Parameter("vcnCompartmentId") String vcnCompartmentId,
-        @CustomType.Parameter("vcnId") String vcnId) {
-        this.availabilityDomains = availabilityDomains;
-        this.compartmentId = compartmentId;
-        this.dataNodeCount = dataNodeCount;
-        this.dataNodeHostBareMetalShape = dataNodeHostBareMetalShape;
-        this.dataNodeHostMemoryGb = dataNodeHostMemoryGb;
-        this.dataNodeHostOcpuCount = dataNodeHostOcpuCount;
-        this.dataNodeHostType = dataNodeHostType;
-        this.dataNodeStorageGb = dataNodeStorageGb;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.fqdn = fqdn;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.masterNodeCount = masterNodeCount;
-        this.masterNodeHostBareMetalShape = masterNodeHostBareMetalShape;
-        this.masterNodeHostMemoryGb = masterNodeHostMemoryGb;
-        this.masterNodeHostOcpuCount = masterNodeHostOcpuCount;
-        this.masterNodeHostType = masterNodeHostType;
-        this.opendashboardFqdn = opendashboardFqdn;
-        this.opendashboardNodeCount = opendashboardNodeCount;
-        this.opendashboardNodeHostMemoryGb = opendashboardNodeHostMemoryGb;
-        this.opendashboardNodeHostOcpuCount = opendashboardNodeHostOcpuCount;
-        this.opendashboardPrivateIp = opendashboardPrivateIp;
-        this.opensearchFqdn = opensearchFqdn;
-        this.opensearchPrivateIp = opensearchPrivateIp;
-        this.softwareVersion = softwareVersion;
-        this.state = state;
-        this.subnetCompartmentId = subnetCompartmentId;
-        this.subnetId = subnetId;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeDeleted = timeDeleted;
-        this.timeUpdated = timeUpdated;
-        this.totalStorageGb = totalStorageGb;
-        this.vcnCompartmentId = vcnCompartmentId;
-        this.vcnId = vcnId;
-    }
-
+    private GetOpensearchClustersOpensearchClusterCollectionItem() {}
     /**
      * @return The availability domains to distribute the cluser nodes across.
      * 
@@ -544,7 +467,7 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
     public static Builder builder(GetOpensearchClustersOpensearchClusterCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> availabilityDomains;
         private String compartmentId;
@@ -583,11 +506,7 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
         private Integer totalStorageGb;
         private String vcnCompartmentId;
         private String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOpensearchClustersOpensearchClusterCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomains = defaults.availabilityDomains;
@@ -629,6 +548,7 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomains(List<String> availabilityDomains) {
             this.availabilityDomains = Objects.requireNonNull(availabilityDomains);
             return this;
@@ -636,151 +556,226 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
         public Builder availabilityDomains(String... availabilityDomains) {
             return availabilityDomains(List.of(availabilityDomains));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dataNodeCount(Integer dataNodeCount) {
             this.dataNodeCount = Objects.requireNonNull(dataNodeCount);
             return this;
         }
+        @CustomType.Setter
         public Builder dataNodeHostBareMetalShape(String dataNodeHostBareMetalShape) {
             this.dataNodeHostBareMetalShape = Objects.requireNonNull(dataNodeHostBareMetalShape);
             return this;
         }
+        @CustomType.Setter
         public Builder dataNodeHostMemoryGb(Integer dataNodeHostMemoryGb) {
             this.dataNodeHostMemoryGb = Objects.requireNonNull(dataNodeHostMemoryGb);
             return this;
         }
+        @CustomType.Setter
         public Builder dataNodeHostOcpuCount(Integer dataNodeHostOcpuCount) {
             this.dataNodeHostOcpuCount = Objects.requireNonNull(dataNodeHostOcpuCount);
             return this;
         }
+        @CustomType.Setter
         public Builder dataNodeHostType(String dataNodeHostType) {
             this.dataNodeHostType = Objects.requireNonNull(dataNodeHostType);
             return this;
         }
+        @CustomType.Setter
         public Builder dataNodeStorageGb(Integer dataNodeStorageGb) {
             this.dataNodeStorageGb = Objects.requireNonNull(dataNodeStorageGb);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder fqdn(String fqdn) {
             this.fqdn = Objects.requireNonNull(fqdn);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder masterNodeCount(Integer masterNodeCount) {
             this.masterNodeCount = Objects.requireNonNull(masterNodeCount);
             return this;
         }
+        @CustomType.Setter
         public Builder masterNodeHostBareMetalShape(String masterNodeHostBareMetalShape) {
             this.masterNodeHostBareMetalShape = Objects.requireNonNull(masterNodeHostBareMetalShape);
             return this;
         }
+        @CustomType.Setter
         public Builder masterNodeHostMemoryGb(Integer masterNodeHostMemoryGb) {
             this.masterNodeHostMemoryGb = Objects.requireNonNull(masterNodeHostMemoryGb);
             return this;
         }
+        @CustomType.Setter
         public Builder masterNodeHostOcpuCount(Integer masterNodeHostOcpuCount) {
             this.masterNodeHostOcpuCount = Objects.requireNonNull(masterNodeHostOcpuCount);
             return this;
         }
+        @CustomType.Setter
         public Builder masterNodeHostType(String masterNodeHostType) {
             this.masterNodeHostType = Objects.requireNonNull(masterNodeHostType);
             return this;
         }
+        @CustomType.Setter
         public Builder opendashboardFqdn(String opendashboardFqdn) {
             this.opendashboardFqdn = Objects.requireNonNull(opendashboardFqdn);
             return this;
         }
+        @CustomType.Setter
         public Builder opendashboardNodeCount(Integer opendashboardNodeCount) {
             this.opendashboardNodeCount = Objects.requireNonNull(opendashboardNodeCount);
             return this;
         }
+        @CustomType.Setter
         public Builder opendashboardNodeHostMemoryGb(Integer opendashboardNodeHostMemoryGb) {
             this.opendashboardNodeHostMemoryGb = Objects.requireNonNull(opendashboardNodeHostMemoryGb);
             return this;
         }
+        @CustomType.Setter
         public Builder opendashboardNodeHostOcpuCount(Integer opendashboardNodeHostOcpuCount) {
             this.opendashboardNodeHostOcpuCount = Objects.requireNonNull(opendashboardNodeHostOcpuCount);
             return this;
         }
+        @CustomType.Setter
         public Builder opendashboardPrivateIp(String opendashboardPrivateIp) {
             this.opendashboardPrivateIp = Objects.requireNonNull(opendashboardPrivateIp);
             return this;
         }
+        @CustomType.Setter
         public Builder opensearchFqdn(String opensearchFqdn) {
             this.opensearchFqdn = Objects.requireNonNull(opensearchFqdn);
             return this;
         }
+        @CustomType.Setter
         public Builder opensearchPrivateIp(String opensearchPrivateIp) {
             this.opensearchPrivateIp = Objects.requireNonNull(opensearchPrivateIp);
             return this;
         }
+        @CustomType.Setter
         public Builder softwareVersion(String softwareVersion) {
             this.softwareVersion = Objects.requireNonNull(softwareVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetCompartmentId(String subnetCompartmentId) {
             this.subnetCompartmentId = Objects.requireNonNull(subnetCompartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeDeleted(String timeDeleted) {
             this.timeDeleted = Objects.requireNonNull(timeDeleted);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder totalStorageGb(Integer totalStorageGb) {
             this.totalStorageGb = Objects.requireNonNull(totalStorageGb);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnCompartmentId(String vcnCompartmentId) {
             this.vcnCompartmentId = Objects.requireNonNull(vcnCompartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(String vcnId) {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
-        }        public GetOpensearchClustersOpensearchClusterCollectionItem build() {
-            return new GetOpensearchClustersOpensearchClusterCollectionItem(availabilityDomains, compartmentId, dataNodeCount, dataNodeHostBareMetalShape, dataNodeHostMemoryGb, dataNodeHostOcpuCount, dataNodeHostType, dataNodeStorageGb, definedTags, displayName, fqdn, freeformTags, id, lifecycleDetails, masterNodeCount, masterNodeHostBareMetalShape, masterNodeHostMemoryGb, masterNodeHostOcpuCount, masterNodeHostType, opendashboardFqdn, opendashboardNodeCount, opendashboardNodeHostMemoryGb, opendashboardNodeHostOcpuCount, opendashboardPrivateIp, opensearchFqdn, opensearchPrivateIp, softwareVersion, state, subnetCompartmentId, subnetId, systemTags, timeCreated, timeDeleted, timeUpdated, totalStorageGb, vcnCompartmentId, vcnId);
+        }
+        public GetOpensearchClustersOpensearchClusterCollectionItem build() {
+            final var o = new GetOpensearchClustersOpensearchClusterCollectionItem();
+            o.availabilityDomains = availabilityDomains;
+            o.compartmentId = compartmentId;
+            o.dataNodeCount = dataNodeCount;
+            o.dataNodeHostBareMetalShape = dataNodeHostBareMetalShape;
+            o.dataNodeHostMemoryGb = dataNodeHostMemoryGb;
+            o.dataNodeHostOcpuCount = dataNodeHostOcpuCount;
+            o.dataNodeHostType = dataNodeHostType;
+            o.dataNodeStorageGb = dataNodeStorageGb;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.fqdn = fqdn;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.masterNodeCount = masterNodeCount;
+            o.masterNodeHostBareMetalShape = masterNodeHostBareMetalShape;
+            o.masterNodeHostMemoryGb = masterNodeHostMemoryGb;
+            o.masterNodeHostOcpuCount = masterNodeHostOcpuCount;
+            o.masterNodeHostType = masterNodeHostType;
+            o.opendashboardFqdn = opendashboardFqdn;
+            o.opendashboardNodeCount = opendashboardNodeCount;
+            o.opendashboardNodeHostMemoryGb = opendashboardNodeHostMemoryGb;
+            o.opendashboardNodeHostOcpuCount = opendashboardNodeHostOcpuCount;
+            o.opendashboardPrivateIp = opendashboardPrivateIp;
+            o.opensearchFqdn = opensearchFqdn;
+            o.opensearchPrivateIp = opensearchPrivateIp;
+            o.softwareVersion = softwareVersion;
+            o.state = state;
+            o.subnetCompartmentId = subnetCompartmentId;
+            o.subnetId = subnetId;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeDeleted = timeDeleted;
+            o.timeUpdated = timeUpdated;
+            o.totalStorageGb = totalStorageGb;
+            o.vcnCompartmentId = vcnCompartmentId;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

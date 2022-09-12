@@ -18,45 +18,30 @@ public final class GetApmDomainsResult {
      * @return The list of apm_domains.
      * 
      */
-    private final List<GetApmDomainsApmDomain> apmDomains;
+    private List<GetApmDomainsApmDomain> apmDomains;
     /**
      * @return The OCID of the compartment corresponding to the APM domain.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Display name of the APM domain, which can be updated.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetApmDomainsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetApmDomainsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current lifecycle state of the APM domain.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetApmDomainsResult(
-        @CustomType.Parameter("apmDomains") List<GetApmDomainsApmDomain> apmDomains,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetApmDomainsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.apmDomains = apmDomains;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetApmDomainsResult() {}
     /**
      * @return The list of apm_domains.
      * 
@@ -103,7 +88,7 @@ public final class GetApmDomainsResult {
     public static Builder builder(GetApmDomainsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetApmDomainsApmDomain> apmDomains;
         private String compartmentId;
@@ -111,11 +96,7 @@ public final class GetApmDomainsResult {
         private @Nullable List<GetApmDomainsFilter> filters;
         private String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApmDomainsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apmDomains = defaults.apmDomains;
@@ -126,6 +107,7 @@ public final class GetApmDomainsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder apmDomains(List<GetApmDomainsApmDomain> apmDomains) {
             this.apmDomains = Objects.requireNonNull(apmDomains);
             return this;
@@ -133,14 +115,17 @@ public final class GetApmDomainsResult {
         public Builder apmDomains(GetApmDomainsApmDomain... apmDomains) {
             return apmDomains(List.of(apmDomains));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetApmDomainsFilter> filters) {
             this.filters = filters;
             return this;
@@ -148,15 +133,25 @@ public final class GetApmDomainsResult {
         public Builder filters(GetApmDomainsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetApmDomainsResult build() {
-            return new GetApmDomainsResult(apmDomains, compartmentId, displayName, filters, id, state);
+        }
+        public GetApmDomainsResult build() {
+            final var o = new GetApmDomainsResult();
+            o.apmDomains = apmDomains;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

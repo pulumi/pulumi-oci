@@ -18,45 +18,30 @@ public final class GetConnectHarnessesResult {
      * @return The OCID of the compartment that contains the connect harness.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of connect_harness.
      * 
      */
-    private final List<GetConnectHarnessesConnectHarness> connectHarnesses;
-    private final @Nullable List<GetConnectHarnessesFilter> filters;
+    private List<GetConnectHarnessesConnectHarness> connectHarnesses;
+    private @Nullable List<GetConnectHarnessesFilter> filters;
     /**
      * @return The OCID of the connect harness.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The current state of the connect harness.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetConnectHarnessesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("connectHarnesses") List<GetConnectHarnessesConnectHarness> connectHarnesses,
-        @CustomType.Parameter("filters") @Nullable List<GetConnectHarnessesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.connectHarnesses = connectHarnesses;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.state = state;
-    }
-
+    private GetConnectHarnessesResult() {}
     /**
      * @return The OCID of the compartment that contains the connect harness.
      * 
@@ -103,7 +88,7 @@ public final class GetConnectHarnessesResult {
     public static Builder builder(GetConnectHarnessesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetConnectHarnessesConnectHarness> connectHarnesses;
@@ -111,11 +96,7 @@ public final class GetConnectHarnessesResult {
         private @Nullable String id;
         private @Nullable String name;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConnectHarnessesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +107,12 @@ public final class GetConnectHarnessesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder connectHarnesses(List<GetConnectHarnessesConnectHarness> connectHarnesses) {
             this.connectHarnesses = Objects.requireNonNull(connectHarnesses);
             return this;
@@ -137,6 +120,7 @@ public final class GetConnectHarnessesResult {
         public Builder connectHarnesses(GetConnectHarnessesConnectHarness... connectHarnesses) {
             return connectHarnesses(List.of(connectHarnesses));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetConnectHarnessesFilter> filters) {
             this.filters = filters;
             return this;
@@ -144,19 +128,30 @@ public final class GetConnectHarnessesResult {
         public Builder filters(GetConnectHarnessesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetConnectHarnessesResult build() {
-            return new GetConnectHarnessesResult(compartmentId, connectHarnesses, filters, id, name, state);
+        }
+        public GetConnectHarnessesResult build() {
+            final var o = new GetConnectHarnessesResult();
+            o.compartmentId = compartmentId;
+            o.connectHarnesses = connectHarnesses;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.state = state;
+            return o;
         }
     }
 }

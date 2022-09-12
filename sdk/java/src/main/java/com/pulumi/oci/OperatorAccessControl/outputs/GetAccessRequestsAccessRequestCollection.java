@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAccessRequestsAccessRequestCollection {
-    private final List<GetAccessRequestsAccessRequestCollectionItem> items;
+    private List<GetAccessRequestsAccessRequestCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetAccessRequestsAccessRequestCollection(@CustomType.Parameter("items") List<GetAccessRequestsAccessRequestCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetAccessRequestsAccessRequestCollection() {}
     public List<GetAccessRequestsAccessRequestCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetAccessRequestsAccessRequestCollection {
     public static Builder builder(GetAccessRequestsAccessRequestCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAccessRequestsAccessRequestCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAccessRequestsAccessRequestCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetAccessRequestsAccessRequestCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAccessRequestsAccessRequestCollectionItem... items) {
             return items(List.of(items));
-        }        public GetAccessRequestsAccessRequestCollection build() {
-            return new GetAccessRequestsAccessRequestCollection(items);
+        }
+        public GetAccessRequestsAccessRequestCollection build() {
+            final var o = new GetAccessRequestsAccessRequestCollection();
+            o.items = items;
+            return o;
         }
     }
 }

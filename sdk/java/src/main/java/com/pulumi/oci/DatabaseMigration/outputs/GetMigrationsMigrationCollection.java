@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMigrationsMigrationCollection {
-    private final List<GetMigrationsMigrationCollectionItem> items;
+    private List<GetMigrationsMigrationCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetMigrationsMigrationCollection(@CustomType.Parameter("items") List<GetMigrationsMigrationCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetMigrationsMigrationCollection() {}
     public List<GetMigrationsMigrationCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetMigrationsMigrationCollection {
     public static Builder builder(GetMigrationsMigrationCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetMigrationsMigrationCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMigrationsMigrationCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetMigrationsMigrationCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetMigrationsMigrationCollectionItem... items) {
             return items(List.of(items));
-        }        public GetMigrationsMigrationCollection build() {
-            return new GetMigrationsMigrationCollection(items);
+        }
+        public GetMigrationsMigrationCollection build() {
+            final var o = new GetMigrationsMigrationCollection();
+            o.items = items;
+            return o;
         }
     }
 }

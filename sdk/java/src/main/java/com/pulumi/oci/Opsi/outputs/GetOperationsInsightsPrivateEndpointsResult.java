@@ -19,65 +19,42 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
      * @return The compartment OCID of the Private service accessed database.
      * 
      */
-    private final @Nullable String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The display name of the private endpoint.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetOperationsInsightsPrivateEndpointsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetOperationsInsightsPrivateEndpointsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The flag is to identify if private endpoint is used for rac database or not
      * 
      */
-    private final @Nullable Boolean isUsedForRacDbs;
+    private @Nullable Boolean isUsedForRacDbs;
     /**
      * @return The list of operations_insights_private_endpoint_collection.
      * 
      */
-    private final List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection> operationsInsightsPrivateEndpointCollections;
-    private final @Nullable String opsiPrivateEndpointId;
+    private List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection> operationsInsightsPrivateEndpointCollections;
+    private @Nullable String opsiPrivateEndpointId;
     /**
      * @return The current state of the private endpoint.
      * 
      */
-    private final @Nullable List<String> states;
+    private @Nullable List<String> states;
     /**
      * @return The OCID of the VCN.
      * 
      */
-    private final @Nullable String vcnId;
+    private @Nullable String vcnId;
 
-    @CustomType.Constructor
-    private GetOperationsInsightsPrivateEndpointsResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetOperationsInsightsPrivateEndpointsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isUsedForRacDbs") @Nullable Boolean isUsedForRacDbs,
-        @CustomType.Parameter("operationsInsightsPrivateEndpointCollections") List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection> operationsInsightsPrivateEndpointCollections,
-        @CustomType.Parameter("opsiPrivateEndpointId") @Nullable String opsiPrivateEndpointId,
-        @CustomType.Parameter("states") @Nullable List<String> states,
-        @CustomType.Parameter("vcnId") @Nullable String vcnId) {
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.isUsedForRacDbs = isUsedForRacDbs;
-        this.operationsInsightsPrivateEndpointCollections = operationsInsightsPrivateEndpointCollections;
-        this.opsiPrivateEndpointId = opsiPrivateEndpointId;
-        this.states = states;
-        this.vcnId = vcnId;
-    }
-
+    private GetOperationsInsightsPrivateEndpointsResult() {}
     /**
      * @return The compartment OCID of the Private service accessed database.
      * 
@@ -144,7 +121,7 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
     public static Builder builder(GetOperationsInsightsPrivateEndpointsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
@@ -156,11 +133,7 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
         private @Nullable String opsiPrivateEndpointId;
         private @Nullable List<String> states;
         private @Nullable String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOperationsInsightsPrivateEndpointsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -175,18 +148,22 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetOperationsInsightsPrivateEndpointsFilter> filters) {
             this.filters = filters;
             return this;
@@ -194,14 +171,17 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
         public Builder filters(GetOperationsInsightsPrivateEndpointsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isUsedForRacDbs(@Nullable Boolean isUsedForRacDbs) {
             this.isUsedForRacDbs = isUsedForRacDbs;
             return this;
         }
+        @CustomType.Setter
         public Builder operationsInsightsPrivateEndpointCollections(List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection> operationsInsightsPrivateEndpointCollections) {
             this.operationsInsightsPrivateEndpointCollections = Objects.requireNonNull(operationsInsightsPrivateEndpointCollections);
             return this;
@@ -209,10 +189,12 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
         public Builder operationsInsightsPrivateEndpointCollections(GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection... operationsInsightsPrivateEndpointCollections) {
             return operationsInsightsPrivateEndpointCollections(List.of(operationsInsightsPrivateEndpointCollections));
         }
+        @CustomType.Setter
         public Builder opsiPrivateEndpointId(@Nullable String opsiPrivateEndpointId) {
             this.opsiPrivateEndpointId = opsiPrivateEndpointId;
             return this;
         }
+        @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
             this.states = states;
             return this;
@@ -220,11 +202,24 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
         public Builder states(String... states) {
             return states(List.of(states));
         }
+        @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
             this.vcnId = vcnId;
             return this;
-        }        public GetOperationsInsightsPrivateEndpointsResult build() {
-            return new GetOperationsInsightsPrivateEndpointsResult(compartmentId, compartmentIdInSubtree, displayName, filters, id, isUsedForRacDbs, operationsInsightsPrivateEndpointCollections, opsiPrivateEndpointId, states, vcnId);
+        }
+        public GetOperationsInsightsPrivateEndpointsResult build() {
+            final var o = new GetOperationsInsightsPrivateEndpointsResult();
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.isUsedForRacDbs = isUsedForRacDbs;
+            o.operationsInsightsPrivateEndpointCollections = operationsInsightsPrivateEndpointCollections;
+            o.opsiPrivateEndpointId = opsiPrivateEndpointId;
+            o.states = states;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

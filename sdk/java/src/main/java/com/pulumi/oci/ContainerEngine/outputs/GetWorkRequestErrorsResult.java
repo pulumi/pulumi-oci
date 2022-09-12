@@ -13,34 +13,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkRequestErrorsResult {
-    private final String compartmentId;
-    private final @Nullable List<GetWorkRequestErrorsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetWorkRequestErrorsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of work_request_errors.
      * 
      */
-    private final List<GetWorkRequestErrorsWorkRequestError> workRequestErrors;
-    private final String workRequestId;
+    private List<GetWorkRequestErrorsWorkRequestError> workRequestErrors;
+    private String workRequestId;
 
-    @CustomType.Constructor
-    private GetWorkRequestErrorsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetWorkRequestErrorsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("workRequestErrors") List<GetWorkRequestErrorsWorkRequestError> workRequestErrors,
-        @CustomType.Parameter("workRequestId") String workRequestId) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.workRequestErrors = workRequestErrors;
-        this.workRequestId = workRequestId;
-    }
-
+    private GetWorkRequestErrorsResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -72,18 +59,14 @@ public final class GetWorkRequestErrorsResult {
     public static Builder builder(GetWorkRequestErrorsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetWorkRequestErrorsFilter> filters;
         private String id;
         private List<GetWorkRequestErrorsWorkRequestError> workRequestErrors;
         private String workRequestId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWorkRequestErrorsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -93,10 +76,12 @@ public final class GetWorkRequestErrorsResult {
     	      this.workRequestId = defaults.workRequestId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetWorkRequestErrorsFilter> filters) {
             this.filters = filters;
             return this;
@@ -104,10 +89,12 @@ public final class GetWorkRequestErrorsResult {
         public Builder filters(GetWorkRequestErrorsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder workRequestErrors(List<GetWorkRequestErrorsWorkRequestError> workRequestErrors) {
             this.workRequestErrors = Objects.requireNonNull(workRequestErrors);
             return this;
@@ -115,11 +102,19 @@ public final class GetWorkRequestErrorsResult {
         public Builder workRequestErrors(GetWorkRequestErrorsWorkRequestError... workRequestErrors) {
             return workRequestErrors(List.of(workRequestErrors));
         }
+        @CustomType.Setter
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = Objects.requireNonNull(workRequestId);
             return this;
-        }        public GetWorkRequestErrorsResult build() {
-            return new GetWorkRequestErrorsResult(compartmentId, filters, id, workRequestErrors, workRequestId);
+        }
+        public GetWorkRequestErrorsResult build() {
+            final var o = new GetWorkRequestErrorsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.workRequestErrors = workRequestErrors;
+            o.workRequestId = workRequestId;
+            return o;
         }
     }
 }

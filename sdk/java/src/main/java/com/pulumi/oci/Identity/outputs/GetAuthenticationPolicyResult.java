@@ -16,31 +16,20 @@ public final class GetAuthenticationPolicyResult {
      * @return Compartment OCID.
      * 
      */
-    private final String compartmentId;
-    private final String id;
+    private String compartmentId;
+    private String id;
     /**
      * @return Network policy, Consists of a list of Network Source ids.
      * 
      */
-    private final List<GetAuthenticationPolicyNetworkPolicy> networkPolicies;
+    private List<GetAuthenticationPolicyNetworkPolicy> networkPolicies;
     /**
      * @return Password policy, currently set for the given compartment.
      * 
      */
-    private final List<GetAuthenticationPolicyPasswordPolicy> passwordPolicies;
+    private List<GetAuthenticationPolicyPasswordPolicy> passwordPolicies;
 
-    @CustomType.Constructor
-    private GetAuthenticationPolicyResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("networkPolicies") List<GetAuthenticationPolicyNetworkPolicy> networkPolicies,
-        @CustomType.Parameter("passwordPolicies") List<GetAuthenticationPolicyPasswordPolicy> passwordPolicies) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.networkPolicies = networkPolicies;
-        this.passwordPolicies = passwordPolicies;
-    }
-
+    private GetAuthenticationPolicyResult() {}
     /**
      * @return Compartment OCID.
      * 
@@ -73,17 +62,13 @@ public final class GetAuthenticationPolicyResult {
     public static Builder builder(GetAuthenticationPolicyResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private List<GetAuthenticationPolicyNetworkPolicy> networkPolicies;
         private List<GetAuthenticationPolicyPasswordPolicy> passwordPolicies;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAuthenticationPolicyResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -92,14 +77,17 @@ public final class GetAuthenticationPolicyResult {
     	      this.passwordPolicies = defaults.passwordPolicies;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder networkPolicies(List<GetAuthenticationPolicyNetworkPolicy> networkPolicies) {
             this.networkPolicies = Objects.requireNonNull(networkPolicies);
             return this;
@@ -107,14 +95,21 @@ public final class GetAuthenticationPolicyResult {
         public Builder networkPolicies(GetAuthenticationPolicyNetworkPolicy... networkPolicies) {
             return networkPolicies(List.of(networkPolicies));
         }
+        @CustomType.Setter
         public Builder passwordPolicies(List<GetAuthenticationPolicyPasswordPolicy> passwordPolicies) {
             this.passwordPolicies = Objects.requireNonNull(passwordPolicies);
             return this;
         }
         public Builder passwordPolicies(GetAuthenticationPolicyPasswordPolicy... passwordPolicies) {
             return passwordPolicies(List.of(passwordPolicies));
-        }        public GetAuthenticationPolicyResult build() {
-            return new GetAuthenticationPolicyResult(compartmentId, id, networkPolicies, passwordPolicies);
+        }
+        public GetAuthenticationPolicyResult build() {
+            final var o = new GetAuthenticationPolicyResult();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.networkPolicies = networkPolicies;
+            o.passwordPolicies = passwordPolicies;
+            return o;
         }
     }
 }

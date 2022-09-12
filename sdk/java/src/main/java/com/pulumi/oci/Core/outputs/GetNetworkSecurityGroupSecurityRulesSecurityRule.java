@@ -18,49 +18,49 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRule {
      * @return An optional description of your choice for the rule.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
      * 
      */
-    private final String destination;
+    private String destination;
     /**
      * @return Type of destination for the rule. Required if `direction` = `EGRESS`.
      * 
      */
-    private final String destinationType;
+    private String destinationType;
     /**
      * @return Direction of the security rule. Set to `EGRESS` for rules that allow outbound IP packets, or `INGRESS` for rules that allow inbound IP packets.
      * 
      */
-    private final String direction;
+    private String direction;
     /**
      * @return Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
      * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
      * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
      * 
      */
-    private final List<GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption> icmpOptions;
+    private List<GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption> icmpOptions;
     /**
      * @return An Oracle-assigned identifier for the security rule. You specify this ID when you want to update or delete the rule.  Example: `04ABEC`
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Whether the rule is valid. The value is `True` when the rule is first created. If the rule&#39;s `source` or `destination` is a network security group, the value changes to `False` if that network security group is deleted.
      * 
      */
-    private final Boolean isValid;
+    private Boolean isValid;
     /**
      * @return The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP (&#34;1&#34;), TCP (&#34;6&#34;), UDP (&#34;17&#34;), and ICMPv6 (&#34;58&#34;).
      * 
      */
-    private final String protocol;
+    private String protocol;
     /**
      * @return Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
      * 
      */
-    private final String source;
+    private String source;
     /**
      * @return Type of source for the rule. Required if `direction` = `INGRESS`.
      * * `CIDR_BLOCK`: If the rule&#39;s `source` is an IP address range in CIDR notation.
@@ -68,60 +68,29 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRule {
      * * `NETWORK_SECURITY_GROUP`: If the rule&#39;s `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      * 
      */
-    private final String sourceType;
+    private String sourceType;
     /**
      * @return A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
      * 
      */
-    private final Boolean stateless;
+    private Boolean stateless;
     /**
      * @return Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
      * 
      */
-    private final List<GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption> tcpOptions;
+    private List<GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption> tcpOptions;
     /**
      * @return The date and time the security rule was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
      * 
      */
-    private final List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption> udpOptions;
+    private List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption> udpOptions;
 
-    @CustomType.Constructor
-    private GetNetworkSecurityGroupSecurityRulesSecurityRule(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("destination") String destination,
-        @CustomType.Parameter("destinationType") String destinationType,
-        @CustomType.Parameter("direction") String direction,
-        @CustomType.Parameter("icmpOptions") List<GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption> icmpOptions,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isValid") Boolean isValid,
-        @CustomType.Parameter("protocol") String protocol,
-        @CustomType.Parameter("source") String source,
-        @CustomType.Parameter("sourceType") String sourceType,
-        @CustomType.Parameter("stateless") Boolean stateless,
-        @CustomType.Parameter("tcpOptions") List<GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption> tcpOptions,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("udpOptions") List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption> udpOptions) {
-        this.description = description;
-        this.destination = destination;
-        this.destinationType = destinationType;
-        this.direction = direction;
-        this.icmpOptions = icmpOptions;
-        this.id = id;
-        this.isValid = isValid;
-        this.protocol = protocol;
-        this.source = source;
-        this.sourceType = sourceType;
-        this.stateless = stateless;
-        this.tcpOptions = tcpOptions;
-        this.timeCreated = timeCreated;
-        this.udpOptions = udpOptions;
-    }
-
+    private GetNetworkSecurityGroupSecurityRulesSecurityRule() {}
     /**
      * @return An optional description of your choice for the rule.
      * 
@@ -233,7 +202,7 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRule {
     public static Builder builder(GetNetworkSecurityGroupSecurityRulesSecurityRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String destination;
@@ -249,11 +218,7 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRule {
         private List<GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption> tcpOptions;
         private String timeCreated;
         private List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption> udpOptions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkSecurityGroupSecurityRulesSecurityRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -272,22 +237,27 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRule {
     	      this.udpOptions = defaults.udpOptions;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder destination(String destination) {
             this.destination = Objects.requireNonNull(destination);
             return this;
         }
+        @CustomType.Setter
         public Builder destinationType(String destinationType) {
             this.destinationType = Objects.requireNonNull(destinationType);
             return this;
         }
+        @CustomType.Setter
         public Builder direction(String direction) {
             this.direction = Objects.requireNonNull(direction);
             return this;
         }
+        @CustomType.Setter
         public Builder icmpOptions(List<GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption> icmpOptions) {
             this.icmpOptions = Objects.requireNonNull(icmpOptions);
             return this;
@@ -295,30 +265,37 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRule {
         public Builder icmpOptions(GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption... icmpOptions) {
             return icmpOptions(List.of(icmpOptions));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isValid(Boolean isValid) {
             this.isValid = Objects.requireNonNull(isValid);
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
         public Builder source(String source) {
             this.source = Objects.requireNonNull(source);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             this.sourceType = Objects.requireNonNull(sourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder stateless(Boolean stateless) {
             this.stateless = Objects.requireNonNull(stateless);
             return this;
         }
+        @CustomType.Setter
         public Builder tcpOptions(List<GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption> tcpOptions) {
             this.tcpOptions = Objects.requireNonNull(tcpOptions);
             return this;
@@ -326,18 +303,36 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRule {
         public Builder tcpOptions(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption... tcpOptions) {
             return tcpOptions(List.of(tcpOptions));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder udpOptions(List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption> udpOptions) {
             this.udpOptions = Objects.requireNonNull(udpOptions);
             return this;
         }
         public Builder udpOptions(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption... udpOptions) {
             return udpOptions(List.of(udpOptions));
-        }        public GetNetworkSecurityGroupSecurityRulesSecurityRule build() {
-            return new GetNetworkSecurityGroupSecurityRulesSecurityRule(description, destination, destinationType, direction, icmpOptions, id, isValid, protocol, source, sourceType, stateless, tcpOptions, timeCreated, udpOptions);
+        }
+        public GetNetworkSecurityGroupSecurityRulesSecurityRule build() {
+            final var o = new GetNetworkSecurityGroupSecurityRulesSecurityRule();
+            o.description = description;
+            o.destination = destination;
+            o.destinationType = destinationType;
+            o.direction = direction;
+            o.icmpOptions = icmpOptions;
+            o.id = id;
+            o.isValid = isValid;
+            o.protocol = protocol;
+            o.source = source;
+            o.sourceType = sourceType;
+            o.stateless = stateless;
+            o.tcpOptions = tcpOptions;
+            o.timeCreated = timeCreated;
+            o.udpOptions = udpOptions;
+            return o;
         }
     }
 }

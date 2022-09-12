@@ -54,14 +54,14 @@ public final class VmClusterRemoveVirtualMachineState extends com.pulumi.resourc
     }
 
     /**
-     * Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
     @Import(name="dataCollectionOptions")
     private @Nullable Output<List<VmClusterRemoveVirtualMachineDataCollectionOptionArgs>> dataCollectionOptions;
 
     /**
-     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster.
+     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
     public Optional<Output<List<VmClusterRemoveVirtualMachineDataCollectionOptionArgs>>> dataCollectionOptions() {
@@ -489,7 +489,7 @@ public final class VmClusterRemoveVirtualMachineState extends com.pulumi.resourc
         }
 
         /**
-         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster.
+         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
          * 
          * @return builder
          * 
@@ -500,7 +500,7 @@ public final class VmClusterRemoveVirtualMachineState extends com.pulumi.resourc
         }
 
         /**
-         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster.
+         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
          * 
          * @return builder
          * 
@@ -510,7 +510,7 @@ public final class VmClusterRemoveVirtualMachineState extends com.pulumi.resourc
         }
 
         /**
-         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster.
+         * @param dataCollectionOptions Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
          * 
          * @return builder
          * 

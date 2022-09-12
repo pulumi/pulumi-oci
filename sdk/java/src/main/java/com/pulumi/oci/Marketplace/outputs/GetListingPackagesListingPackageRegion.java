@@ -15,28 +15,19 @@ public final class GetListingPackagesListingPackageRegion {
      * @return A code assigned to the item.
      * 
      */
-    private final String code;
+    private String code;
     /**
      * @return Countries in the region.
      * 
      */
-    private final List<GetListingPackagesListingPackageRegionCountry> countries;
+    private List<GetListingPackagesListingPackageRegionCountry> countries;
     /**
      * @return The name of the variable.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetListingPackagesListingPackageRegion(
-        @CustomType.Parameter("code") String code,
-        @CustomType.Parameter("countries") List<GetListingPackagesListingPackageRegionCountry> countries,
-        @CustomType.Parameter("name") String name) {
-        this.code = code;
-        this.countries = countries;
-        this.name = name;
-    }
-
+    private GetListingPackagesListingPackageRegion() {}
     /**
      * @return A code assigned to the item.
      * 
@@ -66,16 +57,12 @@ public final class GetListingPackagesListingPackageRegion {
     public static Builder builder(GetListingPackagesListingPackageRegion defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String code;
         private List<GetListingPackagesListingPackageRegionCountry> countries;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingPackagesListingPackageRegion defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.code = defaults.code;
@@ -83,10 +70,12 @@ public final class GetListingPackagesListingPackageRegion {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder code(String code) {
             this.code = Objects.requireNonNull(code);
             return this;
         }
+        @CustomType.Setter
         public Builder countries(List<GetListingPackagesListingPackageRegionCountry> countries) {
             this.countries = Objects.requireNonNull(countries);
             return this;
@@ -94,11 +83,17 @@ public final class GetListingPackagesListingPackageRegion {
         public Builder countries(GetListingPackagesListingPackageRegionCountry... countries) {
             return countries(List.of(countries));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetListingPackagesListingPackageRegion build() {
-            return new GetListingPackagesListingPackageRegion(code, countries, name);
+        }
+        public GetListingPackagesListingPackageRegion build() {
+            final var o = new GetListingPackagesListingPackageRegion();
+            o.code = code;
+            o.countries = countries;
+            o.name = name;
+            return o;
         }
     }
 }

@@ -18,45 +18,30 @@ public final class GetMetastoresResult {
      * @return OCID of the compartment which holds the metastore.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Mutable name of the metastore.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetMetastoresFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetMetastoresFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of metastores.
      * 
      */
-    private final List<GetMetastoresMetastore> metastores;
+    private List<GetMetastoresMetastore> metastores;
     /**
      * @return The current state of the metastore.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetMetastoresResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetMetastoresFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("metastores") List<GetMetastoresMetastore> metastores,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.metastores = metastores;
-        this.state = state;
-    }
-
+    private GetMetastoresResult() {}
     /**
      * @return OCID of the compartment which holds the metastore.
      * 
@@ -103,7 +88,7 @@ public final class GetMetastoresResult {
     public static Builder builder(GetMetastoresResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetMetastoresResult {
         private String id;
         private List<GetMetastoresMetastore> metastores;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMetastoresResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetMetastoresResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetMetastoresFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +125,12 @@ public final class GetMetastoresResult {
         public Builder filters(GetMetastoresFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder metastores(List<GetMetastoresMetastore> metastores) {
             this.metastores = Objects.requireNonNull(metastores);
             return this;
@@ -152,11 +138,20 @@ public final class GetMetastoresResult {
         public Builder metastores(GetMetastoresMetastore... metastores) {
             return metastores(List.of(metastores));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetMetastoresResult build() {
-            return new GetMetastoresResult(compartmentId, displayName, filters, id, metastores, state);
+        }
+        public GetMetastoresResult build() {
+            final var o = new GetMetastoresResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.metastores = metastores;
+            o.state = state;
+            return o;
         }
     }
 }

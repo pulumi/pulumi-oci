@@ -14,13 +14,9 @@ public final class GetSubscriptionsSubscriptionCollectionItemPaymentGateway {
      * @return Merchant details.
      * 
      */
-    private final List<GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData> merchantDefinedDatas;
+    private List<GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData> merchantDefinedDatas;
 
-    @CustomType.Constructor
-    private GetSubscriptionsSubscriptionCollectionItemPaymentGateway(@CustomType.Parameter("merchantDefinedDatas") List<GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData> merchantDefinedDatas) {
-        this.merchantDefinedDatas = merchantDefinedDatas;
-    }
-
+    private GetSubscriptionsSubscriptionCollectionItemPaymentGateway() {}
     /**
      * @return Merchant details.
      * 
@@ -36,27 +32,27 @@ public final class GetSubscriptionsSubscriptionCollectionItemPaymentGateway {
     public static Builder builder(GetSubscriptionsSubscriptionCollectionItemPaymentGateway defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData> merchantDefinedDatas;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriptionsSubscriptionCollectionItemPaymentGateway defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.merchantDefinedDatas = defaults.merchantDefinedDatas;
         }
 
+        @CustomType.Setter
         public Builder merchantDefinedDatas(List<GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData> merchantDefinedDatas) {
             this.merchantDefinedDatas = Objects.requireNonNull(merchantDefinedDatas);
             return this;
         }
         public Builder merchantDefinedDatas(GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData... merchantDefinedDatas) {
             return merchantDefinedDatas(List.of(merchantDefinedDatas));
-        }        public GetSubscriptionsSubscriptionCollectionItemPaymentGateway build() {
-            return new GetSubscriptionsSubscriptionCollectionItemPaymentGateway(merchantDefinedDatas);
+        }
+        public GetSubscriptionsSubscriptionCollectionItemPaymentGateway build() {
+            final var o = new GetSubscriptionsSubscriptionCollectionItemPaymentGateway();
+            o.merchantDefinedDatas = merchantDefinedDatas;
+            return o;
         }
     }
 }

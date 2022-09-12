@@ -17,28 +17,19 @@ public final class PluggableDatabasesLocalCloneConnectionString {
      * @return All connection strings to use to connect to the pluggable database.
      * 
      */
-    private final @Nullable Map<String,Object> allConnectionStrings;
+    private @Nullable Map<String,Object> allConnectionStrings;
     /**
      * @return A host name-based PDB connection string.
      * 
      */
-    private final @Nullable String pdbDefault;
+    private @Nullable String pdbDefault;
     /**
      * @return An IP-based PDB connection string.
      * 
      */
-    private final @Nullable String pdbIpDefault;
+    private @Nullable String pdbIpDefault;
 
-    @CustomType.Constructor
-    private PluggableDatabasesLocalCloneConnectionString(
-        @CustomType.Parameter("allConnectionStrings") @Nullable Map<String,Object> allConnectionStrings,
-        @CustomType.Parameter("pdbDefault") @Nullable String pdbDefault,
-        @CustomType.Parameter("pdbIpDefault") @Nullable String pdbIpDefault) {
-        this.allConnectionStrings = allConnectionStrings;
-        this.pdbDefault = pdbDefault;
-        this.pdbIpDefault = pdbIpDefault;
-    }
-
+    private PluggableDatabasesLocalCloneConnectionString() {}
     /**
      * @return All connection strings to use to connect to the pluggable database.
      * 
@@ -68,16 +59,12 @@ public final class PluggableDatabasesLocalCloneConnectionString {
     public static Builder builder(PluggableDatabasesLocalCloneConnectionString defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Map<String,Object> allConnectionStrings;
         private @Nullable String pdbDefault;
         private @Nullable String pdbIpDefault;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PluggableDatabasesLocalCloneConnectionString defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allConnectionStrings = defaults.allConnectionStrings;
@@ -85,19 +72,27 @@ public final class PluggableDatabasesLocalCloneConnectionString {
     	      this.pdbIpDefault = defaults.pdbIpDefault;
         }
 
+        @CustomType.Setter
         public Builder allConnectionStrings(@Nullable Map<String,Object> allConnectionStrings) {
             this.allConnectionStrings = allConnectionStrings;
             return this;
         }
+        @CustomType.Setter
         public Builder pdbDefault(@Nullable String pdbDefault) {
             this.pdbDefault = pdbDefault;
             return this;
         }
+        @CustomType.Setter
         public Builder pdbIpDefault(@Nullable String pdbIpDefault) {
             this.pdbIpDefault = pdbIpDefault;
             return this;
-        }        public PluggableDatabasesLocalCloneConnectionString build() {
-            return new PluggableDatabasesLocalCloneConnectionString(allConnectionStrings, pdbDefault, pdbIpDefault);
+        }
+        public PluggableDatabasesLocalCloneConnectionString build() {
+            final var o = new PluggableDatabasesLocalCloneConnectionString();
+            o.allConnectionStrings = allConnectionStrings;
+            o.pdbDefault = pdbDefault;
+            o.pdbIpDefault = pdbIpDefault;
+            return o;
         }
     }
 }

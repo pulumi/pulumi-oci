@@ -14,37 +14,22 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOrganizationSubscriptionsResult {
-    private final String compartmentId;
-    private final @Nullable List<GetOrganizationSubscriptionsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetOrganizationSubscriptionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String subscriptionIds;
+    private String id;
+    private String subscriptionIds;
     /**
      * @return The list of subscriptions.
      * 
      */
-    private final List<GetOrganizationSubscriptionsSubscription> subscriptions;
-    private final @Nullable String xOneOriginRegion;
+    private List<GetOrganizationSubscriptionsSubscription> subscriptions;
+    private @Nullable String xOneOriginRegion;
 
-    @CustomType.Constructor
-    private GetOrganizationSubscriptionsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetOrganizationSubscriptionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("subscriptionIds") String subscriptionIds,
-        @CustomType.Parameter("subscriptions") List<GetOrganizationSubscriptionsSubscription> subscriptions,
-        @CustomType.Parameter("xOneOriginRegion") @Nullable String xOneOriginRegion) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.subscriptionIds = subscriptionIds;
-        this.subscriptions = subscriptions;
-        this.xOneOriginRegion = xOneOriginRegion;
-    }
-
+    private GetOrganizationSubscriptionsResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -79,7 +64,7 @@ public final class GetOrganizationSubscriptionsResult {
     public static Builder builder(GetOrganizationSubscriptionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetOrganizationSubscriptionsFilter> filters;
@@ -87,11 +72,7 @@ public final class GetOrganizationSubscriptionsResult {
         private String subscriptionIds;
         private List<GetOrganizationSubscriptionsSubscription> subscriptions;
         private @Nullable String xOneOriginRegion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOrganizationSubscriptionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -102,10 +83,12 @@ public final class GetOrganizationSubscriptionsResult {
     	      this.xOneOriginRegion = defaults.xOneOriginRegion;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetOrganizationSubscriptionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -113,14 +96,17 @@ public final class GetOrganizationSubscriptionsResult {
         public Builder filters(GetOrganizationSubscriptionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionIds(String subscriptionIds) {
             this.subscriptionIds = Objects.requireNonNull(subscriptionIds);
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptions(List<GetOrganizationSubscriptionsSubscription> subscriptions) {
             this.subscriptions = Objects.requireNonNull(subscriptions);
             return this;
@@ -128,11 +114,20 @@ public final class GetOrganizationSubscriptionsResult {
         public Builder subscriptions(GetOrganizationSubscriptionsSubscription... subscriptions) {
             return subscriptions(List.of(subscriptions));
         }
+        @CustomType.Setter
         public Builder xOneOriginRegion(@Nullable String xOneOriginRegion) {
             this.xOneOriginRegion = xOneOriginRegion;
             return this;
-        }        public GetOrganizationSubscriptionsResult build() {
-            return new GetOrganizationSubscriptionsResult(compartmentId, filters, id, subscriptionIds, subscriptions, xOneOriginRegion);
+        }
+        public GetOrganizationSubscriptionsResult build() {
+            final var o = new GetOrganizationSubscriptionsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.subscriptionIds = subscriptionIds;
+            o.subscriptions = subscriptions;
+            o.xOneOriginRegion = xOneOriginRegion;
+            return o;
         }
     }
 }

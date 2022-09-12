@@ -17,35 +17,24 @@ public final class JobRunJobConfigurationOverrideDetails {
      * @return The arguments to pass to the job.
      * 
      */
-    private final @Nullable String commandLineArguments;
+    private @Nullable String commandLineArguments;
     /**
      * @return Environment variables to set for the job.
      * 
      */
-    private final @Nullable Map<String,Object> environmentVariables;
+    private @Nullable Map<String,Object> environmentVariables;
     /**
      * @return The type of job.
      * 
      */
-    private final String jobType;
+    private String jobType;
     /**
      * @return A time bound for the execution of the job. Timer starts when the job becomes active.
      * 
      */
-    private final @Nullable String maximumRuntimeInMinutes;
+    private @Nullable String maximumRuntimeInMinutes;
 
-    @CustomType.Constructor
-    private JobRunJobConfigurationOverrideDetails(
-        @CustomType.Parameter("commandLineArguments") @Nullable String commandLineArguments,
-        @CustomType.Parameter("environmentVariables") @Nullable Map<String,Object> environmentVariables,
-        @CustomType.Parameter("jobType") String jobType,
-        @CustomType.Parameter("maximumRuntimeInMinutes") @Nullable String maximumRuntimeInMinutes) {
-        this.commandLineArguments = commandLineArguments;
-        this.environmentVariables = environmentVariables;
-        this.jobType = jobType;
-        this.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
-    }
-
+    private JobRunJobConfigurationOverrideDetails() {}
     /**
      * @return The arguments to pass to the job.
      * 
@@ -82,17 +71,13 @@ public final class JobRunJobConfigurationOverrideDetails {
     public static Builder builder(JobRunJobConfigurationOverrideDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String commandLineArguments;
         private @Nullable Map<String,Object> environmentVariables;
         private String jobType;
         private @Nullable String maximumRuntimeInMinutes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(JobRunJobConfigurationOverrideDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.commandLineArguments = defaults.commandLineArguments;
@@ -101,23 +86,33 @@ public final class JobRunJobConfigurationOverrideDetails {
     	      this.maximumRuntimeInMinutes = defaults.maximumRuntimeInMinutes;
         }
 
+        @CustomType.Setter
         public Builder commandLineArguments(@Nullable String commandLineArguments) {
             this.commandLineArguments = commandLineArguments;
             return this;
         }
+        @CustomType.Setter
         public Builder environmentVariables(@Nullable Map<String,Object> environmentVariables) {
             this.environmentVariables = environmentVariables;
             return this;
         }
+        @CustomType.Setter
         public Builder jobType(String jobType) {
             this.jobType = Objects.requireNonNull(jobType);
             return this;
         }
+        @CustomType.Setter
         public Builder maximumRuntimeInMinutes(@Nullable String maximumRuntimeInMinutes) {
             this.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
             return this;
-        }        public JobRunJobConfigurationOverrideDetails build() {
-            return new JobRunJobConfigurationOverrideDetails(commandLineArguments, environmentVariables, jobType, maximumRuntimeInMinutes);
+        }
+        public JobRunJobConfigurationOverrideDetails build() {
+            final var o = new JobRunJobConfigurationOverrideDetails();
+            o.commandLineArguments = commandLineArguments;
+            o.environmentVariables = environmentVariables;
+            o.jobType = jobType;
+            o.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
+            return o;
         }
     }
 }

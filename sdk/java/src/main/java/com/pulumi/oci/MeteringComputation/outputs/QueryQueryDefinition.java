@@ -16,35 +16,24 @@ public final class QueryQueryDefinition {
      * @return (Updatable) The common fields for Cost Analysis UI rendering.
      * 
      */
-    private final QueryQueryDefinitionCostAnalysisUi costAnalysisUi;
+    private QueryQueryDefinitionCostAnalysisUi costAnalysisUi;
     /**
      * @return (Updatable) The query display name. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return (Updatable) The request of the generated Cost Analysis report.
      * 
      */
-    private final QueryQueryDefinitionReportQuery reportQuery;
+    private QueryQueryDefinitionReportQuery reportQuery;
     /**
      * @return (Updatable) The saved query version.
      * 
      */
-    private final Double version;
+    private Double version;
 
-    @CustomType.Constructor
-    private QueryQueryDefinition(
-        @CustomType.Parameter("costAnalysisUi") QueryQueryDefinitionCostAnalysisUi costAnalysisUi,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("reportQuery") QueryQueryDefinitionReportQuery reportQuery,
-        @CustomType.Parameter("version") Double version) {
-        this.costAnalysisUi = costAnalysisUi;
-        this.displayName = displayName;
-        this.reportQuery = reportQuery;
-        this.version = version;
-    }
-
+    private QueryQueryDefinition() {}
     /**
      * @return (Updatable) The common fields for Cost Analysis UI rendering.
      * 
@@ -81,17 +70,13 @@ public final class QueryQueryDefinition {
     public static Builder builder(QueryQueryDefinition defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private QueryQueryDefinitionCostAnalysisUi costAnalysisUi;
         private String displayName;
         private QueryQueryDefinitionReportQuery reportQuery;
         private Double version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(QueryQueryDefinition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.costAnalysisUi = defaults.costAnalysisUi;
@@ -100,23 +85,33 @@ public final class QueryQueryDefinition {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder costAnalysisUi(QueryQueryDefinitionCostAnalysisUi costAnalysisUi) {
             this.costAnalysisUi = Objects.requireNonNull(costAnalysisUi);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder reportQuery(QueryQueryDefinitionReportQuery reportQuery) {
             this.reportQuery = Objects.requireNonNull(reportQuery);
             return this;
         }
+        @CustomType.Setter
         public Builder version(Double version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public QueryQueryDefinition build() {
-            return new QueryQueryDefinition(costAnalysisUi, displayName, reportQuery, version);
+        }
+        public QueryQueryDefinition build() {
+            final var o = new QueryQueryDefinition();
+            o.costAnalysisUi = costAnalysisUi;
+            o.displayName = displayName;
+            o.reportQuery = reportQuery;
+            o.version = version;
+            return o;
         }
     }
 }

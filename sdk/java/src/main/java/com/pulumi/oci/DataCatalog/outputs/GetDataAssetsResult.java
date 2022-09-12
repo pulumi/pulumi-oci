@@ -18,72 +18,47 @@ public final class GetDataAssetsResult {
      * @return The data catalog&#39;s OCID.
      * 
      */
-    private final String catalogId;
+    private String catalogId;
     /**
      * @return OCID of the user who created the data asset.
      * 
      */
-    private final @Nullable String createdById;
+    private @Nullable String createdById;
     /**
      * @return The list of data_asset_collection.
      * 
      */
-    private final List<GetDataAssetsDataAssetCollection> dataAssetCollections;
+    private List<GetDataAssetsDataAssetCollection> dataAssetCollections;
     /**
      * @return A user-friendly display name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable String displayNameContains;
+    private @Nullable String displayName;
+    private @Nullable String displayNameContains;
     /**
      * @return External URI that can be used to reference the object. Format will differ based on the type of object.
      * 
      */
-    private final @Nullable String externalKey;
-    private final @Nullable List<String> fields;
-    private final @Nullable List<GetDataAssetsFilter> filters;
+    private @Nullable String externalKey;
+    private @Nullable List<String> fields;
+    private @Nullable List<GetDataAssetsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the data asset.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The key of the object type. Type key&#39;s can be found via the &#39;/types&#39; endpoint.
      * 
      */
-    private final @Nullable String typeKey;
+    private @Nullable String typeKey;
 
-    @CustomType.Constructor
-    private GetDataAssetsResult(
-        @CustomType.Parameter("catalogId") String catalogId,
-        @CustomType.Parameter("createdById") @Nullable String createdById,
-        @CustomType.Parameter("dataAssetCollections") List<GetDataAssetsDataAssetCollection> dataAssetCollections,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("displayNameContains") @Nullable String displayNameContains,
-        @CustomType.Parameter("externalKey") @Nullable String externalKey,
-        @CustomType.Parameter("fields") @Nullable List<String> fields,
-        @CustomType.Parameter("filters") @Nullable List<GetDataAssetsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("typeKey") @Nullable String typeKey) {
-        this.catalogId = catalogId;
-        this.createdById = createdById;
-        this.dataAssetCollections = dataAssetCollections;
-        this.displayName = displayName;
-        this.displayNameContains = displayNameContains;
-        this.externalKey = externalKey;
-        this.fields = fields;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.typeKey = typeKey;
-    }
-
+    private GetDataAssetsResult() {}
     /**
      * @return The data catalog&#39;s OCID.
      * 
@@ -157,7 +132,7 @@ public final class GetDataAssetsResult {
     public static Builder builder(GetDataAssetsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String catalogId;
         private @Nullable String createdById;
@@ -170,11 +145,7 @@ public final class GetDataAssetsResult {
         private String id;
         private @Nullable String state;
         private @Nullable String typeKey;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDataAssetsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.catalogId = defaults.catalogId;
@@ -190,14 +161,17 @@ public final class GetDataAssetsResult {
     	      this.typeKey = defaults.typeKey;
         }
 
+        @CustomType.Setter
         public Builder catalogId(String catalogId) {
             this.catalogId = Objects.requireNonNull(catalogId);
             return this;
         }
+        @CustomType.Setter
         public Builder createdById(@Nullable String createdById) {
             this.createdById = createdById;
             return this;
         }
+        @CustomType.Setter
         public Builder dataAssetCollections(List<GetDataAssetsDataAssetCollection> dataAssetCollections) {
             this.dataAssetCollections = Objects.requireNonNull(dataAssetCollections);
             return this;
@@ -205,18 +179,22 @@ public final class GetDataAssetsResult {
         public Builder dataAssetCollections(GetDataAssetsDataAssetCollection... dataAssetCollections) {
             return dataAssetCollections(List.of(dataAssetCollections));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder displayNameContains(@Nullable String displayNameContains) {
             this.displayNameContains = displayNameContains;
             return this;
         }
+        @CustomType.Setter
         public Builder externalKey(@Nullable String externalKey) {
             this.externalKey = externalKey;
             return this;
         }
+        @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
             this.fields = fields;
             return this;
@@ -224,6 +202,7 @@ public final class GetDataAssetsResult {
         public Builder fields(String... fields) {
             return fields(List.of(fields));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDataAssetsFilter> filters) {
             this.filters = filters;
             return this;
@@ -231,19 +210,35 @@ public final class GetDataAssetsResult {
         public Builder filters(GetDataAssetsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder typeKey(@Nullable String typeKey) {
             this.typeKey = typeKey;
             return this;
-        }        public GetDataAssetsResult build() {
-            return new GetDataAssetsResult(catalogId, createdById, dataAssetCollections, displayName, displayNameContains, externalKey, fields, filters, id, state, typeKey);
+        }
+        public GetDataAssetsResult build() {
+            final var o = new GetDataAssetsResult();
+            o.catalogId = catalogId;
+            o.createdById = createdById;
+            o.dataAssetCollections = dataAssetCollections;
+            o.displayName = displayName;
+            o.displayNameContains = displayNameContains;
+            o.externalKey = externalKey;
+            o.fields = fields;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.typeKey = typeKey;
+            return o;
         }
     }
 }

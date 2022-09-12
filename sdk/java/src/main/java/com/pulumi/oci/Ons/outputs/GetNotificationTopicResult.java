@@ -15,87 +15,60 @@ public final class GetNotificationTopicResult {
      * @return The endpoint for managing subscriptions or publishing messages to the topic.
      * 
      */
-    private final String apiEndpoint;
+    private String apiEndpoint;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the topic.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The description of the topic.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return For optimistic concurrency control. See `if-match`.
      * 
      */
-    private final String etag;
+    private String etag;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
-    private final String id;
+    private Map<String,Object> freeformTags;
+    private String id;
     /**
      * @return The name of the topic.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return A unique short topic Id. This is used only for SMS subscriptions.
      * 
      */
-    private final String shortTopicId;
+    private String shortTopicId;
     /**
      * @return The lifecycle state of the topic.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The time the topic was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
      * 
      */
-    private final String topicId;
+    private String topicId;
 
-    @CustomType.Constructor
-    private GetNotificationTopicResult(
-        @CustomType.Parameter("apiEndpoint") String apiEndpoint,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("etag") String etag,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("shortTopicId") String shortTopicId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("topicId") String topicId) {
-        this.apiEndpoint = apiEndpoint;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.etag = etag;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.name = name;
-        this.shortTopicId = shortTopicId;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.topicId = topicId;
-    }
-
+    private GetNotificationTopicResult() {}
     /**
      * @return The endpoint for managing subscriptions or publishing messages to the topic.
      * 
@@ -184,7 +157,7 @@ public final class GetNotificationTopicResult {
     public static Builder builder(GetNotificationTopicResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apiEndpoint;
         private String compartmentId;
@@ -198,11 +171,7 @@ public final class GetNotificationTopicResult {
         private String state;
         private String timeCreated;
         private String topicId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNotificationTopicResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apiEndpoint = defaults.apiEndpoint;
@@ -219,55 +188,81 @@ public final class GetNotificationTopicResult {
     	      this.topicId = defaults.topicId;
         }
 
+        @CustomType.Setter
         public Builder apiEndpoint(String apiEndpoint) {
             this.apiEndpoint = Objects.requireNonNull(apiEndpoint);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder etag(String etag) {
             this.etag = Objects.requireNonNull(etag);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder shortTopicId(String shortTopicId) {
             this.shortTopicId = Objects.requireNonNull(shortTopicId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder topicId(String topicId) {
             this.topicId = Objects.requireNonNull(topicId);
             return this;
-        }        public GetNotificationTopicResult build() {
-            return new GetNotificationTopicResult(apiEndpoint, compartmentId, definedTags, description, etag, freeformTags, id, name, shortTopicId, state, timeCreated, topicId);
+        }
+        public GetNotificationTopicResult build() {
+            final var o = new GetNotificationTopicResult();
+            o.apiEndpoint = apiEndpoint;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.etag = etag;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.name = name;
+            o.shortTopicId = shortTopicId;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.topicId = topicId;
+            return o;
         }
     }
 }

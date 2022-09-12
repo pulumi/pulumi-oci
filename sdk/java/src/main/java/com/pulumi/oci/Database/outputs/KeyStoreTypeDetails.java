@@ -14,42 +14,29 @@ public final class KeyStoreTypeDetails {
      * @return (Updatable) The administrator username to connect to Oracle Key Vault
      * 
      */
-    private final String adminUsername;
+    private String adminUsername;
     /**
      * @return (Updatable) The list of Oracle Key Vault connection IP addresses.
      * 
      */
-    private final List<String> connectionIps;
+    private List<String> connectionIps;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    private final String secretId;
+    private String secretId;
     /**
      * @return (Updatable) The type of key store.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    private final String vaultId;
+    private String vaultId;
 
-    @CustomType.Constructor
-    private KeyStoreTypeDetails(
-        @CustomType.Parameter("adminUsername") String adminUsername,
-        @CustomType.Parameter("connectionIps") List<String> connectionIps,
-        @CustomType.Parameter("secretId") String secretId,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("vaultId") String vaultId) {
-        this.adminUsername = adminUsername;
-        this.connectionIps = connectionIps;
-        this.secretId = secretId;
-        this.type = type;
-        this.vaultId = vaultId;
-    }
-
+    private KeyStoreTypeDetails() {}
     /**
      * @return (Updatable) The administrator username to connect to Oracle Key Vault
      * 
@@ -93,18 +80,14 @@ public final class KeyStoreTypeDetails {
     public static Builder builder(KeyStoreTypeDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String adminUsername;
         private List<String> connectionIps;
         private String secretId;
         private String type;
         private String vaultId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(KeyStoreTypeDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminUsername = defaults.adminUsername;
@@ -114,10 +97,12 @@ public final class KeyStoreTypeDetails {
     	      this.vaultId = defaults.vaultId;
         }
 
+        @CustomType.Setter
         public Builder adminUsername(String adminUsername) {
             this.adminUsername = Objects.requireNonNull(adminUsername);
             return this;
         }
+        @CustomType.Setter
         public Builder connectionIps(List<String> connectionIps) {
             this.connectionIps = Objects.requireNonNull(connectionIps);
             return this;
@@ -125,19 +110,29 @@ public final class KeyStoreTypeDetails {
         public Builder connectionIps(String... connectionIps) {
             return connectionIps(List.of(connectionIps));
         }
+        @CustomType.Setter
         public Builder secretId(String secretId) {
             this.secretId = Objects.requireNonNull(secretId);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder vaultId(String vaultId) {
             this.vaultId = Objects.requireNonNull(vaultId);
             return this;
-        }        public KeyStoreTypeDetails build() {
-            return new KeyStoreTypeDetails(adminUsername, connectionIps, secretId, type, vaultId);
+        }
+        public KeyStoreTypeDetails build() {
+            final var o = new KeyStoreTypeDetails();
+            o.adminUsername = adminUsername;
+            o.connectionIps = connectionIps;
+            o.secretId = secretId;
+            o.type = type;
+            o.vaultId = vaultId;
+            return o;
         }
     }
 }

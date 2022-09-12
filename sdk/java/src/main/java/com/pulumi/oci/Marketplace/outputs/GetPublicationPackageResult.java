@@ -16,104 +16,71 @@ public final class GetPublicationPackageResult {
      * @return The ID of the listing resource associated with this publication package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.
      * 
      */
-    private final String appCatalogListingId;
+    private String appCatalogListingId;
     /**
      * @return The resource version of the listing resource associated with this publication package.
      * 
      */
-    private final String appCatalogListingResourceVersion;
+    private String appCatalogListingResourceVersion;
     /**
      * @return A description of the variable.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The ID of the image that corresponds to the package.
      * 
      */
-    private final String imageId;
+    private String imageId;
     /**
      * @return The ID of the listing that the specified package belongs to.
      * 
      */
-    private final String listingId;
+    private String listingId;
     /**
      * @return The operating system used by the listing.
      * 
      */
-    private final List<GetPublicationPackageOperatingSystem> operatingSystems;
+    private List<GetPublicationPackageOperatingSystem> operatingSystems;
     /**
      * @return The specified package&#39;s type.
      * 
      */
-    private final String packageType;
-    private final String packageVersion;
-    private final String publicationId;
+    private String packageType;
+    private String packageVersion;
+    private String publicationId;
     /**
      * @return The unique identifier for the package resource.
      * 
      */
-    private final String resourceId;
+    private String resourceId;
     /**
      * @return A link to the stack resource.
      * 
      */
-    private final String resourceLink;
+    private String resourceLink;
     /**
      * @return The date and time the publication package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return A list of variables for the stack resource.
      * 
      */
-    private final List<GetPublicationPackageVariable> variables;
+    private List<GetPublicationPackageVariable> variables;
     /**
      * @return The package version.
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetPublicationPackageResult(
-        @CustomType.Parameter("appCatalogListingId") String appCatalogListingId,
-        @CustomType.Parameter("appCatalogListingResourceVersion") String appCatalogListingResourceVersion,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("imageId") String imageId,
-        @CustomType.Parameter("listingId") String listingId,
-        @CustomType.Parameter("operatingSystems") List<GetPublicationPackageOperatingSystem> operatingSystems,
-        @CustomType.Parameter("packageType") String packageType,
-        @CustomType.Parameter("packageVersion") String packageVersion,
-        @CustomType.Parameter("publicationId") String publicationId,
-        @CustomType.Parameter("resourceId") String resourceId,
-        @CustomType.Parameter("resourceLink") String resourceLink,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("variables") List<GetPublicationPackageVariable> variables,
-        @CustomType.Parameter("version") String version) {
-        this.appCatalogListingId = appCatalogListingId;
-        this.appCatalogListingResourceVersion = appCatalogListingResourceVersion;
-        this.description = description;
-        this.id = id;
-        this.imageId = imageId;
-        this.listingId = listingId;
-        this.operatingSystems = operatingSystems;
-        this.packageType = packageType;
-        this.packageVersion = packageVersion;
-        this.publicationId = publicationId;
-        this.resourceId = resourceId;
-        this.resourceLink = resourceLink;
-        this.timeCreated = timeCreated;
-        this.variables = variables;
-        this.version = version;
-    }
-
+    private GetPublicationPackageResult() {}
     /**
      * @return The ID of the listing resource associated with this publication package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.
      * 
@@ -219,7 +186,7 @@ public final class GetPublicationPackageResult {
     public static Builder builder(GetPublicationPackageResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String appCatalogListingId;
         private String appCatalogListingResourceVersion;
@@ -236,11 +203,7 @@ public final class GetPublicationPackageResult {
         private String timeCreated;
         private List<GetPublicationPackageVariable> variables;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPublicationPackageResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.appCatalogListingId = defaults.appCatalogListingId;
@@ -260,30 +223,37 @@ public final class GetPublicationPackageResult {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder appCatalogListingId(String appCatalogListingId) {
             this.appCatalogListingId = Objects.requireNonNull(appCatalogListingId);
             return this;
         }
+        @CustomType.Setter
         public Builder appCatalogListingResourceVersion(String appCatalogListingResourceVersion) {
             this.appCatalogListingResourceVersion = Objects.requireNonNull(appCatalogListingResourceVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder imageId(String imageId) {
             this.imageId = Objects.requireNonNull(imageId);
             return this;
         }
+        @CustomType.Setter
         public Builder listingId(String listingId) {
             this.listingId = Objects.requireNonNull(listingId);
             return this;
         }
+        @CustomType.Setter
         public Builder operatingSystems(List<GetPublicationPackageOperatingSystem> operatingSystems) {
             this.operatingSystems = Objects.requireNonNull(operatingSystems);
             return this;
@@ -291,30 +261,37 @@ public final class GetPublicationPackageResult {
         public Builder operatingSystems(GetPublicationPackageOperatingSystem... operatingSystems) {
             return operatingSystems(List.of(operatingSystems));
         }
+        @CustomType.Setter
         public Builder packageType(String packageType) {
             this.packageType = Objects.requireNonNull(packageType);
             return this;
         }
+        @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
             this.packageVersion = Objects.requireNonNull(packageVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder publicationId(String publicationId) {
             this.publicationId = Objects.requireNonNull(publicationId);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceId(String resourceId) {
             this.resourceId = Objects.requireNonNull(resourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceLink(String resourceLink) {
             this.resourceLink = Objects.requireNonNull(resourceLink);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder variables(List<GetPublicationPackageVariable> variables) {
             this.variables = Objects.requireNonNull(variables);
             return this;
@@ -322,11 +299,29 @@ public final class GetPublicationPackageResult {
         public Builder variables(GetPublicationPackageVariable... variables) {
             return variables(List.of(variables));
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetPublicationPackageResult build() {
-            return new GetPublicationPackageResult(appCatalogListingId, appCatalogListingResourceVersion, description, id, imageId, listingId, operatingSystems, packageType, packageVersion, publicationId, resourceId, resourceLink, timeCreated, variables, version);
+        }
+        public GetPublicationPackageResult build() {
+            final var o = new GetPublicationPackageResult();
+            o.appCatalogListingId = appCatalogListingId;
+            o.appCatalogListingResourceVersion = appCatalogListingResourceVersion;
+            o.description = description;
+            o.id = id;
+            o.imageId = imageId;
+            o.listingId = listingId;
+            o.operatingSystems = operatingSystems;
+            o.packageType = packageType;
+            o.packageVersion = packageVersion;
+            o.publicationId = publicationId;
+            o.resourceId = resourceId;
+            o.resourceLink = resourceLink;
+            o.timeCreated = timeCreated;
+            o.variables = variables;
+            o.version = version;
+            return o;
         }
     }
 }

@@ -17,133 +17,94 @@ import java.util.Objects;
 
 @CustomType
 public final class GetJobRunsJobRun {
-    private final Boolean asynchronous;
+    private Boolean asynchronous;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
      * 
      */
-    private final String createdBy;
+    private String createdBy;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by its user-friendly name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The job configuration details
      * 
      */
-    private final List<GetJobRunsJobRunJobConfigurationOverrideDetail> jobConfigurationOverrideDetails;
+    private List<GetJobRunsJobRunJobConfigurationOverrideDetail> jobConfigurationOverrideDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      * 
      */
-    private final String jobId;
+    private String jobId;
     /**
      * @return The job infrastructure configuration details (shape, block storage, etc.)
      * 
      */
-    private final List<GetJobRunsJobRunJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
+    private List<GetJobRunsJobRunJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
     /**
      * @return Logging configuration for resource.
      * 
      */
-    private final List<GetJobRunsJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails;
+    private List<GetJobRunsJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails;
     /**
      * @return Details of the state of the job run.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Customer logging details for job run.
      * 
      */
-    private final List<GetJobRunsJobRunLogDetail> logDetails;
+    private List<GetJobRunsJobRunLogDetail> logDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
      * 
      */
-    private final String projectId;
+    private String projectId;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeAccepted;
+    private String timeAccepted;
     /**
      * @return The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeFinished;
+    private String timeFinished;
     /**
      * @return The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeStarted;
+    private String timeStarted;
 
-    @CustomType.Constructor
-    private GetJobRunsJobRun(
-        @CustomType.Parameter("asynchronous") Boolean asynchronous,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("createdBy") String createdBy,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("jobConfigurationOverrideDetails") List<GetJobRunsJobRunJobConfigurationOverrideDetail> jobConfigurationOverrideDetails,
-        @CustomType.Parameter("jobId") String jobId,
-        @CustomType.Parameter("jobInfrastructureConfigurationDetails") List<GetJobRunsJobRunJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails,
-        @CustomType.Parameter("jobLogConfigurationOverrideDetails") List<GetJobRunsJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("logDetails") List<GetJobRunsJobRunLogDetail> logDetails,
-        @CustomType.Parameter("projectId") String projectId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeAccepted") String timeAccepted,
-        @CustomType.Parameter("timeFinished") String timeFinished,
-        @CustomType.Parameter("timeStarted") String timeStarted) {
-        this.asynchronous = asynchronous;
-        this.compartmentId = compartmentId;
-        this.createdBy = createdBy;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.jobConfigurationOverrideDetails = jobConfigurationOverrideDetails;
-        this.jobId = jobId;
-        this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
-        this.jobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
-        this.lifecycleDetails = lifecycleDetails;
-        this.logDetails = logDetails;
-        this.projectId = projectId;
-        this.state = state;
-        this.timeAccepted = timeAccepted;
-        this.timeFinished = timeFinished;
-        this.timeStarted = timeStarted;
-    }
-
+    private GetJobRunsJobRun() {}
     public Boolean asynchronous() {
         return this.asynchronous;
     }
@@ -274,7 +235,7 @@ public final class GetJobRunsJobRun {
     public static Builder builder(GetJobRunsJobRun defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean asynchronous;
         private String compartmentId;
@@ -294,11 +255,7 @@ public final class GetJobRunsJobRun {
         private String timeAccepted;
         private String timeFinished;
         private String timeStarted;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJobRunsJobRun defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.asynchronous = defaults.asynchronous;
@@ -321,34 +278,42 @@ public final class GetJobRunsJobRun {
     	      this.timeStarted = defaults.timeStarted;
         }
 
+        @CustomType.Setter
         public Builder asynchronous(Boolean asynchronous) {
             this.asynchronous = Objects.requireNonNull(asynchronous);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder createdBy(String createdBy) {
             this.createdBy = Objects.requireNonNull(createdBy);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder jobConfigurationOverrideDetails(List<GetJobRunsJobRunJobConfigurationOverrideDetail> jobConfigurationOverrideDetails) {
             this.jobConfigurationOverrideDetails = Objects.requireNonNull(jobConfigurationOverrideDetails);
             return this;
@@ -356,10 +321,12 @@ public final class GetJobRunsJobRun {
         public Builder jobConfigurationOverrideDetails(GetJobRunsJobRunJobConfigurationOverrideDetail... jobConfigurationOverrideDetails) {
             return jobConfigurationOverrideDetails(List.of(jobConfigurationOverrideDetails));
         }
+        @CustomType.Setter
         public Builder jobId(String jobId) {
             this.jobId = Objects.requireNonNull(jobId);
             return this;
         }
+        @CustomType.Setter
         public Builder jobInfrastructureConfigurationDetails(List<GetJobRunsJobRunJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails) {
             this.jobInfrastructureConfigurationDetails = Objects.requireNonNull(jobInfrastructureConfigurationDetails);
             return this;
@@ -367,6 +334,7 @@ public final class GetJobRunsJobRun {
         public Builder jobInfrastructureConfigurationDetails(GetJobRunsJobRunJobInfrastructureConfigurationDetail... jobInfrastructureConfigurationDetails) {
             return jobInfrastructureConfigurationDetails(List.of(jobInfrastructureConfigurationDetails));
         }
+        @CustomType.Setter
         public Builder jobLogConfigurationOverrideDetails(List<GetJobRunsJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails) {
             this.jobLogConfigurationOverrideDetails = Objects.requireNonNull(jobLogConfigurationOverrideDetails);
             return this;
@@ -374,10 +342,12 @@ public final class GetJobRunsJobRun {
         public Builder jobLogConfigurationOverrideDetails(GetJobRunsJobRunJobLogConfigurationOverrideDetail... jobLogConfigurationOverrideDetails) {
             return jobLogConfigurationOverrideDetails(List.of(jobLogConfigurationOverrideDetails));
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder logDetails(List<GetJobRunsJobRunLogDetail> logDetails) {
             this.logDetails = Objects.requireNonNull(logDetails);
             return this;
@@ -385,27 +355,52 @@ public final class GetJobRunsJobRun {
         public Builder logDetails(GetJobRunsJobRunLogDetail... logDetails) {
             return logDetails(List.of(logDetails));
         }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             this.projectId = Objects.requireNonNull(projectId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeAccepted(String timeAccepted) {
             this.timeAccepted = Objects.requireNonNull(timeAccepted);
             return this;
         }
+        @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
             this.timeFinished = Objects.requireNonNull(timeFinished);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
-        }        public GetJobRunsJobRun build() {
-            return new GetJobRunsJobRun(asynchronous, compartmentId, createdBy, definedTags, displayName, freeformTags, id, jobConfigurationOverrideDetails, jobId, jobInfrastructureConfigurationDetails, jobLogConfigurationOverrideDetails, lifecycleDetails, logDetails, projectId, state, timeAccepted, timeFinished, timeStarted);
+        }
+        public GetJobRunsJobRun build() {
+            final var o = new GetJobRunsJobRun();
+            o.asynchronous = asynchronous;
+            o.compartmentId = compartmentId;
+            o.createdBy = createdBy;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.jobConfigurationOverrideDetails = jobConfigurationOverrideDetails;
+            o.jobId = jobId;
+            o.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
+            o.jobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
+            o.lifecycleDetails = lifecycleDetails;
+            o.logDetails = logDetails;
+            o.projectId = projectId;
+            o.state = state;
+            o.timeAccepted = timeAccepted;
+            o.timeFinished = timeFinished;
+            o.timeStarted = timeStarted;
+            return o;
         }
     }
 }

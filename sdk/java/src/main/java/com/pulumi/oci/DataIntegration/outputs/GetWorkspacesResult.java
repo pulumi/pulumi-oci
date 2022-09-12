@@ -18,41 +18,26 @@ public final class GetWorkspacesResult {
      * @return The OCID of the compartment that contains the workspace.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetWorkspacesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetWorkspacesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String name;
+    private String id;
+    private @Nullable String name;
     /**
      * @return Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn&#39;t available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of workspaces.
      * 
      */
-    private final List<GetWorkspacesWorkspace> workspaces;
+    private List<GetWorkspacesWorkspace> workspaces;
 
-    @CustomType.Constructor
-    private GetWorkspacesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetWorkspacesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("workspaces") List<GetWorkspacesWorkspace> workspaces) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.state = state;
-        this.workspaces = workspaces;
-    }
-
+    private GetWorkspacesResult() {}
     /**
      * @return The OCID of the compartment that contains the workspace.
      * 
@@ -95,7 +80,7 @@ public final class GetWorkspacesResult {
     public static Builder builder(GetWorkspacesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetWorkspacesFilter> filters;
@@ -103,11 +88,7 @@ public final class GetWorkspacesResult {
         private @Nullable String name;
         private @Nullable String state;
         private List<GetWorkspacesWorkspace> workspaces;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWorkspacesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -118,10 +99,12 @@ public final class GetWorkspacesResult {
     	      this.workspaces = defaults.workspaces;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetWorkspacesFilter> filters) {
             this.filters = filters;
             return this;
@@ -129,26 +112,38 @@ public final class GetWorkspacesResult {
         public Builder filters(GetWorkspacesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder workspaces(List<GetWorkspacesWorkspace> workspaces) {
             this.workspaces = Objects.requireNonNull(workspaces);
             return this;
         }
         public Builder workspaces(GetWorkspacesWorkspace... workspaces) {
             return workspaces(List.of(workspaces));
-        }        public GetWorkspacesResult build() {
-            return new GetWorkspacesResult(compartmentId, filters, id, name, state, workspaces);
+        }
+        public GetWorkspacesResult build() {
+            final var o = new GetWorkspacesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.state = state;
+            o.workspaces = workspaces;
+            return o;
         }
     }
 }

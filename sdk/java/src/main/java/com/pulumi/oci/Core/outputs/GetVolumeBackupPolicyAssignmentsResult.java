@@ -17,31 +17,20 @@ public final class GetVolumeBackupPolicyAssignmentsResult {
      * @return The OCID of the volume the policy has been assigned to.
      * 
      */
-    private final String assetId;
-    private final @Nullable List<GetVolumeBackupPolicyAssignmentsFilter> filters;
+    private String assetId;
+    private @Nullable List<GetVolumeBackupPolicyAssignmentsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of volume_backup_policy_assignments.
      * 
      */
-    private final List<GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment> volumeBackupPolicyAssignments;
+    private List<GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment> volumeBackupPolicyAssignments;
 
-    @CustomType.Constructor
-    private GetVolumeBackupPolicyAssignmentsResult(
-        @CustomType.Parameter("assetId") String assetId,
-        @CustomType.Parameter("filters") @Nullable List<GetVolumeBackupPolicyAssignmentsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("volumeBackupPolicyAssignments") List<GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment> volumeBackupPolicyAssignments) {
-        this.assetId = assetId;
-        this.filters = filters;
-        this.id = id;
-        this.volumeBackupPolicyAssignments = volumeBackupPolicyAssignments;
-    }
-
+    private GetVolumeBackupPolicyAssignmentsResult() {}
     /**
      * @return The OCID of the volume the policy has been assigned to.
      * 
@@ -74,17 +63,13 @@ public final class GetVolumeBackupPolicyAssignmentsResult {
     public static Builder builder(GetVolumeBackupPolicyAssignmentsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String assetId;
         private @Nullable List<GetVolumeBackupPolicyAssignmentsFilter> filters;
         private String id;
         private List<GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment> volumeBackupPolicyAssignments;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumeBackupPolicyAssignmentsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.assetId = defaults.assetId;
@@ -93,10 +78,12 @@ public final class GetVolumeBackupPolicyAssignmentsResult {
     	      this.volumeBackupPolicyAssignments = defaults.volumeBackupPolicyAssignments;
         }
 
+        @CustomType.Setter
         public Builder assetId(String assetId) {
             this.assetId = Objects.requireNonNull(assetId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVolumeBackupPolicyAssignmentsFilter> filters) {
             this.filters = filters;
             return this;
@@ -104,18 +91,26 @@ public final class GetVolumeBackupPolicyAssignmentsResult {
         public Builder filters(GetVolumeBackupPolicyAssignmentsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder volumeBackupPolicyAssignments(List<GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment> volumeBackupPolicyAssignments) {
             this.volumeBackupPolicyAssignments = Objects.requireNonNull(volumeBackupPolicyAssignments);
             return this;
         }
         public Builder volumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment... volumeBackupPolicyAssignments) {
             return volumeBackupPolicyAssignments(List.of(volumeBackupPolicyAssignments));
-        }        public GetVolumeBackupPolicyAssignmentsResult build() {
-            return new GetVolumeBackupPolicyAssignmentsResult(assetId, filters, id, volumeBackupPolicyAssignments);
+        }
+        public GetVolumeBackupPolicyAssignmentsResult build() {
+            final var o = new GetVolumeBackupPolicyAssignmentsResult();
+            o.assetId = assetId;
+            o.filters = filters;
+            o.id = id;
+            o.volumeBackupPolicyAssignments = volumeBackupPolicyAssignments;
+            return o;
         }
     }
 }

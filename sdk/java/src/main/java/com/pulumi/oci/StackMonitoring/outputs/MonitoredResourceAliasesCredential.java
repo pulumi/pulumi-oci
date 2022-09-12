@@ -13,28 +13,19 @@ public final class MonitoredResourceAliasesCredential {
      * @return (Updatable) property name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return (Updatable) The name of the service owning the credential. Ex stack-monitoring or dbmgmt
      * 
      */
-    private final String service;
+    private String service;
     /**
      * @return (Updatable) The source type and source name combination,delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
-    private final String source;
+    private String source;
 
-    @CustomType.Constructor
-    private MonitoredResourceAliasesCredential(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("service") String service,
-        @CustomType.Parameter("source") String source) {
-        this.name = name;
-        this.service = service;
-        this.source = source;
-    }
-
+    private MonitoredResourceAliasesCredential() {}
     /**
      * @return (Updatable) property name
      * 
@@ -64,16 +55,12 @@ public final class MonitoredResourceAliasesCredential {
     public static Builder builder(MonitoredResourceAliasesCredential defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private String service;
         private String source;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MonitoredResourceAliasesCredential defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
@@ -81,19 +68,27 @@ public final class MonitoredResourceAliasesCredential {
     	      this.source = defaults.source;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder service(String service) {
             this.service = Objects.requireNonNull(service);
             return this;
         }
+        @CustomType.Setter
         public Builder source(String source) {
             this.source = Objects.requireNonNull(source);
             return this;
-        }        public MonitoredResourceAliasesCredential build() {
-            return new MonitoredResourceAliasesCredential(name, service, source);
+        }
+        public MonitoredResourceAliasesCredential build() {
+            final var o = new MonitoredResourceAliasesCredential();
+            o.name = name;
+            o.service = service;
+            o.source = source;
+            return o;
         }
     }
 }

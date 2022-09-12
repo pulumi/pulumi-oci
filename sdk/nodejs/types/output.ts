@@ -1643,6 +1643,10 @@ export namespace Analytics {
          */
         networkEndpointType: string;
         /**
+         * Network Security Group OCIDs for an Analytics instance.
+         */
+        networkSecurityGroupIds: string[];
+        /**
          * The subnet OCID for the private endpoint.
          */
         subnetId: string;
@@ -1651,9 +1655,13 @@ export namespace Analytics {
          */
         vcnId: string;
         /**
-         * Source IP addresses or IP address ranges igress rules.
+         * Source IP addresses or IP address ranges in ingress rules.
          */
         whitelistedIps: string[];
+        /**
+         * Oracle Cloud Services that are allowed to access this Analytics instance.
+         */
+        whitelistedServices: string[];
         /**
          * Virtual Cloud Networks allowed to access this network endpoint.
          */
@@ -1666,20 +1674,35 @@ export namespace Analytics {
          */
         id: string;
         /**
-         * Source IP addresses or IP address ranges igress rules.
+         * Source IP addresses or IP address ranges in ingress rules.
          */
         whitelistedIps: string[];
     }
 
     export interface AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
         /**
-         * (Updatable) Description of private source dns zone.
+         * (Updatable) Description of private source scan host zone.
          */
         description: string;
         /**
          * (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
          */
         dnsZone: string;
+    }
+
+    export interface AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost {
+        /**
+         * (Updatable) Description of private source scan host zone.
+         */
+        description: string;
+        /**
+         * (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+         */
+        scanHostname: string;
+        /**
+         * (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+         */
+        scanPort: number;
     }
 
     export interface GetAnalyticsInstanceCapacity {
@@ -1699,6 +1722,10 @@ export namespace Analytics {
          */
         networkEndpointType: string;
         /**
+         * Network Security Group OCIDs for an Analytics instance.
+         */
+        networkSecurityGroupIds: string[];
+        /**
          * OCID of the customer subnet connected to private access channel.
          */
         subnetId: string;
@@ -1707,9 +1734,13 @@ export namespace Analytics {
          */
         vcnId: string;
         /**
-         * Source IP addresses or IP address ranges igress rules.
+         * Source IP addresses or IP address ranges in ingress rules.
          */
         whitelistedIps: string[];
+        /**
+         * Oracle Cloud Services that are allowed to access this Analytics instance.
+         */
+        whitelistedServices: string[];
         /**
          * Virtual Cloud Networks allowed to access this network endpoint.
          */
@@ -1722,20 +1753,35 @@ export namespace Analytics {
          */
         id: string;
         /**
-         * Source IP addresses or IP address ranges igress rules.
+         * Source IP addresses or IP address ranges in ingress rules.
          */
         whitelistedIps: string[];
     }
 
     export interface GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
         /**
-         * Description of private source dns zone.
+         * Description of private source scan host zone.
          */
         description: string;
         /**
          * Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
          */
         dnsZone: string;
+    }
+
+    export interface GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost {
+        /**
+         * Description of private source scan host zone.
+         */
+        description: string;
+        /**
+         * Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+         */
+        scanHostname: string;
+        /**
+         * Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+         */
+        scanPort: number;
     }
 
     export interface GetAnalyticsInstancesAnalyticsInstance {
@@ -1823,6 +1869,10 @@ export namespace Analytics {
          */
         networkEndpointType: string;
         /**
+         * Network Security Group OCIDs for an Analytics instance.
+         */
+        networkSecurityGroupIds: string[];
+        /**
          * OCID of the customer subnet connected to private access channel.
          */
         subnetId: string;
@@ -1831,9 +1881,13 @@ export namespace Analytics {
          */
         vcnId: string;
         /**
-         * Source IP addresses or IP address ranges igress rules.
+         * Source IP addresses or IP address ranges in ingress rules.
          */
         whitelistedIps: string[];
+        /**
+         * Oracle Cloud Services that are allowed to access this Analytics instance.
+         */
+        whitelistedServices: string[];
         /**
          * Virtual Cloud Networks allowed to access this network endpoint.
          */
@@ -1846,7 +1900,7 @@ export namespace Analytics {
          */
         id: string;
         /**
-         * Source IP addresses or IP address ranges igress rules.
+         * Source IP addresses or IP address ranges in ingress rules.
          */
         whitelistedIps: string[];
     }
@@ -14185,6 +14239,93 @@ export namespace CertificatesManagement {
 }
 
 export namespace CloudGuard {
+    export interface CloudGuardDataSourceDataSourceDetails {
+        /**
+         * (Updatable) The additional entities count used for data source query.
+         */
+        additionalEntitiesCount: number;
+        /**
+         * Possible type of dataSourceFeed Provider(LoggingQuery)
+         */
+        dataSourceFeedProvider: string;
+        /**
+         * (Updatable) Interval in minutes that query is run periodically.
+         */
+        intervalInMinutes: number;
+        /**
+         * (Updatable) Additional details specific to the data source type (Sighting/Insight).
+         */
+        loggingQueryDetails: outputs.CloudGuard.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails;
+        /**
+         * (Updatable) Logging query type for data source (Sighting/Insight)
+         */
+        loggingQueryType: string;
+        /**
+         * (Updatable) Operator used in Data Soruce
+         */
+        operator: string;
+        /**
+         * (Updatable) The continuous query expression that is run periodically.
+         */
+        query: string;
+        /**
+         * (Updatable) Time when the query can start, if not specified it can start immediately.
+         */
+        queryStartTime: outputs.CloudGuard.CloudGuardDataSourceDataSourceDetailsQueryStartTime;
+        /**
+         * (Updatable) Logging Query regions
+         */
+        regions: string[];
+        /**
+         * (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+         */
+        threshold: number;
+    }
+
+    export interface CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails {
+        /**
+         * (Updatable) The key entities count used for data source query
+         */
+        keyEntitiesCount: number;
+        /**
+         * (Updatable) Logging query type for data source (Sighting/Insight)
+         */
+        loggingQueryType: string;
+    }
+
+    export interface CloudGuardDataSourceDataSourceDetailsQueryStartTime {
+        /**
+         * (Updatable) Time when the query can start, if not specified it can start immediately.
+         */
+        queryStartTime: string;
+        /**
+         * (Updatable) policy used for deciding the query start time
+         */
+        startPolicyType: string;
+    }
+
+    export interface CloudGuardDataSourceDataSourceDetectorMappingInfo {
+        /**
+         * Id of the attached detectorRecipeId to the Data Source.
+         */
+        detectorRecipeId: string;
+        /**
+         * Id of the attached detectorRuleId to the Data Source.
+         */
+        detectorRuleId: string;
+    }
+
+    export interface CloudGuardDataSourceRegionStatusDetail {
+        /**
+         * Data Source replication region.
+         */
+        region: string;
+        /**
+         * Status of data Source
+         */
+        status: string;
+    }
+
     export interface DataMaskRuleTargetSelected {
         /**
          * (Updatable) Target selection.
@@ -14202,7 +14343,11 @@ export namespace CloudGuard {
          */
         candidateResponderRules: outputs.CloudGuard.DetectorRecipeDetectorRuleCandidateResponderRule[];
         /**
-         * (Updatable) Detector recipe description.
+         * (Updatable) The id of the attached DataSource.
+         */
+        dataSourceId: string;
+        /**
+         * (Updatable) Description for DetectorRecipeDetectorRule.
          */
         description: string;
         /**
@@ -14222,6 +14367,10 @@ export namespace CloudGuard {
          */
         displayName: string;
         /**
+         * (Updatable) Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings: outputs.CloudGuard.DetectorRecipeDetectorRuleEntitiesMapping[];
+        /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
         lifecycleDetails: string;
@@ -14230,7 +14379,7 @@ export namespace CloudGuard {
          */
         managedListTypes: string[];
         /**
-         * Recommendation for DetectorRecipeDetectorRule
+         * (Updatable) Recommendation for DetectorRecipeDetectorRule
          */
         recommendation: string;
         /**
@@ -14280,6 +14429,18 @@ export namespace CloudGuard {
          */
         configurations: outputs.CloudGuard.DetectorRecipeDetectorRuleDetailsConfiguration[];
         /**
+         * (Updatable) The id of the attached DataSource.
+         */
+        dataSourceId: string;
+        /**
+         * (Updatable) Description for DetectorRecipeDetectorRule.
+         */
+        description: string;
+        /**
+         * (Updatable) Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings: outputs.CloudGuard.DetectorRecipeDetectorRuleDetailsEntitiesMapping[];
+        /**
          * configuration allowed or not
          */
         isConfigurationAllowed: boolean;
@@ -14291,6 +14452,10 @@ export namespace CloudGuard {
          * (Updatable) user defined labels for a detector rule
          */
         labels: string[];
+        /**
+         * (Updatable) Recommendation for DetectorRecipeDetectorRule
+         */
+        recommendation: string;
         /**
          * (Updatable) The Risk Level
          */
@@ -14335,13 +14500,47 @@ export namespace CloudGuard {
         value: string;
     }
 
+    export interface DetectorRecipeDetectorRuleDetailsEntitiesMapping {
+        /**
+         * (Updatable) Detector recipe display name.
+         */
+        displayName: string;
+        /**
+         * (Updatable) Possible type of entity
+         */
+        entityType: string;
+        /**
+         * (Updatable) The entity value mapped to a data source query
+         */
+        queryField: string;
+    }
+
+    export interface DetectorRecipeDetectorRuleEntitiesMapping {
+        /**
+         * (Updatable) Detector recipe display name.
+         */
+        displayName: string;
+        /**
+         * (Updatable) Possible type of entity
+         */
+        entityType: string;
+        /**
+         * (Updatable) The entity value mapped to a data source query
+         */
+        queryField: string;
+    }
+
     export interface DetectorRecipeEffectiveDetectorRule {
         /**
          * List of CandidateResponderRule related to this rule
          */
         candidateResponderRules: outputs.CloudGuard.DetectorRecipeEffectiveDetectorRuleCandidateResponderRule[];
         /**
-         * (Updatable) Detector recipe description.
+         * (Updatable) The id of the attached DataSource.
+         */
+        dataSourceId: string;
+        /**
+         * (Updatable) Description for DetectorRecipeDetectorRule.
          */
         description: string;
         /**
@@ -14361,6 +14560,10 @@ export namespace CloudGuard {
          */
         displayName: string;
         /**
+         * (Updatable) Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings: outputs.CloudGuard.DetectorRecipeEffectiveDetectorRuleEntitiesMapping[];
+        /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
         lifecycleDetails: string;
@@ -14369,7 +14572,7 @@ export namespace CloudGuard {
          */
         managedListTypes: string[];
         /**
-         * Recommendation for DetectorRecipeDetectorRule
+         * (Updatable) Recommendation for DetectorRecipeDetectorRule
          */
         recommendation: string;
         /**
@@ -14474,6 +14677,21 @@ export namespace CloudGuard {
         value: string;
     }
 
+    export interface DetectorRecipeEffectiveDetectorRuleEntitiesMapping {
+        /**
+         * (Updatable) Detector recipe display name.
+         */
+        displayName: string;
+        /**
+         * (Updatable) Possible type of entity
+         */
+        entityType: string;
+        /**
+         * (Updatable) The entity value mapped to a data source query
+         */
+        queryField: string;
+    }
+
     export interface GetDataMaskRuleTargetSelected {
         /**
          * Target selection.
@@ -14572,11 +14790,355 @@ export namespace CloudGuard {
         values: string[];
     }
 
+    export interface GetDataSourceDataSourceDetail {
+        /**
+         * The additional entities count used for data source query.
+         */
+        additionalEntitiesCount: number;
+        /**
+         * Possible type of dataSourceFeed Provider(LoggingQuery)
+         */
+        dataSourceFeedProvider: string;
+        /**
+         * Interval in minutes that query is run periodically.
+         */
+        intervalInMinutes: number;
+        /**
+         * Additional details specific to the data source type (Sighting/Insight).
+         */
+        loggingQueryDetails: outputs.CloudGuard.GetDataSourceDataSourceDetailLoggingQueryDetail[];
+        /**
+         * Logging query type for data source (Sighting/Insight)
+         */
+        loggingQueryType: string;
+        /**
+         * Operator used in Data Soruce
+         */
+        operator: string;
+        /**
+         * The continuous query expression that is run periodically.
+         */
+        query: string;
+        /**
+         * Time when the query can start, if not specified it can start immediately.
+         */
+        queryStartTimes: outputs.CloudGuard.GetDataSourceDataSourceDetailQueryStartTime[];
+        /**
+         * Logging Query regions
+         */
+        regions: string[];
+        /**
+         * The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+         */
+        threshold: number;
+    }
+
+    export interface GetDataSourceDataSourceDetailLoggingQueryDetail {
+        /**
+         * The key entities count used for data source query
+         */
+        keyEntitiesCount: number;
+        /**
+         * Logging query type for data source (Sighting/Insight)
+         */
+        loggingQueryType: string;
+    }
+
+    export interface GetDataSourceDataSourceDetailQueryStartTime {
+        /**
+         * Time when the query can start, if not specified it can start immediately.
+         */
+        queryStartTime: string;
+        /**
+         * policy used for deciding the query start time
+         */
+        startPolicyType: string;
+    }
+
+    export interface GetDataSourceDataSourceDetectorMappingInfo {
+        /**
+         * Id of the attached detectorRecipeId to the Data Source.
+         */
+        detectorRecipeId: string;
+        /**
+         * Id of the attached detectorRuleId to the Data Source.
+         */
+        detectorRuleId: string;
+    }
+
+    export interface GetDataSourceEventItem {
+        /**
+         * Data source event comments
+         */
+        comments: string;
+        /**
+         * DataSource OCID
+         */
+        dataSourceId: string;
+        /**
+         * Data source event date time
+         */
+        eventDate: string;
+        /**
+         * Event info of a data source.
+         */
+        eventInfos: outputs.CloudGuard.GetDataSourceEventItemEventInfo[];
+        /**
+         * A filter to return only resource their region matches the given region.
+         */
+        region: string;
+        /**
+         * Current data source event info status
+         */
+        status: string;
+        /**
+         * Data source event created time
+         */
+        timeCreated: string;
+    }
+
+    export interface GetDataSourceEventItemEventInfo {
+        /**
+         * Possible type of dataSourceFeed Provider(LoggingQuery)
+         */
+        dataSourceFeedProvider: string;
+        logResult: string;
+        observedValue: string;
+        operator: string;
+        triggerValue: string;
+    }
+
+    export interface GetDataSourceEventsDataSourceEventCollection {
+        /**
+         * List of event related to a DataSource
+         */
+        items: outputs.CloudGuard.GetDataSourceEventsDataSourceEventCollectionItem[];
+    }
+
+    export interface GetDataSourceEventsDataSourceEventCollectionItem {
+        /**
+         * Data source event comments
+         */
+        comments: string;
+        /**
+         * DataSource OCID
+         */
+        dataSourceId: string;
+        /**
+         * Data source event date time
+         */
+        eventDate: string;
+        /**
+         * Event info of a data source.
+         */
+        eventInfos: outputs.CloudGuard.GetDataSourceEventsDataSourceEventCollectionItemEventInfo[];
+        /**
+         * A filter to return only resource their region matches the given region.
+         */
+        region: string;
+        /**
+         * Current data source event info status
+         */
+        status: string;
+        /**
+         * Data source event created time
+         */
+        timeCreated: string;
+    }
+
+    export interface GetDataSourceEventsDataSourceEventCollectionItemEventInfo {
+        /**
+         * Possible type of dataSourceFeed Provider(LoggingQuery)
+         */
+        dataSourceFeedProvider: string;
+        logResult: string;
+        observedValue: string;
+        operator: string;
+        triggerValue: string;
+    }
+
+    export interface GetDataSourceEventsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDataSourceRegionStatusDetail {
+        /**
+         * Data Source replication region.
+         */
+        region: string;
+        /**
+         * Status of data Source
+         */
+        status: string;
+    }
+
+    export interface GetDataSourcesDataSourceCollection {
+        items: outputs.CloudGuard.GetDataSourcesDataSourceCollectionItem[];
+    }
+
+    export interface GetDataSourcesDataSourceCollectionItem {
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Details specific to the data source type.
+         */
+        dataSourceDetails: outputs.CloudGuard.GetDataSourcesDataSourceCollectionItemDataSourceDetail[];
+        /**
+         * Information about the detector recipe and rule attached
+         */
+        dataSourceDetectorMappingInfos: outputs.CloudGuard.GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo[];
+        /**
+         * A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+         */
+        dataSourceFeedProvider: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * Ocid for Data source
+         */
+        id: string;
+        /**
+         * Information about the region and status of query replication
+         */
+        regionStatusDetails: outputs.CloudGuard.GetDataSourcesDataSourceCollectionItemRegionStatusDetail[];
+        /**
+         * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         */
+        state: string;
+        /**
+         * Status of data Source
+         */
+        status: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: any};
+        /**
+         * The date and time the Data source was created. Format defined by RFC3339.
+         */
+        timeCreated: string;
+        /**
+         * The date and time the Data source was updated. Format defined by RFC3339.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetDataSourcesDataSourceCollectionItemDataSourceDetail {
+        /**
+         * The additional entities count used for data source query.
+         */
+        additionalEntitiesCount: number;
+        /**
+         * A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+         */
+        dataSourceFeedProvider: string;
+        /**
+         * Interval in minutes that query is run periodically.
+         */
+        intervalInMinutes: number;
+        /**
+         * Additional details specific to the data source type (Sighting/Insight).
+         */
+        loggingQueryDetails: outputs.CloudGuard.GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail[];
+        /**
+         * A filter to return only resources their query type matches the given LoggingQueryType.
+         */
+        loggingQueryType: string;
+        /**
+         * Operator used in Data Soruce
+         */
+        operator: string;
+        /**
+         * The continuous query expression that is run periodically.
+         */
+        query: string;
+        /**
+         * Time when the query can start, if not specified it can start immediately.
+         */
+        queryStartTimes: outputs.CloudGuard.GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime[];
+        /**
+         * Logging Query regions
+         */
+        regions: string[];
+        /**
+         * The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+         */
+        threshold: number;
+    }
+
+    export interface GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail {
+        /**
+         * The key entities count used for data source query
+         */
+        keyEntitiesCount: number;
+        /**
+         * A filter to return only resources their query type matches the given LoggingQueryType.
+         */
+        loggingQueryType: string;
+    }
+
+    export interface GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime {
+        /**
+         * Time when the query can start, if not specified it can start immediately.
+         */
+        queryStartTime: string;
+        /**
+         * policy used for deciding the query start time
+         */
+        startPolicyType: string;
+    }
+
+    export interface GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo {
+        /**
+         * Id of the attached detectorRecipeId to the Data Source.
+         */
+        detectorRecipeId: string;
+        /**
+         * Id of the attached detectorRuleId to the Data Source.
+         */
+        detectorRuleId: string;
+    }
+
+    export interface GetDataSourcesDataSourceCollectionItemRegionStatusDetail {
+        /**
+         * Data Source replication region.
+         */
+        region: string;
+        /**
+         * Status of data Source
+         */
+        status: string;
+    }
+
+    export interface GetDataSourcesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
     export interface GetDetectorRecipeDetectorRule {
         /**
          * List of CandidateResponderRule related to this rule
          */
         candidateResponderRules: outputs.CloudGuard.GetDetectorRecipeDetectorRuleCandidateResponderRule[];
+        /**
+         * The id of the attached DataSource.
+         */
+        dataSourceId: string;
         /**
          * Description for DetectorRecipeDetectorRule.
          */
@@ -14594,9 +15156,13 @@ export namespace CloudGuard {
          */
         detectorRuleId: string;
         /**
-         * Display name for DetectorRecipeDetectorRule.
+         * The display name of entity
          */
         displayName: string;
+        /**
+         * Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings: outputs.CloudGuard.GetDetectorRecipeDetectorRuleEntitiesMapping[];
         /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
@@ -14633,7 +15199,7 @@ export namespace CloudGuard {
 
     export interface GetDetectorRecipeDetectorRuleCandidateResponderRule {
         /**
-         * Display name for DetectorRecipeDetectorRule.
+         * The display name of entity
          */
         displayName: string;
         /**
@@ -14656,6 +15222,18 @@ export namespace CloudGuard {
          */
         configurations: outputs.CloudGuard.GetDetectorRecipeDetectorRuleDetailConfiguration[];
         /**
+         * The id of the attached DataSource.
+         */
+        dataSourceId: string;
+        /**
+         * Description for DetectorRecipeDetectorRule.
+         */
+        description: string;
+        /**
+         * Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings: outputs.CloudGuard.GetDetectorRecipeDetectorRuleDetailEntitiesMapping[];
+        /**
          * configuration allowed or not
          */
         isConfigurationAllowed: boolean;
@@ -14667,6 +15245,10 @@ export namespace CloudGuard {
          * user defined labels for a detector rule
          */
         labels: string[];
+        /**
+         * Recommendation for DetectorRecipeDetectorRule
+         */
+        recommendation: string;
         /**
          * The Risk Level
          */
@@ -14711,11 +15293,45 @@ export namespace CloudGuard {
         value: string;
     }
 
+    export interface GetDetectorRecipeDetectorRuleDetailEntitiesMapping {
+        /**
+         * The display name of entity
+         */
+        displayName: string;
+        /**
+         * Possible type of entity
+         */
+        entityType: string;
+        /**
+         * The entity value mapped to a data source query
+         */
+        queryField: string;
+    }
+
+    export interface GetDetectorRecipeDetectorRuleEntitiesMapping {
+        /**
+         * The display name of entity
+         */
+        displayName: string;
+        /**
+         * Possible type of entity
+         */
+        entityType: string;
+        /**
+         * The entity value mapped to a data source query
+         */
+        queryField: string;
+    }
+
     export interface GetDetectorRecipeEffectiveDetectorRule {
         /**
          * List of CandidateResponderRule related to this rule
          */
         candidateResponderRules: outputs.CloudGuard.GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule[];
+        /**
+         * The id of the attached DataSource.
+         */
+        dataSourceId: string;
         /**
          * Description for DetectorRecipeDetectorRule.
          */
@@ -14733,9 +15349,13 @@ export namespace CloudGuard {
          */
         detectorRuleId: string;
         /**
-         * Display name for DetectorRecipeDetectorRule.
+         * The display name of entity
          */
         displayName: string;
+        /**
+         * Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings: outputs.CloudGuard.GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping[];
         /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
@@ -14772,7 +15392,7 @@ export namespace CloudGuard {
 
     export interface GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule {
         /**
-         * Display name for DetectorRecipeDetectorRule.
+         * The display name of entity
          */
         displayName: string;
         /**
@@ -14850,6 +15470,21 @@ export namespace CloudGuard {
         value: string;
     }
 
+    export interface GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
+        /**
+         * The display name of entity
+         */
+        displayName: string;
+        /**
+         * Possible type of entity
+         */
+        entityType: string;
+        /**
+         * The entity value mapped to a data source query
+         */
+        queryField: string;
+    }
+
     export interface GetDetectorRecipesDetectorRecipeCollection {
         items: outputs.CloudGuard.GetDetectorRecipesDetectorRecipeCollectionItem[];
     }
@@ -14908,6 +15543,10 @@ export namespace CloudGuard {
          */
         systemTags: {[key: string]: any};
         /**
+         * The recipe attached to targets
+         */
+        targetIds: string[];
+        /**
          * The date and time the detector recipe was created. Format defined by RFC3339.
          */
         timeCreated: string;
@@ -14922,6 +15561,10 @@ export namespace CloudGuard {
          * List of CandidateResponderRule related to this rule
          */
         candidateResponderRules: outputs.CloudGuard.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule[];
+        /**
+         * The id of the attached DataSource.
+         */
+        dataSourceId: string;
         /**
          * Description for DetectorRecipeDetectorRule.
          */
@@ -14942,6 +15585,10 @@ export namespace CloudGuard {
          * A filter to return only resources that match the entire display name given.
          */
         displayName: string;
+        /**
+         * Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings: outputs.CloudGuard.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping[];
         /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
@@ -15001,6 +15648,18 @@ export namespace CloudGuard {
          */
         configurations: outputs.CloudGuard.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration[];
         /**
+         * The id of the attached DataSource.
+         */
+        dataSourceId: string;
+        /**
+         * Description for DetectorRecipeDetectorRule.
+         */
+        description: string;
+        /**
+         * Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings: outputs.CloudGuard.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping[];
+        /**
          * configuration allowed or not
          */
         isConfigurationAllowed: boolean;
@@ -15012,6 +15671,10 @@ export namespace CloudGuard {
          * user defined labels for a detector rule
          */
         labels: string[];
+        /**
+         * Recommendation for DetectorRecipeDetectorRule
+         */
+        recommendation: string;
         /**
          * The Risk Level
          */
@@ -15056,11 +15719,45 @@ export namespace CloudGuard {
         value: string;
     }
 
+    export interface GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping {
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Possible type of entity
+         */
+        entityType: string;
+        /**
+         * The entity value mapped to a data source query
+         */
+        queryField: string;
+    }
+
+    export interface GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping {
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Possible type of entity
+         */
+        entityType: string;
+        /**
+         * The entity value mapped to a data source query
+         */
+        queryField: string;
+    }
+
     export interface GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule {
         /**
          * List of CandidateResponderRule related to this rule
          */
         candidateResponderRules: outputs.CloudGuard.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRule[];
+        /**
+         * The id of the attached DataSource.
+         */
+        dataSourceId: string;
         /**
          * Description for DetectorRecipeDetectorRule.
          */
@@ -15081,6 +15778,10 @@ export namespace CloudGuard {
          * A filter to return only resources that match the entire display name given.
          */
         displayName: string;
+        /**
+         * Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings: outputs.CloudGuard.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping[];
         /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
@@ -15193,6 +15894,21 @@ export namespace CloudGuard {
          * configuration value
          */
         value: string;
+    }
+
+    export interface GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping {
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Possible type of entity
+         */
+        entityType: string;
+        /**
+         * The entity value mapped to a data source query
+         */
+        queryField: string;
     }
 
     export interface GetDetectorRecipesFilter {
@@ -15334,6 +16050,10 @@ export namespace CloudGuard {
 
     export interface GetGuardTargetTargetDetectorRecipeDetectorRule {
         /**
+         * The id of the attached DataSource.
+         */
+        dataSourceId: string;
+        /**
          * ResponderRule description.
          */
         description: string;
@@ -15353,6 +16073,10 @@ export namespace CloudGuard {
          * ResponderRule display name.
          */
         displayName: string;
+        /**
+         * Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings: outputs.CloudGuard.GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping[];
         /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
@@ -15463,7 +16187,26 @@ export namespace CloudGuard {
         value: string;
     }
 
+    export interface GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping {
+        /**
+         * ResponderRule display name.
+         */
+        displayName: string;
+        /**
+         * Possible type of entity
+         */
+        entityType: string;
+        /**
+         * The entity value mapped to a data source query
+         */
+        queryField: string;
+    }
+
     export interface GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule {
+        /**
+         * The id of the attached DataSource.
+         */
+        dataSourceId: string;
         /**
          * ResponderRule description.
          */
@@ -15484,6 +16227,10 @@ export namespace CloudGuard {
          * ResponderRule display name.
          */
         displayName: string;
+        /**
+         * Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings: outputs.CloudGuard.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping[];
         /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
@@ -15592,6 +16339,21 @@ export namespace CloudGuard {
          * configuration value
          */
         value: string;
+    }
+
+    export interface GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
+        /**
+         * ResponderRule display name.
+         */
+        displayName: string;
+        /**
+         * Possible type of entity
+         */
+        entityType: string;
+        /**
+         * The entity value mapped to a data source query
+         */
+        queryField: string;
     }
 
     export interface GetGuardTargetTargetResponderRecipe {
@@ -16025,6 +16787,10 @@ export namespace CloudGuard {
 
     export interface GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule {
         /**
+         * The id of the attached DataSource.
+         */
+        dataSourceId: string;
+        /**
          * ResponderRule description.
          */
         description: string;
@@ -16044,6 +16810,10 @@ export namespace CloudGuard {
          * A filter to return only resources that match the entire display name given.
          */
         displayName: string;
+        /**
+         * Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings: outputs.CloudGuard.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping[];
         /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
@@ -16154,7 +16924,26 @@ export namespace CloudGuard {
         value: string;
     }
 
+    export interface GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping {
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Possible type of entity
+         */
+        entityType: string;
+        /**
+         * The entity value mapped to a data source query
+         */
+        queryField: string;
+    }
+
     export interface GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule {
+        /**
+         * The id of the attached DataSource.
+         */
+        dataSourceId: string;
         /**
          * ResponderRule description.
          */
@@ -16175,6 +16964,10 @@ export namespace CloudGuard {
          * A filter to return only resources that match the entire display name given.
          */
         displayName: string;
+        /**
+         * Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings: outputs.CloudGuard.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping[];
         /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
@@ -16283,6 +17076,21 @@ export namespace CloudGuard {
          * configuration value
          */
         value: string;
+    }
+
+    export interface GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Possible type of entity
+         */
+        entityType: string;
+        /**
+         * The entity value mapped to a data source query
+         */
+        queryField: string;
     }
 
     export interface GetGuardTargetsTargetCollectionItemTargetResponderRecipe {
@@ -16573,6 +17381,103 @@ export namespace CloudGuard {
          * The date and time the managed list was updated. Format defined by RFC3339.
          */
         timeUpdated: string;
+    }
+
+    export interface GetProblemEntitiesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetProblemEntitiesProblemEntityCollection {
+        /**
+         * List of problem entities summaries related to a data source.
+         */
+        items: outputs.CloudGuard.GetProblemEntitiesProblemEntityCollectionItem[];
+    }
+
+    export interface GetProblemEntitiesProblemEntityCollectionItem {
+        /**
+         * List of event related to a DataSource
+         */
+        entityDetails: outputs.CloudGuard.GetProblemEntitiesProblemEntityCollectionItemEntityDetail[];
+        /**
+         * OCId of the problem.
+         */
+        problemId: string;
+        /**
+         * Data source problem entities region
+         */
+        regions: string[];
+        /**
+         * Log result query url for a data source query
+         */
+        resultUrl: string;
+        /**
+         * Data source problem entities first detected time
+         */
+        timeFirstDetected: string;
+        /**
+         * Data source problem entities last detected time
+         */
+        timeLastDetected: string;
+    }
+
+    export interface GetProblemEntitiesProblemEntityCollectionItemEntityDetail {
+        /**
+         * The display name of entity
+         */
+        displayName: string;
+        /**
+         * Type of entity
+         */
+        type: string;
+        /**
+         * The entity value
+         */
+        value: string;
+    }
+
+    export interface GetProblemEntityItem {
+        /**
+         * List of event related to a DataSource
+         */
+        entityDetails: outputs.CloudGuard.GetProblemEntityItemEntityDetail[];
+        /**
+         * OCId of the problem.
+         */
+        problemId: string;
+        /**
+         * Data source problem entities region
+         */
+        regions: string[];
+        /**
+         * Log result query url for a data source query
+         */
+        resultUrl: string;
+        /**
+         * Data source problem entities first detected time
+         */
+        timeFirstDetected: string;
+        /**
+         * Data source problem entities last detected time
+         */
+        timeLastDetected: string;
+    }
+
+    export interface GetProblemEntityItemEntityDetail {
+        /**
+         * The display name of entity
+         */
+        displayName: string;
+        /**
+         * Type of entity
+         */
+        type: string;
+        /**
+         * The entity value
+         */
+        value: string;
     }
 
     export interface GetResponderRecipeEffectiveResponderRule {
@@ -17378,7 +18283,7 @@ export namespace CloudGuard {
          */
         securityZoneId: string;
         /**
-         * possible type of targets(compartment/HCMCloud/ERPCloud)
+         * possible type of targets(COMPARTMENT/FACLOUD)
          */
         targetResourceType: string;
         /**
@@ -17495,6 +18400,10 @@ export namespace CloudGuard {
 
     export interface TargetTargetDetectorRecipeDetectorRule {
         /**
+         * The id of the attached DataSource.
+         */
+        dataSourceId: string;
+        /**
          * The target description.
          */
         description: string;
@@ -17514,6 +18423,10 @@ export namespace CloudGuard {
          * (Updatable) DetectorTemplate identifier.
          */
         displayName: string;
+        /**
+         * Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings: outputs.CloudGuard.TargetTargetDetectorRecipeDetectorRuleEntitiesMapping[];
         /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
@@ -17624,7 +18537,26 @@ export namespace CloudGuard {
         value: string;
     }
 
+    export interface TargetTargetDetectorRecipeDetectorRuleEntitiesMapping {
+        /**
+         * (Updatable) DetectorTemplate identifier.
+         */
+        displayName: string;
+        /**
+         * Possible type of entity
+         */
+        entityType: string;
+        /**
+         * The entity value mapped to a data source query
+         */
+        queryField: string;
+    }
+
     export interface TargetTargetDetectorRecipeEffectiveDetectorRule {
+        /**
+         * The id of the attached DataSource.
+         */
+        dataSourceId: string;
         /**
          * The target description.
          */
@@ -17645,6 +18577,10 @@ export namespace CloudGuard {
          * (Updatable) DetectorTemplate identifier.
          */
         displayName: string;
+        /**
+         * Data Source entities mapping for a Detector Rule
+         */
+        entitiesMappings: outputs.CloudGuard.TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping[];
         /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
@@ -17753,6 +18689,21 @@ export namespace CloudGuard {
          * (Updatable) configuration value
          */
         value: string;
+    }
+
+    export interface TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
+        /**
+         * (Updatable) DetectorTemplate identifier.
+         */
+        displayName: string;
+        /**
+         * Possible type of entity
+         */
+        entityType: string;
+        /**
+         * The entity value mapped to a data source query
+         */
+        queryField: string;
     }
 
     export interface TargetTargetResponderRecipe {
@@ -19325,6 +20276,17 @@ export namespace ContainerEngine {
 }
 
 export namespace Core {
+    export interface BootVolumeAutotunePolicy {
+        /**
+         * (Updatable) This specifies the type of autotunes supported by OCI.
+         */
+        autotuneType: string;
+        /**
+         * (Updatable) This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+         */
+        maxVpusPerGb: string;
+    }
+
     export interface BootVolumeBackupSourceDetails {
         bootVolumeBackupId: string;
         /**
@@ -20150,6 +21112,17 @@ export namespace Core {
         values: string[];
     }
 
+    export interface GetBootVolumeAutotunePolicy {
+        /**
+         * This specifies the type of autotunes supported by OCI.
+         */
+        autotuneType: string;
+        /**
+         * This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+         */
+        maxVpusPerGb: string;
+    }
+
     export interface GetBootVolumeBackupSourceDetail {
         /**
          * The OCID of the boot volume backup.
@@ -20342,9 +21315,13 @@ export namespace Core {
 
     export interface GetBootVolumesBootVolume {
         /**
-         * The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+         * The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
          */
         autoTunedVpusPerGb: string;
+        /**
+         * The list of autotune policies enabled for this volume.
+         */
+        autotunePolicies: outputs.Core.GetBootVolumesBootVolumeAutotunePolicy[];
         /**
          * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
          */
@@ -20383,7 +21360,7 @@ export namespace Core {
          */
         imageId: string;
         /**
-         * Specifies whether the auto-tune performance is enabled for this boot volume.
+         * Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
          */
         isAutoTuneEnabled: boolean;
         /**
@@ -20423,6 +21400,17 @@ export namespace Core {
          * The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
          */
         vpusPerGb: string;
+    }
+
+    export interface GetBootVolumesBootVolumeAutotunePolicy {
+        /**
+         * This specifies the type of autotunes supported by OCI.
+         */
+        autotuneType: string;
+        /**
+         * This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+         */
+        maxVpusPerGb: string;
     }
 
     export interface GetBootVolumesBootVolumeBootVolumeReplica {
@@ -22948,6 +23936,10 @@ export namespace Core {
 
     export interface GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail {
         /**
+         * The list of autotune policies enabled for this volume.
+         */
+        autotunePolicies: outputs.Core.GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy[];
+        /**
          * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
          */
         availabilityDomain: string;
@@ -22984,6 +23976,17 @@ export namespace Core {
          * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
          */
         vpusPerGb: string;
+    }
+
+    export interface GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy {
+        /**
+         * This specifies the type of autotunes supported by OCI.
+         */
+        autotuneType: string;
+        /**
+         * This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+         */
+        maxVpusPerGb: string;
     }
 
     export interface GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail {
@@ -23472,6 +24475,10 @@ export namespace Core {
 
     export interface GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetail {
         /**
+         * The list of autotune policies enabled for this volume.
+         */
+        autotunePolicies: outputs.Core.GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy[];
+        /**
          * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
          */
         availabilityDomain: string;
@@ -23508,6 +24515,17 @@ export namespace Core {
          * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
          */
         vpusPerGb: string;
+    }
+
+    export interface GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy {
+        /**
+         * This specifies the type of autotunes supported by OCI.
+         */
+        autotuneType: string;
+        /**
+         * This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+         */
+        maxVpusPerGb: string;
     }
 
     export interface GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail {
@@ -27607,6 +28625,17 @@ export namespace Core {
         port: number;
     }
 
+    export interface GetVolumeAutotunePolicy {
+        /**
+         * This specifies the type of autotunes supported by OCI.
+         */
+        autotuneType: string;
+        /**
+         * This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+         */
+        maxVpusPerGb: string;
+    }
+
     export interface GetVolumeBackupPoliciesFilter {
         name: string;
         regex?: boolean;
@@ -28122,9 +29151,13 @@ export namespace Core {
 
     export interface GetVolumesVolume {
         /**
-         * The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+         * The number of Volume Performance Units per GB that this volume is effectively tuned to.
          */
         autoTunedVpusPerGb: string;
+        /**
+         * The list of autotune policies enabled for this volume.
+         */
+        autotunePolicies: outputs.Core.GetVolumesVolumeAutotunePolicy[];
         /**
          * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
          */
@@ -28159,7 +29192,7 @@ export namespace Core {
          */
         id: string;
         /**
-         * Specifies whether the auto-tune performance is enabled for this volume.
+         * Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
          */
         isAutoTuneEnabled: boolean;
         /**
@@ -28202,6 +29235,17 @@ export namespace Core {
          * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
          */
         vpusPerGb: string;
+    }
+
+    export interface GetVolumesVolumeAutotunePolicy {
+        /**
+         * This specifies the type of autotunes supported by OCI.
+         */
+        autotuneType: string;
+        /**
+         * This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+         */
+        maxVpusPerGb: string;
     }
 
     export interface GetVolumesVolumeBlockVolumeReplica {
@@ -28506,6 +29550,10 @@ export namespace Core {
 
     export interface InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails {
         /**
+         * The list of autotune policies enabled for this volume.
+         */
+        autotunePolicies: outputs.Core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy[];
+        /**
          * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
          */
         availabilityDomain: string;
@@ -28542,6 +29590,17 @@ export namespace Core {
          * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
          */
         vpusPerGb: string;
+    }
+
+    export interface InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy {
+        /**
+         * This specifies the type of autotunes supported by OCI.
+         */
+        autotuneType: string;
+        /**
+         * This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+         */
+        maxVpusPerGb: string;
     }
 
     export interface InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails {
@@ -29717,6 +30776,17 @@ export namespace Core {
         port: number;
     }
 
+    export interface VolumeAutotunePolicy {
+        /**
+         * (Updatable) This specifies the type of autotunes supported by OCI.
+         */
+        autotuneType: string;
+        /**
+         * (Updatable) This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+         */
+        maxVpusPerGb: string;
+    }
+
     export interface VolumeBackupPolicySchedule {
         /**
          * (Updatable) The type of volume backup to create.
@@ -30255,15 +31325,15 @@ export namespace DataConnectivity {
          */
         description: string;
         /**
-         * Data Connectivity Management Registry display name, registries can be renamed
+         * Data Connectivity Management registry display name; registries can be renamed.
          */
         displayName: string;
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{"bar-key": "value"}`
          */
         freeformTags: {[key: string]: any};
         /**
-         * Unique identifier that is immutable on creation
+         * A unique identifier that is immutable on creation.
          */
         id: string;
         /**
@@ -30275,22 +31345,22 @@ export namespace DataConnectivity {
          */
         stateMessage: string;
         /**
-         * The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+         * Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
          */
         timeCreated: string;
         /**
-         * The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+         * Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
          */
         timeUpdated: string;
         /**
-         * Name of the user who updated the DCMS Registry.
+         * Name of the user who updated the DCMS registry.
          */
         updatedBy: string;
     }
 
     export interface GetRegistryConnectionConnectionProperty {
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -30305,7 +31375,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         * A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregators: outputs.DataConnectivity.GetRegistryConnectionMetadataAggregator[];
         /**
@@ -30317,7 +31387,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * The full path to identify this object.
+         * The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -30325,11 +31395,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -30368,7 +31438,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -30387,7 +31457,7 @@ export namespace DataConnectivity {
          */
         description: string;
         /**
-         * The external key for the object.
+         * The external key of the object.
          */
         externalKey: string;
         /**
@@ -30403,19 +31473,19 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * A summary type containing information about the object including its key, name and when/who created/updated it.
+         * A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadatas: outputs.DataConnectivity.GetRegistryConnectionPrimarySchemaMetadata[];
         /**
-         * The object's type.
+         * The object type.
          */
         modelType: string;
         /**
-         * The object's model version.
+         * The model version of the object.
          */
         modelVersion: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -30427,7 +31497,7 @@ export namespace DataConnectivity {
          */
         objectVersion: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentReves: outputs.DataConnectivity.GetRegistryConnectionPrimarySchemaParentRef[];
         /**
@@ -30442,7 +31512,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         * A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregators: outputs.DataConnectivity.GetRegistryConnectionPrimarySchemaMetadataAggregator[];
         /**
@@ -30454,7 +31524,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * The full path to identify this object.
+         * The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -30462,11 +31532,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -30505,7 +31575,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -30527,7 +31597,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * The id of the user who created the object.
+         * The ID of the user who created the object.
          */
         createdByUserId: string;
         /**
@@ -30535,7 +31605,7 @@ export namespace DataConnectivity {
          */
         createdByUserName: string;
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
@@ -30543,7 +31613,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -30559,7 +31629,7 @@ export namespace DataConnectivity {
          */
         timeUpdated: string;
         /**
-         * The id of the user who updated the object.
+         * The ID of the user who updated the object.
          */
         updatedByUserId: string;
         /**
@@ -30574,7 +31644,7 @@ export namespace DataConnectivity {
 
     export interface GetRegistryConnectionsConnectionSummaryCollectionItem {
         /**
-         * The properties for the connection.
+         * The properties of the connection.
          */
         connectionProperties: outputs.DataConnectivity.GetRegistryConnectionsConnectionSummaryCollectionItemConnectionProperty[];
         /**
@@ -30586,7 +31656,7 @@ export namespace DataConnectivity {
          */
         identifier: string;
         /**
-         * The default property for the connection.
+         * The default property of the connection.
          */
         isDefault: boolean;
         /**
@@ -30594,15 +31664,15 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * A summary type containing information about the object including its key, name and when/who created/updated it.
+         * A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata: outputs.DataConnectivity.GetRegistryConnectionsConnectionSummaryCollectionItemMetadata;
         /**
-         * The object's type.
+         * The object type.
          */
         modelType: string;
         /**
-         * The object's model version.
+         * The model version of the object.
          */
         modelVersion: string;
         /**
@@ -30622,11 +31692,11 @@ export namespace DataConnectivity {
          */
         primarySchema: outputs.DataConnectivity.GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchema;
         /**
-         * All the properties for the connection in a key-value map format.
+         * All the properties of the connection in a key-value map format.
          */
         properties: {[key: string]: any};
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         registryId: string;
         /**
@@ -30652,7 +31722,7 @@ export namespace DataConnectivity {
 
     export interface GetRegistryConnectionsConnectionSummaryCollectionItemMetadata {
         /**
-         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         * A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator: outputs.DataConnectivity.GetRegistryConnectionsConnectionSummaryCollectionItemMetadataAggregator;
         /**
@@ -30668,7 +31738,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * The full path to identify this object.
+         * The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -30676,11 +31746,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -30738,7 +31808,7 @@ export namespace DataConnectivity {
          */
         description: string;
         /**
-         * The external key for the object.
+         * The external key of the object.
          */
         externalKey: string;
         /**
@@ -30754,15 +31824,15 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * A summary type containing information about the object including its key, name and when/who created/updated it.
+         * A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata: outputs.DataConnectivity.GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata;
         /**
-         * The object's type.
+         * The object type.
          */
         modelType: string;
         /**
-         * The object's model version.
+         * The model version of the object.
          */
         modelVersion: string;
         /**
@@ -30778,7 +31848,7 @@ export namespace DataConnectivity {
          */
         objectVersion: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaParentRef;
         /**
@@ -30789,7 +31859,7 @@ export namespace DataConnectivity {
 
     export interface GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadata {
         /**
-         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         * A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator: outputs.DataConnectivity.GetRegistryConnectionsConnectionSummaryCollectionItemPrimarySchemaMetadataAggregator;
         /**
@@ -30805,7 +31875,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * The full path to identify this object.
+         * The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -30813,11 +31883,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -30878,7 +31948,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * The id of the user who created the object.
+         * The ID of the user who created the object.
          */
         createdByUserId: string;
         /**
@@ -30886,7 +31956,7 @@ export namespace DataConnectivity {
          */
         createdByUserName: string;
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
@@ -30894,7 +31964,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -30910,7 +31980,7 @@ export namespace DataConnectivity {
          */
         timeUpdated: string;
         /**
-         * The id of the user who updated the object.
+         * The ID of the user who updated the object.
          */
         updatedByUserId: string;
         /**
@@ -30930,19 +32000,19 @@ export namespace DataConnectivity {
 
     export interface GetRegistryDataAssetDefaultConnection {
         /**
-         * The properties for the connection.
+         * The properties of the connection.
          */
         connectionProperties: outputs.DataConnectivity.GetRegistryDataAssetDefaultConnectionConnectionProperty[];
         /**
-         * A user defined description for the object.
+         * A user-defined description for the object.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * The default property for the connection.
+         * The default property of the connection.
          */
         isDefault: boolean;
         /**
@@ -30950,11 +32020,11 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * A summary type containing information about the object including its key, name and when/who created/updated it.
+         * A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadatas: outputs.DataConnectivity.GetRegistryDataAssetDefaultConnectionMetadata[];
         /**
-         * The property which disciminates the subtypes.
+         * The property which differentiates the subtypes.
          */
         modelType: string;
         /**
@@ -30962,7 +32032,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -30993,7 +32063,7 @@ export namespace DataConnectivity {
 
     export interface GetRegistryDataAssetDefaultConnectionConnectionProperty {
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -31008,7 +32078,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         * A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregators: outputs.DataConnectivity.GetRegistryDataAssetDefaultConnectionMetadataAggregator[];
         /**
@@ -31020,7 +32090,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * The full path to identify this object.
+         * The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -31028,11 +32098,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -31059,11 +32129,11 @@ export namespace DataConnectivity {
 
     export interface GetRegistryDataAssetDefaultConnectionMetadataAggregator {
         /**
-         * A user defined description for the object.
+         * A user-defined description for the object.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -31071,7 +32141,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -31086,15 +32156,15 @@ export namespace DataConnectivity {
          */
         defaultConnection: string;
         /**
-         * A user defined description for the object.
+         * A user-defined description for the object.
          */
         description: string;
         /**
-         * The external key for the object.
+         * The external key of the object.
          */
         externalKey: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -31106,11 +32176,11 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * A summary type containing information about the object including its key, name and when/who created/updated it.
+         * A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadatas: outputs.DataConnectivity.GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadata[];
         /**
-         * The property which disciminates the subtypes.
+         * The property which differentiates the subtypes.
          */
         modelType: string;
         /**
@@ -31118,7 +32188,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -31130,7 +32200,7 @@ export namespace DataConnectivity {
          */
         objectVersion: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentReves: outputs.DataConnectivity.GetRegistryDataAssetDefaultConnectionPrimarySchemaParentRef[];
         /**
@@ -31145,7 +32215,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         * A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregators: outputs.DataConnectivity.GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator[];
         /**
@@ -31157,7 +32227,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * The full path to identify this object.
+         * The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -31165,11 +32235,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -31196,11 +32266,11 @@ export namespace DataConnectivity {
 
     export interface GetRegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator {
         /**
-         * A user defined description for the object.
+         * A user-defined description for the object.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -31208,7 +32278,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -31230,7 +32300,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * The id of the user who created the object.
+         * The ID of the user who created the object.
          */
         createdByUserId: string;
         /**
@@ -31238,7 +32308,7 @@ export namespace DataConnectivity {
          */
         createdByUserName: string;
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
@@ -31246,7 +32316,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -31262,7 +32332,7 @@ export namespace DataConnectivity {
          */
         timeUpdated: string;
         /**
-         * The id of the user who updated the object.
+         * The ID of the user who updated the object.
          */
         updatedByUserId: string;
         /**
@@ -31277,7 +32347,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         * A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregators: outputs.DataConnectivity.GetRegistryDataAssetMetadataAggregator[];
         /**
@@ -31289,7 +32359,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * The full path to identify this object.
+         * The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -31297,11 +32367,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -31328,11 +32398,11 @@ export namespace DataConnectivity {
 
     export interface GetRegistryDataAssetMetadataAggregator {
         /**
-         * A user defined description for the object.
+         * A user-defined description for the object.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -31340,7 +32410,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -31351,11 +32421,11 @@ export namespace DataConnectivity {
 
     export interface GetRegistryDataAssetNativeTypeSystem {
         /**
-         * A user defined description for the object.
+         * A user-defined description for the object.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -31363,7 +32433,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * The property which disciminates the subtypes.
+         * The property which differentiates the subtypes.
          */
         modelType: string;
         /**
@@ -31371,7 +32441,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -31383,7 +32453,7 @@ export namespace DataConnectivity {
          */
         objectVersion: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentReves: outputs.DataConnectivity.GetRegistryDataAssetNativeTypeSystemParentRef[];
         /**
@@ -31413,7 +32483,7 @@ export namespace DataConnectivity {
          */
         configDefinitions: outputs.DataConnectivity.GetRegistryDataAssetNativeTypeSystemTypeConfigDefinition[];
         /**
-         * A user defined description for the object.
+         * A user-defined description for the object.
          */
         description: string;
         /**
@@ -31425,7 +32495,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * The property which disciminates the subtypes.
+         * The property which differentiates the subtypes.
          */
         modelType: string;
         /**
@@ -31433,7 +32503,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -31441,7 +32511,7 @@ export namespace DataConnectivity {
          */
         objectStatus: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentReves: outputs.DataConnectivity.GetRegistryDataAssetNativeTypeSystemTypeParentRef[];
         /**
@@ -31456,7 +32526,7 @@ export namespace DataConnectivity {
          */
         configParameterDefinitions: {[key: string]: any};
         /**
-         * Specifies whether the configuration is contained or not.
+         * Specifies whether the configuration is contained.
          */
         isContained: boolean;
         /**
@@ -31464,7 +32534,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * The property which disciminates the subtypes.
+         * The property which differentiates the subtypes.
          */
         modelType: string;
         /**
@@ -31472,7 +32542,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -31480,7 +32550,7 @@ export namespace DataConnectivity {
          */
         objectStatus: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentReves: outputs.DataConnectivity.GetRegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRef[];
     }
@@ -31505,7 +32575,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * The id of the user who created the object.
+         * The ID of the user who created the object.
          */
         createdByUserId: string;
         /**
@@ -31513,7 +32583,7 @@ export namespace DataConnectivity {
          */
         createdByUserName: string;
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
@@ -31521,7 +32591,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -31537,7 +32607,7 @@ export namespace DataConnectivity {
          */
         timeUpdated: string;
         /**
-         * The id of the user who updated the object.
+         * The ID of the user who updated the object.
          */
         updatedByUserId: string;
         /**
@@ -31560,7 +32630,7 @@ export namespace DataConnectivity {
          */
         defaultConnection: outputs.DataConnectivity.GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnection;
         /**
-         * A user defined description for the object.
+         * A user-defined description for the object.
          */
         description: string;
         /**
@@ -31568,11 +32638,11 @@ export namespace DataConnectivity {
          */
         endPoints: string[];
         /**
-         * The external key for the object.
+         * The external key of the object.
          */
         externalKey: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -31580,11 +32650,11 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * A summary type containing information about the object including its key, name and when/who created/updated it.
+         * A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata: outputs.DataConnectivity.GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadata;
         /**
-         * The property which disciminates the subtypes.
+         * The property which differentiates the subtypes.
          */
         modelType: string;
         /**
@@ -31612,7 +32682,7 @@ export namespace DataConnectivity {
          */
         properties: {[key: string]: any};
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         registryId: string;
         /**
@@ -31627,19 +32697,19 @@ export namespace DataConnectivity {
 
     export interface GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnection {
         /**
-         * The properties for the connection.
+         * The properties of the connection.
          */
         connectionProperties: outputs.DataConnectivity.GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionConnectionProperty[];
         /**
-         * A user defined description for the object.
+         * A user-defined description for the object.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * The default property for the connection.
+         * The default property of the connection.
          */
         isDefault: boolean;
         /**
@@ -31647,11 +32717,11 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * A summary type containing information about the object including its key, name and when/who created/updated it.
+         * A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata: outputs.DataConnectivity.GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadata;
         /**
-         * The property which disciminates the subtypes.
+         * The property which differentiates the subtypes.
          */
         modelType: string;
         /**
@@ -31701,7 +32771,7 @@ export namespace DataConnectivity {
 
     export interface GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadata {
         /**
-         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         * A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator: outputs.DataConnectivity.GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregator;
         /**
@@ -31717,7 +32787,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * The full path to identify this object.
+         * The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -31725,11 +32795,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -31756,11 +32826,11 @@ export namespace DataConnectivity {
 
     export interface GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionMetadataAggregator {
         /**
-         * A user defined description for the object.
+         * A user-defined description for the object.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -31783,15 +32853,15 @@ export namespace DataConnectivity {
          */
         defaultConnection: string;
         /**
-         * A user defined description for the object.
+         * A user-defined description for the object.
          */
         description: string;
         /**
-         * The external key for the object.
+         * The external key of the object.
          */
         externalKey: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -31803,11 +32873,11 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * A summary type containing information about the object including its key, name and when/who created/updated it.
+         * A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata: outputs.DataConnectivity.GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadata;
         /**
-         * The property which disciminates the subtypes.
+         * The property which differentiates the subtypes.
          */
         modelType: string;
         /**
@@ -31827,7 +32897,7 @@ export namespace DataConnectivity {
          */
         objectVersion: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaParentRef;
         /**
@@ -31838,7 +32908,7 @@ export namespace DataConnectivity {
 
     export interface GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadata {
         /**
-         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         * A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator: outputs.DataConnectivity.GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregator;
         /**
@@ -31854,7 +32924,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * The full path to identify this object.
+         * The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -31862,11 +32932,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -31893,11 +32963,11 @@ export namespace DataConnectivity {
 
     export interface GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregator {
         /**
-         * A user defined description for the object.
+         * A user-defined description for the object.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -31927,7 +32997,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * The id of the user who created the object.
+         * The ID of the user who created the object.
          */
         createdByUserId: string;
         /**
@@ -31935,7 +33005,7 @@ export namespace DataConnectivity {
          */
         createdByUserName: string;
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
@@ -31943,7 +33013,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -31959,7 +33029,7 @@ export namespace DataConnectivity {
          */
         timeUpdated: string;
         /**
-         * The id of the user who updated the object.
+         * The ID of the user who updated the object.
          */
         updatedByUserId: string;
         /**
@@ -31970,7 +33040,7 @@ export namespace DataConnectivity {
 
     export interface GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadata {
         /**
-         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         * A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator: outputs.DataConnectivity.GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregator;
         /**
@@ -31986,7 +33056,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * The full path to identify this object.
+         * The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -31994,11 +33064,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -32025,11 +33095,11 @@ export namespace DataConnectivity {
 
     export interface GetRegistryDataAssetsDataAssetSummaryCollectionItemMetadataAggregator {
         /**
-         * A user defined description for the object.
+         * A user-defined description for the object.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -32048,11 +33118,11 @@ export namespace DataConnectivity {
 
     export interface GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystem {
         /**
-         * A user defined description for the object.
+         * A user-defined description for the object.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -32060,7 +33130,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * The property which disciminates the subtypes.
+         * The property which differentiates the subtypes.
          */
         modelType: string;
         /**
@@ -32080,7 +33150,7 @@ export namespace DataConnectivity {
          */
         objectVersion: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemParentRef;
         /**
@@ -32110,7 +33180,7 @@ export namespace DataConnectivity {
          */
         configDefinition: outputs.DataConnectivity.GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinition;
         /**
-         * A user defined description for the object.
+         * A user-defined description for the object.
          */
         description: string;
         /**
@@ -32122,7 +33192,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * The property which disciminates the subtypes.
+         * The property which differentiates the subtypes.
          */
         modelType: string;
         /**
@@ -32138,7 +33208,7 @@ export namespace DataConnectivity {
          */
         objectStatus: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeParentRef;
         /**
@@ -32153,7 +33223,7 @@ export namespace DataConnectivity {
          */
         configParameterDefinitions: {[key: string]: any};
         /**
-         * Specifies whether the configuration is contained or not.
+         * Specifies whether the configuration is contained.
          */
         isContained: boolean;
         /**
@@ -32161,7 +33231,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * The property which disciminates the subtypes.
+         * The property which differentiates the subtypes.
          */
         modelType: string;
         /**
@@ -32177,7 +33247,7 @@ export namespace DataConnectivity {
          */
         objectStatus: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionParentRef;
     }
@@ -32202,7 +33272,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * The id of the user who created the object.
+         * The ID of the user who created the object.
          */
         createdByUserId: string;
         /**
@@ -32210,7 +33280,7 @@ export namespace DataConnectivity {
          */
         createdByUserName: string;
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
@@ -32218,7 +33288,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -32234,7 +33304,7 @@ export namespace DataConnectivity {
          */
         timeUpdated: string;
         /**
-         * The id of the user who updated the object.
+         * The ID of the user who updated the object.
          */
         updatedByUserId: string;
         /**
@@ -32262,23 +33332,23 @@ export namespace DataConnectivity {
          */
         defaultConnections: outputs.DataConnectivity.GetRegistryFolderDataAssetDefaultConnection[];
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          */
         description: string;
         /**
-         * The external key for the object.
+         * The external key of the object.
          */
         externalKey: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * A summary type containing information about the object including its key, name and when/who created/updated it.
+         * A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadatas: outputs.DataConnectivity.GetRegistryFolderDataAssetMetadata[];
         /**
@@ -32290,7 +33360,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -32321,27 +33391,27 @@ export namespace DataConnectivity {
 
     export interface GetRegistryFolderDataAssetDefaultConnection {
         /**
-         * The properties for the connection.
+         * The properties of the connection.
          */
         connectionProperties: outputs.DataConnectivity.GetRegistryFolderDataAssetDefaultConnectionConnectionProperty[];
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * The default property for the connection.
+         * The default property of the connection.
          */
         isDefault: boolean;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * A summary type containing information about the object including its key, name and when/who created/updated it.
+         * A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadatas: outputs.DataConnectivity.GetRegistryFolderDataAssetDefaultConnectionMetadata[];
         /**
@@ -32353,7 +33423,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -32384,7 +33454,7 @@ export namespace DataConnectivity {
 
     export interface GetRegistryFolderDataAssetDefaultConnectionConnectionProperty {
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -32399,7 +33469,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         * A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregators: outputs.DataConnectivity.GetRegistryFolderDataAssetDefaultConnectionMetadataAggregator[];
         /**
@@ -32411,7 +33481,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * The full path to identify this object.
+         * The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -32419,11 +33489,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -32450,19 +33520,19 @@ export namespace DataConnectivity {
 
     export interface GetRegistryFolderDataAssetDefaultConnectionMetadataAggregator {
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -32477,15 +33547,15 @@ export namespace DataConnectivity {
          */
         defaultConnection: string;
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          */
         description: string;
         /**
-         * The external key for the object.
+         * The external key of the object.
          */
         externalKey: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -32493,11 +33563,11 @@ export namespace DataConnectivity {
          */
         isHasContainers: boolean;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * A summary type containing information about the object including its key, name and when/who created/updated it.
+         * A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadatas: outputs.DataConnectivity.GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata[];
         /**
@@ -32509,7 +33579,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -32521,7 +33591,7 @@ export namespace DataConnectivity {
          */
         objectVersion: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentReves: outputs.DataConnectivity.GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef[];
         /**
@@ -32536,7 +33606,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         * A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregators: outputs.DataConnectivity.GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator[];
         /**
@@ -32548,7 +33618,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * The full path to identify this object.
+         * The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -32556,11 +33626,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -32587,19 +33657,19 @@ export namespace DataConnectivity {
 
     export interface GetRegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator {
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -32621,7 +33691,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * The id of the user who created the object.
+         * The ID of the user who created the object.
          */
         createdByUserId: string;
         /**
@@ -32629,15 +33699,15 @@ export namespace DataConnectivity {
          */
         createdByUserName: string;
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -32653,7 +33723,7 @@ export namespace DataConnectivity {
          */
         timeUpdated: string;
         /**
-         * The id of the user who updated the object.
+         * The ID of the user who updated the object.
          */
         updatedByUserId: string;
         /**
@@ -32668,7 +33738,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         * A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregators: outputs.DataConnectivity.GetRegistryFolderDataAssetMetadataAggregator[];
         /**
@@ -32680,7 +33750,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * The full path to identify this object.
+         * The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -32688,11 +33758,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -32719,19 +33789,19 @@ export namespace DataConnectivity {
 
     export interface GetRegistryFolderDataAssetMetadataAggregator {
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -32742,15 +33812,15 @@ export namespace DataConnectivity {
 
     export interface GetRegistryFolderDataAssetNativeTypeSystem {
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
@@ -32762,7 +33832,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -32774,7 +33844,7 @@ export namespace DataConnectivity {
          */
         objectVersion: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentReves: outputs.DataConnectivity.GetRegistryFolderDataAssetNativeTypeSystemParentRef[];
         /**
@@ -32804,7 +33874,7 @@ export namespace DataConnectivity {
          */
         configDefinitions: outputs.DataConnectivity.GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition[];
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          */
         description: string;
         /**
@@ -32812,7 +33882,7 @@ export namespace DataConnectivity {
          */
         dtType: string;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
@@ -32824,7 +33894,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -32832,7 +33902,7 @@ export namespace DataConnectivity {
          */
         objectStatus: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentReves: outputs.DataConnectivity.GetRegistryFolderDataAssetNativeTypeSystemTypeParentRef[];
         /**
@@ -32847,11 +33917,11 @@ export namespace DataConnectivity {
          */
         configParameterDefinitions: {[key: string]: any};
         /**
-         * Specifies whether the configuration is contained or not.
+         * Specifies whether the configuration is contained.
          */
         isContained: boolean;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
@@ -32863,7 +33933,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -32871,7 +33941,7 @@ export namespace DataConnectivity {
          */
         objectStatus: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentReves: outputs.DataConnectivity.GetRegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef[];
     }
@@ -32896,7 +33966,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * The id of the user who created the object.
+         * The ID of the user who created the object.
          */
         createdByUserId: string;
         /**
@@ -32904,15 +33974,15 @@ export namespace DataConnectivity {
          */
         createdByUserName: string;
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -32928,7 +33998,7 @@ export namespace DataConnectivity {
          */
         timeUpdated: string;
         /**
-         * The id of the user who updated the object.
+         * The ID of the user who updated the object.
          */
         updatedByUserId: string;
         /**
@@ -32959,19 +34029,19 @@ export namespace DataConnectivity {
 
     export interface GetRegistryFoldersFolderSummaryCollectionItem {
         /**
-         * List of data assets which belongs to this folder
+         * The list of data assets that belong to the folder.
          */
         dataAssets: outputs.DataConnectivity.GetRegistryFoldersFolderSummaryCollectionItemDataAsset[];
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
@@ -32995,11 +34065,11 @@ export namespace DataConnectivity {
          */
         objectVersion: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.GetRegistryFoldersFolderSummaryCollectionItemParentRef;
         /**
-         * The registry Ocid.
+         * The registry OCID.
          */
         registryId: string;
     }
@@ -33014,23 +34084,23 @@ export namespace DataConnectivity {
          */
         defaultConnection: outputs.DataConnectivity.GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnection;
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          */
         description: string;
         /**
-         * The external key for the object.
+         * The external key of the object.
          */
         externalKey: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * A summary type containing information about the object including its key, name and when/who created/updated it.
+         * A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata: outputs.DataConnectivity.GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadata;
         /**
@@ -33073,27 +34143,27 @@ export namespace DataConnectivity {
 
     export interface GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnection {
         /**
-         * The properties for the connection.
+         * The properties of the connection.
          */
         connectionProperties: outputs.DataConnectivity.GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionConnectionProperty[];
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * The default property for the connection.
+         * The default property of the connection.
          */
         isDefault: boolean;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * A summary type containing information about the object including its key, name and when/who created/updated it.
+         * A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata: outputs.DataConnectivity.GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadata;
         /**
@@ -33147,7 +34217,7 @@ export namespace DataConnectivity {
 
     export interface GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadata {
         /**
-         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         * A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator: outputs.DataConnectivity.GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregator;
         /**
@@ -33163,7 +34233,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * The full path to identify this object.
+         * The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -33171,11 +34241,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -33202,15 +34272,15 @@ export namespace DataConnectivity {
 
     export interface GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionMetadataAggregator {
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
@@ -33229,15 +34299,15 @@ export namespace DataConnectivity {
          */
         defaultConnection: string;
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          */
         description: string;
         /**
-         * The external key for the object.
+         * The external key of the object.
          */
         externalKey: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -33245,11 +34315,11 @@ export namespace DataConnectivity {
          */
         isHasContainers: boolean;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * A summary type containing information about the object including its key, name and when/who created/updated it.
+         * A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata: outputs.DataConnectivity.GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadata;
         /**
@@ -33273,7 +34343,7 @@ export namespace DataConnectivity {
          */
         objectVersion: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaParentRef;
         /**
@@ -33284,7 +34354,7 @@ export namespace DataConnectivity {
 
     export interface GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadata {
         /**
-         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         * A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator: outputs.DataConnectivity.GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregator;
         /**
@@ -33300,7 +34370,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * The full path to identify this object.
+         * The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -33308,11 +34378,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -33339,15 +34409,15 @@ export namespace DataConnectivity {
 
     export interface GetRegistryFoldersFolderSummaryCollectionItemDataAssetDefaultConnectionPrimarySchemaMetadataAggregator {
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
@@ -33373,7 +34443,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * The id of the user who created the object.
+         * The ID of the user who created the object.
          */
         createdByUserId: string;
         /**
@@ -33381,15 +34451,15 @@ export namespace DataConnectivity {
          */
         createdByUserName: string;
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -33405,7 +34475,7 @@ export namespace DataConnectivity {
          */
         timeUpdated: string;
         /**
-         * The id of the user who updated the object.
+         * The ID of the user who updated the object.
          */
         updatedByUserId: string;
         /**
@@ -33416,7 +34486,7 @@ export namespace DataConnectivity {
 
     export interface GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadata {
         /**
-         * A summary type containing information about the object's aggregator including its type, key, name and description.
+         * A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator: outputs.DataConnectivity.GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator;
         /**
@@ -33432,7 +34502,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * The full path to identify this object.
+         * The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -33440,11 +34510,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -33471,15 +34541,15 @@ export namespace DataConnectivity {
 
     export interface GetRegistryFoldersFolderSummaryCollectionItemDataAssetMetadataAggregator {
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
@@ -33494,15 +34564,15 @@ export namespace DataConnectivity {
 
     export interface GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystem {
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          */
         description: string;
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
@@ -33526,7 +34596,7 @@ export namespace DataConnectivity {
          */
         objectVersion: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemParentRef;
         /**
@@ -33556,7 +34626,7 @@ export namespace DataConnectivity {
          */
         configDefinition: outputs.DataConnectivity.GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinition;
         /**
-         * User-defined description for the folder.
+         * User-defined description of the folder.
          */
         description: string;
         /**
@@ -33564,7 +34634,7 @@ export namespace DataConnectivity {
          */
         dtType: string;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
@@ -33584,7 +34654,7 @@ export namespace DataConnectivity {
          */
         objectStatus: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeParentRef;
         /**
@@ -33599,11 +34669,11 @@ export namespace DataConnectivity {
          */
         configParameterDefinitions: {[key: string]: any};
         /**
-         * Specifies whether the configuration is contained or not.
+         * Specifies whether the configuration is contained.
          */
         isContained: boolean;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
@@ -33623,7 +34693,7 @@ export namespace DataConnectivity {
          */
         objectStatus: number;
         /**
-         * A reference to the object's parent.
+         * A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.GetRegistryFoldersFolderSummaryCollectionItemDataAssetNativeTypeSystemTypeConfigDefinitionParentRef;
     }
@@ -33648,7 +34718,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * The id of the user who created the object.
+         * The ID of the user who created the object.
          */
         createdByUserId: string;
         /**
@@ -33656,15 +34726,15 @@ export namespace DataConnectivity {
          */
         createdByUserName: string;
         /**
-         * Specifies whether this object is a favorite or not.
+         * Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -33680,7 +34750,7 @@ export namespace DataConnectivity {
          */
         timeUpdated: string;
         /**
-         * The id of the user who updated the object.
+         * The ID of the user who updated the object.
          */
         updatedByUserId: string;
         /**
@@ -33698,31 +34768,31 @@ export namespace DataConnectivity {
 
     export interface GetRegistryTypeDataAssetAttribute {
         /**
-         * Attribute type details
+         * The attribute type details.
          */
         attributeType: string;
         /**
-         * True if Attribute is encoded.
+         * True if attribute is encoded.
          */
         isBase64encoded: boolean;
         /**
-         * True if Attribute is generated.
+         * True if attribute is generated.
          */
         isGenerated: boolean;
         /**
-         * True if Attribute is mandatory.
+         * True if attribute is mandatory.
          */
         isMandatory: boolean;
         /**
-         * True if Attribute is sensitive.
+         * True if attribute is sensitive.
          */
         isSensitive: boolean;
         /**
-         * The name of of the Attribute.
+         * The name of of the attribute.
          */
         name: string;
         /**
-         * List of valid key list
+         * The list of valid keys.
          */
         validKeyLists: string[];
     }
@@ -33742,11 +34812,11 @@ export namespace DataConnectivity {
 
     export interface GetRegistryTypesTypesSummaryCollectionItem {
         /**
-         * Map of connectionType as key and List of attributes as value
+         * Mapping the connectionType as the key to the list of attributes as the value.
          */
         connectionAttributes: {[key: string]: any};
         /**
-         * list of attributes for the dataAsset
+         * The list of attributes of the data asset.
          */
         dataAssetAttributes: outputs.DataConnectivity.GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute[];
         description?: string;
@@ -33759,23 +34829,23 @@ export namespace DataConnectivity {
 
     export interface GetRegistryTypesTypesSummaryCollectionItemDataAssetAttribute {
         /**
-         * Attribute type details
+         * The attribute type details.
          */
         attributeType: string;
         /**
-         * True if Attribute is encoded.
+         * True if attribute is encoded.
          */
         isBase64encoded: boolean;
         /**
-         * True if Attribute is generated.
+         * True if attribute is generated.
          */
         isGenerated: boolean;
         /**
-         * True if Attribute is mandatory.
+         * True if attribute is mandatory.
          */
         isMandatory: boolean;
         /**
-         * True if Attribute is sensitive.
+         * True if attribute is sensitive.
          */
         isSensitive: boolean;
         /**
@@ -33783,14 +34853,14 @@ export namespace DataConnectivity {
          */
         name: string;
         /**
-         * List of valid key list
+         * The list of valid keys.
          */
         validKeyLists: string[];
     }
 
     export interface RegistryConnectionConnectionProperty {
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -33801,7 +34871,7 @@ export namespace DataConnectivity {
 
     export interface RegistryConnectionMetadata {
         /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator: outputs.DataConnectivity.RegistryConnectionMetadataAggregator;
         /**
@@ -33817,7 +34887,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * (Updatable) The full path to identify this object.
+         * (Updatable) The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -33825,11 +34895,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -33868,7 +34938,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -33887,7 +34957,7 @@ export namespace DataConnectivity {
          */
         description: string;
         /**
-         * (Updatable) The external key for the object.
+         * (Updatable) The external key of the object.
          */
         externalKey: string;
         /**
@@ -33903,19 +34973,19 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata: outputs.DataConnectivity.RegistryConnectionPrimarySchemaMetadata;
         /**
-         * (Updatable) The object's type.
+         * (Updatable) The object type.
          */
         modelType: string;
         /**
-         * (Updatable) The object's model version.
+         * (Updatable) The model version of the object.
          */
         modelVersion: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -33927,7 +34997,7 @@ export namespace DataConnectivity {
          */
         objectVersion: number;
         /**
-         * (Updatable) A reference to the object's parent.
+         * (Updatable) A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.RegistryConnectionPrimarySchemaParentRef;
         /**
@@ -33938,7 +35008,7 @@ export namespace DataConnectivity {
 
     export interface RegistryConnectionPrimarySchemaMetadata {
         /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator: outputs.DataConnectivity.RegistryConnectionPrimarySchemaMetadataAggregator;
         /**
@@ -33954,7 +35024,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * (Updatable) The full path to identify this object.
+         * (Updatable) The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -33962,11 +35032,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -34005,7 +35075,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -34027,7 +35097,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * (Updatable) The id of the user who created the object.
+         * (Updatable) The ID of the user who created the object.
          */
         createdByUserId: string;
         /**
@@ -34035,7 +35105,7 @@ export namespace DataConnectivity {
          */
         createdByUserName: string;
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
@@ -34043,7 +35113,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -34059,7 +35129,7 @@ export namespace DataConnectivity {
          */
         timeUpdated: string;
         /**
-         * (Updatable) The id of the user who updated the object.
+         * (Updatable) The ID of the user who updated the object.
          */
         updatedByUserId: string;
         /**
@@ -34070,19 +35140,19 @@ export namespace DataConnectivity {
 
     export interface RegistryDataAssetDefaultConnection {
         /**
-         * (Updatable) The properties for the connection.
+         * (Updatable) The properties of the connection.
          */
         connectionProperties: outputs.DataConnectivity.RegistryDataAssetDefaultConnectionConnectionProperty[];
         /**
-         * (Updatable) A user defined description for the object.
+         * (Updatable) A user-defined description for the object.
          */
         description: string;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * (Updatable) The default property for the connection.
+         * (Updatable) The default property of the connection.
          */
         isDefault: boolean;
         /**
@@ -34090,11 +35160,11 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata: outputs.DataConnectivity.RegistryDataAssetDefaultConnectionMetadata;
         /**
-         * (Updatable) The property which disciminates the subtypes.
+         * (Updatable) The property which differentiates the subtypes.
          */
         modelType: string;
         /**
@@ -34102,7 +35172,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -34133,7 +35203,7 @@ export namespace DataConnectivity {
 
     export interface RegistryDataAssetDefaultConnectionConnectionProperty {
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -34144,7 +35214,7 @@ export namespace DataConnectivity {
 
     export interface RegistryDataAssetDefaultConnectionMetadata {
         /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator: outputs.DataConnectivity.RegistryDataAssetDefaultConnectionMetadataAggregator;
         /**
@@ -34160,7 +35230,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * (Updatable) The full path to identify this object.
+         * (Updatable) The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -34168,11 +35238,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -34199,11 +35269,11 @@ export namespace DataConnectivity {
 
     export interface RegistryDataAssetDefaultConnectionMetadataAggregator {
         /**
-         * (Updatable) A user defined description for the object.
+         * (Updatable) A user-defined description for the object.
          */
         description: string;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -34211,7 +35281,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -34226,15 +35296,15 @@ export namespace DataConnectivity {
          */
         defaultConnection: string;
         /**
-         * (Updatable) A user defined description for the object.
+         * (Updatable) A user-defined description for the object.
          */
         description: string;
         /**
-         * (Updatable) The external key for the object.
+         * (Updatable) The external key of the object.
          */
         externalKey: string;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -34246,11 +35316,11 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata: outputs.DataConnectivity.RegistryDataAssetDefaultConnectionPrimarySchemaMetadata;
         /**
-         * (Updatable) The property which disciminates the subtypes.
+         * (Updatable) The property which differentiates the subtypes.
          */
         modelType: string;
         /**
@@ -34258,7 +35328,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -34270,7 +35340,7 @@ export namespace DataConnectivity {
          */
         objectVersion: number;
         /**
-         * (Updatable) A reference to the object's parent.
+         * (Updatable) A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.RegistryDataAssetDefaultConnectionPrimarySchemaParentRef;
         /**
@@ -34281,7 +35351,7 @@ export namespace DataConnectivity {
 
     export interface RegistryDataAssetDefaultConnectionPrimarySchemaMetadata {
         /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator: outputs.DataConnectivity.RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator;
         /**
@@ -34297,7 +35367,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * (Updatable) The full path to identify this object.
+         * (Updatable) The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -34305,11 +35375,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -34336,11 +35406,11 @@ export namespace DataConnectivity {
 
     export interface RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregator {
         /**
-         * (Updatable) A user defined description for the object.
+         * (Updatable) A user-defined description for the object.
          */
         description: string;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -34348,7 +35418,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -34370,7 +35440,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * (Updatable) The id of the user who created the object.
+         * (Updatable) The ID of the user who created the object.
          */
         createdByUserId: string;
         /**
@@ -34378,7 +35448,7 @@ export namespace DataConnectivity {
          */
         createdByUserName: string;
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
@@ -34386,7 +35456,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -34402,7 +35472,7 @@ export namespace DataConnectivity {
          */
         timeUpdated: string;
         /**
-         * (Updatable) The id of the user who updated the object.
+         * (Updatable) The ID of the user who updated the object.
          */
         updatedByUserId: string;
         /**
@@ -34413,7 +35483,7 @@ export namespace DataConnectivity {
 
     export interface RegistryDataAssetMetadata {
         /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator: outputs.DataConnectivity.RegistryDataAssetMetadataAggregator;
         /**
@@ -34429,7 +35499,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * (Updatable) The full path to identify this object.
+         * (Updatable) The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -34437,11 +35507,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -34468,11 +35538,11 @@ export namespace DataConnectivity {
 
     export interface RegistryDataAssetMetadataAggregator {
         /**
-         * (Updatable) A user defined description for the object.
+         * (Updatable) A user-defined description for the object.
          */
         description: string;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -34480,7 +35550,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -34491,11 +35561,11 @@ export namespace DataConnectivity {
 
     export interface RegistryDataAssetNativeTypeSystem {
         /**
-         * (Updatable) A user defined description for the object.
+         * (Updatable) A user-defined description for the object.
          */
         description: string;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -34503,7 +35573,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * (Updatable) The property which disciminates the subtypes.
+         * (Updatable) The property which differentiates the subtypes.
          */
         modelType: string;
         /**
@@ -34511,7 +35581,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -34523,7 +35593,7 @@ export namespace DataConnectivity {
          */
         objectVersion: number;
         /**
-         * (Updatable) A reference to the object's parent.
+         * (Updatable) A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.RegistryDataAssetNativeTypeSystemParentRef;
         /**
@@ -34553,7 +35623,7 @@ export namespace DataConnectivity {
          */
         configDefinition: outputs.DataConnectivity.RegistryDataAssetNativeTypeSystemTypeConfigDefinition;
         /**
-         * (Updatable) A user defined description for the object.
+         * (Updatable) A user-defined description for the object.
          */
         description: string;
         /**
@@ -34565,7 +35635,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * (Updatable) The property which disciminates the subtypes.
+         * (Updatable) The property which differentiates the subtypes.
          */
         modelType: string;
         /**
@@ -34573,7 +35643,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -34581,7 +35651,7 @@ export namespace DataConnectivity {
          */
         objectStatus: number;
         /**
-         * (Updatable) A reference to the object's parent.
+         * (Updatable) A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.RegistryDataAssetNativeTypeSystemTypeParentRef;
         /**
@@ -34596,7 +35666,7 @@ export namespace DataConnectivity {
          */
         configParameterDefinitions: {[key: string]: any};
         /**
-         * (Updatable) Specifies whether the configuration is contained or not.
+         * (Updatable) Specifies whether the configuration is contained.
          */
         isContained: boolean;
         /**
@@ -34604,7 +35674,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * (Updatable) The property which disciminates the subtypes.
+         * (Updatable) The property which differentiates the subtypes.
          */
         modelType: string;
         /**
@@ -34612,7 +35682,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -34620,7 +35690,7 @@ export namespace DataConnectivity {
          */
         objectStatus: number;
         /**
-         * (Updatable) A reference to the object's parent.
+         * (Updatable) A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRef;
     }
@@ -34645,7 +35715,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * (Updatable) The id of the user who created the object.
+         * (Updatable) The ID of the user who created the object.
          */
         createdByUserId: string;
         /**
@@ -34653,7 +35723,7 @@ export namespace DataConnectivity {
          */
         createdByUserName: string;
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
@@ -34661,7 +35731,7 @@ export namespace DataConnectivity {
          */
         key: string;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -34677,7 +35747,7 @@ export namespace DataConnectivity {
          */
         timeUpdated: string;
         /**
-         * (Updatable) The id of the user who updated the object.
+         * (Updatable) The ID of the user who updated the object.
          */
         updatedByUserId: string;
         /**
@@ -34696,23 +35766,23 @@ export namespace DataConnectivity {
          */
         defaultConnection: outputs.DataConnectivity.RegistryFolderDataAssetDefaultConnection;
         /**
-         * (Updatable) User-defined description for the folder.
+         * (Updatable) User-defined description of the folder.
          */
         description: string;
         /**
-         * (Updatable) The external key for the object.
+         * (Updatable) The external key of the object.
          */
         externalKey: string;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata: outputs.DataConnectivity.RegistryFolderDataAssetMetadata;
         /**
@@ -34724,7 +35794,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -34755,27 +35825,27 @@ export namespace DataConnectivity {
 
     export interface RegistryFolderDataAssetDefaultConnection {
         /**
-         * (Updatable) The properties for the connection.
+         * (Updatable) The properties of the connection.
          */
         connectionProperties: outputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionConnectionProperty[];
         /**
-         * (Updatable) User-defined description for the folder.
+         * (Updatable) User-defined description of the folder.
          */
         description: string;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * (Updatable) The default property for the connection.
+         * (Updatable) The default property of the connection.
          */
         isDefault: boolean;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata: outputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionMetadata;
         /**
@@ -34787,7 +35857,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -34818,7 +35888,7 @@ export namespace DataConnectivity {
 
     export interface RegistryFolderDataAssetDefaultConnectionConnectionProperty {
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -34829,7 +35899,7 @@ export namespace DataConnectivity {
 
     export interface RegistryFolderDataAssetDefaultConnectionMetadata {
         /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator: outputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionMetadataAggregator;
         /**
@@ -34845,7 +35915,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * (Updatable) The full path to identify this object.
+         * (Updatable) The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -34853,11 +35923,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -34884,19 +35954,19 @@ export namespace DataConnectivity {
 
     export interface RegistryFolderDataAssetDefaultConnectionMetadataAggregator {
         /**
-         * (Updatable) User-defined description for the folder.
+         * (Updatable) User-defined description of the folder.
          */
         description: string;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -34911,15 +35981,15 @@ export namespace DataConnectivity {
          */
         defaultConnection: string;
         /**
-         * (Updatable) User-defined description for the folder.
+         * (Updatable) User-defined description of the folder.
          */
         description: string;
         /**
-         * (Updatable) The external key for the object.
+         * (Updatable) The external key of the object.
          */
         externalKey: string;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
@@ -34927,11 +35997,11 @@ export namespace DataConnectivity {
          */
         isHasContainers: boolean;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          */
         metadata: outputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata;
         /**
@@ -34943,7 +36013,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -34955,7 +36025,7 @@ export namespace DataConnectivity {
          */
         objectVersion: number;
         /**
-         * (Updatable) A reference to the object's parent.
+         * (Updatable) A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef;
         /**
@@ -34966,7 +36036,7 @@ export namespace DataConnectivity {
 
     export interface RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata {
         /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator: outputs.DataConnectivity.RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator;
         /**
@@ -34982,7 +36052,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * (Updatable) The full path to identify this object.
+         * (Updatable) The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -34990,11 +36060,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -35021,19 +36091,19 @@ export namespace DataConnectivity {
 
     export interface RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregator {
         /**
-         * (Updatable) User-defined description for the folder.
+         * (Updatable) User-defined description of the folder.
          */
         description: string;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -35055,7 +36125,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * (Updatable) The id of the user who created the object.
+         * (Updatable) The ID of the user who created the object.
          */
         createdByUserId: string;
         /**
@@ -35063,15 +36133,15 @@ export namespace DataConnectivity {
          */
         createdByUserName: string;
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -35087,7 +36157,7 @@ export namespace DataConnectivity {
          */
         timeUpdated: string;
         /**
-         * (Updatable) The id of the user who updated the object.
+         * (Updatable) The ID of the user who updated the object.
          */
         updatedByUserId: string;
         /**
@@ -35098,7 +36168,7 @@ export namespace DataConnectivity {
 
     export interface RegistryFolderDataAssetMetadata {
         /**
-         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
          */
         aggregator: outputs.DataConnectivity.RegistryFolderDataAssetMetadataAggregator;
         /**
@@ -35114,7 +36184,7 @@ export namespace DataConnectivity {
          */
         createdByName: string;
         /**
-         * (Updatable) The full path to identify this object.
+         * (Updatable) The full path to identify the object.
          */
         identifierPath: string;
         /**
@@ -35122,11 +36192,11 @@ export namespace DataConnectivity {
          */
         infoFields: {[key: string]: any};
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -35153,19 +36223,19 @@ export namespace DataConnectivity {
 
     export interface RegistryFolderDataAssetMetadataAggregator {
         /**
-         * (Updatable) User-defined description for the folder.
+         * (Updatable) User-defined description of the folder.
          */
         description: string;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -35176,15 +36246,15 @@ export namespace DataConnectivity {
 
     export interface RegistryFolderDataAssetNativeTypeSystem {
         /**
-         * (Updatable) User-defined description for the folder.
+         * (Updatable) User-defined description of the folder.
          */
         description: string;
         /**
-         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          */
         identifier: string;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
@@ -35196,7 +36266,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -35208,7 +36278,7 @@ export namespace DataConnectivity {
          */
         objectVersion: number;
         /**
-         * (Updatable) A reference to the object's parent.
+         * (Updatable) A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.RegistryFolderDataAssetNativeTypeSystemParentRef;
         /**
@@ -35238,7 +36308,7 @@ export namespace DataConnectivity {
          */
         configDefinition: outputs.DataConnectivity.RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinition;
         /**
-         * (Updatable) User-defined description for the folder.
+         * (Updatable) User-defined description of the folder.
          */
         description: string;
         /**
@@ -35246,7 +36316,7 @@ export namespace DataConnectivity {
          */
         dtType: string;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
@@ -35258,7 +36328,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -35266,7 +36336,7 @@ export namespace DataConnectivity {
          */
         objectStatus: number;
         /**
-         * (Updatable) A reference to the object's parent.
+         * (Updatable) A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.RegistryFolderDataAssetNativeTypeSystemTypeParentRef;
         /**
@@ -35281,11 +36351,11 @@ export namespace DataConnectivity {
          */
         configParameterDefinitions: {[key: string]: any};
         /**
-         * (Updatable) Specifies whether the configuration is contained or not.
+         * (Updatable) Specifies whether the configuration is contained.
          */
         isContained: boolean;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
@@ -35297,7 +36367,7 @@ export namespace DataConnectivity {
          */
         modelVersion: string;
         /**
-         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          */
         name: string;
         /**
@@ -35305,7 +36375,7 @@ export namespace DataConnectivity {
          */
         objectStatus: number;
         /**
-         * (Updatable) A reference to the object's parent.
+         * (Updatable) A reference to the parent object.
          */
         parentRef: outputs.DataConnectivity.RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRef;
     }
@@ -35330,7 +36400,7 @@ export namespace DataConnectivity {
          */
         aggregatorKey: string;
         /**
-         * (Updatable) The id of the user who created the object.
+         * (Updatable) The ID of the user who created the object.
          */
         createdByUserId: string;
         /**
@@ -35338,15 +36408,15 @@ export namespace DataConnectivity {
          */
         createdByUserName: string;
         /**
-         * (Updatable) Specifies whether this object is a favorite or not.
+         * (Updatable) Specifies whether the object is a favorite.
          */
         isFavorite: boolean;
         /**
-         * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          */
         key: string;
         /**
-         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
          */
         labels: string[];
         /**
@@ -35362,7 +36432,7 @@ export namespace DataConnectivity {
          */
         timeUpdated: string;
         /**
-         * (Updatable) The id of the user who updated the object.
+         * (Updatable) The ID of the user who updated the object.
          */
         updatedByUserId: string;
         /**
@@ -44605,6 +45675,10 @@ export namespace Database {
          */
         isCustomActionTimeoutEnabled: boolean;
         /**
+         * (Updatable) If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
+        /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
         leadTimeInWeeks: number;
@@ -44651,6 +45725,10 @@ export namespace Database {
          * (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
          */
         isCustomActionTimeoutEnabled: boolean;
+        /**
+         * (Updatable) If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
         /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -44936,6 +46014,10 @@ export namespace Database {
          */
         isCustomActionTimeoutEnabled: boolean;
         /**
+         * (Updatable) If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
+        /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
         leadTimeInWeeks: number;
@@ -44982,6 +46064,10 @@ export namespace Database {
          * (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
          */
         isCustomActionTimeoutEnabled: boolean;
+        /**
+         * (Updatable) If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
         /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -45037,6 +46123,7 @@ export namespace Database {
          */
         hoursOfDays: number[];
         isCustomActionTimeoutEnabled: boolean;
+        isMonthlyPatchingEnabled: boolean;
         /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -45075,6 +46162,7 @@ export namespace Database {
          */
         hoursOfDays: number[];
         isCustomActionTimeoutEnabled: boolean;
+        isMonthlyPatchingEnabled: boolean;
         /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -45182,6 +46270,10 @@ export namespace Database {
          */
         isCustomActionTimeoutEnabled: boolean;
         /**
+         * (Updatable) If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
+        /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
         leadTimeInWeeks: number;
@@ -45222,6 +46314,14 @@ export namespace Database {
          * (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
          */
         isDiagnosticsEventsEnabled: boolean;
+        /**
+         * (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isHealthMonitoringEnabled: boolean;
+        /**
+         * (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isIncidentLogsEnabled: boolean;
     }
 
     export interface CloudVmClusterIormConfigCach {
@@ -45271,6 +46371,21 @@ export namespace Database {
          * (Updatable) The relative priority of this database.
          */
         share: number;
+    }
+
+    export interface DataGuardAssociationDataCollectionOptions {
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled: boolean;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isHealthMonitoringEnabled: boolean;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isIncidentLogsEnabled: boolean;
     }
 
     export interface DatabaseConnectionString {
@@ -45651,6 +46766,21 @@ export namespace Database {
         type: string;
     }
 
+    export interface DbSystemDataCollectionOptions {
+        /**
+         * (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled: boolean;
+        /**
+         * (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isHealthMonitoringEnabled: boolean;
+        /**
+         * (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isIncidentLogsEnabled: boolean;
+    }
+
     export interface DbSystemDbHome {
         createAsync?: boolean;
         /**
@@ -45894,6 +47024,10 @@ export namespace Database {
          */
         isCustomActionTimeoutEnabled: boolean;
         /**
+         * (Updatable) If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
+        /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
         leadTimeInWeeks: number;
@@ -45940,6 +47074,10 @@ export namespace Database {
          * (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
          */
         isCustomActionTimeoutEnabled: boolean;
+        /**
+         * (Updatable) If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
         /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -46107,6 +47245,10 @@ export namespace Database {
          * (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
          */
         isCustomActionTimeoutEnabled: boolean;
+        /**
+         * (Updatable) If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
         /**
          * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -46495,6 +47637,10 @@ export namespace Database {
          */
         isCustomActionTimeoutEnabled: boolean;
         /**
+         * If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
+        /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
         leadTimeInWeeks: number;
@@ -46541,6 +47687,10 @@ export namespace Database {
          * If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
          */
         isCustomActionTimeoutEnabled: boolean;
+        /**
+         * If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
         /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -46837,6 +47987,10 @@ export namespace Database {
          */
         isCustomActionTimeoutEnabled: boolean;
         /**
+         * If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
+        /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
         leadTimeInWeeks: number;
@@ -46883,6 +48037,10 @@ export namespace Database {
          * If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
          */
         isCustomActionTimeoutEnabled: boolean;
+        /**
+         * If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
         /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -48587,6 +49745,10 @@ export namespace Database {
          */
         isCustomActionTimeoutEnabled: boolean;
         /**
+         * If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
+        /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
         leadTimeInWeeks: number;
@@ -48633,6 +49795,10 @@ export namespace Database {
          * If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
          */
         isCustomActionTimeoutEnabled: boolean;
+        /**
+         * If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
         /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -48830,6 +49996,10 @@ export namespace Database {
          */
         isCustomActionTimeoutEnabled: boolean;
         /**
+         * If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
+        /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
         leadTimeInWeeks: number;
@@ -48876,6 +50046,10 @@ export namespace Database {
          * If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
          */
         isCustomActionTimeoutEnabled: boolean;
+        /**
+         * If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
         /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -48940,6 +50114,7 @@ export namespace Database {
          */
         hoursOfDays: number[];
         isCustomActionTimeoutEnabled: boolean;
+        isMonthlyPatchingEnabled: boolean;
         /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -48978,6 +50153,7 @@ export namespace Database {
          */
         hoursOfDays: number[];
         isCustomActionTimeoutEnabled: boolean;
+        isMonthlyPatchingEnabled: boolean;
         /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -49158,6 +50334,7 @@ export namespace Database {
          */
         hoursOfDays: number[];
         isCustomActionTimeoutEnabled: boolean;
+        isMonthlyPatchingEnabled: boolean;
         /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -49196,6 +50373,7 @@ export namespace Database {
          */
         hoursOfDays: number[];
         isCustomActionTimeoutEnabled: boolean;
+        isMonthlyPatchingEnabled: boolean;
         /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -49634,6 +50812,10 @@ export namespace Database {
          */
         isCustomActionTimeoutEnabled: boolean;
         /**
+         * If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
+        /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
         leadTimeInWeeks: number;
@@ -49770,6 +50952,10 @@ export namespace Database {
          */
         isCustomActionTimeoutEnabled: boolean;
         /**
+         * If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
+        /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
         leadTimeInWeeks: number;
@@ -49819,6 +51005,14 @@ export namespace Database {
          * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
          */
         isDiagnosticsEventsEnabled: boolean;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isHealthMonitoringEnabled: boolean;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isIncidentLogsEnabled: boolean;
     }
 
     export interface GetCloudVmClusterIormConfigCach {
@@ -50045,6 +51239,14 @@ export namespace Database {
          * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
          */
         isDiagnosticsEventsEnabled: boolean;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isHealthMonitoringEnabled: boolean;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isIncidentLogsEnabled: boolean;
     }
 
     export interface GetCloudVmClustersCloudVmClusterIormConfigCach {
@@ -50072,6 +51274,12 @@ export namespace Database {
         values: string[];
     }
 
+    export interface GetDataGuardAssociationDataCollectionOption {
+        isDiagnosticsEventsEnabled: boolean;
+        isHealthMonitoringEnabled: boolean;
+        isIncidentLogsEnabled: boolean;
+    }
+
     export interface GetDataGuardAssociationsDataGuardAssociation {
         /**
          * The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
@@ -50086,6 +51294,7 @@ export namespace Database {
         cpuCoreCount: number;
         createAsync: boolean;
         creationType: string;
+        dataCollectionOptions: outputs.Database.GetDataGuardAssociationsDataGuardAssociationDataCollectionOption[];
         databaseAdminPassword: string;
         databaseDefinedTags: {[key: string]: any};
         databaseFreeformTags: {[key: string]: any};
@@ -50163,6 +51372,12 @@ export namespace Database {
          * The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
          */
         transportType: string;
+    }
+
+    export interface GetDataGuardAssociationsDataGuardAssociationDataCollectionOption {
+        isDiagnosticsEventsEnabled: boolean;
+        isHealthMonitoringEnabled: boolean;
+        isIncidentLogsEnabled: boolean;
     }
 
     export interface GetDataGuardAssociationsFilter {
@@ -52044,6 +53259,10 @@ export namespace Database {
          */
         cpuCoreCount: number;
         /**
+         * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+         */
+        dataCollectionOptions: outputs.Database.GetDbSystemsDbSystemDataCollectionOption[];
+        /**
          * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
          */
         dataStoragePercentage: number;
@@ -52214,6 +53433,21 @@ export namespace Database {
         zoneId: string;
     }
 
+    export interface GetDbSystemsDbSystemDataCollectionOption {
+        /**
+         * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled: boolean;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isHealthMonitoringEnabled: boolean;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isIncidentLogsEnabled: boolean;
+    }
+
     export interface GetDbSystemsDbSystemDbHome {
         createAsync: boolean;
         databaseSoftwareImageId: string;
@@ -52373,6 +53607,10 @@ export namespace Database {
          */
         isCustomActionTimeoutEnabled: boolean;
         /**
+         * If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
+        /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
         leadTimeInWeeks: number;
@@ -52419,6 +53657,10 @@ export namespace Database {
          * If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
          */
         isCustomActionTimeoutEnabled: boolean;
+        /**
+         * If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
         /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -52586,6 +53828,10 @@ export namespace Database {
          * If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
          */
         isCustomActionTimeoutEnabled: boolean;
+        /**
+         * If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
         /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -52824,6 +54070,10 @@ export namespace Database {
          * If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
          */
         isCustomActionTimeoutEnabled: boolean;
+        /**
+         * If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled: boolean;
         /**
          * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
@@ -53841,6 +55091,47 @@ export namespace Database {
         totalEstimatedPatchingTime: number;
     }
 
+    export interface GetManagedPreferredCredentialsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedPreferredCredentialsPreferredCredentialCollection {
+        items: outputs.Database.GetManagedPreferredCredentialsPreferredCredentialCollectionItem[];
+    }
+
+    export interface GetManagedPreferredCredentialsPreferredCredentialCollectionItem {
+        /**
+         * The name of the preferred credential.
+         */
+        credentialName: string;
+        /**
+         * Indicates whether the preferred credential is accessible.
+         */
+        isAccessible: boolean;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
+         */
+        passwordSecretId: string;
+        /**
+         * The role of the database user.
+         */
+        role: string;
+        /**
+         * The status of the preferred credential.
+         */
+        status: string;
+        /**
+         * The type of preferred credential. Only 'BASIC' is supported currently.
+         */
+        type: string;
+        /**
+         * The user name used to connect to the database.
+         */
+        userName: string;
+    }
+
     export interface GetPluggableDatabaseConnectionString {
         /**
          * All connection strings to use to connect to the pluggable database.
@@ -53933,9 +55224,17 @@ export namespace Database {
 
     export interface GetVmClusterDataCollectionOption {
         /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
          */
         isDiagnosticsEventsEnabled: boolean;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isHealthMonitoringEnabled: boolean;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isIncidentLogsEnabled: boolean;
     }
 
     export interface GetVmClusterNetworkScan {
@@ -54423,9 +55722,12 @@ export namespace Database {
          */
         cpusEnabled: number;
         /**
-         * Indicates user preferences for the various diagnostic collection options for the VM cluster.
+         * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
          */
         dataCollectionOptions: outputs.Database.GetVmClustersVmClusterDataCollectionOption[];
+        /**
+         * Size of the DATA disk group in GBs.
+         */
         dataStorageSizeInGb: number;
         /**
          * Size, in terabytes, of the DATA disk group.
@@ -54521,9 +55823,17 @@ export namespace Database {
 
     export interface GetVmClustersVmClusterDataCollectionOption {
         /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
          */
         isDiagnosticsEventsEnabled: boolean;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isHealthMonitoringEnabled: boolean;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isIncidentLogsEnabled: boolean;
     }
 
     export interface KeyStoreAssociatedDatabase {
@@ -54626,9 +55936,17 @@ export namespace Database {
 
     export interface VmClusterAddVirtualNetworkDataCollectionOption {
         /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
          */
         isDiagnosticsEventsEnabled: boolean;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isHealthMonitoringEnabled: boolean;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isIncidentLogsEnabled: boolean;
     }
 
     export interface VmClusterAddVirtualNetworkDbServer {
@@ -54640,9 +55958,17 @@ export namespace Database {
 
     export interface VmClusterDataCollectionOptions {
         /**
-         * (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         * (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
          */
         isDiagnosticsEventsEnabled: boolean;
+        /**
+         * (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isHealthMonitoringEnabled: boolean;
+        /**
+         * (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isIncidentLogsEnabled: boolean;
     }
 
     export interface VmClusterNetworkScan {
@@ -54716,9 +56042,17 @@ export namespace Database {
 
     export interface VmClusterRemoveVirtualMachineDataCollectionOption {
         /**
-         * Indicates whether diagnostic collection is enabled for the VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` API.
+         * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
          */
         isDiagnosticsEventsEnabled: boolean;
+        /**
+         * Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isHealthMonitoringEnabled: boolean;
+        /**
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isIncidentLogsEnabled: boolean;
     }
 
     export interface VmClusterRemoveVirtualMachineDbServer {
@@ -60014,6 +61348,7 @@ export namespace DevOps {
          * The events, for example, PUSH, PULL_REQUEST_MERGE.
          */
         events: string[];
+        excludes: outputs.DevOps.BuildRunBuildRunSourceTriggerInfoActionFilterExclude[];
         /**
          * Attributes to filter GitLab self-hosted server events.
          */
@@ -60024,15 +61359,28 @@ export namespace DevOps {
         triggerSource: string;
     }
 
+    export interface BuildRunBuildRunSourceTriggerInfoActionFilterExclude {
+        fileFilters: outputs.DevOps.BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter[];
+    }
+
+    export interface BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter {
+        filePaths: string[];
+    }
+
     export interface BuildRunBuildRunSourceTriggerInfoActionFilterInclude {
         /**
          * The target branch for pull requests; not applicable for push requests.
          */
         baseRef: string;
+        fileFilters: outputs.DevOps.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter[];
         /**
          * Branch for push event; source branch for pull requests.
          */
         headRef: string;
+    }
+
+    export interface BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter {
+        filePaths: string[];
     }
 
     export interface BuildRunCommitInfo {
@@ -61192,6 +62540,7 @@ export namespace DevOps {
          * The events, for example, PUSH, PULL_REQUEST_MERGE.
          */
         events: string[];
+        excludes: outputs.DevOps.GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude[];
         /**
          * Attributes to filter GitLab self-hosted server events.
          */
@@ -61202,15 +62551,28 @@ export namespace DevOps {
         triggerSource: string;
     }
 
+    export interface GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude {
+        fileFilters: outputs.DevOps.GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter[];
+    }
+
+    export interface GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter {
+        filePaths: string[];
+    }
+
     export interface GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude {
         /**
          * The target branch for pull requests; not applicable for push requests.
          */
         baseRef: string;
+        fileFilters: outputs.DevOps.GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter[];
         /**
          * Branch for push event; source branch for pull requests.
          */
         headRef: string;
+    }
+
+    export interface GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter {
+        filePaths: string[];
     }
 
     export interface GetBuildRunCommitInfo {
@@ -63837,6 +65199,7 @@ export namespace DevOps {
          * The events, for example, PUSH, PULL_REQUEST_MERGE.
          */
         events: string[];
+        excludes: outputs.DevOps.GetTriggerActionFilterExclude[];
         /**
          * Attributes to filter GitLab self-hosted server events.
          */
@@ -63847,15 +65210,28 @@ export namespace DevOps {
         triggerSource: string;
     }
 
+    export interface GetTriggerActionFilterExclude {
+        fileFilters: outputs.DevOps.GetTriggerActionFilterExcludeFileFilter[];
+    }
+
+    export interface GetTriggerActionFilterExcludeFileFilter {
+        filePaths: string[];
+    }
+
     export interface GetTriggerActionFilterInclude {
         /**
          * The target branch for pull requests; not applicable for push requests.
          */
         baseRef: string;
+        fileFilters: outputs.DevOps.GetTriggerActionFilterIncludeFileFilter[];
         /**
          * Branch for push event; source branch for pull requests.
          */
         headRef: string;
+    }
+
+    export interface GetTriggerActionFilterIncludeFileFilter {
+        filePaths: string[];
     }
 
     export interface GetTriggersFilter {
@@ -63877,6 +65253,7 @@ export namespace DevOps {
          * The OCID of the compartment in which to list resources.
          */
         compartmentId: string;
+        connectionId: string;
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
          */
@@ -63955,6 +65332,7 @@ export namespace DevOps {
          * The events, for example, PUSH, PULL_REQUEST_MERGE.
          */
         events: string[];
+        excludes: outputs.DevOps.GetTriggersTriggerCollectionItemActionFilterExclude[];
         /**
          * Attributes to filter GitLab self-hosted server events.
          */
@@ -63965,15 +65343,28 @@ export namespace DevOps {
         triggerSource: string;
     }
 
+    export interface GetTriggersTriggerCollectionItemActionFilterExclude {
+        fileFilters: outputs.DevOps.GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter[];
+    }
+
+    export interface GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter {
+        filePaths: string[];
+    }
+
     export interface GetTriggersTriggerCollectionItemActionFilterInclude {
         /**
          * The target branch for pull requests; not applicable for push requests.
          */
         baseRef: string;
+        fileFilters: outputs.DevOps.GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter[];
         /**
          * Branch for push event; source branch for pull requests.
          */
         headRef: string;
+    }
+
+    export interface GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter {
+        filePaths: string[];
     }
 
     export interface ProjectNotificationConfig {
@@ -64029,6 +65420,7 @@ export namespace DevOps {
          * (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
          */
         events: string[];
+        exclude: outputs.DevOps.TriggerActionFilterExclude;
         /**
          * (Updatable) Attributes to filter GitLab self-hosted server events.
          */
@@ -64039,15 +65431,28 @@ export namespace DevOps {
         triggerSource: string;
     }
 
+    export interface TriggerActionFilterExclude {
+        fileFilter: outputs.DevOps.TriggerActionFilterExcludeFileFilter;
+    }
+
+    export interface TriggerActionFilterExcludeFileFilter {
+        filePaths: string[];
+    }
+
     export interface TriggerActionFilterInclude {
         /**
          * (Updatable) The target branch for pull requests; not applicable for push requests.
          */
         baseRef: string;
+        fileFilter: outputs.DevOps.TriggerActionFilterIncludeFileFilter;
         /**
          * (Updatable) Branch for push event; source branch for pull requests.
          */
         headRef: string;
+    }
+
+    export interface TriggerActionFilterIncludeFileFilter {
+        filePaths: string[];
     }
 }
 
@@ -64210,7 +65615,7 @@ export namespace Dns {
         /**
          * Value must be `PRIVATE` when listing private name resolver endpoints.
          */
-        scope: string;
+        scope?: string;
         /**
          * The canonical absolute URL of the resource.
          */
@@ -65318,6 +66723,10 @@ export namespace EmWarehouse {
 
     export interface GetResourceUsageEmInstance {
         /**
+         * emdDiscoverer url
+         */
+        emDiscovererUrl: string;
+        /**
          * emHost name
          */
         emHost: string;
@@ -66391,6 +67800,969 @@ export namespace Functions {
          * Define if tracing is enabled for the resource.
          */
         isEnabled: boolean;
+    }
+
+    export interface GetFusionEnvironmentAdminUserItem {
+        /**
+         * Admin users email address
+         */
+        emailAddress: string;
+        /**
+         * Admin users first name
+         */
+        firstName: string;
+        /**
+         * Admin users last name
+         */
+        lastName: string;
+        /**
+         * Admin username
+         */
+        username: string;
+    }
+
+    export interface GetFusionEnvironmentAdminUsersAdminUserCollection {
+        /**
+         * A page of AdminUserSummary objects.
+         */
+        items: outputs.Functions.GetFusionEnvironmentAdminUsersAdminUserCollectionItem[];
+    }
+
+    export interface GetFusionEnvironmentAdminUsersAdminUserCollectionItem {
+        /**
+         * Admin users email address
+         */
+        emailAddress: string;
+        /**
+         * Admin users first name
+         */
+        firstName: string;
+        /**
+         * unique FusionEnvironment identifier
+         */
+        fusionEnvironmentId: string;
+        id: string;
+        /**
+         * A page of AdminUserSummary objects.
+         */
+        items: outputs.Functions.GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem[];
+        /**
+         * Admin users last name
+         */
+        lastName: string;
+        password: string;
+        /**
+         * Admin username
+         */
+        username: string;
+    }
+
+    export interface GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem {
+        /**
+         * Admin users email address
+         */
+        emailAddress: string;
+        /**
+         * Admin users first name
+         */
+        firstName: string;
+        /**
+         * Admin users last name
+         */
+        lastName: string;
+        /**
+         * Admin username
+         */
+        username: string;
+    }
+
+    export interface GetFusionEnvironmentAdminUsersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail {
+        emailAddress: string;
+        firstName: string;
+        lastName: string;
+        password: string;
+        username: string;
+    }
+
+    export interface GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection {
+        items: outputs.Functions.GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem[];
+    }
+
+    export interface GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem {
+        /**
+         * unique FusionEnvironment identifier
+         */
+        fusionEnvironmentId: string;
+        /**
+         * Unique identifier that is immutable on creation.
+         */
+        id: string;
+        isResumeDataMasking: boolean;
+        /**
+         * A filter that returns all resources that match the specified status
+         */
+        state: string;
+        /**
+         * The time the data masking activity ended. An RFC3339 formatted datetime string.
+         */
+        timeMaskingFinish: string;
+        /**
+         * The time the data masking activity started. An RFC3339 formatted datetime string.
+         */
+        timeMaskingStart: string;
+    }
+
+    export interface GetFusionEnvironmentDataMaskingActivitiesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFusionEnvironmentFamiliesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection {
+        items: outputs.Functions.GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem[];
+    }
+
+    export interface GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem {
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+         */
+        familyMaintenancePolicies: outputs.Functions.GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy[];
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * The unique identifier (OCID) of the environment family. Can't be changed after creation.
+         */
+        id: string;
+        /**
+         * When set to True, a subscription update is required for the environment family.
+         */
+        isSubscriptionUpdateNeeded: boolean;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * A filter that returns all resources that match the specified lifecycle state.
+         */
+        state: string;
+        /**
+         * The list of the IDs of the applications subscriptions that are associated with the environment family.
+         */
+        subscriptionIds: string[];
+        /**
+         * Environment Specific Guid/ System Name
+         */
+        systemName: string;
+        /**
+         * The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
+         */
+        timeCreated: string;
+        timeUpdated: string;
+    }
+
+    export interface GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy {
+        /**
+         * Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
+         */
+        concurrentMaintenance: string;
+        /**
+         * When True, monthly patching is enabled for the environment family.
+         */
+        isMonthlyPatchingEnabled: boolean;
+        /**
+         * The quarterly maintenance month group schedule of the Fusion environment family.
+         */
+        quarterlyUpgradeBeginTimes: string;
+    }
+
+    export interface GetFusionEnvironmentFamilyFamilyMaintenancePolicy {
+        /**
+         * Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
+         */
+        concurrentMaintenance: string;
+        /**
+         * When True, monthly patching is enabled for the environment family.
+         */
+        isMonthlyPatchingEnabled: boolean;
+        /**
+         * The quarterly maintenance month group schedule of the Fusion environment family.
+         */
+        quarterlyUpgradeBeginTimes: string;
+    }
+
+    export interface GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage {
+        limit: number;
+        /**
+         * The usage of current environment.
+         */
+        usage: number;
+    }
+
+    export interface GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage {
+        limit: number;
+        /**
+         * The usage of current environment.
+         */
+        usage: number;
+    }
+
+    export interface GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage {
+        limit: number;
+        /**
+         * The usage of current environment.
+         */
+        usage: number;
+    }
+
+    export interface GetFusionEnvironmentFamilySubscriptionDetailSubscription {
+        /**
+         * Subscription id.
+         */
+        classicSubscriptionId: string;
+        /**
+         * OCID of the subscription details for particular root compartment or tenancy.
+         */
+        id: string;
+        /**
+         * The type of subscription, such as 'CLOUDCM'/'SAAS'/'CRM', etc.
+         */
+        serviceName: string;
+        /**
+         * Stock keeping unit.
+         */
+        skuses: outputs.Functions.GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus[];
+    }
+
+    export interface GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus {
+        /**
+         * Description of the stock units.
+         */
+        description: string;
+        /**
+         * Description of the covered product belonging to this Sku.
+         */
+        licensePartDescription: string;
+        /**
+         * Base metric for billing the service.
+         */
+        metricName: string;
+        /**
+         * Quantity of the stock units.
+         */
+        quantity: number;
+        /**
+         * Stock keeping unit id.
+         */
+        sku: string;
+    }
+
+    export interface GetFusionEnvironmentMaintenancePolicy {
+        /**
+         * User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
+         */
+        environmentMaintenanceOverride: string;
+        /**
+         * Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
+         */
+        monthlyPatchingOverride: string;
+        /**
+         * Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
+         */
+        quarterlyUpgradeBeginTimes: outputs.Functions.GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime[];
+    }
+
+    export interface GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime {
+        /**
+         * The frequency and month when maintenance occurs for the Fusion environment.
+         */
+        beginTimesValue: string;
+        /**
+         * Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
+         */
+        overrideType: string;
+    }
+
+    export interface GetFusionEnvironmentRefresh {
+        /**
+         * The source environment id for the last refresh
+         */
+        sourceFusionEnvironmentId: string;
+        /**
+         * The time of when the last refresh finish
+         */
+        timeFinished: string;
+        /**
+         * The point of time of the latest DB backup for the last refresh
+         */
+        timeOfRestorationPoint: string;
+    }
+
+    export interface GetFusionEnvironmentRefreshActivitiesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection {
+        items: outputs.Functions.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem[];
+    }
+
+    export interface GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem {
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * unique FusionEnvironment identifier
+         */
+        fusionEnvironmentId: string;
+        /**
+         * The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
+         */
+        id: string;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * Service availability / impact during refresh activity execution up down
+         */
+        serviceAvailability: string;
+        /**
+         * The OCID of the Fusion environment that is the source environment for the refresh.
+         */
+        sourceFusionEnvironmentId: string;
+        /**
+         * A filter that returns all resources that match the specified status
+         */
+        state: string;
+        /**
+         * The time the refresh activity record was created. An RFC3339 formatted datetime string.
+         */
+        timeAccepted: string;
+        /**
+         * The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
+         */
+        timeExpectedFinish: string;
+        /**
+         * The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
+         */
+        timeFinished: string;
+        /**
+         * The date and time of the most recent source environment backup used for the environment refresh.
+         */
+        timeOfRestorationPoint: string;
+        /**
+         * The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
+         */
+        timeScheduledStart: string;
+        /**
+         * The time the refresh activity record was updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetFusionEnvironmentRule {
+        /**
+         * Rule type
+         */
+        action: string;
+        conditions: outputs.Functions.GetFusionEnvironmentRuleCondition[];
+        /**
+         * A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+         */
+        description: string;
+    }
+
+    export interface GetFusionEnvironmentRuleCondition {
+        /**
+         * RuleCondition type
+         */
+        attributeName: string;
+        /**
+         * The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
+         */
+        attributeValue: string;
+    }
+
+    export interface GetFusionEnvironmentScheduledActivitiesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection {
+        items: outputs.Functions.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem[];
+    }
+
+    export interface GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem {
+        /**
+         * List of actions
+         */
+        actions: outputs.Functions.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction[];
+        /**
+         * Cumulative delay hours
+         */
+        delayInHours: number;
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        freeformTags: {[key: string]: any};
+        /**
+         * unique FusionEnvironment identifier
+         */
+        fusionEnvironmentId: string;
+        /**
+         * Unique identifier that is immutable on creation.
+         */
+        id: string;
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * A filter that returns all resources that match the specified run cycle.
+         */
+        runCycle: string;
+        /**
+         * Service availability / impact during scheduled activity execution up down
+         */
+        serviceAvailability: string;
+        /**
+         * A filter that returns all resources that match the specified status
+         */
+        state: string;
+        timeAccepted: string;
+        /**
+         * Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
+         */
+        timeExpectedFinish: string;
+        /**
+         * The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
+         */
+        timeFinished: string;
+        /**
+         * Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
+         */
+        timeScheduledStart: string;
+        /**
+         * The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction {
+        /**
+         * Type of action
+         */
+        actionType: string;
+        /**
+         * patch that delivered the vertex update prerequisite
+         */
+        artifact: string;
+        /**
+         * patch artifact category
+         */
+        category: string;
+        /**
+         * A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+         */
+        description: string;
+        /**
+         * A string that describeds whether the change is applied hot or cold
+         */
+        mode: string;
+        /**
+         * month qualifier
+         */
+        qualifier: string;
+        /**
+         * Unique identifier of the object that represents the action
+         */
+        referenceKey: string;
+        /**
+         * A filter that returns all resources that match the specified status
+         */
+        state: string;
+        /**
+         * name of the repo
+         */
+        version: string;
+    }
+
+    export interface GetFusionEnvironmentScheduledActivityAction {
+        /**
+         * Type of action
+         */
+        actionType: string;
+        /**
+         * patch that delivered the vertex update prerequisite
+         */
+        artifact: string;
+        /**
+         * patch artifact category
+         */
+        category: string;
+        /**
+         * A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+         */
+        description: string;
+        /**
+         * A string that describeds whether the change is applied hot or cold
+         */
+        mode: string;
+        /**
+         * month qualifier
+         */
+        qualifier: string;
+        /**
+         * Unique identifier of the object that represents the action
+         */
+        referenceKey: string;
+        /**
+         * The current state of the scheduledActivity.
+         */
+        state: string;
+        /**
+         * name of the repo
+         */
+        version: string;
+    }
+
+    export interface GetFusionEnvironmentServiceAttachmentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection {
+        items: outputs.Functions.GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem[];
+    }
+
+    export interface GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem {
+        /**
+         * Action
+         */
+        action: string;
+        /**
+         * Compartment Identifier
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * Unique identifier that is immutable on creation
+         */
+        id: string;
+        /**
+         * Whether this service is provisioned due to the customer being subscribed to a specific SKU
+         */
+        isSkuBased: boolean;
+        /**
+         * The ID of the service instance created that can be used to identify this on the service control plane
+         */
+        serviceInstanceId: string;
+        /**
+         * A filter that returns all resources that match the specified lifecycle state.
+         */
+        serviceInstanceType: string;
+        /**
+         * Public URL
+         */
+        serviceUrl: string;
+        /**
+         * A filter that returns all resources that match the specified lifecycle state.
+         */
+        state: string;
+        /**
+         * The time the the ServiceInstance was created. An RFC3339 formatted datetime string
+         */
+        timeCreated: string;
+        /**
+         * The time the ServiceInstance was updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetFusionEnvironmentTimeAvailableForRefreshItem {
+        /**
+         * refresh time.
+         */
+        timeAvailableForRefresh: string;
+    }
+
+    export interface GetFusionEnvironmentTimeAvailableForRefreshsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection {
+        /**
+         * A list of available refresh time objects.
+         */
+        items: outputs.Functions.GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem[];
+    }
+
+    export interface GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem {
+        /**
+         * refresh time.
+         */
+        timeAvailableForRefresh: string;
+    }
+
+    export interface GetFusionEnvironmentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFusionEnvironmentsFusionEnvironmentCollection {
+        items: outputs.Functions.GetFusionEnvironmentsFusionEnvironmentCollectionItem[];
+    }
+
+    export interface GetFusionEnvironmentsFusionEnvironmentCollectionItem {
+        /**
+         * Language packs
+         */
+        additionalLanguagePacks: string[];
+        /**
+         * Patch bundle names
+         */
+        appliedPatchBundles: string[];
+        /**
+         * The ID of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        createFusionEnvironmentAdminUserDetails: outputs.Functions.GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail[];
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+         */
+        definedTags: {[key: string]: any};
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
+        displayName: string;
+        /**
+         * DNS prefix
+         */
+        dnsPrefix: string;
+        /**
+         * The IDCS domain created for the fusion instance
+         */
+        domainId: string;
+        /**
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+         */
+        freeformTags: {[key: string]: any};
+        /**
+         * The ID of the fusion environment family in which to list resources.
+         */
+        fusionEnvironmentFamilyId: string;
+        /**
+         * Type of the FusionEnvironment.
+         */
+        fusionEnvironmentType: string;
+        /**
+         * Unique identifier that is immutable on creation
+         */
+        id: string;
+        /**
+         * The IDCS Domain URL
+         */
+        idcsDomainUrl: string;
+        /**
+         * BYOK key id
+         */
+        kmsKeyId: string;
+        /**
+         * BYOK key info
+         */
+        kmsKeyInfos: string[];
+        /**
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+         */
+        maintenancePolicies: outputs.Functions.GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy[];
+        /**
+         * Public URL
+         */
+        publicUrl: string;
+        /**
+         * Describes a refresh of a fusion environment
+         */
+        refreshes: outputs.Functions.GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh[];
+        /**
+         * Network Access Control Rules
+         */
+        rules: outputs.Functions.GetFusionEnvironmentsFusionEnvironmentCollectionItemRule[];
+        /**
+         * A filter that returns all resources that match the specified lifecycle state.
+         */
+        state: string;
+        /**
+         * List of subscription IDs.
+         */
+        subscriptionIds: string[];
+        /**
+         * Environment Specific Guid/ System Name
+         */
+        systemName: string;
+        /**
+         * The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
+         */
+        timeCreated: string;
+        /**
+         * The next maintenance for this environment
+         */
+        timeUpcomingMaintenance: string;
+        /**
+         * The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated: string;
+        /**
+         * Version of Fusion Apps used by this environment
+         */
+        version: string;
+    }
+
+    export interface GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail {
+        emailAddress: string;
+        firstName: string;
+        lastName: string;
+        password: string;
+        username: string;
+    }
+
+    export interface GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy {
+        /**
+         * User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
+         */
+        environmentMaintenanceOverride: string;
+        /**
+         * Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
+         */
+        monthlyPatchingOverride: string;
+        /**
+         * Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
+         */
+        quarterlyUpgradeBeginTimes: outputs.Functions.GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime[];
+    }
+
+    export interface GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime {
+        /**
+         * The frequency and month when maintenance occurs for the Fusion environment.
+         */
+        beginTimesValue: string;
+        /**
+         * Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
+         */
+        overrideType: string;
+    }
+
+    export interface GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh {
+        /**
+         * The source environment id for the last refresh
+         */
+        sourceFusionEnvironmentId: string;
+        /**
+         * The time of when the last refresh finish
+         */
+        timeFinished: string;
+        /**
+         * The point of time of the latest DB backup for the last refresh
+         */
+        timeOfRestorationPoint: string;
+    }
+
+    export interface GetFusionEnvironmentsFusionEnvironmentCollectionItemRule {
+        /**
+         * Rule type
+         */
+        action: string;
+        conditions: outputs.Functions.GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition[];
+        /**
+         * A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+         */
+        description: string;
+    }
+
+    export interface GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition {
+        /**
+         * RuleCondition type
+         */
+        attributeName: string;
+        /**
+         * The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
+         */
+        attributeValue: string;
+    }
+
+}
+
+export namespace FusionApps {
+    export interface FusionEnvironmentAdminUserItem {
+        /**
+         * The email address for the administrator.
+         */
+        emailAddress: string;
+        /**
+         * The administrator's first name.
+         */
+        firstName: string;
+        /**
+         * The administrator's last name.
+         */
+        lastName: string;
+        /**
+         * The username for the administrator.
+         */
+        username: string;
+    }
+
+    export interface FusionEnvironmentCreateFusionEnvironmentAdminUserDetails {
+        /**
+         * The email address for the administrator.
+         */
+        emailAddress: string;
+        /**
+         * The administrator's first name.
+         */
+        firstName: string;
+        /**
+         * The administrator's last name.
+         */
+        lastName: string;
+        /**
+         * The password for the administrator.
+         */
+        password: string;
+        /**
+         * The username for the administrator.
+         */
+        username: string;
+    }
+
+    export interface FusionEnvironmentFamilyFamilyMaintenancePolicy {
+        /**
+         * (Updatable) Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
+         */
+        concurrentMaintenance: string;
+        /**
+         * (Updatable) When True, monthly patching is enabled for the environment family.
+         */
+        isMonthlyPatchingEnabled: boolean;
+        /**
+         * The quarterly maintenance month group schedule of the Fusion environment family.
+         */
+        quarterlyUpgradeBeginTimes: string;
+    }
+
+    export interface FusionEnvironmentMaintenancePolicy {
+        /**
+         * (Updatable) User choice to upgrade both test and prod pods at the same time. Overrides fusion environment families'.
+         */
+        environmentMaintenanceOverride: string;
+        /**
+         * (Updatable) When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion environment is not patched monthly. This setting overrides the environment family setting. When not set, the environment follows the environment family policy.
+         */
+        monthlyPatchingOverride: string;
+        /**
+         * Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
+         */
+        quarterlyUpgradeBeginTimes: outputs.FusionApps.FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime[];
+    }
+
+    export interface FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime {
+        /**
+         * The frequency and month when maintenance occurs for the Fusion environment.
+         */
+        beginTimesValue: string;
+        /**
+         * Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
+         */
+        overrideType: string;
+    }
+
+    export interface FusionEnvironmentRefresh {
+        /**
+         * The source environment id for the last refresh
+         */
+        sourceFusionEnvironmentId: string;
+        /**
+         * The time of when the last refresh finish
+         */
+        timeFinished: string;
+        /**
+         * The point of time of the latest DB backup for the last refresh
+         */
+        timeOfRestorationPoint: string;
+    }
+
+    export interface FusionEnvironmentRule {
+        /**
+         * (Updatable) Rule type
+         */
+        action: string;
+        /**
+         * (Updatable)
+         */
+        conditions: outputs.FusionApps.FusionEnvironmentRuleCondition[];
+        /**
+         * (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+         */
+        description: string;
+    }
+
+    export interface FusionEnvironmentRuleCondition {
+        /**
+         * (Updatable) RuleCondition type
+         */
+        attributeName: string;
+        /**
+         * (Updatable) The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
+         */
+        attributeValue: string;
     }
 
 }
@@ -76854,6 +79226,10 @@ export namespace Monitoring {
          */
         isEnabled: boolean;
         /**
+         * When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+         */
+        isNotificationsPerMetricDimensionEnabled: boolean;
+        /**
          * The format to use for notification messages sent from this alarm. The formats are:
          */
         messageFormat: string;
@@ -77802,11 +80178,22 @@ export namespace Mysql {
         values: string[];
     }
 
+    export interface GetMysqlConfigurationInitVariable {
+        /**
+         * Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+         */
+        lowerCaseTableNames: string;
+    }
+
     export interface GetMysqlConfigurationVariable {
         /**
          * ("autocommit")
          */
         autocommit: boolean;
+        /**
+         * If enabled, the server stores all temporary tables on disk rather than in memory.
+         */
+        bigTables: boolean;
         /**
          * Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
          */
@@ -77828,13 +80215,21 @@ export namespace Mysql {
          */
         completionType: string;
         /**
-         * ("connectTimeout")
+         * The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
          */
         connectTimeout: number;
         /**
+         * Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+         */
+        connectionMemoryChunkSize: number;
+        /**
+         * Set the maximum amount of memory that can be used by a single user connection.
+         */
+        connectionMemoryLimit: string;
+        /**
          * ("cteMaxRecursionDepth")
          */
-        cteMaxRecursionDepth: number;
+        cteMaxRecursionDepth: string;
         /**
          * ("defaultAuthenticationPlugin")
          */
@@ -77845,8 +80240,18 @@ export namespace Mysql {
         foreignKeyChecks: boolean;
         /**
          * ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
          */
         generatedRandomPasswordLength: number;
+        /**
+         * Set the total amount of memory that can be used by all user connections.
+         */
+        globalConnectionMemoryLimit: string;
+        /**
+         * Determines whether the MySQL server calculates Global_connection_memory.
+         */
+        globalConnectionMemoryTracking: boolean;
         /**
          * * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
          * * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
@@ -77860,13 +80265,25 @@ export namespace Mysql {
          */
         informationSchemaStatsExpiry: number;
         /**
+         * Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+         */
+        innodbBufferPoolDumpPct: number;
+        /**
          * ("innodbBufferPoolInstances")
          */
         innodbBufferPoolInstances: number;
         /**
-         * ("innodbBufferPoolSize")
+         * The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
          */
         innodbBufferPoolSize: string;
+        /**
+         * innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+         */
+        innodbDdlBufferSize: string;
+        /**
+         * innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+         */
+        innodbDdlThreads: number;
         /**
          * ("innodbFtEnableStopword")
          */
@@ -77886,7 +80303,7 @@ export namespace Mysql {
         /**
          * ("innodbFtResultCacheLimit")
          */
-        innodbFtResultCacheLimit: number;
+        innodbFtResultCacheLimit: string;
         /**
          * ("innodbFtServerStopwordTable")
          */
@@ -77896,13 +80313,29 @@ export namespace Mysql {
          */
         innodbLockWaitTimeout: number;
         /**
-         * ("innodbMaxPurgeLag")
+         * Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
          */
-        innodbMaxPurgeLag: number;
+        innodbLogWriterThreads: boolean;
         /**
-         * ("innodbMaxPurgeLagDelay")
+         * The desired maximum purge lag in terms of transactions.
+         */
+        innodbMaxPurgeLag: string;
+        /**
+         * The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
          */
         innodbMaxPurgeLagDelay: number;
+        /**
+         * The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+         */
+        innodbStatsPersistentSamplePages: string;
+        /**
+         * The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+         */
+        innodbStatsTransientSamplePages: string;
+        /**
+         * The number of seconds the server waits for activity on an interactive connection before closing it.
+         */
+        interactiveTimeout: number;
         /**
          * ("localInfile")
          */
@@ -77912,13 +80345,29 @@ export namespace Mysql {
          */
         mandatoryRoles: string;
         /**
+         * The maximum size of one packet or any generated/intermediate string.
+         */
+        maxAllowedPacket: number;
+        /**
+         * Sets the size of the transaction cache.
+         */
+        maxBinlogCacheSize: string;
+        /**
+         * ("maxConnectErrors")
+         */
+        maxConnectErrors: string;
+        /**
          * ("maxConnections")
          */
         maxConnections: number;
         /**
          * ("maxExecutionTime")
          */
-        maxExecutionTime: number;
+        maxExecutionTime: string;
+        /**
+         * This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+         */
+        maxHeapTableSize: string;
         /**
          * ("maxPreparedStmtCount")
          */
@@ -77929,10 +80378,12 @@ export namespace Mysql {
         mysqlFirewallMode: boolean;
         /**
          * DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+         *
+         * @deprecated The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
          */
         mysqlZstdDefaultCompressionLevel: number;
         /**
-         * ("mysqlxConnectTimeout") DEPRECATED -- variable should not be settable and will be ignored
+         * The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
          */
         mysqlxConnectTimeout: number;
         /**
@@ -77945,6 +80396,8 @@ export namespace Mysql {
         mysqlxDeflateMaxClientCompressionLevel: number;
         /**
          * ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
          */
         mysqlxDocumentIdUniquePrefix: number;
         /**
@@ -77953,10 +80406,12 @@ export namespace Mysql {
         mysqlxEnableHelloNotice: boolean;
         /**
          * ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
          */
         mysqlxIdleWorkerThreadTimeout: number;
         /**
-         * ("mysqlxInteractiveTimeout") DEPRECATED -- variable should not be settable and will be ignored
+         * The number of seconds to wait for interactive clients to timeout.
          */
         mysqlxInteractiveTimeout: number;
         /**
@@ -77968,23 +80423,25 @@ export namespace Mysql {
          */
         mysqlxLz4maxClientCompressionLevel: number;
         /**
-         * ("mysqlxMaxAllowedPacket") DEPRECATED -- variable should not be settable and will be ignored
+         * The maximum size of network packets that can be received by X Plugin.
          */
         mysqlxMaxAllowedPacket: number;
         /**
          * ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
          */
         mysqlxMinWorkerThreads: number;
         /**
-         * ("mysqlxReadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+         * The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
          */
         mysqlxReadTimeout: number;
         /**
-         * ("mysqlxWaitTimeout") DEPRECATED -- variable should not be settable and will be ignored
+         * The number of seconds that X Plugin waits for activity on a connection.
          */
         mysqlxWaitTimeout: number;
         /**
-         * ("mysqlxWriteTimeout") DEPRECATED -- variable should not be settable and will be ignored
+         * The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
          */
         mysqlxWriteTimeout: number;
         /**
@@ -77996,17 +80453,37 @@ export namespace Mysql {
          */
         mysqlxZstdMaxClientCompressionLevel: number;
         /**
+         * The number of seconds to wait for more data from a connection before aborting the read.
+         */
+        netReadTimeout: number;
+        /**
+         * The number of seconds to wait for a block to be written to a connection before aborting the write.
+         */
+        netWriteTimeout: number;
+        /**
          * ("parserMaxMemSize")
          */
-        parserMaxMemSize: number;
+        parserMaxMemSize: string;
         /**
          * ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
          */
-        queryAllocBlockSize: number;
+        queryAllocBlockSize: string;
         /**
          * ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
          */
-        queryPreallocSize: number;
+        queryPreallocSize: string;
+        /**
+         * regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+         */
+        regexpTimeLimit: number;
+        /**
+         * Each session that must perform a sort allocates a buffer of this size.
+         */
+        sortBufferSize: string;
         /**
          * ("sqlMode")
          */
@@ -78020,9 +80497,29 @@ export namespace Mysql {
          */
         sqlWarnings: boolean;
         /**
+         * Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+         */
+        threadPoolDedicatedListeners: boolean;
+        /**
+         * Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+         */
+        threadPoolMaxTransactionsLimit: number;
+        /**
+         * Initializes the time zone for each client that connects.
+         */
+        timeZone: string;
+        /**
+         * The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+         */
+        tmpTableSize: string;
+        /**
          * ("transactionIsolation")
          */
         transactionIsolation: string;
+        /**
+         * The number of seconds the server waits for activity on a noninteractive connection before closing it.
+         */
+        waitTimeout: number;
     }
 
     export interface GetMysqlConfigurationsConfiguration {
@@ -78051,6 +80548,10 @@ export namespace Mysql {
          */
         id: string;
         /**
+         * User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
+         */
+        initVariables: outputs.Mysql.GetMysqlConfigurationsConfigurationInitVariable[];
+        /**
          * The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
          */
         parentConfigurationId: string;
@@ -78075,16 +80576,27 @@ export namespace Mysql {
          */
         type: string;
         /**
-         * User controllable service variables.
+         * User-defined service variables.
          */
-        variables: outputs.Mysql.GetMysqlConfigurationsConfigurationVariables;
+        variables: outputs.Mysql.GetMysqlConfigurationsConfigurationVariable[];
     }
 
-    export interface GetMysqlConfigurationsConfigurationVariables {
+    export interface GetMysqlConfigurationsConfigurationInitVariable {
+        /**
+         * Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+         */
+        lowerCaseTableNames: string;
+    }
+
+    export interface GetMysqlConfigurationsConfigurationVariable {
         /**
          * ("autocommit")
          */
         autocommit: boolean;
+        /**
+         * If enabled, the server stores all temporary tables on disk rather than in memory.
+         */
+        bigTables: boolean;
         /**
          * Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
          */
@@ -78106,13 +80618,21 @@ export namespace Mysql {
          */
         completionType: string;
         /**
-         * ("connectTimeout")
+         * The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
          */
         connectTimeout: number;
         /**
+         * Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+         */
+        connectionMemoryChunkSize: number;
+        /**
+         * Set the maximum amount of memory that can be used by a single user connection.
+         */
+        connectionMemoryLimit: string;
+        /**
          * ("cteMaxRecursionDepth")
          */
-        cteMaxRecursionDepth: number;
+        cteMaxRecursionDepth: string;
         /**
          * ("defaultAuthenticationPlugin")
          */
@@ -78123,8 +80643,18 @@ export namespace Mysql {
         foreignKeyChecks: boolean;
         /**
          * ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
          */
         generatedRandomPasswordLength: number;
+        /**
+         * Set the total amount of memory that can be used by all user connections.
+         */
+        globalConnectionMemoryLimit: string;
+        /**
+         * Determines whether the MySQL server calculates Global_connection_memory.
+         */
+        globalConnectionMemoryTracking: boolean;
         /**
          * * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
          * * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
@@ -78138,13 +80668,25 @@ export namespace Mysql {
          */
         informationSchemaStatsExpiry: number;
         /**
+         * Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+         */
+        innodbBufferPoolDumpPct: number;
+        /**
          * ("innodbBufferPoolInstances")
          */
         innodbBufferPoolInstances: number;
         /**
-         * ("innodbBufferPoolSize")
+         * The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
          */
         innodbBufferPoolSize: string;
+        /**
+         * innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+         */
+        innodbDdlBufferSize: string;
+        /**
+         * innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+         */
+        innodbDdlThreads: number;
         /**
          * ("innodbFtEnableStopword")
          */
@@ -78164,7 +80706,7 @@ export namespace Mysql {
         /**
          * ("innodbFtResultCacheLimit")
          */
-        innodbFtResultCacheLimit: number;
+        innodbFtResultCacheLimit: string;
         /**
          * ("innodbFtServerStopwordTable")
          */
@@ -78174,13 +80716,29 @@ export namespace Mysql {
          */
         innodbLockWaitTimeout: number;
         /**
-         * ("innodbMaxPurgeLag")
+         * Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
          */
-        innodbMaxPurgeLag: number;
+        innodbLogWriterThreads: boolean;
         /**
-         * ("innodbMaxPurgeLagDelay")
+         * The desired maximum purge lag in terms of transactions.
+         */
+        innodbMaxPurgeLag: string;
+        /**
+         * The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
          */
         innodbMaxPurgeLagDelay: number;
+        /**
+         * The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+         */
+        innodbStatsPersistentSamplePages: string;
+        /**
+         * The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+         */
+        innodbStatsTransientSamplePages: string;
+        /**
+         * The number of seconds the server waits for activity on an interactive connection before closing it.
+         */
+        interactiveTimeout: number;
         /**
          * ("localInfile")
          */
@@ -78190,13 +80748,29 @@ export namespace Mysql {
          */
         mandatoryRoles: string;
         /**
+         * The maximum size of one packet or any generated/intermediate string.
+         */
+        maxAllowedPacket: number;
+        /**
+         * Sets the size of the transaction cache.
+         */
+        maxBinlogCacheSize: string;
+        /**
+         * ("maxConnectErrors")
+         */
+        maxConnectErrors: string;
+        /**
          * ("maxConnections")
          */
         maxConnections: number;
         /**
          * ("maxExecutionTime")
          */
-        maxExecutionTime: number;
+        maxExecutionTime: string;
+        /**
+         * This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+         */
+        maxHeapTableSize: string;
         /**
          * ("maxPreparedStmtCount")
          */
@@ -78207,10 +80781,12 @@ export namespace Mysql {
         mysqlFirewallMode: boolean;
         /**
          * DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+         *
+         * @deprecated The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
          */
         mysqlZstdDefaultCompressionLevel: number;
         /**
-         * ("mysqlxConnectTimeout") DEPRECATED -- variable should not be settable and will be ignored
+         * The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
          */
         mysqlxConnectTimeout: number;
         /**
@@ -78223,6 +80799,8 @@ export namespace Mysql {
         mysqlxDeflateMaxClientCompressionLevel: number;
         /**
          * ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
          */
         mysqlxDocumentIdUniquePrefix: number;
         /**
@@ -78231,10 +80809,12 @@ export namespace Mysql {
         mysqlxEnableHelloNotice: boolean;
         /**
          * ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
          */
         mysqlxIdleWorkerThreadTimeout: number;
         /**
-         * ("mysqlxInteractiveTimeout") DEPRECATED -- variable should not be settable and will be ignored
+         * The number of seconds to wait for interactive clients to timeout.
          */
         mysqlxInteractiveTimeout: number;
         /**
@@ -78246,23 +80826,25 @@ export namespace Mysql {
          */
         mysqlxLz4maxClientCompressionLevel: number;
         /**
-         * ("mysqlxMaxAllowedPacket") DEPRECATED -- variable should not be settable and will be ignored
+         * The maximum size of network packets that can be received by X Plugin.
          */
         mysqlxMaxAllowedPacket: number;
         /**
          * ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
          */
         mysqlxMinWorkerThreads: number;
         /**
-         * ("mysqlxReadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+         * The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
          */
         mysqlxReadTimeout: number;
         /**
-         * ("mysqlxWaitTimeout") DEPRECATED -- variable should not be settable and will be ignored
+         * The number of seconds that X Plugin waits for activity on a connection.
          */
         mysqlxWaitTimeout: number;
         /**
-         * ("mysqlxWriteTimeout") DEPRECATED -- variable should not be settable and will be ignored
+         * The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
          */
         mysqlxWriteTimeout: number;
         /**
@@ -78274,17 +80856,37 @@ export namespace Mysql {
          */
         mysqlxZstdMaxClientCompressionLevel: number;
         /**
+         * The number of seconds to wait for more data from a connection before aborting the read.
+         */
+        netReadTimeout: number;
+        /**
+         * The number of seconds to wait for a block to be written to a connection before aborting the write.
+         */
+        netWriteTimeout: number;
+        /**
          * ("parserMaxMemSize")
          */
-        parserMaxMemSize: number;
+        parserMaxMemSize: string;
         /**
          * ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
          */
-        queryAllocBlockSize: number;
+        queryAllocBlockSize: string;
         /**
          * ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
          */
-        queryPreallocSize: number;
+        queryPreallocSize: string;
+        /**
+         * regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+         */
+        regexpTimeLimit: number;
+        /**
+         * Each session that must perform a sort allocates a buffer of this size.
+         */
+        sortBufferSize: string;
         /**
          * ("sqlMode")
          */
@@ -78298,9 +80900,29 @@ export namespace Mysql {
          */
         sqlWarnings: boolean;
         /**
+         * Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+         */
+        threadPoolDedicatedListeners: boolean;
+        /**
+         * Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+         */
+        threadPoolMaxTransactionsLimit: number;
+        /**
+         * Initializes the time zone for each client that connects.
+         */
+        timeZone: string;
+        /**
+         * The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+         */
+        tmpTableSize: string;
+        /**
          * ("transactionIsolation")
          */
         transactionIsolation: string;
+        /**
+         * The number of seconds the server waits for activity on a noninteractive connection before closing it.
+         */
+        waitTimeout: number;
     }
 
     export interface GetMysqlConfigurationsFilter {
@@ -79286,6 +81908,350 @@ export namespace Mysql {
         windowStartTime: string;
     }
 
+    export interface MysqlConfigurationInitVariables {
+        /**
+         * Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+         */
+        lowerCaseTableNames: string;
+    }
+
+    export interface MysqlConfigurationVariables {
+        /**
+         * ("autocommit")
+         */
+        autocommit: boolean;
+        /**
+         * If enabled, the server stores all temporary tables on disk rather than in memory.
+         */
+        bigTables: boolean;
+        /**
+         * Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlogExpireLogsSeconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+         */
+        binlogExpireLogsSeconds: number;
+        /**
+         * Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlogRowMetadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+         */
+        binlogRowMetadata: string;
+        /**
+         * When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlogRowValueOptions](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+         */
+        binlogRowValueOptions: string;
+        /**
+         * Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlogTransactionCompression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+         */
+        binlogTransactionCompression: boolean;
+        /**
+         * ("completionType")
+         */
+        completionType: string;
+        /**
+         * The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
+         */
+        connectTimeout: number;
+        /**
+         * Set the chunking size for updates to the global memory usage counter Global_connection_memory.
+         */
+        connectionMemoryChunkSize: number;
+        /**
+         * Set the maximum amount of memory that can be used by a single user connection.
+         */
+        connectionMemoryLimit: string;
+        /**
+         * ("cteMaxRecursionDepth")
+         */
+        cteMaxRecursionDepth: string;
+        /**
+         * ("defaultAuthenticationPlugin")
+         */
+        defaultAuthenticationPlugin: string;
+        /**
+         * ("foreignKeyChecks")
+         */
+        foreignKeyChecks: boolean;
+        /**
+         * ("generatedRandomPasswordLength") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field.
+         */
+        generatedRandomPasswordLength: number;
+        /**
+         * Set the total amount of memory that can be used by all user connections.
+         */
+        globalConnectionMemoryLimit: string;
+        /**
+         * Determines whether the MySQL server calculates Global_connection_memory.
+         */
+        globalConnectionMemoryTracking: boolean;
+        /**
+         * * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
+         * * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
+         * * BEFORE: A RW transaction waits for all preceding transactions to complete before being applied. A RO transaction waits for all preceding transactions to complete before being executed. This ensures that this transaction reads the latest value by only affecting the latency of the transaction. This reduces the overhead of synchronization on every RW transaction, by ensuring synchronization is used only on RO transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+         * * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+         * * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
+         */
+        groupReplicationConsistency: string;
+        /**
+         * ("informationSchemaStatsExpiry")
+         */
+        informationSchemaStatsExpiry: number;
+        /**
+         * Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+         */
+        innodbBufferPoolDumpPct: number;
+        /**
+         * ("innodbBufferPoolInstances")
+         */
+        innodbBufferPoolInstances: number;
+        /**
+         * The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
+         */
+        innodbBufferPoolSize: string;
+        /**
+         * innodbDdlBufferSize corresponds to the MySQL system variable [innodbDdlBufferSize] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
+         */
+        innodbDdlBufferSize: string;
+        /**
+         * innodbDdlThreads corresponds to the MySQL system variable [innodbDdlThreads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
+         */
+        innodbDdlThreads: number;
+        /**
+         * ("innodbFtEnableStopword")
+         */
+        innodbFtEnableStopword: boolean;
+        /**
+         * ("innodbFtMaxTokenSize")
+         */
+        innodbFtMaxTokenSize: number;
+        /**
+         * ("innodbFtMinTokenSize")
+         */
+        innodbFtMinTokenSize: number;
+        /**
+         * ("innodbFtNumWordOptimize")
+         */
+        innodbFtNumWordOptimize: number;
+        /**
+         * ("innodbFtResultCacheLimit")
+         */
+        innodbFtResultCacheLimit: string;
+        /**
+         * ("innodbFtServerStopwordTable")
+         */
+        innodbFtServerStopwordTable: string;
+        /**
+         * ("innodbLockWaitTimeout")
+         */
+        innodbLockWaitTimeout: number;
+        /**
+         * Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
+         */
+        innodbLogWriterThreads: boolean;
+        /**
+         * The desired maximum purge lag in terms of transactions.
+         */
+        innodbMaxPurgeLag: string;
+        /**
+         * The maximum delay in microseconds for the delay imposed when the innodbMaxPurgeLag threshold is exceeded.
+         */
+        innodbMaxPurgeLagDelay: number;
+        /**
+         * The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
+         */
+        innodbStatsPersistentSamplePages: string;
+        /**
+         * The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
+         */
+        innodbStatsTransientSamplePages: string;
+        /**
+         * The number of seconds the server waits for activity on an interactive connection before closing it.
+         */
+        interactiveTimeout: number;
+        /**
+         * ("localInfile")
+         */
+        localInfile: boolean;
+        /**
+         * ("mandatoryRoles")
+         */
+        mandatoryRoles: string;
+        /**
+         * The maximum size of one packet or any generated/intermediate string.
+         */
+        maxAllowedPacket: number;
+        /**
+         * Sets the size of the transaction cache.
+         */
+        maxBinlogCacheSize: string;
+        /**
+         * ("maxConnectErrors")
+         */
+        maxConnectErrors: string;
+        /**
+         * ("maxConnections")
+         */
+        maxConnections: number;
+        /**
+         * ("maxExecutionTime")
+         */
+        maxExecutionTime: string;
+        /**
+         * This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
+         */
+        maxHeapTableSize: string;
+        /**
+         * ("maxPreparedStmtCount")
+         */
+        maxPreparedStmtCount: number;
+        /**
+         * ("mysqlFirewallMode")
+         */
+        mysqlFirewallMode: boolean;
+        /**
+         * DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
+         *
+         * @deprecated The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field.
+         */
+        mysqlZstdDefaultCompressionLevel: number;
+        /**
+         * The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
+         */
+        mysqlxConnectTimeout: number;
+        /**
+         * Set the default compression level for the deflate algorithm. ("mysqlxDeflateDefaultCompressionLevel")
+         */
+        mysqlxDeflateDefaultCompressionLevel: number;
+        /**
+         * Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlxDeflateMaxClientCompressionLevel")
+         */
+        mysqlxDeflateMaxClientCompressionLevel: number;
+        /**
+         * ("mysqlxDocumentIdUniquePrefix") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field.
+         */
+        mysqlxDocumentIdUniquePrefix: number;
+        /**
+         * ("mysqlxEnableHelloNotice") DEPRECATED -- variable should not be settable and will be ignored
+         */
+        mysqlxEnableHelloNotice: boolean;
+        /**
+         * ("mysqlxIdleWorkerThreadTimeout") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field.
+         */
+        mysqlxIdleWorkerThreadTimeout: number;
+        /**
+         * The number of seconds to wait for interactive clients to timeout.
+         */
+        mysqlxInteractiveTimeout: number;
+        /**
+         * Set the default compression level for the lz4 algorithm. ("mysqlxLz4DefaultCompressionLevel")
+         */
+        mysqlxLz4defaultCompressionLevel: number;
+        /**
+         * Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlxLz4MaxClientCompressionLevel")
+         */
+        mysqlxLz4maxClientCompressionLevel: number;
+        /**
+         * The maximum size of network packets that can be received by X Plugin.
+         */
+        mysqlxMaxAllowedPacket: number;
+        /**
+         * ("mysqlxMinWorkerThreads") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field.
+         */
+        mysqlxMinWorkerThreads: number;
+        /**
+         * The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
+         */
+        mysqlxReadTimeout: number;
+        /**
+         * The number of seconds that X Plugin waits for activity on a connection.
+         */
+        mysqlxWaitTimeout: number;
+        /**
+         * The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
+         */
+        mysqlxWriteTimeout: number;
+        /**
+         * Set the default compression level for the zstd algorithm. ("mysqlxZstdDefaultCompressionLevel")
+         */
+        mysqlxZstdDefaultCompressionLevel: number;
+        /**
+         * Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlxZstdMaxClientCompressionLevel")
+         */
+        mysqlxZstdMaxClientCompressionLevel: number;
+        /**
+         * The number of seconds to wait for more data from a connection before aborting the read.
+         */
+        netReadTimeout: number;
+        /**
+         * The number of seconds to wait for a block to be written to a connection before aborting the write.
+         */
+        netWriteTimeout: number;
+        /**
+         * ("parserMaxMemSize")
+         */
+        parserMaxMemSize: string;
+        /**
+         * ("queryAllocBlockSize") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field.
+         */
+        queryAllocBlockSize: string;
+        /**
+         * ("queryPreallocSize") DEPRECATED -- variable should not be settable and will be ignored
+         *
+         * @deprecated The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field.
+         */
+        queryPreallocSize: string;
+        /**
+         * regexpTimeLimit corresponds to the MySQL system variable [regexpTimeLimit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
+         */
+        regexpTimeLimit: number;
+        /**
+         * Each session that must perform a sort allocates a buffer of this size.
+         */
+        sortBufferSize: string;
+        /**
+         * ("sqlMode")
+         */
+        sqlMode: string;
+        /**
+         * ("sqlRequirePrimaryKey")
+         */
+        sqlRequirePrimaryKey: boolean;
+        /**
+         * ("sqlWarnings")
+         */
+        sqlWarnings: boolean;
+        /**
+         * Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
+         */
+        threadPoolDedicatedListeners: boolean;
+        /**
+         * Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
+         */
+        threadPoolMaxTransactionsLimit: number;
+        /**
+         * Initializes the time zone for each client that connects.
+         */
+        timeZone: string;
+        /**
+         * The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
+         */
+        tmpTableSize: string;
+        /**
+         * ("transactionIsolation")
+         */
+        transactionIsolation: string;
+        /**
+         * The number of seconds the server waits for activity on a noninteractive connection before closing it.
+         */
+        waitTimeout: number;
+    }
+
     export interface MysqlDbSystemAnalyticsCluster {
         /**
          * The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
@@ -79569,7 +82535,6 @@ export namespace Mysql {
          */
         sourceType: string;
     }
-
 }
 
 export namespace NetworkFirewall {
@@ -81999,6 +84964,10 @@ export namespace Ocvp {
          */
         nextSku: string;
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
+         */
+        nonUpgradedEsxiHostId: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
          */
         replacementEsxiHostId: string;
@@ -82018,6 +84987,14 @@ export namespace Ocvp {
          * The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          */
         timeUpdated: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+         */
+        upgradedReplacementEsxiHostId: string;
+        /**
+         * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+         */
+        vmwareSoftwareVersion: string;
     }
 
     export interface GetExsiHostsFilter {
@@ -82039,6 +85016,28 @@ export namespace Ocvp {
          * Name of the system that consumed the HCX on-premise license
          */
         systemName: string;
+    }
+
+    export interface GetSddcUpgradeLicense {
+        /**
+         * vSphere license key value.
+         */
+        licenseKey: string;
+        /**
+         * vSphere license type.
+         */
+        licenseType: string;
+    }
+
+    export interface GetSddcVsphereUpgradeObject {
+        /**
+         * Binary object download link.
+         */
+        downloadLink: string;
+        /**
+         * Binary object description.
+         */
+        linkDescription: string;
     }
 
     export interface GetSddcsFilter {
@@ -82224,6 +85223,10 @@ export namespace Ocvp {
          */
         timeUpdated: string;
         /**
+         * The vSphere licenses to be used when upgrade SDDC.
+         */
+        upgradeLicenses: outputs.Ocvp.GetSddcsSddcCollectionUpgradeLicense[];
+        /**
          * The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
          */
         vcenterFqdn: string;
@@ -82252,6 +85255,14 @@ export namespace Ocvp {
          */
         vsanVlanId: string;
         /**
+         * The link of guidance to upgrade vSphere.
+         */
+        vsphereUpgradeGuide: string;
+        /**
+         * The links of binary objects needed for upgrade vSphere.
+         */
+        vsphereUpgradeObjects: outputs.Ocvp.GetSddcsSddcCollectionVsphereUpgradeObject[];
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
          */
         vsphereVlanId: string;
@@ -82274,6 +85285,28 @@ export namespace Ocvp {
          * Name of the system that consumed the HCX on-premise license
          */
         systemName: string;
+    }
+
+    export interface GetSddcsSddcCollectionUpgradeLicense {
+        /**
+         * vSphere license key value.
+         */
+        licenseKey: string;
+        /**
+         * vSphere license type.
+         */
+        licenseType: string;
+    }
+
+    export interface GetSddcsSddcCollectionVsphereUpgradeObject {
+        /**
+         * Binary object download link.
+         */
+        downloadLink: string;
+        /**
+         * Binary object description.
+         */
+        linkDescription: string;
     }
 
     export interface GetSupportedHostShapesFilter {
@@ -82372,6 +85405,27 @@ export namespace Ocvp {
         systemName: string;
     }
 
+    export interface SddcUpgradeLicense {
+        /**
+         * vSphere license key value.
+         */
+        licenseKey: string;
+        /**
+         * vSphere license type.
+         */
+        licenseType: string;
+    }
+
+    export interface SddcVsphereUpgradeObject {
+        /**
+         * Binary object download link.
+         */
+        downloadLink: string;
+        /**
+         * Binary object description.
+         */
+        linkDescription: string;
+    }
 }
 
 export namespace Oda {
@@ -87947,6 +91001,10 @@ export namespace Optimizer {
          * The OCID of the compartment.
          */
         compartmentId: string;
+        /**
+         * The name associated with the compartment.
+         */
+        compartmentName: string;
         /**
          * Text describing the category.
          */
@@ -95874,9 +98932,17 @@ export namespace UsageProxy {
 
     export interface GetSubscriptionRedeemableUserItem {
         /**
-         * The email ID of a user that can redeem rewards.
+         * The email ID of the user that can redeem rewards.
          */
         emailId: string;
+        /**
+         * The first name of the user that can redeem rewards.
+         */
+        firstName: string;
+        /**
+         * The last name of the user that can redeem rewards.
+         */
+        lastName: string;
     }
 
     export interface GetSubscriptionRedeemableUsersFilter {
@@ -95887,14 +98953,14 @@ export namespace UsageProxy {
 
     export interface GetSubscriptionRedeemableUsersRedeemableUserCollection {
         /**
-         * The list of user email IDs that can redeem rewards.
+         * The list of user summary that can redeem rewards.
          */
         items: outputs.UsageProxy.GetSubscriptionRedeemableUsersRedeemableUserCollectionItem[];
     }
 
     export interface GetSubscriptionRedeemableUsersRedeemableUserCollectionItem {
         /**
-         * The list of user email IDs that can redeem rewards.
+         * The list of user summary that can redeem rewards.
          */
         items: outputs.UsageProxy.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem[];
         /**
@@ -95910,9 +98976,123 @@ export namespace UsageProxy {
 
     export interface GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem {
         /**
-         * The email ID of a user that can redeem rewards.
+         * The email ID of the user that can redeem rewards.
          */
         emailId: string;
+        /**
+         * The first name of the user that can redeem rewards.
+         */
+        firstName: string;
+        /**
+         * The last name of the user that can redeem rewards.
+         */
+        lastName: string;
+    }
+
+    export interface GetSubscriptionRedemptionItem {
+        /**
+         * It provides the redeemed rewards in base/subscription currency.
+         */
+        baseRewards: number;
+        /**
+         * It provides the fxRate between invoice currency and subscription currency.
+         */
+        fxRate: number;
+        /**
+         * The currency associated with invoice.
+         */
+        invoiceCurrency: string;
+        /**
+         * It provides the invoice number against the redemption.
+         */
+        invoiceNumber: string;
+        /**
+         * It provides the invoice total amount of given redemption.
+         */
+        invoiceTotalAmount: number;
+        /**
+         * It provides the redeemed rewards in invoice currency.
+         */
+        redeemedRewards: number;
+        /**
+         * The redemption code used in the Billing Center during the reward redemption process.
+         */
+        redemptionCode: string;
+        /**
+         * It provides the redemption email id.
+         */
+        redemptionEmail: string;
+        /**
+         * It provides the invoice date.
+         */
+        timeInvoiced: string;
+        /**
+         * It provides redeem date.
+         */
+        timeRedeemed: string;
+    }
+
+    export interface GetSubscriptionRedemptionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSubscriptionRedemptionsRedemptionCollection {
+        /**
+         * The list of redemption summary.
+         */
+        items: outputs.UsageProxy.GetSubscriptionRedemptionsRedemptionCollectionItem[];
+    }
+
+    export interface GetSubscriptionRedemptionsRedemptionCollectionItem {
+        /**
+         * The list of redemption summary.
+         */
+        items: outputs.UsageProxy.GetSubscriptionRedemptionsRedemptionCollectionItemItem[];
+    }
+
+    export interface GetSubscriptionRedemptionsRedemptionCollectionItemItem {
+        /**
+         * It provides the redeemed rewards in base/subscription currency.
+         */
+        baseRewards: number;
+        /**
+         * It provides the fxRate between invoice currency and subscription currency.
+         */
+        fxRate: number;
+        /**
+         * The currency associated with invoice.
+         */
+        invoiceCurrency: string;
+        /**
+         * It provides the invoice number against the redemption.
+         */
+        invoiceNumber: string;
+        /**
+         * It provides the invoice total amount of given redemption.
+         */
+        invoiceTotalAmount: number;
+        /**
+         * It provides the redeemed rewards in invoice currency.
+         */
+        redeemedRewards: number;
+        /**
+         * The redemption code used in the Billing Center during the reward redemption process.
+         */
+        redemptionCode: string;
+        /**
+         * It provides the redemption email id.
+         */
+        redemptionEmail: string;
+        /**
+         * It provides the invoice date.
+         */
+        timeInvoiced: string;
+        /**
+         * It provides redeem date.
+         */
+        timeRedeemed: string;
     }
 
     export interface GetSubscriptionRewardItem {
@@ -95972,7 +99152,7 @@ export namespace UsageProxy {
          */
         currency: string;
         /**
-         * The redemption code used in the billing center during the reward redemption process
+         * The redemption code used in the Billing Center during the reward redemption process.
          */
         redemptionCode: string;
         /**
@@ -96074,7 +99254,7 @@ export namespace UsageProxy {
          */
         currency: string;
         /**
-         * The redemption code used in the billing center during the reward redemption process
+         * The redemption code used in the Billing Center during the reward redemption process.
          */
         redemptionCode: string;
         /**
@@ -96100,6 +99280,14 @@ export namespace UsageProxy {
          * The email ID for a user that can redeem rewards.
          */
         emailId: string;
+        /**
+         * The first name of the user that can redeem rewards.
+         */
+        firstName: string;
+        /**
+         * The last name of the user that can redeem rewards.
+         */
+        lastName: string;
     }
 }
 

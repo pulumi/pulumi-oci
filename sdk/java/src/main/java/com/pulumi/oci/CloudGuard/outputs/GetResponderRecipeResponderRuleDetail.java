@@ -16,35 +16,24 @@ public final class GetResponderRecipeResponderRuleDetail {
      * @return Base condition object
      * 
      */
-    private final String condition;
+    private String condition;
     /**
      * @return ResponderRule configurations
      * 
      */
-    private final List<GetResponderRecipeResponderRuleDetailConfiguration> configurations;
+    private List<GetResponderRecipeResponderRuleDetailConfiguration> configurations;
     /**
      * @return Identifies state for ResponderRule
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return Execution Mode for ResponderRule
      * 
      */
-    private final String mode;
+    private String mode;
 
-    @CustomType.Constructor
-    private GetResponderRecipeResponderRuleDetail(
-        @CustomType.Parameter("condition") String condition,
-        @CustomType.Parameter("configurations") List<GetResponderRecipeResponderRuleDetailConfiguration> configurations,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("mode") String mode) {
-        this.condition = condition;
-        this.configurations = configurations;
-        this.isEnabled = isEnabled;
-        this.mode = mode;
-    }
-
+    private GetResponderRecipeResponderRuleDetail() {}
     /**
      * @return Base condition object
      * 
@@ -81,17 +70,13 @@ public final class GetResponderRecipeResponderRuleDetail {
     public static Builder builder(GetResponderRecipeResponderRuleDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String condition;
         private List<GetResponderRecipeResponderRuleDetailConfiguration> configurations;
         private Boolean isEnabled;
         private String mode;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetResponderRecipeResponderRuleDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.condition = defaults.condition;
@@ -100,10 +85,12 @@ public final class GetResponderRecipeResponderRuleDetail {
     	      this.mode = defaults.mode;
         }
 
+        @CustomType.Setter
         public Builder condition(String condition) {
             this.condition = Objects.requireNonNull(condition);
             return this;
         }
+        @CustomType.Setter
         public Builder configurations(List<GetResponderRecipeResponderRuleDetailConfiguration> configurations) {
             this.configurations = Objects.requireNonNull(configurations);
             return this;
@@ -111,15 +98,23 @@ public final class GetResponderRecipeResponderRuleDetail {
         public Builder configurations(GetResponderRecipeResponderRuleDetailConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder mode(String mode) {
             this.mode = Objects.requireNonNull(mode);
             return this;
-        }        public GetResponderRecipeResponderRuleDetail build() {
-            return new GetResponderRecipeResponderRuleDetail(condition, configurations, isEnabled, mode);
+        }
+        public GetResponderRecipeResponderRuleDetail build() {
+            final var o = new GetResponderRecipeResponderRuleDetail();
+            o.condition = condition;
+            o.configurations = configurations;
+            o.isEnabled = isEnabled;
+            o.mode = mode;
+            return o;
         }
     }
 }

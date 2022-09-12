@@ -14,56 +14,39 @@ public final class GetWaasPolicyWafConfigCaptcha {
      * @return The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
      * 
      */
-    private final String failureMessage;
+    private String failureMessage;
     /**
      * @return The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to &#39;Enter the letters and numbers as they are shown in the image above.&#39;
      * 
      */
-    private final String footerText;
+    private String footerText;
     /**
      * @return The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to &#39;We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.&#39;
      * 
      */
-    private final String headerText;
+    private String headerText;
     /**
      * @return The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to `300`.
      * 
      */
-    private final Integer sessionExpirationInSeconds;
+    private Integer sessionExpirationInSeconds;
     /**
      * @return The text to show on the label of the CAPTCHA challenge submit button. If unspecified, defaults to `Yes, I am human`.
      * 
      */
-    private final String submitLabel;
+    private String submitLabel;
     /**
      * @return The title used when displaying a CAPTCHA challenge. If unspecified, defaults to `Are you human?`
      * 
      */
-    private final String title;
+    private String title;
     /**
      * @return The unique URL path at which to show the CAPTCHA challenge.
      * 
      */
-    private final String url;
+    private String url;
 
-    @CustomType.Constructor
-    private GetWaasPolicyWafConfigCaptcha(
-        @CustomType.Parameter("failureMessage") String failureMessage,
-        @CustomType.Parameter("footerText") String footerText,
-        @CustomType.Parameter("headerText") String headerText,
-        @CustomType.Parameter("sessionExpirationInSeconds") Integer sessionExpirationInSeconds,
-        @CustomType.Parameter("submitLabel") String submitLabel,
-        @CustomType.Parameter("title") String title,
-        @CustomType.Parameter("url") String url) {
-        this.failureMessage = failureMessage;
-        this.footerText = footerText;
-        this.headerText = headerText;
-        this.sessionExpirationInSeconds = sessionExpirationInSeconds;
-        this.submitLabel = submitLabel;
-        this.title = title;
-        this.url = url;
-    }
-
+    private GetWaasPolicyWafConfigCaptcha() {}
     /**
      * @return The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
      * 
@@ -121,7 +104,7 @@ public final class GetWaasPolicyWafConfigCaptcha {
     public static Builder builder(GetWaasPolicyWafConfigCaptcha defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String failureMessage;
         private String footerText;
@@ -130,11 +113,7 @@ public final class GetWaasPolicyWafConfigCaptcha {
         private String submitLabel;
         private String title;
         private String url;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWaasPolicyWafConfigCaptcha defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.failureMessage = defaults.failureMessage;
@@ -146,35 +125,51 @@ public final class GetWaasPolicyWafConfigCaptcha {
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
         public Builder failureMessage(String failureMessage) {
             this.failureMessage = Objects.requireNonNull(failureMessage);
             return this;
         }
+        @CustomType.Setter
         public Builder footerText(String footerText) {
             this.footerText = Objects.requireNonNull(footerText);
             return this;
         }
+        @CustomType.Setter
         public Builder headerText(String headerText) {
             this.headerText = Objects.requireNonNull(headerText);
             return this;
         }
+        @CustomType.Setter
         public Builder sessionExpirationInSeconds(Integer sessionExpirationInSeconds) {
             this.sessionExpirationInSeconds = Objects.requireNonNull(sessionExpirationInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder submitLabel(String submitLabel) {
             this.submitLabel = Objects.requireNonNull(submitLabel);
             return this;
         }
+        @CustomType.Setter
         public Builder title(String title) {
             this.title = Objects.requireNonNull(title);
             return this;
         }
+        @CustomType.Setter
         public Builder url(String url) {
             this.url = Objects.requireNonNull(url);
             return this;
-        }        public GetWaasPolicyWafConfigCaptcha build() {
-            return new GetWaasPolicyWafConfigCaptcha(failureMessage, footerText, headerText, sessionExpirationInSeconds, submitLabel, title, url);
+        }
+        public GetWaasPolicyWafConfigCaptcha build() {
+            final var o = new GetWaasPolicyWafConfigCaptcha();
+            o.failureMessage = failureMessage;
+            o.footerText = footerText;
+            o.headerText = headerText;
+            o.sessionExpirationInSeconds = sessionExpirationInSeconds;
+            o.submitLabel = submitLabel;
+            o.title = title;
+            o.url = url;
+            return o;
         }
     }
 }

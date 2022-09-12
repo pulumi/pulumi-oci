@@ -18,44 +18,27 @@ public final class GetSuppressionsResult {
      * @return The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The email address of the suppression.
      * 
      */
-    private final @Nullable String emailAddress;
-    private final @Nullable List<GetSuppressionsFilter> filters;
+    private @Nullable String emailAddress;
+    private @Nullable List<GetSuppressionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of suppressions.
      * 
      */
-    private final List<GetSuppressionsSuppression> suppressions;
-    private final @Nullable String timeCreatedGreaterThanOrEqualTo;
-    private final @Nullable String timeCreatedLessThan;
+    private List<GetSuppressionsSuppression> suppressions;
+    private @Nullable String timeCreatedGreaterThanOrEqualTo;
+    private @Nullable String timeCreatedLessThan;
 
-    @CustomType.Constructor
-    private GetSuppressionsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("emailAddress") @Nullable String emailAddress,
-        @CustomType.Parameter("filters") @Nullable List<GetSuppressionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("suppressions") List<GetSuppressionsSuppression> suppressions,
-        @CustomType.Parameter("timeCreatedGreaterThanOrEqualTo") @Nullable String timeCreatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeCreatedLessThan") @Nullable String timeCreatedLessThan) {
-        this.compartmentId = compartmentId;
-        this.emailAddress = emailAddress;
-        this.filters = filters;
-        this.id = id;
-        this.suppressions = suppressions;
-        this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-        this.timeCreatedLessThan = timeCreatedLessThan;
-    }
-
+    private GetSuppressionsResult() {}
     /**
      * @return The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
      * 
@@ -101,7 +84,7 @@ public final class GetSuppressionsResult {
     public static Builder builder(GetSuppressionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String emailAddress;
@@ -110,11 +93,7 @@ public final class GetSuppressionsResult {
         private List<GetSuppressionsSuppression> suppressions;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSuppressionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +105,17 @@ public final class GetSuppressionsResult {
     	      this.timeCreatedLessThan = defaults.timeCreatedLessThan;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder emailAddress(@Nullable String emailAddress) {
             this.emailAddress = emailAddress;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSuppressionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +123,12 @@ public final class GetSuppressionsResult {
         public Builder filters(GetSuppressionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder suppressions(List<GetSuppressionsSuppression> suppressions) {
             this.suppressions = Objects.requireNonNull(suppressions);
             return this;
@@ -152,15 +136,26 @@ public final class GetSuppressionsResult {
         public Builder suppressions(GetSuppressionsSuppression... suppressions) {
             return suppressions(List.of(suppressions));
         }
+        @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
-        }        public GetSuppressionsResult build() {
-            return new GetSuppressionsResult(compartmentId, emailAddress, filters, id, suppressions, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan);
+        }
+        public GetSuppressionsResult build() {
+            final var o = new GetSuppressionsResult();
+            o.compartmentId = compartmentId;
+            o.emailAddress = emailAddress;
+            o.filters = filters;
+            o.id = id;
+            o.suppressions = suppressions;
+            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            o.timeCreatedLessThan = timeCreatedLessThan;
+            return o;
         }
     }
 }

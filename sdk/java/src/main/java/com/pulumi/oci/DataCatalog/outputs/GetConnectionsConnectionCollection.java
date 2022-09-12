@@ -11,17 +11,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetConnectionsConnectionCollection {
-    private final Integer count;
-    private final List<GetConnectionsConnectionCollectionItem> items;
+    private Integer count;
+    private List<GetConnectionsConnectionCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetConnectionsConnectionCollection(
-        @CustomType.Parameter("count") Integer count,
-        @CustomType.Parameter("items") List<GetConnectionsConnectionCollectionItem> items) {
-        this.count = count;
-        this.items = items;
-    }
-
+    private GetConnectionsConnectionCollection() {}
     public Integer count() {
         return this.count;
     }
@@ -36,33 +29,35 @@ public final class GetConnectionsConnectionCollection {
     public static Builder builder(GetConnectionsConnectionCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer count;
         private List<GetConnectionsConnectionCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConnectionsConnectionCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder count(Integer count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetConnectionsConnectionCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetConnectionsConnectionCollectionItem... items) {
             return items(List.of(items));
-        }        public GetConnectionsConnectionCollection build() {
-            return new GetConnectionsConnectionCollection(count, items);
+        }
+        public GetConnectionsConnectionCollection build() {
+            final var o = new GetConnectionsConnectionCollection();
+            o.count = count;
+            o.items = items;
+            return o;
         }
     }
 }

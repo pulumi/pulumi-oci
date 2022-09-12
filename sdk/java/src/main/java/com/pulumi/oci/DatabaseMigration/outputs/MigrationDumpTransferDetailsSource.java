@@ -15,21 +15,14 @@ public final class MigrationDumpTransferDetailsSource {
      * @return (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
      * 
      */
-    private final String kind;
+    private String kind;
     /**
      * @return (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
      * 
      */
-    private final @Nullable String ociHome;
+    private @Nullable String ociHome;
 
-    @CustomType.Constructor
-    private MigrationDumpTransferDetailsSource(
-        @CustomType.Parameter("kind") String kind,
-        @CustomType.Parameter("ociHome") @Nullable String ociHome) {
-        this.kind = kind;
-        this.ociHome = ociHome;
-    }
-
+    private MigrationDumpTransferDetailsSource() {}
     /**
      * @return (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
      * 
@@ -52,30 +45,32 @@ public final class MigrationDumpTransferDetailsSource {
     public static Builder builder(MigrationDumpTransferDetailsSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String kind;
         private @Nullable String ociHome;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MigrationDumpTransferDetailsSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.kind = defaults.kind;
     	      this.ociHome = defaults.ociHome;
         }
 
+        @CustomType.Setter
         public Builder kind(String kind) {
             this.kind = Objects.requireNonNull(kind);
             return this;
         }
+        @CustomType.Setter
         public Builder ociHome(@Nullable String ociHome) {
             this.ociHome = ociHome;
             return this;
-        }        public MigrationDumpTransferDetailsSource build() {
-            return new MigrationDumpTransferDetailsSource(kind, ociHome);
+        }
+        public MigrationDumpTransferDetailsSource build() {
+            final var o = new MigrationDumpTransferDetailsSource();
+            o.kind = kind;
+            o.ociHome = ociHome;
+            return o;
         }
     }
 }

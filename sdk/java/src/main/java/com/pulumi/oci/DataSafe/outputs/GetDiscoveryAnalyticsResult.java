@@ -15,51 +15,32 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDiscoveryAnalyticsResult {
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The list of discovery_analytics_collection.
      * 
      */
-    private final List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollection> discoveryAnalyticsCollections;
-    private final @Nullable List<GetDiscoveryAnalyticsFilter> filters;
-    private final @Nullable String groupBy;
+    private List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollection> discoveryAnalyticsCollections;
+    private @Nullable List<GetDiscoveryAnalyticsFilter> filters;
+    private @Nullable String groupBy;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the sensitive data model.
      * 
      */
-    private final @Nullable String sensitiveDataModelId;
+    private @Nullable String sensitiveDataModelId;
     /**
      * @return The OCID of the target database.
      * 
      */
-    private final @Nullable String targetId;
+    private @Nullable String targetId;
 
-    @CustomType.Constructor
-    private GetDiscoveryAnalyticsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("discoveryAnalyticsCollections") List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollection> discoveryAnalyticsCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetDiscoveryAnalyticsFilter> filters,
-        @CustomType.Parameter("groupBy") @Nullable String groupBy,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("sensitiveDataModelId") @Nullable String sensitiveDataModelId,
-        @CustomType.Parameter("targetId") @Nullable String targetId) {
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.discoveryAnalyticsCollections = discoveryAnalyticsCollections;
-        this.filters = filters;
-        this.groupBy = groupBy;
-        this.id = id;
-        this.sensitiveDataModelId = sensitiveDataModelId;
-        this.targetId = targetId;
-    }
-
+    private GetDiscoveryAnalyticsResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -108,7 +89,7 @@ public final class GetDiscoveryAnalyticsResult {
     public static Builder builder(GetDiscoveryAnalyticsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
@@ -118,11 +99,7 @@ public final class GetDiscoveryAnalyticsResult {
         private String id;
         private @Nullable String sensitiveDataModelId;
         private @Nullable String targetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDiscoveryAnalyticsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -135,14 +112,17 @@ public final class GetDiscoveryAnalyticsResult {
     	      this.targetId = defaults.targetId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder discoveryAnalyticsCollections(List<GetDiscoveryAnalyticsDiscoveryAnalyticsCollection> discoveryAnalyticsCollections) {
             this.discoveryAnalyticsCollections = Objects.requireNonNull(discoveryAnalyticsCollections);
             return this;
@@ -150,6 +130,7 @@ public final class GetDiscoveryAnalyticsResult {
         public Builder discoveryAnalyticsCollections(GetDiscoveryAnalyticsDiscoveryAnalyticsCollection... discoveryAnalyticsCollections) {
             return discoveryAnalyticsCollections(List.of(discoveryAnalyticsCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDiscoveryAnalyticsFilter> filters) {
             this.filters = filters;
             return this;
@@ -157,23 +138,37 @@ public final class GetDiscoveryAnalyticsResult {
         public Builder filters(GetDiscoveryAnalyticsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder groupBy(@Nullable String groupBy) {
             this.groupBy = groupBy;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder sensitiveDataModelId(@Nullable String sensitiveDataModelId) {
             this.sensitiveDataModelId = sensitiveDataModelId;
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
             this.targetId = targetId;
             return this;
-        }        public GetDiscoveryAnalyticsResult build() {
-            return new GetDiscoveryAnalyticsResult(compartmentId, compartmentIdInSubtree, discoveryAnalyticsCollections, filters, groupBy, id, sensitiveDataModelId, targetId);
+        }
+        public GetDiscoveryAnalyticsResult build() {
+            final var o = new GetDiscoveryAnalyticsResult();
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.discoveryAnalyticsCollections = discoveryAnalyticsCollections;
+            o.filters = filters;
+            o.groupBy = groupBy;
+            o.id = id;
+            o.sensitiveDataModelId = sensitiveDataModelId;
+            o.targetId = targetId;
+            return o;
         }
     }
 }

@@ -13,21 +13,14 @@ public final class GetManagedInstancesManagedInstanceManagedInstanceGroup {
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return software source identifier
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetManagedInstancesManagedInstanceManagedInstanceGroup(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id) {
-        this.displayName = displayName;
-        this.id = id;
-    }
-
+    private GetManagedInstancesManagedInstanceManagedInstanceGroup() {}
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
@@ -50,30 +43,32 @@ public final class GetManagedInstancesManagedInstanceManagedInstanceGroup {
     public static Builder builder(GetManagedInstancesManagedInstanceManagedInstanceGroup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedInstancesManagedInstanceManagedInstanceGroup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetManagedInstancesManagedInstanceManagedInstanceGroup build() {
-            return new GetManagedInstancesManagedInstanceManagedInstanceGroup(displayName, id);
+        }
+        public GetManagedInstancesManagedInstanceManagedInstanceGroup build() {
+            final var o = new GetManagedInstancesManagedInstanceManagedInstanceGroup();
+            o.displayName = displayName;
+            o.id = id;
+            return o;
         }
     }
 }

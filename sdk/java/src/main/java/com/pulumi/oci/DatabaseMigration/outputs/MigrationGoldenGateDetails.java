@@ -16,21 +16,14 @@ public final class MigrationGoldenGateDetails {
      * @return (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
      * 
      */
-    private final MigrationGoldenGateDetailsHub hub;
+    private MigrationGoldenGateDetailsHub hub;
     /**
      * @return (Updatable) Optional settings for GoldenGate Microservices processes
      * 
      */
-    private final @Nullable MigrationGoldenGateDetailsSettings settings;
+    private @Nullable MigrationGoldenGateDetailsSettings settings;
 
-    @CustomType.Constructor
-    private MigrationGoldenGateDetails(
-        @CustomType.Parameter("hub") MigrationGoldenGateDetailsHub hub,
-        @CustomType.Parameter("settings") @Nullable MigrationGoldenGateDetailsSettings settings) {
-        this.hub = hub;
-        this.settings = settings;
-    }
-
+    private MigrationGoldenGateDetails() {}
     /**
      * @return (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
      * 
@@ -53,30 +46,32 @@ public final class MigrationGoldenGateDetails {
     public static Builder builder(MigrationGoldenGateDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private MigrationGoldenGateDetailsHub hub;
         private @Nullable MigrationGoldenGateDetailsSettings settings;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MigrationGoldenGateDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hub = defaults.hub;
     	      this.settings = defaults.settings;
         }
 
+        @CustomType.Setter
         public Builder hub(MigrationGoldenGateDetailsHub hub) {
             this.hub = Objects.requireNonNull(hub);
             return this;
         }
+        @CustomType.Setter
         public Builder settings(@Nullable MigrationGoldenGateDetailsSettings settings) {
             this.settings = settings;
             return this;
-        }        public MigrationGoldenGateDetails build() {
-            return new MigrationGoldenGateDetails(hub, settings);
+        }
+        public MigrationGoldenGateDetails build() {
+            final var o = new MigrationGoldenGateDetails();
+            o.hub = hub;
+            o.settings = settings;
+            return o;
         }
     }
 }

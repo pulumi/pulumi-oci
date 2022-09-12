@@ -18,35 +18,24 @@ public final class IntegrationInstanceNetworkEndpointDetails {
      * @return Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
      * 
      */
-    private final @Nullable List<String> allowlistedHttpIps;
+    private @Nullable List<String> allowlistedHttpIps;
     /**
      * @return Virtual Cloud Networks allowed to access this network endpoint.
      * 
      */
-    private final @Nullable List<IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn> allowlistedHttpVcns;
+    private @Nullable List<IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn> allowlistedHttpVcns;
     /**
      * @return The Integration service&#39;s VCN is allow-listed to allow integrations to call back into other integrations
      * 
      */
-    private final @Nullable Boolean isIntegrationVcnAllowlisted;
+    private @Nullable Boolean isIntegrationVcnAllowlisted;
     /**
      * @return The type of network endpoint.
      * 
      */
-    private final String networkEndpointType;
+    private String networkEndpointType;
 
-    @CustomType.Constructor
-    private IntegrationInstanceNetworkEndpointDetails(
-        @CustomType.Parameter("allowlistedHttpIps") @Nullable List<String> allowlistedHttpIps,
-        @CustomType.Parameter("allowlistedHttpVcns") @Nullable List<IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn> allowlistedHttpVcns,
-        @CustomType.Parameter("isIntegrationVcnAllowlisted") @Nullable Boolean isIntegrationVcnAllowlisted,
-        @CustomType.Parameter("networkEndpointType") String networkEndpointType) {
-        this.allowlistedHttpIps = allowlistedHttpIps;
-        this.allowlistedHttpVcns = allowlistedHttpVcns;
-        this.isIntegrationVcnAllowlisted = isIntegrationVcnAllowlisted;
-        this.networkEndpointType = networkEndpointType;
-    }
-
+    private IntegrationInstanceNetworkEndpointDetails() {}
     /**
      * @return Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
      * 
@@ -83,17 +72,13 @@ public final class IntegrationInstanceNetworkEndpointDetails {
     public static Builder builder(IntegrationInstanceNetworkEndpointDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> allowlistedHttpIps;
         private @Nullable List<IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn> allowlistedHttpVcns;
         private @Nullable Boolean isIntegrationVcnAllowlisted;
         private String networkEndpointType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(IntegrationInstanceNetworkEndpointDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowlistedHttpIps = defaults.allowlistedHttpIps;
@@ -102,6 +87,7 @@ public final class IntegrationInstanceNetworkEndpointDetails {
     	      this.networkEndpointType = defaults.networkEndpointType;
         }
 
+        @CustomType.Setter
         public Builder allowlistedHttpIps(@Nullable List<String> allowlistedHttpIps) {
             this.allowlistedHttpIps = allowlistedHttpIps;
             return this;
@@ -109,6 +95,7 @@ public final class IntegrationInstanceNetworkEndpointDetails {
         public Builder allowlistedHttpIps(String... allowlistedHttpIps) {
             return allowlistedHttpIps(List.of(allowlistedHttpIps));
         }
+        @CustomType.Setter
         public Builder allowlistedHttpVcns(@Nullable List<IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn> allowlistedHttpVcns) {
             this.allowlistedHttpVcns = allowlistedHttpVcns;
             return this;
@@ -116,15 +103,23 @@ public final class IntegrationInstanceNetworkEndpointDetails {
         public Builder allowlistedHttpVcns(IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn... allowlistedHttpVcns) {
             return allowlistedHttpVcns(List.of(allowlistedHttpVcns));
         }
+        @CustomType.Setter
         public Builder isIntegrationVcnAllowlisted(@Nullable Boolean isIntegrationVcnAllowlisted) {
             this.isIntegrationVcnAllowlisted = isIntegrationVcnAllowlisted;
             return this;
         }
+        @CustomType.Setter
         public Builder networkEndpointType(String networkEndpointType) {
             this.networkEndpointType = Objects.requireNonNull(networkEndpointType);
             return this;
-        }        public IntegrationInstanceNetworkEndpointDetails build() {
-            return new IntegrationInstanceNetworkEndpointDetails(allowlistedHttpIps, allowlistedHttpVcns, isIntegrationVcnAllowlisted, networkEndpointType);
+        }
+        public IntegrationInstanceNetworkEndpointDetails build() {
+            final var o = new IntegrationInstanceNetworkEndpointDetails();
+            o.allowlistedHttpIps = allowlistedHttpIps;
+            o.allowlistedHttpVcns = allowlistedHttpVcns;
+            o.isIntegrationVcnAllowlisted = isIntegrationVcnAllowlisted;
+            o.networkEndpointType = networkEndpointType;
+            return o;
         }
     }
 }

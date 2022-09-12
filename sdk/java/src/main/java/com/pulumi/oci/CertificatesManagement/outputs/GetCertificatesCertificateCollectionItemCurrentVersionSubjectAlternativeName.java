@@ -13,21 +13,14 @@ public final class GetCertificatesCertificateCollectionItemCurrentVersionSubject
      * @return The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return The subject alternative name.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName(
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("value") String value) {
-        this.type = type;
-        this.value = value;
-    }
-
+    private GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName() {}
     /**
      * @return The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
      * 
@@ -50,30 +43,32 @@ public final class GetCertificatesCertificateCollectionItemCurrentVersionSubject
     public static Builder builder(GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String type;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.type = defaults.type;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName build() {
-            return new GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName(type, value);
+        }
+        public GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName build() {
+            final var o = new GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName();
+            o.type = type;
+            o.value = value;
+            return o;
         }
     }
 }

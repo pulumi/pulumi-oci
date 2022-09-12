@@ -13,13 +13,9 @@ public final class GetPeerOcpuAllocationParam {
      * @return Number of OCPU allocation
      * 
      */
-    private final Double ocpuAllocationNumber;
+    private Double ocpuAllocationNumber;
 
-    @CustomType.Constructor
-    private GetPeerOcpuAllocationParam(@CustomType.Parameter("ocpuAllocationNumber") Double ocpuAllocationNumber) {
-        this.ocpuAllocationNumber = ocpuAllocationNumber;
-    }
-
+    private GetPeerOcpuAllocationParam() {}
     /**
      * @return Number of OCPU allocation
      * 
@@ -35,24 +31,24 @@ public final class GetPeerOcpuAllocationParam {
     public static Builder builder(GetPeerOcpuAllocationParam defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double ocpuAllocationNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPeerOcpuAllocationParam defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ocpuAllocationNumber = defaults.ocpuAllocationNumber;
         }
 
+        @CustomType.Setter
         public Builder ocpuAllocationNumber(Double ocpuAllocationNumber) {
             this.ocpuAllocationNumber = Objects.requireNonNull(ocpuAllocationNumber);
             return this;
-        }        public GetPeerOcpuAllocationParam build() {
-            return new GetPeerOcpuAllocationParam(ocpuAllocationNumber);
+        }
+        public GetPeerOcpuAllocationParam build() {
+            final var o = new GetPeerOcpuAllocationParam();
+            o.ocpuAllocationNumber = ocpuAllocationNumber;
+            return o;
         }
     }
 }

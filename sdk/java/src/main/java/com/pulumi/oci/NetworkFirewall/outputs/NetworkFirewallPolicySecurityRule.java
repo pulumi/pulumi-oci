@@ -20,37 +20,26 @@ public final class NetworkFirewallPolicySecurityRule {
      * * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return (Updatable) Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
      * 
      */
-    private final NetworkFirewallPolicySecurityRuleCondition condition;
+    private NetworkFirewallPolicySecurityRuleCondition condition;
     /**
      * @return (Updatable) Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
      * * INTRUSION_DETECTION - Intrusion Detection.
      * * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
      * 
      */
-    private final @Nullable String inspection;
+    private @Nullable String inspection;
     /**
      * @return (Updatable) Name for the Security rule, must be unique within the policy.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private NetworkFirewallPolicySecurityRule(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("condition") NetworkFirewallPolicySecurityRuleCondition condition,
-        @CustomType.Parameter("inspection") @Nullable String inspection,
-        @CustomType.Parameter("name") String name) {
-        this.action = action;
-        this.condition = condition;
-        this.inspection = inspection;
-        this.name = name;
-    }
-
+    private NetworkFirewallPolicySecurityRule() {}
     /**
      * @return (Updatable) Types of Action on the Traffic flow.
      * * ALLOW - Allows the traffic.
@@ -93,17 +82,13 @@ public final class NetworkFirewallPolicySecurityRule {
     public static Builder builder(NetworkFirewallPolicySecurityRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private NetworkFirewallPolicySecurityRuleCondition condition;
         private @Nullable String inspection;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NetworkFirewallPolicySecurityRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -112,23 +97,33 @@ public final class NetworkFirewallPolicySecurityRule {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder condition(NetworkFirewallPolicySecurityRuleCondition condition) {
             this.condition = Objects.requireNonNull(condition);
             return this;
         }
+        @CustomType.Setter
         public Builder inspection(@Nullable String inspection) {
             this.inspection = inspection;
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public NetworkFirewallPolicySecurityRule build() {
-            return new NetworkFirewallPolicySecurityRule(action, condition, inspection, name);
+        }
+        public NetworkFirewallPolicySecurityRule build() {
+            final var o = new NetworkFirewallPolicySecurityRule();
+            o.action = action;
+            o.condition = condition;
+            o.inspection = inspection;
+            o.name = name;
+            return o;
         }
     }
 }

@@ -16,147 +16,119 @@ public final class GetExsiHostsEsxiHostCollection {
      * @return Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String billingContractEndDate;
+    private String billingContractEndDate;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      * 
      */
-    private final String capacityReservationId;
+    private String capacityReservationId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The availability domain of the ESXi host.
      * 
      */
-    private final String computeAvailabilityDomain;
+    private String computeAvailabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
      * 
      */
-    private final String computeInstanceId;
+    private String computeInstanceId;
     /**
      * @return The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      * 
      */
-    private final String currentSku;
+    private String currentSku;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed.
      * 
      */
-    private final String failedEsxiHostId;
+    private String failedEsxiHostId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
      * 
      */
-    private final String gracePeriodEndDate;
+    private String gracePeriodEndDate;
     /**
      * @return The OCPU count of the ESXi host.
      * 
      */
-    private final Double hostOcpuCount;
+    private Double hostOcpuCount;
     /**
      * @return The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      * 
      */
-    private final String hostShapeName;
+    private String hostShapeName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      * 
      */
-    private final String nextSku;
+    private String nextSku;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
+     * 
+     */
+    private String nonUpgradedEsxiHostId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
      * 
      */
-    private final String replacementEsxiHostId;
+    private String replacementEsxiHostId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
      * 
      */
-    private final String sddcId;
+    private String sddcId;
     /**
      * @return The lifecycle state of the resource.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+     * 
+     */
+    private String upgradedReplacementEsxiHostId;
+    /**
+     * @return The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+     * 
+     */
+    private String vmwareSoftwareVersion;
 
-    @CustomType.Constructor
-    private GetExsiHostsEsxiHostCollection(
-        @CustomType.Parameter("billingContractEndDate") String billingContractEndDate,
-        @CustomType.Parameter("capacityReservationId") String capacityReservationId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("computeAvailabilityDomain") String computeAvailabilityDomain,
-        @CustomType.Parameter("computeInstanceId") String computeInstanceId,
-        @CustomType.Parameter("currentSku") String currentSku,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("failedEsxiHostId") String failedEsxiHostId,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("gracePeriodEndDate") String gracePeriodEndDate,
-        @CustomType.Parameter("hostOcpuCount") Double hostOcpuCount,
-        @CustomType.Parameter("hostShapeName") String hostShapeName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("nextSku") String nextSku,
-        @CustomType.Parameter("replacementEsxiHostId") String replacementEsxiHostId,
-        @CustomType.Parameter("sddcId") String sddcId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.billingContractEndDate = billingContractEndDate;
-        this.capacityReservationId = capacityReservationId;
-        this.compartmentId = compartmentId;
-        this.computeAvailabilityDomain = computeAvailabilityDomain;
-        this.computeInstanceId = computeInstanceId;
-        this.currentSku = currentSku;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.failedEsxiHostId = failedEsxiHostId;
-        this.freeformTags = freeformTags;
-        this.gracePeriodEndDate = gracePeriodEndDate;
-        this.hostOcpuCount = hostOcpuCount;
-        this.hostShapeName = hostShapeName;
-        this.id = id;
-        this.nextSku = nextSku;
-        this.replacementEsxiHostId = replacementEsxiHostId;
-        this.sddcId = sddcId;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetExsiHostsEsxiHostCollection() {}
     /**
      * @return Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
      * 
@@ -263,6 +235,13 @@ public final class GetExsiHostsEsxiHostCollection {
         return this.nextSku;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
+     * 
+     */
+    public String nonUpgradedEsxiHostId() {
+        return this.nonUpgradedEsxiHostId;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
      * 
      */
@@ -297,6 +276,20 @@ public final class GetExsiHostsEsxiHostCollection {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+     * 
+     */
+    public String upgradedReplacementEsxiHostId() {
+        return this.upgradedReplacementEsxiHostId;
+    }
+    /**
+     * @return The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+     * 
+     */
+    public String vmwareSoftwareVersion() {
+        return this.vmwareSoftwareVersion;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -305,7 +298,7 @@ public final class GetExsiHostsEsxiHostCollection {
     public static Builder builder(GetExsiHostsEsxiHostCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String billingContractEndDate;
         private String capacityReservationId;
@@ -322,16 +315,15 @@ public final class GetExsiHostsEsxiHostCollection {
         private String hostShapeName;
         private String id;
         private String nextSku;
+        private String nonUpgradedEsxiHostId;
         private String replacementEsxiHostId;
         private String sddcId;
         private String state;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        private String upgradedReplacementEsxiHostId;
+        private String vmwareSoftwareVersion;
+        public Builder() {}
         public Builder(GetExsiHostsEsxiHostCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.billingContractEndDate = defaults.billingContractEndDate;
@@ -349,94 +341,157 @@ public final class GetExsiHostsEsxiHostCollection {
     	      this.hostShapeName = defaults.hostShapeName;
     	      this.id = defaults.id;
     	      this.nextSku = defaults.nextSku;
+    	      this.nonUpgradedEsxiHostId = defaults.nonUpgradedEsxiHostId;
     	      this.replacementEsxiHostId = defaults.replacementEsxiHostId;
     	      this.sddcId = defaults.sddcId;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.upgradedReplacementEsxiHostId = defaults.upgradedReplacementEsxiHostId;
+    	      this.vmwareSoftwareVersion = defaults.vmwareSoftwareVersion;
         }
 
+        @CustomType.Setter
         public Builder billingContractEndDate(String billingContractEndDate) {
             this.billingContractEndDate = Objects.requireNonNull(billingContractEndDate);
             return this;
         }
+        @CustomType.Setter
         public Builder capacityReservationId(String capacityReservationId) {
             this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
             this.computeAvailabilityDomain = Objects.requireNonNull(computeAvailabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder computeInstanceId(String computeInstanceId) {
             this.computeInstanceId = Objects.requireNonNull(computeInstanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder currentSku(String currentSku) {
             this.currentSku = Objects.requireNonNull(currentSku);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder failedEsxiHostId(String failedEsxiHostId) {
             this.failedEsxiHostId = Objects.requireNonNull(failedEsxiHostId);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder gracePeriodEndDate(String gracePeriodEndDate) {
             this.gracePeriodEndDate = Objects.requireNonNull(gracePeriodEndDate);
             return this;
         }
+        @CustomType.Setter
         public Builder hostOcpuCount(Double hostOcpuCount) {
             this.hostOcpuCount = Objects.requireNonNull(hostOcpuCount);
             return this;
         }
+        @CustomType.Setter
         public Builder hostShapeName(String hostShapeName) {
             this.hostShapeName = Objects.requireNonNull(hostShapeName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder nextSku(String nextSku) {
             this.nextSku = Objects.requireNonNull(nextSku);
             return this;
         }
+        @CustomType.Setter
+        public Builder nonUpgradedEsxiHostId(String nonUpgradedEsxiHostId) {
+            this.nonUpgradedEsxiHostId = Objects.requireNonNull(nonUpgradedEsxiHostId);
+            return this;
+        }
+        @CustomType.Setter
         public Builder replacementEsxiHostId(String replacementEsxiHostId) {
             this.replacementEsxiHostId = Objects.requireNonNull(replacementEsxiHostId);
             return this;
         }
+        @CustomType.Setter
         public Builder sddcId(String sddcId) {
             this.sddcId = Objects.requireNonNull(sddcId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetExsiHostsEsxiHostCollection build() {
-            return new GetExsiHostsEsxiHostCollection(billingContractEndDate, capacityReservationId, compartmentId, computeAvailabilityDomain, computeInstanceId, currentSku, definedTags, displayName, failedEsxiHostId, freeformTags, gracePeriodEndDate, hostOcpuCount, hostShapeName, id, nextSku, replacementEsxiHostId, sddcId, state, timeCreated, timeUpdated);
+        }
+        @CustomType.Setter
+        public Builder upgradedReplacementEsxiHostId(String upgradedReplacementEsxiHostId) {
+            this.upgradedReplacementEsxiHostId = Objects.requireNonNull(upgradedReplacementEsxiHostId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder vmwareSoftwareVersion(String vmwareSoftwareVersion) {
+            this.vmwareSoftwareVersion = Objects.requireNonNull(vmwareSoftwareVersion);
+            return this;
+        }
+        public GetExsiHostsEsxiHostCollection build() {
+            final var o = new GetExsiHostsEsxiHostCollection();
+            o.billingContractEndDate = billingContractEndDate;
+            o.capacityReservationId = capacityReservationId;
+            o.compartmentId = compartmentId;
+            o.computeAvailabilityDomain = computeAvailabilityDomain;
+            o.computeInstanceId = computeInstanceId;
+            o.currentSku = currentSku;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.failedEsxiHostId = failedEsxiHostId;
+            o.freeformTags = freeformTags;
+            o.gracePeriodEndDate = gracePeriodEndDate;
+            o.hostOcpuCount = hostOcpuCount;
+            o.hostShapeName = hostShapeName;
+            o.id = id;
+            o.nextSku = nextSku;
+            o.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
+            o.replacementEsxiHostId = replacementEsxiHostId;
+            o.sddcId = sddcId;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.upgradedReplacementEsxiHostId = upgradedReplacementEsxiHostId;
+            o.vmwareSoftwareVersion = vmwareSoftwareVersion;
+            return o;
         }
     }
 }

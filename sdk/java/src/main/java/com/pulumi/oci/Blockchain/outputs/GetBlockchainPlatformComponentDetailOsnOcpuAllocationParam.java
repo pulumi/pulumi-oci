@@ -13,13 +13,9 @@ public final class GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam {
      * @return Number of OCPU allocation
      * 
      */
-    private final Double ocpuAllocationNumber;
+    private Double ocpuAllocationNumber;
 
-    @CustomType.Constructor
-    private GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam(@CustomType.Parameter("ocpuAllocationNumber") Double ocpuAllocationNumber) {
-        this.ocpuAllocationNumber = ocpuAllocationNumber;
-    }
-
+    private GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam() {}
     /**
      * @return Number of OCPU allocation
      * 
@@ -35,24 +31,24 @@ public final class GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam {
     public static Builder builder(GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double ocpuAllocationNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ocpuAllocationNumber = defaults.ocpuAllocationNumber;
         }
 
+        @CustomType.Setter
         public Builder ocpuAllocationNumber(Double ocpuAllocationNumber) {
             this.ocpuAllocationNumber = Objects.requireNonNull(ocpuAllocationNumber);
             return this;
-        }        public GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam build() {
-            return new GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam(ocpuAllocationNumber);
+        }
+        public GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam build() {
+            final var o = new GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam();
+            o.ocpuAllocationNumber = ocpuAllocationNumber;
+            return o;
         }
     }
 }

@@ -13,21 +13,14 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
      * @return Name of the header.
      * 
      */
-    private final String headerName;
+    private String headerName;
     /**
      * @return Value of the header.
      * 
      */
-    private final String headerValue;
+    private String headerValue;
 
-    @CustomType.Constructor
-    private GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader(
-        @CustomType.Parameter("headerName") String headerName,
-        @CustomType.Parameter("headerValue") String headerValue) {
-        this.headerName = headerName;
-        this.headerValue = headerValue;
-    }
-
+    private GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader() {}
     /**
      * @return Name of the header.
      * 
@@ -50,30 +43,32 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
     public static Builder builder(GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String headerName;
         private String headerValue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.headerName = defaults.headerName;
     	      this.headerValue = defaults.headerValue;
         }
 
+        @CustomType.Setter
         public Builder headerName(String headerName) {
             this.headerName = Objects.requireNonNull(headerName);
             return this;
         }
+        @CustomType.Setter
         public Builder headerValue(String headerValue) {
             this.headerValue = Objects.requireNonNull(headerValue);
             return this;
-        }        public GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader build() {
-            return new GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader(headerName, headerValue);
+        }
+        public GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader build() {
+            final var o = new GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader();
+            o.headerName = headerName;
+            o.headerValue = headerValue;
+            return o;
         }
     }
 }

@@ -17,28 +17,28 @@ public final class GetApisApiCollectionItem {
      * @return The ocid of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
-    private final String content;
+    private String compartmentId;
+    private String content;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
      * * &#39;New&#39; for just updated API Specifications
@@ -50,61 +50,34 @@ public final class GetApisApiCollectionItem {
      * * &#39;Canceled&#39; the document validation was canceled
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Type of API Specification file.
      * 
      */
-    private final String specificationType;
+    private String specificationType;
     /**
      * @return A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time this resource was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return Status of each feature available from the API.
      * 
      */
-    private final List<GetApisApiCollectionItemValidationResult> validationResults;
+    private List<GetApisApiCollectionItemValidationResult> validationResults;
 
-    @CustomType.Constructor
-    private GetApisApiCollectionItem(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("content") String content,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("specificationType") String specificationType,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("validationResults") List<GetApisApiCollectionItemValidationResult> validationResults) {
-        this.compartmentId = compartmentId;
-        this.content = content;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.specificationType = specificationType;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.validationResults = validationResults;
-    }
-
+    private GetApisApiCollectionItem() {}
     /**
      * @return The ocid of the compartment in which to list resources.
      * 
@@ -200,7 +173,7 @@ public final class GetApisApiCollectionItem {
     public static Builder builder(GetApisApiCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String content;
@@ -214,11 +187,7 @@ public final class GetApisApiCollectionItem {
         private String timeCreated;
         private String timeUpdated;
         private List<GetApisApiCollectionItemValidationResult> validationResults;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApisApiCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -235,58 +204,84 @@ public final class GetApisApiCollectionItem {
     	      this.validationResults = defaults.validationResults;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder content(String content) {
             this.content = Objects.requireNonNull(content);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder specificationType(String specificationType) {
             this.specificationType = Objects.requireNonNull(specificationType);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder validationResults(List<GetApisApiCollectionItemValidationResult> validationResults) {
             this.validationResults = Objects.requireNonNull(validationResults);
             return this;
         }
         public Builder validationResults(GetApisApiCollectionItemValidationResult... validationResults) {
             return validationResults(List.of(validationResults));
-        }        public GetApisApiCollectionItem build() {
-            return new GetApisApiCollectionItem(compartmentId, content, definedTags, displayName, freeformTags, id, lifecycleDetails, specificationType, state, timeCreated, timeUpdated, validationResults);
+        }
+        public GetApisApiCollectionItem build() {
+            final var o = new GetApisApiCollectionItem();
+            o.compartmentId = compartmentId;
+            o.content = content;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.specificationType = specificationType;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.validationResults = validationResults;
+            return o;
         }
     }
 }

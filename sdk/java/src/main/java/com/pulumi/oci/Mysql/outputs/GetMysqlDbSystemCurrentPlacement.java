@@ -13,21 +13,14 @@ public final class GetMysqlDbSystemCurrentPlacement {
      * @return The availability domain in which the DB System is placed.
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      * 
      */
-    private final String faultDomain;
+    private String faultDomain;
 
-    @CustomType.Constructor
-    private GetMysqlDbSystemCurrentPlacement(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("faultDomain") String faultDomain) {
-        this.availabilityDomain = availabilityDomain;
-        this.faultDomain = faultDomain;
-    }
-
+    private GetMysqlDbSystemCurrentPlacement() {}
     /**
      * @return The availability domain in which the DB System is placed.
      * 
@@ -50,30 +43,32 @@ public final class GetMysqlDbSystemCurrentPlacement {
     public static Builder builder(GetMysqlDbSystemCurrentPlacement defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String faultDomain;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMysqlDbSystemCurrentPlacement defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.faultDomain = defaults.faultDomain;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = Objects.requireNonNull(faultDomain);
             return this;
-        }        public GetMysqlDbSystemCurrentPlacement build() {
-            return new GetMysqlDbSystemCurrentPlacement(availabilityDomain, faultDomain);
+        }
+        public GetMysqlDbSystemCurrentPlacement build() {
+            final var o = new GetMysqlDbSystemCurrentPlacement();
+            o.availabilityDomain = availabilityDomain;
+            o.faultDomain = faultDomain;
+            return o;
         }
     }
 }

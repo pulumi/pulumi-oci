@@ -13,13 +13,9 @@ public final class GetMonitorsMonitorCollectionItemConfigurationVerifyText {
      * @return Verification text in the response.
      * 
      */
-    private final String text;
+    private String text;
 
-    @CustomType.Constructor
-    private GetMonitorsMonitorCollectionItemConfigurationVerifyText(@CustomType.Parameter("text") String text) {
-        this.text = text;
-    }
-
+    private GetMonitorsMonitorCollectionItemConfigurationVerifyText() {}
     /**
      * @return Verification text in the response.
      * 
@@ -35,24 +31,24 @@ public final class GetMonitorsMonitorCollectionItemConfigurationVerifyText {
     public static Builder builder(GetMonitorsMonitorCollectionItemConfigurationVerifyText defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String text;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMonitorsMonitorCollectionItemConfigurationVerifyText defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.text = defaults.text;
         }
 
+        @CustomType.Setter
         public Builder text(String text) {
             this.text = Objects.requireNonNull(text);
             return this;
-        }        public GetMonitorsMonitorCollectionItemConfigurationVerifyText build() {
-            return new GetMonitorsMonitorCollectionItemConfigurationVerifyText(text);
+        }
+        public GetMonitorsMonitorCollectionItemConfigurationVerifyText build() {
+            final var o = new GetMonitorsMonitorCollectionItemConfigurationVerifyText();
+            o.text = text;
+            return o;
         }
     }
 }

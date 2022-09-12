@@ -15,21 +15,14 @@ public final class GetCompatibleFormatsForDataTypeResult {
      * @return An array of lists of basic masking formats compatible with the supported data types.
      * 
      */
-    private final List<GetCompatibleFormatsForDataTypeFormatsForDataType> formatsForDataTypes;
+    private List<GetCompatibleFormatsForDataTypeFormatsForDataType> formatsForDataTypes;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetCompatibleFormatsForDataTypeResult(
-        @CustomType.Parameter("formatsForDataTypes") List<GetCompatibleFormatsForDataTypeFormatsForDataType> formatsForDataTypes,
-        @CustomType.Parameter("id") String id) {
-        this.formatsForDataTypes = formatsForDataTypes;
-        this.id = id;
-    }
-
+    private GetCompatibleFormatsForDataTypeResult() {}
     /**
      * @return An array of lists of basic masking formats compatible with the supported data types.
      * 
@@ -52,21 +45,18 @@ public final class GetCompatibleFormatsForDataTypeResult {
     public static Builder builder(GetCompatibleFormatsForDataTypeResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCompatibleFormatsForDataTypeFormatsForDataType> formatsForDataTypes;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCompatibleFormatsForDataTypeResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.formatsForDataTypes = defaults.formatsForDataTypes;
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder formatsForDataTypes(List<GetCompatibleFormatsForDataTypeFormatsForDataType> formatsForDataTypes) {
             this.formatsForDataTypes = Objects.requireNonNull(formatsForDataTypes);
             return this;
@@ -74,11 +64,16 @@ public final class GetCompatibleFormatsForDataTypeResult {
         public Builder formatsForDataTypes(GetCompatibleFormatsForDataTypeFormatsForDataType... formatsForDataTypes) {
             return formatsForDataTypes(List.of(formatsForDataTypes));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetCompatibleFormatsForDataTypeResult build() {
-            return new GetCompatibleFormatsForDataTypeResult(formatsForDataTypes, id);
+        }
+        public GetCompatibleFormatsForDataTypeResult build() {
+            final var o = new GetCompatibleFormatsForDataTypeResult();
+            o.formatsForDataTypes = formatsForDataTypes;
+            o.id = id;
+            return o;
         }
     }
 }

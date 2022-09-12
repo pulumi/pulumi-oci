@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVmClusterPatchHistoryEntriesResult {
-    private final @Nullable List<GetVmClusterPatchHistoryEntriesFilter> filters;
+    private @Nullable List<GetVmClusterPatchHistoryEntriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of patch_history_entries.
      * 
      */
-    private final List<GetVmClusterPatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries;
-    private final String vmClusterId;
+    private List<GetVmClusterPatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries;
+    private String vmClusterId;
 
-    @CustomType.Constructor
-    private GetVmClusterPatchHistoryEntriesResult(
-        @CustomType.Parameter("filters") @Nullable List<GetVmClusterPatchHistoryEntriesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("patchHistoryEntries") List<GetVmClusterPatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries,
-        @CustomType.Parameter("vmClusterId") String vmClusterId) {
-        this.filters = filters;
-        this.id = id;
-        this.patchHistoryEntries = patchHistoryEntries;
-        this.vmClusterId = vmClusterId;
-    }
-
+    private GetVmClusterPatchHistoryEntriesResult() {}
     public List<GetVmClusterPatchHistoryEntriesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -66,17 +55,13 @@ public final class GetVmClusterPatchHistoryEntriesResult {
     public static Builder builder(GetVmClusterPatchHistoryEntriesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetVmClusterPatchHistoryEntriesFilter> filters;
         private String id;
         private List<GetVmClusterPatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries;
         private String vmClusterId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVmClusterPatchHistoryEntriesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -85,6 +70,7 @@ public final class GetVmClusterPatchHistoryEntriesResult {
     	      this.vmClusterId = defaults.vmClusterId;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVmClusterPatchHistoryEntriesFilter> filters) {
             this.filters = filters;
             return this;
@@ -92,10 +78,12 @@ public final class GetVmClusterPatchHistoryEntriesResult {
         public Builder filters(GetVmClusterPatchHistoryEntriesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder patchHistoryEntries(List<GetVmClusterPatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries) {
             this.patchHistoryEntries = Objects.requireNonNull(patchHistoryEntries);
             return this;
@@ -103,11 +91,18 @@ public final class GetVmClusterPatchHistoryEntriesResult {
         public Builder patchHistoryEntries(GetVmClusterPatchHistoryEntriesPatchHistoryEntry... patchHistoryEntries) {
             return patchHistoryEntries(List.of(patchHistoryEntries));
         }
+        @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
             this.vmClusterId = Objects.requireNonNull(vmClusterId);
             return this;
-        }        public GetVmClusterPatchHistoryEntriesResult build() {
-            return new GetVmClusterPatchHistoryEntriesResult(filters, id, patchHistoryEntries, vmClusterId);
+        }
+        public GetVmClusterPatchHistoryEntriesResult build() {
+            final var o = new GetVmClusterPatchHistoryEntriesResult();
+            o.filters = filters;
+            o.id = id;
+            o.patchHistoryEntries = patchHistoryEntries;
+            o.vmClusterId = vmClusterId;
+            return o;
         }
     }
 }

@@ -15,13 +15,9 @@ public final class DeploymentDeployPipelineEnvironmentItemDeployPipelineStage {
      * @return List of arguments provided at the time of deployment.
      * 
      */
-    private final @Nullable List<DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem> items;
+    private @Nullable List<DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem> items;
 
-    @CustomType.Constructor
-    private DeploymentDeployPipelineEnvironmentItemDeployPipelineStage(@CustomType.Parameter("items") @Nullable List<DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem> items) {
-        this.items = items;
-    }
-
+    private DeploymentDeployPipelineEnvironmentItemDeployPipelineStage() {}
     /**
      * @return List of arguments provided at the time of deployment.
      * 
@@ -37,27 +33,27 @@ public final class DeploymentDeployPipelineEnvironmentItemDeployPipelineStage {
     public static Builder builder(DeploymentDeployPipelineEnvironmentItemDeployPipelineStage defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentDeployPipelineEnvironmentItemDeployPipelineStage defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(@Nullable List<DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem> items) {
             this.items = items;
             return this;
         }
         public Builder items(DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem... items) {
             return items(List.of(items));
-        }        public DeploymentDeployPipelineEnvironmentItemDeployPipelineStage build() {
-            return new DeploymentDeployPipelineEnvironmentItemDeployPipelineStage(items);
+        }
+        public DeploymentDeployPipelineEnvironmentItemDeployPipelineStage build() {
+            final var o = new DeploymentDeployPipelineEnvironmentItemDeployPipelineStage();
+            o.items = items;
+            return o;
         }
     }
 }

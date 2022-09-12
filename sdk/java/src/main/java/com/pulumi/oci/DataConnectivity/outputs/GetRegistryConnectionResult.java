@@ -18,130 +18,91 @@ import java.util.Objects;
 
 @CustomType
 public final class GetRegistryConnectionResult {
-    private final String connectionKey;
+    private String connectionKey;
     /**
-     * @return The properties for the connection.
+     * @return The properties of the connection.
      * 
      */
-    private final List<GetRegistryConnectionConnectionProperty> connectionProperties;
+    private List<GetRegistryConnectionConnectionProperty> connectionProperties;
     /**
      * @return The description of the aggregator.
      * 
      */
-    private final String description;
-    private final String id;
+    private String description;
+    private String id;
     /**
      * @return The identifier of the aggregator.
      * 
      */
-    private final String identifier;
+    private String identifier;
     /**
-     * @return The default property for the connection.
+     * @return The default property of the connection.
      * 
      */
-    private final Boolean isDefault;
+    private Boolean isDefault;
     /**
      * @return The identifying key for the object.
      * 
      */
-    private final String key;
+    private String key;
     /**
-     * @return A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
-    private final List<GetRegistryConnectionMetadata> metadatas;
+    private List<GetRegistryConnectionMetadata> metadatas;
     /**
-     * @return The object&#39;s type.
+     * @return The object type.
      * 
      */
-    private final String modelType;
+    private String modelType;
     /**
-     * @return The object&#39;s model version.
+     * @return The model version of the object.
      * 
      */
-    private final String modelVersion;
+    private String modelVersion;
     /**
-     * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private final Integer objectStatus;
+    private Integer objectStatus;
     /**
      * @return The version of the object that is used to track changes in the object instance.
      * 
      */
-    private final Integer objectVersion;
+    private Integer objectVersion;
     /**
      * @return The schema object.
      * 
      */
-    private final List<GetRegistryConnectionPrimarySchema> primarySchemas;
+    private List<GetRegistryConnectionPrimarySchema> primarySchemas;
     /**
-     * @return All the properties for the connection in a key-value map format.
+     * @return All the properties of the connection in a key-value map format.
      * 
      */
-    private final Map<String,Object> properties;
-    private final String registryId;
+    private Map<String,Object> properties;
+    private String registryId;
     /**
      * @return Information about the object and its parent.
      * 
      */
-    private final List<GetRegistryConnectionRegistryMetadata> registryMetadatas;
+    private List<GetRegistryConnectionRegistryMetadata> registryMetadatas;
     /**
      * @return Specific Connection Type
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetRegistryConnectionResult(
-        @CustomType.Parameter("connectionKey") String connectionKey,
-        @CustomType.Parameter("connectionProperties") List<GetRegistryConnectionConnectionProperty> connectionProperties,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("identifier") String identifier,
-        @CustomType.Parameter("isDefault") Boolean isDefault,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("metadatas") List<GetRegistryConnectionMetadata> metadatas,
-        @CustomType.Parameter("modelType") String modelType,
-        @CustomType.Parameter("modelVersion") String modelVersion,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("objectStatus") Integer objectStatus,
-        @CustomType.Parameter("objectVersion") Integer objectVersion,
-        @CustomType.Parameter("primarySchemas") List<GetRegistryConnectionPrimarySchema> primarySchemas,
-        @CustomType.Parameter("properties") Map<String,Object> properties,
-        @CustomType.Parameter("registryId") String registryId,
-        @CustomType.Parameter("registryMetadatas") List<GetRegistryConnectionRegistryMetadata> registryMetadatas,
-        @CustomType.Parameter("type") String type) {
-        this.connectionKey = connectionKey;
-        this.connectionProperties = connectionProperties;
-        this.description = description;
-        this.id = id;
-        this.identifier = identifier;
-        this.isDefault = isDefault;
-        this.key = key;
-        this.metadatas = metadatas;
-        this.modelType = modelType;
-        this.modelVersion = modelVersion;
-        this.name = name;
-        this.objectStatus = objectStatus;
-        this.objectVersion = objectVersion;
-        this.primarySchemas = primarySchemas;
-        this.properties = properties;
-        this.registryId = registryId;
-        this.registryMetadatas = registryMetadatas;
-        this.type = type;
-    }
-
+    private GetRegistryConnectionResult() {}
     public String connectionKey() {
         return this.connectionKey;
     }
     /**
-     * @return The properties for the connection.
+     * @return The properties of the connection.
      * 
      */
     public List<GetRegistryConnectionConnectionProperty> connectionProperties() {
@@ -165,7 +126,7 @@ public final class GetRegistryConnectionResult {
         return this.identifier;
     }
     /**
-     * @return The default property for the connection.
+     * @return The default property of the connection.
      * 
      */
     public Boolean isDefault() {
@@ -179,28 +140,28 @@ public final class GetRegistryConnectionResult {
         return this.key;
     }
     /**
-     * @return A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     public List<GetRegistryConnectionMetadata> metadatas() {
         return this.metadatas;
     }
     /**
-     * @return The object&#39;s type.
+     * @return The object type.
      * 
      */
     public String modelType() {
         return this.modelType;
     }
     /**
-     * @return The object&#39;s model version.
+     * @return The model version of the object.
      * 
      */
     public String modelVersion() {
         return this.modelVersion;
     }
     /**
-     * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public String name() {
@@ -228,7 +189,7 @@ public final class GetRegistryConnectionResult {
         return this.primarySchemas;
     }
     /**
-     * @return All the properties for the connection in a key-value map format.
+     * @return All the properties of the connection in a key-value map format.
      * 
      */
     public Map<String,Object> properties() {
@@ -259,7 +220,7 @@ public final class GetRegistryConnectionResult {
     public static Builder builder(GetRegistryConnectionResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String connectionKey;
         private List<GetRegistryConnectionConnectionProperty> connectionProperties;
@@ -279,11 +240,7 @@ public final class GetRegistryConnectionResult {
         private String registryId;
         private List<GetRegistryConnectionRegistryMetadata> registryMetadatas;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryConnectionResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.connectionKey = defaults.connectionKey;
@@ -306,10 +263,12 @@ public final class GetRegistryConnectionResult {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder connectionKey(String connectionKey) {
             this.connectionKey = Objects.requireNonNull(connectionKey);
             return this;
         }
+        @CustomType.Setter
         public Builder connectionProperties(List<GetRegistryConnectionConnectionProperty> connectionProperties) {
             this.connectionProperties = Objects.requireNonNull(connectionProperties);
             return this;
@@ -317,26 +276,32 @@ public final class GetRegistryConnectionResult {
         public Builder connectionProperties(GetRegistryConnectionConnectionProperty... connectionProperties) {
             return connectionProperties(List.of(connectionProperties));
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(String identifier) {
             this.identifier = Objects.requireNonNull(identifier);
             return this;
         }
+        @CustomType.Setter
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = Objects.requireNonNull(isDefault);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder metadatas(List<GetRegistryConnectionMetadata> metadatas) {
             this.metadatas = Objects.requireNonNull(metadatas);
             return this;
@@ -344,26 +309,32 @@ public final class GetRegistryConnectionResult {
         public Builder metadatas(GetRegistryConnectionMetadata... metadatas) {
             return metadatas(List.of(metadatas));
         }
+        @CustomType.Setter
         public Builder modelType(String modelType) {
             this.modelType = Objects.requireNonNull(modelType);
             return this;
         }
+        @CustomType.Setter
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = Objects.requireNonNull(modelVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = Objects.requireNonNull(objectStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = Objects.requireNonNull(objectVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder primarySchemas(List<GetRegistryConnectionPrimarySchema> primarySchemas) {
             this.primarySchemas = Objects.requireNonNull(primarySchemas);
             return this;
@@ -371,14 +342,17 @@ public final class GetRegistryConnectionResult {
         public Builder primarySchemas(GetRegistryConnectionPrimarySchema... primarySchemas) {
             return primarySchemas(List.of(primarySchemas));
         }
+        @CustomType.Setter
         public Builder properties(Map<String,Object> properties) {
             this.properties = Objects.requireNonNull(properties);
             return this;
         }
+        @CustomType.Setter
         public Builder registryId(String registryId) {
             this.registryId = Objects.requireNonNull(registryId);
             return this;
         }
+        @CustomType.Setter
         public Builder registryMetadatas(List<GetRegistryConnectionRegistryMetadata> registryMetadatas) {
             this.registryMetadatas = Objects.requireNonNull(registryMetadatas);
             return this;
@@ -386,11 +360,32 @@ public final class GetRegistryConnectionResult {
         public Builder registryMetadatas(GetRegistryConnectionRegistryMetadata... registryMetadatas) {
             return registryMetadatas(List.of(registryMetadatas));
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetRegistryConnectionResult build() {
-            return new GetRegistryConnectionResult(connectionKey, connectionProperties, description, id, identifier, isDefault, key, metadatas, modelType, modelVersion, name, objectStatus, objectVersion, primarySchemas, properties, registryId, registryMetadatas, type);
+        }
+        public GetRegistryConnectionResult build() {
+            final var o = new GetRegistryConnectionResult();
+            o.connectionKey = connectionKey;
+            o.connectionProperties = connectionProperties;
+            o.description = description;
+            o.id = id;
+            o.identifier = identifier;
+            o.isDefault = isDefault;
+            o.key = key;
+            o.metadatas = metadatas;
+            o.modelType = modelType;
+            o.modelVersion = modelVersion;
+            o.name = name;
+            o.objectStatus = objectStatus;
+            o.objectVersion = objectVersion;
+            o.primarySchemas = primarySchemas;
+            o.properties = properties;
+            o.registryId = registryId;
+            o.registryMetadatas = registryMetadatas;
+            o.type = type;
+            return o;
         }
     }
 }

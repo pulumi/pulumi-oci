@@ -14,35 +14,24 @@ public final class GetProfileLevelsProfileLevelCollectionItemMetric {
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The name of the statistic (e.g., `p95`).
      * 
      */
-    private final String statistic;
+    private String statistic;
     /**
      * @return Optional. The metric value that the recommendation will target.
      * 
      */
-    private final Double target;
+    private Double target;
     /**
      * @return The threshold that must be crossed for the recommendation to appear.
      * 
      */
-    private final Double threshold;
+    private Double threshold;
 
-    @CustomType.Constructor
-    private GetProfileLevelsProfileLevelCollectionItemMetric(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("statistic") String statistic,
-        @CustomType.Parameter("target") Double target,
-        @CustomType.Parameter("threshold") Double threshold) {
-        this.name = name;
-        this.statistic = statistic;
-        this.target = target;
-        this.threshold = threshold;
-    }
-
+    private GetProfileLevelsProfileLevelCollectionItemMetric() {}
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
@@ -79,17 +68,13 @@ public final class GetProfileLevelsProfileLevelCollectionItemMetric {
     public static Builder builder(GetProfileLevelsProfileLevelCollectionItemMetric defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private String statistic;
         private Double target;
         private Double threshold;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProfileLevelsProfileLevelCollectionItemMetric defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
@@ -98,23 +83,33 @@ public final class GetProfileLevelsProfileLevelCollectionItemMetric {
     	      this.threshold = defaults.threshold;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder statistic(String statistic) {
             this.statistic = Objects.requireNonNull(statistic);
             return this;
         }
+        @CustomType.Setter
         public Builder target(Double target) {
             this.target = Objects.requireNonNull(target);
             return this;
         }
+        @CustomType.Setter
         public Builder threshold(Double threshold) {
             this.threshold = Objects.requireNonNull(threshold);
             return this;
-        }        public GetProfileLevelsProfileLevelCollectionItemMetric build() {
-            return new GetProfileLevelsProfileLevelCollectionItemMetric(name, statistic, target, threshold);
+        }
+        public GetProfileLevelsProfileLevelCollectionItemMetric build() {
+            final var o = new GetProfileLevelsProfileLevelCollectionItemMetric();
+            o.name = name;
+            o.statistic = statistic;
+            o.target = target;
+            o.threshold = threshold;
+            return o;
         }
     }
 }

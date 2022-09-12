@@ -17,35 +17,24 @@ public final class InstanceAgentConfig {
      * @return (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
      * 
      */
-    private final @Nullable Boolean areAllPluginsDisabled;
+    private @Nullable Boolean areAllPluginsDisabled;
     /**
      * @return (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
      * 
      */
-    private final @Nullable Boolean isManagementDisabled;
+    private @Nullable Boolean isManagementDisabled;
     /**
      * @return (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
      * 
      */
-    private final @Nullable Boolean isMonitoringDisabled;
+    private @Nullable Boolean isMonitoringDisabled;
     /**
      * @return (Updatable) The configuration of plugins associated with this instance.
      * 
      */
-    private final @Nullable List<InstanceAgentConfigPluginsConfig> pluginsConfigs;
+    private @Nullable List<InstanceAgentConfigPluginsConfig> pluginsConfigs;
 
-    @CustomType.Constructor
-    private InstanceAgentConfig(
-        @CustomType.Parameter("areAllPluginsDisabled") @Nullable Boolean areAllPluginsDisabled,
-        @CustomType.Parameter("isManagementDisabled") @Nullable Boolean isManagementDisabled,
-        @CustomType.Parameter("isMonitoringDisabled") @Nullable Boolean isMonitoringDisabled,
-        @CustomType.Parameter("pluginsConfigs") @Nullable List<InstanceAgentConfigPluginsConfig> pluginsConfigs) {
-        this.areAllPluginsDisabled = areAllPluginsDisabled;
-        this.isManagementDisabled = isManagementDisabled;
-        this.isMonitoringDisabled = isMonitoringDisabled;
-        this.pluginsConfigs = pluginsConfigs;
-    }
-
+    private InstanceAgentConfig() {}
     /**
      * @return (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
      * 
@@ -82,17 +71,13 @@ public final class InstanceAgentConfig {
     public static Builder builder(InstanceAgentConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean areAllPluginsDisabled;
         private @Nullable Boolean isManagementDisabled;
         private @Nullable Boolean isMonitoringDisabled;
         private @Nullable List<InstanceAgentConfigPluginsConfig> pluginsConfigs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(InstanceAgentConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.areAllPluginsDisabled = defaults.areAllPluginsDisabled;
@@ -101,26 +86,36 @@ public final class InstanceAgentConfig {
     	      this.pluginsConfigs = defaults.pluginsConfigs;
         }
 
+        @CustomType.Setter
         public Builder areAllPluginsDisabled(@Nullable Boolean areAllPluginsDisabled) {
             this.areAllPluginsDisabled = areAllPluginsDisabled;
             return this;
         }
+        @CustomType.Setter
         public Builder isManagementDisabled(@Nullable Boolean isManagementDisabled) {
             this.isManagementDisabled = isManagementDisabled;
             return this;
         }
+        @CustomType.Setter
         public Builder isMonitoringDisabled(@Nullable Boolean isMonitoringDisabled) {
             this.isMonitoringDisabled = isMonitoringDisabled;
             return this;
         }
+        @CustomType.Setter
         public Builder pluginsConfigs(@Nullable List<InstanceAgentConfigPluginsConfig> pluginsConfigs) {
             this.pluginsConfigs = pluginsConfigs;
             return this;
         }
         public Builder pluginsConfigs(InstanceAgentConfigPluginsConfig... pluginsConfigs) {
             return pluginsConfigs(List.of(pluginsConfigs));
-        }        public InstanceAgentConfig build() {
-            return new InstanceAgentConfig(areAllPluginsDisabled, isManagementDisabled, isMonitoringDisabled, pluginsConfigs);
+        }
+        public InstanceAgentConfig build() {
+            final var o = new InstanceAgentConfig();
+            o.areAllPluginsDisabled = areAllPluginsDisabled;
+            o.isManagementDisabled = isManagementDisabled;
+            o.isMonitoringDisabled = isMonitoringDisabled;
+            o.pluginsConfigs = pluginsConfigs;
+            return o;
         }
     }
 }

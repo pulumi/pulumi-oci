@@ -17,77 +17,54 @@ public final class GetWaasPolicyWafConfigHumanInteractionChallenge {
      * @return The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
      * 
      */
-    private final Integer actionExpirationInSeconds;
+    private Integer actionExpirationInSeconds;
     /**
      * @return The challenge settings if `action` is set to `BLOCK`.
      * 
      */
-    private final GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings challengeSettings;
+    private GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings challengeSettings;
     /**
      * @return The number of failed requests before taking action. If unspecified, defaults to `10`.
      * 
      */
-    private final Integer failureThreshold;
+    private Integer failureThreshold;
     /**
      * @return The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
      * 
      */
-    private final Integer failureThresholdExpirationInSeconds;
+    private Integer failureThresholdExpirationInSeconds;
     /**
      * @return The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
      * 
      */
-    private final Integer interactionThreshold;
+    private Integer interactionThreshold;
     /**
      * @return Enables or disables the JavaScript challenge Web Application Firewall feature.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
      * 
      */
-    private final Boolean isNatEnabled;
+    private Boolean isNatEnabled;
     /**
      * @return The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
      * 
      */
-    private final Integer recordingPeriodInSeconds;
+    private Integer recordingPeriodInSeconds;
     /**
      * @return Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
      * 
      */
-    private final GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader setHttpHeader;
+    private GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader setHttpHeader;
 
-    @CustomType.Constructor
-    private GetWaasPolicyWafConfigHumanInteractionChallenge(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("actionExpirationInSeconds") Integer actionExpirationInSeconds,
-        @CustomType.Parameter("challengeSettings") GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings challengeSettings,
-        @CustomType.Parameter("failureThreshold") Integer failureThreshold,
-        @CustomType.Parameter("failureThresholdExpirationInSeconds") Integer failureThresholdExpirationInSeconds,
-        @CustomType.Parameter("interactionThreshold") Integer interactionThreshold,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("isNatEnabled") Boolean isNatEnabled,
-        @CustomType.Parameter("recordingPeriodInSeconds") Integer recordingPeriodInSeconds,
-        @CustomType.Parameter("setHttpHeader") GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader setHttpHeader) {
-        this.action = action;
-        this.actionExpirationInSeconds = actionExpirationInSeconds;
-        this.challengeSettings = challengeSettings;
-        this.failureThreshold = failureThreshold;
-        this.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
-        this.interactionThreshold = interactionThreshold;
-        this.isEnabled = isEnabled;
-        this.isNatEnabled = isNatEnabled;
-        this.recordingPeriodInSeconds = recordingPeriodInSeconds;
-        this.setHttpHeader = setHttpHeader;
-    }
-
+    private GetWaasPolicyWafConfigHumanInteractionChallenge() {}
     /**
      * @return The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
@@ -166,7 +143,7 @@ public final class GetWaasPolicyWafConfigHumanInteractionChallenge {
     public static Builder builder(GetWaasPolicyWafConfigHumanInteractionChallenge defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private Integer actionExpirationInSeconds;
@@ -178,11 +155,7 @@ public final class GetWaasPolicyWafConfigHumanInteractionChallenge {
         private Boolean isNatEnabled;
         private Integer recordingPeriodInSeconds;
         private GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader setHttpHeader;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetWaasPolicyWafConfigHumanInteractionChallenge defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -197,47 +170,69 @@ public final class GetWaasPolicyWafConfigHumanInteractionChallenge {
     	      this.setHttpHeader = defaults.setHttpHeader;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder actionExpirationInSeconds(Integer actionExpirationInSeconds) {
             this.actionExpirationInSeconds = Objects.requireNonNull(actionExpirationInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder challengeSettings(GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings challengeSettings) {
             this.challengeSettings = Objects.requireNonNull(challengeSettings);
             return this;
         }
+        @CustomType.Setter
         public Builder failureThreshold(Integer failureThreshold) {
             this.failureThreshold = Objects.requireNonNull(failureThreshold);
             return this;
         }
+        @CustomType.Setter
         public Builder failureThresholdExpirationInSeconds(Integer failureThresholdExpirationInSeconds) {
             this.failureThresholdExpirationInSeconds = Objects.requireNonNull(failureThresholdExpirationInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder interactionThreshold(Integer interactionThreshold) {
             this.interactionThreshold = Objects.requireNonNull(interactionThreshold);
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isNatEnabled(Boolean isNatEnabled) {
             this.isNatEnabled = Objects.requireNonNull(isNatEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder recordingPeriodInSeconds(Integer recordingPeriodInSeconds) {
             this.recordingPeriodInSeconds = Objects.requireNonNull(recordingPeriodInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder setHttpHeader(GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader setHttpHeader) {
             this.setHttpHeader = Objects.requireNonNull(setHttpHeader);
             return this;
-        }        public GetWaasPolicyWafConfigHumanInteractionChallenge build() {
-            return new GetWaasPolicyWafConfigHumanInteractionChallenge(action, actionExpirationInSeconds, challengeSettings, failureThreshold, failureThresholdExpirationInSeconds, interactionThreshold, isEnabled, isNatEnabled, recordingPeriodInSeconds, setHttpHeader);
+        }
+        public GetWaasPolicyWafConfigHumanInteractionChallenge build() {
+            final var o = new GetWaasPolicyWafConfigHumanInteractionChallenge();
+            o.action = action;
+            o.actionExpirationInSeconds = actionExpirationInSeconds;
+            o.challengeSettings = challengeSettings;
+            o.failureThreshold = failureThreshold;
+            o.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
+            o.interactionThreshold = interactionThreshold;
+            o.isEnabled = isEnabled;
+            o.isNatEnabled = isNatEnabled;
+            o.recordingPeriodInSeconds = recordingPeriodInSeconds;
+            o.setHttpHeader = setHttpHeader;
+            return o;
         }
     }
 }

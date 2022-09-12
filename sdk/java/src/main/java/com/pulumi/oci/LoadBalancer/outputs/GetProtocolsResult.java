@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProtocolsResult {
-    private final String compartmentId;
-    private final @Nullable List<GetProtocolsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetProtocolsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of protocols.
      * 
      */
-    private final List<GetProtocolsProtocol> protocols;
+    private List<GetProtocolsProtocol> protocols;
 
-    @CustomType.Constructor
-    private GetProtocolsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetProtocolsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("protocols") List<GetProtocolsProtocol> protocols) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.protocols = protocols;
-    }
-
+    private GetProtocolsResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -66,17 +55,13 @@ public final class GetProtocolsResult {
     public static Builder builder(GetProtocolsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetProtocolsFilter> filters;
         private String id;
         private List<GetProtocolsProtocol> protocols;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProtocolsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -85,10 +70,12 @@ public final class GetProtocolsResult {
     	      this.protocols = defaults.protocols;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetProtocolsFilter> filters) {
             this.filters = filters;
             return this;
@@ -96,18 +83,26 @@ public final class GetProtocolsResult {
         public Builder filters(GetProtocolsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder protocols(List<GetProtocolsProtocol> protocols) {
             this.protocols = Objects.requireNonNull(protocols);
             return this;
         }
         public Builder protocols(GetProtocolsProtocol... protocols) {
             return protocols(List.of(protocols));
-        }        public GetProtocolsResult build() {
-            return new GetProtocolsResult(compartmentId, filters, id, protocols);
+        }
+        public GetProtocolsResult build() {
+            final var o = new GetProtocolsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.protocols = protocols;
+            return o;
         }
     }
 }

@@ -55,15 +55,15 @@ export function getRegistryDataAssets(args: GetRegistryDataAssetsArgs, opts?: pu
  */
 export interface GetRegistryDataAssetsArgs {
     /**
-     * Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+     * Endpoint IDs used for data-plane APIs to filter or prefer specific endpoint.
      */
     endpointIds?: string[];
     /**
-     * Endpoints which will be excluded while listing dataAssets
+     * Endpoints which will be excluded while listing data assets.
      */
     excludeEndpointIds?: string[];
     /**
-     * Types which wont be listed while listing dataAsset/Connection
+     * The types that will be excluded from the list of data assets/connections.
      */
     excludeTypes?: string[];
     /**
@@ -80,7 +80,7 @@ export interface GetRegistryDataAssetsArgs {
      */
     folderId?: string;
     /**
-     * DataAsset type which needs to be listed while listing dataAssets
+     * Artifact type which needs to be listed while listing Artifacts.
      */
     includeTypes?: string[];
     /**
@@ -88,7 +88,7 @@ export interface GetRegistryDataAssetsArgs {
      */
     name?: string;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: string;
     /**
@@ -118,7 +118,7 @@ export interface GetRegistryDataAssetsResult {
     readonly id: string;
     readonly includeTypes?: string[];
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
     readonly name?: string;
     readonly registryId: string;
@@ -137,15 +137,15 @@ export function getRegistryDataAssetsOutput(args: GetRegistryDataAssetsOutputArg
  */
 export interface GetRegistryDataAssetsOutputArgs {
     /**
-     * Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+     * Endpoint IDs used for data-plane APIs to filter or prefer specific endpoint.
      */
     endpointIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Endpoints which will be excluded while listing dataAssets
+     * Endpoints which will be excluded while listing data assets.
      */
     excludeEndpointIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Types which wont be listed while listing dataAsset/Connection
+     * The types that will be excluded from the list of data assets/connections.
      */
     excludeTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -162,7 +162,7 @@ export interface GetRegistryDataAssetsOutputArgs {
      */
     folderId?: pulumi.Input<string>;
     /**
-     * DataAsset type which needs to be listed while listing dataAssets
+     * Artifact type which needs to be listed while listing Artifacts.
      */
     includeTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -170,7 +170,7 @@ export interface GetRegistryDataAssetsOutputArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * The registry Ocid.
+     * The registry OCID.
      */
     registryId: pulumi.Input<string>;
     /**

@@ -15,42 +15,29 @@ public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetai
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return Proxy URL to connect to object store.
      * 
      */
-    private final @Nullable String internetProxy;
+    private @Nullable String internetProxy;
     /**
      * @return Type of the database backup destination.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
      * 
      */
-    private final @Nullable String vpcPassword;
+    private @Nullable String vpcPassword;
     /**
      * @return For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
      * 
      */
-    private final @Nullable String vpcUser;
+    private @Nullable String vpcUser;
 
-    @CustomType.Constructor
-    private AutonomousContainerDatabaseBackupConfigBackupDestinationDetails(
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("internetProxy") @Nullable String internetProxy,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("vpcPassword") @Nullable String vpcPassword,
-        @CustomType.Parameter("vpcUser") @Nullable String vpcUser) {
-        this.id = id;
-        this.internetProxy = internetProxy;
-        this.type = type;
-        this.vpcPassword = vpcPassword;
-        this.vpcUser = vpcUser;
-    }
-
+    private AutonomousContainerDatabaseBackupConfigBackupDestinationDetails() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
@@ -94,18 +81,14 @@ public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetai
     public static Builder builder(AutonomousContainerDatabaseBackupConfigBackupDestinationDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String id;
         private @Nullable String internetProxy;
         private String type;
         private @Nullable String vpcPassword;
         private @Nullable String vpcUser;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutonomousContainerDatabaseBackupConfigBackupDestinationDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -115,27 +98,39 @@ public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetai
     	      this.vpcUser = defaults.vpcUser;
         }
 
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder internetProxy(@Nullable String internetProxy) {
             this.internetProxy = internetProxy;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder vpcPassword(@Nullable String vpcPassword) {
             this.vpcPassword = vpcPassword;
             return this;
         }
+        @CustomType.Setter
         public Builder vpcUser(@Nullable String vpcUser) {
             this.vpcUser = vpcUser;
             return this;
-        }        public AutonomousContainerDatabaseBackupConfigBackupDestinationDetails build() {
-            return new AutonomousContainerDatabaseBackupConfigBackupDestinationDetails(id, internetProxy, type, vpcPassword, vpcUser);
+        }
+        public AutonomousContainerDatabaseBackupConfigBackupDestinationDetails build() {
+            final var o = new AutonomousContainerDatabaseBackupConfigBackupDestinationDetails();
+            o.id = id;
+            o.internetProxy = internetProxy;
+            o.type = type;
+            o.vpcPassword = vpcPassword;
+            o.vpcUser = vpcUser;
+            return o;
         }
     }
 }

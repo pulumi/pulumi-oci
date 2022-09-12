@@ -13,49 +13,34 @@ public final class GetScheduledRunsScheduledRunCollectionItem {
      * @return The ocid representing unique shedule run
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Additional details about scheduled run failure
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The unique ID of a schedule.
      * 
      */
-    private final String scheduleId;
+    private String scheduleId;
     /**
      * @return Specifies if the schedule job was run successfully or not.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The time when schedule started executing
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time when schedule finished executing
      * 
      */
-    private final String timeFinished;
+    private String timeFinished;
 
-    @CustomType.Constructor
-    private GetScheduledRunsScheduledRunCollectionItem(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("scheduleId") String scheduleId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeFinished") String timeFinished) {
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.scheduleId = scheduleId;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeFinished = timeFinished;
-    }
-
+    private GetScheduledRunsScheduledRunCollectionItem() {}
     /**
      * @return The ocid representing unique shedule run
      * 
@@ -106,7 +91,7 @@ public final class GetScheduledRunsScheduledRunCollectionItem {
     public static Builder builder(GetScheduledRunsScheduledRunCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String lifecycleDetails;
@@ -114,11 +99,7 @@ public final class GetScheduledRunsScheduledRunCollectionItem {
         private String state;
         private String timeCreated;
         private String timeFinished;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetScheduledRunsScheduledRunCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -129,31 +110,45 @@ public final class GetScheduledRunsScheduledRunCollectionItem {
     	      this.timeFinished = defaults.timeFinished;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder scheduleId(String scheduleId) {
             this.scheduleId = Objects.requireNonNull(scheduleId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
             this.timeFinished = Objects.requireNonNull(timeFinished);
             return this;
-        }        public GetScheduledRunsScheduledRunCollectionItem build() {
-            return new GetScheduledRunsScheduledRunCollectionItem(id, lifecycleDetails, scheduleId, state, timeCreated, timeFinished);
+        }
+        public GetScheduledRunsScheduledRunCollectionItem build() {
+            final var o = new GetScheduledRunsScheduledRunCollectionItem();
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.scheduleId = scheduleId;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeFinished = timeFinished;
+            return o;
         }
     }
 }

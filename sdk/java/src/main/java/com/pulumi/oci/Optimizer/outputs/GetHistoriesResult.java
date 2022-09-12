@@ -19,76 +19,51 @@ public final class GetHistoriesResult {
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final Boolean compartmentIdInSubtree;
-    private final @Nullable List<GetHistoriesFilter> filters;
+    private String compartmentId;
+    private Boolean compartmentIdInSubtree;
+    private @Nullable List<GetHistoriesFilter> filters;
     /**
      * @return The list of history_collection.
      * 
      */
-    private final List<GetHistoriesHistoryCollection> historyCollections;
+    private List<GetHistoriesHistoryCollection> historyCollections;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name assigned to the resource.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The unique OCID associated with the recommendation.
      * 
      */
-    private final @Nullable String recommendationId;
+    private @Nullable String recommendationId;
     /**
      * @return The name assigned to the recommendation.
      * 
      */
-    private final @Nullable String recommendationName;
+    private @Nullable String recommendationName;
     /**
      * @return The kind of resource.
      * 
      */
-    private final @Nullable String resourceType;
+    private @Nullable String resourceType;
     /**
      * @return The recommendation history&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The current status of the resource action.
      * 
      */
-    private final @Nullable String status;
+    private @Nullable String status;
 
-    @CustomType.Constructor
-    private GetHistoriesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("filters") @Nullable List<GetHistoriesFilter> filters,
-        @CustomType.Parameter("historyCollections") List<GetHistoriesHistoryCollection> historyCollections,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("recommendationId") @Nullable String recommendationId,
-        @CustomType.Parameter("recommendationName") @Nullable String recommendationName,
-        @CustomType.Parameter("resourceType") @Nullable String resourceType,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("status") @Nullable String status) {
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.filters = filters;
-        this.historyCollections = historyCollections;
-        this.id = id;
-        this.name = name;
-        this.recommendationId = recommendationId;
-        this.recommendationName = recommendationName;
-        this.resourceType = resourceType;
-        this.state = state;
-        this.status = status;
-    }
-
+    private GetHistoriesResult() {}
     /**
      * @return The OCID of the compartment.
      * 
@@ -166,7 +141,7 @@ public final class GetHistoriesResult {
     public static Builder builder(GetHistoriesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Boolean compartmentIdInSubtree;
@@ -179,11 +154,7 @@ public final class GetHistoriesResult {
         private @Nullable String resourceType;
         private @Nullable String state;
         private @Nullable String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetHistoriesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -199,14 +170,17 @@ public final class GetHistoriesResult {
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetHistoriesFilter> filters) {
             this.filters = filters;
             return this;
@@ -214,6 +188,7 @@ public final class GetHistoriesResult {
         public Builder filters(GetHistoriesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder historyCollections(List<GetHistoriesHistoryCollection> historyCollections) {
             this.historyCollections = Objects.requireNonNull(historyCollections);
             return this;
@@ -221,35 +196,55 @@ public final class GetHistoriesResult {
         public Builder historyCollections(GetHistoriesHistoryCollection... historyCollections) {
             return historyCollections(List.of(historyCollections));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder recommendationId(@Nullable String recommendationId) {
             this.recommendationId = recommendationId;
             return this;
         }
+        @CustomType.Setter
         public Builder recommendationName(@Nullable String recommendationName) {
             this.recommendationName = recommendationName;
             return this;
         }
+        @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
             this.resourceType = resourceType;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
-        }        public GetHistoriesResult build() {
-            return new GetHistoriesResult(compartmentId, compartmentIdInSubtree, filters, historyCollections, id, name, recommendationId, recommendationName, resourceType, state, status);
+        }
+        public GetHistoriesResult build() {
+            final var o = new GetHistoriesResult();
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.filters = filters;
+            o.historyCollections = historyCollections;
+            o.id = id;
+            o.name = name;
+            o.recommendationId = recommendationId;
+            o.recommendationName = recommendationName;
+            o.resourceType = resourceType;
+            o.state = state;
+            o.status = status;
+            return o;
         }
     }
 }

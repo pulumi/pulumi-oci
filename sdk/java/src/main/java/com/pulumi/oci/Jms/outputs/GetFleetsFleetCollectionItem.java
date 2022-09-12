@@ -20,119 +20,84 @@ public final class GetFleetsFleetCollectionItem {
      * @return The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
      * 
      */
-    private final Integer approximateApplicationCount;
+    private Integer approximateApplicationCount;
     /**
      * @return The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
      * 
      */
-    private final Integer approximateInstallationCount;
+    private Integer approximateInstallationCount;
     /**
      * @return The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
      * 
      */
-    private final Integer approximateJreCount;
+    private Integer approximateJreCount;
     /**
      * @return The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
      * 
      */
-    private final Integer approximateManagedInstanceCount;
+    private Integer approximateManagedInstanceCount;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The Fleet&#39;s description.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The display name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The ID of the Fleet.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Custom Log for inventory or operation log.
      * 
      */
-    private final List<GetFleetsFleetCollectionItemInventoryLog> inventoryLogs;
+    private List<GetFleetsFleetCollectionItemInventoryLog> inventoryLogs;
     /**
      * @return Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
      * 
      */
-    private final Boolean isAdvancedFeaturesEnabled;
+    private Boolean isAdvancedFeaturesEnabled;
     /**
      * @return Custom Log for inventory or operation log.
      * 
      */
-    private final List<GetFleetsFleetCollectionItemOperationLog> operationLogs;
+    private List<GetFleetsFleetCollectionItemOperationLog> operationLogs;
     /**
      * @return The state of the lifecycle.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetFleetsFleetCollectionItem(
-        @CustomType.Parameter("approximateApplicationCount") Integer approximateApplicationCount,
-        @CustomType.Parameter("approximateInstallationCount") Integer approximateInstallationCount,
-        @CustomType.Parameter("approximateJreCount") Integer approximateJreCount,
-        @CustomType.Parameter("approximateManagedInstanceCount") Integer approximateManagedInstanceCount,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("inventoryLogs") List<GetFleetsFleetCollectionItemInventoryLog> inventoryLogs,
-        @CustomType.Parameter("isAdvancedFeaturesEnabled") Boolean isAdvancedFeaturesEnabled,
-        @CustomType.Parameter("operationLogs") List<GetFleetsFleetCollectionItemOperationLog> operationLogs,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.approximateApplicationCount = approximateApplicationCount;
-        this.approximateInstallationCount = approximateInstallationCount;
-        this.approximateJreCount = approximateJreCount;
-        this.approximateManagedInstanceCount = approximateManagedInstanceCount;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.inventoryLogs = inventoryLogs;
-        this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
-        this.operationLogs = operationLogs;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetFleetsFleetCollectionItem() {}
     /**
      * @return The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
      * 
@@ -253,7 +218,7 @@ public final class GetFleetsFleetCollectionItem {
     public static Builder builder(GetFleetsFleetCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer approximateApplicationCount;
         private Integer approximateInstallationCount;
@@ -271,11 +236,7 @@ public final class GetFleetsFleetCollectionItem {
         private String state;
         private Map<String,Object> systemTags;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFleetsFleetCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.approximateApplicationCount = defaults.approximateApplicationCount;
@@ -296,46 +257,57 @@ public final class GetFleetsFleetCollectionItem {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder approximateApplicationCount(Integer approximateApplicationCount) {
             this.approximateApplicationCount = Objects.requireNonNull(approximateApplicationCount);
             return this;
         }
+        @CustomType.Setter
         public Builder approximateInstallationCount(Integer approximateInstallationCount) {
             this.approximateInstallationCount = Objects.requireNonNull(approximateInstallationCount);
             return this;
         }
+        @CustomType.Setter
         public Builder approximateJreCount(Integer approximateJreCount) {
             this.approximateJreCount = Objects.requireNonNull(approximateJreCount);
             return this;
         }
+        @CustomType.Setter
         public Builder approximateManagedInstanceCount(Integer approximateManagedInstanceCount) {
             this.approximateManagedInstanceCount = Objects.requireNonNull(approximateManagedInstanceCount);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder inventoryLogs(List<GetFleetsFleetCollectionItemInventoryLog> inventoryLogs) {
             this.inventoryLogs = Objects.requireNonNull(inventoryLogs);
             return this;
@@ -343,10 +315,12 @@ public final class GetFleetsFleetCollectionItem {
         public Builder inventoryLogs(GetFleetsFleetCollectionItemInventoryLog... inventoryLogs) {
             return inventoryLogs(List.of(inventoryLogs));
         }
+        @CustomType.Setter
         public Builder isAdvancedFeaturesEnabled(Boolean isAdvancedFeaturesEnabled) {
             this.isAdvancedFeaturesEnabled = Objects.requireNonNull(isAdvancedFeaturesEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder operationLogs(List<GetFleetsFleetCollectionItemOperationLog> operationLogs) {
             this.operationLogs = Objects.requireNonNull(operationLogs);
             return this;
@@ -354,19 +328,40 @@ public final class GetFleetsFleetCollectionItem {
         public Builder operationLogs(GetFleetsFleetCollectionItemOperationLog... operationLogs) {
             return operationLogs(List.of(operationLogs));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetFleetsFleetCollectionItem build() {
-            return new GetFleetsFleetCollectionItem(approximateApplicationCount, approximateInstallationCount, approximateJreCount, approximateManagedInstanceCount, compartmentId, definedTags, description, displayName, freeformTags, id, inventoryLogs, isAdvancedFeaturesEnabled, operationLogs, state, systemTags, timeCreated);
+        }
+        public GetFleetsFleetCollectionItem build() {
+            final var o = new GetFleetsFleetCollectionItem();
+            o.approximateApplicationCount = approximateApplicationCount;
+            o.approximateInstallationCount = approximateInstallationCount;
+            o.approximateJreCount = approximateJreCount;
+            o.approximateManagedInstanceCount = approximateManagedInstanceCount;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.inventoryLogs = inventoryLogs;
+            o.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
+            o.operationLogs = operationLogs;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

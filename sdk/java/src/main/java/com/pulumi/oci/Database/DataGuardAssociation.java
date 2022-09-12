@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.DataGuardAssociationArgs;
 import com.pulumi.oci.Database.inputs.DataGuardAssociationState;
+import com.pulumi.oci.Database.outputs.DataGuardAssociationDataCollectionOptions;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -40,6 +41,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Database.DataGuardAssociation;
  * import com.pulumi.oci.Database.DataGuardAssociationArgs;
+ * import com.pulumi.oci.Database.inputs.DataGuardAssociationDataCollectionOptionsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -65,6 +67,11 @@ import javax.annotation.Nullable;
  *             .cpuCoreCount(var_.data_guard_association_cpu_core_count())
  *             .databaseDefinedTags(var_.data_guard_association_database_defined_tags())
  *             .databaseFreeformTags(var_.data_guard_association_database_freeform_tags())
+ *             .dataCollectionOptions(DataGuardAssociationDataCollectionOptionsArgs.builder()
+ *                 .isDiagnosticsEventsEnabled(var_.data_guard_association_data_collection_options_is_diagnostics_events_enabled())
+ *                 .isHealthMonitoringEnabled(var_.data_guard_association_data_collection_options_is_health_monitoring_enabled())
+ *                 .isIncidentLogsEnabled(var_.data_guard_association_data_collection_options_is_incident_logs_enabled())
+ *                 .build())
  *             .databaseSoftwareImageId(oci_database_database_software_image.test_database_software_image().id())
  *             .dbSystemDefinedTags(var_.data_guard_association_db_system_defined_tags())
  *             .dbSystemFreeformTags(var_.data_guard_association_db_system_freeform_tags())
@@ -187,6 +194,20 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      */
     public Output<String> creationType() {
         return this.creationType;
+    }
+    /**
+     * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     * 
+     */
+    @Export(name="dataCollectionOptions", type=DataGuardAssociationDataCollectionOptions.class, parameters={})
+    private Output<DataGuardAssociationDataCollectionOptions> dataCollectionOptions;
+
+    /**
+     * @return Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     * 
+     */
+    public Output<DataGuardAssociationDataCollectionOptions> dataCollectionOptions() {
+        return this.dataCollectionOptions;
     }
     /**
      * (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.

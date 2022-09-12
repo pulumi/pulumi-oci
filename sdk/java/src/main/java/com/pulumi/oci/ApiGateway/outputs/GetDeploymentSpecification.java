@@ -16,28 +16,19 @@ public final class GetDeploymentSpecification {
      * @return Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
      * 
      */
-    private final List<GetDeploymentSpecificationLoggingPolicy> loggingPolicies;
+    private List<GetDeploymentSpecificationLoggingPolicy> loggingPolicies;
     /**
      * @return Behavior applied to any requests received by the API on this route.
      * 
      */
-    private final List<GetDeploymentSpecificationRequestPolicy> requestPolicies;
+    private List<GetDeploymentSpecificationRequestPolicy> requestPolicies;
     /**
      * @return A list of routes that this API exposes.
      * 
      */
-    private final List<GetDeploymentSpecificationRoute> routes;
+    private List<GetDeploymentSpecificationRoute> routes;
 
-    @CustomType.Constructor
-    private GetDeploymentSpecification(
-        @CustomType.Parameter("loggingPolicies") List<GetDeploymentSpecificationLoggingPolicy> loggingPolicies,
-        @CustomType.Parameter("requestPolicies") List<GetDeploymentSpecificationRequestPolicy> requestPolicies,
-        @CustomType.Parameter("routes") List<GetDeploymentSpecificationRoute> routes) {
-        this.loggingPolicies = loggingPolicies;
-        this.requestPolicies = requestPolicies;
-        this.routes = routes;
-    }
-
+    private GetDeploymentSpecification() {}
     /**
      * @return Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
      * 
@@ -67,16 +58,12 @@ public final class GetDeploymentSpecification {
     public static Builder builder(GetDeploymentSpecification defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentSpecificationLoggingPolicy> loggingPolicies;
         private List<GetDeploymentSpecificationRequestPolicy> requestPolicies;
         private List<GetDeploymentSpecificationRoute> routes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentSpecification defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.loggingPolicies = defaults.loggingPolicies;
@@ -84,6 +71,7 @@ public final class GetDeploymentSpecification {
     	      this.routes = defaults.routes;
         }
 
+        @CustomType.Setter
         public Builder loggingPolicies(List<GetDeploymentSpecificationLoggingPolicy> loggingPolicies) {
             this.loggingPolicies = Objects.requireNonNull(loggingPolicies);
             return this;
@@ -91,6 +79,7 @@ public final class GetDeploymentSpecification {
         public Builder loggingPolicies(GetDeploymentSpecificationLoggingPolicy... loggingPolicies) {
             return loggingPolicies(List.of(loggingPolicies));
         }
+        @CustomType.Setter
         public Builder requestPolicies(List<GetDeploymentSpecificationRequestPolicy> requestPolicies) {
             this.requestPolicies = Objects.requireNonNull(requestPolicies);
             return this;
@@ -98,14 +87,20 @@ public final class GetDeploymentSpecification {
         public Builder requestPolicies(GetDeploymentSpecificationRequestPolicy... requestPolicies) {
             return requestPolicies(List.of(requestPolicies));
         }
+        @CustomType.Setter
         public Builder routes(List<GetDeploymentSpecificationRoute> routes) {
             this.routes = Objects.requireNonNull(routes);
             return this;
         }
         public Builder routes(GetDeploymentSpecificationRoute... routes) {
             return routes(List.of(routes));
-        }        public GetDeploymentSpecification build() {
-            return new GetDeploymentSpecification(loggingPolicies, requestPolicies, routes);
+        }
+        public GetDeploymentSpecification build() {
+            final var o = new GetDeploymentSpecification();
+            o.loggingPolicies = loggingPolicies;
+            o.requestPolicies = requestPolicies;
+            o.routes = routes;
+            return o;
         }
     }
 }

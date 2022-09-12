@@ -13,21 +13,14 @@ public final class GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineS
      * @return The OCID of a stage
      * 
      */
-    private final String deployStageId;
+    private String deployStageId;
     /**
      * @return Deployment pipeline display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
 
-    @CustomType.Constructor
-    private GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem(
-        @CustomType.Parameter("deployStageId") String deployStageId,
-        @CustomType.Parameter("displayName") String displayName) {
-        this.deployStageId = deployStageId;
-        this.displayName = displayName;
-    }
-
+    private GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem() {}
     /**
      * @return The OCID of a stage
      * 
@@ -50,30 +43,32 @@ public final class GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineS
     public static Builder builder(GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String deployStageId;
         private String displayName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.deployStageId = defaults.deployStageId;
     	      this.displayName = defaults.displayName;
         }
 
+        @CustomType.Setter
         public Builder deployStageId(String deployStageId) {
             this.deployStageId = Objects.requireNonNull(deployStageId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
-        }        public GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem build() {
-            return new GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem(deployStageId, displayName);
+        }
+        public GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem build() {
+            final var o = new GetDeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem();
+            o.deployStageId = deployStageId;
+            o.displayName = displayName;
+            return o;
         }
     }
 }

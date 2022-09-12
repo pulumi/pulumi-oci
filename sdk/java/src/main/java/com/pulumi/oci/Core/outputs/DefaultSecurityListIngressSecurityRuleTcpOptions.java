@@ -12,20 +12,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DefaultSecurityListIngressSecurityRuleTcpOptions {
-    private final @Nullable Integer max;
-    private final @Nullable Integer min;
-    private final @Nullable DefaultSecurityListIngressSecurityRuleTcpOptionsSourcePortRange sourcePortRange;
+    private @Nullable Integer max;
+    private @Nullable Integer min;
+    private @Nullable DefaultSecurityListIngressSecurityRuleTcpOptionsSourcePortRange sourcePortRange;
 
-    @CustomType.Constructor
-    private DefaultSecurityListIngressSecurityRuleTcpOptions(
-        @CustomType.Parameter("max") @Nullable Integer max,
-        @CustomType.Parameter("min") @Nullable Integer min,
-        @CustomType.Parameter("sourcePortRange") @Nullable DefaultSecurityListIngressSecurityRuleTcpOptionsSourcePortRange sourcePortRange) {
-        this.max = max;
-        this.min = min;
-        this.sourcePortRange = sourcePortRange;
-    }
-
+    private DefaultSecurityListIngressSecurityRuleTcpOptions() {}
     public Optional<Integer> max() {
         return Optional.ofNullable(this.max);
     }
@@ -43,16 +34,12 @@ public final class DefaultSecurityListIngressSecurityRuleTcpOptions {
     public static Builder builder(DefaultSecurityListIngressSecurityRuleTcpOptions defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer max;
         private @Nullable Integer min;
         private @Nullable DefaultSecurityListIngressSecurityRuleTcpOptionsSourcePortRange sourcePortRange;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DefaultSecurityListIngressSecurityRuleTcpOptions defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.max = defaults.max;
@@ -60,19 +47,27 @@ public final class DefaultSecurityListIngressSecurityRuleTcpOptions {
     	      this.sourcePortRange = defaults.sourcePortRange;
         }
 
+        @CustomType.Setter
         public Builder max(@Nullable Integer max) {
             this.max = max;
             return this;
         }
+        @CustomType.Setter
         public Builder min(@Nullable Integer min) {
             this.min = min;
             return this;
         }
+        @CustomType.Setter
         public Builder sourcePortRange(@Nullable DefaultSecurityListIngressSecurityRuleTcpOptionsSourcePortRange sourcePortRange) {
             this.sourcePortRange = sourcePortRange;
             return this;
-        }        public DefaultSecurityListIngressSecurityRuleTcpOptions build() {
-            return new DefaultSecurityListIngressSecurityRuleTcpOptions(max, min, sourcePortRange);
+        }
+        public DefaultSecurityListIngressSecurityRuleTcpOptions build() {
+            final var o = new DefaultSecurityListIngressSecurityRuleTcpOptions();
+            o.max = max;
+            o.min = min;
+            o.sourcePortRange = sourcePortRange;
+            return o;
         }
     }
 }

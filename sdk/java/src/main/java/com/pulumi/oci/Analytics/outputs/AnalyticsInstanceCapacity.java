@@ -14,21 +14,14 @@ public final class AnalyticsInstanceCapacity {
      * @return The capacity model to use.
      * 
      */
-    private final String capacityType;
+    private String capacityType;
     /**
      * @return (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
      * 
      */
-    private final Integer capacityValue;
+    private Integer capacityValue;
 
-    @CustomType.Constructor
-    private AnalyticsInstanceCapacity(
-        @CustomType.Parameter("capacityType") String capacityType,
-        @CustomType.Parameter("capacityValue") Integer capacityValue) {
-        this.capacityType = capacityType;
-        this.capacityValue = capacityValue;
-    }
-
+    private AnalyticsInstanceCapacity() {}
     /**
      * @return The capacity model to use.
      * 
@@ -51,30 +44,32 @@ public final class AnalyticsInstanceCapacity {
     public static Builder builder(AnalyticsInstanceCapacity defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String capacityType;
         private Integer capacityValue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AnalyticsInstanceCapacity defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.capacityType = defaults.capacityType;
     	      this.capacityValue = defaults.capacityValue;
         }
 
+        @CustomType.Setter
         public Builder capacityType(String capacityType) {
             this.capacityType = Objects.requireNonNull(capacityType);
             return this;
         }
+        @CustomType.Setter
         public Builder capacityValue(Integer capacityValue) {
             this.capacityValue = Objects.requireNonNull(capacityValue);
             return this;
-        }        public AnalyticsInstanceCapacity build() {
-            return new AnalyticsInstanceCapacity(capacityType, capacityValue);
+        }
+        public AnalyticsInstanceCapacity build() {
+            final var o = new AnalyticsInstanceCapacity();
+            o.capacityType = capacityType;
+            o.capacityValue = capacityValue;
+            return o;
         }
     }
 }

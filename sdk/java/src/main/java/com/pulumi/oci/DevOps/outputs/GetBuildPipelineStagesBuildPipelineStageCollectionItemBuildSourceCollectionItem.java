@@ -13,49 +13,34 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSo
      * @return Branch name.
      * 
      */
-    private final String branch;
+    private String branch;
     /**
      * @return Connection identifier pertinent to Bitbucket Server source provider
      * 
      */
-    private final String connectionId;
+    private String connectionId;
     /**
      * @return The type of source provider.
      * 
      */
-    private final String connectionType;
+    private String connectionType;
     /**
      * @return Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The DevOps code repository ID.
      * 
      */
-    private final String repositoryId;
+    private String repositoryId;
     /**
      * @return URL for the repository.
      * 
      */
-    private final String repositoryUrl;
+    private String repositoryUrl;
 
-    @CustomType.Constructor
-    private GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem(
-        @CustomType.Parameter("branch") String branch,
-        @CustomType.Parameter("connectionId") String connectionId,
-        @CustomType.Parameter("connectionType") String connectionType,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("repositoryId") String repositoryId,
-        @CustomType.Parameter("repositoryUrl") String repositoryUrl) {
-        this.branch = branch;
-        this.connectionId = connectionId;
-        this.connectionType = connectionType;
-        this.name = name;
-        this.repositoryId = repositoryId;
-        this.repositoryUrl = repositoryUrl;
-    }
-
+    private GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem() {}
     /**
      * @return Branch name.
      * 
@@ -106,7 +91,7 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSo
     public static Builder builder(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String branch;
         private String connectionId;
@@ -114,11 +99,7 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSo
         private String name;
         private String repositoryId;
         private String repositoryUrl;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.branch = defaults.branch;
@@ -129,31 +110,45 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSo
     	      this.repositoryUrl = defaults.repositoryUrl;
         }
 
+        @CustomType.Setter
         public Builder branch(String branch) {
             this.branch = Objects.requireNonNull(branch);
             return this;
         }
+        @CustomType.Setter
         public Builder connectionId(String connectionId) {
             this.connectionId = Objects.requireNonNull(connectionId);
             return this;
         }
+        @CustomType.Setter
         public Builder connectionType(String connectionType) {
             this.connectionType = Objects.requireNonNull(connectionType);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = Objects.requireNonNull(repositoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder repositoryUrl(String repositoryUrl) {
             this.repositoryUrl = Objects.requireNonNull(repositoryUrl);
             return this;
-        }        public GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem build() {
-            return new GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem(branch, connectionId, connectionType, name, repositoryId, repositoryUrl);
+        }
+        public GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem build() {
+            final var o = new GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem();
+            o.branch = branch;
+            o.connectionId = connectionId;
+            o.connectionType = connectionType;
+            o.name = name;
+            o.repositoryId = repositoryId;
+            o.repositoryUrl = repositoryUrl;
+            return o;
         }
     }
 }

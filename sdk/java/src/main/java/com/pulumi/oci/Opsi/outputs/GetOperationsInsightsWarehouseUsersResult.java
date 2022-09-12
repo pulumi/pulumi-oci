@@ -18,48 +18,31 @@ public final class GetOperationsInsightsWarehouseUsersResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final @Nullable String compartmentId;
-    private final @Nullable String displayName;
-    private final @Nullable List<GetOperationsInsightsWarehouseUsersFilter> filters;
+    private @Nullable String compartmentId;
+    private @Nullable String displayName;
+    private @Nullable List<GetOperationsInsightsWarehouseUsersFilter> filters;
     /**
      * @return Hub User OCID
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return OPSI Warehouse OCID
      * 
      */
-    private final String operationsInsightsWarehouseId;
+    private String operationsInsightsWarehouseId;
     /**
      * @return The list of operations_insights_warehouse_user_summary_collection.
      * 
      */
-    private final List<GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection> operationsInsightsWarehouseUserSummaryCollections;
+    private List<GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection> operationsInsightsWarehouseUserSummaryCollections;
     /**
      * @return Possible lifecycle states
      * 
      */
-    private final @Nullable List<String> states;
+    private @Nullable List<String> states;
 
-    @CustomType.Constructor
-    private GetOperationsInsightsWarehouseUsersResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetOperationsInsightsWarehouseUsersFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("operationsInsightsWarehouseId") String operationsInsightsWarehouseId,
-        @CustomType.Parameter("operationsInsightsWarehouseUserSummaryCollections") List<GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection> operationsInsightsWarehouseUserSummaryCollections,
-        @CustomType.Parameter("states") @Nullable List<String> states) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
-        this.operationsInsightsWarehouseUserSummaryCollections = operationsInsightsWarehouseUserSummaryCollections;
-        this.states = states;
-    }
-
+    private GetOperationsInsightsWarehouseUsersResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -109,7 +92,7 @@ public final class GetOperationsInsightsWarehouseUsersResult {
     public static Builder builder(GetOperationsInsightsWarehouseUsersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
@@ -118,11 +101,7 @@ public final class GetOperationsInsightsWarehouseUsersResult {
         private String operationsInsightsWarehouseId;
         private List<GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection> operationsInsightsWarehouseUserSummaryCollections;
         private @Nullable List<String> states;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOperationsInsightsWarehouseUsersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -134,14 +113,17 @@ public final class GetOperationsInsightsWarehouseUsersResult {
     	      this.states = defaults.states;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetOperationsInsightsWarehouseUsersFilter> filters) {
             this.filters = filters;
             return this;
@@ -149,14 +131,17 @@ public final class GetOperationsInsightsWarehouseUsersResult {
         public Builder filters(GetOperationsInsightsWarehouseUsersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder operationsInsightsWarehouseId(String operationsInsightsWarehouseId) {
             this.operationsInsightsWarehouseId = Objects.requireNonNull(operationsInsightsWarehouseId);
             return this;
         }
+        @CustomType.Setter
         public Builder operationsInsightsWarehouseUserSummaryCollections(List<GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection> operationsInsightsWarehouseUserSummaryCollections) {
             this.operationsInsightsWarehouseUserSummaryCollections = Objects.requireNonNull(operationsInsightsWarehouseUserSummaryCollections);
             return this;
@@ -164,14 +149,24 @@ public final class GetOperationsInsightsWarehouseUsersResult {
         public Builder operationsInsightsWarehouseUserSummaryCollections(GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection... operationsInsightsWarehouseUserSummaryCollections) {
             return operationsInsightsWarehouseUserSummaryCollections(List.of(operationsInsightsWarehouseUserSummaryCollections));
         }
+        @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
             this.states = states;
             return this;
         }
         public Builder states(String... states) {
             return states(List.of(states));
-        }        public GetOperationsInsightsWarehouseUsersResult build() {
-            return new GetOperationsInsightsWarehouseUsersResult(compartmentId, displayName, filters, id, operationsInsightsWarehouseId, operationsInsightsWarehouseUserSummaryCollections, states);
+        }
+        public GetOperationsInsightsWarehouseUsersResult build() {
+            final var o = new GetOperationsInsightsWarehouseUsersResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
+            o.operationsInsightsWarehouseUserSummaryCollections = operationsInsightsWarehouseUserSummaryCollections;
+            o.states = states;
+            return o;
         }
     }
 }

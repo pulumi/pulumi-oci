@@ -17,35 +17,24 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig 
      * @return Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
      * 
      */
-    private final @Nullable Boolean areAllPluginsDisabled;
+    private @Nullable Boolean areAllPluginsDisabled;
     /**
      * @return Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
      * 
      */
-    private final @Nullable Boolean isManagementDisabled;
+    private @Nullable Boolean isManagementDisabled;
     /**
      * @return Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
      * 
      */
-    private final @Nullable Boolean isMonitoringDisabled;
+    private @Nullable Boolean isMonitoringDisabled;
     /**
      * @return The configuration of plugins associated with this instance.
      * 
      */
-    private final @Nullable List<InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig> pluginsConfigs;
+    private @Nullable List<InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig> pluginsConfigs;
 
-    @CustomType.Constructor
-    private InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig(
-        @CustomType.Parameter("areAllPluginsDisabled") @Nullable Boolean areAllPluginsDisabled,
-        @CustomType.Parameter("isManagementDisabled") @Nullable Boolean isManagementDisabled,
-        @CustomType.Parameter("isMonitoringDisabled") @Nullable Boolean isMonitoringDisabled,
-        @CustomType.Parameter("pluginsConfigs") @Nullable List<InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig> pluginsConfigs) {
-        this.areAllPluginsDisabled = areAllPluginsDisabled;
-        this.isManagementDisabled = isManagementDisabled;
-        this.isMonitoringDisabled = isMonitoringDisabled;
-        this.pluginsConfigs = pluginsConfigs;
-    }
-
+    private InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig() {}
     /**
      * @return Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
      * 
@@ -82,17 +71,13 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig 
     public static Builder builder(InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean areAllPluginsDisabled;
         private @Nullable Boolean isManagementDisabled;
         private @Nullable Boolean isMonitoringDisabled;
         private @Nullable List<InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig> pluginsConfigs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.areAllPluginsDisabled = defaults.areAllPluginsDisabled;
@@ -101,26 +86,36 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig 
     	      this.pluginsConfigs = defaults.pluginsConfigs;
         }
 
+        @CustomType.Setter
         public Builder areAllPluginsDisabled(@Nullable Boolean areAllPluginsDisabled) {
             this.areAllPluginsDisabled = areAllPluginsDisabled;
             return this;
         }
+        @CustomType.Setter
         public Builder isManagementDisabled(@Nullable Boolean isManagementDisabled) {
             this.isManagementDisabled = isManagementDisabled;
             return this;
         }
+        @CustomType.Setter
         public Builder isMonitoringDisabled(@Nullable Boolean isMonitoringDisabled) {
             this.isMonitoringDisabled = isMonitoringDisabled;
             return this;
         }
+        @CustomType.Setter
         public Builder pluginsConfigs(@Nullable List<InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig> pluginsConfigs) {
             this.pluginsConfigs = pluginsConfigs;
             return this;
         }
         public Builder pluginsConfigs(InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig... pluginsConfigs) {
             return pluginsConfigs(List.of(pluginsConfigs));
-        }        public InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig build() {
-            return new InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig(areAllPluginsDisabled, isManagementDisabled, isMonitoringDisabled, pluginsConfigs);
+        }
+        public InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig build() {
+            final var o = new InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig();
+            o.areAllPluginsDisabled = areAllPluginsDisabled;
+            o.isManagementDisabled = isManagementDisabled;
+            o.isMonitoringDisabled = isMonitoringDisabled;
+            o.pluginsConfigs = pluginsConfigs;
+            return o;
         }
     }
 }

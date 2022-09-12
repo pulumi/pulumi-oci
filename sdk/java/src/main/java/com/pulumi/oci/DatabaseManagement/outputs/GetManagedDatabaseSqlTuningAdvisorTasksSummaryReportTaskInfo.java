@@ -14,63 +14,44 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo 
      * @return The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the SQL Tuning Advisor task.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The owner of the SQL Tuning Advisor task.
      * 
      */
-    private final String owner;
+    private String owner;
     /**
      * @return The total running time in seconds. This is not defined for Auto SQL Tuning tasks.
      * 
      */
-    private final Integer runningTime;
+    private Integer runningTime;
     /**
      * @return The status of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The end time of the task execution.
      * 
      */
-    private final String timeEnded;
+    private String timeEnded;
     /**
      * @return The start time of the task execution.
      * 
      */
-    private final String timeStarted;
+    private String timeStarted;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("owner") String owner,
-        @CustomType.Parameter("runningTime") Integer runningTime,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("timeEnded") String timeEnded,
-        @CustomType.Parameter("timeStarted") String timeStarted) {
-        this.description = description;
-        this.id = id;
-        this.name = name;
-        this.owner = owner;
-        this.runningTime = runningTime;
-        this.status = status;
-        this.timeEnded = timeEnded;
-        this.timeStarted = timeStarted;
-    }
-
+    private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo() {}
     /**
      * @return The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
      * 
@@ -135,7 +116,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo 
     public static Builder builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String id;
@@ -145,11 +126,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo 
         private String status;
         private String timeEnded;
         private String timeStarted;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -162,39 +139,57 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo 
     	      this.timeStarted = defaults.timeStarted;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder owner(String owner) {
             this.owner = Objects.requireNonNull(owner);
             return this;
         }
+        @CustomType.Setter
         public Builder runningTime(Integer runningTime) {
             this.runningTime = Objects.requireNonNull(runningTime);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
             this.timeEnded = Objects.requireNonNull(timeEnded);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
-        }        public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo build() {
-            return new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo(description, id, name, owner, runningTime, status, timeEnded, timeStarted);
+        }
+        public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo build() {
+            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo();
+            o.description = description;
+            o.id = id;
+            o.name = name;
+            o.owner = owner;
+            o.runningTime = runningTime;
+            o.status = status;
+            o.timeEnded = timeEnded;
+            o.timeStarted = timeStarted;
+            return o;
         }
     }
 }

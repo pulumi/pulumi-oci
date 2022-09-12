@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetBlockchainPlatformsBlockchainPlatformCollection {
-    private final List<GetBlockchainPlatformsBlockchainPlatformCollectionItem> items;
+    private List<GetBlockchainPlatformsBlockchainPlatformCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetBlockchainPlatformsBlockchainPlatformCollection(@CustomType.Parameter("items") List<GetBlockchainPlatformsBlockchainPlatformCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetBlockchainPlatformsBlockchainPlatformCollection() {}
     public List<GetBlockchainPlatformsBlockchainPlatformCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollection {
     public static Builder builder(GetBlockchainPlatformsBlockchainPlatformCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBlockchainPlatformsBlockchainPlatformCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBlockchainPlatformsBlockchainPlatformCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetBlockchainPlatformsBlockchainPlatformCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetBlockchainPlatformsBlockchainPlatformCollectionItem... items) {
             return items(List.of(items));
-        }        public GetBlockchainPlatformsBlockchainPlatformCollection build() {
-            return new GetBlockchainPlatformsBlockchainPlatformCollection(items);
+        }
+        public GetBlockchainPlatformsBlockchainPlatformCollection build() {
+            final var o = new GetBlockchainPlatformsBlockchainPlatformCollection();
+            o.items = items;
+            return o;
         }
     }
 }

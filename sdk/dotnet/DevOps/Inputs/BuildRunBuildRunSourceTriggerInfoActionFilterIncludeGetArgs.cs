@@ -18,6 +18,14 @@ namespace Pulumi.Oci.DevOps.Inputs
         [Input("baseRef")]
         public Input<string>? BaseRef { get; set; }
 
+        [Input("fileFilters")]
+        private InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterGetArgs>? _fileFilters;
+        public InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterGetArgs> FileFilters
+        {
+            get => _fileFilters ?? (_fileFilters = new InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterGetArgs>());
+            set => _fileFilters = value;
+        }
+
         /// <summary>
         /// Branch for push event; source branch for pull requests.
         /// </summary>

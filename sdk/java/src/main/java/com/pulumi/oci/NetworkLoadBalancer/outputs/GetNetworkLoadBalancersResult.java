@@ -18,45 +18,30 @@ public final class GetNetworkLoadBalancersResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name, which does not have to be unique, and can be changed.  Example: `example_load_balancer`
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetNetworkLoadBalancersFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetNetworkLoadBalancersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of network_load_balancer_collection.
      * 
      */
-    private final List<GetNetworkLoadBalancersNetworkLoadBalancerCollection> networkLoadBalancerCollections;
+    private List<GetNetworkLoadBalancersNetworkLoadBalancerCollection> networkLoadBalancerCollections;
     /**
      * @return The current state of the network load balancer.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetNetworkLoadBalancersResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetNetworkLoadBalancersFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("networkLoadBalancerCollections") List<GetNetworkLoadBalancersNetworkLoadBalancerCollection> networkLoadBalancerCollections,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.networkLoadBalancerCollections = networkLoadBalancerCollections;
-        this.state = state;
-    }
-
+    private GetNetworkLoadBalancersResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
      * 
@@ -103,7 +88,7 @@ public final class GetNetworkLoadBalancersResult {
     public static Builder builder(GetNetworkLoadBalancersResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetNetworkLoadBalancersResult {
         private String id;
         private List<GetNetworkLoadBalancersNetworkLoadBalancerCollection> networkLoadBalancerCollections;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkLoadBalancersResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetNetworkLoadBalancersResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkLoadBalancersFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +125,12 @@ public final class GetNetworkLoadBalancersResult {
         public Builder filters(GetNetworkLoadBalancersFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder networkLoadBalancerCollections(List<GetNetworkLoadBalancersNetworkLoadBalancerCollection> networkLoadBalancerCollections) {
             this.networkLoadBalancerCollections = Objects.requireNonNull(networkLoadBalancerCollections);
             return this;
@@ -152,11 +138,20 @@ public final class GetNetworkLoadBalancersResult {
         public Builder networkLoadBalancerCollections(GetNetworkLoadBalancersNetworkLoadBalancerCollection... networkLoadBalancerCollections) {
             return networkLoadBalancerCollections(List.of(networkLoadBalancerCollections));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetNetworkLoadBalancersResult build() {
-            return new GetNetworkLoadBalancersResult(compartmentId, displayName, filters, id, networkLoadBalancerCollections, state);
+        }
+        public GetNetworkLoadBalancersResult build() {
+            final var o = new GetNetworkLoadBalancersResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.networkLoadBalancerCollections = networkLoadBalancerCollections;
+            o.state = state;
+            return o;
         }
     }
 }

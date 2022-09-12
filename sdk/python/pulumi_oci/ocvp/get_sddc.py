@@ -22,7 +22,7 @@ class GetSddcResult:
     """
     A collection of values returned by getSddc.
     """
-    def __init__(__self__, actual_esxi_hosts_count=None, capacity_reservation_id=None, compartment_id=None, compute_availability_domain=None, defined_tags=None, display_name=None, esxi_hosts_count=None, freeform_tags=None, hcx_action=None, hcx_fqdn=None, hcx_initial_password=None, hcx_on_prem_key=None, hcx_on_prem_licenses=None, hcx_private_ip_id=None, hcx_vlan_id=None, id=None, initial_host_ocpu_count=None, initial_host_shape_name=None, initial_sku=None, instance_display_name_prefix=None, is_hcx_enabled=None, is_hcx_enterprise_enabled=None, is_hcx_pending_downgrade=None, is_shielded_instance_enabled=None, is_single_host_sddc=None, nsx_edge_uplink1vlan_id=None, nsx_edge_uplink2vlan_id=None, nsx_edge_uplink_ip_id=None, nsx_edge_vtep_vlan_id=None, nsx_manager_fqdn=None, nsx_manager_initial_password=None, nsx_manager_private_ip_id=None, nsx_manager_username=None, nsx_overlay_segment_name=None, nsx_vtep_vlan_id=None, provisioning_subnet_id=None, provisioning_vlan_id=None, refresh_hcx_license_status=None, replication_vlan_id=None, reserving_hcx_on_premise_license_keys=None, sddc_id=None, ssh_authorized_keys=None, state=None, time_created=None, time_hcx_billing_cycle_end=None, time_hcx_license_status_updated=None, time_updated=None, vcenter_fqdn=None, vcenter_initial_password=None, vcenter_private_ip_id=None, vcenter_username=None, vmotion_vlan_id=None, vmware_software_version=None, vsan_vlan_id=None, vsphere_vlan_id=None, workload_network_cidr=None):
+    def __init__(__self__, actual_esxi_hosts_count=None, capacity_reservation_id=None, compartment_id=None, compute_availability_domain=None, defined_tags=None, display_name=None, esxi_hosts_count=None, freeform_tags=None, hcx_action=None, hcx_fqdn=None, hcx_initial_password=None, hcx_on_prem_key=None, hcx_on_prem_licenses=None, hcx_private_ip_id=None, hcx_vlan_id=None, id=None, initial_host_ocpu_count=None, initial_host_shape_name=None, initial_sku=None, instance_display_name_prefix=None, is_hcx_enabled=None, is_hcx_enterprise_enabled=None, is_hcx_pending_downgrade=None, is_shielded_instance_enabled=None, is_single_host_sddc=None, nsx_edge_uplink1vlan_id=None, nsx_edge_uplink2vlan_id=None, nsx_edge_uplink_ip_id=None, nsx_edge_vtep_vlan_id=None, nsx_manager_fqdn=None, nsx_manager_initial_password=None, nsx_manager_private_ip_id=None, nsx_manager_username=None, nsx_overlay_segment_name=None, nsx_vtep_vlan_id=None, provisioning_subnet_id=None, provisioning_vlan_id=None, refresh_hcx_license_status=None, replication_vlan_id=None, reserving_hcx_on_premise_license_keys=None, sddc_id=None, ssh_authorized_keys=None, state=None, time_created=None, time_hcx_billing_cycle_end=None, time_hcx_license_status_updated=None, time_updated=None, upgrade_licenses=None, vcenter_fqdn=None, vcenter_initial_password=None, vcenter_private_ip_id=None, vcenter_username=None, vmotion_vlan_id=None, vmware_software_version=None, vsan_vlan_id=None, vsphere_upgrade_guide=None, vsphere_upgrade_objects=None, vsphere_vlan_id=None, workload_network_cidr=None):
         if actual_esxi_hosts_count and not isinstance(actual_esxi_hosts_count, int):
             raise TypeError("Expected argument 'actual_esxi_hosts_count' to be a int")
         pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
@@ -164,6 +164,9 @@ class GetSddcResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if upgrade_licenses and not isinstance(upgrade_licenses, list):
+            raise TypeError("Expected argument 'upgrade_licenses' to be a list")
+        pulumi.set(__self__, "upgrade_licenses", upgrade_licenses)
         if vcenter_fqdn and not isinstance(vcenter_fqdn, str):
             raise TypeError("Expected argument 'vcenter_fqdn' to be a str")
         pulumi.set(__self__, "vcenter_fqdn", vcenter_fqdn)
@@ -185,6 +188,12 @@ class GetSddcResult:
         if vsan_vlan_id and not isinstance(vsan_vlan_id, str):
             raise TypeError("Expected argument 'vsan_vlan_id' to be a str")
         pulumi.set(__self__, "vsan_vlan_id", vsan_vlan_id)
+        if vsphere_upgrade_guide and not isinstance(vsphere_upgrade_guide, str):
+            raise TypeError("Expected argument 'vsphere_upgrade_guide' to be a str")
+        pulumi.set(__self__, "vsphere_upgrade_guide", vsphere_upgrade_guide)
+        if vsphere_upgrade_objects and not isinstance(vsphere_upgrade_objects, list):
+            raise TypeError("Expected argument 'vsphere_upgrade_objects' to be a list")
+        pulumi.set(__self__, "vsphere_upgrade_objects", vsphere_upgrade_objects)
         if vsphere_vlan_id and not isinstance(vsphere_vlan_id, str):
             raise TypeError("Expected argument 'vsphere_vlan_id' to be a str")
         pulumi.set(__self__, "vsphere_vlan_id", vsphere_vlan_id)
@@ -557,6 +566,14 @@ class GetSddcResult:
         return pulumi.get(self, "time_updated")
 
     @property
+    @pulumi.getter(name="upgradeLicenses")
+    def upgrade_licenses(self) -> Sequence['outputs.GetSddcUpgradeLicenseResult']:
+        """
+        The vSphere licenses to be used when upgrade SDDC.
+        """
+        return pulumi.get(self, "upgrade_licenses")
+
+    @property
     @pulumi.getter(name="vcenterFqdn")
     def vcenter_fqdn(self) -> str:
         """
@@ -611,6 +628,22 @@ class GetSddcResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
         """
         return pulumi.get(self, "vsan_vlan_id")
+
+    @property
+    @pulumi.getter(name="vsphereUpgradeGuide")
+    def vsphere_upgrade_guide(self) -> str:
+        """
+        The link of guidance to upgrade vSphere.
+        """
+        return pulumi.get(self, "vsphere_upgrade_guide")
+
+    @property
+    @pulumi.getter(name="vsphereUpgradeObjects")
+    def vsphere_upgrade_objects(self) -> Sequence['outputs.GetSddcVsphereUpgradeObjectResult']:
+        """
+        The links of binary objects needed for upgrade vSphere.
+        """
+        return pulumi.get(self, "vsphere_upgrade_objects")
 
     @property
     @pulumi.getter(name="vsphereVlanId")
@@ -682,6 +715,7 @@ class AwaitableGetSddcResult(GetSddcResult):
             time_hcx_billing_cycle_end=self.time_hcx_billing_cycle_end,
             time_hcx_license_status_updated=self.time_hcx_license_status_updated,
             time_updated=self.time_updated,
+            upgrade_licenses=self.upgrade_licenses,
             vcenter_fqdn=self.vcenter_fqdn,
             vcenter_initial_password=self.vcenter_initial_password,
             vcenter_private_ip_id=self.vcenter_private_ip_id,
@@ -689,6 +723,8 @@ class AwaitableGetSddcResult(GetSddcResult):
             vmotion_vlan_id=self.vmotion_vlan_id,
             vmware_software_version=self.vmware_software_version,
             vsan_vlan_id=self.vsan_vlan_id,
+            vsphere_upgrade_guide=self.vsphere_upgrade_guide,
+            vsphere_upgrade_objects=self.vsphere_upgrade_objects,
             vsphere_vlan_id=self.vsphere_vlan_id,
             workload_network_cidr=self.workload_network_cidr)
 
@@ -765,6 +801,7 @@ def get_sddc(sddc_id: Optional[str] = None,
         time_hcx_billing_cycle_end=__ret__.time_hcx_billing_cycle_end,
         time_hcx_license_status_updated=__ret__.time_hcx_license_status_updated,
         time_updated=__ret__.time_updated,
+        upgrade_licenses=__ret__.upgrade_licenses,
         vcenter_fqdn=__ret__.vcenter_fqdn,
         vcenter_initial_password=__ret__.vcenter_initial_password,
         vcenter_private_ip_id=__ret__.vcenter_private_ip_id,
@@ -772,6 +809,8 @@ def get_sddc(sddc_id: Optional[str] = None,
         vmotion_vlan_id=__ret__.vmotion_vlan_id,
         vmware_software_version=__ret__.vmware_software_version,
         vsan_vlan_id=__ret__.vsan_vlan_id,
+        vsphere_upgrade_guide=__ret__.vsphere_upgrade_guide,
+        vsphere_upgrade_objects=__ret__.vsphere_upgrade_objects,
         vsphere_vlan_id=__ret__.vsphere_vlan_id,
         workload_network_cidr=__ret__.workload_network_cidr)
 

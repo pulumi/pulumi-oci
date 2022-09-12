@@ -13,35 +13,24 @@ public final class GetPublicationsPublicationIcon {
      * @return The content URL of the upload data.
      * 
      */
-    private final String contentUrl;
+    private String contentUrl;
     /**
      * @return The file extension of the upload data.
      * 
      */
-    private final String fileExtension;
+    private String fileExtension;
     /**
      * @return The MIME type of the upload data.
      * 
      */
-    private final String mimeType;
+    private String mimeType;
     /**
      * @return The name of the publication.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetPublicationsPublicationIcon(
-        @CustomType.Parameter("contentUrl") String contentUrl,
-        @CustomType.Parameter("fileExtension") String fileExtension,
-        @CustomType.Parameter("mimeType") String mimeType,
-        @CustomType.Parameter("name") String name) {
-        this.contentUrl = contentUrl;
-        this.fileExtension = fileExtension;
-        this.mimeType = mimeType;
-        this.name = name;
-    }
-
+    private GetPublicationsPublicationIcon() {}
     /**
      * @return The content URL of the upload data.
      * 
@@ -78,17 +67,13 @@ public final class GetPublicationsPublicationIcon {
     public static Builder builder(GetPublicationsPublicationIcon defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String contentUrl;
         private String fileExtension;
         private String mimeType;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPublicationsPublicationIcon defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.contentUrl = defaults.contentUrl;
@@ -97,23 +82,33 @@ public final class GetPublicationsPublicationIcon {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder contentUrl(String contentUrl) {
             this.contentUrl = Objects.requireNonNull(contentUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder fileExtension(String fileExtension) {
             this.fileExtension = Objects.requireNonNull(fileExtension);
             return this;
         }
+        @CustomType.Setter
         public Builder mimeType(String mimeType) {
             this.mimeType = Objects.requireNonNull(mimeType);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetPublicationsPublicationIcon build() {
-            return new GetPublicationsPublicationIcon(contentUrl, fileExtension, mimeType, name);
+        }
+        public GetPublicationsPublicationIcon build() {
+            final var o = new GetPublicationsPublicationIcon();
+            o.contentUrl = contentUrl;
+            o.fileExtension = fileExtension;
+            o.mimeType = mimeType;
+            o.name = name;
+            return o;
         }
     }
 }

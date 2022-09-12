@@ -16,70 +16,49 @@ public final class GetInvoicesInvoiceLinesInvoiceLineCollectionItem {
      * @return Currency details model
      * 
      */
-    private final List<GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency> currencies;
+    private List<GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency> currencies;
     /**
      * @return Unit price of the ordered product
      * 
      */
-    private final Double netUnitPrice;
+    private Double netUnitPrice;
     /**
      * @return Product of the item
      * 
      */
-    private final String orderNo;
+    private String orderNo;
     /**
      * @return Part number
      * 
      */
-    private final String partNumber;
+    private String partNumber;
     /**
      * @return Product of the item
      * 
      */
-    private final String product;
+    private String product;
     /**
      * @return Quantity of the ordered product
      * 
      */
-    private final Double quantity;
+    private Double quantity;
     /**
      * @return End date
      * 
      */
-    private final String timeEnd;
+    private String timeEnd;
     /**
      * @return Start date
      * 
      */
-    private final String timeStart;
+    private String timeStart;
     /**
      * @return Total price of the ordered product (Net unit price x quantity)
      * 
      */
-    private final Double totalPrice;
+    private Double totalPrice;
 
-    @CustomType.Constructor
-    private GetInvoicesInvoiceLinesInvoiceLineCollectionItem(
-        @CustomType.Parameter("currencies") List<GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency> currencies,
-        @CustomType.Parameter("netUnitPrice") Double netUnitPrice,
-        @CustomType.Parameter("orderNo") String orderNo,
-        @CustomType.Parameter("partNumber") String partNumber,
-        @CustomType.Parameter("product") String product,
-        @CustomType.Parameter("quantity") Double quantity,
-        @CustomType.Parameter("timeEnd") String timeEnd,
-        @CustomType.Parameter("timeStart") String timeStart,
-        @CustomType.Parameter("totalPrice") Double totalPrice) {
-        this.currencies = currencies;
-        this.netUnitPrice = netUnitPrice;
-        this.orderNo = orderNo;
-        this.partNumber = partNumber;
-        this.product = product;
-        this.quantity = quantity;
-        this.timeEnd = timeEnd;
-        this.timeStart = timeStart;
-        this.totalPrice = totalPrice;
-    }
-
+    private GetInvoicesInvoiceLinesInvoiceLineCollectionItem() {}
     /**
      * @return Currency details model
      * 
@@ -151,7 +130,7 @@ public final class GetInvoicesInvoiceLinesInvoiceLineCollectionItem {
     public static Builder builder(GetInvoicesInvoiceLinesInvoiceLineCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency> currencies;
         private Double netUnitPrice;
@@ -162,11 +141,7 @@ public final class GetInvoicesInvoiceLinesInvoiceLineCollectionItem {
         private String timeEnd;
         private String timeStart;
         private Double totalPrice;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvoicesInvoiceLinesInvoiceLineCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.currencies = defaults.currencies;
@@ -180,6 +155,7 @@ public final class GetInvoicesInvoiceLinesInvoiceLineCollectionItem {
     	      this.totalPrice = defaults.totalPrice;
         }
 
+        @CustomType.Setter
         public Builder currencies(List<GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency> currencies) {
             this.currencies = Objects.requireNonNull(currencies);
             return this;
@@ -187,39 +163,58 @@ public final class GetInvoicesInvoiceLinesInvoiceLineCollectionItem {
         public Builder currencies(GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency... currencies) {
             return currencies(List.of(currencies));
         }
+        @CustomType.Setter
         public Builder netUnitPrice(Double netUnitPrice) {
             this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
             return this;
         }
+        @CustomType.Setter
         public Builder orderNo(String orderNo) {
             this.orderNo = Objects.requireNonNull(orderNo);
             return this;
         }
+        @CustomType.Setter
         public Builder partNumber(String partNumber) {
             this.partNumber = Objects.requireNonNull(partNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder product(String product) {
             this.product = Objects.requireNonNull(product);
             return this;
         }
+        @CustomType.Setter
         public Builder quantity(Double quantity) {
             this.quantity = Objects.requireNonNull(quantity);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
             this.timeEnd = Objects.requireNonNull(timeEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(String timeStart) {
             this.timeStart = Objects.requireNonNull(timeStart);
             return this;
         }
+        @CustomType.Setter
         public Builder totalPrice(Double totalPrice) {
             this.totalPrice = Objects.requireNonNull(totalPrice);
             return this;
-        }        public GetInvoicesInvoiceLinesInvoiceLineCollectionItem build() {
-            return new GetInvoicesInvoiceLinesInvoiceLineCollectionItem(currencies, netUnitPrice, orderNo, partNumber, product, quantity, timeEnd, timeStart, totalPrice);
+        }
+        public GetInvoicesInvoiceLinesInvoiceLineCollectionItem build() {
+            final var o = new GetInvoicesInvoiceLinesInvoiceLineCollectionItem();
+            o.currencies = currencies;
+            o.netUnitPrice = netUnitPrice;
+            o.orderNo = orderNo;
+            o.partNumber = partNumber;
+            o.product = product;
+            o.quantity = quantity;
+            o.timeEnd = timeEnd;
+            o.timeStart = timeStart;
+            o.totalPrice = totalPrice;
+            return o;
         }
     }
 }

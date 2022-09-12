@@ -19,105 +19,74 @@ public final class RegistryDataAssetDefaultConnectionPrimarySchema {
      * @return (Updatable) The default connection key.
      * 
      */
-    private final @Nullable String defaultConnection;
+    private @Nullable String defaultConnection;
     /**
-     * @return (Updatable) A user defined description for the object.
+     * @return (Updatable) A user-defined description for the object.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
-     * @return (Updatable) The external key for the object.
+     * @return (Updatable) The external key of the object.
      * 
      */
-    private final @Nullable String externalKey;
+    private @Nullable String externalKey;
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
-    private final String identifier;
+    private String identifier;
     /**
      * @return (Updatable) Specifies whether the schema has containers.
      * 
      */
-    private final @Nullable Boolean isHasContainers;
+    private @Nullable Boolean isHasContainers;
     /**
      * @return (Updatable) The identifying key for the object.
      * 
      */
-    private final String key;
+    private String key;
     /**
-     * @return (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
-    private final @Nullable RegistryDataAssetDefaultConnectionPrimarySchemaMetadata metadata;
+    private @Nullable RegistryDataAssetDefaultConnectionPrimarySchemaMetadata metadata;
     /**
-     * @return (Updatable) The property which disciminates the subtypes.
+     * @return (Updatable) The property which differentiates the subtypes.
      * 
      */
-    private final String modelType;
+    private String modelType;
     /**
      * @return (Updatable) The model version of an object.
      * 
      */
-    private final @Nullable String modelVersion;
+    private @Nullable String modelVersion;
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private final @Nullable Integer objectStatus;
+    private @Nullable Integer objectStatus;
     /**
      * @return (Updatable) The version of the object that is used to track changes in the object instance.
      * 
      */
-    private final @Nullable Integer objectVersion;
+    private @Nullable Integer objectVersion;
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
-    private final @Nullable RegistryDataAssetDefaultConnectionPrimarySchemaParentRef parentRef;
+    private @Nullable RegistryDataAssetDefaultConnectionPrimarySchemaParentRef parentRef;
     /**
      * @return (Updatable) A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
      * 
      */
-    private final @Nullable String resourceName;
+    private @Nullable String resourceName;
 
-    @CustomType.Constructor
-    private RegistryDataAssetDefaultConnectionPrimarySchema(
-        @CustomType.Parameter("defaultConnection") @Nullable String defaultConnection,
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("externalKey") @Nullable String externalKey,
-        @CustomType.Parameter("identifier") String identifier,
-        @CustomType.Parameter("isHasContainers") @Nullable Boolean isHasContainers,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("metadata") @Nullable RegistryDataAssetDefaultConnectionPrimarySchemaMetadata metadata,
-        @CustomType.Parameter("modelType") String modelType,
-        @CustomType.Parameter("modelVersion") @Nullable String modelVersion,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("objectStatus") @Nullable Integer objectStatus,
-        @CustomType.Parameter("objectVersion") @Nullable Integer objectVersion,
-        @CustomType.Parameter("parentRef") @Nullable RegistryDataAssetDefaultConnectionPrimarySchemaParentRef parentRef,
-        @CustomType.Parameter("resourceName") @Nullable String resourceName) {
-        this.defaultConnection = defaultConnection;
-        this.description = description;
-        this.externalKey = externalKey;
-        this.identifier = identifier;
-        this.isHasContainers = isHasContainers;
-        this.key = key;
-        this.metadata = metadata;
-        this.modelType = modelType;
-        this.modelVersion = modelVersion;
-        this.name = name;
-        this.objectStatus = objectStatus;
-        this.objectVersion = objectVersion;
-        this.parentRef = parentRef;
-        this.resourceName = resourceName;
-    }
-
+    private RegistryDataAssetDefaultConnectionPrimarySchema() {}
     /**
      * @return (Updatable) The default connection key.
      * 
@@ -126,21 +95,21 @@ public final class RegistryDataAssetDefaultConnectionPrimarySchema {
         return Optional.ofNullable(this.defaultConnection);
     }
     /**
-     * @return (Updatable) A user defined description for the object.
+     * @return (Updatable) A user-defined description for the object.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) The external key for the object.
+     * @return (Updatable) The external key of the object.
      * 
      */
     public Optional<String> externalKey() {
         return Optional.ofNullable(this.externalKey);
     }
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public String identifier() {
@@ -161,14 +130,14 @@ public final class RegistryDataAssetDefaultConnectionPrimarySchema {
         return this.key;
     }
     /**
-     * @return (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     public Optional<RegistryDataAssetDefaultConnectionPrimarySchemaMetadata> metadata() {
         return Optional.ofNullable(this.metadata);
     }
     /**
-     * @return (Updatable) The property which disciminates the subtypes.
+     * @return (Updatable) The property which differentiates the subtypes.
      * 
      */
     public String modelType() {
@@ -182,7 +151,7 @@ public final class RegistryDataAssetDefaultConnectionPrimarySchema {
         return Optional.ofNullable(this.modelVersion);
     }
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public String name() {
@@ -203,7 +172,7 @@ public final class RegistryDataAssetDefaultConnectionPrimarySchema {
         return Optional.ofNullable(this.objectVersion);
     }
     /**
-     * @return (Updatable) A reference to the object&#39;s parent.
+     * @return (Updatable) A reference to the parent object.
      * 
      */
     public Optional<RegistryDataAssetDefaultConnectionPrimarySchemaParentRef> parentRef() {
@@ -224,7 +193,7 @@ public final class RegistryDataAssetDefaultConnectionPrimarySchema {
     public static Builder builder(RegistryDataAssetDefaultConnectionPrimarySchema defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String defaultConnection;
         private @Nullable String description;
@@ -240,11 +209,7 @@ public final class RegistryDataAssetDefaultConnectionPrimarySchema {
         private @Nullable Integer objectVersion;
         private @Nullable RegistryDataAssetDefaultConnectionPrimarySchemaParentRef parentRef;
         private @Nullable String resourceName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RegistryDataAssetDefaultConnectionPrimarySchema defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultConnection = defaults.defaultConnection;
@@ -263,63 +228,93 @@ public final class RegistryDataAssetDefaultConnectionPrimarySchema {
     	      this.resourceName = defaults.resourceName;
         }
 
+        @CustomType.Setter
         public Builder defaultConnection(@Nullable String defaultConnection) {
             this.defaultConnection = defaultConnection;
             return this;
         }
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder externalKey(@Nullable String externalKey) {
             this.externalKey = externalKey;
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(String identifier) {
             this.identifier = Objects.requireNonNull(identifier);
             return this;
         }
+        @CustomType.Setter
         public Builder isHasContainers(@Nullable Boolean isHasContainers) {
             this.isHasContainers = isHasContainers;
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder metadata(@Nullable RegistryDataAssetDefaultConnectionPrimarySchemaMetadata metadata) {
             this.metadata = metadata;
             return this;
         }
+        @CustomType.Setter
         public Builder modelType(String modelType) {
             this.modelType = Objects.requireNonNull(modelType);
             return this;
         }
+        @CustomType.Setter
         public Builder modelVersion(@Nullable String modelVersion) {
             this.modelVersion = modelVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder objectStatus(@Nullable Integer objectStatus) {
             this.objectStatus = objectStatus;
             return this;
         }
+        @CustomType.Setter
         public Builder objectVersion(@Nullable Integer objectVersion) {
             this.objectVersion = objectVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder parentRef(@Nullable RegistryDataAssetDefaultConnectionPrimarySchemaParentRef parentRef) {
             this.parentRef = parentRef;
             return this;
         }
+        @CustomType.Setter
         public Builder resourceName(@Nullable String resourceName) {
             this.resourceName = resourceName;
             return this;
-        }        public RegistryDataAssetDefaultConnectionPrimarySchema build() {
-            return new RegistryDataAssetDefaultConnectionPrimarySchema(defaultConnection, description, externalKey, identifier, isHasContainers, key, metadata, modelType, modelVersion, name, objectStatus, objectVersion, parentRef, resourceName);
+        }
+        public RegistryDataAssetDefaultConnectionPrimarySchema build() {
+            final var o = new RegistryDataAssetDefaultConnectionPrimarySchema();
+            o.defaultConnection = defaultConnection;
+            o.description = description;
+            o.externalKey = externalKey;
+            o.identifier = identifier;
+            o.isHasContainers = isHasContainers;
+            o.key = key;
+            o.metadata = metadata;
+            o.modelType = modelType;
+            o.modelVersion = modelVersion;
+            o.name = name;
+            o.objectStatus = objectStatus;
+            o.objectVersion = objectVersion;
+            o.parentRef = parentRef;
+            o.resourceName = resourceName;
+            return o;
         }
     }
 }

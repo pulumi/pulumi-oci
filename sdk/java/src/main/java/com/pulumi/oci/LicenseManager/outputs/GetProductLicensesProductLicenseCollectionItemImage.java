@@ -13,42 +13,29 @@ public final class GetProductLicensesProductLicenseCollectionItemImage {
      * @return The image ID associated with the product license.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The image listing ID.
      * 
      */
-    private final String listingId;
+    private String listingId;
     /**
      * @return The listing name associated with the product license.
      * 
      */
-    private final String listingName;
+    private String listingName;
     /**
      * @return The image package version.
      * 
      */
-    private final String packageVersion;
+    private String packageVersion;
     /**
      * @return The image publisher.
      * 
      */
-    private final String publisher;
+    private String publisher;
 
-    @CustomType.Constructor
-    private GetProductLicensesProductLicenseCollectionItemImage(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("listingId") String listingId,
-        @CustomType.Parameter("listingName") String listingName,
-        @CustomType.Parameter("packageVersion") String packageVersion,
-        @CustomType.Parameter("publisher") String publisher) {
-        this.id = id;
-        this.listingId = listingId;
-        this.listingName = listingName;
-        this.packageVersion = packageVersion;
-        this.publisher = publisher;
-    }
-
+    private GetProductLicensesProductLicenseCollectionItemImage() {}
     /**
      * @return The image ID associated with the product license.
      * 
@@ -92,18 +79,14 @@ public final class GetProductLicensesProductLicenseCollectionItemImage {
     public static Builder builder(GetProductLicensesProductLicenseCollectionItemImage defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String listingId;
         private String listingName;
         private String packageVersion;
         private String publisher;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProductLicensesProductLicenseCollectionItemImage defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -113,27 +96,39 @@ public final class GetProductLicensesProductLicenseCollectionItemImage {
     	      this.publisher = defaults.publisher;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder listingId(String listingId) {
             this.listingId = Objects.requireNonNull(listingId);
             return this;
         }
+        @CustomType.Setter
         public Builder listingName(String listingName) {
             this.listingName = Objects.requireNonNull(listingName);
             return this;
         }
+        @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
             this.packageVersion = Objects.requireNonNull(packageVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder publisher(String publisher) {
             this.publisher = Objects.requireNonNull(publisher);
             return this;
-        }        public GetProductLicensesProductLicenseCollectionItemImage build() {
-            return new GetProductLicensesProductLicenseCollectionItemImage(id, listingId, listingName, packageVersion, publisher);
+        }
+        public GetProductLicensesProductLicenseCollectionItemImage build() {
+            final var o = new GetProductLicensesProductLicenseCollectionItemImage();
+            o.id = id;
+            o.listingId = listingId;
+            o.listingName = listingName;
+            o.packageVersion = packageVersion;
+            o.publisher = publisher;
+            return o;
         }
     }
 }

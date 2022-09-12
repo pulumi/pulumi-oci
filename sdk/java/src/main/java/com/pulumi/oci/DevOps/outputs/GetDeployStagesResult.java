@@ -18,52 +18,35 @@ public final class GetDeployStagesResult {
      * @return The OCID of a compartment.
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The OCID of a pipeline.
      * 
      */
-    private final @Nullable String deployPipelineId;
+    private @Nullable String deployPipelineId;
     /**
      * @return The list of deploy_stage_collection.
      * 
      */
-    private final List<GetDeployStagesDeployStageCollection> deployStageCollections;
+    private List<GetDeployStagesDeployStageCollection> deployStageCollections;
     /**
      * @return Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetDeployStagesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetDeployStagesFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The current state of the deployment stage.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetDeployStagesResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("deployPipelineId") @Nullable String deployPipelineId,
-        @CustomType.Parameter("deployStageCollections") List<GetDeployStagesDeployStageCollection> deployStageCollections,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetDeployStagesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.deployPipelineId = deployPipelineId;
-        this.deployStageCollections = deployStageCollections;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetDeployStagesResult() {}
     /**
      * @return The OCID of a compartment.
      * 
@@ -117,7 +100,7 @@ public final class GetDeployStagesResult {
     public static Builder builder(GetDeployStagesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String deployPipelineId;
@@ -126,11 +109,7 @@ public final class GetDeployStagesResult {
         private @Nullable List<GetDeployStagesFilter> filters;
         private @Nullable String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployStagesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,14 +121,17 @@ public final class GetDeployStagesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder deployPipelineId(@Nullable String deployPipelineId) {
             this.deployPipelineId = deployPipelineId;
             return this;
         }
+        @CustomType.Setter
         public Builder deployStageCollections(List<GetDeployStagesDeployStageCollection> deployStageCollections) {
             this.deployStageCollections = Objects.requireNonNull(deployStageCollections);
             return this;
@@ -157,10 +139,12 @@ public final class GetDeployStagesResult {
         public Builder deployStageCollections(GetDeployStagesDeployStageCollection... deployStageCollections) {
             return deployStageCollections(List.of(deployStageCollections));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDeployStagesFilter> filters) {
             this.filters = filters;
             return this;
@@ -168,15 +152,26 @@ public final class GetDeployStagesResult {
         public Builder filters(GetDeployStagesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetDeployStagesResult build() {
-            return new GetDeployStagesResult(compartmentId, deployPipelineId, deployStageCollections, displayName, filters, id, state);
+        }
+        public GetDeployStagesResult build() {
+            final var o = new GetDeployStagesResult();
+            o.compartmentId = compartmentId;
+            o.deployPipelineId = deployPipelineId;
+            o.deployStageCollections = deployStageCollections;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

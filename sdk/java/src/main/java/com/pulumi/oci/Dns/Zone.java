@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
  * This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
  * 
  * Creates a new zone in the specified compartment. Additionally, for Private DNS,
- * the `scope` and `viewId` query parameters are required when creating private zones.
+ * the `viewId` field is required when creating private zones.
  * 
  * ## Example Usage
  * ```java
@@ -70,19 +70,11 @@ import javax.annotation.Nullable;
  * 
  * ## Import
  * 
- * For legacy Zones that were created without using `scope`, these Zones can be imported using the `id`, e.g.
+ * Zones can be imported using their OCID, e.g.
  * 
  * ```sh
  *  $ pulumi import oci:Dns/zone:Zone test_zone &#34;id&#34;
  * ```
- * 
- *  For Zones created using `scope` and `view_id`, these Zones can be imported using the `id`, e.g.
- * 
- * ```sh
- *  $ pulumi import oci:Dns/zone:Zone test_zone &#34;zoneNameOrId/{zoneNameOrId}/scope/{scope}/viewId/{viewId}&#34;
- * ```
- * 
- *  skip adding `{view_id}` at the end if Zone was created without `view_id`.
  * 
  */
 @ResourceType(type="oci:Dns/zone:Zone")
@@ -191,15 +183,15 @@ public class Zone extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="scope", type=String.class, parameters={})
-    private Output</* @Nullable */ String> scope;
+    private Output<String> scope;
 
     /**
      * @return Specifies to operate only on resources that have a matching DNS scope.
      * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
      * 
      */
-    public Output<Optional<String>> scope() {
-        return Codegen.optional(this.scope);
+    public Output<String> scope() {
+        return this.scope;
     }
     /**
      * The canonical absolute URL of the resource.

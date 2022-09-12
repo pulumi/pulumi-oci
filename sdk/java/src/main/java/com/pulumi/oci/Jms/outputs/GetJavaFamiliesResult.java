@@ -18,38 +18,25 @@ public final class GetJavaFamiliesResult {
      * @return The display name of the release family.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The Java release family identifier.
      * 
      */
-    private final @Nullable String familyVersion;
-    private final @Nullable List<GetJavaFamiliesFilter> filters;
+    private @Nullable String familyVersion;
+    private @Nullable List<GetJavaFamiliesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of java_family_collection.
      * 
      */
-    private final List<GetJavaFamiliesJavaFamilyCollection> javaFamilyCollections;
+    private List<GetJavaFamiliesJavaFamilyCollection> javaFamilyCollections;
 
-    @CustomType.Constructor
-    private GetJavaFamiliesResult(
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("familyVersion") @Nullable String familyVersion,
-        @CustomType.Parameter("filters") @Nullable List<GetJavaFamiliesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("javaFamilyCollections") List<GetJavaFamiliesJavaFamilyCollection> javaFamilyCollections) {
-        this.displayName = displayName;
-        this.familyVersion = familyVersion;
-        this.filters = filters;
-        this.id = id;
-        this.javaFamilyCollections = javaFamilyCollections;
-    }
-
+    private GetJavaFamiliesResult() {}
     /**
      * @return The display name of the release family.
      * 
@@ -89,18 +76,14 @@ public final class GetJavaFamiliesResult {
     public static Builder builder(GetJavaFamiliesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String displayName;
         private @Nullable String familyVersion;
         private @Nullable List<GetJavaFamiliesFilter> filters;
         private String id;
         private List<GetJavaFamiliesJavaFamilyCollection> javaFamilyCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJavaFamiliesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -110,14 +93,17 @@ public final class GetJavaFamiliesResult {
     	      this.javaFamilyCollections = defaults.javaFamilyCollections;
         }
 
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder familyVersion(@Nullable String familyVersion) {
             this.familyVersion = familyVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetJavaFamiliesFilter> filters) {
             this.filters = filters;
             return this;
@@ -125,18 +111,27 @@ public final class GetJavaFamiliesResult {
         public Builder filters(GetJavaFamiliesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder javaFamilyCollections(List<GetJavaFamiliesJavaFamilyCollection> javaFamilyCollections) {
             this.javaFamilyCollections = Objects.requireNonNull(javaFamilyCollections);
             return this;
         }
         public Builder javaFamilyCollections(GetJavaFamiliesJavaFamilyCollection... javaFamilyCollections) {
             return javaFamilyCollections(List.of(javaFamilyCollections));
-        }        public GetJavaFamiliesResult build() {
-            return new GetJavaFamiliesResult(displayName, familyVersion, filters, id, javaFamilyCollections);
+        }
+        public GetJavaFamiliesResult build() {
+            final var o = new GetJavaFamiliesResult();
+            o.displayName = displayName;
+            o.familyVersion = familyVersion;
+            o.filters = filters;
+            o.id = id;
+            o.javaFamilyCollections = javaFamilyCollections;
+            return o;
         }
     }
 }

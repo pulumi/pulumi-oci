@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetExadataInsightsExadataInsightSummaryCollection {
-    private final List<GetExadataInsightsExadataInsightSummaryCollectionItem> items;
+    private List<GetExadataInsightsExadataInsightSummaryCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetExadataInsightsExadataInsightSummaryCollection(@CustomType.Parameter("items") List<GetExadataInsightsExadataInsightSummaryCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetExadataInsightsExadataInsightSummaryCollection() {}
     public List<GetExadataInsightsExadataInsightSummaryCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetExadataInsightsExadataInsightSummaryCollection {
     public static Builder builder(GetExadataInsightsExadataInsightSummaryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetExadataInsightsExadataInsightSummaryCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetExadataInsightsExadataInsightSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetExadataInsightsExadataInsightSummaryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetExadataInsightsExadataInsightSummaryCollectionItem... items) {
             return items(List.of(items));
-        }        public GetExadataInsightsExadataInsightSummaryCollection build() {
-            return new GetExadataInsightsExadataInsightSummaryCollection(items);
+        }
+        public GetExadataInsightsExadataInsightSummaryCollection build() {
+            final var o = new GetExadataInsightsExadataInsightSummaryCollection();
+            o.items = items;
+            return o;
         }
     }
 }

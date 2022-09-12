@@ -14,13 +14,9 @@ public final class GetInstallationSitesInstallationSiteCollection {
      * @return A list of Java installation sites.
      * 
      */
-    private final List<GetInstallationSitesInstallationSiteCollectionItem> items;
+    private List<GetInstallationSitesInstallationSiteCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetInstallationSitesInstallationSiteCollection(@CustomType.Parameter("items") List<GetInstallationSitesInstallationSiteCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetInstallationSitesInstallationSiteCollection() {}
     /**
      * @return A list of Java installation sites.
      * 
@@ -36,27 +32,27 @@ public final class GetInstallationSitesInstallationSiteCollection {
     public static Builder builder(GetInstallationSitesInstallationSiteCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetInstallationSitesInstallationSiteCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstallationSitesInstallationSiteCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetInstallationSitesInstallationSiteCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetInstallationSitesInstallationSiteCollectionItem... items) {
             return items(List.of(items));
-        }        public GetInstallationSitesInstallationSiteCollection build() {
-            return new GetInstallationSitesInstallationSiteCollection(items);
+        }
+        public GetInstallationSitesInstallationSiteCollection build() {
+            final var o = new GetInstallationSitesInstallationSiteCollection();
+            o.items = items;
+            return o;
         }
     }
 }

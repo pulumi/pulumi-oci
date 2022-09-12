@@ -63,14 +63,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+     * (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+     * @return (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -78,14 +78,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -93,14 +93,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn&#39;t available FAILED   - The resource is in a failed state due to validation or other errors
+     * Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn&#39;t available. FAILED   - The resource is in a failed state due to validation or other errors.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn&#39;t available FAILED   - The resource is in a failed state due to validation or other errors
+     * @return Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn&#39;t available. FAILED   - The resource is in a failed state due to validation or other errors.
      * 
      */
     public Optional<Output<String>> state() {
@@ -123,14 +123,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+     * Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+     * @return Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -138,14 +138,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+     * Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+     * @return Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -153,14 +153,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Name of the user who updated the DCMS Registry.
+     * Name of the user who updated the DCMS registry.
      * 
      */
     @Import(name="updatedBy")
     private @Nullable Output<String> updatedBy;
 
     /**
-     * @return Name of the user who updated the DCMS Registry.
+     * @return Name of the user who updated the DCMS registry.
      * 
      */
     public Optional<Output<String>> updatedBy() {
@@ -264,7 +264,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+         * @param displayName (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
          * 
          * @return builder
          * 
@@ -275,7 +275,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+         * @param displayName (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -296,7 +296,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn&#39;t available FAILED   - The resource is in a failed state due to validation or other errors
+         * @param state Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn&#39;t available. FAILED   - The resource is in a failed state due to validation or other errors.
          * 
          * @return builder
          * 
@@ -317,7 +317,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn&#39;t available FAILED   - The resource is in a failed state due to validation or other errors
+         * @param state Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn&#39;t available. FAILED   - The resource is in a failed state due to validation or other errors.
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+         * @param timeCreated Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -359,7 +359,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+         * @param timeCreated Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -369,7 +369,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -380,7 +380,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedBy Name of the user who updated the DCMS Registry.
+         * @param updatedBy Name of the user who updated the DCMS registry.
          * 
          * @return builder
          * 
@@ -401,7 +401,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedBy Name of the user who updated the DCMS Registry.
+         * @param updatedBy Name of the user who updated the DCMS registry.
          * 
          * @return builder
          * 

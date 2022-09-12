@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DevOps.inputs.TriggerActionFilterIncludeFileFilterArgs;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -30,6 +31,13 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
         return Optional.ofNullable(this.baseRef);
     }
 
+    @Import(name="fileFilter")
+    private @Nullable Output<TriggerActionFilterIncludeFileFilterArgs> fileFilter;
+
+    public Optional<Output<TriggerActionFilterIncludeFileFilterArgs>> fileFilter() {
+        return Optional.ofNullable(this.fileFilter);
+    }
+
     /**
      * (Updatable) Branch for push event; source branch for pull requests.
      * 
@@ -49,6 +57,7 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
 
     private TriggerActionFilterIncludeArgs(TriggerActionFilterIncludeArgs $) {
         this.baseRef = $.baseRef;
+        this.fileFilter = $.fileFilter;
         this.headRef = $.headRef;
     }
 
@@ -89,6 +98,15 @@ public final class TriggerActionFilterIncludeArgs extends com.pulumi.resources.R
          */
         public Builder baseRef(String baseRef) {
             return baseRef(Output.of(baseRef));
+        }
+
+        public Builder fileFilter(@Nullable Output<TriggerActionFilterIncludeFileFilterArgs> fileFilter) {
+            $.fileFilter = fileFilter;
+            return this;
+        }
+
+        public Builder fileFilter(TriggerActionFilterIncludeFileFilterArgs fileFilter) {
+            return fileFilter(Output.of(fileFilter));
         }
 
         /**

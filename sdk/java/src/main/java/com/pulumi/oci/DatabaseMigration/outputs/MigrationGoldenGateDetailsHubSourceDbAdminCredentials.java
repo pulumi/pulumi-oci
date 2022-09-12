@@ -13,21 +13,14 @@ public final class MigrationGoldenGateDetailsHubSourceDbAdminCredentials {
      * @return (Updatable) Administrator password
      * 
      */
-    private final String password;
+    private String password;
     /**
      * @return (Updatable) Administrator username
      * 
      */
-    private final String username;
+    private String username;
 
-    @CustomType.Constructor
-    private MigrationGoldenGateDetailsHubSourceDbAdminCredentials(
-        @CustomType.Parameter("password") String password,
-        @CustomType.Parameter("username") String username) {
-        this.password = password;
-        this.username = username;
-    }
-
+    private MigrationGoldenGateDetailsHubSourceDbAdminCredentials() {}
     /**
      * @return (Updatable) Administrator password
      * 
@@ -50,30 +43,32 @@ public final class MigrationGoldenGateDetailsHubSourceDbAdminCredentials {
     public static Builder builder(MigrationGoldenGateDetailsHubSourceDbAdminCredentials defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String password;
         private String username;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MigrationGoldenGateDetailsHubSourceDbAdminCredentials defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.password = defaults.password;
     	      this.username = defaults.username;
         }
 
+        @CustomType.Setter
         public Builder password(String password) {
             this.password = Objects.requireNonNull(password);
             return this;
         }
+        @CustomType.Setter
         public Builder username(String username) {
             this.username = Objects.requireNonNull(username);
             return this;
-        }        public MigrationGoldenGateDetailsHubSourceDbAdminCredentials build() {
-            return new MigrationGoldenGateDetailsHubSourceDbAdminCredentials(password, username);
+        }
+        public MigrationGoldenGateDetailsHubSourceDbAdminCredentials build() {
+            final var o = new MigrationGoldenGateDetailsHubSourceDbAdminCredentials();
+            o.password = password;
+            o.username = username;
+            return o;
         }
     }
 }

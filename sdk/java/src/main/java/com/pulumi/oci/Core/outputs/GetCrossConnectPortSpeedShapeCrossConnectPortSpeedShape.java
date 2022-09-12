@@ -14,21 +14,14 @@ public final class GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape {
      * @return The name of the port speed shape.  Example: `10 Gbps`
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The port speed in Gbps.  Example: `10`
      * 
      */
-    private final Integer portSpeedInGbps;
+    private Integer portSpeedInGbps;
 
-    @CustomType.Constructor
-    private GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("portSpeedInGbps") Integer portSpeedInGbps) {
-        this.name = name;
-        this.portSpeedInGbps = portSpeedInGbps;
-    }
-
+    private GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape() {}
     /**
      * @return The name of the port speed shape.  Example: `10 Gbps`
      * 
@@ -51,30 +44,32 @@ public final class GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape {
     public static Builder builder(GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private Integer portSpeedInGbps;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.portSpeedInGbps = defaults.portSpeedInGbps;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder portSpeedInGbps(Integer portSpeedInGbps) {
             this.portSpeedInGbps = Objects.requireNonNull(portSpeedInGbps);
             return this;
-        }        public GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape build() {
-            return new GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape(name, portSpeedInGbps);
+        }
+        public GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape build() {
+            final var o = new GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape();
+            o.name = name;
+            o.portSpeedInGbps = portSpeedInGbps;
+            return o;
         }
     }
 }

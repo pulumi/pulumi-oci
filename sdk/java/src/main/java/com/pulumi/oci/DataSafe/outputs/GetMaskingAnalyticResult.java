@@ -14,44 +14,27 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMaskingAnalyticResult {
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
-    private final @Nullable String groupBy;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable String groupBy;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return An array of masking analytics summary objects.
      * 
      */
-    private final List<GetMaskingAnalyticItem> items;
-    private final @Nullable String maskingPolicyId;
+    private List<GetMaskingAnalyticItem> items;
+    private @Nullable String maskingPolicyId;
     /**
      * @return The OCID of the target database.
      * 
      */
-    private final @Nullable String targetId;
+    private @Nullable String targetId;
 
-    @CustomType.Constructor
-    private GetMaskingAnalyticResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("groupBy") @Nullable String groupBy,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetMaskingAnalyticItem> items,
-        @CustomType.Parameter("maskingPolicyId") @Nullable String maskingPolicyId,
-        @CustomType.Parameter("targetId") @Nullable String targetId) {
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.groupBy = groupBy;
-        this.id = id;
-        this.items = items;
-        this.maskingPolicyId = maskingPolicyId;
-        this.targetId = targetId;
-    }
-
+    private GetMaskingAnalyticResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -93,7 +76,7 @@ public final class GetMaskingAnalyticResult {
     public static Builder builder(GetMaskingAnalyticResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
@@ -102,11 +85,7 @@ public final class GetMaskingAnalyticResult {
         private List<GetMaskingAnalyticItem> items;
         private @Nullable String maskingPolicyId;
         private @Nullable String targetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMaskingAnalyticResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -118,22 +97,27 @@ public final class GetMaskingAnalyticResult {
     	      this.targetId = defaults.targetId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder groupBy(@Nullable String groupBy) {
             this.groupBy = groupBy;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetMaskingAnalyticItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -141,15 +125,26 @@ public final class GetMaskingAnalyticResult {
         public Builder items(GetMaskingAnalyticItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder maskingPolicyId(@Nullable String maskingPolicyId) {
             this.maskingPolicyId = maskingPolicyId;
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
             this.targetId = targetId;
             return this;
-        }        public GetMaskingAnalyticResult build() {
-            return new GetMaskingAnalyticResult(compartmentId, compartmentIdInSubtree, groupBy, id, items, maskingPolicyId, targetId);
+        }
+        public GetMaskingAnalyticResult build() {
+            final var o = new GetMaskingAnalyticResult();
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.groupBy = groupBy;
+            o.id = id;
+            o.items = items;
+            o.maskingPolicyId = maskingPolicyId;
+            o.targetId = targetId;
+            return o;
         }
     }
 }

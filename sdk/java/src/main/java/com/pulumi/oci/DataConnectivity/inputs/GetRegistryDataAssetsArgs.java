@@ -18,14 +18,14 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
     public static final GetRegistryDataAssetsArgs Empty = new GetRegistryDataAssetsArgs();
 
     /**
-     * Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+     * Endpoint IDs used for data-plane APIs to filter or prefer specific endpoint.
      * 
      */
     @Import(name="endpointIds")
     private @Nullable Output<List<String>> endpointIds;
 
     /**
-     * @return Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+     * @return Endpoint IDs used for data-plane APIs to filter or prefer specific endpoint.
      * 
      */
     public Optional<Output<List<String>>> endpointIds() {
@@ -33,14 +33,14 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * Endpoints which will be excluded while listing dataAssets
+     * Endpoints which will be excluded while listing data assets.
      * 
      */
     @Import(name="excludeEndpointIds")
     private @Nullable Output<List<String>> excludeEndpointIds;
 
     /**
-     * @return Endpoints which will be excluded while listing dataAssets
+     * @return Endpoints which will be excluded while listing data assets.
      * 
      */
     public Optional<Output<List<String>>> excludeEndpointIds() {
@@ -48,14 +48,14 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * Types which wont be listed while listing dataAsset/Connection
+     * The types that will be excluded from the list of data assets/connections.
      * 
      */
     @Import(name="excludeTypes")
     private @Nullable Output<List<String>> excludeTypes;
 
     /**
-     * @return Types which wont be listed while listing dataAsset/Connection
+     * @return The types that will be excluded from the list of data assets/connections.
      * 
      */
     public Optional<Output<List<String>>> excludeTypes() {
@@ -115,14 +115,14 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * DataAsset type which needs to be listed while listing dataAssets
+     * Artifact type which needs to be listed while listing Artifacts.
      * 
      */
     @Import(name="includeTypes")
     private @Nullable Output<List<String>> includeTypes;
 
     /**
-     * @return DataAsset type which needs to be listed while listing dataAssets
+     * @return Artifact type which needs to be listed while listing Artifacts.
      * 
      */
     public Optional<Output<List<String>>> includeTypes() {
@@ -145,14 +145,14 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * The registry Ocid.
+     * The registry OCID.
      * 
      */
     @Import(name="registryId", required=true)
     private Output<String> registryId;
 
     /**
-     * @return The registry Ocid.
+     * @return The registry OCID.
      * 
      */
     public Output<String> registryId() {
@@ -209,7 +209,7 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param endpointIds Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+         * @param endpointIds Endpoint IDs used for data-plane APIs to filter or prefer specific endpoint.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param endpointIds Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+         * @param endpointIds Endpoint IDs used for data-plane APIs to filter or prefer specific endpoint.
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param endpointIds Endpoint Ids used for data-plane APIs to filter or prefer specific endpoint.
+         * @param endpointIds Endpoint IDs used for data-plane APIs to filter or prefer specific endpoint.
          * 
          * @return builder
          * 
@@ -240,7 +240,7 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param excludeEndpointIds Endpoints which will be excluded while listing dataAssets
+         * @param excludeEndpointIds Endpoints which will be excluded while listing data assets.
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param excludeEndpointIds Endpoints which will be excluded while listing dataAssets
+         * @param excludeEndpointIds Endpoints which will be excluded while listing data assets.
          * 
          * @return builder
          * 
@@ -261,7 +261,7 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param excludeEndpointIds Endpoints which will be excluded while listing dataAssets
+         * @param excludeEndpointIds Endpoints which will be excluded while listing data assets.
          * 
          * @return builder
          * 
@@ -271,7 +271,7 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param excludeTypes Types which wont be listed while listing dataAsset/Connection
+         * @param excludeTypes The types that will be excluded from the list of data assets/connections.
          * 
          * @return builder
          * 
@@ -282,7 +282,7 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param excludeTypes Types which wont be listed while listing dataAsset/Connection
+         * @param excludeTypes The types that will be excluded from the list of data assets/connections.
          * 
          * @return builder
          * 
@@ -292,7 +292,7 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param excludeTypes Types which wont be listed while listing dataAsset/Connection
+         * @param excludeTypes The types that will be excluded from the list of data assets/connections.
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param includeTypes DataAsset type which needs to be listed while listing dataAssets
+         * @param includeTypes Artifact type which needs to be listed while listing Artifacts.
          * 
          * @return builder
          * 
@@ -399,7 +399,7 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param includeTypes DataAsset type which needs to be listed while listing dataAssets
+         * @param includeTypes Artifact type which needs to be listed while listing Artifacts.
          * 
          * @return builder
          * 
@@ -409,7 +409,7 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param includeTypes DataAsset type which needs to be listed while listing dataAssets
+         * @param includeTypes Artifact type which needs to be listed while listing Artifacts.
          * 
          * @return builder
          * 
@@ -440,7 +440,7 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param registryId The registry Ocid.
+         * @param registryId The registry OCID.
          * 
          * @return builder
          * 
@@ -451,7 +451,7 @@ public final class GetRegistryDataAssetsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param registryId The registry Ocid.
+         * @param registryId The registry OCID.
          * 
          * @return builder
          * 

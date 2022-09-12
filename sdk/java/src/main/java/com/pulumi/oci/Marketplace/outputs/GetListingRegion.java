@@ -15,28 +15,19 @@ public final class GetListingRegion {
      * @return A code assigned to the item.
      * 
      */
-    private final String code;
+    private String code;
     /**
      * @return Countries in the region.
      * 
      */
-    private final List<GetListingRegionCountry> countries;
+    private List<GetListingRegionCountry> countries;
     /**
      * @return Text that describes the resource.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetListingRegion(
-        @CustomType.Parameter("code") String code,
-        @CustomType.Parameter("countries") List<GetListingRegionCountry> countries,
-        @CustomType.Parameter("name") String name) {
-        this.code = code;
-        this.countries = countries;
-        this.name = name;
-    }
-
+    private GetListingRegion() {}
     /**
      * @return A code assigned to the item.
      * 
@@ -66,16 +57,12 @@ public final class GetListingRegion {
     public static Builder builder(GetListingRegion defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String code;
         private List<GetListingRegionCountry> countries;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingRegion defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.code = defaults.code;
@@ -83,10 +70,12 @@ public final class GetListingRegion {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder code(String code) {
             this.code = Objects.requireNonNull(code);
             return this;
         }
+        @CustomType.Setter
         public Builder countries(List<GetListingRegionCountry> countries) {
             this.countries = Objects.requireNonNull(countries);
             return this;
@@ -94,11 +83,17 @@ public final class GetListingRegion {
         public Builder countries(GetListingRegionCountry... countries) {
             return countries(List.of(countries));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetListingRegion build() {
-            return new GetListingRegion(code, countries, name);
+        }
+        public GetListingRegion build() {
+            final var o = new GetListingRegion();
+            o.code = code;
+            o.countries = countries;
+            o.name = name;
+            return o;
         }
     }
 }

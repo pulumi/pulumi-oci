@@ -12,34 +12,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConsoleHistoryDataResult {
-    private final String consoleHistoryId;
+    private String consoleHistoryId;
     /**
      * @return The console history data.
      * 
      */
-    private final String data;
+    private String data;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable Integer length;
-    private final @Nullable Integer offset;
+    private String id;
+    private @Nullable Integer length;
+    private @Nullable Integer offset;
 
-    @CustomType.Constructor
-    private GetConsoleHistoryDataResult(
-        @CustomType.Parameter("consoleHistoryId") String consoleHistoryId,
-        @CustomType.Parameter("data") String data,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("length") @Nullable Integer length,
-        @CustomType.Parameter("offset") @Nullable Integer offset) {
-        this.consoleHistoryId = consoleHistoryId;
-        this.data = data;
-        this.id = id;
-        this.length = length;
-        this.offset = offset;
-    }
-
+    private GetConsoleHistoryDataResult() {}
     public String consoleHistoryId() {
         return this.consoleHistoryId;
     }
@@ -71,18 +58,14 @@ public final class GetConsoleHistoryDataResult {
     public static Builder builder(GetConsoleHistoryDataResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String consoleHistoryId;
         private String data;
         private String id;
         private @Nullable Integer length;
         private @Nullable Integer offset;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConsoleHistoryDataResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.consoleHistoryId = defaults.consoleHistoryId;
@@ -92,27 +75,39 @@ public final class GetConsoleHistoryDataResult {
     	      this.offset = defaults.offset;
         }
 
+        @CustomType.Setter
         public Builder consoleHistoryId(String consoleHistoryId) {
             this.consoleHistoryId = Objects.requireNonNull(consoleHistoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder data(String data) {
             this.data = Objects.requireNonNull(data);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder length(@Nullable Integer length) {
             this.length = length;
             return this;
         }
+        @CustomType.Setter
         public Builder offset(@Nullable Integer offset) {
             this.offset = offset;
             return this;
-        }        public GetConsoleHistoryDataResult build() {
-            return new GetConsoleHistoryDataResult(consoleHistoryId, data, id, length, offset);
+        }
+        public GetConsoleHistoryDataResult build() {
+            final var o = new GetConsoleHistoryDataResult();
+            o.consoleHistoryId = consoleHistoryId;
+            o.data = data;
+            o.id = id;
+            o.length = length;
+            o.offset = offset;
+            return o;
         }
     }
 }

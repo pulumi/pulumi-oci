@@ -17,27 +17,16 @@ public final class GetCertificatesResult {
      * @return The list of certificates.
      * 
      */
-    private final List<GetCertificatesCertificate> certificates;
-    private final @Nullable List<GetCertificatesFilter> filters;
+    private List<GetCertificatesCertificate> certificates;
+    private @Nullable List<GetCertificatesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String loadBalancerId;
+    private String id;
+    private String loadBalancerId;
 
-    @CustomType.Constructor
-    private GetCertificatesResult(
-        @CustomType.Parameter("certificates") List<GetCertificatesCertificate> certificates,
-        @CustomType.Parameter("filters") @Nullable List<GetCertificatesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId) {
-        this.certificates = certificates;
-        this.filters = filters;
-        this.id = id;
-        this.loadBalancerId = loadBalancerId;
-    }
-
+    private GetCertificatesResult() {}
     /**
      * @return The list of certificates.
      * 
@@ -66,17 +55,13 @@ public final class GetCertificatesResult {
     public static Builder builder(GetCertificatesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCertificatesCertificate> certificates;
         private @Nullable List<GetCertificatesFilter> filters;
         private String id;
         private String loadBalancerId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificatesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificates = defaults.certificates;
@@ -85,6 +70,7 @@ public final class GetCertificatesResult {
     	      this.loadBalancerId = defaults.loadBalancerId;
         }
 
+        @CustomType.Setter
         public Builder certificates(List<GetCertificatesCertificate> certificates) {
             this.certificates = Objects.requireNonNull(certificates);
             return this;
@@ -92,6 +78,7 @@ public final class GetCertificatesResult {
         public Builder certificates(GetCertificatesCertificate... certificates) {
             return certificates(List.of(certificates));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetCertificatesFilter> filters) {
             this.filters = filters;
             return this;
@@ -99,15 +86,23 @@ public final class GetCertificatesResult {
         public Builder filters(GetCertificatesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
-        }        public GetCertificatesResult build() {
-            return new GetCertificatesResult(certificates, filters, id, loadBalancerId);
+        }
+        public GetCertificatesResult build() {
+            final var o = new GetCertificatesResult();
+            o.certificates = certificates;
+            o.filters = filters;
+            o.id = id;
+            o.loadBalancerId = loadBalancerId;
+            return o;
         }
     }
 }

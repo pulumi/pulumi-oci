@@ -15,28 +15,19 @@ public final class GetLoadBalancerRoutingPolicyRule {
      * @return A list of actions to be applied when conditions of the routing rule are met.
      * 
      */
-    private final List<GetLoadBalancerRoutingPolicyRuleAction> actions;
+    private List<GetLoadBalancerRoutingPolicyRuleAction> actions;
     /**
      * @return A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
      * 
      */
-    private final String condition;
+    private String condition;
     /**
      * @return A unique name for the routing policy rule. Avoid entering confidential information.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetLoadBalancerRoutingPolicyRule(
-        @CustomType.Parameter("actions") List<GetLoadBalancerRoutingPolicyRuleAction> actions,
-        @CustomType.Parameter("condition") String condition,
-        @CustomType.Parameter("name") String name) {
-        this.actions = actions;
-        this.condition = condition;
-        this.name = name;
-    }
-
+    private GetLoadBalancerRoutingPolicyRule() {}
     /**
      * @return A list of actions to be applied when conditions of the routing rule are met.
      * 
@@ -66,16 +57,12 @@ public final class GetLoadBalancerRoutingPolicyRule {
     public static Builder builder(GetLoadBalancerRoutingPolicyRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetLoadBalancerRoutingPolicyRuleAction> actions;
         private String condition;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLoadBalancerRoutingPolicyRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actions = defaults.actions;
@@ -83,6 +70,7 @@ public final class GetLoadBalancerRoutingPolicyRule {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder actions(List<GetLoadBalancerRoutingPolicyRuleAction> actions) {
             this.actions = Objects.requireNonNull(actions);
             return this;
@@ -90,15 +78,22 @@ public final class GetLoadBalancerRoutingPolicyRule {
         public Builder actions(GetLoadBalancerRoutingPolicyRuleAction... actions) {
             return actions(List.of(actions));
         }
+        @CustomType.Setter
         public Builder condition(String condition) {
             this.condition = Objects.requireNonNull(condition);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetLoadBalancerRoutingPolicyRule build() {
-            return new GetLoadBalancerRoutingPolicyRule(actions, condition, name);
+        }
+        public GetLoadBalancerRoutingPolicyRule build() {
+            final var o = new GetLoadBalancerRoutingPolicyRule();
+            o.actions = actions;
+            o.condition = condition;
+            o.name = name;
+            return o;
         }
     }
 }

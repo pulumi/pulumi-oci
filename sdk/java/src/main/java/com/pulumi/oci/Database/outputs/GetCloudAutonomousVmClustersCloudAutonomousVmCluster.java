@@ -19,266 +19,187 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
      * @return The data disk group size allocated for Autonomous Databases, in TBs.
      * 
      */
-    private final Double autonomousDataStorageSizeInTbs;
+    private Double autonomousDataStorageSizeInTbs;
     /**
      * @return A filter to return only resources that match the given availability domain exactly.
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The data disk group size available for Autonomous Databases, in TBs.
      * 
      */
-    private final Double availableAutonomousDataStorageSizeInTbs;
+    private Double availableAutonomousDataStorageSizeInTbs;
     /**
      * @return The number of Autonomous Container Databases that can be created with the currently available local storage.
      * 
      */
-    private final Integer availableContainerDatabases;
+    private Integer availableContainerDatabases;
     /**
      * @return CPU cores available for allocation to Autonomous Databases.
      * 
      */
-    private final Double availableCpus;
+    private Double availableCpus;
     /**
      * @return If provided, filters the results for the specified cloud Exadata infrastructure.
      * 
      */
-    private final String cloudExadataInfrastructureId;
+    private String cloudExadataInfrastructureId;
     /**
      * @return The time zone of the Cloud Autonomous VM Cluster.
      * 
      */
-    private final String clusterTimeZone;
+    private String clusterTimeZone;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The number of CPU cores enabled on the cloud Autonomous VM cluster.
      * 
      */
-    private final Integer cpuCoreCount;
+    private Integer cpuCoreCount;
     /**
      * @return The total data storage allocated, in gigabytes (GB).
      * 
      */
-    private final Double dataStorageSizeInGb;
+    private Double dataStorageSizeInGb;
     /**
      * @return The total data storage allocated, in terabytes (TB).
      * 
      */
-    private final Double dataStorageSizeInTbs;
+    private Double dataStorageSizeInTbs;
     /**
      * @return The local node storage allocated in GBs.
      * 
      */
-    private final Integer dbNodeStorageSizeInGbs;
+    private Integer dbNodeStorageSizeInGbs;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return User defined description of the cloud Autonomous VM cluster.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The domain name for the cloud Autonomous VM cluster.
      * 
      */
-    private final String domain;
+    private String domain;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The hostname for the cloud Autonomous VM cluster.
      * 
      */
-    private final String hostname;
+    private String hostname;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    private final String lastMaintenanceRunId;
+    private String lastMaintenanceRunId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
      * 
      */
-    private final String lastUpdateHistoryEntryId;
+    private String lastUpdateHistoryEntryId;
     /**
      * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
      * 
      */
-    private final String licenseModel;
+    private String licenseModel;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The amount of memory (in GBs) enabled per each OCPU core.
      * 
      */
-    private final Integer memoryPerOracleComputeUnitInGbs;
+    private Integer memoryPerOracleComputeUnitInGbs;
     /**
      * @return The memory allocated in GBs.
      * 
      */
-    private final Integer memorySizeInGbs;
+    private Integer memorySizeInGbs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    private final String nextMaintenanceRunId;
+    private String nextMaintenanceRunId;
     /**
      * @return The number of database servers in the cloud VM cluster.
      * 
      */
-    private final Integer nodeCount;
+    private Integer nodeCount;
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
-    private final List<String> nsgIds;
+    private List<String> nsgIds;
     /**
      * @return The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
      * 
      */
-    private final Double ocpuCount;
+    private Double ocpuCount;
     /**
      * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      * 
      */
-    private final Double reclaimableCpus;
-    private final Boolean rotateOrdsCertsTrigger;
-    private final Boolean rotateSslCertsTrigger;
+    private Double reclaimableCpus;
+    private Boolean rotateOrdsCertsTrigger;
+    private Boolean rotateSslCertsTrigger;
     /**
      * @return The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      * 
      */
-    private final String shape;
+    private String shape;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return The date and time that the cloud Autonomous VM cluster was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The last date and time that the cloud Autonomous VM cluster was updated.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return The total number of Autonomous Container Databases that can be created with the allocated local storage.
      * 
      */
-    private final Integer totalContainerDatabases;
+    private Integer totalContainerDatabases;
 
-    @CustomType.Constructor
-    private GetCloudAutonomousVmClustersCloudAutonomousVmCluster(
-        @CustomType.Parameter("autonomousDataStorageSizeInTbs") Double autonomousDataStorageSizeInTbs,
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("availableAutonomousDataStorageSizeInTbs") Double availableAutonomousDataStorageSizeInTbs,
-        @CustomType.Parameter("availableContainerDatabases") Integer availableContainerDatabases,
-        @CustomType.Parameter("availableCpus") Double availableCpus,
-        @CustomType.Parameter("cloudExadataInfrastructureId") String cloudExadataInfrastructureId,
-        @CustomType.Parameter("clusterTimeZone") String clusterTimeZone,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("cpuCoreCount") Integer cpuCoreCount,
-        @CustomType.Parameter("dataStorageSizeInGb") Double dataStorageSizeInGb,
-        @CustomType.Parameter("dataStorageSizeInTbs") Double dataStorageSizeInTbs,
-        @CustomType.Parameter("dbNodeStorageSizeInGbs") Integer dbNodeStorageSizeInGbs,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("domain") String domain,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("hostname") String hostname,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lastMaintenanceRunId") String lastMaintenanceRunId,
-        @CustomType.Parameter("lastUpdateHistoryEntryId") String lastUpdateHistoryEntryId,
-        @CustomType.Parameter("licenseModel") String licenseModel,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("memoryPerOracleComputeUnitInGbs") Integer memoryPerOracleComputeUnitInGbs,
-        @CustomType.Parameter("memorySizeInGbs") Integer memorySizeInGbs,
-        @CustomType.Parameter("nextMaintenanceRunId") String nextMaintenanceRunId,
-        @CustomType.Parameter("nodeCount") Integer nodeCount,
-        @CustomType.Parameter("nsgIds") List<String> nsgIds,
-        @CustomType.Parameter("ocpuCount") Double ocpuCount,
-        @CustomType.Parameter("reclaimableCpus") Double reclaimableCpus,
-        @CustomType.Parameter("rotateOrdsCertsTrigger") Boolean rotateOrdsCertsTrigger,
-        @CustomType.Parameter("rotateSslCertsTrigger") Boolean rotateSslCertsTrigger,
-        @CustomType.Parameter("shape") String shape,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("totalContainerDatabases") Integer totalContainerDatabases) {
-        this.autonomousDataStorageSizeInTbs = autonomousDataStorageSizeInTbs;
-        this.availabilityDomain = availabilityDomain;
-        this.availableAutonomousDataStorageSizeInTbs = availableAutonomousDataStorageSizeInTbs;
-        this.availableContainerDatabases = availableContainerDatabases;
-        this.availableCpus = availableCpus;
-        this.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
-        this.clusterTimeZone = clusterTimeZone;
-        this.compartmentId = compartmentId;
-        this.cpuCoreCount = cpuCoreCount;
-        this.dataStorageSizeInGb = dataStorageSizeInGb;
-        this.dataStorageSizeInTbs = dataStorageSizeInTbs;
-        this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.domain = domain;
-        this.freeformTags = freeformTags;
-        this.hostname = hostname;
-        this.id = id;
-        this.lastMaintenanceRunId = lastMaintenanceRunId;
-        this.lastUpdateHistoryEntryId = lastUpdateHistoryEntryId;
-        this.licenseModel = licenseModel;
-        this.lifecycleDetails = lifecycleDetails;
-        this.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
-        this.memorySizeInGbs = memorySizeInGbs;
-        this.nextMaintenanceRunId = nextMaintenanceRunId;
-        this.nodeCount = nodeCount;
-        this.nsgIds = nsgIds;
-        this.ocpuCount = ocpuCount;
-        this.reclaimableCpus = reclaimableCpus;
-        this.rotateOrdsCertsTrigger = rotateOrdsCertsTrigger;
-        this.rotateSslCertsTrigger = rotateSslCertsTrigger;
-        this.shape = shape;
-        this.state = state;
-        this.subnetId = subnetId;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.totalContainerDatabases = totalContainerDatabases;
-    }
-
+    private GetCloudAutonomousVmClustersCloudAutonomousVmCluster() {}
     /**
      * @return The data disk group size allocated for Autonomous Databases, in TBs.
      * 
@@ -546,7 +467,7 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
     public static Builder builder(GetCloudAutonomousVmClustersCloudAutonomousVmCluster defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double autonomousDataStorageSizeInTbs;
         private String availabilityDomain;
@@ -586,11 +507,7 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
         private String timeCreated;
         private String timeUpdated;
         private Integer totalContainerDatabases;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCloudAutonomousVmClustersCloudAutonomousVmCluster defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousDataStorageSizeInTbs = defaults.autonomousDataStorageSizeInTbs;
@@ -633,114 +550,142 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
     	      this.totalContainerDatabases = defaults.totalContainerDatabases;
         }
 
+        @CustomType.Setter
         public Builder autonomousDataStorageSizeInTbs(Double autonomousDataStorageSizeInTbs) {
             this.autonomousDataStorageSizeInTbs = Objects.requireNonNull(autonomousDataStorageSizeInTbs);
             return this;
         }
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder availableAutonomousDataStorageSizeInTbs(Double availableAutonomousDataStorageSizeInTbs) {
             this.availableAutonomousDataStorageSizeInTbs = Objects.requireNonNull(availableAutonomousDataStorageSizeInTbs);
             return this;
         }
+        @CustomType.Setter
         public Builder availableContainerDatabases(Integer availableContainerDatabases) {
             this.availableContainerDatabases = Objects.requireNonNull(availableContainerDatabases);
             return this;
         }
+        @CustomType.Setter
         public Builder availableCpus(Double availableCpus) {
             this.availableCpus = Objects.requireNonNull(availableCpus);
             return this;
         }
+        @CustomType.Setter
         public Builder cloudExadataInfrastructureId(String cloudExadataInfrastructureId) {
             this.cloudExadataInfrastructureId = Objects.requireNonNull(cloudExadataInfrastructureId);
             return this;
         }
+        @CustomType.Setter
         public Builder clusterTimeZone(String clusterTimeZone) {
             this.clusterTimeZone = Objects.requireNonNull(clusterTimeZone);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
             return this;
         }
+        @CustomType.Setter
         public Builder dataStorageSizeInGb(Double dataStorageSizeInGb) {
             this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
             return this;
         }
+        @CustomType.Setter
         public Builder dataStorageSizeInTbs(Double dataStorageSizeInTbs) {
             this.dataStorageSizeInTbs = Objects.requireNonNull(dataStorageSizeInTbs);
             return this;
         }
+        @CustomType.Setter
         public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
             this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder domain(String domain) {
             this.domain = Objects.requireNonNull(domain);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
             this.lastMaintenanceRunId = Objects.requireNonNull(lastMaintenanceRunId);
             return this;
         }
+        @CustomType.Setter
         public Builder lastUpdateHistoryEntryId(String lastUpdateHistoryEntryId) {
             this.lastUpdateHistoryEntryId = Objects.requireNonNull(lastUpdateHistoryEntryId);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseModel(String licenseModel) {
             this.licenseModel = Objects.requireNonNull(licenseModel);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
             this.memoryPerOracleComputeUnitInGbs = Objects.requireNonNull(memoryPerOracleComputeUnitInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder memorySizeInGbs(Integer memorySizeInGbs) {
             this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
             this.nextMaintenanceRunId = Objects.requireNonNull(nextMaintenanceRunId);
             return this;
         }
+        @CustomType.Setter
         public Builder nodeCount(Integer nodeCount) {
             this.nodeCount = Objects.requireNonNull(nodeCount);
             return this;
         }
+        @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             this.nsgIds = Objects.requireNonNull(nsgIds);
             return this;
@@ -748,47 +693,97 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
+        @CustomType.Setter
         public Builder ocpuCount(Double ocpuCount) {
             this.ocpuCount = Objects.requireNonNull(ocpuCount);
             return this;
         }
+        @CustomType.Setter
         public Builder reclaimableCpus(Double reclaimableCpus) {
             this.reclaimableCpus = Objects.requireNonNull(reclaimableCpus);
             return this;
         }
+        @CustomType.Setter
         public Builder rotateOrdsCertsTrigger(Boolean rotateOrdsCertsTrigger) {
             this.rotateOrdsCertsTrigger = Objects.requireNonNull(rotateOrdsCertsTrigger);
             return this;
         }
+        @CustomType.Setter
         public Builder rotateSslCertsTrigger(Boolean rotateSslCertsTrigger) {
             this.rotateSslCertsTrigger = Objects.requireNonNull(rotateSslCertsTrigger);
             return this;
         }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder totalContainerDatabases(Integer totalContainerDatabases) {
             this.totalContainerDatabases = Objects.requireNonNull(totalContainerDatabases);
             return this;
-        }        public GetCloudAutonomousVmClustersCloudAutonomousVmCluster build() {
-            return new GetCloudAutonomousVmClustersCloudAutonomousVmCluster(autonomousDataStorageSizeInTbs, availabilityDomain, availableAutonomousDataStorageSizeInTbs, availableContainerDatabases, availableCpus, cloudExadataInfrastructureId, clusterTimeZone, compartmentId, cpuCoreCount, dataStorageSizeInGb, dataStorageSizeInTbs, dbNodeStorageSizeInGbs, definedTags, description, displayName, domain, freeformTags, hostname, id, lastMaintenanceRunId, lastUpdateHistoryEntryId, licenseModel, lifecycleDetails, memoryPerOracleComputeUnitInGbs, memorySizeInGbs, nextMaintenanceRunId, nodeCount, nsgIds, ocpuCount, reclaimableCpus, rotateOrdsCertsTrigger, rotateSslCertsTrigger, shape, state, subnetId, timeCreated, timeUpdated, totalContainerDatabases);
+        }
+        public GetCloudAutonomousVmClustersCloudAutonomousVmCluster build() {
+            final var o = new GetCloudAutonomousVmClustersCloudAutonomousVmCluster();
+            o.autonomousDataStorageSizeInTbs = autonomousDataStorageSizeInTbs;
+            o.availabilityDomain = availabilityDomain;
+            o.availableAutonomousDataStorageSizeInTbs = availableAutonomousDataStorageSizeInTbs;
+            o.availableContainerDatabases = availableContainerDatabases;
+            o.availableCpus = availableCpus;
+            o.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
+            o.clusterTimeZone = clusterTimeZone;
+            o.compartmentId = compartmentId;
+            o.cpuCoreCount = cpuCoreCount;
+            o.dataStorageSizeInGb = dataStorageSizeInGb;
+            o.dataStorageSizeInTbs = dataStorageSizeInTbs;
+            o.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.domain = domain;
+            o.freeformTags = freeformTags;
+            o.hostname = hostname;
+            o.id = id;
+            o.lastMaintenanceRunId = lastMaintenanceRunId;
+            o.lastUpdateHistoryEntryId = lastUpdateHistoryEntryId;
+            o.licenseModel = licenseModel;
+            o.lifecycleDetails = lifecycleDetails;
+            o.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
+            o.memorySizeInGbs = memorySizeInGbs;
+            o.nextMaintenanceRunId = nextMaintenanceRunId;
+            o.nodeCount = nodeCount;
+            o.nsgIds = nsgIds;
+            o.ocpuCount = ocpuCount;
+            o.reclaimableCpus = reclaimableCpus;
+            o.rotateOrdsCertsTrigger = rotateOrdsCertsTrigger;
+            o.rotateSslCertsTrigger = rotateSslCertsTrigger;
+            o.shape = shape;
+            o.state = state;
+            o.subnetId = subnetId;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.totalContainerDatabases = totalContainerDatabases;
+            return o;
         }
     }
 }

@@ -14,84 +14,59 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOp
      * @return The number of tasks or objects for which statistics gathering is completed.
      * 
      */
-    private final Integer completed;
+    private Integer completed;
     /**
      * @return The number of tasks or objects for which statistics gathering failed.
      * 
      */
-    private final Integer failed;
+    private Integer failed;
     /**
      * @return The optimizer statistics tasks grouped by type.
      * 
      */
-    private final String groupBy;
+    private String groupBy;
     /**
      * @return The number of tasks or objects for which statistics gathering is in progress.
      * 
      */
-    private final Integer inProgress;
+    private Integer inProgress;
     /**
      * @return The number of tasks or objects for which statistics are yet to be gathered.
      * 
      */
-    private final Integer pending;
+    private Integer pending;
     /**
      * @return The number of tasks or objects for which statistics gathering was skipped.
      * 
      */
-    private final Integer skipped;
+    private Integer skipped;
     /**
      * @return Indicates the end of the hour as the statistics are aggregated per hour.
      * 
      */
-    private final String timeEnd;
+    private String timeEnd;
     /**
      * @return Indicates the start of the hour as the statistics are aggregated per hour.
      * 
      */
-    private final String timeStart;
+    private String timeStart;
     /**
      * @return The number of tasks or objects for which statistics gathering timed out.
      * 
      */
-    private final Integer timedOut;
+    private Integer timedOut;
     /**
      * @return The total number of tasks or objects for which statistics collection is finished. This number is the sum of all the tasks or objects with various statuses: pending, inProgress, completed, failed, skipped, timedOut, and unknown.
      * 
      */
-    private final Integer total;
+    private Integer total;
     /**
      * @return The number of tasks or objects for which the status of statistics gathering is unknown.
      * 
      */
-    private final Integer unknown;
+    private Integer unknown;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem(
-        @CustomType.Parameter("completed") Integer completed,
-        @CustomType.Parameter("failed") Integer failed,
-        @CustomType.Parameter("groupBy") String groupBy,
-        @CustomType.Parameter("inProgress") Integer inProgress,
-        @CustomType.Parameter("pending") Integer pending,
-        @CustomType.Parameter("skipped") Integer skipped,
-        @CustomType.Parameter("timeEnd") String timeEnd,
-        @CustomType.Parameter("timeStart") String timeStart,
-        @CustomType.Parameter("timedOut") Integer timedOut,
-        @CustomType.Parameter("total") Integer total,
-        @CustomType.Parameter("unknown") Integer unknown) {
-        this.completed = completed;
-        this.failed = failed;
-        this.groupBy = groupBy;
-        this.inProgress = inProgress;
-        this.pending = pending;
-        this.skipped = skipped;
-        this.timeEnd = timeEnd;
-        this.timeStart = timeStart;
-        this.timedOut = timedOut;
-        this.total = total;
-        this.unknown = unknown;
-    }
-
+    private GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem() {}
     /**
      * @return The number of tasks or objects for which statistics gathering is completed.
      * 
@@ -177,7 +152,7 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOp
     public static Builder builder(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer completed;
         private Integer failed;
@@ -190,11 +165,7 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOp
         private Integer timedOut;
         private Integer total;
         private Integer unknown;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.completed = defaults.completed;
@@ -210,51 +181,75 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOp
     	      this.unknown = defaults.unknown;
         }
 
+        @CustomType.Setter
         public Builder completed(Integer completed) {
             this.completed = Objects.requireNonNull(completed);
             return this;
         }
+        @CustomType.Setter
         public Builder failed(Integer failed) {
             this.failed = Objects.requireNonNull(failed);
             return this;
         }
+        @CustomType.Setter
         public Builder groupBy(String groupBy) {
             this.groupBy = Objects.requireNonNull(groupBy);
             return this;
         }
+        @CustomType.Setter
         public Builder inProgress(Integer inProgress) {
             this.inProgress = Objects.requireNonNull(inProgress);
             return this;
         }
+        @CustomType.Setter
         public Builder pending(Integer pending) {
             this.pending = Objects.requireNonNull(pending);
             return this;
         }
+        @CustomType.Setter
         public Builder skipped(Integer skipped) {
             this.skipped = Objects.requireNonNull(skipped);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
             this.timeEnd = Objects.requireNonNull(timeEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(String timeStart) {
             this.timeStart = Objects.requireNonNull(timeStart);
             return this;
         }
+        @CustomType.Setter
         public Builder timedOut(Integer timedOut) {
             this.timedOut = Objects.requireNonNull(timedOut);
             return this;
         }
+        @CustomType.Setter
         public Builder total(Integer total) {
             this.total = Objects.requireNonNull(total);
             return this;
         }
+        @CustomType.Setter
         public Builder unknown(Integer unknown) {
             this.unknown = Objects.requireNonNull(unknown);
             return this;
-        }        public GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem build() {
-            return new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem(completed, failed, groupBy, inProgress, pending, skipped, timeEnd, timeStart, timedOut, total, unknown);
+        }
+        public GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem build() {
+            final var o = new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem();
+            o.completed = completed;
+            o.failed = failed;
+            o.groupBy = groupBy;
+            o.inProgress = inProgress;
+            o.pending = pending;
+            o.skipped = skipped;
+            o.timeEnd = timeEnd;
+            o.timeStart = timeStart;
+            o.timedOut = timedOut;
+            o.total = total;
+            o.unknown = unknown;
+            return o;
         }
     }
 }

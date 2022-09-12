@@ -14,28 +14,19 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollectionItemCo
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The unique key of protection capability to filter by.
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return The weight of contributing protection capability.
      * 
      */
-    private final Integer weight;
+    private Integer weight;
 
-    @CustomType.Constructor
-    private GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("weight") Integer weight) {
-        this.displayName = displayName;
-        this.key = key;
-        this.weight = weight;
-    }
-
+    private GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight() {}
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
@@ -65,16 +56,12 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollectionItemCo
     public static Builder builder(GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private String key;
         private Integer weight;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -82,19 +69,27 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollectionItemCo
     	      this.weight = defaults.weight;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder weight(Integer weight) {
             this.weight = Objects.requireNonNull(weight);
             return this;
-        }        public GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight build() {
-            return new GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight(displayName, key, weight);
+        }
+        public GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight build() {
+            final var o = new GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight();
+            o.displayName = displayName;
+            o.key = key;
+            o.weight = weight;
+            return o;
         }
     }
 }

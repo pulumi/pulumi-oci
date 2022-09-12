@@ -13,13 +13,9 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilit
      * @return The lifecycle state for an instance when it is recovered after infrastructure maintenance.
      * 
      */
-    private final String recoveryAction;
+    private String recoveryAction;
 
-    @CustomType.Constructor
-    private GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig(@CustomType.Parameter("recoveryAction") String recoveryAction) {
-        this.recoveryAction = recoveryAction;
-    }
-
+    private GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig() {}
     /**
      * @return The lifecycle state for an instance when it is recovered after infrastructure maintenance.
      * 
@@ -35,24 +31,24 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilit
     public static Builder builder(GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String recoveryAction;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.recoveryAction = defaults.recoveryAction;
         }
 
+        @CustomType.Setter
         public Builder recoveryAction(String recoveryAction) {
             this.recoveryAction = Objects.requireNonNull(recoveryAction);
             return this;
-        }        public GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig build() {
-            return new GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig(recoveryAction);
+        }
+        public GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig build() {
+            final var o = new GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig();
+            o.recoveryAction = recoveryAction;
+            return o;
         }
     }
 }

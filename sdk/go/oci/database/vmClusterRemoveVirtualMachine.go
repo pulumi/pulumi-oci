@@ -62,7 +62,7 @@ type VmClusterRemoveVirtualMachine struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The number of enabled CPU cores.
 	CpusEnabled pulumi.IntOutput `pulumi:"cpusEnabled"`
-	// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput `pulumi:"dataCollectionOptions"`
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs pulumi.Float64Output `pulumi:"dataStorageSizeInTbs"`
@@ -149,7 +149,7 @@ type vmClusterRemoveVirtualMachineState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The number of enabled CPU cores.
 	CpusEnabled *int `pulumi:"cpusEnabled"`
-	// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions []VmClusterRemoveVirtualMachineDataCollectionOption `pulumi:"dataCollectionOptions"`
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs *float64 `pulumi:"dataStorageSizeInTbs"`
@@ -202,7 +202,7 @@ type VmClusterRemoveVirtualMachineState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The number of enabled CPU cores.
 	CpusEnabled pulumi.IntPtrInput
-	// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions VmClusterRemoveVirtualMachineDataCollectionOptionArrayInput
 	// Size, in terabytes, of the DATA disk group.
 	DataStorageSizeInTbs pulumi.Float64PtrInput
@@ -366,7 +366,7 @@ func (o VmClusterRemoveVirtualMachineOutput) CpusEnabled() pulumi.IntOutput {
 	return o.ApplyT(func(v *VmClusterRemoveVirtualMachine) pulumi.IntOutput { return v.CpusEnabled }).(pulumi.IntOutput)
 }
 
-// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 func (o VmClusterRemoveVirtualMachineOutput) DataCollectionOptions() VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput {
 	return o.ApplyT(func(v *VmClusterRemoveVirtualMachine) VmClusterRemoveVirtualMachineDataCollectionOptionArrayOutput {
 		return v.DataCollectionOptions

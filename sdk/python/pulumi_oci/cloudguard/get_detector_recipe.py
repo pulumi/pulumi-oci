@@ -22,7 +22,7 @@ class GetDetectorRecipeResult:
     """
     A collection of values returned by getDetectorRecipe.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, detector=None, detector_recipe_id=None, detector_rules=None, display_name=None, effective_detector_rules=None, freeform_tags=None, id=None, owner=None, source_detector_recipe_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, detector=None, detector_recipe_id=None, detector_rules=None, display_name=None, effective_detector_rules=None, freeform_tags=None, id=None, owner=None, source_detector_recipe_id=None, state=None, system_tags=None, target_ids=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -65,6 +65,9 @@ class GetDetectorRecipeResult:
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
+        if target_ids and not isinstance(target_ids, list):
+            raise TypeError("Expected argument 'target_ids' to be a list")
+        pulumi.set(__self__, "target_ids", target_ids)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -121,7 +124,7 @@ class GetDetectorRecipeResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Display name for DetectorRecipeDetectorRule.
+        The display name of entity
         """
         return pulumi.get(self, "display_name")
 
@@ -182,6 +185,14 @@ class GetDetectorRecipeResult:
         return pulumi.get(self, "system_tags")
 
     @property
+    @pulumi.getter(name="targetIds")
+    def target_ids(self) -> Sequence[str]:
+        """
+        The recipe attached to targets
+        """
+        return pulumi.get(self, "target_ids")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -218,6 +229,7 @@ class AwaitableGetDetectorRecipeResult(GetDetectorRecipeResult):
             source_detector_recipe_id=self.source_detector_recipe_id,
             state=self.state,
             system_tags=self.system_tags,
+            target_ids=self.target_ids,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -261,6 +273,7 @@ def get_detector_recipe(detector_recipe_id: Optional[str] = None,
         source_detector_recipe_id=__ret__.source_detector_recipe_id,
         state=__ret__.state,
         system_tags=__ret__.system_tags,
+        target_ids=__ret__.target_ids,
         time_created=__ret__.time_created,
         time_updated=__ret__.time_updated)
 

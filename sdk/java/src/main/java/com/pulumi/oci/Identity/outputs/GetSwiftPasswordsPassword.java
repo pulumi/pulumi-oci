@@ -13,63 +13,44 @@ public final class GetSwiftPasswordsPassword {
      * @return The description you assign to the Swift password. Does not have to be unique, and it&#39;s changeable.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String expiresOn;
+    private String expiresOn;
     /**
      * @return The OCID of the Swift password.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    private final String inactiveState;
+    private String inactiveState;
     /**
      * @return The Swift password. The value is available only in the response for `CreateSwiftPassword`, and not for `ListSwiftPasswords` or `UpdateSwiftPassword`.
      * 
      */
-    private final String password;
+    private String password;
     /**
      * @return The password&#39;s current state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Date and time the `SwiftPassword` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The OCID of the user.
      * 
      */
-    private final String userId;
+    private String userId;
 
-    @CustomType.Constructor
-    private GetSwiftPasswordsPassword(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("expiresOn") String expiresOn,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("inactiveState") String inactiveState,
-        @CustomType.Parameter("password") String password,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("userId") String userId) {
-        this.description = description;
-        this.expiresOn = expiresOn;
-        this.id = id;
-        this.inactiveState = inactiveState;
-        this.password = password;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.userId = userId;
-    }
-
+    private GetSwiftPasswordsPassword() {}
     /**
      * @return The description you assign to the Swift password. Does not have to be unique, and it&#39;s changeable.
      * 
@@ -134,7 +115,7 @@ public final class GetSwiftPasswordsPassword {
     public static Builder builder(GetSwiftPasswordsPassword defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String expiresOn;
@@ -144,11 +125,7 @@ public final class GetSwiftPasswordsPassword {
         private String state;
         private String timeCreated;
         private String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSwiftPasswordsPassword defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -161,39 +138,57 @@ public final class GetSwiftPasswordsPassword {
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder expiresOn(String expiresOn) {
             this.expiresOn = Objects.requireNonNull(expiresOn);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder inactiveState(String inactiveState) {
             this.inactiveState = Objects.requireNonNull(inactiveState);
             return this;
         }
+        @CustomType.Setter
         public Builder password(String password) {
             this.password = Objects.requireNonNull(password);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder userId(String userId) {
             this.userId = Objects.requireNonNull(userId);
             return this;
-        }        public GetSwiftPasswordsPassword build() {
-            return new GetSwiftPasswordsPassword(description, expiresOn, id, inactiveState, password, state, timeCreated, userId);
+        }
+        public GetSwiftPasswordsPassword build() {
+            final var o = new GetSwiftPasswordsPassword();
+            o.description = description;
+            o.expiresOn = expiresOn;
+            o.id = id;
+            o.inactiveState = inactiveState;
+            o.password = password;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.userId = userId;
+            return o;
         }
     }
 }

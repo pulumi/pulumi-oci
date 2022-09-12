@@ -13,13 +13,9 @@ public final class GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy {
      * @return Whether the Channel has been enabled by the user.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
 
-    @CustomType.Constructor
-    private GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy(@CustomType.Parameter("isEnabled") Boolean isEnabled) {
-        this.isEnabled = isEnabled;
-    }
-
+    private GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy() {}
     /**
      * @return Whether the Channel has been enabled by the user.
      * 
@@ -35,24 +31,24 @@ public final class GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy {
     public static Builder builder(GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isEnabled = defaults.isEnabled;
         }
 
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
-        }        public GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy build() {
-            return new GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy(isEnabled);
+        }
+        public GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy build() {
+            final var o = new GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy();
+            o.isEnabled = isEnabled;
+            return o;
         }
     }
 }

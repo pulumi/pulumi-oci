@@ -89,7 +89,7 @@ class GetRegistriesResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors
+        Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn't available. FAILED   - The resource is in a failed state due to validation or other errors.
         """
         return pulumi.get(self, "state")
 
@@ -118,7 +118,7 @@ def get_registries(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Registries in Oracle Cloud Infrastructure Data Connectivity service.
 
-    Returns a list of Data Connectivity Management Registries.
+    Retrieves a list of Data Connectivity Management registries.
 
     ## Example Usage
 
@@ -134,7 +134,7 @@ def get_registries(compartment_id: Optional[str] = None,
 
 
     :param str compartment_id: The OCID of the compartment containing the resources you want to list.
-    :param bool is_deep_lookup: This parameter allows list registries to deep look at whole tenancy.
+    :param bool is_deep_lookup: This parameter allows list registries to deep look at the whole tenancy.
     :param str name: Used to filter by the name of the object.
     :param str state: Lifecycle state of the resource.
     """
@@ -167,7 +167,7 @@ def get_registries_output(compartment_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides the list of Registries in Oracle Cloud Infrastructure Data Connectivity service.
 
-    Returns a list of Data Connectivity Management Registries.
+    Retrieves a list of Data Connectivity Management registries.
 
     ## Example Usage
 
@@ -183,7 +183,7 @@ def get_registries_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
 
     :param str compartment_id: The OCID of the compartment containing the resources you want to list.
-    :param bool is_deep_lookup: This parameter allows list registries to deep look at whole tenancy.
+    :param bool is_deep_lookup: This parameter allows list registries to deep look at the whole tenancy.
     :param str name: Used to filter by the name of the object.
     :param str state: Lifecycle state of the resource.
     """

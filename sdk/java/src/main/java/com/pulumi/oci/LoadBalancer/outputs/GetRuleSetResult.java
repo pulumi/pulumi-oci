@@ -11,34 +11,21 @@ import java.util.Objects;
 
 @CustomType
 public final class GetRuleSetResult {
-    private final String id;
+    private String id;
     /**
      * @return An array of rules that compose the rule set.
      * 
      */
-    private final List<GetRuleSetItem> items;
-    private final String loadBalancerId;
+    private List<GetRuleSetItem> items;
+    private String loadBalancerId;
     /**
      * @return The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
      * 
      */
-    private final String name;
-    private final String state;
+    private String name;
+    private String state;
 
-    @CustomType.Constructor
-    private GetRuleSetResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetRuleSetItem> items,
-        @CustomType.Parameter("loadBalancerId") String loadBalancerId,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("state") String state) {
-        this.id = id;
-        this.items = items;
-        this.loadBalancerId = loadBalancerId;
-        this.name = name;
-        this.state = state;
-    }
-
+    private GetRuleSetResult() {}
     public String id() {
         return this.id;
     }
@@ -70,18 +57,14 @@ public final class GetRuleSetResult {
     public static Builder builder(GetRuleSetResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private List<GetRuleSetItem> items;
         private String loadBalancerId;
         private String name;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRuleSetResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -91,10 +74,12 @@ public final class GetRuleSetResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetRuleSetItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -102,19 +87,29 @@ public final class GetRuleSetResult {
         public Builder items(GetRuleSetItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public GetRuleSetResult build() {
-            return new GetRuleSetResult(id, items, loadBalancerId, name, state);
+        }
+        public GetRuleSetResult build() {
+            final var o = new GetRuleSetResult();
+            o.id = id;
+            o.items = items;
+            o.loadBalancerId = loadBalancerId;
+            o.name = name;
+            o.state = state;
+            return o;
         }
     }
 }

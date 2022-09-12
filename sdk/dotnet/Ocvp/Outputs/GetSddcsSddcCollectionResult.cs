@@ -189,6 +189,10 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
+        /// The vSphere licenses to be used when upgrade SDDC.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSddcsSddcCollectionUpgradeLicenseResult> UpgradeLicenses;
+        /// <summary>
         /// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
         /// </summary>
         public readonly string VcenterFqdn;
@@ -216,6 +220,14 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
         /// </summary>
         public readonly string VsanVlanId;
+        /// <summary>
+        /// The link of guidance to upgrade vSphere.
+        /// </summary>
+        public readonly string VsphereUpgradeGuide;
+        /// <summary>
+        /// The links of binary objects needed for upgrade vSphere.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSddcsSddcCollectionVsphereUpgradeObjectResult> VsphereUpgradeObjects;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
         /// </summary>
@@ -319,6 +331,8 @@ namespace Pulumi.Oci.Ocvp.Outputs
 
             string timeUpdated,
 
+            ImmutableArray<Outputs.GetSddcsSddcCollectionUpgradeLicenseResult> upgradeLicenses,
+
             string vcenterFqdn,
 
             string vcenterInitialPassword,
@@ -332,6 +346,10 @@ namespace Pulumi.Oci.Ocvp.Outputs
             string vmwareSoftwareVersion,
 
             string vsanVlanId,
+
+            string vsphereUpgradeGuide,
+
+            ImmutableArray<Outputs.GetSddcsSddcCollectionVsphereUpgradeObjectResult> vsphereUpgradeObjects,
 
             string vsphereVlanId,
 
@@ -383,6 +401,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
             TimeHcxBillingCycleEnd = timeHcxBillingCycleEnd;
             TimeHcxLicenseStatusUpdated = timeHcxLicenseStatusUpdated;
             TimeUpdated = timeUpdated;
+            UpgradeLicenses = upgradeLicenses;
             VcenterFqdn = vcenterFqdn;
             VcenterInitialPassword = vcenterInitialPassword;
             VcenterPrivateIpId = vcenterPrivateIpId;
@@ -390,6 +409,8 @@ namespace Pulumi.Oci.Ocvp.Outputs
             VmotionVlanId = vmotionVlanId;
             VmwareSoftwareVersion = vmwareSoftwareVersion;
             VsanVlanId = vsanVlanId;
+            VsphereUpgradeGuide = vsphereUpgradeGuide;
+            VsphereUpgradeObjects = vsphereUpgradeObjects;
             VsphereVlanId = vsphereVlanId;
             WorkloadNetworkCidr = workloadNetworkCidr;
         }

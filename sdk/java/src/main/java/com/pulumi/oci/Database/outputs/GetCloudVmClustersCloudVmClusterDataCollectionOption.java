@@ -13,19 +13,39 @@ public final class GetCloudVmClustersCloudVmClusterDataCollectionOption {
      * @return Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
      * 
      */
-    private final Boolean isDiagnosticsEventsEnabled;
+    private Boolean isDiagnosticsEventsEnabled;
+    /**
+     * @return Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+     * 
+     */
+    private Boolean isHealthMonitoringEnabled;
+    /**
+     * @return Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+     * 
+     */
+    private Boolean isIncidentLogsEnabled;
 
-    @CustomType.Constructor
-    private GetCloudVmClustersCloudVmClusterDataCollectionOption(@CustomType.Parameter("isDiagnosticsEventsEnabled") Boolean isDiagnosticsEventsEnabled) {
-        this.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
-    }
-
+    private GetCloudVmClustersCloudVmClusterDataCollectionOption() {}
     /**
      * @return Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
      * 
      */
     public Boolean isDiagnosticsEventsEnabled() {
         return this.isDiagnosticsEventsEnabled;
+    }
+    /**
+     * @return Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+     * 
+     */
+    public Boolean isHealthMonitoringEnabled() {
+        return this.isHealthMonitoringEnabled;
+    }
+    /**
+     * @return Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+     * 
+     */
+    public Boolean isIncidentLogsEnabled() {
+        return this.isIncidentLogsEnabled;
     }
 
     public static Builder builder() {
@@ -35,24 +55,40 @@ public final class GetCloudVmClustersCloudVmClusterDataCollectionOption {
     public static Builder builder(GetCloudVmClustersCloudVmClusterDataCollectionOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isDiagnosticsEventsEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        private Boolean isHealthMonitoringEnabled;
+        private Boolean isIncidentLogsEnabled;
+        public Builder() {}
         public Builder(GetCloudVmClustersCloudVmClusterDataCollectionOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isDiagnosticsEventsEnabled = defaults.isDiagnosticsEventsEnabled;
+    	      this.isHealthMonitoringEnabled = defaults.isHealthMonitoringEnabled;
+    	      this.isIncidentLogsEnabled = defaults.isIncidentLogsEnabled;
         }
 
+        @CustomType.Setter
         public Builder isDiagnosticsEventsEnabled(Boolean isDiagnosticsEventsEnabled) {
             this.isDiagnosticsEventsEnabled = Objects.requireNonNull(isDiagnosticsEventsEnabled);
             return this;
-        }        public GetCloudVmClustersCloudVmClusterDataCollectionOption build() {
-            return new GetCloudVmClustersCloudVmClusterDataCollectionOption(isDiagnosticsEventsEnabled);
+        }
+        @CustomType.Setter
+        public Builder isHealthMonitoringEnabled(Boolean isHealthMonitoringEnabled) {
+            this.isHealthMonitoringEnabled = Objects.requireNonNull(isHealthMonitoringEnabled);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isIncidentLogsEnabled(Boolean isIncidentLogsEnabled) {
+            this.isIncidentLogsEnabled = Objects.requireNonNull(isIncidentLogsEnabled);
+            return this;
+        }
+        public GetCloudVmClustersCloudVmClusterDataCollectionOption build() {
+            final var o = new GetCloudVmClustersCloudVmClusterDataCollectionOption();
+            o.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
+            o.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
+            o.isIncidentLogsEnabled = isIncidentLogsEnabled;
+            return o;
         }
     }
 }

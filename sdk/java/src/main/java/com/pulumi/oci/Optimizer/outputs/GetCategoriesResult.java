@@ -19,54 +19,42 @@ public final class GetCategoriesResult {
      * @return The list of category_collection.
      * 
      */
-    private final List<GetCategoriesCategoryCollection> categoryCollections;
+    private List<GetCategoriesCategoryCollection> categoryCollections;
+    private @Nullable List<String> childTenancyIds;
     /**
      * @return The OCID of the tenancy. The tenancy is the root compartment.
      * 
      */
-    private final String compartmentId;
-    private final Boolean compartmentIdInSubtree;
-    private final @Nullable List<GetCategoriesFilter> filters;
+    private String compartmentId;
+    private Boolean compartmentIdInSubtree;
+    private @Nullable List<GetCategoriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
+    private @Nullable Boolean includeOrganization;
     /**
      * @return The name assigned to the category.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The category&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetCategoriesResult(
-        @CustomType.Parameter("categoryCollections") List<GetCategoriesCategoryCollection> categoryCollections,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("filters") @Nullable List<GetCategoriesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.categoryCollections = categoryCollections;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.state = state;
-    }
-
+    private GetCategoriesResult() {}
     /**
      * @return The list of category_collection.
      * 
      */
     public List<GetCategoriesCategoryCollection> categoryCollections() {
         return this.categoryCollections;
+    }
+    public List<String> childTenancyIds() {
+        return this.childTenancyIds == null ? List.of() : this.childTenancyIds;
     }
     /**
      * @return The OCID of the tenancy. The tenancy is the root compartment.
@@ -87,6 +75,9 @@ public final class GetCategoriesResult {
      */
     public String id() {
         return this.id;
+    }
+    public Optional<Boolean> includeOrganization() {
+        return Optional.ofNullable(this.includeOrganization);
     }
     /**
      * @return The name assigned to the category.
@@ -110,31 +101,32 @@ public final class GetCategoriesResult {
     public static Builder builder(GetCategoriesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCategoriesCategoryCollection> categoryCollections;
+        private @Nullable List<String> childTenancyIds;
         private String compartmentId;
         private Boolean compartmentIdInSubtree;
         private @Nullable List<GetCategoriesFilter> filters;
         private String id;
+        private @Nullable Boolean includeOrganization;
         private @Nullable String name;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCategoriesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.categoryCollections = defaults.categoryCollections;
+    	      this.childTenancyIds = defaults.childTenancyIds;
     	      this.compartmentId = defaults.compartmentId;
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.includeOrganization = defaults.includeOrganization;
     	      this.name = defaults.name;
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder categoryCollections(List<GetCategoriesCategoryCollection> categoryCollections) {
             this.categoryCollections = Objects.requireNonNull(categoryCollections);
             return this;
@@ -142,14 +134,25 @@ public final class GetCategoriesResult {
         public Builder categoryCollections(GetCategoriesCategoryCollection... categoryCollections) {
             return categoryCollections(List.of(categoryCollections));
         }
+        @CustomType.Setter
+        public Builder childTenancyIds(@Nullable List<String> childTenancyIds) {
+            this.childTenancyIds = childTenancyIds;
+            return this;
+        }
+        public Builder childTenancyIds(String... childTenancyIds) {
+            return childTenancyIds(List.of(childTenancyIds));
+        }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetCategoriesFilter> filters) {
             this.filters = filters;
             return this;
@@ -157,19 +160,38 @@ public final class GetCategoriesResult {
         public Builder filters(GetCategoriesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
+        public Builder includeOrganization(@Nullable Boolean includeOrganization) {
+            this.includeOrganization = includeOrganization;
+            return this;
+        }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetCategoriesResult build() {
-            return new GetCategoriesResult(categoryCollections, compartmentId, compartmentIdInSubtree, filters, id, name, state);
+        }
+        public GetCategoriesResult build() {
+            final var o = new GetCategoriesResult();
+            o.categoryCollections = categoryCollections;
+            o.childTenancyIds = childTenancyIds;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.filters = filters;
+            o.id = id;
+            o.includeOrganization = includeOrganization;
+            o.name = name;
+            o.state = state;
+            return o;
         }
     }
 }

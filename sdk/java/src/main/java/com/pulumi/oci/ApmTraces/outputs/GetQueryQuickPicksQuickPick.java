@@ -13,21 +13,14 @@ public final class GetQueryQuickPicksQuickPick {
      * @return Quick Pick name for the query.
      * 
      */
-    private final String quickPickName;
+    private String quickPickName;
     /**
      * @return Query for the Quick Pick.
      * 
      */
-    private final String quickPickQuery;
+    private String quickPickQuery;
 
-    @CustomType.Constructor
-    private GetQueryQuickPicksQuickPick(
-        @CustomType.Parameter("quickPickName") String quickPickName,
-        @CustomType.Parameter("quickPickQuery") String quickPickQuery) {
-        this.quickPickName = quickPickName;
-        this.quickPickQuery = quickPickQuery;
-    }
-
+    private GetQueryQuickPicksQuickPick() {}
     /**
      * @return Quick Pick name for the query.
      * 
@@ -50,30 +43,32 @@ public final class GetQueryQuickPicksQuickPick {
     public static Builder builder(GetQueryQuickPicksQuickPick defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String quickPickName;
         private String quickPickQuery;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetQueryQuickPicksQuickPick defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.quickPickName = defaults.quickPickName;
     	      this.quickPickQuery = defaults.quickPickQuery;
         }
 
+        @CustomType.Setter
         public Builder quickPickName(String quickPickName) {
             this.quickPickName = Objects.requireNonNull(quickPickName);
             return this;
         }
+        @CustomType.Setter
         public Builder quickPickQuery(String quickPickQuery) {
             this.quickPickQuery = Objects.requireNonNull(quickPickQuery);
             return this;
-        }        public GetQueryQuickPicksQuickPick build() {
-            return new GetQueryQuickPicksQuickPick(quickPickName, quickPickQuery);
+        }
+        public GetQueryQuickPicksQuickPick build() {
+            final var o = new GetQueryQuickPicksQuickPick();
+            o.quickPickName = quickPickName;
+            o.quickPickQuery = quickPickQuery;
+            return o;
         }
     }
 }

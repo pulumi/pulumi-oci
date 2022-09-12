@@ -18,136 +18,95 @@ public final class GetResourceActionsResourceActionCollectionItem {
      * @return Details about the recommended action.
      * 
      */
-    private final List<GetResourceActionsResourceActionCollectionItemAction> actions;
+    private List<GetResourceActionsResourceActionCollectionItemAction> actions;
     /**
      * @return The unique OCID associated with the category.
      * 
      */
-    private final String categoryId;
+    private String categoryId;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The name associated with the compartment.
      * 
      */
-    private final String compartmentName;
+    private String compartmentName;
     /**
      * @return The estimated cost savings, in dollars, for the resource action.
      * 
      */
-    private final Double estimatedCostSaving;
+    private Double estimatedCostSaving;
     /**
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    private final Map<String,Object> extendedMetadata;
+    private Map<String,Object> extendedMetadata;
     /**
      * @return The unique OCID associated with the resource action.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Custom metadata key/value pairs for the resource action.
      * 
      */
-    private final Map<String,Object> metadata;
+    private Map<String,Object> metadata;
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The unique OCID associated with the recommendation.
      * 
      */
-    private final String recommendationId;
-    private final String resourceActionId;
+    private String recommendationId;
+    private String resourceActionId;
     /**
      * @return The unique OCID associated with the resource.
      * 
      */
-    private final String resourceId;
+    private String resourceId;
     /**
      * @return Optional. A filter that returns results that match the resource type specified.
      * 
      */
-    private final String resourceType;
+    private String resourceType;
     /**
      * @return A filter that returns results that match the lifecycle state specified.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return A filter that returns recommendations that match the status specified.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The date and time the resource action details were created, in the format defined by RFC3339.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time that the resource action entered its current status. The format is defined by RFC3339.
      * 
      */
-    private final String timeStatusBegin;
+    private String timeStatusBegin;
     /**
      * @return The date and time the current status will change. The format is defined by RFC3339.
      * 
      */
-    private final String timeStatusEnd;
+    private String timeStatusEnd;
     /**
      * @return The date and time the resource action details were last updated, in the format defined by RFC3339.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetResourceActionsResourceActionCollectionItem(
-        @CustomType.Parameter("actions") List<GetResourceActionsResourceActionCollectionItemAction> actions,
-        @CustomType.Parameter("categoryId") String categoryId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentName") String compartmentName,
-        @CustomType.Parameter("estimatedCostSaving") Double estimatedCostSaving,
-        @CustomType.Parameter("extendedMetadata") Map<String,Object> extendedMetadata,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("metadata") Map<String,Object> metadata,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("recommendationId") String recommendationId,
-        @CustomType.Parameter("resourceActionId") String resourceActionId,
-        @CustomType.Parameter("resourceId") String resourceId,
-        @CustomType.Parameter("resourceType") String resourceType,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeStatusBegin") String timeStatusBegin,
-        @CustomType.Parameter("timeStatusEnd") String timeStatusEnd,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.actions = actions;
-        this.categoryId = categoryId;
-        this.compartmentId = compartmentId;
-        this.compartmentName = compartmentName;
-        this.estimatedCostSaving = estimatedCostSaving;
-        this.extendedMetadata = extendedMetadata;
-        this.id = id;
-        this.metadata = metadata;
-        this.name = name;
-        this.recommendationId = recommendationId;
-        this.resourceActionId = resourceActionId;
-        this.resourceId = resourceId;
-        this.resourceType = resourceType;
-        this.state = state;
-        this.status = status;
-        this.timeCreated = timeCreated;
-        this.timeStatusBegin = timeStatusBegin;
-        this.timeStatusEnd = timeStatusEnd;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetResourceActionsResourceActionCollectionItem() {}
     /**
      * @return Details about the recommended action.
      * 
@@ -285,7 +244,7 @@ public final class GetResourceActionsResourceActionCollectionItem {
     public static Builder builder(GetResourceActionsResourceActionCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetResourceActionsResourceActionCollectionItemAction> actions;
         private String categoryId;
@@ -306,11 +265,7 @@ public final class GetResourceActionsResourceActionCollectionItem {
         private String timeStatusBegin;
         private String timeStatusEnd;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetResourceActionsResourceActionCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actions = defaults.actions;
@@ -334,6 +289,7 @@ public final class GetResourceActionsResourceActionCollectionItem {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder actions(List<GetResourceActionsResourceActionCollectionItemAction> actions) {
             this.actions = Objects.requireNonNull(actions);
             return this;
@@ -341,79 +297,118 @@ public final class GetResourceActionsResourceActionCollectionItem {
         public Builder actions(GetResourceActionsResourceActionCollectionItemAction... actions) {
             return actions(List.of(actions));
         }
+        @CustomType.Setter
         public Builder categoryId(String categoryId) {
             this.categoryId = Objects.requireNonNull(categoryId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentName(String compartmentName) {
             this.compartmentName = Objects.requireNonNull(compartmentName);
             return this;
         }
+        @CustomType.Setter
         public Builder estimatedCostSaving(Double estimatedCostSaving) {
             this.estimatedCostSaving = Objects.requireNonNull(estimatedCostSaving);
             return this;
         }
+        @CustomType.Setter
         public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
             this.extendedMetadata = Objects.requireNonNull(extendedMetadata);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder metadata(Map<String,Object> metadata) {
             this.metadata = Objects.requireNonNull(metadata);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder recommendationId(String recommendationId) {
             this.recommendationId = Objects.requireNonNull(recommendationId);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceActionId(String resourceActionId) {
             this.resourceActionId = Objects.requireNonNull(resourceActionId);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceId(String resourceId) {
             this.resourceId = Objects.requireNonNull(resourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceType(String resourceType) {
             this.resourceType = Objects.requireNonNull(resourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStatusBegin(String timeStatusBegin) {
             this.timeStatusBegin = Objects.requireNonNull(timeStatusBegin);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStatusEnd(String timeStatusEnd) {
             this.timeStatusEnd = Objects.requireNonNull(timeStatusEnd);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetResourceActionsResourceActionCollectionItem build() {
-            return new GetResourceActionsResourceActionCollectionItem(actions, categoryId, compartmentId, compartmentName, estimatedCostSaving, extendedMetadata, id, metadata, name, recommendationId, resourceActionId, resourceId, resourceType, state, status, timeCreated, timeStatusBegin, timeStatusEnd, timeUpdated);
+        }
+        public GetResourceActionsResourceActionCollectionItem build() {
+            final var o = new GetResourceActionsResourceActionCollectionItem();
+            o.actions = actions;
+            o.categoryId = categoryId;
+            o.compartmentId = compartmentId;
+            o.compartmentName = compartmentName;
+            o.estimatedCostSaving = estimatedCostSaving;
+            o.extendedMetadata = extendedMetadata;
+            o.id = id;
+            o.metadata = metadata;
+            o.name = name;
+            o.recommendationId = recommendationId;
+            o.resourceActionId = resourceActionId;
+            o.resourceId = resourceId;
+            o.resourceType = resourceType;
+            o.state = state;
+            o.status = status;
+            o.timeCreated = timeCreated;
+            o.timeStatusBegin = timeStatusBegin;
+            o.timeStatusEnd = timeStatusEnd;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

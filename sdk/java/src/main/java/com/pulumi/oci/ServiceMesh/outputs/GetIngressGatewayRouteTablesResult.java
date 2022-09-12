@@ -18,52 +18,35 @@ public final class GetIngressGatewayRouteTablesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetIngressGatewayRouteTablesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetIngressGatewayRouteTablesFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the ingress gateway.
      * 
      */
-    private final @Nullable String ingressGatewayId;
+    private @Nullable String ingressGatewayId;
     /**
      * @return The list of ingress_gateway_route_table_collection.
      * 
      */
-    private final List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection> ingressGatewayRouteTableCollections;
+    private List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection> ingressGatewayRouteTableCollections;
     /**
      * @return Name of the ingress gateway host that this route should apply to.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The current state of the Resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetIngressGatewayRouteTablesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetIngressGatewayRouteTablesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("ingressGatewayId") @Nullable String ingressGatewayId,
-        @CustomType.Parameter("ingressGatewayRouteTableCollections") List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection> ingressGatewayRouteTableCollections,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.ingressGatewayId = ingressGatewayId;
-        this.ingressGatewayRouteTableCollections = ingressGatewayRouteTableCollections;
-        this.name = name;
-        this.state = state;
-    }
-
+    private GetIngressGatewayRouteTablesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -117,7 +100,7 @@ public final class GetIngressGatewayRouteTablesResult {
     public static Builder builder(GetIngressGatewayRouteTablesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetIngressGatewayRouteTablesFilter> filters;
@@ -126,11 +109,7 @@ public final class GetIngressGatewayRouteTablesResult {
         private List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection> ingressGatewayRouteTableCollections;
         private @Nullable String name;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIngressGatewayRouteTablesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,10 +121,12 @@ public final class GetIngressGatewayRouteTablesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetIngressGatewayRouteTablesFilter> filters) {
             this.filters = filters;
             return this;
@@ -153,14 +134,17 @@ public final class GetIngressGatewayRouteTablesResult {
         public Builder filters(GetIngressGatewayRouteTablesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder ingressGatewayId(@Nullable String ingressGatewayId) {
             this.ingressGatewayId = ingressGatewayId;
             return this;
         }
+        @CustomType.Setter
         public Builder ingressGatewayRouteTableCollections(List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection> ingressGatewayRouteTableCollections) {
             this.ingressGatewayRouteTableCollections = Objects.requireNonNull(ingressGatewayRouteTableCollections);
             return this;
@@ -168,15 +152,26 @@ public final class GetIngressGatewayRouteTablesResult {
         public Builder ingressGatewayRouteTableCollections(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection... ingressGatewayRouteTableCollections) {
             return ingressGatewayRouteTableCollections(List.of(ingressGatewayRouteTableCollections));
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetIngressGatewayRouteTablesResult build() {
-            return new GetIngressGatewayRouteTablesResult(compartmentId, filters, id, ingressGatewayId, ingressGatewayRouteTableCollections, name, state);
+        }
+        public GetIngressGatewayRouteTablesResult build() {
+            final var o = new GetIngressGatewayRouteTablesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.ingressGatewayId = ingressGatewayId;
+            o.ingressGatewayRouteTableCollections = ingressGatewayRouteTableCollections;
+            o.name = name;
+            o.state = state;
+            return o;
         }
     }
 }

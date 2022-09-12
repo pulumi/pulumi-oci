@@ -9,27 +9,16 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNamespaceMetadataResult {
-    private final String defaultS3compartmentId;
-    private final String defaultSwiftCompartmentId;
+    private String defaultS3compartmentId;
+    private String defaultSwiftCompartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String namespace;
+    private String id;
+    private String namespace;
 
-    @CustomType.Constructor
-    private GetNamespaceMetadataResult(
-        @CustomType.Parameter("defaultS3compartmentId") String defaultS3compartmentId,
-        @CustomType.Parameter("defaultSwiftCompartmentId") String defaultSwiftCompartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("namespace") String namespace) {
-        this.defaultS3compartmentId = defaultS3compartmentId;
-        this.defaultSwiftCompartmentId = defaultSwiftCompartmentId;
-        this.id = id;
-        this.namespace = namespace;
-    }
-
+    private GetNamespaceMetadataResult() {}
     public String defaultS3compartmentId() {
         return this.defaultS3compartmentId;
     }
@@ -54,17 +43,13 @@ public final class GetNamespaceMetadataResult {
     public static Builder builder(GetNamespaceMetadataResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String defaultS3compartmentId;
         private String defaultSwiftCompartmentId;
         private String id;
         private String namespace;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNamespaceMetadataResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultS3compartmentId = defaults.defaultS3compartmentId;
@@ -73,23 +58,33 @@ public final class GetNamespaceMetadataResult {
     	      this.namespace = defaults.namespace;
         }
 
+        @CustomType.Setter
         public Builder defaultS3compartmentId(String defaultS3compartmentId) {
             this.defaultS3compartmentId = Objects.requireNonNull(defaultS3compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder defaultSwiftCompartmentId(String defaultSwiftCompartmentId) {
             this.defaultSwiftCompartmentId = Objects.requireNonNull(defaultSwiftCompartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
-        }        public GetNamespaceMetadataResult build() {
-            return new GetNamespaceMetadataResult(defaultS3compartmentId, defaultSwiftCompartmentId, id, namespace);
+        }
+        public GetNamespaceMetadataResult build() {
+            final var o = new GetNamespaceMetadataResult();
+            o.defaultS3compartmentId = defaultS3compartmentId;
+            o.defaultSwiftCompartmentId = defaultSwiftCompartmentId;
+            o.id = id;
+            o.namespace = namespace;
+            return o;
         }
     }
 }

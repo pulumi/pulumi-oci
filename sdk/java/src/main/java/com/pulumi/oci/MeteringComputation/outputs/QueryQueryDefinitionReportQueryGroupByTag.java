@@ -15,28 +15,19 @@ public final class QueryQueryDefinitionReportQueryGroupByTag {
      * @return (Updatable) The tag key.
      * 
      */
-    private final @Nullable String key;
+    private @Nullable String key;
     /**
      * @return (Updatable) The tag namespace.
      * 
      */
-    private final @Nullable String namespace;
+    private @Nullable String namespace;
     /**
      * @return (Updatable) The tag value.
      * 
      */
-    private final @Nullable String value;
+    private @Nullable String value;
 
-    @CustomType.Constructor
-    private QueryQueryDefinitionReportQueryGroupByTag(
-        @CustomType.Parameter("key") @Nullable String key,
-        @CustomType.Parameter("namespace") @Nullable String namespace,
-        @CustomType.Parameter("value") @Nullable String value) {
-        this.key = key;
-        this.namespace = namespace;
-        this.value = value;
-    }
-
+    private QueryQueryDefinitionReportQueryGroupByTag() {}
     /**
      * @return (Updatable) The tag key.
      * 
@@ -66,16 +57,12 @@ public final class QueryQueryDefinitionReportQueryGroupByTag {
     public static Builder builder(QueryQueryDefinitionReportQueryGroupByTag defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String key;
         private @Nullable String namespace;
         private @Nullable String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(QueryQueryDefinitionReportQueryGroupByTag defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.key = defaults.key;
@@ -83,19 +70,27 @@ public final class QueryQueryDefinitionReportQueryGroupByTag {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder key(@Nullable String key) {
             this.key = key;
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(@Nullable String namespace) {
             this.namespace = namespace;
             return this;
         }
+        @CustomType.Setter
         public Builder value(@Nullable String value) {
             this.value = value;
             return this;
-        }        public QueryQueryDefinitionReportQueryGroupByTag build() {
-            return new QueryQueryDefinitionReportQueryGroupByTag(key, namespace, value);
+        }
+        public QueryQueryDefinitionReportQueryGroupByTag build() {
+            final var o = new QueryQueryDefinitionReportQueryGroupByTag();
+            o.key = key;
+            o.namespace = namespace;
+            o.value = value;
+            return o;
         }
     }
 }

@@ -24,6 +24,9 @@ namespace Pulumi.Oci.DevOps.Inputs
             set => _events = value;
         }
 
+        [Input("exclude")]
+        public Input<Inputs.TriggerActionFilterExcludeGetArgs>? Exclude { get; set; }
+
         /// <summary>
         /// (Updatable) Attributes to filter GitLab self-hosted server events.
         /// </summary>

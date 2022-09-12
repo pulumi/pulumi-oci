@@ -15,13 +15,9 @@ public final class DeploymentDeploymentArguments {
      * @return List of arguments provided at the time of deployment.
      * 
      */
-    private final @Nullable List<DeploymentDeploymentArgumentsItem> items;
+    private @Nullable List<DeploymentDeploymentArgumentsItem> items;
 
-    @CustomType.Constructor
-    private DeploymentDeploymentArguments(@CustomType.Parameter("items") @Nullable List<DeploymentDeploymentArgumentsItem> items) {
-        this.items = items;
-    }
-
+    private DeploymentDeploymentArguments() {}
     /**
      * @return List of arguments provided at the time of deployment.
      * 
@@ -37,27 +33,27 @@ public final class DeploymentDeploymentArguments {
     public static Builder builder(DeploymentDeploymentArguments defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<DeploymentDeploymentArgumentsItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentDeploymentArguments defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(@Nullable List<DeploymentDeploymentArgumentsItem> items) {
             this.items = items;
             return this;
         }
         public Builder items(DeploymentDeploymentArgumentsItem... items) {
             return items(List.of(items));
-        }        public DeploymentDeploymentArguments build() {
-            return new DeploymentDeploymentArguments(items);
+        }
+        public DeploymentDeploymentArguments build() {
+            final var o = new DeploymentDeploymentArguments();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -13,28 +13,19 @@ public final class GetCpeDeviceShapeParameter {
      * @return A descriptive label for the question (for example, to display in a form in a graphical interface). Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return A description or explanation of the question, to help the customer answer accurately.
      * 
      */
-    private final String explanation;
+    private String explanation;
     /**
      * @return A string that identifies the question.
      * 
      */
-    private final String key;
+    private String key;
 
-    @CustomType.Constructor
-    private GetCpeDeviceShapeParameter(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("explanation") String explanation,
-        @CustomType.Parameter("key") String key) {
-        this.displayName = displayName;
-        this.explanation = explanation;
-        this.key = key;
-    }
-
+    private GetCpeDeviceShapeParameter() {}
     /**
      * @return A descriptive label for the question (for example, to display in a form in a graphical interface). Avoid entering confidential information.
      * 
@@ -64,16 +55,12 @@ public final class GetCpeDeviceShapeParameter {
     public static Builder builder(GetCpeDeviceShapeParameter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private String explanation;
         private String key;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCpeDeviceShapeParameter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
@@ -81,19 +68,27 @@ public final class GetCpeDeviceShapeParameter {
     	      this.key = defaults.key;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder explanation(String explanation) {
             this.explanation = Objects.requireNonNull(explanation);
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
-        }        public GetCpeDeviceShapeParameter build() {
-            return new GetCpeDeviceShapeParameter(displayName, explanation, key);
+        }
+        public GetCpeDeviceShapeParameter build() {
+            final var o = new GetCpeDeviceShapeParameter();
+            o.displayName = displayName;
+            o.explanation = explanation;
+            o.key = key;
+            return o;
         }
     }
 }

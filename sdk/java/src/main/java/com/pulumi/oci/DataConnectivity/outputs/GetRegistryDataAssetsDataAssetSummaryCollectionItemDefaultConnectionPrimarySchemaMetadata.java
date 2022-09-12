@@ -16,103 +16,74 @@ import java.util.Objects;
 @CustomType
 public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadata {
     /**
-     * @return A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
+     * @return A summary type containing information about the object&#39;s aggregator including its type, key, name, and description.
      * 
      */
-    private final GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregator aggregator;
+    private GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregator aggregator;
     /**
      * @return The owning object&#39;s key for this object.
      * 
      */
-    private final String aggregatorKey;
+    private String aggregatorKey;
     /**
      * @return The user that created the object.
      * 
      */
-    private final String createdBy;
+    private String createdBy;
     /**
      * @return The user that created the object.
      * 
      */
-    private final String createdByName;
+    private String createdByName;
     /**
-     * @return The full path to identify this object.
+     * @return The full path to identify the object.
      * 
      */
-    private final String identifierPath;
+    private String identifierPath;
     /**
      * @return Information property fields.
      * 
      */
-    private final Map<String,Object> infoFields;
+    private Map<String,Object> infoFields;
     /**
-     * @return Specifies whether this object is a favorite or not.
+     * @return Specifies whether the object is a favorite.
      * 
      */
-    private final Boolean isFavorite;
+    private Boolean isFavorite;
     /**
-     * @return Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      * 
      */
-    private final List<String> labels;
+    private List<String> labels;
     /**
      * @return The registry version.
      * 
      */
-    private final Integer registryVersion;
+    private Integer registryVersion;
     /**
      * @return The date and time that the object was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time that the object was updated.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return The user that updated the object.
      * 
      */
-    private final String updatedBy;
+    private String updatedBy;
     /**
      * @return The user that updated the object.
      * 
      */
-    private final String updatedByName;
+    private String updatedByName;
 
-    @CustomType.Constructor
-    private GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadata(
-        @CustomType.Parameter("aggregator") GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregator aggregator,
-        @CustomType.Parameter("aggregatorKey") String aggregatorKey,
-        @CustomType.Parameter("createdBy") String createdBy,
-        @CustomType.Parameter("createdByName") String createdByName,
-        @CustomType.Parameter("identifierPath") String identifierPath,
-        @CustomType.Parameter("infoFields") Map<String,Object> infoFields,
-        @CustomType.Parameter("isFavorite") Boolean isFavorite,
-        @CustomType.Parameter("labels") List<String> labels,
-        @CustomType.Parameter("registryVersion") Integer registryVersion,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("updatedBy") String updatedBy,
-        @CustomType.Parameter("updatedByName") String updatedByName) {
-        this.aggregator = aggregator;
-        this.aggregatorKey = aggregatorKey;
-        this.createdBy = createdBy;
-        this.createdByName = createdByName;
-        this.identifierPath = identifierPath;
-        this.infoFields = infoFields;
-        this.isFavorite = isFavorite;
-        this.labels = labels;
-        this.registryVersion = registryVersion;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.updatedBy = updatedBy;
-        this.updatedByName = updatedByName;
-    }
-
+    private GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadata() {}
     /**
-     * @return A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
+     * @return A summary type containing information about the object&#39;s aggregator including its type, key, name, and description.
      * 
      */
     public GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregator aggregator() {
@@ -140,7 +111,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultCon
         return this.createdByName;
     }
     /**
-     * @return The full path to identify this object.
+     * @return The full path to identify the object.
      * 
      */
     public String identifierPath() {
@@ -154,14 +125,14 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultCon
         return this.infoFields;
     }
     /**
-     * @return Specifies whether this object is a favorite or not.
+     * @return Specifies whether the object is a favorite.
      * 
      */
     public Boolean isFavorite() {
         return this.isFavorite;
     }
     /**
-     * @return Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      * 
      */
     public List<String> labels() {
@@ -210,7 +181,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultCon
     public static Builder builder(GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadata defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregator aggregator;
         private String aggregatorKey;
@@ -225,11 +196,7 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultCon
         private String timeUpdated;
         private String updatedBy;
         private String updatedByName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadata defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.aggregator = defaults.aggregator;
@@ -247,34 +214,42 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultCon
     	      this.updatedByName = defaults.updatedByName;
         }
 
+        @CustomType.Setter
         public Builder aggregator(GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadataAggregator aggregator) {
             this.aggregator = Objects.requireNonNull(aggregator);
             return this;
         }
+        @CustomType.Setter
         public Builder aggregatorKey(String aggregatorKey) {
             this.aggregatorKey = Objects.requireNonNull(aggregatorKey);
             return this;
         }
+        @CustomType.Setter
         public Builder createdBy(String createdBy) {
             this.createdBy = Objects.requireNonNull(createdBy);
             return this;
         }
+        @CustomType.Setter
         public Builder createdByName(String createdByName) {
             this.createdByName = Objects.requireNonNull(createdByName);
             return this;
         }
+        @CustomType.Setter
         public Builder identifierPath(String identifierPath) {
             this.identifierPath = Objects.requireNonNull(identifierPath);
             return this;
         }
+        @CustomType.Setter
         public Builder infoFields(Map<String,Object> infoFields) {
             this.infoFields = Objects.requireNonNull(infoFields);
             return this;
         }
+        @CustomType.Setter
         public Builder isFavorite(Boolean isFavorite) {
             this.isFavorite = Objects.requireNonNull(isFavorite);
             return this;
         }
+        @CustomType.Setter
         public Builder labels(List<String> labels) {
             this.labels = Objects.requireNonNull(labels);
             return this;
@@ -282,27 +257,47 @@ public final class GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultCon
         public Builder labels(String... labels) {
             return labels(List.of(labels));
         }
+        @CustomType.Setter
         public Builder registryVersion(Integer registryVersion) {
             this.registryVersion = Objects.requireNonNull(registryVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder updatedBy(String updatedBy) {
             this.updatedBy = Objects.requireNonNull(updatedBy);
             return this;
         }
+        @CustomType.Setter
         public Builder updatedByName(String updatedByName) {
             this.updatedByName = Objects.requireNonNull(updatedByName);
             return this;
-        }        public GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadata build() {
-            return new GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadata(aggregator, aggregatorKey, createdBy, createdByName, identifierPath, infoFields, isFavorite, labels, registryVersion, timeCreated, timeUpdated, updatedBy, updatedByName);
+        }
+        public GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadata build() {
+            final var o = new GetRegistryDataAssetsDataAssetSummaryCollectionItemDefaultConnectionPrimarySchemaMetadata();
+            o.aggregator = aggregator;
+            o.aggregatorKey = aggregatorKey;
+            o.createdBy = createdBy;
+            o.createdByName = createdByName;
+            o.identifierPath = identifierPath;
+            o.infoFields = infoFields;
+            o.isFavorite = isFavorite;
+            o.labels = labels;
+            o.registryVersion = registryVersion;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.updatedBy = updatedBy;
+            o.updatedByName = updatedByName;
+            return o;
         }
     }
 }

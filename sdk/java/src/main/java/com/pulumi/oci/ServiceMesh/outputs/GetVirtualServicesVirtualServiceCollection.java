@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetVirtualServicesVirtualServiceCollection {
-    private final List<GetVirtualServicesVirtualServiceCollectionItem> items;
+    private List<GetVirtualServicesVirtualServiceCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetVirtualServicesVirtualServiceCollection(@CustomType.Parameter("items") List<GetVirtualServicesVirtualServiceCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetVirtualServicesVirtualServiceCollection() {}
     public List<GetVirtualServicesVirtualServiceCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetVirtualServicesVirtualServiceCollection {
     public static Builder builder(GetVirtualServicesVirtualServiceCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetVirtualServicesVirtualServiceCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualServicesVirtualServiceCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetVirtualServicesVirtualServiceCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetVirtualServicesVirtualServiceCollectionItem... items) {
             return items(List.of(items));
-        }        public GetVirtualServicesVirtualServiceCollection build() {
-            return new GetVirtualServicesVirtualServiceCollection(items);
+        }
+        public GetVirtualServicesVirtualServiceCollection build() {
+            final var o = new GetVirtualServicesVirtualServiceCollection();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -17,31 +17,20 @@ public final class GetAvailabilityDomainsResult {
      * @return The list of availability_domains.
      * 
      */
-    private final List<GetAvailabilityDomainsAvailabilityDomain> availabilityDomains;
+    private List<GetAvailabilityDomainsAvailabilityDomain> availabilityDomains;
     /**
      * @return The OCID of the tenancy.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetAvailabilityDomainsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetAvailabilityDomainsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetAvailabilityDomainsResult(
-        @CustomType.Parameter("availabilityDomains") List<GetAvailabilityDomainsAvailabilityDomain> availabilityDomains,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetAvailabilityDomainsFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.availabilityDomains = availabilityDomains;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetAvailabilityDomainsResult() {}
     /**
      * @return The list of availability_domains.
      * 
@@ -74,17 +63,13 @@ public final class GetAvailabilityDomainsResult {
     public static Builder builder(GetAvailabilityDomainsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAvailabilityDomainsAvailabilityDomain> availabilityDomains;
         private String compartmentId;
         private @Nullable List<GetAvailabilityDomainsFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAvailabilityDomainsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomains = defaults.availabilityDomains;
@@ -93,6 +78,7 @@ public final class GetAvailabilityDomainsResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomains(List<GetAvailabilityDomainsAvailabilityDomain> availabilityDomains) {
             this.availabilityDomains = Objects.requireNonNull(availabilityDomains);
             return this;
@@ -100,10 +86,12 @@ public final class GetAvailabilityDomainsResult {
         public Builder availabilityDomains(GetAvailabilityDomainsAvailabilityDomain... availabilityDomains) {
             return availabilityDomains(List.of(availabilityDomains));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAvailabilityDomainsFilter> filters) {
             this.filters = filters;
             return this;
@@ -111,11 +99,18 @@ public final class GetAvailabilityDomainsResult {
         public Builder filters(GetAvailabilityDomainsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetAvailabilityDomainsResult build() {
-            return new GetAvailabilityDomainsResult(availabilityDomains, compartmentId, filters, id);
+        }
+        public GetAvailabilityDomainsResult build() {
+            final var o = new GetAvailabilityDomainsResult();
+            o.availabilityDomains = availabilityDomains;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

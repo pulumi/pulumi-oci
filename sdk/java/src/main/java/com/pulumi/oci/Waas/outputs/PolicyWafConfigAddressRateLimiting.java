@@ -16,35 +16,24 @@ public final class PolicyWafConfigAddressRateLimiting {
      * @return (Updatable) The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
      * 
      */
-    private final @Nullable Integer allowedRatePerAddress;
+    private @Nullable Integer allowedRatePerAddress;
     /**
      * @return (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
      * 
      */
-    private final @Nullable Integer blockResponseCode;
+    private @Nullable Integer blockResponseCode;
     /**
      * @return (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return (Updatable) The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
      * 
      */
-    private final @Nullable Integer maxDelayedCountPerAddress;
+    private @Nullable Integer maxDelayedCountPerAddress;
 
-    @CustomType.Constructor
-    private PolicyWafConfigAddressRateLimiting(
-        @CustomType.Parameter("allowedRatePerAddress") @Nullable Integer allowedRatePerAddress,
-        @CustomType.Parameter("blockResponseCode") @Nullable Integer blockResponseCode,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("maxDelayedCountPerAddress") @Nullable Integer maxDelayedCountPerAddress) {
-        this.allowedRatePerAddress = allowedRatePerAddress;
-        this.blockResponseCode = blockResponseCode;
-        this.isEnabled = isEnabled;
-        this.maxDelayedCountPerAddress = maxDelayedCountPerAddress;
-    }
-
+    private PolicyWafConfigAddressRateLimiting() {}
     /**
      * @return (Updatable) The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
      * 
@@ -81,17 +70,13 @@ public final class PolicyWafConfigAddressRateLimiting {
     public static Builder builder(PolicyWafConfigAddressRateLimiting defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer allowedRatePerAddress;
         private @Nullable Integer blockResponseCode;
         private Boolean isEnabled;
         private @Nullable Integer maxDelayedCountPerAddress;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PolicyWafConfigAddressRateLimiting defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowedRatePerAddress = defaults.allowedRatePerAddress;
@@ -100,23 +85,33 @@ public final class PolicyWafConfigAddressRateLimiting {
     	      this.maxDelayedCountPerAddress = defaults.maxDelayedCountPerAddress;
         }
 
+        @CustomType.Setter
         public Builder allowedRatePerAddress(@Nullable Integer allowedRatePerAddress) {
             this.allowedRatePerAddress = allowedRatePerAddress;
             return this;
         }
+        @CustomType.Setter
         public Builder blockResponseCode(@Nullable Integer blockResponseCode) {
             this.blockResponseCode = blockResponseCode;
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder maxDelayedCountPerAddress(@Nullable Integer maxDelayedCountPerAddress) {
             this.maxDelayedCountPerAddress = maxDelayedCountPerAddress;
             return this;
-        }        public PolicyWafConfigAddressRateLimiting build() {
-            return new PolicyWafConfigAddressRateLimiting(allowedRatePerAddress, blockResponseCode, isEnabled, maxDelayedCountPerAddress);
+        }
+        public PolicyWafConfigAddressRateLimiting build() {
+            final var o = new PolicyWafConfigAddressRateLimiting();
+            o.allowedRatePerAddress = allowedRatePerAddress;
+            o.blockResponseCode = blockResponseCode;
+            o.isEnabled = isEnabled;
+            o.maxDelayedCountPerAddress = maxDelayedCountPerAddress;
+            return o;
         }
     }
 }

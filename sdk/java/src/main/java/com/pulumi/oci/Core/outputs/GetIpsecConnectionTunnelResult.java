@@ -16,104 +16,71 @@ public final class GetIpsecConnectionTunnelResult {
      * @return Information needed to establish a BGP Session on an interface.
      * 
      */
-    private final List<GetIpsecConnectionTunnelBgpSessionInfo> bgpSessionInfos;
+    private List<GetIpsecConnectionTunnelBgpSessionInfo> bgpSessionInfos;
     /**
      * @return The OCID of the compartment containing the tunnel.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The IP address of Cpe headend.  Example: `129.146.17.50`
      * 
      */
-    private final String cpeIp;
+    private String cpeIp;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Configuration information used by the encryption domain policy.
      * 
      */
-    private final List<GetIpsecConnectionTunnelEncryptionDomainConfig> encryptionDomainConfigs;
+    private List<GetIpsecConnectionTunnelEncryptionDomainConfig> encryptionDomainConfigs;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Internet Key Exchange protocol version.
      * 
      */
-    private final String ikeVersion;
-    private final String ipsecId;
+    private String ikeVersion;
+    private String ipsecId;
     /**
      * @return the routing strategy used for this tunnel, either static route or BGP dynamic routing
      * 
      */
-    private final String routing;
+    private String routing;
     /**
      * @return The IPSec connection&#39;s tunnel&#39;s lifecycle state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The tunnel&#39;s current state.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeStatusUpdated;
-    private final String tunnelId;
+    private String timeStatusUpdated;
+    private String tunnelId;
     /**
      * @return The IP address of Oracle&#39;s VPN headend.  Example: `129.146.17.50`
      * 
      */
-    private final String vpnIp;
+    private String vpnIp;
 
-    @CustomType.Constructor
-    private GetIpsecConnectionTunnelResult(
-        @CustomType.Parameter("bgpSessionInfos") List<GetIpsecConnectionTunnelBgpSessionInfo> bgpSessionInfos,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("cpeIp") String cpeIp,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("encryptionDomainConfigs") List<GetIpsecConnectionTunnelEncryptionDomainConfig> encryptionDomainConfigs,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ikeVersion") String ikeVersion,
-        @CustomType.Parameter("ipsecId") String ipsecId,
-        @CustomType.Parameter("routing") String routing,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeStatusUpdated") String timeStatusUpdated,
-        @CustomType.Parameter("tunnelId") String tunnelId,
-        @CustomType.Parameter("vpnIp") String vpnIp) {
-        this.bgpSessionInfos = bgpSessionInfos;
-        this.compartmentId = compartmentId;
-        this.cpeIp = cpeIp;
-        this.displayName = displayName;
-        this.encryptionDomainConfigs = encryptionDomainConfigs;
-        this.id = id;
-        this.ikeVersion = ikeVersion;
-        this.ipsecId = ipsecId;
-        this.routing = routing;
-        this.state = state;
-        this.status = status;
-        this.timeCreated = timeCreated;
-        this.timeStatusUpdated = timeStatusUpdated;
-        this.tunnelId = tunnelId;
-        this.vpnIp = vpnIp;
-    }
-
+    private GetIpsecConnectionTunnelResult() {}
     /**
      * @return Information needed to establish a BGP Session on an interface.
      * 
@@ -219,7 +186,7 @@ public final class GetIpsecConnectionTunnelResult {
     public static Builder builder(GetIpsecConnectionTunnelResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetIpsecConnectionTunnelBgpSessionInfo> bgpSessionInfos;
         private String compartmentId;
@@ -236,11 +203,7 @@ public final class GetIpsecConnectionTunnelResult {
         private String timeStatusUpdated;
         private String tunnelId;
         private String vpnIp;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIpsecConnectionTunnelResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bgpSessionInfos = defaults.bgpSessionInfos;
@@ -260,6 +223,7 @@ public final class GetIpsecConnectionTunnelResult {
     	      this.vpnIp = defaults.vpnIp;
         }
 
+        @CustomType.Setter
         public Builder bgpSessionInfos(List<GetIpsecConnectionTunnelBgpSessionInfo> bgpSessionInfos) {
             this.bgpSessionInfos = Objects.requireNonNull(bgpSessionInfos);
             return this;
@@ -267,18 +231,22 @@ public final class GetIpsecConnectionTunnelResult {
         public Builder bgpSessionInfos(GetIpsecConnectionTunnelBgpSessionInfo... bgpSessionInfos) {
             return bgpSessionInfos(List.of(bgpSessionInfos));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder cpeIp(String cpeIp) {
             this.cpeIp = Objects.requireNonNull(cpeIp);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder encryptionDomainConfigs(List<GetIpsecConnectionTunnelEncryptionDomainConfig> encryptionDomainConfigs) {
             this.encryptionDomainConfigs = Objects.requireNonNull(encryptionDomainConfigs);
             return this;
@@ -286,47 +254,74 @@ public final class GetIpsecConnectionTunnelResult {
         public Builder encryptionDomainConfigs(GetIpsecConnectionTunnelEncryptionDomainConfig... encryptionDomainConfigs) {
             return encryptionDomainConfigs(List.of(encryptionDomainConfigs));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ikeVersion(String ikeVersion) {
             this.ikeVersion = Objects.requireNonNull(ikeVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder ipsecId(String ipsecId) {
             this.ipsecId = Objects.requireNonNull(ipsecId);
             return this;
         }
+        @CustomType.Setter
         public Builder routing(String routing) {
             this.routing = Objects.requireNonNull(routing);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStatusUpdated(String timeStatusUpdated) {
             this.timeStatusUpdated = Objects.requireNonNull(timeStatusUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder tunnelId(String tunnelId) {
             this.tunnelId = Objects.requireNonNull(tunnelId);
             return this;
         }
+        @CustomType.Setter
         public Builder vpnIp(String vpnIp) {
             this.vpnIp = Objects.requireNonNull(vpnIp);
             return this;
-        }        public GetIpsecConnectionTunnelResult build() {
-            return new GetIpsecConnectionTunnelResult(bgpSessionInfos, compartmentId, cpeIp, displayName, encryptionDomainConfigs, id, ikeVersion, ipsecId, routing, state, status, timeCreated, timeStatusUpdated, tunnelId, vpnIp);
+        }
+        public GetIpsecConnectionTunnelResult build() {
+            final var o = new GetIpsecConnectionTunnelResult();
+            o.bgpSessionInfos = bgpSessionInfos;
+            o.compartmentId = compartmentId;
+            o.cpeIp = cpeIp;
+            o.displayName = displayName;
+            o.encryptionDomainConfigs = encryptionDomainConfigs;
+            o.id = id;
+            o.ikeVersion = ikeVersion;
+            o.ipsecId = ipsecId;
+            o.routing = routing;
+            o.state = state;
+            o.status = status;
+            o.timeCreated = timeCreated;
+            o.timeStatusUpdated = timeStatusUpdated;
+            o.tunnelId = tunnelId;
+            o.vpnIp = vpnIp;
+            return o;
         }
     }
 }

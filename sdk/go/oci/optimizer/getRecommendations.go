@@ -12,7 +12,7 @@ import (
 
 // This data source provides the list of Recommendations in Oracle Cloud Infrastructure Optimizer service.
 //
-// Lists the Cloud Advisor recommendations that are currently supported in the specified category.
+// Lists the Cloud Advisor recommendations that are currently supported.
 //
 // ## Example Usage
 //
@@ -29,9 +29,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Optimizer.GetRecommendations(ctx, &optimizer.GetRecommendationsArgs{
-//				CategoryId:             oci_optimizer_category.Test_category.Id,
 //				CompartmentId:          _var.Compartment_id,
 //				CompartmentIdInSubtree: _var.Recommendation_compartment_id_in_subtree,
+//				CategoryId:             pulumi.StringRef(oci_optimizer_category.Test_category.Id),
+//				CategoryName:           pulumi.StringRef(oci_optimizer_category.Test_category.Name),
+//				ChildTenancyIds:        _var.Recommendation_child_tenancy_ids,
+//				IncludeOrganization:    pulumi.BoolRef(_var.Recommendation_include_organization),
 //				Name:                   pulumi.StringRef(_var.Recommendation_name),
 //				State:                  pulumi.StringRef(_var.Recommendation_state),
 //				Status:                 pulumi.StringRef(_var.Recommendation_status),
@@ -56,12 +59,18 @@ func GetRecommendations(ctx *pulumi.Context, args *GetRecommendationsArgs, opts 
 // A collection of arguments for invoking getRecommendations.
 type GetRecommendationsArgs struct {
 	// The unique OCID associated with the category.
-	CategoryId string `pulumi:"categoryId"`
+	CategoryId *string `pulumi:"categoryId"`
+	// Optional. A filter that returns results that match the category name specified.
+	CategoryName *string `pulumi:"categoryName"`
+	// A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+	ChildTenancyIds []string `pulumi:"childTenancyIds"`
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
 	CompartmentIdInSubtree bool                       `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetRecommendationsFilter `pulumi:"filters"`
+	// When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+	IncludeOrganization *bool `pulumi:"includeOrganization"`
 	// Optional. A filter that returns results that match the name specified.
 	Name *string `pulumi:"name"`
 	// A filter that returns results that match the lifecycle state specified.
@@ -73,13 +82,16 @@ type GetRecommendationsArgs struct {
 // A collection of values returned by getRecommendations.
 type GetRecommendationsResult struct {
 	// The unique OCID associated with the category.
-	CategoryId string `pulumi:"categoryId"`
+	CategoryId      *string  `pulumi:"categoryId"`
+	CategoryName    *string  `pulumi:"categoryName"`
+	ChildTenancyIds []string `pulumi:"childTenancyIds"`
 	// The OCID of the tenancy. The tenancy is the root compartment.
 	CompartmentId          string                     `pulumi:"compartmentId"`
 	CompartmentIdInSubtree bool                       `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetRecommendationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id                  string `pulumi:"id"`
+	IncludeOrganization *bool  `pulumi:"includeOrganization"`
 	// The name of the profile level.
 	Name *string `pulumi:"name"`
 	// The list of recommendation_collection.
@@ -106,12 +118,18 @@ func GetRecommendationsOutput(ctx *pulumi.Context, args GetRecommendationsOutput
 // A collection of arguments for invoking getRecommendations.
 type GetRecommendationsOutputArgs struct {
 	// The unique OCID associated with the category.
-	CategoryId pulumi.StringInput `pulumi:"categoryId"`
+	CategoryId pulumi.StringPtrInput `pulumi:"categoryId"`
+	// Optional. A filter that returns results that match the category name specified.
+	CategoryName pulumi.StringPtrInput `pulumi:"categoryName"`
+	// A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+	ChildTenancyIds pulumi.StringArrayInput `pulumi:"childTenancyIds"`
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
 	CompartmentIdInSubtree pulumi.BoolInput                   `pulumi:"compartmentIdInSubtree"`
 	Filters                GetRecommendationsFilterArrayInput `pulumi:"filters"`
+	// When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+	IncludeOrganization pulumi.BoolPtrInput `pulumi:"includeOrganization"`
 	// Optional. A filter that returns results that match the name specified.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A filter that returns results that match the lifecycle state specified.
@@ -140,8 +158,16 @@ func (o GetRecommendationsResultOutput) ToGetRecommendationsResultOutputWithCont
 }
 
 // The unique OCID associated with the category.
-func (o GetRecommendationsResultOutput) CategoryId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationsResult) string { return v.CategoryId }).(pulumi.StringOutput)
+func (o GetRecommendationsResultOutput) CategoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsResult) *string { return v.CategoryId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetRecommendationsResultOutput) CategoryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsResult) *string { return v.CategoryName }).(pulumi.StringPtrOutput)
+}
+
+func (o GetRecommendationsResultOutput) ChildTenancyIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRecommendationsResult) []string { return v.ChildTenancyIds }).(pulumi.StringArrayOutput)
 }
 
 // The OCID of the tenancy. The tenancy is the root compartment.
@@ -160,6 +186,10 @@ func (o GetRecommendationsResultOutput) Filters() GetRecommendationsFilterArrayO
 // The provider-assigned unique ID for this managed resource.
 func (o GetRecommendationsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecommendationsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetRecommendationsResultOutput) IncludeOrganization() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsResult) *bool { return v.IncludeOrganization }).(pulumi.BoolPtrOutput)
 }
 
 // The name of the profile level.

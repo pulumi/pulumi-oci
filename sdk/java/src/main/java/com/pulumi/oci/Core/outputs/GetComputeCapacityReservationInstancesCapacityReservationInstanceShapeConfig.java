@@ -13,21 +13,14 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
      * @return The total amount of memory available to the instance, in gigabytes.
      * 
      */
-    private final Double memoryInGbs;
+    private Double memoryInGbs;
     /**
      * @return The total number of OCPUs available to the instance.
      * 
      */
-    private final Double ocpus;
+    private Double ocpus;
 
-    @CustomType.Constructor
-    private GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig(
-        @CustomType.Parameter("memoryInGbs") Double memoryInGbs,
-        @CustomType.Parameter("ocpus") Double ocpus) {
-        this.memoryInGbs = memoryInGbs;
-        this.ocpus = ocpus;
-    }
-
+    private GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig() {}
     /**
      * @return The total amount of memory available to the instance, in gigabytes.
      * 
@@ -50,30 +43,32 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
     public static Builder builder(GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double memoryInGbs;
         private Double ocpus;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.ocpus = defaults.ocpus;
         }
 
+        @CustomType.Setter
         public Builder memoryInGbs(Double memoryInGbs) {
             this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder ocpus(Double ocpus) {
             this.ocpus = Objects.requireNonNull(ocpus);
             return this;
-        }        public GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig build() {
-            return new GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig(memoryInGbs, ocpus);
+        }
+        public GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig build() {
+            final var o = new GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfig();
+            o.memoryInGbs = memoryInGbs;
+            o.ocpus = ocpus;
+            return o;
         }
     }
 }

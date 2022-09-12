@@ -17,56 +17,39 @@ public final class AccessPolicyRuleDestination {
      * @return (Updatable) The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are &#34;www.example.com&#34;, &#34;*.example.com&#34;, &#34;*.com&#34;, &#34;*&#34;. Hostname &#34;*&#34; can be used to allow all hosts.
      * 
      */
-    private final @Nullable List<String> hostnames;
+    private @Nullable List<String> hostnames;
     /**
      * @return (Updatable) The OCID of the ingress gateway resource.
      * 
      */
-    private final @Nullable String ingressGatewayId;
+    private @Nullable String ingressGatewayId;
     /**
      * @return (Updatable) The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR &#34;0.0.0.0/0&#34; is provided, the same port cannot be used for a virtual service communication.
      * 
      */
-    private final @Nullable List<String> ipAddresses;
+    private @Nullable List<String> ipAddresses;
     /**
      * @return (Updatable) Ports exposed by an external service. If left empty all ports will be allowed.
      * 
      */
-    private final @Nullable List<Integer> ports;
+    private @Nullable List<Integer> ports;
     /**
      * @return (Updatable) Protocol of the external service
      * 
      */
-    private final @Nullable String protocol;
+    private @Nullable String protocol;
     /**
      * @return (Updatable) Traffic type of the target.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return (Updatable) The OCID of the virtual service resource.
      * 
      */
-    private final @Nullable String virtualServiceId;
+    private @Nullable String virtualServiceId;
 
-    @CustomType.Constructor
-    private AccessPolicyRuleDestination(
-        @CustomType.Parameter("hostnames") @Nullable List<String> hostnames,
-        @CustomType.Parameter("ingressGatewayId") @Nullable String ingressGatewayId,
-        @CustomType.Parameter("ipAddresses") @Nullable List<String> ipAddresses,
-        @CustomType.Parameter("ports") @Nullable List<Integer> ports,
-        @CustomType.Parameter("protocol") @Nullable String protocol,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("virtualServiceId") @Nullable String virtualServiceId) {
-        this.hostnames = hostnames;
-        this.ingressGatewayId = ingressGatewayId;
-        this.ipAddresses = ipAddresses;
-        this.ports = ports;
-        this.protocol = protocol;
-        this.type = type;
-        this.virtualServiceId = virtualServiceId;
-    }
-
+    private AccessPolicyRuleDestination() {}
     /**
      * @return (Updatable) The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are &#34;www.example.com&#34;, &#34;*.example.com&#34;, &#34;*.com&#34;, &#34;*&#34;. Hostname &#34;*&#34; can be used to allow all hosts.
      * 
@@ -124,7 +107,7 @@ public final class AccessPolicyRuleDestination {
     public static Builder builder(AccessPolicyRuleDestination defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> hostnames;
         private @Nullable String ingressGatewayId;
@@ -133,11 +116,7 @@ public final class AccessPolicyRuleDestination {
         private @Nullable String protocol;
         private String type;
         private @Nullable String virtualServiceId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AccessPolicyRuleDestination defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.hostnames = defaults.hostnames;
@@ -149,6 +128,7 @@ public final class AccessPolicyRuleDestination {
     	      this.virtualServiceId = defaults.virtualServiceId;
         }
 
+        @CustomType.Setter
         public Builder hostnames(@Nullable List<String> hostnames) {
             this.hostnames = hostnames;
             return this;
@@ -156,10 +136,12 @@ public final class AccessPolicyRuleDestination {
         public Builder hostnames(String... hostnames) {
             return hostnames(List.of(hostnames));
         }
+        @CustomType.Setter
         public Builder ingressGatewayId(@Nullable String ingressGatewayId) {
             this.ingressGatewayId = ingressGatewayId;
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddresses(@Nullable List<String> ipAddresses) {
             this.ipAddresses = ipAddresses;
             return this;
@@ -167,6 +149,7 @@ public final class AccessPolicyRuleDestination {
         public Builder ipAddresses(String... ipAddresses) {
             return ipAddresses(List.of(ipAddresses));
         }
+        @CustomType.Setter
         public Builder ports(@Nullable List<Integer> ports) {
             this.ports = ports;
             return this;
@@ -174,19 +157,31 @@ public final class AccessPolicyRuleDestination {
         public Builder ports(Integer... ports) {
             return ports(List.of(ports));
         }
+        @CustomType.Setter
         public Builder protocol(@Nullable String protocol) {
             this.protocol = protocol;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder virtualServiceId(@Nullable String virtualServiceId) {
             this.virtualServiceId = virtualServiceId;
             return this;
-        }        public AccessPolicyRuleDestination build() {
-            return new AccessPolicyRuleDestination(hostnames, ingressGatewayId, ipAddresses, ports, protocol, type, virtualServiceId);
+        }
+        public AccessPolicyRuleDestination build() {
+            final var o = new AccessPolicyRuleDestination();
+            o.hostnames = hostnames;
+            o.ingressGatewayId = ingressGatewayId;
+            o.ipAddresses = ipAddresses;
+            o.ports = ports;
+            o.protocol = protocol;
+            o.type = type;
+            o.virtualServiceId = virtualServiceId;
+            return o;
         }
     }
 }

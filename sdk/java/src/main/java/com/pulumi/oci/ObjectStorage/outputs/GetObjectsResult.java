@@ -14,52 +14,27 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetObjectsResult {
-    private final String bucket;
-    private final @Nullable String delimiter;
-    private final @Nullable String end;
-    private final @Nullable List<GetObjectsFilter> filters;
+    private String bucket;
+    private @Nullable String delimiter;
+    private @Nullable String end;
+    private @Nullable List<GetObjectsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String namespace;
+    private String id;
+    private String namespace;
     /**
      * @return The list of list_objects.
      * 
      */
-    private final List<GetObjectsObject> objects;
-    private final @Nullable String prefix;
-    private final List<String> prefixes;
-    private final @Nullable String start;
-    private final @Nullable String startAfter;
+    private List<GetObjectsObject> objects;
+    private @Nullable String prefix;
+    private List<String> prefixes;
+    private @Nullable String start;
+    private @Nullable String startAfter;
 
-    @CustomType.Constructor
-    private GetObjectsResult(
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("delimiter") @Nullable String delimiter,
-        @CustomType.Parameter("end") @Nullable String end,
-        @CustomType.Parameter("filters") @Nullable List<GetObjectsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("objects") List<GetObjectsObject> objects,
-        @CustomType.Parameter("prefix") @Nullable String prefix,
-        @CustomType.Parameter("prefixes") List<String> prefixes,
-        @CustomType.Parameter("start") @Nullable String start,
-        @CustomType.Parameter("startAfter") @Nullable String startAfter) {
-        this.bucket = bucket;
-        this.delimiter = delimiter;
-        this.end = end;
-        this.filters = filters;
-        this.id = id;
-        this.namespace = namespace;
-        this.objects = objects;
-        this.prefix = prefix;
-        this.prefixes = prefixes;
-        this.start = start;
-        this.startAfter = startAfter;
-    }
-
+    private GetObjectsResult() {}
     public String bucket() {
         return this.bucket;
     }
@@ -109,7 +84,7 @@ public final class GetObjectsResult {
     public static Builder builder(GetObjectsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bucket;
         private @Nullable String delimiter;
@@ -122,11 +97,7 @@ public final class GetObjectsResult {
         private List<String> prefixes;
         private @Nullable String start;
         private @Nullable String startAfter;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetObjectsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -142,18 +113,22 @@ public final class GetObjectsResult {
     	      this.startAfter = defaults.startAfter;
         }
 
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder delimiter(@Nullable String delimiter) {
             this.delimiter = delimiter;
             return this;
         }
+        @CustomType.Setter
         public Builder end(@Nullable String end) {
             this.end = end;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetObjectsFilter> filters) {
             this.filters = filters;
             return this;
@@ -161,14 +136,17 @@ public final class GetObjectsResult {
         public Builder filters(GetObjectsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder objects(List<GetObjectsObject> objects) {
             this.objects = Objects.requireNonNull(objects);
             return this;
@@ -176,10 +154,12 @@ public final class GetObjectsResult {
         public Builder objects(GetObjectsObject... objects) {
             return objects(List.of(objects));
         }
+        @CustomType.Setter
         public Builder prefix(@Nullable String prefix) {
             this.prefix = prefix;
             return this;
         }
+        @CustomType.Setter
         public Builder prefixes(List<String> prefixes) {
             this.prefixes = Objects.requireNonNull(prefixes);
             return this;
@@ -187,15 +167,30 @@ public final class GetObjectsResult {
         public Builder prefixes(String... prefixes) {
             return prefixes(List.of(prefixes));
         }
+        @CustomType.Setter
         public Builder start(@Nullable String start) {
             this.start = start;
             return this;
         }
+        @CustomType.Setter
         public Builder startAfter(@Nullable String startAfter) {
             this.startAfter = startAfter;
             return this;
-        }        public GetObjectsResult build() {
-            return new GetObjectsResult(bucket, delimiter, end, filters, id, namespace, objects, prefix, prefixes, start, startAfter);
+        }
+        public GetObjectsResult build() {
+            final var o = new GetObjectsResult();
+            o.bucket = bucket;
+            o.delimiter = delimiter;
+            o.end = end;
+            o.filters = filters;
+            o.id = id;
+            o.namespace = namespace;
+            o.objects = objects;
+            o.prefix = prefix;
+            o.prefixes = prefixes;
+            o.start = start;
+            o.startAfter = startAfter;
+            return o;
         }
     }
 }

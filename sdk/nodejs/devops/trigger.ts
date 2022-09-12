@@ -87,6 +87,7 @@ export class Trigger extends pulumi.CustomResource {
      * The OCID of the compartment that contains the trigger.
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public readonly connectionId!: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -155,6 +156,7 @@ export class Trigger extends pulumi.CustomResource {
             const state = argsOrState as TriggerState | undefined;
             resourceInputs["actions"] = state ? state.actions : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["connectionId"] = state ? state.connectionId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
@@ -180,6 +182,7 @@ export class Trigger extends pulumi.CustomResource {
                 throw new Error("Missing required property 'triggerSource'");
             }
             resourceInputs["actions"] = args ? args.actions : undefined;
+            resourceInputs["connectionId"] = args ? args.connectionId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
@@ -212,6 +215,7 @@ export interface TriggerState {
      * The OCID of the compartment that contains the trigger.
      */
     compartmentId?: pulumi.Input<string>;
+    connectionId?: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -274,6 +278,7 @@ export interface TriggerArgs {
      * (Updatable) The list of actions that are to be performed for this trigger.
      */
     actions: pulumi.Input<pulumi.Input<inputs.DevOps.TriggerAction>[]>;
+    connectionId?: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */

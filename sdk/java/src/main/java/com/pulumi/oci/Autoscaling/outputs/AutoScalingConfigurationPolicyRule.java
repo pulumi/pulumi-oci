@@ -17,35 +17,24 @@ public final class AutoScalingConfigurationPolicyRule {
      * @return The action to take when autoscaling is triggered.
      * 
      */
-    private final @Nullable AutoScalingConfigurationPolicyRuleAction action;
+    private @Nullable AutoScalingConfigurationPolicyRuleAction action;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return Metric and threshold details for triggering an autoscaling action.
      * 
      */
-    private final @Nullable AutoScalingConfigurationPolicyRuleMetric metric;
+    private @Nullable AutoScalingConfigurationPolicyRuleMetric metric;
 
-    @CustomType.Constructor
-    private AutoScalingConfigurationPolicyRule(
-        @CustomType.Parameter("action") @Nullable AutoScalingConfigurationPolicyRuleAction action,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("metric") @Nullable AutoScalingConfigurationPolicyRuleMetric metric) {
-        this.action = action;
-        this.displayName = displayName;
-        this.id = id;
-        this.metric = metric;
-    }
-
+    private AutoScalingConfigurationPolicyRule() {}
     /**
      * @return The action to take when autoscaling is triggered.
      * 
@@ -82,17 +71,13 @@ public final class AutoScalingConfigurationPolicyRule {
     public static Builder builder(AutoScalingConfigurationPolicyRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable AutoScalingConfigurationPolicyRuleAction action;
         private String displayName;
         private @Nullable String id;
         private @Nullable AutoScalingConfigurationPolicyRuleMetric metric;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutoScalingConfigurationPolicyRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -101,23 +86,33 @@ public final class AutoScalingConfigurationPolicyRule {
     	      this.metric = defaults.metric;
         }
 
+        @CustomType.Setter
         public Builder action(@Nullable AutoScalingConfigurationPolicyRuleAction action) {
             this.action = action;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder metric(@Nullable AutoScalingConfigurationPolicyRuleMetric metric) {
             this.metric = metric;
             return this;
-        }        public AutoScalingConfigurationPolicyRule build() {
-            return new AutoScalingConfigurationPolicyRule(action, displayName, id, metric);
+        }
+        public AutoScalingConfigurationPolicyRule build() {
+            final var o = new AutoScalingConfigurationPolicyRule();
+            o.action = action;
+            o.displayName = displayName;
+            o.id = id;
+            o.metric = metric;
+            return o;
         }
     }
 }

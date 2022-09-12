@@ -13,13 +13,9 @@ public final class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookS
      * @return The repository URL
      * 
      */
-    private final String url;
+    private String url;
 
-    @CustomType.Constructor
-    private GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection(@CustomType.Parameter("url") String url) {
-        this.url = url;
-    }
-
+    private GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection() {}
     /**
      * @return The repository URL
      * 
@@ -35,24 +31,24 @@ public final class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookS
     public static Builder builder(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String url;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
         public Builder url(String url) {
             this.url = Objects.requireNonNull(url);
             return this;
-        }        public GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection build() {
-            return new GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection(url);
+        }
+        public GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection build() {
+            final var o = new GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollection();
+            o.url = url;
+            return o;
         }
     }
 }

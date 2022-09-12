@@ -16,28 +16,19 @@ public final class CrossConnectGroupMacsecProperties {
      * @return Type of encryption cipher suite to use for the MACsec connection.
      * 
      */
-    private final @Nullable String encryptionCipher;
+    private @Nullable String encryptionCipher;
     /**
      * @return An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
      * 
      */
-    private final @Nullable CrossConnectGroupMacsecPropertiesPrimaryKey primaryKey;
+    private @Nullable CrossConnectGroupMacsecPropertiesPrimaryKey primaryKey;
     /**
      * @return The cross-connect group&#39;s current state.
      * 
      */
-    private final String state;
+    private String state;
 
-    @CustomType.Constructor
-    private CrossConnectGroupMacsecProperties(
-        @CustomType.Parameter("encryptionCipher") @Nullable String encryptionCipher,
-        @CustomType.Parameter("primaryKey") @Nullable CrossConnectGroupMacsecPropertiesPrimaryKey primaryKey,
-        @CustomType.Parameter("state") String state) {
-        this.encryptionCipher = encryptionCipher;
-        this.primaryKey = primaryKey;
-        this.state = state;
-    }
-
+    private CrossConnectGroupMacsecProperties() {}
     /**
      * @return Type of encryption cipher suite to use for the MACsec connection.
      * 
@@ -67,16 +58,12 @@ public final class CrossConnectGroupMacsecProperties {
     public static Builder builder(CrossConnectGroupMacsecProperties defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String encryptionCipher;
         private @Nullable CrossConnectGroupMacsecPropertiesPrimaryKey primaryKey;
         private String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CrossConnectGroupMacsecProperties defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.encryptionCipher = defaults.encryptionCipher;
@@ -84,19 +71,27 @@ public final class CrossConnectGroupMacsecProperties {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder encryptionCipher(@Nullable String encryptionCipher) {
             this.encryptionCipher = encryptionCipher;
             return this;
         }
+        @CustomType.Setter
         public Builder primaryKey(@Nullable CrossConnectGroupMacsecPropertiesPrimaryKey primaryKey) {
             this.primaryKey = primaryKey;
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
-        }        public CrossConnectGroupMacsecProperties build() {
-            return new CrossConnectGroupMacsecProperties(encryptionCipher, primaryKey, state);
+        }
+        public CrossConnectGroupMacsecProperties build() {
+            final var o = new CrossConnectGroupMacsecProperties();
+            o.encryptionCipher = encryptionCipher;
+            o.primaryKey = primaryKey;
+            o.state = state;
+            return o;
         }
     }
 }

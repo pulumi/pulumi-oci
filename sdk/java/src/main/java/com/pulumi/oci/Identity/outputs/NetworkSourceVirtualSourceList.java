@@ -10,17 +10,10 @@ import java.util.Objects;
 
 @CustomType
 public final class NetworkSourceVirtualSourceList {
-    private final List<String> ipRanges;
-    private final String vcnId;
+    private List<String> ipRanges;
+    private String vcnId;
 
-    @CustomType.Constructor
-    private NetworkSourceVirtualSourceList(
-        @CustomType.Parameter("ipRanges") List<String> ipRanges,
-        @CustomType.Parameter("vcnId") String vcnId) {
-        this.ipRanges = ipRanges;
-        this.vcnId = vcnId;
-    }
-
+    private NetworkSourceVirtualSourceList() {}
     public List<String> ipRanges() {
         return this.ipRanges;
     }
@@ -35,21 +28,18 @@ public final class NetworkSourceVirtualSourceList {
     public static Builder builder(NetworkSourceVirtualSourceList defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> ipRanges;
         private String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NetworkSourceVirtualSourceList defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ipRanges = defaults.ipRanges;
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder ipRanges(List<String> ipRanges) {
             this.ipRanges = Objects.requireNonNull(ipRanges);
             return this;
@@ -57,11 +47,16 @@ public final class NetworkSourceVirtualSourceList {
         public Builder ipRanges(String... ipRanges) {
             return ipRanges(List.of(ipRanges));
         }
+        @CustomType.Setter
         public Builder vcnId(String vcnId) {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
-        }        public NetworkSourceVirtualSourceList build() {
-            return new NetworkSourceVirtualSourceList(ipRanges, vcnId);
+        }
+        public NetworkSourceVirtualSourceList build() {
+            final var o = new NetworkSourceVirtualSourceList();
+            o.ipRanges = ipRanges;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

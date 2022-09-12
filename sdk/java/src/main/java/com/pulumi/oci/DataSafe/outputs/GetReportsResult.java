@@ -15,62 +15,41 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetReportsResult {
-    private final @Nullable String accessLevel;
+    private @Nullable String accessLevel;
     /**
      * @return The OCID of the compartment containing the report.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return Name of the report.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetReportsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetReportsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of report_collection.
      * 
      */
-    private final List<GetReportsReportCollection> reportCollections;
+    private List<GetReportsReportCollection> reportCollections;
     /**
      * @return The OCID of the report definition.
      * 
      */
-    private final @Nullable String reportDefinitionId;
+    private @Nullable String reportDefinitionId;
     /**
      * @return The current state of the report.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetReportsResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetReportsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("reportCollections") List<GetReportsReportCollection> reportCollections,
-        @CustomType.Parameter("reportDefinitionId") @Nullable String reportDefinitionId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.accessLevel = accessLevel;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.reportCollections = reportCollections;
-        this.reportDefinitionId = reportDefinitionId;
-        this.state = state;
-    }
-
+    private GetReportsResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -130,7 +109,7 @@ public final class GetReportsResult {
     public static Builder builder(GetReportsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private String compartmentId;
@@ -141,11 +120,7 @@ public final class GetReportsResult {
         private List<GetReportsReportCollection> reportCollections;
         private @Nullable String reportDefinitionId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetReportsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -159,22 +134,27 @@ public final class GetReportsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetReportsFilter> filters) {
             this.filters = filters;
             return this;
@@ -182,10 +162,12 @@ public final class GetReportsResult {
         public Builder filters(GetReportsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder reportCollections(List<GetReportsReportCollection> reportCollections) {
             this.reportCollections = Objects.requireNonNull(reportCollections);
             return this;
@@ -193,15 +175,28 @@ public final class GetReportsResult {
         public Builder reportCollections(GetReportsReportCollection... reportCollections) {
             return reportCollections(List.of(reportCollections));
         }
+        @CustomType.Setter
         public Builder reportDefinitionId(@Nullable String reportDefinitionId) {
             this.reportDefinitionId = reportDefinitionId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetReportsResult build() {
-            return new GetReportsResult(accessLevel, compartmentId, compartmentIdInSubtree, displayName, filters, id, reportCollections, reportDefinitionId, state);
+        }
+        public GetReportsResult build() {
+            final var o = new GetReportsResult();
+            o.accessLevel = accessLevel;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.reportCollections = reportCollections;
+            o.reportDefinitionId = reportDefinitionId;
+            o.state = state;
+            return o;
         }
     }
 }

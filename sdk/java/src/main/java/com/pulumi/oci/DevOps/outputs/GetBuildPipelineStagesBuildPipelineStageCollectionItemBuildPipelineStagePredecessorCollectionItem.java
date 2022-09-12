@@ -13,13 +13,9 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPi
      * @return Unique identifier or OCID for listing a single resource by ID.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItem(@CustomType.Parameter("id") String id) {
-        this.id = id;
-    }
-
+    private GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItem() {}
     /**
      * @return Unique identifier or OCID for listing a single resource by ID.
      * 
@@ -35,24 +31,24 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPi
     public static Builder builder(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItem build() {
-            return new GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItem(id);
+        }
+        public GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItem build() {
+            final var o = new GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItem();
+            o.id = id;
+            return o;
         }
     }
 }

@@ -14,76 +14,51 @@ public final class GetDbSystemsUpgradeHistoryEntryResult {
      * @return The operating system upgrade action.
      * 
      */
-    private final String action;
-    private final String dbSystemId;
+    private String action;
+    private String dbSystemId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return A valid Oracle Grid Infrastructure (GI) software version.
      * 
      */
-    private final String newGiVersion;
+    private String newGiVersion;
     /**
      * @return A valid Oracle Grid Infrastructure (GI) software version.
      * 
      */
-    private final String oldGiVersion;
+    private String oldGiVersion;
     /**
      * @return The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
      * 
      */
-    private final Integer snapshotRetentionPeriodInDays;
+    private Integer snapshotRetentionPeriodInDays;
     /**
      * @return The current state of the action.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time when the upgrade action completed
      * 
      */
-    private final String timeEnded;
+    private String timeEnded;
     /**
      * @return The date and time when the upgrade action started.
      * 
      */
-    private final String timeStarted;
-    private final String upgradeHistoryEntryId;
+    private String timeStarted;
+    private String upgradeHistoryEntryId;
 
-    @CustomType.Constructor
-    private GetDbSystemsUpgradeHistoryEntryResult(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("dbSystemId") String dbSystemId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("newGiVersion") String newGiVersion,
-        @CustomType.Parameter("oldGiVersion") String oldGiVersion,
-        @CustomType.Parameter("snapshotRetentionPeriodInDays") Integer snapshotRetentionPeriodInDays,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeEnded") String timeEnded,
-        @CustomType.Parameter("timeStarted") String timeStarted,
-        @CustomType.Parameter("upgradeHistoryEntryId") String upgradeHistoryEntryId) {
-        this.action = action;
-        this.dbSystemId = dbSystemId;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.newGiVersion = newGiVersion;
-        this.oldGiVersion = oldGiVersion;
-        this.snapshotRetentionPeriodInDays = snapshotRetentionPeriodInDays;
-        this.state = state;
-        this.timeEnded = timeEnded;
-        this.timeStarted = timeStarted;
-        this.upgradeHistoryEntryId = upgradeHistoryEntryId;
-    }
-
+    private GetDbSystemsUpgradeHistoryEntryResult() {}
     /**
      * @return The operating system upgrade action.
      * 
@@ -161,7 +136,7 @@ public final class GetDbSystemsUpgradeHistoryEntryResult {
     public static Builder builder(GetDbSystemsUpgradeHistoryEntryResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private String dbSystemId;
@@ -174,11 +149,7 @@ public final class GetDbSystemsUpgradeHistoryEntryResult {
         private String timeEnded;
         private String timeStarted;
         private String upgradeHistoryEntryId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbSystemsUpgradeHistoryEntryResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -194,51 +165,75 @@ public final class GetDbSystemsUpgradeHistoryEntryResult {
     	      this.upgradeHistoryEntryId = defaults.upgradeHistoryEntryId;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = Objects.requireNonNull(dbSystemId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder newGiVersion(String newGiVersion) {
             this.newGiVersion = Objects.requireNonNull(newGiVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder oldGiVersion(String oldGiVersion) {
             this.oldGiVersion = Objects.requireNonNull(oldGiVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder snapshotRetentionPeriodInDays(Integer snapshotRetentionPeriodInDays) {
             this.snapshotRetentionPeriodInDays = Objects.requireNonNull(snapshotRetentionPeriodInDays);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
             this.timeEnded = Objects.requireNonNull(timeEnded);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
             this.timeStarted = Objects.requireNonNull(timeStarted);
             return this;
         }
+        @CustomType.Setter
         public Builder upgradeHistoryEntryId(String upgradeHistoryEntryId) {
             this.upgradeHistoryEntryId = Objects.requireNonNull(upgradeHistoryEntryId);
             return this;
-        }        public GetDbSystemsUpgradeHistoryEntryResult build() {
-            return new GetDbSystemsUpgradeHistoryEntryResult(action, dbSystemId, id, lifecycleDetails, newGiVersion, oldGiVersion, snapshotRetentionPeriodInDays, state, timeEnded, timeStarted, upgradeHistoryEntryId);
+        }
+        public GetDbSystemsUpgradeHistoryEntryResult build() {
+            final var o = new GetDbSystemsUpgradeHistoryEntryResult();
+            o.action = action;
+            o.dbSystemId = dbSystemId;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.newGiVersion = newGiVersion;
+            o.oldGiVersion = oldGiVersion;
+            o.snapshotRetentionPeriodInDays = snapshotRetentionPeriodInDays;
+            o.state = state;
+            o.timeEnded = timeEnded;
+            o.timeStarted = timeStarted;
+            o.upgradeHistoryEntryId = upgradeHistoryEntryId;
+            return o;
         }
     }
 }

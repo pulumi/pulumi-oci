@@ -18,59 +18,40 @@ public final class GetCertificateAuthoritiesResult {
      * @return The list of certificate_authority_collection.
      * 
      */
-    private final List<GetCertificateAuthoritiesCertificateAuthorityCollection> certificateAuthorityCollections;
+    private List<GetCertificateAuthoritiesCertificateAuthorityCollection> certificateAuthorityCollections;
     /**
      * @return The OCID of the CA.
      * 
      */
-    private final @Nullable String certificateAuthorityId;
+    private @Nullable String certificateAuthorityId;
     /**
      * @return The OCID of the compartment under which the CA is created.
      * 
      */
-    private final @Nullable String compartmentId;
-    private final @Nullable List<GetCertificateAuthoritiesFilter> filters;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetCertificateAuthoritiesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
      * 
      */
-    private final @Nullable String issuerCertificateAuthorityId;
+    private @Nullable String issuerCertificateAuthorityId;
     /**
      * @return A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The current lifecycle state of the certificate authority.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetCertificateAuthoritiesResult(
-        @CustomType.Parameter("certificateAuthorityCollections") List<GetCertificateAuthoritiesCertificateAuthorityCollection> certificateAuthorityCollections,
-        @CustomType.Parameter("certificateAuthorityId") @Nullable String certificateAuthorityId,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetCertificateAuthoritiesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("issuerCertificateAuthorityId") @Nullable String issuerCertificateAuthorityId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.certificateAuthorityCollections = certificateAuthorityCollections;
-        this.certificateAuthorityId = certificateAuthorityId;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
-        this.name = name;
-        this.state = state;
-    }
-
+    private GetCertificateAuthoritiesResult() {}
     /**
      * @return The list of certificate_authority_collection.
      * 
@@ -131,7 +112,7 @@ public final class GetCertificateAuthoritiesResult {
     public static Builder builder(GetCertificateAuthoritiesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetCertificateAuthoritiesCertificateAuthorityCollection> certificateAuthorityCollections;
         private @Nullable String certificateAuthorityId;
@@ -141,11 +122,7 @@ public final class GetCertificateAuthoritiesResult {
         private @Nullable String issuerCertificateAuthorityId;
         private @Nullable String name;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificateAuthoritiesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateAuthorityCollections = defaults.certificateAuthorityCollections;
@@ -158,6 +135,7 @@ public final class GetCertificateAuthoritiesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder certificateAuthorityCollections(List<GetCertificateAuthoritiesCertificateAuthorityCollection> certificateAuthorityCollections) {
             this.certificateAuthorityCollections = Objects.requireNonNull(certificateAuthorityCollections);
             return this;
@@ -165,14 +143,17 @@ public final class GetCertificateAuthoritiesResult {
         public Builder certificateAuthorityCollections(GetCertificateAuthoritiesCertificateAuthorityCollection... certificateAuthorityCollections) {
             return certificateAuthorityCollections(List.of(certificateAuthorityCollections));
         }
+        @CustomType.Setter
         public Builder certificateAuthorityId(@Nullable String certificateAuthorityId) {
             this.certificateAuthorityId = certificateAuthorityId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetCertificateAuthoritiesFilter> filters) {
             this.filters = filters;
             return this;
@@ -180,23 +161,37 @@ public final class GetCertificateAuthoritiesResult {
         public Builder filters(GetCertificateAuthoritiesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder issuerCertificateAuthorityId(@Nullable String issuerCertificateAuthorityId) {
             this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetCertificateAuthoritiesResult build() {
-            return new GetCertificateAuthoritiesResult(certificateAuthorityCollections, certificateAuthorityId, compartmentId, filters, id, issuerCertificateAuthorityId, name, state);
+        }
+        public GetCertificateAuthoritiesResult build() {
+            final var o = new GetCertificateAuthoritiesResult();
+            o.certificateAuthorityCollections = certificateAuthorityCollections;
+            o.certificateAuthorityId = certificateAuthorityId;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
+            o.name = name;
+            o.state = state;
+            return o;
         }
     }
 }

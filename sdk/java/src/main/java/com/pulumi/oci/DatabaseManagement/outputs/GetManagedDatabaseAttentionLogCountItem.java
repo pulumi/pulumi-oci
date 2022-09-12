@@ -14,21 +14,14 @@ public final class GetManagedDatabaseAttentionLogCountItem {
      * @return The category of different attention logs.
      * 
      */
-    private final String category;
+    private String category;
     /**
      * @return The count of attention logs with specific category.
      * 
      */
-    private final Integer count;
+    private Integer count;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseAttentionLogCountItem(
-        @CustomType.Parameter("category") String category,
-        @CustomType.Parameter("count") Integer count) {
-        this.category = category;
-        this.count = count;
-    }
-
+    private GetManagedDatabaseAttentionLogCountItem() {}
     /**
      * @return The category of different attention logs.
      * 
@@ -51,30 +44,32 @@ public final class GetManagedDatabaseAttentionLogCountItem {
     public static Builder builder(GetManagedDatabaseAttentionLogCountItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String category;
         private Integer count;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseAttentionLogCountItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.category = defaults.category;
     	      this.count = defaults.count;
         }
 
+        @CustomType.Setter
         public Builder category(String category) {
             this.category = Objects.requireNonNull(category);
             return this;
         }
+        @CustomType.Setter
         public Builder count(Integer count) {
             this.count = Objects.requireNonNull(count);
             return this;
-        }        public GetManagedDatabaseAttentionLogCountItem build() {
-            return new GetManagedDatabaseAttentionLogCountItem(category, count);
+        }
+        public GetManagedDatabaseAttentionLogCountItem build() {
+            final var o = new GetManagedDatabaseAttentionLogCountItem();
+            o.category = category;
+            o.count = count;
+            return o;
         }
     }
 }

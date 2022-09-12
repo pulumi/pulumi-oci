@@ -13,63 +13,44 @@ public final class GetInvoicesInvoiceBillToContact {
      * @return Email.
      * 
      */
-    private final String email;
+    private String email;
     /**
      * @return First name.
      * 
      */
-    private final String firstName;
+    private String firstName;
     /**
      * @return Last name.
      * 
      */
-    private final String lastName;
+    private String lastName;
     /**
      * @return Payment Term name
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return TCA contact ID.
      * 
      */
-    private final String tcaContactId;
+    private String tcaContactId;
     /**
      * @return TCA customer account site ID.
      * 
      */
-    private final String tcaCustAccntSiteId;
+    private String tcaCustAccntSiteId;
     /**
      * @return TCA party ID.
      * 
      */
-    private final String tcaPartyId;
+    private String tcaPartyId;
     /**
      * @return userName.
      * 
      */
-    private final String userName;
+    private String userName;
 
-    @CustomType.Constructor
-    private GetInvoicesInvoiceBillToContact(
-        @CustomType.Parameter("email") String email,
-        @CustomType.Parameter("firstName") String firstName,
-        @CustomType.Parameter("lastName") String lastName,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("tcaContactId") String tcaContactId,
-        @CustomType.Parameter("tcaCustAccntSiteId") String tcaCustAccntSiteId,
-        @CustomType.Parameter("tcaPartyId") String tcaPartyId,
-        @CustomType.Parameter("userName") String userName) {
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.name = name;
-        this.tcaContactId = tcaContactId;
-        this.tcaCustAccntSiteId = tcaCustAccntSiteId;
-        this.tcaPartyId = tcaPartyId;
-        this.userName = userName;
-    }
-
+    private GetInvoicesInvoiceBillToContact() {}
     /**
      * @return Email.
      * 
@@ -134,7 +115,7 @@ public final class GetInvoicesInvoiceBillToContact {
     public static Builder builder(GetInvoicesInvoiceBillToContact defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String email;
         private String firstName;
@@ -144,11 +125,7 @@ public final class GetInvoicesInvoiceBillToContact {
         private String tcaCustAccntSiteId;
         private String tcaPartyId;
         private String userName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvoicesInvoiceBillToContact defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.email = defaults.email;
@@ -161,39 +138,57 @@ public final class GetInvoicesInvoiceBillToContact {
     	      this.userName = defaults.userName;
         }
 
+        @CustomType.Setter
         public Builder email(String email) {
             this.email = Objects.requireNonNull(email);
             return this;
         }
+        @CustomType.Setter
         public Builder firstName(String firstName) {
             this.firstName = Objects.requireNonNull(firstName);
             return this;
         }
+        @CustomType.Setter
         public Builder lastName(String lastName) {
             this.lastName = Objects.requireNonNull(lastName);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder tcaContactId(String tcaContactId) {
             this.tcaContactId = Objects.requireNonNull(tcaContactId);
             return this;
         }
+        @CustomType.Setter
         public Builder tcaCustAccntSiteId(String tcaCustAccntSiteId) {
             this.tcaCustAccntSiteId = Objects.requireNonNull(tcaCustAccntSiteId);
             return this;
         }
+        @CustomType.Setter
         public Builder tcaPartyId(String tcaPartyId) {
             this.tcaPartyId = Objects.requireNonNull(tcaPartyId);
             return this;
         }
+        @CustomType.Setter
         public Builder userName(String userName) {
             this.userName = Objects.requireNonNull(userName);
             return this;
-        }        public GetInvoicesInvoiceBillToContact build() {
-            return new GetInvoicesInvoiceBillToContact(email, firstName, lastName, name, tcaContactId, tcaCustAccntSiteId, tcaPartyId, userName);
+        }
+        public GetInvoicesInvoiceBillToContact build() {
+            final var o = new GetInvoicesInvoiceBillToContact();
+            o.email = email;
+            o.firstName = firstName;
+            o.lastName = lastName;
+            o.name = name;
+            o.tcaContactId = tcaContactId;
+            o.tcaCustAccntSiteId = tcaCustAccntSiteId;
+            o.tcaPartyId = tcaPartyId;
+            o.userName = userName;
+            return o;
         }
     }
 }

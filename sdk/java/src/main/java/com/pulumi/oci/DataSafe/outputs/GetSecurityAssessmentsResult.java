@@ -15,91 +15,56 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecurityAssessmentsResult {
-    private final @Nullable String accessLevel;
+    private @Nullable String accessLevel;
     /**
      * @return The OCID of the compartment that contains the security assessment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The display name of the security assessment.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetSecurityAssessmentsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetSecurityAssessmentsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
      * 
      */
-    private final @Nullable Boolean isBaseline;
-    private final @Nullable Boolean isScheduleAssessment;
-    private final @Nullable String scheduleAssessmentId;
+    private @Nullable Boolean isBaseline;
+    private @Nullable Boolean isScheduleAssessment;
+    private @Nullable String scheduleAssessmentId;
     /**
      * @return The list of security_assessments.
      * 
      */
-    private final List<GetSecurityAssessmentsSecurityAssessment> securityAssessments;
+    private List<GetSecurityAssessmentsSecurityAssessment> securityAssessments;
     /**
      * @return The current state of the security assessment.
      * 
      */
-    private final @Nullable String state;
-    private final @Nullable String targetId;
-    private final @Nullable String timeCreatedGreaterThanOrEqualTo;
-    private final @Nullable String timeCreatedLessThan;
+    private @Nullable String state;
+    private @Nullable String targetId;
+    private @Nullable String timeCreatedGreaterThanOrEqualTo;
+    private @Nullable String timeCreatedLessThan;
     /**
      * @return Indicates whether the security assessment was created by system or by a user.
      * 
      */
-    private final @Nullable String triggeredBy;
+    private @Nullable String triggeredBy;
     /**
      * @return The type of this security assessment. The possible types are:
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private GetSecurityAssessmentsResult(
-        @CustomType.Parameter("accessLevel") @Nullable String accessLevel,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetSecurityAssessmentsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isBaseline") @Nullable Boolean isBaseline,
-        @CustomType.Parameter("isScheduleAssessment") @Nullable Boolean isScheduleAssessment,
-        @CustomType.Parameter("scheduleAssessmentId") @Nullable String scheduleAssessmentId,
-        @CustomType.Parameter("securityAssessments") List<GetSecurityAssessmentsSecurityAssessment> securityAssessments,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("targetId") @Nullable String targetId,
-        @CustomType.Parameter("timeCreatedGreaterThanOrEqualTo") @Nullable String timeCreatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeCreatedLessThan") @Nullable String timeCreatedLessThan,
-        @CustomType.Parameter("triggeredBy") @Nullable String triggeredBy,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.accessLevel = accessLevel;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.isBaseline = isBaseline;
-        this.isScheduleAssessment = isScheduleAssessment;
-        this.scheduleAssessmentId = scheduleAssessmentId;
-        this.securityAssessments = securityAssessments;
-        this.state = state;
-        this.targetId = targetId;
-        this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-        this.timeCreatedLessThan = timeCreatedLessThan;
-        this.triggeredBy = triggeredBy;
-        this.type = type;
-    }
-
+    private GetSecurityAssessmentsResult() {}
     public Optional<String> accessLevel() {
         return Optional.ofNullable(this.accessLevel);
     }
@@ -188,7 +153,7 @@ public final class GetSecurityAssessmentsResult {
     public static Builder builder(GetSecurityAssessmentsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
         private String compartmentId;
@@ -206,11 +171,7 @@ public final class GetSecurityAssessmentsResult {
         private @Nullable String timeCreatedLessThan;
         private @Nullable String triggeredBy;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityAssessmentsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
@@ -231,22 +192,27 @@ public final class GetSecurityAssessmentsResult {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
             this.accessLevel = accessLevel;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSecurityAssessmentsFilter> filters) {
             this.filters = filters;
             return this;
@@ -254,22 +220,27 @@ public final class GetSecurityAssessmentsResult {
         public Builder filters(GetSecurityAssessmentsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isBaseline(@Nullable Boolean isBaseline) {
             this.isBaseline = isBaseline;
             return this;
         }
+        @CustomType.Setter
         public Builder isScheduleAssessment(@Nullable Boolean isScheduleAssessment) {
             this.isScheduleAssessment = isScheduleAssessment;
             return this;
         }
+        @CustomType.Setter
         public Builder scheduleAssessmentId(@Nullable String scheduleAssessmentId) {
             this.scheduleAssessmentId = scheduleAssessmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder securityAssessments(List<GetSecurityAssessmentsSecurityAssessment> securityAssessments) {
             this.securityAssessments = Objects.requireNonNull(securityAssessments);
             return this;
@@ -277,31 +248,55 @@ public final class GetSecurityAssessmentsResult {
         public Builder securityAssessments(GetSecurityAssessmentsSecurityAssessment... securityAssessments) {
             return securityAssessments(List.of(securityAssessments));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
             this.targetId = targetId;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }
+        @CustomType.Setter
         public Builder triggeredBy(@Nullable String triggeredBy) {
             this.triggeredBy = triggeredBy;
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public GetSecurityAssessmentsResult build() {
-            return new GetSecurityAssessmentsResult(accessLevel, compartmentId, compartmentIdInSubtree, displayName, filters, id, isBaseline, isScheduleAssessment, scheduleAssessmentId, securityAssessments, state, targetId, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, triggeredBy, type);
+        }
+        public GetSecurityAssessmentsResult build() {
+            final var o = new GetSecurityAssessmentsResult();
+            o.accessLevel = accessLevel;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.isBaseline = isBaseline;
+            o.isScheduleAssessment = isScheduleAssessment;
+            o.scheduleAssessmentId = scheduleAssessmentId;
+            o.securityAssessments = securityAssessments;
+            o.state = state;
+            o.targetId = targetId;
+            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            o.timeCreatedLessThan = timeCreatedLessThan;
+            o.triggeredBy = triggeredBy;
+            o.type = type;
+            return o;
         }
     }
 }

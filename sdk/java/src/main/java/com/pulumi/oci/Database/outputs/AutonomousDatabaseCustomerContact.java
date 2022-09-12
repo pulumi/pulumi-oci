@@ -15,13 +15,9 @@ public final class AutonomousDatabaseCustomerContact {
      * @return (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
      * 
      */
-    private final @Nullable String email;
+    private @Nullable String email;
 
-    @CustomType.Constructor
-    private AutonomousDatabaseCustomerContact(@CustomType.Parameter("email") @Nullable String email) {
-        this.email = email;
-    }
-
+    private AutonomousDatabaseCustomerContact() {}
     /**
      * @return (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
      * 
@@ -37,24 +33,24 @@ public final class AutonomousDatabaseCustomerContact {
     public static Builder builder(AutonomousDatabaseCustomerContact defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String email;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutonomousDatabaseCustomerContact defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.email = defaults.email;
         }
 
+        @CustomType.Setter
         public Builder email(@Nullable String email) {
             this.email = email;
             return this;
-        }        public AutonomousDatabaseCustomerContact build() {
-            return new AutonomousDatabaseCustomerContact(email);
+        }
+        public AutonomousDatabaseCustomerContact build() {
+            final var o = new AutonomousDatabaseCustomerContact();
+            o.email = email;
+            return o;
         }
     }
 }

@@ -16,21 +16,14 @@ public final class MigrationGoldenGateDetailsSettingsExtract {
      * @return (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
      * 
      */
-    private final @Nullable Integer longTransDuration;
+    private @Nullable Integer longTransDuration;
     /**
      * @return (Updatable) Extract performance.
      * 
      */
-    private final @Nullable String performanceProfile;
+    private @Nullable String performanceProfile;
 
-    @CustomType.Constructor
-    private MigrationGoldenGateDetailsSettingsExtract(
-        @CustomType.Parameter("longTransDuration") @Nullable Integer longTransDuration,
-        @CustomType.Parameter("performanceProfile") @Nullable String performanceProfile) {
-        this.longTransDuration = longTransDuration;
-        this.performanceProfile = performanceProfile;
-    }
-
+    private MigrationGoldenGateDetailsSettingsExtract() {}
     /**
      * @return (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
      * 
@@ -53,30 +46,32 @@ public final class MigrationGoldenGateDetailsSettingsExtract {
     public static Builder builder(MigrationGoldenGateDetailsSettingsExtract defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer longTransDuration;
         private @Nullable String performanceProfile;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MigrationGoldenGateDetailsSettingsExtract defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.longTransDuration = defaults.longTransDuration;
     	      this.performanceProfile = defaults.performanceProfile;
         }
 
+        @CustomType.Setter
         public Builder longTransDuration(@Nullable Integer longTransDuration) {
             this.longTransDuration = longTransDuration;
             return this;
         }
+        @CustomType.Setter
         public Builder performanceProfile(@Nullable String performanceProfile) {
             this.performanceProfile = performanceProfile;
             return this;
-        }        public MigrationGoldenGateDetailsSettingsExtract build() {
-            return new MigrationGoldenGateDetailsSettingsExtract(longTransDuration, performanceProfile);
+        }
+        public MigrationGoldenGateDetailsSettingsExtract build() {
+            final var o = new MigrationGoldenGateDetailsSettingsExtract();
+            o.longTransDuration = longTransDuration;
+            o.performanceProfile = performanceProfile;
+            return o;
         }
     }
 }

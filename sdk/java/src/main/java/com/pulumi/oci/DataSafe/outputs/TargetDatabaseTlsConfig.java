@@ -15,42 +15,29 @@ public final class TargetDatabaseTlsConfig {
      * @return (Updatable) The format of the certificate store.
      * 
      */
-    private final @Nullable String certificateStoreType;
+    private @Nullable String certificateStoreType;
     /**
      * @return (Updatable) Base64 encoded string of key store file content.
      * 
      */
-    private final @Nullable String keyStoreContent;
+    private @Nullable String keyStoreContent;
     /**
      * @return (Updatable) Status to represent whether the database connection is TLS enabled or not.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return (Updatable) The password to read the trust store and key store files, if they are password protected.
      * 
      */
-    private final @Nullable String storePassword;
+    private @Nullable String storePassword;
     /**
      * @return (Updatable) Base64 encoded string of trust store file content.
      * 
      */
-    private final @Nullable String trustStoreContent;
+    private @Nullable String trustStoreContent;
 
-    @CustomType.Constructor
-    private TargetDatabaseTlsConfig(
-        @CustomType.Parameter("certificateStoreType") @Nullable String certificateStoreType,
-        @CustomType.Parameter("keyStoreContent") @Nullable String keyStoreContent,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("storePassword") @Nullable String storePassword,
-        @CustomType.Parameter("trustStoreContent") @Nullable String trustStoreContent) {
-        this.certificateStoreType = certificateStoreType;
-        this.keyStoreContent = keyStoreContent;
-        this.status = status;
-        this.storePassword = storePassword;
-        this.trustStoreContent = trustStoreContent;
-    }
-
+    private TargetDatabaseTlsConfig() {}
     /**
      * @return (Updatable) The format of the certificate store.
      * 
@@ -94,18 +81,14 @@ public final class TargetDatabaseTlsConfig {
     public static Builder builder(TargetDatabaseTlsConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String certificateStoreType;
         private @Nullable String keyStoreContent;
         private String status;
         private @Nullable String storePassword;
         private @Nullable String trustStoreContent;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(TargetDatabaseTlsConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateStoreType = defaults.certificateStoreType;
@@ -115,27 +98,39 @@ public final class TargetDatabaseTlsConfig {
     	      this.trustStoreContent = defaults.trustStoreContent;
         }
 
+        @CustomType.Setter
         public Builder certificateStoreType(@Nullable String certificateStoreType) {
             this.certificateStoreType = certificateStoreType;
             return this;
         }
+        @CustomType.Setter
         public Builder keyStoreContent(@Nullable String keyStoreContent) {
             this.keyStoreContent = keyStoreContent;
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder storePassword(@Nullable String storePassword) {
             this.storePassword = storePassword;
             return this;
         }
+        @CustomType.Setter
         public Builder trustStoreContent(@Nullable String trustStoreContent) {
             this.trustStoreContent = trustStoreContent;
             return this;
-        }        public TargetDatabaseTlsConfig build() {
-            return new TargetDatabaseTlsConfig(certificateStoreType, keyStoreContent, status, storePassword, trustStoreContent);
+        }
+        public TargetDatabaseTlsConfig build() {
+            final var o = new TargetDatabaseTlsConfig();
+            o.certificateStoreType = certificateStoreType;
+            o.keyStoreContent = keyStoreContent;
+            o.status = status;
+            o.storePassword = storePassword;
+            o.trustStoreContent = trustStoreContent;
+            return o;
         }
     }
 }

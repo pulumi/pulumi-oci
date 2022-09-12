@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetRepositoriesRepositoryCollection {
-    private final List<GetRepositoriesRepositoryCollectionItem> items;
+    private List<GetRepositoriesRepositoryCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetRepositoriesRepositoryCollection(@CustomType.Parameter("items") List<GetRepositoriesRepositoryCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetRepositoriesRepositoryCollection() {}
     public List<GetRepositoriesRepositoryCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetRepositoriesRepositoryCollection {
     public static Builder builder(GetRepositoriesRepositoryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetRepositoriesRepositoryCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRepositoriesRepositoryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetRepositoriesRepositoryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetRepositoriesRepositoryCollectionItem... items) {
             return items(List.of(items));
-        }        public GetRepositoriesRepositoryCollection build() {
-            return new GetRepositoriesRepositoryCollection(items);
+        }
+        public GetRepositoriesRepositoryCollection build() {
+            final var o = new GetRepositoriesRepositoryCollection();
+            o.items = items;
+            return o;
         }
     }
 }

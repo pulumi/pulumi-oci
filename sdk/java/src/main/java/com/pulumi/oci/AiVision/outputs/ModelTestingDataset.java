@@ -15,42 +15,29 @@ public final class ModelTestingDataset {
      * @return The name of the ObjectStorage bucket that contains the input data file.
      * 
      */
-    private final @Nullable String bucket;
+    private @Nullable String bucket;
     /**
      * @return The OCID of the Data Science Labeling Dataset.
      * 
      */
-    private final @Nullable String datasetId;
+    private @Nullable String datasetId;
     /**
      * @return Type of the Dataset.
      * 
      */
-    private final String datasetType;
+    private String datasetType;
     /**
      * @return The namespace name of the ObjectStorage bucket that contains the input data file.
      * 
      */
-    private final @Nullable String namespaceName;
+    private @Nullable String namespaceName;
     /**
      * @return The object name of the input data file.
      * 
      */
-    private final @Nullable String object;
+    private @Nullable String object;
 
-    @CustomType.Constructor
-    private ModelTestingDataset(
-        @CustomType.Parameter("bucket") @Nullable String bucket,
-        @CustomType.Parameter("datasetId") @Nullable String datasetId,
-        @CustomType.Parameter("datasetType") String datasetType,
-        @CustomType.Parameter("namespaceName") @Nullable String namespaceName,
-        @CustomType.Parameter("object") @Nullable String object) {
-        this.bucket = bucket;
-        this.datasetId = datasetId;
-        this.datasetType = datasetType;
-        this.namespaceName = namespaceName;
-        this.object = object;
-    }
-
+    private ModelTestingDataset() {}
     /**
      * @return The name of the ObjectStorage bucket that contains the input data file.
      * 
@@ -94,18 +81,14 @@ public final class ModelTestingDataset {
     public static Builder builder(ModelTestingDataset defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String bucket;
         private @Nullable String datasetId;
         private String datasetType;
         private @Nullable String namespaceName;
         private @Nullable String object;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ModelTestingDataset defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -115,27 +98,39 @@ public final class ModelTestingDataset {
     	      this.object = defaults.object;
         }
 
+        @CustomType.Setter
         public Builder bucket(@Nullable String bucket) {
             this.bucket = bucket;
             return this;
         }
+        @CustomType.Setter
         public Builder datasetId(@Nullable String datasetId) {
             this.datasetId = datasetId;
             return this;
         }
+        @CustomType.Setter
         public Builder datasetType(String datasetType) {
             this.datasetType = Objects.requireNonNull(datasetType);
             return this;
         }
+        @CustomType.Setter
         public Builder namespaceName(@Nullable String namespaceName) {
             this.namespaceName = namespaceName;
             return this;
         }
+        @CustomType.Setter
         public Builder object(@Nullable String object) {
             this.object = object;
             return this;
-        }        public ModelTestingDataset build() {
-            return new ModelTestingDataset(bucket, datasetId, datasetType, namespaceName, object);
+        }
+        public ModelTestingDataset build() {
+            final var o = new ModelTestingDataset();
+            o.bucket = bucket;
+            o.datasetId = datasetId;
+            o.datasetType = datasetType;
+            o.namespaceName = namespaceName;
+            o.object = object;
+            return o;
         }
     }
 }

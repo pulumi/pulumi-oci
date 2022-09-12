@@ -17,108 +17,75 @@ public final class GetPrivateEndpointResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Description of the private endpoint. Avoid entering confidential information.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
      * 
      */
-    private final List<String> dnsZones;
+    private List<String> dnsZones;
     /**
      * @return Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return When `true`, allows the private endpoint to be used with a configuration source provider.
      * 
      */
-    private final Boolean isUsedWithConfigurationSourceProvider;
+    private Boolean isUsedWithConfigurationSourceProvider;
     /**
      * @return An array of network security groups (NSG) that the customer can optionally provide.
      * 
      */
-    private final List<String> nsgIdLists;
-    private final String privateEndpointId;
+    private List<String> nsgIdLists;
+    private String privateEndpointId;
     /**
      * @return The source IPs which resource manager service will use to connect to customer&#39;s network. Automatically assigned by Resource Manager Service.
      * 
      */
-    private final List<String> sourceIps;
+    private List<String> sourceIps;
     /**
      * @return The current lifecycle state of the private endpoint.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
      * 
      */
-    private final String vcnId;
+    private String vcnId;
 
-    @CustomType.Constructor
-    private GetPrivateEndpointResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("dnsZones") List<String> dnsZones,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isUsedWithConfigurationSourceProvider") Boolean isUsedWithConfigurationSourceProvider,
-        @CustomType.Parameter("nsgIdLists") List<String> nsgIdLists,
-        @CustomType.Parameter("privateEndpointId") String privateEndpointId,
-        @CustomType.Parameter("sourceIps") List<String> sourceIps,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("vcnId") String vcnId) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.dnsZones = dnsZones;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isUsedWithConfigurationSourceProvider = isUsedWithConfigurationSourceProvider;
-        this.nsgIdLists = nsgIdLists;
-        this.privateEndpointId = privateEndpointId;
-        this.sourceIps = sourceIps;
-        this.state = state;
-        this.subnetId = subnetId;
-        this.timeCreated = timeCreated;
-        this.vcnId = vcnId;
-    }
-
+    private GetPrivateEndpointResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
      * 
@@ -228,7 +195,7 @@ public final class GetPrivateEndpointResult {
     public static Builder builder(GetPrivateEndpointResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -245,11 +212,7 @@ public final class GetPrivateEndpointResult {
         private String subnetId;
         private String timeCreated;
         private String vcnId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPrivateEndpointResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -269,22 +232,27 @@ public final class GetPrivateEndpointResult {
     	      this.vcnId = defaults.vcnId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder dnsZones(List<String> dnsZones) {
             this.dnsZones = Objects.requireNonNull(dnsZones);
             return this;
@@ -292,18 +260,22 @@ public final class GetPrivateEndpointResult {
         public Builder dnsZones(String... dnsZones) {
             return dnsZones(List.of(dnsZones));
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isUsedWithConfigurationSourceProvider(Boolean isUsedWithConfigurationSourceProvider) {
             this.isUsedWithConfigurationSourceProvider = Objects.requireNonNull(isUsedWithConfigurationSourceProvider);
             return this;
         }
+        @CustomType.Setter
         public Builder nsgIdLists(List<String> nsgIdLists) {
             this.nsgIdLists = Objects.requireNonNull(nsgIdLists);
             return this;
@@ -311,10 +283,12 @@ public final class GetPrivateEndpointResult {
         public Builder nsgIdLists(String... nsgIdLists) {
             return nsgIdLists(List.of(nsgIdLists));
         }
+        @CustomType.Setter
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceIps(List<String> sourceIps) {
             this.sourceIps = Objects.requireNonNull(sourceIps);
             return this;
@@ -322,23 +296,44 @@ public final class GetPrivateEndpointResult {
         public Builder sourceIps(String... sourceIps) {
             return sourceIps(List.of(sourceIps));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder vcnId(String vcnId) {
             this.vcnId = Objects.requireNonNull(vcnId);
             return this;
-        }        public GetPrivateEndpointResult build() {
-            return new GetPrivateEndpointResult(compartmentId, definedTags, description, displayName, dnsZones, freeformTags, id, isUsedWithConfigurationSourceProvider, nsgIdLists, privateEndpointId, sourceIps, state, subnetId, timeCreated, vcnId);
+        }
+        public GetPrivateEndpointResult build() {
+            final var o = new GetPrivateEndpointResult();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.dnsZones = dnsZones;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isUsedWithConfigurationSourceProvider = isUsedWithConfigurationSourceProvider;
+            o.nsgIdLists = nsgIdLists;
+            o.privateEndpointId = privateEndpointId;
+            o.sourceIps = sourceIps;
+            o.state = state;
+            o.subnetId = subnetId;
+            o.timeCreated = timeCreated;
+            o.vcnId = vcnId;
+            return o;
         }
     }
 }

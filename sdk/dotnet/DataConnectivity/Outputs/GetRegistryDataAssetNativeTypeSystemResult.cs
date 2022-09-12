@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
     public sealed class GetRegistryDataAssetNativeTypeSystemResult
     {
         /// <summary>
-        /// A user defined description for the object.
+        /// A user-defined description for the object.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        /// Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         /// </summary>
         public readonly string Identifier;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// The property which disciminates the subtypes.
+        /// The property which differentiates the subtypes.
         /// </summary>
         public readonly string ModelType;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string ModelVersion;
         /// <summary>
-        /// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         public readonly string Name;
         /// <summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly int ObjectVersion;
         /// <summary>
-        /// A reference to the object's parent.
+        /// A reference to the parent object.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRegistryDataAssetNativeTypeSystemParentRefResult> ParentReves;
         /// <summary>

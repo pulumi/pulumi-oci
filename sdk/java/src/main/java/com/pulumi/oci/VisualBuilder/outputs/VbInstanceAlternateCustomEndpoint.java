@@ -16,28 +16,19 @@ public final class VbInstanceAlternateCustomEndpoint {
      * @return (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
      * 
      */
-    private final @Nullable String certificateSecretId;
+    private @Nullable String certificateSecretId;
     /**
      * @return The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
      * 
      */
-    private final @Nullable Integer certificateSecretVersion;
+    private @Nullable Integer certificateSecretVersion;
     /**
      * @return (Updatable) A custom hostname to be used for the vb instance URL, in FQDN format.
      * 
      */
-    private final String hostname;
+    private String hostname;
 
-    @CustomType.Constructor
-    private VbInstanceAlternateCustomEndpoint(
-        @CustomType.Parameter("certificateSecretId") @Nullable String certificateSecretId,
-        @CustomType.Parameter("certificateSecretVersion") @Nullable Integer certificateSecretVersion,
-        @CustomType.Parameter("hostname") String hostname) {
-        this.certificateSecretId = certificateSecretId;
-        this.certificateSecretVersion = certificateSecretVersion;
-        this.hostname = hostname;
-    }
-
+    private VbInstanceAlternateCustomEndpoint() {}
     /**
      * @return (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
      * 
@@ -67,16 +58,12 @@ public final class VbInstanceAlternateCustomEndpoint {
     public static Builder builder(VbInstanceAlternateCustomEndpoint defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String certificateSecretId;
         private @Nullable Integer certificateSecretVersion;
         private String hostname;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(VbInstanceAlternateCustomEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateSecretId = defaults.certificateSecretId;
@@ -84,19 +71,27 @@ public final class VbInstanceAlternateCustomEndpoint {
     	      this.hostname = defaults.hostname;
         }
 
+        @CustomType.Setter
         public Builder certificateSecretId(@Nullable String certificateSecretId) {
             this.certificateSecretId = certificateSecretId;
             return this;
         }
+        @CustomType.Setter
         public Builder certificateSecretVersion(@Nullable Integer certificateSecretVersion) {
             this.certificateSecretVersion = certificateSecretVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
             return this;
-        }        public VbInstanceAlternateCustomEndpoint build() {
-            return new VbInstanceAlternateCustomEndpoint(certificateSecretId, certificateSecretVersion, hostname);
+        }
+        public VbInstanceAlternateCustomEndpoint build() {
+            final var o = new VbInstanceAlternateCustomEndpoint();
+            o.certificateSecretId = certificateSecretId;
+            o.certificateSecretVersion = certificateSecretVersion;
+            o.hostname = hostname;
+            return o;
         }
     }
 }

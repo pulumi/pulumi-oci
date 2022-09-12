@@ -13,28 +13,19 @@ public final class GetVaultRestoreFromFile {
      * @return content length of vault&#39;s backup binary file
      * 
      */
-    private final String contentLength;
+    private String contentLength;
     /**
      * @return content md5 hashed value of vault&#39;s backup file
      * 
      */
-    private final String contentMd5;
+    private String contentMd5;
     /**
      * @return Vault backup file content
      * 
      */
-    private final String restoreVaultFromFileDetails;
+    private String restoreVaultFromFileDetails;
 
-    @CustomType.Constructor
-    private GetVaultRestoreFromFile(
-        @CustomType.Parameter("contentLength") String contentLength,
-        @CustomType.Parameter("contentMd5") String contentMd5,
-        @CustomType.Parameter("restoreVaultFromFileDetails") String restoreVaultFromFileDetails) {
-        this.contentLength = contentLength;
-        this.contentMd5 = contentMd5;
-        this.restoreVaultFromFileDetails = restoreVaultFromFileDetails;
-    }
-
+    private GetVaultRestoreFromFile() {}
     /**
      * @return content length of vault&#39;s backup binary file
      * 
@@ -64,16 +55,12 @@ public final class GetVaultRestoreFromFile {
     public static Builder builder(GetVaultRestoreFromFile defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String contentLength;
         private String contentMd5;
         private String restoreVaultFromFileDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVaultRestoreFromFile defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.contentLength = defaults.contentLength;
@@ -81,19 +68,27 @@ public final class GetVaultRestoreFromFile {
     	      this.restoreVaultFromFileDetails = defaults.restoreVaultFromFileDetails;
         }
 
+        @CustomType.Setter
         public Builder contentLength(String contentLength) {
             this.contentLength = Objects.requireNonNull(contentLength);
             return this;
         }
+        @CustomType.Setter
         public Builder contentMd5(String contentMd5) {
             this.contentMd5 = Objects.requireNonNull(contentMd5);
             return this;
         }
+        @CustomType.Setter
         public Builder restoreVaultFromFileDetails(String restoreVaultFromFileDetails) {
             this.restoreVaultFromFileDetails = Objects.requireNonNull(restoreVaultFromFileDetails);
             return this;
-        }        public GetVaultRestoreFromFile build() {
-            return new GetVaultRestoreFromFile(contentLength, contentMd5, restoreVaultFromFileDetails);
+        }
+        public GetVaultRestoreFromFile build() {
+            final var o = new GetVaultRestoreFromFile();
+            o.contentLength = contentLength;
+            o.contentMd5 = contentMd5;
+            o.restoreVaultFromFileDetails = restoreVaultFromFileDetails;
+            return o;
         }
     }
 }

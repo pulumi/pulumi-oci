@@ -18,45 +18,30 @@ public final class GetConnectionsResult {
      * @return OCID of the compartment where the secret containing the credentials will be created.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of connection_collection.
      * 
      */
-    private final List<GetConnectionsConnectionCollection> connectionCollections;
+    private List<GetConnectionsConnectionCollection> connectionCollections;
     /**
      * @return Database Connection display name identifier.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetConnectionsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetConnectionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current state of the Connection resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetConnectionsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("connectionCollections") List<GetConnectionsConnectionCollection> connectionCollections,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetConnectionsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.connectionCollections = connectionCollections;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-    }
-
+    private GetConnectionsResult() {}
     /**
      * @return OCID of the compartment where the secret containing the credentials will be created.
      * 
@@ -103,7 +88,7 @@ public final class GetConnectionsResult {
     public static Builder builder(GetConnectionsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetConnectionsConnectionCollection> connectionCollections;
@@ -111,11 +96,7 @@ public final class GetConnectionsResult {
         private @Nullable List<GetConnectionsFilter> filters;
         private String id;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConnectionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +107,12 @@ public final class GetConnectionsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder connectionCollections(List<GetConnectionsConnectionCollection> connectionCollections) {
             this.connectionCollections = Objects.requireNonNull(connectionCollections);
             return this;
@@ -137,10 +120,12 @@ public final class GetConnectionsResult {
         public Builder connectionCollections(GetConnectionsConnectionCollection... connectionCollections) {
             return connectionCollections(List.of(connectionCollections));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetConnectionsFilter> filters) {
             this.filters = filters;
             return this;
@@ -148,15 +133,25 @@ public final class GetConnectionsResult {
         public Builder filters(GetConnectionsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetConnectionsResult build() {
-            return new GetConnectionsResult(compartmentId, connectionCollections, displayName, filters, id, state);
+        }
+        public GetConnectionsResult build() {
+            final var o = new GetConnectionsResult();
+            o.compartmentId = compartmentId;
+            o.connectionCollections = connectionCollections;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            return o;
         }
     }
 }

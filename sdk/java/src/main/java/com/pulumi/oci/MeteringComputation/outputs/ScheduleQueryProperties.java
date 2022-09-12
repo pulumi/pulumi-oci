@@ -20,63 +20,44 @@ public final class ScheduleQueryProperties {
      * @return The depth level of the compartment.
      * 
      */
-    private final @Nullable Double compartmentDepth;
+    private @Nullable Double compartmentDepth;
     /**
      * @return Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
      * 
      */
-    private final ScheduleQueryPropertiesDateRange dateRange;
+    private ScheduleQueryPropertiesDateRange dateRange;
     /**
      * @return The filter object for query usage.
      * 
      */
-    private final @Nullable String filter;
+    private @Nullable String filter;
     /**
      * @return The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
      * 
      */
-    private final String granularity;
+    private String granularity;
     /**
      * @return Aggregate the result by. For example: [ &#34;tagNamespace&#34;, &#34;tagKey&#34;, &#34;tagValue&#34;, &#34;service&#34;, &#34;skuName&#34;, &#34;skuPartNumber&#34;, &#34;unit&#34;, &#34;compartmentName&#34;, &#34;compartmentPath&#34;, &#34;compartmentId&#34;, &#34;platform&#34;, &#34;region&#34;, &#34;logicalAd&#34;, &#34;resourceId&#34;, &#34;tenantId&#34;, &#34;tenantName&#34; ]
      * 
      */
-    private final @Nullable List<String> groupBies;
+    private @Nullable List<String> groupBies;
     /**
      * @return GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { &#34;namespace&#34;: &#34;oracle&#34;, &#34;key&#34;: &#34;createdBy&#34; ]
      * 
      */
-    private final @Nullable List<ScheduleQueryPropertiesGroupByTag> groupByTags;
+    private @Nullable List<ScheduleQueryPropertiesGroupByTag> groupByTags;
     /**
      * @return Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
      * 
      */
-    private final @Nullable Boolean isAggregateByTime;
+    private @Nullable Boolean isAggregateByTime;
     /**
      * @return The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
      * 
      */
-    private final @Nullable String queryType;
+    private @Nullable String queryType;
 
-    @CustomType.Constructor
-    private ScheduleQueryProperties(
-        @CustomType.Parameter("compartmentDepth") @Nullable Double compartmentDepth,
-        @CustomType.Parameter("dateRange") ScheduleQueryPropertiesDateRange dateRange,
-        @CustomType.Parameter("filter") @Nullable String filter,
-        @CustomType.Parameter("granularity") String granularity,
-        @CustomType.Parameter("groupBies") @Nullable List<String> groupBies,
-        @CustomType.Parameter("groupByTags") @Nullable List<ScheduleQueryPropertiesGroupByTag> groupByTags,
-        @CustomType.Parameter("isAggregateByTime") @Nullable Boolean isAggregateByTime,
-        @CustomType.Parameter("queryType") @Nullable String queryType) {
-        this.compartmentDepth = compartmentDepth;
-        this.dateRange = dateRange;
-        this.filter = filter;
-        this.granularity = granularity;
-        this.groupBies = groupBies;
-        this.groupByTags = groupByTags;
-        this.isAggregateByTime = isAggregateByTime;
-        this.queryType = queryType;
-    }
-
+    private ScheduleQueryProperties() {}
     /**
      * @return The depth level of the compartment.
      * 
@@ -141,7 +122,7 @@ public final class ScheduleQueryProperties {
     public static Builder builder(ScheduleQueryProperties defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Double compartmentDepth;
         private ScheduleQueryPropertiesDateRange dateRange;
@@ -151,11 +132,7 @@ public final class ScheduleQueryProperties {
         private @Nullable List<ScheduleQueryPropertiesGroupByTag> groupByTags;
         private @Nullable Boolean isAggregateByTime;
         private @Nullable String queryType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ScheduleQueryProperties defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentDepth = defaults.compartmentDepth;
@@ -168,22 +145,27 @@ public final class ScheduleQueryProperties {
     	      this.queryType = defaults.queryType;
         }
 
+        @CustomType.Setter
         public Builder compartmentDepth(@Nullable Double compartmentDepth) {
             this.compartmentDepth = compartmentDepth;
             return this;
         }
+        @CustomType.Setter
         public Builder dateRange(ScheduleQueryPropertiesDateRange dateRange) {
             this.dateRange = Objects.requireNonNull(dateRange);
             return this;
         }
+        @CustomType.Setter
         public Builder filter(@Nullable String filter) {
             this.filter = filter;
             return this;
         }
+        @CustomType.Setter
         public Builder granularity(String granularity) {
             this.granularity = Objects.requireNonNull(granularity);
             return this;
         }
+        @CustomType.Setter
         public Builder groupBies(@Nullable List<String> groupBies) {
             this.groupBies = groupBies;
             return this;
@@ -191,6 +173,7 @@ public final class ScheduleQueryProperties {
         public Builder groupBies(String... groupBies) {
             return groupBies(List.of(groupBies));
         }
+        @CustomType.Setter
         public Builder groupByTags(@Nullable List<ScheduleQueryPropertiesGroupByTag> groupByTags) {
             this.groupByTags = groupByTags;
             return this;
@@ -198,15 +181,27 @@ public final class ScheduleQueryProperties {
         public Builder groupByTags(ScheduleQueryPropertiesGroupByTag... groupByTags) {
             return groupByTags(List.of(groupByTags));
         }
+        @CustomType.Setter
         public Builder isAggregateByTime(@Nullable Boolean isAggregateByTime) {
             this.isAggregateByTime = isAggregateByTime;
             return this;
         }
+        @CustomType.Setter
         public Builder queryType(@Nullable String queryType) {
             this.queryType = queryType;
             return this;
-        }        public ScheduleQueryProperties build() {
-            return new ScheduleQueryProperties(compartmentDepth, dateRange, filter, granularity, groupBies, groupByTags, isAggregateByTime, queryType);
+        }
+        public ScheduleQueryProperties build() {
+            final var o = new ScheduleQueryProperties();
+            o.compartmentDepth = compartmentDepth;
+            o.dateRange = dateRange;
+            o.filter = filter;
+            o.granularity = granularity;
+            o.groupBies = groupBies;
+            o.groupByTags = groupByTags;
+            o.isAggregateByTime = isAggregateByTime;
+            o.queryType = queryType;
+            return o;
         }
     }
 }

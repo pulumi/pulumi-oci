@@ -18,15 +18,15 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string? DefaultConnection;
         /// <summary>
-        /// (Updatable) User-defined description for the folder.
+        /// (Updatable) User-defined description of the folder.
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// (Updatable) The external key for the object.
+        /// (Updatable) The external key of the object.
         /// </summary>
         public readonly string? ExternalKey;
         /// <summary>
-        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         /// </summary>
         public readonly string Identifier;
         /// <summary>
@@ -34,11 +34,11 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly bool? IsHasContainers;
         /// <summary>
-        /// (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        /// (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        /// (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         /// </summary>
         public readonly Outputs.RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata? Metadata;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string? ModelVersion;
         /// <summary>
-        /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         public readonly string Name;
         /// <summary>
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly int? ObjectVersion;
         /// <summary>
-        /// (Updatable) A reference to the object's parent.
+        /// (Updatable) A reference to the parent object.
         /// </summary>
         public readonly Outputs.RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRef? ParentRef;
         /// <summary>

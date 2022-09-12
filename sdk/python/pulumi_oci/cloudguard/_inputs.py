@@ -10,17 +10,25 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'CloudGuardDataSourceDataSourceDetailsArgs',
+    'CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs',
+    'CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs',
+    'CloudGuardDataSourceDataSourceDetectorMappingInfoArgs',
+    'CloudGuardDataSourceRegionStatusDetailArgs',
     'DataMaskRuleTargetSelectedArgs',
     'DetectorRecipeDetectorRuleArgs',
     'DetectorRecipeDetectorRuleCandidateResponderRuleArgs',
     'DetectorRecipeDetectorRuleDetailsArgs',
     'DetectorRecipeDetectorRuleDetailsConfigurationArgs',
     'DetectorRecipeDetectorRuleDetailsConfigurationValueArgs',
+    'DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs',
+    'DetectorRecipeDetectorRuleEntitiesMappingArgs',
     'DetectorRecipeEffectiveDetectorRuleArgs',
     'DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs',
     'DetectorRecipeEffectiveDetectorRuleDetailArgs',
     'DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs',
     'DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs',
+    'DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs',
     'ResponderRecipeEffectiveResponderRuleArgs',
     'ResponderRecipeEffectiveResponderRuleDetailArgs',
     'ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs',
@@ -35,11 +43,13 @@ __all__ = [
     'TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs',
     'TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs',
     'TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs',
+    'TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleArgs',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs',
+    'TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs',
     'TargetTargetResponderRecipeArgs',
     'TargetTargetResponderRecipeEffectiveResponderRuleArgs',
     'TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs',
@@ -48,14 +58,337 @@ __all__ = [
     'TargetTargetResponderRecipeResponderRuleDetailsArgs',
     'TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs',
     'GetDataMaskRulesFilterArgs',
+    'GetDataSourceEventsFilterArgs',
+    'GetDataSourcesFilterArgs',
     'GetDetectorRecipesFilterArgs',
     'GetGuardTargetsFilterArgs',
     'GetManagedListsFilterArgs',
+    'GetProblemEntitiesFilterArgs',
     'GetResponderRecipesFilterArgs',
     'GetSecurityPoliciesFilterArgs',
     'GetSecurityRecipesFilterArgs',
     'GetSecurityZonesFilterArgs',
 ]
+
+@pulumi.input_type
+class CloudGuardDataSourceDataSourceDetailsArgs:
+    def __init__(__self__, *,
+                 data_source_feed_provider: pulumi.Input[str],
+                 additional_entities_count: Optional[pulumi.Input[int]] = None,
+                 interval_in_minutes: Optional[pulumi.Input[int]] = None,
+                 logging_query_details: Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs']] = None,
+                 logging_query_type: Optional[pulumi.Input[str]] = None,
+                 operator: Optional[pulumi.Input[str]] = None,
+                 query: Optional[pulumi.Input[str]] = None,
+                 query_start_time: Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs']] = None,
+                 regions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 threshold: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] data_source_feed_provider: Possible type of dataSourceFeed Provider(LoggingQuery)
+        :param pulumi.Input[int] additional_entities_count: (Updatable) The additional entities count used for data source query.
+        :param pulumi.Input[int] interval_in_minutes: (Updatable) Interval in minutes that query is run periodically.
+        :param pulumi.Input['CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs'] logging_query_details: (Updatable) Additional details specific to the data source type (Sighting/Insight).
+        :param pulumi.Input[str] logging_query_type: (Updatable) Logging query type for data source (Sighting/Insight)
+        :param pulumi.Input[str] operator: (Updatable) Operator used in Data Soruce
+        :param pulumi.Input[str] query: (Updatable) The continuous query expression that is run periodically.
+        :param pulumi.Input['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs'] query_start_time: (Updatable) Time when the query can start, if not specified it can start immediately.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] regions: (Updatable) Logging Query regions
+        :param pulumi.Input[int] threshold: (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+        """
+        pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
+        if additional_entities_count is not None:
+            pulumi.set(__self__, "additional_entities_count", additional_entities_count)
+        if interval_in_minutes is not None:
+            pulumi.set(__self__, "interval_in_minutes", interval_in_minutes)
+        if logging_query_details is not None:
+            pulumi.set(__self__, "logging_query_details", logging_query_details)
+        if logging_query_type is not None:
+            pulumi.set(__self__, "logging_query_type", logging_query_type)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if query is not None:
+            pulumi.set(__self__, "query", query)
+        if query_start_time is not None:
+            pulumi.set(__self__, "query_start_time", query_start_time)
+        if regions is not None:
+            pulumi.set(__self__, "regions", regions)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="dataSourceFeedProvider")
+    def data_source_feed_provider(self) -> pulumi.Input[str]:
+        """
+        Possible type of dataSourceFeed Provider(LoggingQuery)
+        """
+        return pulumi.get(self, "data_source_feed_provider")
+
+    @data_source_feed_provider.setter
+    def data_source_feed_provider(self, value: pulumi.Input[str]):
+        pulumi.set(self, "data_source_feed_provider", value)
+
+    @property
+    @pulumi.getter(name="additionalEntitiesCount")
+    def additional_entities_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The additional entities count used for data source query.
+        """
+        return pulumi.get(self, "additional_entities_count")
+
+    @additional_entities_count.setter
+    def additional_entities_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "additional_entities_count", value)
+
+    @property
+    @pulumi.getter(name="intervalInMinutes")
+    def interval_in_minutes(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Interval in minutes that query is run periodically.
+        """
+        return pulumi.get(self, "interval_in_minutes")
+
+    @interval_in_minutes.setter
+    def interval_in_minutes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "interval_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="loggingQueryDetails")
+    def logging_query_details(self) -> Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs']]:
+        """
+        (Updatable) Additional details specific to the data source type (Sighting/Insight).
+        """
+        return pulumi.get(self, "logging_query_details")
+
+    @logging_query_details.setter
+    def logging_query_details(self, value: Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs']]):
+        pulumi.set(self, "logging_query_details", value)
+
+    @property
+    @pulumi.getter(name="loggingQueryType")
+    def logging_query_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Logging query type for data source (Sighting/Insight)
+        """
+        return pulumi.get(self, "logging_query_type")
+
+    @logging_query_type.setter
+    def logging_query_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "logging_query_type", value)
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Operator used in Data Soruce
+        """
+        return pulumi.get(self, "operator")
+
+    @operator.setter
+    def operator(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "operator", value)
+
+    @property
+    @pulumi.getter
+    def query(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The continuous query expression that is run periodically.
+        """
+        return pulumi.get(self, "query")
+
+    @query.setter
+    def query(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "query", value)
+
+    @property
+    @pulumi.getter(name="queryStartTime")
+    def query_start_time(self) -> Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs']]:
+        """
+        (Updatable) Time when the query can start, if not specified it can start immediately.
+        """
+        return pulumi.get(self, "query_start_time")
+
+    @query_start_time.setter
+    def query_start_time(self, value: Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs']]):
+        pulumi.set(self, "query_start_time", value)
+
+    @property
+    @pulumi.getter
+    def regions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) Logging Query regions
+        """
+        return pulumi.get(self, "regions")
+
+    @regions.setter
+    def regions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "regions", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+        """
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs:
+    def __init__(__self__, *,
+                 logging_query_type: pulumi.Input[str],
+                 key_entities_count: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] logging_query_type: (Updatable) Logging query type for data source (Sighting/Insight)
+        :param pulumi.Input[int] key_entities_count: (Updatable) The key entities count used for data source query
+        """
+        pulumi.set(__self__, "logging_query_type", logging_query_type)
+        if key_entities_count is not None:
+            pulumi.set(__self__, "key_entities_count", key_entities_count)
+
+    @property
+    @pulumi.getter(name="loggingQueryType")
+    def logging_query_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Logging query type for data source (Sighting/Insight)
+        """
+        return pulumi.get(self, "logging_query_type")
+
+    @logging_query_type.setter
+    def logging_query_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "logging_query_type", value)
+
+    @property
+    @pulumi.getter(name="keyEntitiesCount")
+    def key_entities_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The key entities count used for data source query
+        """
+        return pulumi.get(self, "key_entities_count")
+
+    @key_entities_count.setter
+    def key_entities_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "key_entities_count", value)
+
+
+@pulumi.input_type
+class CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs:
+    def __init__(__self__, *,
+                 start_policy_type: pulumi.Input[str],
+                 query_start_time: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] start_policy_type: (Updatable) policy used for deciding the query start time
+        :param pulumi.Input[str] query_start_time: (Updatable) Time when the query can start, if not specified it can start immediately.
+        """
+        pulumi.set(__self__, "start_policy_type", start_policy_type)
+        if query_start_time is not None:
+            pulumi.set(__self__, "query_start_time", query_start_time)
+
+    @property
+    @pulumi.getter(name="startPolicyType")
+    def start_policy_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) policy used for deciding the query start time
+        """
+        return pulumi.get(self, "start_policy_type")
+
+    @start_policy_type.setter
+    def start_policy_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "start_policy_type", value)
+
+    @property
+    @pulumi.getter(name="queryStartTime")
+    def query_start_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Time when the query can start, if not specified it can start immediately.
+        """
+        return pulumi.get(self, "query_start_time")
+
+    @query_start_time.setter
+    def query_start_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "query_start_time", value)
+
+
+@pulumi.input_type
+class CloudGuardDataSourceDataSourceDetectorMappingInfoArgs:
+    def __init__(__self__, *,
+                 detector_recipe_id: Optional[pulumi.Input[str]] = None,
+                 detector_rule_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] detector_recipe_id: Id of the attached detectorRecipeId to the Data Source.
+        :param pulumi.Input[str] detector_rule_id: Id of the attached detectorRuleId to the Data Source.
+        """
+        if detector_recipe_id is not None:
+            pulumi.set(__self__, "detector_recipe_id", detector_recipe_id)
+        if detector_rule_id is not None:
+            pulumi.set(__self__, "detector_rule_id", detector_rule_id)
+
+    @property
+    @pulumi.getter(name="detectorRecipeId")
+    def detector_recipe_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Id of the attached detectorRecipeId to the Data Source.
+        """
+        return pulumi.get(self, "detector_recipe_id")
+
+    @detector_recipe_id.setter
+    def detector_recipe_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detector_recipe_id", value)
+
+    @property
+    @pulumi.getter(name="detectorRuleId")
+    def detector_rule_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Id of the attached detectorRuleId to the Data Source.
+        """
+        return pulumi.get(self, "detector_rule_id")
+
+    @detector_rule_id.setter
+    def detector_rule_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detector_rule_id", value)
+
+
+@pulumi.input_type
+class CloudGuardDataSourceRegionStatusDetailArgs:
+    def __init__(__self__, *,
+                 region: Optional[pulumi.Input[str]] = None,
+                 status: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] region: Data Source replication region.
+        :param pulumi.Input[str] status: Status of data Source
+        """
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[pulumi.Input[str]]:
+        """
+        Data Source replication region.
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "region", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        Status of data Source
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "status", value)
+
 
 @pulumi.input_type
 class DataMaskRuleTargetSelectedArgs:
@@ -101,9 +434,11 @@ class DetectorRecipeDetectorRuleArgs:
                  details: pulumi.Input['DetectorRecipeDetectorRuleDetailsArgs'],
                  detector_rule_id: pulumi.Input[str],
                  candidate_responder_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleCandidateResponderRuleArgs']]]] = None,
+                 data_source_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  detector: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 entities_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleEntitiesMappingArgs']]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  managed_list_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  recommendation: Optional[pulumi.Input[str]] = None,
@@ -116,12 +451,14 @@ class DetectorRecipeDetectorRuleArgs:
         :param pulumi.Input['DetectorRecipeDetectorRuleDetailsArgs'] details: (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
         :param pulumi.Input[str] detector_rule_id: (Updatable) DetectorRecipeRule Identifier
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleCandidateResponderRuleArgs']]] candidate_responder_rules: List of CandidateResponderRule related to this rule
-        :param pulumi.Input[str] description: (Updatable) Detector recipe description.
+        :param pulumi.Input[str] data_source_id: (Updatable) The id of the attached DataSource.
+        :param pulumi.Input[str] description: (Updatable) Description for DetectorRecipeDetectorRule.
         :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
+        :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleEntitiesMappingArgs']]] entities_mappings: (Updatable) Data Source entities mapping for a Detector Rule
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_list_types: List of cloudguard managed list types related to this rule
-        :param pulumi.Input[str] recommendation: Recommendation for DetectorRecipeDetectorRule
+        :param pulumi.Input[str] recommendation: (Updatable) Recommendation for DetectorRecipeDetectorRule
         :param pulumi.Input[str] resource_type: resource type of the configuration to which the rule is applied
         :param pulumi.Input[str] service_type: service type of the configuration to which the rule is applied
         :param pulumi.Input[str] state: The current state of the resource.
@@ -132,12 +469,16 @@ class DetectorRecipeDetectorRuleArgs:
         pulumi.set(__self__, "detector_rule_id", detector_rule_id)
         if candidate_responder_rules is not None:
             pulumi.set(__self__, "candidate_responder_rules", candidate_responder_rules)
+        if data_source_id is not None:
+            pulumi.set(__self__, "data_source_id", data_source_id)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if detector is not None:
             pulumi.set(__self__, "detector", detector)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if entities_mappings is not None:
+            pulumi.set(__self__, "entities_mappings", entities_mappings)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
@@ -192,10 +533,22 @@ class DetectorRecipeDetectorRuleArgs:
         pulumi.set(self, "candidate_responder_rules", value)
 
     @property
+    @pulumi.getter(name="dataSourceId")
+    def data_source_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The id of the attached DataSource.
+        """
+        return pulumi.get(self, "data_source_id")
+
+    @data_source_id.setter
+    def data_source_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "data_source_id", value)
+
+    @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Detector recipe description.
+        (Updatable) Description for DetectorRecipeDetectorRule.
         """
         return pulumi.get(self, "description")
 
@@ -228,6 +581,18 @@ class DetectorRecipeDetectorRuleArgs:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="entitiesMappings")
+    def entities_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleEntitiesMappingArgs']]]]:
+        """
+        (Updatable) Data Source entities mapping for a Detector Rule
+        """
+        return pulumi.get(self, "entities_mappings")
+
+    @entities_mappings.setter
+    def entities_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleEntitiesMappingArgs']]]]):
+        pulumi.set(self, "entities_mappings", value)
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
         """
@@ -255,7 +620,7 @@ class DetectorRecipeDetectorRuleArgs:
     @pulumi.getter
     def recommendation(self) -> Optional[pulumi.Input[str]]:
         """
-        Recommendation for DetectorRecipeDetectorRule
+        (Updatable) Recommendation for DetectorRecipeDetectorRule
         """
         return pulumi.get(self, "recommendation")
 
@@ -386,15 +751,23 @@ class DetectorRecipeDetectorRuleDetailsArgs:
                  risk_level: pulumi.Input[str],
                  condition: Optional[pulumi.Input[str]] = None,
                  configurations: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationArgs']]]] = None,
+                 data_source_id: Optional[pulumi.Input[str]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 entities_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs']]]] = None,
                  is_configuration_allowed: Optional[pulumi.Input[bool]] = None,
-                 labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+                 labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 recommendation: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[bool] is_enabled: (Updatable) Enables the control
         :param pulumi.Input[str] risk_level: (Updatable) The Risk Level
         :param pulumi.Input[str] condition: (Updatable) Base condition object
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationArgs']]] configurations: (Updatable) Configuration details
+        :param pulumi.Input[str] data_source_id: (Updatable) The id of the attached DataSource.
+        :param pulumi.Input[str] description: (Updatable) Description for DetectorRecipeDetectorRule.
+        :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs']]] entities_mappings: (Updatable) Data Source entities mapping for a Detector Rule
         :param pulumi.Input[bool] is_configuration_allowed: configuration allowed or not
         :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) user defined labels for a detector rule
+        :param pulumi.Input[str] recommendation: (Updatable) Recommendation for DetectorRecipeDetectorRule
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
         pulumi.set(__self__, "risk_level", risk_level)
@@ -402,10 +775,18 @@ class DetectorRecipeDetectorRuleDetailsArgs:
             pulumi.set(__self__, "condition", condition)
         if configurations is not None:
             pulumi.set(__self__, "configurations", configurations)
+        if data_source_id is not None:
+            pulumi.set(__self__, "data_source_id", data_source_id)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if entities_mappings is not None:
+            pulumi.set(__self__, "entities_mappings", entities_mappings)
         if is_configuration_allowed is not None:
             pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
         if labels is not None:
             pulumi.set(__self__, "labels", labels)
+        if recommendation is not None:
+            pulumi.set(__self__, "recommendation", recommendation)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -456,6 +837,42 @@ class DetectorRecipeDetectorRuleDetailsArgs:
         pulumi.set(self, "configurations", value)
 
     @property
+    @pulumi.getter(name="dataSourceId")
+    def data_source_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The id of the attached DataSource.
+        """
+        return pulumi.get(self, "data_source_id")
+
+    @data_source_id.setter
+    def data_source_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "data_source_id", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Description for DetectorRecipeDetectorRule.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="entitiesMappings")
+    def entities_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs']]]]:
+        """
+        (Updatable) Data Source entities mapping for a Detector Rule
+        """
+        return pulumi.get(self, "entities_mappings")
+
+    @entities_mappings.setter
+    def entities_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs']]]]):
+        pulumi.set(self, "entities_mappings", value)
+
+    @property
     @pulumi.getter(name="isConfigurationAllowed")
     def is_configuration_allowed(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -478,6 +895,18 @@ class DetectorRecipeDetectorRuleDetailsArgs:
     @labels.setter
     def labels(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "labels", value)
+
+    @property
+    @pulumi.getter
+    def recommendation(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Recommendation for DetectorRecipeDetectorRule
+        """
+        return pulumi.get(self, "recommendation")
+
+    @recommendation.setter
+    def recommendation(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "recommendation", value)
 
 
 @pulumi.input_type
@@ -618,14 +1047,125 @@ class DetectorRecipeDetectorRuleDetailsConfigurationValueArgs:
 
 
 @pulumi.input_type
+class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs:
+    def __init__(__self__, *,
+                 query_field: pulumi.Input[str],
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 entity_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] query_field: (Updatable) The entity value mapped to a data source query
+        :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
+        :param pulumi.Input[str] entity_type: (Updatable) Possible type of entity
+        """
+        pulumi.set(__self__, "query_field", query_field)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if entity_type is not None:
+            pulumi.set(__self__, "entity_type", entity_type)
+
+    @property
+    @pulumi.getter(name="queryField")
+    def query_field(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The entity value mapped to a data source query
+        """
+        return pulumi.get(self, "query_field")
+
+    @query_field.setter
+    def query_field(self, value: pulumi.Input[str]):
+        pulumi.set(self, "query_field", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Detector recipe display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Possible type of entity
+        """
+        return pulumi.get(self, "entity_type")
+
+    @entity_type.setter
+    def entity_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "entity_type", value)
+
+
+@pulumi.input_type
+class DetectorRecipeDetectorRuleEntitiesMappingArgs:
+    def __init__(__self__, *,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 entity_type: Optional[pulumi.Input[str]] = None,
+                 query_field: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
+        :param pulumi.Input[str] entity_type: (Updatable) Possible type of entity
+        :param pulumi.Input[str] query_field: (Updatable) The entity value mapped to a data source query
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if entity_type is not None:
+            pulumi.set(__self__, "entity_type", entity_type)
+        if query_field is not None:
+            pulumi.set(__self__, "query_field", query_field)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Detector recipe display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Possible type of entity
+        """
+        return pulumi.get(self, "entity_type")
+
+    @entity_type.setter
+    def entity_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "entity_type", value)
+
+    @property
+    @pulumi.getter(name="queryField")
+    def query_field(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The entity value mapped to a data source query
+        """
+        return pulumi.get(self, "query_field")
+
+    @query_field.setter
+    def query_field(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "query_field", value)
+
+
+@pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleArgs:
     def __init__(__self__, *,
                  candidate_responder_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs']]]] = None,
+                 data_source_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  details: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailArgs']]]] = None,
                  detector: Optional[pulumi.Input[str]] = None,
                  detector_rule_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 entities_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  managed_list_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  recommendation: Optional[pulumi.Input[str]] = None,
@@ -636,14 +1176,16 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs']]] candidate_responder_rules: List of CandidateResponderRule related to this rule
-        :param pulumi.Input[str] description: (Updatable) Detector recipe description.
+        :param pulumi.Input[str] data_source_id: (Updatable) The id of the attached DataSource.
+        :param pulumi.Input[str] description: (Updatable) Description for DetectorRecipeDetectorRule.
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailArgs']]] details: (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
         :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[str] detector_rule_id: (Updatable) DetectorRecipeRule Identifier
         :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
+        :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]] entities_mappings: (Updatable) Data Source entities mapping for a Detector Rule
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_list_types: List of cloudguard managed list types related to this rule
-        :param pulumi.Input[str] recommendation: Recommendation for DetectorRecipeDetectorRule
+        :param pulumi.Input[str] recommendation: (Updatable) Recommendation for DetectorRecipeDetectorRule
         :param pulumi.Input[str] resource_type: resource type of the configuration to which the rule is applied
         :param pulumi.Input[str] service_type: service type of the configuration to which the rule is applied
         :param pulumi.Input[str] state: The current state of the resource.
@@ -652,6 +1194,8 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
         """
         if candidate_responder_rules is not None:
             pulumi.set(__self__, "candidate_responder_rules", candidate_responder_rules)
+        if data_source_id is not None:
+            pulumi.set(__self__, "data_source_id", data_source_id)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if details is not None:
@@ -662,6 +1206,8 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
             pulumi.set(__self__, "detector_rule_id", detector_rule_id)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if entities_mappings is not None:
+            pulumi.set(__self__, "entities_mappings", entities_mappings)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
@@ -692,10 +1238,22 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
         pulumi.set(self, "candidate_responder_rules", value)
 
     @property
+    @pulumi.getter(name="dataSourceId")
+    def data_source_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The id of the attached DataSource.
+        """
+        return pulumi.get(self, "data_source_id")
+
+    @data_source_id.setter
+    def data_source_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "data_source_id", value)
+
+    @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Detector recipe description.
+        (Updatable) Description for DetectorRecipeDetectorRule.
         """
         return pulumi.get(self, "description")
 
@@ -752,6 +1310,18 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="entitiesMappings")
+    def entities_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]]:
+        """
+        (Updatable) Data Source entities mapping for a Detector Rule
+        """
+        return pulumi.get(self, "entities_mappings")
+
+    @entities_mappings.setter
+    def entities_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]]):
+        pulumi.set(self, "entities_mappings", value)
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
         """
@@ -779,7 +1349,7 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
     @pulumi.getter
     def recommendation(self) -> Optional[pulumi.Input[str]]:
         """
-        Recommendation for DetectorRecipeDetectorRule
+        (Updatable) Recommendation for DetectorRecipeDetectorRule
         """
         return pulumi.get(self, "recommendation")
 
@@ -1146,6 +1716,61 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs:
     @value.setter
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs:
+    def __init__(__self__, *,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 entity_type: Optional[pulumi.Input[str]] = None,
+                 query_field: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
+        :param pulumi.Input[str] entity_type: (Updatable) Possible type of entity
+        :param pulumi.Input[str] query_field: (Updatable) The entity value mapped to a data source query
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if entity_type is not None:
+            pulumi.set(__self__, "entity_type", entity_type)
+        if query_field is not None:
+            pulumi.set(__self__, "query_field", query_field)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Detector recipe display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Possible type of entity
+        """
+        return pulumi.get(self, "entity_type")
+
+    @entity_type.setter
+    def entity_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "entity_type", value)
+
+    @property
+    @pulumi.getter(name="queryField")
+    def query_field(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The entity value mapped to a data source query
+        """
+        return pulumi.get(self, "query_field")
+
+    @query_field.setter
+    def query_field(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "query_field", value)
 
 
 @pulumi.input_type
@@ -1805,7 +2430,7 @@ class TargetTargetDetailArgs:
         """
         :param pulumi.Input[str] security_zone_display_name: The name of the security zone to associate this compartment with.
         :param pulumi.Input[str] security_zone_id: The OCID of the security zone to associate this compartment with.
-        :param pulumi.Input[str] target_resource_type: possible type of targets(compartment/HCMCloud/ERPCloud)
+        :param pulumi.Input[str] target_resource_type: possible type of targets(COMPARTMENT/FACLOUD)
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailTargetSecurityZoneRecipeArgs']]] target_security_zone_recipes: The list of security zone recipes to associate this compartment with.
         """
         if security_zone_display_name is not None:
@@ -1845,7 +2470,7 @@ class TargetTargetDetailArgs:
     @pulumi.getter(name="targetResourceType")
     def target_resource_type(self) -> Optional[pulumi.Input[str]]:
         """
-        possible type of targets(compartment/HCMCloud/ERPCloud)
+        possible type of targets(COMPARTMENT/FACLOUD)
         """
         return pulumi.get(self, "target_resource_type")
 
@@ -2284,9 +2909,11 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
     def __init__(__self__, *,
                  details: pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsArgs'],
                  detector_rule_id: pulumi.Input[str],
+                 data_source_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  detector: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 entities_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs']]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  managed_list_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  recommendation: Optional[pulumi.Input[str]] = None,
@@ -2298,9 +2925,11 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
         """
         :param pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsArgs'] details: (Updatable) Details of ResponderRule.
         :param pulumi.Input[str] detector_rule_id: (Updatable) Identifier for DetectorRule.
+        :param pulumi.Input[str] data_source_id: The id of the attached DataSource.
         :param pulumi.Input[str] description: The target description.
         :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
+        :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs']]] entities_mappings: Data Source entities mapping for a Detector Rule
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_list_types: List of cloudguard managed list types related to this rule
         :param pulumi.Input[str] recommendation: Recommendation for TargetDetectorRecipeDetectorRule
@@ -2312,12 +2941,16 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
         """
         pulumi.set(__self__, "details", details)
         pulumi.set(__self__, "detector_rule_id", detector_rule_id)
+        if data_source_id is not None:
+            pulumi.set(__self__, "data_source_id", data_source_id)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if detector is not None:
             pulumi.set(__self__, "detector", detector)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if entities_mappings is not None:
+            pulumi.set(__self__, "entities_mappings", entities_mappings)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
@@ -2360,6 +2993,18 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
         pulumi.set(self, "detector_rule_id", value)
 
     @property
+    @pulumi.getter(name="dataSourceId")
+    def data_source_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The id of the attached DataSource.
+        """
+        return pulumi.get(self, "data_source_id")
+
+    @data_source_id.setter
+    def data_source_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "data_source_id", value)
+
+    @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
@@ -2394,6 +3039,18 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="entitiesMappings")
+    def entities_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs']]]]:
+        """
+        Data Source entities mapping for a Detector Rule
+        """
+        return pulumi.get(self, "entities_mappings")
+
+    @entities_mappings.setter
+    def entities_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs']]]]):
+        pulumi.set(self, "entities_mappings", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -2775,13 +3432,70 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs:
 
 
 @pulumi.input_type
+class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs:
+    def __init__(__self__, *,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 entity_type: Optional[pulumi.Input[str]] = None,
+                 query_field: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
+        :param pulumi.Input[str] entity_type: Possible type of entity
+        :param pulumi.Input[str] query_field: The entity value mapped to a data source query
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if entity_type is not None:
+            pulumi.set(__self__, "entity_type", entity_type)
+        if query_field is not None:
+            pulumi.set(__self__, "query_field", query_field)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) DetectorTemplate identifier.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible type of entity
+        """
+        return pulumi.get(self, "entity_type")
+
+    @entity_type.setter
+    def entity_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "entity_type", value)
+
+    @property
+    @pulumi.getter(name="queryField")
+    def query_field(self) -> Optional[pulumi.Input[str]]:
+        """
+        The entity value mapped to a data source query
+        """
+        return pulumi.get(self, "query_field")
+
+    @query_field.setter
+    def query_field(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "query_field", value)
+
+
+@pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
     def __init__(__self__, *,
+                 data_source_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  details: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs']]]] = None,
                  detector: Optional[pulumi.Input[str]] = None,
                  detector_rule_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 entities_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  managed_list_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  recommendation: Optional[pulumi.Input[str]] = None,
@@ -2791,11 +3505,13 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] data_source_id: The id of the attached DataSource.
         :param pulumi.Input[str] description: The target description.
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs']]] details: (Updatable) Details of ResponderRule.
         :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[str] detector_rule_id: (Updatable) Identifier for DetectorRule.
         :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
+        :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]] entities_mappings: Data Source entities mapping for a Detector Rule
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_list_types: List of cloudguard managed list types related to this rule
         :param pulumi.Input[str] recommendation: Recommendation for TargetDetectorRecipeDetectorRule
@@ -2805,6 +3521,8 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
         :param pulumi.Input[str] time_created: The date and time the target was created. Format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
+        if data_source_id is not None:
+            pulumi.set(__self__, "data_source_id", data_source_id)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if details is not None:
@@ -2815,6 +3533,8 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
             pulumi.set(__self__, "detector_rule_id", detector_rule_id)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if entities_mappings is not None:
+            pulumi.set(__self__, "entities_mappings", entities_mappings)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
@@ -2831,6 +3551,18 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="dataSourceId")
+    def data_source_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The id of the attached DataSource.
+        """
+        return pulumi.get(self, "data_source_id")
+
+    @data_source_id.setter
+    def data_source_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "data_source_id", value)
 
     @property
     @pulumi.getter
@@ -2891,6 +3623,18 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="entitiesMappings")
+    def entities_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]]:
+        """
+        Data Source entities mapping for a Detector Rule
+        """
+        return pulumi.get(self, "entities_mappings")
+
+    @entities_mappings.setter
+    def entities_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]]):
+        pulumi.set(self, "entities_mappings", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -3271,6 +4015,61 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArg
     @value.setter
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs:
+    def __init__(__self__, *,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 entity_type: Optional[pulumi.Input[str]] = None,
+                 query_field: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
+        :param pulumi.Input[str] entity_type: Possible type of entity
+        :param pulumi.Input[str] query_field: The entity value mapped to a data source query
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if entity_type is not None:
+            pulumi.set(__self__, "entity_type", entity_type)
+        if query_field is not None:
+            pulumi.set(__self__, "query_field", query_field)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) DetectorTemplate identifier.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible type of entity
+        """
+        return pulumi.get(self, "entity_type")
+
+    @entity_type.setter
+    def entity_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "entity_type", value)
+
+    @property
+    @pulumi.getter(name="queryField")
+    def query_field(self) -> Optional[pulumi.Input[str]]:
+        """
+        The entity value mapped to a data source query
+        """
+        return pulumi.get(self, "query_field")
+
+    @query_field.setter
+    def query_field(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "query_field", value)
 
 
 @pulumi.input_type
@@ -4130,6 +4929,84 @@ class GetDataMaskRulesFilterArgs:
 
 
 @pulumi.input_type
+class GetDataSourceEventsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetDataSourcesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
 class GetDetectorRecipesFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -4229,6 +5106,45 @@ class GetGuardTargetsFilterArgs:
 
 @pulumi.input_type
 class GetManagedListsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetProblemEntitiesFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

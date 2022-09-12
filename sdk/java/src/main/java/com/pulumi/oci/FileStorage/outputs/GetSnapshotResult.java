@@ -16,80 +16,55 @@ public final class GetSnapshotResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
      * 
      */
-    private final String fileSystemId;
+    private String fileSystemId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
      * 
      */
-    private final Boolean isCloneSource;
+    private Boolean isCloneSource;
     /**
      * @return Additional information about the current &#39;lifecycleState&#39;.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Name of the snapshot. This value is immutable.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent&#39;s `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
      * 
      */
-    private final String provenanceId;
-    private final String snapshotId;
+    private String provenanceId;
+    private String snapshotId;
     /**
      * @return The current state of the snapshot.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetSnapshotResult(
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("fileSystemId") String fileSystemId,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isCloneSource") Boolean isCloneSource,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("provenanceId") String provenanceId,
-        @CustomType.Parameter("snapshotId") String snapshotId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.definedTags = definedTags;
-        this.fileSystemId = fileSystemId;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isCloneSource = isCloneSource;
-        this.lifecycleDetails = lifecycleDetails;
-        this.name = name;
-        this.provenanceId = provenanceId;
-        this.snapshotId = snapshotId;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetSnapshotResult() {}
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -171,7 +146,7 @@ public final class GetSnapshotResult {
     public static Builder builder(GetSnapshotResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> definedTags;
         private String fileSystemId;
@@ -184,11 +159,7 @@ public final class GetSnapshotResult {
         private String snapshotId;
         private String state;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSnapshotResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.definedTags = defaults.definedTags;
@@ -204,51 +175,75 @@ public final class GetSnapshotResult {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder fileSystemId(String fileSystemId) {
             this.fileSystemId = Objects.requireNonNull(fileSystemId);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isCloneSource(Boolean isCloneSource) {
             this.isCloneSource = Objects.requireNonNull(isCloneSource);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder provenanceId(String provenanceId) {
             this.provenanceId = Objects.requireNonNull(provenanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder snapshotId(String snapshotId) {
             this.snapshotId = Objects.requireNonNull(snapshotId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetSnapshotResult build() {
-            return new GetSnapshotResult(definedTags, fileSystemId, freeformTags, id, isCloneSource, lifecycleDetails, name, provenanceId, snapshotId, state, timeCreated);
+        }
+        public GetSnapshotResult build() {
+            final var o = new GetSnapshotResult();
+            o.definedTags = definedTags;
+            o.fileSystemId = fileSystemId;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isCloneSource = isCloneSource;
+            o.lifecycleDetails = lifecycleDetails;
+            o.name = name;
+            o.provenanceId = provenanceId;
+            o.snapshotId = snapshotId;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

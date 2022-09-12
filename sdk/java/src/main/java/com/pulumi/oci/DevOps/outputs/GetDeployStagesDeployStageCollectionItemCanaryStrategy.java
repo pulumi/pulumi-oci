@@ -13,28 +13,19 @@ public final class GetDeployStagesDeployStageCollectionItemCanaryStrategy {
      * @return Name of the Ingress resource.
      * 
      */
-    private final String ingressName;
+    private String ingressName;
     /**
      * @return Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
      * 
      */
-    private final String namespace;
+    private String namespace;
     /**
      * @return Canary strategy type
      * 
      */
-    private final String strategyType;
+    private String strategyType;
 
-    @CustomType.Constructor
-    private GetDeployStagesDeployStageCollectionItemCanaryStrategy(
-        @CustomType.Parameter("ingressName") String ingressName,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("strategyType") String strategyType) {
-        this.ingressName = ingressName;
-        this.namespace = namespace;
-        this.strategyType = strategyType;
-    }
-
+    private GetDeployStagesDeployStageCollectionItemCanaryStrategy() {}
     /**
      * @return Name of the Ingress resource.
      * 
@@ -64,16 +55,12 @@ public final class GetDeployStagesDeployStageCollectionItemCanaryStrategy {
     public static Builder builder(GetDeployStagesDeployStageCollectionItemCanaryStrategy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String ingressName;
         private String namespace;
         private String strategyType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeployStagesDeployStageCollectionItemCanaryStrategy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ingressName = defaults.ingressName;
@@ -81,19 +68,27 @@ public final class GetDeployStagesDeployStageCollectionItemCanaryStrategy {
     	      this.strategyType = defaults.strategyType;
         }
 
+        @CustomType.Setter
         public Builder ingressName(String ingressName) {
             this.ingressName = Objects.requireNonNull(ingressName);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder strategyType(String strategyType) {
             this.strategyType = Objects.requireNonNull(strategyType);
             return this;
-        }        public GetDeployStagesDeployStageCollectionItemCanaryStrategy build() {
-            return new GetDeployStagesDeployStageCollectionItemCanaryStrategy(ingressName, namespace, strategyType);
+        }
+        public GetDeployStagesDeployStageCollectionItemCanaryStrategy build() {
+            final var o = new GetDeployStagesDeployStageCollectionItemCanaryStrategy();
+            o.ingressName = ingressName;
+            o.namespace = namespace;
+            o.strategyType = strategyType;
+            return o;
         }
     }
 }

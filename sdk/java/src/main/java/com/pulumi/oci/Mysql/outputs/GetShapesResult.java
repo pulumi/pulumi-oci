@@ -14,48 +14,31 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetShapesResult {
-    private final @Nullable String availabilityDomain;
-    private final String compartmentId;
-    private final @Nullable List<GetShapesFilter> filters;
+    private @Nullable String availabilityDomain;
+    private String compartmentId;
+    private @Nullable List<GetShapesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return What service features the shape is supported for.
      * 
      */
-    private final @Nullable List<String> isSupportedFors;
+    private @Nullable List<String> isSupportedFors;
     /**
      * @return The name of the shape used for the DB System.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The list of shapes.
      * 
      */
-    private final List<GetShapesShape> shapes;
+    private List<GetShapesShape> shapes;
 
-    @CustomType.Constructor
-    private GetShapesResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetShapesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isSupportedFors") @Nullable List<String> isSupportedFors,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("shapes") List<GetShapesShape> shapes) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.isSupportedFors = isSupportedFors;
-        this.name = name;
-        this.shapes = shapes;
-    }
-
+    private GetShapesResult() {}
     public Optional<String> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
     }
@@ -101,7 +84,7 @@ public final class GetShapesResult {
     public static Builder builder(GetShapesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
@@ -110,11 +93,7 @@ public final class GetShapesResult {
         private @Nullable List<String> isSupportedFors;
         private @Nullable String name;
         private List<GetShapesShape> shapes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -126,14 +105,17 @@ public final class GetShapesResult {
     	      this.shapes = defaults.shapes;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetShapesFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +123,12 @@ public final class GetShapesResult {
         public Builder filters(GetShapesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isSupportedFors(@Nullable List<String> isSupportedFors) {
             this.isSupportedFors = isSupportedFors;
             return this;
@@ -152,18 +136,29 @@ public final class GetShapesResult {
         public Builder isSupportedFors(String... isSupportedFors) {
             return isSupportedFors(List.of(isSupportedFors));
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder shapes(List<GetShapesShape> shapes) {
             this.shapes = Objects.requireNonNull(shapes);
             return this;
         }
         public Builder shapes(GetShapesShape... shapes) {
             return shapes(List.of(shapes));
-        }        public GetShapesResult build() {
-            return new GetShapesResult(availabilityDomain, compartmentId, filters, id, isSupportedFors, name, shapes);
+        }
+        public GetShapesResult build() {
+            final var o = new GetShapesResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.isSupportedFors = isSupportedFors;
+            o.name = name;
+            o.shapes = shapes;
+            return o;
         }
     }
 }

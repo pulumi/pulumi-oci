@@ -19,77 +19,54 @@ public final class CertificateCertificateConfig {
      * @return The name of the profile used to create the certificate, which depends on the type of certificate you need.
      * 
      */
-    private final @Nullable String certificateProfileType;
+    private @Nullable String certificateProfileType;
     /**
      * @return (Updatable) The origin of the certificate.
      * 
      */
-    private final String configType;
+    private String configType;
     /**
      * @return (Updatable) The certificate signing request (in PEM format).
      * 
      */
-    private final @Nullable String csrPem;
+    private @Nullable String csrPem;
     /**
      * @return The OCID of the private CA.
      * 
      */
-    private final @Nullable String issuerCertificateAuthorityId;
+    private @Nullable String issuerCertificateAuthorityId;
     /**
      * @return The algorithm to use to create key pairs.
      * 
      */
-    private final @Nullable String keyAlgorithm;
+    private @Nullable String keyAlgorithm;
     /**
      * @return The algorithm to use to sign the public key certificate.
      * 
      */
-    private final @Nullable String signatureAlgorithm;
+    private @Nullable String signatureAlgorithm;
     /**
      * @return The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
-    private final @Nullable CertificateCertificateConfigSubject subject;
+    private @Nullable CertificateCertificateConfigSubject subject;
     /**
      * @return A list of subject alternative names.
      * 
      */
-    private final @Nullable List<CertificateCertificateConfigSubjectAlternativeName> subjectAlternativeNames;
+    private @Nullable List<CertificateCertificateConfigSubjectAlternativeName> subjectAlternativeNames;
     /**
      * @return (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
      * 
      */
-    private final @Nullable CertificateCertificateConfigValidity validity;
+    private @Nullable CertificateCertificateConfigValidity validity;
     /**
      * @return (Updatable) A name for the certificate. When the value is not null, a name is unique across versions of a given certificate.
      * 
      */
-    private final @Nullable String versionName;
+    private @Nullable String versionName;
 
-    @CustomType.Constructor
-    private CertificateCertificateConfig(
-        @CustomType.Parameter("certificateProfileType") @Nullable String certificateProfileType,
-        @CustomType.Parameter("configType") String configType,
-        @CustomType.Parameter("csrPem") @Nullable String csrPem,
-        @CustomType.Parameter("issuerCertificateAuthorityId") @Nullable String issuerCertificateAuthorityId,
-        @CustomType.Parameter("keyAlgorithm") @Nullable String keyAlgorithm,
-        @CustomType.Parameter("signatureAlgorithm") @Nullable String signatureAlgorithm,
-        @CustomType.Parameter("subject") @Nullable CertificateCertificateConfigSubject subject,
-        @CustomType.Parameter("subjectAlternativeNames") @Nullable List<CertificateCertificateConfigSubjectAlternativeName> subjectAlternativeNames,
-        @CustomType.Parameter("validity") @Nullable CertificateCertificateConfigValidity validity,
-        @CustomType.Parameter("versionName") @Nullable String versionName) {
-        this.certificateProfileType = certificateProfileType;
-        this.configType = configType;
-        this.csrPem = csrPem;
-        this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
-        this.keyAlgorithm = keyAlgorithm;
-        this.signatureAlgorithm = signatureAlgorithm;
-        this.subject = subject;
-        this.subjectAlternativeNames = subjectAlternativeNames;
-        this.validity = validity;
-        this.versionName = versionName;
-    }
-
+    private CertificateCertificateConfig() {}
     /**
      * @return The name of the profile used to create the certificate, which depends on the type of certificate you need.
      * 
@@ -168,7 +145,7 @@ public final class CertificateCertificateConfig {
     public static Builder builder(CertificateCertificateConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String certificateProfileType;
         private String configType;
@@ -180,11 +157,7 @@ public final class CertificateCertificateConfig {
         private @Nullable List<CertificateCertificateConfigSubjectAlternativeName> subjectAlternativeNames;
         private @Nullable CertificateCertificateConfigValidity validity;
         private @Nullable String versionName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(CertificateCertificateConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateProfileType = defaults.certificateProfileType;
@@ -199,34 +172,42 @@ public final class CertificateCertificateConfig {
     	      this.versionName = defaults.versionName;
         }
 
+        @CustomType.Setter
         public Builder certificateProfileType(@Nullable String certificateProfileType) {
             this.certificateProfileType = certificateProfileType;
             return this;
         }
+        @CustomType.Setter
         public Builder configType(String configType) {
             this.configType = Objects.requireNonNull(configType);
             return this;
         }
+        @CustomType.Setter
         public Builder csrPem(@Nullable String csrPem) {
             this.csrPem = csrPem;
             return this;
         }
+        @CustomType.Setter
         public Builder issuerCertificateAuthorityId(@Nullable String issuerCertificateAuthorityId) {
             this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             return this;
         }
+        @CustomType.Setter
         public Builder keyAlgorithm(@Nullable String keyAlgorithm) {
             this.keyAlgorithm = keyAlgorithm;
             return this;
         }
+        @CustomType.Setter
         public Builder signatureAlgorithm(@Nullable String signatureAlgorithm) {
             this.signatureAlgorithm = signatureAlgorithm;
             return this;
         }
+        @CustomType.Setter
         public Builder subject(@Nullable CertificateCertificateConfigSubject subject) {
             this.subject = subject;
             return this;
         }
+        @CustomType.Setter
         public Builder subjectAlternativeNames(@Nullable List<CertificateCertificateConfigSubjectAlternativeName> subjectAlternativeNames) {
             this.subjectAlternativeNames = subjectAlternativeNames;
             return this;
@@ -234,15 +215,29 @@ public final class CertificateCertificateConfig {
         public Builder subjectAlternativeNames(CertificateCertificateConfigSubjectAlternativeName... subjectAlternativeNames) {
             return subjectAlternativeNames(List.of(subjectAlternativeNames));
         }
+        @CustomType.Setter
         public Builder validity(@Nullable CertificateCertificateConfigValidity validity) {
             this.validity = validity;
             return this;
         }
+        @CustomType.Setter
         public Builder versionName(@Nullable String versionName) {
             this.versionName = versionName;
             return this;
-        }        public CertificateCertificateConfig build() {
-            return new CertificateCertificateConfig(certificateProfileType, configType, csrPem, issuerCertificateAuthorityId, keyAlgorithm, signatureAlgorithm, subject, subjectAlternativeNames, validity, versionName);
+        }
+        public CertificateCertificateConfig build() {
+            final var o = new CertificateCertificateConfig();
+            o.certificateProfileType = certificateProfileType;
+            o.configType = configType;
+            o.csrPem = csrPem;
+            o.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
+            o.keyAlgorithm = keyAlgorithm;
+            o.signatureAlgorithm = signatureAlgorithm;
+            o.subject = subject;
+            o.subjectAlternativeNames = subjectAlternativeNames;
+            o.validity = validity;
+            o.versionName = versionName;
+            return o;
         }
     }
 }

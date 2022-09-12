@@ -14,38 +14,25 @@ public final class GetRegionSubscriptionsRegionSubscription {
      * @return Indicates if the region is the home region or not.
      * 
      */
-    private final Boolean isHomeRegion;
+    private Boolean isHomeRegion;
     /**
      * @return The region&#39;s key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported 3-letter region codes.  Example: `PHX`
      * 
      */
-    private final String regionKey;
+    private String regionKey;
     /**
      * @return The region&#39;s name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
      * 
      */
-    private final String regionName;
-    private final String state;
+    private String regionName;
+    private String state;
     /**
      * @return The OCID of the tenancy.
      * 
      */
-    private final String tenancyId;
+    private String tenancyId;
 
-    @CustomType.Constructor
-    private GetRegionSubscriptionsRegionSubscription(
-        @CustomType.Parameter("isHomeRegion") Boolean isHomeRegion,
-        @CustomType.Parameter("regionKey") String regionKey,
-        @CustomType.Parameter("regionName") String regionName,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("tenancyId") String tenancyId) {
-        this.isHomeRegion = isHomeRegion;
-        this.regionKey = regionKey;
-        this.regionName = regionName;
-        this.state = state;
-        this.tenancyId = tenancyId;
-    }
-
+    private GetRegionSubscriptionsRegionSubscription() {}
     /**
      * @return Indicates if the region is the home region or not.
      * 
@@ -85,18 +72,14 @@ public final class GetRegionSubscriptionsRegionSubscription {
     public static Builder builder(GetRegionSubscriptionsRegionSubscription defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isHomeRegion;
         private String regionKey;
         private String regionName;
         private String state;
         private String tenancyId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegionSubscriptionsRegionSubscription defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isHomeRegion = defaults.isHomeRegion;
@@ -106,27 +89,39 @@ public final class GetRegionSubscriptionsRegionSubscription {
     	      this.tenancyId = defaults.tenancyId;
         }
 
+        @CustomType.Setter
         public Builder isHomeRegion(Boolean isHomeRegion) {
             this.isHomeRegion = Objects.requireNonNull(isHomeRegion);
             return this;
         }
+        @CustomType.Setter
         public Builder regionKey(String regionKey) {
             this.regionKey = Objects.requireNonNull(regionKey);
             return this;
         }
+        @CustomType.Setter
         public Builder regionName(String regionName) {
             this.regionName = Objects.requireNonNull(regionName);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = Objects.requireNonNull(tenancyId);
             return this;
-        }        public GetRegionSubscriptionsRegionSubscription build() {
-            return new GetRegionSubscriptionsRegionSubscription(isHomeRegion, regionKey, regionName, state, tenancyId);
+        }
+        public GetRegionSubscriptionsRegionSubscription build() {
+            final var o = new GetRegionSubscriptionsRegionSubscription();
+            o.isHomeRegion = isHomeRegion;
+            o.regionKey = regionKey;
+            o.regionName = regionName;
+            o.state = state;
+            o.tenancyId = tenancyId;
+            return o;
         }
     }
 }

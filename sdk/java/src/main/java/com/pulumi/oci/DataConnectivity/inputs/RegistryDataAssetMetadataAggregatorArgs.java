@@ -16,14 +16,14 @@ public final class RegistryDataAssetMetadataAggregatorArgs extends com.pulumi.re
     public static final RegistryDataAssetMetadataAggregatorArgs Empty = new RegistryDataAssetMetadataAggregatorArgs();
 
     /**
-     * (Updatable) A user defined description for the object.
+     * (Updatable) A user-defined description for the object.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A user defined description for the object.
+     * @return (Updatable) A user-defined description for the object.
      * 
      */
     public Optional<Output<String>> description() {
@@ -31,14 +31,14 @@ public final class RegistryDataAssetMetadataAggregatorArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     @Import(name="identifier")
     private @Nullable Output<String> identifier;
 
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public Optional<Output<String>> identifier() {
@@ -61,14 +61,14 @@ public final class RegistryDataAssetMetadataAggregatorArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Optional<Output<String>> name() {
@@ -119,7 +119,7 @@ public final class RegistryDataAssetMetadataAggregatorArgs extends com.pulumi.re
         }
 
         /**
-         * @param description (Updatable) A user defined description for the object.
+         * @param description (Updatable) A user-defined description for the object.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class RegistryDataAssetMetadataAggregatorArgs extends com.pulumi.re
         }
 
         /**
-         * @param description (Updatable) A user defined description for the object.
+         * @param description (Updatable) A user-defined description for the object.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class RegistryDataAssetMetadataAggregatorArgs extends com.pulumi.re
         }
 
         /**
-         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class RegistryDataAssetMetadataAggregatorArgs extends com.pulumi.re
         }
 
         /**
-         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class RegistryDataAssetMetadataAggregatorArgs extends com.pulumi.re
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class RegistryDataAssetMetadataAggregatorArgs extends com.pulumi.re
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 

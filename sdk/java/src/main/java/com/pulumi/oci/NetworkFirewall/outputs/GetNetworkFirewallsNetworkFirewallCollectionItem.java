@@ -16,119 +16,84 @@ public final class GetNetworkFirewallsNetworkFirewallCollectionItem {
      * @return A filter to return only resources that are present within the specified availability domain. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return IPv4 address for the Network Firewall.
      * 
      */
-    private final String ipv4address;
+    private String ipv4address;
     /**
      * @return IPv6 address for the Network Firewall.
      * 
      */
-    private final String ipv6address;
+    private String ipv6address;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return A filter to return only resources that match the entire networkFirewallPolicyId given.
      * 
      */
-    private final String networkFirewallPolicyId;
+    private String networkFirewallPolicyId;
     /**
      * @return An array of network security groups [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the Network Firewall.
      * 
      */
-    private final List<String> networkSecurityGroupIds;
+    private List<String> networkSecurityGroupIds;
     /**
      * @return A filter to return only resources with a lifecycleState matching the given value.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time instant at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time instant at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetNetworkFirewallsNetworkFirewallCollectionItem(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ipv4address") String ipv4address,
-        @CustomType.Parameter("ipv6address") String ipv6address,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("networkFirewallPolicyId") String networkFirewallPolicyId,
-        @CustomType.Parameter("networkSecurityGroupIds") List<String> networkSecurityGroupIds,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("subnetId") String subnetId,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.ipv4address = ipv4address;
-        this.ipv6address = ipv6address;
-        this.lifecycleDetails = lifecycleDetails;
-        this.networkFirewallPolicyId = networkFirewallPolicyId;
-        this.networkSecurityGroupIds = networkSecurityGroupIds;
-        this.state = state;
-        this.subnetId = subnetId;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetNetworkFirewallsNetworkFirewallCollectionItem() {}
     /**
      * @return A filter to return only resources that are present within the specified availability domain. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
      * 
@@ -249,7 +214,7 @@ public final class GetNetworkFirewallsNetworkFirewallCollectionItem {
     public static Builder builder(GetNetworkFirewallsNetworkFirewallCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String compartmentId;
@@ -267,11 +232,7 @@ public final class GetNetworkFirewallsNetworkFirewallCollectionItem {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkFirewallsNetworkFirewallCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -292,46 +253,57 @@ public final class GetNetworkFirewallsNetworkFirewallCollectionItem {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ipv4address(String ipv4address) {
             this.ipv4address = Objects.requireNonNull(ipv4address);
             return this;
         }
+        @CustomType.Setter
         public Builder ipv6address(String ipv6address) {
             this.ipv6address = Objects.requireNonNull(ipv6address);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder networkFirewallPolicyId(String networkFirewallPolicyId) {
             this.networkFirewallPolicyId = Objects.requireNonNull(networkFirewallPolicyId);
             return this;
         }
+        @CustomType.Setter
         public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
             this.networkSecurityGroupIds = Objects.requireNonNull(networkSecurityGroupIds);
             return this;
@@ -339,27 +311,50 @@ public final class GetNetworkFirewallsNetworkFirewallCollectionItem {
         public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
             return networkSecurityGroupIds(List.of(networkSecurityGroupIds));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetNetworkFirewallsNetworkFirewallCollectionItem build() {
-            return new GetNetworkFirewallsNetworkFirewallCollectionItem(availabilityDomain, compartmentId, definedTags, displayName, freeformTags, id, ipv4address, ipv6address, lifecycleDetails, networkFirewallPolicyId, networkSecurityGroupIds, state, subnetId, systemTags, timeCreated, timeUpdated);
+        }
+        public GetNetworkFirewallsNetworkFirewallCollectionItem build() {
+            final var o = new GetNetworkFirewallsNetworkFirewallCollectionItem();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.ipv4address = ipv4address;
+            o.ipv6address = ipv6address;
+            o.lifecycleDetails = lifecycleDetails;
+            o.networkFirewallPolicyId = networkFirewallPolicyId;
+            o.networkSecurityGroupIds = networkSecurityGroupIds;
+            o.state = state;
+            o.subnetId = subnetId;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

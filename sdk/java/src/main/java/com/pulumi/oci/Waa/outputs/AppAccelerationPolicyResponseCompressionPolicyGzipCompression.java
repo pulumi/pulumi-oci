@@ -15,13 +15,9 @@ public final class AppAccelerationPolicyResponseCompressionPolicyGzipCompression
      * @return (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the &#34;Accept-Encoding: gzip&#34; request header.
      * 
      */
-    private final @Nullable Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
 
-    @CustomType.Constructor
-    private AppAccelerationPolicyResponseCompressionPolicyGzipCompression(@CustomType.Parameter("isEnabled") @Nullable Boolean isEnabled) {
-        this.isEnabled = isEnabled;
-    }
-
+    private AppAccelerationPolicyResponseCompressionPolicyGzipCompression() {}
     /**
      * @return (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the &#34;Accept-Encoding: gzip&#34; request header.
      * 
@@ -37,24 +33,24 @@ public final class AppAccelerationPolicyResponseCompressionPolicyGzipCompression
     public static Builder builder(AppAccelerationPolicyResponseCompressionPolicyGzipCompression defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean isEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AppAccelerationPolicyResponseCompressionPolicyGzipCompression defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isEnabled = defaults.isEnabled;
         }
 
+        @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
             this.isEnabled = isEnabled;
             return this;
-        }        public AppAccelerationPolicyResponseCompressionPolicyGzipCompression build() {
-            return new AppAccelerationPolicyResponseCompressionPolicyGzipCompression(isEnabled);
+        }
+        public AppAccelerationPolicyResponseCompressionPolicyGzipCompression build() {
+            final var o = new AppAccelerationPolicyResponseCompressionPolicyGzipCompression();
+            o.isEnabled = isEnabled;
+            return o;
         }
     }
 }

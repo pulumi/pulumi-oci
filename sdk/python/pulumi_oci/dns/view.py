@@ -15,26 +15,27 @@ __all__ = ['ViewArgs', 'View']
 class ViewArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
-                 scope: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 scope: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a View resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the owning compartment.
-        :param pulumi.Input[str] scope: Value must be `PRIVATE` when creating a view for private zones.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The display name of the view.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating a view for private zones.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "scope", scope)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -47,18 +48,6 @@ class ViewArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
-
-    @property
-    @pulumi.getter
-    def scope(self) -> pulumi.Input[str]:
-        """
-        Value must be `PRIVATE` when creating a view for private zones.
-        """
-        return pulumi.get(self, "scope")
-
-    @scope.setter
-    def scope(self, value: pulumi.Input[str]):
-        pulumi.set(self, "scope", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -96,6 +85,18 @@ class ViewArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @property
+    @pulumi.getter
+    def scope(self) -> Optional[pulumi.Input[str]]:
+        """
+        If specified, must be `PRIVATE` when creating a view for private zones.
+        """
+        return pulumi.get(self, "scope")
+
+    @scope.setter
+    def scope(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scope", value)
+
 
 @pulumi.input_type
 class _ViewState:
@@ -117,7 +118,7 @@ class _ViewState:
         :param pulumi.Input[str] display_name: (Updatable) The display name of the view.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        :param pulumi.Input[str] scope: Value must be `PRIVATE` when creating a view for private zones.
+        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating a view for private zones.
         :param pulumi.Input[str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[str] state: The current state of the resource.
         :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
@@ -208,7 +209,7 @@ class _ViewState:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        Value must be `PRIVATE` when creating a view for private zones.
+        If specified, must be `PRIVATE` when creating a view for private zones.
         """
         return pulumi.get(self, "scope")
 
@@ -279,7 +280,7 @@ class View(pulumi.CustomResource):
         """
         This resource provides the View resource in Oracle Cloud Infrastructure DNS service.
 
-        Creates a new view in the specified compartment. Requires a `PRIVATE` scope query parameter.
+        Creates a new view in the specified compartment.
 
         ## Example Usage
 
@@ -297,16 +298,10 @@ class View(pulumi.CustomResource):
 
         ## Import
 
-        For legacy Views that were created without using `scope`, these Views can be imported using the `id`, e.g.
+        Views can be imported using their OCID, e.g.
 
         ```sh
          $ pulumi import oci:Dns/view:View test_view "id"
-        ```
-
-         For Views created using `scope`, these Views can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Dns/view:View test_view "viewId/{viewId}/scope/{scope}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -315,7 +310,7 @@ class View(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The display name of the view.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] scope: Value must be `PRIVATE` when creating a view for private zones.
+        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating a view for private zones.
         """
         ...
     @overload
@@ -326,7 +321,7 @@ class View(pulumi.CustomResource):
         """
         This resource provides the View resource in Oracle Cloud Infrastructure DNS service.
 
-        Creates a new view in the specified compartment. Requires a `PRIVATE` scope query parameter.
+        Creates a new view in the specified compartment.
 
         ## Example Usage
 
@@ -344,16 +339,10 @@ class View(pulumi.CustomResource):
 
         ## Import
 
-        For legacy Views that were created without using `scope`, these Views can be imported using the `id`, e.g.
+        Views can be imported using their OCID, e.g.
 
         ```sh
          $ pulumi import oci:Dns/view:View test_view "id"
-        ```
-
-         For Views created using `scope`, these Views can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Dns/view:View test_view "viewId/{viewId}/scope/{scope}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -391,8 +380,6 @@ class View(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if scope is None and not opts.urn:
-                raise TypeError("Missing required property 'scope'")
             __props__.__dict__["scope"] = scope
             __props__.__dict__["is_protected"] = None
             __props__.__dict__["self"] = None
@@ -431,7 +418,7 @@ class View(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The display name of the view.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        :param pulumi.Input[str] scope: Value must be `PRIVATE` when creating a view for private zones.
+        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating a view for private zones.
         :param pulumi.Input[str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[str] state: The current state of the resource.
         :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
@@ -495,9 +482,9 @@ class View(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def scope(self) -> pulumi.Output[str]:
+    def scope(self) -> pulumi.Output[Optional[str]]:
         """
-        Value must be `PRIVATE` when creating a view for private zones.
+        If specified, must be `PRIVATE` when creating a view for private zones.
         """
         return pulumi.get(self, "scope")
 

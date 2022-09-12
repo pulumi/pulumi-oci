@@ -13,21 +13,14 @@ public final class GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail {
      * @return Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private final String timeEarliestRecoveryPoint;
+    private String timeEarliestRecoveryPoint;
     /**
      * @return Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private final String timeLatestRecoveryPoint;
+    private String timeLatestRecoveryPoint;
 
-    @CustomType.Constructor
-    private GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail(
-        @CustomType.Parameter("timeEarliestRecoveryPoint") String timeEarliestRecoveryPoint,
-        @CustomType.Parameter("timeLatestRecoveryPoint") String timeLatestRecoveryPoint) {
-        this.timeEarliestRecoveryPoint = timeEarliestRecoveryPoint;
-        this.timeLatestRecoveryPoint = timeLatestRecoveryPoint;
-    }
-
+    private GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail() {}
     /**
      * @return Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
@@ -50,30 +43,32 @@ public final class GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail {
     public static Builder builder(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String timeEarliestRecoveryPoint;
         private String timeLatestRecoveryPoint;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.timeEarliestRecoveryPoint = defaults.timeEarliestRecoveryPoint;
     	      this.timeLatestRecoveryPoint = defaults.timeLatestRecoveryPoint;
         }
 
+        @CustomType.Setter
         public Builder timeEarliestRecoveryPoint(String timeEarliestRecoveryPoint) {
             this.timeEarliestRecoveryPoint = Objects.requireNonNull(timeEarliestRecoveryPoint);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLatestRecoveryPoint(String timeLatestRecoveryPoint) {
             this.timeLatestRecoveryPoint = Objects.requireNonNull(timeLatestRecoveryPoint);
             return this;
-        }        public GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail build() {
-            return new GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail(timeEarliestRecoveryPoint, timeLatestRecoveryPoint);
+        }
+        public GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail build() {
+            final var o = new GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail();
+            o.timeEarliestRecoveryPoint = timeEarliestRecoveryPoint;
+            o.timeLatestRecoveryPoint = timeLatestRecoveryPoint;
+            return o;
         }
     }
 }

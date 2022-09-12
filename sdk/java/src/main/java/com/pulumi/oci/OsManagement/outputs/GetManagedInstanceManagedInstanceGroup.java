@@ -13,21 +13,14 @@ public final class GetManagedInstanceManagedInstanceGroup {
      * @return User friendly name
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return software source identifier
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetManagedInstanceManagedInstanceGroup(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id) {
-        this.displayName = displayName;
-        this.id = id;
-    }
-
+    private GetManagedInstanceManagedInstanceGroup() {}
     /**
      * @return User friendly name
      * 
@@ -50,30 +43,32 @@ public final class GetManagedInstanceManagedInstanceGroup {
     public static Builder builder(GetManagedInstanceManagedInstanceGroup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedInstanceManagedInstanceGroup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetManagedInstanceManagedInstanceGroup build() {
-            return new GetManagedInstanceManagedInstanceGroup(displayName, id);
+        }
+        public GetManagedInstanceManagedInstanceGroup build() {
+            final var o = new GetManagedInstanceManagedInstanceGroup();
+            o.displayName = displayName;
+            o.id = id;
+            return o;
         }
     }
 }

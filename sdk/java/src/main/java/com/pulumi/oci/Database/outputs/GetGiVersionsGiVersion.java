@@ -13,13 +13,9 @@ public final class GetGiVersionsGiVersion {
      * @return A valid Oracle Grid Infrastructure (GI) software version.
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetGiVersionsGiVersion(@CustomType.Parameter("version") String version) {
-        this.version = version;
-    }
-
+    private GetGiVersionsGiVersion() {}
     /**
      * @return A valid Oracle Grid Infrastructure (GI) software version.
      * 
@@ -35,24 +31,24 @@ public final class GetGiVersionsGiVersion {
     public static Builder builder(GetGiVersionsGiVersion defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGiVersionsGiVersion defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetGiVersionsGiVersion build() {
-            return new GetGiVersionsGiVersion(version);
+        }
+        public GetGiVersionsGiVersion build() {
+            final var o = new GetGiVersionsGiVersion();
+            o.version = version;
+            return o;
         }
     }
 }

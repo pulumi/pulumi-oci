@@ -10,20 +10,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetShapeShapeMaxVnicAttachmentOption {
-    private final Double defaultPerOcpu;
-    private final Double max;
-    private final Integer min;
+    private Double defaultPerOcpu;
+    private Double max;
+    private Integer min;
 
-    @CustomType.Constructor
-    private GetShapeShapeMaxVnicAttachmentOption(
-        @CustomType.Parameter("defaultPerOcpu") Double defaultPerOcpu,
-        @CustomType.Parameter("max") Double max,
-        @CustomType.Parameter("min") Integer min) {
-        this.defaultPerOcpu = defaultPerOcpu;
-        this.max = max;
-        this.min = min;
-    }
-
+    private GetShapeShapeMaxVnicAttachmentOption() {}
     public Double defaultPerOcpu() {
         return this.defaultPerOcpu;
     }
@@ -41,16 +32,12 @@ public final class GetShapeShapeMaxVnicAttachmentOption {
     public static Builder builder(GetShapeShapeMaxVnicAttachmentOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double defaultPerOcpu;
         private Double max;
         private Integer min;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetShapeShapeMaxVnicAttachmentOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.defaultPerOcpu = defaults.defaultPerOcpu;
@@ -58,19 +45,27 @@ public final class GetShapeShapeMaxVnicAttachmentOption {
     	      this.min = defaults.min;
         }
 
+        @CustomType.Setter
         public Builder defaultPerOcpu(Double defaultPerOcpu) {
             this.defaultPerOcpu = Objects.requireNonNull(defaultPerOcpu);
             return this;
         }
+        @CustomType.Setter
         public Builder max(Double max) {
             this.max = Objects.requireNonNull(max);
             return this;
         }
+        @CustomType.Setter
         public Builder min(Integer min) {
             this.min = Objects.requireNonNull(min);
             return this;
-        }        public GetShapeShapeMaxVnicAttachmentOption build() {
-            return new GetShapeShapeMaxVnicAttachmentOption(defaultPerOcpu, max, min);
+        }
+        public GetShapeShapeMaxVnicAttachmentOption build() {
+            final var o = new GetShapeShapeMaxVnicAttachmentOption();
+            o.defaultPerOcpu = defaultPerOcpu;
+            o.max = max;
+            o.min = min;
+            return o;
         }
     }
 }

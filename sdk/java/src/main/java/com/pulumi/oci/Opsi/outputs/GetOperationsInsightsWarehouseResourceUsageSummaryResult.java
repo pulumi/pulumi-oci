@@ -14,38 +14,25 @@ public final class GetOperationsInsightsWarehouseResourceUsageSummaryResult {
      * @return Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
      * 
      */
-    private final Double cpuUsed;
+    private Double cpuUsed;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String operationsInsightsWarehouseId;
+    private String id;
+    private String operationsInsightsWarehouseId;
     /**
      * @return Possible lifecycle states
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Storage by OPSI Warehouse ADW in GB.
      * 
      */
-    private final Double storageUsedInGbs;
+    private Double storageUsedInGbs;
 
-    @CustomType.Constructor
-    private GetOperationsInsightsWarehouseResourceUsageSummaryResult(
-        @CustomType.Parameter("cpuUsed") Double cpuUsed,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("operationsInsightsWarehouseId") String operationsInsightsWarehouseId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("storageUsedInGbs") Double storageUsedInGbs) {
-        this.cpuUsed = cpuUsed;
-        this.id = id;
-        this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
-        this.state = state;
-        this.storageUsedInGbs = storageUsedInGbs;
-    }
-
+    private GetOperationsInsightsWarehouseResourceUsageSummaryResult() {}
     /**
      * @return Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
      * 
@@ -85,18 +72,14 @@ public final class GetOperationsInsightsWarehouseResourceUsageSummaryResult {
     public static Builder builder(GetOperationsInsightsWarehouseResourceUsageSummaryResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Double cpuUsed;
         private String id;
         private String operationsInsightsWarehouseId;
         private String state;
         private Double storageUsedInGbs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetOperationsInsightsWarehouseResourceUsageSummaryResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cpuUsed = defaults.cpuUsed;
@@ -106,27 +89,39 @@ public final class GetOperationsInsightsWarehouseResourceUsageSummaryResult {
     	      this.storageUsedInGbs = defaults.storageUsedInGbs;
         }
 
+        @CustomType.Setter
         public Builder cpuUsed(Double cpuUsed) {
             this.cpuUsed = Objects.requireNonNull(cpuUsed);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder operationsInsightsWarehouseId(String operationsInsightsWarehouseId) {
             this.operationsInsightsWarehouseId = Objects.requireNonNull(operationsInsightsWarehouseId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder storageUsedInGbs(Double storageUsedInGbs) {
             this.storageUsedInGbs = Objects.requireNonNull(storageUsedInGbs);
             return this;
-        }        public GetOperationsInsightsWarehouseResourceUsageSummaryResult build() {
-            return new GetOperationsInsightsWarehouseResourceUsageSummaryResult(cpuUsed, id, operationsInsightsWarehouseId, state, storageUsedInGbs);
+        }
+        public GetOperationsInsightsWarehouseResourceUsageSummaryResult build() {
+            final var o = new GetOperationsInsightsWarehouseResourceUsageSummaryResult();
+            o.cpuUsed = cpuUsed;
+            o.id = id;
+            o.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
+            o.state = state;
+            o.storageUsedInGbs = storageUsedInGbs;
+            return o;
         }
     }
 }

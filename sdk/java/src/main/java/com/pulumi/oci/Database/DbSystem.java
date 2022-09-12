@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.DbSystemArgs;
 import com.pulumi.oci.Database.inputs.DbSystemState;
+import com.pulumi.oci.Database.outputs.DbSystemDataCollectionOptions;
 import com.pulumi.oci.Database.outputs.DbSystemDbHome;
 import com.pulumi.oci.Database.outputs.DbSystemDbSystemOptions;
 import com.pulumi.oci.Database.outputs.DbSystemIormConfigCach;
@@ -173,6 +174,20 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> cpuCoreCount() {
         return this.cpuCoreCount;
+    }
+    /**
+     * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     * 
+     */
+    @Export(name="dataCollectionOptions", type=DbSystemDataCollectionOptions.class, parameters={})
+    private Output<DbSystemDataCollectionOptions> dataCollectionOptions;
+
+    /**
+     * @return (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+     * 
+     */
+    public Output<DbSystemDataCollectionOptions> dataCollectionOptions() {
+        return this.dataCollectionOptions;
     }
     /**
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.

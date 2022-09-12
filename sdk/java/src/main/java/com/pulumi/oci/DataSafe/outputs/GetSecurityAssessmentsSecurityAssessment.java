@@ -18,182 +18,129 @@ public final class GetSecurityAssessmentsSecurityAssessment {
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The description of the security assessment.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A filter to return only resources that match the specified display name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the security assessment.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
-    private final List<String> ignoredAssessmentIds;
+    private List<String> ignoredAssessmentIds;
     /**
      * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
-    private final List<String> ignoredTargets;
+    private List<String> ignoredTargets;
     /**
      * @return A filter to return only security assessments that are set as baseline.
      * 
      */
-    private final Boolean isBaseline;
+    private Boolean isBaseline;
     /**
      * @return Indicates whether or not the security assessment deviates from the baseline.
      * 
      */
-    private final Boolean isDeviatedFromBaseline;
+    private Boolean isDeviatedFromBaseline;
     /**
      * @return The OCID of the baseline against which the latest security assessment was compared.
      * 
      */
-    private final String lastComparedBaselineId;
+    private String lastComparedBaselineId;
     /**
      * @return Details about the current state of the security assessment.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The summary of findings for the security assessment.
      * 
      */
-    private final String link;
+    private String link;
     /**
      * @return Schedule of the assessment that runs periodically in the specified format: - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
      */
-    private final String schedule;
+    private String schedule;
     /**
      * @return The OCID of the security assessment that is responsible for creating this scheduled save assessment.
      * 
      */
-    private final String scheduleSecurityAssessmentId;
+    private String scheduleSecurityAssessmentId;
     /**
      * @return A filter to return only resources that match the specified lifecycle state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
      * 
      */
-    private final List<GetSecurityAssessmentsSecurityAssessmentStatistic> statistics;
+    private List<GetSecurityAssessmentsSecurityAssessmentStatistic> statistics;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private final String targetId;
+    private String targetId;
     /**
      * @return Array of database target OCIDs.
      * 
      */
-    private final List<String> targetIds;
+    private List<String> targetIds;
     /**
      * @return The version of the target database.
      * 
      */
-    private final String targetVersion;
+    private String targetVersion;
     /**
      * @return The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return A filter to return only security asessments that were created by either user or system.
      * 
      */
-    private final String triggeredBy;
+    private String triggeredBy;
     /**
      * @return A filter to return only items that match the specified security assessment type.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetSecurityAssessmentsSecurityAssessment(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ignoredAssessmentIds") List<String> ignoredAssessmentIds,
-        @CustomType.Parameter("ignoredTargets") List<String> ignoredTargets,
-        @CustomType.Parameter("isBaseline") Boolean isBaseline,
-        @CustomType.Parameter("isDeviatedFromBaseline") Boolean isDeviatedFromBaseline,
-        @CustomType.Parameter("lastComparedBaselineId") String lastComparedBaselineId,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("link") String link,
-        @CustomType.Parameter("schedule") String schedule,
-        @CustomType.Parameter("scheduleSecurityAssessmentId") String scheduleSecurityAssessmentId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("statistics") List<GetSecurityAssessmentsSecurityAssessmentStatistic> statistics,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("targetId") String targetId,
-        @CustomType.Parameter("targetIds") List<String> targetIds,
-        @CustomType.Parameter("targetVersion") String targetVersion,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("triggeredBy") String triggeredBy,
-        @CustomType.Parameter("type") String type) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.ignoredAssessmentIds = ignoredAssessmentIds;
-        this.ignoredTargets = ignoredTargets;
-        this.isBaseline = isBaseline;
-        this.isDeviatedFromBaseline = isDeviatedFromBaseline;
-        this.lastComparedBaselineId = lastComparedBaselineId;
-        this.lifecycleDetails = lifecycleDetails;
-        this.link = link;
-        this.schedule = schedule;
-        this.scheduleSecurityAssessmentId = scheduleSecurityAssessmentId;
-        this.state = state;
-        this.statistics = statistics;
-        this.systemTags = systemTags;
-        this.targetId = targetId;
-        this.targetIds = targetIds;
-        this.targetVersion = targetVersion;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.triggeredBy = triggeredBy;
-        this.type = type;
-    }
-
+    private GetSecurityAssessmentsSecurityAssessment() {}
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
@@ -377,7 +324,7 @@ public final class GetSecurityAssessmentsSecurityAssessment {
     public static Builder builder(GetSecurityAssessmentsSecurityAssessment defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -404,11 +351,7 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         private String timeUpdated;
         private String triggeredBy;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSecurityAssessmentsSecurityAssessment defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -438,30 +381,37 @@ public final class GetSecurityAssessmentsSecurityAssessment {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ignoredAssessmentIds(List<String> ignoredAssessmentIds) {
             this.ignoredAssessmentIds = Objects.requireNonNull(ignoredAssessmentIds);
             return this;
@@ -469,6 +419,7 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         public Builder ignoredAssessmentIds(String... ignoredAssessmentIds) {
             return ignoredAssessmentIds(List.of(ignoredAssessmentIds));
         }
+        @CustomType.Setter
         public Builder ignoredTargets(List<String> ignoredTargets) {
             this.ignoredTargets = Objects.requireNonNull(ignoredTargets);
             return this;
@@ -476,38 +427,47 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         public Builder ignoredTargets(String... ignoredTargets) {
             return ignoredTargets(List.of(ignoredTargets));
         }
+        @CustomType.Setter
         public Builder isBaseline(Boolean isBaseline) {
             this.isBaseline = Objects.requireNonNull(isBaseline);
             return this;
         }
+        @CustomType.Setter
         public Builder isDeviatedFromBaseline(Boolean isDeviatedFromBaseline) {
             this.isDeviatedFromBaseline = Objects.requireNonNull(isDeviatedFromBaseline);
             return this;
         }
+        @CustomType.Setter
         public Builder lastComparedBaselineId(String lastComparedBaselineId) {
             this.lastComparedBaselineId = Objects.requireNonNull(lastComparedBaselineId);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder link(String link) {
             this.link = Objects.requireNonNull(link);
             return this;
         }
+        @CustomType.Setter
         public Builder schedule(String schedule) {
             this.schedule = Objects.requireNonNull(schedule);
             return this;
         }
+        @CustomType.Setter
         public Builder scheduleSecurityAssessmentId(String scheduleSecurityAssessmentId) {
             this.scheduleSecurityAssessmentId = Objects.requireNonNull(scheduleSecurityAssessmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder statistics(List<GetSecurityAssessmentsSecurityAssessmentStatistic> statistics) {
             this.statistics = Objects.requireNonNull(statistics);
             return this;
@@ -515,14 +475,17 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         public Builder statistics(GetSecurityAssessmentsSecurityAssessmentStatistic... statistics) {
             return statistics(List.of(statistics));
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             this.targetId = Objects.requireNonNull(targetId);
             return this;
         }
+        @CustomType.Setter
         public Builder targetIds(List<String> targetIds) {
             this.targetIds = Objects.requireNonNull(targetIds);
             return this;
@@ -530,27 +493,59 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         public Builder targetIds(String... targetIds) {
             return targetIds(List.of(targetIds));
         }
+        @CustomType.Setter
         public Builder targetVersion(String targetVersion) {
             this.targetVersion = Objects.requireNonNull(targetVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder triggeredBy(String triggeredBy) {
             this.triggeredBy = Objects.requireNonNull(triggeredBy);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetSecurityAssessmentsSecurityAssessment build() {
-            return new GetSecurityAssessmentsSecurityAssessment(compartmentId, definedTags, description, displayName, freeformTags, id, ignoredAssessmentIds, ignoredTargets, isBaseline, isDeviatedFromBaseline, lastComparedBaselineId, lifecycleDetails, link, schedule, scheduleSecurityAssessmentId, state, statistics, systemTags, targetId, targetIds, targetVersion, timeCreated, timeUpdated, triggeredBy, type);
+        }
+        public GetSecurityAssessmentsSecurityAssessment build() {
+            final var o = new GetSecurityAssessmentsSecurityAssessment();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.ignoredAssessmentIds = ignoredAssessmentIds;
+            o.ignoredTargets = ignoredTargets;
+            o.isBaseline = isBaseline;
+            o.isDeviatedFromBaseline = isDeviatedFromBaseline;
+            o.lastComparedBaselineId = lastComparedBaselineId;
+            o.lifecycleDetails = lifecycleDetails;
+            o.link = link;
+            o.schedule = schedule;
+            o.scheduleSecurityAssessmentId = scheduleSecurityAssessmentId;
+            o.state = state;
+            o.statistics = statistics;
+            o.systemTags = systemTags;
+            o.targetId = targetId;
+            o.targetIds = targetIds;
+            o.targetVersion = targetVersion;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.triggeredBy = triggeredBy;
+            o.type = type;
+            return o;
         }
     }
 }

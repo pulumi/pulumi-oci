@@ -33,7 +33,7 @@ import (
 //			_, err := Dns.GetResolverEndpoint(ctx, &dns.GetResolverEndpointArgs{
 //				ResolverEndpointName: oci_dns_resolver_endpoint.Test_resolver_endpoint.Name,
 //				ResolverId:           oci_dns_resolver.Test_resolver.Id,
-//				Scope:                "PRIVATE",
+//				Scope:                pulumi.StringRef("PRIVATE"),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -59,7 +59,7 @@ type LookupResolverEndpointArgs struct {
 	// The OCID of the target resolver.
 	ResolverId string `pulumi:"resolverId"`
 	// Value must be `PRIVATE` when listing private name resolver endpoints.
-	Scope string `pulumi:"scope"`
+	Scope *string `pulumi:"scope"`
 }
 
 // A collection of values returned by getResolverEndpoint.
@@ -83,7 +83,7 @@ type LookupResolverEndpointResult struct {
 	NsgIds               []string `pulumi:"nsgIds"`
 	ResolverEndpointName string   `pulumi:"resolverEndpointName"`
 	ResolverId           string   `pulumi:"resolverId"`
-	Scope                string   `pulumi:"scope"`
+	Scope                *string  `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
 	Self string `pulumi:"self"`
 	// The current state of the resource.
@@ -116,7 +116,7 @@ type LookupResolverEndpointOutputArgs struct {
 	// The OCID of the target resolver.
 	ResolverId pulumi.StringInput `pulumi:"resolverId"`
 	// Value must be `PRIVATE` when listing private name resolver endpoints.
-	Scope pulumi.StringInput `pulumi:"scope"`
+	Scope pulumi.StringPtrInput `pulumi:"scope"`
 }
 
 func (LookupResolverEndpointOutputArgs) ElementType() reflect.Type {
@@ -190,8 +190,8 @@ func (o LookupResolverEndpointResultOutput) ResolverId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.ResolverId }).(pulumi.StringOutput)
 }
 
-func (o LookupResolverEndpointResultOutput) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.Scope }).(pulumi.StringOutput)
+func (o LookupResolverEndpointResultOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverEndpointResult) *string { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
 // The canonical absolute URL of the resource.

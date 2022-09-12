@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPrivateApplicationsPrivateApplicationCollection {
-    private final List<GetPrivateApplicationsPrivateApplicationCollectionItem> items;
+    private List<GetPrivateApplicationsPrivateApplicationCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetPrivateApplicationsPrivateApplicationCollection(@CustomType.Parameter("items") List<GetPrivateApplicationsPrivateApplicationCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetPrivateApplicationsPrivateApplicationCollection() {}
     public List<GetPrivateApplicationsPrivateApplicationCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetPrivateApplicationsPrivateApplicationCollection {
     public static Builder builder(GetPrivateApplicationsPrivateApplicationCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetPrivateApplicationsPrivateApplicationCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPrivateApplicationsPrivateApplicationCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetPrivateApplicationsPrivateApplicationCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetPrivateApplicationsPrivateApplicationCollectionItem... items) {
             return items(List.of(items));
-        }        public GetPrivateApplicationsPrivateApplicationCollection build() {
-            return new GetPrivateApplicationsPrivateApplicationCollection(items);
+        }
+        public GetPrivateApplicationsPrivateApplicationCollection build() {
+            final var o = new GetPrivateApplicationsPrivateApplicationCollection();
+            o.items = items;
+            return o;
         }
     }
 }

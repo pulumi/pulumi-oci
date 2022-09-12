@@ -14,13 +14,9 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunArguments {
      * @return List of exported variables.
      * 
      */
-    private final List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItem> items;
+    private List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItem> items;
 
-    @CustomType.Constructor
-    private GetBuildRunsBuildRunSummaryCollectionItemBuildRunArguments(@CustomType.Parameter("items") List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItem> items) {
-        this.items = items;
-    }
-
+    private GetBuildRunsBuildRunSummaryCollectionItemBuildRunArguments() {}
     /**
      * @return List of exported variables.
      * 
@@ -36,27 +32,27 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunArguments {
     public static Builder builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunArguments defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildRunsBuildRunSummaryCollectionItemBuildRunArguments defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItem... items) {
             return items(List.of(items));
-        }        public GetBuildRunsBuildRunSummaryCollectionItemBuildRunArguments build() {
-            return new GetBuildRunsBuildRunSummaryCollectionItemBuildRunArguments(items);
+        }
+        public GetBuildRunsBuildRunSummaryCollectionItemBuildRunArguments build() {
+            final var o = new GetBuildRunsBuildRunSummaryCollectionItemBuildRunArguments();
+            o.items = items;
+            return o;
         }
     }
 }

@@ -13,28 +13,19 @@ public final class GetAllowedDomainLicenseTypesAllowedDomainLicenseType {
      * @return The license type description.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The license type identifier.  Example: &#34;oracle-apps-premium&#34;
      * 
      */
-    private final String licenseType;
+    private String licenseType;
     /**
      * @return The license type name.  Example: &#34;Oracle Apps Premium&#34;
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetAllowedDomainLicenseTypesAllowedDomainLicenseType(
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("licenseType") String licenseType,
-        @CustomType.Parameter("name") String name) {
-        this.description = description;
-        this.licenseType = licenseType;
-        this.name = name;
-    }
-
+    private GetAllowedDomainLicenseTypesAllowedDomainLicenseType() {}
     /**
      * @return The license type description.
      * 
@@ -64,16 +55,12 @@ public final class GetAllowedDomainLicenseTypesAllowedDomainLicenseType {
     public static Builder builder(GetAllowedDomainLicenseTypesAllowedDomainLicenseType defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String description;
         private String licenseType;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAllowedDomainLicenseTypesAllowedDomainLicenseType defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -81,19 +68,27 @@ public final class GetAllowedDomainLicenseTypesAllowedDomainLicenseType {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseType(String licenseType) {
             this.licenseType = Objects.requireNonNull(licenseType);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetAllowedDomainLicenseTypesAllowedDomainLicenseType build() {
-            return new GetAllowedDomainLicenseTypesAllowedDomainLicenseType(description, licenseType, name);
+        }
+        public GetAllowedDomainLicenseTypesAllowedDomainLicenseType build() {
+            final var o = new GetAllowedDomainLicenseTypesAllowedDomainLicenseType();
+            o.description = description;
+            o.licenseType = licenseType;
+            o.name = name;
+            return o;
         }
     }
 }

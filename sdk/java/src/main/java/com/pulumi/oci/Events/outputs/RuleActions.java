@@ -14,13 +14,9 @@ public final class RuleActions {
      * @return (Updatable) A list of one or more ActionDetails objects.
      * 
      */
-    private final List<RuleActionsAction> actions;
+    private List<RuleActionsAction> actions;
 
-    @CustomType.Constructor
-    private RuleActions(@CustomType.Parameter("actions") List<RuleActionsAction> actions) {
-        this.actions = actions;
-    }
-
+    private RuleActions() {}
     /**
      * @return (Updatable) A list of one or more ActionDetails objects.
      * 
@@ -36,27 +32,27 @@ public final class RuleActions {
     public static Builder builder(RuleActions defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<RuleActionsAction> actions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RuleActions defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actions = defaults.actions;
         }
 
+        @CustomType.Setter
         public Builder actions(List<RuleActionsAction> actions) {
             this.actions = Objects.requireNonNull(actions);
             return this;
         }
         public Builder actions(RuleActionsAction... actions) {
             return actions(List.of(actions));
-        }        public RuleActions build() {
-            return new RuleActions(actions);
+        }
+        public RuleActions build() {
+            final var o = new RuleActions();
+            o.actions = actions;
+            return o;
         }
     }
 }

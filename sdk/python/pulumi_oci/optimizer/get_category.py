@@ -22,13 +22,16 @@ class GetCategoryResult:
     """
     A collection of values returned by getCategory.
     """
-    def __init__(__self__, category_id=None, compartment_id=None, description=None, estimated_cost_saving=None, extended_metadata=None, id=None, name=None, recommendation_counts=None, resource_counts=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, category_id=None, compartment_id=None, compartment_name=None, description=None, estimated_cost_saving=None, extended_metadata=None, id=None, name=None, recommendation_counts=None, resource_counts=None, state=None, time_created=None, time_updated=None):
         if category_id and not isinstance(category_id, str):
             raise TypeError("Expected argument 'category_id' to be a str")
         pulumi.set(__self__, "category_id", category_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compartment_name and not isinstance(compartment_name, str):
+            raise TypeError("Expected argument 'compartment_name' to be a str")
+        pulumi.set(__self__, "compartment_name", compartment_name)
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
@@ -72,6 +75,14 @@ class GetCategoryResult:
         The OCID of the tenancy. The tenancy is the root compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="compartmentName")
+    def compartment_name(self) -> str:
+        """
+        The name associated with the compartment.
+        """
+        return pulumi.get(self, "compartment_name")
 
     @property
     @pulumi.getter
@@ -162,6 +173,7 @@ class AwaitableGetCategoryResult(GetCategoryResult):
         return GetCategoryResult(
             category_id=self.category_id,
             compartment_id=self.compartment_id,
+            compartment_name=self.compartment_name,
             description=self.description,
             estimated_cost_saving=self.estimated_cost_saving,
             extended_metadata=self.extended_metadata,
@@ -201,6 +213,7 @@ def get_category(category_id: Optional[str] = None,
     return AwaitableGetCategoryResult(
         category_id=__ret__.category_id,
         compartment_id=__ret__.compartment_id,
+        compartment_name=__ret__.compartment_name,
         description=__ret__.description,
         estimated_cost_saving=__ret__.estimated_cost_saving,
         extended_metadata=__ret__.extended_metadata,

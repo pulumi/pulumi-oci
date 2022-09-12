@@ -13,21 +13,14 @@ public final class GetSoftwareSourceAssociatedManagedInstance {
      * @return User friendly name for the software source
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return OCID for the Software Source
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetSoftwareSourceAssociatedManagedInstance(
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id) {
-        this.displayName = displayName;
-        this.id = id;
-    }
-
+    private GetSoftwareSourceAssociatedManagedInstance() {}
     /**
      * @return User friendly name for the software source
      * 
@@ -50,30 +43,32 @@ public final class GetSoftwareSourceAssociatedManagedInstance {
     public static Builder builder(GetSoftwareSourceAssociatedManagedInstance defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String displayName;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSoftwareSourceAssociatedManagedInstance defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetSoftwareSourceAssociatedManagedInstance build() {
-            return new GetSoftwareSourceAssociatedManagedInstance(displayName, id);
+        }
+        public GetSoftwareSourceAssociatedManagedInstance build() {
+            final var o = new GetSoftwareSourceAssociatedManagedInstance();
+            o.displayName = displayName;
+            o.id = id;
+            return o;
         }
     }
 }

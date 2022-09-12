@@ -18,49 +18,34 @@ public final class MigrationDatapumpSettingsDataPumpParameters {
      * @return (Updatable) Estimate size of dumps that will be generated.
      * 
      */
-    private final @Nullable String estimate;
+    private @Nullable String estimate;
     /**
      * @return (Updatable) Exclude paratemers for Export and Import.
      * 
      */
-    private final @Nullable List<String> excludeParameters;
+    private @Nullable List<String> excludeParameters;
     /**
      * @return (Updatable) Maximum number of worker processes that can be used for a Data Pump Export job.
      * 
      */
-    private final @Nullable Integer exportParallelismDegree;
+    private @Nullable Integer exportParallelismDegree;
     /**
      * @return (Updatable) Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
      * 
      */
-    private final @Nullable Integer importParallelismDegree;
+    private @Nullable Integer importParallelismDegree;
     /**
      * @return (Updatable) Set to false to force Data Pump worker process to run on one instance.
      * 
      */
-    private final @Nullable Boolean isCluster;
+    private @Nullable Boolean isCluster;
     /**
      * @return (Updatable) IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
      * 
      */
-    private final @Nullable String tableExistsAction;
+    private @Nullable String tableExistsAction;
 
-    @CustomType.Constructor
-    private MigrationDatapumpSettingsDataPumpParameters(
-        @CustomType.Parameter("estimate") @Nullable String estimate,
-        @CustomType.Parameter("excludeParameters") @Nullable List<String> excludeParameters,
-        @CustomType.Parameter("exportParallelismDegree") @Nullable Integer exportParallelismDegree,
-        @CustomType.Parameter("importParallelismDegree") @Nullable Integer importParallelismDegree,
-        @CustomType.Parameter("isCluster") @Nullable Boolean isCluster,
-        @CustomType.Parameter("tableExistsAction") @Nullable String tableExistsAction) {
-        this.estimate = estimate;
-        this.excludeParameters = excludeParameters;
-        this.exportParallelismDegree = exportParallelismDegree;
-        this.importParallelismDegree = importParallelismDegree;
-        this.isCluster = isCluster;
-        this.tableExistsAction = tableExistsAction;
-    }
-
+    private MigrationDatapumpSettingsDataPumpParameters() {}
     /**
      * @return (Updatable) Estimate size of dumps that will be generated.
      * 
@@ -111,7 +96,7 @@ public final class MigrationDatapumpSettingsDataPumpParameters {
     public static Builder builder(MigrationDatapumpSettingsDataPumpParameters defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String estimate;
         private @Nullable List<String> excludeParameters;
@@ -119,11 +104,7 @@ public final class MigrationDatapumpSettingsDataPumpParameters {
         private @Nullable Integer importParallelismDegree;
         private @Nullable Boolean isCluster;
         private @Nullable String tableExistsAction;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MigrationDatapumpSettingsDataPumpParameters defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.estimate = defaults.estimate;
@@ -134,10 +115,12 @@ public final class MigrationDatapumpSettingsDataPumpParameters {
     	      this.tableExistsAction = defaults.tableExistsAction;
         }
 
+        @CustomType.Setter
         public Builder estimate(@Nullable String estimate) {
             this.estimate = estimate;
             return this;
         }
+        @CustomType.Setter
         public Builder excludeParameters(@Nullable List<String> excludeParameters) {
             this.excludeParameters = excludeParameters;
             return this;
@@ -145,23 +128,35 @@ public final class MigrationDatapumpSettingsDataPumpParameters {
         public Builder excludeParameters(String... excludeParameters) {
             return excludeParameters(List.of(excludeParameters));
         }
+        @CustomType.Setter
         public Builder exportParallelismDegree(@Nullable Integer exportParallelismDegree) {
             this.exportParallelismDegree = exportParallelismDegree;
             return this;
         }
+        @CustomType.Setter
         public Builder importParallelismDegree(@Nullable Integer importParallelismDegree) {
             this.importParallelismDegree = importParallelismDegree;
             return this;
         }
+        @CustomType.Setter
         public Builder isCluster(@Nullable Boolean isCluster) {
             this.isCluster = isCluster;
             return this;
         }
+        @CustomType.Setter
         public Builder tableExistsAction(@Nullable String tableExistsAction) {
             this.tableExistsAction = tableExistsAction;
             return this;
-        }        public MigrationDatapumpSettingsDataPumpParameters build() {
-            return new MigrationDatapumpSettingsDataPumpParameters(estimate, excludeParameters, exportParallelismDegree, importParallelismDegree, isCluster, tableExistsAction);
+        }
+        public MigrationDatapumpSettingsDataPumpParameters build() {
+            final var o = new MigrationDatapumpSettingsDataPumpParameters();
+            o.estimate = estimate;
+            o.excludeParameters = excludeParameters;
+            o.exportParallelismDegree = exportParallelismDegree;
+            o.importParallelismDegree = importParallelismDegree;
+            o.isCluster = isCluster;
+            o.tableExistsAction = tableExistsAction;
+            return o;
         }
     }
 }

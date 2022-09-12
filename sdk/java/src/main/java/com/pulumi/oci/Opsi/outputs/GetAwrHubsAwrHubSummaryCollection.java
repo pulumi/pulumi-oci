@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAwrHubsAwrHubSummaryCollection {
-    private final List<GetAwrHubsAwrHubSummaryCollectionItem> items;
+    private List<GetAwrHubsAwrHubSummaryCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetAwrHubsAwrHubSummaryCollection(@CustomType.Parameter("items") List<GetAwrHubsAwrHubSummaryCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetAwrHubsAwrHubSummaryCollection() {}
     public List<GetAwrHubsAwrHubSummaryCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetAwrHubsAwrHubSummaryCollection {
     public static Builder builder(GetAwrHubsAwrHubSummaryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAwrHubsAwrHubSummaryCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAwrHubsAwrHubSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetAwrHubsAwrHubSummaryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetAwrHubsAwrHubSummaryCollectionItem... items) {
             return items(List.of(items));
-        }        public GetAwrHubsAwrHubSummaryCollection build() {
-            return new GetAwrHubsAwrHubSummaryCollection(items);
+        }
+        public GetAwrHubsAwrHubSummaryCollection build() {
+            final var o = new GetAwrHubsAwrHubSummaryCollection();
+            o.items = items;
+            return o;
         }
     }
 }

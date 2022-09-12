@@ -18,45 +18,30 @@ public final class GetProfilesResult {
      * @return The OCID of the tenancy. The tenancy is the root compartment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetProfilesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetProfilesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name assigned to the profile. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The list of profile_collection.
      * 
      */
-    private final List<GetProfilesProfileCollection> profileCollections;
+    private List<GetProfilesProfileCollection> profileCollections;
     /**
      * @return The profile&#39;s current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetProfilesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetProfilesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("profileCollections") List<GetProfilesProfileCollection> profileCollections,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.profileCollections = profileCollections;
-        this.state = state;
-    }
-
+    private GetProfilesResult() {}
     /**
      * @return The OCID of the tenancy. The tenancy is the root compartment.
      * 
@@ -103,7 +88,7 @@ public final class GetProfilesResult {
     public static Builder builder(GetProfilesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetProfilesFilter> filters;
@@ -111,11 +96,7 @@ public final class GetProfilesResult {
         private @Nullable String name;
         private List<GetProfilesProfileCollection> profileCollections;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProfilesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +107,12 @@ public final class GetProfilesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetProfilesFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,14 +120,17 @@ public final class GetProfilesResult {
         public Builder filters(GetProfilesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder profileCollections(List<GetProfilesProfileCollection> profileCollections) {
             this.profileCollections = Objects.requireNonNull(profileCollections);
             return this;
@@ -152,11 +138,20 @@ public final class GetProfilesResult {
         public Builder profileCollections(GetProfilesProfileCollection... profileCollections) {
             return profileCollections(List.of(profileCollections));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetProfilesResult build() {
-            return new GetProfilesResult(compartmentId, filters, id, name, profileCollections, state);
+        }
+        public GetProfilesResult build() {
+            final var o = new GetProfilesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.profileCollections = profileCollections;
+            o.state = state;
+            return o;
         }
     }
 }

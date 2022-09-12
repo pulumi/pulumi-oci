@@ -17,56 +17,39 @@ public final class RrsetItem {
      * @return The fully qualified domain name where the record can be located.
      * 
      */
-    private final String domain;
+    private String domain;
     /**
      * @return A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
      * 
      */
-    private final @Nullable Boolean isProtected;
+    private @Nullable Boolean isProtected;
     /**
      * @return (Updatable) The record&#39;s data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
      * 
      */
-    private final String rdata;
+    private String rdata;
     /**
      * @return A unique identifier for the record within its zone.
      * 
      */
-    private final @Nullable String recordHash;
+    private @Nullable String recordHash;
     /**
      * @return The latest version of the record&#39;s zone in which its RRSet differs from the preceding version.
      * 
      */
-    private final @Nullable String rrsetVersion;
+    private @Nullable String rrsetVersion;
     /**
      * @return The type of the target RRSet within the target zone.
      * 
      */
-    private final String rtype;
+    private String rtype;
     /**
      * @return (Updatable) The Time To Live for the record, in seconds.
      * 
      */
-    private final Integer ttl;
+    private Integer ttl;
 
-    @CustomType.Constructor
-    private RrsetItem(
-        @CustomType.Parameter("domain") String domain,
-        @CustomType.Parameter("isProtected") @Nullable Boolean isProtected,
-        @CustomType.Parameter("rdata") String rdata,
-        @CustomType.Parameter("recordHash") @Nullable String recordHash,
-        @CustomType.Parameter("rrsetVersion") @Nullable String rrsetVersion,
-        @CustomType.Parameter("rtype") String rtype,
-        @CustomType.Parameter("ttl") Integer ttl) {
-        this.domain = domain;
-        this.isProtected = isProtected;
-        this.rdata = rdata;
-        this.recordHash = recordHash;
-        this.rrsetVersion = rrsetVersion;
-        this.rtype = rtype;
-        this.ttl = ttl;
-    }
-
+    private RrsetItem() {}
     /**
      * @return The fully qualified domain name where the record can be located.
      * 
@@ -124,7 +107,7 @@ public final class RrsetItem {
     public static Builder builder(RrsetItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String domain;
         private @Nullable Boolean isProtected;
@@ -133,11 +116,7 @@ public final class RrsetItem {
         private @Nullable String rrsetVersion;
         private String rtype;
         private Integer ttl;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RrsetItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.domain = defaults.domain;
@@ -149,35 +128,51 @@ public final class RrsetItem {
     	      this.ttl = defaults.ttl;
         }
 
+        @CustomType.Setter
         public Builder domain(String domain) {
             this.domain = Objects.requireNonNull(domain);
             return this;
         }
+        @CustomType.Setter
         public Builder isProtected(@Nullable Boolean isProtected) {
             this.isProtected = isProtected;
             return this;
         }
+        @CustomType.Setter
         public Builder rdata(String rdata) {
             this.rdata = Objects.requireNonNull(rdata);
             return this;
         }
+        @CustomType.Setter
         public Builder recordHash(@Nullable String recordHash) {
             this.recordHash = recordHash;
             return this;
         }
+        @CustomType.Setter
         public Builder rrsetVersion(@Nullable String rrsetVersion) {
             this.rrsetVersion = rrsetVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder rtype(String rtype) {
             this.rtype = Objects.requireNonNull(rtype);
             return this;
         }
+        @CustomType.Setter
         public Builder ttl(Integer ttl) {
             this.ttl = Objects.requireNonNull(ttl);
             return this;
-        }        public RrsetItem build() {
-            return new RrsetItem(domain, isProtected, rdata, recordHash, rrsetVersion, rtype, ttl);
+        }
+        public RrsetItem build() {
+            final var o = new RrsetItem();
+            o.domain = domain;
+            o.isProtected = isProtected;
+            o.rdata = rdata;
+            o.recordHash = recordHash;
+            o.rrsetVersion = rrsetVersion;
+            o.rtype = rtype;
+            o.ttl = ttl;
+            return o;
         }
     }
 }

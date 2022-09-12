@@ -19,28 +19,28 @@ public final class GetKeysResult {
      * @return The algorithm used by a key&#39;s key versions to encrypt or decrypt.
      * 
      */
-    private final @Nullable String algorithm;
+    private @Nullable String algorithm;
     /**
      * @return The OCID of the compartment that contains this master encryption key.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Supported curve IDs for ECDSA keys.
      * 
      */
-    private final @Nullable String curveId;
-    private final @Nullable List<GetKeysFilter> filters;
+    private @Nullable String curveId;
+    private @Nullable List<GetKeysFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of keys.
      * 
      */
-    private final List<GetKeysKey> keys;
+    private List<GetKeysKey> keys;
     /**
      * @return The length of the key in bytes, expressed as an integer. Supported values include the following:
      * * AES: 16, 24, or 32
@@ -48,36 +48,15 @@ public final class GetKeysResult {
      * * ECDSA: 32, 48, or 66
      * 
      */
-    private final @Nullable Integer length;
-    private final String managementEndpoint;
+    private @Nullable Integer length;
+    private String managementEndpoint;
     /**
      * @return The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported.
      * 
      */
-    private final @Nullable String protectionMode;
+    private @Nullable String protectionMode;
 
-    @CustomType.Constructor
-    private GetKeysResult(
-        @CustomType.Parameter("algorithm") @Nullable String algorithm,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("curveId") @Nullable String curveId,
-        @CustomType.Parameter("filters") @Nullable List<GetKeysFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("keys") List<GetKeysKey> keys,
-        @CustomType.Parameter("length") @Nullable Integer length,
-        @CustomType.Parameter("managementEndpoint") String managementEndpoint,
-        @CustomType.Parameter("protectionMode") @Nullable String protectionMode) {
-        this.algorithm = algorithm;
-        this.compartmentId = compartmentId;
-        this.curveId = curveId;
-        this.filters = filters;
-        this.id = id;
-        this.keys = keys;
-        this.length = length;
-        this.managementEndpoint = managementEndpoint;
-        this.protectionMode = protectionMode;
-    }
-
+    private GetKeysResult() {}
     /**
      * @return The algorithm used by a key&#39;s key versions to encrypt or decrypt.
      * 
@@ -144,7 +123,7 @@ public final class GetKeysResult {
     public static Builder builder(GetKeysResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String algorithm;
         private String compartmentId;
@@ -155,11 +134,7 @@ public final class GetKeysResult {
         private @Nullable Integer length;
         private String managementEndpoint;
         private @Nullable String protectionMode;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetKeysResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.algorithm = defaults.algorithm;
@@ -173,18 +148,22 @@ public final class GetKeysResult {
     	      this.protectionMode = defaults.protectionMode;
         }
 
+        @CustomType.Setter
         public Builder algorithm(@Nullable String algorithm) {
             this.algorithm = algorithm;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder curveId(@Nullable String curveId) {
             this.curveId = curveId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetKeysFilter> filters) {
             this.filters = filters;
             return this;
@@ -192,10 +171,12 @@ public final class GetKeysResult {
         public Builder filters(GetKeysFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder keys(List<GetKeysKey> keys) {
             this.keys = Objects.requireNonNull(keys);
             return this;
@@ -203,19 +184,33 @@ public final class GetKeysResult {
         public Builder keys(GetKeysKey... keys) {
             return keys(List.of(keys));
         }
+        @CustomType.Setter
         public Builder length(@Nullable Integer length) {
             this.length = length;
             return this;
         }
+        @CustomType.Setter
         public Builder managementEndpoint(String managementEndpoint) {
             this.managementEndpoint = Objects.requireNonNull(managementEndpoint);
             return this;
         }
+        @CustomType.Setter
         public Builder protectionMode(@Nullable String protectionMode) {
             this.protectionMode = protectionMode;
             return this;
-        }        public GetKeysResult build() {
-            return new GetKeysResult(algorithm, compartmentId, curveId, filters, id, keys, length, managementEndpoint, protectionMode);
+        }
+        public GetKeysResult build() {
+            final var o = new GetKeysResult();
+            o.algorithm = algorithm;
+            o.compartmentId = compartmentId;
+            o.curveId = curveId;
+            o.filters = filters;
+            o.id = id;
+            o.keys = keys;
+            o.length = length;
+            o.managementEndpoint = managementEndpoint;
+            o.protectionMode = protectionMode;
+            return o;
         }
     }
 }

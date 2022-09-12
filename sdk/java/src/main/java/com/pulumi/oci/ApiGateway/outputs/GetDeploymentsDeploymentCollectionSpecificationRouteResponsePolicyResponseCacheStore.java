@@ -14,21 +14,14 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteResponseP
      * @return Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
      * 
      */
-    private final Integer timeToLiveInSeconds;
+    private Integer timeToLiveInSeconds;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore(
-        @CustomType.Parameter("timeToLiveInSeconds") Integer timeToLiveInSeconds,
-        @CustomType.Parameter("type") String type) {
-        this.timeToLiveInSeconds = timeToLiveInSeconds;
-        this.type = type;
-    }
-
+    private GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore() {}
     /**
      * @return Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
      * 
@@ -51,30 +44,32 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteResponseP
     public static Builder builder(GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer timeToLiveInSeconds;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.timeToLiveInSeconds = defaults.timeToLiveInSeconds;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder timeToLiveInSeconds(Integer timeToLiveInSeconds) {
             this.timeToLiveInSeconds = Objects.requireNonNull(timeToLiveInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore build() {
-            return new GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore(timeToLiveInSeconds, type);
+        }
+        public GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore build() {
+            final var o = new GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore();
+            o.timeToLiveInSeconds = timeToLiveInSeconds;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -15,147 +15,104 @@ public final class GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail
      * @return atp db password Secret Id
      * 
      */
-    private final String atpPasswordSecretId;
+    private String atpPasswordSecretId;
     /**
      * @return atp db user name
      * 
      */
-    private final String atpUserName;
+    private String atpUserName;
     /**
      * @return Bucket Name for influx connection
      * 
      */
-    private final String bucket;
+    private String bucket;
     /**
      * @return OCID of the secret containing the containers certificates of ATP wallet
      * 
      */
-    private final String cwalletFileSecretId;
+    private String cwalletFileSecretId;
     /**
      * @return Data source type where actually data asset is being stored
      * 
      */
-    private final String dataSourceType;
+    private String dataSourceType;
     /**
      * @return DB Name for influx connection
      * 
      */
-    private final String databaseName;
+    private String databaseName;
     /**
      * @return OCID of the secret containing the PDB&#39;S certificates of ATP wallet
      * 
      */
-    private final String ewalletFileSecretId;
+    private String ewalletFileSecretId;
     /**
      * @return OCID of the secret containing Keystore.jks file of the ATP wallet
      * 
      */
-    private final String keyStoreFileSecretId;
+    private String keyStoreFileSecretId;
     /**
      * @return Measurement name for influx
      * 
      */
-    private final String measurementName;
+    private String measurementName;
     /**
      * @return Object storage namespace
      * 
      */
-    private final String namespace;
+    private String namespace;
     /**
      * @return File name
      * 
      */
-    private final String object;
+    private String object;
     /**
      * @return OCID of the secret that contains jdbc properties file of ATP wallet
      * 
      */
-    private final String ojdbcFileSecretId;
+    private String ojdbcFileSecretId;
     /**
      * @return Password Secret Id for the influx connection
      * 
      */
-    private final String passwordSecretId;
+    private String passwordSecretId;
     /**
      * @return atp database table name
      * 
      */
-    private final String tableName;
+    private String tableName;
     /**
      * @return OCID of the secret that contains the tnsnames file of ATP wallet
      * 
      */
-    private final String tnsnamesFileSecretId;
+    private String tnsnamesFileSecretId;
     /**
      * @return OCID of the secret containing truststore.jks file of the ATP wallet
      * 
      */
-    private final String truststoreFileSecretId;
+    private String truststoreFileSecretId;
     /**
      * @return public IP address and port to influx DB
      * 
      */
-    private final String url;
+    private String url;
     /**
      * @return Username for connection to Influx
      * 
      */
-    private final String userName;
+    private String userName;
     /**
      * @return Possible data sources
      * 
      */
-    private final List<GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail> versionSpecificDetails;
+    private List<GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail> versionSpecificDetails;
     /**
      * @return wallet password Secret ID in String format
      * 
      */
-    private final String walletPasswordSecretId;
+    private String walletPasswordSecretId;
 
-    @CustomType.Constructor
-    private GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail(
-        @CustomType.Parameter("atpPasswordSecretId") String atpPasswordSecretId,
-        @CustomType.Parameter("atpUserName") String atpUserName,
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("cwalletFileSecretId") String cwalletFileSecretId,
-        @CustomType.Parameter("dataSourceType") String dataSourceType,
-        @CustomType.Parameter("databaseName") String databaseName,
-        @CustomType.Parameter("ewalletFileSecretId") String ewalletFileSecretId,
-        @CustomType.Parameter("keyStoreFileSecretId") String keyStoreFileSecretId,
-        @CustomType.Parameter("measurementName") String measurementName,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("object") String object,
-        @CustomType.Parameter("ojdbcFileSecretId") String ojdbcFileSecretId,
-        @CustomType.Parameter("passwordSecretId") String passwordSecretId,
-        @CustomType.Parameter("tableName") String tableName,
-        @CustomType.Parameter("tnsnamesFileSecretId") String tnsnamesFileSecretId,
-        @CustomType.Parameter("truststoreFileSecretId") String truststoreFileSecretId,
-        @CustomType.Parameter("url") String url,
-        @CustomType.Parameter("userName") String userName,
-        @CustomType.Parameter("versionSpecificDetails") List<GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail> versionSpecificDetails,
-        @CustomType.Parameter("walletPasswordSecretId") String walletPasswordSecretId) {
-        this.atpPasswordSecretId = atpPasswordSecretId;
-        this.atpUserName = atpUserName;
-        this.bucket = bucket;
-        this.cwalletFileSecretId = cwalletFileSecretId;
-        this.dataSourceType = dataSourceType;
-        this.databaseName = databaseName;
-        this.ewalletFileSecretId = ewalletFileSecretId;
-        this.keyStoreFileSecretId = keyStoreFileSecretId;
-        this.measurementName = measurementName;
-        this.namespace = namespace;
-        this.object = object;
-        this.ojdbcFileSecretId = ojdbcFileSecretId;
-        this.passwordSecretId = passwordSecretId;
-        this.tableName = tableName;
-        this.tnsnamesFileSecretId = tnsnamesFileSecretId;
-        this.truststoreFileSecretId = truststoreFileSecretId;
-        this.url = url;
-        this.userName = userName;
-        this.versionSpecificDetails = versionSpecificDetails;
-        this.walletPasswordSecretId = walletPasswordSecretId;
-    }
-
+    private GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail() {}
     /**
      * @return atp db password Secret Id
      * 
@@ -304,7 +261,7 @@ public final class GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail
     public static Builder builder(GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String atpPasswordSecretId;
         private String atpUserName;
@@ -326,11 +283,7 @@ public final class GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail
         private String userName;
         private List<GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail> versionSpecificDetails;
         private String walletPasswordSecretId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.atpPasswordSecretId = defaults.atpPasswordSecretId;
@@ -355,78 +308,97 @@ public final class GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail
     	      this.walletPasswordSecretId = defaults.walletPasswordSecretId;
         }
 
+        @CustomType.Setter
         public Builder atpPasswordSecretId(String atpPasswordSecretId) {
             this.atpPasswordSecretId = Objects.requireNonNull(atpPasswordSecretId);
             return this;
         }
+        @CustomType.Setter
         public Builder atpUserName(String atpUserName) {
             this.atpUserName = Objects.requireNonNull(atpUserName);
             return this;
         }
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder cwalletFileSecretId(String cwalletFileSecretId) {
             this.cwalletFileSecretId = Objects.requireNonNull(cwalletFileSecretId);
             return this;
         }
+        @CustomType.Setter
         public Builder dataSourceType(String dataSourceType) {
             this.dataSourceType = Objects.requireNonNull(dataSourceType);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseName(String databaseName) {
             this.databaseName = Objects.requireNonNull(databaseName);
             return this;
         }
+        @CustomType.Setter
         public Builder ewalletFileSecretId(String ewalletFileSecretId) {
             this.ewalletFileSecretId = Objects.requireNonNull(ewalletFileSecretId);
             return this;
         }
+        @CustomType.Setter
         public Builder keyStoreFileSecretId(String keyStoreFileSecretId) {
             this.keyStoreFileSecretId = Objects.requireNonNull(keyStoreFileSecretId);
             return this;
         }
+        @CustomType.Setter
         public Builder measurementName(String measurementName) {
             this.measurementName = Objects.requireNonNull(measurementName);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder object(String object) {
             this.object = Objects.requireNonNull(object);
             return this;
         }
+        @CustomType.Setter
         public Builder ojdbcFileSecretId(String ojdbcFileSecretId) {
             this.ojdbcFileSecretId = Objects.requireNonNull(ojdbcFileSecretId);
             return this;
         }
+        @CustomType.Setter
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = Objects.requireNonNull(passwordSecretId);
             return this;
         }
+        @CustomType.Setter
         public Builder tableName(String tableName) {
             this.tableName = Objects.requireNonNull(tableName);
             return this;
         }
+        @CustomType.Setter
         public Builder tnsnamesFileSecretId(String tnsnamesFileSecretId) {
             this.tnsnamesFileSecretId = Objects.requireNonNull(tnsnamesFileSecretId);
             return this;
         }
+        @CustomType.Setter
         public Builder truststoreFileSecretId(String truststoreFileSecretId) {
             this.truststoreFileSecretId = Objects.requireNonNull(truststoreFileSecretId);
             return this;
         }
+        @CustomType.Setter
         public Builder url(String url) {
             this.url = Objects.requireNonNull(url);
             return this;
         }
+        @CustomType.Setter
         public Builder userName(String userName) {
             this.userName = Objects.requireNonNull(userName);
             return this;
         }
+        @CustomType.Setter
         public Builder versionSpecificDetails(List<GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail> versionSpecificDetails) {
             this.versionSpecificDetails = Objects.requireNonNull(versionSpecificDetails);
             return this;
@@ -434,11 +406,34 @@ public final class GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail
         public Builder versionSpecificDetails(GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail... versionSpecificDetails) {
             return versionSpecificDetails(List.of(versionSpecificDetails));
         }
+        @CustomType.Setter
         public Builder walletPasswordSecretId(String walletPasswordSecretId) {
             this.walletPasswordSecretId = Objects.requireNonNull(walletPasswordSecretId);
             return this;
-        }        public GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail build() {
-            return new GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail(atpPasswordSecretId, atpUserName, bucket, cwalletFileSecretId, dataSourceType, databaseName, ewalletFileSecretId, keyStoreFileSecretId, measurementName, namespace, object, ojdbcFileSecretId, passwordSecretId, tableName, tnsnamesFileSecretId, truststoreFileSecretId, url, userName, versionSpecificDetails, walletPasswordSecretId);
+        }
+        public GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail build() {
+            final var o = new GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail();
+            o.atpPasswordSecretId = atpPasswordSecretId;
+            o.atpUserName = atpUserName;
+            o.bucket = bucket;
+            o.cwalletFileSecretId = cwalletFileSecretId;
+            o.dataSourceType = dataSourceType;
+            o.databaseName = databaseName;
+            o.ewalletFileSecretId = ewalletFileSecretId;
+            o.keyStoreFileSecretId = keyStoreFileSecretId;
+            o.measurementName = measurementName;
+            o.namespace = namespace;
+            o.object = object;
+            o.ojdbcFileSecretId = ojdbcFileSecretId;
+            o.passwordSecretId = passwordSecretId;
+            o.tableName = tableName;
+            o.tnsnamesFileSecretId = tnsnamesFileSecretId;
+            o.truststoreFileSecretId = truststoreFileSecretId;
+            o.url = url;
+            o.userName = userName;
+            o.versionSpecificDetails = versionSpecificDetails;
+            o.walletPasswordSecretId = walletPasswordSecretId;
+            return o;
         }
     }
 }

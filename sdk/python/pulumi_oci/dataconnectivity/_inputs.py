@@ -69,7 +69,7 @@ class RegistryConnectionConnectionPropertyArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] value: (Updatable) The value for the connection name property.
         """
         if name is not None:
@@ -81,7 +81,7 @@ class RegistryConnectionConnectionPropertyArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -119,14 +119,14 @@ class RegistryConnectionMetadataArgs:
                  updated_by: Optional[pulumi.Input[str]] = None,
                  updated_by_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input['RegistryConnectionMetadataAggregatorArgs'] aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param pulumi.Input['RegistryConnectionMetadataAggregatorArgs'] aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
         :param pulumi.Input[str] created_by: (Updatable) The user that created the object.
         :param pulumi.Input[str] created_by_name: (Updatable) The user that created the object.
-        :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify this object.
+        :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify the object.
         :param pulumi.Input[Mapping[str, Any]] info_fields: (Updatable) Information property fields.
-        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: (Updatable) The registry version.
         :param pulumi.Input[str] time_created: (Updatable) The date and time that the object was created.
         :param pulumi.Input[str] time_updated: (Updatable) The date and time that the object was updated.
@@ -164,7 +164,7 @@ class RegistryConnectionMetadataArgs:
     @pulumi.getter
     def aggregator(self) -> Optional[pulumi.Input['RegistryConnectionMetadataAggregatorArgs']]:
         """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -212,7 +212,7 @@ class RegistryConnectionMetadataArgs:
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The full path to identify this object.
+        (Updatable) The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -236,7 +236,7 @@ class RegistryConnectionMetadataArgs:
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -248,7 +248,7 @@ class RegistryConnectionMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -329,7 +329,7 @@ class RegistryConnectionMetadataAggregatorArgs:
         :param pulumi.Input[str] description: (Updatable) The description of the aggregator.
         :param pulumi.Input[str] identifier: (Updatable) The identifier of the aggregator.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] type: (Updatable) Specific Connection Type
         """
         if description is not None:
@@ -383,7 +383,7 @@ class RegistryConnectionMetadataAggregatorArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -424,17 +424,17 @@ class RegistryConnectionPrimarySchemaArgs:
         """
         :param pulumi.Input[str] identifier: (Updatable) The identifier of the aggregator.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[str] model_type: (Updatable) The object's type.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] model_type: (Updatable) The object type.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] default_connection: (Updatable) The default connection key.
         :param pulumi.Input[str] description: (Updatable) The description of the aggregator.
-        :param pulumi.Input[str] external_key: (Updatable) The external key for the object.
+        :param pulumi.Input[str] external_key: (Updatable) The external key of the object.
         :param pulumi.Input[bool] is_has_containers: (Updatable) Specifies whether the schema has containers.
-        :param pulumi.Input['RegistryConnectionPrimarySchemaMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_version: (Updatable) The object's model version.
+        :param pulumi.Input['RegistryConnectionPrimarySchemaMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
+        :param pulumi.Input[str] model_version: (Updatable) The model version of the object.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) The version of the object that is used to track changes in the object instance.
-        :param pulumi.Input['RegistryConnectionPrimarySchemaParentRefArgs'] parent_ref: (Updatable) A reference to the object's parent.
+        :param pulumi.Input['RegistryConnectionPrimarySchemaParentRefArgs'] parent_ref: (Updatable) A reference to the parent object.
         :param pulumi.Input[str] resource_name: (Updatable) A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
         """
         pulumi.set(__self__, "identifier", identifier)
@@ -490,7 +490,7 @@ class RegistryConnectionPrimarySchemaArgs:
     @pulumi.getter(name="modelType")
     def model_type(self) -> pulumi.Input[str]:
         """
-        (Updatable) The object's type.
+        (Updatable) The object type.
         """
         return pulumi.get(self, "model_type")
 
@@ -502,7 +502,7 @@ class RegistryConnectionPrimarySchemaArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -538,7 +538,7 @@ class RegistryConnectionPrimarySchemaArgs:
     @pulumi.getter(name="externalKey")
     def external_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The external key for the object.
+        (Updatable) The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -562,7 +562,7 @@ class RegistryConnectionPrimarySchemaArgs:
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input['RegistryConnectionPrimarySchemaMetadataArgs']]:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -574,7 +574,7 @@ class RegistryConnectionPrimarySchemaArgs:
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The object's model version.
+        (Updatable) The model version of the object.
         """
         return pulumi.get(self, "model_version")
 
@@ -610,7 +610,7 @@ class RegistryConnectionPrimarySchemaArgs:
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional[pulumi.Input['RegistryConnectionPrimarySchemaParentRefArgs']]:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -648,14 +648,14 @@ class RegistryConnectionPrimarySchemaMetadataArgs:
                  updated_by: Optional[pulumi.Input[str]] = None,
                  updated_by_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input['RegistryConnectionPrimarySchemaMetadataAggregatorArgs'] aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param pulumi.Input['RegistryConnectionPrimarySchemaMetadataAggregatorArgs'] aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
         :param pulumi.Input[str] created_by: (Updatable) The user that created the object.
         :param pulumi.Input[str] created_by_name: (Updatable) The user that created the object.
-        :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify this object.
+        :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify the object.
         :param pulumi.Input[Mapping[str, Any]] info_fields: (Updatable) Information property fields.
-        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: (Updatable) The registry version.
         :param pulumi.Input[str] time_created: (Updatable) The date and time that the object was created.
         :param pulumi.Input[str] time_updated: (Updatable) The date and time that the object was updated.
@@ -693,7 +693,7 @@ class RegistryConnectionPrimarySchemaMetadataArgs:
     @pulumi.getter
     def aggregator(self) -> Optional[pulumi.Input['RegistryConnectionPrimarySchemaMetadataAggregatorArgs']]:
         """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -741,7 +741,7 @@ class RegistryConnectionPrimarySchemaMetadataArgs:
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The full path to identify this object.
+        (Updatable) The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -765,7 +765,7 @@ class RegistryConnectionPrimarySchemaMetadataArgs:
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -777,7 +777,7 @@ class RegistryConnectionPrimarySchemaMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -858,7 +858,7 @@ class RegistryConnectionPrimarySchemaMetadataAggregatorArgs:
         :param pulumi.Input[str] description: (Updatable) The description of the aggregator.
         :param pulumi.Input[str] identifier: (Updatable) The identifier of the aggregator.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] type: (Updatable) Specific Connection Type
         """
         if description is not None:
@@ -912,7 +912,7 @@ class RegistryConnectionPrimarySchemaMetadataAggregatorArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -972,15 +972,15 @@ class RegistryConnectionRegistryMetadataArgs:
                  updated_by_user_name: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
-        :param pulumi.Input[str] created_by_user_id: (Updatable) The id of the user who created the object.
+        :param pulumi.Input[str] created_by_user_id: (Updatable) The ID of the user who created the object.
         :param pulumi.Input[str] created_by_user_name: (Updatable) The name of the user who created the object.
-        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
+        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether the object is a favorite.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: (Updatable) The registry version.
         :param pulumi.Input[str] time_created: (Updatable) The date and time that the object was created.
         :param pulumi.Input[str] time_updated: (Updatable) The date and time that the object was updated.
-        :param pulumi.Input[str] updated_by_user_id: (Updatable) The id of the user who updated the object.
+        :param pulumi.Input[str] updated_by_user_id: (Updatable) The ID of the user who updated the object.
         :param pulumi.Input[str] updated_by_user_name: (Updatable) The name of the user who updated the object.
         """
         if aggregator_key is not None:
@@ -1022,7 +1022,7 @@ class RegistryConnectionRegistryMetadataArgs:
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The id of the user who created the object.
+        (Updatable) The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -1046,7 +1046,7 @@ class RegistryConnectionRegistryMetadataArgs:
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -1070,7 +1070,7 @@ class RegistryConnectionRegistryMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -1118,7 +1118,7 @@ class RegistryConnectionRegistryMetadataArgs:
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The id of the user who updated the object.
+        (Updatable) The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -1158,15 +1158,15 @@ class RegistryDataAssetDefaultConnectionArgs:
                  registry_metadata: Optional[pulumi.Input['RegistryDataAssetDefaultConnectionRegistryMetadataArgs']] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] model_type: (Updatable) The property which disciminates the subtypes.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] model_type: (Updatable) The property which differentiates the subtypes.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) All the properties for the data asset in a key-value map format.
-        :param pulumi.Input[Sequence[pulumi.Input['RegistryDataAssetDefaultConnectionConnectionPropertyArgs']]] connection_properties: (Updatable) The properties for the connection.
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the object.
-        :param pulumi.Input[bool] is_default: (Updatable) The default property for the connection.
+        :param pulumi.Input[Sequence[pulumi.Input['RegistryDataAssetDefaultConnectionConnectionPropertyArgs']]] connection_properties: (Updatable) The properties of the connection.
+        :param pulumi.Input[str] description: (Updatable) A user-defined description for the object.
+        :param pulumi.Input[bool] is_default: (Updatable) The default property of the connection.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input['RegistryDataAssetDefaultConnectionMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param pulumi.Input['RegistryDataAssetDefaultConnectionMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) The version of the object that is used to track changes in the object instance.
@@ -1205,7 +1205,7 @@ class RegistryDataAssetDefaultConnectionArgs:
     @pulumi.getter
     def identifier(self) -> pulumi.Input[str]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -1217,7 +1217,7 @@ class RegistryDataAssetDefaultConnectionArgs:
     @pulumi.getter(name="modelType")
     def model_type(self) -> pulumi.Input[str]:
         """
-        (Updatable) The property which disciminates the subtypes.
+        (Updatable) The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -1229,7 +1229,7 @@ class RegistryDataAssetDefaultConnectionArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -1253,7 +1253,7 @@ class RegistryDataAssetDefaultConnectionArgs:
     @pulumi.getter(name="connectionProperties")
     def connection_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RegistryDataAssetDefaultConnectionConnectionPropertyArgs']]]]:
         """
-        (Updatable) The properties for the connection.
+        (Updatable) The properties of the connection.
         """
         return pulumi.get(self, "connection_properties")
 
@@ -1265,7 +1265,7 @@ class RegistryDataAssetDefaultConnectionArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user defined description for the object.
+        (Updatable) A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -1277,7 +1277,7 @@ class RegistryDataAssetDefaultConnectionArgs:
     @pulumi.getter(name="isDefault")
     def is_default(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) The default property for the connection.
+        (Updatable) The default property of the connection.
         """
         return pulumi.get(self, "is_default")
 
@@ -1301,7 +1301,7 @@ class RegistryDataAssetDefaultConnectionArgs:
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input['RegistryDataAssetDefaultConnectionMetadataArgs']]:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -1388,7 +1388,7 @@ class RegistryDataAssetDefaultConnectionConnectionPropertyArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] value: (Updatable) The value for the connection name property.
         """
         if name is not None:
@@ -1400,7 +1400,7 @@ class RegistryDataAssetDefaultConnectionConnectionPropertyArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -1438,14 +1438,14 @@ class RegistryDataAssetDefaultConnectionMetadataArgs:
                  updated_by: Optional[pulumi.Input[str]] = None,
                  updated_by_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input['RegistryDataAssetDefaultConnectionMetadataAggregatorArgs'] aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param pulumi.Input['RegistryDataAssetDefaultConnectionMetadataAggregatorArgs'] aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
         :param pulumi.Input[str] created_by: (Updatable) The user that created the object.
         :param pulumi.Input[str] created_by_name: (Updatable) The user that created the object.
-        :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify this object.
+        :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify the object.
         :param pulumi.Input[Mapping[str, Any]] info_fields: (Updatable) Information property fields.
-        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: (Updatable) The registry version.
         :param pulumi.Input[str] time_created: (Updatable) The date and time that the object was created.
         :param pulumi.Input[str] time_updated: (Updatable) The date and time that the object was updated.
@@ -1483,7 +1483,7 @@ class RegistryDataAssetDefaultConnectionMetadataArgs:
     @pulumi.getter
     def aggregator(self) -> Optional[pulumi.Input['RegistryDataAssetDefaultConnectionMetadataAggregatorArgs']]:
         """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -1531,7 +1531,7 @@ class RegistryDataAssetDefaultConnectionMetadataArgs:
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The full path to identify this object.
+        (Updatable) The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -1555,7 +1555,7 @@ class RegistryDataAssetDefaultConnectionMetadataArgs:
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -1567,7 +1567,7 @@ class RegistryDataAssetDefaultConnectionMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -1645,10 +1645,10 @@ class RegistryDataAssetDefaultConnectionMetadataAggregatorArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the object.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] description: (Updatable) A user-defined description for the object.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] type: (Updatable) Specific DataAsset Type
         """
         if description is not None:
@@ -1666,7 +1666,7 @@ class RegistryDataAssetDefaultConnectionMetadataAggregatorArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user defined description for the object.
+        (Updatable) A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -1678,7 +1678,7 @@ class RegistryDataAssetDefaultConnectionMetadataAggregatorArgs:
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -1702,7 +1702,7 @@ class RegistryDataAssetDefaultConnectionMetadataAggregatorArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -1741,19 +1741,19 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaArgs:
                  parent_ref: Optional[pulumi.Input['RegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs']] = None,
                  resource_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[str] model_type: (Updatable) The property which disciminates the subtypes.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] model_type: (Updatable) The property which differentiates the subtypes.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] default_connection: (Updatable) The default connection key.
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the object.
-        :param pulumi.Input[str] external_key: (Updatable) The external key for the object.
+        :param pulumi.Input[str] description: (Updatable) A user-defined description for the object.
+        :param pulumi.Input[str] external_key: (Updatable) The external key of the object.
         :param pulumi.Input[bool] is_has_containers: (Updatable) Specifies whether the schema has containers.
-        :param pulumi.Input['RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param pulumi.Input['RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) The version of the object that is used to track changes in the object instance.
-        :param pulumi.Input['RegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs'] parent_ref: (Updatable) A reference to the object's parent.
+        :param pulumi.Input['RegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs'] parent_ref: (Updatable) A reference to the parent object.
         :param pulumi.Input[str] resource_name: (Updatable) A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
         """
         pulumi.set(__self__, "identifier", identifier)
@@ -1785,7 +1785,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaArgs:
     @pulumi.getter
     def identifier(self) -> pulumi.Input[str]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -1809,7 +1809,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaArgs:
     @pulumi.getter(name="modelType")
     def model_type(self) -> pulumi.Input[str]:
         """
-        (Updatable) The property which disciminates the subtypes.
+        (Updatable) The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -1821,7 +1821,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -1845,7 +1845,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user defined description for the object.
+        (Updatable) A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -1857,7 +1857,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaArgs:
     @pulumi.getter(name="externalKey")
     def external_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The external key for the object.
+        (Updatable) The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -1881,7 +1881,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaArgs:
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input['RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs']]:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -1929,7 +1929,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaArgs:
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional[pulumi.Input['RegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs']]:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -1967,14 +1967,14 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs:
                  updated_by: Optional[pulumi.Input[str]] = None,
                  updated_by_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input['RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs'] aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param pulumi.Input['RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs'] aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
         :param pulumi.Input[str] created_by: (Updatable) The user that created the object.
         :param pulumi.Input[str] created_by_name: (Updatable) The user that created the object.
-        :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify this object.
+        :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify the object.
         :param pulumi.Input[Mapping[str, Any]] info_fields: (Updatable) Information property fields.
-        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: (Updatable) The registry version.
         :param pulumi.Input[str] time_created: (Updatable) The date and time that the object was created.
         :param pulumi.Input[str] time_updated: (Updatable) The date and time that the object was updated.
@@ -2012,7 +2012,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs:
     @pulumi.getter
     def aggregator(self) -> Optional[pulumi.Input['RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs']]:
         """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -2060,7 +2060,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs:
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The full path to identify this object.
+        (Updatable) The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -2084,7 +2084,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs:
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -2096,7 +2096,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -2174,10 +2174,10 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the object.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] description: (Updatable) A user-defined description for the object.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] type: (Updatable) Specific DataAsset Type
         """
         if description is not None:
@@ -2195,7 +2195,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user defined description for the object.
+        (Updatable) A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -2207,7 +2207,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs:
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -2231,7 +2231,7 @@ class RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -2291,15 +2291,15 @@ class RegistryDataAssetDefaultConnectionRegistryMetadataArgs:
                  updated_by_user_name: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
-        :param pulumi.Input[str] created_by_user_id: (Updatable) The id of the user who created the object.
+        :param pulumi.Input[str] created_by_user_id: (Updatable) The ID of the user who created the object.
         :param pulumi.Input[str] created_by_user_name: (Updatable) The name of the user who created the object.
-        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
+        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether the object is a favorite.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: (Updatable) The registry version.
         :param pulumi.Input[str] time_created: (Updatable) The date and time that the object was created.
         :param pulumi.Input[str] time_updated: (Updatable) The date and time that the object was updated.
-        :param pulumi.Input[str] updated_by_user_id: (Updatable) The id of the user who updated the object.
+        :param pulumi.Input[str] updated_by_user_id: (Updatable) The ID of the user who updated the object.
         :param pulumi.Input[str] updated_by_user_name: (Updatable) The name of the user who updated the object.
         """
         if aggregator_key is not None:
@@ -2341,7 +2341,7 @@ class RegistryDataAssetDefaultConnectionRegistryMetadataArgs:
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The id of the user who created the object.
+        (Updatable) The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -2365,7 +2365,7 @@ class RegistryDataAssetDefaultConnectionRegistryMetadataArgs:
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -2389,7 +2389,7 @@ class RegistryDataAssetDefaultConnectionRegistryMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -2437,7 +2437,7 @@ class RegistryDataAssetDefaultConnectionRegistryMetadataArgs:
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The id of the user who updated the object.
+        (Updatable) The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -2475,14 +2475,14 @@ class RegistryDataAssetMetadataArgs:
                  updated_by: Optional[pulumi.Input[str]] = None,
                  updated_by_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input['RegistryDataAssetMetadataAggregatorArgs'] aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param pulumi.Input['RegistryDataAssetMetadataAggregatorArgs'] aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
         :param pulumi.Input[str] created_by: (Updatable) The user that created the object.
         :param pulumi.Input[str] created_by_name: (Updatable) The user that created the object.
-        :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify this object.
+        :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify the object.
         :param pulumi.Input[Mapping[str, Any]] info_fields: (Updatable) Information property fields.
-        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: (Updatable) The registry version.
         :param pulumi.Input[str] time_created: (Updatable) The date and time that the object was created.
         :param pulumi.Input[str] time_updated: (Updatable) The date and time that the object was updated.
@@ -2520,7 +2520,7 @@ class RegistryDataAssetMetadataArgs:
     @pulumi.getter
     def aggregator(self) -> Optional[pulumi.Input['RegistryDataAssetMetadataAggregatorArgs']]:
         """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -2568,7 +2568,7 @@ class RegistryDataAssetMetadataArgs:
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The full path to identify this object.
+        (Updatable) The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -2592,7 +2592,7 @@ class RegistryDataAssetMetadataArgs:
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -2604,7 +2604,7 @@ class RegistryDataAssetMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -2682,10 +2682,10 @@ class RegistryDataAssetMetadataAggregatorArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the object.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] description: (Updatable) A user-defined description for the object.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] type: (Updatable) Specific DataAsset Type
         """
         if description is not None:
@@ -2703,7 +2703,7 @@ class RegistryDataAssetMetadataAggregatorArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user defined description for the object.
+        (Updatable) A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -2715,7 +2715,7 @@ class RegistryDataAssetMetadataAggregatorArgs:
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -2739,7 +2739,7 @@ class RegistryDataAssetMetadataAggregatorArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -2776,15 +2776,15 @@ class RegistryDataAssetNativeTypeSystemArgs:
                  type_mapping_to: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  types: Optional[pulumi.Input[Sequence[pulumi.Input['RegistryDataAssetNativeTypeSystemTypeArgs']]]] = None):
         """
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the object.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] description: (Updatable) A user-defined description for the object.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[str] model_type: (Updatable) The property which disciminates the subtypes.
+        :param pulumi.Input[str] model_type: (Updatable) The property which differentiates the subtypes.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) The version of the object that is used to track changes in the object instance.
-        :param pulumi.Input['RegistryDataAssetNativeTypeSystemParentRefArgs'] parent_ref: (Updatable) A reference to the object's parent.
+        :param pulumi.Input['RegistryDataAssetNativeTypeSystemParentRefArgs'] parent_ref: (Updatable) A reference to the parent object.
         :param pulumi.Input[Mapping[str, Any]] type_mapping_from: (Updatable) The type system to map from.
         :param pulumi.Input[Mapping[str, Any]] type_mapping_to: (Updatable) The type system to map to.
         :param pulumi.Input[Sequence[pulumi.Input['RegistryDataAssetNativeTypeSystemTypeArgs']]] types: (Updatable) An array of types.
@@ -2818,7 +2818,7 @@ class RegistryDataAssetNativeTypeSystemArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user defined description for the object.
+        (Updatable) A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -2830,7 +2830,7 @@ class RegistryDataAssetNativeTypeSystemArgs:
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -2854,7 +2854,7 @@ class RegistryDataAssetNativeTypeSystemArgs:
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The property which disciminates the subtypes.
+        (Updatable) The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -2878,7 +2878,7 @@ class RegistryDataAssetNativeTypeSystemArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -2914,7 +2914,7 @@ class RegistryDataAssetNativeTypeSystemArgs:
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional[pulumi.Input['RegistryDataAssetNativeTypeSystemParentRefArgs']]:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -2996,15 +2996,15 @@ class RegistryDataAssetNativeTypeSystemTypeArgs:
                  parent_ref: Optional[pulumi.Input['RegistryDataAssetNativeTypeSystemTypeParentRefArgs']] = None,
                  type_system_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] model_type: (Updatable) The property which disciminates the subtypes.
+        :param pulumi.Input[str] model_type: (Updatable) The property which differentiates the subtypes.
         :param pulumi.Input['RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs'] config_definition: (Updatable) The configuration details of a configurable object. This contains one or more config param definitions.
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the object.
+        :param pulumi.Input[str] description: (Updatable) A user-defined description for the object.
         :param pulumi.Input[str] dt_type: (Updatable) The data type.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input['RegistryDataAssetNativeTypeSystemTypeParentRefArgs'] parent_ref: (Updatable) A reference to the object's parent.
+        :param pulumi.Input['RegistryDataAssetNativeTypeSystemTypeParentRefArgs'] parent_ref: (Updatable) A reference to the parent object.
         :param pulumi.Input[str] type_system_name: (Updatable) The data type system name.
         """
         pulumi.set(__self__, "model_type", model_type)
@@ -3031,7 +3031,7 @@ class RegistryDataAssetNativeTypeSystemTypeArgs:
     @pulumi.getter(name="modelType")
     def model_type(self) -> pulumi.Input[str]:
         """
-        (Updatable) The property which disciminates the subtypes.
+        (Updatable) The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -3055,7 +3055,7 @@ class RegistryDataAssetNativeTypeSystemTypeArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user defined description for the object.
+        (Updatable) A user-defined description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -3103,7 +3103,7 @@ class RegistryDataAssetNativeTypeSystemTypeArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -3127,7 +3127,7 @@ class RegistryDataAssetNativeTypeSystemTypeArgs:
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional[pulumi.Input['RegistryDataAssetNativeTypeSystemTypeParentRefArgs']]:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -3161,13 +3161,13 @@ class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs:
                  parent_ref: Optional[pulumi.Input['RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs']] = None):
         """
         :param pulumi.Input[Mapping[str, Any]] config_parameter_definitions: (Updatable) The parameter configuration details.
-        :param pulumi.Input[bool] is_contained: (Updatable) Specifies whether the configuration is contained or not.
+        :param pulumi.Input[bool] is_contained: (Updatable) Specifies whether the configuration is contained.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[str] model_type: (Updatable) The property which disciminates the subtypes.
+        :param pulumi.Input[str] model_type: (Updatable) The property which differentiates the subtypes.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input['RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs'] parent_ref: (Updatable) A reference to the object's parent.
+        :param pulumi.Input['RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs'] parent_ref: (Updatable) A reference to the parent object.
         """
         if config_parameter_definitions is not None:
             pulumi.set(__self__, "config_parameter_definitions", config_parameter_definitions)
@@ -3202,7 +3202,7 @@ class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs:
     @pulumi.getter(name="isContained")
     def is_contained(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether the configuration is contained or not.
+        (Updatable) Specifies whether the configuration is contained.
         """
         return pulumi.get(self, "is_contained")
 
@@ -3226,7 +3226,7 @@ class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs:
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The property which disciminates the subtypes.
+        (Updatable) The property which differentiates the subtypes.
         """
         return pulumi.get(self, "model_type")
 
@@ -3250,7 +3250,7 @@ class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -3274,7 +3274,7 @@ class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs:
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional[pulumi.Input['RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs']]:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -3345,15 +3345,15 @@ class RegistryDataAssetRegistryMetadataArgs:
                  updated_by_user_name: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
-        :param pulumi.Input[str] created_by_user_id: (Updatable) The id of the user who created the object.
+        :param pulumi.Input[str] created_by_user_id: (Updatable) The ID of the user who created the object.
         :param pulumi.Input[str] created_by_user_name: (Updatable) The name of the user who created the object.
-        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
+        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether the object is a favorite.
         :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: (Updatable) The registry version.
         :param pulumi.Input[str] time_created: (Updatable) The date and time that the object was created.
         :param pulumi.Input[str] time_updated: (Updatable) The date and time that the object was updated.
-        :param pulumi.Input[str] updated_by_user_id: (Updatable) The id of the user who updated the object.
+        :param pulumi.Input[str] updated_by_user_id: (Updatable) The ID of the user who updated the object.
         :param pulumi.Input[str] updated_by_user_name: (Updatable) The name of the user who updated the object.
         """
         if aggregator_key is not None:
@@ -3395,7 +3395,7 @@ class RegistryDataAssetRegistryMetadataArgs:
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The id of the user who created the object.
+        (Updatable) The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -3419,7 +3419,7 @@ class RegistryDataAssetRegistryMetadataArgs:
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -3443,7 +3443,7 @@ class RegistryDataAssetRegistryMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -3491,7 +3491,7 @@ class RegistryDataAssetRegistryMetadataArgs:
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The id of the user who updated the object.
+        (Updatable) The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -3532,14 +3532,14 @@ class RegistryFolderDataAssetArgs:
                  registry_metadata: Optional[pulumi.Input['RegistryFolderDataAssetRegistryMetadataArgs']] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[Mapping[str, Any]] asset_properties: (Updatable) Additional properties for the data asset.
         :param pulumi.Input['RegistryFolderDataAssetDefaultConnectionArgs'] default_connection: (Updatable) The default connection key.
-        :param pulumi.Input[str] description: (Updatable) User-defined description for the folder.
-        :param pulumi.Input[str] external_key: (Updatable) The external key for the object.
-        :param pulumi.Input['RegistryFolderDataAssetMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param pulumi.Input[str] description: (Updatable) User-defined description of the folder.
+        :param pulumi.Input[str] external_key: (Updatable) The external key of the object.
+        :param pulumi.Input['RegistryFolderDataAssetMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         :param pulumi.Input[str] model_type: (Updatable) The type of the folder.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
         :param pulumi.Input['RegistryFolderDataAssetNativeTypeSystemArgs'] native_type_system: (Updatable) The type system maps from and to a type.
@@ -3583,7 +3583,7 @@ class RegistryFolderDataAssetArgs:
     @pulumi.getter
     def identifier(self) -> pulumi.Input[str]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -3595,7 +3595,7 @@ class RegistryFolderDataAssetArgs:
     @pulumi.getter
     def key(self) -> pulumi.Input[str]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -3607,7 +3607,7 @@ class RegistryFolderDataAssetArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -3643,7 +3643,7 @@ class RegistryFolderDataAssetArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -3655,7 +3655,7 @@ class RegistryFolderDataAssetArgs:
     @pulumi.getter(name="externalKey")
     def external_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The external key for the object.
+        (Updatable) The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -3667,7 +3667,7 @@ class RegistryFolderDataAssetArgs:
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input['RegistryFolderDataAssetMetadataArgs']]:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -3791,13 +3791,13 @@ class RegistryFolderDataAssetDefaultConnectionArgs:
                  registry_metadata: Optional[pulumi.Input['RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs']] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[Sequence[pulumi.Input['RegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs']]] connection_properties: (Updatable) The properties for the connection.
-        :param pulumi.Input[str] description: (Updatable) User-defined description for the folder.
-        :param pulumi.Input[bool] is_default: (Updatable) The default property for the connection.
-        :param pulumi.Input['RegistryFolderDataAssetDefaultConnectionMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[Sequence[pulumi.Input['RegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs']]] connection_properties: (Updatable) The properties of the connection.
+        :param pulumi.Input[str] description: (Updatable) User-defined description of the folder.
+        :param pulumi.Input[bool] is_default: (Updatable) The default property of the connection.
+        :param pulumi.Input['RegistryFolderDataAssetDefaultConnectionMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         :param pulumi.Input[str] model_type: (Updatable) The type of the folder.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
@@ -3839,7 +3839,7 @@ class RegistryFolderDataAssetDefaultConnectionArgs:
     @pulumi.getter
     def identifier(self) -> pulumi.Input[str]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -3851,7 +3851,7 @@ class RegistryFolderDataAssetDefaultConnectionArgs:
     @pulumi.getter
     def key(self) -> pulumi.Input[str]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -3863,7 +3863,7 @@ class RegistryFolderDataAssetDefaultConnectionArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -3875,7 +3875,7 @@ class RegistryFolderDataAssetDefaultConnectionArgs:
     @pulumi.getter(name="connectionProperties")
     def connection_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs']]]]:
         """
-        (Updatable) The properties for the connection.
+        (Updatable) The properties of the connection.
         """
         return pulumi.get(self, "connection_properties")
 
@@ -3887,7 +3887,7 @@ class RegistryFolderDataAssetDefaultConnectionArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -3899,7 +3899,7 @@ class RegistryFolderDataAssetDefaultConnectionArgs:
     @pulumi.getter(name="isDefault")
     def is_default(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) The default property for the connection.
+        (Updatable) The default property of the connection.
         """
         return pulumi.get(self, "is_default")
 
@@ -3911,7 +3911,7 @@ class RegistryFolderDataAssetDefaultConnectionArgs:
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input['RegistryFolderDataAssetDefaultConnectionMetadataArgs']]:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -4022,7 +4022,7 @@ class RegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] value: (Updatable) The value for the connection name property.
         """
         if name is not None:
@@ -4034,7 +4034,7 @@ class RegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -4072,14 +4072,14 @@ class RegistryFolderDataAssetDefaultConnectionMetadataArgs:
                  updated_by: Optional[pulumi.Input[str]] = None,
                  updated_by_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input['RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs'] aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param pulumi.Input['RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs'] aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
         :param pulumi.Input[str] created_by: (Updatable) The user that created the object.
         :param pulumi.Input[str] created_by_name: (Updatable) The user that created the object.
-        :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify this object.
+        :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify the object.
         :param pulumi.Input[Mapping[str, Any]] info_fields: (Updatable) Information property fields.
-        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: (Updatable) The registry version.
         :param pulumi.Input[str] time_created: (Updatable) The date and time that the object was created.
         :param pulumi.Input[str] time_updated: (Updatable) The date and time that the object was updated.
@@ -4117,7 +4117,7 @@ class RegistryFolderDataAssetDefaultConnectionMetadataArgs:
     @pulumi.getter
     def aggregator(self) -> Optional[pulumi.Input['RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs']]:
         """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -4165,7 +4165,7 @@ class RegistryFolderDataAssetDefaultConnectionMetadataArgs:
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The full path to identify this object.
+        (Updatable) The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -4189,7 +4189,7 @@ class RegistryFolderDataAssetDefaultConnectionMetadataArgs:
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -4201,7 +4201,7 @@ class RegistryFolderDataAssetDefaultConnectionMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -4279,10 +4279,10 @@ class RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] description: (Updatable) User-defined description for the folder.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] description: (Updatable) User-defined description of the folder.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] type: (Updatable) Specific DataAsset Type
         """
         if description is not None:
@@ -4300,7 +4300,7 @@ class RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -4312,7 +4312,7 @@ class RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs:
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -4324,7 +4324,7 @@ class RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -4336,7 +4336,7 @@ class RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -4375,19 +4375,19 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs:
                  parent_ref: Optional[pulumi.Input['RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs']] = None,
                  resource_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param pulumi.Input[str] model_type: (Updatable) The type of the folder.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] default_connection: (Updatable) The default connection key.
-        :param pulumi.Input[str] description: (Updatable) User-defined description for the folder.
-        :param pulumi.Input[str] external_key: (Updatable) The external key for the object.
+        :param pulumi.Input[str] description: (Updatable) User-defined description of the folder.
+        :param pulumi.Input[str] external_key: (Updatable) The external key of the object.
         :param pulumi.Input[bool] is_has_containers: (Updatable) Specifies whether the schema has containers.
-        :param pulumi.Input['RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param pulumi.Input['RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) The version of the object that is used to track changes in the object instance.
-        :param pulumi.Input['RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs'] parent_ref: (Updatable) A reference to the object's parent.
+        :param pulumi.Input['RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs'] parent_ref: (Updatable) A reference to the parent object.
         :param pulumi.Input[str] resource_name: (Updatable) A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
         """
         pulumi.set(__self__, "identifier", identifier)
@@ -4419,7 +4419,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs:
     @pulumi.getter
     def identifier(self) -> pulumi.Input[str]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -4431,7 +4431,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs:
     @pulumi.getter
     def key(self) -> pulumi.Input[str]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -4455,7 +4455,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -4479,7 +4479,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -4491,7 +4491,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs:
     @pulumi.getter(name="externalKey")
     def external_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The external key for the object.
+        (Updatable) The external key of the object.
         """
         return pulumi.get(self, "external_key")
 
@@ -4515,7 +4515,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs:
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input['RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs']]:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         """
         return pulumi.get(self, "metadata")
 
@@ -4563,7 +4563,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs:
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional[pulumi.Input['RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs']]:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -4601,14 +4601,14 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs:
                  updated_by: Optional[pulumi.Input[str]] = None,
                  updated_by_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input['RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs'] aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param pulumi.Input['RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs'] aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
         :param pulumi.Input[str] created_by: (Updatable) The user that created the object.
         :param pulumi.Input[str] created_by_name: (Updatable) The user that created the object.
-        :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify this object.
+        :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify the object.
         :param pulumi.Input[Mapping[str, Any]] info_fields: (Updatable) Information property fields.
-        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: (Updatable) The registry version.
         :param pulumi.Input[str] time_created: (Updatable) The date and time that the object was created.
         :param pulumi.Input[str] time_updated: (Updatable) The date and time that the object was updated.
@@ -4646,7 +4646,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs:
     @pulumi.getter
     def aggregator(self) -> Optional[pulumi.Input['RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs']]:
         """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -4694,7 +4694,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs:
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The full path to identify this object.
+        (Updatable) The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -4718,7 +4718,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs:
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -4730,7 +4730,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -4808,10 +4808,10 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArg
                  name: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] description: (Updatable) User-defined description for the folder.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] description: (Updatable) User-defined description of the folder.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] type: (Updatable) Specific DataAsset Type
         """
         if description is not None:
@@ -4829,7 +4829,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArg
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -4841,7 +4841,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArg
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -4853,7 +4853,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArg
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -4865,7 +4865,7 @@ class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArg
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -4925,15 +4925,15 @@ class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs:
                  updated_by_user_name: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
-        :param pulumi.Input[str] created_by_user_id: (Updatable) The id of the user who created the object.
+        :param pulumi.Input[str] created_by_user_id: (Updatable) The ID of the user who created the object.
         :param pulumi.Input[str] created_by_user_name: (Updatable) The name of the user who created the object.
-        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: (Updatable) The registry version.
         :param pulumi.Input[str] time_created: (Updatable) The date and time that the object was created.
         :param pulumi.Input[str] time_updated: (Updatable) The date and time that the object was updated.
-        :param pulumi.Input[str] updated_by_user_id: (Updatable) The id of the user who updated the object.
+        :param pulumi.Input[str] updated_by_user_id: (Updatable) The ID of the user who updated the object.
         :param pulumi.Input[str] updated_by_user_name: (Updatable) The name of the user who updated the object.
         """
         if aggregator_key is not None:
@@ -4975,7 +4975,7 @@ class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs:
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The id of the user who created the object.
+        (Updatable) The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -4999,7 +4999,7 @@ class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs:
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -5011,7 +5011,7 @@ class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -5023,7 +5023,7 @@ class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -5071,7 +5071,7 @@ class RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs:
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The id of the user who updated the object.
+        (Updatable) The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 
@@ -5109,14 +5109,14 @@ class RegistryFolderDataAssetMetadataArgs:
                  updated_by: Optional[pulumi.Input[str]] = None,
                  updated_by_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input['RegistryFolderDataAssetMetadataAggregatorArgs'] aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param pulumi.Input['RegistryFolderDataAssetMetadataAggregatorArgs'] aggregator: (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
         :param pulumi.Input[str] created_by: (Updatable) The user that created the object.
         :param pulumi.Input[str] created_by_name: (Updatable) The user that created the object.
-        :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify this object.
+        :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify the object.
         :param pulumi.Input[Mapping[str, Any]] info_fields: (Updatable) Information property fields.
-        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: (Updatable) The registry version.
         :param pulumi.Input[str] time_created: (Updatable) The date and time that the object was created.
         :param pulumi.Input[str] time_updated: (Updatable) The date and time that the object was updated.
@@ -5154,7 +5154,7 @@ class RegistryFolderDataAssetMetadataArgs:
     @pulumi.getter
     def aggregator(self) -> Optional[pulumi.Input['RegistryFolderDataAssetMetadataAggregatorArgs']]:
         """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name, and description.
         """
         return pulumi.get(self, "aggregator")
 
@@ -5202,7 +5202,7 @@ class RegistryFolderDataAssetMetadataArgs:
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The full path to identify this object.
+        (Updatable) The full path to identify the object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -5226,7 +5226,7 @@ class RegistryFolderDataAssetMetadataArgs:
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -5238,7 +5238,7 @@ class RegistryFolderDataAssetMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -5316,10 +5316,10 @@ class RegistryFolderDataAssetMetadataAggregatorArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] description: (Updatable) User-defined description for the folder.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] description: (Updatable) User-defined description of the folder.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] type: (Updatable) Specific DataAsset Type
         """
         if description is not None:
@@ -5337,7 +5337,7 @@ class RegistryFolderDataAssetMetadataAggregatorArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -5349,7 +5349,7 @@ class RegistryFolderDataAssetMetadataAggregatorArgs:
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -5361,7 +5361,7 @@ class RegistryFolderDataAssetMetadataAggregatorArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -5373,7 +5373,7 @@ class RegistryFolderDataAssetMetadataAggregatorArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -5410,15 +5410,15 @@ class RegistryFolderDataAssetNativeTypeSystemArgs:
                  type_mapping_to: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  types: Optional[pulumi.Input[Sequence[pulumi.Input['RegistryFolderDataAssetNativeTypeSystemTypeArgs']]]] = None):
         """
-        :param pulumi.Input[str] description: (Updatable) User-defined description for the folder.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param pulumi.Input[str] description: (Updatable) User-defined description of the folder.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param pulumi.Input[str] model_type: (Updatable) The type of the folder.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[int] object_version: (Updatable) The version of the object that is used to track changes in the object instance.
-        :param pulumi.Input['RegistryFolderDataAssetNativeTypeSystemParentRefArgs'] parent_ref: (Updatable) A reference to the object's parent.
+        :param pulumi.Input['RegistryFolderDataAssetNativeTypeSystemParentRefArgs'] parent_ref: (Updatable) A reference to the parent object.
         :param pulumi.Input[Mapping[str, Any]] type_mapping_from: (Updatable) The type system to map from.
         :param pulumi.Input[Mapping[str, Any]] type_mapping_to: (Updatable) The type system to map to.
         :param pulumi.Input[Sequence[pulumi.Input['RegistryFolderDataAssetNativeTypeSystemTypeArgs']]] types: (Updatable) An array of types.
@@ -5452,7 +5452,7 @@ class RegistryFolderDataAssetNativeTypeSystemArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -5464,7 +5464,7 @@ class RegistryFolderDataAssetNativeTypeSystemArgs:
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -5476,7 +5476,7 @@ class RegistryFolderDataAssetNativeTypeSystemArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -5512,7 +5512,7 @@ class RegistryFolderDataAssetNativeTypeSystemArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -5548,7 +5548,7 @@ class RegistryFolderDataAssetNativeTypeSystemArgs:
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional[pulumi.Input['RegistryFolderDataAssetNativeTypeSystemParentRefArgs']]:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -5632,13 +5632,13 @@ class RegistryFolderDataAssetNativeTypeSystemTypeArgs:
         """
         :param pulumi.Input[str] model_type: (Updatable) The type of the folder.
         :param pulumi.Input['RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs'] config_definition: (Updatable) The configuration details of a configurable object. This contains one or more config param definitions.
-        :param pulumi.Input[str] description: (Updatable) User-defined description for the folder.
+        :param pulumi.Input[str] description: (Updatable) User-defined description of the folder.
         :param pulumi.Input[str] dt_type: (Updatable) The data type.
-        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input['RegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs'] parent_ref: (Updatable) A reference to the object's parent.
+        :param pulumi.Input['RegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs'] parent_ref: (Updatable) A reference to the parent object.
         :param pulumi.Input[str] type_system_name: (Updatable) The data type system name.
         """
         pulumi.set(__self__, "model_type", model_type)
@@ -5689,7 +5689,7 @@ class RegistryFolderDataAssetNativeTypeSystemTypeArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User-defined description for the folder.
+        (Updatable) User-defined description of the folder.
         """
         return pulumi.get(self, "description")
 
@@ -5713,7 +5713,7 @@ class RegistryFolderDataAssetNativeTypeSystemTypeArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -5737,7 +5737,7 @@ class RegistryFolderDataAssetNativeTypeSystemTypeArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -5761,7 +5761,7 @@ class RegistryFolderDataAssetNativeTypeSystemTypeArgs:
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional[pulumi.Input['RegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs']]:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -5795,13 +5795,13 @@ class RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs:
                  parent_ref: Optional[pulumi.Input['RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs']] = None):
         """
         :param pulumi.Input[Mapping[str, Any]] config_parameter_definitions: (Updatable) The parameter configuration details.
-        :param pulumi.Input[bool] is_contained: (Updatable) Specifies whether the configuration is contained or not.
-        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        :param pulumi.Input[bool] is_contained: (Updatable) Specifies whether the configuration is contained.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         :param pulumi.Input[str] model_type: (Updatable) The type of the folder.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input['RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs'] parent_ref: (Updatable) A reference to the object's parent.
+        :param pulumi.Input['RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs'] parent_ref: (Updatable) A reference to the parent object.
         """
         if config_parameter_definitions is not None:
             pulumi.set(__self__, "config_parameter_definitions", config_parameter_definitions)
@@ -5836,7 +5836,7 @@ class RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs:
     @pulumi.getter(name="isContained")
     def is_contained(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether the configuration is contained or not.
+        (Updatable) Specifies whether the configuration is contained.
         """
         return pulumi.get(self, "is_contained")
 
@@ -5848,7 +5848,7 @@ class RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -5884,7 +5884,7 @@ class RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
@@ -5908,7 +5908,7 @@ class RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs:
     @pulumi.getter(name="parentRef")
     def parent_ref(self) -> Optional[pulumi.Input['RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs']]:
         """
-        (Updatable) A reference to the object's parent.
+        (Updatable) A reference to the parent object.
         """
         return pulumi.get(self, "parent_ref")
 
@@ -5979,15 +5979,15 @@ class RegistryFolderDataAssetRegistryMetadataArgs:
                  updated_by_user_name: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
-        :param pulumi.Input[str] created_by_user_id: (Updatable) The id of the user who created the object.
+        :param pulumi.Input[str] created_by_user_id: (Updatable) The ID of the user who created the object.
         :param pulumi.Input[str] created_by_user_name: (Updatable) The name of the user who created the object.
-        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether the object is a favorite.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: (Updatable) The registry version.
         :param pulumi.Input[str] time_created: (Updatable) The date and time that the object was created.
         :param pulumi.Input[str] time_updated: (Updatable) The date and time that the object was updated.
-        :param pulumi.Input[str] updated_by_user_id: (Updatable) The id of the user who updated the object.
+        :param pulumi.Input[str] updated_by_user_id: (Updatable) The ID of the user who updated the object.
         :param pulumi.Input[str] updated_by_user_name: (Updatable) The name of the user who updated the object.
         """
         if aggregator_key is not None:
@@ -6029,7 +6029,7 @@ class RegistryFolderDataAssetRegistryMetadataArgs:
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The id of the user who created the object.
+        (Updatable) The ID of the user who created the object.
         """
         return pulumi.get(self, "created_by_user_id")
 
@@ -6053,7 +6053,7 @@ class RegistryFolderDataAssetRegistryMetadataArgs:
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        (Updatable) Specifies whether the object is a favorite.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -6065,7 +6065,7 @@ class RegistryFolderDataAssetRegistryMetadataArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -6077,7 +6077,7 @@ class RegistryFolderDataAssetRegistryMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -6125,7 +6125,7 @@ class RegistryFolderDataAssetRegistryMetadataArgs:
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The id of the user who updated the object.
+        (Updatable) The ID of the user who updated the object.
         """
         return pulumi.get(self, "updated_by_user_id")
 

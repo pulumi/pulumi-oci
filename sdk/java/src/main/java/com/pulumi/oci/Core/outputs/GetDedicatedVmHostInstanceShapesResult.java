@@ -18,37 +18,22 @@ public final class GetDedicatedVmHostInstanceShapesResult {
      * @return The shape&#39;s availability domain.
      * 
      */
-    private final @Nullable String availabilityDomain;
-    private final String compartmentId;
+    private @Nullable String availabilityDomain;
+    private String compartmentId;
     /**
      * @return The list of dedicated_vm_host_instance_shapes.
      * 
      */
-    private final List<GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape> dedicatedVmHostInstanceShapes;
-    private final @Nullable String dedicatedVmHostShape;
-    private final @Nullable List<GetDedicatedVmHostInstanceShapesFilter> filters;
+    private List<GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape> dedicatedVmHostInstanceShapes;
+    private @Nullable String dedicatedVmHostShape;
+    private @Nullable List<GetDedicatedVmHostInstanceShapesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetDedicatedVmHostInstanceShapesResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dedicatedVmHostInstanceShapes") List<GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape> dedicatedVmHostInstanceShapes,
-        @CustomType.Parameter("dedicatedVmHostShape") @Nullable String dedicatedVmHostShape,
-        @CustomType.Parameter("filters") @Nullable List<GetDedicatedVmHostInstanceShapesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.dedicatedVmHostInstanceShapes = dedicatedVmHostInstanceShapes;
-        this.dedicatedVmHostShape = dedicatedVmHostShape;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetDedicatedVmHostInstanceShapesResult() {}
     /**
      * @return The shape&#39;s availability domain.
      * 
@@ -87,7 +72,7 @@ public final class GetDedicatedVmHostInstanceShapesResult {
     public static Builder builder(GetDedicatedVmHostInstanceShapesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
@@ -95,11 +80,7 @@ public final class GetDedicatedVmHostInstanceShapesResult {
         private @Nullable String dedicatedVmHostShape;
         private @Nullable List<GetDedicatedVmHostInstanceShapesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDedicatedVmHostInstanceShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -110,14 +91,17 @@ public final class GetDedicatedVmHostInstanceShapesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dedicatedVmHostInstanceShapes(List<GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape> dedicatedVmHostInstanceShapes) {
             this.dedicatedVmHostInstanceShapes = Objects.requireNonNull(dedicatedVmHostInstanceShapes);
             return this;
@@ -125,10 +109,12 @@ public final class GetDedicatedVmHostInstanceShapesResult {
         public Builder dedicatedVmHostInstanceShapes(GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape... dedicatedVmHostInstanceShapes) {
             return dedicatedVmHostInstanceShapes(List.of(dedicatedVmHostInstanceShapes));
         }
+        @CustomType.Setter
         public Builder dedicatedVmHostShape(@Nullable String dedicatedVmHostShape) {
             this.dedicatedVmHostShape = dedicatedVmHostShape;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDedicatedVmHostInstanceShapesFilter> filters) {
             this.filters = filters;
             return this;
@@ -136,11 +122,20 @@ public final class GetDedicatedVmHostInstanceShapesResult {
         public Builder filters(GetDedicatedVmHostInstanceShapesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetDedicatedVmHostInstanceShapesResult build() {
-            return new GetDedicatedVmHostInstanceShapesResult(availabilityDomain, compartmentId, dedicatedVmHostInstanceShapes, dedicatedVmHostShape, filters, id);
+        }
+        public GetDedicatedVmHostInstanceShapesResult build() {
+            final var o = new GetDedicatedVmHostInstanceShapesResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.dedicatedVmHostInstanceShapes = dedicatedVmHostInstanceShapes;
+            o.dedicatedVmHostShape = dedicatedVmHostShape;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

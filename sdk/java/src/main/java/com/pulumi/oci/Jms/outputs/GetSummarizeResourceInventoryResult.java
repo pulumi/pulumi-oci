@@ -16,58 +16,37 @@ public final class GetSummarizeResourceInventoryResult {
      * @return The number of _active_ fleets.
      * 
      */
-    private final Integer activeFleetCount;
+    private Integer activeFleetCount;
     /**
      * @return The number of applications.
      * 
      */
-    private final Integer applicationCount;
-    private final @Nullable String compartmentId;
+    private Integer applicationCount;
+    private @Nullable String compartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The number of Java installations.
      * 
      */
-    private final Integer installationCount;
+    private Integer installationCount;
     /**
      * @return The number of Java Runtimes.
      * 
      */
-    private final Integer jreCount;
+    private Integer jreCount;
     /**
      * @return The number of managed instances.
      * 
      */
-    private final Integer managedInstanceCount;
-    private final @Nullable String timeEnd;
-    private final @Nullable String timeStart;
+    private Integer managedInstanceCount;
+    private @Nullable String timeEnd;
+    private @Nullable String timeStart;
 
-    @CustomType.Constructor
-    private GetSummarizeResourceInventoryResult(
-        @CustomType.Parameter("activeFleetCount") Integer activeFleetCount,
-        @CustomType.Parameter("applicationCount") Integer applicationCount,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("installationCount") Integer installationCount,
-        @CustomType.Parameter("jreCount") Integer jreCount,
-        @CustomType.Parameter("managedInstanceCount") Integer managedInstanceCount,
-        @CustomType.Parameter("timeEnd") @Nullable String timeEnd,
-        @CustomType.Parameter("timeStart") @Nullable String timeStart) {
-        this.activeFleetCount = activeFleetCount;
-        this.applicationCount = applicationCount;
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.installationCount = installationCount;
-        this.jreCount = jreCount;
-        this.managedInstanceCount = managedInstanceCount;
-        this.timeEnd = timeEnd;
-        this.timeStart = timeStart;
-    }
-
+    private GetSummarizeResourceInventoryResult() {}
     /**
      * @return The number of _active_ fleets.
      * 
@@ -127,7 +106,7 @@ public final class GetSummarizeResourceInventoryResult {
     public static Builder builder(GetSummarizeResourceInventoryResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer activeFleetCount;
         private Integer applicationCount;
@@ -138,11 +117,7 @@ public final class GetSummarizeResourceInventoryResult {
         private Integer managedInstanceCount;
         private @Nullable String timeEnd;
         private @Nullable String timeStart;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSummarizeResourceInventoryResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.activeFleetCount = defaults.activeFleetCount;
@@ -156,43 +131,63 @@ public final class GetSummarizeResourceInventoryResult {
     	      this.timeStart = defaults.timeStart;
         }
 
+        @CustomType.Setter
         public Builder activeFleetCount(Integer activeFleetCount) {
             this.activeFleetCount = Objects.requireNonNull(activeFleetCount);
             return this;
         }
+        @CustomType.Setter
         public Builder applicationCount(Integer applicationCount) {
             this.applicationCount = Objects.requireNonNull(applicationCount);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder installationCount(Integer installationCount) {
             this.installationCount = Objects.requireNonNull(installationCount);
             return this;
         }
+        @CustomType.Setter
         public Builder jreCount(Integer jreCount) {
             this.jreCount = Objects.requireNonNull(jreCount);
             return this;
         }
+        @CustomType.Setter
         public Builder managedInstanceCount(Integer managedInstanceCount) {
             this.managedInstanceCount = Objects.requireNonNull(managedInstanceCount);
             return this;
         }
+        @CustomType.Setter
         public Builder timeEnd(@Nullable String timeEnd) {
             this.timeEnd = timeEnd;
             return this;
         }
+        @CustomType.Setter
         public Builder timeStart(@Nullable String timeStart) {
             this.timeStart = timeStart;
             return this;
-        }        public GetSummarizeResourceInventoryResult build() {
-            return new GetSummarizeResourceInventoryResult(activeFleetCount, applicationCount, compartmentId, id, installationCount, jreCount, managedInstanceCount, timeEnd, timeStart);
+        }
+        public GetSummarizeResourceInventoryResult build() {
+            final var o = new GetSummarizeResourceInventoryResult();
+            o.activeFleetCount = activeFleetCount;
+            o.applicationCount = applicationCount;
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.installationCount = installationCount;
+            o.jreCount = jreCount;
+            o.managedInstanceCount = managedInstanceCount;
+            o.timeEnd = timeEnd;
+            o.timeStart = timeStart;
+            return o;
         }
     }
 }

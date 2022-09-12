@@ -12,23 +12,12 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DefaultDhcpOptionsOption {
-    private final @Nullable List<String> customDnsServers;
-    private final @Nullable List<String> searchDomainNames;
-    private final @Nullable String serverType;
-    private final String type;
+    private @Nullable List<String> customDnsServers;
+    private @Nullable List<String> searchDomainNames;
+    private @Nullable String serverType;
+    private String type;
 
-    @CustomType.Constructor
-    private DefaultDhcpOptionsOption(
-        @CustomType.Parameter("customDnsServers") @Nullable List<String> customDnsServers,
-        @CustomType.Parameter("searchDomainNames") @Nullable List<String> searchDomainNames,
-        @CustomType.Parameter("serverType") @Nullable String serverType,
-        @CustomType.Parameter("type") String type) {
-        this.customDnsServers = customDnsServers;
-        this.searchDomainNames = searchDomainNames;
-        this.serverType = serverType;
-        this.type = type;
-    }
-
+    private DefaultDhcpOptionsOption() {}
     public List<String> customDnsServers() {
         return this.customDnsServers == null ? List.of() : this.customDnsServers;
     }
@@ -49,17 +38,13 @@ public final class DefaultDhcpOptionsOption {
     public static Builder builder(DefaultDhcpOptionsOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> customDnsServers;
         private @Nullable List<String> searchDomainNames;
         private @Nullable String serverType;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DefaultDhcpOptionsOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.customDnsServers = defaults.customDnsServers;
@@ -68,6 +53,7 @@ public final class DefaultDhcpOptionsOption {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder customDnsServers(@Nullable List<String> customDnsServers) {
             this.customDnsServers = customDnsServers;
             return this;
@@ -75,6 +61,7 @@ public final class DefaultDhcpOptionsOption {
         public Builder customDnsServers(String... customDnsServers) {
             return customDnsServers(List.of(customDnsServers));
         }
+        @CustomType.Setter
         public Builder searchDomainNames(@Nullable List<String> searchDomainNames) {
             this.searchDomainNames = searchDomainNames;
             return this;
@@ -82,15 +69,23 @@ public final class DefaultDhcpOptionsOption {
         public Builder searchDomainNames(String... searchDomainNames) {
             return searchDomainNames(List.of(searchDomainNames));
         }
+        @CustomType.Setter
         public Builder serverType(@Nullable String serverType) {
             this.serverType = serverType;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public DefaultDhcpOptionsOption build() {
-            return new DefaultDhcpOptionsOption(customDnsServers, searchDomainNames, serverType, type);
+        }
+        public DefaultDhcpOptionsOption build() {
+            final var o = new DefaultDhcpOptionsOption();
+            o.customDnsServers = customDnsServers;
+            o.searchDomainNames = searchDomainNames;
+            o.serverType = serverType;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -539,9 +539,11 @@ class AnalyticsInstance(pulumi.CustomResource):
             kms_key_id=oci_kms_key["test_key"]["id"],
             network_endpoint_details=oci.analytics.AnalyticsInstanceNetworkEndpointDetailsArgs(
                 network_endpoint_type=var["analytics_instance_network_endpoint_details_network_endpoint_type"],
+                network_security_group_ids=var["analytics_instance_network_endpoint_details_network_security_group_ids"],
                 subnet_id=oci_core_subnet["test_subnet"]["id"],
                 vcn_id=oci_core_vcn["test_vcn"]["id"],
                 whitelisted_ips=var["analytics_instance_network_endpoint_details_whitelisted_ips"],
+                whitelisted_services=var["analytics_instance_network_endpoint_details_whitelisted_services"],
                 whitelisted_vcns=[oci.analytics.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs(
                     id=var["analytics_instance_network_endpoint_details_whitelisted_vcns_id"],
                     whitelisted_ips=var["analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips"],
@@ -611,9 +613,11 @@ class AnalyticsInstance(pulumi.CustomResource):
             kms_key_id=oci_kms_key["test_key"]["id"],
             network_endpoint_details=oci.analytics.AnalyticsInstanceNetworkEndpointDetailsArgs(
                 network_endpoint_type=var["analytics_instance_network_endpoint_details_network_endpoint_type"],
+                network_security_group_ids=var["analytics_instance_network_endpoint_details_network_security_group_ids"],
                 subnet_id=oci_core_subnet["test_subnet"]["id"],
                 vcn_id=oci_core_vcn["test_vcn"]["id"],
                 whitelisted_ips=var["analytics_instance_network_endpoint_details_whitelisted_ips"],
+                whitelisted_services=var["analytics_instance_network_endpoint_details_whitelisted_services"],
                 whitelisted_vcns=[oci.analytics.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs(
                     id=var["analytics_instance_network_endpoint_details_whitelisted_vcns_id"],
                     whitelisted_ips=var["analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips"],

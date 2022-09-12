@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Ocvp
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
         /// </summary>
         [Output("failedEsxiHostId")]
         public Output<string> FailedEsxiHostId { get; private set; } = null!;
@@ -115,6 +115,12 @@ namespace Pulumi.Oci.Ocvp
         public Output<string> NextSku { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+        /// </summary>
+        [Output("nonUpgradedEsxiHostId")]
+        public Output<string> NonUpgradedEsxiHostId { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
         /// </summary>
         [Output("replacementEsxiHostId")]
@@ -143,6 +149,18 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+        /// </summary>
+        [Output("upgradedReplacementEsxiHostId")]
+        public Output<string> UpgradedReplacementEsxiHostId { get; private set; } = null!;
+
+        /// <summary>
+        /// The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+        /// </summary>
+        [Output("vmwareSoftwareVersion")]
+        public Output<string> VmwareSoftwareVersion { get; private set; } = null!;
 
 
         /// <summary>
@@ -227,7 +245,7 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
         /// </summary>
         [Input("failedEsxiHostId")]
         public Input<string>? FailedEsxiHostId { get; set; }
@@ -261,6 +279,12 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("nextSku")]
         public Input<string>? NextSku { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+        /// </summary>
+        [Input("nonUpgradedEsxiHostId")]
+        public Input<string>? NonUpgradedEsxiHostId { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to.
@@ -331,7 +355,7 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
         /// </summary>
         [Input("failedEsxiHostId")]
         public Input<string>? FailedEsxiHostId { get; set; }
@@ -373,6 +397,12 @@ namespace Pulumi.Oci.Ocvp
         public Input<string>? NextSku { get; set; }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+        /// </summary>
+        [Input("nonUpgradedEsxiHostId")]
+        public Input<string>? NonUpgradedEsxiHostId { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
         /// </summary>
         [Input("replacementEsxiHostId")]
@@ -401,6 +431,18 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
+        /// </summary>
+        [Input("upgradedReplacementEsxiHostId")]
+        public Input<string>? UpgradedReplacementEsxiHostId { get; set; }
+
+        /// <summary>
+        /// The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+        /// </summary>
+        [Input("vmwareSoftwareVersion")]
+        public Input<string>? VmwareSoftwareVersion { get; set; }
 
         public EsxiHostState()
         {

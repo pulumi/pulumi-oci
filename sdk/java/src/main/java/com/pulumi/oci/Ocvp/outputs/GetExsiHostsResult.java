@@ -18,52 +18,35 @@ public final class GetExsiHostsResult {
      * @return In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
      * 
      */
-    private final @Nullable String computeInstanceId;
+    private @Nullable String computeInstanceId;
     /**
      * @return A descriptive name for the ESXi host. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The list of esxi_host_collection.
      * 
      */
-    private final List<GetExsiHostsEsxiHostCollection> esxiHostCollections;
-    private final @Nullable List<GetExsiHostsFilter> filters;
+    private List<GetExsiHostsEsxiHostCollection> esxiHostCollections;
+    private @Nullable List<GetExsiHostsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
      * 
      */
-    private final @Nullable String sddcId;
+    private @Nullable String sddcId;
     /**
      * @return The current state of the ESXi host.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetExsiHostsResult(
-        @CustomType.Parameter("computeInstanceId") @Nullable String computeInstanceId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("esxiHostCollections") List<GetExsiHostsEsxiHostCollection> esxiHostCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetExsiHostsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("sddcId") @Nullable String sddcId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.computeInstanceId = computeInstanceId;
-        this.displayName = displayName;
-        this.esxiHostCollections = esxiHostCollections;
-        this.filters = filters;
-        this.id = id;
-        this.sddcId = sddcId;
-        this.state = state;
-    }
-
+    private GetExsiHostsResult() {}
     /**
      * @return In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
      * 
@@ -117,7 +100,7 @@ public final class GetExsiHostsResult {
     public static Builder builder(GetExsiHostsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String computeInstanceId;
         private @Nullable String displayName;
@@ -126,11 +109,7 @@ public final class GetExsiHostsResult {
         private String id;
         private @Nullable String sddcId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetExsiHostsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.computeInstanceId = defaults.computeInstanceId;
@@ -142,14 +121,17 @@ public final class GetExsiHostsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder computeInstanceId(@Nullable String computeInstanceId) {
             this.computeInstanceId = computeInstanceId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder esxiHostCollections(List<GetExsiHostsEsxiHostCollection> esxiHostCollections) {
             this.esxiHostCollections = Objects.requireNonNull(esxiHostCollections);
             return this;
@@ -157,6 +139,7 @@ public final class GetExsiHostsResult {
         public Builder esxiHostCollections(GetExsiHostsEsxiHostCollection... esxiHostCollections) {
             return esxiHostCollections(List.of(esxiHostCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetExsiHostsFilter> filters) {
             this.filters = filters;
             return this;
@@ -164,19 +147,31 @@ public final class GetExsiHostsResult {
         public Builder filters(GetExsiHostsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder sddcId(@Nullable String sddcId) {
             this.sddcId = sddcId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetExsiHostsResult build() {
-            return new GetExsiHostsResult(computeInstanceId, displayName, esxiHostCollections, filters, id, sddcId, state);
+        }
+        public GetExsiHostsResult build() {
+            final var o = new GetExsiHostsResult();
+            o.computeInstanceId = computeInstanceId;
+            o.displayName = displayName;
+            o.esxiHostCollections = esxiHostCollections;
+            o.filters = filters;
+            o.id = id;
+            o.sddcId = sddcId;
+            o.state = state;
+            return o;
         }
     }
 }

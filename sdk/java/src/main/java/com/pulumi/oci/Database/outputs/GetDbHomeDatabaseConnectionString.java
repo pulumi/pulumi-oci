@@ -11,20 +11,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDbHomeDatabaseConnectionString {
-    private final Map<String,Object> allConnectionStrings;
-    private final String cdbDefault;
-    private final String cdbIpDefault;
+    private Map<String,Object> allConnectionStrings;
+    private String cdbDefault;
+    private String cdbIpDefault;
 
-    @CustomType.Constructor
-    private GetDbHomeDatabaseConnectionString(
-        @CustomType.Parameter("allConnectionStrings") Map<String,Object> allConnectionStrings,
-        @CustomType.Parameter("cdbDefault") String cdbDefault,
-        @CustomType.Parameter("cdbIpDefault") String cdbIpDefault) {
-        this.allConnectionStrings = allConnectionStrings;
-        this.cdbDefault = cdbDefault;
-        this.cdbIpDefault = cdbIpDefault;
-    }
-
+    private GetDbHomeDatabaseConnectionString() {}
     public Map<String,Object> allConnectionStrings() {
         return this.allConnectionStrings;
     }
@@ -42,16 +33,12 @@ public final class GetDbHomeDatabaseConnectionString {
     public static Builder builder(GetDbHomeDatabaseConnectionString defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> allConnectionStrings;
         private String cdbDefault;
         private String cdbIpDefault;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbHomeDatabaseConnectionString defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allConnectionStrings = defaults.allConnectionStrings;
@@ -59,19 +46,27 @@ public final class GetDbHomeDatabaseConnectionString {
     	      this.cdbIpDefault = defaults.cdbIpDefault;
         }
 
+        @CustomType.Setter
         public Builder allConnectionStrings(Map<String,Object> allConnectionStrings) {
             this.allConnectionStrings = Objects.requireNonNull(allConnectionStrings);
             return this;
         }
+        @CustomType.Setter
         public Builder cdbDefault(String cdbDefault) {
             this.cdbDefault = Objects.requireNonNull(cdbDefault);
             return this;
         }
+        @CustomType.Setter
         public Builder cdbIpDefault(String cdbIpDefault) {
             this.cdbIpDefault = Objects.requireNonNull(cdbIpDefault);
             return this;
-        }        public GetDbHomeDatabaseConnectionString build() {
-            return new GetDbHomeDatabaseConnectionString(allConnectionStrings, cdbDefault, cdbIpDefault);
+        }
+        public GetDbHomeDatabaseConnectionString build() {
+            final var o = new GetDbHomeDatabaseConnectionString();
+            o.allConnectionStrings = allConnectionStrings;
+            o.cdbDefault = cdbDefault;
+            o.cdbIpDefault = cdbIpDefault;
+            return o;
         }
     }
 }

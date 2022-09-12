@@ -22,214 +22,145 @@ public final class GetDatabaseResult {
      * @return The character set for the database.
      * 
      */
-    private final String characterSet;
+    private String characterSet;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The Connection strings used to connect to the Oracle Database.
      * 
      */
-    private final List<GetDatabaseConnectionString> connectionStrings;
-    private final String databaseId;
+    private List<GetDatabaseConnectionString> connectionStrings;
+    private String databaseId;
     /**
      * @return The configuration of the Database Management service.
      * 
      */
-    private final List<GetDatabaseDatabaseManagementConfig> databaseManagementConfigs;
+    private List<GetDatabaseDatabaseManagementConfig> databaseManagementConfigs;
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    private final String databaseSoftwareImageId;
-    private final List<GetDatabaseDatabase> databases;
+    private String databaseSoftwareImageId;
+    private List<GetDatabaseDatabase> databases;
     /**
      * @return Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you&#39;re not authorized, talk to an administrator. If you&#39;re an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      * 
      */
-    private final List<GetDatabaseDbBackupConfig> dbBackupConfigs;
+    private List<GetDatabaseDbBackupConfig> dbBackupConfigs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
-    private final String dbHomeId;
+    private String dbHomeId;
     /**
      * @return The database name.
      * 
      */
-    private final String dbName;
+    private String dbName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    private final String dbSystemId;
+    private String dbSystemId;
     /**
      * @return A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
      * 
      */
-    private final String dbUniqueName;
-    private final String dbVersion;
+    private String dbUniqueName;
+    private String dbVersion;
     /**
      * @return The database workload type.
      * 
      */
-    private final String dbWorkload;
+    private String dbWorkload;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return True if the database is a container database.
      * 
      */
-    private final Boolean isCdb;
+    private Boolean isCdb;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    private final String kmsKeyId;
-    private final Boolean kmsKeyMigration;
-    private final Integer kmsKeyRotation;
+    private String kmsKeyId;
+    private Boolean kmsKeyMigration;
+    private Integer kmsKeyRotation;
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    private final String kmsKeyVersionId;
+    private String kmsKeyVersionId;
     /**
      * @return The date and time when the latest database backup was created.
      * 
      */
-    private final String lastBackupTimestamp;
+    private String lastBackupTimestamp;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The national character set for the database.
      * 
      */
-    private final String ncharacterSet;
+    private String ncharacterSet;
     /**
      * @return The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      * 
      */
-    private final String pdbName;
+    private String pdbName;
     /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
-    private final String sidPrefix;
-    private final String source;
+    private String sidPrefix;
+    private String source;
     /**
      * @return Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
      * 
      */
-    private final String sourceDatabasePointInTimeRecoveryTimestamp;
+    private String sourceDatabasePointInTimeRecoveryTimestamp;
     /**
      * @return The current state of the database.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the database was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    private final String vaultId;
+    private String vaultId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      * 
      */
-    private final String vmClusterId;
+    private String vmClusterId;
 
-    @CustomType.Constructor
-    private GetDatabaseResult(
-        @CustomType.Parameter("characterSet") String characterSet,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("connectionStrings") List<GetDatabaseConnectionString> connectionStrings,
-        @CustomType.Parameter("databaseId") String databaseId,
-        @CustomType.Parameter("databaseManagementConfigs") List<GetDatabaseDatabaseManagementConfig> databaseManagementConfigs,
-        @CustomType.Parameter("databaseSoftwareImageId") String databaseSoftwareImageId,
-        @CustomType.Parameter("databases") List<GetDatabaseDatabase> databases,
-        @CustomType.Parameter("dbBackupConfigs") List<GetDatabaseDbBackupConfig> dbBackupConfigs,
-        @CustomType.Parameter("dbHomeId") String dbHomeId,
-        @CustomType.Parameter("dbName") String dbName,
-        @CustomType.Parameter("dbSystemId") String dbSystemId,
-        @CustomType.Parameter("dbUniqueName") String dbUniqueName,
-        @CustomType.Parameter("dbVersion") String dbVersion,
-        @CustomType.Parameter("dbWorkload") String dbWorkload,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isCdb") Boolean isCdb,
-        @CustomType.Parameter("kmsKeyId") String kmsKeyId,
-        @CustomType.Parameter("kmsKeyMigration") Boolean kmsKeyMigration,
-        @CustomType.Parameter("kmsKeyRotation") Integer kmsKeyRotation,
-        @CustomType.Parameter("kmsKeyVersionId") String kmsKeyVersionId,
-        @CustomType.Parameter("lastBackupTimestamp") String lastBackupTimestamp,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("ncharacterSet") String ncharacterSet,
-        @CustomType.Parameter("pdbName") String pdbName,
-        @CustomType.Parameter("sidPrefix") String sidPrefix,
-        @CustomType.Parameter("source") String source,
-        @CustomType.Parameter("sourceDatabasePointInTimeRecoveryTimestamp") String sourceDatabasePointInTimeRecoveryTimestamp,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("vaultId") String vaultId,
-        @CustomType.Parameter("vmClusterId") String vmClusterId) {
-        this.characterSet = characterSet;
-        this.compartmentId = compartmentId;
-        this.connectionStrings = connectionStrings;
-        this.databaseId = databaseId;
-        this.databaseManagementConfigs = databaseManagementConfigs;
-        this.databaseSoftwareImageId = databaseSoftwareImageId;
-        this.databases = databases;
-        this.dbBackupConfigs = dbBackupConfigs;
-        this.dbHomeId = dbHomeId;
-        this.dbName = dbName;
-        this.dbSystemId = dbSystemId;
-        this.dbUniqueName = dbUniqueName;
-        this.dbVersion = dbVersion;
-        this.dbWorkload = dbWorkload;
-        this.definedTags = definedTags;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isCdb = isCdb;
-        this.kmsKeyId = kmsKeyId;
-        this.kmsKeyMigration = kmsKeyMigration;
-        this.kmsKeyRotation = kmsKeyRotation;
-        this.kmsKeyVersionId = kmsKeyVersionId;
-        this.lastBackupTimestamp = lastBackupTimestamp;
-        this.lifecycleDetails = lifecycleDetails;
-        this.ncharacterSet = ncharacterSet;
-        this.pdbName = pdbName;
-        this.sidPrefix = sidPrefix;
-        this.source = source;
-        this.sourceDatabasePointInTimeRecoveryTimestamp = sourceDatabasePointInTimeRecoveryTimestamp;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.vaultId = vaultId;
-        this.vmClusterId = vmClusterId;
-    }
-
+    private GetDatabaseResult() {}
     /**
      * @return The character set for the database.
      * 
@@ -445,7 +376,7 @@ public final class GetDatabaseResult {
     public static Builder builder(GetDatabaseResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String characterSet;
         private String compartmentId;
@@ -480,11 +411,7 @@ public final class GetDatabaseResult {
         private String timeCreated;
         private String vaultId;
         private String vmClusterId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.characterSet = defaults.characterSet;
@@ -522,14 +449,17 @@ public final class GetDatabaseResult {
     	      this.vmClusterId = defaults.vmClusterId;
         }
 
+        @CustomType.Setter
         public Builder characterSet(String characterSet) {
             this.characterSet = Objects.requireNonNull(characterSet);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder connectionStrings(List<GetDatabaseConnectionString> connectionStrings) {
             this.connectionStrings = Objects.requireNonNull(connectionStrings);
             return this;
@@ -537,10 +467,12 @@ public final class GetDatabaseResult {
         public Builder connectionStrings(GetDatabaseConnectionString... connectionStrings) {
             return connectionStrings(List.of(connectionStrings));
         }
+        @CustomType.Setter
         public Builder databaseId(String databaseId) {
             this.databaseId = Objects.requireNonNull(databaseId);
             return this;
         }
+        @CustomType.Setter
         public Builder databaseManagementConfigs(List<GetDatabaseDatabaseManagementConfig> databaseManagementConfigs) {
             this.databaseManagementConfigs = Objects.requireNonNull(databaseManagementConfigs);
             return this;
@@ -548,10 +480,12 @@ public final class GetDatabaseResult {
         public Builder databaseManagementConfigs(GetDatabaseDatabaseManagementConfig... databaseManagementConfigs) {
             return databaseManagementConfigs(List.of(databaseManagementConfigs));
         }
+        @CustomType.Setter
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
             this.databaseSoftwareImageId = Objects.requireNonNull(databaseSoftwareImageId);
             return this;
         }
+        @CustomType.Setter
         public Builder databases(List<GetDatabaseDatabase> databases) {
             this.databases = Objects.requireNonNull(databases);
             return this;
@@ -559,6 +493,7 @@ public final class GetDatabaseResult {
         public Builder databases(GetDatabaseDatabase... databases) {
             return databases(List.of(databases));
         }
+        @CustomType.Setter
         public Builder dbBackupConfigs(List<GetDatabaseDbBackupConfig> dbBackupConfigs) {
             this.dbBackupConfigs = Objects.requireNonNull(dbBackupConfigs);
             return this;
@@ -566,107 +501,167 @@ public final class GetDatabaseResult {
         public Builder dbBackupConfigs(GetDatabaseDbBackupConfig... dbBackupConfigs) {
             return dbBackupConfigs(List.of(dbBackupConfigs));
         }
+        @CustomType.Setter
         public Builder dbHomeId(String dbHomeId) {
             this.dbHomeId = Objects.requireNonNull(dbHomeId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbName(String dbName) {
             this.dbName = Objects.requireNonNull(dbName);
             return this;
         }
+        @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = Objects.requireNonNull(dbSystemId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbUniqueName(String dbUniqueName) {
             this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
             return this;
         }
+        @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
             this.dbVersion = Objects.requireNonNull(dbVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder dbWorkload(String dbWorkload) {
             this.dbWorkload = Objects.requireNonNull(dbWorkload);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isCdb(Boolean isCdb) {
             this.isCdb = Objects.requireNonNull(isCdb);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyMigration(Boolean kmsKeyMigration) {
             this.kmsKeyMigration = Objects.requireNonNull(kmsKeyMigration);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyRotation(Integer kmsKeyRotation) {
             this.kmsKeyRotation = Objects.requireNonNull(kmsKeyRotation);
             return this;
         }
+        @CustomType.Setter
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
             this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
             return this;
         }
+        @CustomType.Setter
         public Builder lastBackupTimestamp(String lastBackupTimestamp) {
             this.lastBackupTimestamp = Objects.requireNonNull(lastBackupTimestamp);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder ncharacterSet(String ncharacterSet) {
             this.ncharacterSet = Objects.requireNonNull(ncharacterSet);
             return this;
         }
+        @CustomType.Setter
         public Builder pdbName(String pdbName) {
             this.pdbName = Objects.requireNonNull(pdbName);
             return this;
         }
+        @CustomType.Setter
         public Builder sidPrefix(String sidPrefix) {
             this.sidPrefix = Objects.requireNonNull(sidPrefix);
             return this;
         }
+        @CustomType.Setter
         public Builder source(String source) {
             this.source = Objects.requireNonNull(source);
             return this;
         }
+        @CustomType.Setter
         public Builder sourceDatabasePointInTimeRecoveryTimestamp(String sourceDatabasePointInTimeRecoveryTimestamp) {
             this.sourceDatabasePointInTimeRecoveryTimestamp = Objects.requireNonNull(sourceDatabasePointInTimeRecoveryTimestamp);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder vaultId(String vaultId) {
             this.vaultId = Objects.requireNonNull(vaultId);
             return this;
         }
+        @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
             this.vmClusterId = Objects.requireNonNull(vmClusterId);
             return this;
-        }        public GetDatabaseResult build() {
-            return new GetDatabaseResult(characterSet, compartmentId, connectionStrings, databaseId, databaseManagementConfigs, databaseSoftwareImageId, databases, dbBackupConfigs, dbHomeId, dbName, dbSystemId, dbUniqueName, dbVersion, dbWorkload, definedTags, freeformTags, id, isCdb, kmsKeyId, kmsKeyMigration, kmsKeyRotation, kmsKeyVersionId, lastBackupTimestamp, lifecycleDetails, ncharacterSet, pdbName, sidPrefix, source, sourceDatabasePointInTimeRecoveryTimestamp, state, timeCreated, vaultId, vmClusterId);
+        }
+        public GetDatabaseResult build() {
+            final var o = new GetDatabaseResult();
+            o.characterSet = characterSet;
+            o.compartmentId = compartmentId;
+            o.connectionStrings = connectionStrings;
+            o.databaseId = databaseId;
+            o.databaseManagementConfigs = databaseManagementConfigs;
+            o.databaseSoftwareImageId = databaseSoftwareImageId;
+            o.databases = databases;
+            o.dbBackupConfigs = dbBackupConfigs;
+            o.dbHomeId = dbHomeId;
+            o.dbName = dbName;
+            o.dbSystemId = dbSystemId;
+            o.dbUniqueName = dbUniqueName;
+            o.dbVersion = dbVersion;
+            o.dbWorkload = dbWorkload;
+            o.definedTags = definedTags;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isCdb = isCdb;
+            o.kmsKeyId = kmsKeyId;
+            o.kmsKeyMigration = kmsKeyMigration;
+            o.kmsKeyRotation = kmsKeyRotation;
+            o.kmsKeyVersionId = kmsKeyVersionId;
+            o.lastBackupTimestamp = lastBackupTimestamp;
+            o.lifecycleDetails = lifecycleDetails;
+            o.ncharacterSet = ncharacterSet;
+            o.pdbName = pdbName;
+            o.sidPrefix = sidPrefix;
+            o.source = source;
+            o.sourceDatabasePointInTimeRecoveryTimestamp = sourceDatabasePointInTimeRecoveryTimestamp;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.vaultId = vaultId;
+            o.vmClusterId = vmClusterId;
+            return o;
         }
     }
 }

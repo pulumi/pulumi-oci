@@ -15,28 +15,19 @@ public final class NodePoolNodeSource {
      * @return (Updatable) The OCID of the image used to boot the node.
      * 
      */
-    private final @Nullable String imageId;
+    private @Nullable String imageId;
     /**
      * @return The user-friendly name of the entity corresponding to the OCID.
      * 
      */
-    private final @Nullable String sourceName;
+    private @Nullable String sourceName;
     /**
      * @return (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
      * 
      */
-    private final @Nullable String sourceType;
+    private @Nullable String sourceType;
 
-    @CustomType.Constructor
-    private NodePoolNodeSource(
-        @CustomType.Parameter("imageId") @Nullable String imageId,
-        @CustomType.Parameter("sourceName") @Nullable String sourceName,
-        @CustomType.Parameter("sourceType") @Nullable String sourceType) {
-        this.imageId = imageId;
-        this.sourceName = sourceName;
-        this.sourceType = sourceType;
-    }
-
+    private NodePoolNodeSource() {}
     /**
      * @return (Updatable) The OCID of the image used to boot the node.
      * 
@@ -66,16 +57,12 @@ public final class NodePoolNodeSource {
     public static Builder builder(NodePoolNodeSource defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String imageId;
         private @Nullable String sourceName;
         private @Nullable String sourceType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NodePoolNodeSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.imageId = defaults.imageId;
@@ -83,19 +70,27 @@ public final class NodePoolNodeSource {
     	      this.sourceType = defaults.sourceType;
         }
 
+        @CustomType.Setter
         public Builder imageId(@Nullable String imageId) {
             this.imageId = imageId;
             return this;
         }
+        @CustomType.Setter
         public Builder sourceName(@Nullable String sourceName) {
             this.sourceName = sourceName;
             return this;
         }
+        @CustomType.Setter
         public Builder sourceType(@Nullable String sourceType) {
             this.sourceType = sourceType;
             return this;
-        }        public NodePoolNodeSource build() {
-            return new NodePoolNodeSource(imageId, sourceName, sourceType);
+        }
+        public NodePoolNodeSource build() {
+            final var o = new NodePoolNodeSource();
+            o.imageId = imageId;
+            o.sourceName = sourceName;
+            o.sourceType = sourceType;
+            return o;
         }
     }
 }

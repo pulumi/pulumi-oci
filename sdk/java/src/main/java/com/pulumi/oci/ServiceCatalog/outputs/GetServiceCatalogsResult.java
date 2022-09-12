@@ -18,41 +18,26 @@ public final class GetServiceCatalogsResult {
      * @return The Compartment id where the service catalog exists
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The name of the service catalog.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetServiceCatalogsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetServiceCatalogsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of service_catalog_collection.
      * 
      */
-    private final List<GetServiceCatalogsServiceCatalogCollection> serviceCatalogCollections;
-    private final @Nullable String serviceCatalogId;
+    private List<GetServiceCatalogsServiceCatalogCollection> serviceCatalogCollections;
+    private @Nullable String serviceCatalogId;
 
-    @CustomType.Constructor
-    private GetServiceCatalogsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetServiceCatalogsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("serviceCatalogCollections") List<GetServiceCatalogsServiceCatalogCollection> serviceCatalogCollections,
-        @CustomType.Parameter("serviceCatalogId") @Nullable String serviceCatalogId) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.serviceCatalogCollections = serviceCatalogCollections;
-        this.serviceCatalogId = serviceCatalogId;
-    }
-
+    private GetServiceCatalogsResult() {}
     /**
      * @return The Compartment id where the service catalog exists
      * 
@@ -95,7 +80,7 @@ public final class GetServiceCatalogsResult {
     public static Builder builder(GetServiceCatalogsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -103,11 +88,7 @@ public final class GetServiceCatalogsResult {
         private String id;
         private List<GetServiceCatalogsServiceCatalogCollection> serviceCatalogCollections;
         private @Nullable String serviceCatalogId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceCatalogsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -118,14 +99,17 @@ public final class GetServiceCatalogsResult {
     	      this.serviceCatalogId = defaults.serviceCatalogId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetServiceCatalogsFilter> filters) {
             this.filters = filters;
             return this;
@@ -133,10 +117,12 @@ public final class GetServiceCatalogsResult {
         public Builder filters(GetServiceCatalogsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceCatalogCollections(List<GetServiceCatalogsServiceCatalogCollection> serviceCatalogCollections) {
             this.serviceCatalogCollections = Objects.requireNonNull(serviceCatalogCollections);
             return this;
@@ -144,11 +130,20 @@ public final class GetServiceCatalogsResult {
         public Builder serviceCatalogCollections(GetServiceCatalogsServiceCatalogCollection... serviceCatalogCollections) {
             return serviceCatalogCollections(List.of(serviceCatalogCollections));
         }
+        @CustomType.Setter
         public Builder serviceCatalogId(@Nullable String serviceCatalogId) {
             this.serviceCatalogId = serviceCatalogId;
             return this;
-        }        public GetServiceCatalogsResult build() {
-            return new GetServiceCatalogsResult(compartmentId, displayName, filters, id, serviceCatalogCollections, serviceCatalogId);
+        }
+        public GetServiceCatalogsResult build() {
+            final var o = new GetServiceCatalogsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.serviceCatalogCollections = serviceCatalogCollections;
+            o.serviceCatalogId = serviceCatalogId;
+            return o;
         }
     }
 }

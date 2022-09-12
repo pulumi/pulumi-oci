@@ -14,28 +14,19 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThr
      * @return This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
      * 
      */
-    private final Integer durationInMinutes;
+    private Integer durationInMinutes;
     /**
      * @return The comparison operator to use. Options are greater than (GT) or less than (LT).
      * 
      */
-    private final String operator;
+    private String operator;
     /**
      * @return Integer non-negative value. 0 &lt; value &lt; 100
      * 
      */
-    private final Integer value;
+    private Integer value;
 
-    @CustomType.Constructor
-    private GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold(
-        @CustomType.Parameter("durationInMinutes") Integer durationInMinutes,
-        @CustomType.Parameter("operator") String operator,
-        @CustomType.Parameter("value") Integer value) {
-        this.durationInMinutes = durationInMinutes;
-        this.operator = operator;
-        this.value = value;
-    }
-
+    private GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold() {}
     /**
      * @return This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
      * 
@@ -65,16 +56,12 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThr
     public static Builder builder(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer durationInMinutes;
         private String operator;
         private Integer value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.durationInMinutes = defaults.durationInMinutes;
@@ -82,19 +69,27 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThr
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder durationInMinutes(Integer durationInMinutes) {
             this.durationInMinutes = Objects.requireNonNull(durationInMinutes);
             return this;
         }
+        @CustomType.Setter
         public Builder operator(String operator) {
             this.operator = Objects.requireNonNull(operator);
             return this;
         }
+        @CustomType.Setter
         public Builder value(Integer value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold build() {
-            return new GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold(durationInMinutes, operator, value);
+        }
+        public GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold build() {
+            final var o = new GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold();
+            o.durationInMinutes = durationInMinutes;
+            o.operator = operator;
+            o.value = value;
+            return o;
         }
     }
 }

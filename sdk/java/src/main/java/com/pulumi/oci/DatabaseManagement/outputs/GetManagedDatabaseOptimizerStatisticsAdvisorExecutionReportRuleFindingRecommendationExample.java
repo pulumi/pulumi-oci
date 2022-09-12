@@ -14,13 +14,9 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
      * @return The list of examples for the recommendation.
      * 
      */
-    private final List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine> lines;
+    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine> lines;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample(@CustomType.Parameter("lines") List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine> lines) {
-        this.lines = lines;
-    }
-
+    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample() {}
     /**
      * @return The list of examples for the recommendation.
      * 
@@ -36,27 +32,27 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
     public static Builder builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine> lines;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.lines = defaults.lines;
         }
 
+        @CustomType.Setter
         public Builder lines(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine> lines) {
             this.lines = Objects.requireNonNull(lines);
             return this;
         }
         public Builder lines(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine... lines) {
             return lines(List.of(lines));
-        }        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample build() {
-            return new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample(lines);
+        }
+        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample build() {
+            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample();
+            o.lines = lines;
+            return o;
         }
     }
 }

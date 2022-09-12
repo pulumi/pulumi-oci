@@ -18,59 +18,40 @@ public final class GetInstancesResult {
      * @return The availability domain the instance is running in.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The OCID of the compute capacity reservation this instance is launched under. When this field contains an empty string or is null, the instance is not currently in a capacity reservation. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      * 
      */
-    private final @Nullable String capacityReservationId;
+    private @Nullable String capacityReservationId;
     /**
      * @return The OCID of the compartment that contains the instance.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetInstancesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetInstancesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of instances.
      * 
      */
-    private final List<GetInstancesInstance> instances;
+    private List<GetInstancesInstance> instances;
     /**
      * @return The current state of the instance.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetInstancesResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("capacityReservationId") @Nullable String capacityReservationId,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetInstancesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instances") List<GetInstancesInstance> instances,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.availabilityDomain = availabilityDomain;
-        this.capacityReservationId = capacityReservationId;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.instances = instances;
-        this.state = state;
-    }
-
+    private GetInstancesResult() {}
     /**
      * @return The availability domain the instance is running in.  Example: `Uocm:PHX-AD-1`
      * 
@@ -131,7 +112,7 @@ public final class GetInstancesResult {
     public static Builder builder(GetInstancesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private @Nullable String capacityReservationId;
@@ -141,11 +122,7 @@ public final class GetInstancesResult {
         private String id;
         private List<GetInstancesInstance> instances;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -158,22 +135,27 @@ public final class GetInstancesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder capacityReservationId(@Nullable String capacityReservationId) {
             this.capacityReservationId = capacityReservationId;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetInstancesFilter> filters) {
             this.filters = filters;
             return this;
@@ -181,10 +163,12 @@ public final class GetInstancesResult {
         public Builder filters(GetInstancesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instances(List<GetInstancesInstance> instances) {
             this.instances = Objects.requireNonNull(instances);
             return this;
@@ -192,11 +176,22 @@ public final class GetInstancesResult {
         public Builder instances(GetInstancesInstance... instances) {
             return instances(List.of(instances));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetInstancesResult build() {
-            return new GetInstancesResult(availabilityDomain, capacityReservationId, compartmentId, displayName, filters, id, instances, state);
+        }
+        public GetInstancesResult build() {
+            final var o = new GetInstancesResult();
+            o.availabilityDomain = availabilityDomain;
+            o.capacityReservationId = capacityReservationId;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.instances = instances;
+            o.state = state;
+            return o;
         }
     }
 }

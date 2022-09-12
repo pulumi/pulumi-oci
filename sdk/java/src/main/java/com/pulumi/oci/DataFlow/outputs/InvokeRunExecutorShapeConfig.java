@@ -15,21 +15,14 @@ public final class InvokeRunExecutorShapeConfig {
      * @return The amount of memory used for the driver or executors.
      * 
      */
-    private final @Nullable Double memoryInGbs;
+    private @Nullable Double memoryInGbs;
     /**
      * @return The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
      * 
      */
-    private final @Nullable Double ocpus;
+    private @Nullable Double ocpus;
 
-    @CustomType.Constructor
-    private InvokeRunExecutorShapeConfig(
-        @CustomType.Parameter("memoryInGbs") @Nullable Double memoryInGbs,
-        @CustomType.Parameter("ocpus") @Nullable Double ocpus) {
-        this.memoryInGbs = memoryInGbs;
-        this.ocpus = ocpus;
-    }
-
+    private InvokeRunExecutorShapeConfig() {}
     /**
      * @return The amount of memory used for the driver or executors.
      * 
@@ -52,30 +45,32 @@ public final class InvokeRunExecutorShapeConfig {
     public static Builder builder(InvokeRunExecutorShapeConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable Double memoryInGbs;
         private @Nullable Double ocpus;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(InvokeRunExecutorShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.ocpus = defaults.ocpus;
         }
 
+        @CustomType.Setter
         public Builder memoryInGbs(@Nullable Double memoryInGbs) {
             this.memoryInGbs = memoryInGbs;
             return this;
         }
+        @CustomType.Setter
         public Builder ocpus(@Nullable Double ocpus) {
             this.ocpus = ocpus;
             return this;
-        }        public InvokeRunExecutorShapeConfig build() {
-            return new InvokeRunExecutorShapeConfig(memoryInGbs, ocpus);
+        }
+        public InvokeRunExecutorShapeConfig build() {
+            final var o = new InvokeRunExecutorShapeConfig();
+            o.memoryInGbs = memoryInGbs;
+            o.ocpus = ocpus;
+            return o;
         }
     }
 }

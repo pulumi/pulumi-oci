@@ -13,23 +13,12 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDbHomeDatabaseDbBackupConfig {
-    private final Boolean autoBackupEnabled;
-    private final String autoBackupWindow;
-    private final List<GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
-    private final Integer recoveryWindowInDays;
+    private Boolean autoBackupEnabled;
+    private String autoBackupWindow;
+    private List<GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
+    private Integer recoveryWindowInDays;
 
-    @CustomType.Constructor
-    private GetDbHomeDatabaseDbBackupConfig(
-        @CustomType.Parameter("autoBackupEnabled") Boolean autoBackupEnabled,
-        @CustomType.Parameter("autoBackupWindow") String autoBackupWindow,
-        @CustomType.Parameter("backupDestinationDetails") List<GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails,
-        @CustomType.Parameter("recoveryWindowInDays") Integer recoveryWindowInDays) {
-        this.autoBackupEnabled = autoBackupEnabled;
-        this.autoBackupWindow = autoBackupWindow;
-        this.backupDestinationDetails = backupDestinationDetails;
-        this.recoveryWindowInDays = recoveryWindowInDays;
-    }
-
+    private GetDbHomeDatabaseDbBackupConfig() {}
     public Boolean autoBackupEnabled() {
         return this.autoBackupEnabled;
     }
@@ -50,17 +39,13 @@ public final class GetDbHomeDatabaseDbBackupConfig {
     public static Builder builder(GetDbHomeDatabaseDbBackupConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean autoBackupEnabled;
         private String autoBackupWindow;
         private List<GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
         private Integer recoveryWindowInDays;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbHomeDatabaseDbBackupConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autoBackupEnabled = defaults.autoBackupEnabled;
@@ -69,14 +54,17 @@ public final class GetDbHomeDatabaseDbBackupConfig {
     	      this.recoveryWindowInDays = defaults.recoveryWindowInDays;
         }
 
+        @CustomType.Setter
         public Builder autoBackupEnabled(Boolean autoBackupEnabled) {
             this.autoBackupEnabled = Objects.requireNonNull(autoBackupEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder autoBackupWindow(String autoBackupWindow) {
             this.autoBackupWindow = Objects.requireNonNull(autoBackupWindow);
             return this;
         }
+        @CustomType.Setter
         public Builder backupDestinationDetails(List<GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails) {
             this.backupDestinationDetails = Objects.requireNonNull(backupDestinationDetails);
             return this;
@@ -84,11 +72,18 @@ public final class GetDbHomeDatabaseDbBackupConfig {
         public Builder backupDestinationDetails(GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail... backupDestinationDetails) {
             return backupDestinationDetails(List.of(backupDestinationDetails));
         }
+        @CustomType.Setter
         public Builder recoveryWindowInDays(Integer recoveryWindowInDays) {
             this.recoveryWindowInDays = Objects.requireNonNull(recoveryWindowInDays);
             return this;
-        }        public GetDbHomeDatabaseDbBackupConfig build() {
-            return new GetDbHomeDatabaseDbBackupConfig(autoBackupEnabled, autoBackupWindow, backupDestinationDetails, recoveryWindowInDays);
+        }
+        public GetDbHomeDatabaseDbBackupConfig build() {
+            final var o = new GetDbHomeDatabaseDbBackupConfig();
+            o.autoBackupEnabled = autoBackupEnabled;
+            o.autoBackupWindow = autoBackupWindow;
+            o.backupDestinationDetails = backupDestinationDetails;
+            o.recoveryWindowInDays = recoveryWindowInDays;
+            return o;
         }
     }
 }

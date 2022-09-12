@@ -15,28 +15,19 @@ public final class PolicyWafConfigWhitelist {
      * @return (Updatable) A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
      * 
      */
-    private final @Nullable List<String> addressLists;
+    private @Nullable List<String> addressLists;
     /**
      * @return (Updatable) A set of IP addresses or CIDR notations to include in the whitelist.
      * 
      */
-    private final @Nullable List<String> addresses;
+    private @Nullable List<String> addresses;
     /**
      * @return (Updatable) The unique name of the whitelist.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private PolicyWafConfigWhitelist(
-        @CustomType.Parameter("addressLists") @Nullable List<String> addressLists,
-        @CustomType.Parameter("addresses") @Nullable List<String> addresses,
-        @CustomType.Parameter("name") String name) {
-        this.addressLists = addressLists;
-        this.addresses = addresses;
-        this.name = name;
-    }
-
+    private PolicyWafConfigWhitelist() {}
     /**
      * @return (Updatable) A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
      * 
@@ -66,16 +57,12 @@ public final class PolicyWafConfigWhitelist {
     public static Builder builder(PolicyWafConfigWhitelist defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> addressLists;
         private @Nullable List<String> addresses;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PolicyWafConfigWhitelist defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.addressLists = defaults.addressLists;
@@ -83,6 +70,7 @@ public final class PolicyWafConfigWhitelist {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder addressLists(@Nullable List<String> addressLists) {
             this.addressLists = addressLists;
             return this;
@@ -90,6 +78,7 @@ public final class PolicyWafConfigWhitelist {
         public Builder addressLists(String... addressLists) {
             return addressLists(List.of(addressLists));
         }
+        @CustomType.Setter
         public Builder addresses(@Nullable List<String> addresses) {
             this.addresses = addresses;
             return this;
@@ -97,11 +86,17 @@ public final class PolicyWafConfigWhitelist {
         public Builder addresses(String... addresses) {
             return addresses(List.of(addresses));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public PolicyWafConfigWhitelist build() {
-            return new PolicyWafConfigWhitelist(addressLists, addresses, name);
+        }
+        public PolicyWafConfigWhitelist build() {
+            final var o = new PolicyWafConfigWhitelist();
+            o.addressLists = addressLists;
+            o.addresses = addresses;
+            o.name = name;
+            return o;
         }
     }
 }

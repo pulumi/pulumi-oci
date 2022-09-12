@@ -13,70 +13,49 @@ public final class GetManagedDatabaseUserObjectPrivilegeItem {
      * @return Indicates how the object privilege was granted. Possible values: YES if the role is granted commonly (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL is not used)
      * 
      */
-    private final String common;
+    private String common;
     /**
      * @return Indicates whether the privilege is granted with the GRANT OPTION (YES) or not (NO).
      * 
      */
-    private final String grantOption;
+    private String grantOption;
     /**
      * @return The name of the user who granted the object privilege.
      * 
      */
-    private final String grantor;
+    private String grantor;
     /**
      * @return Indicates whether the privilege is granted with the HIERARCHY OPTION (YES) or not (NO).
      * 
      */
-    private final String hierarchy;
+    private String hierarchy;
     /**
      * @return Indicates whether the granted privilege is inherited from another container (YES) or not (NO).
      * 
      */
-    private final String inherited;
+    private String inherited;
     /**
      * @return A filter to return only resources that match the entire name.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The name of the object. The object can be any object, including tables, packages, indexes, sequences, and so on.
      * 
      */
-    private final String object;
+    private String object;
     /**
      * @return The owner of the object.
      * 
      */
-    private final String owner;
+    private String owner;
     /**
      * @return The type of object.
      * 
      */
-    private final String schemaType;
+    private String schemaType;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseUserObjectPrivilegeItem(
-        @CustomType.Parameter("common") String common,
-        @CustomType.Parameter("grantOption") String grantOption,
-        @CustomType.Parameter("grantor") String grantor,
-        @CustomType.Parameter("hierarchy") String hierarchy,
-        @CustomType.Parameter("inherited") String inherited,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("object") String object,
-        @CustomType.Parameter("owner") String owner,
-        @CustomType.Parameter("schemaType") String schemaType) {
-        this.common = common;
-        this.grantOption = grantOption;
-        this.grantor = grantor;
-        this.hierarchy = hierarchy;
-        this.inherited = inherited;
-        this.name = name;
-        this.object = object;
-        this.owner = owner;
-        this.schemaType = schemaType;
-    }
-
+    private GetManagedDatabaseUserObjectPrivilegeItem() {}
     /**
      * @return Indicates how the object privilege was granted. Possible values: YES if the role is granted commonly (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL is not used)
      * 
@@ -148,7 +127,7 @@ public final class GetManagedDatabaseUserObjectPrivilegeItem {
     public static Builder builder(GetManagedDatabaseUserObjectPrivilegeItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String common;
         private String grantOption;
@@ -159,11 +138,7 @@ public final class GetManagedDatabaseUserObjectPrivilegeItem {
         private String object;
         private String owner;
         private String schemaType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseUserObjectPrivilegeItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.common = defaults.common;
@@ -177,43 +152,63 @@ public final class GetManagedDatabaseUserObjectPrivilegeItem {
     	      this.schemaType = defaults.schemaType;
         }
 
+        @CustomType.Setter
         public Builder common(String common) {
             this.common = Objects.requireNonNull(common);
             return this;
         }
+        @CustomType.Setter
         public Builder grantOption(String grantOption) {
             this.grantOption = Objects.requireNonNull(grantOption);
             return this;
         }
+        @CustomType.Setter
         public Builder grantor(String grantor) {
             this.grantor = Objects.requireNonNull(grantor);
             return this;
         }
+        @CustomType.Setter
         public Builder hierarchy(String hierarchy) {
             this.hierarchy = Objects.requireNonNull(hierarchy);
             return this;
         }
+        @CustomType.Setter
         public Builder inherited(String inherited) {
             this.inherited = Objects.requireNonNull(inherited);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder object(String object) {
             this.object = Objects.requireNonNull(object);
             return this;
         }
+        @CustomType.Setter
         public Builder owner(String owner) {
             this.owner = Objects.requireNonNull(owner);
             return this;
         }
+        @CustomType.Setter
         public Builder schemaType(String schemaType) {
             this.schemaType = Objects.requireNonNull(schemaType);
             return this;
-        }        public GetManagedDatabaseUserObjectPrivilegeItem build() {
-            return new GetManagedDatabaseUserObjectPrivilegeItem(common, grantOption, grantor, hierarchy, inherited, name, object, owner, schemaType);
+        }
+        public GetManagedDatabaseUserObjectPrivilegeItem build() {
+            final var o = new GetManagedDatabaseUserObjectPrivilegeItem();
+            o.common = common;
+            o.grantOption = grantOption;
+            o.grantor = grantor;
+            o.hierarchy = hierarchy;
+            o.inherited = inherited;
+            o.name = name;
+            o.object = object;
+            o.owner = owner;
+            o.schemaType = schemaType;
+            return o;
         }
     }
 }

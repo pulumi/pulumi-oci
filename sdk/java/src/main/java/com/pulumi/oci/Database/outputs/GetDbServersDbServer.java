@@ -18,133 +18,94 @@ public final class GetDbServersDbServer {
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The number of CPU cores enabled on the Db server.
      * 
      */
-    private final Integer cpuCoreCount;
+    private Integer cpuCoreCount;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
      * 
      */
-    private final List<String> dbNodeIds;
+    private List<String> dbNodeIds;
     /**
      * @return The allocated local node storage in GBs on the Db server.
      * 
      */
-    private final Integer dbNodeStorageSizeInGbs;
+    private Integer dbNodeStorageSizeInGbs;
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    private final List<GetDbServersDbServerDbServerPatchingDetail> dbServerPatchingDetails;
+    private List<GetDbServersDbServerDbServerPatchingDetail> dbServerPatchingDetails;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ExadataInfrastructure.
      * 
      */
-    private final String exadataInfrastructureId;
+    private String exadataInfrastructureId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The total number of CPU cores available.
      * 
      */
-    private final Integer maxCpuCount;
+    private Integer maxCpuCount;
     /**
      * @return The total local node storage available in GBs.
      * 
      */
-    private final Integer maxDbNodeStorageInGbs;
+    private Integer maxDbNodeStorageInGbs;
     /**
      * @return The total memory available in GBs.
      * 
      */
-    private final Integer maxMemoryInGbs;
+    private Integer maxMemoryInGbs;
     /**
      * @return The allocated memory in GBs on the Db server.
      * 
      */
-    private final Integer memorySizeInGbs;
+    private Integer memorySizeInGbs;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time that the Db Server was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
      * 
      */
-    private final List<String> vmClusterIds;
+    private List<String> vmClusterIds;
 
-    @CustomType.Constructor
-    private GetDbServersDbServer(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("cpuCoreCount") Integer cpuCoreCount,
-        @CustomType.Parameter("dbNodeIds") List<String> dbNodeIds,
-        @CustomType.Parameter("dbNodeStorageSizeInGbs") Integer dbNodeStorageSizeInGbs,
-        @CustomType.Parameter("dbServerPatchingDetails") List<GetDbServersDbServerDbServerPatchingDetail> dbServerPatchingDetails,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("exadataInfrastructureId") String exadataInfrastructureId,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("maxCpuCount") Integer maxCpuCount,
-        @CustomType.Parameter("maxDbNodeStorageInGbs") Integer maxDbNodeStorageInGbs,
-        @CustomType.Parameter("maxMemoryInGbs") Integer maxMemoryInGbs,
-        @CustomType.Parameter("memorySizeInGbs") Integer memorySizeInGbs,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("vmClusterIds") List<String> vmClusterIds) {
-        this.compartmentId = compartmentId;
-        this.cpuCoreCount = cpuCoreCount;
-        this.dbNodeIds = dbNodeIds;
-        this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
-        this.dbServerPatchingDetails = dbServerPatchingDetails;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.exadataInfrastructureId = exadataInfrastructureId;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.maxCpuCount = maxCpuCount;
-        this.maxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
-        this.maxMemoryInGbs = maxMemoryInGbs;
-        this.memorySizeInGbs = memorySizeInGbs;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.vmClusterIds = vmClusterIds;
-    }
-
+    private GetDbServersDbServer() {}
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -279,7 +240,7 @@ public final class GetDbServersDbServer {
     public static Builder builder(GetDbServersDbServer defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Integer cpuCoreCount;
@@ -299,11 +260,7 @@ public final class GetDbServersDbServer {
         private String state;
         private String timeCreated;
         private List<String> vmClusterIds;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbServersDbServer defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -326,14 +283,17 @@ public final class GetDbServersDbServer {
     	      this.vmClusterIds = defaults.vmClusterIds;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
             return this;
         }
+        @CustomType.Setter
         public Builder dbNodeIds(List<String> dbNodeIds) {
             this.dbNodeIds = Objects.requireNonNull(dbNodeIds);
             return this;
@@ -341,10 +301,12 @@ public final class GetDbServersDbServer {
         public Builder dbNodeIds(String... dbNodeIds) {
             return dbNodeIds(List.of(dbNodeIds));
         }
+        @CustomType.Setter
         public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
             this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder dbServerPatchingDetails(List<GetDbServersDbServerDbServerPatchingDetail> dbServerPatchingDetails) {
             this.dbServerPatchingDetails = Objects.requireNonNull(dbServerPatchingDetails);
             return this;
@@ -352,62 +314,95 @@ public final class GetDbServersDbServer {
         public Builder dbServerPatchingDetails(GetDbServersDbServerDbServerPatchingDetail... dbServerPatchingDetails) {
             return dbServerPatchingDetails(List.of(dbServerPatchingDetails));
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
             this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder maxCpuCount(Integer maxCpuCount) {
             this.maxCpuCount = Objects.requireNonNull(maxCpuCount);
             return this;
         }
+        @CustomType.Setter
         public Builder maxDbNodeStorageInGbs(Integer maxDbNodeStorageInGbs) {
             this.maxDbNodeStorageInGbs = Objects.requireNonNull(maxDbNodeStorageInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder maxMemoryInGbs(Integer maxMemoryInGbs) {
             this.maxMemoryInGbs = Objects.requireNonNull(maxMemoryInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder memorySizeInGbs(Integer memorySizeInGbs) {
             this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder vmClusterIds(List<String> vmClusterIds) {
             this.vmClusterIds = Objects.requireNonNull(vmClusterIds);
             return this;
         }
         public Builder vmClusterIds(String... vmClusterIds) {
             return vmClusterIds(List.of(vmClusterIds));
-        }        public GetDbServersDbServer build() {
-            return new GetDbServersDbServer(compartmentId, cpuCoreCount, dbNodeIds, dbNodeStorageSizeInGbs, dbServerPatchingDetails, definedTags, displayName, exadataInfrastructureId, freeformTags, id, lifecycleDetails, maxCpuCount, maxDbNodeStorageInGbs, maxMemoryInGbs, memorySizeInGbs, state, timeCreated, vmClusterIds);
+        }
+        public GetDbServersDbServer build() {
+            final var o = new GetDbServersDbServer();
+            o.compartmentId = compartmentId;
+            o.cpuCoreCount = cpuCoreCount;
+            o.dbNodeIds = dbNodeIds;
+            o.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            o.dbServerPatchingDetails = dbServerPatchingDetails;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.exadataInfrastructureId = exadataInfrastructureId;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.maxCpuCount = maxCpuCount;
+            o.maxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
+            o.maxMemoryInGbs = maxMemoryInGbs;
+            o.memorySizeInGbs = memorySizeInGbs;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.vmClusterIds = vmClusterIds;
+            return o;
         }
     }
 }

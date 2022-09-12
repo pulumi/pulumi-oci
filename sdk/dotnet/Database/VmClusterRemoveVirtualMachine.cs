@@ -62,7 +62,7 @@ namespace Pulumi.Oci.Database
         public Output<int> CpusEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        /// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         /// </summary>
         [Output("dataCollectionOptions")]
         public Output<ImmutableArray<Outputs.VmClusterRemoveVirtualMachineDataCollectionOption>> DataCollectionOptions { get; private set; } = null!;
@@ -287,7 +287,7 @@ namespace Pulumi.Oci.Database
         private InputList<Inputs.VmClusterRemoveVirtualMachineDataCollectionOptionGetArgs>? _dataCollectionOptions;
 
         /// <summary>
-        /// Indicates user preferences for the various diagnostic collection options for the VM cluster.
+        /// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         /// </summary>
         public InputList<Inputs.VmClusterRemoveVirtualMachineDataCollectionOptionGetArgs> DataCollectionOptions
         {

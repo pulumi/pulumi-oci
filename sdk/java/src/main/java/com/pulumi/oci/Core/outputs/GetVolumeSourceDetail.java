@@ -13,21 +13,14 @@ public final class GetVolumeSourceDetail {
      * @return The OCID of the block volume replica.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetVolumeSourceDetail(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("type") String type) {
-        this.id = id;
-        this.type = type;
-    }
-
+    private GetVolumeSourceDetail() {}
     /**
      * @return The OCID of the block volume replica.
      * 
@@ -50,30 +43,32 @@ public final class GetVolumeSourceDetail {
     public static Builder builder(GetVolumeSourceDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVolumeSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetVolumeSourceDetail build() {
-            return new GetVolumeSourceDetail(id, type);
+        }
+        public GetVolumeSourceDetail build() {
+            final var o = new GetVolumeSourceDetail();
+            o.id = id;
+            o.type = type;
+            return o;
         }
     }
 }

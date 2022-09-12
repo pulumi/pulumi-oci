@@ -94,14 +94,14 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
      * 
      */
     @Import(name="failedEsxiHostId")
     private @Nullable Output<String> failedEsxiHostId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
      * 
      */
     public Optional<Output<String>> failedEsxiHostId() {
@@ -169,6 +169,21 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+     * 
+     */
+    @Import(name="nonUpgradedEsxiHostId")
+    private @Nullable Output<String> nonUpgradedEsxiHostId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+     * 
+     */
+    public Optional<Output<String>> nonUpgradedEsxiHostId() {
+        return Optional.ofNullable(this.nonUpgradedEsxiHostId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to.
      * 
      */
@@ -196,6 +211,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         this.hostOcpuCount = $.hostOcpuCount;
         this.hostShapeName = $.hostShapeName;
         this.nextSku = $.nextSku;
+        this.nonUpgradedEsxiHostId = $.nonUpgradedEsxiHostId;
         this.sddcId = $.sddcId;
     }
 
@@ -323,7 +339,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param failedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
+         * @param failedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
          * 
          * @return builder
          * 
@@ -334,7 +350,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param failedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is failed. It is an optional param, when user supplies this param, new Esxi Host will be created to replace the failed one, and failedEsxiHostId field will be udpated in the newly created EsxiHost.
+         * @param failedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
          * 
          * @return builder
          * 
@@ -425,6 +441,27 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder nextSku(String nextSku) {
             return nextSku(Output.of(nextSku));
+        }
+
+        /**
+         * @param nonUpgradedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nonUpgradedEsxiHostId(@Nullable Output<String> nonUpgradedEsxiHostId) {
+            $.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
+            return this;
+        }
+
+        /**
+         * @param nonUpgradedEsxiHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with new version will be created to replace the original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly created Esxi host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nonUpgradedEsxiHostId(String nonUpgradedEsxiHostId) {
+            return nonUpgradedEsxiHostId(Output.of(nonUpgradedEsxiHostId));
         }
 
         /**

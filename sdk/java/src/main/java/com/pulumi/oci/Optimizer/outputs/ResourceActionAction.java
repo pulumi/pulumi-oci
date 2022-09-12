@@ -15,28 +15,19 @@ public final class ResourceActionAction {
      * @return Text describing the recommended action.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
      * @return The status of the resource action.
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
     /**
      * @return The URL path to documentation that explains how to perform the action.
      * 
      */
-    private final @Nullable String url;
+    private @Nullable String url;
 
-    @CustomType.Constructor
-    private ResourceActionAction(
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("type") @Nullable String type,
-        @CustomType.Parameter("url") @Nullable String url) {
-        this.description = description;
-        this.type = type;
-        this.url = url;
-    }
-
+    private ResourceActionAction() {}
     /**
      * @return Text describing the recommended action.
      * 
@@ -66,16 +57,12 @@ public final class ResourceActionAction {
     public static Builder builder(ResourceActionAction defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String description;
         private @Nullable String type;
         private @Nullable String url;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ResourceActionAction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -83,19 +70,27 @@ public final class ResourceActionAction {
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
         }
+        @CustomType.Setter
         public Builder url(@Nullable String url) {
             this.url = url;
             return this;
-        }        public ResourceActionAction build() {
-            return new ResourceActionAction(description, type, url);
+        }
+        public ResourceActionAction build() {
+            final var o = new ResourceActionAction();
+            o.description = description;
+            o.type = type;
+            o.url = url;
+            return o;
         }
     }
 }

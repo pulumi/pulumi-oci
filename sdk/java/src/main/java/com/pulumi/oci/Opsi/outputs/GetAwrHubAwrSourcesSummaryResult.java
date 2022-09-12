@@ -17,38 +17,25 @@ public final class GetAwrHubAwrSourcesSummaryResult {
      * @return AWR Hub OCID
      * 
      */
-    private final String awrHubId;
-    private final @Nullable String compartmentId;
+    private String awrHubId;
+    private @Nullable String compartmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Array of AwrSource summary objects.
      * 
      */
-    private final List<GetAwrHubAwrSourcesSummaryItem> items;
+    private List<GetAwrHubAwrSourcesSummaryItem> items;
     /**
      * @return Database name of the Source database for which AWR Data will be uploaded to AWR Hub.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private GetAwrHubAwrSourcesSummaryResult(
-        @CustomType.Parameter("awrHubId") String awrHubId,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetAwrHubAwrSourcesSummaryItem> items,
-        @CustomType.Parameter("name") @Nullable String name) {
-        this.awrHubId = awrHubId;
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.items = items;
-        this.name = name;
-    }
-
+    private GetAwrHubAwrSourcesSummaryResult() {}
     /**
      * @return AWR Hub OCID
      * 
@@ -88,18 +75,14 @@ public final class GetAwrHubAwrSourcesSummaryResult {
     public static Builder builder(GetAwrHubAwrSourcesSummaryResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String awrHubId;
         private @Nullable String compartmentId;
         private String id;
         private List<GetAwrHubAwrSourcesSummaryItem> items;
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAwrHubAwrSourcesSummaryResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.awrHubId = defaults.awrHubId;
@@ -109,18 +92,22 @@ public final class GetAwrHubAwrSourcesSummaryResult {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder awrHubId(String awrHubId) {
             this.awrHubId = Objects.requireNonNull(awrHubId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetAwrHubAwrSourcesSummaryItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -128,11 +115,19 @@ public final class GetAwrHubAwrSourcesSummaryResult {
         public Builder items(GetAwrHubAwrSourcesSummaryItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public GetAwrHubAwrSourcesSummaryResult build() {
-            return new GetAwrHubAwrSourcesSummaryResult(awrHubId, compartmentId, id, items, name);
+        }
+        public GetAwrHubAwrSourcesSummaryResult build() {
+            final var o = new GetAwrHubAwrSourcesSummaryResult();
+            o.awrHubId = awrHubId;
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.items = items;
+            o.name = name;
+            return o;
         }
     }
 }

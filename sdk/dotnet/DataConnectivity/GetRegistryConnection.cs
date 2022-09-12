@@ -82,7 +82,7 @@ namespace Pulumi.Oci.DataConnectivity
         public string ConnectionKey { get; set; } = null!;
 
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         [Input("registryId", required: true)]
         public string RegistryId { get; set; } = null!;
@@ -102,7 +102,7 @@ namespace Pulumi.Oci.DataConnectivity
         public Input<string> ConnectionKey { get; set; } = null!;
 
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         [Input("registryId", required: true)]
         public Input<string> RegistryId { get; set; } = null!;
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.DataConnectivity
     {
         public readonly string ConnectionKey;
         /// <summary>
-        /// The properties for the connection.
+        /// The properties of the connection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRegistryConnectionConnectionPropertyResult> ConnectionProperties;
         /// <summary>
@@ -132,7 +132,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// </summary>
         public readonly string Identifier;
         /// <summary>
-        /// The default property for the connection.
+        /// The default property of the connection.
         /// </summary>
         public readonly bool IsDefault;
         /// <summary>
@@ -140,19 +140,19 @@ namespace Pulumi.Oci.DataConnectivity
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// A summary type containing information about the object including its key, name and when/who created/updated it.
+        /// A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRegistryConnectionMetadataResult> Metadatas;
         /// <summary>
-        /// The object's type.
+        /// The object type.
         /// </summary>
         public readonly string ModelType;
         /// <summary>
-        /// The object's model version.
+        /// The model version of the object.
         /// </summary>
         public readonly string ModelVersion;
         /// <summary>
-        /// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         public readonly string Name;
         /// <summary>
@@ -168,7 +168,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRegistryConnectionPrimarySchemaResult> PrimarySchemas;
         /// <summary>
-        /// All the properties for the connection in a key-value map format.
+        /// All the properties of the connection in a key-value map format.
         /// </summary>
         public readonly ImmutableDictionary<string, object> Properties;
         public readonly string RegistryId;

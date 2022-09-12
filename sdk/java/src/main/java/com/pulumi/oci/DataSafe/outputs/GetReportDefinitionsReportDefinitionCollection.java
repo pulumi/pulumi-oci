@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetReportDefinitionsReportDefinitionCollection {
-    private final List<GetReportDefinitionsReportDefinitionCollectionItem> items;
+    private List<GetReportDefinitionsReportDefinitionCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetReportDefinitionsReportDefinitionCollection(@CustomType.Parameter("items") List<GetReportDefinitionsReportDefinitionCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetReportDefinitionsReportDefinitionCollection() {}
     public List<GetReportDefinitionsReportDefinitionCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetReportDefinitionsReportDefinitionCollection {
     public static Builder builder(GetReportDefinitionsReportDefinitionCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetReportDefinitionsReportDefinitionCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetReportDefinitionsReportDefinitionCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetReportDefinitionsReportDefinitionCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetReportDefinitionsReportDefinitionCollectionItem... items) {
             return items(List.of(items));
-        }        public GetReportDefinitionsReportDefinitionCollection build() {
-            return new GetReportDefinitionsReportDefinitionCollection(items);
+        }
+        public GetReportDefinitionsReportDefinitionCollection build() {
+            final var o = new GetReportDefinitionsReportDefinitionCollection();
+            o.items = items;
+            return o;
         }
     }
 }

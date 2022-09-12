@@ -18,52 +18,35 @@ public final class GetDetectionDataAssetsResult {
      * @return The OCID of the compartment containing the DataAsset.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of data_asset_collection.
      * 
      */
-    private final List<GetDetectionDataAssetsDataAssetCollection> dataAssetCollections;
+    private List<GetDetectionDataAssetsDataAssetCollection> dataAssetCollections;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetDetectionDataAssetsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetDetectionDataAssetsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The Unique project id which is created at project creation that is immutable on creation.
      * 
      */
-    private final @Nullable String projectId;
+    private @Nullable String projectId;
     /**
      * @return The lifecycle state of the Data Asset.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetDetectionDataAssetsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dataAssetCollections") List<GetDetectionDataAssetsDataAssetCollection> dataAssetCollections,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetDetectionDataAssetsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("projectId") @Nullable String projectId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.dataAssetCollections = dataAssetCollections;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.projectId = projectId;
-        this.state = state;
-    }
-
+    private GetDetectionDataAssetsResult() {}
     /**
      * @return The OCID of the compartment containing the DataAsset.
      * 
@@ -117,7 +100,7 @@ public final class GetDetectionDataAssetsResult {
     public static Builder builder(GetDetectionDataAssetsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetDetectionDataAssetsDataAssetCollection> dataAssetCollections;
@@ -126,11 +109,7 @@ public final class GetDetectionDataAssetsResult {
         private String id;
         private @Nullable String projectId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDetectionDataAssetsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,10 +121,12 @@ public final class GetDetectionDataAssetsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dataAssetCollections(List<GetDetectionDataAssetsDataAssetCollection> dataAssetCollections) {
             this.dataAssetCollections = Objects.requireNonNull(dataAssetCollections);
             return this;
@@ -153,10 +134,12 @@ public final class GetDetectionDataAssetsResult {
         public Builder dataAssetCollections(GetDetectionDataAssetsDataAssetCollection... dataAssetCollections) {
             return dataAssetCollections(List.of(dataAssetCollections));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDetectionDataAssetsFilter> filters) {
             this.filters = filters;
             return this;
@@ -164,19 +147,31 @@ public final class GetDetectionDataAssetsResult {
         public Builder filters(GetDetectionDataAssetsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
             this.projectId = projectId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetDetectionDataAssetsResult build() {
-            return new GetDetectionDataAssetsResult(compartmentId, dataAssetCollections, displayName, filters, id, projectId, state);
+        }
+        public GetDetectionDataAssetsResult build() {
+            final var o = new GetDetectionDataAssetsResult();
+            o.compartmentId = compartmentId;
+            o.dataAssetCollections = dataAssetCollections;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.projectId = projectId;
+            o.state = state;
+            return o;
         }
     }
 }

@@ -15,21 +15,14 @@ public final class InstancePoolPlacementConfigurationSecondaryVnicSubnet {
      * @return (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
      * 
      */
-    private final String subnetId;
+    private String subnetId;
 
-    @CustomType.Constructor
-    private InstancePoolPlacementConfigurationSecondaryVnicSubnet(
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("subnetId") String subnetId) {
-        this.displayName = displayName;
-        this.subnetId = subnetId;
-    }
-
+    private InstancePoolPlacementConfigurationSecondaryVnicSubnet() {}
     /**
      * @return (Updatable) The display name of the VNIC. This is also use to match against the instance configuration defined secondary VNIC.
      * 
@@ -52,30 +45,32 @@ public final class InstancePoolPlacementConfigurationSecondaryVnicSubnet {
     public static Builder builder(InstancePoolPlacementConfigurationSecondaryVnicSubnet defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String displayName;
         private String subnetId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(InstancePoolPlacementConfigurationSecondaryVnicSubnet defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
             return this;
-        }        public InstancePoolPlacementConfigurationSecondaryVnicSubnet build() {
-            return new InstancePoolPlacementConfigurationSecondaryVnicSubnet(displayName, subnetId);
+        }
+        public InstancePoolPlacementConfigurationSecondaryVnicSubnet build() {
+            final var o = new InstancePoolPlacementConfigurationSecondaryVnicSubnet();
+            o.displayName = displayName;
+            o.subnetId = subnetId;
+            return o;
         }
     }
 }

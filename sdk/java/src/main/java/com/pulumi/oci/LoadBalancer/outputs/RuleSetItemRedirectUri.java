@@ -16,42 +16,29 @@ public final class RuleSetItemRedirectUri {
      * @return (Updatable) The valid domain name (hostname) or IP address to use in the redirect URI.
      * 
      */
-    private final @Nullable String host;
+    private @Nullable String host;
     /**
      * @return (Updatable) The HTTP URI path to use in the redirect URI.
      * 
      */
-    private final @Nullable String path;
+    private @Nullable String path;
     /**
      * @return (Updatable) The communication port to use in the redirect URI.
      * 
      */
-    private final @Nullable Integer port;
+    private @Nullable Integer port;
     /**
      * @return (Updatable) The HTTP protocol to use in the redirect URI.
      * 
      */
-    private final @Nullable String protocol;
+    private @Nullable String protocol;
     /**
      * @return (Updatable) The query string to use in the redirect URI.
      * 
      */
-    private final @Nullable String query;
+    private @Nullable String query;
 
-    @CustomType.Constructor
-    private RuleSetItemRedirectUri(
-        @CustomType.Parameter("host") @Nullable String host,
-        @CustomType.Parameter("path") @Nullable String path,
-        @CustomType.Parameter("port") @Nullable Integer port,
-        @CustomType.Parameter("protocol") @Nullable String protocol,
-        @CustomType.Parameter("query") @Nullable String query) {
-        this.host = host;
-        this.path = path;
-        this.port = port;
-        this.protocol = protocol;
-        this.query = query;
-    }
-
+    private RuleSetItemRedirectUri() {}
     /**
      * @return (Updatable) The valid domain name (hostname) or IP address to use in the redirect URI.
      * 
@@ -95,18 +82,14 @@ public final class RuleSetItemRedirectUri {
     public static Builder builder(RuleSetItemRedirectUri defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String host;
         private @Nullable String path;
         private @Nullable Integer port;
         private @Nullable String protocol;
         private @Nullable String query;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RuleSetItemRedirectUri defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.host = defaults.host;
@@ -116,27 +99,39 @@ public final class RuleSetItemRedirectUri {
     	      this.query = defaults.query;
         }
 
+        @CustomType.Setter
         public Builder host(@Nullable String host) {
             this.host = host;
             return this;
         }
+        @CustomType.Setter
         public Builder path(@Nullable String path) {
             this.path = path;
             return this;
         }
+        @CustomType.Setter
         public Builder port(@Nullable Integer port) {
             this.port = port;
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(@Nullable String protocol) {
             this.protocol = protocol;
             return this;
         }
+        @CustomType.Setter
         public Builder query(@Nullable String query) {
             this.query = query;
             return this;
-        }        public RuleSetItemRedirectUri build() {
-            return new RuleSetItemRedirectUri(host, path, port, protocol, query);
+        }
+        public RuleSetItemRedirectUri build() {
+            final var o = new RuleSetItemRedirectUri();
+            o.host = host;
+            o.path = path;
+            o.port = port;
+            o.protocol = protocol;
+            o.query = query;
+            return o;
         }
     }
 }

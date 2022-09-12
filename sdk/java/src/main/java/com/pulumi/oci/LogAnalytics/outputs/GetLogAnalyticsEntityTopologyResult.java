@@ -17,34 +17,21 @@ public final class GetLogAnalyticsEntityTopologyResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Array of log analytics entity summary.
      * 
      */
-    private final List<GetLogAnalyticsEntityTopologyItem> items;
-    private final String logAnalyticsEntityId;
-    private final String namespace;
+    private List<GetLogAnalyticsEntityTopologyItem> items;
+    private String logAnalyticsEntityId;
+    private String namespace;
     /**
      * @return The current state of the log analytics entity.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsEntityTopologyResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetLogAnalyticsEntityTopologyItem> items,
-        @CustomType.Parameter("logAnalyticsEntityId") String logAnalyticsEntityId,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.id = id;
-        this.items = items;
-        this.logAnalyticsEntityId = logAnalyticsEntityId;
-        this.namespace = namespace;
-        this.state = state;
-    }
-
+    private GetLogAnalyticsEntityTopologyResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -80,18 +67,14 @@ public final class GetLogAnalyticsEntityTopologyResult {
     public static Builder builder(GetLogAnalyticsEntityTopologyResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private List<GetLogAnalyticsEntityTopologyItem> items;
         private String logAnalyticsEntityId;
         private String namespace;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsEntityTopologyResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -101,10 +84,12 @@ public final class GetLogAnalyticsEntityTopologyResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetLogAnalyticsEntityTopologyItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -112,19 +97,29 @@ public final class GetLogAnalyticsEntityTopologyResult {
         public Builder items(GetLogAnalyticsEntityTopologyItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder logAnalyticsEntityId(String logAnalyticsEntityId) {
             this.logAnalyticsEntityId = Objects.requireNonNull(logAnalyticsEntityId);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetLogAnalyticsEntityTopologyResult build() {
-            return new GetLogAnalyticsEntityTopologyResult(id, items, logAnalyticsEntityId, namespace, state);
+        }
+        public GetLogAnalyticsEntityTopologyResult build() {
+            final var o = new GetLogAnalyticsEntityTopologyResult();
+            o.id = id;
+            o.items = items;
+            o.logAnalyticsEntityId = logAnalyticsEntityId;
+            o.namespace = namespace;
+            o.state = state;
+            return o;
         }
     }
 }

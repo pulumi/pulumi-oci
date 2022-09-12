@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// <summary>
         /// This data source provides the list of Registry Folders in Oracle Cloud Infrastructure Data Connectivity service.
         /// 
-        /// Retrieves a list of all folders.
+        /// Retrieves a list of all the folders.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -47,7 +47,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// <summary>
         /// This data source provides the list of Registry Folders in Oracle Cloud Infrastructure Data Connectivity service.
         /// 
-        /// Retrieves a list of all folders.
+        /// Retrieves a list of all the folders.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -114,7 +114,7 @@ namespace Pulumi.Oci.DataConnectivity
         public string? Name { get; set; }
 
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         [Input("registryId", required: true)]
         public string RegistryId { get; set; } = null!;
@@ -166,7 +166,7 @@ namespace Pulumi.Oci.DataConnectivity
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The registry Ocid.
+        /// The registry OCID.
         /// </summary>
         [Input("registryId", required: true)]
         public Input<string> RegistryId { get; set; } = null!;
@@ -199,7 +199,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
         public readonly string? Name;
         public readonly string RegistryId;

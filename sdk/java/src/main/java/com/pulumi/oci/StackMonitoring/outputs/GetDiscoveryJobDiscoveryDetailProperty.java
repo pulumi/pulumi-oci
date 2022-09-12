@@ -15,13 +15,9 @@ public final class GetDiscoveryJobDiscoveryDetailProperty {
      * @return Key/Value pair of Property
      * 
      */
-    private final Map<String,Object> propertiesMap;
+    private Map<String,Object> propertiesMap;
 
-    @CustomType.Constructor
-    private GetDiscoveryJobDiscoveryDetailProperty(@CustomType.Parameter("propertiesMap") Map<String,Object> propertiesMap) {
-        this.propertiesMap = propertiesMap;
-    }
-
+    private GetDiscoveryJobDiscoveryDetailProperty() {}
     /**
      * @return Key/Value pair of Property
      * 
@@ -37,24 +33,24 @@ public final class GetDiscoveryJobDiscoveryDetailProperty {
     public static Builder builder(GetDiscoveryJobDiscoveryDetailProperty defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> propertiesMap;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDiscoveryJobDiscoveryDetailProperty defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.propertiesMap = defaults.propertiesMap;
         }
 
+        @CustomType.Setter
         public Builder propertiesMap(Map<String,Object> propertiesMap) {
             this.propertiesMap = Objects.requireNonNull(propertiesMap);
             return this;
-        }        public GetDiscoveryJobDiscoveryDetailProperty build() {
-            return new GetDiscoveryJobDiscoveryDetailProperty(propertiesMap);
+        }
+        public GetDiscoveryJobDiscoveryDetailProperty build() {
+            final var o = new GetDiscoveryJobDiscoveryDetailProperty();
+            o.propertiesMap = propertiesMap;
+            return o;
         }
     }
 }

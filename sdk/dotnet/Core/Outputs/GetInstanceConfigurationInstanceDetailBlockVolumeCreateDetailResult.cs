@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult
     {
         /// <summary>
+        /// The list of autotune policies enabled for this volume.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyResult> AutotunePolicies;
+        /// <summary>
         /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string AvailabilityDomain;
@@ -53,6 +57,8 @@ namespace Pulumi.Oci.Core.Outputs
 
         [OutputConstructor]
         private GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(
+            ImmutableArray<Outputs.GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyResult> autotunePolicies,
+
             string availabilityDomain,
 
             string backupPolicyId,
@@ -73,6 +79,7 @@ namespace Pulumi.Oci.Core.Outputs
 
             string vpusPerGb)
         {
+            AutotunePolicies = autotunePolicies;
             AvailabilityDomain = availabilityDomain;
             BackupPolicyId = backupPolicyId;
             CompartmentId = compartmentId;

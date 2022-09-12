@@ -13,17 +13,10 @@ public final class GetReportContentResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String reportId;
+    private String id;
+    private String reportId;
 
-    @CustomType.Constructor
-    private GetReportContentResult(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("reportId") String reportId) {
-        this.id = id;
-        this.reportId = reportId;
-    }
-
+    private GetReportContentResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -42,30 +35,32 @@ public final class GetReportContentResult {
     public static Builder builder(GetReportContentResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String reportId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetReportContentResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
     	      this.reportId = defaults.reportId;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder reportId(String reportId) {
             this.reportId = Objects.requireNonNull(reportId);
             return this;
-        }        public GetReportContentResult build() {
-            return new GetReportContentResult(id, reportId);
+        }
+        public GetReportContentResult build() {
+            final var o = new GetReportContentResult();
+            o.id = id;
+            o.reportId = reportId;
+            return o;
         }
     }
 }

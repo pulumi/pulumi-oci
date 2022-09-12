@@ -17,27 +17,16 @@ public final class GetByoipAllocatedRangesResult {
      * @return The list of byoip_allocated_range_collection.
      * 
      */
-    private final List<GetByoipAllocatedRangesByoipAllocatedRangeCollection> byoipAllocatedRangeCollections;
-    private final String byoipRangeId;
-    private final @Nullable List<GetByoipAllocatedRangesFilter> filters;
+    private List<GetByoipAllocatedRangesByoipAllocatedRangeCollection> byoipAllocatedRangeCollections;
+    private String byoipRangeId;
+    private @Nullable List<GetByoipAllocatedRangesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetByoipAllocatedRangesResult(
-        @CustomType.Parameter("byoipAllocatedRangeCollections") List<GetByoipAllocatedRangesByoipAllocatedRangeCollection> byoipAllocatedRangeCollections,
-        @CustomType.Parameter("byoipRangeId") String byoipRangeId,
-        @CustomType.Parameter("filters") @Nullable List<GetByoipAllocatedRangesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.byoipAllocatedRangeCollections = byoipAllocatedRangeCollections;
-        this.byoipRangeId = byoipRangeId;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetByoipAllocatedRangesResult() {}
     /**
      * @return The list of byoip_allocated_range_collection.
      * 
@@ -66,17 +55,13 @@ public final class GetByoipAllocatedRangesResult {
     public static Builder builder(GetByoipAllocatedRangesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetByoipAllocatedRangesByoipAllocatedRangeCollection> byoipAllocatedRangeCollections;
         private String byoipRangeId;
         private @Nullable List<GetByoipAllocatedRangesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetByoipAllocatedRangesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.byoipAllocatedRangeCollections = defaults.byoipAllocatedRangeCollections;
@@ -85,6 +70,7 @@ public final class GetByoipAllocatedRangesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder byoipAllocatedRangeCollections(List<GetByoipAllocatedRangesByoipAllocatedRangeCollection> byoipAllocatedRangeCollections) {
             this.byoipAllocatedRangeCollections = Objects.requireNonNull(byoipAllocatedRangeCollections);
             return this;
@@ -92,10 +78,12 @@ public final class GetByoipAllocatedRangesResult {
         public Builder byoipAllocatedRangeCollections(GetByoipAllocatedRangesByoipAllocatedRangeCollection... byoipAllocatedRangeCollections) {
             return byoipAllocatedRangeCollections(List.of(byoipAllocatedRangeCollections));
         }
+        @CustomType.Setter
         public Builder byoipRangeId(String byoipRangeId) {
             this.byoipRangeId = Objects.requireNonNull(byoipRangeId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetByoipAllocatedRangesFilter> filters) {
             this.filters = filters;
             return this;
@@ -103,11 +91,18 @@ public final class GetByoipAllocatedRangesResult {
         public Builder filters(GetByoipAllocatedRangesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetByoipAllocatedRangesResult build() {
-            return new GetByoipAllocatedRangesResult(byoipAllocatedRangeCollections, byoipRangeId, filters, id);
+        }
+        public GetByoipAllocatedRangesResult build() {
+            final var o = new GetByoipAllocatedRangesResult();
+            o.byoipAllocatedRangeCollections = byoipAllocatedRangeCollections;
+            o.byoipRangeId = byoipRangeId;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

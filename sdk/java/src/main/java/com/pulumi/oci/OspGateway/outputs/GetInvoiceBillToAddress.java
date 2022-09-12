@@ -15,105 +15,74 @@ public final class GetInvoiceBillToAddress {
      * @return Address line 1
      * 
      */
-    private final String addressLine1;
+    private String addressLine1;
     /**
      * @return Address line 2
      * 
      */
-    private final String addressLine2;
+    private String addressLine2;
     /**
      * @return Address line 3
      * 
      */
-    private final String addressLine3;
+    private String addressLine3;
     /**
      * @return Address line 4
      * 
      */
-    private final String addressLine4;
+    private String addressLine4;
     /**
      * @return Name of the city
      * 
      */
-    private final String city;
+    private String city;
     /**
      * @return Name of the customer company
      * 
      */
-    private final String companyName;
+    private String companyName;
     /**
      * @return Name of the contact person
      * 
      */
-    private final String contactName;
+    private String contactName;
     /**
      * @return Country details model
      * 
      */
-    private final List<GetInvoiceBillToAddressCountry> countries;
+    private List<GetInvoiceBillToAddressCountry> countries;
     /**
      * @return County name
      * 
      */
-    private final String county;
+    private String county;
     /**
      * @return ZIP no
      * 
      */
-    private final String postalCode;
+    private String postalCode;
     /**
      * @return Name of the province
      * 
      */
-    private final String province;
+    private String province;
     /**
      * @return Name of the state
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Street name
      * 
      */
-    private final String streetName;
+    private String streetName;
     /**
      * @return House no
      * 
      */
-    private final String streetNumber;
+    private String streetNumber;
 
-    @CustomType.Constructor
-    private GetInvoiceBillToAddress(
-        @CustomType.Parameter("addressLine1") String addressLine1,
-        @CustomType.Parameter("addressLine2") String addressLine2,
-        @CustomType.Parameter("addressLine3") String addressLine3,
-        @CustomType.Parameter("addressLine4") String addressLine4,
-        @CustomType.Parameter("city") String city,
-        @CustomType.Parameter("companyName") String companyName,
-        @CustomType.Parameter("contactName") String contactName,
-        @CustomType.Parameter("countries") List<GetInvoiceBillToAddressCountry> countries,
-        @CustomType.Parameter("county") String county,
-        @CustomType.Parameter("postalCode") String postalCode,
-        @CustomType.Parameter("province") String province,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("streetName") String streetName,
-        @CustomType.Parameter("streetNumber") String streetNumber) {
-        this.addressLine1 = addressLine1;
-        this.addressLine2 = addressLine2;
-        this.addressLine3 = addressLine3;
-        this.addressLine4 = addressLine4;
-        this.city = city;
-        this.companyName = companyName;
-        this.contactName = contactName;
-        this.countries = countries;
-        this.county = county;
-        this.postalCode = postalCode;
-        this.province = province;
-        this.state = state;
-        this.streetName = streetName;
-        this.streetNumber = streetNumber;
-    }
-
+    private GetInvoiceBillToAddress() {}
     /**
      * @return Address line 1
      * 
@@ -220,7 +189,7 @@ public final class GetInvoiceBillToAddress {
     public static Builder builder(GetInvoiceBillToAddress defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String addressLine1;
         private String addressLine2;
@@ -236,11 +205,7 @@ public final class GetInvoiceBillToAddress {
         private String state;
         private String streetName;
         private String streetNumber;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvoiceBillToAddress defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.addressLine1 = defaults.addressLine1;
@@ -259,34 +224,42 @@ public final class GetInvoiceBillToAddress {
     	      this.streetNumber = defaults.streetNumber;
         }
 
+        @CustomType.Setter
         public Builder addressLine1(String addressLine1) {
             this.addressLine1 = Objects.requireNonNull(addressLine1);
             return this;
         }
+        @CustomType.Setter
         public Builder addressLine2(String addressLine2) {
             this.addressLine2 = Objects.requireNonNull(addressLine2);
             return this;
         }
+        @CustomType.Setter
         public Builder addressLine3(String addressLine3) {
             this.addressLine3 = Objects.requireNonNull(addressLine3);
             return this;
         }
+        @CustomType.Setter
         public Builder addressLine4(String addressLine4) {
             this.addressLine4 = Objects.requireNonNull(addressLine4);
             return this;
         }
+        @CustomType.Setter
         public Builder city(String city) {
             this.city = Objects.requireNonNull(city);
             return this;
         }
+        @CustomType.Setter
         public Builder companyName(String companyName) {
             this.companyName = Objects.requireNonNull(companyName);
             return this;
         }
+        @CustomType.Setter
         public Builder contactName(String contactName) {
             this.contactName = Objects.requireNonNull(contactName);
             return this;
         }
+        @CustomType.Setter
         public Builder countries(List<GetInvoiceBillToAddressCountry> countries) {
             this.countries = Objects.requireNonNull(countries);
             return this;
@@ -294,31 +267,53 @@ public final class GetInvoiceBillToAddress {
         public Builder countries(GetInvoiceBillToAddressCountry... countries) {
             return countries(List.of(countries));
         }
+        @CustomType.Setter
         public Builder county(String county) {
             this.county = Objects.requireNonNull(county);
             return this;
         }
+        @CustomType.Setter
         public Builder postalCode(String postalCode) {
             this.postalCode = Objects.requireNonNull(postalCode);
             return this;
         }
+        @CustomType.Setter
         public Builder province(String province) {
             this.province = Objects.requireNonNull(province);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder streetName(String streetName) {
             this.streetName = Objects.requireNonNull(streetName);
             return this;
         }
+        @CustomType.Setter
         public Builder streetNumber(String streetNumber) {
             this.streetNumber = Objects.requireNonNull(streetNumber);
             return this;
-        }        public GetInvoiceBillToAddress build() {
-            return new GetInvoiceBillToAddress(addressLine1, addressLine2, addressLine3, addressLine4, city, companyName, contactName, countries, county, postalCode, province, state, streetName, streetNumber);
+        }
+        public GetInvoiceBillToAddress build() {
+            final var o = new GetInvoiceBillToAddress();
+            o.addressLine1 = addressLine1;
+            o.addressLine2 = addressLine2;
+            o.addressLine3 = addressLine3;
+            o.addressLine4 = addressLine4;
+            o.city = city;
+            o.companyName = companyName;
+            o.contactName = contactName;
+            o.countries = countries;
+            o.county = county;
+            o.postalCode = postalCode;
+            o.province = province;
+            o.state = state;
+            o.streetName = streetName;
+            o.streetNumber = streetNumber;
+            return o;
         }
     }
 }

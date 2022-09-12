@@ -23,185 +23,130 @@ public final class GetBuildPipelineStageResult {
      * @return The OCID of the build pipeline.
      * 
      */
-    private final String buildPipelineId;
-    private final String buildPipelineStageId;
+    private String buildPipelineId;
+    private String buildPipelineStageId;
     /**
      * @return The collection containing the predecessors of a stage.
      * 
      */
-    private final List<GetBuildPipelineStageBuildPipelineStagePredecessorCollection> buildPipelineStagePredecessorCollections;
+    private List<GetBuildPipelineStageBuildPipelineStagePredecessorCollection> buildPipelineStagePredecessorCollections;
     /**
      * @return Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
      * 
      */
-    private final String buildPipelineStageType;
+    private String buildPipelineStageType;
     /**
      * @return Collection of build sources.
      * 
      */
-    private final List<GetBuildPipelineStageBuildSourceCollection> buildSourceCollections;
+    private List<GetBuildPipelineStageBuildSourceCollection> buildSourceCollections;
     /**
      * @return The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
      * 
      */
-    private final String buildSpecFile;
+    private String buildSpecFile;
     /**
      * @return The OCID of the compartment where the pipeline is created.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return Specifies an array of artifacts that need to be pushed to the artifactory stores.
      * 
      */
-    private final List<GetBuildPipelineStageDeliverArtifactCollection> deliverArtifactCollections;
+    private List<GetBuildPipelineStageDeliverArtifactCollection> deliverArtifactCollections;
     /**
      * @return A target deployment pipeline OCID that will run in this stage.
      * 
      */
-    private final String deployPipelineId;
+    private String deployPipelineId;
     /**
      * @return Optional description about the build stage.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Image name for the build environment.
      * 
      */
-    private final String image;
+    private String image;
     /**
      * @return A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
      * 
      */
-    private final Boolean isPassAllParametersEnabled;
+    private Boolean isPassAllParametersEnabled;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Name of the build source where the build_spec.yml file is located. If not specified, then the first entry in the build source collection is chosen as primary build source.
      * 
      */
-    private final String primaryBuildSource;
+    private String primaryBuildSource;
     /**
      * @return Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
      * 
      */
-    private final List<GetBuildPipelineStagePrivateAccessConfig> privateAccessConfigs;
+    private List<GetBuildPipelineStagePrivateAccessConfig> privateAccessConfigs;
     /**
      * @return The OCID of the DevOps project.
      * 
      */
-    private final String projectId;
+    private String projectId;
     /**
      * @return Timeout for the build stage execution. Specify value in seconds.
      * 
      */
-    private final Integer stageExecutionTimeoutInSeconds;
+    private Integer stageExecutionTimeoutInSeconds;
     /**
      * @return The current state of the stage.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return Specifies wait criteria for the Wait stage.
      * 
      */
-    private final List<GetBuildPipelineStageWaitCriteria> waitCriterias;
+    private List<GetBuildPipelineStageWaitCriteria> waitCriterias;
 
-    @CustomType.Constructor
-    private GetBuildPipelineStageResult(
-        @CustomType.Parameter("buildPipelineId") String buildPipelineId,
-        @CustomType.Parameter("buildPipelineStageId") String buildPipelineStageId,
-        @CustomType.Parameter("buildPipelineStagePredecessorCollections") List<GetBuildPipelineStageBuildPipelineStagePredecessorCollection> buildPipelineStagePredecessorCollections,
-        @CustomType.Parameter("buildPipelineStageType") String buildPipelineStageType,
-        @CustomType.Parameter("buildSourceCollections") List<GetBuildPipelineStageBuildSourceCollection> buildSourceCollections,
-        @CustomType.Parameter("buildSpecFile") String buildSpecFile,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("deliverArtifactCollections") List<GetBuildPipelineStageDeliverArtifactCollection> deliverArtifactCollections,
-        @CustomType.Parameter("deployPipelineId") String deployPipelineId,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("image") String image,
-        @CustomType.Parameter("isPassAllParametersEnabled") Boolean isPassAllParametersEnabled,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("primaryBuildSource") String primaryBuildSource,
-        @CustomType.Parameter("privateAccessConfigs") List<GetBuildPipelineStagePrivateAccessConfig> privateAccessConfigs,
-        @CustomType.Parameter("projectId") String projectId,
-        @CustomType.Parameter("stageExecutionTimeoutInSeconds") Integer stageExecutionTimeoutInSeconds,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("waitCriterias") List<GetBuildPipelineStageWaitCriteria> waitCriterias) {
-        this.buildPipelineId = buildPipelineId;
-        this.buildPipelineStageId = buildPipelineStageId;
-        this.buildPipelineStagePredecessorCollections = buildPipelineStagePredecessorCollections;
-        this.buildPipelineStageType = buildPipelineStageType;
-        this.buildSourceCollections = buildSourceCollections;
-        this.buildSpecFile = buildSpecFile;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.deliverArtifactCollections = deliverArtifactCollections;
-        this.deployPipelineId = deployPipelineId;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.image = image;
-        this.isPassAllParametersEnabled = isPassAllParametersEnabled;
-        this.lifecycleDetails = lifecycleDetails;
-        this.primaryBuildSource = primaryBuildSource;
-        this.privateAccessConfigs = privateAccessConfigs;
-        this.projectId = projectId;
-        this.stageExecutionTimeoutInSeconds = stageExecutionTimeoutInSeconds;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.waitCriterias = waitCriterias;
-    }
-
+    private GetBuildPipelineStageResult() {}
     /**
      * @return The OCID of the build pipeline.
      * 
@@ -388,7 +333,7 @@ public final class GetBuildPipelineStageResult {
     public static Builder builder(GetBuildPipelineStageResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String buildPipelineId;
         private String buildPipelineStageId;
@@ -416,11 +361,7 @@ public final class GetBuildPipelineStageResult {
         private String timeCreated;
         private String timeUpdated;
         private List<GetBuildPipelineStageWaitCriteria> waitCriterias;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBuildPipelineStageResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.buildPipelineId = defaults.buildPipelineId;
@@ -451,14 +392,17 @@ public final class GetBuildPipelineStageResult {
     	      this.waitCriterias = defaults.waitCriterias;
         }
 
+        @CustomType.Setter
         public Builder buildPipelineId(String buildPipelineId) {
             this.buildPipelineId = Objects.requireNonNull(buildPipelineId);
             return this;
         }
+        @CustomType.Setter
         public Builder buildPipelineStageId(String buildPipelineStageId) {
             this.buildPipelineStageId = Objects.requireNonNull(buildPipelineStageId);
             return this;
         }
+        @CustomType.Setter
         public Builder buildPipelineStagePredecessorCollections(List<GetBuildPipelineStageBuildPipelineStagePredecessorCollection> buildPipelineStagePredecessorCollections) {
             this.buildPipelineStagePredecessorCollections = Objects.requireNonNull(buildPipelineStagePredecessorCollections);
             return this;
@@ -466,10 +410,12 @@ public final class GetBuildPipelineStageResult {
         public Builder buildPipelineStagePredecessorCollections(GetBuildPipelineStageBuildPipelineStagePredecessorCollection... buildPipelineStagePredecessorCollections) {
             return buildPipelineStagePredecessorCollections(List.of(buildPipelineStagePredecessorCollections));
         }
+        @CustomType.Setter
         public Builder buildPipelineStageType(String buildPipelineStageType) {
             this.buildPipelineStageType = Objects.requireNonNull(buildPipelineStageType);
             return this;
         }
+        @CustomType.Setter
         public Builder buildSourceCollections(List<GetBuildPipelineStageBuildSourceCollection> buildSourceCollections) {
             this.buildSourceCollections = Objects.requireNonNull(buildSourceCollections);
             return this;
@@ -477,18 +423,22 @@ public final class GetBuildPipelineStageResult {
         public Builder buildSourceCollections(GetBuildPipelineStageBuildSourceCollection... buildSourceCollections) {
             return buildSourceCollections(List.of(buildSourceCollections));
         }
+        @CustomType.Setter
         public Builder buildSpecFile(String buildSpecFile) {
             this.buildSpecFile = Objects.requireNonNull(buildSpecFile);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder deliverArtifactCollections(List<GetBuildPipelineStageDeliverArtifactCollection> deliverArtifactCollections) {
             this.deliverArtifactCollections = Objects.requireNonNull(deliverArtifactCollections);
             return this;
@@ -496,42 +446,52 @@ public final class GetBuildPipelineStageResult {
         public Builder deliverArtifactCollections(GetBuildPipelineStageDeliverArtifactCollection... deliverArtifactCollections) {
             return deliverArtifactCollections(List.of(deliverArtifactCollections));
         }
+        @CustomType.Setter
         public Builder deployPipelineId(String deployPipelineId) {
             this.deployPipelineId = Objects.requireNonNull(deployPipelineId);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder image(String image) {
             this.image = Objects.requireNonNull(image);
             return this;
         }
+        @CustomType.Setter
         public Builder isPassAllParametersEnabled(Boolean isPassAllParametersEnabled) {
             this.isPassAllParametersEnabled = Objects.requireNonNull(isPassAllParametersEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder primaryBuildSource(String primaryBuildSource) {
             this.primaryBuildSource = Objects.requireNonNull(primaryBuildSource);
             return this;
         }
+        @CustomType.Setter
         public Builder privateAccessConfigs(List<GetBuildPipelineStagePrivateAccessConfig> privateAccessConfigs) {
             this.privateAccessConfigs = Objects.requireNonNull(privateAccessConfigs);
             return this;
@@ -539,38 +499,73 @@ public final class GetBuildPipelineStageResult {
         public Builder privateAccessConfigs(GetBuildPipelineStagePrivateAccessConfig... privateAccessConfigs) {
             return privateAccessConfigs(List.of(privateAccessConfigs));
         }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             this.projectId = Objects.requireNonNull(projectId);
             return this;
         }
+        @CustomType.Setter
         public Builder stageExecutionTimeoutInSeconds(Integer stageExecutionTimeoutInSeconds) {
             this.stageExecutionTimeoutInSeconds = Objects.requireNonNull(stageExecutionTimeoutInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder waitCriterias(List<GetBuildPipelineStageWaitCriteria> waitCriterias) {
             this.waitCriterias = Objects.requireNonNull(waitCriterias);
             return this;
         }
         public Builder waitCriterias(GetBuildPipelineStageWaitCriteria... waitCriterias) {
             return waitCriterias(List.of(waitCriterias));
-        }        public GetBuildPipelineStageResult build() {
-            return new GetBuildPipelineStageResult(buildPipelineId, buildPipelineStageId, buildPipelineStagePredecessorCollections, buildPipelineStageType, buildSourceCollections, buildSpecFile, compartmentId, definedTags, deliverArtifactCollections, deployPipelineId, description, displayName, freeformTags, id, image, isPassAllParametersEnabled, lifecycleDetails, primaryBuildSource, privateAccessConfigs, projectId, stageExecutionTimeoutInSeconds, state, systemTags, timeCreated, timeUpdated, waitCriterias);
+        }
+        public GetBuildPipelineStageResult build() {
+            final var o = new GetBuildPipelineStageResult();
+            o.buildPipelineId = buildPipelineId;
+            o.buildPipelineStageId = buildPipelineStageId;
+            o.buildPipelineStagePredecessorCollections = buildPipelineStagePredecessorCollections;
+            o.buildPipelineStageType = buildPipelineStageType;
+            o.buildSourceCollections = buildSourceCollections;
+            o.buildSpecFile = buildSpecFile;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.deliverArtifactCollections = deliverArtifactCollections;
+            o.deployPipelineId = deployPipelineId;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.image = image;
+            o.isPassAllParametersEnabled = isPassAllParametersEnabled;
+            o.lifecycleDetails = lifecycleDetails;
+            o.primaryBuildSource = primaryBuildSource;
+            o.privateAccessConfigs = privateAccessConfigs;
+            o.projectId = projectId;
+            o.stageExecutionTimeoutInSeconds = stageExecutionTimeoutInSeconds;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.waitCriterias = waitCriterias;
+            return o;
         }
     }
 }

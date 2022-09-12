@@ -18,45 +18,30 @@ public final class GetEnrollmentStatusesResult {
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of enrollment_status_collection.
      * 
      */
-    private final List<GetEnrollmentStatusesEnrollmentStatusCollection> enrollmentStatusCollections;
-    private final @Nullable List<GetEnrollmentStatusesFilter> filters;
+    private List<GetEnrollmentStatusesEnrollmentStatusCollection> enrollmentStatusCollections;
+    private @Nullable List<GetEnrollmentStatusesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The enrollment status&#39; current state.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The current Cloud Advisor enrollment status.
      * 
      */
-    private final @Nullable String status;
+    private @Nullable String status;
 
-    @CustomType.Constructor
-    private GetEnrollmentStatusesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("enrollmentStatusCollections") List<GetEnrollmentStatusesEnrollmentStatusCollection> enrollmentStatusCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetEnrollmentStatusesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("status") @Nullable String status) {
-        this.compartmentId = compartmentId;
-        this.enrollmentStatusCollections = enrollmentStatusCollections;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.status = status;
-    }
-
+    private GetEnrollmentStatusesResult() {}
     /**
      * @return The OCID of the compartment.
      * 
@@ -103,7 +88,7 @@ public final class GetEnrollmentStatusesResult {
     public static Builder builder(GetEnrollmentStatusesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetEnrollmentStatusesEnrollmentStatusCollection> enrollmentStatusCollections;
@@ -111,11 +96,7 @@ public final class GetEnrollmentStatusesResult {
         private String id;
         private @Nullable String state;
         private @Nullable String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEnrollmentStatusesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +107,12 @@ public final class GetEnrollmentStatusesResult {
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder enrollmentStatusCollections(List<GetEnrollmentStatusesEnrollmentStatusCollection> enrollmentStatusCollections) {
             this.enrollmentStatusCollections = Objects.requireNonNull(enrollmentStatusCollections);
             return this;
@@ -137,6 +120,7 @@ public final class GetEnrollmentStatusesResult {
         public Builder enrollmentStatusCollections(GetEnrollmentStatusesEnrollmentStatusCollection... enrollmentStatusCollections) {
             return enrollmentStatusCollections(List.of(enrollmentStatusCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetEnrollmentStatusesFilter> filters) {
             this.filters = filters;
             return this;
@@ -144,19 +128,30 @@ public final class GetEnrollmentStatusesResult {
         public Builder filters(GetEnrollmentStatusesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
-        }        public GetEnrollmentStatusesResult build() {
-            return new GetEnrollmentStatusesResult(compartmentId, enrollmentStatusCollections, filters, id, state, status);
+        }
+        public GetEnrollmentStatusesResult build() {
+            final var o = new GetEnrollmentStatusesResult();
+            o.compartmentId = compartmentId;
+            o.enrollmentStatusCollections = enrollmentStatusCollections;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.status = status;
+            return o;
         }
     }
 }

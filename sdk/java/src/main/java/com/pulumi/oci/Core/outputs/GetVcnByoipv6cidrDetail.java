@@ -9,17 +9,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetVcnByoipv6cidrDetail {
-    private final String byoipv6rangeId;
-    private final String ipv6cidrBlock;
+    private String byoipv6rangeId;
+    private String ipv6cidrBlock;
 
-    @CustomType.Constructor
-    private GetVcnByoipv6cidrDetail(
-        @CustomType.Parameter("byoipv6rangeId") String byoipv6rangeId,
-        @CustomType.Parameter("ipv6cidrBlock") String ipv6cidrBlock) {
-        this.byoipv6rangeId = byoipv6rangeId;
-        this.ipv6cidrBlock = ipv6cidrBlock;
-    }
-
+    private GetVcnByoipv6cidrDetail() {}
     public String byoipv6rangeId() {
         return this.byoipv6rangeId;
     }
@@ -34,30 +27,32 @@ public final class GetVcnByoipv6cidrDetail {
     public static Builder builder(GetVcnByoipv6cidrDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String byoipv6rangeId;
         private String ipv6cidrBlock;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVcnByoipv6cidrDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.byoipv6rangeId = defaults.byoipv6rangeId;
     	      this.ipv6cidrBlock = defaults.ipv6cidrBlock;
         }
 
+        @CustomType.Setter
         public Builder byoipv6rangeId(String byoipv6rangeId) {
             this.byoipv6rangeId = Objects.requireNonNull(byoipv6rangeId);
             return this;
         }
+        @CustomType.Setter
         public Builder ipv6cidrBlock(String ipv6cidrBlock) {
             this.ipv6cidrBlock = Objects.requireNonNull(ipv6cidrBlock);
             return this;
-        }        public GetVcnByoipv6cidrDetail build() {
-            return new GetVcnByoipv6cidrDetail(byoipv6rangeId, ipv6cidrBlock);
+        }
+        public GetVcnByoipv6cidrDetail build() {
+            final var o = new GetVcnByoipv6cidrDetail();
+            o.byoipv6rangeId = byoipv6rangeId;
+            o.ipv6cidrBlock = ipv6cidrBlock;
+            return o;
         }
     }
 }

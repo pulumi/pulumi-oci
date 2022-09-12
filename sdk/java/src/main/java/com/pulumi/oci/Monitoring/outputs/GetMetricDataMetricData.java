@@ -18,91 +18,64 @@ public final class GetMetricDataMetricData {
      * @return The list of timestamp-value pairs returned for the specified request. Metric values are rolled up to the start time specified in the request. For important limits information related to data points, see MetricData Reference at the top of this page.
      * 
      */
-    private final List<GetMetricDataMetricDataAggregatedDatapoint> aggregatedDatapoints;
+    private List<GetMetricDataMetricDataAggregatedDatapoint> aggregatedDatapoints;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
      * 
      */
-    private final Boolean compartmentIdInSubtree;
+    private Boolean compartmentIdInSubtree;
     /**
      * @return Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `&#34;resourceId&#34;: &#34;ocid1.instance.region1.phx.exampleuniqueID&#34;`
      * 
      */
-    private final Map<String,Object> dimensions;
+    private Map<String,Object> dimensions;
     /**
      * @return The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2019-02-01T02:02:29.600Z`
      * 
      */
-    private final String endTime;
+    private String endTime;
     /**
      * @return The references provided in a metric definition to indicate extra information about the metric.  Example: `&#34;unit&#34;: &#34;bytes&#34;`
      * 
      */
-    private final Map<String,Object> metadata;
+    private Map<String,Object> metadata;
     /**
      * @return The name of the metric.  Example: `CpuUtilization`
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The source service or application to use when searching for metric data points to aggregate.  Example: `oci_computeagent`
      * 
      */
-    private final String namespace;
+    private String namespace;
     /**
      * @return The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
      * 
      */
-    private final String query;
+    private String query;
     /**
      * @return The time between calculated aggregation windows. Use with the query interval to vary the frequency at which aggregated data points are returned. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
      * 
      */
-    private final String resolution;
+    private String resolution;
     /**
      * @return Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
      * 
      */
-    private final String resourceGroup;
+    private String resourceGroup;
     /**
      * @return The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    private final String startTime;
+    private String startTime;
 
-    @CustomType.Constructor
-    private GetMetricDataMetricData(
-        @CustomType.Parameter("aggregatedDatapoints") List<GetMetricDataMetricDataAggregatedDatapoint> aggregatedDatapoints,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("dimensions") Map<String,Object> dimensions,
-        @CustomType.Parameter("endTime") String endTime,
-        @CustomType.Parameter("metadata") Map<String,Object> metadata,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("query") String query,
-        @CustomType.Parameter("resolution") String resolution,
-        @CustomType.Parameter("resourceGroup") String resourceGroup,
-        @CustomType.Parameter("startTime") String startTime) {
-        this.aggregatedDatapoints = aggregatedDatapoints;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.dimensions = dimensions;
-        this.endTime = endTime;
-        this.metadata = metadata;
-        this.name = name;
-        this.namespace = namespace;
-        this.query = query;
-        this.resolution = resolution;
-        this.resourceGroup = resourceGroup;
-        this.startTime = startTime;
-    }
-
+    private GetMetricDataMetricData() {}
     /**
      * @return The list of timestamp-value pairs returned for the specified request. Metric values are rolled up to the start time specified in the request. For important limits information related to data points, see MetricData Reference at the top of this page.
      * 
@@ -195,7 +168,7 @@ public final class GetMetricDataMetricData {
     public static Builder builder(GetMetricDataMetricData defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetMetricDataMetricDataAggregatedDatapoint> aggregatedDatapoints;
         private String compartmentId;
@@ -209,11 +182,7 @@ public final class GetMetricDataMetricData {
         private String resolution;
         private String resourceGroup;
         private String startTime;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMetricDataMetricData defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.aggregatedDatapoints = defaults.aggregatedDatapoints;
@@ -230,6 +199,7 @@ public final class GetMetricDataMetricData {
     	      this.startTime = defaults.startTime;
         }
 
+        @CustomType.Setter
         public Builder aggregatedDatapoints(List<GetMetricDataMetricDataAggregatedDatapoint> aggregatedDatapoints) {
             this.aggregatedDatapoints = Objects.requireNonNull(aggregatedDatapoints);
             return this;
@@ -237,51 +207,76 @@ public final class GetMetricDataMetricData {
         public Builder aggregatedDatapoints(GetMetricDataMetricDataAggregatedDatapoint... aggregatedDatapoints) {
             return aggregatedDatapoints(List.of(aggregatedDatapoints));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
             return this;
         }
+        @CustomType.Setter
         public Builder dimensions(Map<String,Object> dimensions) {
             this.dimensions = Objects.requireNonNull(dimensions);
             return this;
         }
+        @CustomType.Setter
         public Builder endTime(String endTime) {
             this.endTime = Objects.requireNonNull(endTime);
             return this;
         }
+        @CustomType.Setter
         public Builder metadata(Map<String,Object> metadata) {
             this.metadata = Objects.requireNonNull(metadata);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder query(String query) {
             this.query = Objects.requireNonNull(query);
             return this;
         }
+        @CustomType.Setter
         public Builder resolution(String resolution) {
             this.resolution = Objects.requireNonNull(resolution);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceGroup(String resourceGroup) {
             this.resourceGroup = Objects.requireNonNull(resourceGroup);
             return this;
         }
+        @CustomType.Setter
         public Builder startTime(String startTime) {
             this.startTime = Objects.requireNonNull(startTime);
             return this;
-        }        public GetMetricDataMetricData build() {
-            return new GetMetricDataMetricData(aggregatedDatapoints, compartmentId, compartmentIdInSubtree, dimensions, endTime, metadata, name, namespace, query, resolution, resourceGroup, startTime);
+        }
+        public GetMetricDataMetricData build() {
+            final var o = new GetMetricDataMetricData();
+            o.aggregatedDatapoints = aggregatedDatapoints;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.dimensions = dimensions;
+            o.endTime = endTime;
+            o.metadata = metadata;
+            o.name = name;
+            o.namespace = namespace;
+            o.query = query;
+            o.resolution = resolution;
+            o.resourceGroup = resourceGroup;
+            o.startTime = startTime;
+            return o;
         }
     }
 }

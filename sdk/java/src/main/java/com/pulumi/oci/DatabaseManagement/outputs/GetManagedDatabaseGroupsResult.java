@@ -18,45 +18,30 @@ public final class GetManagedDatabaseGroupsResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetManagedDatabaseGroupsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetManagedDatabaseGroupsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of managed_database_group_collection.
      * 
      */
-    private final List<GetManagedDatabaseGroupsManagedDatabaseGroupCollection> managedDatabaseGroupCollections;
+    private List<GetManagedDatabaseGroupsManagedDatabaseGroupCollection> managedDatabaseGroupCollections;
     /**
      * @return The name of the Managed Database Group.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The current lifecycle state of the Managed Database Group.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseGroupsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetManagedDatabaseGroupsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("managedDatabaseGroupCollections") List<GetManagedDatabaseGroupsManagedDatabaseGroupCollection> managedDatabaseGroupCollections,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.managedDatabaseGroupCollections = managedDatabaseGroupCollections;
-        this.name = name;
-        this.state = state;
-    }
-
+    private GetManagedDatabaseGroupsResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
      * 
@@ -103,7 +88,7 @@ public final class GetManagedDatabaseGroupsResult {
     public static Builder builder(GetManagedDatabaseGroupsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetManagedDatabaseGroupsFilter> filters;
@@ -111,11 +96,7 @@ public final class GetManagedDatabaseGroupsResult {
         private List<GetManagedDatabaseGroupsManagedDatabaseGroupCollection> managedDatabaseGroupCollections;
         private @Nullable String name;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseGroupsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +107,12 @@ public final class GetManagedDatabaseGroupsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseGroupsFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,10 +120,12 @@ public final class GetManagedDatabaseGroupsResult {
         public Builder filters(GetManagedDatabaseGroupsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder managedDatabaseGroupCollections(List<GetManagedDatabaseGroupsManagedDatabaseGroupCollection> managedDatabaseGroupCollections) {
             this.managedDatabaseGroupCollections = Objects.requireNonNull(managedDatabaseGroupCollections);
             return this;
@@ -148,15 +133,25 @@ public final class GetManagedDatabaseGroupsResult {
         public Builder managedDatabaseGroupCollections(GetManagedDatabaseGroupsManagedDatabaseGroupCollection... managedDatabaseGroupCollections) {
             return managedDatabaseGroupCollections(List.of(managedDatabaseGroupCollections));
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetManagedDatabaseGroupsResult build() {
-            return new GetManagedDatabaseGroupsResult(compartmentId, filters, id, managedDatabaseGroupCollections, name, state);
+        }
+        public GetManagedDatabaseGroupsResult build() {
+            final var o = new GetManagedDatabaseGroupsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.managedDatabaseGroupCollections = managedDatabaseGroupCollections;
+            o.name = name;
+            o.state = state;
+            return o;
         }
     }
 }

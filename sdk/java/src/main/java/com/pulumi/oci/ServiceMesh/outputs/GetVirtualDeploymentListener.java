@@ -14,21 +14,14 @@ public final class GetVirtualDeploymentListener {
      * @return Port in which virtual deployment is running.
      * 
      */
-    private final Integer port;
+    private Integer port;
     /**
      * @return Type of protocol used in virtual deployment.
      * 
      */
-    private final String protocol;
+    private String protocol;
 
-    @CustomType.Constructor
-    private GetVirtualDeploymentListener(
-        @CustomType.Parameter("port") Integer port,
-        @CustomType.Parameter("protocol") String protocol) {
-        this.port = port;
-        this.protocol = protocol;
-    }
-
+    private GetVirtualDeploymentListener() {}
     /**
      * @return Port in which virtual deployment is running.
      * 
@@ -51,30 +44,32 @@ public final class GetVirtualDeploymentListener {
     public static Builder builder(GetVirtualDeploymentListener defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer port;
         private String protocol;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualDeploymentListener defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.port = defaults.port;
     	      this.protocol = defaults.protocol;
         }
 
+        @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
             return this;
         }
+        @CustomType.Setter
         public Builder protocol(String protocol) {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
-        }        public GetVirtualDeploymentListener build() {
-            return new GetVirtualDeploymentListener(port, protocol);
+        }
+        public GetVirtualDeploymentListener build() {
+            final var o = new GetVirtualDeploymentListener();
+            o.port = port;
+            o.protocol = protocol;
+            return o;
         }
     }
 }

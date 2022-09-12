@@ -18,52 +18,35 @@ public final class GetVirtualServicesResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetVirtualServicesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetVirtualServicesFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the service mesh in which this virtual service is created.
      * 
      */
-    private final @Nullable String meshId;
+    private @Nullable String meshId;
     /**
      * @return A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The current state of the Resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of virtual_service_collection.
      * 
      */
-    private final List<GetVirtualServicesVirtualServiceCollection> virtualServiceCollections;
+    private List<GetVirtualServicesVirtualServiceCollection> virtualServiceCollections;
 
-    @CustomType.Constructor
-    private GetVirtualServicesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetVirtualServicesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("meshId") @Nullable String meshId,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("virtualServiceCollections") List<GetVirtualServicesVirtualServiceCollection> virtualServiceCollections) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.meshId = meshId;
-        this.name = name;
-        this.state = state;
-        this.virtualServiceCollections = virtualServiceCollections;
-    }
-
+    private GetVirtualServicesResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -117,7 +100,7 @@ public final class GetVirtualServicesResult {
     public static Builder builder(GetVirtualServicesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetVirtualServicesFilter> filters;
@@ -126,11 +109,7 @@ public final class GetVirtualServicesResult {
         private @Nullable String name;
         private @Nullable String state;
         private List<GetVirtualServicesVirtualServiceCollection> virtualServiceCollections;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualServicesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,10 +121,12 @@ public final class GetVirtualServicesResult {
     	      this.virtualServiceCollections = defaults.virtualServiceCollections;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVirtualServicesFilter> filters) {
             this.filters = filters;
             return this;
@@ -153,30 +134,44 @@ public final class GetVirtualServicesResult {
         public Builder filters(GetVirtualServicesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder meshId(@Nullable String meshId) {
             this.meshId = meshId;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder virtualServiceCollections(List<GetVirtualServicesVirtualServiceCollection> virtualServiceCollections) {
             this.virtualServiceCollections = Objects.requireNonNull(virtualServiceCollections);
             return this;
         }
         public Builder virtualServiceCollections(GetVirtualServicesVirtualServiceCollection... virtualServiceCollections) {
             return virtualServiceCollections(List.of(virtualServiceCollections));
-        }        public GetVirtualServicesResult build() {
-            return new GetVirtualServicesResult(compartmentId, filters, id, meshId, name, state, virtualServiceCollections);
+        }
+        public GetVirtualServicesResult build() {
+            final var o = new GetVirtualServicesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.meshId = meshId;
+            o.name = name;
+            o.state = state;
+            o.virtualServiceCollections = virtualServiceCollections;
+            return o;
         }
     }
 }

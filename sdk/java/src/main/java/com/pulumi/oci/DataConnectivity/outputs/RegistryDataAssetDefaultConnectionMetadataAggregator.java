@@ -12,54 +12,41 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RegistryDataAssetDefaultConnectionMetadataAggregator {
     /**
-     * @return (Updatable) A user defined description for the object.
+     * @return (Updatable) A user-defined description for the object.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
-    private final @Nullable String identifier;
+    private @Nullable String identifier;
     /**
      * @return (Updatable) The identifying key for the object.
      * 
      */
-    private final @Nullable String key;
+    private @Nullable String key;
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) Specific DataAsset Type
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private RegistryDataAssetDefaultConnectionMetadataAggregator(
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("identifier") @Nullable String identifier,
-        @CustomType.Parameter("key") @Nullable String key,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.description = description;
-        this.identifier = identifier;
-        this.key = key;
-        this.name = name;
-        this.type = type;
-    }
-
+    private RegistryDataAssetDefaultConnectionMetadataAggregator() {}
     /**
-     * @return (Updatable) A user defined description for the object.
+     * @return (Updatable) A user-defined description for the object.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public Optional<String> identifier() {
@@ -73,7 +60,7 @@ public final class RegistryDataAssetDefaultConnectionMetadataAggregator {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Optional<String> name() {
@@ -94,18 +81,14 @@ public final class RegistryDataAssetDefaultConnectionMetadataAggregator {
     public static Builder builder(RegistryDataAssetDefaultConnectionMetadataAggregator defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String description;
         private @Nullable String identifier;
         private @Nullable String key;
         private @Nullable String name;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RegistryDataAssetDefaultConnectionMetadataAggregator defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
@@ -115,27 +98,39 @@ public final class RegistryDataAssetDefaultConnectionMetadataAggregator {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(@Nullable String identifier) {
             this.identifier = identifier;
             return this;
         }
+        @CustomType.Setter
         public Builder key(@Nullable String key) {
             this.key = key;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public RegistryDataAssetDefaultConnectionMetadataAggregator build() {
-            return new RegistryDataAssetDefaultConnectionMetadataAggregator(description, identifier, key, name, type);
+        }
+        public RegistryDataAssetDefaultConnectionMetadataAggregator build() {
+            final var o = new RegistryDataAssetDefaultConnectionMetadataAggregator();
+            o.description = description;
+            o.identifier = identifier;
+            o.key = key;
+            o.name = name;
+            o.type = type;
+            return o;
         }
     }
 }

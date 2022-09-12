@@ -16,35 +16,24 @@ public final class GetTableSchema {
      * @return The columns of a table.
      * 
      */
-    private final List<GetTableSchemaColumn> columns;
+    private List<GetTableSchemaColumn> columns;
     /**
      * @return A list of column names that make up a key.
      * 
      */
-    private final List<String> primaryKeys;
+    private List<String> primaryKeys;
     /**
      * @return A list of column names that make up a key.
      * 
      */
-    private final List<String> shardKeys;
+    private List<String> shardKeys;
     /**
      * @return The default Time-to-Live for the table, in days.
      * 
      */
-    private final Integer ttl;
+    private Integer ttl;
 
-    @CustomType.Constructor
-    private GetTableSchema(
-        @CustomType.Parameter("columns") List<GetTableSchemaColumn> columns,
-        @CustomType.Parameter("primaryKeys") List<String> primaryKeys,
-        @CustomType.Parameter("shardKeys") List<String> shardKeys,
-        @CustomType.Parameter("ttl") Integer ttl) {
-        this.columns = columns;
-        this.primaryKeys = primaryKeys;
-        this.shardKeys = shardKeys;
-        this.ttl = ttl;
-    }
-
+    private GetTableSchema() {}
     /**
      * @return The columns of a table.
      * 
@@ -81,17 +70,13 @@ public final class GetTableSchema {
     public static Builder builder(GetTableSchema defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetTableSchemaColumn> columns;
         private List<String> primaryKeys;
         private List<String> shardKeys;
         private Integer ttl;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetTableSchema defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.columns = defaults.columns;
@@ -100,6 +85,7 @@ public final class GetTableSchema {
     	      this.ttl = defaults.ttl;
         }
 
+        @CustomType.Setter
         public Builder columns(List<GetTableSchemaColumn> columns) {
             this.columns = Objects.requireNonNull(columns);
             return this;
@@ -107,6 +93,7 @@ public final class GetTableSchema {
         public Builder columns(GetTableSchemaColumn... columns) {
             return columns(List.of(columns));
         }
+        @CustomType.Setter
         public Builder primaryKeys(List<String> primaryKeys) {
             this.primaryKeys = Objects.requireNonNull(primaryKeys);
             return this;
@@ -114,6 +101,7 @@ public final class GetTableSchema {
         public Builder primaryKeys(String... primaryKeys) {
             return primaryKeys(List.of(primaryKeys));
         }
+        @CustomType.Setter
         public Builder shardKeys(List<String> shardKeys) {
             this.shardKeys = Objects.requireNonNull(shardKeys);
             return this;
@@ -121,11 +109,18 @@ public final class GetTableSchema {
         public Builder shardKeys(String... shardKeys) {
             return shardKeys(List.of(shardKeys));
         }
+        @CustomType.Setter
         public Builder ttl(Integer ttl) {
             this.ttl = Objects.requireNonNull(ttl);
             return this;
-        }        public GetTableSchema build() {
-            return new GetTableSchema(columns, primaryKeys, shardKeys, ttl);
+        }
+        public GetTableSchema build() {
+            final var o = new GetTableSchema();
+            o.columns = columns;
+            o.primaryKeys = primaryKeys;
+            o.shardKeys = shardKeys;
+            o.ttl = ttl;
+            return o;
         }
     }
 }

@@ -14,13 +14,9 @@ public final class GetUnifiedAgentConfigurationGroupAssociation {
      * @return list of group/dynamic group ids associated with this configuration.
      * 
      */
-    private final List<String> groupLists;
+    private List<String> groupLists;
 
-    @CustomType.Constructor
-    private GetUnifiedAgentConfigurationGroupAssociation(@CustomType.Parameter("groupLists") List<String> groupLists) {
-        this.groupLists = groupLists;
-    }
-
+    private GetUnifiedAgentConfigurationGroupAssociation() {}
     /**
      * @return list of group/dynamic group ids associated with this configuration.
      * 
@@ -36,27 +32,27 @@ public final class GetUnifiedAgentConfigurationGroupAssociation {
     public static Builder builder(GetUnifiedAgentConfigurationGroupAssociation defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> groupLists;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUnifiedAgentConfigurationGroupAssociation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.groupLists = defaults.groupLists;
         }
 
+        @CustomType.Setter
         public Builder groupLists(List<String> groupLists) {
             this.groupLists = Objects.requireNonNull(groupLists);
             return this;
         }
         public Builder groupLists(String... groupLists) {
             return groupLists(List.of(groupLists));
-        }        public GetUnifiedAgentConfigurationGroupAssociation build() {
-            return new GetUnifiedAgentConfigurationGroupAssociation(groupLists);
+        }
+        public GetUnifiedAgentConfigurationGroupAssociation build() {
+            final var o = new GetUnifiedAgentConfigurationGroupAssociation();
+            o.groupLists = groupLists;
+            return o;
         }
     }
 }

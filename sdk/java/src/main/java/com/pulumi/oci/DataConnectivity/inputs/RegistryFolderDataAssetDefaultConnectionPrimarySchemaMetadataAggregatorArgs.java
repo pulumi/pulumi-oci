@@ -16,14 +16,14 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata
     public static final RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs Empty = new RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs();
 
     /**
-     * (Updatable) User-defined description for the folder.
+     * (Updatable) User-defined description of the folder.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) User-defined description for the folder.
+     * @return (Updatable) User-defined description of the folder.
      * 
      */
     public Optional<Output<String>> description() {
@@ -31,14 +31,14 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata
     }
 
     /**
-     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     @Import(name="identifier")
     private @Nullable Output<String> identifier;
 
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public Optional<Output<String>> identifier() {
@@ -46,14 +46,14 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata
     }
 
     /**
-     * (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     public Optional<Output<String>> key() {
@@ -61,14 +61,14 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata
     }
 
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Optional<Output<String>> name() {
@@ -119,7 +119,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata
         }
 
         /**
-         * @param description (Updatable) User-defined description for the folder.
+         * @param description (Updatable) User-defined description of the folder.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata
         }
 
         /**
-         * @param description (Updatable) User-defined description for the folder.
+         * @param description (Updatable) User-defined description of the folder.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata
         }
 
         /**
-         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata
         }
 
         /**
-         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -161,7 +161,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata
         }
 
         /**
-         * @param key (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * @param key (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata
         }
 
         /**
-         * @param key (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+         * @param key (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadata
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 

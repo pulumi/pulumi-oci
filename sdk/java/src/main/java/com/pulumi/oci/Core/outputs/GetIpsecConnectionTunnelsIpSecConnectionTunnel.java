@@ -19,140 +19,99 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
      * @return Information for establishing a BGP session for the IPSec tunnel.
      * 
      */
-    private final List<GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo> bgpSessionInfos;
+    private List<GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo> bgpSessionInfos;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The IP address of the CPE device&#39;s VPN headend.  Example: `203.0.113.22`
      * 
      */
-    private final String cpeIp;
+    private String cpeIp;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Dead peer detection (DPD) mode set on the Oracle side of the connection. This mode sets whether Oracle can only respond to a request from the CPE device to start DPD, or both respond to and initiate requests.
      * 
      */
-    private final String dpdMode;
+    private String dpdMode;
     /**
      * @return DPD timeout in seconds.
      * 
      */
-    private final Integer dpdTimeoutInSec;
+    private Integer dpdTimeoutInSec;
     /**
      * @return Configuration information used by the encryption domain policy.
      * 
      */
-    private final List<GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig> encryptionDomainConfigs;
+    private List<GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig> encryptionDomainConfigs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Internet Key Exchange protocol version.
      * 
      */
-    private final String ikeVersion;
+    private String ikeVersion;
     /**
      * @return By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
      * 
      */
-    private final String natTranslationEnabled;
+    private String natTranslationEnabled;
     /**
      * @return Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device, or both respond to and initiate requests.
      * 
      */
-    private final String oracleCanInitiate;
+    private String oracleCanInitiate;
     /**
      * @return IPSec tunnel details specific to ISAKMP phase one.
      * 
      */
-    private final List<GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail> phaseOneDetails;
+    private List<GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail> phaseOneDetails;
     /**
      * @return IPsec tunnel detail information specific to phase two.
      * 
      */
-    private final List<GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail> phaseTwoDetails;
+    private List<GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail> phaseTwoDetails;
     /**
      * @return The type of routing used for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
      * 
      */
-    private final String routing;
+    private String routing;
     /**
      * @return The tunnel&#39;s lifecycle state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The status of the tunnel based on IPSec protocol characteristics.
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return The date and time the IPSec tunnel was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return When the status of the IPSec tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeStatusUpdated;
+    private String timeStatusUpdated;
     /**
      * @return The IP address of the Oracle VPN headend for the connection.  Example: `203.0.113.21`
      * 
      */
-    private final String vpnIp;
+    private String vpnIp;
 
-    @CustomType.Constructor
-    private GetIpsecConnectionTunnelsIpSecConnectionTunnel(
-        @CustomType.Parameter("bgpSessionInfos") List<GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo> bgpSessionInfos,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("cpeIp") String cpeIp,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("dpdMode") String dpdMode,
-        @CustomType.Parameter("dpdTimeoutInSec") Integer dpdTimeoutInSec,
-        @CustomType.Parameter("encryptionDomainConfigs") List<GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig> encryptionDomainConfigs,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("ikeVersion") String ikeVersion,
-        @CustomType.Parameter("natTranslationEnabled") String natTranslationEnabled,
-        @CustomType.Parameter("oracleCanInitiate") String oracleCanInitiate,
-        @CustomType.Parameter("phaseOneDetails") List<GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail> phaseOneDetails,
-        @CustomType.Parameter("phaseTwoDetails") List<GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail> phaseTwoDetails,
-        @CustomType.Parameter("routing") String routing,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeStatusUpdated") String timeStatusUpdated,
-        @CustomType.Parameter("vpnIp") String vpnIp) {
-        this.bgpSessionInfos = bgpSessionInfos;
-        this.compartmentId = compartmentId;
-        this.cpeIp = cpeIp;
-        this.displayName = displayName;
-        this.dpdMode = dpdMode;
-        this.dpdTimeoutInSec = dpdTimeoutInSec;
-        this.encryptionDomainConfigs = encryptionDomainConfigs;
-        this.id = id;
-        this.ikeVersion = ikeVersion;
-        this.natTranslationEnabled = natTranslationEnabled;
-        this.oracleCanInitiate = oracleCanInitiate;
-        this.phaseOneDetails = phaseOneDetails;
-        this.phaseTwoDetails = phaseTwoDetails;
-        this.routing = routing;
-        this.state = state;
-        this.status = status;
-        this.timeCreated = timeCreated;
-        this.timeStatusUpdated = timeStatusUpdated;
-        this.vpnIp = vpnIp;
-    }
-
+    private GetIpsecConnectionTunnelsIpSecConnectionTunnel() {}
     /**
      * @return Information for establishing a BGP session for the IPSec tunnel.
      * 
@@ -294,7 +253,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
     public static Builder builder(GetIpsecConnectionTunnelsIpSecConnectionTunnel defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo> bgpSessionInfos;
         private String compartmentId;
@@ -315,11 +274,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
         private String timeCreated;
         private String timeStatusUpdated;
         private String vpnIp;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIpsecConnectionTunnelsIpSecConnectionTunnel defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bgpSessionInfos = defaults.bgpSessionInfos;
@@ -343,6 +298,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
     	      this.vpnIp = defaults.vpnIp;
         }
 
+        @CustomType.Setter
         public Builder bgpSessionInfos(List<GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo> bgpSessionInfos) {
             this.bgpSessionInfos = Objects.requireNonNull(bgpSessionInfos);
             return this;
@@ -350,26 +306,32 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
         public Builder bgpSessionInfos(GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo... bgpSessionInfos) {
             return bgpSessionInfos(List.of(bgpSessionInfos));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder cpeIp(String cpeIp) {
             this.cpeIp = Objects.requireNonNull(cpeIp);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder dpdMode(String dpdMode) {
             this.dpdMode = Objects.requireNonNull(dpdMode);
             return this;
         }
+        @CustomType.Setter
         public Builder dpdTimeoutInSec(Integer dpdTimeoutInSec) {
             this.dpdTimeoutInSec = Objects.requireNonNull(dpdTimeoutInSec);
             return this;
         }
+        @CustomType.Setter
         public Builder encryptionDomainConfigs(List<GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig> encryptionDomainConfigs) {
             this.encryptionDomainConfigs = Objects.requireNonNull(encryptionDomainConfigs);
             return this;
@@ -377,22 +339,27 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
         public Builder encryptionDomainConfigs(GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig... encryptionDomainConfigs) {
             return encryptionDomainConfigs(List.of(encryptionDomainConfigs));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder ikeVersion(String ikeVersion) {
             this.ikeVersion = Objects.requireNonNull(ikeVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder natTranslationEnabled(String natTranslationEnabled) {
             this.natTranslationEnabled = Objects.requireNonNull(natTranslationEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder oracleCanInitiate(String oracleCanInitiate) {
             this.oracleCanInitiate = Objects.requireNonNull(oracleCanInitiate);
             return this;
         }
+        @CustomType.Setter
         public Builder phaseOneDetails(List<GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail> phaseOneDetails) {
             this.phaseOneDetails = Objects.requireNonNull(phaseOneDetails);
             return this;
@@ -400,6 +367,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
         public Builder phaseOneDetails(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail... phaseOneDetails) {
             return phaseOneDetails(List.of(phaseOneDetails));
         }
+        @CustomType.Setter
         public Builder phaseTwoDetails(List<GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail> phaseTwoDetails) {
             this.phaseTwoDetails = Objects.requireNonNull(phaseTwoDetails);
             return this;
@@ -407,31 +375,58 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
         public Builder phaseTwoDetails(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail... phaseTwoDetails) {
             return phaseTwoDetails(List.of(phaseTwoDetails));
         }
+        @CustomType.Setter
         public Builder routing(String routing) {
             this.routing = Objects.requireNonNull(routing);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeStatusUpdated(String timeStatusUpdated) {
             this.timeStatusUpdated = Objects.requireNonNull(timeStatusUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder vpnIp(String vpnIp) {
             this.vpnIp = Objects.requireNonNull(vpnIp);
             return this;
-        }        public GetIpsecConnectionTunnelsIpSecConnectionTunnel build() {
-            return new GetIpsecConnectionTunnelsIpSecConnectionTunnel(bgpSessionInfos, compartmentId, cpeIp, displayName, dpdMode, dpdTimeoutInSec, encryptionDomainConfigs, id, ikeVersion, natTranslationEnabled, oracleCanInitiate, phaseOneDetails, phaseTwoDetails, routing, state, status, timeCreated, timeStatusUpdated, vpnIp);
+        }
+        public GetIpsecConnectionTunnelsIpSecConnectionTunnel build() {
+            final var o = new GetIpsecConnectionTunnelsIpSecConnectionTunnel();
+            o.bgpSessionInfos = bgpSessionInfos;
+            o.compartmentId = compartmentId;
+            o.cpeIp = cpeIp;
+            o.displayName = displayName;
+            o.dpdMode = dpdMode;
+            o.dpdTimeoutInSec = dpdTimeoutInSec;
+            o.encryptionDomainConfigs = encryptionDomainConfigs;
+            o.id = id;
+            o.ikeVersion = ikeVersion;
+            o.natTranslationEnabled = natTranslationEnabled;
+            o.oracleCanInitiate = oracleCanInitiate;
+            o.phaseOneDetails = phaseOneDetails;
+            o.phaseTwoDetails = phaseTwoDetails;
+            o.routing = routing;
+            o.state = state;
+            o.status = status;
+            o.timeCreated = timeCreated;
+            o.timeStatusUpdated = timeStatusUpdated;
+            o.vpnIp = vpnIp;
+            return o;
         }
     }
 }

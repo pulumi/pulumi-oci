@@ -16,21 +16,14 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
      * @return (Updatable) The shape used to launch the model deployment instances.
      * 
      */
-    private final String instanceShapeName;
+    private String instanceShapeName;
     /**
      * @return (Updatable) Details for the model-deployment instance shape configuration.
      * 
      */
-    private final @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails;
+    private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails;
 
-    @CustomType.Constructor
-    private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration(
-        @CustomType.Parameter("instanceShapeName") String instanceShapeName,
-        @CustomType.Parameter("modelDeploymentInstanceShapeConfigDetails") @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails) {
-        this.instanceShapeName = instanceShapeName;
-        this.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
-    }
-
+    private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration() {}
     /**
      * @return (Updatable) The shape used to launch the model deployment instances.
      * 
@@ -53,30 +46,32 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     public static Builder builder(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String instanceShapeName;
         private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.instanceShapeName = defaults.instanceShapeName;
     	      this.modelDeploymentInstanceShapeConfigDetails = defaults.modelDeploymentInstanceShapeConfigDetails;
         }
 
+        @CustomType.Setter
         public Builder instanceShapeName(String instanceShapeName) {
             this.instanceShapeName = Objects.requireNonNull(instanceShapeName);
             return this;
         }
+        @CustomType.Setter
         public Builder modelDeploymentInstanceShapeConfigDetails(@Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails) {
             this.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
             return this;
-        }        public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration build() {
-            return new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration(instanceShapeName, modelDeploymentInstanceShapeConfigDetails);
+        }
+        public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration build() {
+            final var o = new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration();
+            o.instanceShapeName = instanceShapeName;
+            o.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
+            return o;
         }
     }
 }

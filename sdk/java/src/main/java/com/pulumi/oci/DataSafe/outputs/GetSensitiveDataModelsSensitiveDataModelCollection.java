@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSensitiveDataModelsSensitiveDataModelCollection {
-    private final List<GetSensitiveDataModelsSensitiveDataModelCollectionItem> items;
+    private List<GetSensitiveDataModelsSensitiveDataModelCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetSensitiveDataModelsSensitiveDataModelCollection(@CustomType.Parameter("items") List<GetSensitiveDataModelsSensitiveDataModelCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetSensitiveDataModelsSensitiveDataModelCollection() {}
     public List<GetSensitiveDataModelsSensitiveDataModelCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetSensitiveDataModelsSensitiveDataModelCollection {
     public static Builder builder(GetSensitiveDataModelsSensitiveDataModelCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSensitiveDataModelsSensitiveDataModelCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSensitiveDataModelsSensitiveDataModelCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetSensitiveDataModelsSensitiveDataModelCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetSensitiveDataModelsSensitiveDataModelCollectionItem... items) {
             return items(List.of(items));
-        }        public GetSensitiveDataModelsSensitiveDataModelCollection build() {
-            return new GetSensitiveDataModelsSensitiveDataModelCollection(items);
+        }
+        public GetSensitiveDataModelsSensitiveDataModelCollection build() {
+            final var o = new GetSensitiveDataModelsSensitiveDataModelCollection();
+            o.items = items;
+            return o;
         }
     }
 }

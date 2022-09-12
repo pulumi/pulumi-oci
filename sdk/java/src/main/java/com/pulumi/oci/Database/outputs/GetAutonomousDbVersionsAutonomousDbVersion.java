@@ -14,63 +14,44 @@ public final class GetAutonomousDbVersionsAutonomousDbVersion {
      * @return A filter to return only autonomous database resources that match the specified workload type.
      * 
      */
-    private final String dbWorkload;
+    private String dbWorkload;
     /**
      * @return A URL that points to a detailed description of the Autonomous Database version.
      * 
      */
-    private final String details;
+    private String details;
     /**
      * @return True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      * 
      */
-    private final Boolean isDedicated;
+    private Boolean isDedicated;
     /**
      * @return True if this version of the Oracle Database software&#39;s default is free.
      * 
      */
-    private final Boolean isDefaultForFree;
+    private Boolean isDefaultForFree;
     /**
      * @return True if this version of the Oracle Database software&#39;s default is paid.
      * 
      */
-    private final Boolean isDefaultForPaid;
+    private Boolean isDefaultForPaid;
     /**
      * @return True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
      * 
      */
-    private final Boolean isFreeTierEnabled;
+    private Boolean isFreeTierEnabled;
     /**
      * @return True if this version of the Oracle Database software has payments enabled.
      * 
      */
-    private final Boolean isPaidEnabled;
+    private Boolean isPaidEnabled;
     /**
      * @return A valid Oracle Database version for Autonomous Database.
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetAutonomousDbVersionsAutonomousDbVersion(
-        @CustomType.Parameter("dbWorkload") String dbWorkload,
-        @CustomType.Parameter("details") String details,
-        @CustomType.Parameter("isDedicated") Boolean isDedicated,
-        @CustomType.Parameter("isDefaultForFree") Boolean isDefaultForFree,
-        @CustomType.Parameter("isDefaultForPaid") Boolean isDefaultForPaid,
-        @CustomType.Parameter("isFreeTierEnabled") Boolean isFreeTierEnabled,
-        @CustomType.Parameter("isPaidEnabled") Boolean isPaidEnabled,
-        @CustomType.Parameter("version") String version) {
-        this.dbWorkload = dbWorkload;
-        this.details = details;
-        this.isDedicated = isDedicated;
-        this.isDefaultForFree = isDefaultForFree;
-        this.isDefaultForPaid = isDefaultForPaid;
-        this.isFreeTierEnabled = isFreeTierEnabled;
-        this.isPaidEnabled = isPaidEnabled;
-        this.version = version;
-    }
-
+    private GetAutonomousDbVersionsAutonomousDbVersion() {}
     /**
      * @return A filter to return only autonomous database resources that match the specified workload type.
      * 
@@ -135,7 +116,7 @@ public final class GetAutonomousDbVersionsAutonomousDbVersion {
     public static Builder builder(GetAutonomousDbVersionsAutonomousDbVersion defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dbWorkload;
         private String details;
@@ -145,11 +126,7 @@ public final class GetAutonomousDbVersionsAutonomousDbVersion {
         private Boolean isFreeTierEnabled;
         private Boolean isPaidEnabled;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDbVersionsAutonomousDbVersion defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbWorkload = defaults.dbWorkload;
@@ -162,39 +139,57 @@ public final class GetAutonomousDbVersionsAutonomousDbVersion {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder dbWorkload(String dbWorkload) {
             this.dbWorkload = Objects.requireNonNull(dbWorkload);
             return this;
         }
+        @CustomType.Setter
         public Builder details(String details) {
             this.details = Objects.requireNonNull(details);
             return this;
         }
+        @CustomType.Setter
         public Builder isDedicated(Boolean isDedicated) {
             this.isDedicated = Objects.requireNonNull(isDedicated);
             return this;
         }
+        @CustomType.Setter
         public Builder isDefaultForFree(Boolean isDefaultForFree) {
             this.isDefaultForFree = Objects.requireNonNull(isDefaultForFree);
             return this;
         }
+        @CustomType.Setter
         public Builder isDefaultForPaid(Boolean isDefaultForPaid) {
             this.isDefaultForPaid = Objects.requireNonNull(isDefaultForPaid);
             return this;
         }
+        @CustomType.Setter
         public Builder isFreeTierEnabled(Boolean isFreeTierEnabled) {
             this.isFreeTierEnabled = Objects.requireNonNull(isFreeTierEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isPaidEnabled(Boolean isPaidEnabled) {
             this.isPaidEnabled = Objects.requireNonNull(isPaidEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetAutonomousDbVersionsAutonomousDbVersion build() {
-            return new GetAutonomousDbVersionsAutonomousDbVersion(dbWorkload, details, isDedicated, isDefaultForFree, isDefaultForPaid, isFreeTierEnabled, isPaidEnabled, version);
+        }
+        public GetAutonomousDbVersionsAutonomousDbVersion build() {
+            final var o = new GetAutonomousDbVersionsAutonomousDbVersion();
+            o.dbWorkload = dbWorkload;
+            o.details = details;
+            o.isDedicated = isDedicated;
+            o.isDefaultForFree = isDefaultForFree;
+            o.isDefaultForPaid = isDefaultForPaid;
+            o.isFreeTierEnabled = isFreeTierEnabled;
+            o.isPaidEnabled = isPaidEnabled;
+            o.version = version;
+            return o;
         }
     }
 }

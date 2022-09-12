@@ -22,150 +22,105 @@ public final class GetReportDefinitionResult {
      * @return Specifies the name of the category that this report belongs to.
      * 
      */
-    private final String category;
+    private String category;
     /**
      * @return An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
      * 
      */
-    private final List<GetReportDefinitionColumnFilter> columnFilters;
+    private List<GetReportDefinitionColumnFilter> columnFilters;
     /**
      * @return An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
      * 
      */
-    private final List<GetReportDefinitionColumnInfo> columnInfos;
+    private List<GetReportDefinitionColumnInfo> columnInfos;
     /**
      * @return An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
      * 
      */
-    private final List<GetReportDefinitionColumnSorting> columnSortings;
+    private List<GetReportDefinitionColumnSorting> columnSortings;
     /**
      * @return The OCID of the compartment containing the report definition.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Specifies the name of a resource that provides data for the report. For example alerts, events.
      * 
      */
-    private final String dataSource;
+    private String dataSource;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A description of the report definition.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return Name of the report definition.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Specifies the order in which the summary must be displayed.
      * 
      */
-    private final Integer displayOrder;
+    private Integer displayOrder;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The OCID of the report definition.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Signifies whether the definition is seeded or user defined. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    private final Boolean isSeeded;
+    private Boolean isSeeded;
     /**
      * @return The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
      * 
      */
-    private final String parentId;
-    private final String reportDefinitionId;
+    private String parentId;
+    private String reportDefinitionId;
     /**
      * @return Additional scim filters used to get the specific summary.
      * 
      */
-    private final String scimFilter;
+    private String scimFilter;
     /**
      * @return The current state of the report.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
      * 
      */
-    private final List<GetReportDefinitionSummary> summaries;
+    private List<GetReportDefinitionSummary> summaries;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return Specifies the time at which the report definition was created.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time of the report definition update in Data Safe.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetReportDefinitionResult(
-        @CustomType.Parameter("category") String category,
-        @CustomType.Parameter("columnFilters") List<GetReportDefinitionColumnFilter> columnFilters,
-        @CustomType.Parameter("columnInfos") List<GetReportDefinitionColumnInfo> columnInfos,
-        @CustomType.Parameter("columnSortings") List<GetReportDefinitionColumnSorting> columnSortings,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dataSource") String dataSource,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("displayOrder") Integer displayOrder,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isSeeded") Boolean isSeeded,
-        @CustomType.Parameter("parentId") String parentId,
-        @CustomType.Parameter("reportDefinitionId") String reportDefinitionId,
-        @CustomType.Parameter("scimFilter") String scimFilter,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("summaries") List<GetReportDefinitionSummary> summaries,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.category = category;
-        this.columnFilters = columnFilters;
-        this.columnInfos = columnInfos;
-        this.columnSortings = columnSortings;
-        this.compartmentId = compartmentId;
-        this.dataSource = dataSource;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.displayOrder = displayOrder;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isSeeded = isSeeded;
-        this.parentId = parentId;
-        this.reportDefinitionId = reportDefinitionId;
-        this.scimFilter = scimFilter;
-        this.state = state;
-        this.summaries = summaries;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetReportDefinitionResult() {}
     /**
      * @return Specifies the name of the category that this report belongs to.
      * 
@@ -317,7 +272,7 @@ public final class GetReportDefinitionResult {
     public static Builder builder(GetReportDefinitionResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String category;
         private List<GetReportDefinitionColumnFilter> columnFilters;
@@ -340,11 +295,7 @@ public final class GetReportDefinitionResult {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetReportDefinitionResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.category = defaults.category;
@@ -370,10 +321,12 @@ public final class GetReportDefinitionResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder category(String category) {
             this.category = Objects.requireNonNull(category);
             return this;
         }
+        @CustomType.Setter
         public Builder columnFilters(List<GetReportDefinitionColumnFilter> columnFilters) {
             this.columnFilters = Objects.requireNonNull(columnFilters);
             return this;
@@ -381,6 +334,7 @@ public final class GetReportDefinitionResult {
         public Builder columnFilters(GetReportDefinitionColumnFilter... columnFilters) {
             return columnFilters(List.of(columnFilters));
         }
+        @CustomType.Setter
         public Builder columnInfos(List<GetReportDefinitionColumnInfo> columnInfos) {
             this.columnInfos = Objects.requireNonNull(columnInfos);
             return this;
@@ -388,6 +342,7 @@ public final class GetReportDefinitionResult {
         public Builder columnInfos(GetReportDefinitionColumnInfo... columnInfos) {
             return columnInfos(List.of(columnInfos));
         }
+        @CustomType.Setter
         public Builder columnSortings(List<GetReportDefinitionColumnSorting> columnSortings) {
             this.columnSortings = Objects.requireNonNull(columnSortings);
             return this;
@@ -395,58 +350,72 @@ public final class GetReportDefinitionResult {
         public Builder columnSortings(GetReportDefinitionColumnSorting... columnSortings) {
             return columnSortings(List.of(columnSortings));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dataSource(String dataSource) {
             this.dataSource = Objects.requireNonNull(dataSource);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder displayOrder(Integer displayOrder) {
             this.displayOrder = Objects.requireNonNull(displayOrder);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isSeeded(Boolean isSeeded) {
             this.isSeeded = Objects.requireNonNull(isSeeded);
             return this;
         }
+        @CustomType.Setter
         public Builder parentId(String parentId) {
             this.parentId = Objects.requireNonNull(parentId);
             return this;
         }
+        @CustomType.Setter
         public Builder reportDefinitionId(String reportDefinitionId) {
             this.reportDefinitionId = Objects.requireNonNull(reportDefinitionId);
             return this;
         }
+        @CustomType.Setter
         public Builder scimFilter(String scimFilter) {
             this.scimFilter = Objects.requireNonNull(scimFilter);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder summaries(List<GetReportDefinitionSummary> summaries) {
             this.summaries = Objects.requireNonNull(summaries);
             return this;
@@ -454,19 +423,45 @@ public final class GetReportDefinitionResult {
         public Builder summaries(GetReportDefinitionSummary... summaries) {
             return summaries(List.of(summaries));
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetReportDefinitionResult build() {
-            return new GetReportDefinitionResult(category, columnFilters, columnInfos, columnSortings, compartmentId, dataSource, definedTags, description, displayName, displayOrder, freeformTags, id, isSeeded, parentId, reportDefinitionId, scimFilter, state, summaries, systemTags, timeCreated, timeUpdated);
+        }
+        public GetReportDefinitionResult build() {
+            final var o = new GetReportDefinitionResult();
+            o.category = category;
+            o.columnFilters = columnFilters;
+            o.columnInfos = columnInfos;
+            o.columnSortings = columnSortings;
+            o.compartmentId = compartmentId;
+            o.dataSource = dataSource;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.displayOrder = displayOrder;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isSeeded = isSeeded;
+            o.parentId = parentId;
+            o.reportDefinitionId = reportDefinitionId;
+            o.scimFilter = scimFilter;
+            o.state = state;
+            o.summaries = summaries;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

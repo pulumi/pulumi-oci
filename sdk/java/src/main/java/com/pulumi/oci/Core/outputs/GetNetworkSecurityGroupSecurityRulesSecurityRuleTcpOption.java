@@ -11,17 +11,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption {
-    private final List<GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange> destinationPortRanges;
-    private final List<GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange> sourcePortRanges;
+    private List<GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange> destinationPortRanges;
+    private List<GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange> sourcePortRanges;
 
-    @CustomType.Constructor
-    private GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption(
-        @CustomType.Parameter("destinationPortRanges") List<GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange> destinationPortRanges,
-        @CustomType.Parameter("sourcePortRanges") List<GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange> sourcePortRanges) {
-        this.destinationPortRanges = destinationPortRanges;
-        this.sourcePortRanges = sourcePortRanges;
-    }
-
+    private GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption() {}
     public List<GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange> destinationPortRanges() {
         return this.destinationPortRanges;
     }
@@ -36,21 +29,18 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption {
     public static Builder builder(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange> destinationPortRanges;
         private List<GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange> sourcePortRanges;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.destinationPortRanges = defaults.destinationPortRanges;
     	      this.sourcePortRanges = defaults.sourcePortRanges;
         }
 
+        @CustomType.Setter
         public Builder destinationPortRanges(List<GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange> destinationPortRanges) {
             this.destinationPortRanges = Objects.requireNonNull(destinationPortRanges);
             return this;
@@ -58,14 +48,19 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption {
         public Builder destinationPortRanges(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionDestinationPortRange... destinationPortRanges) {
             return destinationPortRanges(List.of(destinationPortRanges));
         }
+        @CustomType.Setter
         public Builder sourcePortRanges(List<GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange> sourcePortRanges) {
             this.sourcePortRanges = Objects.requireNonNull(sourcePortRanges);
             return this;
         }
         public Builder sourcePortRanges(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange... sourcePortRanges) {
             return sourcePortRanges(List.of(sourcePortRanges));
-        }        public GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption build() {
-            return new GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption(destinationPortRanges, sourcePortRanges);
+        }
+        public GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption build() {
+            final var o = new GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption();
+            o.destinationPortRanges = destinationPortRanges;
+            o.sourcePortRanges = sourcePortRanges;
+            return o;
         }
     }
 }

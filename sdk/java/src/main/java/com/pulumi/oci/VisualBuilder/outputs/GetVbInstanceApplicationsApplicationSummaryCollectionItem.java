@@ -13,35 +13,24 @@ public final class GetVbInstanceApplicationsApplicationSummaryCollectionItem {
      * @return The Visual Builder application identifier.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The Visual Builder application project identifier.
      * 
      */
-    private final String projectId;
+    private String projectId;
     /**
      * @return The state of visual builder application. Either LIVE or STAGED
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The Visual Builder application version
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetVbInstanceApplicationsApplicationSummaryCollectionItem(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("projectId") String projectId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("version") String version) {
-        this.id = id;
-        this.projectId = projectId;
-        this.state = state;
-        this.version = version;
-    }
-
+    private GetVbInstanceApplicationsApplicationSummaryCollectionItem() {}
     /**
      * @return The Visual Builder application identifier.
      * 
@@ -78,17 +67,13 @@ public final class GetVbInstanceApplicationsApplicationSummaryCollectionItem {
     public static Builder builder(GetVbInstanceApplicationsApplicationSummaryCollectionItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String projectId;
         private String state;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVbInstanceApplicationsApplicationSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -97,23 +82,33 @@ public final class GetVbInstanceApplicationsApplicationSummaryCollectionItem {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             this.projectId = Objects.requireNonNull(projectId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetVbInstanceApplicationsApplicationSummaryCollectionItem build() {
-            return new GetVbInstanceApplicationsApplicationSummaryCollectionItem(id, projectId, state, version);
+        }
+        public GetVbInstanceApplicationsApplicationSummaryCollectionItem build() {
+            final var o = new GetVbInstanceApplicationsApplicationSummaryCollectionItem();
+            o.id = id;
+            o.projectId = projectId;
+            o.state = state;
+            o.version = version;
+            return o;
         }
     }
 }

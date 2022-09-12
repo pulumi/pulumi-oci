@@ -19,108 +19,75 @@ public final class GetServiceConnectorResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The description of the resource. Avoid entering confidential information.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
      * 
      */
-    private final String lifecyleDetails;
-    private final String serviceConnectorId;
+    private String lifecyleDetails;
+    private String serviceConnectorId;
     /**
      * @return An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
      * 
      */
-    private final List<GetServiceConnectorSource> sources;
+    private List<GetServiceConnectorSource> sources;
     /**
      * @return The current state of the service connector.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
      * 
      */
-    private final List<GetServiceConnectorTarget> targets;
+    private List<GetServiceConnectorTarget> targets;
     /**
      * @return The list of tasks.
      * 
      */
-    private final List<GetServiceConnectorTask> tasks;
+    private List<GetServiceConnectorTask> tasks;
     /**
      * @return The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetServiceConnectorResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecyleDetails") String lifecyleDetails,
-        @CustomType.Parameter("serviceConnectorId") String serviceConnectorId,
-        @CustomType.Parameter("sources") List<GetServiceConnectorSource> sources,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("targets") List<GetServiceConnectorTarget> targets,
-        @CustomType.Parameter("tasks") List<GetServiceConnectorTask> tasks,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.lifecyleDetails = lifecyleDetails;
-        this.serviceConnectorId = serviceConnectorId;
-        this.sources = sources;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.targets = targets;
-        this.tasks = tasks;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetServiceConnectorResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
      * 
@@ -230,7 +197,7 @@ public final class GetServiceConnectorResult {
     public static Builder builder(GetServiceConnectorResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -247,11 +214,7 @@ public final class GetServiceConnectorResult {
         private List<GetServiceConnectorTask> tasks;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetServiceConnectorResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -271,38 +234,47 @@ public final class GetServiceConnectorResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecyleDetails(String lifecyleDetails) {
             this.lifecyleDetails = Objects.requireNonNull(lifecyleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder serviceConnectorId(String serviceConnectorId) {
             this.serviceConnectorId = Objects.requireNonNull(serviceConnectorId);
             return this;
         }
+        @CustomType.Setter
         public Builder sources(List<GetServiceConnectorSource> sources) {
             this.sources = Objects.requireNonNull(sources);
             return this;
@@ -310,14 +282,17 @@ public final class GetServiceConnectorResult {
         public Builder sources(GetServiceConnectorSource... sources) {
             return sources(List.of(sources));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder targets(List<GetServiceConnectorTarget> targets) {
             this.targets = Objects.requireNonNull(targets);
             return this;
@@ -325,6 +300,7 @@ public final class GetServiceConnectorResult {
         public Builder targets(GetServiceConnectorTarget... targets) {
             return targets(List.of(targets));
         }
+        @CustomType.Setter
         public Builder tasks(List<GetServiceConnectorTask> tasks) {
             this.tasks = Objects.requireNonNull(tasks);
             return this;
@@ -332,15 +308,34 @@ public final class GetServiceConnectorResult {
         public Builder tasks(GetServiceConnectorTask... tasks) {
             return tasks(List.of(tasks));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetServiceConnectorResult build() {
-            return new GetServiceConnectorResult(compartmentId, definedTags, description, displayName, freeformTags, id, lifecyleDetails, serviceConnectorId, sources, state, systemTags, targets, tasks, timeCreated, timeUpdated);
+        }
+        public GetServiceConnectorResult build() {
+            final var o = new GetServiceConnectorResult();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.lifecyleDetails = lifecyleDetails;
+            o.serviceConnectorId = serviceConnectorId;
+            o.sources = sources;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.targets = targets;
+            o.tasks = tasks;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

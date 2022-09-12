@@ -14,35 +14,24 @@ public final class GetProfileTargetTagItem {
      * @return The name you use to refer to the tag, also known as the tag key.
      * 
      */
-    private final String tagDefinitionName;
+    private String tagDefinitionName;
     /**
      * @return The name of the tag namespace.
      * 
      */
-    private final String tagNamespaceName;
+    private String tagNamespaceName;
     /**
      * @return Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
      * 
      */
-    private final String tagValueType;
+    private String tagValueType;
     /**
      * @return The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
      * 
      */
-    private final List<String> tagValues;
+    private List<String> tagValues;
 
-    @CustomType.Constructor
-    private GetProfileTargetTagItem(
-        @CustomType.Parameter("tagDefinitionName") String tagDefinitionName,
-        @CustomType.Parameter("tagNamespaceName") String tagNamespaceName,
-        @CustomType.Parameter("tagValueType") String tagValueType,
-        @CustomType.Parameter("tagValues") List<String> tagValues) {
-        this.tagDefinitionName = tagDefinitionName;
-        this.tagNamespaceName = tagNamespaceName;
-        this.tagValueType = tagValueType;
-        this.tagValues = tagValues;
-    }
-
+    private GetProfileTargetTagItem() {}
     /**
      * @return The name you use to refer to the tag, also known as the tag key.
      * 
@@ -79,17 +68,13 @@ public final class GetProfileTargetTagItem {
     public static Builder builder(GetProfileTargetTagItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String tagDefinitionName;
         private String tagNamespaceName;
         private String tagValueType;
         private List<String> tagValues;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetProfileTargetTagItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.tagDefinitionName = defaults.tagDefinitionName;
@@ -98,26 +83,36 @@ public final class GetProfileTargetTagItem {
     	      this.tagValues = defaults.tagValues;
         }
 
+        @CustomType.Setter
         public Builder tagDefinitionName(String tagDefinitionName) {
             this.tagDefinitionName = Objects.requireNonNull(tagDefinitionName);
             return this;
         }
+        @CustomType.Setter
         public Builder tagNamespaceName(String tagNamespaceName) {
             this.tagNamespaceName = Objects.requireNonNull(tagNamespaceName);
             return this;
         }
+        @CustomType.Setter
         public Builder tagValueType(String tagValueType) {
             this.tagValueType = Objects.requireNonNull(tagValueType);
             return this;
         }
+        @CustomType.Setter
         public Builder tagValues(List<String> tagValues) {
             this.tagValues = Objects.requireNonNull(tagValues);
             return this;
         }
         public Builder tagValues(String... tagValues) {
             return tagValues(List.of(tagValues));
-        }        public GetProfileTargetTagItem build() {
-            return new GetProfileTargetTagItem(tagDefinitionName, tagNamespaceName, tagValueType, tagValues);
+        }
+        public GetProfileTargetTagItem build() {
+            final var o = new GetProfileTargetTagItem();
+            o.tagDefinitionName = tagDefinitionName;
+            o.tagNamespaceName = tagNamespaceName;
+            o.tagValueType = tagValueType;
+            o.tagValues = tagValues;
+            return o;
         }
     }
 }

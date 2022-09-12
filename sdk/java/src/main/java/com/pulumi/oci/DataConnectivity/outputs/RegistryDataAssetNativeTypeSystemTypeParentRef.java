@@ -15,13 +15,9 @@ public final class RegistryDataAssetNativeTypeSystemTypeParentRef {
      * @return (Updatable) Key of the parent object.
      * 
      */
-    private final @Nullable String parent;
+    private @Nullable String parent;
 
-    @CustomType.Constructor
-    private RegistryDataAssetNativeTypeSystemTypeParentRef(@CustomType.Parameter("parent") @Nullable String parent) {
-        this.parent = parent;
-    }
-
+    private RegistryDataAssetNativeTypeSystemTypeParentRef() {}
     /**
      * @return (Updatable) Key of the parent object.
      * 
@@ -37,24 +33,24 @@ public final class RegistryDataAssetNativeTypeSystemTypeParentRef {
     public static Builder builder(RegistryDataAssetNativeTypeSystemTypeParentRef defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String parent;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RegistryDataAssetNativeTypeSystemTypeParentRef defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.parent = defaults.parent;
         }
 
+        @CustomType.Setter
         public Builder parent(@Nullable String parent) {
             this.parent = parent;
             return this;
-        }        public RegistryDataAssetNativeTypeSystemTypeParentRef build() {
-            return new RegistryDataAssetNativeTypeSystemTypeParentRef(parent);
+        }
+        public RegistryDataAssetNativeTypeSystemTypeParentRef build() {
+            final var o = new RegistryDataAssetNativeTypeSystemTypeParentRef();
+            o.parent = parent;
+            return o;
         }
     }
 }

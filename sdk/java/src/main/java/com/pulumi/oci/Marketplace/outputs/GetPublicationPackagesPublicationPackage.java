@@ -13,42 +13,29 @@ public final class GetPublicationPackagesPublicationPackage {
      * @return The ID of the listing that the specified package belongs to.
      * 
      */
-    private final String listingId;
+    private String listingId;
     /**
      * @return A filter to return only packages that match the given package type exactly.
      * 
      */
-    private final String packageType;
+    private String packageType;
     /**
      * @return The version of the package. Package versions are unique within a listing.
      * 
      */
-    private final String packageVersion;
+    private String packageVersion;
     /**
      * @return The unique identifier for the package resource.
      * 
      */
-    private final String resourceId;
+    private String resourceId;
     /**
      * @return The date and time the publication package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetPublicationPackagesPublicationPackage(
-        @CustomType.Parameter("listingId") String listingId,
-        @CustomType.Parameter("packageType") String packageType,
-        @CustomType.Parameter("packageVersion") String packageVersion,
-        @CustomType.Parameter("resourceId") String resourceId,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.listingId = listingId;
-        this.packageType = packageType;
-        this.packageVersion = packageVersion;
-        this.resourceId = resourceId;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetPublicationPackagesPublicationPackage() {}
     /**
      * @return The ID of the listing that the specified package belongs to.
      * 
@@ -92,18 +79,14 @@ public final class GetPublicationPackagesPublicationPackage {
     public static Builder builder(GetPublicationPackagesPublicationPackage defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String listingId;
         private String packageType;
         private String packageVersion;
         private String resourceId;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetPublicationPackagesPublicationPackage defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.listingId = defaults.listingId;
@@ -113,27 +96,39 @@ public final class GetPublicationPackagesPublicationPackage {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder listingId(String listingId) {
             this.listingId = Objects.requireNonNull(listingId);
             return this;
         }
+        @CustomType.Setter
         public Builder packageType(String packageType) {
             this.packageType = Objects.requireNonNull(packageType);
             return this;
         }
+        @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
             this.packageVersion = Objects.requireNonNull(packageVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceId(String resourceId) {
             this.resourceId = Objects.requireNonNull(resourceId);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetPublicationPackagesPublicationPackage build() {
-            return new GetPublicationPackagesPublicationPackage(listingId, packageType, packageVersion, resourceId, timeCreated);
+        }
+        public GetPublicationPackagesPublicationPackage build() {
+            final var o = new GetPublicationPackagesPublicationPackage();
+            o.listingId = listingId;
+            o.packageType = packageType;
+            o.packageVersion = packageVersion;
+            o.resourceId = resourceId;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

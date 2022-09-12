@@ -77,7 +77,7 @@ class GetViewsResult:
 
     @property
     @pulumi.getter
-    def scope(self) -> str:
+    def scope(self) -> Optional[str]:
         return pulumi.get(self, "scope")
 
     @property
@@ -174,7 +174,7 @@ def get_views_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      display_name: Optional[pulumi.Input[Optional[str]]] = None,
                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetViewsFilterArgs']]]]] = None,
                      id: Optional[pulumi.Input[Optional[str]]] = None,
-                     scope: Optional[pulumi.Input[str]] = None,
+                     scope: Optional[pulumi.Input[Optional[str]]] = None,
                      state: Optional[pulumi.Input[Optional[str]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetViewsResult]:
     """

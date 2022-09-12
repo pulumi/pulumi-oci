@@ -18,71 +18,44 @@ public final class GetSteeringPolicyAttachmentsResult {
      * @return The OCID of the compartment containing the steering policy attachment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable String domain;
-    private final @Nullable String domainContains;
-    private final @Nullable List<GetSteeringPolicyAttachmentsFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable String domain;
+    private @Nullable String domainContains;
+    private @Nullable List<GetSteeringPolicyAttachmentsFilter> filters;
     /**
      * @return The OCID of the resource.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The current state of the resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The list of steering_policy_attachments.
      * 
      */
-    private final List<GetSteeringPolicyAttachmentsSteeringPolicyAttachment> steeringPolicyAttachments;
+    private List<GetSteeringPolicyAttachmentsSteeringPolicyAttachment> steeringPolicyAttachments;
     /**
      * @return The OCID of the attached steering policy.
      * 
      */
-    private final @Nullable String steeringPolicyId;
-    private final @Nullable String timeCreatedGreaterThanOrEqualTo;
-    private final @Nullable String timeCreatedLessThan;
+    private @Nullable String steeringPolicyId;
+    private @Nullable String timeCreatedGreaterThanOrEqualTo;
+    private @Nullable String timeCreatedLessThan;
     /**
      * @return The OCID of the attached zone.
      * 
      */
-    private final @Nullable String zoneId;
+    private @Nullable String zoneId;
 
-    @CustomType.Constructor
-    private GetSteeringPolicyAttachmentsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("domain") @Nullable String domain,
-        @CustomType.Parameter("domainContains") @Nullable String domainContains,
-        @CustomType.Parameter("filters") @Nullable List<GetSteeringPolicyAttachmentsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("steeringPolicyAttachments") List<GetSteeringPolicyAttachmentsSteeringPolicyAttachment> steeringPolicyAttachments,
-        @CustomType.Parameter("steeringPolicyId") @Nullable String steeringPolicyId,
-        @CustomType.Parameter("timeCreatedGreaterThanOrEqualTo") @Nullable String timeCreatedGreaterThanOrEqualTo,
-        @CustomType.Parameter("timeCreatedLessThan") @Nullable String timeCreatedLessThan,
-        @CustomType.Parameter("zoneId") @Nullable String zoneId) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.domain = domain;
-        this.domainContains = domainContains;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.steeringPolicyAttachments = steeringPolicyAttachments;
-        this.steeringPolicyId = steeringPolicyId;
-        this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-        this.timeCreatedLessThan = timeCreatedLessThan;
-        this.zoneId = zoneId;
-    }
-
+    private GetSteeringPolicyAttachmentsResult() {}
     /**
      * @return The OCID of the compartment containing the steering policy attachment.
      * 
@@ -155,7 +128,7 @@ public final class GetSteeringPolicyAttachmentsResult {
     public static Builder builder(GetSteeringPolicyAttachmentsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -169,11 +142,7 @@ public final class GetSteeringPolicyAttachmentsResult {
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
         private @Nullable String zoneId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSteeringPolicyAttachmentsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -190,22 +159,27 @@ public final class GetSteeringPolicyAttachmentsResult {
     	      this.zoneId = defaults.zoneId;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder domain(@Nullable String domain) {
             this.domain = domain;
             return this;
         }
+        @CustomType.Setter
         public Builder domainContains(@Nullable String domainContains) {
             this.domainContains = domainContains;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSteeringPolicyAttachmentsFilter> filters) {
             this.filters = filters;
             return this;
@@ -213,14 +187,17 @@ public final class GetSteeringPolicyAttachmentsResult {
         public Builder filters(GetSteeringPolicyAttachmentsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder steeringPolicyAttachments(List<GetSteeringPolicyAttachmentsSteeringPolicyAttachment> steeringPolicyAttachments) {
             this.steeringPolicyAttachments = Objects.requireNonNull(steeringPolicyAttachments);
             return this;
@@ -228,23 +205,41 @@ public final class GetSteeringPolicyAttachmentsResult {
         public Builder steeringPolicyAttachments(GetSteeringPolicyAttachmentsSteeringPolicyAttachment... steeringPolicyAttachments) {
             return steeringPolicyAttachments(List.of(steeringPolicyAttachments));
         }
+        @CustomType.Setter
         public Builder steeringPolicyId(@Nullable String steeringPolicyId) {
             this.steeringPolicyId = steeringPolicyId;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }
+        @CustomType.Setter
         public Builder zoneId(@Nullable String zoneId) {
             this.zoneId = zoneId;
             return this;
-        }        public GetSteeringPolicyAttachmentsResult build() {
-            return new GetSteeringPolicyAttachmentsResult(compartmentId, displayName, domain, domainContains, filters, id, state, steeringPolicyAttachments, steeringPolicyId, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, zoneId);
+        }
+        public GetSteeringPolicyAttachmentsResult build() {
+            final var o = new GetSteeringPolicyAttachmentsResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.domain = domain;
+            o.domainContains = domainContains;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.steeringPolicyAttachments = steeringPolicyAttachments;
+            o.steeringPolicyId = steeringPolicyId;
+            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            o.timeCreatedLessThan = timeCreatedLessThan;
+            o.zoneId = zoneId;
+            return o;
         }
     }
 }

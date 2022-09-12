@@ -15,13 +15,9 @@ public final class DbSystemMaintenanceWindowMonth {
      * @return (Updatable) Name of the month of the year.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private DbSystemMaintenanceWindowMonth(@CustomType.Parameter("name") @Nullable String name) {
-        this.name = name;
-    }
-
+    private DbSystemMaintenanceWindowMonth() {}
     /**
      * @return (Updatable) Name of the month of the year.
      * 
@@ -37,24 +33,24 @@ public final class DbSystemMaintenanceWindowMonth {
     public static Builder builder(DbSystemMaintenanceWindowMonth defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DbSystemMaintenanceWindowMonth defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public DbSystemMaintenanceWindowMonth build() {
-            return new DbSystemMaintenanceWindowMonth(name);
+        }
+        public DbSystemMaintenanceWindowMonth build() {
+            final var o = new DbSystemMaintenanceWindowMonth();
+            o.name = name;
+            return o;
         }
     }
 }

@@ -16,28 +16,19 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
      * @return The details of the schema or operation.
      * 
      */
-    private final List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail> details;
+    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail> details;
     /**
      * @return The message of the rationale.
      * 
      */
-    private final String message;
+    private String message;
     /**
      * @return The list of recommendations.
      * 
      */
-    private final List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation> recommendations;
+    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation> recommendations;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding(
-        @CustomType.Parameter("details") List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail> details,
-        @CustomType.Parameter("message") String message,
-        @CustomType.Parameter("recommendations") List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation> recommendations) {
-        this.details = details;
-        this.message = message;
-        this.recommendations = recommendations;
-    }
-
+    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding() {}
     /**
      * @return The details of the schema or operation.
      * 
@@ -67,16 +58,12 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
     public static Builder builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail> details;
         private String message;
         private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation> recommendations;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.details = defaults.details;
@@ -84,6 +71,7 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
     	      this.recommendations = defaults.recommendations;
         }
 
+        @CustomType.Setter
         public Builder details(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail> details) {
             this.details = Objects.requireNonNull(details);
             return this;
@@ -91,18 +79,25 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
         public Builder details(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail... details) {
             return details(List.of(details));
         }
+        @CustomType.Setter
         public Builder message(String message) {
             this.message = Objects.requireNonNull(message);
             return this;
         }
+        @CustomType.Setter
         public Builder recommendations(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation> recommendations) {
             this.recommendations = Objects.requireNonNull(recommendations);
             return this;
         }
         public Builder recommendations(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation... recommendations) {
             return recommendations(List.of(recommendations));
-        }        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding build() {
-            return new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding(details, message, recommendations);
+        }
+        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding build() {
+            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding();
+            o.details = details;
+            o.message = message;
+            o.recommendations = recommendations;
+            return o;
         }
     }
 }

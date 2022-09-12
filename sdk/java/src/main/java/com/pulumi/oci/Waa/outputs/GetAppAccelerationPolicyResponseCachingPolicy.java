@@ -13,13 +13,9 @@ public final class GetAppAccelerationPolicyResponseCachingPolicy {
      * @return When false, responses will not be cached by the backend based on response headers.
      * 
      */
-    private final Boolean isResponseHeaderBasedCachingEnabled;
+    private Boolean isResponseHeaderBasedCachingEnabled;
 
-    @CustomType.Constructor
-    private GetAppAccelerationPolicyResponseCachingPolicy(@CustomType.Parameter("isResponseHeaderBasedCachingEnabled") Boolean isResponseHeaderBasedCachingEnabled) {
-        this.isResponseHeaderBasedCachingEnabled = isResponseHeaderBasedCachingEnabled;
-    }
-
+    private GetAppAccelerationPolicyResponseCachingPolicy() {}
     /**
      * @return When false, responses will not be cached by the backend based on response headers.
      * 
@@ -35,24 +31,24 @@ public final class GetAppAccelerationPolicyResponseCachingPolicy {
     public static Builder builder(GetAppAccelerationPolicyResponseCachingPolicy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isResponseHeaderBasedCachingEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAppAccelerationPolicyResponseCachingPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isResponseHeaderBasedCachingEnabled = defaults.isResponseHeaderBasedCachingEnabled;
         }
 
+        @CustomType.Setter
         public Builder isResponseHeaderBasedCachingEnabled(Boolean isResponseHeaderBasedCachingEnabled) {
             this.isResponseHeaderBasedCachingEnabled = Objects.requireNonNull(isResponseHeaderBasedCachingEnabled);
             return this;
-        }        public GetAppAccelerationPolicyResponseCachingPolicy build() {
-            return new GetAppAccelerationPolicyResponseCachingPolicy(isResponseHeaderBasedCachingEnabled);
+        }
+        public GetAppAccelerationPolicyResponseCachingPolicy build() {
+            final var o = new GetAppAccelerationPolicyResponseCachingPolicy();
+            o.isResponseHeaderBasedCachingEnabled = isResponseHeaderBasedCachingEnabled;
+            return o;
         }
     }
 }

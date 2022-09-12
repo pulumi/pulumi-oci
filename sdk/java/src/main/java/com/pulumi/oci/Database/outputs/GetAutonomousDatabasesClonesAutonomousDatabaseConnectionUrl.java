@@ -13,35 +13,24 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl {
      * @return Oracle Application Express (APEX) URL.
      * 
      */
-    private final String apexUrl;
+    private String apexUrl;
     /**
      * @return The URL of the Graph Studio for the Autonomous Database.
      * 
      */
-    private final String graphStudioUrl;
+    private String graphStudioUrl;
     /**
      * @return Oracle Machine Learning user management URL.
      * 
      */
-    private final String machineLearningUserManagementUrl;
+    private String machineLearningUserManagementUrl;
     /**
      * @return Oracle SQL Developer Web URL.
      * 
      */
-    private final String sqlDevWebUrl;
+    private String sqlDevWebUrl;
 
-    @CustomType.Constructor
-    private GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl(
-        @CustomType.Parameter("apexUrl") String apexUrl,
-        @CustomType.Parameter("graphStudioUrl") String graphStudioUrl,
-        @CustomType.Parameter("machineLearningUserManagementUrl") String machineLearningUserManagementUrl,
-        @CustomType.Parameter("sqlDevWebUrl") String sqlDevWebUrl) {
-        this.apexUrl = apexUrl;
-        this.graphStudioUrl = graphStudioUrl;
-        this.machineLearningUserManagementUrl = machineLearningUserManagementUrl;
-        this.sqlDevWebUrl = sqlDevWebUrl;
-    }
-
+    private GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl() {}
     /**
      * @return Oracle Application Express (APEX) URL.
      * 
@@ -78,17 +67,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl {
     public static Builder builder(GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apexUrl;
         private String graphStudioUrl;
         private String machineLearningUserManagementUrl;
         private String sqlDevWebUrl;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apexUrl = defaults.apexUrl;
@@ -97,23 +82,33 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl {
     	      this.sqlDevWebUrl = defaults.sqlDevWebUrl;
         }
 
+        @CustomType.Setter
         public Builder apexUrl(String apexUrl) {
             this.apexUrl = Objects.requireNonNull(apexUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder graphStudioUrl(String graphStudioUrl) {
             this.graphStudioUrl = Objects.requireNonNull(graphStudioUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder machineLearningUserManagementUrl(String machineLearningUserManagementUrl) {
             this.machineLearningUserManagementUrl = Objects.requireNonNull(machineLearningUserManagementUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder sqlDevWebUrl(String sqlDevWebUrl) {
             this.sqlDevWebUrl = Objects.requireNonNull(sqlDevWebUrl);
             return this;
-        }        public GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl build() {
-            return new GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl(apexUrl, graphStudioUrl, machineLearningUserManagementUrl, sqlDevWebUrl);
+        }
+        public GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl build() {
+            final var o = new GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl();
+            o.apexUrl = apexUrl;
+            o.graphStudioUrl = graphStudioUrl;
+            o.machineLearningUserManagementUrl = machineLearningUserManagementUrl;
+            o.sqlDevWebUrl = sqlDevWebUrl;
+            return o;
         }
     }
 }

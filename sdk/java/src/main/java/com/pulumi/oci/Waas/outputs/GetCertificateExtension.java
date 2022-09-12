@@ -14,28 +14,19 @@ public final class GetCertificateExtension {
      * @return The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
      * 
      */
-    private final Boolean isCritical;
+    private Boolean isCritical;
     /**
      * @return The certificate extension name.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The certificate extension value.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetCertificateExtension(
-        @CustomType.Parameter("isCritical") Boolean isCritical,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("value") String value) {
-        this.isCritical = isCritical;
-        this.name = name;
-        this.value = value;
-    }
-
+    private GetCertificateExtension() {}
     /**
      * @return The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
      * 
@@ -65,16 +56,12 @@ public final class GetCertificateExtension {
     public static Builder builder(GetCertificateExtension defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isCritical;
         private String name;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificateExtension defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isCritical = defaults.isCritical;
@@ -82,19 +69,27 @@ public final class GetCertificateExtension {
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder isCritical(Boolean isCritical) {
             this.isCritical = Objects.requireNonNull(isCritical);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetCertificateExtension build() {
-            return new GetCertificateExtension(isCritical, name, value);
+        }
+        public GetCertificateExtension build() {
+            final var o = new GetCertificateExtension();
+            o.isCritical = isCritical;
+            o.name = name;
+            o.value = value;
+            return o;
         }
     }
 }

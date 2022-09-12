@@ -13,21 +13,14 @@ public final class GetIamWorkRequestLogsIamWorkRequestLog {
      * @return A human-readable error string.
      * 
      */
-    private final String message;
+    private String message;
     /**
      * @return Date and time the log was written, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timestamp;
+    private String timestamp;
 
-    @CustomType.Constructor
-    private GetIamWorkRequestLogsIamWorkRequestLog(
-        @CustomType.Parameter("message") String message,
-        @CustomType.Parameter("timestamp") String timestamp) {
-        this.message = message;
-        this.timestamp = timestamp;
-    }
-
+    private GetIamWorkRequestLogsIamWorkRequestLog() {}
     /**
      * @return A human-readable error string.
      * 
@@ -50,30 +43,32 @@ public final class GetIamWorkRequestLogsIamWorkRequestLog {
     public static Builder builder(GetIamWorkRequestLogsIamWorkRequestLog defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String message;
         private String timestamp;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIamWorkRequestLogsIamWorkRequestLog defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.message = defaults.message;
     	      this.timestamp = defaults.timestamp;
         }
 
+        @CustomType.Setter
         public Builder message(String message) {
             this.message = Objects.requireNonNull(message);
             return this;
         }
+        @CustomType.Setter
         public Builder timestamp(String timestamp) {
             this.timestamp = Objects.requireNonNull(timestamp);
             return this;
-        }        public GetIamWorkRequestLogsIamWorkRequestLog build() {
-            return new GetIamWorkRequestLogsIamWorkRequestLog(message, timestamp);
+        }
+        public GetIamWorkRequestLogsIamWorkRequestLog build() {
+            final var o = new GetIamWorkRequestLogsIamWorkRequestLog();
+            o.message = message;
+            o.timestamp = timestamp;
+            return o;
         }
     }
 }

@@ -11,17 +11,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetContainerImagesContainerImageCollection {
-    private final List<GetContainerImagesContainerImageCollectionItem> items;
-    private final Integer remainingItemsCount;
+    private List<GetContainerImagesContainerImageCollectionItem> items;
+    private Integer remainingItemsCount;
 
-    @CustomType.Constructor
-    private GetContainerImagesContainerImageCollection(
-        @CustomType.Parameter("items") List<GetContainerImagesContainerImageCollectionItem> items,
-        @CustomType.Parameter("remainingItemsCount") Integer remainingItemsCount) {
-        this.items = items;
-        this.remainingItemsCount = remainingItemsCount;
-    }
-
+    private GetContainerImagesContainerImageCollection() {}
     public List<GetContainerImagesContainerImageCollectionItem> items() {
         return this.items;
     }
@@ -36,21 +29,18 @@ public final class GetContainerImagesContainerImageCollection {
     public static Builder builder(GetContainerImagesContainerImageCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetContainerImagesContainerImageCollectionItem> items;
         private Integer remainingItemsCount;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetContainerImagesContainerImageCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
     	      this.remainingItemsCount = defaults.remainingItemsCount;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetContainerImagesContainerImageCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -58,11 +48,16 @@ public final class GetContainerImagesContainerImageCollection {
         public Builder items(GetContainerImagesContainerImageCollectionItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder remainingItemsCount(Integer remainingItemsCount) {
             this.remainingItemsCount = Objects.requireNonNull(remainingItemsCount);
             return this;
-        }        public GetContainerImagesContainerImageCollection build() {
-            return new GetContainerImagesContainerImageCollection(items, remainingItemsCount);
+        }
+        public GetContainerImagesContainerImageCollection build() {
+            final var o = new GetContainerImagesContainerImageCollection();
+            o.items = items;
+            o.remainingItemsCount = remainingItemsCount;
+            return o;
         }
     }
 }

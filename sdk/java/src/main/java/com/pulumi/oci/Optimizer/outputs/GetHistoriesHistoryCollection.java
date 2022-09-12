@@ -14,13 +14,9 @@ public final class GetHistoriesHistoryCollection {
      * @return A collection of history summaries.
      * 
      */
-    private final List<GetHistoriesHistoryCollectionItem> items;
+    private List<GetHistoriesHistoryCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetHistoriesHistoryCollection(@CustomType.Parameter("items") List<GetHistoriesHistoryCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetHistoriesHistoryCollection() {}
     /**
      * @return A collection of history summaries.
      * 
@@ -36,27 +32,27 @@ public final class GetHistoriesHistoryCollection {
     public static Builder builder(GetHistoriesHistoryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetHistoriesHistoryCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetHistoriesHistoryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetHistoriesHistoryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetHistoriesHistoryCollectionItem... items) {
             return items(List.of(items));
-        }        public GetHistoriesHistoryCollection build() {
-            return new GetHistoriesHistoryCollection(items);
+        }
+        public GetHistoriesHistoryCollection build() {
+            final var o = new GetHistoriesHistoryCollection();
+            o.items = items;
+            return o;
         }
     }
 }

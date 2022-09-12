@@ -18,45 +18,30 @@ public final class GetNetworkSourcesResult {
      * @return The OCID of the tenancy containing the network source. The tenancy is the root compartment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetNetworkSourcesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetNetworkSourcesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name you assign to the network source during creation. The name must be unique across the tenancy and cannot be changed.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return The list of network_sources.
      * 
      */
-    private final List<GetNetworkSourcesNetworkSource> networkSources;
+    private List<GetNetworkSourcesNetworkSource> networkSources;
     /**
      * @return The network source object&#39;s current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetNetworkSourcesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetNetworkSourcesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("networkSources") List<GetNetworkSourcesNetworkSource> networkSources,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.name = name;
-        this.networkSources = networkSources;
-        this.state = state;
-    }
-
+    private GetNetworkSourcesResult() {}
     /**
      * @return The OCID of the tenancy containing the network source. The tenancy is the root compartment.
      * 
@@ -103,7 +88,7 @@ public final class GetNetworkSourcesResult {
     public static Builder builder(GetNetworkSourcesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetNetworkSourcesFilter> filters;
@@ -111,11 +96,7 @@ public final class GetNetworkSourcesResult {
         private @Nullable String name;
         private List<GetNetworkSourcesNetworkSource> networkSources;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkSourcesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,10 +107,12 @@ public final class GetNetworkSourcesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkSourcesFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,14 +120,17 @@ public final class GetNetworkSourcesResult {
         public Builder filters(GetNetworkSourcesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder networkSources(List<GetNetworkSourcesNetworkSource> networkSources) {
             this.networkSources = Objects.requireNonNull(networkSources);
             return this;
@@ -152,11 +138,20 @@ public final class GetNetworkSourcesResult {
         public Builder networkSources(GetNetworkSourcesNetworkSource... networkSources) {
             return networkSources(List.of(networkSources));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetNetworkSourcesResult build() {
-            return new GetNetworkSourcesResult(compartmentId, filters, id, name, networkSources, state);
+        }
+        public GetNetworkSourcesResult build() {
+            final var o = new GetNetworkSourcesResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.name = name;
+            o.networkSources = networkSources;
+            o.state = state;
+            return o;
         }
     }
 }

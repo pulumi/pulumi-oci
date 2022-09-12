@@ -10,17 +10,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList {
-    private final String ipAddressListName;
-    private final List<String> ipAddressListValues;
+    private String ipAddressListName;
+    private List<String> ipAddressListValues;
 
-    @CustomType.Constructor
-    private GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList(
-        @CustomType.Parameter("ipAddressListName") String ipAddressListName,
-        @CustomType.Parameter("ipAddressListValues") List<String> ipAddressListValues) {
-        this.ipAddressListName = ipAddressListName;
-        this.ipAddressListValues = ipAddressListValues;
-    }
-
+    private GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList() {}
     public String ipAddressListName() {
         return this.ipAddressListName;
     }
@@ -35,33 +28,35 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
     public static Builder builder(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String ipAddressListName;
         private List<String> ipAddressListValues;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ipAddressListName = defaults.ipAddressListName;
     	      this.ipAddressListValues = defaults.ipAddressListValues;
         }
 
+        @CustomType.Setter
         public Builder ipAddressListName(String ipAddressListName) {
             this.ipAddressListName = Objects.requireNonNull(ipAddressListName);
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddressListValues(List<String> ipAddressListValues) {
             this.ipAddressListValues = Objects.requireNonNull(ipAddressListValues);
             return this;
         }
         public Builder ipAddressListValues(String... ipAddressListValues) {
             return ipAddressListValues(List.of(ipAddressListValues));
-        }        public GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList build() {
-            return new GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList(ipAddressListName, ipAddressListValues);
+        }
+        public GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList build() {
+            final var o = new GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressList();
+            o.ipAddressListName = ipAddressListName;
+            o.ipAddressListValues = ipAddressListValues;
+            return o;
         }
     }
 }

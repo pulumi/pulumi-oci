@@ -43,7 +43,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.NewVolume(ctx, "testVolume", &Core.VolumeArgs{
-//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				AutotunePolicies: core.VolumeAutotunePolicyArray{
+//					&core.VolumeAutotunePolicyArgs{
+//						AutotuneType: pulumi.Any(_var.Volume_autotune_policies_autotune_type),
+//						MaxVpusPerGb: pulumi.Any(_var.Volume_autotune_policies_max_vpus_per_gb),
+//					},
+//				},
 //				AvailabilityDomain: pulumi.Any(_var.Volume_availability_domain),
 //				BackupPolicyId:     pulumi.Any(data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id),
 //				BlockVolumeReplicas: core.VolumeBlockVolumeReplicaArray{
@@ -91,8 +97,10 @@ import (
 type Volume struct {
 	pulumi.CustomResourceState
 
-	// The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+	// The number of Volume Performance Units per GB that this volume is effectively tuned to.
 	AutoTunedVpusPerGb pulumi.StringOutput `pulumi:"autoTunedVpusPerGb"`
+	// (Updatable) The list of autotune policies to be enabled for this volume.
+	AutotunePolicies VolumeAutotunePolicyArrayOutput `pulumi:"autotunePolicies"`
 	// (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
@@ -110,7 +118,7 @@ type Volume struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
+	// (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled pulumi.BoolOutput `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
 	IsHydrated pulumi.BoolOutput `pulumi:"isHydrated"`
@@ -172,8 +180,10 @@ func GetVolume(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Volume resources.
 type volumeState struct {
-	// The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+	// The number of Volume Performance Units per GB that this volume is effectively tuned to.
 	AutoTunedVpusPerGb *string `pulumi:"autoTunedVpusPerGb"`
+	// (Updatable) The list of autotune policies to be enabled for this volume.
+	AutotunePolicies []VolumeAutotunePolicy `pulumi:"autotunePolicies"`
 	// (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
@@ -191,7 +201,7 @@ type volumeState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
+	// (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled *bool `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
 	IsHydrated *bool `pulumi:"isHydrated"`
@@ -219,8 +229,10 @@ type volumeState struct {
 }
 
 type VolumeState struct {
-	// The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+	// The number of Volume Performance Units per GB that this volume is effectively tuned to.
 	AutoTunedVpusPerGb pulumi.StringPtrInput
+	// (Updatable) The list of autotune policies to be enabled for this volume.
+	AutotunePolicies VolumeAutotunePolicyArrayInput
 	// (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringPtrInput
 	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
@@ -238,7 +250,7 @@ type VolumeState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
+	// (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled pulumi.BoolPtrInput
 	// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
 	IsHydrated pulumi.BoolPtrInput
@@ -270,6 +282,8 @@ func (VolumeState) ElementType() reflect.Type {
 }
 
 type volumeArgs struct {
+	// (Updatable) The list of autotune policies to be enabled for this volume.
+	AutotunePolicies []VolumeAutotunePolicy `pulumi:"autotunePolicies"`
 	// (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
@@ -287,7 +301,7 @@ type volumeArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
+	// (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled *bool `pulumi:"isAutoTuneEnabled"`
 	// (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
@@ -306,6 +320,8 @@ type volumeArgs struct {
 
 // The set of arguments for constructing a Volume resource.
 type VolumeArgs struct {
+	// (Updatable) The list of autotune policies to be enabled for this volume.
+	AutotunePolicies VolumeAutotunePolicyArrayInput
 	// (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput
 	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
@@ -323,7 +339,7 @@ type VolumeArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
+	// (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled pulumi.BoolPtrInput
 	// (Updatable) The OCID of the Key Management key to assign as the master encryption key for the volume.
 	KmsKeyId pulumi.StringPtrInput
@@ -427,9 +443,14 @@ func (o VolumeOutput) ToVolumeOutputWithContext(ctx context.Context) VolumeOutpu
 	return o
 }
 
-// The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+// The number of Volume Performance Units per GB that this volume is effectively tuned to.
 func (o VolumeOutput) AutoTunedVpusPerGb() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.AutoTunedVpusPerGb }).(pulumi.StringOutput)
+}
+
+// (Updatable) The list of autotune policies to be enabled for this volume.
+func (o VolumeOutput) AutotunePolicies() VolumeAutotunePolicyArrayOutput {
+	return o.ApplyT(func(v *Volume) VolumeAutotunePolicyArrayOutput { return v.AutotunePolicies }).(VolumeAutotunePolicyArrayOutput)
 }
 
 // (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
@@ -473,7 +494,7 @@ func (o VolumeOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Volume) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether the auto-tune performance is enabled for this volume.
+// (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 func (o VolumeOutput) IsAutoTuneEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Volume) pulumi.BoolOutput { return v.IsAutoTuneEnabled }).(pulumi.BoolOutput)
 }

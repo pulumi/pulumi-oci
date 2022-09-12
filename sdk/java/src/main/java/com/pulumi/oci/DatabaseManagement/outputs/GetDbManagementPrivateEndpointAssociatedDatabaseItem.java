@@ -13,35 +13,24 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabaseItem {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The name of the database.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The time when Database Management was enabled for the database.
      * 
      */
-    private final String timeRegistered;
+    private String timeRegistered;
 
-    @CustomType.Constructor
-    private GetDbManagementPrivateEndpointAssociatedDatabaseItem(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("timeRegistered") String timeRegistered) {
-        this.compartmentId = compartmentId;
-        this.id = id;
-        this.name = name;
-        this.timeRegistered = timeRegistered;
-    }
-
+    private GetDbManagementPrivateEndpointAssociatedDatabaseItem() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -78,17 +67,13 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabaseItem {
     public static Builder builder(GetDbManagementPrivateEndpointAssociatedDatabaseItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String id;
         private String name;
         private String timeRegistered;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbManagementPrivateEndpointAssociatedDatabaseItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -97,23 +82,33 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabaseItem {
     	      this.timeRegistered = defaults.timeRegistered;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder timeRegistered(String timeRegistered) {
             this.timeRegistered = Objects.requireNonNull(timeRegistered);
             return this;
-        }        public GetDbManagementPrivateEndpointAssociatedDatabaseItem build() {
-            return new GetDbManagementPrivateEndpointAssociatedDatabaseItem(compartmentId, id, name, timeRegistered);
+        }
+        public GetDbManagementPrivateEndpointAssociatedDatabaseItem build() {
+            final var o = new GetDbManagementPrivateEndpointAssociatedDatabaseItem();
+            o.compartmentId = compartmentId;
+            o.id = id;
+            o.name = name;
+            o.timeRegistered = timeRegistered;
+            return o;
         }
     }
 }

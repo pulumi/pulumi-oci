@@ -13,35 +13,24 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemJre {
      * @return The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
      * 
      */
-    private final String distribution;
+    private String distribution;
     /**
      * @return The unique identifier for a Java Runtime.
      * 
      */
-    private final String jreKey;
+    private String jreKey;
     /**
      * @return The vendor of the Java Runtime.
      * 
      */
-    private final String vendor;
+    private String vendor;
     /**
      * @return The version of the operating system as provided by the Java system property os.version.
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetInstallationSitesInstallationSiteCollectionItemItemJre(
-        @CustomType.Parameter("distribution") String distribution,
-        @CustomType.Parameter("jreKey") String jreKey,
-        @CustomType.Parameter("vendor") String vendor,
-        @CustomType.Parameter("version") String version) {
-        this.distribution = distribution;
-        this.jreKey = jreKey;
-        this.vendor = vendor;
-        this.version = version;
-    }
-
+    private GetInstallationSitesInstallationSiteCollectionItemItemJre() {}
     /**
      * @return The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
      * 
@@ -78,17 +67,13 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemJre {
     public static Builder builder(GetInstallationSitesInstallationSiteCollectionItemItemJre defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String distribution;
         private String jreKey;
         private String vendor;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstallationSitesInstallationSiteCollectionItemItemJre defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.distribution = defaults.distribution;
@@ -97,23 +82,33 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemJre {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder distribution(String distribution) {
             this.distribution = Objects.requireNonNull(distribution);
             return this;
         }
+        @CustomType.Setter
         public Builder jreKey(String jreKey) {
             this.jreKey = Objects.requireNonNull(jreKey);
             return this;
         }
+        @CustomType.Setter
         public Builder vendor(String vendor) {
             this.vendor = Objects.requireNonNull(vendor);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetInstallationSitesInstallationSiteCollectionItemItemJre build() {
-            return new GetInstallationSitesInstallationSiteCollectionItemItemJre(distribution, jreKey, vendor, version);
+        }
+        public GetInstallationSitesInstallationSiteCollectionItemItemJre build() {
+            final var o = new GetInstallationSitesInstallationSiteCollectionItemItemJre();
+            o.distribution = distribution;
+            o.jreKey = jreKey;
+            o.vendor = vendor;
+            o.version = version;
+            return o;
         }
     }
 }

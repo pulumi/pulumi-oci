@@ -14,42 +14,29 @@ public final class GetListJreUsageItemOperatingSystem {
      * @return The architecture of the operating system as provided by the Java system property os.arch.
      * 
      */
-    private final String architecture;
+    private String architecture;
     /**
      * @return The operating system type, such as Windows or Linux
      * 
      */
-    private final String family;
+    private String family;
     /**
      * @return Number of instances running the operating system
      * 
      */
-    private final Integer managedInstanceCount;
+    private Integer managedInstanceCount;
     /**
      * @return The name of the operating system as provided by the Java system property os.name.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The version of the Java Runtime.
      * 
      */
-    private final String version;
+    private String version;
 
-    @CustomType.Constructor
-    private GetListJreUsageItemOperatingSystem(
-        @CustomType.Parameter("architecture") String architecture,
-        @CustomType.Parameter("family") String family,
-        @CustomType.Parameter("managedInstanceCount") Integer managedInstanceCount,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("version") String version) {
-        this.architecture = architecture;
-        this.family = family;
-        this.managedInstanceCount = managedInstanceCount;
-        this.name = name;
-        this.version = version;
-    }
-
+    private GetListJreUsageItemOperatingSystem() {}
     /**
      * @return The architecture of the operating system as provided by the Java system property os.arch.
      * 
@@ -93,18 +80,14 @@ public final class GetListJreUsageItemOperatingSystem {
     public static Builder builder(GetListJreUsageItemOperatingSystem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String architecture;
         private String family;
         private Integer managedInstanceCount;
         private String name;
         private String version;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListJreUsageItemOperatingSystem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.architecture = defaults.architecture;
@@ -114,27 +97,39 @@ public final class GetListJreUsageItemOperatingSystem {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
         public Builder architecture(String architecture) {
             this.architecture = Objects.requireNonNull(architecture);
             return this;
         }
+        @CustomType.Setter
         public Builder family(String family) {
             this.family = Objects.requireNonNull(family);
             return this;
         }
+        @CustomType.Setter
         public Builder managedInstanceCount(Integer managedInstanceCount) {
             this.managedInstanceCount = Objects.requireNonNull(managedInstanceCount);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
-        }        public GetListJreUsageItemOperatingSystem build() {
-            return new GetListJreUsageItemOperatingSystem(architecture, family, managedInstanceCount, name, version);
+        }
+        public GetListJreUsageItemOperatingSystem build() {
+            final var o = new GetListJreUsageItemOperatingSystem();
+            o.architecture = architecture;
+            o.family = family;
+            o.managedInstanceCount = managedInstanceCount;
+            o.name = name;
+            o.version = version;
+            return o;
         }
     }
 }

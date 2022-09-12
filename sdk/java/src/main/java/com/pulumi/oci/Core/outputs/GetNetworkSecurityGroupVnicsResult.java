@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkSecurityGroupVnicsResult {
-    private final @Nullable List<GetNetworkSecurityGroupVnicsFilter> filters;
+    private @Nullable List<GetNetworkSecurityGroupVnicsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String networkSecurityGroupId;
+    private String id;
+    private String networkSecurityGroupId;
     /**
      * @return The list of network_security_group_vnics.
      * 
      */
-    private final List<GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic> networkSecurityGroupVnics;
+    private List<GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic> networkSecurityGroupVnics;
 
-    @CustomType.Constructor
-    private GetNetworkSecurityGroupVnicsResult(
-        @CustomType.Parameter("filters") @Nullable List<GetNetworkSecurityGroupVnicsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("networkSecurityGroupId") String networkSecurityGroupId,
-        @CustomType.Parameter("networkSecurityGroupVnics") List<GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic> networkSecurityGroupVnics) {
-        this.filters = filters;
-        this.id = id;
-        this.networkSecurityGroupId = networkSecurityGroupId;
-        this.networkSecurityGroupVnics = networkSecurityGroupVnics;
-    }
-
+    private GetNetworkSecurityGroupVnicsResult() {}
     public List<GetNetworkSecurityGroupVnicsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -66,17 +55,13 @@ public final class GetNetworkSecurityGroupVnicsResult {
     public static Builder builder(GetNetworkSecurityGroupVnicsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetNetworkSecurityGroupVnicsFilter> filters;
         private String id;
         private String networkSecurityGroupId;
         private List<GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic> networkSecurityGroupVnics;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetNetworkSecurityGroupVnicsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -85,6 +70,7 @@ public final class GetNetworkSecurityGroupVnicsResult {
     	      this.networkSecurityGroupVnics = defaults.networkSecurityGroupVnics;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetNetworkSecurityGroupVnicsFilter> filters) {
             this.filters = filters;
             return this;
@@ -92,22 +78,31 @@ public final class GetNetworkSecurityGroupVnicsResult {
         public Builder filters(GetNetworkSecurityGroupVnicsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder networkSecurityGroupId(String networkSecurityGroupId) {
             this.networkSecurityGroupId = Objects.requireNonNull(networkSecurityGroupId);
             return this;
         }
+        @CustomType.Setter
         public Builder networkSecurityGroupVnics(List<GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic> networkSecurityGroupVnics) {
             this.networkSecurityGroupVnics = Objects.requireNonNull(networkSecurityGroupVnics);
             return this;
         }
         public Builder networkSecurityGroupVnics(GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic... networkSecurityGroupVnics) {
             return networkSecurityGroupVnics(List.of(networkSecurityGroupVnics));
-        }        public GetNetworkSecurityGroupVnicsResult build() {
-            return new GetNetworkSecurityGroupVnicsResult(filters, id, networkSecurityGroupId, networkSecurityGroupVnics);
+        }
+        public GetNetworkSecurityGroupVnicsResult build() {
+            final var o = new GetNetworkSecurityGroupVnicsResult();
+            o.filters = filters;
+            o.id = id;
+            o.networkSecurityGroupId = networkSecurityGroupId;
+            o.networkSecurityGroupVnics = networkSecurityGroupVnics;
+            return o;
         }
     }
 }

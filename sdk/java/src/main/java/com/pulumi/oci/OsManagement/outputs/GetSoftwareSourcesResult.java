@@ -18,45 +18,30 @@ public final class GetSoftwareSourcesResult {
      * @return OCID for the Compartment
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return User friendly name for the software source
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetSoftwareSourcesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetSoftwareSourcesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of software_sources.
      * 
      */
-    private final List<GetSoftwareSourcesSoftwareSource> softwareSources;
+    private List<GetSoftwareSourcesSoftwareSource> softwareSources;
     /**
      * @return The current state of the Software Source.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetSoftwareSourcesResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetSoftwareSourcesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("softwareSources") List<GetSoftwareSourcesSoftwareSource> softwareSources,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.softwareSources = softwareSources;
-        this.state = state;
-    }
-
+    private GetSoftwareSourcesResult() {}
     /**
      * @return OCID for the Compartment
      * 
@@ -103,7 +88,7 @@ public final class GetSoftwareSourcesResult {
     public static Builder builder(GetSoftwareSourcesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -111,11 +96,7 @@ public final class GetSoftwareSourcesResult {
         private String id;
         private List<GetSoftwareSourcesSoftwareSource> softwareSources;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSoftwareSourcesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -126,14 +107,17 @@ public final class GetSoftwareSourcesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetSoftwareSourcesFilter> filters) {
             this.filters = filters;
             return this;
@@ -141,10 +125,12 @@ public final class GetSoftwareSourcesResult {
         public Builder filters(GetSoftwareSourcesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder softwareSources(List<GetSoftwareSourcesSoftwareSource> softwareSources) {
             this.softwareSources = Objects.requireNonNull(softwareSources);
             return this;
@@ -152,11 +138,20 @@ public final class GetSoftwareSourcesResult {
         public Builder softwareSources(GetSoftwareSourcesSoftwareSource... softwareSources) {
             return softwareSources(List.of(softwareSources));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetSoftwareSourcesResult build() {
-            return new GetSoftwareSourcesResult(compartmentId, displayName, filters, id, softwareSources, state);
+        }
+        public GetSoftwareSourcesResult build() {
+            final var o = new GetSoftwareSourcesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.softwareSources = softwareSources;
+            o.state = state;
+            return o;
         }
     }
 }

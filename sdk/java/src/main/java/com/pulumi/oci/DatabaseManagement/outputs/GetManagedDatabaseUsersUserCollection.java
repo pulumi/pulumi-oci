@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetManagedDatabaseUsersUserCollection {
-    private final List<GetManagedDatabaseUsersUserCollectionItem> items;
+    private List<GetManagedDatabaseUsersUserCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseUsersUserCollection(@CustomType.Parameter("items") List<GetManagedDatabaseUsersUserCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetManagedDatabaseUsersUserCollection() {}
     public List<GetManagedDatabaseUsersUserCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetManagedDatabaseUsersUserCollection {
     public static Builder builder(GetManagedDatabaseUsersUserCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetManagedDatabaseUsersUserCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseUsersUserCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetManagedDatabaseUsersUserCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetManagedDatabaseUsersUserCollectionItem... items) {
             return items(List.of(items));
-        }        public GetManagedDatabaseUsersUserCollection build() {
-            return new GetManagedDatabaseUsersUserCollection(items);
+        }
+        public GetManagedDatabaseUsersUserCollection build() {
+            final var o = new GetManagedDatabaseUsersUserCollection();
+            o.items = items;
+            return o;
         }
     }
 }

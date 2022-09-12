@@ -19,42 +19,29 @@ public final class SteeringPolicyRule {
      * @return An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate configurations for how it should behave during processing for any given DNS query. When a rule has no sequence of `cases`, it is always evaluated with the same configuration during processing. When a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a non-empty sequence of `cases`, its behavior during processing is configured by the first matching `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression evaluates to true for the given query.
      * 
      */
-    private final @Nullable List<SteeringPolicyRuleCase> cases;
+    private @Nullable List<SteeringPolicyRuleCase> cases;
     /**
      * @return Defines a default set of answer conditions and values that are applied to an answer when `cases` is not defined for the rule, or a matching case does not have any matching `answerCondition`s in its `answerData`. `defaultAnswerData` is not applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed.
      * 
      */
-    private final @Nullable List<SteeringPolicyRuleDefaultAnswerData> defaultAnswerDatas;
+    private @Nullable List<SteeringPolicyRuleDefaultAnswerData> defaultAnswerDatas;
     /**
      * @return Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
      * 
      */
-    private final @Nullable Integer defaultCount;
+    private @Nullable Integer defaultCount;
     /**
      * @return A user-defined description of the rule&#39;s purpose or behavior.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
      * @return The type of a rule determines its sorting/filtering behavior.
      * 
      */
-    private final String ruleType;
+    private String ruleType;
 
-    @CustomType.Constructor
-    private SteeringPolicyRule(
-        @CustomType.Parameter("cases") @Nullable List<SteeringPolicyRuleCase> cases,
-        @CustomType.Parameter("defaultAnswerDatas") @Nullable List<SteeringPolicyRuleDefaultAnswerData> defaultAnswerDatas,
-        @CustomType.Parameter("defaultCount") @Nullable Integer defaultCount,
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("ruleType") String ruleType) {
-        this.cases = cases;
-        this.defaultAnswerDatas = defaultAnswerDatas;
-        this.defaultCount = defaultCount;
-        this.description = description;
-        this.ruleType = ruleType;
-    }
-
+    private SteeringPolicyRule() {}
     /**
      * @return An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate configurations for how it should behave during processing for any given DNS query. When a rule has no sequence of `cases`, it is always evaluated with the same configuration during processing. When a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a non-empty sequence of `cases`, its behavior during processing is configured by the first matching `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression evaluates to true for the given query.
      * 
@@ -98,18 +85,14 @@ public final class SteeringPolicyRule {
     public static Builder builder(SteeringPolicyRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<SteeringPolicyRuleCase> cases;
         private @Nullable List<SteeringPolicyRuleDefaultAnswerData> defaultAnswerDatas;
         private @Nullable Integer defaultCount;
         private @Nullable String description;
         private String ruleType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(SteeringPolicyRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cases = defaults.cases;
@@ -119,6 +102,7 @@ public final class SteeringPolicyRule {
     	      this.ruleType = defaults.ruleType;
         }
 
+        @CustomType.Setter
         public Builder cases(@Nullable List<SteeringPolicyRuleCase> cases) {
             this.cases = cases;
             return this;
@@ -126,6 +110,7 @@ public final class SteeringPolicyRule {
         public Builder cases(SteeringPolicyRuleCase... cases) {
             return cases(List.of(cases));
         }
+        @CustomType.Setter
         public Builder defaultAnswerDatas(@Nullable List<SteeringPolicyRuleDefaultAnswerData> defaultAnswerDatas) {
             this.defaultAnswerDatas = defaultAnswerDatas;
             return this;
@@ -133,19 +118,29 @@ public final class SteeringPolicyRule {
         public Builder defaultAnswerDatas(SteeringPolicyRuleDefaultAnswerData... defaultAnswerDatas) {
             return defaultAnswerDatas(List.of(defaultAnswerDatas));
         }
+        @CustomType.Setter
         public Builder defaultCount(@Nullable Integer defaultCount) {
             this.defaultCount = defaultCount;
             return this;
         }
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder ruleType(String ruleType) {
             this.ruleType = Objects.requireNonNull(ruleType);
             return this;
-        }        public SteeringPolicyRule build() {
-            return new SteeringPolicyRule(cases, defaultAnswerDatas, defaultCount, description, ruleType);
+        }
+        public SteeringPolicyRule build() {
+            final var o = new SteeringPolicyRule();
+            o.cases = cases;
+            o.defaultAnswerDatas = defaultAnswerDatas;
+            o.defaultCount = defaultCount;
+            o.description = description;
+            o.ruleType = ruleType;
+            return o;
         }
     }
 }

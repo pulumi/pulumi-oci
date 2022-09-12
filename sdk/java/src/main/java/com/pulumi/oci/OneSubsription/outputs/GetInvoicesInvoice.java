@@ -21,140 +21,99 @@ public final class GetInvoicesInvoice {
      * @return AR Invoice Numbers comma separated under one invoice
      * 
      */
-    private final String arInvoices;
+    private String arInvoices;
     /**
      * @return Address.
      * 
      */
-    private final List<GetInvoicesInvoiceBillToAddress> billToAddresses;
+    private List<GetInvoicesInvoiceBillToAddress> billToAddresses;
     /**
      * @return User.
      * 
      */
-    private final List<GetInvoicesInvoiceBillToContact> billToContacts;
+    private List<GetInvoicesInvoiceBillToContact> billToContacts;
     /**
      * @return Business partner.
      * 
      */
-    private final List<GetInvoicesInvoiceBillToCustomer> billToCustomers;
+    private List<GetInvoicesInvoiceBillToCustomer> billToCustomers;
     /**
      * @return User that created the Payment term
      * 
      */
-    private final String createdBy;
+    private String createdBy;
     /**
      * @return Currency details
      * 
      */
-    private final List<GetInvoicesInvoiceCurrency> currencies;
+    private List<GetInvoicesInvoiceCurrency> currencies;
     /**
      * @return Invoice Lines under particular invoice.
      * 
      */
-    private final List<GetInvoicesInvoiceInvoiceLine> invoiceLines;
+    private List<GetInvoicesInvoiceInvoiceLine> invoiceLines;
     /**
      * @return Organization details
      * 
      */
-    private final List<GetInvoicesInvoiceOrganization> organizations;
+    private List<GetInvoicesInvoiceOrganization> organizations;
     /**
      * @return Payment Method
      * 
      */
-    private final String paymentMethod;
+    private String paymentMethod;
     /**
      * @return Payment Term details
      * 
      */
-    private final List<GetInvoicesInvoicePaymentTerm> paymentTerms;
+    private List<GetInvoicesInvoicePaymentTerm> paymentTerms;
     /**
      * @return Receipt Method of Payment Mode
      * 
      */
-    private final String receiptMethod;
+    private String receiptMethod;
     /**
      * @return SPM Document Number is an functional identifier for invoice in SPM
      * 
      */
-    private final String spmInvoiceNumber;
+    private String spmInvoiceNumber;
     /**
      * @return Document Status in SPM which depicts current state of invoice
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return Invoice associated subscription plan number.
      * 
      */
-    private final String subscriptionNumber;
+    private String subscriptionNumber;
     /**
      * @return SPM Invocie creation date
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return Invoice Date
      * 
      */
-    private final String timeInvoiceDate;
+    private String timeInvoiceDate;
     /**
      * @return SPM Invoice updated date
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
     /**
      * @return Document Type in SPM like SPM Invoice,SPM Credit Memo etc.,
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return User that updated SPM Invoice
      * 
      */
-    private final String updatedBy;
+    private String updatedBy;
 
-    @CustomType.Constructor
-    private GetInvoicesInvoice(
-        @CustomType.Parameter("arInvoices") String arInvoices,
-        @CustomType.Parameter("billToAddresses") List<GetInvoicesInvoiceBillToAddress> billToAddresses,
-        @CustomType.Parameter("billToContacts") List<GetInvoicesInvoiceBillToContact> billToContacts,
-        @CustomType.Parameter("billToCustomers") List<GetInvoicesInvoiceBillToCustomer> billToCustomers,
-        @CustomType.Parameter("createdBy") String createdBy,
-        @CustomType.Parameter("currencies") List<GetInvoicesInvoiceCurrency> currencies,
-        @CustomType.Parameter("invoiceLines") List<GetInvoicesInvoiceInvoiceLine> invoiceLines,
-        @CustomType.Parameter("organizations") List<GetInvoicesInvoiceOrganization> organizations,
-        @CustomType.Parameter("paymentMethod") String paymentMethod,
-        @CustomType.Parameter("paymentTerms") List<GetInvoicesInvoicePaymentTerm> paymentTerms,
-        @CustomType.Parameter("receiptMethod") String receiptMethod,
-        @CustomType.Parameter("spmInvoiceNumber") String spmInvoiceNumber,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("subscriptionNumber") String subscriptionNumber,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeInvoiceDate") String timeInvoiceDate,
-        @CustomType.Parameter("timeUpdated") String timeUpdated,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("updatedBy") String updatedBy) {
-        this.arInvoices = arInvoices;
-        this.billToAddresses = billToAddresses;
-        this.billToContacts = billToContacts;
-        this.billToCustomers = billToCustomers;
-        this.createdBy = createdBy;
-        this.currencies = currencies;
-        this.invoiceLines = invoiceLines;
-        this.organizations = organizations;
-        this.paymentMethod = paymentMethod;
-        this.paymentTerms = paymentTerms;
-        this.receiptMethod = receiptMethod;
-        this.spmInvoiceNumber = spmInvoiceNumber;
-        this.status = status;
-        this.subscriptionNumber = subscriptionNumber;
-        this.timeCreated = timeCreated;
-        this.timeInvoiceDate = timeInvoiceDate;
-        this.timeUpdated = timeUpdated;
-        this.type = type;
-        this.updatedBy = updatedBy;
-    }
-
+    private GetInvoicesInvoice() {}
     /**
      * @return AR Invoice Numbers comma separated under one invoice
      * 
@@ -296,7 +255,7 @@ public final class GetInvoicesInvoice {
     public static Builder builder(GetInvoicesInvoice defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String arInvoices;
         private List<GetInvoicesInvoiceBillToAddress> billToAddresses;
@@ -317,11 +276,7 @@ public final class GetInvoicesInvoice {
         private String timeUpdated;
         private String type;
         private String updatedBy;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInvoicesInvoice defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.arInvoices = defaults.arInvoices;
@@ -345,10 +300,12 @@ public final class GetInvoicesInvoice {
     	      this.updatedBy = defaults.updatedBy;
         }
 
+        @CustomType.Setter
         public Builder arInvoices(String arInvoices) {
             this.arInvoices = Objects.requireNonNull(arInvoices);
             return this;
         }
+        @CustomType.Setter
         public Builder billToAddresses(List<GetInvoicesInvoiceBillToAddress> billToAddresses) {
             this.billToAddresses = Objects.requireNonNull(billToAddresses);
             return this;
@@ -356,6 +313,7 @@ public final class GetInvoicesInvoice {
         public Builder billToAddresses(GetInvoicesInvoiceBillToAddress... billToAddresses) {
             return billToAddresses(List.of(billToAddresses));
         }
+        @CustomType.Setter
         public Builder billToContacts(List<GetInvoicesInvoiceBillToContact> billToContacts) {
             this.billToContacts = Objects.requireNonNull(billToContacts);
             return this;
@@ -363,6 +321,7 @@ public final class GetInvoicesInvoice {
         public Builder billToContacts(GetInvoicesInvoiceBillToContact... billToContacts) {
             return billToContacts(List.of(billToContacts));
         }
+        @CustomType.Setter
         public Builder billToCustomers(List<GetInvoicesInvoiceBillToCustomer> billToCustomers) {
             this.billToCustomers = Objects.requireNonNull(billToCustomers);
             return this;
@@ -370,10 +329,12 @@ public final class GetInvoicesInvoice {
         public Builder billToCustomers(GetInvoicesInvoiceBillToCustomer... billToCustomers) {
             return billToCustomers(List.of(billToCustomers));
         }
+        @CustomType.Setter
         public Builder createdBy(String createdBy) {
             this.createdBy = Objects.requireNonNull(createdBy);
             return this;
         }
+        @CustomType.Setter
         public Builder currencies(List<GetInvoicesInvoiceCurrency> currencies) {
             this.currencies = Objects.requireNonNull(currencies);
             return this;
@@ -381,6 +342,7 @@ public final class GetInvoicesInvoice {
         public Builder currencies(GetInvoicesInvoiceCurrency... currencies) {
             return currencies(List.of(currencies));
         }
+        @CustomType.Setter
         public Builder invoiceLines(List<GetInvoicesInvoiceInvoiceLine> invoiceLines) {
             this.invoiceLines = Objects.requireNonNull(invoiceLines);
             return this;
@@ -388,6 +350,7 @@ public final class GetInvoicesInvoice {
         public Builder invoiceLines(GetInvoicesInvoiceInvoiceLine... invoiceLines) {
             return invoiceLines(List.of(invoiceLines));
         }
+        @CustomType.Setter
         public Builder organizations(List<GetInvoicesInvoiceOrganization> organizations) {
             this.organizations = Objects.requireNonNull(organizations);
             return this;
@@ -395,10 +358,12 @@ public final class GetInvoicesInvoice {
         public Builder organizations(GetInvoicesInvoiceOrganization... organizations) {
             return organizations(List.of(organizations));
         }
+        @CustomType.Setter
         public Builder paymentMethod(String paymentMethod) {
             this.paymentMethod = Objects.requireNonNull(paymentMethod);
             return this;
         }
+        @CustomType.Setter
         public Builder paymentTerms(List<GetInvoicesInvoicePaymentTerm> paymentTerms) {
             this.paymentTerms = Objects.requireNonNull(paymentTerms);
             return this;
@@ -406,43 +371,73 @@ public final class GetInvoicesInvoice {
         public Builder paymentTerms(GetInvoicesInvoicePaymentTerm... paymentTerms) {
             return paymentTerms(List.of(paymentTerms));
         }
+        @CustomType.Setter
         public Builder receiptMethod(String receiptMethod) {
             this.receiptMethod = Objects.requireNonNull(receiptMethod);
             return this;
         }
+        @CustomType.Setter
         public Builder spmInvoiceNumber(String spmInvoiceNumber) {
             this.spmInvoiceNumber = Objects.requireNonNull(spmInvoiceNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder subscriptionNumber(String subscriptionNumber) {
             this.subscriptionNumber = Objects.requireNonNull(subscriptionNumber);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeInvoiceDate(String timeInvoiceDate) {
             this.timeInvoiceDate = Objects.requireNonNull(timeInvoiceDate);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder updatedBy(String updatedBy) {
             this.updatedBy = Objects.requireNonNull(updatedBy);
             return this;
-        }        public GetInvoicesInvoice build() {
-            return new GetInvoicesInvoice(arInvoices, billToAddresses, billToContacts, billToCustomers, createdBy, currencies, invoiceLines, organizations, paymentMethod, paymentTerms, receiptMethod, spmInvoiceNumber, status, subscriptionNumber, timeCreated, timeInvoiceDate, timeUpdated, type, updatedBy);
+        }
+        public GetInvoicesInvoice build() {
+            final var o = new GetInvoicesInvoice();
+            o.arInvoices = arInvoices;
+            o.billToAddresses = billToAddresses;
+            o.billToContacts = billToContacts;
+            o.billToCustomers = billToCustomers;
+            o.createdBy = createdBy;
+            o.currencies = currencies;
+            o.invoiceLines = invoiceLines;
+            o.organizations = organizations;
+            o.paymentMethod = paymentMethod;
+            o.paymentTerms = paymentTerms;
+            o.receiptMethod = receiptMethod;
+            o.spmInvoiceNumber = spmInvoiceNumber;
+            o.status = status;
+            o.subscriptionNumber = subscriptionNumber;
+            o.timeCreated = timeCreated;
+            o.timeInvoiceDate = timeInvoiceDate;
+            o.timeUpdated = timeUpdated;
+            o.type = type;
+            o.updatedBy = updatedBy;
+            return o;
         }
     }
 }

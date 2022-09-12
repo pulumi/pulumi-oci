@@ -14,66 +14,45 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabaseMaintenanceRunHistoriesResult {
-    private final @Nullable String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetDatabaseMaintenanceRunHistoriesFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetDatabaseMaintenanceRunHistoriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of maintenance_run_histories.
      * 
      */
-    private final List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory> maintenanceRunHistories;
+    private List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory> maintenanceRunHistories;
     /**
      * @return Maintenance type.
      * 
      */
-    private final @Nullable String maintenanceType;
+    private @Nullable String maintenanceType;
     /**
      * @return The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The ID of the target resource on which the maintenance run occurs.
      * 
      */
-    private final @Nullable String targetResourceId;
+    private @Nullable String targetResourceId;
     /**
      * @return The type of the target resource on which the maintenance run occurs.
      * 
      */
-    private final @Nullable String targetResourceType;
+    private @Nullable String targetResourceType;
 
-    @CustomType.Constructor
-    private GetDatabaseMaintenanceRunHistoriesResult(
-        @CustomType.Parameter("availabilityDomain") @Nullable String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetDatabaseMaintenanceRunHistoriesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("maintenanceRunHistories") List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory> maintenanceRunHistories,
-        @CustomType.Parameter("maintenanceType") @Nullable String maintenanceType,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("targetResourceId") @Nullable String targetResourceId,
-        @CustomType.Parameter("targetResourceType") @Nullable String targetResourceType) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.maintenanceRunHistories = maintenanceRunHistories;
-        this.maintenanceType = maintenanceType;
-        this.state = state;
-        this.targetResourceId = targetResourceId;
-        this.targetResourceType = targetResourceType;
-    }
-
+    private GetDatabaseMaintenanceRunHistoriesResult() {}
     public Optional<String> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
     }
@@ -137,7 +116,7 @@ public final class GetDatabaseMaintenanceRunHistoriesResult {
     public static Builder builder(GetDatabaseMaintenanceRunHistoriesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
@@ -148,11 +127,7 @@ public final class GetDatabaseMaintenanceRunHistoriesResult {
         private @Nullable String state;
         private @Nullable String targetResourceId;
         private @Nullable String targetResourceType;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseMaintenanceRunHistoriesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -166,14 +141,17 @@ public final class GetDatabaseMaintenanceRunHistoriesResult {
     	      this.targetResourceType = defaults.targetResourceType;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDatabaseMaintenanceRunHistoriesFilter> filters) {
             this.filters = filters;
             return this;
@@ -181,10 +159,12 @@ public final class GetDatabaseMaintenanceRunHistoriesResult {
         public Builder filters(GetDatabaseMaintenanceRunHistoriesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder maintenanceRunHistories(List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory> maintenanceRunHistories) {
             this.maintenanceRunHistories = Objects.requireNonNull(maintenanceRunHistories);
             return this;
@@ -192,23 +172,38 @@ public final class GetDatabaseMaintenanceRunHistoriesResult {
         public Builder maintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory... maintenanceRunHistories) {
             return maintenanceRunHistories(List.of(maintenanceRunHistories));
         }
+        @CustomType.Setter
         public Builder maintenanceType(@Nullable String maintenanceType) {
             this.maintenanceType = maintenanceType;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder targetResourceId(@Nullable String targetResourceId) {
             this.targetResourceId = targetResourceId;
             return this;
         }
+        @CustomType.Setter
         public Builder targetResourceType(@Nullable String targetResourceType) {
             this.targetResourceType = targetResourceType;
             return this;
-        }        public GetDatabaseMaintenanceRunHistoriesResult build() {
-            return new GetDatabaseMaintenanceRunHistoriesResult(availabilityDomain, compartmentId, filters, id, maintenanceRunHistories, maintenanceType, state, targetResourceId, targetResourceType);
+        }
+        public GetDatabaseMaintenanceRunHistoriesResult build() {
+            final var o = new GetDatabaseMaintenanceRunHistoriesResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.maintenanceRunHistories = maintenanceRunHistories;
+            o.maintenanceType = maintenanceType;
+            o.state = state;
+            o.targetResourceId = targetResourceId;
+            o.targetResourceType = targetResourceType;
+            return o;
         }
     }
 }

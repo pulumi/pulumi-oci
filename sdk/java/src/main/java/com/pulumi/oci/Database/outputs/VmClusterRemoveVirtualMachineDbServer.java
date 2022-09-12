@@ -13,13 +13,9 @@ public final class VmClusterRemoveVirtualMachineDbServer {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
      * 
      */
-    private final String dbServerId;
+    private String dbServerId;
 
-    @CustomType.Constructor
-    private VmClusterRemoveVirtualMachineDbServer(@CustomType.Parameter("dbServerId") String dbServerId) {
-        this.dbServerId = dbServerId;
-    }
-
+    private VmClusterRemoveVirtualMachineDbServer() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
      * 
@@ -35,24 +31,24 @@ public final class VmClusterRemoveVirtualMachineDbServer {
     public static Builder builder(VmClusterRemoveVirtualMachineDbServer defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dbServerId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(VmClusterRemoveVirtualMachineDbServer defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbServerId = defaults.dbServerId;
         }
 
+        @CustomType.Setter
         public Builder dbServerId(String dbServerId) {
             this.dbServerId = Objects.requireNonNull(dbServerId);
             return this;
-        }        public VmClusterRemoveVirtualMachineDbServer build() {
-            return new VmClusterRemoveVirtualMachineDbServer(dbServerId);
+        }
+        public VmClusterRemoveVirtualMachineDbServer build() {
+            final var o = new VmClusterRemoveVirtualMachineDbServer();
+            o.dbServerId = dbServerId;
+            return o;
         }
     }
 }

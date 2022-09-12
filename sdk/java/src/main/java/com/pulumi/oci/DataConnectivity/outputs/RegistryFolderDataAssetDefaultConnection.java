@@ -21,152 +21,119 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RegistryFolderDataAssetDefaultConnection {
     /**
-     * @return (Updatable) The properties for the connection.
+     * @return (Updatable) The properties of the connection.
      * 
      */
-    private final @Nullable List<RegistryFolderDataAssetDefaultConnectionConnectionProperty> connectionProperties;
+    private @Nullable List<RegistryFolderDataAssetDefaultConnectionConnectionProperty> connectionProperties;
     /**
-     * @return (Updatable) User-defined description for the folder.
+     * @return (Updatable) User-defined description of the folder.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
-    private final String identifier;
+    private String identifier;
     /**
-     * @return (Updatable) The default property for the connection.
+     * @return (Updatable) The default property of the connection.
      * 
      */
-    private final @Nullable Boolean isDefault;
+    private @Nullable Boolean isDefault;
     /**
-     * @return (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
-    private final String key;
+    private String key;
     /**
-     * @return (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
-    private final @Nullable RegistryFolderDataAssetDefaultConnectionMetadata metadata;
+    private @Nullable RegistryFolderDataAssetDefaultConnectionMetadata metadata;
     /**
      * @return (Updatable) The type of the folder.
      * 
      */
-    private final @Nullable String modelType;
+    private @Nullable String modelType;
     /**
      * @return (Updatable) The model version of an object.
      * 
      */
-    private final @Nullable String modelVersion;
+    private @Nullable String modelVersion;
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private final @Nullable Integer objectStatus;
+    private @Nullable Integer objectStatus;
     /**
      * @return (Updatable) The version of the object that is used to track changes in the object instance.
      * 
      */
-    private final @Nullable Integer objectVersion;
+    private @Nullable Integer objectVersion;
     /**
      * @return (Updatable) The schema object.
      * 
      */
-    private final @Nullable RegistryFolderDataAssetDefaultConnectionPrimarySchema primarySchema;
+    private @Nullable RegistryFolderDataAssetDefaultConnectionPrimarySchema primarySchema;
     /**
      * @return (Updatable) All the properties for the data asset in a key-value map format.
      * 
      */
-    private final @Nullable Map<String,Object> properties;
+    private @Nullable Map<String,Object> properties;
     /**
      * @return (Updatable) Information about the object and its parent.
      * 
      */
-    private final @Nullable RegistryFolderDataAssetDefaultConnectionRegistryMetadata registryMetadata;
+    private @Nullable RegistryFolderDataAssetDefaultConnectionRegistryMetadata registryMetadata;
     /**
      * @return (Updatable) Specific DataAsset Type
      * 
      */
-    private final @Nullable String type;
+    private @Nullable String type;
 
-    @CustomType.Constructor
-    private RegistryFolderDataAssetDefaultConnection(
-        @CustomType.Parameter("connectionProperties") @Nullable List<RegistryFolderDataAssetDefaultConnectionConnectionProperty> connectionProperties,
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("identifier") String identifier,
-        @CustomType.Parameter("isDefault") @Nullable Boolean isDefault,
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("metadata") @Nullable RegistryFolderDataAssetDefaultConnectionMetadata metadata,
-        @CustomType.Parameter("modelType") @Nullable String modelType,
-        @CustomType.Parameter("modelVersion") @Nullable String modelVersion,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("objectStatus") @Nullable Integer objectStatus,
-        @CustomType.Parameter("objectVersion") @Nullable Integer objectVersion,
-        @CustomType.Parameter("primarySchema") @Nullable RegistryFolderDataAssetDefaultConnectionPrimarySchema primarySchema,
-        @CustomType.Parameter("properties") @Nullable Map<String,Object> properties,
-        @CustomType.Parameter("registryMetadata") @Nullable RegistryFolderDataAssetDefaultConnectionRegistryMetadata registryMetadata,
-        @CustomType.Parameter("type") @Nullable String type) {
-        this.connectionProperties = connectionProperties;
-        this.description = description;
-        this.identifier = identifier;
-        this.isDefault = isDefault;
-        this.key = key;
-        this.metadata = metadata;
-        this.modelType = modelType;
-        this.modelVersion = modelVersion;
-        this.name = name;
-        this.objectStatus = objectStatus;
-        this.objectVersion = objectVersion;
-        this.primarySchema = primarySchema;
-        this.properties = properties;
-        this.registryMetadata = registryMetadata;
-        this.type = type;
-    }
-
+    private RegistryFolderDataAssetDefaultConnection() {}
     /**
-     * @return (Updatable) The properties for the connection.
+     * @return (Updatable) The properties of the connection.
      * 
      */
     public List<RegistryFolderDataAssetDefaultConnectionConnectionProperty> connectionProperties() {
         return this.connectionProperties == null ? List.of() : this.connectionProperties;
     }
     /**
-     * @return (Updatable) User-defined description for the folder.
+     * @return (Updatable) User-defined description of the folder.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public String identifier() {
         return this.identifier;
     }
     /**
-     * @return (Updatable) The default property for the connection.
+     * @return (Updatable) The default property of the connection.
      * 
      */
     public Optional<Boolean> isDefault() {
         return Optional.ofNullable(this.isDefault);
     }
     /**
-     * @return (Updatable) Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+     * @return (Updatable) Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     public Optional<RegistryFolderDataAssetDefaultConnectionMetadata> metadata() {
@@ -187,7 +154,7 @@ public final class RegistryFolderDataAssetDefaultConnection {
         return Optional.ofNullable(this.modelVersion);
     }
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public String name() {
@@ -243,7 +210,7 @@ public final class RegistryFolderDataAssetDefaultConnection {
     public static Builder builder(RegistryFolderDataAssetDefaultConnection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<RegistryFolderDataAssetDefaultConnectionConnectionProperty> connectionProperties;
         private @Nullable String description;
@@ -260,11 +227,7 @@ public final class RegistryFolderDataAssetDefaultConnection {
         private @Nullable Map<String,Object> properties;
         private @Nullable RegistryFolderDataAssetDefaultConnectionRegistryMetadata registryMetadata;
         private @Nullable String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RegistryFolderDataAssetDefaultConnection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.connectionProperties = defaults.connectionProperties;
@@ -284,6 +247,7 @@ public final class RegistryFolderDataAssetDefaultConnection {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder connectionProperties(@Nullable List<RegistryFolderDataAssetDefaultConnectionConnectionProperty> connectionProperties) {
             this.connectionProperties = connectionProperties;
             return this;
@@ -291,63 +255,94 @@ public final class RegistryFolderDataAssetDefaultConnection {
         public Builder connectionProperties(RegistryFolderDataAssetDefaultConnectionConnectionProperty... connectionProperties) {
             return connectionProperties(List.of(connectionProperties));
         }
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder identifier(String identifier) {
             this.identifier = Objects.requireNonNull(identifier);
             return this;
         }
+        @CustomType.Setter
         public Builder isDefault(@Nullable Boolean isDefault) {
             this.isDefault = isDefault;
             return this;
         }
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder metadata(@Nullable RegistryFolderDataAssetDefaultConnectionMetadata metadata) {
             this.metadata = metadata;
             return this;
         }
+        @CustomType.Setter
         public Builder modelType(@Nullable String modelType) {
             this.modelType = modelType;
             return this;
         }
+        @CustomType.Setter
         public Builder modelVersion(@Nullable String modelVersion) {
             this.modelVersion = modelVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder objectStatus(@Nullable Integer objectStatus) {
             this.objectStatus = objectStatus;
             return this;
         }
+        @CustomType.Setter
         public Builder objectVersion(@Nullable Integer objectVersion) {
             this.objectVersion = objectVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder primarySchema(@Nullable RegistryFolderDataAssetDefaultConnectionPrimarySchema primarySchema) {
             this.primarySchema = primarySchema;
             return this;
         }
+        @CustomType.Setter
         public Builder properties(@Nullable Map<String,Object> properties) {
             this.properties = properties;
             return this;
         }
+        @CustomType.Setter
         public Builder registryMetadata(@Nullable RegistryFolderDataAssetDefaultConnectionRegistryMetadata registryMetadata) {
             this.registryMetadata = registryMetadata;
             return this;
         }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
-        }        public RegistryFolderDataAssetDefaultConnection build() {
-            return new RegistryFolderDataAssetDefaultConnection(connectionProperties, description, identifier, isDefault, key, metadata, modelType, modelVersion, name, objectStatus, objectVersion, primarySchema, properties, registryMetadata, type);
+        }
+        public RegistryFolderDataAssetDefaultConnection build() {
+            final var o = new RegistryFolderDataAssetDefaultConnection();
+            o.connectionProperties = connectionProperties;
+            o.description = description;
+            o.identifier = identifier;
+            o.isDefault = isDefault;
+            o.key = key;
+            o.metadata = metadata;
+            o.modelType = modelType;
+            o.modelVersion = modelVersion;
+            o.name = name;
+            o.objectStatus = objectStatus;
+            o.objectVersion = objectVersion;
+            o.primarySchema = primarySchema;
+            o.properties = properties;
+            o.registryMetadata = registryMetadata;
+            o.type = type;
+            return o;
         }
     }
 }

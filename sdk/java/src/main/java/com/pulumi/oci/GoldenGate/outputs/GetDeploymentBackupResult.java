@@ -17,150 +17,105 @@ public final class GetDeploymentBackupResult {
      * @return Possible Deployment backup types.
      * 
      */
-    private final String backupType;
+    private String backupType;
     /**
      * @return Name of the bucket where the object is to be uploaded in the object storage
      * 
      */
-    private final String bucket;
+    private String bucket;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
-    private final String deploymentBackupId;
+    private Map<String,Object> definedTags;
+    private String deploymentBackupId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */
-    private final String deploymentId;
+    private String deploymentId;
     /**
      * @return An object&#39;s Display Name.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return True if this object is automatically created
      * 
      */
-    private final Boolean isAutomatic;
+    private Boolean isAutomatic;
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return Name of namespace that serves as a container for all of your buckets
      * 
      */
-    private final String namespace;
+    private String namespace;
     /**
      * @return Name of the object to be uploaded to object storage
      * 
      */
-    private final String object;
+    private String object;
     /**
      * @return Version of OGG
      * 
      */
-    private final String oggVersion;
+    private String oggVersion;
     /**
      * @return The size of the backup stored in object storage (in bytes)
      * 
      */
-    private final Double sizeInBytes;
+    private Double sizeInBytes;
     /**
      * @return Possible lifecycle states.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private final String timeBackupFinished;
+    private String timeBackupFinished;
     /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private final String timeOfBackup;
+    private String timeOfBackup;
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetDeploymentBackupResult(
-        @CustomType.Parameter("backupType") String backupType,
-        @CustomType.Parameter("bucket") String bucket,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("deploymentBackupId") String deploymentBackupId,
-        @CustomType.Parameter("deploymentId") String deploymentId,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isAutomatic") Boolean isAutomatic,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("object") String object,
-        @CustomType.Parameter("oggVersion") String oggVersion,
-        @CustomType.Parameter("sizeInBytes") Double sizeInBytes,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeBackupFinished") String timeBackupFinished,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeOfBackup") String timeOfBackup,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.backupType = backupType;
-        this.bucket = bucket;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.deploymentBackupId = deploymentBackupId;
-        this.deploymentId = deploymentId;
-        this.displayName = displayName;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isAutomatic = isAutomatic;
-        this.lifecycleDetails = lifecycleDetails;
-        this.namespace = namespace;
-        this.object = object;
-        this.oggVersion = oggVersion;
-        this.sizeInBytes = sizeInBytes;
-        this.state = state;
-        this.systemTags = systemTags;
-        this.timeBackupFinished = timeBackupFinished;
-        this.timeCreated = timeCreated;
-        this.timeOfBackup = timeOfBackup;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetDeploymentBackupResult() {}
     /**
      * @return Possible Deployment backup types.
      * 
@@ -312,7 +267,7 @@ public final class GetDeploymentBackupResult {
     public static Builder builder(GetDeploymentBackupResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String backupType;
         private String bucket;
@@ -335,11 +290,7 @@ public final class GetDeploymentBackupResult {
         private String timeCreated;
         private String timeOfBackup;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentBackupResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupType = defaults.backupType;
@@ -365,91 +316,135 @@ public final class GetDeploymentBackupResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder backupType(String backupType) {
             this.backupType = Objects.requireNonNull(backupType);
             return this;
         }
+        @CustomType.Setter
         public Builder bucket(String bucket) {
             this.bucket = Objects.requireNonNull(bucket);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder deploymentBackupId(String deploymentBackupId) {
             this.deploymentBackupId = Objects.requireNonNull(deploymentBackupId);
             return this;
         }
+        @CustomType.Setter
         public Builder deploymentId(String deploymentId) {
             this.deploymentId = Objects.requireNonNull(deploymentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isAutomatic(Boolean isAutomatic) {
             this.isAutomatic = Objects.requireNonNull(isAutomatic);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder object(String object) {
             this.object = Objects.requireNonNull(object);
             return this;
         }
+        @CustomType.Setter
         public Builder oggVersion(String oggVersion) {
             this.oggVersion = Objects.requireNonNull(oggVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder sizeInBytes(Double sizeInBytes) {
             this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeBackupFinished(String timeBackupFinished) {
             this.timeBackupFinished = Objects.requireNonNull(timeBackupFinished);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeOfBackup(String timeOfBackup) {
             this.timeOfBackup = Objects.requireNonNull(timeOfBackup);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetDeploymentBackupResult build() {
-            return new GetDeploymentBackupResult(backupType, bucket, compartmentId, definedTags, deploymentBackupId, deploymentId, displayName, freeformTags, id, isAutomatic, lifecycleDetails, namespace, object, oggVersion, sizeInBytes, state, systemTags, timeBackupFinished, timeCreated, timeOfBackup, timeUpdated);
+        }
+        public GetDeploymentBackupResult build() {
+            final var o = new GetDeploymentBackupResult();
+            o.backupType = backupType;
+            o.bucket = bucket;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.deploymentBackupId = deploymentBackupId;
+            o.deploymentId = deploymentId;
+            o.displayName = displayName;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isAutomatic = isAutomatic;
+            o.lifecycleDetails = lifecycleDetails;
+            o.namespace = namespace;
+            o.object = object;
+            o.oggVersion = oggVersion;
+            o.sizeInBytes = sizeInBytes;
+            o.state = state;
+            o.systemTags = systemTags;
+            o.timeBackupFinished = timeBackupFinished;
+            o.timeCreated = timeCreated;
+            o.timeOfBackup = timeOfBackup;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

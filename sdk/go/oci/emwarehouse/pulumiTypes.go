@@ -1119,6 +1119,8 @@ func (o GetEtlRunsFilterArrayOutput) Index(i pulumi.IntInput) GetEtlRunsFilterOu
 }
 
 type GetResourceUsageEmInstance struct {
+	// emdDiscoverer url
+	EmDiscovererUrl string `pulumi:"emDiscovererUrl"`
 	// emHost name
 	EmHost string `pulumi:"emHost"`
 	// operations Insights Warehouse Identifier
@@ -1139,6 +1141,8 @@ type GetResourceUsageEmInstanceInput interface {
 }
 
 type GetResourceUsageEmInstanceArgs struct {
+	// emdDiscoverer url
+	EmDiscovererUrl pulumi.StringInput `pulumi:"emDiscovererUrl"`
 	// emHost name
 	EmHost pulumi.StringInput `pulumi:"emHost"`
 	// operations Insights Warehouse Identifier
@@ -1196,6 +1200,11 @@ func (o GetResourceUsageEmInstanceOutput) ToGetResourceUsageEmInstanceOutput() G
 
 func (o GetResourceUsageEmInstanceOutput) ToGetResourceUsageEmInstanceOutputWithContext(ctx context.Context) GetResourceUsageEmInstanceOutput {
 	return o
+}
+
+// emdDiscoverer url
+func (o GetResourceUsageEmInstanceOutput) EmDiscovererUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceUsageEmInstance) string { return v.EmDiscovererUrl }).(pulumi.StringOutput)
 }
 
 // emHost name

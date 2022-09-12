@@ -13,21 +13,14 @@ public final class MigrationDatapumpSettingsExportDirectoryObject {
      * @return (Updatable) Name of directory object in database
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return (Updatable) Absolute path of directory on database server
      * 
      */
-    private final String path;
+    private String path;
 
-    @CustomType.Constructor
-    private MigrationDatapumpSettingsExportDirectoryObject(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("path") String path) {
-        this.name = name;
-        this.path = path;
-    }
-
+    private MigrationDatapumpSettingsExportDirectoryObject() {}
     /**
      * @return (Updatable) Name of directory object in database
      * 
@@ -50,30 +43,32 @@ public final class MigrationDatapumpSettingsExportDirectoryObject {
     public static Builder builder(MigrationDatapumpSettingsExportDirectoryObject defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private String path;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MigrationDatapumpSettingsExportDirectoryObject defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.path = defaults.path;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder path(String path) {
             this.path = Objects.requireNonNull(path);
             return this;
-        }        public MigrationDatapumpSettingsExportDirectoryObject build() {
-            return new MigrationDatapumpSettingsExportDirectoryObject(name, path);
+        }
+        public MigrationDatapumpSettingsExportDirectoryObject build() {
+            final var o = new MigrationDatapumpSettingsExportDirectoryObject();
+            o.name = name;
+            o.path = path;
+            return o;
         }
     }
 }

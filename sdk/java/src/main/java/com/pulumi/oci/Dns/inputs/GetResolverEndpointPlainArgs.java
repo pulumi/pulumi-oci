@@ -6,6 +6,8 @@ package com.pulumi.oci.Dns.inputs;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetResolverEndpointPlainArgs extends com.pulumi.resources.InvokeArgs {
@@ -46,15 +48,15 @@ public final class GetResolverEndpointPlainArgs extends com.pulumi.resources.Inv
      * Value must be `PRIVATE` when listing private name resolver endpoints.
      * 
      */
-    @Import(name="scope", required=true)
-    private String scope;
+    @Import(name="scope")
+    private @Nullable String scope;
 
     /**
      * @return Value must be `PRIVATE` when listing private name resolver endpoints.
      * 
      */
-    public String scope() {
-        return this.scope;
+    public Optional<String> scope() {
+        return Optional.ofNullable(this.scope);
     }
 
     private GetResolverEndpointPlainArgs() {}
@@ -111,7 +113,7 @@ public final class GetResolverEndpointPlainArgs extends com.pulumi.resources.Inv
          * @return builder
          * 
          */
-        public Builder scope(String scope) {
+        public Builder scope(@Nullable String scope) {
             $.scope = scope;
             return this;
         }
@@ -119,7 +121,6 @@ public final class GetResolverEndpointPlainArgs extends com.pulumi.resources.Inv
         public GetResolverEndpointPlainArgs build() {
             $.resolverEndpointName = Objects.requireNonNull($.resolverEndpointName, "expected parameter 'resolverEndpointName' to be non-null");
             $.resolverId = Objects.requireNonNull($.resolverId, "expected parameter 'resolverId' to be non-null");
-            $.scope = Objects.requireNonNull($.scope, "expected parameter 'scope' to be non-null");
             return $;
         }
     }

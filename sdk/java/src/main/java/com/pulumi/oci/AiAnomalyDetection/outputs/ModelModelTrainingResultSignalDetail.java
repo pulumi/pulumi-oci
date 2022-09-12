@@ -17,37 +17,37 @@ public final class ModelModelTrainingResultSignalDetail {
      * @return detailed information for a signal.
      * 
      */
-    private final @Nullable String details;
+    private @Nullable String details;
     /**
      * @return Accuracy metric for a signal.
      * 
      */
-    private final @Nullable Double fap;
+    private @Nullable Double fap;
     /**
      * @return A boolean value to indicate if a signal is quantized or not.
      * 
      */
-    private final @Nullable Boolean isQuantized;
+    private @Nullable Boolean isQuantized;
     /**
      * @return Max value within a signal.
      * 
      */
-    private final @Nullable Double max;
+    private @Nullable Double max;
     /**
      * @return Min value within a signal.
      * 
      */
-    private final @Nullable Double min;
+    private @Nullable Double min;
     /**
      * @return The ratio of missing values in a signal filled/imputed by the IDP algorithm.
      * 
      */
-    private final @Nullable Double mviRatio;
+    private @Nullable Double mviRatio;
     /**
      * @return The name of a signal.
      * 
      */
-    private final @Nullable String signalName;
+    private @Nullable String signalName;
     /**
      * @return Status of the signal:
      * * ACCEPTED - the signal is used for training the model
@@ -55,35 +55,14 @@ public final class ModelModelTrainingResultSignalDetail {
      * * OTHER - placeholder for other status
      * 
      */
-    private final @Nullable String status;
+    private @Nullable String status;
     /**
      * @return Standard deviation of values within a signal.
      * 
      */
-    private final @Nullable Double std;
+    private @Nullable Double std;
 
-    @CustomType.Constructor
-    private ModelModelTrainingResultSignalDetail(
-        @CustomType.Parameter("details") @Nullable String details,
-        @CustomType.Parameter("fap") @Nullable Double fap,
-        @CustomType.Parameter("isQuantized") @Nullable Boolean isQuantized,
-        @CustomType.Parameter("max") @Nullable Double max,
-        @CustomType.Parameter("min") @Nullable Double min,
-        @CustomType.Parameter("mviRatio") @Nullable Double mviRatio,
-        @CustomType.Parameter("signalName") @Nullable String signalName,
-        @CustomType.Parameter("status") @Nullable String status,
-        @CustomType.Parameter("std") @Nullable Double std) {
-        this.details = details;
-        this.fap = fap;
-        this.isQuantized = isQuantized;
-        this.max = max;
-        this.min = min;
-        this.mviRatio = mviRatio;
-        this.signalName = signalName;
-        this.status = status;
-        this.std = std;
-    }
-
+    private ModelModelTrainingResultSignalDetail() {}
     /**
      * @return detailed information for a signal.
      * 
@@ -158,7 +137,7 @@ public final class ModelModelTrainingResultSignalDetail {
     public static Builder builder(ModelModelTrainingResultSignalDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String details;
         private @Nullable Double fap;
@@ -169,11 +148,7 @@ public final class ModelModelTrainingResultSignalDetail {
         private @Nullable String signalName;
         private @Nullable String status;
         private @Nullable Double std;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ModelModelTrainingResultSignalDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.details = defaults.details;
@@ -187,43 +162,63 @@ public final class ModelModelTrainingResultSignalDetail {
     	      this.std = defaults.std;
         }
 
+        @CustomType.Setter
         public Builder details(@Nullable String details) {
             this.details = details;
             return this;
         }
+        @CustomType.Setter
         public Builder fap(@Nullable Double fap) {
             this.fap = fap;
             return this;
         }
+        @CustomType.Setter
         public Builder isQuantized(@Nullable Boolean isQuantized) {
             this.isQuantized = isQuantized;
             return this;
         }
+        @CustomType.Setter
         public Builder max(@Nullable Double max) {
             this.max = max;
             return this;
         }
+        @CustomType.Setter
         public Builder min(@Nullable Double min) {
             this.min = min;
             return this;
         }
+        @CustomType.Setter
         public Builder mviRatio(@Nullable Double mviRatio) {
             this.mviRatio = mviRatio;
             return this;
         }
+        @CustomType.Setter
         public Builder signalName(@Nullable String signalName) {
             this.signalName = signalName;
             return this;
         }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
         }
+        @CustomType.Setter
         public Builder std(@Nullable Double std) {
             this.std = std;
             return this;
-        }        public ModelModelTrainingResultSignalDetail build() {
-            return new ModelModelTrainingResultSignalDetail(details, fap, isQuantized, max, min, mviRatio, signalName, status, std);
+        }
+        public ModelModelTrainingResultSignalDetail build() {
+            final var o = new ModelModelTrainingResultSignalDetail();
+            o.details = details;
+            o.fap = fap;
+            o.isQuantized = isQuantized;
+            o.max = max;
+            o.min = min;
+            o.mviRatio = mviRatio;
+            o.signalName = signalName;
+            o.status = status;
+            o.std = std;
+            return o;
         }
     }
 }

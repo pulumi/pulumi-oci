@@ -14,28 +14,19 @@ public final class GetListingPackagesListingPackagePricingInternationalMarketPri
      * @return The currency of the pricing model.
      * 
      */
-    private final String currencyCode;
+    private String currencyCode;
     /**
      * @return The symbol of the currency
      * 
      */
-    private final String currencySymbol;
+    private String currencySymbol;
     /**
      * @return The pricing rate.
      * 
      */
-    private final Double rate;
+    private Double rate;
 
-    @CustomType.Constructor
-    private GetListingPackagesListingPackagePricingInternationalMarketPrice(
-        @CustomType.Parameter("currencyCode") String currencyCode,
-        @CustomType.Parameter("currencySymbol") String currencySymbol,
-        @CustomType.Parameter("rate") Double rate) {
-        this.currencyCode = currencyCode;
-        this.currencySymbol = currencySymbol;
-        this.rate = rate;
-    }
-
+    private GetListingPackagesListingPackagePricingInternationalMarketPrice() {}
     /**
      * @return The currency of the pricing model.
      * 
@@ -65,16 +56,12 @@ public final class GetListingPackagesListingPackagePricingInternationalMarketPri
     public static Builder builder(GetListingPackagesListingPackagePricingInternationalMarketPrice defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String currencyCode;
         private String currencySymbol;
         private Double rate;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingPackagesListingPackagePricingInternationalMarketPrice defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.currencyCode = defaults.currencyCode;
@@ -82,19 +69,27 @@ public final class GetListingPackagesListingPackagePricingInternationalMarketPri
     	      this.rate = defaults.rate;
         }
 
+        @CustomType.Setter
         public Builder currencyCode(String currencyCode) {
             this.currencyCode = Objects.requireNonNull(currencyCode);
             return this;
         }
+        @CustomType.Setter
         public Builder currencySymbol(String currencySymbol) {
             this.currencySymbol = Objects.requireNonNull(currencySymbol);
             return this;
         }
+        @CustomType.Setter
         public Builder rate(Double rate) {
             this.rate = Objects.requireNonNull(rate);
             return this;
-        }        public GetListingPackagesListingPackagePricingInternationalMarketPrice build() {
-            return new GetListingPackagesListingPackagePricingInternationalMarketPrice(currencyCode, currencySymbol, rate);
+        }
+        public GetListingPackagesListingPackagePricingInternationalMarketPrice build() {
+            final var o = new GetListingPackagesListingPackagePricingInternationalMarketPrice();
+            o.currencyCode = currencyCode;
+            o.currencySymbol = currencySymbol;
+            o.rate = rate;
+            return o;
         }
     }
 }

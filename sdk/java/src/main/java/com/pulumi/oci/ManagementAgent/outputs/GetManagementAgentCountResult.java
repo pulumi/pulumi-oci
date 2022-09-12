@@ -14,45 +14,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentCountResult {
-    private final String compartmentId;
-    private final List<String> groupBies;
+    private String compartmentId;
+    private List<String> groupBies;
     /**
      * @return Whether or not a managementAgent has at least one plugin
      * 
      */
-    private final @Nullable Boolean hasPlugins;
+    private @Nullable Boolean hasPlugins;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The install type, either AGENT or GATEWAY
      * 
      */
-    private final @Nullable String installType;
+    private @Nullable String installType;
     /**
      * @return List in which each item describes an aggregation of Managment Agents
      * 
      */
-    private final List<GetManagementAgentCountItem> items;
+    private List<GetManagementAgentCountItem> items;
 
-    @CustomType.Constructor
-    private GetManagementAgentCountResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("groupBies") List<String> groupBies,
-        @CustomType.Parameter("hasPlugins") @Nullable Boolean hasPlugins,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("installType") @Nullable String installType,
-        @CustomType.Parameter("items") List<GetManagementAgentCountItem> items) {
-        this.compartmentId = compartmentId;
-        this.groupBies = groupBies;
-        this.hasPlugins = hasPlugins;
-        this.id = id;
-        this.installType = installType;
-        this.items = items;
-    }
-
+    private GetManagementAgentCountResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -95,7 +80,7 @@ public final class GetManagementAgentCountResult {
     public static Builder builder(GetManagementAgentCountResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<String> groupBies;
@@ -103,11 +88,7 @@ public final class GetManagementAgentCountResult {
         private String id;
         private @Nullable String installType;
         private List<GetManagementAgentCountItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagementAgentCountResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -118,10 +99,12 @@ public final class GetManagementAgentCountResult {
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder groupBies(List<String> groupBies) {
             this.groupBies = Objects.requireNonNull(groupBies);
             return this;
@@ -129,26 +112,38 @@ public final class GetManagementAgentCountResult {
         public Builder groupBies(String... groupBies) {
             return groupBies(List.of(groupBies));
         }
+        @CustomType.Setter
         public Builder hasPlugins(@Nullable Boolean hasPlugins) {
             this.hasPlugins = hasPlugins;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder installType(@Nullable String installType) {
             this.installType = installType;
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetManagementAgentCountItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetManagementAgentCountItem... items) {
             return items(List.of(items));
-        }        public GetManagementAgentCountResult build() {
-            return new GetManagementAgentCountResult(compartmentId, groupBies, hasPlugins, id, installType, items);
+        }
+        public GetManagementAgentCountResult build() {
+            final var o = new GetManagementAgentCountResult();
+            o.compartmentId = compartmentId;
+            o.groupBies = groupBies;
+            o.hasPlugins = hasPlugins;
+            o.id = id;
+            o.installType = installType;
+            o.items = items;
+            return o;
         }
     }
 }

@@ -17,20 +17,11 @@ public final class GetRegionsFilter {
      * @return The name of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
      * 
      */
-    private final String name;
-    private final @Nullable Boolean regex;
-    private final List<String> values;
+    private String name;
+    private @Nullable Boolean regex;
+    private List<String> values;
 
-    @CustomType.Constructor
-    private GetRegionsFilter(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("regex") @Nullable Boolean regex,
-        @CustomType.Parameter("values") List<String> values) {
-        this.name = name;
-        this.regex = regex;
-        this.values = values;
-    }
-
+    private GetRegionsFilter() {}
     /**
      * @return The name of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
      * 
@@ -52,16 +43,12 @@ public final class GetRegionsFilter {
     public static Builder builder(GetRegionsFilter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private @Nullable Boolean regex;
         private List<String> values;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegionsFilter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
@@ -69,22 +56,30 @@ public final class GetRegionsFilter {
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder regex(@Nullable Boolean regex) {
             this.regex = regex;
             return this;
         }
+        @CustomType.Setter
         public Builder values(List<String> values) {
             this.values = Objects.requireNonNull(values);
             return this;
         }
         public Builder values(String... values) {
             return values(List.of(values));
-        }        public GetRegionsFilter build() {
-            return new GetRegionsFilter(name, regex, values);
+        }
+        public GetRegionsFilter build() {
+            final var o = new GetRegionsFilter();
+            o.name = name;
+            o.regex = regex;
+            o.values = values;
+            return o;
         }
     }
 }

@@ -14,13 +14,9 @@ public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifact 
      * @return A list of stage predecessors for a stage.
      * 
      */
-    private final List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem> items;
+    private List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem> items;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollectionItemDeployPipelineArtifact(@CustomType.Parameter("items") List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem> items) {
-        this.items = items;
-    }
-
+    private GetDeploymentsDeploymentCollectionItemDeployPipelineArtifact() {}
     /**
      * @return A list of stage predecessors for a stage.
      * 
@@ -36,27 +32,27 @@ public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifact 
     public static Builder builder(GetDeploymentsDeploymentCollectionItemDeployPipelineArtifact defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionItemDeployPipelineArtifact defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItem... items) {
             return items(List.of(items));
-        }        public GetDeploymentsDeploymentCollectionItemDeployPipelineArtifact build() {
-            return new GetDeploymentsDeploymentCollectionItemDeployPipelineArtifact(items);
+        }
+        public GetDeploymentsDeploymentCollectionItemDeployPipelineArtifact build() {
+            final var o = new GetDeploymentsDeploymentCollectionItemDeployPipelineArtifact();
+            o.items = items;
+            return o;
         }
     }
 }

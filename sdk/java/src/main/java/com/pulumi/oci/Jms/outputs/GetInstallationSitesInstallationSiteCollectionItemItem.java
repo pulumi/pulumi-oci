@@ -18,77 +18,54 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItem {
      * @return The approximate count of applications running on this installation
      * 
      */
-    private final Integer approximateApplicationCount;
+    private Integer approximateApplicationCount;
     /**
      * @return The list of operations that are blocklisted.
      * 
      */
-    private final List<GetInstallationSitesInstallationSiteCollectionItemItemBlocklist> blocklists;
+    private List<GetInstallationSitesInstallationSiteCollectionItemItemBlocklist> blocklists;
     /**
      * @return The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
      * 
      */
-    private final String installationKey;
+    private String installationKey;
     /**
      * @return The essential properties to identify a Java Runtime.
      * 
      */
-    private final List<GetInstallationSitesInstallationSiteCollectionItemItemJre> jres;
+    private List<GetInstallationSitesInstallationSiteCollectionItemItemJre> jres;
     /**
      * @return The Fleet-unique identifier of the related managed instance.
      * 
      */
-    private final String managedInstanceId;
+    private String managedInstanceId;
     /**
      * @return Operating System of the platform on which the Java Runtime was reported.
      * 
      */
-    private final List<GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem> operatingSystems;
+    private List<GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem> operatingSystems;
     /**
      * @return The file system path of the installation.
      * 
      */
-    private final String path;
+    private String path;
     /**
      * @return The security status of the Java Runtime.
      * 
      */
-    private final String securityStatus;
+    private String securityStatus;
     /**
      * @return The lifecycle state of the installation site.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
      * 
      */
-    private final String timeLastSeen;
+    private String timeLastSeen;
 
-    @CustomType.Constructor
-    private GetInstallationSitesInstallationSiteCollectionItemItem(
-        @CustomType.Parameter("approximateApplicationCount") Integer approximateApplicationCount,
-        @CustomType.Parameter("blocklists") List<GetInstallationSitesInstallationSiteCollectionItemItemBlocklist> blocklists,
-        @CustomType.Parameter("installationKey") String installationKey,
-        @CustomType.Parameter("jres") List<GetInstallationSitesInstallationSiteCollectionItemItemJre> jres,
-        @CustomType.Parameter("managedInstanceId") String managedInstanceId,
-        @CustomType.Parameter("operatingSystems") List<GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem> operatingSystems,
-        @CustomType.Parameter("path") String path,
-        @CustomType.Parameter("securityStatus") String securityStatus,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeLastSeen") String timeLastSeen) {
-        this.approximateApplicationCount = approximateApplicationCount;
-        this.blocklists = blocklists;
-        this.installationKey = installationKey;
-        this.jres = jres;
-        this.managedInstanceId = managedInstanceId;
-        this.operatingSystems = operatingSystems;
-        this.path = path;
-        this.securityStatus = securityStatus;
-        this.state = state;
-        this.timeLastSeen = timeLastSeen;
-    }
-
+    private GetInstallationSitesInstallationSiteCollectionItemItem() {}
     /**
      * @return The approximate count of applications running on this installation
      * 
@@ -167,7 +144,7 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItem {
     public static Builder builder(GetInstallationSitesInstallationSiteCollectionItemItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer approximateApplicationCount;
         private List<GetInstallationSitesInstallationSiteCollectionItemItemBlocklist> blocklists;
@@ -179,11 +156,7 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItem {
         private String securityStatus;
         private String state;
         private String timeLastSeen;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstallationSitesInstallationSiteCollectionItemItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.approximateApplicationCount = defaults.approximateApplicationCount;
@@ -198,10 +171,12 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItem {
     	      this.timeLastSeen = defaults.timeLastSeen;
         }
 
+        @CustomType.Setter
         public Builder approximateApplicationCount(Integer approximateApplicationCount) {
             this.approximateApplicationCount = Objects.requireNonNull(approximateApplicationCount);
             return this;
         }
+        @CustomType.Setter
         public Builder blocklists(List<GetInstallationSitesInstallationSiteCollectionItemItemBlocklist> blocklists) {
             this.blocklists = Objects.requireNonNull(blocklists);
             return this;
@@ -209,10 +184,12 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItem {
         public Builder blocklists(GetInstallationSitesInstallationSiteCollectionItemItemBlocklist... blocklists) {
             return blocklists(List.of(blocklists));
         }
+        @CustomType.Setter
         public Builder installationKey(String installationKey) {
             this.installationKey = Objects.requireNonNull(installationKey);
             return this;
         }
+        @CustomType.Setter
         public Builder jres(List<GetInstallationSitesInstallationSiteCollectionItemItemJre> jres) {
             this.jres = Objects.requireNonNull(jres);
             return this;
@@ -220,10 +197,12 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItem {
         public Builder jres(GetInstallationSitesInstallationSiteCollectionItemItemJre... jres) {
             return jres(List.of(jres));
         }
+        @CustomType.Setter
         public Builder managedInstanceId(String managedInstanceId) {
             this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder operatingSystems(List<GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem> operatingSystems) {
             this.operatingSystems = Objects.requireNonNull(operatingSystems);
             return this;
@@ -231,23 +210,39 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItem {
         public Builder operatingSystems(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem... operatingSystems) {
             return operatingSystems(List.of(operatingSystems));
         }
+        @CustomType.Setter
         public Builder path(String path) {
             this.path = Objects.requireNonNull(path);
             return this;
         }
+        @CustomType.Setter
         public Builder securityStatus(String securityStatus) {
             this.securityStatus = Objects.requireNonNull(securityStatus);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeLastSeen(String timeLastSeen) {
             this.timeLastSeen = Objects.requireNonNull(timeLastSeen);
             return this;
-        }        public GetInstallationSitesInstallationSiteCollectionItemItem build() {
-            return new GetInstallationSitesInstallationSiteCollectionItemItem(approximateApplicationCount, blocklists, installationKey, jres, managedInstanceId, operatingSystems, path, securityStatus, state, timeLastSeen);
+        }
+        public GetInstallationSitesInstallationSiteCollectionItemItem build() {
+            final var o = new GetInstallationSitesInstallationSiteCollectionItemItem();
+            o.approximateApplicationCount = approximateApplicationCount;
+            o.blocklists = blocklists;
+            o.installationKey = installationKey;
+            o.jres = jres;
+            o.managedInstanceId = managedInstanceId;
+            o.operatingSystems = operatingSystems;
+            o.path = path;
+            o.securityStatus = securityStatus;
+            o.state = state;
+            o.timeLastSeen = timeLastSeen;
+            return o;
         }
     }
 }

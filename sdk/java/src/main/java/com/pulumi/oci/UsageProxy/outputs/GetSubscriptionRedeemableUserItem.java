@@ -10,22 +10,42 @@ import java.util.Objects;
 @CustomType
 public final class GetSubscriptionRedeemableUserItem {
     /**
-     * @return The email ID of a user that can redeem rewards.
+     * @return The email ID of the user that can redeem rewards.
      * 
      */
-    private final String emailId;
-
-    @CustomType.Constructor
-    private GetSubscriptionRedeemableUserItem(@CustomType.Parameter("emailId") String emailId) {
-        this.emailId = emailId;
-    }
-
+    private String emailId;
     /**
-     * @return The email ID of a user that can redeem rewards.
+     * @return The first name of the user that can redeem rewards.
+     * 
+     */
+    private String firstName;
+    /**
+     * @return The last name of the user that can redeem rewards.
+     * 
+     */
+    private String lastName;
+
+    private GetSubscriptionRedeemableUserItem() {}
+    /**
+     * @return The email ID of the user that can redeem rewards.
      * 
      */
     public String emailId() {
         return this.emailId;
+    }
+    /**
+     * @return The first name of the user that can redeem rewards.
+     * 
+     */
+    public String firstName() {
+        return this.firstName;
+    }
+    /**
+     * @return The last name of the user that can redeem rewards.
+     * 
+     */
+    public String lastName() {
+        return this.lastName;
     }
 
     public static Builder builder() {
@@ -35,24 +55,40 @@ public final class GetSubscriptionRedeemableUserItem {
     public static Builder builder(GetSubscriptionRedeemableUserItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String emailId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        private String firstName;
+        private String lastName;
+        public Builder() {}
         public Builder(GetSubscriptionRedeemableUserItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.emailId = defaults.emailId;
+    	      this.firstName = defaults.firstName;
+    	      this.lastName = defaults.lastName;
         }
 
+        @CustomType.Setter
         public Builder emailId(String emailId) {
             this.emailId = Objects.requireNonNull(emailId);
             return this;
-        }        public GetSubscriptionRedeemableUserItem build() {
-            return new GetSubscriptionRedeemableUserItem(emailId);
+        }
+        @CustomType.Setter
+        public Builder firstName(String firstName) {
+            this.firstName = Objects.requireNonNull(firstName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lastName(String lastName) {
+            this.lastName = Objects.requireNonNull(lastName);
+            return this;
+        }
+        public GetSubscriptionRedeemableUserItem build() {
+            final var o = new GetSubscriptionRedeemableUserItem();
+            o.emailId = emailId;
+            o.firstName = firstName;
+            o.lastName = lastName;
+            return o;
         }
     }
 }

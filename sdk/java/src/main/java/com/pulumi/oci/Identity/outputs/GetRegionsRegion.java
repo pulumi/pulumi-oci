@@ -13,21 +13,14 @@ public final class GetRegionsRegion {
      * @return The key of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported 3-letter region codes.  Example: `PHX`
      * 
      */
-    private final String key;
+    private String key;
     /**
      * @return The name of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetRegionsRegion(
-        @CustomType.Parameter("key") String key,
-        @CustomType.Parameter("name") String name) {
-        this.key = key;
-        this.name = name;
-    }
-
+    private GetRegionsRegion() {}
     /**
      * @return The key of the region. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported 3-letter region codes.  Example: `PHX`
      * 
@@ -50,30 +43,32 @@ public final class GetRegionsRegion {
     public static Builder builder(GetRegionsRegion defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String key;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRegionsRegion defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.key = defaults.key;
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder key(String key) {
             this.key = Objects.requireNonNull(key);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetRegionsRegion build() {
-            return new GetRegionsRegion(key, name);
+        }
+        public GetRegionsRegion build() {
+            final var o = new GetRegionsRegion();
+            o.key = key;
+            o.name = name;
+            return o;
         }
     }
 }

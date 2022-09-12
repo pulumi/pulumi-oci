@@ -14,33 +14,18 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVirtualNetworksResult {
-    private final String compartmentId;
-    private final @Nullable String displayName;
-    private final @Nullable List<GetVirtualNetworksFilter> filters;
+    private String compartmentId;
+    private @Nullable String displayName;
+    private @Nullable List<GetVirtualNetworksFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String state;
-    private final List<GetVirtualNetworksVirtualNetwork> virtualNetworks;
+    private String id;
+    private @Nullable String state;
+    private List<GetVirtualNetworksVirtualNetwork> virtualNetworks;
 
-    @CustomType.Constructor
-    private GetVirtualNetworksResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetVirtualNetworksFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("virtualNetworks") List<GetVirtualNetworksVirtualNetwork> virtualNetworks) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.virtualNetworks = virtualNetworks;
-    }
-
+    private GetVirtualNetworksResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -71,7 +56,7 @@ public final class GetVirtualNetworksResult {
     public static Builder builder(GetVirtualNetworksResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
@@ -79,11 +64,7 @@ public final class GetVirtualNetworksResult {
         private String id;
         private @Nullable String state;
         private List<GetVirtualNetworksVirtualNetwork> virtualNetworks;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualNetworksResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -94,14 +75,17 @@ public final class GetVirtualNetworksResult {
     	      this.virtualNetworks = defaults.virtualNetworks;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVirtualNetworksFilter> filters) {
             this.filters = filters;
             return this;
@@ -109,22 +93,33 @@ public final class GetVirtualNetworksResult {
         public Builder filters(GetVirtualNetworksFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder virtualNetworks(List<GetVirtualNetworksVirtualNetwork> virtualNetworks) {
             this.virtualNetworks = Objects.requireNonNull(virtualNetworks);
             return this;
         }
         public Builder virtualNetworks(GetVirtualNetworksVirtualNetwork... virtualNetworks) {
             return virtualNetworks(List.of(virtualNetworks));
-        }        public GetVirtualNetworksResult build() {
-            return new GetVirtualNetworksResult(compartmentId, displayName, filters, id, state, virtualNetworks);
+        }
+        public GetVirtualNetworksResult build() {
+            final var o = new GetVirtualNetworksResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.virtualNetworks = virtualNetworks;
+            return o;
         }
     }
 }

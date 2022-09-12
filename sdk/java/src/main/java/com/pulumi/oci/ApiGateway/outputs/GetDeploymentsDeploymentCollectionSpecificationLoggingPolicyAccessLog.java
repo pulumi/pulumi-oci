@@ -13,13 +13,9 @@ public final class GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyA
      * @return Whether this policy is currently enabled.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
 
-    @CustomType.Constructor
-    private GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog(@CustomType.Parameter("isEnabled") Boolean isEnabled) {
-        this.isEnabled = isEnabled;
-    }
-
+    private GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog() {}
     /**
      * @return Whether this policy is currently enabled.
      * 
@@ -35,24 +31,24 @@ public final class GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyA
     public static Builder builder(GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isEnabled = defaults.isEnabled;
         }
 
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
-        }        public GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog build() {
-            return new GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog(isEnabled);
+        }
+        public GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog build() {
+            final var o = new GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLog();
+            o.isEnabled = isEnabled;
+            return o;
         }
     }
 }

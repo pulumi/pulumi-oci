@@ -16,28 +16,19 @@ public final class GetRecommendationStrategyItemStrategy {
      * @return Whether this is the default recommendation strategy.
      * 
      */
-    private final Boolean isDefault;
+    private Boolean isDefault;
     /**
      * @return The list of strategies for the parameters.
      * 
      */
-    private final List<GetRecommendationStrategyItemStrategyParametersDefinition> parametersDefinitions;
+    private List<GetRecommendationStrategyItemStrategyParametersDefinition> parametersDefinitions;
     /**
      * @return The name of the strategy.
      * 
      */
-    private final String strategyName;
+    private String strategyName;
 
-    @CustomType.Constructor
-    private GetRecommendationStrategyItemStrategy(
-        @CustomType.Parameter("isDefault") Boolean isDefault,
-        @CustomType.Parameter("parametersDefinitions") List<GetRecommendationStrategyItemStrategyParametersDefinition> parametersDefinitions,
-        @CustomType.Parameter("strategyName") String strategyName) {
-        this.isDefault = isDefault;
-        this.parametersDefinitions = parametersDefinitions;
-        this.strategyName = strategyName;
-    }
-
+    private GetRecommendationStrategyItemStrategy() {}
     /**
      * @return Whether this is the default recommendation strategy.
      * 
@@ -67,16 +58,12 @@ public final class GetRecommendationStrategyItemStrategy {
     public static Builder builder(GetRecommendationStrategyItemStrategy defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isDefault;
         private List<GetRecommendationStrategyItemStrategyParametersDefinition> parametersDefinitions;
         private String strategyName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRecommendationStrategyItemStrategy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isDefault = defaults.isDefault;
@@ -84,10 +71,12 @@ public final class GetRecommendationStrategyItemStrategy {
     	      this.strategyName = defaults.strategyName;
         }
 
+        @CustomType.Setter
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = Objects.requireNonNull(isDefault);
             return this;
         }
+        @CustomType.Setter
         public Builder parametersDefinitions(List<GetRecommendationStrategyItemStrategyParametersDefinition> parametersDefinitions) {
             this.parametersDefinitions = Objects.requireNonNull(parametersDefinitions);
             return this;
@@ -95,11 +84,17 @@ public final class GetRecommendationStrategyItemStrategy {
         public Builder parametersDefinitions(GetRecommendationStrategyItemStrategyParametersDefinition... parametersDefinitions) {
             return parametersDefinitions(List.of(parametersDefinitions));
         }
+        @CustomType.Setter
         public Builder strategyName(String strategyName) {
             this.strategyName = Objects.requireNonNull(strategyName);
             return this;
-        }        public GetRecommendationStrategyItemStrategy build() {
-            return new GetRecommendationStrategyItemStrategy(isDefault, parametersDefinitions, strategyName);
+        }
+        public GetRecommendationStrategyItemStrategy build() {
+            final var o = new GetRecommendationStrategyItemStrategy();
+            o.isDefault = isDefault;
+            o.parametersDefinitions = parametersDefinitions;
+            o.strategyName = strategyName;
+            return o;
         }
     }
 }

@@ -14,13 +14,9 @@ public final class GetVantagePointsPublicVantagePointCollection {
      * @return List of PublicVantagePointSummary items.
      * 
      */
-    private final List<GetVantagePointsPublicVantagePointCollectionItem> items;
+    private List<GetVantagePointsPublicVantagePointCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetVantagePointsPublicVantagePointCollection(@CustomType.Parameter("items") List<GetVantagePointsPublicVantagePointCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetVantagePointsPublicVantagePointCollection() {}
     /**
      * @return List of PublicVantagePointSummary items.
      * 
@@ -36,27 +32,27 @@ public final class GetVantagePointsPublicVantagePointCollection {
     public static Builder builder(GetVantagePointsPublicVantagePointCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetVantagePointsPublicVantagePointCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVantagePointsPublicVantagePointCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetVantagePointsPublicVantagePointCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetVantagePointsPublicVantagePointCollectionItem... items) {
             return items(List.of(items));
-        }        public GetVantagePointsPublicVantagePointCollection build() {
-            return new GetVantagePointsPublicVantagePointCollection(items);
+        }
+        public GetVantagePointsPublicVantagePointCollection build() {
+            final var o = new GetVantagePointsPublicVantagePointCollection();
+            o.items = items;
+            return o;
         }
     }
 }

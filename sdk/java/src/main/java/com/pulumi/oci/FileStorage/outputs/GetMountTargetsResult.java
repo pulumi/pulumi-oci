@@ -18,59 +18,40 @@ public final class GetMountTargetsResult {
      * @return The availability domain the mount target is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private final String availabilityDomain;
+    private String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the mount target.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My mount target`
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated export set. Controls what file systems will be exported through Network File System (NFS) protocol on this mount target.
      * 
      */
-    private final @Nullable String exportSetId;
-    private final @Nullable List<GetMountTargetsFilter> filters;
+    private @Nullable String exportSetId;
+    private @Nullable List<GetMountTargetsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return The list of mount_targets.
      * 
      */
-    private final List<GetMountTargetsMountTarget> mountTargets;
+    private List<GetMountTargetsMountTarget> mountTargets;
     /**
      * @return The current state of the mount target.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetMountTargetsResult(
-        @CustomType.Parameter("availabilityDomain") String availabilityDomain,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("exportSetId") @Nullable String exportSetId,
-        @CustomType.Parameter("filters") @Nullable List<GetMountTargetsFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("mountTargets") List<GetMountTargetsMountTarget> mountTargets,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.availabilityDomain = availabilityDomain;
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.exportSetId = exportSetId;
-        this.filters = filters;
-        this.id = id;
-        this.mountTargets = mountTargets;
-        this.state = state;
-    }
-
+    private GetMountTargetsResult() {}
     /**
      * @return The availability domain the mount target is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
      * 
@@ -131,7 +112,7 @@ public final class GetMountTargetsResult {
     public static Builder builder(GetMountTargetsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
         private String compartmentId;
@@ -141,11 +122,7 @@ public final class GetMountTargetsResult {
         private @Nullable String id;
         private List<GetMountTargetsMountTarget> mountTargets;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetMountTargetsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
@@ -158,22 +135,27 @@ public final class GetMountTargetsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder exportSetId(@Nullable String exportSetId) {
             this.exportSetId = exportSetId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetMountTargetsFilter> filters) {
             this.filters = filters;
             return this;
@@ -181,10 +163,12 @@ public final class GetMountTargetsResult {
         public Builder filters(GetMountTargetsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder mountTargets(List<GetMountTargetsMountTarget> mountTargets) {
             this.mountTargets = Objects.requireNonNull(mountTargets);
             return this;
@@ -192,11 +176,22 @@ public final class GetMountTargetsResult {
         public Builder mountTargets(GetMountTargetsMountTarget... mountTargets) {
             return mountTargets(List.of(mountTargets));
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetMountTargetsResult build() {
-            return new GetMountTargetsResult(availabilityDomain, compartmentId, displayName, exportSetId, filters, id, mountTargets, state);
+        }
+        public GetMountTargetsResult build() {
+            final var o = new GetMountTargetsResult();
+            o.availabilityDomain = availabilityDomain;
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.exportSetId = exportSetId;
+            o.filters = filters;
+            o.id = id;
+            o.mountTargets = mountTargets;
+            o.state = state;
+            return o;
         }
     }
 }

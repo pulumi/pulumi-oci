@@ -149,6 +149,10 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         public readonly bool IsEnabled;
         /// <summary>
+        /// When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams. Example: `true`
+        /// </summary>
+        public readonly bool IsNotificationsPerMetricDimensionEnabled;
+        /// <summary>
         /// The format to use for notification messages sent from this alarm. The formats are:
         /// </summary>
         public readonly string MessageFormat;
@@ -225,6 +229,8 @@ namespace Pulumi.Oci.Monitoring
 
             bool isEnabled,
 
+            bool isNotificationsPerMetricDimensionEnabled,
+
             string messageFormat,
 
             string metricCompartmentId,
@@ -262,6 +268,7 @@ namespace Pulumi.Oci.Monitoring
             FreeformTags = freeformTags;
             Id = id;
             IsEnabled = isEnabled;
+            IsNotificationsPerMetricDimensionEnabled = isNotificationsPerMetricDimensionEnabled;
             MessageFormat = messageFormat;
             MetricCompartmentId = metricCompartmentId;
             MetricCompartmentIdInSubtree = metricCompartmentIdInSubtree;

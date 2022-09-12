@@ -38,6 +38,16 @@ namespace Pulumi.Oci.Analytics
     ///         },
     ///         SubnetId = oci_core_subnet.Test_subnet.Id,
     ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         NetworkSecurityGroupIds = @var.Analytics_instance_private_access_channel_network_security_group_ids,
+    ///         PrivateSourceScanHosts = new[]
+    ///         {
+    ///             new Oci.Analytics.Inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs
+    ///             {
+    ///                 ScanHostname = @var.Analytics_instance_private_access_channel_private_source_scan_hosts_scan_hostname,
+    ///                 ScanPort = @var.Analytics_instance_private_access_channel_private_source_scan_hosts_scan_port,
+    ///                 Description = @var.Analytics_instance_private_access_channel_private_source_scan_hosts_description,
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -85,10 +95,22 @@ namespace Pulumi.Oci.Analytics
         public Output<string> Key { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Network Security Group OCIDs for an Analytics instance.
+        /// </summary>
+        [Output("networkSecurityGroupIds")]
+        public Output<ImmutableArray<string>> NetworkSecurityGroupIds { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
         /// </summary>
         [Output("privateSourceDnsZones")]
         public Output<ImmutableArray<Outputs.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone>> PrivateSourceDnsZones { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+        /// </summary>
+        [Output("privateSourceScanHosts")]
+        public Output<ImmutableArray<Outputs.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost>> PrivateSourceScanHosts { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) OCID of the customer subnet connected to private access channel.
@@ -160,6 +182,18 @@ namespace Pulumi.Oci.Analytics
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
+        [Input("networkSecurityGroupIds")]
+        private InputList<string>? _networkSecurityGroupIds;
+
+        /// <summary>
+        /// (Updatable) Network Security Group OCIDs for an Analytics instance.
+        /// </summary>
+        public InputList<string> NetworkSecurityGroupIds
+        {
+            get => _networkSecurityGroupIds ?? (_networkSecurityGroupIds = new InputList<string>());
+            set => _networkSecurityGroupIds = value;
+        }
+
         [Input("privateSourceDnsZones", required: true)]
         private InputList<Inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs>? _privateSourceDnsZones;
 
@@ -170,6 +204,18 @@ namespace Pulumi.Oci.Analytics
         {
             get => _privateSourceDnsZones ?? (_privateSourceDnsZones = new InputList<Inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs>());
             set => _privateSourceDnsZones = value;
+        }
+
+        [Input("privateSourceScanHosts")]
+        private InputList<Inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs>? _privateSourceScanHosts;
+
+        /// <summary>
+        /// (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+        /// </summary>
+        public InputList<Inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs> PrivateSourceScanHosts
+        {
+            get => _privateSourceScanHosts ?? (_privateSourceScanHosts = new InputList<Inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs>());
+            set => _privateSourceScanHosts = value;
         }
 
         /// <summary>
@@ -228,6 +274,18 @@ namespace Pulumi.Oci.Analytics
         [Input("key")]
         public Input<string>? Key { get; set; }
 
+        [Input("networkSecurityGroupIds")]
+        private InputList<string>? _networkSecurityGroupIds;
+
+        /// <summary>
+        /// (Updatable) Network Security Group OCIDs for an Analytics instance.
+        /// </summary>
+        public InputList<string> NetworkSecurityGroupIds
+        {
+            get => _networkSecurityGroupIds ?? (_networkSecurityGroupIds = new InputList<string>());
+            set => _networkSecurityGroupIds = value;
+        }
+
         [Input("privateSourceDnsZones")]
         private InputList<Inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneGetArgs>? _privateSourceDnsZones;
 
@@ -238,6 +296,18 @@ namespace Pulumi.Oci.Analytics
         {
             get => _privateSourceDnsZones ?? (_privateSourceDnsZones = new InputList<Inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneGetArgs>());
             set => _privateSourceDnsZones = value;
+        }
+
+        [Input("privateSourceScanHosts")]
+        private InputList<Inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostGetArgs>? _privateSourceScanHosts;
+
+        /// <summary>
+        /// (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+        /// </summary>
+        public InputList<Inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostGetArgs> PrivateSourceScanHosts
+        {
+            get => _privateSourceScanHosts ?? (_privateSourceScanHosts = new InputList<Inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostGetArgs>());
+            set => _privateSourceScanHosts = value;
         }
 
         /// <summary>

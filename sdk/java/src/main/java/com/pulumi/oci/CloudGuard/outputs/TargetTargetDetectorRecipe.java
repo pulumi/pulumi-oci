@@ -18,91 +18,64 @@ public final class TargetTargetDetectorRecipe {
      * @return (Updatable) compartment associated with condition
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The target description.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
      * @return detector for the rule
      * 
      */
-    private final @Nullable String detector;
+    private @Nullable String detector;
     /**
      * @return Identifier for DetectorRecipe.
      * 
      */
-    private final String detectorRecipeId;
+    private String detectorRecipeId;
     /**
      * @return (Updatable) Overrides to be applied to Detector Rule associated with the target
      * 
      */
-    private final @Nullable List<TargetTargetDetectorRecipeDetectorRule> detectorRules;
+    private @Nullable List<TargetTargetDetectorRecipeDetectorRule> detectorRules;
     /**
      * @return (Updatable) DetectorTemplate identifier.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return List of effective detector rules for the detector type for recipe after applying defaults
      * 
      */
-    private final @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules;
+    private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules;
     /**
      * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return Owner of ResponderRecipe
      * 
      */
-    private final @Nullable String owner;
+    private @Nullable String owner;
     /**
      * @return (Updatable) The current state of the DetectorRule.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The date and time the target was created. Format defined by RFC3339.
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the target was updated. Format defined by RFC3339.
      * 
      */
-    private final @Nullable String timeUpdated;
+    private @Nullable String timeUpdated;
 
-    @CustomType.Constructor
-    private TargetTargetDetectorRecipe(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("detector") @Nullable String detector,
-        @CustomType.Parameter("detectorRecipeId") String detectorRecipeId,
-        @CustomType.Parameter("detectorRules") @Nullable List<TargetTargetDetectorRecipeDetectorRule> detectorRules,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("effectiveDetectorRules") @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("owner") @Nullable String owner,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated,
-        @CustomType.Parameter("timeUpdated") @Nullable String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.description = description;
-        this.detector = detector;
-        this.detectorRecipeId = detectorRecipeId;
-        this.detectorRules = detectorRules;
-        this.displayName = displayName;
-        this.effectiveDetectorRules = effectiveDetectorRules;
-        this.id = id;
-        this.owner = owner;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private TargetTargetDetectorRecipe() {}
     /**
      * @return (Updatable) compartment associated with condition
      * 
@@ -195,7 +168,7 @@ public final class TargetTargetDetectorRecipe {
     public static Builder builder(TargetTargetDetectorRecipe defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String description;
@@ -209,11 +182,7 @@ public final class TargetTargetDetectorRecipe {
         private @Nullable String state;
         private @Nullable String timeCreated;
         private @Nullable String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(TargetTargetDetectorRecipe defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -230,22 +199,27 @@ public final class TargetTargetDetectorRecipe {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder detector(@Nullable String detector) {
             this.detector = detector;
             return this;
         }
+        @CustomType.Setter
         public Builder detectorRecipeId(String detectorRecipeId) {
             this.detectorRecipeId = Objects.requireNonNull(detectorRecipeId);
             return this;
         }
+        @CustomType.Setter
         public Builder detectorRules(@Nullable List<TargetTargetDetectorRecipeDetectorRule> detectorRules) {
             this.detectorRules = detectorRules;
             return this;
@@ -253,10 +227,12 @@ public final class TargetTargetDetectorRecipe {
         public Builder detectorRules(TargetTargetDetectorRecipeDetectorRule... detectorRules) {
             return detectorRules(List.of(detectorRules));
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder effectiveDetectorRules(@Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules) {
             this.effectiveDetectorRules = effectiveDetectorRules;
             return this;
@@ -264,27 +240,46 @@ public final class TargetTargetDetectorRecipe {
         public Builder effectiveDetectorRules(TargetTargetDetectorRecipeEffectiveDetectorRule... effectiveDetectorRules) {
             return effectiveDetectorRules(List.of(effectiveDetectorRules));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder owner(@Nullable String owner) {
             this.owner = owner;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
             this.timeUpdated = timeUpdated;
             return this;
-        }        public TargetTargetDetectorRecipe build() {
-            return new TargetTargetDetectorRecipe(compartmentId, description, detector, detectorRecipeId, detectorRules, displayName, effectiveDetectorRules, id, owner, state, timeCreated, timeUpdated);
+        }
+        public TargetTargetDetectorRecipe build() {
+            final var o = new TargetTargetDetectorRecipe();
+            o.compartmentId = compartmentId;
+            o.description = description;
+            o.detector = detector;
+            o.detectorRecipeId = detectorRecipeId;
+            o.detectorRules = detectorRules;
+            o.displayName = displayName;
+            o.effectiveDetectorRules = effectiveDetectorRules;
+            o.id = id;
+            o.owner = owner;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

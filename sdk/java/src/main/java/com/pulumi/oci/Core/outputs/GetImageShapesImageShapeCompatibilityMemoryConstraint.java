@@ -13,21 +13,14 @@ public final class GetImageShapesImageShapeCompatibilityMemoryConstraint {
      * @return The maximum amount of memory, in gigabytes.
      * 
      */
-    private final Integer maxInGbs;
+    private Integer maxInGbs;
     /**
      * @return The minimum amount of memory, in gigabytes.
      * 
      */
-    private final Integer minInGbs;
+    private Integer minInGbs;
 
-    @CustomType.Constructor
-    private GetImageShapesImageShapeCompatibilityMemoryConstraint(
-        @CustomType.Parameter("maxInGbs") Integer maxInGbs,
-        @CustomType.Parameter("minInGbs") Integer minInGbs) {
-        this.maxInGbs = maxInGbs;
-        this.minInGbs = minInGbs;
-    }
-
+    private GetImageShapesImageShapeCompatibilityMemoryConstraint() {}
     /**
      * @return The maximum amount of memory, in gigabytes.
      * 
@@ -50,30 +43,32 @@ public final class GetImageShapesImageShapeCompatibilityMemoryConstraint {
     public static Builder builder(GetImageShapesImageShapeCompatibilityMemoryConstraint defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer maxInGbs;
         private Integer minInGbs;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetImageShapesImageShapeCompatibilityMemoryConstraint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.maxInGbs = defaults.maxInGbs;
     	      this.minInGbs = defaults.minInGbs;
         }
 
+        @CustomType.Setter
         public Builder maxInGbs(Integer maxInGbs) {
             this.maxInGbs = Objects.requireNonNull(maxInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder minInGbs(Integer minInGbs) {
             this.minInGbs = Objects.requireNonNull(minInGbs);
             return this;
-        }        public GetImageShapesImageShapeCompatibilityMemoryConstraint build() {
-            return new GetImageShapesImageShapeCompatibilityMemoryConstraint(maxInGbs, minInGbs);
+        }
+        public GetImageShapesImageShapeCompatibilityMemoryConstraint build() {
+            final var o = new GetImageShapesImageShapeCompatibilityMemoryConstraint();
+            o.maxInGbs = maxInGbs;
+            o.minInGbs = minInGbs;
+            return o;
         }
     }
 }

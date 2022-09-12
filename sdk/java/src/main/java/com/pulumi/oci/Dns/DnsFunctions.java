@@ -2183,6 +2183,90 @@ public final class DnsFunctions {
      * ```
      * 
      */
+    public static Output<GetViewResult> getView() {
+        return getView(GetViewArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
+     * 
+     * Gets information about a specific view. Note that attempting to get a
+     * view in the DELETED lifecycleState will result in a `404` response to be
+     * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetViewArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetViewResult> getViewPlain() {
+        return getViewPlain(GetViewPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
+     * 
+     * Gets information about a specific view. Note that attempting to get a
+     * view in the DELETED lifecycleState will result in a `404` response to be
+     * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetViewArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static Output<GetViewResult> getView(GetViewArgs args) {
         return getView(args, InvokeOptions.Empty);
     }

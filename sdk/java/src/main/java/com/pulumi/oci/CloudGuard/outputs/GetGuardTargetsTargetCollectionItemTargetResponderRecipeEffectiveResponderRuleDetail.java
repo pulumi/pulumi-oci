@@ -16,35 +16,24 @@ public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffec
      * @return Base condition object
      * 
      */
-    private final String condition;
+    private String condition;
     /**
      * @return ResponderRule configurations
      * 
      */
-    private final List<GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations;
+    private List<GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations;
     /**
      * @return Identifies state for ResponderRule
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return Execution Mode for ResponderRule
      * 
      */
-    private final String mode;
+    private String mode;
 
-    @CustomType.Constructor
-    private GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail(
-        @CustomType.Parameter("condition") String condition,
-        @CustomType.Parameter("configurations") List<GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("mode") String mode) {
-        this.condition = condition;
-        this.configurations = configurations;
-        this.isEnabled = isEnabled;
-        this.mode = mode;
-    }
-
+    private GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail() {}
     /**
      * @return Base condition object
      * 
@@ -81,17 +70,13 @@ public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffec
     public static Builder builder(GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String condition;
         private List<GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations;
         private Boolean isEnabled;
         private String mode;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.condition = defaults.condition;
@@ -100,10 +85,12 @@ public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffec
     	      this.mode = defaults.mode;
         }
 
+        @CustomType.Setter
         public Builder condition(String condition) {
             this.condition = Objects.requireNonNull(condition);
             return this;
         }
+        @CustomType.Setter
         public Builder configurations(List<GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations) {
             this.configurations = Objects.requireNonNull(configurations);
             return this;
@@ -111,15 +98,23 @@ public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffec
         public Builder configurations(GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder mode(String mode) {
             this.mode = Objects.requireNonNull(mode);
             return this;
-        }        public GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail build() {
-            return new GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail(condition, configurations, isEnabled, mode);
+        }
+        public GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail build() {
+            final var o = new GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail();
+            o.condition = condition;
+            o.configurations = configurations;
+            o.isEnabled = isEnabled;
+            o.mode = mode;
+            return o;
         }
     }
 }

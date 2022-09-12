@@ -14,49 +14,34 @@ public final class GetFastLaunchJobConfigsFastLaunchJobConfig {
      * @return The number of cores associated with this fast launch job shape.
      * 
      */
-    private final Integer coreCount;
+    private Integer coreCount;
     /**
      * @return The managed egress support
      * 
      */
-    private final String managedEgressSupport;
+    private String managedEgressSupport;
     /**
      * @return The number of cores associated with this fast launch job shape.
      * 
      */
-    private final Integer memoryInGbs;
+    private Integer memoryInGbs;
     /**
      * @return The name of the fast launch job config
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The name of the fast launch job shape.
      * 
      */
-    private final String shapeName;
+    private String shapeName;
     /**
      * @return The family that the compute shape belongs to.
      * 
      */
-    private final String shapeSeries;
+    private String shapeSeries;
 
-    @CustomType.Constructor
-    private GetFastLaunchJobConfigsFastLaunchJobConfig(
-        @CustomType.Parameter("coreCount") Integer coreCount,
-        @CustomType.Parameter("managedEgressSupport") String managedEgressSupport,
-        @CustomType.Parameter("memoryInGbs") Integer memoryInGbs,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("shapeName") String shapeName,
-        @CustomType.Parameter("shapeSeries") String shapeSeries) {
-        this.coreCount = coreCount;
-        this.managedEgressSupport = managedEgressSupport;
-        this.memoryInGbs = memoryInGbs;
-        this.name = name;
-        this.shapeName = shapeName;
-        this.shapeSeries = shapeSeries;
-    }
-
+    private GetFastLaunchJobConfigsFastLaunchJobConfig() {}
     /**
      * @return The number of cores associated with this fast launch job shape.
      * 
@@ -107,7 +92,7 @@ public final class GetFastLaunchJobConfigsFastLaunchJobConfig {
     public static Builder builder(GetFastLaunchJobConfigsFastLaunchJobConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer coreCount;
         private String managedEgressSupport;
@@ -115,11 +100,7 @@ public final class GetFastLaunchJobConfigsFastLaunchJobConfig {
         private String name;
         private String shapeName;
         private String shapeSeries;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFastLaunchJobConfigsFastLaunchJobConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.coreCount = defaults.coreCount;
@@ -130,31 +111,45 @@ public final class GetFastLaunchJobConfigsFastLaunchJobConfig {
     	      this.shapeSeries = defaults.shapeSeries;
         }
 
+        @CustomType.Setter
         public Builder coreCount(Integer coreCount) {
             this.coreCount = Objects.requireNonNull(coreCount);
             return this;
         }
+        @CustomType.Setter
         public Builder managedEgressSupport(String managedEgressSupport) {
             this.managedEgressSupport = Objects.requireNonNull(managedEgressSupport);
             return this;
         }
+        @CustomType.Setter
         public Builder memoryInGbs(Integer memoryInGbs) {
             this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             this.shapeName = Objects.requireNonNull(shapeName);
             return this;
         }
+        @CustomType.Setter
         public Builder shapeSeries(String shapeSeries) {
             this.shapeSeries = Objects.requireNonNull(shapeSeries);
             return this;
-        }        public GetFastLaunchJobConfigsFastLaunchJobConfig build() {
-            return new GetFastLaunchJobConfigsFastLaunchJobConfig(coreCount, managedEgressSupport, memoryInGbs, name, shapeName, shapeSeries);
+        }
+        public GetFastLaunchJobConfigsFastLaunchJobConfig build() {
+            final var o = new GetFastLaunchJobConfigsFastLaunchJobConfig();
+            o.coreCount = coreCount;
+            o.managedEgressSupport = managedEgressSupport;
+            o.memoryInGbs = memoryInGbs;
+            o.name = name;
+            o.shapeName = shapeName;
+            o.shapeSeries = shapeSeries;
+            return o;
         }
     }
 }

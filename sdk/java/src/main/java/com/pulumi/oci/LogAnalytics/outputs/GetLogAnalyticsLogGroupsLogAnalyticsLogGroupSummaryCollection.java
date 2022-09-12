@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection {
-    private final List<GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem> items;
+    private List<GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection(@CustomType.Parameter("items") List<GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection() {}
     public List<GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection
     public static Builder builder(GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem... items) {
             return items(List.of(items));
-        }        public GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection build() {
-            return new GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection(items);
+        }
+        public GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection build() {
+            final var o = new GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection();
+            o.items = items;
+            return o;
         }
     }
 }

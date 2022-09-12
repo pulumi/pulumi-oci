@@ -21,70 +21,49 @@ public final class PolicyWafConfigJsChallenge {
      * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
-    private final @Nullable String action;
+    private @Nullable String action;
     /**
      * @return (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
      * 
      */
-    private final @Nullable Integer actionExpirationInSeconds;
+    private @Nullable Integer actionExpirationInSeconds;
     /**
      * @return (Updatable) When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
      * 
      */
-    private final @Nullable Boolean areRedirectsChallenged;
+    private @Nullable Boolean areRedirectsChallenged;
     /**
      * @return (Updatable) The challenge settings if `action` is set to `BLOCK`.
      * 
      */
-    private final @Nullable PolicyWafConfigJsChallengeChallengeSettings challengeSettings;
+    private @Nullable PolicyWafConfigJsChallengeChallengeSettings challengeSettings;
     /**
      * @return (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
      * 
      */
-    private final @Nullable List<PolicyWafConfigJsChallengeCriteria> criterias;
+    private @Nullable List<PolicyWafConfigJsChallengeCriteria> criterias;
     /**
      * @return (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
      * 
      */
-    private final @Nullable Integer failureThreshold;
+    private @Nullable Integer failureThreshold;
     /**
      * @return (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
     /**
      * @return (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
      * 
      */
-    private final @Nullable Boolean isNatEnabled;
+    private @Nullable Boolean isNatEnabled;
     /**
      * @return (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
      * 
      */
-    private final @Nullable PolicyWafConfigJsChallengeSetHttpHeader setHttpHeader;
+    private @Nullable PolicyWafConfigJsChallengeSetHttpHeader setHttpHeader;
 
-    @CustomType.Constructor
-    private PolicyWafConfigJsChallenge(
-        @CustomType.Parameter("action") @Nullable String action,
-        @CustomType.Parameter("actionExpirationInSeconds") @Nullable Integer actionExpirationInSeconds,
-        @CustomType.Parameter("areRedirectsChallenged") @Nullable Boolean areRedirectsChallenged,
-        @CustomType.Parameter("challengeSettings") @Nullable PolicyWafConfigJsChallengeChallengeSettings challengeSettings,
-        @CustomType.Parameter("criterias") @Nullable List<PolicyWafConfigJsChallengeCriteria> criterias,
-        @CustomType.Parameter("failureThreshold") @Nullable Integer failureThreshold,
-        @CustomType.Parameter("isEnabled") Boolean isEnabled,
-        @CustomType.Parameter("isNatEnabled") @Nullable Boolean isNatEnabled,
-        @CustomType.Parameter("setHttpHeader") @Nullable PolicyWafConfigJsChallengeSetHttpHeader setHttpHeader) {
-        this.action = action;
-        this.actionExpirationInSeconds = actionExpirationInSeconds;
-        this.areRedirectsChallenged = areRedirectsChallenged;
-        this.challengeSettings = challengeSettings;
-        this.criterias = criterias;
-        this.failureThreshold = failureThreshold;
-        this.isEnabled = isEnabled;
-        this.isNatEnabled = isNatEnabled;
-        this.setHttpHeader = setHttpHeader;
-    }
-
+    private PolicyWafConfigJsChallenge() {}
     /**
      * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
@@ -156,7 +135,7 @@ public final class PolicyWafConfigJsChallenge {
     public static Builder builder(PolicyWafConfigJsChallenge defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String action;
         private @Nullable Integer actionExpirationInSeconds;
@@ -167,11 +146,7 @@ public final class PolicyWafConfigJsChallenge {
         private Boolean isEnabled;
         private @Nullable Boolean isNatEnabled;
         private @Nullable PolicyWafConfigJsChallengeSetHttpHeader setHttpHeader;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(PolicyWafConfigJsChallenge defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -185,22 +160,27 @@ public final class PolicyWafConfigJsChallenge {
     	      this.setHttpHeader = defaults.setHttpHeader;
         }
 
+        @CustomType.Setter
         public Builder action(@Nullable String action) {
             this.action = action;
             return this;
         }
+        @CustomType.Setter
         public Builder actionExpirationInSeconds(@Nullable Integer actionExpirationInSeconds) {
             this.actionExpirationInSeconds = actionExpirationInSeconds;
             return this;
         }
+        @CustomType.Setter
         public Builder areRedirectsChallenged(@Nullable Boolean areRedirectsChallenged) {
             this.areRedirectsChallenged = areRedirectsChallenged;
             return this;
         }
+        @CustomType.Setter
         public Builder challengeSettings(@Nullable PolicyWafConfigJsChallengeChallengeSettings challengeSettings) {
             this.challengeSettings = challengeSettings;
             return this;
         }
+        @CustomType.Setter
         public Builder criterias(@Nullable List<PolicyWafConfigJsChallengeCriteria> criterias) {
             this.criterias = criterias;
             return this;
@@ -208,23 +188,38 @@ public final class PolicyWafConfigJsChallenge {
         public Builder criterias(PolicyWafConfigJsChallengeCriteria... criterias) {
             return criterias(List.of(criterias));
         }
+        @CustomType.Setter
         public Builder failureThreshold(@Nullable Integer failureThreshold) {
             this.failureThreshold = failureThreshold;
             return this;
         }
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
         }
+        @CustomType.Setter
         public Builder isNatEnabled(@Nullable Boolean isNatEnabled) {
             this.isNatEnabled = isNatEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder setHttpHeader(@Nullable PolicyWafConfigJsChallengeSetHttpHeader setHttpHeader) {
             this.setHttpHeader = setHttpHeader;
             return this;
-        }        public PolicyWafConfigJsChallenge build() {
-            return new PolicyWafConfigJsChallenge(action, actionExpirationInSeconds, areRedirectsChallenged, challengeSettings, criterias, failureThreshold, isEnabled, isNatEnabled, setHttpHeader);
+        }
+        public PolicyWafConfigJsChallenge build() {
+            final var o = new PolicyWafConfigJsChallenge();
+            o.action = action;
+            o.actionExpirationInSeconds = actionExpirationInSeconds;
+            o.areRedirectsChallenged = areRedirectsChallenged;
+            o.challengeSettings = challengeSettings;
+            o.criterias = criterias;
+            o.failureThreshold = failureThreshold;
+            o.isEnabled = isEnabled;
+            o.isNatEnabled = isNatEnabled;
+            o.setHttpHeader = setHttpHeader;
+            return o;
         }
     }
 }

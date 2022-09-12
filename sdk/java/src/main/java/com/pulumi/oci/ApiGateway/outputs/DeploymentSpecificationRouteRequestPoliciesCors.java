@@ -18,49 +18,34 @@ public final class DeploymentSpecificationRouteRequestPoliciesCors {
      * @return (Updatable) The list of headers that will be allowed from the client via the Access-Control-Allow-Headers header. &#39;*&#39; will allow all headers.
      * 
      */
-    private final @Nullable List<String> allowedHeaders;
+    private @Nullable List<String> allowedHeaders;
     /**
      * @return (Updatable) The list of allowed HTTP methods that will be returned for the preflight OPTIONS request in the Access-Control-Allow-Methods header. &#39;*&#39; will allow all methods.
      * 
      */
-    private final @Nullable List<String> allowedMethods;
+    private @Nullable List<String> allowedMethods;
     /**
      * @return (Updatable) The list of allowed origins that the CORS handler will use to respond to CORS requests. The gateway will send the Access-Control-Allow-Origin header with the best origin match for the circumstances. &#39;*&#39; will match any origins, and &#39;null&#39; will match queries from &#39;file:&#39; origins. All other origins must be qualified with the scheme, full hostname, and port if necessary.
      * 
      */
-    private final List<String> allowedOrigins;
+    private List<String> allowedOrigins;
     /**
      * @return (Updatable) The list of headers that the client will be allowed to see from the response as indicated by the Access-Control-Expose-Headers header. &#39;*&#39; will expose all headers.
      * 
      */
-    private final @Nullable List<String> exposedHeaders;
+    private @Nullable List<String> exposedHeaders;
     /**
      * @return (Updatable) Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
      * 
      */
-    private final @Nullable Boolean isAllowCredentialsEnabled;
+    private @Nullable Boolean isAllowCredentialsEnabled;
     /**
      * @return (Updatable) The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
      * 
      */
-    private final @Nullable Integer maxAgeInSeconds;
+    private @Nullable Integer maxAgeInSeconds;
 
-    @CustomType.Constructor
-    private DeploymentSpecificationRouteRequestPoliciesCors(
-        @CustomType.Parameter("allowedHeaders") @Nullable List<String> allowedHeaders,
-        @CustomType.Parameter("allowedMethods") @Nullable List<String> allowedMethods,
-        @CustomType.Parameter("allowedOrigins") List<String> allowedOrigins,
-        @CustomType.Parameter("exposedHeaders") @Nullable List<String> exposedHeaders,
-        @CustomType.Parameter("isAllowCredentialsEnabled") @Nullable Boolean isAllowCredentialsEnabled,
-        @CustomType.Parameter("maxAgeInSeconds") @Nullable Integer maxAgeInSeconds) {
-        this.allowedHeaders = allowedHeaders;
-        this.allowedMethods = allowedMethods;
-        this.allowedOrigins = allowedOrigins;
-        this.exposedHeaders = exposedHeaders;
-        this.isAllowCredentialsEnabled = isAllowCredentialsEnabled;
-        this.maxAgeInSeconds = maxAgeInSeconds;
-    }
-
+    private DeploymentSpecificationRouteRequestPoliciesCors() {}
     /**
      * @return (Updatable) The list of headers that will be allowed from the client via the Access-Control-Allow-Headers header. &#39;*&#39; will allow all headers.
      * 
@@ -111,7 +96,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesCors {
     public static Builder builder(DeploymentSpecificationRouteRequestPoliciesCors defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> allowedHeaders;
         private @Nullable List<String> allowedMethods;
@@ -119,11 +104,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesCors {
         private @Nullable List<String> exposedHeaders;
         private @Nullable Boolean isAllowCredentialsEnabled;
         private @Nullable Integer maxAgeInSeconds;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DeploymentSpecificationRouteRequestPoliciesCors defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowedHeaders = defaults.allowedHeaders;
@@ -134,6 +115,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesCors {
     	      this.maxAgeInSeconds = defaults.maxAgeInSeconds;
         }
 
+        @CustomType.Setter
         public Builder allowedHeaders(@Nullable List<String> allowedHeaders) {
             this.allowedHeaders = allowedHeaders;
             return this;
@@ -141,6 +123,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesCors {
         public Builder allowedHeaders(String... allowedHeaders) {
             return allowedHeaders(List.of(allowedHeaders));
         }
+        @CustomType.Setter
         public Builder allowedMethods(@Nullable List<String> allowedMethods) {
             this.allowedMethods = allowedMethods;
             return this;
@@ -148,6 +131,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesCors {
         public Builder allowedMethods(String... allowedMethods) {
             return allowedMethods(List.of(allowedMethods));
         }
+        @CustomType.Setter
         public Builder allowedOrigins(List<String> allowedOrigins) {
             this.allowedOrigins = Objects.requireNonNull(allowedOrigins);
             return this;
@@ -155,6 +139,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesCors {
         public Builder allowedOrigins(String... allowedOrigins) {
             return allowedOrigins(List.of(allowedOrigins));
         }
+        @CustomType.Setter
         public Builder exposedHeaders(@Nullable List<String> exposedHeaders) {
             this.exposedHeaders = exposedHeaders;
             return this;
@@ -162,15 +147,25 @@ public final class DeploymentSpecificationRouteRequestPoliciesCors {
         public Builder exposedHeaders(String... exposedHeaders) {
             return exposedHeaders(List.of(exposedHeaders));
         }
+        @CustomType.Setter
         public Builder isAllowCredentialsEnabled(@Nullable Boolean isAllowCredentialsEnabled) {
             this.isAllowCredentialsEnabled = isAllowCredentialsEnabled;
             return this;
         }
+        @CustomType.Setter
         public Builder maxAgeInSeconds(@Nullable Integer maxAgeInSeconds) {
             this.maxAgeInSeconds = maxAgeInSeconds;
             return this;
-        }        public DeploymentSpecificationRouteRequestPoliciesCors build() {
-            return new DeploymentSpecificationRouteRequestPoliciesCors(allowedHeaders, allowedMethods, allowedOrigins, exposedHeaders, isAllowCredentialsEnabled, maxAgeInSeconds);
+        }
+        public DeploymentSpecificationRouteRequestPoliciesCors build() {
+            final var o = new DeploymentSpecificationRouteRequestPoliciesCors();
+            o.allowedHeaders = allowedHeaders;
+            o.allowedMethods = allowedMethods;
+            o.allowedOrigins = allowedOrigins;
+            o.exposedHeaders = exposedHeaders;
+            o.isAllowCredentialsEnabled = isAllowCredentialsEnabled;
+            o.maxAgeInSeconds = maxAgeInSeconds;
+            return o;
         }
     }
 }

@@ -12,37 +12,22 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClusterKubeConfigResult {
-    private final String clusterId;
+    private String clusterId;
     /**
      * @return content of the Kubeconfig YAML for the cluster.
      * 
      */
-    private final String content;
-    private final @Nullable String endpoint;
-    private final @Nullable Integer expiration;
+    private String content;
+    private @Nullable String endpoint;
+    private @Nullable Integer expiration;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String tokenVersion;
+    private String id;
+    private @Nullable String tokenVersion;
 
-    @CustomType.Constructor
-    private GetClusterKubeConfigResult(
-        @CustomType.Parameter("clusterId") String clusterId,
-        @CustomType.Parameter("content") String content,
-        @CustomType.Parameter("endpoint") @Nullable String endpoint,
-        @CustomType.Parameter("expiration") @Nullable Integer expiration,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("tokenVersion") @Nullable String tokenVersion) {
-        this.clusterId = clusterId;
-        this.content = content;
-        this.endpoint = endpoint;
-        this.expiration = expiration;
-        this.id = id;
-        this.tokenVersion = tokenVersion;
-    }
-
+    private GetClusterKubeConfigResult() {}
     public String clusterId() {
         return this.clusterId;
     }
@@ -77,7 +62,7 @@ public final class GetClusterKubeConfigResult {
     public static Builder builder(GetClusterKubeConfigResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String clusterId;
         private String content;
@@ -85,11 +70,7 @@ public final class GetClusterKubeConfigResult {
         private @Nullable Integer expiration;
         private String id;
         private @Nullable String tokenVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetClusterKubeConfigResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.clusterId = defaults.clusterId;
@@ -100,31 +81,45 @@ public final class GetClusterKubeConfigResult {
     	      this.tokenVersion = defaults.tokenVersion;
         }
 
+        @CustomType.Setter
         public Builder clusterId(String clusterId) {
             this.clusterId = Objects.requireNonNull(clusterId);
             return this;
         }
+        @CustomType.Setter
         public Builder content(String content) {
             this.content = Objects.requireNonNull(content);
             return this;
         }
+        @CustomType.Setter
         public Builder endpoint(@Nullable String endpoint) {
             this.endpoint = endpoint;
             return this;
         }
+        @CustomType.Setter
         public Builder expiration(@Nullable Integer expiration) {
             this.expiration = expiration;
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder tokenVersion(@Nullable String tokenVersion) {
             this.tokenVersion = tokenVersion;
             return this;
-        }        public GetClusterKubeConfigResult build() {
-            return new GetClusterKubeConfigResult(clusterId, content, endpoint, expiration, id, tokenVersion);
+        }
+        public GetClusterKubeConfigResult build() {
+            final var o = new GetClusterKubeConfigResult();
+            o.clusterId = clusterId;
+            o.content = content;
+            o.endpoint = endpoint;
+            o.expiration = expiration;
+            o.id = id;
+            o.tokenVersion = tokenVersion;
+            return o;
         }
     }
 }

@@ -15,42 +15,29 @@ public final class GetEventsAuditEventDataRequest {
      * @return The HTTP method of the request.  Example: `GET`
      * 
      */
-    private final String action;
+    private String action;
     /**
      * @return The headers of the response.
      * 
      */
-    private final Map<String,Object> headers;
+    private Map<String,Object> headers;
     /**
      * @return The opc-request-id of the request.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The parameters supplied by the caller during this operation.
      * 
      */
-    private final Map<String,Object> parameters;
+    private Map<String,Object> parameters;
     /**
      * @return The full path of the API request.  Example: `/20160918/instances/ocid1.instance.oc1.phx.&lt;unique_ID&gt;`
      * 
      */
-    private final String path;
+    private String path;
 
-    @CustomType.Constructor
-    private GetEventsAuditEventDataRequest(
-        @CustomType.Parameter("action") String action,
-        @CustomType.Parameter("headers") Map<String,Object> headers,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("parameters") Map<String,Object> parameters,
-        @CustomType.Parameter("path") String path) {
-        this.action = action;
-        this.headers = headers;
-        this.id = id;
-        this.parameters = parameters;
-        this.path = path;
-    }
-
+    private GetEventsAuditEventDataRequest() {}
     /**
      * @return The HTTP method of the request.  Example: `GET`
      * 
@@ -94,18 +81,14 @@ public final class GetEventsAuditEventDataRequest {
     public static Builder builder(GetEventsAuditEventDataRequest defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String action;
         private Map<String,Object> headers;
         private String id;
         private Map<String,Object> parameters;
         private String path;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEventsAuditEventDataRequest defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.action = defaults.action;
@@ -115,27 +98,39 @@ public final class GetEventsAuditEventDataRequest {
     	      this.path = defaults.path;
         }
 
+        @CustomType.Setter
         public Builder action(String action) {
             this.action = Objects.requireNonNull(action);
             return this;
         }
+        @CustomType.Setter
         public Builder headers(Map<String,Object> headers) {
             this.headers = Objects.requireNonNull(headers);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder parameters(Map<String,Object> parameters) {
             this.parameters = Objects.requireNonNull(parameters);
             return this;
         }
+        @CustomType.Setter
         public Builder path(String path) {
             this.path = Objects.requireNonNull(path);
             return this;
-        }        public GetEventsAuditEventDataRequest build() {
-            return new GetEventsAuditEventDataRequest(action, headers, id, parameters, path);
+        }
+        public GetEventsAuditEventDataRequest build() {
+            final var o = new GetEventsAuditEventDataRequest();
+            o.action = action;
+            o.headers = headers;
+            o.id = id;
+            o.parameters = parameters;
+            o.path = path;
+            return o;
         }
     }
 }

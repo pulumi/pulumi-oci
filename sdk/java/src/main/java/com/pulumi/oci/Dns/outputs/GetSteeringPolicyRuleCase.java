@@ -16,28 +16,19 @@ public final class GetSteeringPolicyRuleCase {
      * @return An array of `SteeringPolicyPriorityAnswerData` objects.
      * 
      */
-    private final List<GetSteeringPolicyRuleCaseAnswerData> answerDatas;
+    private List<GetSteeringPolicyRuleCaseAnswerData> answerDatas;
     /**
      * @return An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in (&#39;192.0.2.0/24&#39;)` to define a case that matches queries from that office.
      * 
      */
-    private final String caseCondition;
+    private String caseCondition;
     /**
      * @return The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
      * 
      */
-    private final Integer count;
+    private Integer count;
 
-    @CustomType.Constructor
-    private GetSteeringPolicyRuleCase(
-        @CustomType.Parameter("answerDatas") List<GetSteeringPolicyRuleCaseAnswerData> answerDatas,
-        @CustomType.Parameter("caseCondition") String caseCondition,
-        @CustomType.Parameter("count") Integer count) {
-        this.answerDatas = answerDatas;
-        this.caseCondition = caseCondition;
-        this.count = count;
-    }
-
+    private GetSteeringPolicyRuleCase() {}
     /**
      * @return An array of `SteeringPolicyPriorityAnswerData` objects.
      * 
@@ -67,16 +58,12 @@ public final class GetSteeringPolicyRuleCase {
     public static Builder builder(GetSteeringPolicyRuleCase defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetSteeringPolicyRuleCaseAnswerData> answerDatas;
         private String caseCondition;
         private Integer count;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSteeringPolicyRuleCase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.answerDatas = defaults.answerDatas;
@@ -84,6 +71,7 @@ public final class GetSteeringPolicyRuleCase {
     	      this.count = defaults.count;
         }
 
+        @CustomType.Setter
         public Builder answerDatas(List<GetSteeringPolicyRuleCaseAnswerData> answerDatas) {
             this.answerDatas = Objects.requireNonNull(answerDatas);
             return this;
@@ -91,15 +79,22 @@ public final class GetSteeringPolicyRuleCase {
         public Builder answerDatas(GetSteeringPolicyRuleCaseAnswerData... answerDatas) {
             return answerDatas(List.of(answerDatas));
         }
+        @CustomType.Setter
         public Builder caseCondition(String caseCondition) {
             this.caseCondition = Objects.requireNonNull(caseCondition);
             return this;
         }
+        @CustomType.Setter
         public Builder count(Integer count) {
             this.count = Objects.requireNonNull(count);
             return this;
-        }        public GetSteeringPolicyRuleCase build() {
-            return new GetSteeringPolicyRuleCase(answerDatas, caseCondition, count);
+        }
+        public GetSteeringPolicyRuleCase build() {
+            final var o = new GetSteeringPolicyRuleCase();
+            o.answerDatas = answerDatas;
+            o.caseCondition = caseCondition;
+            o.count = count;
+            return o;
         }
     }
 }

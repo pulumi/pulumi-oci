@@ -13,21 +13,14 @@ public final class GetApiValidationResult {
      * @return Name of the validation.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return Result of the validation.
      * 
      */
-    private final String result;
+    private String result;
 
-    @CustomType.Constructor
-    private GetApiValidationResult(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("result") String result) {
-        this.name = name;
-        this.result = result;
-    }
-
+    private GetApiValidationResult() {}
     /**
      * @return Name of the validation.
      * 
@@ -50,30 +43,32 @@ public final class GetApiValidationResult {
     public static Builder builder(GetApiValidationResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private String result;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiValidationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.result = defaults.result;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder result(String result) {
             this.result = Objects.requireNonNull(result);
             return this;
-        }        public GetApiValidationResult build() {
-            return new GetApiValidationResult(name, result);
+        }
+        public GetApiValidationResult build() {
+            final var o = new GetApiValidationResult();
+            o.name = name;
+            o.result = result;
+            return o;
         }
     }
 }

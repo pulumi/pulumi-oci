@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
  * This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
  *
  * Creates a new zone in the specified compartment. Additionally, for Private DNS,
- * the `scope` and `viewId` query parameters are required when creating private zones.
+ * the `viewId` field is required when creating private zones.
  *
  * ## Example Usage
  *
@@ -34,19 +34,11 @@ import * as utilities from "../utilities";
  *
  * ## Import
  *
- * For legacy Zones that were created without using `scope`, these Zones can be imported using the `id`, e.g.
+ * Zones can be imported using their OCID, e.g.
  *
  * ```sh
  *  $ pulumi import oci:Dns/zone:Zone test_zone "id"
  * ```
- *
- *  For Zones created using `scope` and `view_id`, these Zones can be imported using the `id`, e.g.
- *
- * ```sh
- *  $ pulumi import oci:Dns/zone:Zone test_zone "zoneNameOrId/{zoneNameOrId}/scope/{scope}/viewId/{viewId}"
- * ```
- *
- *  skip adding `{view_id}` at the end if Zone was created without `view_id`.
  */
 export class Zone extends pulumi.CustomResource {
     /**
@@ -108,7 +100,7 @@ export class Zone extends pulumi.CustomResource {
      * Specifies to operate only on resources that have a matching DNS scope. 
      * This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
      */
-    public readonly scope!: pulumi.Output<string | undefined>;
+    public readonly scope!: pulumi.Output<string>;
     /**
      * The canonical absolute URL of the resource.
      */

@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Registry resource in Oracle Cloud Infrastructure Data Connectivity service.
  * 
- * Creates a new Data Connectivity Management Registry ready for performing data Connectivity Management.
+ * Creates a new Data Connectivity Management registry ready to perform data connectivity management.
  * 
  * ## Example Usage
  * ```java
@@ -108,42 +108,42 @@ public class Registry extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+     * (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
      * 
      */
     @Export(name="displayName", type=String.class, parameters={})
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Data Connectivity Management Registry display name, registries can be renamed
+     * @return (Updatable) The Data Connectivity Management Registry display name; registries can be renamed.
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
     }
     /**
-     * Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn&#39;t available FAILED   - The resource is in a failed state due to validation or other errors
+     * Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn&#39;t available. FAILED   - The resource is in a failed state due to validation or other errors.
      * 
      */
     @Export(name="state", type=String.class, parameters={})
     private Output<String> state;
 
     /**
-     * @return Lifecycle states for registries in Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn&#39;t available FAILED   - The resource is in a failed state due to validation or other errors
+     * @return Lifecycle states for registries in the Data Connectivity Management Service CREATING - The resource is being created and may not be usable until the entire metadata is defined. UPDATING - The resource is being updated and may not be usable until all changes are commited. DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access. INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons. DELETED  - The resource has been deleted and isn&#39;t available. FAILED   - The resource is in a failed state due to validation or other errors.
      * 
      */
     public Output<String> state() {
@@ -164,42 +164,42 @@ public class Registry extends com.pulumi.resources.CustomResource {
         return this.stateMessage;
     }
     /**
-     * The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+     * Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", type=String.class, parameters={})
     private Output<String> timeCreated;
 
     /**
-     * @return The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+     * @return Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+     * Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", type=String.class, parameters={})
     private Output<String> timeUpdated;
 
     /**
-     * @return The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+     * @return Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
      * 
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * Name of the user who updated the DCMS Registry.
+     * Name of the user who updated the DCMS registry.
      * 
      */
     @Export(name="updatedBy", type=String.class, parameters={})
     private Output<String> updatedBy;
 
     /**
-     * @return Name of the user who updated the DCMS Registry.
+     * @return Name of the user who updated the DCMS registry.
      * 
      */
     public Output<String> updatedBy() {

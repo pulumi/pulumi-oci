@@ -14,13 +14,9 @@ public final class GetInstancePreemptibleInstanceConfig {
      * @return (Required) The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
-    private final List<GetInstancePreemptibleInstanceConfigPreemptionAction> preemptionActions;
+    private List<GetInstancePreemptibleInstanceConfigPreemptionAction> preemptionActions;
 
-    @CustomType.Constructor
-    private GetInstancePreemptibleInstanceConfig(@CustomType.Parameter("preemptionActions") List<GetInstancePreemptibleInstanceConfigPreemptionAction> preemptionActions) {
-        this.preemptionActions = preemptionActions;
-    }
-
+    private GetInstancePreemptibleInstanceConfig() {}
     /**
      * @return (Required) The action to run when the preemptible instance is interrupted for eviction.
      * 
@@ -36,27 +32,27 @@ public final class GetInstancePreemptibleInstanceConfig {
     public static Builder builder(GetInstancePreemptibleInstanceConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetInstancePreemptibleInstanceConfigPreemptionAction> preemptionActions;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstancePreemptibleInstanceConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.preemptionActions = defaults.preemptionActions;
         }
 
+        @CustomType.Setter
         public Builder preemptionActions(List<GetInstancePreemptibleInstanceConfigPreemptionAction> preemptionActions) {
             this.preemptionActions = Objects.requireNonNull(preemptionActions);
             return this;
         }
         public Builder preemptionActions(GetInstancePreemptibleInstanceConfigPreemptionAction... preemptionActions) {
             return preemptionActions(List.of(preemptionActions));
-        }        public GetInstancePreemptibleInstanceConfig build() {
-            return new GetInstancePreemptibleInstanceConfig(preemptionActions);
+        }
+        public GetInstancePreemptibleInstanceConfig build() {
+            final var o = new GetInstancePreemptibleInstanceConfig();
+            o.preemptionActions = preemptionActions;
+            return o;
         }
     }
 }

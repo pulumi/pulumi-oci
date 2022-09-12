@@ -64,6 +64,10 @@ export interface GetResourceUsageResult {
      */
     readonly operationsInsightsWarehouseId: string;
     /**
+     * schema name
+     */
+    readonly schemaName: string;
+    /**
      * EmInstance Target count
      */
     readonly targetsCount: number;

@@ -15,63 +15,44 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedC
      * @return Sum of Computed Line Amount rounded
      * 
      */
-    private final String cost;
+    private String cost;
     /**
      * @return Sum of Computed Line Amount unrounded
      * 
      */
-    private final String costUnrounded;
+    private String costUnrounded;
     /**
      * @return Data Center Attribute as sent by MQS to SPM.
      * 
      */
-    private final String dataCenter;
+    private String dataCenter;
     /**
      * @return Net Unit Price for the product in consideration.
      * 
      */
-    private final String netUnitPrice;
+    private String netUnitPrice;
     /**
      * @return Product description
      * 
      */
-    private final List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct> products;
+    private List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct> products;
     /**
      * @return Total Quantity that was used for computation
      * 
      */
-    private final String quantity;
+    private String quantity;
     /**
      * @return Metered Service date , expressed in RFC 3339 timestamp format.
      * 
      */
-    private final String timeMeteredOn;
+    private String timeMeteredOn;
     /**
      * @return Usage compute type in SPM.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage(
-        @CustomType.Parameter("cost") String cost,
-        @CustomType.Parameter("costUnrounded") String costUnrounded,
-        @CustomType.Parameter("dataCenter") String dataCenter,
-        @CustomType.Parameter("netUnitPrice") String netUnitPrice,
-        @CustomType.Parameter("products") List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct> products,
-        @CustomType.Parameter("quantity") String quantity,
-        @CustomType.Parameter("timeMeteredOn") String timeMeteredOn,
-        @CustomType.Parameter("type") String type) {
-        this.cost = cost;
-        this.costUnrounded = costUnrounded;
-        this.dataCenter = dataCenter;
-        this.netUnitPrice = netUnitPrice;
-        this.products = products;
-        this.quantity = quantity;
-        this.timeMeteredOn = timeMeteredOn;
-        this.type = type;
-    }
-
+    private GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage() {}
     /**
      * @return Sum of Computed Line Amount rounded
      * 
@@ -136,7 +117,7 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedC
     public static Builder builder(GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String cost;
         private String costUnrounded;
@@ -146,11 +127,7 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedC
         private String quantity;
         private String timeMeteredOn;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cost = defaults.cost;
@@ -163,22 +140,27 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedC
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder cost(String cost) {
             this.cost = Objects.requireNonNull(cost);
             return this;
         }
+        @CustomType.Setter
         public Builder costUnrounded(String costUnrounded) {
             this.costUnrounded = Objects.requireNonNull(costUnrounded);
             return this;
         }
+        @CustomType.Setter
         public Builder dataCenter(String dataCenter) {
             this.dataCenter = Objects.requireNonNull(dataCenter);
             return this;
         }
+        @CustomType.Setter
         public Builder netUnitPrice(String netUnitPrice) {
             this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
             return this;
         }
+        @CustomType.Setter
         public Builder products(List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct> products) {
             this.products = Objects.requireNonNull(products);
             return this;
@@ -186,19 +168,32 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedC
         public Builder products(GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct... products) {
             return products(List.of(products));
         }
+        @CustomType.Setter
         public Builder quantity(String quantity) {
             this.quantity = Objects.requireNonNull(quantity);
             return this;
         }
+        @CustomType.Setter
         public Builder timeMeteredOn(String timeMeteredOn) {
             this.timeMeteredOn = Objects.requireNonNull(timeMeteredOn);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage build() {
-            return new GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage(cost, costUnrounded, dataCenter, netUnitPrice, products, quantity, timeMeteredOn, type);
+        }
+        public GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage build() {
+            final var o = new GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage();
+            o.cost = cost;
+            o.costUnrounded = costUnrounded;
+            o.dataCenter = dataCenter;
+            o.netUnitPrice = netUnitPrice;
+            o.products = products;
+            o.quantity = quantity;
+            o.timeMeteredOn = timeMeteredOn;
+            o.type = type;
+            return o;
         }
     }
 }

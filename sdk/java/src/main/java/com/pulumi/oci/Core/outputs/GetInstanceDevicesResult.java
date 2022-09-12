@@ -19,41 +19,26 @@ public final class GetInstanceDevicesResult {
      * @return The list of devices.
      * 
      */
-    private final List<GetInstanceDevicesDevice> devices;
-    private final @Nullable List<GetInstanceDevicesFilter> filters;
+    private List<GetInstanceDevicesDevice> devices;
+    private @Nullable List<GetInstanceDevicesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String instanceId;
+    private String id;
+    private String instanceId;
     /**
      * @return The flag denoting whether device is available.
      * 
      */
-    private final @Nullable Boolean isAvailable;
+    private @Nullable Boolean isAvailable;
     /**
      * @return The device name.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
 
-    @CustomType.Constructor
-    private GetInstanceDevicesResult(
-        @CustomType.Parameter("devices") List<GetInstanceDevicesDevice> devices,
-        @CustomType.Parameter("filters") @Nullable List<GetInstanceDevicesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("instanceId") String instanceId,
-        @CustomType.Parameter("isAvailable") @Nullable Boolean isAvailable,
-        @CustomType.Parameter("name") @Nullable String name) {
-        this.devices = devices;
-        this.filters = filters;
-        this.id = id;
-        this.instanceId = instanceId;
-        this.isAvailable = isAvailable;
-        this.name = name;
-    }
-
+    private GetInstanceDevicesResult() {}
     /**
      * @return The list of devices.
      * 
@@ -96,7 +81,7 @@ public final class GetInstanceDevicesResult {
     public static Builder builder(GetInstanceDevicesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetInstanceDevicesDevice> devices;
         private @Nullable List<GetInstanceDevicesFilter> filters;
@@ -104,11 +89,7 @@ public final class GetInstanceDevicesResult {
         private String instanceId;
         private @Nullable Boolean isAvailable;
         private @Nullable String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetInstanceDevicesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.devices = defaults.devices;
@@ -119,6 +100,7 @@ public final class GetInstanceDevicesResult {
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder devices(List<GetInstanceDevicesDevice> devices) {
             this.devices = Objects.requireNonNull(devices);
             return this;
@@ -126,6 +108,7 @@ public final class GetInstanceDevicesResult {
         public Builder devices(GetInstanceDevicesDevice... devices) {
             return devices(List.of(devices));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetInstanceDevicesFilter> filters) {
             this.filters = filters;
             return this;
@@ -133,23 +116,35 @@ public final class GetInstanceDevicesResult {
         public Builder filters(GetInstanceDevicesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder instanceId(String instanceId) {
             this.instanceId = Objects.requireNonNull(instanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder isAvailable(@Nullable Boolean isAvailable) {
             this.isAvailable = isAvailable;
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
-        }        public GetInstanceDevicesResult build() {
-            return new GetInstanceDevicesResult(devices, filters, id, instanceId, isAvailable, name);
+        }
+        public GetInstanceDevicesResult build() {
+            final var o = new GetInstanceDevicesResult();
+            o.devices = devices;
+            o.filters = filters;
+            o.id = id;
+            o.instanceId = instanceId;
+            o.isAvailable = isAvailable;
+            o.name = name;
+            return o;
         }
     }
 }

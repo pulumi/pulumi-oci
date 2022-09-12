@@ -16,133 +16,86 @@ import java.util.Objects;
 
 @CustomType
 public final class GetJobResult {
-    private final String artifactContentDisposition;
-    private final String artifactContentLength;
-    private final String artifactContentMd5;
-    private final String artifactLastModified;
+    private String artifactContentDisposition;
+    private String artifactContentLength;
+    private String artifactContentMd5;
+    private String artifactLastModified;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
      * 
      */
-    private final String createdBy;
+    private String createdBy;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
-    private final Boolean deleteRelatedJobRuns;
+    private Map<String,Object> definedTags;
+    private Boolean deleteRelatedJobRuns;
     /**
      * @return A short description of the job.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A user-friendly display name for the resource.
      * 
      */
-    private final String displayName;
-    private final Boolean emptyArtifact;
+    private String displayName;
+    private Boolean emptyArtifact;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      * 
      */
-    private final String id;
-    private final String jobArtifact;
+    private String id;
+    private String jobArtifact;
     /**
      * @return The job configuration details
      * 
      */
-    private final List<GetJobJobConfigurationDetail> jobConfigurationDetails;
-    private final String jobId;
+    private List<GetJobJobConfigurationDetail> jobConfigurationDetails;
+    private String jobId;
     /**
      * @return The job infrastructure configuration details (shape, block storage, etc.)
      * 
      */
-    private final List<GetJobJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
+    private List<GetJobJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
     /**
      * @return Logging configuration for resource.
      * 
      */
-    private final List<GetJobJobLogConfigurationDetail> jobLogConfigurationDetails;
+    private List<GetJobJobLogConfigurationDetail> jobLogConfigurationDetails;
     /**
      * @return The state of the job.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
      * 
      */
-    private final String projectId;
+    private String projectId;
     /**
      * @return The state of the job.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
 
-    @CustomType.Constructor
-    private GetJobResult(
-        @CustomType.Parameter("artifactContentDisposition") String artifactContentDisposition,
-        @CustomType.Parameter("artifactContentLength") String artifactContentLength,
-        @CustomType.Parameter("artifactContentMd5") String artifactContentMd5,
-        @CustomType.Parameter("artifactLastModified") String artifactLastModified,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("createdBy") String createdBy,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("deleteRelatedJobRuns") Boolean deleteRelatedJobRuns,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("emptyArtifact") Boolean emptyArtifact,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("jobArtifact") String jobArtifact,
-        @CustomType.Parameter("jobConfigurationDetails") List<GetJobJobConfigurationDetail> jobConfigurationDetails,
-        @CustomType.Parameter("jobId") String jobId,
-        @CustomType.Parameter("jobInfrastructureConfigurationDetails") List<GetJobJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails,
-        @CustomType.Parameter("jobLogConfigurationDetails") List<GetJobJobLogConfigurationDetail> jobLogConfigurationDetails,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("projectId") String projectId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated) {
-        this.artifactContentDisposition = artifactContentDisposition;
-        this.artifactContentLength = artifactContentLength;
-        this.artifactContentMd5 = artifactContentMd5;
-        this.artifactLastModified = artifactLastModified;
-        this.compartmentId = compartmentId;
-        this.createdBy = createdBy;
-        this.definedTags = definedTags;
-        this.deleteRelatedJobRuns = deleteRelatedJobRuns;
-        this.description = description;
-        this.displayName = displayName;
-        this.emptyArtifact = emptyArtifact;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.jobArtifact = jobArtifact;
-        this.jobConfigurationDetails = jobConfigurationDetails;
-        this.jobId = jobId;
-        this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
-        this.jobLogConfigurationDetails = jobLogConfigurationDetails;
-        this.lifecycleDetails = lifecycleDetails;
-        this.projectId = projectId;
-        this.state = state;
-        this.timeCreated = timeCreated;
-    }
-
+    private GetJobResult() {}
     public String artifactContentDisposition() {
         return this.artifactContentDisposition;
     }
@@ -273,7 +226,7 @@ public final class GetJobResult {
     public static Builder builder(GetJobResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String artifactContentDisposition;
         private String artifactContentLength;
@@ -297,11 +250,7 @@ public final class GetJobResult {
         private String projectId;
         private String state;
         private String timeCreated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJobResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.artifactContentDisposition = defaults.artifactContentDisposition;
@@ -328,62 +277,77 @@ public final class GetJobResult {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
         public Builder artifactContentDisposition(String artifactContentDisposition) {
             this.artifactContentDisposition = Objects.requireNonNull(artifactContentDisposition);
             return this;
         }
+        @CustomType.Setter
         public Builder artifactContentLength(String artifactContentLength) {
             this.artifactContentLength = Objects.requireNonNull(artifactContentLength);
             return this;
         }
+        @CustomType.Setter
         public Builder artifactContentMd5(String artifactContentMd5) {
             this.artifactContentMd5 = Objects.requireNonNull(artifactContentMd5);
             return this;
         }
+        @CustomType.Setter
         public Builder artifactLastModified(String artifactLastModified) {
             this.artifactLastModified = Objects.requireNonNull(artifactLastModified);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder createdBy(String createdBy) {
             this.createdBy = Objects.requireNonNull(createdBy);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder deleteRelatedJobRuns(Boolean deleteRelatedJobRuns) {
             this.deleteRelatedJobRuns = Objects.requireNonNull(deleteRelatedJobRuns);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder emptyArtifact(Boolean emptyArtifact) {
             this.emptyArtifact = Objects.requireNonNull(emptyArtifact);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder jobArtifact(String jobArtifact) {
             this.jobArtifact = Objects.requireNonNull(jobArtifact);
             return this;
         }
+        @CustomType.Setter
         public Builder jobConfigurationDetails(List<GetJobJobConfigurationDetail> jobConfigurationDetails) {
             this.jobConfigurationDetails = Objects.requireNonNull(jobConfigurationDetails);
             return this;
@@ -391,10 +355,12 @@ public final class GetJobResult {
         public Builder jobConfigurationDetails(GetJobJobConfigurationDetail... jobConfigurationDetails) {
             return jobConfigurationDetails(List.of(jobConfigurationDetails));
         }
+        @CustomType.Setter
         public Builder jobId(String jobId) {
             this.jobId = Objects.requireNonNull(jobId);
             return this;
         }
+        @CustomType.Setter
         public Builder jobInfrastructureConfigurationDetails(List<GetJobJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails) {
             this.jobInfrastructureConfigurationDetails = Objects.requireNonNull(jobInfrastructureConfigurationDetails);
             return this;
@@ -402,6 +368,7 @@ public final class GetJobResult {
         public Builder jobInfrastructureConfigurationDetails(GetJobJobInfrastructureConfigurationDetail... jobInfrastructureConfigurationDetails) {
             return jobInfrastructureConfigurationDetails(List.of(jobInfrastructureConfigurationDetails));
         }
+        @CustomType.Setter
         public Builder jobLogConfigurationDetails(List<GetJobJobLogConfigurationDetail> jobLogConfigurationDetails) {
             this.jobLogConfigurationDetails = Objects.requireNonNull(jobLogConfigurationDetails);
             return this;
@@ -409,23 +376,51 @@ public final class GetJobResult {
         public Builder jobLogConfigurationDetails(GetJobJobLogConfigurationDetail... jobLogConfigurationDetails) {
             return jobLogConfigurationDetails(List.of(jobLogConfigurationDetails));
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             this.projectId = Objects.requireNonNull(projectId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
-        }        public GetJobResult build() {
-            return new GetJobResult(artifactContentDisposition, artifactContentLength, artifactContentMd5, artifactLastModified, compartmentId, createdBy, definedTags, deleteRelatedJobRuns, description, displayName, emptyArtifact, freeformTags, id, jobArtifact, jobConfigurationDetails, jobId, jobInfrastructureConfigurationDetails, jobLogConfigurationDetails, lifecycleDetails, projectId, state, timeCreated);
+        }
+        public GetJobResult build() {
+            final var o = new GetJobResult();
+            o.artifactContentDisposition = artifactContentDisposition;
+            o.artifactContentLength = artifactContentLength;
+            o.artifactContentMd5 = artifactContentMd5;
+            o.artifactLastModified = artifactLastModified;
+            o.compartmentId = compartmentId;
+            o.createdBy = createdBy;
+            o.definedTags = definedTags;
+            o.deleteRelatedJobRuns = deleteRelatedJobRuns;
+            o.description = description;
+            o.displayName = displayName;
+            o.emptyArtifact = emptyArtifact;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.jobArtifact = jobArtifact;
+            o.jobConfigurationDetails = jobConfigurationDetails;
+            o.jobId = jobId;
+            o.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
+            o.jobLogConfigurationDetails = jobLogConfigurationDetails;
+            o.lifecycleDetails = lifecycleDetails;
+            o.projectId = projectId;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            return o;
         }
     }
 }

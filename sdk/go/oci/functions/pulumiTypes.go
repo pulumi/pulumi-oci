@@ -2405,6 +2405,6174 @@ func (o GetFunctionsFunctionTraceConfigArrayOutput) Index(i pulumi.IntInput) Get
 	}).(GetFunctionsFunctionTraceConfigOutput)
 }
 
+type GetFusionEnvironmentAdminUserItem struct {
+	// Admin users email address
+	EmailAddress string `pulumi:"emailAddress"`
+	// Admin users first name
+	FirstName string `pulumi:"firstName"`
+	// Admin users last name
+	LastName string `pulumi:"lastName"`
+	// Admin username
+	Username string `pulumi:"username"`
+}
+
+// GetFusionEnvironmentAdminUserItemInput is an input type that accepts GetFusionEnvironmentAdminUserItemArgs and GetFusionEnvironmentAdminUserItemOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentAdminUserItemInput` via:
+//
+//	GetFusionEnvironmentAdminUserItemArgs{...}
+type GetFusionEnvironmentAdminUserItemInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentAdminUserItemOutput() GetFusionEnvironmentAdminUserItemOutput
+	ToGetFusionEnvironmentAdminUserItemOutputWithContext(context.Context) GetFusionEnvironmentAdminUserItemOutput
+}
+
+type GetFusionEnvironmentAdminUserItemArgs struct {
+	// Admin users email address
+	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	// Admin users first name
+	FirstName pulumi.StringInput `pulumi:"firstName"`
+	// Admin users last name
+	LastName pulumi.StringInput `pulumi:"lastName"`
+	// Admin username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetFusionEnvironmentAdminUserItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentAdminUserItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentAdminUserItemArgs) ToGetFusionEnvironmentAdminUserItemOutput() GetFusionEnvironmentAdminUserItemOutput {
+	return i.ToGetFusionEnvironmentAdminUserItemOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentAdminUserItemArgs) ToGetFusionEnvironmentAdminUserItemOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUserItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUserItemOutput)
+}
+
+// GetFusionEnvironmentAdminUserItemArrayInput is an input type that accepts GetFusionEnvironmentAdminUserItemArray and GetFusionEnvironmentAdminUserItemArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentAdminUserItemArrayInput` via:
+//
+//	GetFusionEnvironmentAdminUserItemArray{ GetFusionEnvironmentAdminUserItemArgs{...} }
+type GetFusionEnvironmentAdminUserItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentAdminUserItemArrayOutput() GetFusionEnvironmentAdminUserItemArrayOutput
+	ToGetFusionEnvironmentAdminUserItemArrayOutputWithContext(context.Context) GetFusionEnvironmentAdminUserItemArrayOutput
+}
+
+type GetFusionEnvironmentAdminUserItemArray []GetFusionEnvironmentAdminUserItemInput
+
+func (GetFusionEnvironmentAdminUserItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentAdminUserItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentAdminUserItemArray) ToGetFusionEnvironmentAdminUserItemArrayOutput() GetFusionEnvironmentAdminUserItemArrayOutput {
+	return i.ToGetFusionEnvironmentAdminUserItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentAdminUserItemArray) ToGetFusionEnvironmentAdminUserItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUserItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUserItemArrayOutput)
+}
+
+type GetFusionEnvironmentAdminUserItemOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentAdminUserItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentAdminUserItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentAdminUserItemOutput) ToGetFusionEnvironmentAdminUserItemOutput() GetFusionEnvironmentAdminUserItemOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdminUserItemOutput) ToGetFusionEnvironmentAdminUserItemOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUserItemOutput {
+	return o
+}
+
+// Admin users email address
+func (o GetFusionEnvironmentAdminUserItemOutput) EmailAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUserItem) string { return v.EmailAddress }).(pulumi.StringOutput)
+}
+
+// Admin users first name
+func (o GetFusionEnvironmentAdminUserItemOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUserItem) string { return v.FirstName }).(pulumi.StringOutput)
+}
+
+// Admin users last name
+func (o GetFusionEnvironmentAdminUserItemOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUserItem) string { return v.LastName }).(pulumi.StringOutput)
+}
+
+// Admin username
+func (o GetFusionEnvironmentAdminUserItemOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUserItem) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentAdminUserItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentAdminUserItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentAdminUserItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentAdminUserItemArrayOutput) ToGetFusionEnvironmentAdminUserItemArrayOutput() GetFusionEnvironmentAdminUserItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdminUserItemArrayOutput) ToGetFusionEnvironmentAdminUserItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUserItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdminUserItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentAdminUserItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentAdminUserItem {
+		return vs[0].([]GetFusionEnvironmentAdminUserItem)[vs[1].(int)]
+	}).(GetFusionEnvironmentAdminUserItemOutput)
+}
+
+type GetFusionEnvironmentAdminUsersAdminUserCollection struct {
+	// A page of AdminUserSummary objects.
+	Items []GetFusionEnvironmentAdminUsersAdminUserCollectionItem `pulumi:"items"`
+}
+
+// GetFusionEnvironmentAdminUsersAdminUserCollectionInput is an input type that accepts GetFusionEnvironmentAdminUsersAdminUserCollectionArgs and GetFusionEnvironmentAdminUsersAdminUserCollectionOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentAdminUsersAdminUserCollectionInput` via:
+//
+//	GetFusionEnvironmentAdminUsersAdminUserCollectionArgs{...}
+type GetFusionEnvironmentAdminUsersAdminUserCollectionInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentAdminUsersAdminUserCollectionOutput() GetFusionEnvironmentAdminUsersAdminUserCollectionOutput
+	ToGetFusionEnvironmentAdminUsersAdminUserCollectionOutputWithContext(context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionOutput
+}
+
+type GetFusionEnvironmentAdminUsersAdminUserCollectionArgs struct {
+	// A page of AdminUserSummary objects.
+	Items GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFusionEnvironmentAdminUsersAdminUserCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentAdminUsersAdminUserCollection)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentAdminUsersAdminUserCollectionArgs) ToGetFusionEnvironmentAdminUsersAdminUserCollectionOutput() GetFusionEnvironmentAdminUsersAdminUserCollectionOutput {
+	return i.ToGetFusionEnvironmentAdminUsersAdminUserCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentAdminUsersAdminUserCollectionArgs) ToGetFusionEnvironmentAdminUsersAdminUserCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUsersAdminUserCollectionOutput)
+}
+
+// GetFusionEnvironmentAdminUsersAdminUserCollectionArrayInput is an input type that accepts GetFusionEnvironmentAdminUsersAdminUserCollectionArray and GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentAdminUsersAdminUserCollectionArrayInput` via:
+//
+//	GetFusionEnvironmentAdminUsersAdminUserCollectionArray{ GetFusionEnvironmentAdminUsersAdminUserCollectionArgs{...} }
+type GetFusionEnvironmentAdminUsersAdminUserCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput() GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput
+	ToGetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutputWithContext(context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput
+}
+
+type GetFusionEnvironmentAdminUsersAdminUserCollectionArray []GetFusionEnvironmentAdminUsersAdminUserCollectionInput
+
+func (GetFusionEnvironmentAdminUsersAdminUserCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentAdminUsersAdminUserCollection)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentAdminUsersAdminUserCollectionArray) ToGetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput() GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput {
+	return i.ToGetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentAdminUsersAdminUserCollectionArray) ToGetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput)
+}
+
+type GetFusionEnvironmentAdminUsersAdminUserCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentAdminUsersAdminUserCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentAdminUsersAdminUserCollection)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionOutput) ToGetFusionEnvironmentAdminUsersAdminUserCollectionOutput() GetFusionEnvironmentAdminUsersAdminUserCollectionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionOutput) ToGetFusionEnvironmentAdminUsersAdminUserCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionOutput {
+	return o
+}
+
+// A page of AdminUserSummary objects.
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionOutput) Items() GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollection) []GetFusionEnvironmentAdminUsersAdminUserCollectionItem {
+		return v.Items
+	}).(GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput)
+}
+
+type GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentAdminUsersAdminUserCollection)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput) ToGetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput() GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput) ToGetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentAdminUsersAdminUserCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentAdminUsersAdminUserCollection {
+		return vs[0].([]GetFusionEnvironmentAdminUsersAdminUserCollection)[vs[1].(int)]
+	}).(GetFusionEnvironmentAdminUsersAdminUserCollectionOutput)
+}
+
+type GetFusionEnvironmentAdminUsersAdminUserCollectionItem struct {
+	// Admin users email address
+	EmailAddress string `pulumi:"emailAddress"`
+	// Admin users first name
+	FirstName string `pulumi:"firstName"`
+	// unique FusionEnvironment identifier
+	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
+	Id                  string `pulumi:"id"`
+	// A page of AdminUserSummary objects.
+	Items []GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem `pulumi:"items"`
+	// Admin users last name
+	LastName string `pulumi:"lastName"`
+	Password string `pulumi:"password"`
+	// Admin username
+	Username string `pulumi:"username"`
+}
+
+// GetFusionEnvironmentAdminUsersAdminUserCollectionItemInput is an input type that accepts GetFusionEnvironmentAdminUsersAdminUserCollectionItemArgs and GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentAdminUsersAdminUserCollectionItemInput` via:
+//
+//	GetFusionEnvironmentAdminUsersAdminUserCollectionItemArgs{...}
+type GetFusionEnvironmentAdminUsersAdminUserCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput() GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput
+	ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemOutputWithContext(context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput
+}
+
+type GetFusionEnvironmentAdminUsersAdminUserCollectionItemArgs struct {
+	// Admin users email address
+	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	// Admin users first name
+	FirstName pulumi.StringInput `pulumi:"firstName"`
+	// unique FusionEnvironment identifier
+	FusionEnvironmentId pulumi.StringInput `pulumi:"fusionEnvironmentId"`
+	Id                  pulumi.StringInput `pulumi:"id"`
+	// A page of AdminUserSummary objects.
+	Items GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayInput `pulumi:"items"`
+	// Admin users last name
+	LastName pulumi.StringInput `pulumi:"lastName"`
+	Password pulumi.StringInput `pulumi:"password"`
+	// Admin username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetFusionEnvironmentAdminUsersAdminUserCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentAdminUsersAdminUserCollectionItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentAdminUsersAdminUserCollectionItemArgs) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput() GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput {
+	return i.ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentAdminUsersAdminUserCollectionItemArgs) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput)
+}
+
+// GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayInput is an input type that accepts GetFusionEnvironmentAdminUsersAdminUserCollectionItemArray and GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayInput` via:
+//
+//	GetFusionEnvironmentAdminUsersAdminUserCollectionItemArray{ GetFusionEnvironmentAdminUsersAdminUserCollectionItemArgs{...} }
+type GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput() GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput
+	ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutputWithContext(context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput
+}
+
+type GetFusionEnvironmentAdminUsersAdminUserCollectionItemArray []GetFusionEnvironmentAdminUsersAdminUserCollectionItemInput
+
+func (GetFusionEnvironmentAdminUsersAdminUserCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentAdminUsersAdminUserCollectionItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentAdminUsersAdminUserCollectionItemArray) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput() GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput {
+	return i.ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentAdminUsersAdminUserCollectionItemArray) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput)
+}
+
+type GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentAdminUsersAdminUserCollectionItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput() GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput {
+	return o
+}
+
+// Admin users email address
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) EmailAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) string { return v.EmailAddress }).(pulumi.StringOutput)
+}
+
+// Admin users first name
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) string { return v.FirstName }).(pulumi.StringOutput)
+}
+
+// unique FusionEnvironment identifier
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) FusionEnvironmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) string { return v.FusionEnvironmentId }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A page of AdminUserSummary objects.
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) Items() GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) []GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem {
+		return v.Items
+	}).(GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput)
+}
+
+// Admin users last name
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) string { return v.LastName }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// Admin username
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentAdminUsersAdminUserCollectionItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput() GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentAdminUsersAdminUserCollectionItem {
+		return vs[0].([]GetFusionEnvironmentAdminUsersAdminUserCollectionItem)[vs[1].(int)]
+	}).(GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput)
+}
+
+type GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem struct {
+	// Admin users email address
+	EmailAddress string `pulumi:"emailAddress"`
+	// Admin users first name
+	FirstName string `pulumi:"firstName"`
+	// Admin users last name
+	LastName string `pulumi:"lastName"`
+	// Admin username
+	Username string `pulumi:"username"`
+}
+
+// GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemInput is an input type that accepts GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArgs and GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemInput` via:
+//
+//	GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArgs{...}
+type GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput() GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput
+	ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutputWithContext(context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput
+}
+
+type GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArgs struct {
+	// Admin users email address
+	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	// Admin users first name
+	FirstName pulumi.StringInput `pulumi:"firstName"`
+	// Admin users last name
+	LastName pulumi.StringInput `pulumi:"lastName"`
+	// Admin username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArgs) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput() GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput {
+	return i.ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArgs) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput)
+}
+
+// GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayInput is an input type that accepts GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArray and GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayInput` via:
+//
+//	GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArray{ GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArgs{...} }
+type GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput() GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput
+	ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutputWithContext(context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput
+}
+
+type GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArray []GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemInput
+
+func (GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArray) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput() GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput {
+	return i.ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArray) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput)
+}
+
+type GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput() GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput {
+	return o
+}
+
+// Admin users email address
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput) EmailAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem) string { return v.EmailAddress }).(pulumi.StringOutput)
+}
+
+// Admin users first name
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem) string { return v.FirstName }).(pulumi.StringOutput)
+}
+
+// Admin users last name
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem) string { return v.LastName }).(pulumi.StringOutput)
+}
+
+// Admin username
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput() GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem {
+		return vs[0].([]GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem)[vs[1].(int)]
+	}).(GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput)
+}
+
+type GetFusionEnvironmentAdminUsersFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFusionEnvironmentAdminUsersFilterInput is an input type that accepts GetFusionEnvironmentAdminUsersFilterArgs and GetFusionEnvironmentAdminUsersFilterOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentAdminUsersFilterInput` via:
+//
+//	GetFusionEnvironmentAdminUsersFilterArgs{...}
+type GetFusionEnvironmentAdminUsersFilterInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentAdminUsersFilterOutput() GetFusionEnvironmentAdminUsersFilterOutput
+	ToGetFusionEnvironmentAdminUsersFilterOutputWithContext(context.Context) GetFusionEnvironmentAdminUsersFilterOutput
+}
+
+type GetFusionEnvironmentAdminUsersFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFusionEnvironmentAdminUsersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentAdminUsersFilter)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentAdminUsersFilterArgs) ToGetFusionEnvironmentAdminUsersFilterOutput() GetFusionEnvironmentAdminUsersFilterOutput {
+	return i.ToGetFusionEnvironmentAdminUsersFilterOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentAdminUsersFilterArgs) ToGetFusionEnvironmentAdminUsersFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUsersFilterOutput)
+}
+
+// GetFusionEnvironmentAdminUsersFilterArrayInput is an input type that accepts GetFusionEnvironmentAdminUsersFilterArray and GetFusionEnvironmentAdminUsersFilterArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentAdminUsersFilterArrayInput` via:
+//
+//	GetFusionEnvironmentAdminUsersFilterArray{ GetFusionEnvironmentAdminUsersFilterArgs{...} }
+type GetFusionEnvironmentAdminUsersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentAdminUsersFilterArrayOutput() GetFusionEnvironmentAdminUsersFilterArrayOutput
+	ToGetFusionEnvironmentAdminUsersFilterArrayOutputWithContext(context.Context) GetFusionEnvironmentAdminUsersFilterArrayOutput
+}
+
+type GetFusionEnvironmentAdminUsersFilterArray []GetFusionEnvironmentAdminUsersFilterInput
+
+func (GetFusionEnvironmentAdminUsersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentAdminUsersFilter)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentAdminUsersFilterArray) ToGetFusionEnvironmentAdminUsersFilterArrayOutput() GetFusionEnvironmentAdminUsersFilterArrayOutput {
+	return i.ToGetFusionEnvironmentAdminUsersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentAdminUsersFilterArray) ToGetFusionEnvironmentAdminUsersFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUsersFilterArrayOutput)
+}
+
+type GetFusionEnvironmentAdminUsersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentAdminUsersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentAdminUsersFilter)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentAdminUsersFilterOutput) ToGetFusionEnvironmentAdminUsersFilterOutput() GetFusionEnvironmentAdminUsersFilterOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdminUsersFilterOutput) ToGetFusionEnvironmentAdminUsersFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersFilterOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdminUsersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentAdminUsersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFusionEnvironmentAdminUsersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFusionEnvironmentAdminUsersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentAdminUsersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentAdminUsersFilter)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentAdminUsersFilterArrayOutput) ToGetFusionEnvironmentAdminUsersFilterArrayOutput() GetFusionEnvironmentAdminUsersFilterArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdminUsersFilterArrayOutput) ToGetFusionEnvironmentAdminUsersFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersFilterArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentAdminUsersFilterArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentAdminUsersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentAdminUsersFilter {
+		return vs[0].([]GetFusionEnvironmentAdminUsersFilter)[vs[1].(int)]
+	}).(GetFusionEnvironmentAdminUsersFilterOutput)
+}
+
+type GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail struct {
+	EmailAddress string `pulumi:"emailAddress"`
+	FirstName    string `pulumi:"firstName"`
+	LastName     string `pulumi:"lastName"`
+	Password     string `pulumi:"password"`
+	Username     string `pulumi:"username"`
+}
+
+// GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailInput is an input type that accepts GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArgs and GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailInput` via:
+//
+//	GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArgs{...}
+type GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput() GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput
+	ToGetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutputWithContext(context.Context) GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput
+}
+
+type GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArgs struct {
+	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	FirstName    pulumi.StringInput `pulumi:"firstName"`
+	LastName     pulumi.StringInput `pulumi:"lastName"`
+	Password     pulumi.StringInput `pulumi:"password"`
+	Username     pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArgs) ToGetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput() GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput {
+	return i.ToGetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArgs) ToGetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutputWithContext(ctx context.Context) GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput)
+}
+
+// GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayInput is an input type that accepts GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArray and GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayInput` via:
+//
+//	GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArray{ GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArgs{...} }
+type GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput() GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput
+	ToGetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutputWithContext(context.Context) GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput
+}
+
+type GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArray []GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailInput
+
+func (GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArray) ToGetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput() GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput {
+	return i.ToGetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArray) ToGetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput)
+}
+
+type GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) ToGetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput() GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) ToGetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutputWithContext(ctx context.Context) GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) EmailAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail) string { return v.EmailAddress }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail) string { return v.FirstName }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail) string { return v.LastName }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail) string { return v.Password }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput) ToGetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput() GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput) ToGetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail {
+		return vs[0].([]GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail)[vs[1].(int)]
+	}).(GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput)
+}
+
+type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection struct {
+	Items []GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem `pulumi:"items"`
+}
+
+// GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionInput is an input type that accepts GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArgs and GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionInput` via:
+//
+//	GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArgs{...}
+type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput() GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput
+	ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutputWithContext(context.Context) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput
+}
+
+type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArgs struct {
+	Items GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArgs) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput() GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput {
+	return i.ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArgs) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput)
+}
+
+// GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayInput is an input type that accepts GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArray and GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayInput` via:
+//
+//	GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArray{ GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArgs{...} }
+type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput() GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput
+	ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutputWithContext(context.Context) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput
+}
+
+type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArray []GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionInput
+
+func (GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArray) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput() GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput {
+	return i.ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArray) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput)
+}
+
+type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput() GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput) Items() GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection) []GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem {
+		return v.Items
+	}).(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput)
+}
+
+type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput() GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection {
+		return vs[0].([]GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection)[vs[1].(int)]
+	}).(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput)
+}
+
+type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem struct {
+	// unique FusionEnvironment identifier
+	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
+	// Unique identifier that is immutable on creation.
+	Id                  string `pulumi:"id"`
+	IsResumeDataMasking bool   `pulumi:"isResumeDataMasking"`
+	// A filter that returns all resources that match the specified status
+	State string `pulumi:"state"`
+	// The time the data masking activity ended. An RFC3339 formatted datetime string.
+	TimeMaskingFinish string `pulumi:"timeMaskingFinish"`
+	// The time the data masking activity started. An RFC3339 formatted datetime string.
+	TimeMaskingStart string `pulumi:"timeMaskingStart"`
+}
+
+// GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemInput is an input type that accepts GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArgs and GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemInput` via:
+//
+//	GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArgs{...}
+type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput() GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput
+	ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutputWithContext(context.Context) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput
+}
+
+type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArgs struct {
+	// unique FusionEnvironment identifier
+	FusionEnvironmentId pulumi.StringInput `pulumi:"fusionEnvironmentId"`
+	// Unique identifier that is immutable on creation.
+	Id                  pulumi.StringInput `pulumi:"id"`
+	IsResumeDataMasking pulumi.BoolInput   `pulumi:"isResumeDataMasking"`
+	// A filter that returns all resources that match the specified status
+	State pulumi.StringInput `pulumi:"state"`
+	// The time the data masking activity ended. An RFC3339 formatted datetime string.
+	TimeMaskingFinish pulumi.StringInput `pulumi:"timeMaskingFinish"`
+	// The time the data masking activity started. An RFC3339 formatted datetime string.
+	TimeMaskingStart pulumi.StringInput `pulumi:"timeMaskingStart"`
+}
+
+func (GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArgs) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput() GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput {
+	return i.ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArgs) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput)
+}
+
+// GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayInput is an input type that accepts GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArray and GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayInput` via:
+//
+//	GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArray{ GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArgs{...} }
+type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput() GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput
+	ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutputWithContext(context.Context) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput
+}
+
+type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArray []GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemInput
+
+func (GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArray) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput() GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput {
+	return i.ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArray) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput)
+}
+
+type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput() GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput {
+	return o
+}
+
+// unique FusionEnvironment identifier
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) FusionEnvironmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem) string {
+		return v.FusionEnvironmentId
+	}).(pulumi.StringOutput)
+}
+
+// Unique identifier that is immutable on creation.
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) IsResumeDataMasking() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem) bool {
+		return v.IsResumeDataMasking
+	}).(pulumi.BoolOutput)
+}
+
+// A filter that returns all resources that match the specified status
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// The time the data masking activity ended. An RFC3339 formatted datetime string.
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) TimeMaskingFinish() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem) string {
+		return v.TimeMaskingFinish
+	}).(pulumi.StringOutput)
+}
+
+// The time the data masking activity started. An RFC3339 formatted datetime string.
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) TimeMaskingStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem) string {
+		return v.TimeMaskingStart
+	}).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput() GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem {
+		return vs[0].([]GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem)[vs[1].(int)]
+	}).(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput)
+}
+
+type GetFusionEnvironmentDataMaskingActivitiesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFusionEnvironmentDataMaskingActivitiesFilterInput is an input type that accepts GetFusionEnvironmentDataMaskingActivitiesFilterArgs and GetFusionEnvironmentDataMaskingActivitiesFilterOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentDataMaskingActivitiesFilterInput` via:
+//
+//	GetFusionEnvironmentDataMaskingActivitiesFilterArgs{...}
+type GetFusionEnvironmentDataMaskingActivitiesFilterInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentDataMaskingActivitiesFilterOutput() GetFusionEnvironmentDataMaskingActivitiesFilterOutput
+	ToGetFusionEnvironmentDataMaskingActivitiesFilterOutputWithContext(context.Context) GetFusionEnvironmentDataMaskingActivitiesFilterOutput
+}
+
+type GetFusionEnvironmentDataMaskingActivitiesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFusionEnvironmentDataMaskingActivitiesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentDataMaskingActivitiesFilter)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentDataMaskingActivitiesFilterArgs) ToGetFusionEnvironmentDataMaskingActivitiesFilterOutput() GetFusionEnvironmentDataMaskingActivitiesFilterOutput {
+	return i.ToGetFusionEnvironmentDataMaskingActivitiesFilterOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentDataMaskingActivitiesFilterArgs) ToGetFusionEnvironmentDataMaskingActivitiesFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentDataMaskingActivitiesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentDataMaskingActivitiesFilterOutput)
+}
+
+// GetFusionEnvironmentDataMaskingActivitiesFilterArrayInput is an input type that accepts GetFusionEnvironmentDataMaskingActivitiesFilterArray and GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentDataMaskingActivitiesFilterArrayInput` via:
+//
+//	GetFusionEnvironmentDataMaskingActivitiesFilterArray{ GetFusionEnvironmentDataMaskingActivitiesFilterArgs{...} }
+type GetFusionEnvironmentDataMaskingActivitiesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput() GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput
+	ToGetFusionEnvironmentDataMaskingActivitiesFilterArrayOutputWithContext(context.Context) GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput
+}
+
+type GetFusionEnvironmentDataMaskingActivitiesFilterArray []GetFusionEnvironmentDataMaskingActivitiesFilterInput
+
+func (GetFusionEnvironmentDataMaskingActivitiesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentDataMaskingActivitiesFilter)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentDataMaskingActivitiesFilterArray) ToGetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput() GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput {
+	return i.ToGetFusionEnvironmentDataMaskingActivitiesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentDataMaskingActivitiesFilterArray) ToGetFusionEnvironmentDataMaskingActivitiesFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput)
+}
+
+type GetFusionEnvironmentDataMaskingActivitiesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentDataMaskingActivitiesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentDataMaskingActivitiesFilter)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesFilterOutput) ToGetFusionEnvironmentDataMaskingActivitiesFilterOutput() GetFusionEnvironmentDataMaskingActivitiesFilterOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesFilterOutput) ToGetFusionEnvironmentDataMaskingActivitiesFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentDataMaskingActivitiesFilterOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentDataMaskingActivitiesFilter)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput) ToGetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput() GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput) ToGetFusionEnvironmentDataMaskingActivitiesFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentDataMaskingActivitiesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentDataMaskingActivitiesFilter {
+		return vs[0].([]GetFusionEnvironmentDataMaskingActivitiesFilter)[vs[1].(int)]
+	}).(GetFusionEnvironmentDataMaskingActivitiesFilterOutput)
+}
+
+type GetFusionEnvironmentFamiliesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFusionEnvironmentFamiliesFilterInput is an input type that accepts GetFusionEnvironmentFamiliesFilterArgs and GetFusionEnvironmentFamiliesFilterOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamiliesFilterInput` via:
+//
+//	GetFusionEnvironmentFamiliesFilterArgs{...}
+type GetFusionEnvironmentFamiliesFilterInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamiliesFilterOutput() GetFusionEnvironmentFamiliesFilterOutput
+	ToGetFusionEnvironmentFamiliesFilterOutputWithContext(context.Context) GetFusionEnvironmentFamiliesFilterOutput
+}
+
+type GetFusionEnvironmentFamiliesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFusionEnvironmentFamiliesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamiliesFilter)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamiliesFilterArgs) ToGetFusionEnvironmentFamiliesFilterOutput() GetFusionEnvironmentFamiliesFilterOutput {
+	return i.ToGetFusionEnvironmentFamiliesFilterOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamiliesFilterArgs) ToGetFusionEnvironmentFamiliesFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamiliesFilterOutput)
+}
+
+// GetFusionEnvironmentFamiliesFilterArrayInput is an input type that accepts GetFusionEnvironmentFamiliesFilterArray and GetFusionEnvironmentFamiliesFilterArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamiliesFilterArrayInput` via:
+//
+//	GetFusionEnvironmentFamiliesFilterArray{ GetFusionEnvironmentFamiliesFilterArgs{...} }
+type GetFusionEnvironmentFamiliesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamiliesFilterArrayOutput() GetFusionEnvironmentFamiliesFilterArrayOutput
+	ToGetFusionEnvironmentFamiliesFilterArrayOutputWithContext(context.Context) GetFusionEnvironmentFamiliesFilterArrayOutput
+}
+
+type GetFusionEnvironmentFamiliesFilterArray []GetFusionEnvironmentFamiliesFilterInput
+
+func (GetFusionEnvironmentFamiliesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamiliesFilter)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamiliesFilterArray) ToGetFusionEnvironmentFamiliesFilterArrayOutput() GetFusionEnvironmentFamiliesFilterArrayOutput {
+	return i.ToGetFusionEnvironmentFamiliesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamiliesFilterArray) ToGetFusionEnvironmentFamiliesFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamiliesFilterArrayOutput)
+}
+
+type GetFusionEnvironmentFamiliesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamiliesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamiliesFilter)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamiliesFilterOutput) ToGetFusionEnvironmentFamiliesFilterOutput() GetFusionEnvironmentFamiliesFilterOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamiliesFilterOutput) ToGetFusionEnvironmentFamiliesFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFilterOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamiliesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentFamiliesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFusionEnvironmentFamiliesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFusionEnvironmentFamiliesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamiliesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamiliesFilter)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamiliesFilterArrayOutput) ToGetFusionEnvironmentFamiliesFilterArrayOutput() GetFusionEnvironmentFamiliesFilterArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamiliesFilterArrayOutput) ToGetFusionEnvironmentFamiliesFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFilterArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamiliesFilterArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamiliesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamiliesFilter {
+		return vs[0].([]GetFusionEnvironmentFamiliesFilter)[vs[1].(int)]
+	}).(GetFusionEnvironmentFamiliesFilterOutput)
+}
+
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection struct {
+	Items []GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem `pulumi:"items"`
+}
+
+// GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionInput is an input type that accepts GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArgs and GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionInput` via:
+//
+//	GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArgs{...}
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput
+	ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutputWithContext(context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput
+}
+
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArgs struct {
+	Items GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArgs) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput {
+	return i.ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArgs) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput)
+}
+
+// GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayInput is an input type that accepts GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArray and GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayInput` via:
+//
+//	GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArray{ GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArgs{...} }
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput
+	ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutputWithContext(context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput
+}
+
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArray []GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionInput
+
+func (GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArray) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput {
+	return i.ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArray) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput)
+}
+
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput) Items() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection) []GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem {
+		return v.Items
+	}).(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput)
+}
+
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection {
+		return vs[0].([]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection)[vs[1].(int)]
+	}).(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput)
+}
+
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+	FamilyMaintenancePolicies []GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy `pulumi:"familyMaintenancePolicies"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The unique identifier (OCID) of the environment family. Can't be changed after creation.
+	Id string `pulumi:"id"`
+	// When set to True, a subscription update is required for the environment family.
+	IsSubscriptionUpdateNeeded bool `pulumi:"isSubscriptionUpdateNeeded"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter that returns all resources that match the specified lifecycle state.
+	State string `pulumi:"state"`
+	// The list of the IDs of the applications subscriptions that are associated with the environment family.
+	SubscriptionIds []string `pulumi:"subscriptionIds"`
+	// Environment Specific Guid/ System Name
+	SystemName string `pulumi:"systemName"`
+	// The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemInput is an input type that accepts GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArgs and GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemInput` via:
+//
+//	GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArgs{...}
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput
+	ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutputWithContext(context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput
+}
+
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+	FamilyMaintenancePolicies GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayInput `pulumi:"familyMaintenancePolicies"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The unique identifier (OCID) of the environment family. Can't be changed after creation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// When set to True, a subscription update is required for the environment family.
+	IsSubscriptionUpdateNeeded pulumi.BoolInput `pulumi:"isSubscriptionUpdateNeeded"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter that returns all resources that match the specified lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The list of the IDs of the applications subscriptions that are associated with the environment family.
+	SubscriptionIds pulumi.StringArrayInput `pulumi:"subscriptionIds"`
+	// Environment Specific Guid/ System Name
+	SystemName pulumi.StringInput `pulumi:"systemName"`
+	// The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArgs) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput {
+	return i.ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArgs) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput)
+}
+
+// GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayInput is an input type that accepts GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArray and GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayInput` via:
+//
+//	GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArray{ GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArgs{...} }
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput
+	ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutputWithContext(context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput
+}
+
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArray []GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemInput
+
+func (GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArray) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput {
+	return i.ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArray) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput)
+}
+
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) FamilyMaintenancePolicies() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) []GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy {
+		return v.FamilyMaintenancePolicies
+	}).(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The unique identifier (OCID) of the environment family. Can't be changed after creation.
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// When set to True, a subscription update is required for the environment family.
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) IsSubscriptionUpdateNeeded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) bool {
+		return v.IsSubscriptionUpdateNeeded
+	}).(pulumi.BoolOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// A filter that returns all resources that match the specified lifecycle state.
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The list of the IDs of the applications subscriptions that are associated with the environment family.
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) SubscriptionIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) []string {
+		return v.SubscriptionIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// Environment Specific Guid/ System Name
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) SystemName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) string { return v.SystemName }).(pulumi.StringOutput)
+}
+
+// The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem {
+		return vs[0].([]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem)[vs[1].(int)]
+	}).(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput)
+}
+
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy struct {
+	// Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
+	ConcurrentMaintenance string `pulumi:"concurrentMaintenance"`
+	// When True, monthly patching is enabled for the environment family.
+	IsMonthlyPatchingEnabled bool `pulumi:"isMonthlyPatchingEnabled"`
+	// The quarterly maintenance month group schedule of the Fusion environment family.
+	QuarterlyUpgradeBeginTimes string `pulumi:"quarterlyUpgradeBeginTimes"`
+}
+
+// GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyInput is an input type that accepts GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArgs and GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyInput` via:
+//
+//	GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArgs{...}
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput
+	ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutputWithContext(context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput
+}
+
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArgs struct {
+	// Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
+	ConcurrentMaintenance pulumi.StringInput `pulumi:"concurrentMaintenance"`
+	// When True, monthly patching is enabled for the environment family.
+	IsMonthlyPatchingEnabled pulumi.BoolInput `pulumi:"isMonthlyPatchingEnabled"`
+	// The quarterly maintenance month group schedule of the Fusion environment family.
+	QuarterlyUpgradeBeginTimes pulumi.StringInput `pulumi:"quarterlyUpgradeBeginTimes"`
+}
+
+func (GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArgs) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput {
+	return i.ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArgs) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput)
+}
+
+// GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayInput is an input type that accepts GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArray and GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayInput` via:
+//
+//	GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArray{ GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArgs{...} }
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput
+	ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutputWithContext(context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput
+}
+
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArray []GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyInput
+
+func (GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArray) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput {
+	return i.ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArray) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput)
+}
+
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput {
+	return o
+}
+
+// Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput) ConcurrentMaintenance() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy) string {
+		return v.ConcurrentMaintenance
+	}).(pulumi.StringOutput)
+}
+
+// When True, monthly patching is enabled for the environment family.
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput) IsMonthlyPatchingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy) bool {
+		return v.IsMonthlyPatchingEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// The quarterly maintenance month group schedule of the Fusion environment family.
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput) QuarterlyUpgradeBeginTimes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy) string {
+		return v.QuarterlyUpgradeBeginTimes
+	}).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy {
+		return vs[0].([]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy)[vs[1].(int)]
+	}).(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput)
+}
+
+type GetFusionEnvironmentFamilyFamilyMaintenancePolicy struct {
+	// Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
+	ConcurrentMaintenance string `pulumi:"concurrentMaintenance"`
+	// When True, monthly patching is enabled for the environment family.
+	IsMonthlyPatchingEnabled bool `pulumi:"isMonthlyPatchingEnabled"`
+	// The quarterly maintenance month group schedule of the Fusion environment family.
+	QuarterlyUpgradeBeginTimes string `pulumi:"quarterlyUpgradeBeginTimes"`
+}
+
+// GetFusionEnvironmentFamilyFamilyMaintenancePolicyInput is an input type that accepts GetFusionEnvironmentFamilyFamilyMaintenancePolicyArgs and GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamilyFamilyMaintenancePolicyInput` via:
+//
+//	GetFusionEnvironmentFamilyFamilyMaintenancePolicyArgs{...}
+type GetFusionEnvironmentFamilyFamilyMaintenancePolicyInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput() GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput
+	ToGetFusionEnvironmentFamilyFamilyMaintenancePolicyOutputWithContext(context.Context) GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput
+}
+
+type GetFusionEnvironmentFamilyFamilyMaintenancePolicyArgs struct {
+	// Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
+	ConcurrentMaintenance pulumi.StringInput `pulumi:"concurrentMaintenance"`
+	// When True, monthly patching is enabled for the environment family.
+	IsMonthlyPatchingEnabled pulumi.BoolInput `pulumi:"isMonthlyPatchingEnabled"`
+	// The quarterly maintenance month group schedule of the Fusion environment family.
+	QuarterlyUpgradeBeginTimes pulumi.StringInput `pulumi:"quarterlyUpgradeBeginTimes"`
+}
+
+func (GetFusionEnvironmentFamilyFamilyMaintenancePolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamilyFamilyMaintenancePolicy)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamilyFamilyMaintenancePolicyArgs) ToGetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput() GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput {
+	return i.ToGetFusionEnvironmentFamilyFamilyMaintenancePolicyOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamilyFamilyMaintenancePolicyArgs) ToGetFusionEnvironmentFamilyFamilyMaintenancePolicyOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput)
+}
+
+// GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayInput is an input type that accepts GetFusionEnvironmentFamilyFamilyMaintenancePolicyArray and GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayInput` via:
+//
+//	GetFusionEnvironmentFamilyFamilyMaintenancePolicyArray{ GetFusionEnvironmentFamilyFamilyMaintenancePolicyArgs{...} }
+type GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput() GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput
+	ToGetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutputWithContext(context.Context) GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput
+}
+
+type GetFusionEnvironmentFamilyFamilyMaintenancePolicyArray []GetFusionEnvironmentFamilyFamilyMaintenancePolicyInput
+
+func (GetFusionEnvironmentFamilyFamilyMaintenancePolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamilyFamilyMaintenancePolicy)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamilyFamilyMaintenancePolicyArray) ToGetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput() GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput {
+	return i.ToGetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamilyFamilyMaintenancePolicyArray) ToGetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput)
+}
+
+type GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamilyFamilyMaintenancePolicy)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput) ToGetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput() GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput) ToGetFusionEnvironmentFamilyFamilyMaintenancePolicyOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput {
+	return o
+}
+
+// Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
+func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput) ConcurrentMaintenance() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyFamilyMaintenancePolicy) string { return v.ConcurrentMaintenance }).(pulumi.StringOutput)
+}
+
+// When True, monthly patching is enabled for the environment family.
+func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput) IsMonthlyPatchingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyFamilyMaintenancePolicy) bool { return v.IsMonthlyPatchingEnabled }).(pulumi.BoolOutput)
+}
+
+// The quarterly maintenance month group schedule of the Fusion environment family.
+func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput) QuarterlyUpgradeBeginTimes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyFamilyMaintenancePolicy) string { return v.QuarterlyUpgradeBeginTimes }).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamilyFamilyMaintenancePolicy)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput) ToGetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput() GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput) ToGetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamilyFamilyMaintenancePolicy {
+		return vs[0].([]GetFusionEnvironmentFamilyFamilyMaintenancePolicy)[vs[1].(int)]
+	}).(GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput)
+}
+
+type GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage struct {
+	Limit int `pulumi:"limit"`
+	// The usage of current environment.
+	Usage int `pulumi:"usage"`
+}
+
+// GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageInput is an input type that accepts GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArgs and GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageInput` via:
+//
+//	GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArgs{...}
+type GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput() GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput
+	ToGetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutputWithContext(context.Context) GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput
+}
+
+type GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArgs struct {
+	Limit pulumi.IntInput `pulumi:"limit"`
+	// The usage of current environment.
+	Usage pulumi.IntInput `pulumi:"usage"`
+}
+
+func (GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArgs) ToGetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput() GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput {
+	return i.ToGetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArgs) ToGetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput)
+}
+
+// GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayInput is an input type that accepts GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArray and GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayInput` via:
+//
+//	GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArray{ GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArgs{...} }
+type GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput() GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput
+	ToGetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutputWithContext(context.Context) GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput
+}
+
+type GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArray []GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageInput
+
+func (GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArray) ToGetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput() GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput {
+	return i.ToGetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArray) ToGetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput)
+}
+
+type GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput) ToGetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput() GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput) ToGetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput) Limit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage) int { return v.Limit }).(pulumi.IntOutput)
+}
+
+// The usage of current environment.
+func (o GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput) Usage() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage) int { return v.Usage }).(pulumi.IntOutput)
+}
+
+type GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput) ToGetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput() GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput) ToGetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage {
+		return vs[0].([]GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage)[vs[1].(int)]
+	}).(GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput)
+}
+
+type GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage struct {
+	Limit int `pulumi:"limit"`
+	// The usage of current environment.
+	Usage int `pulumi:"usage"`
+}
+
+// GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageInput is an input type that accepts GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArgs and GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageInput` via:
+//
+//	GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArgs{...}
+type GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput() GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput
+	ToGetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutputWithContext(context.Context) GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput
+}
+
+type GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArgs struct {
+	Limit pulumi.IntInput `pulumi:"limit"`
+	// The usage of current environment.
+	Usage pulumi.IntInput `pulumi:"usage"`
+}
+
+func (GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArgs) ToGetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput() GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput {
+	return i.ToGetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArgs) ToGetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput)
+}
+
+// GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayInput is an input type that accepts GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArray and GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayInput` via:
+//
+//	GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArray{ GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArgs{...} }
+type GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput() GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput
+	ToGetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutputWithContext(context.Context) GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput
+}
+
+type GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArray []GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageInput
+
+func (GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArray) ToGetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput() GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput {
+	return i.ToGetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArray) ToGetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput)
+}
+
+type GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput) ToGetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput() GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput) ToGetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput) Limit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage) int { return v.Limit }).(pulumi.IntOutput)
+}
+
+// The usage of current environment.
+func (o GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput) Usage() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage) int { return v.Usage }).(pulumi.IntOutput)
+}
+
+type GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput) ToGetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput() GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput) ToGetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage {
+		return vs[0].([]GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage)[vs[1].(int)]
+	}).(GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput)
+}
+
+type GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage struct {
+	Limit int `pulumi:"limit"`
+	// The usage of current environment.
+	Usage int `pulumi:"usage"`
+}
+
+// GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageInput is an input type that accepts GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArgs and GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageInput` via:
+//
+//	GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArgs{...}
+type GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput() GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput
+	ToGetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutputWithContext(context.Context) GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput
+}
+
+type GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArgs struct {
+	Limit pulumi.IntInput `pulumi:"limit"`
+	// The usage of current environment.
+	Usage pulumi.IntInput `pulumi:"usage"`
+}
+
+func (GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArgs) ToGetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput() GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput {
+	return i.ToGetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArgs) ToGetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput)
+}
+
+// GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayInput is an input type that accepts GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArray and GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayInput` via:
+//
+//	GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArray{ GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArgs{...} }
+type GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput() GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput
+	ToGetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutputWithContext(context.Context) GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput
+}
+
+type GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArray []GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageInput
+
+func (GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArray) ToGetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput() GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput {
+	return i.ToGetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArray) ToGetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput)
+}
+
+type GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput) ToGetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput() GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput) ToGetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput) Limit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage) int { return v.Limit }).(pulumi.IntOutput)
+}
+
+// The usage of current environment.
+func (o GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput) Usage() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage) int { return v.Usage }).(pulumi.IntOutput)
+}
+
+type GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput) ToGetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput() GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput) ToGetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage {
+		return vs[0].([]GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage)[vs[1].(int)]
+	}).(GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput)
+}
+
+type GetFusionEnvironmentFamilySubscriptionDetailSubscription struct {
+	// Subscription id.
+	ClassicSubscriptionId string `pulumi:"classicSubscriptionId"`
+	// OCID of the subscription details for particular root compartment or tenancy.
+	Id string `pulumi:"id"`
+	// The type of subscription, such as 'CLOUDCM'/'SAAS'/'CRM', etc.
+	ServiceName string `pulumi:"serviceName"`
+	// Stock keeping unit.
+	Skuses []GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus `pulumi:"skuses"`
+}
+
+// GetFusionEnvironmentFamilySubscriptionDetailSubscriptionInput is an input type that accepts GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArgs and GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamilySubscriptionDetailSubscriptionInput` via:
+//
+//	GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArgs{...}
+type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput() GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput
+	ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutputWithContext(context.Context) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput
+}
+
+type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArgs struct {
+	// Subscription id.
+	ClassicSubscriptionId pulumi.StringInput `pulumi:"classicSubscriptionId"`
+	// OCID of the subscription details for particular root compartment or tenancy.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The type of subscription, such as 'CLOUDCM'/'SAAS'/'CRM', etc.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// Stock keeping unit.
+	Skuses GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayInput `pulumi:"skuses"`
+}
+
+func (GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamilySubscriptionDetailSubscription)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArgs) ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput() GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput {
+	return i.ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArgs) ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput)
+}
+
+// GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayInput is an input type that accepts GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArray and GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayInput` via:
+//
+//	GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArray{ GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArgs{...} }
+type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput() GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput
+	ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutputWithContext(context.Context) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput
+}
+
+type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArray []GetFusionEnvironmentFamilySubscriptionDetailSubscriptionInput
+
+func (GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamilySubscriptionDetailSubscription)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArray) ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput() GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput {
+	return i.ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArray) ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput)
+}
+
+type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamilySubscriptionDetailSubscription)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput) ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput() GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput) ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput {
+	return o
+}
+
+// Subscription id.
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput) ClassicSubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscription) string {
+		return v.ClassicSubscriptionId
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the subscription details for particular root compartment or tenancy.
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscription) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The type of subscription, such as 'CLOUDCM'/'SAAS'/'CRM', etc.
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscription) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+// Stock keeping unit.
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput) Skuses() GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscription) []GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus {
+		return v.Skuses
+	}).(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput)
+}
+
+type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamilySubscriptionDetailSubscription)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput) ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput() GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput) ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamilySubscriptionDetailSubscription {
+		return vs[0].([]GetFusionEnvironmentFamilySubscriptionDetailSubscription)[vs[1].(int)]
+	}).(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput)
+}
+
+type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus struct {
+	// Description of the stock units.
+	Description string `pulumi:"description"`
+	// Description of the covered product belonging to this Sku.
+	LicensePartDescription string `pulumi:"licensePartDescription"`
+	// Base metric for billing the service.
+	MetricName string `pulumi:"metricName"`
+	// Quantity of the stock units.
+	Quantity int `pulumi:"quantity"`
+	// Stock keeping unit id.
+	Sku string `pulumi:"sku"`
+}
+
+// GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusInput is an input type that accepts GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArgs and GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusInput` via:
+//
+//	GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArgs{...}
+type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput() GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput
+	ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutputWithContext(context.Context) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput
+}
+
+type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArgs struct {
+	// Description of the stock units.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Description of the covered product belonging to this Sku.
+	LicensePartDescription pulumi.StringInput `pulumi:"licensePartDescription"`
+	// Base metric for billing the service.
+	MetricName pulumi.StringInput `pulumi:"metricName"`
+	// Quantity of the stock units.
+	Quantity pulumi.IntInput `pulumi:"quantity"`
+	// Stock keeping unit id.
+	Sku pulumi.StringInput `pulumi:"sku"`
+}
+
+func (GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArgs) ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput() GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput {
+	return i.ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArgs) ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput)
+}
+
+// GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayInput is an input type that accepts GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArray and GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayInput` via:
+//
+//	GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArray{ GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArgs{...} }
+type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput() GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput
+	ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutputWithContext(context.Context) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput
+}
+
+type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArray []GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusInput
+
+func (GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArray) ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput() GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput {
+	return i.ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArray) ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput)
+}
+
+type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput() GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput {
+	return o
+}
+
+// Description of the stock units.
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Description of the covered product belonging to this Sku.
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) LicensePartDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus) string {
+		return v.LicensePartDescription
+	}).(pulumi.StringOutput)
+}
+
+// Base metric for billing the service.
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) MetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus) string { return v.MetricName }).(pulumi.StringOutput)
+}
+
+// Quantity of the stock units.
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) Quantity() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus) int { return v.Quantity }).(pulumi.IntOutput)
+}
+
+// Stock keeping unit id.
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) Sku() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus) string { return v.Sku }).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput) ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput() GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput) ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus {
+		return vs[0].([]GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus)[vs[1].(int)]
+	}).(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput)
+}
+
+type GetFusionEnvironmentMaintenancePolicy struct {
+	// User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
+	EnvironmentMaintenanceOverride string `pulumi:"environmentMaintenanceOverride"`
+	// Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
+	MonthlyPatchingOverride string `pulumi:"monthlyPatchingOverride"`
+	// Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
+	QuarterlyUpgradeBeginTimes []GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime `pulumi:"quarterlyUpgradeBeginTimes"`
+}
+
+// GetFusionEnvironmentMaintenancePolicyInput is an input type that accepts GetFusionEnvironmentMaintenancePolicyArgs and GetFusionEnvironmentMaintenancePolicyOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentMaintenancePolicyInput` via:
+//
+//	GetFusionEnvironmentMaintenancePolicyArgs{...}
+type GetFusionEnvironmentMaintenancePolicyInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentMaintenancePolicyOutput() GetFusionEnvironmentMaintenancePolicyOutput
+	ToGetFusionEnvironmentMaintenancePolicyOutputWithContext(context.Context) GetFusionEnvironmentMaintenancePolicyOutput
+}
+
+type GetFusionEnvironmentMaintenancePolicyArgs struct {
+	// User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
+	EnvironmentMaintenanceOverride pulumi.StringInput `pulumi:"environmentMaintenanceOverride"`
+	// Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
+	MonthlyPatchingOverride pulumi.StringInput `pulumi:"monthlyPatchingOverride"`
+	// Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
+	QuarterlyUpgradeBeginTimes GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayInput `pulumi:"quarterlyUpgradeBeginTimes"`
+}
+
+func (GetFusionEnvironmentMaintenancePolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentMaintenancePolicy)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentMaintenancePolicyArgs) ToGetFusionEnvironmentMaintenancePolicyOutput() GetFusionEnvironmentMaintenancePolicyOutput {
+	return i.ToGetFusionEnvironmentMaintenancePolicyOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentMaintenancePolicyArgs) ToGetFusionEnvironmentMaintenancePolicyOutputWithContext(ctx context.Context) GetFusionEnvironmentMaintenancePolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentMaintenancePolicyOutput)
+}
+
+// GetFusionEnvironmentMaintenancePolicyArrayInput is an input type that accepts GetFusionEnvironmentMaintenancePolicyArray and GetFusionEnvironmentMaintenancePolicyArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentMaintenancePolicyArrayInput` via:
+//
+//	GetFusionEnvironmentMaintenancePolicyArray{ GetFusionEnvironmentMaintenancePolicyArgs{...} }
+type GetFusionEnvironmentMaintenancePolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentMaintenancePolicyArrayOutput() GetFusionEnvironmentMaintenancePolicyArrayOutput
+	ToGetFusionEnvironmentMaintenancePolicyArrayOutputWithContext(context.Context) GetFusionEnvironmentMaintenancePolicyArrayOutput
+}
+
+type GetFusionEnvironmentMaintenancePolicyArray []GetFusionEnvironmentMaintenancePolicyInput
+
+func (GetFusionEnvironmentMaintenancePolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentMaintenancePolicy)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentMaintenancePolicyArray) ToGetFusionEnvironmentMaintenancePolicyArrayOutput() GetFusionEnvironmentMaintenancePolicyArrayOutput {
+	return i.ToGetFusionEnvironmentMaintenancePolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentMaintenancePolicyArray) ToGetFusionEnvironmentMaintenancePolicyArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentMaintenancePolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentMaintenancePolicyArrayOutput)
+}
+
+type GetFusionEnvironmentMaintenancePolicyOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentMaintenancePolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentMaintenancePolicy)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentMaintenancePolicyOutput) ToGetFusionEnvironmentMaintenancePolicyOutput() GetFusionEnvironmentMaintenancePolicyOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentMaintenancePolicyOutput) ToGetFusionEnvironmentMaintenancePolicyOutputWithContext(ctx context.Context) GetFusionEnvironmentMaintenancePolicyOutput {
+	return o
+}
+
+// User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
+func (o GetFusionEnvironmentMaintenancePolicyOutput) EnvironmentMaintenanceOverride() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentMaintenancePolicy) string { return v.EnvironmentMaintenanceOverride }).(pulumi.StringOutput)
+}
+
+// Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
+func (o GetFusionEnvironmentMaintenancePolicyOutput) MonthlyPatchingOverride() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentMaintenancePolicy) string { return v.MonthlyPatchingOverride }).(pulumi.StringOutput)
+}
+
+// Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
+func (o GetFusionEnvironmentMaintenancePolicyOutput) QuarterlyUpgradeBeginTimes() GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentMaintenancePolicy) []GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime {
+		return v.QuarterlyUpgradeBeginTimes
+	}).(GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput)
+}
+
+type GetFusionEnvironmentMaintenancePolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentMaintenancePolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentMaintenancePolicy)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentMaintenancePolicyArrayOutput) ToGetFusionEnvironmentMaintenancePolicyArrayOutput() GetFusionEnvironmentMaintenancePolicyArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentMaintenancePolicyArrayOutput) ToGetFusionEnvironmentMaintenancePolicyArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentMaintenancePolicyArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentMaintenancePolicyArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentMaintenancePolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentMaintenancePolicy {
+		return vs[0].([]GetFusionEnvironmentMaintenancePolicy)[vs[1].(int)]
+	}).(GetFusionEnvironmentMaintenancePolicyOutput)
+}
+
+type GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime struct {
+	// The frequency and month when maintenance occurs for the Fusion environment.
+	BeginTimesValue string `pulumi:"beginTimesValue"`
+	// Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
+	OverrideType string `pulumi:"overrideType"`
+}
+
+// GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeInput is an input type that accepts GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs and GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeInput` via:
+//
+//	GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs{...}
+type GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput() GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput
+	ToGetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutputWithContext(context.Context) GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput
+}
+
+type GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs struct {
+	// The frequency and month when maintenance occurs for the Fusion environment.
+	BeginTimesValue pulumi.StringInput `pulumi:"beginTimesValue"`
+	// Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
+	OverrideType pulumi.StringInput `pulumi:"overrideType"`
+}
+
+func (GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs) ToGetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput() GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput {
+	return i.ToGetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs) ToGetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutputWithContext(ctx context.Context) GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput)
+}
+
+// GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayInput is an input type that accepts GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArray and GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayInput` via:
+//
+//	GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArray{ GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs{...} }
+type GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput() GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput
+	ToGetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutputWithContext(context.Context) GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput
+}
+
+type GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArray []GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeInput
+
+func (GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArray) ToGetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput() GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput {
+	return i.ToGetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArray) ToGetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput)
+}
+
+type GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) ToGetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput() GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) ToGetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutputWithContext(ctx context.Context) GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput {
+	return o
+}
+
+// The frequency and month when maintenance occurs for the Fusion environment.
+func (o GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) BeginTimesValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime) string {
+		return v.BeginTimesValue
+	}).(pulumi.StringOutput)
+}
+
+// Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
+func (o GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) OverrideType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime) string { return v.OverrideType }).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput) ToGetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput() GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput) ToGetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime {
+		return vs[0].([]GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime)[vs[1].(int)]
+	}).(GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput)
+}
+
+type GetFusionEnvironmentRefresh struct {
+	// The source environment id for the last refresh
+	SourceFusionEnvironmentId string `pulumi:"sourceFusionEnvironmentId"`
+	// The time of when the last refresh finish
+	TimeFinished string `pulumi:"timeFinished"`
+	// The point of time of the latest DB backup for the last refresh
+	TimeOfRestorationPoint string `pulumi:"timeOfRestorationPoint"`
+}
+
+// GetFusionEnvironmentRefreshInput is an input type that accepts GetFusionEnvironmentRefreshArgs and GetFusionEnvironmentRefreshOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentRefreshInput` via:
+//
+//	GetFusionEnvironmentRefreshArgs{...}
+type GetFusionEnvironmentRefreshInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentRefreshOutput() GetFusionEnvironmentRefreshOutput
+	ToGetFusionEnvironmentRefreshOutputWithContext(context.Context) GetFusionEnvironmentRefreshOutput
+}
+
+type GetFusionEnvironmentRefreshArgs struct {
+	// The source environment id for the last refresh
+	SourceFusionEnvironmentId pulumi.StringInput `pulumi:"sourceFusionEnvironmentId"`
+	// The time of when the last refresh finish
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// The point of time of the latest DB backup for the last refresh
+	TimeOfRestorationPoint pulumi.StringInput `pulumi:"timeOfRestorationPoint"`
+}
+
+func (GetFusionEnvironmentRefreshArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentRefresh)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentRefreshArgs) ToGetFusionEnvironmentRefreshOutput() GetFusionEnvironmentRefreshOutput {
+	return i.ToGetFusionEnvironmentRefreshOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentRefreshArgs) ToGetFusionEnvironmentRefreshOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshOutput)
+}
+
+// GetFusionEnvironmentRefreshArrayInput is an input type that accepts GetFusionEnvironmentRefreshArray and GetFusionEnvironmentRefreshArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentRefreshArrayInput` via:
+//
+//	GetFusionEnvironmentRefreshArray{ GetFusionEnvironmentRefreshArgs{...} }
+type GetFusionEnvironmentRefreshArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentRefreshArrayOutput() GetFusionEnvironmentRefreshArrayOutput
+	ToGetFusionEnvironmentRefreshArrayOutputWithContext(context.Context) GetFusionEnvironmentRefreshArrayOutput
+}
+
+type GetFusionEnvironmentRefreshArray []GetFusionEnvironmentRefreshInput
+
+func (GetFusionEnvironmentRefreshArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentRefresh)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentRefreshArray) ToGetFusionEnvironmentRefreshArrayOutput() GetFusionEnvironmentRefreshArrayOutput {
+	return i.ToGetFusionEnvironmentRefreshArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentRefreshArray) ToGetFusionEnvironmentRefreshArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshArrayOutput)
+}
+
+type GetFusionEnvironmentRefreshOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentRefreshOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentRefresh)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentRefreshOutput) ToGetFusionEnvironmentRefreshOutput() GetFusionEnvironmentRefreshOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshOutput) ToGetFusionEnvironmentRefreshOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshOutput {
+	return o
+}
+
+// The source environment id for the last refresh
+func (o GetFusionEnvironmentRefreshOutput) SourceFusionEnvironmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefresh) string { return v.SourceFusionEnvironmentId }).(pulumi.StringOutput)
+}
+
+// The time of when the last refresh finish
+func (o GetFusionEnvironmentRefreshOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefresh) string { return v.TimeFinished }).(pulumi.StringOutput)
+}
+
+// The point of time of the latest DB backup for the last refresh
+func (o GetFusionEnvironmentRefreshOutput) TimeOfRestorationPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefresh) string { return v.TimeOfRestorationPoint }).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentRefreshArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentRefreshArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentRefresh)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentRefreshArrayOutput) ToGetFusionEnvironmentRefreshArrayOutput() GetFusionEnvironmentRefreshArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshArrayOutput) ToGetFusionEnvironmentRefreshArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentRefreshOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentRefresh {
+		return vs[0].([]GetFusionEnvironmentRefresh)[vs[1].(int)]
+	}).(GetFusionEnvironmentRefreshOutput)
+}
+
+type GetFusionEnvironmentRefreshActivitiesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFusionEnvironmentRefreshActivitiesFilterInput is an input type that accepts GetFusionEnvironmentRefreshActivitiesFilterArgs and GetFusionEnvironmentRefreshActivitiesFilterOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentRefreshActivitiesFilterInput` via:
+//
+//	GetFusionEnvironmentRefreshActivitiesFilterArgs{...}
+type GetFusionEnvironmentRefreshActivitiesFilterInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentRefreshActivitiesFilterOutput() GetFusionEnvironmentRefreshActivitiesFilterOutput
+	ToGetFusionEnvironmentRefreshActivitiesFilterOutputWithContext(context.Context) GetFusionEnvironmentRefreshActivitiesFilterOutput
+}
+
+type GetFusionEnvironmentRefreshActivitiesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFusionEnvironmentRefreshActivitiesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesFilter)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentRefreshActivitiesFilterArgs) ToGetFusionEnvironmentRefreshActivitiesFilterOutput() GetFusionEnvironmentRefreshActivitiesFilterOutput {
+	return i.ToGetFusionEnvironmentRefreshActivitiesFilterOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentRefreshActivitiesFilterArgs) ToGetFusionEnvironmentRefreshActivitiesFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivitiesFilterOutput)
+}
+
+// GetFusionEnvironmentRefreshActivitiesFilterArrayInput is an input type that accepts GetFusionEnvironmentRefreshActivitiesFilterArray and GetFusionEnvironmentRefreshActivitiesFilterArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentRefreshActivitiesFilterArrayInput` via:
+//
+//	GetFusionEnvironmentRefreshActivitiesFilterArray{ GetFusionEnvironmentRefreshActivitiesFilterArgs{...} }
+type GetFusionEnvironmentRefreshActivitiesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentRefreshActivitiesFilterArrayOutput() GetFusionEnvironmentRefreshActivitiesFilterArrayOutput
+	ToGetFusionEnvironmentRefreshActivitiesFilterArrayOutputWithContext(context.Context) GetFusionEnvironmentRefreshActivitiesFilterArrayOutput
+}
+
+type GetFusionEnvironmentRefreshActivitiesFilterArray []GetFusionEnvironmentRefreshActivitiesFilterInput
+
+func (GetFusionEnvironmentRefreshActivitiesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentRefreshActivitiesFilter)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentRefreshActivitiesFilterArray) ToGetFusionEnvironmentRefreshActivitiesFilterArrayOutput() GetFusionEnvironmentRefreshActivitiesFilterArrayOutput {
+	return i.ToGetFusionEnvironmentRefreshActivitiesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentRefreshActivitiesFilterArray) ToGetFusionEnvironmentRefreshActivitiesFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivitiesFilterArrayOutput)
+}
+
+type GetFusionEnvironmentRefreshActivitiesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentRefreshActivitiesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesFilter)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesFilterOutput) ToGetFusionEnvironmentRefreshActivitiesFilterOutput() GetFusionEnvironmentRefreshActivitiesFilterOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesFilterOutput) ToGetFusionEnvironmentRefreshActivitiesFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesFilterOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFusionEnvironmentRefreshActivitiesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentRefreshActivitiesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentRefreshActivitiesFilter)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesFilterArrayOutput) ToGetFusionEnvironmentRefreshActivitiesFilterArrayOutput() GetFusionEnvironmentRefreshActivitiesFilterArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesFilterArrayOutput) ToGetFusionEnvironmentRefreshActivitiesFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesFilterArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesFilterArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentRefreshActivitiesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentRefreshActivitiesFilter {
+		return vs[0].([]GetFusionEnvironmentRefreshActivitiesFilter)[vs[1].(int)]
+	}).(GetFusionEnvironmentRefreshActivitiesFilterOutput)
+}
+
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection struct {
+	Items []GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem `pulumi:"items"`
+}
+
+// GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionInput is an input type that accepts GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArgs and GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionInput` via:
+//
+//	GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArgs{...}
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput
+	ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutputWithContext(context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput
+}
+
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArgs struct {
+	Items GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArgs) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput {
+	return i.ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArgs) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput)
+}
+
+// GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayInput is an input type that accepts GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArray and GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayInput` via:
+//
+//	GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArray{ GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArgs{...} }
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput
+	ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutputWithContext(context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput
+}
+
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArray []GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionInput
+
+func (GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArray) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput {
+	return i.ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArray) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput)
+}
+
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput) Items() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection) []GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem {
+		return v.Items
+	}).(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput)
+}
+
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection {
+		return vs[0].([]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection)[vs[1].(int)]
+	}).(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput)
+}
+
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// unique FusionEnvironment identifier
+	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
+	// The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Service availability / impact during refresh activity execution up down
+	ServiceAvailability string `pulumi:"serviceAvailability"`
+	// The OCID of the Fusion environment that is the source environment for the refresh.
+	SourceFusionEnvironmentId string `pulumi:"sourceFusionEnvironmentId"`
+	// A filter that returns all resources that match the specified status
+	State string `pulumi:"state"`
+	// The time the refresh activity record was created. An RFC3339 formatted datetime string.
+	TimeAccepted string `pulumi:"timeAccepted"`
+	// The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
+	TimeExpectedFinish string `pulumi:"timeExpectedFinish"`
+	// The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
+	TimeFinished string `pulumi:"timeFinished"`
+	// The date and time of the most recent source environment backup used for the environment refresh.
+	TimeOfRestorationPoint string `pulumi:"timeOfRestorationPoint"`
+	// The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
+	TimeScheduledStart string `pulumi:"timeScheduledStart"`
+	// The time the refresh activity record was updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemInput is an input type that accepts GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArgs and GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemInput` via:
+//
+//	GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArgs{...}
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput
+	ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutputWithContext(context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput
+}
+
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArgs struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// unique FusionEnvironment identifier
+	FusionEnvironmentId pulumi.StringInput `pulumi:"fusionEnvironmentId"`
+	// The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Service availability / impact during refresh activity execution up down
+	ServiceAvailability pulumi.StringInput `pulumi:"serviceAvailability"`
+	// The OCID of the Fusion environment that is the source environment for the refresh.
+	SourceFusionEnvironmentId pulumi.StringInput `pulumi:"sourceFusionEnvironmentId"`
+	// A filter that returns all resources that match the specified status
+	State pulumi.StringInput `pulumi:"state"`
+	// The time the refresh activity record was created. An RFC3339 formatted datetime string.
+	TimeAccepted pulumi.StringInput `pulumi:"timeAccepted"`
+	// The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
+	TimeExpectedFinish pulumi.StringInput `pulumi:"timeExpectedFinish"`
+	// The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// The date and time of the most recent source environment backup used for the environment refresh.
+	TimeOfRestorationPoint pulumi.StringInput `pulumi:"timeOfRestorationPoint"`
+	// The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
+	TimeScheduledStart pulumi.StringInput `pulumi:"timeScheduledStart"`
+	// The time the refresh activity record was updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArgs) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput {
+	return i.ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArgs) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput)
+}
+
+// GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayInput is an input type that accepts GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArray and GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayInput` via:
+//
+//	GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArray{ GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArgs{...} }
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput
+	ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutputWithContext(context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput
+}
+
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArray []GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemInput
+
+func (GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArray) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput {
+	return i.ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArray) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput)
+}
+
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// unique FusionEnvironment identifier
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) FusionEnvironmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+		return v.FusionEnvironmentId
+	}).(pulumi.StringOutput)
+}
+
+// The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// Service availability / impact during refresh activity execution up down
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) ServiceAvailability() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+		return v.ServiceAvailability
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the Fusion environment that is the source environment for the refresh.
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) SourceFusionEnvironmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+		return v.SourceFusionEnvironmentId
+	}).(pulumi.StringOutput)
+}
+
+// A filter that returns all resources that match the specified status
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time the refresh activity record was created. An RFC3339 formatted datetime string.
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) TimeAccepted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+		return v.TimeAccepted
+	}).(pulumi.StringOutput)
+}
+
+// The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) TimeExpectedFinish() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+		return v.TimeExpectedFinish
+	}).(pulumi.StringOutput)
+}
+
+// The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+		return v.TimeFinished
+	}).(pulumi.StringOutput)
+}
+
+// The date and time of the most recent source environment backup used for the environment refresh.
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) TimeOfRestorationPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+		return v.TimeOfRestorationPoint
+	}).(pulumi.StringOutput)
+}
+
+// The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) TimeScheduledStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+		return v.TimeScheduledStart
+	}).(pulumi.StringOutput)
+}
+
+// The time the refresh activity record was updated. An RFC3339 formatted datetime string.
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem {
+		return vs[0].([]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem)[vs[1].(int)]
+	}).(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput)
+}
+
+type GetFusionEnvironmentRule struct {
+	// Rule type
+	Action     string                              `pulumi:"action"`
+	Conditions []GetFusionEnvironmentRuleCondition `pulumi:"conditions"`
+	// A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+	Description string `pulumi:"description"`
+}
+
+// GetFusionEnvironmentRuleInput is an input type that accepts GetFusionEnvironmentRuleArgs and GetFusionEnvironmentRuleOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentRuleInput` via:
+//
+//	GetFusionEnvironmentRuleArgs{...}
+type GetFusionEnvironmentRuleInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentRuleOutput() GetFusionEnvironmentRuleOutput
+	ToGetFusionEnvironmentRuleOutputWithContext(context.Context) GetFusionEnvironmentRuleOutput
+}
+
+type GetFusionEnvironmentRuleArgs struct {
+	// Rule type
+	Action     pulumi.StringInput                          `pulumi:"action"`
+	Conditions GetFusionEnvironmentRuleConditionArrayInput `pulumi:"conditions"`
+	// A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+	Description pulumi.StringInput `pulumi:"description"`
+}
+
+func (GetFusionEnvironmentRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentRule)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentRuleArgs) ToGetFusionEnvironmentRuleOutput() GetFusionEnvironmentRuleOutput {
+	return i.ToGetFusionEnvironmentRuleOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentRuleArgs) ToGetFusionEnvironmentRuleOutputWithContext(ctx context.Context) GetFusionEnvironmentRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRuleOutput)
+}
+
+// GetFusionEnvironmentRuleArrayInput is an input type that accepts GetFusionEnvironmentRuleArray and GetFusionEnvironmentRuleArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentRuleArrayInput` via:
+//
+//	GetFusionEnvironmentRuleArray{ GetFusionEnvironmentRuleArgs{...} }
+type GetFusionEnvironmentRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentRuleArrayOutput() GetFusionEnvironmentRuleArrayOutput
+	ToGetFusionEnvironmentRuleArrayOutputWithContext(context.Context) GetFusionEnvironmentRuleArrayOutput
+}
+
+type GetFusionEnvironmentRuleArray []GetFusionEnvironmentRuleInput
+
+func (GetFusionEnvironmentRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentRule)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentRuleArray) ToGetFusionEnvironmentRuleArrayOutput() GetFusionEnvironmentRuleArrayOutput {
+	return i.ToGetFusionEnvironmentRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentRuleArray) ToGetFusionEnvironmentRuleArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRuleArrayOutput)
+}
+
+type GetFusionEnvironmentRuleOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentRule)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentRuleOutput) ToGetFusionEnvironmentRuleOutput() GetFusionEnvironmentRuleOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRuleOutput) ToGetFusionEnvironmentRuleOutputWithContext(ctx context.Context) GetFusionEnvironmentRuleOutput {
+	return o
+}
+
+// Rule type
+func (o GetFusionEnvironmentRuleOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRule) string { return v.Action }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentRuleOutput) Conditions() GetFusionEnvironmentRuleConditionArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRule) []GetFusionEnvironmentRuleCondition { return v.Conditions }).(GetFusionEnvironmentRuleConditionArrayOutput)
+}
+
+// A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+func (o GetFusionEnvironmentRuleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRule) string { return v.Description }).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentRule)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentRuleArrayOutput) ToGetFusionEnvironmentRuleArrayOutput() GetFusionEnvironmentRuleArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRuleArrayOutput) ToGetFusionEnvironmentRuleArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRuleArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRuleArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentRule {
+		return vs[0].([]GetFusionEnvironmentRule)[vs[1].(int)]
+	}).(GetFusionEnvironmentRuleOutput)
+}
+
+type GetFusionEnvironmentRuleCondition struct {
+	// RuleCondition type
+	AttributeName string `pulumi:"attributeName"`
+	// The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
+	AttributeValue string `pulumi:"attributeValue"`
+}
+
+// GetFusionEnvironmentRuleConditionInput is an input type that accepts GetFusionEnvironmentRuleConditionArgs and GetFusionEnvironmentRuleConditionOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentRuleConditionInput` via:
+//
+//	GetFusionEnvironmentRuleConditionArgs{...}
+type GetFusionEnvironmentRuleConditionInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentRuleConditionOutput() GetFusionEnvironmentRuleConditionOutput
+	ToGetFusionEnvironmentRuleConditionOutputWithContext(context.Context) GetFusionEnvironmentRuleConditionOutput
+}
+
+type GetFusionEnvironmentRuleConditionArgs struct {
+	// RuleCondition type
+	AttributeName pulumi.StringInput `pulumi:"attributeName"`
+	// The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
+	AttributeValue pulumi.StringInput `pulumi:"attributeValue"`
+}
+
+func (GetFusionEnvironmentRuleConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentRuleCondition)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentRuleConditionArgs) ToGetFusionEnvironmentRuleConditionOutput() GetFusionEnvironmentRuleConditionOutput {
+	return i.ToGetFusionEnvironmentRuleConditionOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentRuleConditionArgs) ToGetFusionEnvironmentRuleConditionOutputWithContext(ctx context.Context) GetFusionEnvironmentRuleConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRuleConditionOutput)
+}
+
+// GetFusionEnvironmentRuleConditionArrayInput is an input type that accepts GetFusionEnvironmentRuleConditionArray and GetFusionEnvironmentRuleConditionArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentRuleConditionArrayInput` via:
+//
+//	GetFusionEnvironmentRuleConditionArray{ GetFusionEnvironmentRuleConditionArgs{...} }
+type GetFusionEnvironmentRuleConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentRuleConditionArrayOutput() GetFusionEnvironmentRuleConditionArrayOutput
+	ToGetFusionEnvironmentRuleConditionArrayOutputWithContext(context.Context) GetFusionEnvironmentRuleConditionArrayOutput
+}
+
+type GetFusionEnvironmentRuleConditionArray []GetFusionEnvironmentRuleConditionInput
+
+func (GetFusionEnvironmentRuleConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentRuleCondition)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentRuleConditionArray) ToGetFusionEnvironmentRuleConditionArrayOutput() GetFusionEnvironmentRuleConditionArrayOutput {
+	return i.ToGetFusionEnvironmentRuleConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentRuleConditionArray) ToGetFusionEnvironmentRuleConditionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRuleConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRuleConditionArrayOutput)
+}
+
+type GetFusionEnvironmentRuleConditionOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentRuleConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentRuleCondition)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentRuleConditionOutput) ToGetFusionEnvironmentRuleConditionOutput() GetFusionEnvironmentRuleConditionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRuleConditionOutput) ToGetFusionEnvironmentRuleConditionOutputWithContext(ctx context.Context) GetFusionEnvironmentRuleConditionOutput {
+	return o
+}
+
+// RuleCondition type
+func (o GetFusionEnvironmentRuleConditionOutput) AttributeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRuleCondition) string { return v.AttributeName }).(pulumi.StringOutput)
+}
+
+// The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
+func (o GetFusionEnvironmentRuleConditionOutput) AttributeValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRuleCondition) string { return v.AttributeValue }).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentRuleConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentRuleConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentRuleCondition)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentRuleConditionArrayOutput) ToGetFusionEnvironmentRuleConditionArrayOutput() GetFusionEnvironmentRuleConditionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRuleConditionArrayOutput) ToGetFusionEnvironmentRuleConditionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRuleConditionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRuleConditionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentRuleConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentRuleCondition {
+		return vs[0].([]GetFusionEnvironmentRuleCondition)[vs[1].(int)]
+	}).(GetFusionEnvironmentRuleConditionOutput)
+}
+
+type GetFusionEnvironmentScheduledActivitiesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFusionEnvironmentScheduledActivitiesFilterInput is an input type that accepts GetFusionEnvironmentScheduledActivitiesFilterArgs and GetFusionEnvironmentScheduledActivitiesFilterOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentScheduledActivitiesFilterInput` via:
+//
+//	GetFusionEnvironmentScheduledActivitiesFilterArgs{...}
+type GetFusionEnvironmentScheduledActivitiesFilterInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentScheduledActivitiesFilterOutput() GetFusionEnvironmentScheduledActivitiesFilterOutput
+	ToGetFusionEnvironmentScheduledActivitiesFilterOutputWithContext(context.Context) GetFusionEnvironmentScheduledActivitiesFilterOutput
+}
+
+type GetFusionEnvironmentScheduledActivitiesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFusionEnvironmentScheduledActivitiesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentScheduledActivitiesFilter)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentScheduledActivitiesFilterArgs) ToGetFusionEnvironmentScheduledActivitiesFilterOutput() GetFusionEnvironmentScheduledActivitiesFilterOutput {
+	return i.ToGetFusionEnvironmentScheduledActivitiesFilterOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentScheduledActivitiesFilterArgs) ToGetFusionEnvironmentScheduledActivitiesFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivitiesFilterOutput)
+}
+
+// GetFusionEnvironmentScheduledActivitiesFilterArrayInput is an input type that accepts GetFusionEnvironmentScheduledActivitiesFilterArray and GetFusionEnvironmentScheduledActivitiesFilterArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentScheduledActivitiesFilterArrayInput` via:
+//
+//	GetFusionEnvironmentScheduledActivitiesFilterArray{ GetFusionEnvironmentScheduledActivitiesFilterArgs{...} }
+type GetFusionEnvironmentScheduledActivitiesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentScheduledActivitiesFilterArrayOutput() GetFusionEnvironmentScheduledActivitiesFilterArrayOutput
+	ToGetFusionEnvironmentScheduledActivitiesFilterArrayOutputWithContext(context.Context) GetFusionEnvironmentScheduledActivitiesFilterArrayOutput
+}
+
+type GetFusionEnvironmentScheduledActivitiesFilterArray []GetFusionEnvironmentScheduledActivitiesFilterInput
+
+func (GetFusionEnvironmentScheduledActivitiesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentScheduledActivitiesFilter)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentScheduledActivitiesFilterArray) ToGetFusionEnvironmentScheduledActivitiesFilterArrayOutput() GetFusionEnvironmentScheduledActivitiesFilterArrayOutput {
+	return i.ToGetFusionEnvironmentScheduledActivitiesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentScheduledActivitiesFilterArray) ToGetFusionEnvironmentScheduledActivitiesFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivitiesFilterArrayOutput)
+}
+
+type GetFusionEnvironmentScheduledActivitiesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentScheduledActivitiesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentScheduledActivitiesFilter)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesFilterOutput) ToGetFusionEnvironmentScheduledActivitiesFilterOutput() GetFusionEnvironmentScheduledActivitiesFilterOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesFilterOutput) ToGetFusionEnvironmentScheduledActivitiesFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesFilterOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFusionEnvironmentScheduledActivitiesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentScheduledActivitiesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentScheduledActivitiesFilter)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesFilterArrayOutput) ToGetFusionEnvironmentScheduledActivitiesFilterArrayOutput() GetFusionEnvironmentScheduledActivitiesFilterArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesFilterArrayOutput) ToGetFusionEnvironmentScheduledActivitiesFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesFilterArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesFilterArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentScheduledActivitiesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentScheduledActivitiesFilter {
+		return vs[0].([]GetFusionEnvironmentScheduledActivitiesFilter)[vs[1].(int)]
+	}).(GetFusionEnvironmentScheduledActivitiesFilterOutput)
+}
+
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection struct {
+	Items []GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem `pulumi:"items"`
+}
+
+// GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionInput is an input type that accepts GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArgs and GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionInput` via:
+//
+//	GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArgs{...}
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput
+	ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutputWithContext(context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput
+}
+
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArgs struct {
+	Items GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArgs) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput {
+	return i.ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArgs) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput)
+}
+
+// GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayInput is an input type that accepts GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArray and GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayInput` via:
+//
+//	GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArray{ GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArgs{...} }
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput
+	ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutputWithContext(context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput
+}
+
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArray []GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionInput
+
+func (GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArray) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput {
+	return i.ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArray) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput)
+}
+
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput) Items() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection) []GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem {
+		return v.Items
+	}).(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput)
+}
+
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection {
+		return vs[0].([]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection)[vs[1].(int)]
+	}).(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput)
+}
+
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem struct {
+	// List of actions
+	Actions []GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction `pulumi:"actions"`
+	// Cumulative delay hours
+	DelayInHours int `pulumi:"delayInHours"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName  string                 `pulumi:"displayName"`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// unique FusionEnvironment identifier
+	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
+	// Unique identifier that is immutable on creation.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter that returns all resources that match the specified run cycle.
+	RunCycle string `pulumi:"runCycle"`
+	// Service availability / impact during scheduled activity execution up down
+	ServiceAvailability string `pulumi:"serviceAvailability"`
+	// A filter that returns all resources that match the specified status
+	State        string `pulumi:"state"`
+	TimeAccepted string `pulumi:"timeAccepted"`
+	// Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
+	TimeExpectedFinish string `pulumi:"timeExpectedFinish"`
+	// The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
+	TimeFinished string `pulumi:"timeFinished"`
+	// Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
+	TimeScheduledStart string `pulumi:"timeScheduledStart"`
+	// The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemInput is an input type that accepts GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArgs and GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemInput` via:
+//
+//	GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArgs{...}
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput
+	ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutputWithContext(context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput
+}
+
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArgs struct {
+	// List of actions
+	Actions GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayInput `pulumi:"actions"`
+	// Cumulative delay hours
+	DelayInHours pulumi.IntInput `pulumi:"delayInHours"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName  pulumi.StringInput `pulumi:"displayName"`
+	FreeformTags pulumi.MapInput    `pulumi:"freeformTags"`
+	// unique FusionEnvironment identifier
+	FusionEnvironmentId pulumi.StringInput `pulumi:"fusionEnvironmentId"`
+	// Unique identifier that is immutable on creation.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter that returns all resources that match the specified run cycle.
+	RunCycle pulumi.StringInput `pulumi:"runCycle"`
+	// Service availability / impact during scheduled activity execution up down
+	ServiceAvailability pulumi.StringInput `pulumi:"serviceAvailability"`
+	// A filter that returns all resources that match the specified status
+	State        pulumi.StringInput `pulumi:"state"`
+	TimeAccepted pulumi.StringInput `pulumi:"timeAccepted"`
+	// Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
+	TimeExpectedFinish pulumi.StringInput `pulumi:"timeExpectedFinish"`
+	// The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
+	TimeScheduledStart pulumi.StringInput `pulumi:"timeScheduledStart"`
+	// The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArgs) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput {
+	return i.ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArgs) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput)
+}
+
+// GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayInput is an input type that accepts GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArray and GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayInput` via:
+//
+//	GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArray{ GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArgs{...} }
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput
+	ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutputWithContext(context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput
+}
+
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArray []GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemInput
+
+func (GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArray) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput {
+	return i.ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArray) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput)
+}
+
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput {
+	return o
+}
+
+// List of actions
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) Actions() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) []GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction {
+		return v.Actions
+	}).(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput)
+}
+
+// Cumulative delay hours
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) DelayInHours() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) int {
+		return v.DelayInHours
+	}).(pulumi.IntOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// unique FusionEnvironment identifier
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) FusionEnvironmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+		return v.FusionEnvironmentId
+	}).(pulumi.StringOutput)
+}
+
+// Unique identifier that is immutable on creation.
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// A filter that returns all resources that match the specified run cycle.
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) RunCycle() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+		return v.RunCycle
+	}).(pulumi.StringOutput)
+}
+
+// Service availability / impact during scheduled activity execution up down
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) ServiceAvailability() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+		return v.ServiceAvailability
+	}).(pulumi.StringOutput)
+}
+
+// A filter that returns all resources that match the specified status
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) TimeAccepted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+		return v.TimeAccepted
+	}).(pulumi.StringOutput)
+}
+
+// Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) TimeExpectedFinish() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+		return v.TimeExpectedFinish
+	}).(pulumi.StringOutput)
+}
+
+// The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+		return v.TimeFinished
+	}).(pulumi.StringOutput)
+}
+
+// Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) TimeScheduledStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+		return v.TimeScheduledStart
+	}).(pulumi.StringOutput)
+}
+
+// The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem {
+		return vs[0].([]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem)[vs[1].(int)]
+	}).(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput)
+}
+
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction struct {
+	// Type of action
+	ActionType string `pulumi:"actionType"`
+	// patch that delivered the vertex update prerequisite
+	Artifact string `pulumi:"artifact"`
+	// patch artifact category
+	Category string `pulumi:"category"`
+	// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A string that describeds whether the change is applied hot or cold
+	Mode string `pulumi:"mode"`
+	// month qualifier
+	Qualifier string `pulumi:"qualifier"`
+	// Unique identifier of the object that represents the action
+	ReferenceKey string `pulumi:"referenceKey"`
+	// A filter that returns all resources that match the specified status
+	State string `pulumi:"state"`
+	// name of the repo
+	Version string `pulumi:"version"`
+}
+
+// GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionInput is an input type that accepts GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArgs and GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionInput` via:
+//
+//	GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArgs{...}
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput
+	ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutputWithContext(context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput
+}
+
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArgs struct {
+	// Type of action
+	ActionType pulumi.StringInput `pulumi:"actionType"`
+	// patch that delivered the vertex update prerequisite
+	Artifact pulumi.StringInput `pulumi:"artifact"`
+	// patch artifact category
+	Category pulumi.StringInput `pulumi:"category"`
+	// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A string that describeds whether the change is applied hot or cold
+	Mode pulumi.StringInput `pulumi:"mode"`
+	// month qualifier
+	Qualifier pulumi.StringInput `pulumi:"qualifier"`
+	// Unique identifier of the object that represents the action
+	ReferenceKey pulumi.StringInput `pulumi:"referenceKey"`
+	// A filter that returns all resources that match the specified status
+	State pulumi.StringInput `pulumi:"state"`
+	// name of the repo
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArgs) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput {
+	return i.ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArgs) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput)
+}
+
+// GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayInput is an input type that accepts GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArray and GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayInput` via:
+//
+//	GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArray{ GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArgs{...} }
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput
+	ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutputWithContext(context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput
+}
+
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArray []GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionInput
+
+func (GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArray) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput {
+	return i.ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArray) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput)
+}
+
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput {
+	return o
+}
+
+// Type of action
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) ActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+		return v.ActionType
+	}).(pulumi.StringOutput)
+}
+
+// patch that delivered the vertex update prerequisite
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Artifact() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+		return v.Artifact
+	}).(pulumi.StringOutput)
+}
+
+// patch artifact category
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+		return v.Category
+	}).(pulumi.StringOutput)
+}
+
+// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A string that describeds whether the change is applied hot or cold
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+		return v.Mode
+	}).(pulumi.StringOutput)
+}
+
+// month qualifier
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Qualifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+		return v.Qualifier
+	}).(pulumi.StringOutput)
+}
+
+// Unique identifier of the object that represents the action
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) ReferenceKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+		return v.ReferenceKey
+	}).(pulumi.StringOutput)
+}
+
+// A filter that returns all resources that match the specified status
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// name of the repo
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+		return v.Version
+	}).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction {
+		return vs[0].([]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction)[vs[1].(int)]
+	}).(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput)
+}
+
+type GetFusionEnvironmentScheduledActivityAction struct {
+	// Type of action
+	ActionType string `pulumi:"actionType"`
+	// patch that delivered the vertex update prerequisite
+	Artifact string `pulumi:"artifact"`
+	// patch artifact category
+	Category string `pulumi:"category"`
+	// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A string that describeds whether the change is applied hot or cold
+	Mode string `pulumi:"mode"`
+	// month qualifier
+	Qualifier string `pulumi:"qualifier"`
+	// Unique identifier of the object that represents the action
+	ReferenceKey string `pulumi:"referenceKey"`
+	// The current state of the scheduledActivity.
+	State string `pulumi:"state"`
+	// name of the repo
+	Version string `pulumi:"version"`
+}
+
+// GetFusionEnvironmentScheduledActivityActionInput is an input type that accepts GetFusionEnvironmentScheduledActivityActionArgs and GetFusionEnvironmentScheduledActivityActionOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentScheduledActivityActionInput` via:
+//
+//	GetFusionEnvironmentScheduledActivityActionArgs{...}
+type GetFusionEnvironmentScheduledActivityActionInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentScheduledActivityActionOutput() GetFusionEnvironmentScheduledActivityActionOutput
+	ToGetFusionEnvironmentScheduledActivityActionOutputWithContext(context.Context) GetFusionEnvironmentScheduledActivityActionOutput
+}
+
+type GetFusionEnvironmentScheduledActivityActionArgs struct {
+	// Type of action
+	ActionType pulumi.StringInput `pulumi:"actionType"`
+	// patch that delivered the vertex update prerequisite
+	Artifact pulumi.StringInput `pulumi:"artifact"`
+	// patch artifact category
+	Category pulumi.StringInput `pulumi:"category"`
+	// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A string that describeds whether the change is applied hot or cold
+	Mode pulumi.StringInput `pulumi:"mode"`
+	// month qualifier
+	Qualifier pulumi.StringInput `pulumi:"qualifier"`
+	// Unique identifier of the object that represents the action
+	ReferenceKey pulumi.StringInput `pulumi:"referenceKey"`
+	// The current state of the scheduledActivity.
+	State pulumi.StringInput `pulumi:"state"`
+	// name of the repo
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetFusionEnvironmentScheduledActivityActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentScheduledActivityAction)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentScheduledActivityActionArgs) ToGetFusionEnvironmentScheduledActivityActionOutput() GetFusionEnvironmentScheduledActivityActionOutput {
+	return i.ToGetFusionEnvironmentScheduledActivityActionOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentScheduledActivityActionArgs) ToGetFusionEnvironmentScheduledActivityActionOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivityActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivityActionOutput)
+}
+
+// GetFusionEnvironmentScheduledActivityActionArrayInput is an input type that accepts GetFusionEnvironmentScheduledActivityActionArray and GetFusionEnvironmentScheduledActivityActionArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentScheduledActivityActionArrayInput` via:
+//
+//	GetFusionEnvironmentScheduledActivityActionArray{ GetFusionEnvironmentScheduledActivityActionArgs{...} }
+type GetFusionEnvironmentScheduledActivityActionArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentScheduledActivityActionArrayOutput() GetFusionEnvironmentScheduledActivityActionArrayOutput
+	ToGetFusionEnvironmentScheduledActivityActionArrayOutputWithContext(context.Context) GetFusionEnvironmentScheduledActivityActionArrayOutput
+}
+
+type GetFusionEnvironmentScheduledActivityActionArray []GetFusionEnvironmentScheduledActivityActionInput
+
+func (GetFusionEnvironmentScheduledActivityActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentScheduledActivityAction)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentScheduledActivityActionArray) ToGetFusionEnvironmentScheduledActivityActionArrayOutput() GetFusionEnvironmentScheduledActivityActionArrayOutput {
+	return i.ToGetFusionEnvironmentScheduledActivityActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentScheduledActivityActionArray) ToGetFusionEnvironmentScheduledActivityActionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivityActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivityActionArrayOutput)
+}
+
+type GetFusionEnvironmentScheduledActivityActionOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentScheduledActivityActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentScheduledActivityAction)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentScheduledActivityActionOutput) ToGetFusionEnvironmentScheduledActivityActionOutput() GetFusionEnvironmentScheduledActivityActionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentScheduledActivityActionOutput) ToGetFusionEnvironmentScheduledActivityActionOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivityActionOutput {
+	return o
+}
+
+// Type of action
+func (o GetFusionEnvironmentScheduledActivityActionOutput) ActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.ActionType }).(pulumi.StringOutput)
+}
+
+// patch that delivered the vertex update prerequisite
+func (o GetFusionEnvironmentScheduledActivityActionOutput) Artifact() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Artifact }).(pulumi.StringOutput)
+}
+
+// patch artifact category
+func (o GetFusionEnvironmentScheduledActivityActionOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Category }).(pulumi.StringOutput)
+}
+
+// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+func (o GetFusionEnvironmentScheduledActivityActionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A string that describeds whether the change is applied hot or cold
+func (o GetFusionEnvironmentScheduledActivityActionOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Mode }).(pulumi.StringOutput)
+}
+
+// month qualifier
+func (o GetFusionEnvironmentScheduledActivityActionOutput) Qualifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Qualifier }).(pulumi.StringOutput)
+}
+
+// Unique identifier of the object that represents the action
+func (o GetFusionEnvironmentScheduledActivityActionOutput) ReferenceKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.ReferenceKey }).(pulumi.StringOutput)
+}
+
+// The current state of the scheduledActivity.
+func (o GetFusionEnvironmentScheduledActivityActionOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.State }).(pulumi.StringOutput)
+}
+
+// name of the repo
+func (o GetFusionEnvironmentScheduledActivityActionOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentScheduledActivityActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentScheduledActivityActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentScheduledActivityAction)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentScheduledActivityActionArrayOutput) ToGetFusionEnvironmentScheduledActivityActionArrayOutput() GetFusionEnvironmentScheduledActivityActionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentScheduledActivityActionArrayOutput) ToGetFusionEnvironmentScheduledActivityActionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivityActionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentScheduledActivityActionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentScheduledActivityActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentScheduledActivityAction {
+		return vs[0].([]GetFusionEnvironmentScheduledActivityAction)[vs[1].(int)]
+	}).(GetFusionEnvironmentScheduledActivityActionOutput)
+}
+
+type GetFusionEnvironmentServiceAttachmentsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFusionEnvironmentServiceAttachmentsFilterInput is an input type that accepts GetFusionEnvironmentServiceAttachmentsFilterArgs and GetFusionEnvironmentServiceAttachmentsFilterOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentServiceAttachmentsFilterInput` via:
+//
+//	GetFusionEnvironmentServiceAttachmentsFilterArgs{...}
+type GetFusionEnvironmentServiceAttachmentsFilterInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentServiceAttachmentsFilterOutput() GetFusionEnvironmentServiceAttachmentsFilterOutput
+	ToGetFusionEnvironmentServiceAttachmentsFilterOutputWithContext(context.Context) GetFusionEnvironmentServiceAttachmentsFilterOutput
+}
+
+type GetFusionEnvironmentServiceAttachmentsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFusionEnvironmentServiceAttachmentsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentServiceAttachmentsFilter)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentServiceAttachmentsFilterArgs) ToGetFusionEnvironmentServiceAttachmentsFilterOutput() GetFusionEnvironmentServiceAttachmentsFilterOutput {
+	return i.ToGetFusionEnvironmentServiceAttachmentsFilterOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentServiceAttachmentsFilterArgs) ToGetFusionEnvironmentServiceAttachmentsFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentServiceAttachmentsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentServiceAttachmentsFilterOutput)
+}
+
+// GetFusionEnvironmentServiceAttachmentsFilterArrayInput is an input type that accepts GetFusionEnvironmentServiceAttachmentsFilterArray and GetFusionEnvironmentServiceAttachmentsFilterArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentServiceAttachmentsFilterArrayInput` via:
+//
+//	GetFusionEnvironmentServiceAttachmentsFilterArray{ GetFusionEnvironmentServiceAttachmentsFilterArgs{...} }
+type GetFusionEnvironmentServiceAttachmentsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentServiceAttachmentsFilterArrayOutput() GetFusionEnvironmentServiceAttachmentsFilterArrayOutput
+	ToGetFusionEnvironmentServiceAttachmentsFilterArrayOutputWithContext(context.Context) GetFusionEnvironmentServiceAttachmentsFilterArrayOutput
+}
+
+type GetFusionEnvironmentServiceAttachmentsFilterArray []GetFusionEnvironmentServiceAttachmentsFilterInput
+
+func (GetFusionEnvironmentServiceAttachmentsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentServiceAttachmentsFilter)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentServiceAttachmentsFilterArray) ToGetFusionEnvironmentServiceAttachmentsFilterArrayOutput() GetFusionEnvironmentServiceAttachmentsFilterArrayOutput {
+	return i.ToGetFusionEnvironmentServiceAttachmentsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentServiceAttachmentsFilterArray) ToGetFusionEnvironmentServiceAttachmentsFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentServiceAttachmentsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentServiceAttachmentsFilterArrayOutput)
+}
+
+type GetFusionEnvironmentServiceAttachmentsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentServiceAttachmentsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentServiceAttachmentsFilter)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsFilterOutput) ToGetFusionEnvironmentServiceAttachmentsFilterOutput() GetFusionEnvironmentServiceAttachmentsFilterOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsFilterOutput) ToGetFusionEnvironmentServiceAttachmentsFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentServiceAttachmentsFilterOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFusionEnvironmentServiceAttachmentsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentServiceAttachmentsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentServiceAttachmentsFilter)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsFilterArrayOutput) ToGetFusionEnvironmentServiceAttachmentsFilterArrayOutput() GetFusionEnvironmentServiceAttachmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsFilterArrayOutput) ToGetFusionEnvironmentServiceAttachmentsFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentServiceAttachmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsFilterArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentServiceAttachmentsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentServiceAttachmentsFilter {
+		return vs[0].([]GetFusionEnvironmentServiceAttachmentsFilter)[vs[1].(int)]
+	}).(GetFusionEnvironmentServiceAttachmentsFilterOutput)
+}
+
+type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection struct {
+	Items []GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem `pulumi:"items"`
+}
+
+// GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionInput is an input type that accepts GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArgs and GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionInput` via:
+//
+//	GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArgs{...}
+type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput() GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput
+	ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutputWithContext(context.Context) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput
+}
+
+type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArgs struct {
+	Items GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArgs) ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput() GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput {
+	return i.ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArgs) ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput)
+}
+
+// GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayInput is an input type that accepts GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArray and GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayInput` via:
+//
+//	GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArray{ GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArgs{...} }
+type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput() GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput
+	ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutputWithContext(context.Context) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput
+}
+
+type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArray []GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionInput
+
+func (GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArray) ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput() GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput {
+	return i.ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArray) ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput)
+}
+
+type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput) ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput() GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput) ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput) Items() GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection) []GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem {
+		return v.Items
+	}).(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput)
+}
+
+type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput) ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput() GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput) ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection {
+		return vs[0].([]GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection)[vs[1].(int)]
+	}).(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput)
+}
+
+type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem struct {
+	// Action
+	Action string `pulumi:"action"`
+	// Compartment Identifier
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Unique identifier that is immutable on creation
+	Id string `pulumi:"id"`
+	// Whether this service is provisioned due to the customer being subscribed to a specific SKU
+	IsSkuBased bool `pulumi:"isSkuBased"`
+	// The ID of the service instance created that can be used to identify this on the service control plane
+	ServiceInstanceId string `pulumi:"serviceInstanceId"`
+	// A filter that returns all resources that match the specified lifecycle state.
+	ServiceInstanceType string `pulumi:"serviceInstanceType"`
+	// Public URL
+	ServiceUrl string `pulumi:"serviceUrl"`
+	// A filter that returns all resources that match the specified lifecycle state.
+	State string `pulumi:"state"`
+	// The time the the ServiceInstance was created. An RFC3339 formatted datetime string
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the ServiceInstance was updated. An RFC3339 formatted datetime string
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemInput is an input type that accepts GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArgs and GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemInput` via:
+//
+//	GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArgs{...}
+type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput() GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput
+	ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutputWithContext(context.Context) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput
+}
+
+type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArgs struct {
+	// Action
+	Action pulumi.StringInput `pulumi:"action"`
+	// Compartment Identifier
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Unique identifier that is immutable on creation
+	Id pulumi.StringInput `pulumi:"id"`
+	// Whether this service is provisioned due to the customer being subscribed to a specific SKU
+	IsSkuBased pulumi.BoolInput `pulumi:"isSkuBased"`
+	// The ID of the service instance created that can be used to identify this on the service control plane
+	ServiceInstanceId pulumi.StringInput `pulumi:"serviceInstanceId"`
+	// A filter that returns all resources that match the specified lifecycle state.
+	ServiceInstanceType pulumi.StringInput `pulumi:"serviceInstanceType"`
+	// Public URL
+	ServiceUrl pulumi.StringInput `pulumi:"serviceUrl"`
+	// A filter that returns all resources that match the specified lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The time the the ServiceInstance was created. An RFC3339 formatted datetime string
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the ServiceInstance was updated. An RFC3339 formatted datetime string
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArgs) ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput() GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput {
+	return i.ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArgs) ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput)
+}
+
+// GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayInput is an input type that accepts GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArray and GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayInput` via:
+//
+//	GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArray{ GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArgs{...} }
+type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput() GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput
+	ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutputWithContext(context.Context) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput
+}
+
+type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArray []GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemInput
+
+func (GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArray) ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput() GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput {
+	return i.ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArray) ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput)
+}
+
+type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput() GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput {
+	return o
+}
+
+// Action
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string { return v.Action }).(pulumi.StringOutput)
+}
+
+// Compartment Identifier
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// Unique identifier that is immutable on creation
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Whether this service is provisioned due to the customer being subscribed to a specific SKU
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) IsSkuBased() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) bool {
+		return v.IsSkuBased
+	}).(pulumi.BoolOutput)
+}
+
+// The ID of the service instance created that can be used to identify this on the service control plane
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) ServiceInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string {
+		return v.ServiceInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// A filter that returns all resources that match the specified lifecycle state.
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) ServiceInstanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string {
+		return v.ServiceInstanceType
+	}).(pulumi.StringOutput)
+}
+
+// Public URL
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) ServiceUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string {
+		return v.ServiceUrl
+	}).(pulumi.StringOutput)
+}
+
+// A filter that returns all resources that match the specified lifecycle state.
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time the the ServiceInstance was created. An RFC3339 formatted datetime string
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The time the ServiceInstance was updated. An RFC3339 formatted datetime string
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput) ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput() GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput) ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem {
+		return vs[0].([]GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem)[vs[1].(int)]
+	}).(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput)
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshItem struct {
+	// refresh time.
+	TimeAvailableForRefresh string `pulumi:"timeAvailableForRefresh"`
+}
+
+// GetFusionEnvironmentTimeAvailableForRefreshItemInput is an input type that accepts GetFusionEnvironmentTimeAvailableForRefreshItemArgs and GetFusionEnvironmentTimeAvailableForRefreshItemOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentTimeAvailableForRefreshItemInput` via:
+//
+//	GetFusionEnvironmentTimeAvailableForRefreshItemArgs{...}
+type GetFusionEnvironmentTimeAvailableForRefreshItemInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentTimeAvailableForRefreshItemOutput() GetFusionEnvironmentTimeAvailableForRefreshItemOutput
+	ToGetFusionEnvironmentTimeAvailableForRefreshItemOutputWithContext(context.Context) GetFusionEnvironmentTimeAvailableForRefreshItemOutput
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshItemArgs struct {
+	// refresh time.
+	TimeAvailableForRefresh pulumi.StringInput `pulumi:"timeAvailableForRefresh"`
+}
+
+func (GetFusionEnvironmentTimeAvailableForRefreshItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentTimeAvailableForRefreshItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentTimeAvailableForRefreshItemArgs) ToGetFusionEnvironmentTimeAvailableForRefreshItemOutput() GetFusionEnvironmentTimeAvailableForRefreshItemOutput {
+	return i.ToGetFusionEnvironmentTimeAvailableForRefreshItemOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentTimeAvailableForRefreshItemArgs) ToGetFusionEnvironmentTimeAvailableForRefreshItemOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentTimeAvailableForRefreshItemOutput)
+}
+
+// GetFusionEnvironmentTimeAvailableForRefreshItemArrayInput is an input type that accepts GetFusionEnvironmentTimeAvailableForRefreshItemArray and GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentTimeAvailableForRefreshItemArrayInput` via:
+//
+//	GetFusionEnvironmentTimeAvailableForRefreshItemArray{ GetFusionEnvironmentTimeAvailableForRefreshItemArgs{...} }
+type GetFusionEnvironmentTimeAvailableForRefreshItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput() GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput
+	ToGetFusionEnvironmentTimeAvailableForRefreshItemArrayOutputWithContext(context.Context) GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshItemArray []GetFusionEnvironmentTimeAvailableForRefreshItemInput
+
+func (GetFusionEnvironmentTimeAvailableForRefreshItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentTimeAvailableForRefreshItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentTimeAvailableForRefreshItemArray) ToGetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput() GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput {
+	return i.ToGetFusionEnvironmentTimeAvailableForRefreshItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentTimeAvailableForRefreshItemArray) ToGetFusionEnvironmentTimeAvailableForRefreshItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput)
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshItemOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentTimeAvailableForRefreshItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentTimeAvailableForRefreshItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshItemOutput) ToGetFusionEnvironmentTimeAvailableForRefreshItemOutput() GetFusionEnvironmentTimeAvailableForRefreshItemOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshItemOutput) ToGetFusionEnvironmentTimeAvailableForRefreshItemOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshItemOutput {
+	return o
+}
+
+// refresh time.
+func (o GetFusionEnvironmentTimeAvailableForRefreshItemOutput) TimeAvailableForRefresh() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentTimeAvailableForRefreshItem) string { return v.TimeAvailableForRefresh }).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentTimeAvailableForRefreshItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput) ToGetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput() GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput) ToGetFusionEnvironmentTimeAvailableForRefreshItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentTimeAvailableForRefreshItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentTimeAvailableForRefreshItem {
+		return vs[0].([]GetFusionEnvironmentTimeAvailableForRefreshItem)[vs[1].(int)]
+	}).(GetFusionEnvironmentTimeAvailableForRefreshItemOutput)
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFusionEnvironmentTimeAvailableForRefreshsFilterInput is an input type that accepts GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs and GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentTimeAvailableForRefreshsFilterInput` via:
+//
+//	GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs{...}
+type GetFusionEnvironmentTimeAvailableForRefreshsFilterInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentTimeAvailableForRefreshsFilterOutput() GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput
+	ToGetFusionEnvironmentTimeAvailableForRefreshsFilterOutputWithContext(context.Context) GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentTimeAvailableForRefreshsFilter)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs) ToGetFusionEnvironmentTimeAvailableForRefreshsFilterOutput() GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput {
+	return i.ToGetFusionEnvironmentTimeAvailableForRefreshsFilterOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs) ToGetFusionEnvironmentTimeAvailableForRefreshsFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput)
+}
+
+// GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayInput is an input type that accepts GetFusionEnvironmentTimeAvailableForRefreshsFilterArray and GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayInput` via:
+//
+//	GetFusionEnvironmentTimeAvailableForRefreshsFilterArray{ GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs{...} }
+type GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput() GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput
+	ToGetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutputWithContext(context.Context) GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshsFilterArray []GetFusionEnvironmentTimeAvailableForRefreshsFilterInput
+
+func (GetFusionEnvironmentTimeAvailableForRefreshsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentTimeAvailableForRefreshsFilter)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentTimeAvailableForRefreshsFilterArray) ToGetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput() GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput {
+	return i.ToGetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentTimeAvailableForRefreshsFilterArray) ToGetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput)
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentTimeAvailableForRefreshsFilter)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput) ToGetFusionEnvironmentTimeAvailableForRefreshsFilterOutput() GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput) ToGetFusionEnvironmentTimeAvailableForRefreshsFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentTimeAvailableForRefreshsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentTimeAvailableForRefreshsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentTimeAvailableForRefreshsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentTimeAvailableForRefreshsFilter)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput) ToGetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput() GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput) ToGetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentTimeAvailableForRefreshsFilter {
+		return vs[0].([]GetFusionEnvironmentTimeAvailableForRefreshsFilter)[vs[1].(int)]
+	}).(GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput)
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection struct {
+	// A list of available refresh time objects.
+	Items []GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem `pulumi:"items"`
+}
+
+// GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionInput is an input type that accepts GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArgs and GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionInput` via:
+//
+//	GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArgs{...}
+type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput() GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput
+	ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutputWithContext(context.Context) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArgs struct {
+	// A list of available refresh time objects.
+	Items GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArgs) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput() GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput {
+	return i.ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArgs) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput)
+}
+
+// GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayInput is an input type that accepts GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArray and GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayInput` via:
+//
+//	GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArray{ GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArgs{...} }
+type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput() GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput
+	ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutputWithContext(context.Context) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArray []GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionInput
+
+func (GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArray) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput() GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput {
+	return i.ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArray) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput)
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput() GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput {
+	return o
+}
+
+// A list of available refresh time objects.
+func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput) Items() GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection) []GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem {
+		return v.Items
+	}).(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput)
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput() GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection {
+		return vs[0].([]GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection)[vs[1].(int)]
+	}).(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput)
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem struct {
+	// refresh time.
+	TimeAvailableForRefresh string `pulumi:"timeAvailableForRefresh"`
+}
+
+// GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemInput is an input type that accepts GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArgs and GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemInput` via:
+//
+//	GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArgs{...}
+type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput() GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput
+	ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutputWithContext(context.Context) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArgs struct {
+	// refresh time.
+	TimeAvailableForRefresh pulumi.StringInput `pulumi:"timeAvailableForRefresh"`
+}
+
+func (GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArgs) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput() GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput {
+	return i.ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArgs) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput)
+}
+
+// GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayInput is an input type that accepts GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArray and GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayInput` via:
+//
+//	GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArray{ GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArgs{...} }
+type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput() GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput
+	ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutputWithContext(context.Context) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArray []GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemInput
+
+func (GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArray) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput() GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput {
+	return i.ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArray) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput)
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput() GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput {
+	return o
+}
+
+// refresh time.
+func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput) TimeAvailableForRefresh() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem) string {
+		return v.TimeAvailableForRefresh
+	}).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput() GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem {
+		return vs[0].([]GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem)[vs[1].(int)]
+	}).(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput)
+}
+
+type GetFusionEnvironmentsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFusionEnvironmentsFilterInput is an input type that accepts GetFusionEnvironmentsFilterArgs and GetFusionEnvironmentsFilterOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFilterInput` via:
+//
+//	GetFusionEnvironmentsFilterArgs{...}
+type GetFusionEnvironmentsFilterInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFilterOutput() GetFusionEnvironmentsFilterOutput
+	ToGetFusionEnvironmentsFilterOutputWithContext(context.Context) GetFusionEnvironmentsFilterOutput
+}
+
+type GetFusionEnvironmentsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFusionEnvironmentsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFilter)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFilterArgs) ToGetFusionEnvironmentsFilterOutput() GetFusionEnvironmentsFilterOutput {
+	return i.ToGetFusionEnvironmentsFilterOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFilterArgs) ToGetFusionEnvironmentsFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFilterOutput)
+}
+
+// GetFusionEnvironmentsFilterArrayInput is an input type that accepts GetFusionEnvironmentsFilterArray and GetFusionEnvironmentsFilterArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFilterArrayInput` via:
+//
+//	GetFusionEnvironmentsFilterArray{ GetFusionEnvironmentsFilterArgs{...} }
+type GetFusionEnvironmentsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFilterArrayOutput() GetFusionEnvironmentsFilterArrayOutput
+	ToGetFusionEnvironmentsFilterArrayOutputWithContext(context.Context) GetFusionEnvironmentsFilterArrayOutput
+}
+
+type GetFusionEnvironmentsFilterArray []GetFusionEnvironmentsFilterInput
+
+func (GetFusionEnvironmentsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFilter)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFilterArray) ToGetFusionEnvironmentsFilterArrayOutput() GetFusionEnvironmentsFilterArrayOutput {
+	return i.ToGetFusionEnvironmentsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFilterArray) ToGetFusionEnvironmentsFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFilterArrayOutput)
+}
+
+type GetFusionEnvironmentsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFilter)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFilterOutput) ToGetFusionEnvironmentsFilterOutput() GetFusionEnvironmentsFilterOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFilterOutput) ToGetFusionEnvironmentsFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentsFilterOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFusionEnvironmentsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFusionEnvironmentsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFilter)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFilterArrayOutput) ToGetFusionEnvironmentsFilterArrayOutput() GetFusionEnvironmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFilterArrayOutput) ToGetFusionEnvironmentsFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFilterArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFilter {
+		return vs[0].([]GetFusionEnvironmentsFilter)[vs[1].(int)]
+	}).(GetFusionEnvironmentsFilterOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollection struct {
+	Items []GetFusionEnvironmentsFusionEnvironmentCollectionItem `pulumi:"items"`
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionArgs and GetFusionEnvironmentsFusionEnvironmentCollectionOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionArgs{...}
+type GetFusionEnvironmentsFusionEnvironmentCollectionInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionOutput() GetFusionEnvironmentsFusionEnvironmentCollectionOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionArgs struct {
+	Items GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollection)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionOutput() GetFusionEnvironmentsFusionEnvironmentCollectionOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionOutput)
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionArray and GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionArrayInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionArray{ GetFusionEnvironmentsFusionEnvironmentCollectionArgs{...} }
+type GetFusionEnvironmentsFusionEnvironmentCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionArrayOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionArray []GetFusionEnvironmentsFusionEnvironmentCollectionInput
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollection)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollection)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionOutput() GetFusionEnvironmentsFusionEnvironmentCollectionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionOutput) Items() GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollection) []GetFusionEnvironmentsFusionEnvironmentCollectionItem {
+		return v.Items
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollection)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollection {
+		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollection)[vs[1].(int)]
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItem struct {
+	// Language packs
+	AdditionalLanguagePacks []string `pulumi:"additionalLanguagePacks"`
+	// Patch bundle names
+	AppliedPatchBundles []string `pulumi:"appliedPatchBundles"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId                           string                                                                                       `pulumi:"compartmentId"`
+	CreateFusionEnvironmentAdminUserDetails []GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail `pulumi:"createFusionEnvironmentAdminUserDetails"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// DNS prefix
+	DnsPrefix string `pulumi:"dnsPrefix"`
+	// The IDCS domain created for the fusion instance
+	DomainId string `pulumi:"domainId"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The ID of the fusion environment family in which to list resources.
+	FusionEnvironmentFamilyId string `pulumi:"fusionEnvironmentFamilyId"`
+	// Type of the FusionEnvironment.
+	FusionEnvironmentType string `pulumi:"fusionEnvironmentType"`
+	// Unique identifier that is immutable on creation
+	Id string `pulumi:"id"`
+	// The IDCS Domain URL
+	IdcsDomainUrl string `pulumi:"idcsDomainUrl"`
+	// BYOK key id
+	KmsKeyId string `pulumi:"kmsKeyId"`
+	// BYOK key info
+	KmsKeyInfos []string `pulumi:"kmsKeyInfos"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+	MaintenancePolicies []GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy `pulumi:"maintenancePolicies"`
+	// Public URL
+	PublicUrl string `pulumi:"publicUrl"`
+	// Describes a refresh of a fusion environment
+	Refreshes []GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh `pulumi:"refreshes"`
+	// Network Access Control Rules
+	Rules []GetFusionEnvironmentsFusionEnvironmentCollectionItemRule `pulumi:"rules"`
+	// A filter that returns all resources that match the specified lifecycle state.
+	State string `pulumi:"state"`
+	// List of subscription IDs.
+	SubscriptionIds []string `pulumi:"subscriptionIds"`
+	// Environment Specific Guid/ System Name
+	SystemName string `pulumi:"systemName"`
+	// The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
+	TimeCreated string `pulumi:"timeCreated"`
+	// The next maintenance for this environment
+	TimeUpcomingMaintenance string `pulumi:"timeUpcomingMaintenance"`
+	// The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Version of Fusion Apps used by this environment
+	Version string `pulumi:"version"`
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionItemInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs and GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionItemInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs{...}
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs struct {
+	// Language packs
+	AdditionalLanguagePacks pulumi.StringArrayInput `pulumi:"additionalLanguagePacks"`
+	// Patch bundle names
+	AppliedPatchBundles pulumi.StringArrayInput `pulumi:"appliedPatchBundles"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId                           pulumi.StringInput                                                                                   `pulumi:"compartmentId"`
+	CreateFusionEnvironmentAdminUserDetails GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayInput `pulumi:"createFusionEnvironmentAdminUserDetails"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// DNS prefix
+	DnsPrefix pulumi.StringInput `pulumi:"dnsPrefix"`
+	// The IDCS domain created for the fusion instance
+	DomainId pulumi.StringInput `pulumi:"domainId"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The ID of the fusion environment family in which to list resources.
+	FusionEnvironmentFamilyId pulumi.StringInput `pulumi:"fusionEnvironmentFamilyId"`
+	// Type of the FusionEnvironment.
+	FusionEnvironmentType pulumi.StringInput `pulumi:"fusionEnvironmentType"`
+	// Unique identifier that is immutable on creation
+	Id pulumi.StringInput `pulumi:"id"`
+	// The IDCS Domain URL
+	IdcsDomainUrl pulumi.StringInput `pulumi:"idcsDomainUrl"`
+	// BYOK key id
+	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	// BYOK key info
+	KmsKeyInfos pulumi.StringArrayInput `pulumi:"kmsKeyInfos"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+	MaintenancePolicies GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayInput `pulumi:"maintenancePolicies"`
+	// Public URL
+	PublicUrl pulumi.StringInput `pulumi:"publicUrl"`
+	// Describes a refresh of a fusion environment
+	Refreshes GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayInput `pulumi:"refreshes"`
+	// Network Access Control Rules
+	Rules GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayInput `pulumi:"rules"`
+	// A filter that returns all resources that match the specified lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// List of subscription IDs.
+	SubscriptionIds pulumi.StringArrayInput `pulumi:"subscriptionIds"`
+	// Environment Specific Guid/ System Name
+	SystemName pulumi.StringInput `pulumi:"systemName"`
+	// The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The next maintenance for this environment
+	TimeUpcomingMaintenance pulumi.StringInput `pulumi:"timeUpcomingMaintenance"`
+	// The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Version of Fusion Apps used by this environment
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput)
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemArray and GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionItemArray{ GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs{...} }
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemArray []GetFusionEnvironmentsFusionEnvironmentCollectionItemInput
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollectionItem)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput {
+	return o
+}
+
+// Language packs
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) AdditionalLanguagePacks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) []string {
+		return v.AdditionalLanguagePacks
+	}).(pulumi.StringArrayOutput)
+}
+
+// Patch bundle names
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) AppliedPatchBundles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) []string { return v.AppliedPatchBundles }).(pulumi.StringArrayOutput)
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) CreateFusionEnvironmentAdminUserDetails() GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) []GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail {
+		return v.CreateFusionEnvironmentAdminUserDetails
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// DNS prefix
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) DnsPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.DnsPrefix }).(pulumi.StringOutput)
+}
+
+// The IDCS domain created for the fusion instance
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) DomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.DomainId }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The ID of the fusion environment family in which to list resources.
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) FusionEnvironmentFamilyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string {
+		return v.FusionEnvironmentFamilyId
+	}).(pulumi.StringOutput)
+}
+
+// Type of the FusionEnvironment.
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) FusionEnvironmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.FusionEnvironmentType }).(pulumi.StringOutput)
+}
+
+// Unique identifier that is immutable on creation
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The IDCS Domain URL
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) IdcsDomainUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.IdcsDomainUrl }).(pulumi.StringOutput)
+}
+
+// BYOK key id
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.KmsKeyId }).(pulumi.StringOutput)
+}
+
+// BYOK key info
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) KmsKeyInfos() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) []string { return v.KmsKeyInfos }).(pulumi.StringArrayOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) MaintenancePolicies() GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) []GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy {
+		return v.MaintenancePolicies
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput)
+}
+
+// Public URL
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) PublicUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.PublicUrl }).(pulumi.StringOutput)
+}
+
+// Describes a refresh of a fusion environment
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) Refreshes() GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) []GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh {
+		return v.Refreshes
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput)
+}
+
+// Network Access Control Rules
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) Rules() GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) []GetFusionEnvironmentsFusionEnvironmentCollectionItemRule {
+		return v.Rules
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput)
+}
+
+// A filter that returns all resources that match the specified lifecycle state.
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// List of subscription IDs.
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) SubscriptionIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) []string { return v.SubscriptionIds }).(pulumi.StringArrayOutput)
+}
+
+// Environment Specific Guid/ System Name
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) SystemName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.SystemName }).(pulumi.StringOutput)
+}
+
+// The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The next maintenance for this environment
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) TimeUpcomingMaintenance() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.TimeUpcomingMaintenance }).(pulumi.StringOutput)
+}
+
+// The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Version of Fusion Apps used by this environment
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollectionItem)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItem {
+		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItem)[vs[1].(int)]
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail struct {
+	EmailAddress string `pulumi:"emailAddress"`
+	FirstName    string `pulumi:"firstName"`
+	LastName     string `pulumi:"lastName"`
+	Password     string `pulumi:"password"`
+	Username     string `pulumi:"username"`
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArgs and GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArgs{...}
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArgs struct {
+	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	FirstName    pulumi.StringInput `pulumi:"firstName"`
+	LastName     pulumi.StringInput `pulumi:"lastName"`
+	Password     pulumi.StringInput `pulumi:"password"`
+	Username     pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput)
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArray and GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArray{ GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArgs{...} }
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArray []GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailInput
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) EmailAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail) string {
+		return v.EmailAddress
+	}).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail) string {
+		return v.FirstName
+	}).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail) string {
+		return v.LastName
+	}).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail) string {
+		return v.Password
+	}).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail {
+		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail)[vs[1].(int)]
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy struct {
+	// User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
+	EnvironmentMaintenanceOverride string `pulumi:"environmentMaintenanceOverride"`
+	// Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
+	MonthlyPatchingOverride string `pulumi:"monthlyPatchingOverride"`
+	// Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
+	QuarterlyUpgradeBeginTimes []GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime `pulumi:"quarterlyUpgradeBeginTimes"`
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArgs and GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArgs{...}
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArgs struct {
+	// User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
+	EnvironmentMaintenanceOverride pulumi.StringInput `pulumi:"environmentMaintenanceOverride"`
+	// Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
+	MonthlyPatchingOverride pulumi.StringInput `pulumi:"monthlyPatchingOverride"`
+	// Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
+	QuarterlyUpgradeBeginTimes GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayInput `pulumi:"quarterlyUpgradeBeginTimes"`
+}
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput)
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArray and GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArray{ GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArgs{...} }
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArray []GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyInput
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput {
+	return o
+}
+
+// User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput) EnvironmentMaintenanceOverride() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy) string {
+		return v.EnvironmentMaintenanceOverride
+	}).(pulumi.StringOutput)
+}
+
+// Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput) MonthlyPatchingOverride() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy) string {
+		return v.MonthlyPatchingOverride
+	}).(pulumi.StringOutput)
+}
+
+// Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput) QuarterlyUpgradeBeginTimes() GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy) []GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime {
+		return v.QuarterlyUpgradeBeginTimes
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy {
+		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy)[vs[1].(int)]
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime struct {
+	// The frequency and month when maintenance occurs for the Fusion environment.
+	BeginTimesValue string `pulumi:"beginTimesValue"`
+	// Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
+	OverrideType string `pulumi:"overrideType"`
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArgs and GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArgs{...}
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArgs struct {
+	// The frequency and month when maintenance occurs for the Fusion environment.
+	BeginTimesValue pulumi.StringInput `pulumi:"beginTimesValue"`
+	// Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
+	OverrideType pulumi.StringInput `pulumi:"overrideType"`
+}
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput)
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArray and GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArray{ GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArgs{...} }
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArray []GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeInput
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput {
+	return o
+}
+
+// The frequency and month when maintenance occurs for the Fusion environment.
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) BeginTimesValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime) string {
+		return v.BeginTimesValue
+	}).(pulumi.StringOutput)
+}
+
+// Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) OverrideType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime) string {
+		return v.OverrideType
+	}).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime {
+		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime)[vs[1].(int)]
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh struct {
+	// The source environment id for the last refresh
+	SourceFusionEnvironmentId string `pulumi:"sourceFusionEnvironmentId"`
+	// The time of when the last refresh finish
+	TimeFinished string `pulumi:"timeFinished"`
+	// The point of time of the latest DB backup for the last refresh
+	TimeOfRestorationPoint string `pulumi:"timeOfRestorationPoint"`
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArgs and GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArgs{...}
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArgs struct {
+	// The source environment id for the last refresh
+	SourceFusionEnvironmentId pulumi.StringInput `pulumi:"sourceFusionEnvironmentId"`
+	// The time of when the last refresh finish
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// The point of time of the latest DB backup for the last refresh
+	TimeOfRestorationPoint pulumi.StringInput `pulumi:"timeOfRestorationPoint"`
+}
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput)
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArray and GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArray{ GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArgs{...} }
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArray []GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshInput
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput {
+	return o
+}
+
+// The source environment id for the last refresh
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput) SourceFusionEnvironmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh) string {
+		return v.SourceFusionEnvironmentId
+	}).(pulumi.StringOutput)
+}
+
+// The time of when the last refresh finish
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh) string { return v.TimeFinished }).(pulumi.StringOutput)
+}
+
+// The point of time of the latest DB backup for the last refresh
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput) TimeOfRestorationPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh) string {
+		return v.TimeOfRestorationPoint
+	}).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh {
+		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh)[vs[1].(int)]
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRule struct {
+	// Rule type
+	Action     string                                                              `pulumi:"action"`
+	Conditions []GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition `pulumi:"conditions"`
+	// A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+	Description string `pulumi:"description"`
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArgs and GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArgs{...}
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArgs struct {
+	// Rule type
+	Action     pulumi.StringInput                                                          `pulumi:"action"`
+	Conditions GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayInput `pulumi:"conditions"`
+	// A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+	Description pulumi.StringInput `pulumi:"description"`
+}
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemRule)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput)
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArray and GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArray{ GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArgs{...} }
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArray []GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleInput
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollectionItemRule)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemRule)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput {
+	return o
+}
+
+// Rule type
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRule) string { return v.Action }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput) Conditions() GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRule) []GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition {
+		return v.Conditions
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput)
+}
+
+// A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRule) string { return v.Description }).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollectionItemRule)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItemRule {
+		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItemRule)[vs[1].(int)]
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition struct {
+	// RuleCondition type
+	AttributeName string `pulumi:"attributeName"`
+	// The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
+	AttributeValue string `pulumi:"attributeValue"`
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArgs and GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArgs{...}
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArgs struct {
+	// RuleCondition type
+	AttributeName pulumi.StringInput `pulumi:"attributeName"`
+	// The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
+	AttributeValue pulumi.StringInput `pulumi:"attributeValue"`
+}
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput)
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArray and GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArray{ GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArgs{...} }
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArray []GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionInput
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput {
+	return o
+}
+
+// RuleCondition type
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput) AttributeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition) string {
+		return v.AttributeName
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput) AttributeValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition) string {
+		return v.AttributeValue
+	}).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition {
+		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition)[vs[1].(int)]
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationImagePolicyConfigInput)(nil)).Elem(), ApplicationImagePolicyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationImagePolicyConfigPtrInput)(nil)).Elem(), ApplicationImagePolicyConfigArgs{})
@@ -2444,6 +8612,102 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionProvisionedConcurrencyConfigArrayInput)(nil)).Elem(), GetFunctionsFunctionProvisionedConcurrencyConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionTraceConfigInput)(nil)).Elem(), GetFunctionsFunctionTraceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFunctionsFunctionTraceConfigArrayInput)(nil)).Elem(), GetFunctionsFunctionTraceConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdminUserItemInput)(nil)).Elem(), GetFusionEnvironmentAdminUserItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdminUserItemArrayInput)(nil)).Elem(), GetFusionEnvironmentAdminUserItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdminUsersAdminUserCollectionInput)(nil)).Elem(), GetFusionEnvironmentAdminUsersAdminUserCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdminUsersAdminUserCollectionArrayInput)(nil)).Elem(), GetFusionEnvironmentAdminUsersAdminUserCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdminUsersAdminUserCollectionItemInput)(nil)).Elem(), GetFusionEnvironmentAdminUsersAdminUserCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayInput)(nil)).Elem(), GetFusionEnvironmentAdminUsersAdminUserCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemInput)(nil)).Elem(), GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayInput)(nil)).Elem(), GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdminUsersFilterInput)(nil)).Elem(), GetFusionEnvironmentAdminUsersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentAdminUsersFilterArrayInput)(nil)).Elem(), GetFusionEnvironmentAdminUsersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailInput)(nil)).Elem(), GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayInput)(nil)).Elem(), GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionInput)(nil)).Elem(), GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayInput)(nil)).Elem(), GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemInput)(nil)).Elem(), GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayInput)(nil)).Elem(), GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentDataMaskingActivitiesFilterInput)(nil)).Elem(), GetFusionEnvironmentDataMaskingActivitiesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentDataMaskingActivitiesFilterArrayInput)(nil)).Elem(), GetFusionEnvironmentDataMaskingActivitiesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamiliesFilterInput)(nil)).Elem(), GetFusionEnvironmentFamiliesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamiliesFilterArrayInput)(nil)).Elem(), GetFusionEnvironmentFamiliesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionInput)(nil)).Elem(), GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayInput)(nil)).Elem(), GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemInput)(nil)).Elem(), GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayInput)(nil)).Elem(), GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyInput)(nil)).Elem(), GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayInput)(nil)).Elem(), GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamilyFamilyMaintenancePolicyInput)(nil)).Elem(), GetFusionEnvironmentFamilyFamilyMaintenancePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayInput)(nil)).Elem(), GetFusionEnvironmentFamilyFamilyMaintenancePolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageInput)(nil)).Elem(), GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayInput)(nil)).Elem(), GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageInput)(nil)).Elem(), GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayInput)(nil)).Elem(), GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageInput)(nil)).Elem(), GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayInput)(nil)).Elem(), GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamilySubscriptionDetailSubscriptionInput)(nil)).Elem(), GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayInput)(nil)).Elem(), GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusInput)(nil)).Elem(), GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayInput)(nil)).Elem(), GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentMaintenancePolicyInput)(nil)).Elem(), GetFusionEnvironmentMaintenancePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentMaintenancePolicyArrayInput)(nil)).Elem(), GetFusionEnvironmentMaintenancePolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeInput)(nil)).Elem(), GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayInput)(nil)).Elem(), GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRefreshInput)(nil)).Elem(), GetFusionEnvironmentRefreshArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRefreshArrayInput)(nil)).Elem(), GetFusionEnvironmentRefreshArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesFilterInput)(nil)).Elem(), GetFusionEnvironmentRefreshActivitiesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesFilterArrayInput)(nil)).Elem(), GetFusionEnvironmentRefreshActivitiesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionInput)(nil)).Elem(), GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayInput)(nil)).Elem(), GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemInput)(nil)).Elem(), GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayInput)(nil)).Elem(), GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRuleInput)(nil)).Elem(), GetFusionEnvironmentRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRuleArrayInput)(nil)).Elem(), GetFusionEnvironmentRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRuleConditionInput)(nil)).Elem(), GetFusionEnvironmentRuleConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRuleConditionArrayInput)(nil)).Elem(), GetFusionEnvironmentRuleConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentScheduledActivitiesFilterInput)(nil)).Elem(), GetFusionEnvironmentScheduledActivitiesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentScheduledActivitiesFilterArrayInput)(nil)).Elem(), GetFusionEnvironmentScheduledActivitiesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionInput)(nil)).Elem(), GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayInput)(nil)).Elem(), GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemInput)(nil)).Elem(), GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayInput)(nil)).Elem(), GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionInput)(nil)).Elem(), GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayInput)(nil)).Elem(), GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentScheduledActivityActionInput)(nil)).Elem(), GetFusionEnvironmentScheduledActivityActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentScheduledActivityActionArrayInput)(nil)).Elem(), GetFusionEnvironmentScheduledActivityActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentServiceAttachmentsFilterInput)(nil)).Elem(), GetFusionEnvironmentServiceAttachmentsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentServiceAttachmentsFilterArrayInput)(nil)).Elem(), GetFusionEnvironmentServiceAttachmentsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionInput)(nil)).Elem(), GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayInput)(nil)).Elem(), GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemInput)(nil)).Elem(), GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayInput)(nil)).Elem(), GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentTimeAvailableForRefreshItemInput)(nil)).Elem(), GetFusionEnvironmentTimeAvailableForRefreshItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentTimeAvailableForRefreshItemArrayInput)(nil)).Elem(), GetFusionEnvironmentTimeAvailableForRefreshItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentTimeAvailableForRefreshsFilterInput)(nil)).Elem(), GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayInput)(nil)).Elem(), GetFusionEnvironmentTimeAvailableForRefreshsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionInput)(nil)).Elem(), GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayInput)(nil)).Elem(), GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemInput)(nil)).Elem(), GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayInput)(nil)).Elem(), GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFilterInput)(nil)).Elem(), GetFusionEnvironmentsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFilterArrayInput)(nil)).Elem(), GetFusionEnvironmentsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionArrayInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArray{})
 	pulumi.RegisterOutputType(ApplicationImagePolicyConfigOutput{})
 	pulumi.RegisterOutputType(ApplicationImagePolicyConfigPtrOutput{})
 	pulumi.RegisterOutputType(ApplicationImagePolicyConfigKeyDetailOutput{})
@@ -2482,4 +8746,100 @@ func init() {
 	pulumi.RegisterOutputType(GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionTraceConfigOutput{})
 	pulumi.RegisterOutputType(GetFunctionsFunctionTraceConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentAdminUserItemOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentAdminUserItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentAdminUsersAdminUserCollectionOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentAdminUsersFilterOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentAdminUsersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentDataMaskingActivitiesFilterOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamiliesFilterOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamiliesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentMaintenancePolicyOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentMaintenancePolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentRefreshOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentRefreshArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentRefreshActivitiesFilterOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentRefreshActivitiesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentRuleOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentRuleConditionOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentRuleConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentScheduledActivitiesFilterOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentScheduledActivitiesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentScheduledActivityActionOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentScheduledActivityActionArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentServiceAttachmentsFilterOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentServiceAttachmentsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentTimeAvailableForRefreshItemOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFilterOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput{})
 }

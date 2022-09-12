@@ -19,37 +19,22 @@ public final class GetAlarmStatusesResult {
      * @return The list of alarm_statuses.
      * 
      */
-    private final List<GetAlarmStatusesAlarmStatus> alarmStatuses;
-    private final String compartmentId;
-    private final @Nullable Boolean compartmentIdInSubtree;
+    private List<GetAlarmStatusesAlarmStatus> alarmStatuses;
+    private String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The configured name of the alarm.  Example: `High CPU Utilization`
      * 
      */
-    private final @Nullable String displayName;
-    private final @Nullable List<GetAlarmStatusesFilter> filters;
+    private @Nullable String displayName;
+    private @Nullable List<GetAlarmStatusesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetAlarmStatusesResult(
-        @CustomType.Parameter("alarmStatuses") List<GetAlarmStatusesAlarmStatus> alarmStatuses,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("compartmentIdInSubtree") @Nullable Boolean compartmentIdInSubtree,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetAlarmStatusesFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.alarmStatuses = alarmStatuses;
-        this.compartmentId = compartmentId;
-        this.compartmentIdInSubtree = compartmentIdInSubtree;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetAlarmStatusesResult() {}
     /**
      * @return The list of alarm_statuses.
      * 
@@ -88,7 +73,7 @@ public final class GetAlarmStatusesResult {
     public static Builder builder(GetAlarmStatusesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAlarmStatusesAlarmStatus> alarmStatuses;
         private String compartmentId;
@@ -96,11 +81,7 @@ public final class GetAlarmStatusesResult {
         private @Nullable String displayName;
         private @Nullable List<GetAlarmStatusesFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAlarmStatusesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alarmStatuses = defaults.alarmStatuses;
@@ -111,6 +92,7 @@ public final class GetAlarmStatusesResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder alarmStatuses(List<GetAlarmStatusesAlarmStatus> alarmStatuses) {
             this.alarmStatuses = Objects.requireNonNull(alarmStatuses);
             return this;
@@ -118,18 +100,22 @@ public final class GetAlarmStatusesResult {
         public Builder alarmStatuses(GetAlarmStatusesAlarmStatus... alarmStatuses) {
             return alarmStatuses(List.of(alarmStatuses));
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetAlarmStatusesFilter> filters) {
             this.filters = filters;
             return this;
@@ -137,11 +123,20 @@ public final class GetAlarmStatusesResult {
         public Builder filters(GetAlarmStatusesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetAlarmStatusesResult build() {
-            return new GetAlarmStatusesResult(alarmStatuses, compartmentId, compartmentIdInSubtree, displayName, filters, id);
+        }
+        public GetAlarmStatusesResult build() {
+            final var o = new GetAlarmStatusesResult();
+            o.alarmStatuses = alarmStatuses;
+            o.compartmentId = compartmentId;
+            o.compartmentIdInSubtree = compartmentIdInSubtree;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

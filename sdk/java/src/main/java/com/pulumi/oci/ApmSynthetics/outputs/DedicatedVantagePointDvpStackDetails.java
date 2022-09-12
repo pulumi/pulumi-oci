@@ -13,35 +13,24 @@ public final class DedicatedVantagePointDvpStackDetails {
      * @return (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * 
      */
-    private final String dvpStackId;
+    private String dvpStackId;
     /**
      * @return (Updatable) Type of stack.
      * 
      */
-    private final String dvpStackType;
+    private String dvpStackType;
     /**
      * @return (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * 
      */
-    private final String dvpStreamId;
+    private String dvpStreamId;
     /**
      * @return (Updatable) Version of the dedicated vantage point.
      * 
      */
-    private final String dvpVersion;
+    private String dvpVersion;
 
-    @CustomType.Constructor
-    private DedicatedVantagePointDvpStackDetails(
-        @CustomType.Parameter("dvpStackId") String dvpStackId,
-        @CustomType.Parameter("dvpStackType") String dvpStackType,
-        @CustomType.Parameter("dvpStreamId") String dvpStreamId,
-        @CustomType.Parameter("dvpVersion") String dvpVersion) {
-        this.dvpStackId = dvpStackId;
-        this.dvpStackType = dvpStackType;
-        this.dvpStreamId = dvpStreamId;
-        this.dvpVersion = dvpVersion;
-    }
-
+    private DedicatedVantagePointDvpStackDetails() {}
     /**
      * @return (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * 
@@ -78,17 +67,13 @@ public final class DedicatedVantagePointDvpStackDetails {
     public static Builder builder(DedicatedVantagePointDvpStackDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String dvpStackId;
         private String dvpStackType;
         private String dvpStreamId;
         private String dvpVersion;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DedicatedVantagePointDvpStackDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dvpStackId = defaults.dvpStackId;
@@ -97,23 +82,33 @@ public final class DedicatedVantagePointDvpStackDetails {
     	      this.dvpVersion = defaults.dvpVersion;
         }
 
+        @CustomType.Setter
         public Builder dvpStackId(String dvpStackId) {
             this.dvpStackId = Objects.requireNonNull(dvpStackId);
             return this;
         }
+        @CustomType.Setter
         public Builder dvpStackType(String dvpStackType) {
             this.dvpStackType = Objects.requireNonNull(dvpStackType);
             return this;
         }
+        @CustomType.Setter
         public Builder dvpStreamId(String dvpStreamId) {
             this.dvpStreamId = Objects.requireNonNull(dvpStreamId);
             return this;
         }
+        @CustomType.Setter
         public Builder dvpVersion(String dvpVersion) {
             this.dvpVersion = Objects.requireNonNull(dvpVersion);
             return this;
-        }        public DedicatedVantagePointDvpStackDetails build() {
-            return new DedicatedVantagePointDvpStackDetails(dvpStackId, dvpStackType, dvpStreamId, dvpVersion);
+        }
+        public DedicatedVantagePointDvpStackDetails build() {
+            final var o = new DedicatedVantagePointDvpStackDetails();
+            o.dvpStackId = dvpStackId;
+            o.dvpStackType = dvpStackType;
+            o.dvpStreamId = dvpStreamId;
+            o.dvpVersion = dvpVersion;
+            return o;
         }
     }
 }

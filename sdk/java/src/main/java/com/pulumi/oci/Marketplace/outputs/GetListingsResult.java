@@ -15,73 +15,42 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListingsResult {
-    private final @Nullable List<String> categories;
-    private final @Nullable String compartmentId;
-    private final @Nullable List<GetListingsFilter> filters;
+    private @Nullable List<String> categories;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetListingsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String imageId;
+    private String id;
+    private @Nullable String imageId;
     /**
      * @return Indicates whether the listing is included in Featured Listings.
      * 
      */
-    private final @Nullable Boolean isFeatured;
-    private final @Nullable String listingId;
-    private final @Nullable List<String> listingTypes;
+    private @Nullable Boolean isFeatured;
+    private @Nullable String listingId;
+    private @Nullable List<String> listingTypes;
     /**
      * @return The list of listings.
      * 
      */
-    private final List<GetListingsListing> listings;
+    private List<GetListingsListing> listings;
     /**
      * @return Text that describes the resource.
      * 
      */
-    private final @Nullable List<String> names;
-    private final @Nullable List<String> operatingSystems;
+    private @Nullable List<String> names;
+    private @Nullable List<String> operatingSystems;
     /**
      * @return The listing&#39;s package type.
      * 
      */
-    private final @Nullable String packageType;
-    private final @Nullable List<String> pricings;
-    private final @Nullable String publisherId;
+    private @Nullable String packageType;
+    private @Nullable List<String> pricings;
+    private @Nullable String publisherId;
 
-    @CustomType.Constructor
-    private GetListingsResult(
-        @CustomType.Parameter("categories") @Nullable List<String> categories,
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetListingsFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("imageId") @Nullable String imageId,
-        @CustomType.Parameter("isFeatured") @Nullable Boolean isFeatured,
-        @CustomType.Parameter("listingId") @Nullable String listingId,
-        @CustomType.Parameter("listingTypes") @Nullable List<String> listingTypes,
-        @CustomType.Parameter("listings") List<GetListingsListing> listings,
-        @CustomType.Parameter("names") @Nullable List<String> names,
-        @CustomType.Parameter("operatingSystems") @Nullable List<String> operatingSystems,
-        @CustomType.Parameter("packageType") @Nullable String packageType,
-        @CustomType.Parameter("pricings") @Nullable List<String> pricings,
-        @CustomType.Parameter("publisherId") @Nullable String publisherId) {
-        this.categories = categories;
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.id = id;
-        this.imageId = imageId;
-        this.isFeatured = isFeatured;
-        this.listingId = listingId;
-        this.listingTypes = listingTypes;
-        this.listings = listings;
-        this.names = names;
-        this.operatingSystems = operatingSystems;
-        this.packageType = packageType;
-        this.pricings = pricings;
-        this.publisherId = publisherId;
-    }
-
+    private GetListingsResult() {}
     public List<String> categories() {
         return this.categories == null ? List.of() : this.categories;
     }
@@ -152,7 +121,7 @@ public final class GetListingsResult {
     public static Builder builder(GetListingsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> categories;
         private @Nullable String compartmentId;
@@ -168,11 +137,7 @@ public final class GetListingsResult {
         private @Nullable String packageType;
         private @Nullable List<String> pricings;
         private @Nullable String publisherId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.categories = defaults.categories;
@@ -191,6 +156,7 @@ public final class GetListingsResult {
     	      this.publisherId = defaults.publisherId;
         }
 
+        @CustomType.Setter
         public Builder categories(@Nullable List<String> categories) {
             this.categories = categories;
             return this;
@@ -198,10 +164,12 @@ public final class GetListingsResult {
         public Builder categories(String... categories) {
             return categories(List.of(categories));
         }
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetListingsFilter> filters) {
             this.filters = filters;
             return this;
@@ -209,22 +177,27 @@ public final class GetListingsResult {
         public Builder filters(GetListingsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder imageId(@Nullable String imageId) {
             this.imageId = imageId;
             return this;
         }
+        @CustomType.Setter
         public Builder isFeatured(@Nullable Boolean isFeatured) {
             this.isFeatured = isFeatured;
             return this;
         }
+        @CustomType.Setter
         public Builder listingId(@Nullable String listingId) {
             this.listingId = listingId;
             return this;
         }
+        @CustomType.Setter
         public Builder listingTypes(@Nullable List<String> listingTypes) {
             this.listingTypes = listingTypes;
             return this;
@@ -232,6 +205,7 @@ public final class GetListingsResult {
         public Builder listingTypes(String... listingTypes) {
             return listingTypes(List.of(listingTypes));
         }
+        @CustomType.Setter
         public Builder listings(List<GetListingsListing> listings) {
             this.listings = Objects.requireNonNull(listings);
             return this;
@@ -239,6 +213,7 @@ public final class GetListingsResult {
         public Builder listings(GetListingsListing... listings) {
             return listings(List.of(listings));
         }
+        @CustomType.Setter
         public Builder names(@Nullable List<String> names) {
             this.names = names;
             return this;
@@ -246,6 +221,7 @@ public final class GetListingsResult {
         public Builder names(String... names) {
             return names(List.of(names));
         }
+        @CustomType.Setter
         public Builder operatingSystems(@Nullable List<String> operatingSystems) {
             this.operatingSystems = operatingSystems;
             return this;
@@ -253,10 +229,12 @@ public final class GetListingsResult {
         public Builder operatingSystems(String... operatingSystems) {
             return operatingSystems(List.of(operatingSystems));
         }
+        @CustomType.Setter
         public Builder packageType(@Nullable String packageType) {
             this.packageType = packageType;
             return this;
         }
+        @CustomType.Setter
         public Builder pricings(@Nullable List<String> pricings) {
             this.pricings = pricings;
             return this;
@@ -264,11 +242,28 @@ public final class GetListingsResult {
         public Builder pricings(String... pricings) {
             return pricings(List.of(pricings));
         }
+        @CustomType.Setter
         public Builder publisherId(@Nullable String publisherId) {
             this.publisherId = publisherId;
             return this;
-        }        public GetListingsResult build() {
-            return new GetListingsResult(categories, compartmentId, filters, id, imageId, isFeatured, listingId, listingTypes, listings, names, operatingSystems, packageType, pricings, publisherId);
+        }
+        public GetListingsResult build() {
+            final var o = new GetListingsResult();
+            o.categories = categories;
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.id = id;
+            o.imageId = imageId;
+            o.isFeatured = isFeatured;
+            o.listingId = listingId;
+            o.listingTypes = listingTypes;
+            o.listings = listings;
+            o.names = names;
+            o.operatingSystems = operatingSystems;
+            o.packageType = packageType;
+            o.pricings = pricings;
+            o.publisherId = publisherId;
+            return o;
         }
     }
 }

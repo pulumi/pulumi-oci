@@ -21,6 +21,7 @@ export * from "./getMysqlVersion";
 export * from "./getShapes";
 export * from "./heatWaveCluster";
 export * from "./mysqlBackup";
+export * from "./mysqlConfiguration";
 export * from "./mysqlDbSystem";
 
 // Import resources to register:
@@ -28,6 +29,7 @@ import { AnalyticsCluster } from "./analyticsCluster";
 import { Channel } from "./channel";
 import { HeatWaveCluster } from "./heatWaveCluster";
 import { MysqlBackup } from "./mysqlBackup";
+import { MysqlConfiguration } from "./mysqlConfiguration";
 import { MysqlDbSystem } from "./mysqlDbSystem";
 
 const _module = {
@@ -42,6 +44,8 @@ const _module = {
                 return new HeatWaveCluster(name, <any>undefined, { urn })
             case "oci:Mysql/mysqlBackup:MysqlBackup":
                 return new MysqlBackup(name, <any>undefined, { urn })
+            case "oci:Mysql/mysqlConfiguration:MysqlConfiguration":
+                return new MysqlConfiguration(name, <any>undefined, { urn })
             case "oci:Mysql/mysqlDbSystem:MysqlDbSystem":
                 return new MysqlDbSystem(name, <any>undefined, { urn })
             default:
@@ -53,4 +57,5 @@ pulumi.runtime.registerResourceModule("oci", "Mysql/analyticsCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Mysql/channel", _module)
 pulumi.runtime.registerResourceModule("oci", "Mysql/heatWaveCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Mysql/mysqlBackup", _module)
+pulumi.runtime.registerResourceModule("oci", "Mysql/mysqlConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "Mysql/mysqlDbSystem", _module)

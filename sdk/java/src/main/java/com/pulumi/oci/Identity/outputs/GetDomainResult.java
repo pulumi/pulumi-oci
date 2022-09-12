@@ -14,144 +14,95 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDomainResult {
-    private final String adminEmail;
-    private final String adminFirstName;
-    private final String adminLastName;
-    private final String adminUserName;
+    private String adminEmail;
+    private String adminFirstName;
+    private String adminLastName;
+    private String adminUserName;
     /**
      * @return The OCID of the compartment containing the domain.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The domain descripition
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The mutable display name of the domain
      * 
      */
-    private final String displayName;
-    private final String domainId;
+    private String displayName;
+    private String domainId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The home region for the domain. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
      * 
      */
-    private final String homeRegion;
+    private String homeRegion;
     /**
      * @return Region specific domain URL.
      * 
      */
-    private final String homeRegionUrl;
+    private String homeRegionUrl;
     /**
      * @return The OCID of the domain
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Indicates whether domain is hidden on login screen or not.
      * 
      */
-    private final Boolean isHiddenOnLogin;
-    private final Boolean isNotificationBypassed;
-    private final Boolean isPrimaryEmailRequired;
+    private Boolean isHiddenOnLogin;
+    private Boolean isNotificationBypassed;
+    private Boolean isPrimaryEmailRequired;
     /**
      * @return The License type of Domain
      * 
      */
-    private final String licenseType;
+    private String licenseType;
     /**
      * @return Any additional details about the current state of the Domain.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The regions domain is replication to.
      * 
      */
-    private final List<GetDomainReplicaRegion> replicaRegions;
+    private List<GetDomainReplicaRegion> replicaRegions;
     /**
      * @return The current state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The type of the domain.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return Region agnostic domain URL.
      * 
      */
-    private final String url;
+    private String url;
 
-    @CustomType.Constructor
-    private GetDomainResult(
-        @CustomType.Parameter("adminEmail") String adminEmail,
-        @CustomType.Parameter("adminFirstName") String adminFirstName,
-        @CustomType.Parameter("adminLastName") String adminLastName,
-        @CustomType.Parameter("adminUserName") String adminUserName,
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("domainId") String domainId,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("homeRegion") String homeRegion,
-        @CustomType.Parameter("homeRegionUrl") String homeRegionUrl,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isHiddenOnLogin") Boolean isHiddenOnLogin,
-        @CustomType.Parameter("isNotificationBypassed") Boolean isNotificationBypassed,
-        @CustomType.Parameter("isPrimaryEmailRequired") Boolean isPrimaryEmailRequired,
-        @CustomType.Parameter("licenseType") String licenseType,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("replicaRegions") List<GetDomainReplicaRegion> replicaRegions,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("url") String url) {
-        this.adminEmail = adminEmail;
-        this.adminFirstName = adminFirstName;
-        this.adminLastName = adminLastName;
-        this.adminUserName = adminUserName;
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.displayName = displayName;
-        this.domainId = domainId;
-        this.freeformTags = freeformTags;
-        this.homeRegion = homeRegion;
-        this.homeRegionUrl = homeRegionUrl;
-        this.id = id;
-        this.isHiddenOnLogin = isHiddenOnLogin;
-        this.isNotificationBypassed = isNotificationBypassed;
-        this.isPrimaryEmailRequired = isPrimaryEmailRequired;
-        this.licenseType = licenseType;
-        this.lifecycleDetails = lifecycleDetails;
-        this.replicaRegions = replicaRegions;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.type = type;
-        this.url = url;
-    }
-
+    private GetDomainResult() {}
     public String adminEmail() {
         return this.adminEmail;
     }
@@ -293,7 +244,7 @@ public final class GetDomainResult {
     public static Builder builder(GetDomainResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String adminEmail;
         private String adminFirstName;
@@ -318,11 +269,7 @@ public final class GetDomainResult {
         private String timeCreated;
         private String type;
         private String url;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDomainResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminEmail = defaults.adminEmail;
@@ -350,78 +297,97 @@ public final class GetDomainResult {
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
         public Builder adminEmail(String adminEmail) {
             this.adminEmail = Objects.requireNonNull(adminEmail);
             return this;
         }
+        @CustomType.Setter
         public Builder adminFirstName(String adminFirstName) {
             this.adminFirstName = Objects.requireNonNull(adminFirstName);
             return this;
         }
+        @CustomType.Setter
         public Builder adminLastName(String adminLastName) {
             this.adminLastName = Objects.requireNonNull(adminLastName);
             return this;
         }
+        @CustomType.Setter
         public Builder adminUserName(String adminUserName) {
             this.adminUserName = Objects.requireNonNull(adminUserName);
             return this;
         }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder domainId(String domainId) {
             this.domainId = Objects.requireNonNull(domainId);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder homeRegion(String homeRegion) {
             this.homeRegion = Objects.requireNonNull(homeRegion);
             return this;
         }
+        @CustomType.Setter
         public Builder homeRegionUrl(String homeRegionUrl) {
             this.homeRegionUrl = Objects.requireNonNull(homeRegionUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isHiddenOnLogin(Boolean isHiddenOnLogin) {
             this.isHiddenOnLogin = Objects.requireNonNull(isHiddenOnLogin);
             return this;
         }
+        @CustomType.Setter
         public Builder isNotificationBypassed(Boolean isNotificationBypassed) {
             this.isNotificationBypassed = Objects.requireNonNull(isNotificationBypassed);
             return this;
         }
+        @CustomType.Setter
         public Builder isPrimaryEmailRequired(Boolean isPrimaryEmailRequired) {
             this.isPrimaryEmailRequired = Objects.requireNonNull(isPrimaryEmailRequired);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseType(String licenseType) {
             this.licenseType = Objects.requireNonNull(licenseType);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder replicaRegions(List<GetDomainReplicaRegion> replicaRegions) {
             this.replicaRegions = Objects.requireNonNull(replicaRegions);
             return this;
@@ -429,23 +395,52 @@ public final class GetDomainResult {
         public Builder replicaRegions(GetDomainReplicaRegion... replicaRegions) {
             return replicaRegions(List.of(replicaRegions));
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder url(String url) {
             this.url = Objects.requireNonNull(url);
             return this;
-        }        public GetDomainResult build() {
-            return new GetDomainResult(adminEmail, adminFirstName, adminLastName, adminUserName, compartmentId, definedTags, description, displayName, domainId, freeformTags, homeRegion, homeRegionUrl, id, isHiddenOnLogin, isNotificationBypassed, isPrimaryEmailRequired, licenseType, lifecycleDetails, replicaRegions, state, timeCreated, type, url);
+        }
+        public GetDomainResult build() {
+            final var o = new GetDomainResult();
+            o.adminEmail = adminEmail;
+            o.adminFirstName = adminFirstName;
+            o.adminLastName = adminLastName;
+            o.adminUserName = adminUserName;
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.displayName = displayName;
+            o.domainId = domainId;
+            o.freeformTags = freeformTags;
+            o.homeRegion = homeRegion;
+            o.homeRegionUrl = homeRegionUrl;
+            o.id = id;
+            o.isHiddenOnLogin = isHiddenOnLogin;
+            o.isNotificationBypassed = isNotificationBypassed;
+            o.isPrimaryEmailRequired = isPrimaryEmailRequired;
+            o.licenseType = licenseType;
+            o.lifecycleDetails = lifecycleDetails;
+            o.replicaRegions = replicaRegions;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.type = type;
+            o.url = url;
+            return o;
         }
     }
 }

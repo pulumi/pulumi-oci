@@ -19,115 +19,80 @@ public final class GetSessionResult {
      * @return The unique identifier (OCID) of the bastion that is hosting this session.
      * 
      */
-    private final String bastionId;
+    private String bastionId;
     /**
      * @return The name of the bastion that is hosting this session.
      * 
      */
-    private final String bastionName;
+    private String bastionName;
     /**
      * @return The public key of the bastion host. You can use this to verify that you&#39;re connecting to the correct bastion.
      * 
      */
-    private final String bastionPublicHostKeyInfo;
+    private String bastionPublicHostKeyInfo;
     /**
      * @return The username that the session uses to connect to the target resource.
      * 
      */
-    private final String bastionUserName;
+    private String bastionUserName;
     /**
      * @return The name of the session.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The unique identifier (OCID) of the session, which can&#39;t be changed after creation.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Public key details for a bastion session.
      * 
      */
-    private final List<GetSessionKeyDetail> keyDetails;
+    private List<GetSessionKeyDetail> keyDetails;
     /**
      * @return The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
      * 
      */
-    private final String keyType;
+    private String keyType;
     /**
      * @return A message describing the current session state in more detail.
      * 
      */
-    private final String lifecycleDetails;
-    private final String sessionId;
+    private String lifecycleDetails;
+    private String sessionId;
     /**
      * @return The amount of time the session can remain active.
      * 
      */
-    private final Integer sessionTtlInSeconds;
+    private Integer sessionTtlInSeconds;
     /**
      * @return The connection message for the session.
      * 
      */
-    private final Map<String,Object> sshMetadata;
+    private Map<String,Object> sshMetadata;
     /**
      * @return The current state of the session.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Details about a bastion session&#39;s target resource.
      * 
      */
-    private final List<GetSessionTargetResourceDetail> targetResourceDetails;
+    private List<GetSessionTargetResourceDetail> targetResourceDetails;
     /**
      * @return The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetSessionResult(
-        @CustomType.Parameter("bastionId") String bastionId,
-        @CustomType.Parameter("bastionName") String bastionName,
-        @CustomType.Parameter("bastionPublicHostKeyInfo") String bastionPublicHostKeyInfo,
-        @CustomType.Parameter("bastionUserName") String bastionUserName,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("keyDetails") List<GetSessionKeyDetail> keyDetails,
-        @CustomType.Parameter("keyType") String keyType,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("sessionId") String sessionId,
-        @CustomType.Parameter("sessionTtlInSeconds") Integer sessionTtlInSeconds,
-        @CustomType.Parameter("sshMetadata") Map<String,Object> sshMetadata,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("targetResourceDetails") List<GetSessionTargetResourceDetail> targetResourceDetails,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.bastionId = bastionId;
-        this.bastionName = bastionName;
-        this.bastionPublicHostKeyInfo = bastionPublicHostKeyInfo;
-        this.bastionUserName = bastionUserName;
-        this.displayName = displayName;
-        this.id = id;
-        this.keyDetails = keyDetails;
-        this.keyType = keyType;
-        this.lifecycleDetails = lifecycleDetails;
-        this.sessionId = sessionId;
-        this.sessionTtlInSeconds = sessionTtlInSeconds;
-        this.sshMetadata = sshMetadata;
-        this.state = state;
-        this.targetResourceDetails = targetResourceDetails;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetSessionResult() {}
     /**
      * @return The unique identifier (OCID) of the bastion that is hosting this session.
      * 
@@ -244,7 +209,7 @@ public final class GetSessionResult {
     public static Builder builder(GetSessionResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String bastionId;
         private String bastionName;
@@ -262,11 +227,7 @@ public final class GetSessionResult {
         private List<GetSessionTargetResourceDetail> targetResourceDetails;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSessionResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bastionId = defaults.bastionId;
@@ -287,30 +248,37 @@ public final class GetSessionResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder bastionId(String bastionId) {
             this.bastionId = Objects.requireNonNull(bastionId);
             return this;
         }
+        @CustomType.Setter
         public Builder bastionName(String bastionName) {
             this.bastionName = Objects.requireNonNull(bastionName);
             return this;
         }
+        @CustomType.Setter
         public Builder bastionPublicHostKeyInfo(String bastionPublicHostKeyInfo) {
             this.bastionPublicHostKeyInfo = Objects.requireNonNull(bastionPublicHostKeyInfo);
             return this;
         }
+        @CustomType.Setter
         public Builder bastionUserName(String bastionUserName) {
             this.bastionUserName = Objects.requireNonNull(bastionUserName);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder keyDetails(List<GetSessionKeyDetail> keyDetails) {
             this.keyDetails = Objects.requireNonNull(keyDetails);
             return this;
@@ -318,30 +286,37 @@ public final class GetSessionResult {
         public Builder keyDetails(GetSessionKeyDetail... keyDetails) {
             return keyDetails(List.of(keyDetails));
         }
+        @CustomType.Setter
         public Builder keyType(String keyType) {
             this.keyType = Objects.requireNonNull(keyType);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder sessionId(String sessionId) {
             this.sessionId = Objects.requireNonNull(sessionId);
             return this;
         }
+        @CustomType.Setter
         public Builder sessionTtlInSeconds(Integer sessionTtlInSeconds) {
             this.sessionTtlInSeconds = Objects.requireNonNull(sessionTtlInSeconds);
             return this;
         }
+        @CustomType.Setter
         public Builder sshMetadata(Map<String,Object> sshMetadata) {
             this.sshMetadata = Objects.requireNonNull(sshMetadata);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder targetResourceDetails(List<GetSessionTargetResourceDetail> targetResourceDetails) {
             this.targetResourceDetails = Objects.requireNonNull(targetResourceDetails);
             return this;
@@ -349,15 +324,35 @@ public final class GetSessionResult {
         public Builder targetResourceDetails(GetSessionTargetResourceDetail... targetResourceDetails) {
             return targetResourceDetails(List.of(targetResourceDetails));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetSessionResult build() {
-            return new GetSessionResult(bastionId, bastionName, bastionPublicHostKeyInfo, bastionUserName, displayName, id, keyDetails, keyType, lifecycleDetails, sessionId, sessionTtlInSeconds, sshMetadata, state, targetResourceDetails, timeCreated, timeUpdated);
+        }
+        public GetSessionResult build() {
+            final var o = new GetSessionResult();
+            o.bastionId = bastionId;
+            o.bastionName = bastionName;
+            o.bastionPublicHostKeyInfo = bastionPublicHostKeyInfo;
+            o.bastionUserName = bastionUserName;
+            o.displayName = displayName;
+            o.id = id;
+            o.keyDetails = keyDetails;
+            o.keyType = keyType;
+            o.lifecycleDetails = lifecycleDetails;
+            o.sessionId = sessionId;
+            o.sessionTtlInSeconds = sessionTtlInSeconds;
+            o.sshMetadata = sshMetadata;
+            o.state = state;
+            o.targetResourceDetails = targetResourceDetails;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

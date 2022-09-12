@@ -13,35 +13,24 @@ public final class GetListingPackageAgreementsAgreement {
      * @return Who authored the agreement.
      * 
      */
-    private final String author;
+    private String author;
     /**
      * @return The content URL of the agreement.
      * 
      */
-    private final String contentUrl;
+    private String contentUrl;
     /**
      * @return The unique identifier for the agreement.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Textual prompt to read and accept the agreement.
      * 
      */
-    private final String prompt;
+    private String prompt;
 
-    @CustomType.Constructor
-    private GetListingPackageAgreementsAgreement(
-        @CustomType.Parameter("author") String author,
-        @CustomType.Parameter("contentUrl") String contentUrl,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("prompt") String prompt) {
-        this.author = author;
-        this.contentUrl = contentUrl;
-        this.id = id;
-        this.prompt = prompt;
-    }
-
+    private GetListingPackageAgreementsAgreement() {}
     /**
      * @return Who authored the agreement.
      * 
@@ -78,17 +67,13 @@ public final class GetListingPackageAgreementsAgreement {
     public static Builder builder(GetListingPackageAgreementsAgreement defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String author;
         private String contentUrl;
         private String id;
         private String prompt;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetListingPackageAgreementsAgreement defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.author = defaults.author;
@@ -97,23 +82,33 @@ public final class GetListingPackageAgreementsAgreement {
     	      this.prompt = defaults.prompt;
         }
 
+        @CustomType.Setter
         public Builder author(String author) {
             this.author = Objects.requireNonNull(author);
             return this;
         }
+        @CustomType.Setter
         public Builder contentUrl(String contentUrl) {
             this.contentUrl = Objects.requireNonNull(contentUrl);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder prompt(String prompt) {
             this.prompt = Objects.requireNonNull(prompt);
             return this;
-        }        public GetListingPackageAgreementsAgreement build() {
-            return new GetListingPackageAgreementsAgreement(author, contentUrl, id, prompt);
+        }
+        public GetListingPackageAgreementsAgreement build() {
+            final var o = new GetListingPackageAgreementsAgreement();
+            o.author = author;
+            o.contentUrl = contentUrl;
+            o.id = id;
+            o.prompt = prompt;
+            return o;
         }
     }
 }

@@ -13,13 +13,9 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
      * @return The message of the rationale.
      * 
      */
-    private final String message;
+    private String message;
 
-    @CustomType.Constructor
-    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale(@CustomType.Parameter("message") String message) {
-        this.message = message;
-    }
-
+    private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale() {}
     /**
      * @return The message of the rationale.
      * 
@@ -35,24 +31,24 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
     public static Builder builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String message;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.message = defaults.message;
         }
 
+        @CustomType.Setter
         public Builder message(String message) {
             this.message = Objects.requireNonNull(message);
             return this;
-        }        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale build() {
-            return new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale(message);
+        }
+        public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale build() {
+            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale();
+            o.message = message;
+            return o;
         }
     }
 }

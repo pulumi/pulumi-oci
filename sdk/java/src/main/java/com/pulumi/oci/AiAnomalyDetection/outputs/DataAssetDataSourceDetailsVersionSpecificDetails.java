@@ -15,42 +15,29 @@ public final class DataAssetDataSourceDetailsVersionSpecificDetails {
      * @return Bucket Name for influx connection
      * 
      */
-    private final @Nullable String bucket;
+    private @Nullable String bucket;
     /**
      * @return DB Name for influx connection
      * 
      */
-    private final @Nullable String databaseName;
+    private @Nullable String databaseName;
     /**
      * @return Data source type where actually data asset is being stored
      * 
      */
-    private final String influxVersion;
+    private String influxVersion;
     /**
      * @return Org name for the influx db
      * 
      */
-    private final @Nullable String organizationName;
+    private @Nullable String organizationName;
     /**
      * @return retention policy is how long the bucket would last
      * 
      */
-    private final @Nullable String retentionPolicyName;
+    private @Nullable String retentionPolicyName;
 
-    @CustomType.Constructor
-    private DataAssetDataSourceDetailsVersionSpecificDetails(
-        @CustomType.Parameter("bucket") @Nullable String bucket,
-        @CustomType.Parameter("databaseName") @Nullable String databaseName,
-        @CustomType.Parameter("influxVersion") String influxVersion,
-        @CustomType.Parameter("organizationName") @Nullable String organizationName,
-        @CustomType.Parameter("retentionPolicyName") @Nullable String retentionPolicyName) {
-        this.bucket = bucket;
-        this.databaseName = databaseName;
-        this.influxVersion = influxVersion;
-        this.organizationName = organizationName;
-        this.retentionPolicyName = retentionPolicyName;
-    }
-
+    private DataAssetDataSourceDetailsVersionSpecificDetails() {}
     /**
      * @return Bucket Name for influx connection
      * 
@@ -94,18 +81,14 @@ public final class DataAssetDataSourceDetailsVersionSpecificDetails {
     public static Builder builder(DataAssetDataSourceDetailsVersionSpecificDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String bucket;
         private @Nullable String databaseName;
         private String influxVersion;
         private @Nullable String organizationName;
         private @Nullable String retentionPolicyName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(DataAssetDataSourceDetailsVersionSpecificDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
@@ -115,27 +98,39 @@ public final class DataAssetDataSourceDetailsVersionSpecificDetails {
     	      this.retentionPolicyName = defaults.retentionPolicyName;
         }
 
+        @CustomType.Setter
         public Builder bucket(@Nullable String bucket) {
             this.bucket = bucket;
             return this;
         }
+        @CustomType.Setter
         public Builder databaseName(@Nullable String databaseName) {
             this.databaseName = databaseName;
             return this;
         }
+        @CustomType.Setter
         public Builder influxVersion(String influxVersion) {
             this.influxVersion = Objects.requireNonNull(influxVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder organizationName(@Nullable String organizationName) {
             this.organizationName = organizationName;
             return this;
         }
+        @CustomType.Setter
         public Builder retentionPolicyName(@Nullable String retentionPolicyName) {
             this.retentionPolicyName = retentionPolicyName;
             return this;
-        }        public DataAssetDataSourceDetailsVersionSpecificDetails build() {
-            return new DataAssetDataSourceDetailsVersionSpecificDetails(bucket, databaseName, influxVersion, organizationName, retentionPolicyName);
+        }
+        public DataAssetDataSourceDetailsVersionSpecificDetails build() {
+            final var o = new DataAssetDataSourceDetailsVersionSpecificDetails();
+            o.bucket = bucket;
+            o.databaseName = databaseName;
+            o.influxVersion = influxVersion;
+            o.organizationName = organizationName;
+            o.retentionPolicyName = retentionPolicyName;
+            return o;
         }
     }
 }

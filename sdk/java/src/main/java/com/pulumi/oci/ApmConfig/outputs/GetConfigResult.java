@@ -15,128 +15,87 @@ import java.util.Objects;
 
 @CustomType
 public final class GetConfigResult {
-    private final String apmDomainId;
-    private final String configId;
+    private String apmDomainId;
+    private String configId;
     /**
      * @return The type of configuration item.
      * 
      */
-    private final String configType;
+    private String configType;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return A description of the metric.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return A list of dimensions for the metric. This variable should not be used.
      * 
      */
-    private final List<GetConfigDimension> dimensions;
+    private List<GetConfigDimension> dimensions;
     /**
      * @return The name by which a configuration entity is displayed to the end user.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      * 
      */
-    private final String filterId;
+    private String filterId;
     /**
      * @return The string that defines the Span Filter expression.
      * 
      */
-    private final String filterText;
+    private String filterText;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return A string that specifies the group that an OPTIONS item belongs to.
      * 
      */
-    private final String group;
+    private String group;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The list of metrics in this group.
      * 
      */
-    private final List<GetConfigMetric> metrics;
+    private List<GetConfigMetric> metrics;
     /**
      * @return The namespace to which the metrics are published. It must be one of several predefined namespaces.
      * 
      */
-    private final String namespace;
-    private final String opcDryRun;
+    private String namespace;
+    private String opcDryRun;
     /**
      * @return The options are stored here as JSON.
      * 
      */
-    private final String options;
-    private final List<GetConfigRule> rules;
+    private String options;
+    private List<GetConfigRule> rules;
     /**
      * @return The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetConfigResult(
-        @CustomType.Parameter("apmDomainId") String apmDomainId,
-        @CustomType.Parameter("configId") String configId,
-        @CustomType.Parameter("configType") String configType,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("dimensions") List<GetConfigDimension> dimensions,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("filterId") String filterId,
-        @CustomType.Parameter("filterText") String filterText,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("group") String group,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("metrics") List<GetConfigMetric> metrics,
-        @CustomType.Parameter("namespace") String namespace,
-        @CustomType.Parameter("opcDryRun") String opcDryRun,
-        @CustomType.Parameter("options") String options,
-        @CustomType.Parameter("rules") List<GetConfigRule> rules,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.apmDomainId = apmDomainId;
-        this.configId = configId;
-        this.configType = configType;
-        this.definedTags = definedTags;
-        this.description = description;
-        this.dimensions = dimensions;
-        this.displayName = displayName;
-        this.filterId = filterId;
-        this.filterText = filterText;
-        this.freeformTags = freeformTags;
-        this.group = group;
-        this.id = id;
-        this.metrics = metrics;
-        this.namespace = namespace;
-        this.opcDryRun = opcDryRun;
-        this.options = options;
-        this.rules = rules;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetConfigResult() {}
     public String apmDomainId() {
         return this.apmDomainId;
     }
@@ -262,7 +221,7 @@ public final class GetConfigResult {
     public static Builder builder(GetConfigResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String apmDomainId;
         private String configId;
@@ -283,11 +242,7 @@ public final class GetConfigResult {
         private List<GetConfigRule> rules;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConfigResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apmDomainId = defaults.apmDomainId;
@@ -311,26 +266,32 @@ public final class GetConfigResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
             this.apmDomainId = Objects.requireNonNull(apmDomainId);
             return this;
         }
+        @CustomType.Setter
         public Builder configId(String configId) {
             this.configId = Objects.requireNonNull(configId);
             return this;
         }
+        @CustomType.Setter
         public Builder configType(String configType) {
             this.configType = Objects.requireNonNull(configType);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder dimensions(List<GetConfigDimension> dimensions) {
             this.dimensions = Objects.requireNonNull(dimensions);
             return this;
@@ -338,30 +299,37 @@ public final class GetConfigResult {
         public Builder dimensions(GetConfigDimension... dimensions) {
             return dimensions(List.of(dimensions));
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder filterId(String filterId) {
             this.filterId = Objects.requireNonNull(filterId);
             return this;
         }
+        @CustomType.Setter
         public Builder filterText(String filterText) {
             this.filterText = Objects.requireNonNull(filterText);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder group(String group) {
             this.group = Objects.requireNonNull(group);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder metrics(List<GetConfigMetric> metrics) {
             this.metrics = Objects.requireNonNull(metrics);
             return this;
@@ -369,18 +337,22 @@ public final class GetConfigResult {
         public Builder metrics(GetConfigMetric... metrics) {
             return metrics(List.of(metrics));
         }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             this.namespace = Objects.requireNonNull(namespace);
             return this;
         }
+        @CustomType.Setter
         public Builder opcDryRun(String opcDryRun) {
             this.opcDryRun = Objects.requireNonNull(opcDryRun);
             return this;
         }
+        @CustomType.Setter
         public Builder options(String options) {
             this.options = Objects.requireNonNull(options);
             return this;
         }
+        @CustomType.Setter
         public Builder rules(List<GetConfigRule> rules) {
             this.rules = Objects.requireNonNull(rules);
             return this;
@@ -388,15 +360,38 @@ public final class GetConfigResult {
         public Builder rules(GetConfigRule... rules) {
             return rules(List.of(rules));
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetConfigResult build() {
-            return new GetConfigResult(apmDomainId, configId, configType, definedTags, description, dimensions, displayName, filterId, filterText, freeformTags, group, id, metrics, namespace, opcDryRun, options, rules, timeCreated, timeUpdated);
+        }
+        public GetConfigResult build() {
+            final var o = new GetConfigResult();
+            o.apmDomainId = apmDomainId;
+            o.configId = configId;
+            o.configType = configType;
+            o.definedTags = definedTags;
+            o.description = description;
+            o.dimensions = dimensions;
+            o.displayName = displayName;
+            o.filterId = filterId;
+            o.filterText = filterText;
+            o.freeformTags = freeformTags;
+            o.group = group;
+            o.id = id;
+            o.metrics = metrics;
+            o.namespace = namespace;
+            o.opcDryRun = opcDryRun;
+            o.options = options;
+            o.rules = rules;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

@@ -18,6 +18,21 @@ public final class GetResourceActionsPlainArgs extends com.pulumi.resources.Invo
     public static final GetResourceActionsPlainArgs Empty = new GetResourceActionsPlainArgs();
 
     /**
+     * A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+     * 
+     */
+    @Import(name="childTenancyIds")
+    private @Nullable List<String> childTenancyIds;
+
+    /**
+     * @return A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+     * 
+     */
+    public Optional<List<String>> childTenancyIds() {
+        return Optional.ofNullable(this.childTenancyIds);
+    }
+
+    /**
      * The OCID of the compartment.
      * 
      */
@@ -55,6 +70,21 @@ public final class GetResourceActionsPlainArgs extends com.pulumi.resources.Invo
     }
 
     /**
+     * When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+     * 
+     */
+    @Import(name="includeOrganization")
+    private @Nullable Boolean includeOrganization;
+
+    /**
+     * @return When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+     * 
+     */
+    public Optional<Boolean> includeOrganization() {
+        return Optional.ofNullable(this.includeOrganization);
+    }
+
+    /**
      * Optional. A filter that returns results that match the name specified.
      * 
      */
@@ -73,15 +103,30 @@ public final class GetResourceActionsPlainArgs extends com.pulumi.resources.Invo
      * The unique OCID associated with the recommendation.
      * 
      */
-    @Import(name="recommendationId", required=true)
-    private String recommendationId;
+    @Import(name="recommendationId")
+    private @Nullable String recommendationId;
 
     /**
      * @return The unique OCID associated with the recommendation.
      * 
      */
-    public String recommendationId() {
-        return this.recommendationId;
+    public Optional<String> recommendationId() {
+        return Optional.ofNullable(this.recommendationId);
+    }
+
+    /**
+     * Optional. A filter that returns results that match the recommendation name specified.
+     * 
+     */
+    @Import(name="recommendationName")
+    private @Nullable String recommendationName;
+
+    /**
+     * @return Optional. A filter that returns results that match the recommendation name specified.
+     * 
+     */
+    public Optional<String> recommendationName() {
+        return Optional.ofNullable(this.recommendationName);
     }
 
     /**
@@ -132,11 +177,14 @@ public final class GetResourceActionsPlainArgs extends com.pulumi.resources.Invo
     private GetResourceActionsPlainArgs() {}
 
     private GetResourceActionsPlainArgs(GetResourceActionsPlainArgs $) {
+        this.childTenancyIds = $.childTenancyIds;
         this.compartmentId = $.compartmentId;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
+        this.includeOrganization = $.includeOrganization;
         this.name = $.name;
         this.recommendationId = $.recommendationId;
+        this.recommendationName = $.recommendationName;
         this.resourceType = $.resourceType;
         this.state = $.state;
         this.status = $.status;
@@ -158,6 +206,27 @@ public final class GetResourceActionsPlainArgs extends com.pulumi.resources.Invo
 
         public Builder(GetResourceActionsPlainArgs defaults) {
             $ = new GetResourceActionsPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param childTenancyIds A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder childTenancyIds(@Nullable List<String> childTenancyIds) {
+            $.childTenancyIds = childTenancyIds;
+            return this;
+        }
+
+        /**
+         * @param childTenancyIds A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder childTenancyIds(String... childTenancyIds) {
+            return childTenancyIds(List.of(childTenancyIds));
         }
 
         /**
@@ -192,6 +261,17 @@ public final class GetResourceActionsPlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
+         * @param includeOrganization When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder includeOrganization(@Nullable Boolean includeOrganization) {
+            $.includeOrganization = includeOrganization;
+            return this;
+        }
+
+        /**
          * @param name Optional. A filter that returns results that match the name specified.
          * 
          * @return builder
@@ -208,8 +288,19 @@ public final class GetResourceActionsPlainArgs extends com.pulumi.resources.Invo
          * @return builder
          * 
          */
-        public Builder recommendationId(String recommendationId) {
+        public Builder recommendationId(@Nullable String recommendationId) {
             $.recommendationId = recommendationId;
+            return this;
+        }
+
+        /**
+         * @param recommendationName Optional. A filter that returns results that match the recommendation name specified.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recommendationName(@Nullable String recommendationName) {
+            $.recommendationName = recommendationName;
             return this;
         }
 
@@ -249,7 +340,6 @@ public final class GetResourceActionsPlainArgs extends com.pulumi.resources.Invo
         public GetResourceActionsPlainArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             $.compartmentIdInSubtree = Objects.requireNonNull($.compartmentIdInSubtree, "expected parameter 'compartmentIdInSubtree' to be non-null");
-            $.recommendationId = Objects.requireNonNull($.recommendationId, "expected parameter 'recommendationId' to be non-null");
             return $;
         }
     }

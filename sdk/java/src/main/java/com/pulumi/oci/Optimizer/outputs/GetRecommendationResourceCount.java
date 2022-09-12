@@ -14,21 +14,14 @@ public final class GetRecommendationResourceCount {
      * @return The count of resources.
      * 
      */
-    private final Integer count;
+    private Integer count;
     /**
      * @return The current status of the recommendation.
      * 
      */
-    private final String status;
+    private String status;
 
-    @CustomType.Constructor
-    private GetRecommendationResourceCount(
-        @CustomType.Parameter("count") Integer count,
-        @CustomType.Parameter("status") String status) {
-        this.count = count;
-        this.status = status;
-    }
-
+    private GetRecommendationResourceCount() {}
     /**
      * @return The count of resources.
      * 
@@ -51,30 +44,32 @@ public final class GetRecommendationResourceCount {
     public static Builder builder(GetRecommendationResourceCount defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Integer count;
         private String status;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetRecommendationResourceCount defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
     	      this.status = defaults.status;
         }
 
+        @CustomType.Setter
         public Builder count(Integer count) {
             this.count = Objects.requireNonNull(count);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
-        }        public GetRecommendationResourceCount build() {
-            return new GetRecommendationResourceCount(count, status);
+        }
+        public GetRecommendationResourceCount build() {
+            final var o = new GetRecommendationResourceCount();
+            o.count = count;
+            o.status = status;
+            return o;
         }
     }
 }

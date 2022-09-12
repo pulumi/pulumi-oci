@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVirtualCircuitBandwidthShapesResult {
-    private final @Nullable List<GetVirtualCircuitBandwidthShapesFilter> filters;
+    private @Nullable List<GetVirtualCircuitBandwidthShapesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final String providerServiceId;
+    private String id;
+    private String providerServiceId;
     /**
      * @return The list of virtual_circuit_bandwidth_shapes.
      * 
      */
-    private final List<GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape> virtualCircuitBandwidthShapes;
+    private List<GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape> virtualCircuitBandwidthShapes;
 
-    @CustomType.Constructor
-    private GetVirtualCircuitBandwidthShapesResult(
-        @CustomType.Parameter("filters") @Nullable List<GetVirtualCircuitBandwidthShapesFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("providerServiceId") String providerServiceId,
-        @CustomType.Parameter("virtualCircuitBandwidthShapes") List<GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape> virtualCircuitBandwidthShapes) {
-        this.filters = filters;
-        this.id = id;
-        this.providerServiceId = providerServiceId;
-        this.virtualCircuitBandwidthShapes = virtualCircuitBandwidthShapes;
-    }
-
+    private GetVirtualCircuitBandwidthShapesResult() {}
     public List<GetVirtualCircuitBandwidthShapesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -66,17 +55,13 @@ public final class GetVirtualCircuitBandwidthShapesResult {
     public static Builder builder(GetVirtualCircuitBandwidthShapesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetVirtualCircuitBandwidthShapesFilter> filters;
         private String id;
         private String providerServiceId;
         private List<GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape> virtualCircuitBandwidthShapes;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetVirtualCircuitBandwidthShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
@@ -85,6 +70,7 @@ public final class GetVirtualCircuitBandwidthShapesResult {
     	      this.virtualCircuitBandwidthShapes = defaults.virtualCircuitBandwidthShapes;
         }
 
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetVirtualCircuitBandwidthShapesFilter> filters) {
             this.filters = filters;
             return this;
@@ -92,22 +78,31 @@ public final class GetVirtualCircuitBandwidthShapesResult {
         public Builder filters(GetVirtualCircuitBandwidthShapesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder providerServiceId(String providerServiceId) {
             this.providerServiceId = Objects.requireNonNull(providerServiceId);
             return this;
         }
+        @CustomType.Setter
         public Builder virtualCircuitBandwidthShapes(List<GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape> virtualCircuitBandwidthShapes) {
             this.virtualCircuitBandwidthShapes = Objects.requireNonNull(virtualCircuitBandwidthShapes);
             return this;
         }
         public Builder virtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape... virtualCircuitBandwidthShapes) {
             return virtualCircuitBandwidthShapes(List.of(virtualCircuitBandwidthShapes));
-        }        public GetVirtualCircuitBandwidthShapesResult build() {
-            return new GetVirtualCircuitBandwidthShapesResult(filters, id, providerServiceId, virtualCircuitBandwidthShapes);
+        }
+        public GetVirtualCircuitBandwidthShapesResult build() {
+            final var o = new GetVirtualCircuitBandwidthShapesResult();
+            o.filters = filters;
+            o.id = id;
+            o.providerServiceId = providerServiceId;
+            o.virtualCircuitBandwidthShapes = virtualCircuitBandwidthShapes;
+            return o;
         }
     }
 }

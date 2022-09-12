@@ -15,21 +15,14 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
      * @return A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
      * 
      */
-    private final List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter> filters;
+    private List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter> filters;
     /**
      * @return The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
      * 
      */
-    private final String name;
+    private String name;
 
-    @CustomType.Constructor
-    private GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup(
-        @CustomType.Parameter("filters") List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter> filters,
-        @CustomType.Parameter("name") String name) {
-        this.filters = filters;
-        this.name = name;
-    }
-
+    private GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup() {}
     /**
      * @return A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
      * 
@@ -52,21 +45,18 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
     public static Builder builder(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter> filters;
         private String name;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
     	      this.name = defaults.name;
         }
 
+        @CustomType.Setter
         public Builder filters(List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter> filters) {
             this.filters = Objects.requireNonNull(filters);
             return this;
@@ -74,11 +64,16 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
         public Builder filters(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
-        }        public GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup build() {
-            return new GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup(filters, name);
+        }
+        public GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup build() {
+            final var o = new GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup();
+            o.filters = filters;
+            o.name = name;
+            return o;
         }
     }
 }

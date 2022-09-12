@@ -13,21 +13,14 @@ public final class GetCertificateCertificateConfigSubjectAlternativeName {
      * @return The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
      * 
      */
-    private final String type;
+    private String type;
     /**
      * @return The subject alternative name.
      * 
      */
-    private final String value;
+    private String value;
 
-    @CustomType.Constructor
-    private GetCertificateCertificateConfigSubjectAlternativeName(
-        @CustomType.Parameter("type") String type,
-        @CustomType.Parameter("value") String value) {
-        this.type = type;
-        this.value = value;
-    }
-
+    private GetCertificateCertificateConfigSubjectAlternativeName() {}
     /**
      * @return The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
      * 
@@ -50,30 +43,32 @@ public final class GetCertificateCertificateConfigSubjectAlternativeName {
     public static Builder builder(GetCertificateCertificateConfigSubjectAlternativeName defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String type;
         private String value;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCertificateCertificateConfigSubjectAlternativeName defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.type = defaults.type;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
         }
+        @CustomType.Setter
         public Builder value(String value) {
             this.value = Objects.requireNonNull(value);
             return this;
-        }        public GetCertificateCertificateConfigSubjectAlternativeName build() {
-            return new GetCertificateCertificateConfigSubjectAlternativeName(type, value);
+        }
+        public GetCertificateCertificateConfigSubjectAlternativeName build() {
+            final var o = new GetCertificateCertificateConfigSubjectAlternativeName();
+            o.type = type;
+            o.value = value;
+            return o;
         }
     }
 }

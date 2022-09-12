@@ -11,17 +11,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class NetworkFirewallPolicyIpAddressList {
-    private final String ipAddressListName;
-    private final @Nullable List<String> ipAddressListValues;
+    private String ipAddressListName;
+    private @Nullable List<String> ipAddressListValues;
 
-    @CustomType.Constructor
-    private NetworkFirewallPolicyIpAddressList(
-        @CustomType.Parameter("ipAddressListName") String ipAddressListName,
-        @CustomType.Parameter("ipAddressListValues") @Nullable List<String> ipAddressListValues) {
-        this.ipAddressListName = ipAddressListName;
-        this.ipAddressListValues = ipAddressListValues;
-    }
-
+    private NetworkFirewallPolicyIpAddressList() {}
     public String ipAddressListName() {
         return this.ipAddressListName;
     }
@@ -36,33 +29,35 @@ public final class NetworkFirewallPolicyIpAddressList {
     public static Builder builder(NetworkFirewallPolicyIpAddressList defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String ipAddressListName;
         private @Nullable List<String> ipAddressListValues;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(NetworkFirewallPolicyIpAddressList defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ipAddressListName = defaults.ipAddressListName;
     	      this.ipAddressListValues = defaults.ipAddressListValues;
         }
 
+        @CustomType.Setter
         public Builder ipAddressListName(String ipAddressListName) {
             this.ipAddressListName = Objects.requireNonNull(ipAddressListName);
             return this;
         }
+        @CustomType.Setter
         public Builder ipAddressListValues(@Nullable List<String> ipAddressListValues) {
             this.ipAddressListValues = ipAddressListValues;
             return this;
         }
         public Builder ipAddressListValues(String... ipAddressListValues) {
             return ipAddressListValues(List.of(ipAddressListValues));
-        }        public NetworkFirewallPolicyIpAddressList build() {
-            return new NetworkFirewallPolicyIpAddressList(ipAddressListName, ipAddressListValues);
+        }
+        public NetworkFirewallPolicyIpAddressList build() {
+            final var o = new NetworkFirewallPolicyIpAddressList();
+            o.ipAddressListName = ipAddressListName;
+            o.ipAddressListValues = ipAddressListValues;
+            return o;
         }
     }
 }

@@ -15,21 +15,14 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransfor
      * @return The list of headers.
      * 
      */
-    private final List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem> items;
+    private List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem> items;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeader(
-        @CustomType.Parameter("items") List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem> items,
-        @CustomType.Parameter("type") String type) {
-        this.items = items;
-        this.type = type;
-    }
-
+    private GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeader() {}
     /**
      * @return The list of headers.
      * 
@@ -52,21 +45,18 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransfor
     public static Builder builder(GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeader defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem> items;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeader defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
@@ -74,11 +64,16 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransfor
         public Builder items(GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeader build() {
-            return new GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeader(items, type);
+        }
+        public GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeader build() {
+            final var o = new GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeader();
+            o.items = items;
+            o.type = type;
+            return o;
         }
     }
 }

@@ -15,42 +15,29 @@ public final class InstancePoolInstanceLoadBalancerBackend {
      * @return The health of the backend as observed by the load balancer.
      * 
      */
-    private final @Nullable String backendHealthStatus;
+    private @Nullable String backendHealthStatus;
     /**
      * @return The name of the backend in the backend set.
      * 
      */
-    private final @Nullable String backendName;
+    private @Nullable String backendName;
     /**
      * @return The name of the backend set on the load balancer.
      * 
      */
-    private final @Nullable String backendSetName;
+    private @Nullable String backendSetName;
     /**
      * @return The OCID of the load balancer attached to the instance pool.
      * 
      */
-    private final @Nullable String loadBalancerId;
+    private @Nullable String loadBalancerId;
     /**
      * @return The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private InstancePoolInstanceLoadBalancerBackend(
-        @CustomType.Parameter("backendHealthStatus") @Nullable String backendHealthStatus,
-        @CustomType.Parameter("backendName") @Nullable String backendName,
-        @CustomType.Parameter("backendSetName") @Nullable String backendSetName,
-        @CustomType.Parameter("loadBalancerId") @Nullable String loadBalancerId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.backendHealthStatus = backendHealthStatus;
-        this.backendName = backendName;
-        this.backendSetName = backendSetName;
-        this.loadBalancerId = loadBalancerId;
-        this.state = state;
-    }
-
+    private InstancePoolInstanceLoadBalancerBackend() {}
     /**
      * @return The health of the backend as observed by the load balancer.
      * 
@@ -94,18 +81,14 @@ public final class InstancePoolInstanceLoadBalancerBackend {
     public static Builder builder(InstancePoolInstanceLoadBalancerBackend defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String backendHealthStatus;
         private @Nullable String backendName;
         private @Nullable String backendSetName;
         private @Nullable String loadBalancerId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(InstancePoolInstanceLoadBalancerBackend defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backendHealthStatus = defaults.backendHealthStatus;
@@ -115,27 +98,39 @@ public final class InstancePoolInstanceLoadBalancerBackend {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder backendHealthStatus(@Nullable String backendHealthStatus) {
             this.backendHealthStatus = backendHealthStatus;
             return this;
         }
+        @CustomType.Setter
         public Builder backendName(@Nullable String backendName) {
             this.backendName = backendName;
             return this;
         }
+        @CustomType.Setter
         public Builder backendSetName(@Nullable String backendSetName) {
             this.backendSetName = backendSetName;
             return this;
         }
+        @CustomType.Setter
         public Builder loadBalancerId(@Nullable String loadBalancerId) {
             this.loadBalancerId = loadBalancerId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public InstancePoolInstanceLoadBalancerBackend build() {
-            return new InstancePoolInstanceLoadBalancerBackend(backendHealthStatus, backendName, backendSetName, loadBalancerId, state);
+        }
+        public InstancePoolInstanceLoadBalancerBackend build() {
+            final var o = new InstancePoolInstanceLoadBalancerBackend();
+            o.backendHealthStatus = backendHealthStatus;
+            o.backendName = backendName;
+            o.backendSetName = backendSetName;
+            o.loadBalancerId = loadBalancerId;
+            o.state = state;
+            return o;
         }
     }
 }

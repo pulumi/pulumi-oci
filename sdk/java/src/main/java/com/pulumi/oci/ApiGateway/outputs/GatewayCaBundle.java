@@ -15,28 +15,19 @@ public final class GatewayCaBundle {
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    private final @Nullable String caBundleId;
+    private @Nullable String caBundleId;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    private final @Nullable String certificateAuthorityId;
+    private @Nullable String certificateAuthorityId;
     /**
      * @return (Updatable) Type of the Response Cache.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private GatewayCaBundle(
-        @CustomType.Parameter("caBundleId") @Nullable String caBundleId,
-        @CustomType.Parameter("certificateAuthorityId") @Nullable String certificateAuthorityId,
-        @CustomType.Parameter("type") String type) {
-        this.caBundleId = caBundleId;
-        this.certificateAuthorityId = certificateAuthorityId;
-        this.type = type;
-    }
-
+    private GatewayCaBundle() {}
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
@@ -66,16 +57,12 @@ public final class GatewayCaBundle {
     public static Builder builder(GatewayCaBundle defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String caBundleId;
         private @Nullable String certificateAuthorityId;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GatewayCaBundle defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.caBundleId = defaults.caBundleId;
@@ -83,19 +70,27 @@ public final class GatewayCaBundle {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder caBundleId(@Nullable String caBundleId) {
             this.caBundleId = caBundleId;
             return this;
         }
+        @CustomType.Setter
         public Builder certificateAuthorityId(@Nullable String certificateAuthorityId) {
             this.certificateAuthorityId = certificateAuthorityId;
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public GatewayCaBundle build() {
-            return new GatewayCaBundle(caBundleId, certificateAuthorityId, type);
+        }
+        public GatewayCaBundle build() {
+            final var o = new GatewayCaBundle();
+            o.caBundleId = caBundleId;
+            o.certificateAuthorityId = certificateAuthorityId;
+            o.type = type;
+            return o;
         }
     }
 }

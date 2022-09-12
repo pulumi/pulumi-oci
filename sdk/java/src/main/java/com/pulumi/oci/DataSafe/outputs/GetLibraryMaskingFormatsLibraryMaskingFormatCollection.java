@@ -10,13 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetLibraryMaskingFormatsLibraryMaskingFormatCollection {
-    private final List<GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem> items;
+    private List<GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem> items;
 
-    @CustomType.Constructor
-    private GetLibraryMaskingFormatsLibraryMaskingFormatCollection(@CustomType.Parameter("items") List<GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem> items) {
-        this.items = items;
-    }
-
+    private GetLibraryMaskingFormatsLibraryMaskingFormatCollection() {}
     public List<GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem> items() {
         return this.items;
     }
@@ -28,27 +24,27 @@ public final class GetLibraryMaskingFormatsLibraryMaskingFormatCollection {
     public static Builder builder(GetLibraryMaskingFormatsLibraryMaskingFormatCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLibraryMaskingFormatsLibraryMaskingFormatCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(List<GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem... items) {
             return items(List.of(items));
-        }        public GetLibraryMaskingFormatsLibraryMaskingFormatCollection build() {
-            return new GetLibraryMaskingFormatsLibraryMaskingFormatCollection(items);
+        }
+        public GetLibraryMaskingFormatsLibraryMaskingFormatCollection build() {
+            final var o = new GetLibraryMaskingFormatsLibraryMaskingFormatCollection();
+            o.items = items;
+            return o;
         }
     }
 }

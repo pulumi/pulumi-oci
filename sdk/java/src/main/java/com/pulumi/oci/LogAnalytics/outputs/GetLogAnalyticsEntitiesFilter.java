@@ -17,20 +17,11 @@ public final class GetLogAnalyticsEntitiesFilter {
      * @return A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
      * 
      */
-    private final String name;
-    private final @Nullable Boolean regex;
-    private final List<String> values;
+    private String name;
+    private @Nullable Boolean regex;
+    private List<String> values;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsEntitiesFilter(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("regex") @Nullable Boolean regex,
-        @CustomType.Parameter("values") List<String> values) {
-        this.name = name;
-        this.regex = regex;
-        this.values = values;
-    }
-
+    private GetLogAnalyticsEntitiesFilter() {}
     /**
      * @return A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
      * 
@@ -52,16 +43,12 @@ public final class GetLogAnalyticsEntitiesFilter {
     public static Builder builder(GetLogAnalyticsEntitiesFilter defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private @Nullable Boolean regex;
         private List<String> values;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsEntitiesFilter defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
@@ -69,22 +56,30 @@ public final class GetLogAnalyticsEntitiesFilter {
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder regex(@Nullable Boolean regex) {
             this.regex = regex;
             return this;
         }
+        @CustomType.Setter
         public Builder values(List<String> values) {
             this.values = Objects.requireNonNull(values);
             return this;
         }
         public Builder values(String... values) {
             return values(List.of(values));
-        }        public GetLogAnalyticsEntitiesFilter build() {
-            return new GetLogAnalyticsEntitiesFilter(name, regex, values);
+        }
+        public GetLogAnalyticsEntitiesFilter build() {
+            final var o = new GetLogAnalyticsEntitiesFilter();
+            o.name = name;
+            o.regex = regex;
+            o.values = values;
+            return o;
         }
     }
 }

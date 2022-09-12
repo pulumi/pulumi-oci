@@ -72,6 +72,7 @@ const (
 	eventsMod                       = "Events"                       // Events
 	fileStorageMod                  = "FileStorage"                  // File Storage
 	functionsMod                    = "Functions"                    // Functions
+	fusionAppsMod                   = "FusionApps"                   // Fusion Apps
 	genericArtifactsContentMod      = "GenericArtifactsContent"      // Generic Artifacts Content
 	goldenGateMod                   = "GoldenGate"                   // Golden Gate
 	healthChecksMod                 = "HealthChecks"                 // Health Checks
@@ -249,6 +250,7 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_certificates_management_certificate":           {Tok: tfbridge.MakeResource(mainPkg, certificatesManagementMod, "Certificate")},
 			"oci_certificates_management_certificate_authority": {Tok: tfbridge.MakeResource(mainPkg, certificatesManagementMod, "CertificateAuthority")},
 
+			"oci_cloud_guard_data_source":               {Tok: tfbridge.MakeResource(mainPkg, cloudGuardMod, "CloudGuardDataSource")},
 			"oci_cloud_guard_cloud_guard_configuration": {Tok: tfbridge.MakeResource(mainPkg, cloudGuardMod, "CloudGuardConfiguration")},
 			"oci_cloud_guard_data_mask_rule":            {Tok: tfbridge.MakeResource(mainPkg, cloudGuardMod, "DataMaskRule")},
 			"oci_cloud_guard_detector_recipe":           {Tok: tfbridge.MakeResource(mainPkg, cloudGuardMod, "DetectorRecipe")},
@@ -543,6 +545,12 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_functions_function":        {Tok: tfbridge.MakeResource(mainPkg, functionsMod, "Function")},
 			"oci_functions_invoke_function": {Tok: tfbridge.MakeResource(mainPkg, functionsMod, "InvokeFunction")},
 
+			"oci_fusion_apps_fusion_environment":                       {Tok: tfbridge.MakeResource(mainPkg, fusionAppsMod, "FusionEnvironment")},
+			"oci_fusion_apps_fusion_environment_admin_user":            {Tok: tfbridge.MakeResource(mainPkg, fusionAppsMod, "FusionEnvironmentAdminUser")},
+			"oci_fusion_apps_fusion_environment_data_masking_activity": {Tok: tfbridge.MakeResource(mainPkg, fusionAppsMod, "FusionEnvironmentDataMaskingActivity")},
+			"oci_fusion_apps_fusion_environment_family":                {Tok: tfbridge.MakeResource(mainPkg, fusionAppsMod, "FusionEnvironmentFamily")},
+			"oci_fusion_apps_fusion_environment_refresh_activity":      {Tok: tfbridge.MakeResource(mainPkg, fusionAppsMod, "FusionEnvironmentRefreshActivity")},
+
 			"oci_generic_artifacts_content_artifact_by_path": {Tok: tfbridge.MakeResource(mainPkg, genericArtifactsContentMod, "ArtifactByPath")},
 
 			"oci_golden_gate_database_registration": {Tok: tfbridge.MakeResource(mainPkg, goldenGateMod, "DatabaseRegistration")},
@@ -656,11 +664,12 @@ func Provider() tfbridge.ProviderInfo {
 
 			"oci_monitoring_alarm": {Tok: tfbridge.MakeResource(mainPkg, monitoringMod, "Alarm")},
 
-			"oci_mysql_analytics_cluster": {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "AnalyticsCluster")},
-			"oci_mysql_channel":           {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "Channel")},
-			"oci_mysql_heat_wave_cluster": {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "HeatWaveCluster")},
-			"oci_mysql_mysql_backup":      {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "MysqlBackup")},
-			"oci_mysql_mysql_db_system":   {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "MysqlDbSystem")},
+			"oci_mysql_analytics_cluster":   {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "AnalyticsCluster")},
+			"oci_mysql_mysql_configuration": {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "MysqlConfiguration")},
+			"oci_mysql_channel":             {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "Channel")},
+			"oci_mysql_heat_wave_cluster":   {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "HeatWaveCluster")},
+			"oci_mysql_mysql_backup":        {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "MysqlBackup")},
+			"oci_mysql_mysql_db_system":     {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "MysqlDbSystem")},
 
 			"oci_network_load_balancer_backend":               {Tok: tfbridge.MakeResource(mainPkg, networkLoadBalancerMod, "Backend")},
 			"oci_network_load_balancer_backend_set":           {Tok: tfbridge.MakeResource(mainPkg, networkLoadBalancerMod, "BackendSet")},
@@ -934,6 +943,12 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_cloud_guard_cloud_guard_configuration": {Tok: tfbridge.MakeDataSource(mainPkg, cloudGuardMod, "getCloudGuardConfiguration")},
 			"oci_cloud_guard_data_mask_rule":            {Tok: tfbridge.MakeDataSource(mainPkg, cloudGuardMod, "getDataMaskRule")},
 			"oci_cloud_guard_data_mask_rules":           {Tok: tfbridge.MakeDataSource(mainPkg, cloudGuardMod, "getDataMaskRules")},
+			"oci_cloud_guard_data_source":               {Tok: tfbridge.MakeDataSource(mainPkg, cloudGuardMod, "getDataSource")},
+			"oci_cloud_guard_data_source_event":         {Tok: tfbridge.MakeDataSource(mainPkg, cloudGuardMod, "getDataSourceEvent")},
+			"oci_cloud_guard_data_source_events":        {Tok: tfbridge.MakeDataSource(mainPkg, cloudGuardMod, "getDataSourceEvents")},
+			"oci_cloud_guard_data_sources":              {Tok: tfbridge.MakeDataSource(mainPkg, cloudGuardMod, "getDataSources")},
+			"oci_cloud_guard_problem_entities":          {Tok: tfbridge.MakeDataSource(mainPkg, cloudGuardMod, "getProblemEntities")},
+			"oci_cloud_guard_problem_entity":            {Tok: tfbridge.MakeDataSource(mainPkg, cloudGuardMod, "getProblemEntity")},
 			"oci_cloud_guard_detector_recipe":           {Tok: tfbridge.MakeDataSource(mainPkg, cloudGuardMod, "getDetectorRecipe")},
 			"oci_cloud_guard_detector_recipes":          {Tok: tfbridge.MakeDataSource(mainPkg, cloudGuardMod, "getDetectorRecipes")},
 			"oci_cloud_guard_managed_list":              {Tok: tfbridge.MakeDataSource(mainPkg, cloudGuardMod, "getManagedList")},
@@ -1309,10 +1324,13 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_database_external_pluggable_databases":                         {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getExternalPluggableDatabases")},
 			"oci_database_flex_components":                                      {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getFlexComponents")},
 			"oci_database_gi_versions":                                          {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getGiVersions")},
+			"oci_database_infrastructure_target_version":                        {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getInfrastructureTargetVersion")},
 			"oci_database_key_store":                                            {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getKeyStore")},
 			"oci_database_key_stores":                                           {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getKeyStores")},
 			"oci_database_maintenance_run":                                      {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getMaintenanceRun")},
 			"oci_database_maintenance_runs":                                     {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getMaintenanceRuns")},
+			"oci_database_management_managed_database_preferred_credential":     {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getManagedPreferredCredential")},
+			"oci_database_management_managed_database_preferred_credentials":    {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getManagedPreferredCredentials")},
 			"oci_database_pluggable_database":                                   {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getPluggableDatabase")},
 			"oci_database_pluggable_databases":                                  {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getPluggableDatabases")},
 			"oci_database_vm_cluster":                                           {Tok: tfbridge.MakeDataSource(mainPkg, databaseMod, "getVmCluster")},
@@ -1543,6 +1561,26 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_functions_applications": {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getApplications")},
 			"oci_functions_function":     {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFunction")},
 			"oci_functions_functions":    {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFunctions")},
+
+			"oci_fusion_apps_fusion_environment":                             {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironment")},
+			"oci_fusion_apps_fusion_environment_admin_user":                  {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironmentAdminUser")},
+			"oci_fusion_apps_fusion_environment_admin_users":                 {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironmentAdminUsers")},
+			"oci_fusion_apps_fusion_environment_data_masking_activities":     {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironmentDataMaskingActivities")},
+			"oci_fusion_apps_fusion_environment_data_masking_activity":       {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironmentDataMaskingActivity")},
+			"oci_fusion_apps_fusion_environment_families":                    {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironmentFamilies")},
+			"oci_fusion_apps_fusion_environment_family":                      {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironmentFamily")},
+			"oci_fusion_apps_fusion_environment_family_limits_and_usage":     {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironmentFamilyLimitsAndUsage")},
+			"oci_fusion_apps_fusion_environment_family_subscription_detail":  {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironmentFamilySubscriptionDetail")},
+			"oci_fusion_apps_fusion_environment_refresh_activities":          {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironmentRefreshActivities")},
+			"oci_fusion_apps_fusion_environment_refresh_activity":            {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironmentRefreshActivity")},
+			"oci_fusion_apps_fusion_environment_scheduled_activities":        {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironmentScheduledActivities")},
+			"oci_fusion_apps_fusion_environment_scheduled_activity":          {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironmentScheduledActivity")},
+			"oci_fusion_apps_fusion_environment_service_attachment":          {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironmentServiceAttachment")},
+			"oci_fusion_apps_fusion_environment_service_attachments":         {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironmentServiceAttachments")},
+			"oci_fusion_apps_fusion_environment_status":                      {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironmentStatus")},
+			"oci_fusion_apps_fusion_environment_time_available_for_refresh":  {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironmentTimeAvailableForRefresh")},
+			"oci_fusion_apps_fusion_environment_time_available_for_refreshs": {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironmentTimeAvailableForRefreshs")},
+			"oci_fusion_apps_fusion_environments":                            {Tok: tfbridge.MakeDataSource(mainPkg, functionsMod, "getFusionEnvironments")},
 
 			"oci_generic_artifacts_content_artifact_by_path":          {Tok: tfbridge.MakeDataSource(mainPkg, genericArtifactsContentMod, "getArtifactByPath")},
 			"oci_generic_artifacts_content_generic_artifacts_content": {Tok: tfbridge.MakeDataSource(mainPkg, genericArtifactsContentMod, "getGenericArtifactsContent")},
@@ -1985,6 +2023,8 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_usage_proxy_subscription_products":         {Tok: tfbridge.MakeDataSource(mainPkg, usageProxyMod, "getSubscriptionProducts")},
 			"oci_usage_proxy_subscription_redeemable_user":  {Tok: tfbridge.MakeDataSource(mainPkg, usageProxyMod, "getSubscriptionRedeemableUser")},
 			"oci_usage_proxy_subscription_redeemable_users": {Tok: tfbridge.MakeDataSource(mainPkg, usageProxyMod, "getSubscriptionRedeemableUsers")},
+			"oci_usage_proxy_subscription_redemption":       {Tok: tfbridge.MakeDataSource(mainPkg, usageProxyMod, "getSubscriptionRedemption")},
+			"oci_usage_proxy_subscription_redemptions":      {Tok: tfbridge.MakeDataSource(mainPkg, usageProxyMod, "getSubscriptionRedemptions")},
 			"oci_usage_proxy_subscription_reward":           {Tok: tfbridge.MakeDataSource(mainPkg, usageProxyMod, "getSubscriptionReward")},
 			"oci_usage_proxy_subscription_rewards":          {Tok: tfbridge.MakeDataSource(mainPkg, usageProxyMod, "getSubscriptionRewards")},
 

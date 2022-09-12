@@ -13,21 +13,14 @@ public final class BootVolumeSourceDetails {
      * @return The OCID of the boot volume replica.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The type can be one of these values: `bootVolume`, `bootVolumeBackup`, `bootVolumeReplica`
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private BootVolumeSourceDetails(
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("type") String type) {
-        this.id = id;
-        this.type = type;
-    }
-
+    private BootVolumeSourceDetails() {}
     /**
      * @return The OCID of the boot volume replica.
      * 
@@ -50,30 +43,32 @@ public final class BootVolumeSourceDetails {
     public static Builder builder(BootVolumeSourceDetails defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String id;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BootVolumeSourceDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public BootVolumeSourceDetails build() {
-            return new BootVolumeSourceDetails(id, type);
+        }
+        public BootVolumeSourceDetails build() {
+            final var o = new BootVolumeSourceDetails();
+            o.id = id;
+            o.type = type;
+            return o;
         }
     }
 }

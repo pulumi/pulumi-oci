@@ -9,23 +9,12 @@ import java.util.Objects;
 
 @CustomType
 public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride {
-    private final String matchType;
-    private final String matchValue;
-    private final String propertyName;
-    private final String propertyValue;
+    private String matchType;
+    private String matchValue;
+    private String propertyName;
+    private String propertyValue;
 
-    @CustomType.Constructor
-    private GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride(
-        @CustomType.Parameter("matchType") String matchType,
-        @CustomType.Parameter("matchValue") String matchValue,
-        @CustomType.Parameter("propertyName") String propertyName,
-        @CustomType.Parameter("propertyValue") String propertyValue) {
-        this.matchType = matchType;
-        this.matchValue = matchValue;
-        this.propertyName = propertyName;
-        this.propertyValue = propertyValue;
-    }
-
+    private GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride() {}
     public String matchType() {
         return this.matchType;
     }
@@ -46,17 +35,13 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
     public static Builder builder(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String matchType;
         private String matchValue;
         private String propertyName;
         private String propertyValue;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.matchType = defaults.matchType;
@@ -65,23 +50,33 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
     	      this.propertyValue = defaults.propertyValue;
         }
 
+        @CustomType.Setter
         public Builder matchType(String matchType) {
             this.matchType = Objects.requireNonNull(matchType);
             return this;
         }
+        @CustomType.Setter
         public Builder matchValue(String matchValue) {
             this.matchValue = Objects.requireNonNull(matchValue);
             return this;
         }
+        @CustomType.Setter
         public Builder propertyName(String propertyName) {
             this.propertyName = Objects.requireNonNull(propertyName);
             return this;
         }
+        @CustomType.Setter
         public Builder propertyValue(String propertyValue) {
             this.propertyValue = Objects.requireNonNull(propertyValue);
             return this;
-        }        public GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride build() {
-            return new GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride(matchType, matchValue, propertyName, propertyValue);
+        }
+        public GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride build() {
+            final var o = new GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride();
+            o.matchType = matchType;
+            o.matchValue = matchValue;
+            o.propertyName = propertyName;
+            o.propertyValue = propertyValue;
+            return o;
         }
     }
 }

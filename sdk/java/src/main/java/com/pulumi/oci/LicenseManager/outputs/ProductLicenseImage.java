@@ -15,42 +15,29 @@ public final class ProductLicenseImage {
      * @return The image ID associated with the product license.
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return (Updatable) Marketplace image listing ID.
      * 
      */
-    private final String listingId;
+    private String listingId;
     /**
      * @return The listing name associated with the product license.
      * 
      */
-    private final @Nullable String listingName;
+    private @Nullable String listingName;
     /**
      * @return (Updatable) Image package version.
      * 
      */
-    private final String packageVersion;
+    private String packageVersion;
     /**
      * @return The image publisher.
      * 
      */
-    private final @Nullable String publisher;
+    private @Nullable String publisher;
 
-    @CustomType.Constructor
-    private ProductLicenseImage(
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("listingId") String listingId,
-        @CustomType.Parameter("listingName") @Nullable String listingName,
-        @CustomType.Parameter("packageVersion") String packageVersion,
-        @CustomType.Parameter("publisher") @Nullable String publisher) {
-        this.id = id;
-        this.listingId = listingId;
-        this.listingName = listingName;
-        this.packageVersion = packageVersion;
-        this.publisher = publisher;
-    }
-
+    private ProductLicenseImage() {}
     /**
      * @return The image ID associated with the product license.
      * 
@@ -94,18 +81,14 @@ public final class ProductLicenseImage {
     public static Builder builder(ProductLicenseImage defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String id;
         private String listingId;
         private @Nullable String listingName;
         private String packageVersion;
         private @Nullable String publisher;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(ProductLicenseImage defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
@@ -115,27 +98,39 @@ public final class ProductLicenseImage {
     	      this.publisher = defaults.publisher;
         }
 
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder listingId(String listingId) {
             this.listingId = Objects.requireNonNull(listingId);
             return this;
         }
+        @CustomType.Setter
         public Builder listingName(@Nullable String listingName) {
             this.listingName = listingName;
             return this;
         }
+        @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
             this.packageVersion = Objects.requireNonNull(packageVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder publisher(@Nullable String publisher) {
             this.publisher = publisher;
             return this;
-        }        public ProductLicenseImage build() {
-            return new ProductLicenseImage(id, listingId, listingName, packageVersion, publisher);
+        }
+        public ProductLicenseImage build() {
+            final var o = new ProductLicenseImage();
+            o.id = id;
+            o.listingId = listingId;
+            o.listingName = listingName;
+            o.packageVersion = packageVersion;
+            o.publisher = publisher;
+            return o;
         }
     }
 }

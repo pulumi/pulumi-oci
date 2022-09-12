@@ -13,13 +13,9 @@ public final class GetFunctionTraceConfig {
      * @return Define if tracing is enabled for the resource.
      * 
      */
-    private final Boolean isEnabled;
+    private Boolean isEnabled;
 
-    @CustomType.Constructor
-    private GetFunctionTraceConfig(@CustomType.Parameter("isEnabled") Boolean isEnabled) {
-        this.isEnabled = isEnabled;
-    }
-
+    private GetFunctionTraceConfig() {}
     /**
      * @return Define if tracing is enabled for the resource.
      * 
@@ -35,24 +31,24 @@ public final class GetFunctionTraceConfig {
     public static Builder builder(GetFunctionTraceConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Boolean isEnabled;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetFunctionTraceConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isEnabled = defaults.isEnabled;
         }
 
+        @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = Objects.requireNonNull(isEnabled);
             return this;
-        }        public GetFunctionTraceConfig build() {
-            return new GetFunctionTraceConfig(isEnabled);
+        }
+        public GetFunctionTraceConfig build() {
+            final var o = new GetFunctionTraceConfig();
+            o.isEnabled = isEnabled;
+            return o;
         }
     }
 }

@@ -13,13 +13,9 @@ public final class GetJobOutputItem {
      * @return Job output line.
      * 
      */
-    private final String message;
+    private String message;
 
-    @CustomType.Constructor
-    private GetJobOutputItem(@CustomType.Parameter("message") String message) {
-        this.message = message;
-    }
-
+    private GetJobOutputItem() {}
     /**
      * @return Job output line.
      * 
@@ -35,24 +31,24 @@ public final class GetJobOutputItem {
     public static Builder builder(GetJobOutputItem defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String message;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetJobOutputItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.message = defaults.message;
         }
 
+        @CustomType.Setter
         public Builder message(String message) {
             this.message = Objects.requireNonNull(message);
             return this;
-        }        public GetJobOutputItem build() {
-            return new GetJobOutputItem(message);
+        }
+        public GetJobOutputItem build() {
+            final var o = new GetJobOutputItem();
+            o.message = message;
+            return o;
         }
     }
 }

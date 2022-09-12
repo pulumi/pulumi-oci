@@ -14,44 +14,27 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBdsInstanceApiKeysResult {
-    private final List<GetBdsInstanceApiKeysBdsApiKey> bdsApiKeys;
-    private final String bdsInstanceId;
-    private final @Nullable String displayName;
-    private final @Nullable List<GetBdsInstanceApiKeysFilter> filters;
+    private List<GetBdsInstanceApiKeysBdsApiKey> bdsApiKeys;
+    private String bdsInstanceId;
+    private @Nullable String displayName;
+    private @Nullable List<GetBdsInstanceApiKeysFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return The current status of the API key.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The user OCID for which this API key was created.
      * 
      */
-    private final @Nullable String userId;
+    private @Nullable String userId;
 
-    @CustomType.Constructor
-    private GetBdsInstanceApiKeysResult(
-        @CustomType.Parameter("bdsApiKeys") List<GetBdsInstanceApiKeysBdsApiKey> bdsApiKeys,
-        @CustomType.Parameter("bdsInstanceId") String bdsInstanceId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("filters") @Nullable List<GetBdsInstanceApiKeysFilter> filters,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("userId") @Nullable String userId) {
-        this.bdsApiKeys = bdsApiKeys;
-        this.bdsInstanceId = bdsInstanceId;
-        this.displayName = displayName;
-        this.filters = filters;
-        this.id = id;
-        this.state = state;
-        this.userId = userId;
-    }
-
+    private GetBdsInstanceApiKeysResult() {}
     public List<GetBdsInstanceApiKeysBdsApiKey> bdsApiKeys() {
         return this.bdsApiKeys;
     }
@@ -93,7 +76,7 @@ public final class GetBdsInstanceApiKeysResult {
     public static Builder builder(GetBdsInstanceApiKeysResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<GetBdsInstanceApiKeysBdsApiKey> bdsApiKeys;
         private String bdsInstanceId;
@@ -102,11 +85,7 @@ public final class GetBdsInstanceApiKeysResult {
         private String id;
         private @Nullable String state;
         private @Nullable String userId;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetBdsInstanceApiKeysResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bdsApiKeys = defaults.bdsApiKeys;
@@ -118,6 +97,7 @@ public final class GetBdsInstanceApiKeysResult {
     	      this.userId = defaults.userId;
         }
 
+        @CustomType.Setter
         public Builder bdsApiKeys(List<GetBdsInstanceApiKeysBdsApiKey> bdsApiKeys) {
             this.bdsApiKeys = Objects.requireNonNull(bdsApiKeys);
             return this;
@@ -125,14 +105,17 @@ public final class GetBdsInstanceApiKeysResult {
         public Builder bdsApiKeys(GetBdsInstanceApiKeysBdsApiKey... bdsApiKeys) {
             return bdsApiKeys(List.of(bdsApiKeys));
         }
+        @CustomType.Setter
         public Builder bdsInstanceId(String bdsInstanceId) {
             this.bdsInstanceId = Objects.requireNonNull(bdsInstanceId);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetBdsInstanceApiKeysFilter> filters) {
             this.filters = filters;
             return this;
@@ -140,19 +123,31 @@ public final class GetBdsInstanceApiKeysResult {
         public Builder filters(GetBdsInstanceApiKeysFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder userId(@Nullable String userId) {
             this.userId = userId;
             return this;
-        }        public GetBdsInstanceApiKeysResult build() {
-            return new GetBdsInstanceApiKeysResult(bdsApiKeys, bdsInstanceId, displayName, filters, id, state, userId);
+        }
+        public GetBdsInstanceApiKeysResult build() {
+            final var o = new GetBdsInstanceApiKeysResult();
+            o.bdsApiKeys = bdsApiKeys;
+            o.bdsInstanceId = bdsInstanceId;
+            o.displayName = displayName;
+            o.filters = filters;
+            o.id = id;
+            o.state = state;
+            o.userId = userId;
+            return o;
         }
     }
 }

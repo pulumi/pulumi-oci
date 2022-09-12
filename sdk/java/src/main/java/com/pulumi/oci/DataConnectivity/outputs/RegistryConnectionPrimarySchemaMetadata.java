@@ -18,103 +18,74 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RegistryConnectionPrimarySchemaMetadata {
     /**
-     * @return (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
+     * @return (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name, and description.
      * 
      */
-    private final @Nullable RegistryConnectionPrimarySchemaMetadataAggregator aggregator;
+    private @Nullable RegistryConnectionPrimarySchemaMetadataAggregator aggregator;
     /**
      * @return (Updatable) The owning object&#39;s key for this object.
      * 
      */
-    private final @Nullable String aggregatorKey;
+    private @Nullable String aggregatorKey;
     /**
      * @return (Updatable) The user that created the object.
      * 
      */
-    private final @Nullable String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return (Updatable) The user that created the object.
      * 
      */
-    private final @Nullable String createdByName;
+    private @Nullable String createdByName;
     /**
-     * @return (Updatable) The full path to identify this object.
+     * @return (Updatable) The full path to identify the object.
      * 
      */
-    private final @Nullable String identifierPath;
+    private @Nullable String identifierPath;
     /**
      * @return (Updatable) Information property fields.
      * 
      */
-    private final @Nullable Map<String,Object> infoFields;
+    private @Nullable Map<String,Object> infoFields;
     /**
-     * @return (Updatable) Specifies whether this object is a favorite or not.
+     * @return (Updatable) Specifies whether the object is a favorite.
      * 
      */
-    private final @Nullable Boolean isFavorite;
+    private @Nullable Boolean isFavorite;
     /**
-     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      * 
      */
-    private final @Nullable List<String> labels;
+    private @Nullable List<String> labels;
     /**
      * @return (Updatable) The registry version.
      * 
      */
-    private final @Nullable Integer registryVersion;
+    private @Nullable Integer registryVersion;
     /**
      * @return (Updatable) The date and time that the object was created.
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return (Updatable) The date and time that the object was updated.
      * 
      */
-    private final @Nullable String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return (Updatable) The user that updated the object.
      * 
      */
-    private final @Nullable String updatedBy;
+    private @Nullable String updatedBy;
     /**
      * @return (Updatable) The user that updated the object.
      * 
      */
-    private final @Nullable String updatedByName;
+    private @Nullable String updatedByName;
 
-    @CustomType.Constructor
-    private RegistryConnectionPrimarySchemaMetadata(
-        @CustomType.Parameter("aggregator") @Nullable RegistryConnectionPrimarySchemaMetadataAggregator aggregator,
-        @CustomType.Parameter("aggregatorKey") @Nullable String aggregatorKey,
-        @CustomType.Parameter("createdBy") @Nullable String createdBy,
-        @CustomType.Parameter("createdByName") @Nullable String createdByName,
-        @CustomType.Parameter("identifierPath") @Nullable String identifierPath,
-        @CustomType.Parameter("infoFields") @Nullable Map<String,Object> infoFields,
-        @CustomType.Parameter("isFavorite") @Nullable Boolean isFavorite,
-        @CustomType.Parameter("labels") @Nullable List<String> labels,
-        @CustomType.Parameter("registryVersion") @Nullable Integer registryVersion,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated,
-        @CustomType.Parameter("timeUpdated") @Nullable String timeUpdated,
-        @CustomType.Parameter("updatedBy") @Nullable String updatedBy,
-        @CustomType.Parameter("updatedByName") @Nullable String updatedByName) {
-        this.aggregator = aggregator;
-        this.aggregatorKey = aggregatorKey;
-        this.createdBy = createdBy;
-        this.createdByName = createdByName;
-        this.identifierPath = identifierPath;
-        this.infoFields = infoFields;
-        this.isFavorite = isFavorite;
-        this.labels = labels;
-        this.registryVersion = registryVersion;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.updatedBy = updatedBy;
-        this.updatedByName = updatedByName;
-    }
-
+    private RegistryConnectionPrimarySchemaMetadata() {}
     /**
-     * @return (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
+     * @return (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name, and description.
      * 
      */
     public Optional<RegistryConnectionPrimarySchemaMetadataAggregator> aggregator() {
@@ -142,7 +113,7 @@ public final class RegistryConnectionPrimarySchemaMetadata {
         return Optional.ofNullable(this.createdByName);
     }
     /**
-     * @return (Updatable) The full path to identify this object.
+     * @return (Updatable) The full path to identify the object.
      * 
      */
     public Optional<String> identifierPath() {
@@ -156,14 +127,14 @@ public final class RegistryConnectionPrimarySchemaMetadata {
         return this.infoFields == null ? Map.of() : this.infoFields;
     }
     /**
-     * @return (Updatable) Specifies whether this object is a favorite or not.
+     * @return (Updatable) Specifies whether the object is a favorite.
      * 
      */
     public Optional<Boolean> isFavorite() {
         return Optional.ofNullable(this.isFavorite);
     }
     /**
-     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
      * 
      */
     public List<String> labels() {
@@ -212,7 +183,7 @@ public final class RegistryConnectionPrimarySchemaMetadata {
     public static Builder builder(RegistryConnectionPrimarySchemaMetadata defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable RegistryConnectionPrimarySchemaMetadataAggregator aggregator;
         private @Nullable String aggregatorKey;
@@ -227,11 +198,7 @@ public final class RegistryConnectionPrimarySchemaMetadata {
         private @Nullable String timeUpdated;
         private @Nullable String updatedBy;
         private @Nullable String updatedByName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(RegistryConnectionPrimarySchemaMetadata defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.aggregator = defaults.aggregator;
@@ -249,34 +216,42 @@ public final class RegistryConnectionPrimarySchemaMetadata {
     	      this.updatedByName = defaults.updatedByName;
         }
 
+        @CustomType.Setter
         public Builder aggregator(@Nullable RegistryConnectionPrimarySchemaMetadataAggregator aggregator) {
             this.aggregator = aggregator;
             return this;
         }
+        @CustomType.Setter
         public Builder aggregatorKey(@Nullable String aggregatorKey) {
             this.aggregatorKey = aggregatorKey;
             return this;
         }
+        @CustomType.Setter
         public Builder createdBy(@Nullable String createdBy) {
             this.createdBy = createdBy;
             return this;
         }
+        @CustomType.Setter
         public Builder createdByName(@Nullable String createdByName) {
             this.createdByName = createdByName;
             return this;
         }
+        @CustomType.Setter
         public Builder identifierPath(@Nullable String identifierPath) {
             this.identifierPath = identifierPath;
             return this;
         }
+        @CustomType.Setter
         public Builder infoFields(@Nullable Map<String,Object> infoFields) {
             this.infoFields = infoFields;
             return this;
         }
+        @CustomType.Setter
         public Builder isFavorite(@Nullable Boolean isFavorite) {
             this.isFavorite = isFavorite;
             return this;
         }
+        @CustomType.Setter
         public Builder labels(@Nullable List<String> labels) {
             this.labels = labels;
             return this;
@@ -284,27 +259,47 @@ public final class RegistryConnectionPrimarySchemaMetadata {
         public Builder labels(String... labels) {
             return labels(List.of(labels));
         }
+        @CustomType.Setter
         public Builder registryVersion(@Nullable Integer registryVersion) {
             this.registryVersion = registryVersion;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
             this.timeUpdated = timeUpdated;
             return this;
         }
+        @CustomType.Setter
         public Builder updatedBy(@Nullable String updatedBy) {
             this.updatedBy = updatedBy;
             return this;
         }
+        @CustomType.Setter
         public Builder updatedByName(@Nullable String updatedByName) {
             this.updatedByName = updatedByName;
             return this;
-        }        public RegistryConnectionPrimarySchemaMetadata build() {
-            return new RegistryConnectionPrimarySchemaMetadata(aggregator, aggregatorKey, createdBy, createdByName, identifierPath, infoFields, isFavorite, labels, registryVersion, timeCreated, timeUpdated, updatedBy, updatedByName);
+        }
+        public RegistryConnectionPrimarySchemaMetadata build() {
+            final var o = new RegistryConnectionPrimarySchemaMetadata();
+            o.aggregator = aggregator;
+            o.aggregatorKey = aggregatorKey;
+            o.createdBy = createdBy;
+            o.createdByName = createdByName;
+            o.identifierPath = identifierPath;
+            o.infoFields = infoFields;
+            o.isFavorite = isFavorite;
+            o.labels = labels;
+            o.registryVersion = registryVersion;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            o.updatedBy = updatedBy;
+            o.updatedByName = updatedByName;
+            return o;
         }
     }
 }

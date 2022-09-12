@@ -15,21 +15,14 @@ public final class GetEventsAuditEventDataStateChange {
      * @return Provides the current state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `previous`.
      * 
      */
-    private final Map<String,Object> current;
+    private Map<String,Object> current;
     /**
      * @return Provides the previous state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `current`.
      * 
      */
-    private final Map<String,Object> previous;
+    private Map<String,Object> previous;
 
-    @CustomType.Constructor
-    private GetEventsAuditEventDataStateChange(
-        @CustomType.Parameter("current") Map<String,Object> current,
-        @CustomType.Parameter("previous") Map<String,Object> previous) {
-        this.current = current;
-        this.previous = previous;
-    }
-
+    private GetEventsAuditEventDataStateChange() {}
     /**
      * @return Provides the current state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `previous`.
      * 
@@ -52,30 +45,32 @@ public final class GetEventsAuditEventDataStateChange {
     public static Builder builder(GetEventsAuditEventDataStateChange defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private Map<String,Object> current;
         private Map<String,Object> previous;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEventsAuditEventDataStateChange defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.current = defaults.current;
     	      this.previous = defaults.previous;
         }
 
+        @CustomType.Setter
         public Builder current(Map<String,Object> current) {
             this.current = Objects.requireNonNull(current);
             return this;
         }
+        @CustomType.Setter
         public Builder previous(Map<String,Object> previous) {
             this.previous = Objects.requireNonNull(previous);
             return this;
-        }        public GetEventsAuditEventDataStateChange build() {
-            return new GetEventsAuditEventDataStateChange(current, previous);
+        }
+        public GetEventsAuditEventDataStateChange build() {
+            final var o = new GetEventsAuditEventDataStateChange();
+            o.current = current;
+            o.previous = previous;
+            return o;
         }
     }
 }

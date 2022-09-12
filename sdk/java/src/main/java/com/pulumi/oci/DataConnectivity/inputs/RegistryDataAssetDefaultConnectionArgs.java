@@ -25,14 +25,14 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
     public static final RegistryDataAssetDefaultConnectionArgs Empty = new RegistryDataAssetDefaultConnectionArgs();
 
     /**
-     * (Updatable) The properties for the connection.
+     * (Updatable) The properties of the connection.
      * 
      */
     @Import(name="connectionProperties")
     private @Nullable Output<List<RegistryDataAssetDefaultConnectionConnectionPropertyArgs>> connectionProperties;
 
     /**
-     * @return (Updatable) The properties for the connection.
+     * @return (Updatable) The properties of the connection.
      * 
      */
     public Optional<Output<List<RegistryDataAssetDefaultConnectionConnectionPropertyArgs>>> connectionProperties() {
@@ -40,14 +40,14 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) A user defined description for the object.
+     * (Updatable) A user-defined description for the object.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A user defined description for the object.
+     * @return (Updatable) A user-defined description for the object.
      * 
      */
     public Optional<Output<String>> description() {
@@ -55,14 +55,14 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     @Import(name="identifier", required=true)
     private Output<String> identifier;
 
     /**
-     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
      * 
      */
     public Output<String> identifier() {
@@ -70,14 +70,14 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The default property for the connection.
+     * (Updatable) The default property of the connection.
      * 
      */
     @Import(name="isDefault")
     private @Nullable Output<Boolean> isDefault;
 
     /**
-     * @return (Updatable) The default property for the connection.
+     * @return (Updatable) The default property of the connection.
      * 
      */
     public Optional<Output<Boolean>> isDefault() {
@@ -100,14 +100,14 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     @Import(name="metadata")
     private @Nullable Output<RegistryDataAssetDefaultConnectionMetadataArgs> metadata;
 
     /**
-     * @return (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
      * 
      */
     public Optional<Output<RegistryDataAssetDefaultConnectionMetadataArgs>> metadata() {
@@ -115,14 +115,14 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The property which disciminates the subtypes.
+     * (Updatable) The property which differentiates the subtypes.
      * 
      */
     @Import(name="modelType", required=true)
     private Output<String> modelType;
 
     /**
-     * @return (Updatable) The property which disciminates the subtypes.
+     * @return (Updatable) The property which differentiates the subtypes.
      * 
      */
     public Output<String> modelType() {
@@ -145,14 +145,14 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     public Output<String> name() {
@@ -288,7 +288,7 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
         }
 
         /**
-         * @param connectionProperties (Updatable) The properties for the connection.
+         * @param connectionProperties (Updatable) The properties of the connection.
          * 
          * @return builder
          * 
@@ -299,7 +299,7 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
         }
 
         /**
-         * @param connectionProperties (Updatable) The properties for the connection.
+         * @param connectionProperties (Updatable) The properties of the connection.
          * 
          * @return builder
          * 
@@ -309,7 +309,7 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
         }
 
         /**
-         * @param connectionProperties (Updatable) The properties for the connection.
+         * @param connectionProperties (Updatable) The properties of the connection.
          * 
          * @return builder
          * 
@@ -319,7 +319,7 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
         }
 
         /**
-         * @param description (Updatable) A user defined description for the object.
+         * @param description (Updatable) A user-defined description for the object.
          * 
          * @return builder
          * 
@@ -330,7 +330,7 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
         }
 
         /**
-         * @param description (Updatable) A user defined description for the object.
+         * @param description (Updatable) A user-defined description for the object.
          * 
          * @return builder
          * 
@@ -340,7 +340,7 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
         }
 
         /**
-         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -351,7 +351,7 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
         }
 
         /**
-         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -361,7 +361,7 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
         }
 
         /**
-         * @param isDefault (Updatable) The default property for the connection.
+         * @param isDefault (Updatable) The default property of the connection.
          * 
          * @return builder
          * 
@@ -372,7 +372,7 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
         }
 
         /**
-         * @param isDefault (Updatable) The default property for the connection.
+         * @param isDefault (Updatable) The default property of the connection.
          * 
          * @return builder
          * 
@@ -403,7 +403,7 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
         }
 
         /**
-         * @param metadata (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * @param metadata (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          * 
          * @return builder
          * 
@@ -414,7 +414,7 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
         }
 
         /**
-         * @param metadata (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * @param metadata (Updatable) A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
          * 
          * @return builder
          * 
@@ -424,7 +424,7 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
         }
 
         /**
-         * @param modelType (Updatable) The property which disciminates the subtypes.
+         * @param modelType (Updatable) The property which differentiates the subtypes.
          * 
          * @return builder
          * 
@@ -435,7 +435,7 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
         }
 
         /**
-         * @param modelType (Updatable) The property which disciminates the subtypes.
+         * @param modelType (Updatable) The property which differentiates the subtypes.
          * 
          * @return builder
          * 
@@ -466,7 +466,7 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 
@@ -477,7 +477,7 @@ public final class RegistryDataAssetDefaultConnectionArgs extends com.pulumi.res
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * 
          * @return builder
          * 

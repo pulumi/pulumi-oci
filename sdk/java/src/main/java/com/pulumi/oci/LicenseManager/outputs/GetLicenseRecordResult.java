@@ -17,136 +17,95 @@ public final class GetLicenseRecordResult {
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return The license record display name. Avoid entering confidential information.
      * 
      */
-    private final String displayName;
+    private String displayName;
     /**
      * @return The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
      * 
      */
-    private final String expirationDate;
+    private String expirationDate;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The license record [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return Specifies if the license record term is perpertual.
      * 
      */
-    private final Boolean isPerpetual;
+    private Boolean isPerpetual;
     /**
      * @return Specifies if the license count is unlimited.
      * 
      */
-    private final Boolean isUnlimited;
+    private Boolean isUnlimited;
     /**
      * @return The number of license units added by the user for the given license record. Default 1
      * 
      */
-    private final Integer licenseCount;
-    private final String licenseRecordId;
+    private Integer licenseCount;
+    private String licenseRecordId;
     /**
      * @return The product license unit.
      * 
      */
-    private final String licenseUnit;
+    private String licenseUnit;
     /**
      * @return The license record product ID.
      * 
      */
-    private final String productId;
+    private String productId;
     /**
      * @return The product license name with which the license record is associated.
      * 
      */
-    private final String productLicense;
+    private String productLicense;
     /**
      * @return The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which the license record is associated.
      * 
      */
-    private final String productLicenseId;
+    private String productLicenseId;
     /**
      * @return The current license record state.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
      * 
      */
-    private final String supportEndDate;
+    private String supportEndDate;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetLicenseRecordResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("displayName") String displayName,
-        @CustomType.Parameter("expirationDate") String expirationDate,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isPerpetual") Boolean isPerpetual,
-        @CustomType.Parameter("isUnlimited") Boolean isUnlimited,
-        @CustomType.Parameter("licenseCount") Integer licenseCount,
-        @CustomType.Parameter("licenseRecordId") String licenseRecordId,
-        @CustomType.Parameter("licenseUnit") String licenseUnit,
-        @CustomType.Parameter("productId") String productId,
-        @CustomType.Parameter("productLicense") String productLicense,
-        @CustomType.Parameter("productLicenseId") String productLicenseId,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("supportEndDate") String supportEndDate,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.definedTags = definedTags;
-        this.displayName = displayName;
-        this.expirationDate = expirationDate;
-        this.freeformTags = freeformTags;
-        this.id = id;
-        this.isPerpetual = isPerpetual;
-        this.isUnlimited = isUnlimited;
-        this.licenseCount = licenseCount;
-        this.licenseRecordId = licenseRecordId;
-        this.licenseUnit = licenseUnit;
-        this.productId = productId;
-        this.productLicense = productLicense;
-        this.productLicenseId = productLicenseId;
-        this.state = state;
-        this.supportEndDate = supportEndDate;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetLicenseRecordResult() {}
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
      * 
@@ -284,7 +243,7 @@ public final class GetLicenseRecordResult {
     public static Builder builder(GetLicenseRecordResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
@@ -305,11 +264,7 @@ public final class GetLicenseRecordResult {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetLicenseRecordResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -333,83 +288,123 @@ public final class GetLicenseRecordResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
+        @CustomType.Setter
         public Builder expirationDate(String expirationDate) {
             this.expirationDate = Objects.requireNonNull(expirationDate);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isPerpetual(Boolean isPerpetual) {
             this.isPerpetual = Objects.requireNonNull(isPerpetual);
             return this;
         }
+        @CustomType.Setter
         public Builder isUnlimited(Boolean isUnlimited) {
             this.isUnlimited = Objects.requireNonNull(isUnlimited);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseCount(Integer licenseCount) {
             this.licenseCount = Objects.requireNonNull(licenseCount);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseRecordId(String licenseRecordId) {
             this.licenseRecordId = Objects.requireNonNull(licenseRecordId);
             return this;
         }
+        @CustomType.Setter
         public Builder licenseUnit(String licenseUnit) {
             this.licenseUnit = Objects.requireNonNull(licenseUnit);
             return this;
         }
+        @CustomType.Setter
         public Builder productId(String productId) {
             this.productId = Objects.requireNonNull(productId);
             return this;
         }
+        @CustomType.Setter
         public Builder productLicense(String productLicense) {
             this.productLicense = Objects.requireNonNull(productLicense);
             return this;
         }
+        @CustomType.Setter
         public Builder productLicenseId(String productLicenseId) {
             this.productLicenseId = Objects.requireNonNull(productLicenseId);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder supportEndDate(String supportEndDate) {
             this.supportEndDate = Objects.requireNonNull(supportEndDate);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetLicenseRecordResult build() {
-            return new GetLicenseRecordResult(compartmentId, definedTags, displayName, expirationDate, freeformTags, id, isPerpetual, isUnlimited, licenseCount, licenseRecordId, licenseUnit, productId, productLicense, productLicenseId, state, supportEndDate, systemTags, timeCreated, timeUpdated);
+        }
+        public GetLicenseRecordResult build() {
+            final var o = new GetLicenseRecordResult();
+            o.compartmentId = compartmentId;
+            o.definedTags = definedTags;
+            o.displayName = displayName;
+            o.expirationDate = expirationDate;
+            o.freeformTags = freeformTags;
+            o.id = id;
+            o.isPerpetual = isPerpetual;
+            o.isUnlimited = isUnlimited;
+            o.licenseCount = licenseCount;
+            o.licenseRecordId = licenseRecordId;
+            o.licenseUnit = licenseUnit;
+            o.productId = productId;
+            o.productLicense = productLicense;
+            o.productLicenseId = productLicenseId;
+            o.state = state;
+            o.supportEndDate = supportEndDate;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

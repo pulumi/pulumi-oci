@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> ConfigParameterDefinitions;
         /// <summary>
-        /// Specifies whether the configuration is contained or not.
+        /// Specifies whether the configuration is contained.
         /// </summary>
         public readonly bool IsContained;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// The property which disciminates the subtypes.
+        /// The property which differentiates the subtypes.
         /// </summary>
         public readonly string ModelType;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DataConnectivity.Outputs
         /// </summary>
         public readonly int ObjectStatus;
         /// <summary>
-        /// A reference to the object's parent.
+        /// A reference to the parent object.
         /// </summary>
         public readonly Outputs.GetRegistryDataAssetsDataAssetSummaryCollectionItemNativeTypeSystemTypeConfigDefinitionParentRefResult ParentRef;
 

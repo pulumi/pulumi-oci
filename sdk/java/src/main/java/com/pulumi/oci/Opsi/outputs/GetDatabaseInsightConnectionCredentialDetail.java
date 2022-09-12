@@ -13,42 +13,29 @@ public final class GetDatabaseInsightConnectionCredentialDetail {
      * @return Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
      * 
      */
-    private final String credentialSourceName;
+    private String credentialSourceName;
     /**
      * @return Credential type.
      * 
      */
-    private final String credentialType;
+    private String credentialType;
     /**
      * @return The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
      * 
      */
-    private final String passwordSecretId;
+    private String passwordSecretId;
     /**
      * @return database user role.
      * 
      */
-    private final String role;
+    private String role;
     /**
      * @return database user name.
      * 
      */
-    private final String userName;
+    private String userName;
 
-    @CustomType.Constructor
-    private GetDatabaseInsightConnectionCredentialDetail(
-        @CustomType.Parameter("credentialSourceName") String credentialSourceName,
-        @CustomType.Parameter("credentialType") String credentialType,
-        @CustomType.Parameter("passwordSecretId") String passwordSecretId,
-        @CustomType.Parameter("role") String role,
-        @CustomType.Parameter("userName") String userName) {
-        this.credentialSourceName = credentialSourceName;
-        this.credentialType = credentialType;
-        this.passwordSecretId = passwordSecretId;
-        this.role = role;
-        this.userName = userName;
-    }
-
+    private GetDatabaseInsightConnectionCredentialDetail() {}
     /**
      * @return Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
      * 
@@ -92,18 +79,14 @@ public final class GetDatabaseInsightConnectionCredentialDetail {
     public static Builder builder(GetDatabaseInsightConnectionCredentialDetail defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String credentialSourceName;
         private String credentialType;
         private String passwordSecretId;
         private String role;
         private String userName;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDatabaseInsightConnectionCredentialDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.credentialSourceName = defaults.credentialSourceName;
@@ -113,27 +96,39 @@ public final class GetDatabaseInsightConnectionCredentialDetail {
     	      this.userName = defaults.userName;
         }
 
+        @CustomType.Setter
         public Builder credentialSourceName(String credentialSourceName) {
             this.credentialSourceName = Objects.requireNonNull(credentialSourceName);
             return this;
         }
+        @CustomType.Setter
         public Builder credentialType(String credentialType) {
             this.credentialType = Objects.requireNonNull(credentialType);
             return this;
         }
+        @CustomType.Setter
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = Objects.requireNonNull(passwordSecretId);
             return this;
         }
+        @CustomType.Setter
         public Builder role(String role) {
             this.role = Objects.requireNonNull(role);
             return this;
         }
+        @CustomType.Setter
         public Builder userName(String userName) {
             this.userName = Objects.requireNonNull(userName);
             return this;
-        }        public GetDatabaseInsightConnectionCredentialDetail build() {
-            return new GetDatabaseInsightConnectionCredentialDetail(credentialSourceName, credentialType, passwordSecretId, role, userName);
+        }
+        public GetDatabaseInsightConnectionCredentialDetail build() {
+            final var o = new GetDatabaseInsightConnectionCredentialDetail();
+            o.credentialSourceName = credentialSourceName;
+            o.credentialType = credentialType;
+            o.passwordSecretId = passwordSecretId;
+            o.role = role;
+            o.userName = userName;
+            return o;
         }
     }
 }

@@ -15,13 +15,9 @@ public final class BuildPipelineStageBuildSourceCollection {
      * @return (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
      * 
      */
-    private final @Nullable List<BuildPipelineStageBuildSourceCollectionItem> items;
+    private @Nullable List<BuildPipelineStageBuildSourceCollectionItem> items;
 
-    @CustomType.Constructor
-    private BuildPipelineStageBuildSourceCollection(@CustomType.Parameter("items") @Nullable List<BuildPipelineStageBuildSourceCollectionItem> items) {
-        this.items = items;
-    }
-
+    private BuildPipelineStageBuildSourceCollection() {}
     /**
      * @return (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
      * 
@@ -37,27 +33,27 @@ public final class BuildPipelineStageBuildSourceCollection {
     public static Builder builder(BuildPipelineStageBuildSourceCollection defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable List<BuildPipelineStageBuildSourceCollectionItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(BuildPipelineStageBuildSourceCollection defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder items(@Nullable List<BuildPipelineStageBuildSourceCollectionItem> items) {
             this.items = items;
             return this;
         }
         public Builder items(BuildPipelineStageBuildSourceCollectionItem... items) {
             return items(List.of(items));
-        }        public BuildPipelineStageBuildSourceCollection build() {
-            return new BuildPipelineStageBuildSourceCollection(items);
+        }
+        public BuildPipelineStageBuildSourceCollection build() {
+            final var o = new BuildPipelineStageBuildSourceCollection();
+            o.items = items;
+            return o;
         }
     }
 }

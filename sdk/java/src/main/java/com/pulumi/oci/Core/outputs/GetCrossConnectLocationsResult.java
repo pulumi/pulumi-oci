@@ -13,31 +13,20 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCrossConnectLocationsResult {
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The list of cross_connect_locations.
      * 
      */
-    private final List<GetCrossConnectLocationsCrossConnectLocation> crossConnectLocations;
-    private final @Nullable List<GetCrossConnectLocationsFilter> filters;
+    private List<GetCrossConnectLocationsCrossConnectLocation> crossConnectLocations;
+    private @Nullable List<GetCrossConnectLocationsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
 
-    @CustomType.Constructor
-    private GetCrossConnectLocationsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("crossConnectLocations") List<GetCrossConnectLocationsCrossConnectLocation> crossConnectLocations,
-        @CustomType.Parameter("filters") @Nullable List<GetCrossConnectLocationsFilter> filters,
-        @CustomType.Parameter("id") String id) {
-        this.compartmentId = compartmentId;
-        this.crossConnectLocations = crossConnectLocations;
-        this.filters = filters;
-        this.id = id;
-    }
-
+    private GetCrossConnectLocationsResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -66,17 +55,13 @@ public final class GetCrossConnectLocationsResult {
     public static Builder builder(GetCrossConnectLocationsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private List<GetCrossConnectLocationsCrossConnectLocation> crossConnectLocations;
         private @Nullable List<GetCrossConnectLocationsFilter> filters;
         private String id;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetCrossConnectLocationsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -85,10 +70,12 @@ public final class GetCrossConnectLocationsResult {
     	      this.id = defaults.id;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder crossConnectLocations(List<GetCrossConnectLocationsCrossConnectLocation> crossConnectLocations) {
             this.crossConnectLocations = Objects.requireNonNull(crossConnectLocations);
             return this;
@@ -96,6 +83,7 @@ public final class GetCrossConnectLocationsResult {
         public Builder crossConnectLocations(GetCrossConnectLocationsCrossConnectLocation... crossConnectLocations) {
             return crossConnectLocations(List.of(crossConnectLocations));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetCrossConnectLocationsFilter> filters) {
             this.filters = filters;
             return this;
@@ -103,11 +91,18 @@ public final class GetCrossConnectLocationsResult {
         public Builder filters(GetCrossConnectLocationsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
-        }        public GetCrossConnectLocationsResult build() {
-            return new GetCrossConnectLocationsResult(compartmentId, crossConnectLocations, filters, id);
+        }
+        public GetCrossConnectLocationsResult build() {
+            final var o = new GetCrossConnectLocationsResult();
+            o.compartmentId = compartmentId;
+            o.crossConnectLocations = crossConnectLocations;
+            o.filters = filters;
+            o.id = id;
+            return o;
         }
     }
 }

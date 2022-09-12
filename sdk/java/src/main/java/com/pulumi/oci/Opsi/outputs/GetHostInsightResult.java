@@ -17,199 +17,140 @@ public final class GetHostInsightResult {
      * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
-    private final String compartmentId;
+    private String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
      * 
      */
-    private final String computeId;
+    private String computeId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> definedTags;
+    private Map<String,Object> definedTags;
     /**
      * @return OPSI Enterprise Manager Bridge OCID
      * 
      */
-    private final String enterpriseManagerBridgeId;
+    private String enterpriseManagerBridgeId;
     /**
      * @return Enterprise Manager Entity Display Name
      * 
      */
-    private final String enterpriseManagerEntityDisplayName;
+    private String enterpriseManagerEntityDisplayName;
     /**
      * @return Enterprise Manager Entity Unique Identifier
      * 
      */
-    private final String enterpriseManagerEntityIdentifier;
+    private String enterpriseManagerEntityIdentifier;
     /**
      * @return Enterprise Manager Entity Name
      * 
      */
-    private final String enterpriseManagerEntityName;
+    private String enterpriseManagerEntityName;
     /**
      * @return Enterprise Manager Entity Type
      * 
      */
-    private final String enterpriseManagerEntityType;
+    private String enterpriseManagerEntityType;
     /**
      * @return Enterprise Manager Unique Identifier
      * 
      */
-    private final String enterpriseManagerIdentifier;
+    private String enterpriseManagerIdentifier;
     /**
      * @return Source of the host entity.
      * 
      */
-    private final String entitySource;
+    private String entitySource;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      * 
      */
-    private final String exadataInsightId;
+    private String exadataInsightId;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private final Map<String,Object> freeformTags;
+    private Map<String,Object> freeformTags;
     /**
      * @return The user-friendly name for the host. The name does not have to be unique.
      * 
      */
-    private final String hostDisplayName;
-    private final String hostInsightId;
+    private String hostDisplayName;
+    private String hostInsightId;
     /**
      * @return The host name. The host name is unique amongst the hosts managed by the same management agent.
      * 
      */
-    private final String hostName;
+    private String hostName;
     /**
      * @return Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * 
      */
-    private final String hostType;
+    private String hostType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final String lifecycleDetails;
+    private String lifecycleDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
      * 
      */
-    private final String managementAgentId;
+    private String managementAgentId;
     /**
      * @return Platform name.
      * 
      */
-    private final String platformName;
+    private String platformName;
     /**
      * @return Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      * 
      */
-    private final String platformType;
+    private String platformType;
     /**
      * @return Platform version.
      * 
      */
-    private final String platformVersion;
+    private String platformVersion;
     /**
      * @return Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      * 
      */
-    private final Integer processorCount;
+    private Integer processorCount;
     /**
      * @return The current state of the host.
      * 
      */
-    private final String state;
+    private String state;
     /**
      * @return Indicates the status of a host insight in Operations Insights
      * 
      */
-    private final String status;
+    private String status;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private final Map<String,Object> systemTags;
+    private Map<String,Object> systemTags;
     /**
      * @return The time the the host insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeCreated;
+    private String timeCreated;
     /**
      * @return The time the host insight was updated. An RFC3339 formatted datetime string
      * 
      */
-    private final String timeUpdated;
+    private String timeUpdated;
 
-    @CustomType.Constructor
-    private GetHostInsightResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("computeId") String computeId,
-        @CustomType.Parameter("definedTags") Map<String,Object> definedTags,
-        @CustomType.Parameter("enterpriseManagerBridgeId") String enterpriseManagerBridgeId,
-        @CustomType.Parameter("enterpriseManagerEntityDisplayName") String enterpriseManagerEntityDisplayName,
-        @CustomType.Parameter("enterpriseManagerEntityIdentifier") String enterpriseManagerEntityIdentifier,
-        @CustomType.Parameter("enterpriseManagerEntityName") String enterpriseManagerEntityName,
-        @CustomType.Parameter("enterpriseManagerEntityType") String enterpriseManagerEntityType,
-        @CustomType.Parameter("enterpriseManagerIdentifier") String enterpriseManagerIdentifier,
-        @CustomType.Parameter("entitySource") String entitySource,
-        @CustomType.Parameter("exadataInsightId") String exadataInsightId,
-        @CustomType.Parameter("freeformTags") Map<String,Object> freeformTags,
-        @CustomType.Parameter("hostDisplayName") String hostDisplayName,
-        @CustomType.Parameter("hostInsightId") String hostInsightId,
-        @CustomType.Parameter("hostName") String hostName,
-        @CustomType.Parameter("hostType") String hostType,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("lifecycleDetails") String lifecycleDetails,
-        @CustomType.Parameter("managementAgentId") String managementAgentId,
-        @CustomType.Parameter("platformName") String platformName,
-        @CustomType.Parameter("platformType") String platformType,
-        @CustomType.Parameter("platformVersion") String platformVersion,
-        @CustomType.Parameter("processorCount") Integer processorCount,
-        @CustomType.Parameter("state") String state,
-        @CustomType.Parameter("status") String status,
-        @CustomType.Parameter("systemTags") Map<String,Object> systemTags,
-        @CustomType.Parameter("timeCreated") String timeCreated,
-        @CustomType.Parameter("timeUpdated") String timeUpdated) {
-        this.compartmentId = compartmentId;
-        this.computeId = computeId;
-        this.definedTags = definedTags;
-        this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
-        this.enterpriseManagerEntityDisplayName = enterpriseManagerEntityDisplayName;
-        this.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
-        this.enterpriseManagerEntityName = enterpriseManagerEntityName;
-        this.enterpriseManagerEntityType = enterpriseManagerEntityType;
-        this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
-        this.entitySource = entitySource;
-        this.exadataInsightId = exadataInsightId;
-        this.freeformTags = freeformTags;
-        this.hostDisplayName = hostDisplayName;
-        this.hostInsightId = hostInsightId;
-        this.hostName = hostName;
-        this.hostType = hostType;
-        this.id = id;
-        this.lifecycleDetails = lifecycleDetails;
-        this.managementAgentId = managementAgentId;
-        this.platformName = platformName;
-        this.platformType = platformType;
-        this.platformVersion = platformVersion;
-        this.processorCount = processorCount;
-        this.state = state;
-        this.status = status;
-        this.systemTags = systemTags;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-    }
-
+    private GetHostInsightResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
@@ -411,7 +352,7 @@ public final class GetHostInsightResult {
     public static Builder builder(GetHostInsightResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String computeId;
@@ -441,11 +382,7 @@ public final class GetHostInsightResult {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetHostInsightResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -478,119 +415,177 @@ public final class GetHostInsightResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder computeId(String computeId) {
             this.computeId = Objects.requireNonNull(computeId);
             return this;
         }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
             return this;
         }
+        @CustomType.Setter
         public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
             this.enterpriseManagerBridgeId = Objects.requireNonNull(enterpriseManagerBridgeId);
             return this;
         }
+        @CustomType.Setter
         public Builder enterpriseManagerEntityDisplayName(String enterpriseManagerEntityDisplayName) {
             this.enterpriseManagerEntityDisplayName = Objects.requireNonNull(enterpriseManagerEntityDisplayName);
             return this;
         }
+        @CustomType.Setter
         public Builder enterpriseManagerEntityIdentifier(String enterpriseManagerEntityIdentifier) {
             this.enterpriseManagerEntityIdentifier = Objects.requireNonNull(enterpriseManagerEntityIdentifier);
             return this;
         }
+        @CustomType.Setter
         public Builder enterpriseManagerEntityName(String enterpriseManagerEntityName) {
             this.enterpriseManagerEntityName = Objects.requireNonNull(enterpriseManagerEntityName);
             return this;
         }
+        @CustomType.Setter
         public Builder enterpriseManagerEntityType(String enterpriseManagerEntityType) {
             this.enterpriseManagerEntityType = Objects.requireNonNull(enterpriseManagerEntityType);
             return this;
         }
+        @CustomType.Setter
         public Builder enterpriseManagerIdentifier(String enterpriseManagerIdentifier) {
             this.enterpriseManagerIdentifier = Objects.requireNonNull(enterpriseManagerIdentifier);
             return this;
         }
+        @CustomType.Setter
         public Builder entitySource(String entitySource) {
             this.entitySource = Objects.requireNonNull(entitySource);
             return this;
         }
+        @CustomType.Setter
         public Builder exadataInsightId(String exadataInsightId) {
             this.exadataInsightId = Objects.requireNonNull(exadataInsightId);
             return this;
         }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
         }
+        @CustomType.Setter
         public Builder hostDisplayName(String hostDisplayName) {
             this.hostDisplayName = Objects.requireNonNull(hostDisplayName);
             return this;
         }
+        @CustomType.Setter
         public Builder hostInsightId(String hostInsightId) {
             this.hostInsightId = Objects.requireNonNull(hostInsightId);
             return this;
         }
+        @CustomType.Setter
         public Builder hostName(String hostName) {
             this.hostName = Objects.requireNonNull(hostName);
             return this;
         }
+        @CustomType.Setter
         public Builder hostType(String hostType) {
             this.hostType = Objects.requireNonNull(hostType);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
         }
+        @CustomType.Setter
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = Objects.requireNonNull(managementAgentId);
             return this;
         }
+        @CustomType.Setter
         public Builder platformName(String platformName) {
             this.platformName = Objects.requireNonNull(platformName);
             return this;
         }
+        @CustomType.Setter
         public Builder platformType(String platformType) {
             this.platformType = Objects.requireNonNull(platformType);
             return this;
         }
+        @CustomType.Setter
         public Builder platformVersion(String platformVersion) {
             this.platformVersion = Objects.requireNonNull(platformVersion);
             return this;
         }
+        @CustomType.Setter
         public Builder processorCount(Integer processorCount) {
             this.processorCount = Objects.requireNonNull(processorCount);
             return this;
         }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
         }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
         }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             this.timeCreated = Objects.requireNonNull(timeCreated);
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
-        }        public GetHostInsightResult build() {
-            return new GetHostInsightResult(compartmentId, computeId, definedTags, enterpriseManagerBridgeId, enterpriseManagerEntityDisplayName, enterpriseManagerEntityIdentifier, enterpriseManagerEntityName, enterpriseManagerEntityType, enterpriseManagerIdentifier, entitySource, exadataInsightId, freeformTags, hostDisplayName, hostInsightId, hostName, hostType, id, lifecycleDetails, managementAgentId, platformName, platformType, platformVersion, processorCount, state, status, systemTags, timeCreated, timeUpdated);
+        }
+        public GetHostInsightResult build() {
+            final var o = new GetHostInsightResult();
+            o.compartmentId = compartmentId;
+            o.computeId = computeId;
+            o.definedTags = definedTags;
+            o.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
+            o.enterpriseManagerEntityDisplayName = enterpriseManagerEntityDisplayName;
+            o.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
+            o.enterpriseManagerEntityName = enterpriseManagerEntityName;
+            o.enterpriseManagerEntityType = enterpriseManagerEntityType;
+            o.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
+            o.entitySource = entitySource;
+            o.exadataInsightId = exadataInsightId;
+            o.freeformTags = freeformTags;
+            o.hostDisplayName = hostDisplayName;
+            o.hostInsightId = hostInsightId;
+            o.hostName = hostName;
+            o.hostType = hostType;
+            o.id = id;
+            o.lifecycleDetails = lifecycleDetails;
+            o.managementAgentId = managementAgentId;
+            o.platformName = platformName;
+            o.platformType = platformType;
+            o.platformVersion = platformVersion;
+            o.processorCount = processorCount;
+            o.state = state;
+            o.status = status;
+            o.systemTags = systemTags;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

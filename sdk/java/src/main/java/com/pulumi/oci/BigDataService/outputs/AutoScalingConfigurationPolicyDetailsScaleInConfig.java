@@ -16,28 +16,19 @@ public final class AutoScalingConfigurationPolicyDetailsScaleInConfig {
      * @return (Updatable) Metric and threshold details for triggering an autoscale action.
      * 
      */
-    private final @Nullable AutoScalingConfigurationPolicyDetailsScaleInConfigMetric metric;
+    private @Nullable AutoScalingConfigurationPolicyDetailsScaleInConfigMetric metric;
     /**
      * @return (Updatable) This value is the minimum number of nodes the cluster can be scaled-in to.
      * 
      */
-    private final @Nullable Integer minNodeCount;
+    private @Nullable Integer minNodeCount;
     /**
      * @return (Updatable) This value is the number of nodes to add during a scale-out event.
      * 
      */
-    private final @Nullable Integer stepSize;
+    private @Nullable Integer stepSize;
 
-    @CustomType.Constructor
-    private AutoScalingConfigurationPolicyDetailsScaleInConfig(
-        @CustomType.Parameter("metric") @Nullable AutoScalingConfigurationPolicyDetailsScaleInConfigMetric metric,
-        @CustomType.Parameter("minNodeCount") @Nullable Integer minNodeCount,
-        @CustomType.Parameter("stepSize") @Nullable Integer stepSize) {
-        this.metric = metric;
-        this.minNodeCount = minNodeCount;
-        this.stepSize = stepSize;
-    }
-
+    private AutoScalingConfigurationPolicyDetailsScaleInConfig() {}
     /**
      * @return (Updatable) Metric and threshold details for triggering an autoscale action.
      * 
@@ -67,16 +58,12 @@ public final class AutoScalingConfigurationPolicyDetailsScaleInConfig {
     public static Builder builder(AutoScalingConfigurationPolicyDetailsScaleInConfig defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable AutoScalingConfigurationPolicyDetailsScaleInConfigMetric metric;
         private @Nullable Integer minNodeCount;
         private @Nullable Integer stepSize;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AutoScalingConfigurationPolicyDetailsScaleInConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.metric = defaults.metric;
@@ -84,19 +71,27 @@ public final class AutoScalingConfigurationPolicyDetailsScaleInConfig {
     	      this.stepSize = defaults.stepSize;
         }
 
+        @CustomType.Setter
         public Builder metric(@Nullable AutoScalingConfigurationPolicyDetailsScaleInConfigMetric metric) {
             this.metric = metric;
             return this;
         }
+        @CustomType.Setter
         public Builder minNodeCount(@Nullable Integer minNodeCount) {
             this.minNodeCount = minNodeCount;
             return this;
         }
+        @CustomType.Setter
         public Builder stepSize(@Nullable Integer stepSize) {
             this.stepSize = stepSize;
             return this;
-        }        public AutoScalingConfigurationPolicyDetailsScaleInConfig build() {
-            return new AutoScalingConfigurationPolicyDetailsScaleInConfig(metric, minNodeCount, stepSize);
+        }
+        public AutoScalingConfigurationPolicyDetailsScaleInConfig build() {
+            final var o = new AutoScalingConfigurationPolicyDetailsScaleInConfig();
+            o.metric = metric;
+            o.minNodeCount = minNodeCount;
+            o.stepSize = stepSize;
+            return o;
         }
     }
 }

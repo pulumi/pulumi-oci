@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudGuard.outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetail;
+import com.pulumi.oci.CloudGuard.outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -14,101 +15,89 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
     /**
+     * @return The id of the attached DataSource.
+     * 
+     */
+    private @Nullable String dataSourceId;
+    /**
      * @return The target description.
      * 
      */
-    private final @Nullable String description;
+    private @Nullable String description;
     /**
      * @return (Updatable) Details of ResponderRule.
      * 
      */
-    private final @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetail> details;
+    private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetail> details;
     /**
      * @return detector for the rule
      * 
      */
-    private final @Nullable String detector;
+    private @Nullable String detector;
     /**
      * @return (Updatable) Identifier for DetectorRule.
      * 
      */
-    private final @Nullable String detectorRuleId;
+    private @Nullable String detectorRuleId;
     /**
      * @return (Updatable) DetectorTemplate identifier.
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
+    /**
+     * @return Data Source entities mapping for a Detector Rule
+     * 
+     */
+    private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping> entitiesMappings;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private final @Nullable String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return List of cloudguard managed list types related to this rule
      * 
      */
-    private final @Nullable List<String> managedListTypes;
+    private @Nullable List<String> managedListTypes;
     /**
      * @return Recommendation for TargetDetectorRecipeDetectorRule
      * 
      */
-    private final @Nullable String recommendation;
+    private @Nullable String recommendation;
     /**
      * @return resource type of the configuration to which the rule is applied
      * 
      */
-    private final @Nullable String resourceType;
+    private @Nullable String resourceType;
     /**
      * @return service type of the configuration to which the rule is applied
      * 
      */
-    private final @Nullable String serviceType;
+    private @Nullable String serviceType;
     /**
      * @return (Updatable) The current state of the DetectorRule.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
     /**
      * @return The date and time the target was created. Format defined by RFC3339.
      * 
      */
-    private final @Nullable String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the target was updated. Format defined by RFC3339.
      * 
      */
-    private final @Nullable String timeUpdated;
+    private @Nullable String timeUpdated;
 
-    @CustomType.Constructor
-    private TargetTargetDetectorRecipeEffectiveDetectorRule(
-        @CustomType.Parameter("description") @Nullable String description,
-        @CustomType.Parameter("details") @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetail> details,
-        @CustomType.Parameter("detector") @Nullable String detector,
-        @CustomType.Parameter("detectorRuleId") @Nullable String detectorRuleId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("lifecycleDetails") @Nullable String lifecycleDetails,
-        @CustomType.Parameter("managedListTypes") @Nullable List<String> managedListTypes,
-        @CustomType.Parameter("recommendation") @Nullable String recommendation,
-        @CustomType.Parameter("resourceType") @Nullable String resourceType,
-        @CustomType.Parameter("serviceType") @Nullable String serviceType,
-        @CustomType.Parameter("state") @Nullable String state,
-        @CustomType.Parameter("timeCreated") @Nullable String timeCreated,
-        @CustomType.Parameter("timeUpdated") @Nullable String timeUpdated) {
-        this.description = description;
-        this.details = details;
-        this.detector = detector;
-        this.detectorRuleId = detectorRuleId;
-        this.displayName = displayName;
-        this.lifecycleDetails = lifecycleDetails;
-        this.managedListTypes = managedListTypes;
-        this.recommendation = recommendation;
-        this.resourceType = resourceType;
-        this.serviceType = serviceType;
-        this.state = state;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
+    private TargetTargetDetectorRecipeEffectiveDetectorRule() {}
+    /**
+     * @return The id of the attached DataSource.
+     * 
+     */
+    public Optional<String> dataSourceId() {
+        return Optional.ofNullable(this.dataSourceId);
     }
-
     /**
      * @return The target description.
      * 
@@ -143,6 +132,13 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
      */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+    /**
+     * @return Data Source entities mapping for a Detector Rule
+     * 
+     */
+    public List<TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping> entitiesMappings() {
+        return this.entitiesMappings == null ? List.of() : this.entitiesMappings;
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -208,13 +204,15 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
     public static Builder builder(TargetTargetDetectorRecipeEffectiveDetectorRule defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
+        private @Nullable String dataSourceId;
         private @Nullable String description;
         private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetail> details;
         private @Nullable String detector;
         private @Nullable String detectorRuleId;
         private @Nullable String displayName;
+        private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping> entitiesMappings;
         private @Nullable String lifecycleDetails;
         private @Nullable List<String> managedListTypes;
         private @Nullable String recommendation;
@@ -223,18 +221,16 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
         private @Nullable String state;
         private @Nullable String timeCreated;
         private @Nullable String timeUpdated;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(TargetTargetDetectorRecipeEffectiveDetectorRule defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.dataSourceId = defaults.dataSourceId;
     	      this.description = defaults.description;
     	      this.details = defaults.details;
     	      this.detector = defaults.detector;
     	      this.detectorRuleId = defaults.detectorRuleId;
     	      this.displayName = defaults.displayName;
+    	      this.entitiesMappings = defaults.entitiesMappings;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.managedListTypes = defaults.managedListTypes;
     	      this.recommendation = defaults.recommendation;
@@ -245,10 +241,17 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder dataSourceId(@Nullable String dataSourceId) {
+            this.dataSourceId = dataSourceId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder description(@Nullable String description) {
             this.description = description;
             return this;
         }
+        @CustomType.Setter
         public Builder details(@Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetail> details) {
             this.details = details;
             return this;
@@ -256,22 +259,35 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
         public Builder details(TargetTargetDetectorRecipeEffectiveDetectorRuleDetail... details) {
             return details(List.of(details));
         }
+        @CustomType.Setter
         public Builder detector(@Nullable String detector) {
             this.detector = detector;
             return this;
         }
+        @CustomType.Setter
         public Builder detectorRuleId(@Nullable String detectorRuleId) {
             this.detectorRuleId = detectorRuleId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
+        public Builder entitiesMappings(@Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping> entitiesMappings) {
+            this.entitiesMappings = entitiesMappings;
+            return this;
+        }
+        public Builder entitiesMappings(TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping... entitiesMappings) {
+            return entitiesMappings(List.of(entitiesMappings));
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
+        @CustomType.Setter
         public Builder managedListTypes(@Nullable List<String> managedListTypes) {
             this.managedListTypes = managedListTypes;
             return this;
@@ -279,31 +295,54 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
         public Builder managedListTypes(String... managedListTypes) {
             return managedListTypes(List.of(managedListTypes));
         }
+        @CustomType.Setter
         public Builder recommendation(@Nullable String recommendation) {
             this.recommendation = recommendation;
             return this;
         }
+        @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
             this.resourceType = resourceType;
             return this;
         }
+        @CustomType.Setter
         public Builder serviceType(@Nullable String serviceType) {
             this.serviceType = serviceType;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
             this.timeUpdated = timeUpdated;
             return this;
-        }        public TargetTargetDetectorRecipeEffectiveDetectorRule build() {
-            return new TargetTargetDetectorRecipeEffectiveDetectorRule(description, details, detector, detectorRuleId, displayName, lifecycleDetails, managedListTypes, recommendation, resourceType, serviceType, state, timeCreated, timeUpdated);
+        }
+        public TargetTargetDetectorRecipeEffectiveDetectorRule build() {
+            final var o = new TargetTargetDetectorRecipeEffectiveDetectorRule();
+            o.dataSourceId = dataSourceId;
+            o.description = description;
+            o.details = details;
+            o.detector = detector;
+            o.detectorRuleId = detectorRuleId;
+            o.displayName = displayName;
+            o.entitiesMappings = entitiesMappings;
+            o.lifecycleDetails = lifecycleDetails;
+            o.managedListTypes = managedListTypes;
+            o.recommendation = recommendation;
+            o.resourceType = resourceType;
+            o.serviceType = serviceType;
+            o.state = state;
+            o.timeCreated = timeCreated;
+            o.timeUpdated = timeUpdated;
+            return o;
         }
     }
 }

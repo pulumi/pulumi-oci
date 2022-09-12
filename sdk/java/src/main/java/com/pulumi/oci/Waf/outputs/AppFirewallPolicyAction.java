@@ -19,42 +19,29 @@ public final class AppFirewallPolicyAction {
      * @return (Updatable) Type of returned HTTP response body.
      * 
      */
-    private final @Nullable AppFirewallPolicyActionBody body;
+    private @Nullable AppFirewallPolicyActionBody body;
     /**
      * @return (Updatable) Response code.
      * 
      */
-    private final @Nullable Integer code;
+    private @Nullable Integer code;
     /**
      * @return (Updatable) Adds headers defined in this array for HTTP response.
      * 
      */
-    private final @Nullable List<AppFirewallPolicyActionHeader> headers;
+    private @Nullable List<AppFirewallPolicyActionHeader> headers;
     /**
      * @return (Updatable) Rule name. Must be unique within the module.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return (Updatable) Type of WebAppFirewallPolicyRule.
      * 
      */
-    private final String type;
+    private String type;
 
-    @CustomType.Constructor
-    private AppFirewallPolicyAction(
-        @CustomType.Parameter("body") @Nullable AppFirewallPolicyActionBody body,
-        @CustomType.Parameter("code") @Nullable Integer code,
-        @CustomType.Parameter("headers") @Nullable List<AppFirewallPolicyActionHeader> headers,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("type") String type) {
-        this.body = body;
-        this.code = code;
-        this.headers = headers;
-        this.name = name;
-        this.type = type;
-    }
-
+    private AppFirewallPolicyAction() {}
     /**
      * @return (Updatable) Type of returned HTTP response body.
      * 
@@ -98,18 +85,14 @@ public final class AppFirewallPolicyAction {
     public static Builder builder(AppFirewallPolicyAction defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable AppFirewallPolicyActionBody body;
         private @Nullable Integer code;
         private @Nullable List<AppFirewallPolicyActionHeader> headers;
         private String name;
         private String type;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(AppFirewallPolicyAction defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.body = defaults.body;
@@ -119,14 +102,17 @@ public final class AppFirewallPolicyAction {
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
         public Builder body(@Nullable AppFirewallPolicyActionBody body) {
             this.body = body;
             return this;
         }
+        @CustomType.Setter
         public Builder code(@Nullable Integer code) {
             this.code = code;
             return this;
         }
+        @CustomType.Setter
         public Builder headers(@Nullable List<AppFirewallPolicyActionHeader> headers) {
             this.headers = headers;
             return this;
@@ -134,15 +120,24 @@ public final class AppFirewallPolicyAction {
         public Builder headers(AppFirewallPolicyActionHeader... headers) {
             return headers(List.of(headers));
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
-        }        public AppFirewallPolicyAction build() {
-            return new AppFirewallPolicyAction(body, code, headers, name, type);
+        }
+        public AppFirewallPolicyAction build() {
+            final var o = new AppFirewallPolicyAction();
+            o.body = body;
+            o.code = code;
+            o.headers = headers;
+            o.name = name;
+            o.type = type;
+            return o;
         }
     }
 }

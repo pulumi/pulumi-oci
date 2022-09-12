@@ -15,35 +15,24 @@ public final class SecretSecretContent {
      * @return (Updatable) The base64-encoded content of the secret.
      * 
      */
-    private final String content;
+    private String content;
     /**
      * @return (Updatable) content type . Example `BASE64` .
      * 
      */
-    private final String contentType;
+    private String contentType;
     /**
      * @return (Updatable) Names should be unique within a secret. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      * 
      */
-    private final @Nullable String name;
+    private @Nullable String name;
     /**
      * @return (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don&#39;t yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven&#39;t yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating  a secret, you can specify a version&#39;s rotation state as either `CURRENT` or `PENDING`.
      * 
      */
-    private final @Nullable String stage;
+    private @Nullable String stage;
 
-    @CustomType.Constructor
-    private SecretSecretContent(
-        @CustomType.Parameter("content") String content,
-        @CustomType.Parameter("contentType") String contentType,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("stage") @Nullable String stage) {
-        this.content = content;
-        this.contentType = contentType;
-        this.name = name;
-        this.stage = stage;
-    }
-
+    private SecretSecretContent() {}
     /**
      * @return (Updatable) The base64-encoded content of the secret.
      * 
@@ -80,17 +69,13 @@ public final class SecretSecretContent {
     public static Builder builder(SecretSecretContent defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String content;
         private String contentType;
         private @Nullable String name;
         private @Nullable String stage;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(SecretSecretContent defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.content = defaults.content;
@@ -99,23 +84,33 @@ public final class SecretSecretContent {
     	      this.stage = defaults.stage;
         }
 
+        @CustomType.Setter
         public Builder content(String content) {
             this.content = Objects.requireNonNull(content);
             return this;
         }
+        @CustomType.Setter
         public Builder contentType(String contentType) {
             this.contentType = Objects.requireNonNull(contentType);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder stage(@Nullable String stage) {
             this.stage = stage;
             return this;
-        }        public SecretSecretContent build() {
-            return new SecretSecretContent(content, contentType, name, stage);
+        }
+        public SecretSecretContent build() {
+            final var o = new SecretSecretContent();
+            o.content = content;
+            o.contentType = contentType;
+            o.name = name;
+            o.stage = stage;
+            return o;
         }
     }
 }

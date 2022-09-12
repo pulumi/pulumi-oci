@@ -13,28 +13,19 @@ public final class GetIndexesIndexCollectionKey {
      * @return The name of a column to be included as an index key.
      * 
      */
-    private final String columnName;
+    private String columnName;
     /**
      * @return If the specified column is of type JSON, jsonFieldType contains the type of the field indicated by jsonPath.
      * 
      */
-    private final String jsonFieldType;
+    private String jsonFieldType;
     /**
      * @return If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
      * 
      */
-    private final String jsonPath;
+    private String jsonPath;
 
-    @CustomType.Constructor
-    private GetIndexesIndexCollectionKey(
-        @CustomType.Parameter("columnName") String columnName,
-        @CustomType.Parameter("jsonFieldType") String jsonFieldType,
-        @CustomType.Parameter("jsonPath") String jsonPath) {
-        this.columnName = columnName;
-        this.jsonFieldType = jsonFieldType;
-        this.jsonPath = jsonPath;
-    }
-
+    private GetIndexesIndexCollectionKey() {}
     /**
      * @return The name of a column to be included as an index key.
      * 
@@ -64,16 +55,12 @@ public final class GetIndexesIndexCollectionKey {
     public static Builder builder(GetIndexesIndexCollectionKey defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String columnName;
         private String jsonFieldType;
         private String jsonPath;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIndexesIndexCollectionKey defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.columnName = defaults.columnName;
@@ -81,19 +68,27 @@ public final class GetIndexesIndexCollectionKey {
     	      this.jsonPath = defaults.jsonPath;
         }
 
+        @CustomType.Setter
         public Builder columnName(String columnName) {
             this.columnName = Objects.requireNonNull(columnName);
             return this;
         }
+        @CustomType.Setter
         public Builder jsonFieldType(String jsonFieldType) {
             this.jsonFieldType = Objects.requireNonNull(jsonFieldType);
             return this;
         }
+        @CustomType.Setter
         public Builder jsonPath(String jsonPath) {
             this.jsonPath = Objects.requireNonNull(jsonPath);
             return this;
-        }        public GetIndexesIndexCollectionKey build() {
-            return new GetIndexesIndexCollectionKey(columnName, jsonFieldType, jsonPath);
+        }
+        public GetIndexesIndexCollectionKey build() {
+            final var o = new GetIndexesIndexCollectionKey();
+            o.columnName = columnName;
+            o.jsonFieldType = jsonFieldType;
+            o.jsonPath = jsonPath;
+            return o;
         }
     }
 }

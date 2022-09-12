@@ -13,13 +13,9 @@ public final class MysqlDbSystemMaintenance {
      * @return (Updatable) The start of the 2 hour maintenance window.
      * 
      */
-    private final String windowStartTime;
+    private String windowStartTime;
 
-    @CustomType.Constructor
-    private MysqlDbSystemMaintenance(@CustomType.Parameter("windowStartTime") String windowStartTime) {
-        this.windowStartTime = windowStartTime;
-    }
-
+    private MysqlDbSystemMaintenance() {}
     /**
      * @return (Updatable) The start of the 2 hour maintenance window.
      * 
@@ -35,24 +31,24 @@ public final class MysqlDbSystemMaintenance {
     public static Builder builder(MysqlDbSystemMaintenance defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String windowStartTime;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(MysqlDbSystemMaintenance defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.windowStartTime = defaults.windowStartTime;
         }
 
+        @CustomType.Setter
         public Builder windowStartTime(String windowStartTime) {
             this.windowStartTime = Objects.requireNonNull(windowStartTime);
             return this;
-        }        public MysqlDbSystemMaintenance build() {
-            return new MysqlDbSystemMaintenance(windowStartTime);
+        }
+        public MysqlDbSystemMaintenance build() {
+            final var o = new MysqlDbSystemMaintenance();
+            o.windowStartTime = windowStartTime;
+            return o;
         }
     }
 }

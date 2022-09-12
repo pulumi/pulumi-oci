@@ -15,31 +15,20 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabaseResult {
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    private final String compartmentId;
-    private final String dbManagementPrivateEndpointId;
+    private String compartmentId;
+    private String dbManagementPrivateEndpointId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return A list of databases using a Database Management private endpoint.
      * 
      */
-    private final List<GetDbManagementPrivateEndpointAssociatedDatabaseItem> items;
+    private List<GetDbManagementPrivateEndpointAssociatedDatabaseItem> items;
 
-    @CustomType.Constructor
-    private GetDbManagementPrivateEndpointAssociatedDatabaseResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("dbManagementPrivateEndpointId") String dbManagementPrivateEndpointId,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("items") List<GetDbManagementPrivateEndpointAssociatedDatabaseItem> items) {
-        this.compartmentId = compartmentId;
-        this.dbManagementPrivateEndpointId = dbManagementPrivateEndpointId;
-        this.id = id;
-        this.items = items;
-    }
-
+    private GetDbManagementPrivateEndpointAssociatedDatabaseResult() {}
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
@@ -72,17 +61,13 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabaseResult {
     public static Builder builder(GetDbManagementPrivateEndpointAssociatedDatabaseResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private String dbManagementPrivateEndpointId;
         private String id;
         private List<GetDbManagementPrivateEndpointAssociatedDatabaseItem> items;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetDbManagementPrivateEndpointAssociatedDatabaseResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -91,26 +76,36 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabaseResult {
     	      this.items = defaults.items;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder dbManagementPrivateEndpointId(String dbManagementPrivateEndpointId) {
             this.dbManagementPrivateEndpointId = Objects.requireNonNull(dbManagementPrivateEndpointId);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder items(List<GetDbManagementPrivateEndpointAssociatedDatabaseItem> items) {
             this.items = Objects.requireNonNull(items);
             return this;
         }
         public Builder items(GetDbManagementPrivateEndpointAssociatedDatabaseItem... items) {
             return items(List.of(items));
-        }        public GetDbManagementPrivateEndpointAssociatedDatabaseResult build() {
-            return new GetDbManagementPrivateEndpointAssociatedDatabaseResult(compartmentId, dbManagementPrivateEndpointId, id, items);
+        }
+        public GetDbManagementPrivateEndpointAssociatedDatabaseResult build() {
+            final var o = new GetDbManagementPrivateEndpointAssociatedDatabaseResult();
+            o.compartmentId = compartmentId;
+            o.dbManagementPrivateEndpointId = dbManagementPrivateEndpointId;
+            o.id = id;
+            o.items = items;
+            return o;
         }
     }
 }

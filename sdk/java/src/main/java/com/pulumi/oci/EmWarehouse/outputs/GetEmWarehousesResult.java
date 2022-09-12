@@ -18,52 +18,35 @@ public final class GetEmWarehousesResult {
      * @return Compartment Identifier
      * 
      */
-    private final @Nullable String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return EmWarehouse Identifier, can be renamed
      * 
      */
-    private final @Nullable String displayName;
+    private @Nullable String displayName;
     /**
      * @return The list of em_warehouse_collection.
      * 
      */
-    private final List<GetEmWarehousesEmWarehouseCollection> emWarehouseCollections;
-    private final @Nullable List<GetEmWarehousesFilter> filters;
+    private List<GetEmWarehousesEmWarehouseCollection> emWarehouseCollections;
+    private @Nullable List<GetEmWarehousesFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation
      * 
      */
-    private final @Nullable String id;
+    private @Nullable String id;
     /**
      * @return operations Insights Warehouse Identifier
      * 
      */
-    private final @Nullable String operationsInsightsWarehouseId;
+    private @Nullable String operationsInsightsWarehouseId;
     /**
      * @return The current state of the EmWarehouse.
      * 
      */
-    private final @Nullable String state;
+    private @Nullable String state;
 
-    @CustomType.Constructor
-    private GetEmWarehousesResult(
-        @CustomType.Parameter("compartmentId") @Nullable String compartmentId,
-        @CustomType.Parameter("displayName") @Nullable String displayName,
-        @CustomType.Parameter("emWarehouseCollections") List<GetEmWarehousesEmWarehouseCollection> emWarehouseCollections,
-        @CustomType.Parameter("filters") @Nullable List<GetEmWarehousesFilter> filters,
-        @CustomType.Parameter("id") @Nullable String id,
-        @CustomType.Parameter("operationsInsightsWarehouseId") @Nullable String operationsInsightsWarehouseId,
-        @CustomType.Parameter("state") @Nullable String state) {
-        this.compartmentId = compartmentId;
-        this.displayName = displayName;
-        this.emWarehouseCollections = emWarehouseCollections;
-        this.filters = filters;
-        this.id = id;
-        this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
-        this.state = state;
-    }
-
+    private GetEmWarehousesResult() {}
     /**
      * @return Compartment Identifier
      * 
@@ -117,7 +100,7 @@ public final class GetEmWarehousesResult {
     public static Builder builder(GetEmWarehousesResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
@@ -126,11 +109,7 @@ public final class GetEmWarehousesResult {
         private @Nullable String id;
         private @Nullable String operationsInsightsWarehouseId;
         private @Nullable String state;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetEmWarehousesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -142,14 +121,17 @@ public final class GetEmWarehousesResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
             return this;
         }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
         public Builder emWarehouseCollections(List<GetEmWarehousesEmWarehouseCollection> emWarehouseCollections) {
             this.emWarehouseCollections = Objects.requireNonNull(emWarehouseCollections);
             return this;
@@ -157,6 +139,7 @@ public final class GetEmWarehousesResult {
         public Builder emWarehouseCollections(GetEmWarehousesEmWarehouseCollection... emWarehouseCollections) {
             return emWarehouseCollections(List.of(emWarehouseCollections));
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetEmWarehousesFilter> filters) {
             this.filters = filters;
             return this;
@@ -164,19 +147,31 @@ public final class GetEmWarehousesResult {
         public Builder filters(GetEmWarehousesFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder id(@Nullable String id) {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
         public Builder operationsInsightsWarehouseId(@Nullable String operationsInsightsWarehouseId) {
             this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
             return this;
         }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
-        }        public GetEmWarehousesResult build() {
-            return new GetEmWarehousesResult(compartmentId, displayName, emWarehouseCollections, filters, id, operationsInsightsWarehouseId, state);
+        }
+        public GetEmWarehousesResult build() {
+            final var o = new GetEmWarehousesResult();
+            o.compartmentId = compartmentId;
+            o.displayName = displayName;
+            o.emWarehouseCollections = emWarehouseCollections;
+            o.filters = filters;
+            o.id = id;
+            o.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
+            o.state = state;
+            return o;
         }
     }
 }

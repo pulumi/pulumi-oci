@@ -18,34 +18,21 @@ public final class GetIamWorkRequestsResult {
      * @return The OCID of the compartment containing this IAM work request.
      * 
      */
-    private final String compartmentId;
-    private final @Nullable List<GetIamWorkRequestsFilter> filters;
+    private String compartmentId;
+    private @Nullable List<GetIamWorkRequestsFilter> filters;
     /**
      * @return The list of iam_work_requests.
      * 
      */
-    private final List<GetIamWorkRequestsIamWorkRequest> iamWorkRequests;
+    private List<GetIamWorkRequestsIamWorkRequest> iamWorkRequests;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String resourceIdentifier;
+    private String id;
+    private @Nullable String resourceIdentifier;
 
-    @CustomType.Constructor
-    private GetIamWorkRequestsResult(
-        @CustomType.Parameter("compartmentId") String compartmentId,
-        @CustomType.Parameter("filters") @Nullable List<GetIamWorkRequestsFilter> filters,
-        @CustomType.Parameter("iamWorkRequests") List<GetIamWorkRequestsIamWorkRequest> iamWorkRequests,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("resourceIdentifier") @Nullable String resourceIdentifier) {
-        this.compartmentId = compartmentId;
-        this.filters = filters;
-        this.iamWorkRequests = iamWorkRequests;
-        this.id = id;
-        this.resourceIdentifier = resourceIdentifier;
-    }
-
+    private GetIamWorkRequestsResult() {}
     /**
      * @return The OCID of the compartment containing this IAM work request.
      * 
@@ -81,18 +68,14 @@ public final class GetIamWorkRequestsResult {
     public static Builder builder(GetIamWorkRequestsResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetIamWorkRequestsFilter> filters;
         private List<GetIamWorkRequestsIamWorkRequest> iamWorkRequests;
         private String id;
         private @Nullable String resourceIdentifier;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetIamWorkRequestsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
@@ -102,10 +85,12 @@ public final class GetIamWorkRequestsResult {
     	      this.resourceIdentifier = defaults.resourceIdentifier;
         }
 
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
         }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetIamWorkRequestsFilter> filters) {
             this.filters = filters;
             return this;
@@ -113,6 +98,7 @@ public final class GetIamWorkRequestsResult {
         public Builder filters(GetIamWorkRequestsFilter... filters) {
             return filters(List.of(filters));
         }
+        @CustomType.Setter
         public Builder iamWorkRequests(List<GetIamWorkRequestsIamWorkRequest> iamWorkRequests) {
             this.iamWorkRequests = Objects.requireNonNull(iamWorkRequests);
             return this;
@@ -120,15 +106,24 @@ public final class GetIamWorkRequestsResult {
         public Builder iamWorkRequests(GetIamWorkRequestsIamWorkRequest... iamWorkRequests) {
             return iamWorkRequests(List.of(iamWorkRequests));
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder resourceIdentifier(@Nullable String resourceIdentifier) {
             this.resourceIdentifier = resourceIdentifier;
             return this;
-        }        public GetIamWorkRequestsResult build() {
-            return new GetIamWorkRequestsResult(compartmentId, filters, iamWorkRequests, id, resourceIdentifier);
+        }
+        public GetIamWorkRequestsResult build() {
+            final var o = new GetIamWorkRequestsResult();
+            o.compartmentId = compartmentId;
+            o.filters = filters;
+            o.iamWorkRequests = iamWorkRequests;
+            o.id = id;
+            o.resourceIdentifier = resourceIdentifier;
+            return o;
         }
     }
 }

@@ -13,21 +13,14 @@ public final class GetSubscriberClient {
      * @return The name of the client. Must be unique within a subscriber.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return The token for the client. Must be unique within a tenancy.
      * 
      */
-    private final String token;
+    private String token;
 
-    @CustomType.Constructor
-    private GetSubscriberClient(
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("token") String token) {
-        this.name = name;
-        this.token = token;
-    }
-
+    private GetSubscriberClient() {}
     /**
      * @return The name of the client. Must be unique within a subscriber.
      * 
@@ -50,30 +43,32 @@ public final class GetSubscriberClient {
     public static Builder builder(GetSubscriberClient defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String name;
         private String token;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetSubscriberClient defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.name = defaults.name;
     	      this.token = defaults.token;
         }
 
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder token(String token) {
             this.token = Objects.requireNonNull(token);
             return this;
-        }        public GetSubscriberClient build() {
-            return new GetSubscriberClient(name, token);
+        }
+        public GetSubscriberClient build() {
+            final var o = new GetSubscriberClient();
+            o.name = name;
+            o.token = token;
+            return o;
         }
     }
 }
